@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTools", "src\BuildTools\BuildTools.csproj", "{FD24E9FF-1097-4777-A418-F2D88C558665}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Core", "Silk.NET.Core\Silk.NET.Core.csproj", "{136C6154-D300-4B82-80D3-17B637841A2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Core", "src\Silk.NET.Core\Silk.NET.Core.csproj", "{136C6154-D300-4B82-80D3-17B637841A2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
