@@ -7,13 +7,15 @@
 
 using System;
 using AdvancedDLSupport;
+using Silk.NET.Core.Loader;
+using Silk.NET.Core.Native;
 
 namespace Silk.NET.GLFW
 {
     /// <summary>
     /// Provides access to the GLFW API.
     /// </summary>
-    public abstract class GLFW : NativeLibraryBase, IGLFW
+    public abstract class GLFW : NativeAPI, IGLFW
     {
         /// <summary>
         /// Gets an instance of the API.
@@ -21,7 +23,7 @@ namespace Silk.NET.GLFW
         /// <returns>The instance.</returns>
         public static GLFW GetAPI()
         {
-            return APILoader.Load<GLFW>(new GLFWLibraryNameContainer());
+            return LibraryLoader.Load<GLFW>(new GLFWLibraryNameContainer());
         }
 
         /// <summary>

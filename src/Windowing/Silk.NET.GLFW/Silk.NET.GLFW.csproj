@@ -16,4 +16,8 @@
       <PackageReference Include="AdvancedDLSupport" Version="3.0.0" />
       <PackageReference Include="opentoolkit.redist.glfw" Version="3.3.0-pre20190419183326" />
     </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\..\Silk.NET.Core\Silk.NET.Core.csproj" />
+    </ItemGroup>
 </Project>

@@ -13,7 +13,7 @@ namespace Silk.NET.GLFW
     /// <summary>
     /// Contains the library name of GLFW.
     /// </summary>
-    internal class GLFWLibraryNameContainer : PlatformLibraryNameContainerBase
+    internal class GLFWLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
         public override string Linux => "libglfw.so.3.3";
@@ -28,6 +28,9 @@ namespace Silk.NET.GLFW
         public override string IOS => MacOS;
 
         /// <inheritdoc />
-        public override string Windows => Environment.Is64BitProcess ? "glfw3-x64.dll" : "glfw3-x86.dll";
+        public override string Windows64 => "glfw3-x64.dll";
+
+        /// <inheritdoc />
+        public override string Windows86 => "glfw3-x86.dll";
     }
 }
