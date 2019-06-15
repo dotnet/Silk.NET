@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+      <TargetFramework>netstandard2.0</TargetFramework>
+      <RootNamespace>Silk.NET.GLFW</RootNamespace>
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleTo">
+        <_Parameter1>DLSupportDynamicAssembly</_Parameter1>
+      </AssemblyAttribute>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="AdvancedDLSupport" Version="3.0.0" />
+      <PackageReference Include="opentoolkit.redist.glfw" Version="3.3.0-pre20190419183326" />
+    </ItemGroup>
+</Project>
