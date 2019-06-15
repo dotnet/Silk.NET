@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTools", "src\BuildTools\BuildTools.csproj", "{FD24E9FF-1097-4777-A418-F2D88C558665}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Core", "Silk.NET.Core\Silk.NET.Core.csproj", "{136C6154-D300-4B82-80D3-17B637841A2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,17 @@ Global
 		{FD24E9FF-1097-4777-A418-F2D88C558665}.Release|x64.Build.0 = Release|Any CPU
 		{FD24E9FF-1097-4777-A418-F2D88C558665}.Release|x86.ActiveCfg = Release|Any CPU
 		{FD24E9FF-1097-4777-A418-F2D88C558665}.Release|x86.Build.0 = Release|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Debug|x64.Build.0 = Debug|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Debug|x86.Build.0 = Debug|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Release|x64.ActiveCfg = Release|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Release|x64.Build.0 = Release|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Release|x86.ActiveCfg = Release|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
