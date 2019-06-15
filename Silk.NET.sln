@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.GLFW", "src\Window
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Core", "src\Silk.NET.Core\Silk.NET.Core.csproj", "{136C6154-D300-4B82-80D3-17B637841A2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing.Common", "src\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj", "{A8DFEA18-E880-4303-BBCE-0F27EE214D44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,8 +62,21 @@ Global
 		{136C6154-D300-4B82-80D3-17B637841A2B}.Release|x64.Build.0 = Release|Any CPU
 		{136C6154-D300-4B82-80D3-17B637841A2B}.Release|x86.ActiveCfg = Release|Any CPU
 		{136C6154-D300-4B82-80D3-17B637841A2B}.Release|x86.Build.0 = Release|Any CPU
+		{A8DFEA18-E880-4303-BBCE-0F27EE214D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8DFEA18-E880-4303-BBCE-0F27EE214D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8DFEA18-E880-4303-BBCE-0F27EE214D44}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A8DFEA18-E880-4303-BBCE-0F27EE214D44}.Debug|x64.Build.0 = Debug|Any CPU
+		{A8DFEA18-E880-4303-BBCE-0F27EE214D44}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A8DFEA18-E880-4303-BBCE-0F27EE214D44}.Debug|x86.Build.0 = Debug|Any CPU
+		{A8DFEA18-E880-4303-BBCE-0F27EE214D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8DFEA18-E880-4303-BBCE-0F27EE214D44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8DFEA18-E880-4303-BBCE-0F27EE214D44}.Release|x64.ActiveCfg = Release|Any CPU
+		{A8DFEA18-E880-4303-BBCE-0F27EE214D44}.Release|x64.Build.0 = Release|Any CPU
+		{A8DFEA18-E880-4303-BBCE-0F27EE214D44}.Release|x86.ActiveCfg = Release|Any CPU
+		{A8DFEA18-E880-4303-BBCE-0F27EE214D44}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BFE429EB-4C2E-4BF3-A302-C9C5A2FDA6D7} = {23324041-2076-477C-A4BF-B385B8066C6C}
+		{A8DFEA18-E880-4303-BBCE-0F27EE214D44} = {23324041-2076-477C-A4BF-B385B8066C6C}
 	EndGlobalSection
 EndGlobal
