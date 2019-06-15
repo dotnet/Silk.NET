@@ -15,11 +15,11 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// Use core OpenGL. This is standard for software intended for desktop computers.
         /// </summary>
-        OpenGl = 0,
+        OpenGL = 0,
 
         /// <summary>
         /// Use OpenGL ES. This is standard for software intended to be compatable with embedded systems, such as phones.
         /// </summary>
-        OpenGlEs,
+        OpenGLES,
     }
 }
