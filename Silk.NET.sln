@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windowing", "Windowing", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.GLFW", "src\Windowing\Silk.NET.GLFW\Silk.NET.GLFW.csproj", "{BFE429EB-4C2E-4BF3-A302-C9C5A2FDA6D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Core", "src\Silk.NET.Core\Silk.NET.Core.csproj", "{136C6154-D300-4B82-80D3-17B637841A2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,18 @@ Global
 		{BFE429EB-4C2E-4BF3-A302-C9C5A2FDA6D7}.Release|x64.Build.0 = Release|Any CPU
 		{BFE429EB-4C2E-4BF3-A302-C9C5A2FDA6D7}.Release|x86.ActiveCfg = Release|Any CPU
 		{BFE429EB-4C2E-4BF3-A302-C9C5A2FDA6D7}.Release|x86.Build.0 = Release|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Debug|x64.Build.0 = Debug|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Debug|x86.Build.0 = Debug|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Release|x64.ActiveCfg = Release|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Release|x64.Build.0 = Release|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Release|x86.ActiveCfg = Release|Any CPU
+		{136C6154-D300-4B82-80D3-17B637841A2B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BFE429EB-4C2E-4BF3-A302-C9C5A2FDA6D7} = {23324041-2076-477C-A4BF-B385B8066C6C}
