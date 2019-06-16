@@ -21,11 +21,11 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// OpenGL context is created.
         /// </summary>
-        OpenGlApi = 0x00030001,
+        OpenGL = 0x00030001,
 
         /// <summary>
         /// OpenGL ES context is created.
         /// </summary>
-        OpenGlEsApi = 0x00030002
+        OpenGLES = 0x00030002
     }
 }
