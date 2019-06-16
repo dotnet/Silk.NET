@@ -1,21 +1,35 @@
+//
+// ArrayParameterConvenienceOverloader.cs
+//
+// Copyright (C) 2019 OpenTK
+//
+// This software may be modified and distributed under the terms
+// of the MIT license. See the LICENSE file for details.
+//
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Generator.Bind.Overloading;
 using Generator.Common.Builders;
 using Generator.Common.Functions;
 using Humanizer;
-using MoreLinq;
+using MoreLinq.Extensions;
 
-namespace Generator.Bind.Overloading
+namespace Bind.Overloaders
 {
-       /// <summary>
+    /// <summary>
     /// Creates array parameter convenience overloads for functions.
     /// </summary>
     public class ArrayParameterConvenienceOverloader : IFunctionOverloader
     {
-        /// <inheritdoc/>
-        public bool IsApplicable(Function function)
+        /// <summary>
+        /// Determines whether or not the overloader is applicable for the given function.
+        /// </summary>
+        /// <param name="function">The function.</param>
+        /// <returns>true if the overloader is applicable; otherwise, false.</returns>
+        public static bool IsApplicable(Function function)
         {
             // function has exactly two parameters
             var parameterCount = function.Parameters.Count;
@@ -70,11 +84,16 @@ namespace Generator.Bind.Overloading
         /// <inheritdoc/>
         public IEnumerable<Overload> CreateOverloads(Function function)
         {
+            if (!IsApplicable(function))
+            {
+                yield break;
+            }
+
             var arrayParameter = function.Parameters.Last();
             var arrayParameterType = arrayParameter.Type;
 
             var newName = function.Name.Singularize(false);
-            var newParameters = MoreEnumerable.SkipLast(new List<Parameter>(function.Parameters),2).ToList();
+            var newParameters = SkipLastExtension.SkipLast(new List<Parameter>(function.Parameters), 2).ToList();
 
             var newArrayParameterType = new TypeSignatureBuilder(arrayParameterType)
                 .WithArrayDimensions(0)
@@ -87,15 +106,14 @@ namespace Generator.Bind.Overloading
 
             newParameters.Add(newArrayParameter);
 
-            var sig = new FunctionSignatureBuilder(function)
+            var sb = new StringBuilder();
+
+            sb.AppendLine(function.Name + "(1, &" + newArrayParameter.Name + ");");
+
+            yield return new Overload(new FunctionSignatureBuilder(function)
                 .WithName(newName)
                 .WithParameters(newParameters)
-                .Build();
-            var sb = new StringBuilder();
-            
-            sb.AppendLine(function.Name+"(1, &"+newArrayParameter.Name+");");
-            
-            yield return new Overload(sig, sb, true);
+                .Build(), sb);
         }
     }
 }
