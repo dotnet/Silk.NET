@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Generator.Common.Functions
 {
@@ -7,6 +8,16 @@ namespace Generator.Common.Functions
     /// </summary>
     public class GenericTypeParameter
     {
+        public GenericTypeParameter()
+        {
+            
+        }
+        public GenericTypeParameter(string genericTypeParameterName, IEnumerable<string> constraints)
+        {
+            Name = genericTypeParameterName;
+            Constraints = constraints.ToList();
+        }
+
         /// <summary>
         /// Gets or sets the name of this generic type parameter.
         /// </summary>
