@@ -1,10 +1,12 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
@@ -17,7 +19,8 @@ namespace Generator.Convert.Documentation
     /// </summary>
     public class DocumentationReader
     {
-        private static readonly Regex RedirectRegex = new Regex("<script>window\\.location\\.replace\\(\"(?<redirect>.*)\"\\);<\\/script>");
+        private static readonly Regex RedirectRegex = new Regex
+            ("<script>window\\.location\\.replace\\(\"(?<redirect>.*)\"\\);<\\/script>");
 
         /// <summary>
         /// Reads function documentation from a directory containing docs.gl XHTML files.
@@ -27,14 +30,14 @@ namespace Generator.Convert.Documentation
         /// <returns>A dictionary where the function name is the key, and its documentation is the value.</returns>
         public static async Task<ProfileDocumentation> ReadDocumentationAsync(string directory, string prefix)
         {
-            return new ProfileDocumentation()
+            return new ProfileDocumentation
             {
                 Functions = (await Task.WhenAll
                     (
                         Directory.GetFiles(directory, "*.xhtml")
                             .Select(ReadDocumentationAsync)
                     ))
-                    .ToDictionary(x => x.Key.Substring(prefix.Length), x => x.Value),
+                    .ToDictionary(x => x.Key.Substring(prefix.Length), x => x.Value)
             };
         }
 
@@ -47,10 +50,10 @@ namespace Generator.Convert.Documentation
                     new KeyValuePair<string, FunctionDocumentation>
                     (
                         Path.GetFileNameWithoutExtension(xhtmlFile),
-                        new FunctionDocumentation()
+                        new FunctionDocumentation
                         {
                             Summary = "To be added.",
-                            Parameters = new Dictionary<string, ParameterDocumentation>(),
+                            Parameters = new Dictionary<string, ParameterDocumentation>()
                         }
                     )
                 );
@@ -73,17 +76,20 @@ namespace Generator.Convert.Documentation
 
             var document = new HtmlDocument();
             document.LoadHtml(file);
-            var div = document.DocumentNode.ChildNodes.FirstOrDefault(x => x.Name == "div")?.ChildNodes.FirstOrDefault
-            (
-                x => x.HasClass("refsect1") && x.ChildNodes.Any(y => y.Name == "h2" && y.InnerText == "Parameters")
-            );
+            var div = document.DocumentNode.ChildNodes.FirstOrDefault(x => x.Name == "div")
+                ?.ChildNodes.FirstOrDefault
+                (
+                    x => x.HasClass("refsect1") && x.ChildNodes.Any(y => y.Name == "h2" && y.InnerText == "Parameters")
+                );
 
             var parameters = new Dictionary<string, ParameterDocumentation>();
             if (div != null)
             {
-                var variableList = div?.ChildNodes.FirstOrDefault(x => x.HasClass("variablelist"))?
+                var variableList = div?.ChildNodes.FirstOrDefault(x => x.HasClass("variablelist"))
+                    ?
                     .ChildNodes
-                    .FirstOrDefault(x => x.Name == "dl")?
+                    .FirstOrDefault(x => x.Name == "dl")
+                    ?
                     .ChildNodes;
                 var dt = string.Empty; // parameter name
                 foreach (var child in variableList)
@@ -96,38 +102,40 @@ namespace Generator.Convert.Documentation
                     {
                         parameters[dt] = new ParameterDocumentation
                         {
-                            Summary = StyleGuideCompliance(FixWhitespace(MegaTrim(child.InnerText))).Trim(),
+                            Summary = StyleGuideCompliance(FixWhitespace(MegaTrim(child.InnerText))).Trim()
                         };
                         dt = string.Empty;
                     }
                 }
             }
 
-            div = document.DocumentNode.ChildNodes.FirstOrDefault(x => x.Name == "div")?.ChildNodes.FirstOrDefault
-            (
-                x => x.HasClass("refnamediv") && x.ChildNodes.Any(y => y.Name == "h2" && y.InnerText == "Name")
-            );
+            div = document.DocumentNode.ChildNodes.FirstOrDefault(x => x.Name == "div")
+                ?.ChildNodes.FirstOrDefault
+                (
+                    x => x.HasClass("refnamediv") && x.ChildNodes.Any(y => y.Name == "h2" && y.InnerText == "Name")
+                );
             div.RemoveChild(div.ChildNodes.FirstOrDefault(x => x.Name == "h2"));
             var description = StyleGuideCompliance
-            (
-                FixWhitespace
-                (
-                    MegaTrim
-                    (
-                        div.InnerText.Substring(div.InnerText.IndexOf("—", StringComparison.Ordinal) + 2)
-                            .Transform(To.SentenceCase)
-                            .Trim()
-                    )
-                )
-            )
-            .TrimEnd('.') + ".";
+                                  (
+                                      FixWhitespace
+                                      (
+                                          MegaTrim
+                                          (
+                                              div.InnerText.Substring
+                                                      (div.InnerText.IndexOf("—", StringComparison.Ordinal) + 2)
+                                                  .Transform(To.SentenceCase)
+                                                  .Trim()
+                                          )
+                                      )
+                                  )
+                                  .TrimEnd('.') + ".";
 
             return Task.FromResult
             (
                 new KeyValuePair<string, FunctionDocumentation>
                 (
                     Path.GetFileNameWithoutExtension(xhtmlFile),
-                    new FunctionDocumentation() { Summary = description, Parameters = parameters }
+                    new FunctionDocumentation {Summary = description, Parameters = parameters}
                 )
             );
         }

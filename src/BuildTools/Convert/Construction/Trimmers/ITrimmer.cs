@@ -1,3 +1,8 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using JetBrains.Annotations;
 
 namespace Generator.Convert.Construction.Trimmers
@@ -19,7 +24,8 @@ namespace Generator.Convert.Construction.Trimmers
         /// Trims the given type.
         /// </summary>
         /// <param name="trimmable">The type to trim.</param>
-        [NotNull, Pure]
+        [NotNull]
+        [Pure]
         void Trim([NotNull] TTrimmable trimmable);
     }
 }

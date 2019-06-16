@@ -1,7 +1,11 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Generator.Common;
 using Generator.Convert.Overrides;
 using Enum = Generator.Common.Enums.Enum;
@@ -14,7 +18,7 @@ namespace Generator.Convert.Construction
     public static class Overrider
     {
         /// <summary>
-        /// Gets the overrides read from the override files specified in <see cref="Converter.CliOptions"/>.
+        /// Gets the overrides read from the override files specified in <see cref="Converter.CliOptions" />.
         /// </summary>
         public static Lazy<List<ApiProfileOverride>> Overrides { get; } = new Lazy<List<ApiProfileOverride>>
         (
@@ -22,13 +26,14 @@ namespace Generator.Convert.Construction
         );
 
         /// <summary>
-        /// Gets the overrides for this profile using the <see cref="Converter.CliOptions"/>, and then applies them to the
+        /// Gets the overrides for this profile using the <see cref="Converter.CliOptions" />, and then applies them to the
         /// profile.
         /// </summary>
         /// <param name="profile">The profile to which overrides should be applied.</param>
         public static void Override(Profile profile)
         {
-            var overrides = Overrides?.Value.FirstOrDefault(x => x.Name == profile.Name && x.Version == profile.Version);
+            var overrides = Overrides?.Value.FirstOrDefault
+                (x => x.Name == profile.Name && x.Version == profile.Version);
             if (overrides == null)
             {
                 // no overrides available, the profile must be perfect.
@@ -43,30 +48,36 @@ namespace Generator.Convert.Construction
         {
             foreach (var overridesAddedEnumeration in overrides.AddedEnumerations)
             {
-                profile.Projects["Core"].Enums.Add(new Enum
-                {
-                    Name = overridesAddedEnumeration.Name,
-                    Tokens = overridesAddedEnumeration.DirectTokens.Concat
+                profile.Projects["Core"]
+                    .Enums.Add
                     (
-                        overridesAddedEnumeration.UseTokens.Select
-                        (
-                            x => profile.Projects["Core"]
-                                .Enums
-                                .FirstOrDefault(y => y.Name == x.Enumeration)?
-                                .Tokens
-                                .FirstOrDefault(y => y.Name == x.Token)
-                        )
-                    )
-                    .Concat
-                    (
-                        overridesAddedEnumeration.ReuseEnumerations.Select
-                        (
-                            x => profile.Projects["Core"].Enums.FirstOrDefault(y => y.Name == x.Enumeration)
-                        )
-                        .SelectMany(x => x?.Tokens)
-                    )
-                    .ToList(),
-                });
+                        new Enum
+                        {
+                            Name = overridesAddedEnumeration.Name,
+                            Tokens = overridesAddedEnumeration.DirectTokens.Concat
+                                (
+                                    overridesAddedEnumeration.UseTokens.Select
+                                    (
+                                        x => profile.Projects["Core"]
+                                            .Enums
+                                            .FirstOrDefault(y => y.Name == x.Enumeration)
+                                            ?
+                                            .Tokens
+                                            .FirstOrDefault(y => y.Name == x.Token)
+                                    )
+                                )
+                                .Concat
+                                (
+                                    overridesAddedEnumeration.ReuseEnumerations.Select
+                                        (
+                                            x => profile.Projects["Core"]
+                                                .Enums.FirstOrDefault(y => y.Name == x.Enumeration)
+                                        )
+                                        .SelectMany(x => x?.Tokens)
+                                )
+                                .ToList()
+                        }
+                    );
             }
         }
 

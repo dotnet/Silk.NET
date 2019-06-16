@@ -1,7 +1,11 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Xml.Linq;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 
@@ -30,19 +34,23 @@ namespace Generator.Common.Functions
         /// <summary>
         /// Gets or sets the parameters of the function.
         /// </summary>
-        [NotNull, ItemNotNull]
+        [NotNull]
+        [ItemNotNull]
         public List<Parameter> Parameters { get; set; } = new List<Parameter>();
 
         /// <summary>
         /// Gets or sets the categories in which this function falls under.
         /// </summary>
-        [NotNull, ItemNotNull, JsonIgnore]
+        [NotNull]
+        [ItemNotNull]
+        [JsonIgnore]
         public string[] Categories { get; set; }
 
         /// <summary>
         /// Gets or sets the generic type parameters of the function.
         /// </summary>
-        [NotNull, ItemNotNull]
+        [NotNull]
+        [ItemNotNull]
         public List<GenericTypeParameter> GenericTypeParameters { get; set; } =
             new List<GenericTypeParameter>();
 

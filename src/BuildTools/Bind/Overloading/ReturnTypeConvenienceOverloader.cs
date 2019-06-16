@@ -1,11 +1,7 @@
-//
-// ReturnTypeConvenienceOverloader.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using System.Collections.Generic;
@@ -25,6 +21,73 @@ namespace Bind.Overloaders
     /// </summary>
     public class ReturnTypeConvenienceOverloader : IFunctionOverloader
     {
+        /// <inheritdoc />
+        public IEnumerable<Overload> CreateOverloads(Function function)
+        {
+            if (!IsApplicable(function))
+            {
+                yield break;
+            }
+
+            var lastParameterType = function.Parameters.Last().Type;
+            var newReturnType = new TypeSignatureBuilder(lastParameterType)
+                .WithIndirectionLevel(lastParameterType.IndirectionLevels - 1)
+                .WithArrayDimensions(0)
+                .Build();
+
+            var newParameters = SkipLastExtension.SkipLast(function.Parameters, 1).ToList();
+            var newName = function.Name.Singularize(false);
+
+            var functionBuilder = new FunctionSignatureBuilder(function)
+                .WithName(newName)
+                .WithReturnType(newReturnType);
+
+            var sb = new StringBuilder();
+            var strParams = newParameters.Select(x => Utilities.CSharpKeywords.Contains(x.Name) ? "@" + x.Name : x.Name)
+                .Concat(new[] {"ret"});
+
+            sb.AppendLine(lastParameterType + " ret = null;");
+            sb.Append(function.Name + "(");
+            sb.Append(string.Join(", ", strParams));
+            sb.AppendLine(");");
+            sb.AppendLine("return *ret;");
+
+            if (!newParameters.Any())
+            {
+                yield return new Overload
+                (
+                    functionBuilder
+                        .WithParameters(newParameters)
+                        .Build(), sb
+                );
+
+                yield break;
+            }
+
+            // TODO: check if this has anything to do with CLS compliance
+            var sizeParameterType = newParameters.Last().Type;
+            if (!sizeParameterType.Name.StartsWith("int", StringComparison.OrdinalIgnoreCase) ||
+                sizeParameterType.IsPointer)
+            {
+                yield return new Overload
+                (
+                    functionBuilder
+                        .WithParameters(newParameters)
+                        .Build(), sb
+                );
+
+                yield break;
+            }
+
+            newParameters = SkipLastExtension.SkipLast(newParameters, 1).ToList();
+            yield return new Overload
+            (
+                functionBuilder
+                    .WithParameters(newParameters)
+                    .Build(), sb
+            );
+        }
+
         private static bool IsApplicable(Function function)
         {
             // function has 1 - 2 parameters
@@ -77,66 +140,6 @@ namespace Bind.Overloaders
             }
 
             return true;
-        }
-
-        /// <inheritdoc/>
-        public IEnumerable<Overload> CreateOverloads(Function function)
-        {
-            if (!IsApplicable(function))
-            {
-                yield break;
-            }
-
-            var lastParameterType = function.Parameters.Last().Type;
-            var newReturnType = new TypeSignatureBuilder(lastParameterType)
-                .WithIndirectionLevel(lastParameterType.IndirectionLevels - 1)
-                .WithArrayDimensions(0)
-                .Build();
-
-            var newParameters = SkipLastExtension.SkipLast(function.Parameters, 1).ToList();
-            var newName = function.Name.Singularize(false);
-
-            var functionBuilder = new FunctionSignatureBuilder(function)
-                .WithName(newName)
-                .WithReturnType(newReturnType);
-
-            var sb = new StringBuilder();
-            var strParams = newParameters.Select(x => Utilities.CSharpKeywords.Contains(x.Name) ? "@" + x.Name : x.Name)
-                .Concat(new[] { "ret" });
-
-            sb.AppendLine(lastParameterType + " ret = null;");
-            sb.Append(function.Name + "(");
-            sb.Append(string.Join(", ", strParams));
-            sb.AppendLine(");");
-            sb.AppendLine("return *ret;");
-
-            if (!newParameters.Any())
-            {
-                yield return new Overload(functionBuilder
-                    .WithParameters(newParameters)
-                    .Build(), sb);
-
-                yield break;
-            }
-
-            // TODO: check if this has anything to do with CLS compliance
-            var sizeParameterType = newParameters.Last().Type;
-            if (!sizeParameterType.Name.StartsWith("int", StringComparison.OrdinalIgnoreCase) || sizeParameterType.IsPointer)
-            {
-                yield return new Overload(functionBuilder
-                    .WithParameters(newParameters)
-                    .Build(), sb);
-
-                yield break;
-            }
-
-            newParameters = SkipLastExtension.SkipLast(newParameters, 1).ToList();
-            yield return new Overload
-            (
-                functionBuilder
-                    .WithParameters(newParameters)
-                    .Build(), sb
-            );
         }
     }
 }

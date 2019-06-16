@@ -1,26 +1,28 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using Generator.Common.Functions;
 using JetBrains.Annotations;
 
 namespace Generator.Common.Builders
 {
     /// <summary>
-    /// Acts as a builder for new instances of <see cref="ParameterSignature"/>s, based on existing instances.
+    /// Acts as a builder for new instances of <see cref="ParameterSignature" />s, based on existing instances.
     /// </summary>
     public class ParameterSignatureBuilder
     {
-        [NotNull]
-        private string _newName;
-
-        [NotNull]
-        private Type _newType;
+        [CanBeNull] private Count _newCount;
 
         private FlowDirection _newFlow;
 
-        [CanBeNull]
-        private Count _newCount;
+        [NotNull] private string _newName;
+
+        [NotNull] private Type _newType;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ParameterSignatureBuilder"/> class.
+        /// Initializes a new instance of the <see cref="ParameterSignatureBuilder" /> class.
         /// </summary>
         /// <param name="parameterSignature">The signature.</param>
         public ParameterSignatureBuilder([NotNull] Parameter parameterSignature)

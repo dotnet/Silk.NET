@@ -1,4 +1,8 @@
-using System;
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System.Reflection;
 using AdvancedDLSupport;
 using Silk.NET.Core.Attributes;
@@ -13,7 +17,7 @@ namespace Silk.NET.Core.Loader
                                                       ImplementationOptions.SuppressSecurity |
                                                       ImplementationOptions.EnableOptimizations;
 
-        private static NativeLibraryBuilder _builder;
+        private static readonly NativeLibraryBuilder _builder;
 
         static LibraryLoader()
         {

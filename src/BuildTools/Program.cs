@@ -1,4 +1,9 @@
-﻿using System;
+﻿// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -12,9 +17,9 @@ using Silk.NET.BuildTools.Pipeline;
 
 namespace Silk.NET.BuildTools
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             Console.WriteLine("Silk.NET Build Tools");
             Console.WriteLine($"(C) {DateTime.Now.Year} Ultz Limited");
@@ -26,7 +31,7 @@ namespace Silk.NET.BuildTools
             Console.WriteLine("Completed in {0} seconds.", sw.Elapsed.TotalSeconds);
         }
 
-        static void Switch(string[] args)
+        private static void Switch(string[] args)
         {
             switch (args[0].ToLower())
             {
@@ -47,9 +52,10 @@ namespace Silk.NET.BuildTools
             if (File.Exists(args[0]))
             {
                 Environment.CurrentDirectory = Path.GetDirectoryName(args[0]);
-                foreach (var task in JsonConvert.DeserializeObject<PipelineTask[]>(File.ReadAllText(Path.GetFileName(args[0]))))
+                foreach (var task in JsonConvert.DeserializeObject<PipelineTask[]>
+                    (File.ReadAllText(Path.GetFileName(args[0]))))
                 {
-                    Switch(new []{task.Task}.Concat(task.Args).ToArray());
+                    Switch(new[] {task.Task}.Concat(task.Args).ToArray());
                 }
             }
             else

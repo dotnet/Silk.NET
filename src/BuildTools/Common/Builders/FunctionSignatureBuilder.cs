@@ -1,46 +1,39 @@
-using System;
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System.Collections.Generic;
 using System.Linq;
 using Generator.Common.Functions;
 using JetBrains.Annotations;
-using Type = Generator.Common.Functions.Type;
 
 namespace Generator.Common.Builders
 {
     /// <summary>
-    /// Acts as a builder for new instances of <see cref="FunctionSignature"/>s, based on existing instances.
+    /// Acts as a builder for new instances of <see cref="FunctionSignature" />s, based on existing instances.
     /// </summary>
     public sealed class FunctionSignatureBuilder
     {
-        [NotNull]
-        private string _newName;
+        [NotNull] private readonly string _newDoc;
+        [NotNull] private List<Attribute> _newAttributes;
 
-        [NotNull]
-        private string _newNativeEntrypoint;
+        [NotNull] private IReadOnlyList<string> _newCategory;
 
-        [NotNull]
-        private IReadOnlyList<string> _newCategory;
+        [NotNull] private string _newExtension;
 
-        [NotNull]
-        private string _newExtension;
+        [NotNull] private IReadOnlyList<GenericTypeParameter> _newGenericTypeParameters;
 
-        [NotNull]
-        private string _newDoc;
+        [NotNull] private string _newName;
 
-        [NotNull]
-        private IReadOnlyList<Parameter> _newParameters;
+        [NotNull] private string _newNativeEntrypoint;
 
-        [NotNull]
-        private IReadOnlyList<GenericTypeParameter> _newGenericTypeParameters;
+        [NotNull] private IReadOnlyList<Parameter> _newParameters;
 
-        [NotNull]
-        private Type _newReturnType;
-
-        [NotNull]
-        private List<Attribute> _newAttributes;
+        [NotNull] private Type _newReturnType;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="FunctionSignatureBuilder"/> class.
+        /// Initializes a new instance of the <see cref="FunctionSignatureBuilder" /> class.
         /// </summary>
         /// <param name="functionSignature">The signature.</param>
         public FunctionSignatureBuilder([NotNull] Function functionSignature)
@@ -170,7 +163,8 @@ namespace Generator.Common.Builders
                 ExtensionName = _newExtension,
                 ReturnType = _newReturnType,
                 Parameters = _newParameters?.ToList() ?? new List<Parameter>(),
-                GenericTypeParameters = _newGenericTypeParameters?.ToList() ?? new List<GenericTypeParameter>(), Attributes = _newAttributes, Doc = _newDoc
+                GenericTypeParameters = _newGenericTypeParameters?.ToList() ?? new List<GenericTypeParameter>(),
+                Attributes = _newAttributes, Doc = _newDoc
             };
         }
     }

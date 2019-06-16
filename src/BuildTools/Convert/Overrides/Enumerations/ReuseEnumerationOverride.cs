@@ -1,3 +1,8 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System;
 using JetBrains.Annotations;
 
@@ -9,13 +14,7 @@ namespace Generator.Convert.Overrides.Enumerations
     public class ReuseEnumerationOverride
     {
         /// <summary>
-        /// Gets the name of the enumeration to reuse the tokens of.
-        /// </summary>
-        [NotNull]
-        public string Enumeration { get; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ReuseEnumerationOverride"/> class.
+        /// Initializes a new instance of the <see cref="ReuseEnumerationOverride" /> class.
         /// </summary>
         /// <param name="enumeration">The name of the enumeration to reuse.</param>
         public ReuseEnumerationOverride([NotNull] string enumeration)
@@ -23,7 +22,13 @@ namespace Generator.Convert.Overrides.Enumerations
             Enumeration = enumeration ?? throw new ArgumentNullException(nameof(enumeration));
         }
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Gets the name of the enumeration to reuse the tokens of.
+        /// </summary>
+        [NotNull]
+        public string Enumeration { get; }
+
+        /// <inheritdoc />
         public override string ToString()
         {
             return Enumeration;

@@ -1,3 +1,8 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -22,7 +27,8 @@ namespace Generator.Convert.Overrides
         /// </summary>
         /// <param name="overrideFilePath">The document containing the overrides.</param>
         /// <returns>A set of profiles.</returns>
-        [NotNull, ItemNotNull]
+        [NotNull]
+        [ItemNotNull]
         public static IEnumerable<ApiProfileOverride> GetProfileOverrides([NotNull] string overrideFilePath)
         {
             var doc = LoadOverrideDocument(overrideFilePath);
@@ -34,7 +40,8 @@ namespace Generator.Convert.Overrides
         /// </summary>
         /// <param name="overrideFilePaths">The files to load.</param>
         /// <returns>A set of profiles.</returns>
-        [NotNull, ItemNotNull]
+        [NotNull]
+        [ItemNotNull]
         public static IEnumerable<ApiProfileOverride> GetProfileOverrides([NotNull] params string[] overrideFilePaths)
         {
             var documents = overrideFilePaths.Select(LoadOverrideDocument);
@@ -48,7 +55,7 @@ namespace Generator.Convert.Overrides
         /// <returns>The document.</returns>
         /// <exception cref="FileNotFoundException">Thrown if no file was found at the path.</exception>
         [NotNull]
-        private static XDocument LoadOverrideDocument([NotNull, PathReference] string overrideFilePath)
+        private static XDocument LoadOverrideDocument([NotNull] [PathReference] string overrideFilePath)
         {
             if (!File.Exists(overrideFilePath))
             {
@@ -69,7 +76,8 @@ namespace Generator.Convert.Overrides
         /// </summary>
         /// <param name="signatureDocuments">The documents that contain overrides.</param>
         /// <returns>A set of profiles.</returns>
-        [NotNull, ItemNotNull]
+        [NotNull]
+        [ItemNotNull]
         public static IEnumerable<ApiProfileOverride> GetProfileOverrides
         (
             [NotNull] params XDocument[] signatureDocuments
@@ -85,15 +93,19 @@ namespace Generator.Convert.Overrides
                 >
             >();
 
-            var profileElements = signatureDocuments.Select(GetOverridesRoot).Elements().Where(e => e.Name == "add" || e.Name == "overload" || e.Name == "replace");
+            var profileElements = signatureDocuments.Select
+                    (GetOverridesRoot)
+                .Elements()
+                .Where(e => e.Name == "add" || e.Name == "overload" || e.Name == "replace");
             foreach (var profileElement in profileElements)
             {
-                var profileNamesAndVersions = (Names: ParseProfileNames(profileElement), Versions: GetVersions(profileElement));
+                var profileNamesAndVersions = (Names: ParseProfileNames(profileElement),
+                    Versions: GetVersions(profileElement));
 
                 var profilePairs = profileNamesAndVersions.Names.SelectMany
                 (
                     n =>
-                        new[] { n }.Zip(profileNamesAndVersions.Versions, (x, y) => (x, y))
+                        new[] {n}.Zip(profileNamesAndVersions.Versions, (x, y) => (x, y))
                 );
 
                 foreach (var (profileName, profileVersion) in profilePairs)
@@ -107,7 +119,7 @@ namespace Generator.Convert.Overrides
                         }
 
                         // We do have the name registered, but not this version
-                        existingProfileVersions.Add(profileVersion, new List<XElement> { profileElement });
+                        existingProfileVersions.Add(profileVersion, new List<XElement> {profileElement});
                         continue;
                     }
 
@@ -117,7 +129,7 @@ namespace Generator.Convert.Overrides
                         profileName,
                         new Dictionary<string, List<XElement>>
                         {
-                            { profileVersion, new List<XElement> { profileElement } }
+                            {profileVersion, new List<XElement> {profileElement}}
                         }
                     );
                 }
@@ -144,17 +156,24 @@ namespace Generator.Convert.Overrides
                                 enumerationAdditions.AddRange(element.Elements("enum").Select(ParseEnumeration));
                                 break;
                             }
+
                             case "replace":
                             {
-                                functionReplacements.AddRange(element.Elements("function").Select(ParseFunctionOverride));
+                                functionReplacements.AddRange
+                                    (element.Elements("function").Select(ParseFunctionOverride));
                                 break;
                             }
+
                             case "overload":
                             {
-                                Console.WriteLine("Warning: XML Overloads are deprecated and should be moved to" +
-                                                  "helper classes. XML Overloads will be ignored.");
+                                Console.WriteLine
+                                (
+                                    "Warning: XML Overloads are deprecated and should be moved to" +
+                                    "helper classes. XML Overloads will be ignored."
+                                );
                                 break;
                             }
+
                             default:
                             {
                                 throw new InvalidDataException("Invalid element found in profile.");
@@ -174,7 +193,7 @@ namespace Generator.Convert.Overrides
         }
 
         /// <summary>
-        /// Parses a function override from the given <see cref="XElement"/>.
+        /// Parses a function override from the given <see cref="XElement" />.
         /// </summary>
         /// <param name="functionElement">The element.</param>
         /// <returns>A parsed override.</returns>
@@ -219,7 +238,7 @@ namespace Generator.Convert.Overrides
         }
 
         /// <summary>
-        /// Parses a function parameter signature from the given <see cref="XElement"/>.
+        /// Parses a function parameter signature from the given <see cref="XElement" />.
         /// </summary>
         /// <param name="paramElement">The parameter element.</param>
         /// <returns>A parsed parameter.</returns>
@@ -277,7 +296,7 @@ namespace Generator.Convert.Overrides
         }
 
         /// <summary>
-        /// Parses a reuse token from a given <see cref="XElement"/>.
+        /// Parses a reuse token from a given <see cref="XElement" />.
         /// </summary>
         /// <param name="reuseElement">The element.</param>
         /// <returns>A parsed token.</returns>
@@ -290,7 +309,7 @@ namespace Generator.Convert.Overrides
         }
 
         /// <summary>
-        /// Parses a use token from a given <see cref="XElement"/>.
+        /// Parses a use token from a given <see cref="XElement" />.
         /// </summary>
         /// <param name="useElement">The element.</param>
         /// <returns>A parsed token.</returns>
@@ -321,7 +340,8 @@ namespace Generator.Convert.Overrides
         /// </summary>
         /// <param name="profileElement">The element.</param>
         /// <returns>The names.</returns>
-        [NotNull, ItemNotNull]
+        [NotNull]
+        [ItemNotNull]
         private static IEnumerable<string> ParseProfileNames([NotNull] XElement profileElement)
         {
             var profileNameString = profileElement.Attribute("name")?.Value
@@ -336,7 +356,8 @@ namespace Generator.Convert.Overrides
         /// </summary>
         /// <param name="profileElement">The element.</param>
         /// <returns>The versions.</returns>
-        [NotNull, ItemNotNull]
+        [NotNull]
+        [ItemNotNull]
         private static IEnumerable<string> GetVersions([NotNull] XElement profileElement)
         {
             var profileVersionString = profileElement.Attribute("version")?.Value ?? string.Empty;

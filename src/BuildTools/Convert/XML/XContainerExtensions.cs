@@ -1,3 +1,8 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,7 +13,7 @@ using JetBrains.Annotations;
 namespace Generator.Convert.XML
 {
     /// <summary>
-    /// Extension methods for the <see cref="XContainer"/> class.
+    /// Extension methods for the <see cref="XContainer" /> class.
     /// </summary>
     public static class XContainerExtensions
     {
@@ -62,7 +67,8 @@ namespace Generator.Convert.XML
         /// <returns>The section.</returns>
         /// <exception cref="InvalidDataException">Thrown if the section couldn't be found.</exception>
         /// <exception cref="AmbiguousMatchException">Thrown if more than one matching section was found.</exception>
-        [NotNull, ItemNotNull]
+        [NotNull]
+        [ItemNotNull]
         public static IEnumerable<XElement> GetRequiredSectionsByClass
         (
             [NotNull] this XContainer container,
@@ -118,7 +124,8 @@ namespace Generator.Convert.XML
         /// <param name="elementName">The name of the element.</param>
         /// <param name="ignoreNamespace">Whether or not the namespace should be ignored.</param>
         /// <returns>The elements.</returns>
-        [NotNull, ItemNotNull]
+        [NotNull]
+        [ItemNotNull]
         public static IEnumerable<XElement> GetRequiredElements
         (
             [NotNull] this XContainer container,

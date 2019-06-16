@@ -1,3 +1,8 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,17 +14,52 @@ namespace Generator.Common.Functions
     /// <summary>
     /// Represents a computed or static element count of a parameter. A computed parameter varies its count based on the
     /// input arguments the user provides, and is extremely difficult (if not wholly impossible) to predict accurately.
-    ///
     /// Therefore, these counts tend to generate a set of catch-all signatures (such as a single element, a pointer, an
     /// array, and a ref).
     /// </summary>
     public class Count
     {
         /// <summary>
-        /// Backing field for <see cref="Count"/>.
+        /// Backing field for <see cref="Count" />.
         /// </summary>
-        [JsonProperty]
-        private int _count;
+        [JsonProperty] private int _count;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Count" /> class.
+        /// </summary>
+        [Obsolete("This constructor is for JSON use only. Please use one of the overloads.")]
+        public Count()
+        {
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Count" /> class.
+        /// </summary>
+        /// <param name="count">The static count.</param>
+        public Count(int count)
+        {
+            _count = count;
+            ComputedFromNames = new List<string>();
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Count" /> class.
+        /// </summary>
+        /// <param name="computedFrom">The parameters the count is computed from.</param>
+        public Count([NotNull] IReadOnlyList<Parameter> computedFrom)
+        {
+            ComputedFromNames = computedFrom.Select(x => x.Name).ToList();
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Count" /> class.
+        /// </summary>
+        /// <param name="valueReference">The parameter the count is taken from.</param>
+        public Count([CanBeNull] Parameter valueReference)
+        {
+            ValueReference = valueReference;
+            ComputedFromNames = new List<string>();
+        }
 
         /// <summary>
         /// Gets the static count of the parameter.
@@ -53,7 +93,8 @@ namespace Generator.Common.Functions
         /// <summary>
         /// Gets or sets the parameter that the count is taken from.
         /// </summary>
-        [CanBeNull, JsonIgnore]
+        [CanBeNull]
+        [JsonIgnore]
         public Parameter ValueReference { get; set; }
 
         /// <summary>
@@ -65,12 +106,13 @@ namespace Generator.Common.Functions
         /// <summary>
         /// Gets the parameters that the count is computed from.
         /// </summary>
-        [NotNull, JsonIgnore]
+        [NotNull]
+        [JsonIgnore]
         public IReadOnlyList<Parameter> ComputedFrom => ComputedFromNames.Select
-        (
-            x => FunctionReference.Parameters.FirstOrDefault(y => y.Name == x)
-        )
-        .ToList();
+            (
+                x => FunctionReference.Parameters.FirstOrDefault(y => y.Name == x)
+            )
+            .ToList();
 
         /// <summary>
         /// Gets or sets the parameter names the count is computed from.
@@ -95,44 +137,7 @@ namespace Generator.Common.Functions
         [JsonIgnore]
         public bool IsStatic => !(IsComputed || IsReference);
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Count"/> class.
-        /// </summary>
-        [Obsolete("This constructor is for JSON use only. Please use one of the overloads.")]
-        public Count()
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Count"/> class.
-        /// </summary>
-        /// <param name="count">The static count.</param>
-        public Count(int count)
-        {
-            _count = count;
-            ComputedFromNames = new List<string>();
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Count"/> class.
-        /// </summary>
-        /// <param name="computedFrom">The parameters the count is computed from.</param>
-        public Count([NotNull] IReadOnlyList<Parameter> computedFrom)
-        {
-            ComputedFromNames = computedFrom.Select(x => x.Name).ToList();
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Count"/> class.
-        /// </summary>
-        /// <param name="valueReference">The parameter the count is taken from.</param>
-        public Count([CanBeNull] Parameter valueReference)
-        {
-            ValueReference = valueReference;
-            ComputedFromNames = new List<string>();
-        }
-
-        /// <inheritdoc/>
+        /// <inheritdoc />
         public override string ToString()
         {
             if (IsComputed)

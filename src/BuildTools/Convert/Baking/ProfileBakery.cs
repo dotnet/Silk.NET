@@ -1,7 +1,11 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Generator.Common;
 using Generator.Convert.Construction;
@@ -17,7 +21,7 @@ namespace Generator.Convert.Baking
     public class ProfileBakery
     {
         /// <summary>
-        /// Asynchronously bakes APIs together given the <see cref="ProfileBakeryInformation"/>, and outputs the baked
+        /// Asynchronously bakes APIs together given the <see cref="ProfileBakeryInformation" />, and outputs the baked
         /// profile to the given folder.
         /// </summary>
         /// <param name="information">The information of what APIs to bake.</param>
@@ -37,14 +41,14 @@ namespace Generator.Convert.Baking
                 Name = information.Name,
                 Namespace = information.Namespace,
                 ExtensionsNamespace = information.ExtensionsNamespace,
-                OutputFolder = information.OutputFolder,
+                OutputFolder = information.OutputFolder
             };
             profile.Projects.Add
             (
                 "Core",
-                new Project()
+                new Project
                 {
-                    CategoryName = "Core", ExtensionName = "Core", Namespace = string.Empty, IsRoot = true,
+                    CategoryName = "Core", ExtensionName = "Core", Namespace = string.Empty, IsRoot = true
                 }
             );
 
@@ -91,7 +95,8 @@ namespace Generator.Convert.Baking
         /// <param name="folder">The output folder.</param>
         /// <param name="pretty">Whether the output JSON should be pretty-printed.</param>
         /// <returns>An asynchronous task.</returns>
-        public static async Task BakeAsync(IEnumerable<ProfileBakeryInformation> information, string folder, bool pretty)
+        public static async Task BakeAsync
+            (IEnumerable<ProfileBakeryInformation> information, string folder, bool pretty)
         {
             await Task.WhenAll(information.Select(info => BakeAsync(info, folder, pretty)));
         }

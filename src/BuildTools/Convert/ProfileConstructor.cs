@@ -1,3 +1,8 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +13,6 @@ using Generator.Common;
 using Generator.Convert.Construction;
 using Generator.Convert.XML;
 using Newtonsoft.Json;
-using Formatting = Newtonsoft.Json.Formatting;
 
 namespace Generator.Convert
 {
@@ -42,13 +46,18 @@ namespace Generator.Convert
         /// </summary>
         public List<Dictionary<string, string>> TypeMaps { get; set; }
 
+        /// <inheritdoc />
+        public void Dispose()
+        {
+        }
+
         /// <summary>
         /// Reads and parses the XML input files, and returns the constructed profiles.
         /// </summary>
         /// <returns>The profiles constructed from the XML files.</returns>
         public IEnumerable<Profile> ReadProfiles()
         {
-            var parser = new GLXmlParser { Prefix = Prefix };
+            var parser = new GLXmlParser {Prefix = Prefix};
             var sigs = InputFiles.Select(x => parser.Parse(x)).ToList();
 
             // Merge any duplicate enum entries (in case an enum is declared
@@ -73,10 +82,10 @@ namespace Generator.Convert
             };
             var elements = api.Elements()
                 .OrderBy(s => s.Name.LocalName)
-                .ThenBy(s => (string)s.Attribute("value") ?? string.Empty)
-                .ThenBy(s => (string)s.Attribute("name") ?? string.Empty)
-                .ThenBy(s => (string)s.Attribute("version") ?? string.Empty)
-                .ThenBy(s => (string)s.Attribute("extension") ?? string.Empty)
+                .ThenBy(s => (string) s.Attribute("value") ?? string.Empty)
+                .ThenBy(s => (string) s.Attribute("name") ?? string.Empty)
+                .ThenBy(s => (string) s.Attribute("version") ?? string.Empty)
+                .ThenBy(s => (string) s.Attribute("extension") ?? string.Empty)
                 .ToList();
             var enums = elements.Where(x => x.Name == "enum");
             var functions = elements.Where(x => x.Name == "function");
@@ -105,7 +114,8 @@ namespace Generator.Convert
                             Path.Combine
                             (
                                 OutputFolder,
-                                "api-" + profile.Name + (!string.IsNullOrEmpty(profile.Version) ? "-" + profile.Version : null) + ".json"
+                                "api-" + profile.Name +
+                                (!string.IsNullOrEmpty(profile.Version) ? "-" + profile.Version : null) + ".json"
                             )
                         )
                 )
@@ -133,7 +143,7 @@ namespace Generator.Convert
                 }
 
                 var tokens = e.Value.Elements()
-                    .OrderBy(t => (string)t.Attribute("name"))
+                    .OrderBy(t => (string) t.Attribute("name"))
                     .ToList();
                 e.Value.RemoveNodes();
                 e.Value.Add(tokens);
@@ -150,8 +160,8 @@ namespace Generator.Convert
             var entries = new Dictionary<string, XElement>();
             foreach (var e in sigs.SelectMany(s => s))
             {
-                var name = (string)e.Attribute("name") ?? string.Empty;
-                var version = (string)e.Attribute("version") ?? string.Empty;
+                var name = (string) e.Attribute("name") ?? string.Empty;
+                var version = (string) e.Attribute("version") ?? string.Empty;
                 var key = name + version;
                 if (entries.ContainsKey(key))
                 {
@@ -167,11 +177,6 @@ namespace Generator.Convert
             }
 
             return entries;
-        }
-
-        /// <inheritdoc />
-        public void Dispose()
-        {
         }
     }
 }

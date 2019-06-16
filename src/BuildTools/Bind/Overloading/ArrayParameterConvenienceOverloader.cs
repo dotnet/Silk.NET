@@ -1,11 +1,7 @@
-//
-// ArrayParameterConvenienceOverloader.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using System.Collections.Generic;
@@ -24,6 +20,44 @@ namespace Bind.Overloaders
     /// </summary>
     public class ArrayParameterConvenienceOverloader : IFunctionOverloader
     {
+        /// <inheritdoc />
+        public IEnumerable<Overload> CreateOverloads(Function function)
+        {
+            if (!IsApplicable(function))
+            {
+                yield break;
+            }
+
+            var arrayParameter = function.Parameters.Last();
+            var arrayParameterType = arrayParameter.Type;
+
+            var newName = function.Name.Singularize(false);
+            var newParameters = SkipLastExtension.SkipLast(new List<Parameter>(function.Parameters), 2).ToList();
+
+            var newArrayParameterType = new TypeSignatureBuilder(arrayParameterType)
+                .WithArrayDimensions(0)
+                .WithIndirectionLevel(0)
+                .Build();
+
+            var newArrayParameter = new ParameterSignatureBuilder(arrayParameter)
+                .WithType(newArrayParameterType)
+                .Build();
+
+            newParameters.Add(newArrayParameter);
+
+            var sb = new StringBuilder();
+
+            sb.AppendLine(function.Name + "(1, &" + newArrayParameter.Name + ");");
+
+            yield return new Overload
+            (
+                new FunctionSignatureBuilder(function)
+                    .WithName(newName)
+                    .WithParameters(newParameters)
+                    .Build(), sb
+            );
+        }
+
         /// <summary>
         /// Determines whether or not the overloader is applicable for the given function.
         /// </summary>
@@ -79,41 +113,6 @@ namespace Bind.Overloaders
             }
 
             return true;
-        }
-
-        /// <inheritdoc/>
-        public IEnumerable<Overload> CreateOverloads(Function function)
-        {
-            if (!IsApplicable(function))
-            {
-                yield break;
-            }
-
-            var arrayParameter = function.Parameters.Last();
-            var arrayParameterType = arrayParameter.Type;
-
-            var newName = function.Name.Singularize(false);
-            var newParameters = SkipLastExtension.SkipLast(new List<Parameter>(function.Parameters), 2).ToList();
-
-            var newArrayParameterType = new TypeSignatureBuilder(arrayParameterType)
-                .WithArrayDimensions(0)
-                .WithIndirectionLevel(0)
-                .Build();
-
-            var newArrayParameter = new ParameterSignatureBuilder(arrayParameter)
-                .WithType(newArrayParameterType)
-                .Build();
-
-            newParameters.Add(newArrayParameter);
-
-            var sb = new StringBuilder();
-
-            sb.AppendLine(function.Name + "(1, &" + newArrayParameter.Name + ");");
-
-            yield return new Overload(new FunctionSignatureBuilder(function)
-                .WithName(newName)
-                .WithParameters(newParameters)
-                .Build(), sb);
         }
     }
 }

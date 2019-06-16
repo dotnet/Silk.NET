@@ -1,16 +1,11 @@
-//
-// VoidPointerParameterOverloader.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection.Emit;
 using System.Text;
 using Generator.Bind.Overloading;
 using Generator.Common;
@@ -24,7 +19,7 @@ namespace Bind.Overloaders
     /// </summary>
     public class VoidPointerParameterOverloader : IFunctionOverloader
     {
-        /// <inheritdoc/>
+        /// <inheritdoc />
         public IEnumerable<Overload> CreateOverloads(Function function)
         {
             if (!function.Parameters.Any(p => p.Type.IsVoidPointer()))
@@ -49,11 +44,14 @@ namespace Bind.Overloaders
                 }
 
                 var genericTypeParameterName = baseParameters.Count(p => p.Type.IsVoidPointer()) > 1
-                    ? $"T{newGenericTypeParameters.Count + 1}" : "T";
+                    ? $"T{newGenericTypeParameters.Count + 1}"
+                    : "T";
 
-                var genericTypeParameter = new GenericTypeParameter(
+                var genericTypeParameter = new GenericTypeParameter
+                (
                     genericTypeParameterName,
-                    new[] { "unmanaged" });
+                    new[] {"unmanaged"}
+                );
 
                 newGenericTypeParameters.Add(genericTypeParameter);
 

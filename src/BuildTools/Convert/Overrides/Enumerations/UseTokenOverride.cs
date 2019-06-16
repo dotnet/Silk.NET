@@ -1,3 +1,8 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System;
 using JetBrains.Annotations;
 
@@ -8,6 +13,17 @@ namespace Generator.Convert.Overrides.Enumerations
     /// </summary>
     public class UseTokenOverride
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UseTokenOverride" /> class.
+        /// </summary>
+        /// <param name="token">The name of the token to use.</param>
+        /// <param name="enumeration">The name of the enumeration to search.</param>
+        public UseTokenOverride([NotNull] string token, [CanBeNull] string enumeration)
+        {
+            Token = token ?? throw new ArgumentNullException(nameof(token));
+            Enumeration = enumeration;
+        }
+
         /// <summary>
         /// Gets the name of the token to include.
         /// </summary>
@@ -21,18 +37,7 @@ namespace Generator.Convert.Overrides.Enumerations
         [CanBeNull]
         public string Enumeration { get; }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="UseTokenOverride"/> class.
-        /// </summary>
-        /// <param name="token">The name of the token to use.</param>
-        /// <param name="enumeration">The name of the enumeration to search.</param>
-        public UseTokenOverride([NotNull] string token, [CanBeNull] string enumeration)
-        {
-            Token = token ?? throw new ArgumentNullException(nameof(token));
-            Enumeration = enumeration;
-        }
-
-        /// <inheritdoc/>
+        /// <inheritdoc />
         public override string ToString()
         {
             return $"{(Enumeration is null ? string.Empty : $"{Enumeration}::")}{Token}";

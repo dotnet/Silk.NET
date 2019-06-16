@@ -1,3 +1,8 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,7 +13,6 @@ using Generator.Common.Enums;
 using Generator.Common.Functions;
 using Generator.Convert.XML;
 using JetBrains.Annotations;
-using MoreLinq.Extensions;
 using Attribute = Generator.Common.Attribute;
 using Enum = Generator.Common.Enums.Enum;
 
@@ -33,28 +37,28 @@ namespace Generator.Convert.Construction
                     element.Attribute("name")?.Value
                     ?? throw new InvalidOperationException("No name attribute.")
                 ),
-                NativeName = element.Attribute("name")?.Value,
+                NativeName = element.Attribute("name")?.Value
             };
             foreach (var child in element.Elements("token"))
             {
                 var deprecatedSince = ParsingHelpers.ParseVersion(child, "deprecated");
                 result.Tokens.Add
                 (
-                    new Token()
+                    new Token
                     {
                         Name = NativeIdentifierTranslator.TranslateIdentifierName(child.Attribute("name")?.Value),
                         NativeName = child.Attribute("name")?.Value,
                         Value = child.Attribute("value")?.Value,
                         Attributes = deprecatedSince != null
-                            ? new List<Attribute>()
+                            ? new List<Attribute>
                             {
-                                new Attribute()
+                                new Attribute
                                 {
                                     Name = "Obsolete",
-                                    Arguments = new List<string>() { "\"Deprecated in " + deprecatedSince + ".\"" },
-                                },
+                                    Arguments = new List<string> {"\"Deprecated in " + deprecatedSince + ".\""}
+                                }
                             }
-                            : new List<Attribute>(),
+                            : new List<Attribute>()
                     }
                 );
             }
@@ -72,7 +76,7 @@ namespace Generator.Convert.Construction
             var functionName = element.GetRequiredAttribute("name").Value;
             var functionCategories = element.GetRequiredAttribute("category")
                 .Value
-                .Split(new[] { '|' }, StringSplitOptions.RemoveEmptyEntries);
+                .Split(new[] {'|'}, StringSplitOptions.RemoveEmptyEntries);
             var functionExtensions = element.GetRequiredAttribute("extension").Value;
 
             var functionVersion = ParsingHelpers.ParseVersion(element, defaultVersion: new Version(0, 0));
@@ -82,7 +86,7 @@ namespace Generator.Convert.Construction
 
             var returnElement = element.GetRequiredElement("returns");
             var returnType = ParsingHelpers.ParseTypeSignature(returnElement);
-            return new Function()
+            return new Function
             {
                 Name = NativeIdentifierTranslator.TranslateIdentifierName(functionName),
                 NativeName = functionName,
@@ -91,15 +95,15 @@ namespace Generator.Convert.Construction
                 Categories = functionCategories,
                 ExtensionName = functionExtensions,
                 Attributes = functionDeprecationVersion != null
-                    ? new List<Attribute>()
+                    ? new List<Attribute>
                     {
-                        new Attribute()
+                        new Attribute
                         {
                             Name = "Obsolete",
-                            Arguments = new List<string>() { "\"Deprecated in " + functionDeprecationVersion + ".\"" },
-                        },
+                            Arguments = new List<string> {"\"Deprecated in " + functionDeprecationVersion + ".\""}
+                        }
                     }
-                    : new List<Attribute>(),
+                    : new List<Attribute>()
             };
         }
 
@@ -108,7 +112,8 @@ namespace Generator.Convert.Construction
         /// </summary>
         /// <param name="functionElement">The XML block containing the parameters.</param>
         /// <returns>The parsed parameters.</returns>
-        [NotNull, ItemNotNull]
+        [NotNull]
+        [ItemNotNull]
         private static IReadOnlyList<Parameter> ParseParameters([NotNull] XElement functionElement)
         {
             var parameterElements = functionElement.Elements().Where(e => e.Name == "param");
@@ -154,7 +159,7 @@ namespace Generator.Convert.Construction
         }
 
         /// <summary>
-        /// Parses a function parameter signature from the given <see cref="XElement"/>.
+        /// Parses a function parameter signature from the given <see cref="XElement" />.
         /// </summary>
         /// <param name="paramElement">The parameter element.</param>
         /// <param name="hasComputedCount">Whether or not the parameter has a computed count.</param>
@@ -205,7 +210,7 @@ namespace Generator.Convert.Construction
                 out valueReferenceExpression
             );
 
-            return new Parameter()
+            return new Parameter
             {
                 Name = Utilities.CSharpKeywords.Contains(paramName) ? "@" + paramName : paramName,
                 Flow = paramFlow,
@@ -225,7 +230,7 @@ namespace Generator.Convert.Construction
             profile.Projects.Add
             (
                 "Core",
-                new Project() { CategoryName = "Core", ExtensionName = "Core", IsRoot = true, Namespace = string.Empty }
+                new Project {CategoryName = "Core", ExtensionName = "Core", IsRoot = true, Namespace = string.Empty}
             );
             profile.Projects["Core"].Enums.AddRange(enums.Select(ParseEnum));
             var funs = functions.ToList();
@@ -255,10 +260,10 @@ namespace Generator.Convert.Construction
                         profile.Projects.Add
                         (
                             "Core",
-                            new Project()
+                            new Project
                             {
                                 CategoryName = "Core", ExtensionName = "Core", IsRoot = true,
-                                Namespace = string.Empty,
+                                Namespace = string.Empty
                             }
                         );
                     }
@@ -269,10 +274,10 @@ namespace Generator.Convert.Construction
                         profile.Projects.Add
                         (
                             category,
-                            new Project()
+                            new Project
                             {
                                 CategoryName = category, ExtensionName = function.ExtensionName, IsRoot = false,
-                                Namespace = "." + Utilities.ConvertExtensionNameToNamespace(category),
+                                Namespace = "." + Utilities.ConvertExtensionNameToNamespace(category)
                             }
                         );
                     }
@@ -288,7 +293,7 @@ namespace Generator.Convert.Construction
                             .Interfaces.Add
                             (
                                 category,
-                                new Interface()
+                                new Interface
                                 {
                                     Name = "I" + NativeIdentifierTranslator.TranslateIdentifierName(category)
                                 }

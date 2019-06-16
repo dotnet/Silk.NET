@@ -1,3 +1,8 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,7 +19,7 @@ namespace Generator.Common
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets arguments to be added to this <see cref="Attribute"/>'s constructors.
+        /// Gets or sets arguments to be added to this <see cref="Attribute" />'s constructors.
         /// </summary>
         public List<string> Arguments { get; set; }
 

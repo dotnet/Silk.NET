@@ -1,10 +1,15 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System.Collections.Generic;
 using Generator.Common.Enums;
 
 namespace Generator.Common
 {
     /// <summary>
-    /// Represents a project, whether root or extension, containing <see cref="Interface"/>s and <see cref="Enum"/>s.
+    /// Represents a project, whether root or extension, containing <see cref="Interface" />s and <see cref="Enum" />s.
     /// </summary>
     public class Project
     {
@@ -29,12 +34,12 @@ namespace Generator.Common
         public bool IsRoot { get; set; }
 
         /// <summary>
-        /// Gets or sets a list of <see cref="Enum"/>s contained within this <see cref="Project"/>.
+        /// Gets or sets a list of <see cref="Enum" />s contained within this <see cref="Project" />.
         /// </summary>
         public List<Enum> Enums { get; set; } = new List<Enum>();
 
         /// <summary>
-        /// Gets or sets a dictionary where the category names are the keys, and <see cref="Interface"/>s
+        /// Gets or sets a dictionary where the category names are the keys, and <see cref="Interface" />s
         /// are the values.
         /// </summary>
         public Dictionary<string, Interface> Interfaces { get; set; } = new Dictionary<string, Interface>();

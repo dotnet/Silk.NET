@@ -1,3 +1,8 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
@@ -10,7 +15,7 @@ namespace Generator.Common
     {
         /// <summary>
         /// Gets or sets a dictionary where the category names (or "Core", if the project isn't an extension)
-        /// are the keys and <see cref="Project"/>s are the values.
+        /// are the keys and <see cref="Project" />s are the values.
         /// </summary>
         public Dictionary<string, Project> Projects { get; set; } = new Dictionary<string, Project>();
 

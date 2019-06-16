@@ -1,3 +1,8 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System.Collections.Generic;
 using Generator.Common;
 
@@ -8,92 +13,6 @@ namespace Generator.Convert.Baking
     /// </summary>
     public class ProfileBakeryInformation
     {
-        // ReSharper disable InconsistentNaming
-
-        /// <summary>
-        /// Gets <see cref="ProfileBakeryInformation"/> implementing OpenGL for Embedded Systems,
-        /// versions 2.0 through 3.2.
-        /// </summary>
-        public static ProfileBakeryInformation GLES { get; } = new ProfileBakeryInformationBuilder()
-            .Implements("gles2", "gles2-2.0", "gles2-3.0", "gles2-3.1", "gles2-3.2")
-            .WithNamespaces("Silk.NET.OpenGLES", "Silk.NET.OpenGLES.Extensions")
-            .WithName("GLES")
-            .WithOutputFolder("OpenGL")
-            .WithLibraries
-            (
-                "OpenGLESLibraryNameContainer",
-                linux: "libGLESv2.so",
-                android: "libGLESv2.so",
-                osx: "/System/Library/Frameworks/OpenGLES.framework/OpenGLES",
-                windows: "libGLESv2.dll",
-                ios: "/System/Library/Frameworks/OpenGLES.framework/OpenGLES"
-            )
-            .WithPrefix("gl")
-            .Result;
-
-        /// <summary>
-        /// Gets <see cref="ProfileBakeryInformation"/> implementing the OpenGL Compatibility Profile, versions 1.0
-        /// through 4.6.
-        /// </summary>
-        public static ProfileBakeryInformation GLCompatibility { get; } = new ProfileBakeryInformationBuilder()
-            .Implements("gl", "gl-1.0", "gl-1.1", "gl-1.2", "gl-1.3", "gl-1.4", "gl-1.5")
-            .Implements("gl-2.0", "gl-2.1")
-            .Implements("gl-3.0", "gl-3.1", "gl-3.2", "gl-3.3")
-            .Implements("gl-4.0", "gl-4.1", "gl-4.2", "gl-4.3", "gl-4.4", "gl-4.5", "gl-4.6")
-            .WithNamespaces("Silk.NET.OpenGL", "Silk.NET.OpenGL.Extensions")
-            .WithName("OpenGL")
-            .WithOutputFolder("OpenGL")
-            .WithLibraries
-            (
-                "OpenGLLibraryNameContainer",
-                linux: "libGL.so.1",
-                android: "libGL.so.1",
-                osx: "/System/Library/Frameworks/OpenGL.framework/OpenGL",
-                windows: "opengl32.dll",
-                ios: "/System/Library/Frameworks/OpenGL.framework/OpenGL"
-            )
-            .WithPrefix("gl")
-            .Result;
-
-        /// <summary>
-        /// Gets <see cref="ProfileBakeryInformation"/> implementing the OpenGL Core Profile, versions 1.0
-        /// through 4.6.
-        /// </summary>
-        public static ProfileBakeryInformation GLCore { get; } = new ProfileBakeryInformationBuilder()
-            .Implements("glcore", "glcore-1.0", "glcore-1.1", "glcore-1.2", "glcore-1.3", "glcore-1.4", "glcore-1.5")
-            .Implements("glcore-2.0", "glcore-2.1")
-            .Implements("glcore-3.0", "glcore-3.1", "glcore-3.2", "glcore-3.3")
-            .Implements("glcore-4.0", "glcore-4.1", "glcore-4.2", "glcore-4.3", "glcore-4.4", "glcore-4.5")
-            .Implements("glcore-4.6")
-            .WithNamespaces("Silk.NET.OpenGL.Core", "Silk.NET.OpenGL.Core.Extensions")
-            .WithName("OpenGL (Core Profile)")
-            .WithOutputFolder("OpenGL")
-            .WithLibraries
-            (
-                "GLCoreLibraryNameContainer",
-                linux: "libGL.so.1",
-                android: "libGL.so.1",
-                osx: "/System/Library/Frameworks/OpenGL.framework/OpenGL",
-                windows: "opengl32.dll",
-                ios: "/System/Library/Frameworks/OpenGL.framework/OpenGL"
-            )
-            .WithPrefix("gl")
-            .Result;
-
-/*
-*        /// <summary>
-*        /// Gets <see cref="ProfileBakeryInformation"/> implementing OpenGL Safety Critical, version 2.0.
-*        /// </summary>
-*        public static ProfileBakeryInformation GLSC { get; } = new ProfileBakeryInformationBuilder()
-*            .Implements("glsc2", "glsc2-2.0")
-*            .WithNamespaces("Silk.NET.OpenGLSC", "Silk.NET.OpenGLSC.Extensions")
-*            .WithName("GLSC")
-*            .WithOutputFolder("OpenGL")
-*            .Result;
-*/
-
-        // ReSharper restore InconsistentNaming
-
         /// <summary>
         /// Gets or sets a list of the APIs that should be baked into this profile.
         /// </summary>
@@ -132,12 +51,97 @@ namespace Generator.Convert.Baking
         /// <summary>
         /// Gets all of the out-of-the-box-supported bakery info.
         /// </summary>
-        public static List<ProfileBakeryInformation> Default { get; } = new List<ProfileBakeryInformation>()
+        public static List<ProfileBakeryInformation> Default { get; } = new List<ProfileBakeryInformation>
         {
             GLCore,
             GLCompatibility,
-            GLES,
+            GLES
             /* GLSC */
         };
+        // ReSharper disable InconsistentNaming
+
+        /// <summary>
+        /// Gets <see cref="ProfileBakeryInformation" /> implementing OpenGL for Embedded Systems,
+        /// versions 2.0 through 3.2.
+        /// </summary>
+        public static ProfileBakeryInformation GLES { get; } = new ProfileBakeryInformationBuilder()
+            .Implements("gles2", "gles2-2.0", "gles2-3.0", "gles2-3.1", "gles2-3.2")
+            .WithNamespaces("Silk.NET.OpenGLES", "Silk.NET.OpenGLES.Extensions")
+            .WithName("GLES")
+            .WithOutputFolder("OpenGL")
+            .WithLibraries
+            (
+                "OpenGLESLibraryNameContainer",
+                "libGLESv2.so",
+                "libGLESv2.so",
+                "/System/Library/Frameworks/OpenGLES.framework/OpenGLES",
+                "libGLESv2.dll",
+                "/System/Library/Frameworks/OpenGLES.framework/OpenGLES"
+            )
+            .WithPrefix("gl")
+            .Result;
+
+        /// <summary>
+        /// Gets <see cref="ProfileBakeryInformation" /> implementing the OpenGL Compatibility Profile, versions 1.0
+        /// through 4.6.
+        /// </summary>
+        public static ProfileBakeryInformation GLCompatibility { get; } = new ProfileBakeryInformationBuilder()
+            .Implements("gl", "gl-1.0", "gl-1.1", "gl-1.2", "gl-1.3", "gl-1.4", "gl-1.5")
+            .Implements("gl-2.0", "gl-2.1")
+            .Implements("gl-3.0", "gl-3.1", "gl-3.2", "gl-3.3")
+            .Implements("gl-4.0", "gl-4.1", "gl-4.2", "gl-4.3", "gl-4.4", "gl-4.5", "gl-4.6")
+            .WithNamespaces("Silk.NET.OpenGL", "Silk.NET.OpenGL.Extensions")
+            .WithName("OpenGL")
+            .WithOutputFolder("OpenGL")
+            .WithLibraries
+            (
+                "OpenGLLibraryNameContainer",
+                "libGL.so.1",
+                "libGL.so.1",
+                "/System/Library/Frameworks/OpenGL.framework/OpenGL",
+                "opengl32.dll",
+                "/System/Library/Frameworks/OpenGL.framework/OpenGL"
+            )
+            .WithPrefix("gl")
+            .Result;
+
+        /// <summary>
+        /// Gets <see cref="ProfileBakeryInformation" /> implementing the OpenGL Core Profile, versions 1.0
+        /// through 4.6.
+        /// </summary>
+        public static ProfileBakeryInformation GLCore { get; } = new ProfileBakeryInformationBuilder()
+            .Implements("glcore", "glcore-1.0", "glcore-1.1", "glcore-1.2", "glcore-1.3", "glcore-1.4", "glcore-1.5")
+            .Implements("glcore-2.0", "glcore-2.1")
+            .Implements("glcore-3.0", "glcore-3.1", "glcore-3.2", "glcore-3.3")
+            .Implements("glcore-4.0", "glcore-4.1", "glcore-4.2", "glcore-4.3", "glcore-4.4", "glcore-4.5")
+            .Implements("glcore-4.6")
+            .WithNamespaces("Silk.NET.OpenGL.Core", "Silk.NET.OpenGL.Core.Extensions")
+            .WithName("OpenGL (Core Profile)")
+            .WithOutputFolder("OpenGL")
+            .WithLibraries
+            (
+                "GLCoreLibraryNameContainer",
+                "libGL.so.1",
+                "libGL.so.1",
+                "/System/Library/Frameworks/OpenGL.framework/OpenGL",
+                "opengl32.dll",
+                "/System/Library/Frameworks/OpenGL.framework/OpenGL"
+            )
+            .WithPrefix("gl")
+            .Result;
+
+/*
+*        /// <summary>
+*        /// Gets <see cref="ProfileBakeryInformation"/> implementing OpenGL Safety Critical, version 2.0.
+*        /// </summary>
+*        public static ProfileBakeryInformation GLSC { get; } = new ProfileBakeryInformationBuilder()
+*            .Implements("glsc2", "glsc2-2.0")
+*            .WithNamespaces("Silk.NET.OpenGLSC", "Silk.NET.OpenGLSC.Extensions")
+*            .WithName("GLSC")
+*            .WithOutputFolder("OpenGL")
+*            .Result;
+*/
+
+        // ReSharper restore InconsistentNaming
     }
 }

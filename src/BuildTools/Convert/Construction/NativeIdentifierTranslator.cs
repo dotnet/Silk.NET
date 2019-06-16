@@ -1,4 +1,10 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -35,9 +41,9 @@ namespace Generator.Convert.Construction
         public static readonly IReadOnlyDictionary<string, string> ExtensionAndAcronymOverrides =
             new Dictionary<string, string>
             {
-                { "CMAAINTEL", "CmaaIntel" },
-                { "QCOM", "QCom" },
-                { "SNORM", "SNorm" }
+                {"CMAAINTEL", "CmaaIntel"},
+                {"QCOM", "QCom"},
+                {"SNORM", "SNorm"}
             };
 
         /// <summary>
@@ -46,6 +52,7 @@ namespace Generator.Convert.Construction
         /// <param name="name">The name to translate.</param>
         /// <returns>The translated name.</returns>
         [NotNull]
+        [SuppressMessage("ReSharper", "RedundantEnumerableCastCall")]
         public static string TranslateIdentifierName([NotNull] string name)
         {
             var builder = new StringBuilder(name);

@@ -1,26 +1,30 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using Generator.Common.Functions;
 using JetBrains.Annotations;
 
 namespace Generator.Common.Builders
 {
     /// <summary>
-    /// Acts as a builder for new instances of <see cref="TypeSignature"/>s, based on existing instances.
+    /// Acts as a builder for new instances of <see cref="TypeSignature" />s, based on existing instances.
     /// </summary>
     public sealed class TypeSignatureBuilder
     {
-        [NotNull]
-        private string _newName;
+        private int _newArrayDimensions;
 
         private int _newIndirectionLevel;
-
-        private int _newArrayDimensions;
 
         private bool _newIsByRef;
 
         private bool _newIsOut;
 
+        [NotNull] private string _newName;
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="TypeSignatureBuilder"/> class.
+        /// Initializes a new instance of the <see cref="TypeSignatureBuilder" /> class.
         /// </summary>
         /// <param name="typeSignature">The signature.</param>
         public TypeSignatureBuilder([NotNull] Type typeSignature)
@@ -103,7 +107,7 @@ namespace Generator.Common.Builders
                 IndirectionLevels = _newIndirectionLevel,
                 ArrayDimensions = _newArrayDimensions,
                 IsByRef = _newIsByRef,
-                IsOut = _newIsOut,
+                IsOut = _newIsOut
             };
         }
     }

@@ -1,5 +1,9 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using Generator.Common.Functions;
 using Humanizer;
@@ -22,7 +26,7 @@ namespace Generator.Convert.Documentation
         public Dictionary<string, ParameterDocumentation> Parameters { get; set; }
 
         /// <summary>
-        /// Converts this documentation to string, and writes it to the function's <see cref="Function.Doc"/> property.
+        /// Converts this documentation to string, and writes it to the function's <see cref="Function.Doc" /> property.
         /// </summary>
         /// <param name="function">The function to write documentation to.</param>
         public void Write(Function function)

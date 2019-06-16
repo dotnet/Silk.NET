@@ -1,7 +1,11 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System;
 using System.Text;
 using Generator.Common.Functions;
-using JetBrains.Annotations;
 
 namespace Generator.Convert.Construction.Trimmers
 {
@@ -10,7 +14,7 @@ namespace Generator.Convert.Construction.Trimmers
     /// </summary>
     public class ExtensionNameTrimmer : ITrimmer<Function>, ITrimmer<string>
     {
-        /// <inheritdoc/>
+        /// <inheritdoc />
         public bool IsRelevant(Function trimmable)
         {
             if (trimmable.ExtensionName is null)
@@ -21,14 +25,15 @@ namespace Generator.Convert.Construction.Trimmers
             return trimmable.Name.ToLower().EndsWith(trimmable.ExtensionName.ToLower());
         }
 
-        /// <inheritdoc/>
+        /// <inheritdoc />
         public void Trim(Function trimmable)
         {
-            var extensionNameIndex = trimmable.Name.LastIndexOf(trimmable.ExtensionName, StringComparison.OrdinalIgnoreCase);
+            var extensionNameIndex = trimmable.Name.LastIndexOf
+                (trimmable.ExtensionName, StringComparison.OrdinalIgnoreCase);
             trimmable.Name = trimmable.Name.Remove(extensionNameIndex);
         }
 
-        /// <inheritdoc/>
+        /// <inheritdoc />
         public bool IsRelevant(string trimmable)
         {
             var uppercaseCount = 0;
@@ -51,7 +56,7 @@ namespace Generator.Convert.Construction.Trimmers
             return false;
         }
 
-        /// <inheritdoc/>
+        /// <inheritdoc />
         public void Trim(string trimmable)
         {
             var sb = new StringBuilder();

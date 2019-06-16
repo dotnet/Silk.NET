@@ -1,11 +1,11 @@
-﻿using System;
-using System.Diagnostics;
+﻿// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using CommandLine;
-using CommandLine.Text;
-using Generator.Bind.Overloading;
 using Generator.Common;
 using Newtonsoft.Json;
 
@@ -29,13 +29,13 @@ namespace Generator.Bind
         {
             CliOptions = args;
             Task.WhenAll
-            (
-                CliOptions.InputFiles.Select(File.ReadAllText)
-                    .Select(JsonConvert.DeserializeObject<Profile>)
-                    .Select(x => x.FlushAsync())
-            )
-            .GetAwaiter()
-            .GetResult();
+                (
+                    CliOptions.InputFiles.Select(File.ReadAllText)
+                        .Select(JsonConvert.DeserializeObject<Profile>)
+                        .Select(x => x.FlushAsync())
+                )
+                .GetAwaiter()
+                .GetResult();
         }
     }
 }

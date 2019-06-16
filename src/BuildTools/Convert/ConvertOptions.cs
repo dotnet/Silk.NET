@@ -1,9 +1,12 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System.Collections.Generic;
 using CommandLine;
 using CommandLine.Text;
 using Generator.Convert.Baking;
-using Generator.Convert.Overrides;
-using JetBrains.Annotations;
 
 namespace Generator.Convert
 {
@@ -50,8 +53,8 @@ namespace Generator.Convert
         public IEnumerable<string> InputFiles { get; set; }
 
         /// <summary>
-        /// Gets or sets a list of paths to JSON <see cref="ProfileBakeryInformation"/> files.
-        /// Defaults to <see cref="ProfileBakeryInformation.Default"/>.
+        /// Gets or sets a list of paths to JSON <see cref="ProfileBakeryInformation" /> files.
+        /// Defaults to <see cref="ProfileBakeryInformation.Default" />.
         /// </summary>
         [Option('b', "bakery-info", HelpText = "A list of paths to JSON ProfileBakeryInformation files.")]
         public IEnumerable<string> BakeryInformation { get; set; }
@@ -97,7 +100,7 @@ namespace Generator.Convert
                 yield return new Example
                 (
                     "Converting local files",
-                    new ConvertOptions { Prefix = "gl", OutputFolder = "Specifications", InputFiles = new[] { "gl.xml" } }
+                    new ConvertOptions {Prefix = "gl", OutputFolder = "Specifications", InputFiles = new[] {"gl.xml"}}
                 );
 
                 yield return new Example

@@ -1,3 +1,8 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -32,13 +37,14 @@ namespace Generator.Convert.Construction
             new Regex("^[\\d[[:blank:]+\\-\\/()*!]+?$", RegexOptions.Compiled);
 
         /// <summary>
-        /// Parses a version from a given <see cref="XElement"/>, returning a default value if the attribute is null.
+        /// Parses a version from a given <see cref="XElement" />, returning a default value if the attribute is null.
         /// </summary>
         /// <param name="element">The element the attribute is on.</param>
         /// <param name="attributeName">The name of the attribute to parse from.</param>
         /// <param name="defaultVersion">The default value to return.</param>
         /// <returns>A parsed version.</returns>
-        [CanBeNull, ContractAnnotation("defaultVersion : null => canbenull; defaultVersion : notnull => notnull")]
+        [CanBeNull]
+        [ContractAnnotation("defaultVersion : null => canbenull; defaultVersion : notnull => notnull")]
         public static Version ParseVersion
         (
             [NotNull] XElement element,
@@ -63,13 +69,14 @@ namespace Generator.Convert.Construction
         }
 
         /// <summary>
-        /// Parses a version from a given <see cref="string"/>, returning a default value if the string is null or
+        /// Parses a version from a given <see cref="string" />, returning a default value if the string is null or
         /// whitespace.
         /// </summary>
         /// <param name="versionString">The version string.</param>
         /// <param name="defaultVersion">The default value to return.</param>
         /// <returns>A parsed version.</returns>
-        [CanBeNull, ContractAnnotation("defaultVersion : null => canbenull; defaultVersion : notnull => notnull")]
+        [CanBeNull]
+        [ContractAnnotation("defaultVersion : null => canbenull; defaultVersion : notnull => notnull")]
         public static Version ParseVersion([CanBeNull] string versionString, [CanBeNull] Version defaultVersion = null)
         {
             var version = string.IsNullOrWhiteSpace(versionString)
@@ -80,7 +87,7 @@ namespace Generator.Convert.Construction
         }
 
         /// <summary>
-        /// Parses a token signatures from the given <see cref="XElement"/>.
+        /// Parses a token signatures from the given <see cref="XElement" />.
         /// </summary>
         /// <param name="tokenElement">The token element.</param>
         /// <returns>A parsed token.</returns>
@@ -109,7 +116,7 @@ namespace Generator.Convert.Construction
             var tokenRemarks = tokenElement.Attribute("remark")?.Value;
 
             // TODO: Deprecated attribute
-            return new Token()
+            return new Token
             {
                 Name = NativeIdentifierTranslator.TranslateIdentifierName(tokenName), NativeName = tokenName,
                 Value = "0x" + tokenValueHexStr
@@ -117,7 +124,7 @@ namespace Generator.Convert.Construction
         }
 
         /// <summary>
-        /// Parses a type signature from the given <see cref="XElement"/>.
+        /// Parses a type signature from the given <see cref="XElement" />.
         /// </summary>
         /// <param name="typeElement">The type element.</param>
         /// <returns>A parsed type.</returns>
@@ -192,7 +199,7 @@ namespace Generator.Convert.Construction
                 typeName = typeName.Remove(firstArrayIndex);
             }
 
-            return new Type() { Name = typeName, IndirectionLevels = pointerLevel, ArrayDimensions = arrayLevel };
+            return new Type {Name = typeName, IndirectionLevels = pointerLevel, ArrayDimensions = arrayLevel};
         }
 
         /// <summary>
@@ -207,7 +214,7 @@ namespace Generator.Convert.Construction
         }
 
         /// <summary>
-        /// Parses a <see cref="Count"/> from a raw string.
+        /// Parses a <see cref="Count" /> from a raw string.
         /// </summary>
         /// <param name="countData">The raw count string.</param>
         /// <param name="hasComputedCount">Whether or not the signature has a computed count.</param>
@@ -220,26 +227,23 @@ namespace Generator.Convert.Construction
         /// <exception cref="InvalidDataException">Thrown if the input string is in an invalid format.</exception>
         /// <returns>
         /// This function returns a static count signature if the count is a static number. If not, the function will
-        /// return null, and provide additional information in the <paramref name="hasComputedCount"/> and
-        /// <paramref name="hasValueReference"/> parameters. These two are mutually exclusive, and if one is true, the
+        /// return null, and provide additional information in the <paramref name="hasComputedCount" /> and
+        /// <paramref name="hasValueReference" /> parameters. These two are mutually exclusive, and if one is true, the
         /// other is guaranteed to be false.
-        ///
         /// In the case of a null return value, the following cases may occur:
-        ///
         /// * The input count string was null.
-        /// * <paramref name="hasComputedCount"/> is true, and <paramref name="computedCountParameterNames"/> contains a
+        /// * <paramref name="hasComputedCount" /> is true, and <paramref name="computedCountParameterNames" /> contains a
         ///   list of all parameter names that are used to compute the count.
-        /// * <paramref name="hasValueReference"/> is true, and <paramref name="valueReferenceName"/> contains the name
+        /// * <paramref name="hasValueReference" /> is true, and <paramref name="valueReferenceName" /> contains the name
         ///   of the parameter from which the count is taken.
-        ///
-        ///   <paramref name="valueReferenceExpression"/> may contain a mathematical expression, which should be applied
+        /// <paramref name="valueReferenceExpression" /> may contain a mathematical expression, which should be applied
         ///   to the parameter's value to get the final count.
         /// </returns>
-        [CanBeNull,
-         ContractAnnotation
-         (
-             "hasComputedCount : true => computedCountParameterNames : notnull; hasValueReference : true => valueReferenceName : notnull"
-         )]
+        [CanBeNull]
+        [ContractAnnotation
+        (
+            "hasComputedCount : true => computedCountParameterNames : notnull; hasValueReference : true => valueReferenceName : notnull"
+        )]
         public static Count ParseCountSignature
         (
             [CanBeNull] string countData,
@@ -272,10 +276,9 @@ namespace Generator.Convert.Construction
                 // It's a computed count, so we'll extract the names and let the count signature resolve in the second pass
                 var countParamNames = ComputedSizeParametersRegex
                     .Matches(countData)
-                    .Cast<Match>()
                     .Select(m => m.Value)
                     .First()
-                    .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+                    .Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries);
 
                 computedCountParameterNames = countParamNames.ToList();
 
@@ -319,7 +322,7 @@ namespace Generator.Convert.Construction
         /// <param name="parametersWithValueReferenceCounts">The parameters with reference counts.</param>
         public static void ResolveReferenceCountSignatures
         (
-            [NotNull, ItemNotNull] IReadOnlyCollection<Parameter> parameters,
+            [NotNull] [ItemNotNull] IReadOnlyCollection<Parameter> parameters,
             [NotNull]
             IEnumerable<(Parameter parameter, string parameterReferenceName)> parametersWithValueReferenceCounts
         )
@@ -345,9 +348,8 @@ namespace Generator.Convert.Construction
         /// <param name="parametersWithComputedCounts">The parameters with computed counts.</param>
         public static void ResolveComputedCountSignatures
         (
-            [NotNull, ItemNotNull] IReadOnlyCollection<Parameter> parameters,
-            [NotNull]
-            IEnumerable<(Parameter parameter, IReadOnlyList<string> computedCountParameterNames)>
+            [NotNull] [ItemNotNull] IReadOnlyCollection<Parameter> parameters,
+            [NotNull] IEnumerable<(Parameter parameter, IReadOnlyList<string> computedCountParameterNames)>
                 parametersWithComputedCounts
         )
         {

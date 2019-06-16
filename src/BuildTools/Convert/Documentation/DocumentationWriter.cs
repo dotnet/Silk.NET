@@ -1,3 +1,8 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -119,9 +124,9 @@ namespace Generator.Convert.Documentation
             {
                 var doc = new Dictionary<int, ProfileDocumentation>
                 {
-                    { 2, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "gl2"), "gl") },
-                    { 3, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "gl3"), "gl") },
-                    { 4, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "gl4"), "gl") },
+                    {2, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "gl2"), "gl")},
+                    {3, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "gl3"), "gl")},
+                    {4, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "gl4"), "gl")}
                 };
                 return GetOnlyNewest(doc);
             }
@@ -130,9 +135,9 @@ namespace Generator.Convert.Documentation
             {
                 var doc = new Dictionary<int, ProfileDocumentation>
                 {
-                    { 1, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "es1"), "gl") },
-                    { 2, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "es2"), "gl") },
-                    { 3, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "es3"), "gl") },
+                    {1, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "es1"), "gl")},
+                    {2, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "es2"), "gl")},
+                    {3, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "es3"), "gl")}
                 };
                 return GetOnlyNewest(doc);
             }
@@ -143,7 +148,7 @@ namespace Generator.Convert.Documentation
             }
 
             // no documentation entry found, return dummy documentation
-            return new ProfileDocumentation() { Functions = new Dictionary<string, FunctionDocumentation>() };
+            return new ProfileDocumentation {Functions = new Dictionary<string, FunctionDocumentation>()};
         }
 
         private static ProfileDocumentation GetOnlyNewest(Dictionary<int, ProfileDocumentation> documentations)
@@ -157,7 +162,7 @@ namespace Generator.Convert.Documentation
                 }
             }
 
-            return new ProfileDocumentation() { Functions = functions };
+            return new ProfileDocumentation {Functions = functions};
         }
     }
 }

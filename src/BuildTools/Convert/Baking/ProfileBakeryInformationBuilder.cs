@@ -1,19 +1,17 @@
-using System.Linq;
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
 
 namespace Generator.Convert.Baking
 {
     /// <summary>
-    /// A builder class for <see cref="ProfileBakeryInformation"/>.
+    /// A builder class for <see cref="ProfileBakeryInformation" />.
     /// </summary>
     public class ProfileBakeryInformationBuilder
     {
         /// <summary>
-        /// Gets the resulting <see cref="ProfileBakeryInformation"/>.
-        /// </summary>
-        public ProfileBakeryInformation Result { get; private set; }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="ProfileBakeryInformationBuilder"/> class.
+        /// Initializes a new instance of the <see cref="ProfileBakeryInformationBuilder" /> class.
         /// </summary>
         public ProfileBakeryInformationBuilder()
         {
@@ -21,7 +19,12 @@ namespace Generator.Convert.Baking
         }
 
         /// <summary>
-        /// Adds the given implemented profiles to the <see cref="ProfileBakeryInformation"/>.
+        /// Gets the resulting <see cref="ProfileBakeryInformation" />.
+        /// </summary>
+        public ProfileBakeryInformation Result { get; }
+
+        /// <summary>
+        /// Adds the given implemented profiles to the <see cref="ProfileBakeryInformation" />.
         /// </summary>
         /// <param name="implements">The profiles to implement.</param>
         /// <returns>This instance (for chaining purposes).</returns>

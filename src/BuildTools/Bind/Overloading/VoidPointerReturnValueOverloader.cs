@@ -1,11 +1,7 @@
-//
-// VoidPointerReturnValueOverloader.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using System.Collections.Generic;
@@ -19,11 +15,11 @@ using Generator.Common.Functions;
 namespace Bind.Overloaders
 {
     /// <summary>
-    /// Creates <see cref="IntPtr"/> return value overloads for functions returning a void pointer (of any depth).
+    /// Creates <see cref="IntPtr" /> return value overloads for functions returning a void pointer (of any depth).
     /// </summary>
     public class VoidPointerReturnValueOverloader : IFunctionOverloader
     {
-        /// <inheritdoc/>
+        /// <inheritdoc />
         public IEnumerable<Overload> CreateOverloads(Function function)
         {
             if (!function.ReturnType.IsVoidPointer())
@@ -36,17 +32,21 @@ namespace Bind.Overloaders
                 .WithName(nameof(IntPtr))
                 .Build();
 
-            yield return Cast(
+            yield return Cast
+            (
                 new FunctionSignatureBuilder(function)
                     .WithReturnType(newReturnType)
                     .WithName(function.Name + "Ptr")
                     .Build(),
-                function);
+                function
+            );
         }
 
-        private static Overload Cast(
+        private static Overload Cast
+        (
             Function function,
-            Function oldFunction)
+            Function oldFunction
+        )
         {
             var sb = new StringBuilder();
             sb.Append("return (IntPtr) " + oldFunction.Name + "(");

@@ -1,13 +1,14 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Net.Sockets;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 using Generator.Common;
-using Generator.Common.Enums;
 using Enum = Generator.Common.Enums.Enum;
 
 namespace Generator.Bind
@@ -18,16 +19,17 @@ namespace Generator.Bind
     public static class ProfileWriter
     {
         /// <summary>
-        /// The name of the subfolder containing <see cref="Enum"/>s.
+        /// The name of the subfolder containing <see cref="Common.Enums.Enum" />s.
         /// </summary>
         public const string EnumsSubfolder = "Enums";
 
         /// <summary>
-        /// The name of the subfolder containing <see cref="Interface"/>s.
+        /// The name of the subfolder containing <see cref="Interface" />s.
         /// </summary>
         public const string InterfacesSubfolder = "Interfaces";
 
-        public static Lazy<string> LicenseText { get; } = new Lazy<string>(() => File.ReadAllText(Binder.CliOptions.License));
+        public static Lazy<string> LicenseText { get; } =
+            new Lazy<string>(() => File.ReadAllText(Binder.CliOptions.License));
 
         /// <summary>
         /// Asynchronously writes this enum to a file.
@@ -79,7 +81,8 @@ namespace Generator.Bind
         /// <param name="profile">The subsystem containing this interface.</param>
         /// <param name="project">The project containing this interface.</param>
         /// <returns>The asynchronous task.</returns>
-        public static async Task WriteInterfaceAsync(this Interface @interface, string file, Profile profile, Project project)
+        public static async Task WriteInterfaceAsync
+            (this Interface @interface, string file, Profile profile, Project project)
         {
             var sw = new StreamWriter(file);
             await sw.WriteAsync(LicenseText.Value);
@@ -194,6 +197,7 @@ namespace Generator.Bind
                     profile.Names.ClassName + "();"
                 );
             }
+
             foreach (var kvp in project.Interfaces)
             {
                 await sw.WriteLineAsync();
@@ -249,7 +253,8 @@ namespace Generator.Bind
 
             var interfaceTasks = project.Interfaces.Select
             (
-                x => x.Value.WriteInterfaceAsync(Path.Combine(folder, InterfacesSubfolder, x.Value.Name + ".cs"), profile, project)
+                x => x.Value.WriteInterfaceAsync
+                    (Path.Combine(folder, InterfacesSubfolder, x.Value.Name + ".cs"), profile, project)
             );
             var enumTasks = project.Enums.Select
             (
@@ -266,7 +271,7 @@ namespace Generator.Bind
 
             var nm = project.IsRoot ? profile.FunctionPrefix.ToUpper() : project.Namespace.Split('.').Last();
             await project.WriteMixedModeClassAsync(profile, Path.Combine(folder, nm) + ".cs");
-            
+
             await Task.WhenAll(interfaceTasks.Concat(enumTasks));
         }
 
