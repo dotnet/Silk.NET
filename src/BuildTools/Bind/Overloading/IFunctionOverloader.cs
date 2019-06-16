@@ -10,13 +10,6 @@ namespace Generator.Bind.Overloading
     public interface IFunctionOverloader
     {
         /// <summary>
-        /// Determines whether or not the overloader is applicable for the given function.
-        /// </summary>
-        /// <param name="function">The function.</param>
-        /// <returns>true if the overloader is applicable; otherwise, false.</returns>
-        bool IsApplicable([NotNull] Function function);
-
-        /// <summary>
         /// Creates a set of overload signatures from the given function.
         /// </summary>
         /// <param name="function">The base function.</param>
