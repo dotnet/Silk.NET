@@ -15,8 +15,8 @@ namespace Silk.NET.GLFW
     {
         /// <summary>
         /// Indicates the client API provided by the window's context;
-        /// either <see cref="NET.GLFW.ClientApi.OpenGlApi"/>,
-        /// <see cref="NET.GLFW.ClientApi.OpenGlEsApi"/> or
+        /// either <see cref="NET.GLFW.ClientApi.OpenGL"/>,
+        /// <see cref="NET.GLFW.ClientApi.OpenGLES"/> or
         /// <see cref="NET.GLFW.ClientApi.NoApi"/>.
         /// </summary>
         ClientApi = 0x00022001,
