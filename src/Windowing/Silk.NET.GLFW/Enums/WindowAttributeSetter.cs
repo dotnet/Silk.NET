@@ -8,7 +8,7 @@ namespace Silk.NET.GLFW
     /// <summary>
     /// Used to set window related attributes.
     /// </summary>
-    /// <seealso cref="IGLFW.SetWindowAttrib" />
+    /// <seealso cref="IGlfw.SetWindowAttrib" />
     public enum WindowAttributeSetter
     {
         /// <summary>
@@ -37,7 +37,7 @@ namespace Silk.NET.GLFW
         Floating = WindowHintBool.Floating,
 
         /// <summary>
-        /// Specifies whether the window will be given input focus when <see cref="IGLFW.ShowWindow" /> is called.
+        /// Specifies whether the window will be given input focus when <see cref="IGlfw.ShowWindow" /> is called.
         /// Possible values are <c>true</c> and <c>false</c>.
         /// </summary>
         FocusOnShow = WindowHintBool.FocusOnShow

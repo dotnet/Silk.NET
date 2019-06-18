@@ -8,7 +8,7 @@ namespace Silk.NET.GLFW
     /// <summary>
     /// The context release behaviors.
     /// </summary>
-    /// <seealso cref="IGLFW.WindowHint(WindowHintReleaseBehavior,ReleaseBehavior)" />
+    /// <seealso cref="IGlfw.WindowHint(WindowHintReleaseBehavior,ReleaseBehavior)" />
     public enum ReleaseBehavior
     {
         /// <summary>

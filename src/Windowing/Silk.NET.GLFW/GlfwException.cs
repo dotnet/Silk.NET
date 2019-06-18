@@ -12,44 +12,44 @@ namespace Silk.NET.GLFW
     /// Represents errors that occur within GLFW.
     /// </summary>
     [Serializable]
-    public class GLFWException : Exception
+    public class GlfwException : Exception
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GLFWException" /> class.
+        /// Initializes a new instance of the <see cref="GlfwException" /> class.
         /// </summary>
-        public GLFWException()
+        public GlfwException()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GLFWException" /> class with the specified detailed description.
+        /// Initializes a new instance of the <see cref="GlfwException" /> class with the specified detailed description.
         /// </summary>
         /// <param name="message">A detailed description of the error.</param>
-        public GLFWException(string message)
+        public GlfwException(string message)
             : base(message)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GLFWException" /> class with the specified detailed description
+        /// Initializes a new instance of the <see cref="GlfwException" /> class with the specified detailed description
         /// and the specified exception.
         /// </summary>
         /// <param name="message">A detailed description of the error.</param>
         /// <param name="innerException">A reference to the inner exception that is the cause of this exception.</param>
-        public GLFWException(string message, Exception innerException)
+        public GlfwException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GLFWException" /> class with the specified context
+        /// Initializes a new instance of the <see cref="GlfwException" /> class with the specified context
         /// and the serialization information.
         /// </summary>
         /// <param name="info">The <see cref="SerializationInfo" /> associated with this exception.</param>
         /// <param name="context">
         /// A <see cref="StreamingContext" /> that represents the context of this exception.
         /// </param>
-        protected GLFWException(SerializationInfo info, StreamingContext context)
+        protected GlfwException(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
         }

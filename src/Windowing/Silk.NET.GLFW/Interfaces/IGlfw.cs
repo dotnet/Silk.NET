@@ -14,7 +14,7 @@ namespace Silk.NET.GLFW
     /// Defines the public interface of the GLFW library.
     /// </summary>
     [NativeSymbols(Prefix = "glfw")]
-    internal interface IGLFW
+    internal interface IGlfw
     {
         // XML-documentation is from https://www.glfw.org/docs/latest/
         // Still missing in documentation
@@ -529,16 +529,16 @@ namespace Silk.NET.GLFW
         /// </summary>
         /// <param name="window">The window to set limits for.</param>
         /// <param name="minwidth">
-        /// The minimum width, in screen coordinates, of the client area, or <see cref="GLFW.DontCare" />.
+        /// The minimum width, in screen coordinates, of the client area, or <see cref="Glfw.DontCare" />.
         /// </param>
         /// <param name="minheight">
-        /// The minimum height, in screen coordinates, of the client area, or <see cref="GLFW.DontCare" />.
+        /// The minimum height, in screen coordinates, of the client area, or <see cref="Glfw.DontCare" />.
         /// </param>
         /// <param name="maxwidth">
-        /// The maximum width, in screen coordinates, of the client area, or <see cref="GLFW.DontCare" />.
+        /// The maximum width, in screen coordinates, of the client area, or <see cref="Glfw.DontCare" />.
         /// </param>
         /// <param name="maxheight">
-        /// The maximum height, in screen coordinates, of the client area, or <see cref="GLFW.DontCare" />.
+        /// The maximum height, in screen coordinates, of the client area, or <see cref="Glfw.DontCare" />.
         /// </param>
         /// <remarks>
         /// <para>
@@ -569,15 +569,15 @@ namespace Silk.NET.GLFW
         /// For example, the common 16:9 aspect ratio is specified as 16 and 9, respectively.
         /// </para>
         /// <para>
-        /// If the numerator and denominator is set to <see cref="GLFW.DontCare" /> then the aspect ratio limit is disabled.
+        /// If the numerator and denominator is set to <see cref="Glfw.DontCare" /> then the aspect ratio limit is disabled.
         /// </para>
         /// <para>
         /// The aspect ratio is applied immediately to a windowed mode window and may cause it to be resized.
         /// </para>
         /// </summary>
         /// <param name="window">The window to set limits for.</param>
-        /// <param name="numer">The numerator of the desired aspect ratio, or <see cref="GLFW.DontCare" />.</param>
-        /// <param name="denom">The denominator of the desired aspect ratio, or <see cref="GLFW.DontCare" />.</param>
+        /// <param name="numer">The numerator of the desired aspect ratio, or <see cref="Glfw.DontCare" />.</param>
+        /// <param name="denom">The denominator of the desired aspect ratio, or <see cref="Glfw.DontCare" />.</param>
         /// <remarks>
         /// <para>
         /// If you set size limits and an aspect ratio that conflict, the results are undefined.
@@ -2336,7 +2336,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.CharCallback SetCharCallback(Window* window, GLFWCallbacks.CharCallback callback);
+        unsafe GlfwCallbacks.CharCallback SetCharCallback(Window* window, GlfwCallbacks.CharCallback callback);
 
         /// <summary>
         /// <para>
@@ -2368,8 +2368,8 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.CharModsCallback SetCharModsCallback(Window* window,
-            GLFWCallbacks.CharModsCallback callback);
+        unsafe GlfwCallbacks.CharModsCallback SetCharModsCallback(Window* window,
+            GlfwCallbacks.CharModsCallback callback);
 
         /// <summary>
         /// <para>
@@ -2411,8 +2411,8 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.CursorEnterCallback SetCursorEnterCallback(Window* window,
-            GLFWCallbacks.CursorEnterCallback callback);
+        unsafe GlfwCallbacks.CursorEnterCallback SetCursorEnterCallback(Window* window,
+            GlfwCallbacks.CursorEnterCallback callback);
 
         /// <summary>
         /// <para>
@@ -2437,8 +2437,8 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.CursorPosCallback SetCursorPosCallback(Window* window,
-            GLFWCallbacks.CursorPosCallback callback);
+        unsafe GlfwCallbacks.CursorPosCallback SetCursorPosCallback(Window* window,
+            GlfwCallbacks.CursorPosCallback callback);
 
         /// <summary>
         /// <para>
@@ -2464,7 +2464,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.DropCallback SetDropCallback(Window* window, GLFWCallbacks.DropCallback callback);
+        unsafe GlfwCallbacks.DropCallback SetDropCallback(Window* window, GlfwCallbacks.DropCallback callback);
 
         /// <summary>
         /// <para>
@@ -2494,7 +2494,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// </remarks>
-        GLFWCallbacks.ErrorCallback SetErrorCallback(GLFWCallbacks.ErrorCallback callback);
+        GlfwCallbacks.ErrorCallback SetErrorCallback(GlfwCallbacks.ErrorCallback callback);
 
         /// <summary>
         /// <para>
@@ -2583,7 +2583,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        GLFWCallbacks.JoystickCallback SetJoystickCallback(GLFWCallbacks.JoystickCallback callback);
+        GlfwCallbacks.JoystickCallback SetJoystickCallback(GlfwCallbacks.JoystickCallback callback);
 
         /// <summary>
         /// <para>
@@ -2624,7 +2624,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.KeyCallback SetKeyCallback(Window* window, GLFWCallbacks.KeyCallback callback);
+        unsafe GlfwCallbacks.KeyCallback SetKeyCallback(Window* window, GlfwCallbacks.KeyCallback callback);
 
         /// <summary>
         /// <para>
@@ -2648,7 +2648,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.ScrollCallback SetScrollCallback(Window* window, GLFWCallbacks.ScrollCallback callback);
+        unsafe GlfwCallbacks.ScrollCallback SetScrollCallback(Window* window, GlfwCallbacks.ScrollCallback callback);
 
         /// <summary>
         /// <para>
@@ -2668,7 +2668,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        GLFWCallbacks.MonitorCallback SetMonitorCallback(GLFWCallbacks.MonitorCallback callback);
+        GlfwCallbacks.MonitorCallback SetMonitorCallback(GlfwCallbacks.MonitorCallback callback);
 
         /// <summary>
         /// <para>
@@ -2696,8 +2696,8 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.MouseButtonCallback SetMouseButtonCallback(Window* window,
-            GLFWCallbacks.MouseButtonCallback callback);
+        unsafe GlfwCallbacks.MouseButtonCallback SetMouseButtonCallback(Window* window,
+            GlfwCallbacks.MouseButtonCallback callback);
 
         /// <summary>
         /// <para>
@@ -2729,8 +2729,8 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.WindowCloseCallback SetWindowCloseCallback(Window* window,
-            GLFWCallbacks.WindowCloseCallback callback);
+        unsafe GlfwCallbacks.WindowCloseCallback SetWindowCloseCallback(Window* window,
+            GlfwCallbacks.WindowCloseCallback callback);
 
         /// <summary>
         /// <para>
@@ -2756,8 +2756,8 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.WindowFocusCallback SetWindowFocusCallback(Window* window,
-            GLFWCallbacks.WindowFocusCallback callback);
+        unsafe GlfwCallbacks.WindowFocusCallback SetWindowFocusCallback(Window* window,
+            GlfwCallbacks.WindowFocusCallback callback);
 
         /// <summary>
         /// <para>
@@ -2811,8 +2811,8 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.WindowIconifyCallback SetWindowIconifyCallback(Window* window,
-            GLFWCallbacks.WindowIconifyCallback callback);
+        unsafe GlfwCallbacks.WindowIconifyCallback SetWindowIconifyCallback(Window* window,
+            GlfwCallbacks.WindowIconifyCallback callback);
 
         /// <summary>
         /// <para>
@@ -2846,7 +2846,7 @@ namespace Silk.NET.GLFW
         /// <param name="y">The desired y-coordinate of the upper-left corner of the client area.</param>
         /// <param name="width">The desired with, in screen coordinates, of the client area or video mode.</param>
         /// <param name="height">The desired height, in screen coordinates, of the client area or video mode.</param>
-        /// <param name="refreshRate">The desired refresh rate, in Hz, of the video mode, or <see cref="GLFW.DontCare" />.</param>
+        /// <param name="refreshRate">The desired refresh rate, in Hz, of the video mode, or <see cref="Glfw.DontCare" />.</param>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
@@ -2912,8 +2912,8 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.WindowPosCallback SetWindowPosCallback(Window* window,
-            GLFWCallbacks.WindowPosCallback callback);
+        unsafe GlfwCallbacks.WindowPosCallback SetWindowPosCallback(Window* window,
+            GlfwCallbacks.WindowPosCallback callback);
 
         /// <summary>
         /// <para>
@@ -2943,8 +2943,8 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.WindowRefreshCallback SetWindowRefreshCallback(Window* window,
-            GLFWCallbacks.WindowRefreshCallback callback);
+        unsafe GlfwCallbacks.WindowRefreshCallback SetWindowRefreshCallback(Window* window,
+            GlfwCallbacks.WindowRefreshCallback callback);
 
         /// <summary>
         /// <para>
@@ -3002,8 +3002,8 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.WindowSizeCallback SetWindowSizeCallback(Window* window,
-            GLFWCallbacks.WindowSizeCallback callback);
+        unsafe GlfwCallbacks.WindowSizeCallback SetWindowSizeCallback(Window* window,
+            GlfwCallbacks.WindowSizeCallback callback);
 
         /// <summary>
         /// <para>

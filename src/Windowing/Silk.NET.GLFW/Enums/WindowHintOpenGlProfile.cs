@@ -8,7 +8,7 @@ namespace Silk.NET.GLFW
     /// <summary>
     /// Used to set the OpenGlProfile attribute.
     /// </summary>
-    /// <seealso cref="IGLFW.WindowHint(WindowHintOpenGlProfile,OpenGlProfile)" />
+    /// <seealso cref="IGlfw.WindowHint(WindowHintOpenGlProfile,OpenGlProfile)" />
     public enum WindowHintOpenGlProfile
     {
         /// <summary>

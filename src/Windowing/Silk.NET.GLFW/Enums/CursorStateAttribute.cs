@@ -8,8 +8,8 @@ namespace Silk.NET.GLFW
     /// <summary>
     /// Attribute for setting <see cref="CursorModeValue" /> of the cursor.
     /// </summary>
-    /// <seealso cref="IGLFW.SetInputMode(Window*,CursorStateAttribute,CursorModeValue)" />
-    /// <seealso cref="IGLFW.GetInputMode(Window*,CursorStateAttribute)" />
+    /// <seealso cref="IGlfw.SetInputMode(Window*,CursorStateAttribute,CursorModeValue)" />
+    /// <seealso cref="IGlfw.GetInputMode(Window*,CursorStateAttribute)" />
     public enum CursorStateAttribute
     {
         /// <summary>

@@ -6,8 +6,8 @@
 namespace Silk.NET.GLFW
 {
     /// <summary>
-    /// Defines event information for <see cref="GLFWCallbacks.KeyCallback" />
-    /// or <see cref="GLFWCallbacks.MouseButtonCallback" />.
+    /// Defines event information for <see cref="GlfwCallbacks.KeyCallback" />
+    /// or <see cref="GlfwCallbacks.MouseButtonCallback" />.
     /// </summary>
     public enum InputAction
     {

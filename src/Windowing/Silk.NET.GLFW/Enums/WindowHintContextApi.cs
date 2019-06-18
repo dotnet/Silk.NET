@@ -8,7 +8,7 @@ namespace Silk.NET.GLFW
     /// <summary>
     /// Used to specify the context creation API.
     /// </summary>
-    /// <seealso cref="IGLFW.WindowHint(WindowHintContextApi,ContextApi)" />
+    /// <seealso cref="IGlfw.WindowHint(WindowHintContextApi,ContextApi)" />
     public enum WindowHintContextApi
     {
         /// <summary>

@@ -12,7 +12,7 @@ namespace Silk.NET.GLFW
     public enum CursorModeValue
     {
         /// <summary>
-        /// The regular arrow cursor (or another cursor set with <see cref="IGLFW.SetCursor" />) is used
+        /// The regular arrow cursor (or another cursor set with <see cref="IGlfw.SetCursor" />) is used
         /// and cursor motion is not limited.
         /// </summary>
         CursorNormal = 0x00034001,

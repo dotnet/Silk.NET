@@ -8,7 +8,7 @@ namespace Silk.NET.GLFW
     /// <summary>
     /// The context client APIs.
     /// </summary>
-    /// <seealso cref="IGLFW.WindowHint(WindowHintClientApi,ClientApi)" />
+    /// <seealso cref="IGlfw.WindowHint(WindowHintClientApi,ClientApi)" />
     public enum ClientApi
     {
         /// <summary>

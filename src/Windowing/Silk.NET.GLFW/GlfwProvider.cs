@@ -10,16 +10,16 @@ namespace Silk.NET.GLFW
     /// <summary>
     /// Singleton providing easy GLFW implementation access.
     /// </summary>
-    public static class GLFWProvider
+    public static class GlfwProvider
     {
         /// <summary>
         /// Gets a GLFW interface implementation lazily.
         /// </summary>
-        public static Lazy<GLFW> GLFW { get; internal set; } = new Lazy<GLFW>(() =>
+        public static Lazy<Glfw> GLFW { get; internal set; } = new Lazy<Glfw>(() =>
         {
-            var glfw = NET.GLFW.GLFW.GetAPI();
+            var glfw = Glfw.GetAPI();
             glfw.Init();
-            glfw.SetErrorCallback(NET.GLFW.GLFW.ErrorCallback);
+            glfw.SetErrorCallback(Glfw.ErrorCallback);
             return glfw;
         });
 
@@ -29,11 +29,11 @@ namespace Silk.NET.GLFW
         public static void Unload()
         {
             GLFW.Value.Terminate();
-            GLFW = new Lazy<GLFW>(() =>
+            GLFW = new Lazy<Glfw>(() =>
             {
-                var glfw = NET.GLFW.GLFW.GetAPI();
+                var glfw = Glfw.GetAPI();
                 glfw.Init();
-                glfw.SetErrorCallback(NET.GLFW.GLFW.ErrorCallback);
+                glfw.SetErrorCallback(Glfw.ErrorCallback);
                 return glfw;
             });
         }

@@ -8,7 +8,7 @@ namespace Silk.NET.GLFW
     /// <summary>
     /// Used to set context robustness attribute.
     /// </summary>
-    /// <seealso cref="IGLFW.WindowHint(WindowHintRobustness,Robustness)" />
+    /// <seealso cref="IGlfw.WindowHint(WindowHintRobustness,Robustness)" />
     public enum WindowHintRobustness
     {
         /// <summary>

@@ -8,7 +8,7 @@ namespace Silk.NET.GLFW
     /// <summary>
     /// Context related boolean attributes.
     /// </summary>
-    /// <seealso cref="IGLFW.WindowHint(WindowHintBool,bool)" />
+    /// <seealso cref="IGlfw.WindowHint(WindowHintBool,bool)" />
     public enum WindowHintBool
     {
         /// <summary>
@@ -19,7 +19,7 @@ namespace Silk.NET.GLFW
 
         /// <summary>
         /// Indicates whether the specified window is iconified,
-        /// whether by the user or with <see cref="IGLFW.IconifyWindow" />.
+        /// whether by the user or with <see cref="IGlfw.IconifyWindow" />.
         /// </summary>
         Iconified = 0x00020002,
 
@@ -31,7 +31,7 @@ namespace Silk.NET.GLFW
 
         /// <summary>
         /// Indicates whether the specified window is visible.
-        /// Window visibility can be controlled with <see cref="IGLFW.ShowWindow" /> and <see cref="IGLFW.HideWindow" />
+        /// Window visibility can be controlled with <see cref="IGlfw.ShowWindow" /> and <see cref="IGlfw.HideWindow" />
         /// and initial visibility is controlled by the window hint with the same name.
         /// </summary>
         Visible = 0x00020004,
@@ -57,7 +57,7 @@ namespace Silk.NET.GLFW
 
         /// <summary>
         /// Indicates whether the specified window is maximized,
-        /// whether by the user or with <see cref="IGLFW.MaximizeWindow" />.
+        /// whether by the user or with <see cref="IGlfw.MaximizeWindow" />.
         /// </summary>
         Maximized = 0x00020008,
 
@@ -84,7 +84,7 @@ namespace Silk.NET.GLFW
         Hovered = 0x0002000B,
 
         /// <summary>
-        /// Specifies whether the window will be given input focus when <see cref="IGLFW.ShowWindow" /> is called.
+        /// Specifies whether the window will be given input focus when <see cref="IGlfw.ShowWindow" /> is called.
         /// Possible values are <c>true</c> and <c>false</c>.
         /// </summary>
         FocusOnShow = 0x0002000C,

@@ -10,7 +10,7 @@ namespace Silk.NET.GLFW
     /// <summary>
     /// Contains the library name of GLFW.
     /// </summary>
-    internal class GLFWLibraryNameContainer : SearchPathContainer
+    internal class GlfwLibraryNameContainer : SearchPathContainer
     {
         /// <inheritdoc />
         public override string Linux => "libglfw.so.3.3";
