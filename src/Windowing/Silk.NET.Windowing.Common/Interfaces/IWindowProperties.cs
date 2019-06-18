@@ -63,6 +63,11 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// Gets or sets the window border.
         /// </summary>
-        WindowBorder WindowBorder { get; set;  }
+        WindowBorder WindowBorder { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the VSync mode.
+        /// </summary>
+        VSyncMode VSync { get; set; }
     }
 }
