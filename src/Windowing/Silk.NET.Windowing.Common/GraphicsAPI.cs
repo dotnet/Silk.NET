@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Linq.Expressions;
 
 namespace Silk.NET.Windowing.Common
 {
@@ -36,5 +37,15 @@ namespace Silk.NET.Windowing.Common
         /// The version of the API to use.
         /// </summary>
         public Version APIVersion { get; set; }
+
+        public GraphicsAPI(ContextAPI api, ContextProfile profile, ContextFlags flags, Version apiVersion)
+        {
+            API = api;
+            Profile = profile;
+            Flags = flags;
+            APIVersion = apiVersion;
+        }
+        
+        public static GraphicsAPI Default => new GraphicsAPI(ContextAPI.OpenGL, ContextProfile.Core, ContextFlags.ForwardCompatible, new Version(3, 3));
     }
 }
