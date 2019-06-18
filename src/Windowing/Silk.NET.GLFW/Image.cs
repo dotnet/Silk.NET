@@ -23,9 +23,9 @@ namespace Silk.NET.GLFW
         /// <param name="pixels"><see cref="IntPtr"/> pointing to the RGBA pixel data of the image.</param>
         public Image(int width, int height, IntPtr pixels)
         {
-            this.Width = width;
-            this.Height = height;
-            this.Pixels = pixels;
+            Width = width;
+            Height = height;
+            Pixels = pixels;
         }
 
         /// <summary>
