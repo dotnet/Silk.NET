@@ -38,6 +38,13 @@ namespace Silk.NET.Windowing.Common
         /// </summary>
         public Version APIVersion { get; set; }
 
+        /// <summary>
+        /// Create a new instance of the GraphicsAPI struct.
+        /// </summary>
+        /// <param name="api">The context API to use.</param>
+        /// <param name="profile">The context profile to use.</param>
+        /// <param name="flags">The context flags to use.</param>
+        /// <param name="apiVersion">The API version to use.</param>
         public GraphicsAPI(ContextAPI api, ContextProfile profile, ContextFlags flags, Version apiVersion)
         {
             API = api;
@@ -46,6 +53,9 @@ namespace Silk.NET.Windowing.Common
             APIVersion = apiVersion;
         }
         
+        /// <summary>
+        /// The default graphics API. This is OpenGL 3.3 core profile, with forward compatability enabled.
+        /// </summary>
         public static GraphicsAPI Default => new GraphicsAPI(ContextAPI.OpenGL, ContextProfile.Core, ContextFlags.ForwardCompatible, new Version(3, 3));
     }
 }
