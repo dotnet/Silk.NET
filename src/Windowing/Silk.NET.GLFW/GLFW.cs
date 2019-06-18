@@ -1,9 +1,7 @@
-﻿//
-// This file is part of Silk.NET.
-//
+﻿// This file is part of Silk.NET.
+// 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using AdvancedDLSupport;
@@ -18,30 +16,22 @@ namespace Silk.NET.GLFW
     public abstract class GLFW : NativeAPI, IGLFW
     {
         /// <summary>
-        /// Gets an instance of the API.
+        /// Gets an integer equal to GLFW_DONT_CARE. This can be used for several window hints to use the platform default.
         /// </summary>
-        /// <returns>The instance.</returns>
-        public static GLFW GetAPI()
+        public const int DontCare = -1;
+
+        /// <inheritdoc cref="NativeLibraryBase" />
+        protected GLFW(string path, ImplementationOptions options)
+            : base(path, options)
         {
-            return LibraryLoader.Load<GLFW>(new GLFWLibraryNameContainer());
         }
 
         /// <summary>
         /// Gets the default callback which gets called when a GLFW-Error occurs.
         /// </summary>
-        /// <seealso cref="SetErrorCallback"/>
-        public static GLFWCallbacks.ErrorCallback ErrorCallback { get; } = (errorCode, description) => throw new GLFWException(description) { ErrorCode = errorCode };
-
-        /// <summary>
-        /// Gets an integer equal to GLFW_DONT_CARE. This can be used for several window hints to use the platform default.
-        /// </summary>
-        public const int DontCare = -1;
-
-        /// <inheritdoc cref="NativeLibraryBase"/>
-        protected GLFW(string path, ImplementationOptions options)
-            : base(path, options)
-        {
-        }
+        /// <seealso cref="SetErrorCallback" />
+        public static GLFWCallbacks.ErrorCallback ErrorCallback { get; } = (errorCode, description) =>
+            throw new GLFWException(description) {ErrorCode = errorCode};
 
         /// <inheritdoc />
         public abstract bool Init();
@@ -101,13 +91,15 @@ namespace Silk.NET.GLFW
         public abstract void WindowHintString(int hint, string value);
 
         /// <inheritdoc />
-        public abstract unsafe void SetWindowSizeLimits(Window* window, int minwidth, int minheight, int maxwidth, int maxheight);
+        public abstract unsafe void SetWindowSizeLimits(Window* window, int minwidth, int minheight, int maxwidth,
+            int maxheight);
 
         /// <inheritdoc />
         public abstract unsafe void SetWindowAspectRatio(Window* window, int numer, int denom);
 
         /// <inheritdoc />
-        public abstract unsafe void GetWindowFrameSize(Window* window, out int left, out int top, out int right, out int bottom);
+        public abstract unsafe void GetWindowFrameSize(Window* window, out int left, out int top, out int right,
+            out int bottom);
 
         /// <inheritdoc />
         public abstract unsafe float GetWindowOpacity(Window* window);
@@ -212,7 +204,8 @@ namespace Silk.NET.GLFW
         public abstract bool ExtensionSupported(string extensionName);
 
         /// <inheritdoc />
-        public abstract unsafe Window* CreateWindow(int width, int height, string title, Monitor* monitor, Window* share);
+        public abstract unsafe Window* CreateWindow(int width, int height, string title, Monitor* monitor,
+            Window* share);
 
         /// <inheritdoc />
         public abstract unsafe Monitor* GetPrimaryMonitor();
@@ -293,19 +286,24 @@ namespace Silk.NET.GLFW
         public abstract unsafe bool WindowShouldClose(Window* window);
 
         /// <inheritdoc />
-        public abstract unsafe GLFWCallbacks.CharCallback SetCharCallback(Window* window, GLFWCallbacks.CharCallback callback);
+        public abstract unsafe GLFWCallbacks.CharCallback SetCharCallback(Window* window,
+            GLFWCallbacks.CharCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GLFWCallbacks.CharModsCallback SetCharModsCallback(Window* window, GLFWCallbacks.CharModsCallback callback);
+        public abstract unsafe GLFWCallbacks.CharModsCallback SetCharModsCallback(Window* window,
+            GLFWCallbacks.CharModsCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GLFWCallbacks.CursorEnterCallback SetCursorEnterCallback(Window* window, GLFWCallbacks.CursorEnterCallback callback);
+        public abstract unsafe GLFWCallbacks.CursorEnterCallback SetCursorEnterCallback(Window* window,
+            GLFWCallbacks.CursorEnterCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GLFWCallbacks.CursorPosCallback SetCursorPosCallback(Window* window, GLFWCallbacks.CursorPosCallback callback);
+        public abstract unsafe GLFWCallbacks.CursorPosCallback SetCursorPosCallback(Window* window,
+            GLFWCallbacks.CursorPosCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GLFWCallbacks.DropCallback SetDropCallback(Window* window, GLFWCallbacks.DropCallback callback);
+        public abstract unsafe GLFWCallbacks.DropCallback SetDropCallback(Window* window,
+            GLFWCallbacks.DropCallback callback);
 
         /// <inheritdoc />
         public abstract GLFWCallbacks.ErrorCallback SetErrorCallback(GLFWCallbacks.ErrorCallback callback);
@@ -320,28 +318,34 @@ namespace Silk.NET.GLFW
         public abstract GLFWCallbacks.JoystickCallback SetJoystickCallback(GLFWCallbacks.JoystickCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GLFWCallbacks.KeyCallback SetKeyCallback(Window* window, GLFWCallbacks.KeyCallback callback);
+        public abstract unsafe GLFWCallbacks.KeyCallback SetKeyCallback(Window* window,
+            GLFWCallbacks.KeyCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GLFWCallbacks.ScrollCallback SetScrollCallback(Window* window, GLFWCallbacks.ScrollCallback callback);
+        public abstract unsafe GLFWCallbacks.ScrollCallback SetScrollCallback(Window* window,
+            GLFWCallbacks.ScrollCallback callback);
 
         /// <inheritdoc />
         public abstract GLFWCallbacks.MonitorCallback SetMonitorCallback(GLFWCallbacks.MonitorCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GLFWCallbacks.MouseButtonCallback SetMouseButtonCallback(Window* window, GLFWCallbacks.MouseButtonCallback callback);
+        public abstract unsafe GLFWCallbacks.MouseButtonCallback SetMouseButtonCallback(Window* window,
+            GLFWCallbacks.MouseButtonCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GLFWCallbacks.WindowCloseCallback SetWindowCloseCallback(Window* window, GLFWCallbacks.WindowCloseCallback callback);
+        public abstract unsafe GLFWCallbacks.WindowCloseCallback SetWindowCloseCallback(Window* window,
+            GLFWCallbacks.WindowCloseCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GLFWCallbacks.WindowFocusCallback SetWindowFocusCallback(Window* window, GLFWCallbacks.WindowFocusCallback callback);
+        public abstract unsafe GLFWCallbacks.WindowFocusCallback SetWindowFocusCallback(Window* window,
+            GLFWCallbacks.WindowFocusCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe void SetWindowIcon(Window* window, int count, Image* images);
 
         /// <inheritdoc />
-        public abstract unsafe GLFWCallbacks.WindowIconifyCallback SetWindowIconifyCallback(Window* window, GLFWCallbacks.WindowIconifyCallback callback);
+        public abstract unsafe GLFWCallbacks.WindowIconifyCallback SetWindowIconifyCallback(Window* window,
+            GLFWCallbacks.WindowIconifyCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe void SetWindowTitle(Window* window, string title);
@@ -353,22 +357,26 @@ namespace Silk.NET.GLFW
         public abstract unsafe void SetWindowSize(Window* window, int width, int height);
 
         /// <inheritdoc />
-        public abstract unsafe GLFWCallbacks.WindowSizeCallback SetWindowSizeCallback(Window* window, GLFWCallbacks.WindowSizeCallback callback);
+        public abstract unsafe GLFWCallbacks.WindowSizeCallback SetWindowSizeCallback(Window* window,
+            GLFWCallbacks.WindowSizeCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe void SetWindowShouldClose(Window* window, bool value);
 
         /// <inheritdoc />
-        public abstract unsafe void SetWindowMonitor(Window* window, Monitor* monitor, int x, int y, int width, int height, int refreshRate);
+        public abstract unsafe void SetWindowMonitor(Window* window, Monitor* monitor, int x, int y, int width,
+            int height, int refreshRate);
 
         /// <inheritdoc />
         public abstract unsafe void SetWindowPos(Window* window, int x, int y);
 
         /// <inheritdoc />
-        public abstract unsafe GLFWCallbacks.WindowPosCallback SetWindowPosCallback(Window* window, GLFWCallbacks.WindowPosCallback callback);
+        public abstract unsafe GLFWCallbacks.WindowPosCallback SetWindowPosCallback(Window* window,
+            GLFWCallbacks.WindowPosCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GLFWCallbacks.WindowRefreshCallback SetWindowRefreshCallback(Window* window, GLFWCallbacks.WindowRefreshCallback callback);
+        public abstract unsafe GLFWCallbacks.WindowRefreshCallback SetWindowRefreshCallback(Window* window,
+            GLFWCallbacks.WindowRefreshCallback callback);
 
         /// <inheritdoc />
         public abstract void SwapInterval(int interval);
@@ -398,6 +406,16 @@ namespace Silk.NET.GLFW
         public abstract bool GetPhysicalDevicePresentationSupport(VkHandle instance, VkHandle device, int queueFamily);
 
         /// <inheritdoc />
-        public abstract unsafe int CreateWindowSurface(VkHandle instance, Window* window, void* allocator, VkHandle surface);
+        public abstract unsafe int CreateWindowSurface(VkHandle instance, Window* window, void* allocator,
+            VkHandle surface);
+
+        /// <summary>
+        /// Gets an instance of the API.
+        /// </summary>
+        /// <returns>The instance.</returns>
+        public static GLFW GetAPI()
+        {
+            return LibraryLoader.Load<GLFW>(new GLFWLibraryNameContainer());
+        }
     }
 }

@@ -1,9 +1,7 @@
-//
 // This file is part of Silk.NET.
-//
+// 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System.Drawing;
 
@@ -41,7 +39,7 @@ namespace Silk.NET.Windowing.Common
         Size Size { get; set; }
 
         /// <summary>
-        /// The number of rendering operations to run every second. 
+        /// The number of rendering operations to run every second.
         /// </summary>
         double FramesPerSecond { get; }
 
@@ -54,17 +52,17 @@ namespace Silk.NET.Windowing.Common
         /// Gets the graphics API the window will use.
         /// </summary>
         GraphicsAPI API { get; }
-        
+
         /// <summary>
         /// Gets or sets the window state.
         /// </summary>
         WindowState WindowState { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the window border.
         /// </summary>
         WindowBorder WindowBorder { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the VSync mode.
         /// </summary>

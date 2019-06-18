@@ -1,9 +1,7 @@
-//
 // This file is part of Silk.NET.
-//
+// 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 namespace Silk.NET.Windowing.Common
 {
@@ -21,6 +19,6 @@ namespace Silk.NET.Windowing.Common
         /// Uses a compatability OpenGL context, allowing for some deprecated functionality. This should only ever be
         /// used for maintaining legacy code; no newly-written software should use this.
         /// </summary>
-        Compatability,
+        Compatability
     }
 }

@@ -1,16 +1,14 @@
-//
 // This file is part of Silk.NET.
-//
+// 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 namespace Silk.NET.GLFW
 {
     /// <summary>
     /// Context related boolean attributes.
     /// </summary>
-    /// <seealso cref="IGLFW.WindowHint(WindowHintBool,bool)"/>
+    /// <seealso cref="IGLFW.WindowHint(WindowHintBool,bool)" />
     public enum WindowHintBool
     {
         /// <summary>
@@ -21,7 +19,7 @@ namespace Silk.NET.GLFW
 
         /// <summary>
         /// Indicates whether the specified window is iconified,
-        /// whether by the user or with <see cref="IGLFW.IconifyWindow"/>.
+        /// whether by the user or with <see cref="IGLFW.IconifyWindow" />.
         /// </summary>
         Iconified = 0x00020002,
 
@@ -33,7 +31,7 @@ namespace Silk.NET.GLFW
 
         /// <summary>
         /// Indicates whether the specified window is visible.
-        /// Window visibility can be controlled with <see cref="IGLFW.ShowWindow"/> and <see cref="IGLFW.HideWindow"/>
+        /// Window visibility can be controlled with <see cref="IGLFW.ShowWindow" /> and <see cref="IGLFW.HideWindow" />
         /// and initial visibility is controlled by the window hint with the same name.
         /// </summary>
         Visible = 0x00020004,
@@ -59,7 +57,7 @@ namespace Silk.NET.GLFW
 
         /// <summary>
         /// Indicates whether the specified window is maximized,
-        /// whether by the user or with <see cref="IGLFW.MaximizeWindow"/>.
+        /// whether by the user or with <see cref="IGLFW.MaximizeWindow" />.
         /// </summary>
         Maximized = 0x00020008,
 
@@ -86,7 +84,7 @@ namespace Silk.NET.GLFW
         Hovered = 0x0002000B,
 
         /// <summary>
-        /// Specifies whether the window will be given input focus when <see cref="IGLFW.ShowWindow"/> is called.
+        /// Specifies whether the window will be given input focus when <see cref="IGLFW.ShowWindow" /> is called.
         /// Possible values are <c>true</c> and <c>false</c>.
         /// </summary>
         FocusOnShow = 0x0002000C,
@@ -126,6 +124,6 @@ namespace Silk.NET.GLFW
         /// <c>GL_FRAMEBUFFER_SRGB</c> enable( also called <c>GL_FRAMEBUFFER_SRGB_EXT</c>)
         /// for controlling sRGB rendering and a created OpenGL ES context will always have sRGB rendering enabled.
         /// </summary>
-        SrgbCapable = 0x0002100E,
+        SrgbCapable = 0x0002100E
     }
 }

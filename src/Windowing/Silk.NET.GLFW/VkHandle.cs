@@ -1,9 +1,7 @@
-//
 // This file is part of Silk.NET.
-//
+// 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using System.Runtime.InteropServices;
@@ -22,7 +20,7 @@ namespace Silk.NET.GLFW
         public IntPtr Handle;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="VkHandle"/> struct.
+        /// Initializes a new instance of the <see cref="VkHandle" /> struct.
         /// </summary>
         /// <param name="handle">
         /// The native Vulkan handle.

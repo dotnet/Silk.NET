@@ -1,9 +1,7 @@
-//
 // This file is part of Silk.NET.
-//
+// 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 namespace Silk.NET.GLFW
 {
@@ -25,6 +23,6 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// Sets the instance name on X11. on any other platform, this does nothing.
         /// </summary>
-        X11InstanceName = 0x00024002,
+        X11InstanceName = 0x00024002
     }
 }

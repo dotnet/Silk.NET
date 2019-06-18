@@ -1,9 +1,7 @@
-﻿//
-// This file is part of Silk.NET.
-//
+﻿// This file is part of Silk.NET.
+// 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using AdvancedDLSupport;
@@ -28,10 +26,10 @@ namespace Silk.NET.GLFW
         /// free any resources allocated during or after initialization.
         /// </para>
         /// <para>
-        /// If this function fails, it calls <see cref="Terminate"/> before returning.
+        /// If this function fails, it calls <see cref="Terminate" /> before returning.
         /// </para>
         /// <para>
-        /// If it succeeds, you should call <see cref="Terminate"/> before the application exits.
+        /// If it succeeds, you should call <see cref="Terminate" /> before the application exits.
         /// </para>
         /// <para>
         /// Additional calls to this function after successful initialization
@@ -48,7 +46,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         bool Init();
@@ -57,14 +55,14 @@ namespace Silk.NET.GLFW
         /// <para>
         /// This function destroys all remaining windows and cursors, restores any modified gamma ramps
         /// and frees any other allocated resources. Once this function is called,
-        /// you must again call <see cref="Init"/> successfully before you will be able to use most GLFW functions.
+        /// you must again call <see cref="Init" /> successfully before you will be able to use most GLFW functions.
         /// </para>
         /// <para>
         /// If GLFW has been successfully initialized, this function should be called before the application exits.
         /// </para>
         /// <para>
         /// If initialization fails, there is no need to call this function,
-        /// as it is called by <see cref="Init"/> before it returns failure.
+        /// as it is called by <see cref="Init" /> before it returns failure.
         /// </para>
         /// </summary>
         /// <remarks>
@@ -72,7 +70,7 @@ namespace Silk.NET.GLFW
         /// The contexts of any remaining windows must not be current on any other thread when this function is called.
         /// </para>
         /// <para>
-        /// This function may be called before <see cref="Init"/>.
+        /// This function may be called before <see cref="Init" />.
         /// </para>
         /// <para>
         /// This function must not be called from a callback.
@@ -81,7 +79,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         void Terminate();
@@ -97,22 +95,23 @@ namespace Silk.NET.GLFW
         /// Once GLFW has been initialized,
         /// any values you set will be ignored until the library is terminated and initialized again.
         /// </para>
-        /// <para>Some hints are platform specific.
+        /// <para>
+        /// Some hints are platform specific.
         /// These may be set on any platform but they will only affect their specific platform.
         /// Other platforms will ignore them. Setting these hints requires no platform specific headers or functions.
         /// </para>
         /// </summary>
-        /// <param name="hint">The <see cref="NET.GLFW.InitHint"/> to set.</param>
-        /// <param name="value">The new value of the <see cref="NET.GLFW.InitHint"/>.</param>
+        /// <param name="hint">The <see cref="NET.GLFW.InitHint" /> to set.</param>
+        /// <param name="value">The new value of the <see cref="NET.GLFW.InitHint" />.</param>
         /// <remarks>
         /// <para>
-        /// This function may be called before <see cref="Init"/>.
+        /// This function may be called before <see cref="Init" />.
         /// </para>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.InvalidEnum"/> and <see cref="ErrorCode.InvalidValue"/>.
+        /// Possible errors include <see cref="ErrorCode.InvalidEnum" /> and <see cref="ErrorCode.InvalidValue" />.
         /// </para>
         /// </remarks>
         void InitHint(InitHint hint, bool value);
@@ -132,7 +131,7 @@ namespace Silk.NET.GLFW
         /// <param name="revision">Where to store the revision number, or <c>out _</c>.</param>
         /// <remarks>
         /// <para>
-        /// This function may be called before <see cref="Init"/>.
+        /// This function may be called before <see cref="Init" />.
         /// </para>
         /// <para>
         /// This function may be called from any thread.
@@ -148,13 +147,13 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// Do not use the version string to parse the GLFW library version.
-        /// The <see cref="GetVersion"/> function provides the version of the running library binary in numerical format.
+        /// The <see cref="GetVersion" /> function provides the version of the running library binary in numerical format.
         /// </para>
         /// </summary>
         /// <returns>The ASCII-encoded GLFW version string.</returns>
         /// <remarks>
         /// <para>
-        /// This function may be called before <see cref="Init"/>.
+        /// This function may be called before <see cref="Init" />.
         /// </para>
         /// <para>
         /// The returned string is static and compile-time generated.
@@ -163,7 +162,7 @@ namespace Silk.NET.GLFW
         /// This function may be called from any thread.
         /// </para>
         /// </remarks>
-        /// <seealso cref="GetVersion"/>
+        /// <seealso cref="GetVersion" />
         string GetVersionString();
 
         /// <summary>
@@ -173,24 +172,24 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// If no error has occurred since the last call,
-        /// it returns <see cref="ErrorCode.NoError"/> (zero) and the description pointer is set to <c>null</c>.
+        /// it returns <see cref="ErrorCode.NoError" /> (zero) and the description pointer is set to <c>null</c>.
         /// </para>
         /// </summary>
         /// <param name="description">Where to store the error description pointer, or <c>out _</c>"/>.</param>
-        /// <returns>The last error code for the calling thread, or <see cref="ErrorCode.NoError"/> (zero).</returns>
+        /// <returns>The last error code for the calling thread, or <see cref="ErrorCode.NoError" /> (zero).</returns>
         /// <remarks>
         /// <para>
         /// The returned string is allocated and freed by GLFW. You should not free it yourself.
         /// It is only guaranteed to be valid until the next error occurs or the library is terminated.
         /// </para>
         /// <para>
-        /// This function may be called before <see cref="Init"/>.
+        /// This function may be called before <see cref="Init" />.
         /// </para>
         /// <para>
         /// This function may be called from any thread.
         /// </para>
         /// </remarks>
-        /// <seealso cref="SetErrorCallback"/>
+        /// <seealso cref="SetErrorCallback" />
         unsafe ErrorCode GetError(out char* description);
 
         /// <summary>
@@ -217,10 +216,10 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="GetPrimaryMonitor"/>
+        /// <seealso cref="GetPrimaryMonitor" />
         unsafe Monitor** GetMonitors(out int count);
 
         /// <summary>
@@ -236,7 +235,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void GetMonitorPos(Monitor* monitor, out int x, out int y);
@@ -271,7 +270,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         unsafe void GetMonitorPhysicalSize(Monitor* monitor, out int width, out int height);
@@ -287,7 +286,6 @@ namespace Silk.NET.GLFW
         /// If you scale all pixel dimensions by this scale then your content should appear at an appropriate size.
         /// This is especially important for text and any UI elements.
         /// </para>
-        ///
         /// <para>
         /// The content scale may depend on both the monitor resolution and pixel density and on user settings.
         /// It may be very different from the raw DPI calculated from the physical size and current resolution.
@@ -316,7 +314,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         unsafe string GetMonitorName(Monitor* monitor);
@@ -325,7 +323,7 @@ namespace Silk.NET.GLFW
         /// <para>
         /// This function sets the user-defined pointer of the specified monitor.
         /// The current value is retained until the monitor is disconnected.
-        /// The initial value is <see cref="IntPtr.Zero"/>.
+        /// The initial value is <see cref="IntPtr.Zero" />.
         /// </para>
         /// <para>
         /// This function may be called from the monitor callback, even for a monitor that is being disconnected.
@@ -338,7 +336,7 @@ namespace Silk.NET.GLFW
         /// This function may be called from any thread. Access is not synchronized.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         unsafe void SetMonitorUserPointer(Monitor* monitor, IntPtr pointer);
@@ -346,20 +344,20 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// <para>
         /// This function returns the current value of the user-defined pointer of the specified monitor.
-        /// The initial value is <see cref="IntPtr.Zero"/>.
+        /// The initial value is <see cref="IntPtr.Zero" />.
         /// </para>
         /// <para>
         /// This function may be called from the monitor callback, even for a monitor that is being disconnected.
         /// </para>
         /// </summary>
         /// <param name="monitor">The monitor whose pointer to return.</param>
-        /// <returns>The user-defined pointer of the given <paramref name="monitor"/>.</returns>
+        /// <returns>The user-defined pointer of the given <paramref name="monitor" />.</returns>
         /// <remarks>
         /// <para>
         /// This function may be called from any thread. Access is not synchronized.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         unsafe IntPtr GetMonitorUserPointer(Monitor* monitor);
@@ -387,16 +385,16 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="GetVideoMode"/>
+        /// <seealso cref="GetVideoMode" />
         unsafe VideoMode* GetVideoModes(Monitor* monitor, out int count);
 
         /// <summary>
         /// <para>
         /// This function generates a 256-element gamma ramp from the specified exponent and then calls
-        /// <see cref="SetGammaRamp"/> with it. The value must be a finite number greater than zero.
+        /// <see cref="SetGammaRamp" /> with it. The value must be a finite number greater than zero.
         /// </para>
         /// </summary>
         /// <param name="monitor">The monitor whose gamma ramp to set.</param>
@@ -406,7 +404,8 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidValue"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidValue" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void SetGamma(Monitor* monitor, float gamma);
@@ -428,7 +427,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe GammaRamp* GetGammaRamp(Monitor* monitor);
@@ -439,7 +438,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// The original gamma ramp for that monitor
-        /// is saved by GLFW the first time this function is called and is restored by <see cref="Terminate"/>.
+        /// is saved by GLFW the first time this function is called and is restored by <see cref="Terminate" />.
         /// </para>
         /// </summary>
         /// <param name="monitor">The monitor whose gamma ramp to set.</param>
@@ -458,7 +457,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void SetGammaRamp(Monitor* monitor, ref GammaRamp ramp);
@@ -482,12 +481,12 @@ namespace Silk.NET.GLFW
         /// <para>
         /// This function sets hints for the next call to @ref glfwCreateWindow.  The
         /// hints, once set, retain their values until changed by a call to this
-        /// function or <see cref="DefaultWindowHints"/>, or until the library is terminated.
+        /// function or <see cref="DefaultWindowHints" />, or until the library is terminated.
         /// </para>
         /// <para>
         /// This function does not check whether the specified hint values are valid.
         /// If you set hints to invalid values this will instead be reported by the next
-        /// call to <see cref="CreateWindow"/>.
+        /// call to <see cref="CreateWindow" />.
         /// </para>
         /// <para>
         /// Some hints are platform specific.  These may be set on any platform but they
@@ -499,7 +498,7 @@ namespace Silk.NET.GLFW
         /// <param name="value">The new value of the set hint.</param>
         /// <remarks>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> <see cref="ErrorCode.InvalidEnum"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// <para>
         /// The string is copied before this function returns.
@@ -530,16 +529,16 @@ namespace Silk.NET.GLFW
         /// </summary>
         /// <param name="window">The window to set limits for.</param>
         /// <param name="minwidth">
-        /// The minimum width, in screen coordinates, of the client area, or <see cref="GLFW.DontCare"/>.
+        /// The minimum width, in screen coordinates, of the client area, or <see cref="GLFW.DontCare" />.
         /// </param>
         /// <param name="minheight">
-        /// The minimum height, in screen coordinates, of the client area, or <see cref="GLFW.DontCare"/>.
+        /// The minimum height, in screen coordinates, of the client area, or <see cref="GLFW.DontCare" />.
         /// </param>
         /// <param name="maxwidth">
-        /// The maximum width, in screen coordinates, of the client area, or <see cref="GLFW.DontCare"/>.
+        /// The maximum width, in screen coordinates, of the client area, or <see cref="GLFW.DontCare" />.
         /// </param>
         /// <param name="maxheight">
-        /// The maximum height, in screen coordinates, of the client area, or <see cref="GLFW.DontCare"/>.
+        /// The maximum height, in screen coordinates, of the client area, or <see cref="GLFW.DontCare" />.
         /// </param>
         /// <remarks>
         /// <para>
@@ -549,7 +548,8 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidValue"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidValue" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void SetWindowSizeLimits(Window* window, int minwidth, int minheight, int maxwidth, int maxheight);
@@ -569,15 +569,15 @@ namespace Silk.NET.GLFW
         /// For example, the common 16:9 aspect ratio is specified as 16 and 9, respectively.
         /// </para>
         /// <para>
-        /// If the numerator and denominator is set to <see cref="GLFW.DontCare"/> then the aspect ratio limit is disabled.
+        /// If the numerator and denominator is set to <see cref="GLFW.DontCare" /> then the aspect ratio limit is disabled.
         /// </para>
         /// <para>
         /// The aspect ratio is applied immediately to a windowed mode window and may cause it to be resized.
         /// </para>
         /// </summary>
         /// <param name="window">The window to set limits for.</param>
-        /// <param name="numer">The numerator of the desired aspect ratio, or <see cref="GLFW.DontCare"/>.</param>
-        /// <param name="denom">The denominator of the desired aspect ratio, or <see cref="GLFW.DontCare"/>.</param>
+        /// <param name="numer">The numerator of the desired aspect ratio, or <see cref="GLFW.DontCare" />.</param>
+        /// <param name="denom">The denominator of the desired aspect ratio, or <see cref="GLFW.DontCare" />.</param>
         /// <remarks>
         /// <para>
         /// If you set size limits and an aspect ratio that conflict, the results are undefined.
@@ -586,7 +586,8 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidValue"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidValue" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void SetWindowAspectRatio(Window* window, int numer, int denom);
@@ -599,12 +600,10 @@ namespace Silk.NET.GLFW
         /// This size includes the title bar, if the window has one.
         /// The size of the frame may vary depending on the window-related hints used to create it.
         /// </para>
-        ///
         /// <para>
         /// Because this function retrieves the size of each window frame edge
         /// and not the offset along a particular coordinate axis, the retrieved values will always be zero or positive.
         /// </para>
-        ///
         /// <para>
         /// Any or all of the size arguments may be <c>out _</c>.
         /// If an error occurs, all non-<c>out _</c> size arguments will be set to zero.
@@ -628,7 +627,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void GetWindowFrameSize(Window* window, out int left, out int top, out int right, out int bottom);
@@ -655,10 +654,10 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="SetWindowOpacity"/>
+        /// <seealso cref="SetWindowOpacity" />
         unsafe float GetWindowOpacity(Window* window);
 
         /// <summary>
@@ -684,10 +683,10 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="GetWindowOpacity"/>
+        /// <seealso cref="GetWindowOpacity" />
         unsafe void SetWindowOpacity(Window* window, float opacity);
 
         /// <summary>
@@ -709,7 +708,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void RequestWindowAttention(Window* window);
@@ -719,9 +718,9 @@ namespace Silk.NET.GLFW
         /// This function sets the value of an attribute of the specified window.
         /// </para>
         /// <para>
-        /// The supported attributes are <see cref="WindowAttributeSetter.Decorated"/>,
-        /// <see cref="WindowAttributeSetter.Resizable"/>, <see cref="WindowAttributeSetter.Floating"/>,
-        /// <see cref="WindowAttributeSetter.AutoIconify"/> and <see cref="WindowAttributeSetter.FocusOnShow"/>.
+        /// The supported attributes are <see cref="WindowAttributeSetter.Decorated" />,
+        /// <see cref="WindowAttributeSetter.Resizable" />, <see cref="WindowAttributeSetter.Floating" />,
+        /// <see cref="WindowAttributeSetter.AutoIconify" /> and <see cref="WindowAttributeSetter.FocusOnShow" />.
         /// </para>
         /// <para>
         /// Some of these attributes are ignored for full screen windows.
@@ -737,14 +736,15 @@ namespace Silk.NET.GLFW
         /// <param name="value"><c>true</c> or <c>false</c>.</param>
         /// <remarks>
         /// <para>
-        /// Calling <see cref="GetWindowAttrib"/> will always return the latest value,
+        /// Calling <see cref="GetWindowAttrib" /> will always return the latest value,
         /// even if that value is ignored by the current mode of the window.
         /// </para>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidEnum"/>, <see cref="ErrorCode.InvalidValue"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidEnum" />,
+        /// <see cref="ErrorCode.InvalidValue" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void SetWindowAttrib(Window* window, WindowAttributeSetter attribute, bool value);
@@ -754,7 +754,7 @@ namespace Silk.NET.GLFW
         /// This function returns whether raw mouse motion is supported on the current system.
         /// This status does not change after GLFW has been initialized so you only need to check this once.
         /// If you attempt to enable raw motion on a system that does not support it,
-        /// <see cref="ErrorCode.PlatformError"/> will be emitted.
+        /// <see cref="ErrorCode.PlatformError" /> will be emitted.
         /// </para>
         /// <para>
         /// Raw mouse motion is closer to the actual motion of the mouse across a surface.
@@ -771,7 +771,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         bool RawMouseMotionSupported();
@@ -790,8 +790,8 @@ namespace Silk.NET.GLFW
         /// You will break text input for many languages even if it happens to work for yours.
         /// </para>
         /// <para>
-        /// If the key is <see cref="Keys.Unknown"/>, the scancode is used to identify the key, otherwise the scancode is ignored.
-        /// If you specify a non-printable key, or <see cref="Keys.Unknown"/> and a scancode that maps to a non-printable key,
+        /// If the key is <see cref="Keys.Unknown" />, the scancode is used to identify the key, otherwise the scancode is ignored.
+        /// If you specify a non-printable key, or <see cref="Keys.Unknown" /> and a scancode that maps to a non-printable key,
         /// this function returns <c>null</c> but does not emit an error.
         /// </para>
         /// <para>
@@ -800,27 +800,105 @@ namespace Silk.NET.GLFW
         /// <para>
         /// The printable keys are:
         /// <list type="">
-        /// <item><term><see cref="Keys.Apostrophe"/></term></item>
-        /// <item><term><see cref="Keys.Comma"/></term></item>
-        /// <item><term><see cref="Keys.Minus"/></term></item>
-        /// <item><term><see cref="Keys.Period"/></term></item>
-        /// <item><term><see cref="Keys.Slash"/></term></item>
-        /// <item><term><see cref="Keys.Semicolon"/></term></item>
-        /// <item><term><see cref="Keys.Equal"/></term></item>
-        /// <item><term><see cref="Keys.LeftBracket"/></term></item>
-        /// <item><term><see cref="Keys.RightBracket"/></term></item>
-        /// <item><term><see cref="Keys.Backslash"/></term></item>
-        /// <item><term><see cref="Keys.World1"/></term></item>
-        /// <item><term><see cref="Keys.World2"/></term></item>
-        /// <item><term><see cref="Keys.D0"/> to <see cref="Keys.D9"/></term></item>
-        /// <item><term><see cref="Keys.A"/> to <see cref="Keys.Z"/></term></item>
-        /// <item><term><see cref="Keys.KeyPad0"/> to <see cref="Keys.KeyPad9"/></term></item>
-        /// <item><term><see cref="Keys.KeyPadDecimal"/></term></item>
-        /// <item><term><see cref="Keys.KeyPadDivide"/></term></item>
-        /// <item><term><see cref="Keys.KeyPadMultiply"/></term></item>
-        /// <item><term><see cref="Keys.KeyPadSubtract"/></term></item>
-        /// <item><term><see cref="Keys.KeyPadAdd"/></term></item>
-        /// <item><term><see cref="Keys.KeyPadEqual"/></term></item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.Apostrophe" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.Comma" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.Minus" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.Period" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.Slash" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.Semicolon" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.Equal" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.LeftBracket" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.RightBracket" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.Backslash" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.World1" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.World2" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term><see cref="Keys.D0" /> to <see cref="Keys.D9" /></term>
+        /// </item>
+        /// <item>
+        /// <term><see cref="Keys.A" /> to <see cref="Keys.Z" /></term>
+        /// </item>
+        /// <item>
+        /// <term><see cref="Keys.KeyPad0" /> to <see cref="Keys.KeyPad9" /></term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.KeyPadDecimal" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.KeyPadDivide" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.KeyPadMultiply" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.KeyPadSubtract" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.KeyPadAdd" />
+        /// </term>
+        /// </item>
+        /// <item>
+        /// <term>
+        /// <see cref="Keys.KeyPadEqual" />
+        /// </term>
+        /// </item>
         /// </list>
         /// </para>
         /// <para>
@@ -829,19 +907,19 @@ namespace Silk.NET.GLFW
         /// and should be localized along with other user interface text.
         /// </para>
         /// </summary>
-        /// <param name="key">The key to query, or <see cref="Keys.Unknown"/>.</param>
+        /// <param name="key">The key to query, or <see cref="Keys.Unknown" />.</param>
         /// <param name="scancode">The scancode of the key to query.</param>
         /// <returns>The UTF-8 encoded, layout-specific name of the key, or <c>null</c>.</returns>
         /// <remarks>
         /// <para>
         /// The returned string is allocated and freed by GLFW. You should not free it yourself.
-        /// It is valid until the next call to <see cref="GetKeyName"/>, or until the library is terminated.
+        /// It is valid until the next call to <see cref="GetKeyName" />, or until the library is terminated.
         /// </para>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         string GetKeyName(int key, int scancode);
@@ -851,7 +929,7 @@ namespace Silk.NET.GLFW
         /// This function returns the platform-specific scancode of the specified key.
         /// </para>
         /// <para>
-        /// If the key is <see cref="Keys.Unknown"/> or does not exist on the keyboard this method will return -1.
+        /// If the key is <see cref="Keys.Unknown" /> or does not exist on the keyboard this method will return -1.
         /// </para>
         /// </summary>
         /// <param name="key">Any named key.</param>
@@ -861,7 +939,8 @@ namespace Silk.NET.GLFW
         /// This function may be called from any thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidEnum"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidEnum" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         int GetKeyScancode(int key);
@@ -869,12 +948,12 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// <para>
         /// This function returns the last state reported for the specified key to the specified window.
-        /// The returned state is one of <see cref="InputAction.Press"/> or <see cref="InputAction.Release"/>.
-        /// The higher-level action <see cref="InputAction.Repeat"/> is only reported to the key callback.
+        /// The returned state is one of <see cref="InputAction.Press" /> or <see cref="InputAction.Release" />.
+        /// The higher-level action <see cref="InputAction.Repeat" /> is only reported to the key callback.
         /// </para>
         /// <para>
-        /// If the <see cref="StickyAttributes.StickyKeys"/> input mode is enabled, this function returns
-        /// <see cref="InputAction.Press"/> the first time you call it for a key that was pressed,
+        /// If the <see cref="StickyAttributes.StickyKeys" /> input mode is enabled, this function returns
+        /// <see cref="InputAction.Press" /> the first time you call it for a key that was pressed,
         /// even if that key has already been released.
         /// </para>
         /// <para>
@@ -891,15 +970,15 @@ namespace Silk.NET.GLFW
         /// </summary>
         /// <param name="window">The desired window.</param>
         /// <param name="key">
-        /// The desired keyboard key. <see cref="Keys.Unknown"/> is not a valid key for this function.
+        /// The desired keyboard key. <see cref="Keys.Unknown" /> is not a valid key for this function.
         /// </param>
-        /// <returns>One of <see cref="InputAction.Press"/> or <see cref="InputAction.Release"/>.</returns>
+        /// <returns>One of <see cref="InputAction.Press" /> or <see cref="InputAction.Release" />.</returns>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.InvalidEnum"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
         unsafe int GetKey(Window* window, int key);
@@ -907,23 +986,23 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// <para>
         /// This function returns the last state reported for the specified mouse button to the specified window.
-        /// The returned state is one of <see cref="InputAction.Press"/> or <see cref="InputAction.Release"/>.
+        /// The returned state is one of <see cref="InputAction.Press" /> or <see cref="InputAction.Release" />.
         /// </para>
         /// <para>
-        /// If the <see cref="StickyAttributes.StickyMouseButtons"/> input mode is enabled, this function returns
-        /// <see cref="InputAction.Press"/> the first time you call it for a mouse button that was pressed,
+        /// If the <see cref="StickyAttributes.StickyMouseButtons" /> input mode is enabled, this function returns
+        /// <see cref="InputAction.Press" /> the first time you call it for a mouse button that was pressed,
         /// even if that mouse button has already been released.
         /// </para>
         /// </summary>
         /// <param name="window">The desired window.</param>
         /// <param name="button">The desired mouse button.</param>
-        /// <returns>One of <see cref="InputAction.Press"/> or <see cref="InputAction.Release"/>.</returns>
+        /// <returns>One of <see cref="InputAction.Press" /> or <see cref="InputAction.Release" />.</returns>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.InvalidEnum"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
         unsafe int GetMouseButton(Window* window, int button);
@@ -934,7 +1013,7 @@ namespace Silk.NET.GLFW
         /// in screen coordinates, relative to the upper-left corner of the client area of the specified window.
         /// </para>
         /// <para>
-        /// If the cursor is disabled (with <see cref="CursorModeValue.CursorDisabled"/>) then the cursor position
+        /// If the cursor is disabled (with <see cref="CursorModeValue.CursorDisabled" />) then the cursor position
         /// is unbounded and limited only by the minimum and maximum values of a double.
         /// </para>
         /// <para>
@@ -958,7 +1037,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void GetCursorPos(Window* window, out double xpos, out double ypos);
@@ -974,12 +1053,12 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// Do not use this function to implement things like camera controls.
-        /// GLFW already provides the <see cref="CursorModeValue.CursorDisabled"/> cursor mode that hides the cursor,
+        /// GLFW already provides the <see cref="CursorModeValue.CursorDisabled" /> cursor mode that hides the cursor,
         /// transparently re-centers it and provides unconstrained cursor motion.
-        /// See <see cref="SetInputMode(Window*,CursorStateAttribute,CursorModeValue)"/> for more information.
+        /// See <see cref="SetInputMode(Window*,CursorStateAttribute,CursorModeValue)" /> for more information.
         /// </para>
         /// <para>
-        /// If the cursor mode is <see cref="CursorModeValue.CursorDisabled"/> then the cursor position is unconstrained
+        /// If the cursor mode is <see cref="CursorModeValue.CursorDisabled" /> then the cursor position is unconstrained
         /// and limited only by the minimum and maximum values of a double.
         /// </para>
         /// </summary>
@@ -988,25 +1067,25 @@ namespace Silk.NET.GLFW
         /// <param name="ypos">The desired y-coordinate, relative to the top edge of the client area.</param>
         /// <remarks>
         /// <para>
-        /// Wayland: This function will only work when the cursor mode is <see cref="CursorModeValue.CursorDisabled"/>,
+        /// Wayland: This function will only work when the cursor mode is <see cref="CursorModeValue.CursorDisabled" />,
         ///          otherwise it will do nothing.
         /// </para>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void SetCursorPos(Window* window, double xpos, double ypos);
 
         /// <summary>
         /// <para>
-        /// Creates a new custom cursor image that can be set for a window with <see cref="SetCursor"/>.
+        /// Creates a new custom cursor image that can be set for a window with <see cref="SetCursor" />.
         /// </para>
         /// <para>
-        /// The cursor can be destroyed with <see cref="DestroyCursor"/>.
-        /// Any remaining cursors are destroyed by <see cref="Terminate"/>.
+        /// The cursor can be destroyed with <see cref="DestroyCursor" />.
+        /// Any remaining cursors are destroyed by <see cref="Terminate" />.
         /// </para>
         /// <para>
         /// The pixels are 32-bit, little-endian, non-premultiplied RGBA,
@@ -1030,14 +1109,14 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe Cursor* CreateCursor(Image* image, int xhot, int yhot);
 
         /// <summary>
         /// <para>
-        /// Returns a cursor with a standard shape, that can be set for a window with <see cref="SetCursor"/>.
+        /// Returns a cursor with a standard shape, that can be set for a window with <see cref="SetCursor" />.
         /// </para>
         /// </summary>
         /// <param name="shape">One of the standard shapes.</param>
@@ -1047,15 +1126,16 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidEnum"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidEnum" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe Cursor* CreateStandardCursor(CursorShape shape);
 
         /// <summary>
         /// <para>
-        /// This function destroys a cursor previously created with <see cref="CreateCursor"/>.
-        /// Any remaining cursors will be destroyed by <see cref="Terminate"/>.
+        /// This function destroys a cursor previously created with <see cref="CreateCursor" />.
+        /// Any remaining cursors will be destroyed by <see cref="Terminate" />.
         /// </para>
         /// <para>
         /// If the specified cursor is current for any window, that window will be reverted to the default cursor.
@@ -1071,7 +1151,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void DestroyCursor(Cursor* cursor);
@@ -1083,7 +1163,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// The set cursor will only be visible
-        /// when the cursor mode of the window is <see cref="CursorModeValue.CursorNormal"/>.
+        /// when the cursor mode of the window is <see cref="CursorModeValue.CursorNormal" />.
         /// </para>
         /// <para>
         /// On some platforms, the set cursor may not be visible unless the window also has input focus.
@@ -1096,7 +1176,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void SetCursor(Window* window, Cursor* cursor);
@@ -1117,7 +1197,8 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidEnum"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidEnum" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         bool JoystickPresent(int jid);
@@ -1130,7 +1211,7 @@ namespace Silk.NET.GLFW
         /// <para>
         /// If the specified joystick is not present
         /// this function will return <c>null</c> but will not generate an error.
-        /// This can be used instead of first calling <see cref="JoystickPresent"/>.
+        /// This can be used instead of first calling <see cref="JoystickPresent" />.
         /// </para>
         /// </summary>
         /// <param name="jid">The joystick to query.</param>
@@ -1151,7 +1232,8 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidEnum"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidEnum" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe float* GetJoystickAxes(int jid, out int count);
@@ -1159,23 +1241,23 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// <para>
         /// This function returns the state of all buttons of the specified joystick.
-        /// Each element in the array is either <see cref="InputAction.Press"/> or <see cref="InputAction.Release"/>.
+        /// Each element in the array is either <see cref="InputAction.Press" /> or <see cref="InputAction.Release" />.
         /// </para>
         /// <para>
-        /// For backward compatibility with earlier versions that did not have <see cref="GetJoystickHats"/>,
+        /// For backward compatibility with earlier versions that did not have <see cref="GetJoystickHats" />,
         /// the button array also includes all hats, each represented as four buttons.
         /// </para>
         /// <para>
-        /// The hats are in the same order as returned by <see cref="GetJoystickHats"/> and are in the order
+        /// The hats are in the same order as returned by <see cref="GetJoystickHats" /> and are in the order
         /// up, right, down and left.
         /// </para>
         /// <para>
-        /// To disable these extra buttons, set the <see cref="NET.GLFW.InitHint.JoystickHatButtons"/>
+        /// To disable these extra buttons, set the <see cref="NET.GLFW.InitHint.JoystickHatButtons" />
         /// init hint before initialization.
         /// </para>
         /// <para>
         /// If the specified joystick is not present this function will return <c>null</c> but will not generate an error.
-        /// This can be used instead of first calling <see cref="JoystickPresent"/>.
+        /// This can be used instead of first calling <see cref="JoystickPresent" />.
         /// </para>
         /// </summary>
         /// <param name="jid">The joystick to query.</param>
@@ -1195,7 +1277,8 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidEnum"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidEnum" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe byte* GetJoystickButtons(int jid, out int count);
@@ -1203,7 +1286,7 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// <para>
         /// This function returns the state of all hats of the specified joystick.
-        /// Each element in the array is one of the <see cref="JoystickHats"/>.
+        /// Each element in the array is one of the <see cref="JoystickHats" />.
         /// </para>
         /// <para>
         /// The diagonal directions are bitwise combinations of the primary (up, right, down and left) directions
@@ -1217,7 +1300,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// If the specified joystick is not present, this function will return NULL but will not generate an error.
-        /// This can be used instead of first calling <see cref="JoystickPresent"/>.
+        /// This can be used instead of first calling <see cref="JoystickPresent" />.
         /// </para>
         /// </summary>
         /// <param name="jid">The joystick to query.</param>
@@ -1238,7 +1321,8 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidEnum"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidEnum" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe JoystickHats* GetJoystickHats(int jid, out int count);
@@ -1249,7 +1333,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// If the specified joystick is not present this function will return <c>null</c> but will not generate an error.
-        /// This can be used instead of first calling <see cref="JoystickPresent"/>.
+        /// This can be used instead of first calling <see cref="JoystickPresent" />.
         /// </para>
         /// </summary>
         /// <param name="jid">The joystick to query.</param>
@@ -1265,7 +1349,8 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidEnum"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidEnum" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         string GetJoystickName(int jid);
@@ -1282,7 +1367,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// If the specified joystick is not present this function will return <c>null</c> but will not generate an error.
-        /// This can be used instead of first calling <see cref="JoystickPresent"/>.
+        /// This can be used instead of first calling <see cref="JoystickPresent" />.
         /// </para>
         /// <para>
         /// The GUID uses the format introduced in SDL 2.0.5.
@@ -1305,7 +1390,8 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidEnum"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidEnum" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         string GetJoystickGUID(int jid);
@@ -1314,7 +1400,7 @@ namespace Silk.NET.GLFW
         /// <para>
         /// This function sets the user-defined pointer of the specified joystick.
         /// The current value is retained until the joystick is disconnected.
-        /// The initial value is <see cref="IntPtr.Zero"/>.
+        /// The initial value is <see cref="IntPtr.Zero" />.
         /// </para>
         /// <para>
         /// This function may be called from the joystick callback, even for a joystick that is being disconnected.
@@ -1327,7 +1413,7 @@ namespace Silk.NET.GLFW
         /// This function may be called from any thread. Access is not synchronized.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         void SetJoystickUserPointer(int jid, IntPtr ptr);
@@ -1335,20 +1421,20 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// <para>
         /// This function returns the current value of the user-defined pointer of the specified joystick.
-        /// The initial value is <see cref="IntPtr.Zero"/>.
+        /// The initial value is <see cref="IntPtr.Zero" />.
         /// </para>
         /// <para>
         /// This function may be called from the joystick callback, even for a joystick that is being disconnected.
         /// </para>
         /// </summary>
         /// <param name="jid">The joystick whose pointer to return.</param>
-        /// <returns>The user-defined pointer of the given <paramref name="jid"/>.</returns>
+        /// <returns>The user-defined pointer of the given <paramref name="jid" />.</returns>
         /// <remarks>
         /// <para>
         /// This function may be called from any thread. Access is not synchronized.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         IntPtr GetJoystickUserPointer(int jid);
@@ -1368,17 +1454,16 @@ namespace Silk.NET.GLFW
         /// </returns>
         /// <remarks>
         /// <para>
-        /// Call <see cref="JoystickPresent"/> to check if a joystick is present regardless of whether it has a mapping.
+        /// Call <see cref="JoystickPresent" /> to check if a joystick is present regardless of whether it has a mapping.
         /// </para>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
-        ///
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.InvalidEnum"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="GetGamepadState"/>
+        /// <seealso cref="GetGamepadState" />
         bool JoystickIsGamepad(int jid);
 
         /// <summary>
@@ -1398,7 +1483,8 @@ namespace Silk.NET.GLFW
         /// for a description of the format.
         /// </para>
         /// <para>
-        /// If there is already a gamepad mapping for a given GUID in the internal list, it will be replaced by the one passed to this function. If the library is terminated and re-initialized the internal list will revert to the built-in default.
+        /// If there is already a gamepad mapping for a given GUID in the internal list, it will be replaced by the one passed to
+        /// this function. If the library is terminated and re-initialized the internal list will revert to the built-in default.
         /// </para>
         /// </summary>
         /// <param name="newMapping">The string containing the gamepad mappings.</param>
@@ -1408,7 +1494,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.InvalidValue"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidValue" />.
         /// </para>
         /// </remarks>
         bool UpdateGamepadMappings(string newMapping);
@@ -1430,7 +1516,7 @@ namespace Silk.NET.GLFW
         /// </returns>
         /// <remarks>
         /// <para>
-        /// Call <see cref="JoystickPresent"/> to check whether it is present regardless of whether it has a mapping.
+        /// Call <see cref="JoystickPresent" /> to check whether it is present regardless of whether it has a mapping.
         /// </para>
         /// <para>
         /// The returned string is allocated and freed by GLFW. You should not free it yourself.
@@ -1450,14 +1536,14 @@ namespace Silk.NET.GLFW
         /// <para>
         /// If the specified joystick is not present or does not have a gamepad mapping
         /// this function will return <c>false</c> but will not generate an error.
-        /// Call <see cref="JoystickPresent"/> to check whether it is present regardless of whether it has a mapping.
+        /// Call <see cref="JoystickPresent" /> to check whether it is present regardless of whether it has a mapping.
         /// </para>
         /// <para>
         /// The Guide button may not be available for input as it is often hooked by the system or the Steam client.
         /// </para>
         /// <para>
-        /// Not all devices have all the buttons or axes provided by <see cref="GamepadState"/>.
-        /// Unavailable buttons and axes will always report <see cref="InputAction.Release"/> and 0.0 respectively.
+        /// Not all devices have all the buttons or axes provided by <see cref="GamepadState" />.
+        /// Unavailable buttons and axes will always report <see cref="InputAction.Release" /> and 0.0 respectively.
         /// </para>
         /// </summary>
         /// <param name="jid">The joystick to query.</param>
@@ -1471,7 +1557,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.InvalidEnum"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
         bool GetGamepadState(int jid, out GamepadState state);
@@ -1481,7 +1567,7 @@ namespace Silk.NET.GLFW
         /// This function returns the value of the GLFW timer.
         /// </para>
         /// <para>
-        /// Unless the timer has been set using <see cref="SetTime"/>,
+        /// Unless the timer has been set using <see cref="SetTime" />,
         /// the timer measures time elapsed since GLFW was initialized.
         /// </para>
         /// <para>
@@ -1496,11 +1582,10 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// Reading and writing of the internal timer offset is not atomic,
-        /// so it needs to be externally synchronized with calls to <see cref="SetTime"/>.
+        /// so it needs to be externally synchronized with calls to <see cref="SetTime" />.
         /// </para>
-        ///
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         double GetTime();
@@ -1521,10 +1606,10 @@ namespace Silk.NET.GLFW
         /// <para>
         /// This function may be called from any thread.
         /// Reading and writing of the internal timer offset is not atomic,
-        /// so it needs to be externally synchronized with calls to <see cref="GetTime"/>.
+        /// so it needs to be externally synchronized with calls to <see cref="GetTime" />.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.InvalidValue"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidValue" />.
         /// </para>
         /// </remarks>
         void SetTime(double time);
@@ -1532,7 +1617,7 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// <para>
         /// This function returns the current value of the raw timer, measured in 1 / frequency seconds.
-        /// To get the frequency, call <see cref="GetTimerFrequency"/>.
+        /// To get the frequency, call <see cref="GetTimerFrequency" />.
         /// </para>
         /// </summary>
         /// <returns>The value of the timer, or zero if an error occurred.</returns>
@@ -1541,7 +1626,7 @@ namespace Silk.NET.GLFW
         /// This function may be called from any thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         long GetTimerValue();
@@ -1557,7 +1642,7 @@ namespace Silk.NET.GLFW
         /// This function may be called from any thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         long GetTimerFrequency();
@@ -1573,7 +1658,7 @@ namespace Silk.NET.GLFW
         /// This function may be called from any thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         unsafe Window* GetCurrentContext();
@@ -1589,7 +1674,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// The specified window must have an OpenGL or OpenGL ES context.
-        /// Specifying a window without a context will generate a <see cref="ErrorCode.NoWindowContext"/> error.
+        /// Specifying a window without a context will generate a <see cref="ErrorCode.NoWindowContext" /> error.
         /// </para>
         /// </summary>
         /// <param name="window">The window whose buffers to swap.</param>
@@ -1601,7 +1686,8 @@ namespace Silk.NET.GLFW
         /// This function may be called from any thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.NoWindowContext"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.NoWindowContext" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void SwapBuffers(Window* window);
@@ -1614,7 +1700,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// A context must be current on the calling thread.
-        /// Calling this function without a current context will cause a <see cref="ErrorCode.NoWindowContext"/> error.
+        /// Calling this function without a current context will cause a <see cref="ErrorCode.NoWindowContext" /> error.
         /// </para>
         /// <para>
         /// As this functions retrieves and searches one or more extension strings each call,
@@ -1629,7 +1715,8 @@ namespace Silk.NET.GLFW
         /// This function may be called from any thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.NoContext"/>, <see cref="ErrorCode.InvalidValue"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.NoContext" />,
+        /// <see cref="ErrorCode.InvalidValue" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         bool ExtensionSupported(string extensionName);
@@ -1670,18 +1757,19 @@ namespace Silk.NET.GLFW
         /// or borderless full screen windows, see
         /// <a href="https://www.glfw.org/docs/latest/window_guide.html#window_windowed_full_screen">
         /// "Windowed full screen" windows
-        /// </a>.
+        /// </a>
+        /// .
         /// </para>
         /// <para>
         /// Once you have created the window, you can switch it between windowed and full screen mode
-        /// with <see cref="SetWindowMonitor"/>. If the window has an OpenGL or OpenGL ES context, it will be unaffected.
+        /// with <see cref="SetWindowMonitor" />. If the window has an OpenGL or OpenGL ES context, it will be unaffected.
         /// </para>
         /// <para>
         /// By default, newly created windows use the placement recommended by the window system.
         /// To create the window at a specific position,
-        /// make it initially invisible using the <see cref="WindowHintBool.Visible"/> window hint,
-        /// set its position(see <see cref="SetWindowPos"/>) and then show it
-        /// (see <see cref="ShowWindow"/>).
+        /// make it initially invisible using the <see cref="WindowHintBool.Visible" /> window hint,
+        /// set its position(see <see cref="SetWindowPos" />) and then show it
+        /// (see <see cref="ShowWindow" />).
         /// </para>
         /// <para>
         /// As long as at least one full screen window is not iconified, the screensaver is prohibited from starting.
@@ -1689,7 +1777,7 @@ namespace Silk.NET.GLFW
         /// <para>
         /// Window systems put limits on window sizes.
         /// Very large or very small window dimensions may be overridden by the window system on creation.
-        /// Check the actual size after creation(see <see cref="GetWindowSize" /> or <see cref="SetWindowSizeCallback"/>.
+        /// Check the actual size after creation(see <see cref="GetWindowSize" /> or <see cref="SetWindowSizeCallback" />.
         /// </para>
         /// <para>
         /// The <a href="https://www.glfw.org/docs/latest/window_guide.html#buffer_swap">swap interval</a>
@@ -1715,13 +1803,15 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// Windows: If the executable has an icon resource named GLFW_ICON, it will be set as the initial icon for the window.
-        ///          If no such icon is present, the IDI_WINLOGO icon will be used instead. To set a different icon, see <see cref="SetWindowIcon"/>.
+        ///          If no such icon is present, the IDI_WINLOGO icon will be used instead. To set a different icon, see
+        /// <see cref="SetWindowIcon" />.
         /// </para>
         /// <para>
         /// Windows: The context to share resources with must not be current on any other thread.
         /// </para>
         /// <para>
-        /// OS X: The GLFW window has no icon, as it is not a document window, but the dock icon will be the same as the application bundle's icon.
+        /// OS X: The GLFW window has no icon, as it is not a document window, but the dock icon will be the same as the
+        /// application bundle's icon.
         /// For more information on bundles, see the Bundle Programming Guide in the Mac Developer Library.
         /// </para>
         /// <para>
@@ -1733,12 +1823,14 @@ namespace Silk.NET.GLFW
         /// OS X: On OS X 10.10 and later the window frame will not be rendered at full resolution on Retina displays
         ///       unless the NSHighResolutionCapable key is enabled in the application bundle's Info.plist.
         ///       For more information, see High Resolution Guidelines for OS X in the Mac Developer Library.
-        ///       The GLFW test and example programs use a custom Info.plist template for this, which can be found as CMake/MacOSXBundleInfo.plist.in in the source tree.
+        ///       The GLFW test and example programs use a custom Info.plist template for this, which can be found as
+        /// CMake/MacOSXBundleInfo.plist.in in the source tree.
         /// </para>
         /// <para>
         /// X11: Some window managers will not respect the placement of initially hidden windows.
         /// X11: Due to the asynchronous nature of X11, it may take a moment for a window to reach its requested state.
-        ///      This means you may not be able to query the final size, position or other attributes directly after window creation.
+        ///      This means you may not be able to query the final size, position or other attributes directly after window
+        /// creation.
         /// </para>
         /// <para>
         /// This function must not be called from a callback.
@@ -1747,8 +1839,10 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidEnum"/>, <see cref="ErrorCode.InvalidValue"/>, <see cref="ErrorCode.ApiUnavailable"/>,
-        /// <see cref="ErrorCode.VersionUnavailable"/>, <see cref="ErrorCode.FormatUnavailable"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidEnum" />,
+        /// <see cref="ErrorCode.InvalidValue" />, <see cref="ErrorCode.ApiUnavailable" />,
+        /// <see cref="ErrorCode.VersionUnavailable" />, <see cref="ErrorCode.FormatUnavailable" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe Window* CreateWindow(int width, int height, string title, Monitor* monitor, Window* share);
@@ -1774,10 +1868,10 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="CreateWindow"/>
+        /// <seealso cref="CreateWindow" />
         unsafe void DestroyWindow(Window* window);
 
         /// <summary>
@@ -1787,7 +1881,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// By default, both windowed and full screen mode windows are focused when initially created.
-        /// Set the <see cref="WindowHintBool.Focused"/> to disable this behavior.
+        /// Set the <see cref="WindowHintBool.Focused" /> to disable this behavior.
         /// </para>
         /// <para>
         /// Do not use this function to steal focus from other applications unless you are certain
@@ -1801,7 +1895,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void FocusWindow(Window* window);
@@ -1822,20 +1916,20 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// The returned string is allocated and freed by GLFW. You should not free it yourself.
-        /// The returned string is valid only until the next call to <see cref="GetClipboardString"/> or
-        /// <see cref="SetClipboardString"/>.
+        /// The returned string is valid only until the next call to <see cref="GetClipboardString" /> or
+        /// <see cref="SetClipboardString" />.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="SetClipboardString"/>
+        /// <seealso cref="SetClipboardString" />
         unsafe string GetClipboardString(Window* window);
 
         /// <summary>
         /// <para>
         /// This function retrieves the size, in pixels, of the framebuffer of the specified window.
-        /// If you wish to retrieve the size of the window in screen coordinates, see <see cref="GetWindowSize"/>.
+        /// If you wish to retrieve the size of the window in screen coordinates, see <see cref="GetWindowSize" />.
         /// </para>
         /// <para>
         /// Any or all of the size arguments may be <c>out _</c>.
@@ -1850,7 +1944,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void GetFramebufferSize(Window* window, out int width, out int height);
@@ -1858,45 +1952,45 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// <para>
         /// This function returns the value of an input option for the specified window.
-        /// The mode must be <see cref="StickyAttributes.StickyKeys"/> or <see cref="StickyAttributes.StickyMouseButtons"/>.
+        /// The mode must be <see cref="StickyAttributes.StickyKeys" /> or <see cref="StickyAttributes.StickyMouseButtons" />.
         /// </para>
         /// </summary>
         /// <param name="window">The window to query.</param>
         /// <param name="mode">
-        /// Either <see cref="StickyAttributes.StickyKeys"/> or <see cref="StickyAttributes.StickyMouseButtons"/>.
+        /// Either <see cref="StickyAttributes.StickyKeys" /> or <see cref="StickyAttributes.StickyMouseButtons" />.
         /// </param>
-        /// <returns>TODO: return value is either InputModeValue or bool dependant on <paramref name="mode"/>.</returns>
+        /// <returns>TODO: return value is either InputModeValue or bool dependant on <paramref name="mode" />.</returns>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.InvalidEnum"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="SetInputMode(Window*, StickyAttributes, bool)"/>
+        /// <seealso cref="SetInputMode(Window*, StickyAttributes, bool)" />
         unsafe bool GetInputMode(Window* window, StickyAttributes mode);
 
         /// <summary>
         /// <para>
         /// This function returns the value of an input option for the specified window.
-        /// The mode must be <see cref="CursorStateAttribute.Cursor"/>.
+        /// The mode must be <see cref="CursorStateAttribute.Cursor" />.
         /// </para>
         /// </summary>
         /// <param name="window">The window to query.</param>
         /// <param name="mode">
-        /// <see cref="CursorStateAttribute.Cursor"/>.
+        /// <see cref="CursorStateAttribute.Cursor" />.
         /// </param>
-        /// <returns>TODO: return value is either InputModeValue or bool dependant on <paramref name="mode"/>.</returns>
+        /// <returns>TODO: return value is either InputModeValue or bool dependant on <paramref name="mode" />.</returns>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.InvalidEnum"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="SetInputMode(Window*,CursorStateAttribute, CursorModeValue)"/>
+        /// <seealso cref="SetInputMode(Window*,CursorStateAttribute, CursorModeValue)" />
         unsafe CursorModeValue GetInputMode(Window* window, CursorStateAttribute mode);
 
         /// <summary>
@@ -1913,10 +2007,10 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// The primary monitor is always first in the array returned by <see cref="GetMonitors"/>.
+        /// The primary monitor is always first in the array returned by <see cref="GetMonitors" />.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         unsafe Monitor* GetPrimaryMonitor();
@@ -1942,10 +2036,10 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="GetVideoModes"/>
+        /// <seealso cref="GetVideoModes" />
         unsafe VideoMode* GetVideoMode(Monitor* monitor);
 
         /// <summary>
@@ -1968,7 +2062,8 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidEnum"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidEnum" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe bool GetWindowAttrib(Window* window, WindowAttributeGetter attribute);
@@ -1976,7 +2071,7 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// <para>
         /// This function retrieves the size, in screen coordinates, of the client area of the specified window.
-        /// If you wish to retrieve the size of the framebuffer of the window in pixels, see <see cref="GetFramebufferSize"/>.
+        /// If you wish to retrieve the size of the framebuffer of the window in pixels, see <see cref="GetFramebufferSize" />.
         /// </para>
         /// <para>
         /// Any or all of the size arguments may be <c>out _</c>.
@@ -1991,10 +2086,10 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="SetWindowSize"/>
+        /// <seealso cref="SetWindowSize" />
         unsafe void GetWindowSize(Window* window, out int width, out int height);
 
         /// <summary>
@@ -2015,10 +2110,10 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="SetWindowPos"/>
+        /// <seealso cref="SetWindowPos" />
         unsafe void GetWindowPos(Window* window, out int x, out int y);
 
         /// <summary>
@@ -2033,10 +2128,10 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="SetWindowMonitor"/>
+        /// <seealso cref="SetWindowMonitor" />
         unsafe Monitor* GetWindowMonitor(Window* window);
 
         /// <summary>
@@ -2051,7 +2146,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void HideWindow(Window* window);
@@ -2072,7 +2167,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void IconifyWindow(Window* window);
@@ -2091,11 +2186,11 @@ namespace Silk.NET.GLFW
         /// <para>
         /// On machines that support <c>GL_KHR_context_flush_control</c>,
         /// you can control whether a context performs this flush
-        /// by setting the <see cref="WindowHintReleaseBehavior.ContextReleaseBehavior"/> window hint.
+        /// by setting the <see cref="WindowHintReleaseBehavior.ContextReleaseBehavior" /> window hint.
         /// </para>
         /// <para>
         /// The specified window must have an OpenGL or OpenGL ES context.
-        /// Specifying a window without a context will generate a <see cref="ErrorCode.NoWindowContext"/> error.
+        /// Specifying a window without a context will generate a <see cref="ErrorCode.NoWindowContext" /> error.
         /// </para>
         /// </summary>
         /// <param name="window">
@@ -2106,10 +2201,11 @@ namespace Silk.NET.GLFW
         /// This function may be called from any thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.NoWindowContext"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.NoWindowContext" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="GetCurrentContext"/>
+        /// <seealso cref="GetCurrentContext" />
         unsafe void MakeContextCurrent(Window* window);
 
         /// <summary>
@@ -2127,7 +2223,7 @@ namespace Silk.NET.GLFW
         /// This function may only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void MaximizeWindow(Window* window);
@@ -2160,7 +2256,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         void PollEvents();
@@ -2168,7 +2264,7 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// <para>
         /// This function posts an empty event from the current thread to the event queue,
-        /// causing <see cref="WaitEvents"/> or <see cref="WaitEventsTimeout"/> to return.
+        /// causing <see cref="WaitEvents" /> or <see cref="WaitEventsTimeout" /> to return.
         /// </para>
         /// <para>
         /// If no windows exist, this function returns immediately.
@@ -2180,7 +2276,7 @@ namespace Silk.NET.GLFW
         /// This function may be called from any thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         void PostEmptyEvent();
@@ -2191,7 +2287,8 @@ namespace Silk.NET.GLFW
         /// If the window is already restored, this function does nothing.
         /// </para>
         /// <para>
-        /// If the specified window is a full screen window, the resolution chosen for the window is restored on the selected monitor.
+        /// If the specified window is a full screen window, the resolution chosen for the window is restored on the selected
+        /// monitor.
         /// </para>
         /// </summary>
         /// <param name="window">The window to restore.</param>
@@ -2200,7 +2297,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void RestoreWindow(Window* window);
@@ -2223,7 +2320,7 @@ namespace Silk.NET.GLFW
         /// for example a Super (Command) key on OS X or Alt key on Windows.
         /// </para>
         /// <para>
-        /// There is a character with modifiers callback(<see cref="SetCharModsCallback"/>) that receives these events.
+        /// There is a character with modifiers callback(<see cref="SetCharModsCallback" />) that receives these events.
         /// </para>
         /// </summary>
         /// <param name="window">The window whose callback to set.</param>
@@ -2236,7 +2333,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         unsafe GLFWCallbacks.CharCallback SetCharCallback(Window* window, GLFWCallbacks.CharCallback callback);
@@ -2251,13 +2348,13 @@ namespace Silk.NET.GLFW
         /// For regular Unicode text input, see the character callback.
         /// </para>
         /// <para>
-        /// Like the character callback(<see cref="SetCharCallback"/>),
+        /// Like the character callback(<see cref="SetCharCallback" />),
         /// the character with modifiers callback deals with characters and is keyboard layout dependent.
         /// Characters do not map 1:1 to physical keys, as a key may produce zero, one, or more characters.
         /// </para>
         /// <para>
         /// If you want to know whether a specific physical key was pressed or released,
-        /// see the key callback(<see cref="SetKeyCallback"/>) instead.
+        /// see the key callback(<see cref="SetKeyCallback" />) instead.
         /// </para>
         /// </summary>
         /// <param name="window">The window whose callback to set.</param>
@@ -2268,10 +2365,11 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.CharModsCallback SetCharModsCallback(Window* window, GLFWCallbacks.CharModsCallback callback);
+        unsafe GLFWCallbacks.CharModsCallback SetCharModsCallback(Window* window,
+            GLFWCallbacks.CharModsCallback callback);
 
         /// <summary>
         /// <para>
@@ -2288,10 +2386,10 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="GetClipboardString"/>
+        /// <seealso cref="GetClipboardString" />
         unsafe void SetClipboardString(Window* window, string data);
 
         /// <summary>
@@ -2310,10 +2408,11 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.CursorEnterCallback SetCursorEnterCallback(Window* window, GLFWCallbacks.CursorEnterCallback callback);
+        unsafe GLFWCallbacks.CursorEnterCallback SetCursorEnterCallback(Window* window,
+            GLFWCallbacks.CursorEnterCallback callback);
 
         /// <summary>
         /// <para>
@@ -2335,10 +2434,11 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.CursorPosCallback SetCursorPosCallback(Window* window, GLFWCallbacks.CursorPosCallback callback);
+        unsafe GLFWCallbacks.CursorPosCallback SetCursorPosCallback(Window* window,
+            GLFWCallbacks.CursorPosCallback callback);
 
         /// <summary>
         /// <para>
@@ -2361,7 +2461,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         unsafe GLFWCallbacks.DropCallback SetDropCallback(Window* window, GLFWCallbacks.DropCallback callback);
@@ -2388,7 +2488,7 @@ namespace Silk.NET.GLFW
         /// <returns>The previously set callback, or <c>null</c> if no callback was set.</returns>
         /// <remarks>
         /// <para>
-        /// This function may be called before <see cref="Init"/>.
+        /// This function may be called before <see cref="Init" />.
         /// </para>
         /// <para>
         /// This function must only be called from the main thread.
@@ -2399,26 +2499,27 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// <para>
         /// This function sets an input mode option for the specified window.
-        /// The mode must be <see cref="CursorStateAttribute.Cursor"/>.
+        /// The mode must be <see cref="CursorStateAttribute.Cursor" />.
         /// </para>
         /// <para>
-        /// If the mode is <see cref="CursorStateAttribute.Cursor"/>, the value must be one of the following cursor modes:
-        /// - <see cref="CursorModeValue.CursorNormal"/> makes the cursor visible and behaving normally.
-        /// - <see cref="CursorModeValue.CursorHidden"/> makes the cursor invisible when it is over the client area of
+        /// If the mode is <see cref="CursorStateAttribute.Cursor" />, the value must be one of the following cursor modes:
+        /// - <see cref="CursorModeValue.CursorNormal" /> makes the cursor visible and behaving normally.
+        /// - <see cref="CursorModeValue.CursorHidden" /> makes the cursor invisible when it is over the client area of
         ///   the window but does not restrict the cursor from leaving.
-        /// - <see cref="CursorModeValue.CursorDisabled"/> hides and grabs the cursor, providing virtual
+        /// - <see cref="CursorModeValue.CursorDisabled" /> hides and grabs the cursor, providing virtual
         ///   and unlimited cursor movement. This is useful for implementing for example 3D camera controls.
         /// </para>
         /// </summary>
         /// <param name="window">The window whose input mode to set.</param>
-        /// <param name="mode"><see cref="CursorStateAttribute.Cursor"/>.</param>
+        /// <param name="mode"><see cref="CursorStateAttribute.Cursor" />.</param>
         /// <param name="value">The new value of the specified input mode.</param>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidEnum"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidEnum" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void SetInputMode(Window* window, CursorStateAttribute mode, CursorModeValue value);
@@ -2426,29 +2527,31 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// <para>
         /// This function sets an input mode option for the specified window.
-        /// The mode must be <see cref="StickyAttributes.StickyKeys"/>
-        /// or <see cref="StickyAttributes.StickyMouseButtons"/>.
+        /// The mode must be <see cref="StickyAttributes.StickyKeys" />
+        /// or <see cref="StickyAttributes.StickyMouseButtons" />.
         /// </para>
         /// <para>
-        /// If the mode is <see cref="StickyAttributes.StickyKeys"/>, the value must be either <c>true</c>
+        /// If the mode is <see cref="StickyAttributes.StickyKeys" />, the value must be either <c>true</c>
         /// to enable sticky keys, or <c>false</c> to disable it.
         /// </para>
         /// <para>
         /// If sticky keys are enabled, a key press will ensure that
-        /// <see cref="GetKey"/> returns <see cref="InputAction.Press"/> the next time it is called even if the key had been released before the call.
+        /// <see cref="GetKey" /> returns <see cref="InputAction.Press" /> the next time it is called even if the key had been
+        /// released before the call.
         /// This is useful when you are only interested in whether keys have been pressed but not when or in which order.
         /// </para>
         /// <para>
-        /// If the mode is <see cref="StickyAttributes.StickyMouseButtons"/>, the value must be either <c>true</c>
+        /// If the mode is <see cref="StickyAttributes.StickyMouseButtons" />, the value must be either <c>true</c>
         /// to enable sticky mouse buttons, or <c>false</c> to disable it.
         /// If sticky mouse buttons are enabled, a mouse button press will ensure that
-        /// <see cref="GetMouseButton"/> returns <see cref="InputAction.Press"/> the next time it is called even if the mouse button had been released before the call.
+        /// <see cref="GetMouseButton" /> returns <see cref="InputAction.Press" /> the next time it is called even if the mouse
+        /// button had been released before the call.
         /// This is useful when you are only interested in whether mouse buttons have been pressed but not when or in which order.
         /// </para>
         /// </summary>
         /// <param name="window">The window whose input mode to set.</param>
         /// <param name="mode">
-        /// Either <see cref="StickyAttributes.StickyKeys"/> or <see cref="StickyAttributes.StickyMouseButtons"/>.
+        /// Either <see cref="StickyAttributes.StickyKeys" /> or <see cref="StickyAttributes.StickyMouseButtons" />.
         /// </param>
         /// <param name="value">The new value of the specified input mode.</param>
         /// <remarks>
@@ -2456,7 +2559,8 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.InvalidEnum"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.InvalidEnum" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void SetInputMode(Window* window, StickyAttributes mode, bool value);
@@ -2476,30 +2580,31 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         GLFWCallbacks.JoystickCallback SetJoystickCallback(GLFWCallbacks.JoystickCallback callback);
 
         /// <summary>
         /// <para>
-        /// This function sets the key callback of the specified window, which is called when a key is pressed, repeated or released.
+        /// This function sets the key callback of the specified window, which is called when a key is pressed, repeated or
+        /// released.
         /// </para>
         /// <para>
         /// The key functions deal with physical keys, with layout independent
         /// key tokens(<see cref="Keys" />) named after their values in the standard US keyboard layout.
-        /// If you want to input text, use the character callback(<see cref="SetCharCallback"/>) instead.
+        /// If you want to input text, use the character callback(<see cref="SetCharCallback" />) instead.
         /// </para>
         /// <para>
         /// When a window loses input focus, it will generate synthetic key release events for all pressed keys.
         /// You can tell these events from user-generated events by the fact that the synthetic ones are generated
         /// after the focus loss event has been processed,
-        /// i.e. after the window focus callback(<see cref="SetWindowFocusCallback"/>) has been called.
+        /// i.e. after the window focus callback(<see cref="SetWindowFocusCallback" />) has been called.
         /// </para>
         /// <para>
         /// The scancode of a key is specific to that platform or sometimes even to that machine.
         /// Scancodes are intended to allow users to bind keys that don't have a GLFW key token.
-        /// Such keys have key set to <see cref="Keys.Unknown"/>, their state is not saved
+        /// Such keys have key set to <see cref="Keys.Unknown" />, their state is not saved
         /// and so it cannot be queried with <see cref="GetKey" />.
         /// </para>
         /// <para>
@@ -2516,7 +2621,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         unsafe GLFWCallbacks.KeyCallback SetKeyCallback(Window* window, GLFWCallbacks.KeyCallback callback);
@@ -2540,7 +2645,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         unsafe GLFWCallbacks.ScrollCallback SetScrollCallback(Window* window, GLFWCallbacks.ScrollCallback callback);
@@ -2560,7 +2665,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         GLFWCallbacks.MonitorCallback SetMonitorCallback(GLFWCallbacks.MonitorCallback callback);
@@ -2575,7 +2680,7 @@ namespace Silk.NET.GLFW
         /// it will generate synthetic mouse button release events for all pressed mouse buttons.
         /// You can tell these events from user-generated events by the fact that the synthetic ones are generated after
         /// the focus loss event has been processed,
-        /// i.e. after the window focus callback(<see cref="SetWindowFocusCallback"/>) has been called.
+        /// i.e. after the window focus callback(<see cref="SetWindowFocusCallback" />) has been called.
         /// </para>
         /// </summary>
         /// <param name="window">The window whose callback to set.</param>
@@ -2588,10 +2693,11 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.MouseButtonCallback SetMouseButtonCallback(Window* window, GLFWCallbacks.MouseButtonCallback callback);
+        unsafe GLFWCallbacks.MouseButtonCallback SetMouseButtonCallback(Window* window,
+            GLFWCallbacks.MouseButtonCallback callback);
 
         /// <summary>
         /// <para>
@@ -2601,10 +2707,10 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// The close flag is set before this callback is called,
-        /// but you can modify it at any time with <see cref="SetWindowShouldClose"/>.
+        /// but you can modify it at any time with <see cref="SetWindowShouldClose" />.
         /// </para>
         /// <para>
-        /// The close callback is not triggered by <see cref="DestroyWindow"/>.
+        /// The close callback is not triggered by <see cref="DestroyWindow" />.
         /// </para>
         /// </summary>
         /// <param name="window">The window whose callback to set.</param>
@@ -2620,10 +2726,11 @@ namespace Silk.NET.GLFW
         /// OS X: Selecting Quit from the application menu will trigger the close callback for all windows.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.WindowCloseCallback SetWindowCloseCallback(Window* window, GLFWCallbacks.WindowCloseCallback callback);
+        unsafe GLFWCallbacks.WindowCloseCallback SetWindowCloseCallback(Window* window,
+            GLFWCallbacks.WindowCloseCallback callback);
 
         /// <summary>
         /// <para>
@@ -2633,7 +2740,7 @@ namespace Silk.NET.GLFW
         /// <para>
         /// After the focus callback is called for a window that lost input focus,
         /// synthetic key and mouse button release events will be generated for all such that had been pressed.
-        /// For more information, see <see cref="SetKeyCallback"/> and <see cref="SetMouseButtonCallback"/>.
+        /// For more information, see <see cref="SetKeyCallback" /> and <see cref="SetMouseButtonCallback" />.
         /// </para>
         /// </summary>
         /// <param name="window">The window whose callback to set.</param>
@@ -2646,10 +2753,11 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.WindowFocusCallback SetWindowFocusCallback(Window* window, GLFWCallbacks.WindowFocusCallback callback);
+        unsafe GLFWCallbacks.WindowFocusCallback SetWindowFocusCallback(Window* window,
+            GLFWCallbacks.WindowFocusCallback callback);
 
         /// <summary>
         /// <para>
@@ -2700,10 +2808,11 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.WindowIconifyCallback SetWindowIconifyCallback(Window* window, GLFWCallbacks.WindowIconifyCallback callback);
+        unsafe GLFWCallbacks.WindowIconifyCallback SetWindowIconifyCallback(Window* window,
+            GLFWCallbacks.WindowIconifyCallback callback);
 
         /// <summary>
         /// <para>
@@ -2723,7 +2832,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// If you only wish to update the resolution of a full screen window or the size of a windowed mode window,
-        /// see <see cref="SetWindowSize"/>.
+        /// see <see cref="SetWindowSize" />.
         /// </para>
         /// <para>
         /// When a window transitions from full screen to windowed mode,
@@ -2737,18 +2846,19 @@ namespace Silk.NET.GLFW
         /// <param name="y">The desired y-coordinate of the upper-left corner of the client area.</param>
         /// <param name="width">The desired with, in screen coordinates, of the client area or video mode.</param>
         /// <param name="height">The desired height, in screen coordinates, of the client area or video mode.</param>
-        /// <param name="refreshRate">The desired refresh rate, in Hz, of the video mode, or <see cref="GLFW.DontCare"/>.</param>
+        /// <param name="refreshRate">The desired refresh rate, in Hz, of the video mode, or <see cref="GLFW.DontCare" />.</param>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="GetWindowMonitor"/>
-        /// <seealso cref="SetWindowSize"/>
-        unsafe void SetWindowMonitor(Window* window, Monitor* monitor, int x, int y, int width, int height, int refreshRate);
+        /// <seealso cref="GetWindowMonitor" />
+        /// <seealso cref="SetWindowSize" />
+        unsafe void SetWindowMonitor(Window* window, Monitor* monitor, int x, int y, int width, int height,
+            int refreshRate);
 
         /// <summary>
         /// <para>
@@ -2775,10 +2885,10 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="GetWindowPos"/>
+        /// <seealso cref="GetWindowPos" />
         unsafe void SetWindowPos(Window* window, int x, int y);
 
         /// <summary>
@@ -2799,10 +2909,11 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.WindowPosCallback SetWindowPosCallback(Window* window, GLFWCallbacks.WindowPosCallback callback);
+        unsafe GLFWCallbacks.WindowPosCallback SetWindowPosCallback(Window* window,
+            GLFWCallbacks.WindowPosCallback callback);
 
         /// <summary>
         /// <para>
@@ -2829,10 +2940,11 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.WindowRefreshCallback SetWindowRefreshCallback(Window* window, GLFWCallbacks.WindowRefreshCallback callback);
+        unsafe GLFWCallbacks.WindowRefreshCallback SetWindowRefreshCallback(Window* window,
+            GLFWCallbacks.WindowRefreshCallback callback);
 
         /// <summary>
         /// <para>
@@ -2847,7 +2959,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// If you wish to update the refresh rate of the desired video mode in addition to its resolution,
-        /// see <see cref="SetWindowMonitor"/>.
+        /// see <see cref="SetWindowMonitor" />.
         /// </para>
         /// <para>
         /// The window manager may put limits on what sizes are allowed.
@@ -2862,11 +2974,11 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="GetWindowSize"/>
-        /// <seealso cref="SetWindowMonitor"/>
+        /// <seealso cref="GetWindowSize" />
+        /// <seealso cref="SetWindowMonitor" />
         unsafe void SetWindowSize(Window* window, int width, int height);
 
         /// <summary>
@@ -2887,10 +2999,11 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GLFWCallbacks.WindowSizeCallback SetWindowSizeCallback(Window* window, GLFWCallbacks.WindowSizeCallback callback);
+        unsafe GLFWCallbacks.WindowSizeCallback SetWindowSizeCallback(Window* window,
+            GLFWCallbacks.WindowSizeCallback callback);
 
         /// <summary>
         /// <para>
@@ -2907,7 +3020,7 @@ namespace Silk.NET.GLFW
         /// This function may be called from any thread. Access is not synchronized.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         unsafe void SetWindowShouldClose(Window* window, bool value);
@@ -2927,7 +3040,7 @@ namespace Silk.NET.GLFW
         /// OS X: The window title will not be updated until the next time you process events.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
         unsafe void SetWindowTitle(Window* window, string title);
@@ -2946,16 +3059,16 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="HideWindow"/>
+        /// <seealso cref="HideWindow" />
         unsafe void ShowWindow(Window* window);
 
         /// <summary>
         /// <para>
         /// This function sets the swap interval for the current OpenGL or OpenGL ES context,
-        /// i.e. the number of screen updates to wait from the time <see cref="SwapBuffers"/> was called
+        /// i.e. the number of screen updates to wait from the time <see cref="SwapBuffers" /> was called
         /// before swapping the buffers and returning.
         /// This is sometimes called vertical synchronization, vertical retrace synchronization or just vsync.
         /// </para>
@@ -2963,15 +3076,15 @@ namespace Silk.NET.GLFW
         /// A context that supports either of the <c>WGL_EXT_swap_control_tear</c>
         /// and <c>GLX_EXT_swap_control_tear</c> extensions also accepts negative swap intervals,
         /// which allows the driver to swap immediately even if a frame arrives a little bit late.
-        /// You can check for these extensions with <see cref="ExtensionSupported"/>.
+        /// You can check for these extensions with <see cref="ExtensionSupported" />.
         /// </para>
         /// <para>
         /// A context must be current on the calling thread.
-        /// Calling this function without a current context will cause a <see cref="ErrorCode.NoContext"/> error.
+        /// Calling this function without a current context will cause a <see cref="ErrorCode.NoContext" /> error.
         /// </para>
         /// </summary>
         /// <param name="interval">
-        /// The minimum number of screen updates to wait for until the buffers are swapped by <see cref="SwapBuffers"/>.
+        /// The minimum number of screen updates to wait for until the buffers are swapped by <see cref="SwapBuffers" />.
         /// </param>
         /// <remarks>
         /// <para>
@@ -2988,10 +3101,11 @@ namespace Silk.NET.GLFW
         /// This function may be called from any thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.NoContext"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.NoContext" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="SwapBuffers"/>
+        /// <seealso cref="SwapBuffers" />
         void SwapInterval(int interval);
 
         /// <summary>
@@ -2999,7 +3113,7 @@ namespace Silk.NET.GLFW
         /// This function puts the calling thread to sleep until at least one event is available in the event queue.
         /// </para>
         /// <para>
-        /// Once one or more events are available, it behaves exactly like <see cref="PollEvents"/>,
+        /// Once one or more events are available, it behaves exactly like <see cref="PollEvents" />,
         /// i.e. the events in the queue are processed and the function then returns immediately.
         /// </para>
         /// <para>
@@ -3012,7 +3126,7 @@ namespace Silk.NET.GLFW
         /// <para>
         /// On some platforms, a window move, resize or menu operation will cause event processing to block.
         /// This is due to how event processing is designed on those platforms.
-        /// You can use the window refresh callback (<see cref="SetWindowRefreshCallback"/>)
+        /// You can use the window refresh callback (<see cref="SetWindowRefreshCallback" />)
         /// to redraw the contents of your window when necessary during such operations.
         /// </para>
         /// <para>
@@ -3030,13 +3144,11 @@ namespace Silk.NET.GLFW
         /// </summary>
         /// <remarks>
         /// This function must only be called from the main thread.
-        ///
         /// This function must not be called from a callback.
-        ///
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </remarks>
-        /// <seealso cref="PollEvents"/>
-        /// <seealso cref="WaitEventsTimeout"/>
+        /// <seealso cref="PollEvents" />
+        /// <seealso cref="WaitEventsTimeout" />
         void WaitEvents();
 
         /// <summary>
@@ -3045,7 +3157,7 @@ namespace Silk.NET.GLFW
         /// or until the specified timeout is reached.
         /// </para>
         /// <para>
-        /// If one or more events are available, it behaves exactly like <see cref="PollEvents"/>,
+        /// If one or more events are available, it behaves exactly like <see cref="PollEvents" />,
         /// i.e. the events in the queue are processed and the function then returns immediately.
         /// </para>
         /// <para>
@@ -3063,7 +3175,7 @@ namespace Silk.NET.GLFW
         /// This is due to how event processing is designed on those platforms.
         /// </para>
         /// <para>
-        /// You can use the window refresh callback (<see cref="SetWindowRefreshCallback"/>)
+        /// You can use the window refresh callback (<see cref="SetWindowRefreshCallback" />)
         /// to redraw the contents of your window when necessary during such operations.
         /// </para>
         /// <para>
@@ -3090,190 +3202,190 @@ namespace Silk.NET.GLFW
         /// This function must not be called from a callback.
         /// </para>
         /// </remarks>
-        /// <seealso cref="PollEvents"/>
-        /// <seealso cref="WaitEvents"/>
+        /// <seealso cref="PollEvents" />
+        /// <seealso cref="WaitEvents" />
         void WaitEventsTimeout(double timeout);
 
         /// <summary>
         /// <para>
-        /// This function sets hints for the next call to <see cref="CreateWindow"/>.
+        /// This function sets hints for the next call to <see cref="CreateWindow" />.
         /// The hints, once set, retain their values
-        /// until changed by a call to <see cref="WindowHint(WindowHintInt,int)"/>
-        /// or <see cref="DefaultWindowHints"/>, or until the library is terminated.
+        /// until changed by a call to <see cref="WindowHint(WindowHintInt,int)" />
+        /// or <see cref="DefaultWindowHints" />, or until the library is terminated.
         /// </para>
         /// <para>
         /// This function does not check whether the specified hint values are valid.
         /// If you set hints to invalid values this will instead be reported
-        /// by the next call to <see cref="CreateWindow"/>.
+        /// by the next call to <see cref="CreateWindow" />.
         /// </para>
         /// </summary>
-        /// <param name="hint">The <see cref="WindowHintInt"/> to set.</param>
+        /// <param name="hint">The <see cref="WindowHintInt" /> to set.</param>
         /// <param name="value">The new value of the framebuffer attribute hint.</param>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.InvalidEnum"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="DefaultWindowHints"/>
+        /// <seealso cref="DefaultWindowHints" />
         void WindowHint(WindowHintInt hint, int value);
 
         /// <summary>
         /// <para>
-        /// This function sets hints for the next call to <see cref="CreateWindow"/>.
+        /// This function sets hints for the next call to <see cref="CreateWindow" />.
         /// The hints, once set, retain their values
-        /// until changed by a call to <see cref="WindowHint(WindowHintBool,bool)"/>
-        /// or <see cref="DefaultWindowHints"/>, or until the library is terminated.
+        /// until changed by a call to <see cref="WindowHint(WindowHintBool,bool)" />
+        /// or <see cref="DefaultWindowHints" />, or until the library is terminated.
         /// </para>
         /// <para>
         /// This function does not check whether the specified hint values are valid.
         /// If you set hints to invalid values this will instead be reported
-        /// by the next call to <see cref="CreateWindow"/>.
+        /// by the next call to <see cref="CreateWindow" />.
         /// </para>
         /// </summary>
-        /// <param name="hint">The <see cref="WindowHintInt"/> to set.</param>
+        /// <param name="hint">The <see cref="WindowHintInt" /> to set.</param>
         /// <param name="value">The new value of the framebuffer attribute hint.</param>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.InvalidEnum"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="DefaultWindowHints"/>
+        /// <seealso cref="DefaultWindowHints" />
         void WindowHint(WindowHintBool hint, bool value);
 
         /// <summary>
         /// <para>
-        /// This function sets hints for the next call to <see cref="CreateWindow"/>.
+        /// This function sets hints for the next call to <see cref="CreateWindow" />.
         /// The hints, once set, retain their values
-        /// until changed by a call to <see cref="WindowHint(WindowHintClientApi,ClientApi)"/>
-        /// or <see cref="DefaultWindowHints"/>, or until the library is terminated.
+        /// until changed by a call to <see cref="WindowHint(WindowHintClientApi,ClientApi)" />
+        /// or <see cref="DefaultWindowHints" />, or until the library is terminated.
         /// </para>
         /// <para>
         /// This function does not check whether the specified hint values are valid.
         /// If you set hints to invalid values this will instead be reported
-        /// by the next call to <see cref="CreateWindow"/>.
+        /// by the next call to <see cref="CreateWindow" />.
         /// </para>
         /// </summary>
-        /// <param name="hint"><see cref="WindowHintClientApi.ClientApi"/>.</param>
+        /// <param name="hint"><see cref="WindowHintClientApi.ClientApi" />.</param>
         /// <param name="value">The new value of the window hint.</param>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.InvalidEnum"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="DefaultWindowHints"/>
+        /// <seealso cref="DefaultWindowHints" />
         void WindowHint(WindowHintClientApi hint, ClientApi value);
 
         /// <summary>
         /// <para>
-        /// This function sets hints for the next call to <see cref="CreateWindow"/>.
+        /// This function sets hints for the next call to <see cref="CreateWindow" />.
         /// The hints, once set, retain their values
-        /// until changed by a call to <see cref="WindowHint(WindowHintReleaseBehavior,ReleaseBehavior)"/>
-        /// or <see cref="DefaultWindowHints"/>, or until the library is terminated.
+        /// until changed by a call to <see cref="WindowHint(WindowHintReleaseBehavior,ReleaseBehavior)" />
+        /// or <see cref="DefaultWindowHints" />, or until the library is terminated.
         /// </para>
         /// <para>
         /// This function does not check whether the specified hint values are valid.
         /// If you set hints to invalid values this will instead be reported
-        /// by the next call to <see cref="CreateWindow"/>.
+        /// by the next call to <see cref="CreateWindow" />.
         /// </para>
         /// </summary>
-        /// <param name="hint"><see cref="WindowHintReleaseBehavior.ContextReleaseBehavior"/>.</param>
+        /// <param name="hint"><see cref="WindowHintReleaseBehavior.ContextReleaseBehavior" />.</param>
         /// <param name="value">The new value of the window hint.</param>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.InvalidEnum"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="DefaultWindowHints"/>
+        /// <seealso cref="DefaultWindowHints" />
         void WindowHint(WindowHintReleaseBehavior hint, ReleaseBehavior value);
 
         /// <summary>
         /// <para>
-        /// This function sets hints for the next call to <see cref="CreateWindow"/>.
+        /// This function sets hints for the next call to <see cref="CreateWindow" />.
         /// The hints, once set, retain their values
-        /// until changed by a call to <see cref="WindowHint(WindowHintContextApi,ContextApi)"/>
-        /// or <see cref="DefaultWindowHints"/>, or until the library is terminated.
+        /// until changed by a call to <see cref="WindowHint(WindowHintContextApi,ContextApi)" />
+        /// or <see cref="DefaultWindowHints" />, or until the library is terminated.
         /// </para>
         /// <para>
         /// This function does not check whether the specified hint values are valid.
         /// If you set hints to invalid values this will instead be reported
-        /// by the next call to <see cref="CreateWindow"/>.
+        /// by the next call to <see cref="CreateWindow" />.
         /// </para>
         /// </summary>
-        /// <param name="hint"><see cref="WindowHintContextApi.ContextCreationApi"/>.</param>
+        /// <param name="hint"><see cref="WindowHintContextApi.ContextCreationApi" />.</param>
         /// <param name="value">The new value of the window hint.</param>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.InvalidEnum"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="DefaultWindowHints"/>
+        /// <seealso cref="DefaultWindowHints" />
         void WindowHint(WindowHintContextApi hint, ContextApi value);
 
         /// <summary>
         /// <para>
-        /// This function sets hints for the next call to <see cref="CreateWindow"/>.
+        /// This function sets hints for the next call to <see cref="CreateWindow" />.
         /// The hints, once set, retain their values
-        /// until changed by a call to <see cref="WindowHint(WindowHintRobustness,Robustness)"/>
-        /// or <see cref="DefaultWindowHints"/>, or until the library is terminated.
+        /// until changed by a call to <see cref="WindowHint(WindowHintRobustness,Robustness)" />
+        /// or <see cref="DefaultWindowHints" />, or until the library is terminated.
         /// </para>
         /// <para>
         /// This function does not check whether the specified hint values are valid.
         /// If you set hints to invalid values this will instead be reported
-        /// by the next call to <see cref="CreateWindow"/>.
+        /// by the next call to <see cref="CreateWindow" />.
         /// </para>
         /// </summary>
-        /// <param name="hint"><see cref="WindowHintRobustness.ContextRobustness"/>.</param>
+        /// <param name="hint"><see cref="WindowHintRobustness.ContextRobustness" />.</param>
         /// <param name="value">The new value of the window hint.</param>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.InvalidEnum"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="DefaultWindowHints"/>
+        /// <seealso cref="DefaultWindowHints" />
         void WindowHint(WindowHintRobustness hint, Robustness value);
 
         /// <summary>
         /// <para>
-        /// This function sets hints for the next call to <see cref="CreateWindow"/>.
+        /// This function sets hints for the next call to <see cref="CreateWindow" />.
         /// The hints, once set, retain their values
-        /// until changed by a call to <see cref="WindowHint(WindowHintOpenGlProfile,OpenGlProfile)"/>
-        /// or <see cref="DefaultWindowHints"/>, or until the library is terminated.
+        /// until changed by a call to <see cref="WindowHint(WindowHintOpenGlProfile,OpenGlProfile)" />
+        /// or <see cref="DefaultWindowHints" />, or until the library is terminated.
         /// </para>
         /// <para>
         /// This function does not check whether the specified hint values are valid.
         /// If you set hints to invalid values this will instead be reported
-        /// by the next call to <see cref="CreateWindow"/>.
+        /// by the next call to <see cref="CreateWindow" />.
         /// </para>
         /// </summary>
-        /// <param name="hint"><see cref="WindowHintOpenGlProfile.OpenGlProfile"/>.</param>
+        /// <param name="hint"><see cref="WindowHintOpenGlProfile.OpenGlProfile" />.</param>
         /// <param name="value">The new value of the window hint.</param>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.InvalidEnum"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="DefaultWindowHints"/>
+        /// <seealso cref="DefaultWindowHints" />
         void WindowHint(WindowHintOpenGlProfile hint, OpenGlProfile value);
 
         /// <summary>
@@ -3288,7 +3400,7 @@ namespace Silk.NET.GLFW
         /// This function may be called from any thread. Access is not synchronized.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
         unsafe bool WindowShouldClose(Window* window);
@@ -3304,12 +3416,12 @@ namespace Silk.NET.GLFW
         /// The availability of a Vulkan loader and even an ICD does not by itself
         /// guarantee that surface creation or even instance creation is possible.
         /// For example, on Fermi systems Nvidia will install an ICD that provides no actual Vulkan support.
-        /// Call <see cref="GetRequiredInstanceExtensions"/> to check whether the extensions necessary
-        /// for Vulkan surface creation are available and <see cref="GetPhysicalDevicePresentationSupport"/>
+        /// Call <see cref="GetRequiredInstanceExtensions" /> to check whether the extensions necessary
+        /// for Vulkan surface creation are available and <see cref="GetPhysicalDevicePresentationSupport" />
         /// to check whether a queue family of a physical device supports image presentation.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// <para>
         /// This function may be called from any thread.
@@ -3332,7 +3444,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// If Vulkan is not available on the machine, this function returns <c>null</c> and generates
-        /// a <see cref="ErrorCode.NotInitialized"/> error. Call <see cref="VulkanSupported"/> to check
+        /// a <see cref="ErrorCode.NotInitialized" /> error. Call <see cref="VulkanSupported" /> to check
         /// whether Vulkan is at least minimally available.
         /// </para>
         /// <para>
@@ -3348,7 +3460,7 @@ namespace Silk.NET.GLFW
         /// macOS: This function currently only supports the <c>VK_MVK_macos_surface</c> extension from MoltenVK.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.ApiUnavailable"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.ApiUnavailable" />.
         /// </para>
         /// <para>
         /// The returned array is allocated and freed by GLFW. You should not free it yourself.
@@ -3378,15 +3490,23 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <list type="bullet">
         /// <item>
-        /// <description><c>vkEnumerateInstanceExtensionProperties</c></description>
-        /// <description><c>vkEnumerateInstanceLayerProperties</c></description>
-        /// <description><c>vkCreateInstance</c></description>
-        /// <description><c>vkGetInstanceProcAddr</c></description>
+        /// <description>
+        /// <c>vkEnumerateInstanceExtensionProperties</c>
+        /// </description>
+        /// <description>
+        /// <c>vkEnumerateInstanceLayerProperties</c>
+        /// </description>
+        /// <description>
+        /// <c>vkCreateInstance</c>
+        /// </description>
+        /// <description>
+        /// <c>vkGetInstanceProcAddr</c>
+        /// </description>
         /// </item>
         /// </list>
         /// <para>
         /// If Vulkan is not available on the machine, this function returns <c>null</c> and generates
-        /// a <see cref="ErrorCode.NotInitialized"/> error. Call <see cref="VulkanSupported"/> to check
+        /// a <see cref="ErrorCode.NotInitialized" /> error. Call <see cref="VulkanSupported" /> to check
         /// whether Vulkan is at least minimally available.
         /// </para>
         /// <para>
@@ -3394,7 +3514,7 @@ namespace Silk.NET.GLFW
         /// query of the Vulkan loader as a fallback.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.ApiUnavailable"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.ApiUnavailable" />.
         /// </para>
         /// <para>
         /// The returned function pointer is valid until the library is terminated.
@@ -3418,12 +3538,12 @@ namespace Silk.NET.GLFW
         /// <para>
         /// If Vulkan or the required window surface creation instance extensions are not available
         /// on the machine, or if the specified instance was not created with the required extensions,
-        /// this function returns <c>false</c> and generates a <see cref="ErrorCode.ApiUnavailable"/> error.
-        /// Call <see cref="VulkanSupported"/> to check whether Vulkan is at least minimally available and
-        /// <see cref="GetRequiredInstanceExtensions"/> to check what instance extensions are required.
+        /// this function returns <c>false</c> and generates a <see cref="ErrorCode.ApiUnavailable" /> error.
+        /// Call <see cref="VulkanSupported" /> to check whether Vulkan is at least minimally available and
+        /// <see cref="GetRequiredInstanceExtensions" /> to check what instance extensions are required.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/> and <see cref="ErrorCode.ApiUnavailable"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.ApiUnavailable" />.
         /// </para>
         /// <para>
         /// macOS: This function currently always returns <c>true</c>, as the <c>VK_MVK_macos_surface</c>
@@ -3450,20 +3570,20 @@ namespace Silk.NET.GLFW
         /// <para>
         /// If the Vulkan loader or at least one minimally functional ICD were not found,
         /// this function returns <c>VK_ERROR_INITIALIZATION_FAILED</c> and generates a
-        /// <see cref="ErrorCode.ApiUnavailable"/> error.
-        /// Call <see cref="VulkanSupported"/> to check whether Vulkan is at least minimally available.
+        /// <see cref="ErrorCode.ApiUnavailable" /> error.
+        /// Call <see cref="VulkanSupported" /> to check whether Vulkan is at least minimally available.
         /// </para>
         /// <para>
         /// If the required window surface creation instance extensions are not available or
         /// if the specified instance was not created with these extensions enabled,
         /// this function returns <c>VK_ERROR_EXTENSION_NOT_PRESENT</c> and generates a
-        /// <see cref="ErrorCode.ApiUnavailable"/> error.
-        /// Call <see cref="GetRequiredInstanceExtensions"/> to check what instance extensions are required.
+        /// <see cref="ErrorCode.ApiUnavailable" /> error.
+        /// Call <see cref="GetRequiredInstanceExtensions" /> to check what instance extensions are required.
         /// </para>
         /// <para>
         /// The window surface cannot be shared with another API so the window must have been created with
-        /// the client api hint set to <see cref="ClientApi.NoApi"/> otherwise it generates a
-        /// <see cref="ErrorCode.InvalidValue"/> error and returns <c>VK_ERROR_NATIVE_WINDOW_IN_USE_KHR</c>.
+        /// the client api hint set to <see cref="ClientApi.NoApi" /> otherwise it generates a
+        /// <see cref="ErrorCode.InvalidValue" /> error and returns <c>VK_ERROR_NATIVE_WINDOW_IN_USE_KHR</c>.
         /// </para>
         /// <para>
         /// The window surface must be destroyed before the specified Vulkan instance.
@@ -3471,13 +3591,13 @@ namespace Silk.NET.GLFW
         /// GLFW does not destroy it for you. Call <c>vkDestroySurfaceKHR</c> to destroy the surface.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.ApiUnavailable"/>,
-        /// <see cref="ErrorCode.PlatformError"/> and <see cref="ErrorCode.InvalidValue"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.ApiUnavailable" />,
+        /// <see cref="ErrorCode.PlatformError" /> and <see cref="ErrorCode.InvalidValue" />.
         /// </para>
         /// <para>
         /// If an error occurs before the creation call is made, GLFW returns the Vulkan error code most
-        /// appropriate for the error. Appropriate use of <see cref="VulkanSupported"/> and
-        /// <see cref="GetRequiredInstanceExtensions"/> should eliminate almost all occurrences of these errors.
+        /// appropriate for the error. Appropriate use of <see cref="VulkanSupported" /> and
+        /// <see cref="GetRequiredInstanceExtensions" /> should eliminate almost all occurrences of these errors.
         /// </para>
         /// <para>
         /// macOS: This function currently only supports the <c>VK_MVK_macos_surface</c> extension from MoltenVK.

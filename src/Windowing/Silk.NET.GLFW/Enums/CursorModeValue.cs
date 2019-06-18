@@ -1,9 +1,7 @@
-﻿//
-// This file is part of Silk.NET.
-//
+﻿// This file is part of Silk.NET.
+// 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 namespace Silk.NET.GLFW
 {
@@ -14,7 +12,7 @@ namespace Silk.NET.GLFW
     public enum CursorModeValue
     {
         /// <summary>
-        /// The regular arrow cursor (or another cursor set with <see cref="IGLFW.SetCursor"/>) is used
+        /// The regular arrow cursor (or another cursor set with <see cref="IGLFW.SetCursor" />) is used
         /// and cursor motion is not limited.
         /// </summary>
         CursorNormal = 0x00034001,

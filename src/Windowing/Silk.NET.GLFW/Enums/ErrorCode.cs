@@ -1,9 +1,7 @@
-//
 // This file is part of Silk.NET.
-//
+// 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 namespace Silk.NET.GLFW
 {
@@ -18,7 +16,7 @@ namespace Silk.NET.GLFW
         NoError = 0,
 
         /// <summary>
-        /// Called a function before calling <see cref="IGLFW.Init"/>. Initialize GLFW and then try again.
+        /// Called a function before calling <see cref="IGLFW.Init" />. Initialize GLFW and then try again.
         /// </summary>
         NotInitialized = 0x00010001,
 
@@ -45,7 +43,8 @@ namespace Silk.NET.GLFW
         /// This can happen if you request an OpenGL version that doesn't exist, like 2.7.
         /// </para>
         /// <para>
-        /// If you request a version of OpenGL that exists, but isn't supported by this graphics card, it will return VersionUnavailable instead.
+        /// If you request a version of OpenGL that exists, but isn't supported by this graphics card, it will return
+        /// VersionUnavailable instead.
         /// </para>
         /// </remarks>
         InvalidValue = 0x00010004,
