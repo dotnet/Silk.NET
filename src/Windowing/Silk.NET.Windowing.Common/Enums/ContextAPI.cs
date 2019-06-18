@@ -11,9 +11,19 @@ namespace Silk.NET.Windowing.Common
     public enum ContextAPI
     {
         /// <summary>
+        /// Don't use any API. This is necessary for linking an external API, such as Vulkan, to the window.
+        /// </summary>
+        None = 0,
+        
+        /// <summary>
+        /// Identical to <see cref="None"/>
+        /// </summary>
+        Vulkan = None,
+        
+        /// <summary>
         /// Use core OpenGL. This is standard for software intended for desktop computers.
         /// </summary>
-        OpenGL = 0,
+        OpenGL,
 
         /// <summary>
         /// Use OpenGL ES. This is standard for software intended to be compatable with embedded systems, such as phones.
