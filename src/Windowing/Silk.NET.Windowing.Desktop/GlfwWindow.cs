@@ -324,6 +324,10 @@ namespace Silk.NET.Windowing.Desktop
                     if (UseSingleThreadedWindow) {
                         RaiseRenderFrame();
                     }
+
+                    if (VSync == VSyncMode.Adaptive) {
+                        glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
+                    }
                 }
             }
         }
