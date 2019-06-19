@@ -5,6 +5,7 @@
 
 using System;
 using System.Drawing;
+using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
 
 namespace Silk.NET.Windowing.Desktop
@@ -14,17 +15,53 @@ namespace Silk.NET.Windowing.Desktop
     /// </summary>
     public class GlfwWindow : IWindow
     {
+        private Glfw glfw = Glfw.GetAPI();
+        private unsafe WindowHandle* WindowPtr;
+
         /// <inheritdoc />
-        public IntPtr Handle { get; }
+        public IntPtr Handle
+        {
+            get
+            {
+                unsafe {
+                    return new IntPtr(WindowPtr);
+                }
+            }
+        }
         
         /// <inheritdoc />
         public bool UseSingleThreadedWindow { get; }
-        
+
+        private Point _position;
+
         /// <inheritdoc />
-        public Point Position { get; set; }
-        
+        public Point Position
+        {
+            get => _position;
+            set {
+                unsafe {
+                    glfw.SetWindowPos(WindowPtr, value.X, value.Y);
+                }
+                
+                _position = value;
+            }
+        }
+
+        private Size _size;
+
         /// <inheritdoc />
-        public Size Size { get; set; }
+        public Size Size
+        {
+            get => _size;
+            set
+            {
+                unsafe {
+                    glfw.SetWindowSize(WindowPtr, value.Width, value.Height);
+                }
+
+                _size = value;
+            }
+        }
         
         /// <inheritdoc />
         public double FramesPerSecond { get; }
@@ -34,19 +71,100 @@ namespace Silk.NET.Windowing.Desktop
         
         /// <inheritdoc />
         public GraphicsAPI API { get; }
-        
+
+        private WindowState _windowState;
+
         /// <inheritdoc />
-        public WindowState WindowState { get; set; }
-        
+        public WindowState WindowState
+        {
+            get => _windowState;
+            set
+            {
+                unsafe {
+                    switch (value)
+                    {
+                        case WindowState.Normal:
+                            glfw.RestoreWindow(WindowPtr);
+                            break;
+                        case WindowState.Minimized:
+                            glfw.IconifyWindow(WindowPtr);
+                            break;
+                        case WindowState.Maximized:
+                            glfw.MaximizeWindow(WindowPtr);
+                            break;
+                        case WindowState.Fullscreen:
+                            var monitor = glfw.GetWindowMonitor(WindowPtr);
+                            var mode = glfw.GetVideoMode(monitor);
+                            glfw.SetWindowMonitor(WindowPtr, monitor, 0, 0, mode->Width, mode->Height, mode->RefreshRate);
+                            break;
+                    }
+                }
+                
+                _windowState = value;
+            }
+        }
+
+        private WindowBorder _windowBorder;
+
         /// <inheritdoc />
-        public WindowBorder WindowBorder { get; set; }
-        
+        public WindowBorder WindowBorder
+        {
+            get => _windowBorder;
+            set
+            {
+                unsafe {
+                    switch (value) {
+                        case WindowBorder.Hidden:
+                            glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, false);
+                            glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, false);
+                            break;
+
+                        case WindowBorder.Resizable:
+                            glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, true);
+                            glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, true);
+                            break;
+
+                        case WindowBorder.Fixed:
+                            glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, true);
+                            glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, false);
+                            break;
+                    }
+                }
+
+                _windowBorder = value;
+            }
+        }
+
+        private VSyncMode _vSync;
+
         /// <inheritdoc />
-        public VSyncMode VSync { get; set; }
+        public VSyncMode VSync
+        {
+            get => _vSync;
+            set
+            {
+                switch (value) {
+                    case VSyncMode.Off:
+                        glfw.SwapInterval(0);
+                        break;
+                        
+                    case VSyncMode.On:
+                        glfw.SwapInterval(1);
+                        break;
+                    
+                    default:
+                        throw new NotImplementedException();
+                }
+
+                _vSync = value;
+            }
+        }
 
         public GlfwWindow(WindowOptions options)
         {
-            
+            unsafe
+            {
+            }
         }
 
         /// <inheritdoc />
