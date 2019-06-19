@@ -3,6 +3,8 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
+
 namespace Silk.NET.Windowing.Common
 {
     /// <summary>
@@ -10,5 +12,9 @@ namespace Silk.NET.Windowing.Common
     /// </summary>
     public interface IWindow : IWindowProperties, IWindowFunctions
     {
+        /// <summary>
+        /// A handle to the underlying window.
+        /// </summary>
+        IntPtr Handle { get; }
     }
 }
