@@ -13,6 +13,11 @@ namespace Silk.NET.Windowing.Common
     public interface IWindowFunctions
     {
         /// <summary>
+        /// Start this window's update/render loop.
+        /// </summary>
+        void Run();
+        
+        /// <summary>
         /// Close this window.
         /// </summary>
         void Close();
