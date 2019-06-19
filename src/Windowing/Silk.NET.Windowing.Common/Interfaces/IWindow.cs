@@ -16,5 +16,11 @@ namespace Silk.NET.Windowing.Common
         /// A handle to the underlying window.
         /// </summary>
         IntPtr Handle { get; }
+        
+        /// <summary>
+        /// If true, the window has failed to reach the target framerate for five consecutive frames. You can use this
+        /// to do things such as lowering visual fidelity to increase framerates on lower-end machines.
+        /// </summary>
+        bool IsRunningSlowly { get; }
     }
 }

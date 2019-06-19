@@ -52,5 +52,9 @@ namespace Silk.NET.Windowing.Common
         /// </summary>
         /// <param name="files">An array of paths to the files dropped.</param>
         void OnFileDrop(string[] files);
+
+        void OnUpdate(double delta);
+
+        void OnRender(double delta);
     }
 }

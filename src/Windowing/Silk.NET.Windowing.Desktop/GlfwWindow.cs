@@ -4,7 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Diagnostics;
 using System.Drawing;
+using System.Threading;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
 
@@ -17,6 +19,15 @@ namespace Silk.NET.Windowing.Desktop
     {
         private Glfw glfw = Glfw.GetAPI();
         private unsafe WindowHandle* WindowPtr;
+        
+        private Thread renderThread;
+        private Stopwatch renderClock;
+        private Stopwatch updateClock;
+
+        private double renderPeriod;
+        private double updatePeriod;
+        
+        public bool IsRunningSlowly { get; private set; }
 
         private bool _isVisible;
 
@@ -192,7 +203,8 @@ namespace Silk.NET.Windowing.Desktop
                         break;
 
                     default:
-                        throw new NotImplementedException();
+                        glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
+                        break;
                 }
 
                 _vSync = value;
@@ -272,7 +284,67 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public void Run()
         {
-            throw new NotImplementedException();
+            IsRunningSlowly = false;
+            
+            // Calculate the update speed.
+            if (UpdatesPerSecond < double.Epsilon) {
+                updatePeriod = 0.0;
+            }
+            else {
+                updatePeriod = 1.0 / UpdatesPerSecond;
+            }
+            
+            // Calculate the render speed.
+            if (FramesPerSecond < double.Epsilon) {
+                renderPeriod = 0.0;
+            }
+            else {
+                renderPeriod = 1.0 / FramesPerSecond;
+            }
+
+            // Start the render thread if using multiple threads.
+            if (!UseSingleThreadedWindow) {
+                renderThread = new Thread(StartRenderThread);
+                renderThread.Start();
+            }
+            
+            renderClock = new Stopwatch();
+            updateClock = new Stopwatch();
+            
+            renderClock.Start();
+            updateClock.Start();
+
+            // Start the update loop.
+            unsafe {
+                while (!glfw.WindowShouldClose(WindowPtr)) {
+                    ProcessEvents();
+                    
+                    RaiseUpdateFrame();
+
+                    if (UseSingleThreadedWindow) {
+                        RaiseRenderFrame();
+                    }
+                }
+            }
+        }
+        
+        private void RaiseUpdateFrame()
+        {
+            OnUpdate(0.0);
+        }
+
+        private void StartRenderThread()
+        {
+            unsafe {
+                while (!glfw.WindowShouldClose(WindowPtr)) {
+                    RaiseRenderFrame();
+                }
+            }
+        }
+        
+        private void RaiseRenderFrame()
+        {
+            OnRender(0.0);
         }
 
         /// <inheritdoc />
@@ -423,6 +495,16 @@ namespace Silk.NET.Windowing.Desktop
         /// </summary>
         /// <param name="files">An array of paths to the files dropped.</param>
         public virtual void OnFileDrop(string[] files)
+        {
+            
+        }
+
+        public virtual void OnUpdate(double delta)
+        {
+            
+        }
+
+        public virtual void OnRender(double delta)
         {
             
         }
