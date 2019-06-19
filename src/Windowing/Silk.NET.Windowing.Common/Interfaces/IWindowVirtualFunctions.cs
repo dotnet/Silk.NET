@@ -53,8 +53,16 @@ namespace Silk.NET.Windowing.Common
         /// <param name="files">An array of paths to the files dropped.</param>
         void OnFileDrop(string[] files);
 
+        /// <summary>
+        /// Called when an update should be run.
+        /// </summary>
+        /// <param name="delta">The number of milliseconds since the last update event.</param>
         void OnUpdate(double delta);
 
+        /// <summary>
+        /// Called when a frame should be rendered.
+        /// </summary>
+        /// <param name="delta">The number of milliseconds since the last render event.</param>
         void OnRender(double delta);
     }
 }
