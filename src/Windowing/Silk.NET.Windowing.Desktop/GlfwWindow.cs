@@ -19,7 +19,7 @@ namespace Silk.NET.Windowing.Desktop
         private unsafe WindowHandle* WindowPtr;
 
         private bool _isVisible;
-        
+
         /// <inheritdoc />
         public bool IsVisible
         {
@@ -49,7 +49,7 @@ namespace Silk.NET.Windowing.Desktop
                 }
             }
         }
-        
+
         /// <inheritdoc />
         public bool UseSingleThreadedWindow { get; }
 
@@ -59,11 +59,12 @@ namespace Silk.NET.Windowing.Desktop
         public Point Position
         {
             get => _position;
-            set {
+            set
+            {
                 unsafe {
                     glfw.SetWindowPos(WindowPtr, value.X, value.Y);
                 }
-                
+
                 _position = value;
             }
         }
@@ -83,13 +84,13 @@ namespace Silk.NET.Windowing.Desktop
                 _size = value;
             }
         }
-        
+
         /// <inheritdoc />
         public double FramesPerSecond { get; }
-        
+
         /// <inheritdoc />
         public double UpdatesPerSecond { get; }
-        
+
         /// <inheritdoc />
         public GraphicsAPI API { get; }
 
@@ -118,8 +119,7 @@ namespace Silk.NET.Windowing.Desktop
             set
             {
                 unsafe {
-                    switch (value)
-                    {
+                    switch (value) {
                         case WindowState.Normal:
                             glfw.RestoreWindow(WindowPtr);
                             break;
@@ -132,12 +132,14 @@ namespace Silk.NET.Windowing.Desktop
                         case WindowState.Fullscreen:
                             var monitor = glfw.GetWindowMonitor(WindowPtr);
                             var mode = glfw.GetVideoMode(monitor);
-                            glfw.SetWindowMonitor(WindowPtr, monitor, 0, 0, mode->Width, mode->Height, mode->RefreshRate);
+                            glfw.SetWindowMonitor(WindowPtr, monitor, 0, 0, mode->Width, mode->Height,
+                                mode->RefreshRate);
                             break;
                     }
                 }
-                
+
                 _windowState = value;
+                OnWindowStateChanged(value);
             }
         }
 
@@ -184,11 +186,11 @@ namespace Silk.NET.Windowing.Desktop
                     case VSyncMode.Off:
                         glfw.SwapInterval(0);
                         break;
-                        
+
                     case VSyncMode.On:
                         glfw.SwapInterval(1);
                         break;
-                    
+
                     default:
                         throw new NotImplementedException();
                 }
@@ -203,7 +205,7 @@ namespace Silk.NET.Windowing.Desktop
                 // Title and Size must be set before the window is created.
                 _title = options.Title;
                 _size = options.Size;
-                
+
                 // Set window border.
                 switch (options.WindowBorder) {
                     case WindowBorder.Hidden:
@@ -236,19 +238,17 @@ namespace Silk.NET.Windowing.Desktop
                         glfw.WindowHint(WindowHintClientApi.ClientApi, ClientApi.OpenGLES);
                         break;
                 }
-                
+
                 // Set API version.
                 glfw.WindowHint(WindowHintInt.ContextVersionMajor, options.API.Version.MajorVersion);
                 glfw.WindowHint(WindowHintInt.ContextVersionMinor, options.API.Version.MinorVersion);
-                
+
                 // Set API flags
-                if (options.API.Flags.HasFlag(ContextFlags.ForwardCompatible))
-                {
+                if (options.API.Flags.HasFlag(ContextFlags.ForwardCompatible)) {
                     glfw.WindowHint(WindowHintBool.OpenGLForwardCompat, true);
                 }
 
-                if (options.API.Flags.HasFlag(ContextFlags.Debug))
-                {
+                if (options.API.Flags.HasFlag(ContextFlags.Debug)) {
                     glfw.WindowHint(WindowHintBool.OpenGLDebugContext, true);
                 }
 
@@ -258,12 +258,14 @@ namespace Silk.NET.Windowing.Desktop
 
                 // Create window
                 WindowPtr = glfw.CreateWindow(_size.Width, _size.Height, _title, null, null);
-                
+
                 MakeCurrent();
 
                 WindowState = options.WindowState;
                 Position = options.Position;
                 VSync = options.VSync;
+
+                InitializeCallbacks();
             }
         }
 
@@ -272,7 +274,7 @@ namespace Silk.NET.Windowing.Desktop
         {
             throw new NotImplementedException();
         }
-        
+
         /// <inheritdoc />
         public void Close()
         {
@@ -313,6 +315,116 @@ namespace Silk.NET.Windowing.Desktop
         public Point PointToScreen(Point point)
         {
             return new Point(point.X + _position.X, point.Y + _position.Y);
+        }
+
+        // Callbacks
+
+        private GlfwCallbacks.WindowPosCallback onMove;
+        private GlfwCallbacks.WindowSizeCallback onResize;
+        private GlfwCallbacks.WindowCloseCallback onClosing;
+        private GlfwCallbacks.WindowFocusCallback onFocusChanged;
+        private GlfwCallbacks.DropCallback onFileDrop;
+
+        /// <summary>
+        /// Setup all window callbacks
+        /// </summary>
+        private unsafe void InitializeCallbacks()
+        {
+            onMove = (window, x, y) =>
+            {
+                var point = new Point(x, y);
+                _position = point;
+                OnMove(point);
+            };
+            glfw.SetWindowPosCallback(WindowPtr, onMove);
+            
+            onResize = (window, width, height) =>
+            {
+                var size = new Size(width, height);
+                _size = size;
+                OnResize(size);
+            };
+            glfw.SetWindowSizeCallback(WindowPtr, onResize);
+            
+            onClosing = (window) => OnClosing();
+            glfw.SetWindowCloseCallback(WindowPtr, onClosing);
+            
+            onFocusChanged = (window, isFocused) => OnFocusChanged(isFocused);
+            glfw.SetWindowFocusCallback(WindowPtr, onFocusChanged);
+
+            onFileDrop = (window, count, paths) =>
+            {
+                var pathsStrings = (char**)paths;
+
+                var arrayOfPaths = new string[count];
+
+                for (var i = 0; i < count; i++)
+                {
+                    if (pathsStrings != null)
+                    {
+                        arrayOfPaths[i] = new string(pathsStrings[i]);
+                    }
+                }
+
+                OnFileDrop(arrayOfPaths);
+                
+            };
+            glfw.SetDropCallback(WindowPtr, onFileDrop);
+        }
+
+        /// <inheritdoc />
+        public virtual void OnMove(Point newPosition)
+        {
+        }
+
+        /// <inheritdoc />
+        public virtual void OnResize(Size newSize)
+        {
+            
+        }
+
+        /// <summary>
+        /// Called when the window is about to close.
+        /// </summary>
+        public virtual void OnClosing()
+        {
+            
+        }
+
+        /// <summary>
+        /// Called when the window state is changed.
+        /// </summary>
+        /// <param name="newState">The new state of the window.</param>
+        public virtual void OnWindowStateChanged(WindowState newState)
+        {
+            
+        }
+
+        /// <summary>
+        /// Called when the window focus changes.
+        /// </summary>
+        /// <param name="isFocused">If the window is focused or not.</param>
+        public virtual void OnFocusChanged(bool isFocused)
+        {
+            
+        }
+
+        /// <summary>
+        /// Called when the window visibility changes.
+        /// </summary>
+        /// <param name="isVisible">If the window is visible or not.</param>
+        public virtual void OnVisibilityChanged(bool isVisible)
+        {
+            
+        }
+
+        /// <summary>
+        /// Called when the user drops files onto the window.
+        /// </summary>
+        /// <param name="files">An array of paths to the files dropped.</param>
+        public virtual void OnFileDrop(string[] files)
+        {
+            
         }
     }
 }
