@@ -8,8 +8,8 @@ namespace Silk.NET.GLFW
     /// <summary>
     /// Attributes related to sticky keys and buttons.
     /// </summary>
-    /// <seealso cref="IGlfw.SetInputMode(Window*,StickyAttributes,bool)" />
-    /// <seealso cref="IGlfw.GetInputMode(Window*,StickyAttributes)" />
+    /// <seealso cref="IGlfw.SetInputMode(WindowHandle*,StickyAttributes,bool)" />
+    /// <seealso cref="IGlfw.GetInputMode(WindowHandle*,StickyAttributes)" />
     public enum StickyAttributes
     {
         /// <summary>

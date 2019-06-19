@@ -8,7 +8,7 @@ namespace Silk.NET.GLFW
     /// <summary>
     /// Opaque handle to a GLFW window.
     /// </summary>
-    public struct Window
+    public struct WindowHandle
     {
     }
 }

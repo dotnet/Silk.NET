@@ -91,27 +91,27 @@ namespace Silk.NET.GLFW
         public abstract void WindowHintString(int hint, string value);
 
         /// <inheritdoc />
-        public abstract unsafe void SetWindowSizeLimits(Window* window, int minwidth, int minheight, int maxwidth,
+        public abstract unsafe void SetWindowSizeLimits(WindowHandle* window, int minwidth, int minheight, int maxwidth,
             int maxheight);
 
         /// <inheritdoc />
-        public abstract unsafe void SetWindowAspectRatio(Window* window, int numer, int denom);
+        public abstract unsafe void SetWindowAspectRatio(WindowHandle* window, int numer, int denom);
 
         /// <inheritdoc />
-        public abstract unsafe void GetWindowFrameSize(Window* window, out int left, out int top, out int right,
+        public abstract unsafe void GetWindowFrameSize(WindowHandle* window, out int left, out int top, out int right,
             out int bottom);
 
         /// <inheritdoc />
-        public abstract unsafe float GetWindowOpacity(Window* window);
+        public abstract unsafe float GetWindowOpacity(WindowHandle* window);
 
         /// <inheritdoc />
-        public abstract unsafe void SetWindowOpacity(Window* window, float opacity);
+        public abstract unsafe void SetWindowOpacity(WindowHandle* window, float opacity);
 
         /// <inheritdoc />
-        public abstract unsafe void RequestWindowAttention(Window* window);
+        public abstract unsafe void RequestWindowAttention(WindowHandle* window);
 
         /// <inheritdoc />
-        public abstract unsafe void SetWindowAttrib(Window* window, WindowAttributeSetter attrib, bool value);
+        public abstract unsafe void SetWindowAttrib(WindowHandle* window, WindowAttributeSetter attrib, bool value);
 
         /// <inheritdoc />
         public abstract bool RawMouseMotionSupported();
@@ -123,16 +123,16 @@ namespace Silk.NET.GLFW
         public abstract int GetKeyScancode(int key);
 
         /// <inheritdoc />
-        public abstract unsafe int GetKey(Window* window, int key);
+        public abstract unsafe int GetKey(WindowHandle* window, int key);
 
         /// <inheritdoc />
-        public abstract unsafe int GetMouseButton(Window* window, int button);
+        public abstract unsafe int GetMouseButton(WindowHandle* window, int button);
 
         /// <inheritdoc />
-        public abstract unsafe void GetCursorPos(Window* window, out double xpos, out double ypos);
+        public abstract unsafe void GetCursorPos(WindowHandle* window, out double xpos, out double ypos);
 
         /// <inheritdoc />
-        public abstract unsafe void SetCursorPos(Window* window, double xpos, double ypos);
+        public abstract unsafe void SetCursorPos(WindowHandle* window, double xpos, double ypos);
 
         /// <inheritdoc />
         public abstract unsafe Cursor* CreateCursor(Image* image, int xhot, int yhot);
@@ -144,7 +144,7 @@ namespace Silk.NET.GLFW
         public abstract unsafe void DestroyCursor(Cursor* cursor);
 
         /// <inheritdoc />
-        public abstract unsafe void SetCursor(Window* window, Cursor* cursor);
+        public abstract unsafe void SetCursor(WindowHandle* window, Cursor* cursor);
 
         /// <inheritdoc />
         public abstract bool JoystickPresent(int jid);
@@ -195,65 +195,65 @@ namespace Silk.NET.GLFW
         public abstract long GetTimerFrequency();
 
         /// <inheritdoc />
-        public abstract unsafe Window* GetCurrentContext();
+        public abstract unsafe WindowHandle* GetCurrentContext();
 
         /// <inheritdoc />
-        public abstract unsafe void SwapBuffers(Window* window);
+        public abstract unsafe void SwapBuffers(WindowHandle* window);
 
         /// <inheritdoc />
         public abstract bool ExtensionSupported(string extensionName);
 
         /// <inheritdoc />
-        public abstract unsafe Window* CreateWindow(int width, int height, string title, Monitor* monitor,
-            Window* share);
+        public abstract unsafe WindowHandle* CreateWindow(int width, int height, string title, Monitor* monitor,
+            WindowHandle* share);
 
         /// <inheritdoc />
         public abstract unsafe Monitor* GetPrimaryMonitor();
 
         /// <inheritdoc />
-        public abstract unsafe void DestroyWindow(Window* window);
+        public abstract unsafe void DestroyWindow(WindowHandle* window);
 
         /// <inheritdoc />
-        public abstract unsafe void FocusWindow(Window* window);
+        public abstract unsafe void FocusWindow(WindowHandle* window);
 
         /// <inheritdoc />
-        public abstract unsafe void GetFramebufferSize(Window* window, out int width, out int height);
+        public abstract unsafe void GetFramebufferSize(WindowHandle* window, out int width, out int height);
 
         /// <inheritdoc />
-        public abstract unsafe CursorModeValue GetInputMode(Window* window, CursorStateAttribute mode);
+        public abstract unsafe CursorModeValue GetInputMode(WindowHandle* window, CursorStateAttribute mode);
 
         /// <inheritdoc />
-        public abstract unsafe bool GetInputMode(Window* window, StickyAttributes mode);
+        public abstract unsafe bool GetInputMode(WindowHandle* window, StickyAttributes mode);
 
         /// <inheritdoc />
-        public abstract unsafe void RestoreWindow(Window* window);
+        public abstract unsafe void RestoreWindow(WindowHandle* window);
 
         /// <inheritdoc />
         public abstract unsafe VideoMode* GetVideoMode(Monitor* monitor);
 
         /// <inheritdoc />
-        public abstract unsafe bool GetWindowAttrib(Window* window, WindowAttributeGetter attribute);
+        public abstract unsafe bool GetWindowAttrib(WindowHandle* window, WindowAttributeGetter attribute);
 
         /// <inheritdoc />
-        public abstract unsafe void GetWindowSize(Window* window, out int width, out int height);
+        public abstract unsafe void GetWindowSize(WindowHandle* window, out int width, out int height);
 
         /// <inheritdoc />
-        public abstract unsafe void GetWindowPos(Window* window, out int x, out int y);
+        public abstract unsafe void GetWindowPos(WindowHandle* window, out int x, out int y);
 
         /// <inheritdoc />
-        public abstract unsafe Monitor* GetWindowMonitor(Window* window);
+        public abstract unsafe Monitor* GetWindowMonitor(WindowHandle* window);
 
         /// <inheritdoc />
-        public abstract unsafe void HideWindow(Window* window);
+        public abstract unsafe void HideWindow(WindowHandle* window);
 
         /// <inheritdoc />
-        public abstract unsafe void IconifyWindow(Window* window);
+        public abstract unsafe void IconifyWindow(WindowHandle* window);
 
         /// <inheritdoc />
-        public abstract unsafe void MakeContextCurrent(Window* window);
+        public abstract unsafe void MakeContextCurrent(WindowHandle* window);
 
         /// <inheritdoc />
-        public abstract unsafe void MaximizeWindow(Window* window);
+        public abstract unsafe void MaximizeWindow(WindowHandle* window);
 
         /// <inheritdoc />
         public abstract void PollEvents();
@@ -283,99 +283,99 @@ namespace Silk.NET.GLFW
         public abstract void WindowHint(WindowHintOpenGlProfile hint, OpenGlProfile value);
 
         /// <inheritdoc />
-        public abstract unsafe bool WindowShouldClose(Window* window);
+        public abstract unsafe bool WindowShouldClose(WindowHandle* window);
 
         /// <inheritdoc />
-        public abstract unsafe GlfwCallbacks.CharCallback SetCharCallback(Window* window,
+        public abstract unsafe GlfwCallbacks.CharCallback SetCharCallback(WindowHandle* window,
             GlfwCallbacks.CharCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GlfwCallbacks.CharModsCallback SetCharModsCallback(Window* window,
+        public abstract unsafe GlfwCallbacks.CharModsCallback SetCharModsCallback(WindowHandle* window,
             GlfwCallbacks.CharModsCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GlfwCallbacks.CursorEnterCallback SetCursorEnterCallback(Window* window,
+        public abstract unsafe GlfwCallbacks.CursorEnterCallback SetCursorEnterCallback(WindowHandle* window,
             GlfwCallbacks.CursorEnterCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GlfwCallbacks.CursorPosCallback SetCursorPosCallback(Window* window,
+        public abstract unsafe GlfwCallbacks.CursorPosCallback SetCursorPosCallback(WindowHandle* window,
             GlfwCallbacks.CursorPosCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GlfwCallbacks.DropCallback SetDropCallback(Window* window,
+        public abstract unsafe GlfwCallbacks.DropCallback SetDropCallback(WindowHandle* window,
             GlfwCallbacks.DropCallback callback);
 
         /// <inheritdoc />
         public abstract GlfwCallbacks.ErrorCallback SetErrorCallback(GlfwCallbacks.ErrorCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe void SetInputMode(Window* window, CursorStateAttribute mode, CursorModeValue value);
+        public abstract unsafe void SetInputMode(WindowHandle* window, CursorStateAttribute mode, CursorModeValue value);
 
         /// <inheritdoc />
-        public abstract unsafe void SetInputMode(Window* window, StickyAttributes mode, bool value);
+        public abstract unsafe void SetInputMode(WindowHandle* window, StickyAttributes mode, bool value);
 
         /// <inheritdoc />
         public abstract GlfwCallbacks.JoystickCallback SetJoystickCallback(GlfwCallbacks.JoystickCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GlfwCallbacks.KeyCallback SetKeyCallback(Window* window,
+        public abstract unsafe GlfwCallbacks.KeyCallback SetKeyCallback(WindowHandle* window,
             GlfwCallbacks.KeyCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GlfwCallbacks.ScrollCallback SetScrollCallback(Window* window,
+        public abstract unsafe GlfwCallbacks.ScrollCallback SetScrollCallback(WindowHandle* window,
             GlfwCallbacks.ScrollCallback callback);
 
         /// <inheritdoc />
         public abstract GlfwCallbacks.MonitorCallback SetMonitorCallback(GlfwCallbacks.MonitorCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GlfwCallbacks.MouseButtonCallback SetMouseButtonCallback(Window* window,
+        public abstract unsafe GlfwCallbacks.MouseButtonCallback SetMouseButtonCallback(WindowHandle* window,
             GlfwCallbacks.MouseButtonCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GlfwCallbacks.WindowCloseCallback SetWindowCloseCallback(Window* window,
+        public abstract unsafe GlfwCallbacks.WindowCloseCallback SetWindowCloseCallback(WindowHandle* window,
             GlfwCallbacks.WindowCloseCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GlfwCallbacks.WindowFocusCallback SetWindowFocusCallback(Window* window,
+        public abstract unsafe GlfwCallbacks.WindowFocusCallback SetWindowFocusCallback(WindowHandle* window,
             GlfwCallbacks.WindowFocusCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe void SetWindowIcon(Window* window, int count, Image* images);
+        public abstract unsafe void SetWindowIcon(WindowHandle* window, int count, Image* images);
 
         /// <inheritdoc />
-        public abstract unsafe GlfwCallbacks.WindowIconifyCallback SetWindowIconifyCallback(Window* window,
+        public abstract unsafe GlfwCallbacks.WindowIconifyCallback SetWindowIconifyCallback(WindowHandle* window,
             GlfwCallbacks.WindowIconifyCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe void SetWindowTitle(Window* window, string title);
+        public abstract unsafe void SetWindowTitle(WindowHandle* window, string title);
 
         /// <inheritdoc />
-        public abstract unsafe void ShowWindow(Window* window);
+        public abstract unsafe void ShowWindow(WindowHandle* window);
 
         /// <inheritdoc />
-        public abstract unsafe void SetWindowSize(Window* window, int width, int height);
+        public abstract unsafe void SetWindowSize(WindowHandle* window, int width, int height);
 
         /// <inheritdoc />
-        public abstract unsafe GlfwCallbacks.WindowSizeCallback SetWindowSizeCallback(Window* window,
+        public abstract unsafe GlfwCallbacks.WindowSizeCallback SetWindowSizeCallback(WindowHandle* window,
             GlfwCallbacks.WindowSizeCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe void SetWindowShouldClose(Window* window, bool value);
+        public abstract unsafe void SetWindowShouldClose(WindowHandle* window, bool value);
 
         /// <inheritdoc />
-        public abstract unsafe void SetWindowMonitor(Window* window, Monitor* monitor, int x, int y, int width,
+        public abstract unsafe void SetWindowMonitor(WindowHandle* window, Monitor* monitor, int x, int y, int width,
             int height, int refreshRate);
 
         /// <inheritdoc />
-        public abstract unsafe void SetWindowPos(Window* window, int x, int y);
+        public abstract unsafe void SetWindowPos(WindowHandle* window, int x, int y);
 
         /// <inheritdoc />
-        public abstract unsafe GlfwCallbacks.WindowPosCallback SetWindowPosCallback(Window* window,
+        public abstract unsafe GlfwCallbacks.WindowPosCallback SetWindowPosCallback(WindowHandle* window,
             GlfwCallbacks.WindowPosCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe GlfwCallbacks.WindowRefreshCallback SetWindowRefreshCallback(Window* window,
+        public abstract unsafe GlfwCallbacks.WindowRefreshCallback SetWindowRefreshCallback(WindowHandle* window,
             GlfwCallbacks.WindowRefreshCallback callback);
 
         /// <inheritdoc />
@@ -388,10 +388,10 @@ namespace Silk.NET.GLFW
         public abstract void WaitEventsTimeout(double timeout);
 
         /// <inheritdoc />
-        public abstract unsafe string GetClipboardString(Window* window);
+        public abstract unsafe string GetClipboardString(WindowHandle* window);
 
         /// <inheritdoc />
-        public abstract unsafe void SetClipboardString(Window* window, string data);
+        public abstract unsafe void SetClipboardString(WindowHandle* window, string data);
 
         /// <inheritdoc />
         public abstract bool VulkanSupported();
@@ -406,7 +406,7 @@ namespace Silk.NET.GLFW
         public abstract bool GetPhysicalDevicePresentationSupport(VkHandle instance, VkHandle device, int queueFamily);
 
         /// <inheritdoc />
-        public abstract unsafe int CreateWindowSurface(VkHandle instance, Window* window, void* allocator,
+        public abstract unsafe int CreateWindowSurface(VkHandle instance, WindowHandle* window, void* allocator,
             VkHandle surface);
 
         /// <summary>

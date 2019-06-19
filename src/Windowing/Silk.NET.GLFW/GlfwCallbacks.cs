@@ -18,7 +18,7 @@ namespace Silk.NET.GLFW
         /// <param name="window">The window that received the event.</param>
         /// <param name="codepoint">The Unicode code point of the character.</param>
         /// <seealso cref="IGlfw.SetCharCallback" />
-        public delegate void CharCallback(Window* window, uint codepoint);
+        public delegate void CharCallback(WindowHandle* window, uint codepoint);
 
         /// <summary>
         /// The function signature for Unicode character with modifiers callback functions.
@@ -28,7 +28,7 @@ namespace Silk.NET.GLFW
         /// <param name="codepoint">The Unicode code point of the character.</param>
         /// <param name="modifiers">Bit field describing which modifier keys were held down.</param>
         /// <seealso cref="IGlfw.SetCharModsCallback" />
-        public delegate void CharModsCallback(Window* window, uint codepoint, KeyModifiers modifiers);
+        public delegate void CharModsCallback(WindowHandle* window, uint codepoint, KeyModifiers modifiers);
 
         /// <summary>
         /// The function signature for cursor enter/leave callback functions.
@@ -36,7 +36,7 @@ namespace Silk.NET.GLFW
         /// <param name="window">The window that received the event.</param>
         /// <param name="entered"><c>true</c> if the cursor entered the window's client area, or <c>false</c> if it left it.</param>
         /// <seealso cref="IGlfw.SetCursorEnterCallback" />
-        public delegate void CursorEnterCallback(Window* window, bool entered);
+        public delegate void CursorEnterCallback(WindowHandle* window, bool entered);
 
         /// <summary>
         /// The function signature for cursor position callback functions.
@@ -45,7 +45,7 @@ namespace Silk.NET.GLFW
         /// <param name="x">The new cursor x-coordinate, relative to the left edge of the client area.</param>
         /// <param name="y">The new cursor y-coordinate, relative to the top edge of the client area.</param>
         /// <seealso cref="IGlfw.SetCursorPosCallback" />
-        public delegate void CursorPosCallback(Window* window, double x, double y);
+        public delegate void CursorPosCallback(WindowHandle* window, double x, double y);
 
         /// <summary>
         /// The function signature for file drop callbacks.
@@ -54,7 +54,7 @@ namespace Silk.NET.GLFW
         /// <param name="count">The number of dropped files.</param>
         /// <param name="paths">The UTF-8 encoded file and/or directory path names.</param>
         /// <seealso cref="IGlfw.SetDropCallback" />
-        public delegate void DropCallback(Window* window, int count, IntPtr paths);
+        public delegate void DropCallback(WindowHandle* window, int count, IntPtr paths);
 
         /// <summary>
         /// The function signature for error callback functions.
@@ -82,7 +82,7 @@ namespace Silk.NET.GLFW
         /// <param name="action">The <see cref="InputAction" /> for that <paramref name="key" />.</param>
         /// <param name="mods">Bit field describing which modifier keys were held down.</param>
         /// <seealso cref="IGlfw.SetKeyCallback" />
-        public delegate void KeyCallback(Window* window, Keys key, int scanCode, InputAction action, KeyModifiers mods);
+        public delegate void KeyCallback(WindowHandle* window, Keys key, int scanCode, InputAction action, KeyModifiers mods);
 
         /// <summary>
         /// The function signature for monitor configuration callback functions.
@@ -103,7 +103,7 @@ namespace Silk.NET.GLFW
         /// <param name="mods">Bit field describing which modifier keys were held down.</param>
         /// <seealso cref="IGlfw.SetMouseButtonCallback" />
         public delegate void
-            MouseButtonCallback(Window* window, int button, InputAction action,
+            MouseButtonCallback(WindowHandle* window, int button, InputAction action,
                 int mods); // TODO: Make enums for int params in callback
 
         /// <summary>
@@ -113,14 +113,14 @@ namespace Silk.NET.GLFW
         /// <param name="offsetX">The scroll offset along the x-axis.</param>
         /// <param name="offsetY">The scroll offset along the y-axis.</param>
         /// <seealso cref="IGlfw.SetScrollCallback" />
-        public delegate void ScrollCallback(Window* window, double offsetX, double offsetY);
+        public delegate void ScrollCallback(WindowHandle* window, double offsetX, double offsetY);
 
         /// <summary>
         /// The function signature for window close callback functions.
         /// </summary>
         /// <param name="window">The window that the user attempted to close.</param>
         /// <seealso cref="IGlfw.SetWindowCloseCallback" />
-        public delegate void WindowCloseCallback(Window* window);
+        public delegate void WindowCloseCallback(WindowHandle* window);
 
         /// <summary>
         /// The function signature for window focus callback functions.
@@ -128,7 +128,7 @@ namespace Silk.NET.GLFW
         /// <param name="window">The window that gained or lost input focus.</param>
         /// <param name="focused"><c>true</c> if the window was given input focus, or <c>false</c> if it lost it.</param>
         /// <seealso cref="IGlfw.SetWindowFocusCallback" />
-        public delegate void WindowFocusCallback(Window* window, bool focused);
+        public delegate void WindowFocusCallback(WindowHandle* window, bool focused);
 
         /// <summary>
         /// The function signature for window iconify/restore callback functions.
@@ -136,7 +136,7 @@ namespace Silk.NET.GLFW
         /// <param name="window">The window that was iconified or restored.</param>
         /// <param name="iconified"><c>true</c> if the window was iconified(minimized), or <c>false</c> if it was restored.</param>
         /// <seealso cref="IGlfw.SetWindowIconifyCallback" />
-        public delegate void WindowIconifyCallback(Window* window, bool iconified);
+        public delegate void WindowIconifyCallback(WindowHandle* window, bool iconified);
 
         /// <summary>
         /// The function signature for window position callback functions.
@@ -149,13 +149,13 @@ namespace Silk.NET.GLFW
         /// The new y-coordinate, in screen coordinates, of the upper-left corner of the client area of the window.
         /// </param>
         /// <seealso cref="IGlfw.SetWindowPosCallback" />
-        public delegate void WindowPosCallback(Window* window, int x, int y);
+        public delegate void WindowPosCallback(WindowHandle* window, int x, int y);
 
         /// <summary>
         /// The function signature for window refresh functions.
         /// </summary>
         /// <param name="window">The window that needs to be refreshed.</param>
-        public delegate void WindowRefreshCallback(Window* window);
+        public delegate void WindowRefreshCallback(WindowHandle* window);
 
         /// <summary>
         /// The function signature for window size callback functions.
@@ -164,6 +164,6 @@ namespace Silk.NET.GLFW
         /// <param name="width">The new width, in screen coordinates, of the window.</param>
         /// <param name="height">The new height, in screen coordinates, of the window.</param>
         /// <seealso cref="IGlfw.SetWindowSizeCallback" />
-        public delegate void WindowSizeCallback(Window* window, int width, int height);
+        public delegate void WindowSizeCallback(WindowHandle* window, int width, int height);
     }
 }
