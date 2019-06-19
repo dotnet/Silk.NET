@@ -18,6 +18,27 @@ namespace Silk.NET.Windowing.Desktop
         private Glfw glfw = Glfw.GetAPI();
         private unsafe WindowHandle* WindowPtr;
 
+        private bool _isVisible;
+        
+        /// <inheritdoc />
+        public bool IsVisible
+        {
+            get => _isVisible;
+            set
+            {
+                unsafe {
+                    if (value) {
+                        glfw.ShowWindow(WindowPtr);
+                    }
+                    else {
+                        glfw.HideWindow(WindowPtr);
+                    }
+                }
+
+                _isVisible = value;
+            }
+        }
+
         /// <inheritdoc />
         public IntPtr Handle
         {

@@ -13,6 +13,11 @@ namespace Silk.NET.Windowing.Common
     public interface IWindowProperties
     {
         /// <summary>
+        /// Gets or sets whether or not the window is visible. 
+        /// </summary>
+        bool IsVisible { get; set; }
+        
+        /// <summary>
         /// Gets whether or not the window should use a single-threaded implementation. If false,
         /// rendering will be moved to its own thread.
         /// </summary>
