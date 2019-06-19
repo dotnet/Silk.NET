@@ -334,7 +334,8 @@ namespace Silk.NET.Windowing.Desktop
         
         private void RaiseUpdateFrame()
         {
-            OnUpdate(0.0);
+            OnUpdate(updateClock.Elapsed.TotalMilliseconds);
+            updateClock.Restart();
         }
 
         private void StartRenderThread()
@@ -348,7 +349,8 @@ namespace Silk.NET.Windowing.Desktop
         
         private void RaiseRenderFrame()
         {
-            OnRender(0.0);
+            OnRender(renderClock.Elapsed.TotalMilliseconds);
+            renderClock.Restart();
         }
 
         /// <inheritdoc />
