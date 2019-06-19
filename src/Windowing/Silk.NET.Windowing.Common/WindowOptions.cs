@@ -1,11 +1,13 @@
+using System.Data.SqlTypes;
 using System.Drawing;
+using System.Linq.Expressions;
 
 namespace Silk.NET.Windowing.Common
 {
     /// <summary>
     /// Contains all window properties, used for window creation.
     /// </summary>
-    public class WindowOptions : IWindowProperties
+    public struct WindowOptions : IWindowProperties
     {
         /// <inheritdoc />
         public bool UseSingleThreadedWindow { get; set; }
@@ -37,22 +39,25 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// Creates a new WindowOptions struct, with sensible defaults.
         /// </summary>
-        public WindowOptions()
+        public WindowOptions(bool useSingleThreadedWindow, Point position, Size size, double framesPerSecond,
+            double updatesPerSecond, GraphicsAPI api, WindowState windowState, WindowBorder windowBorder, VSyncMode vSync)
         {
-            UseSingleThreadedWindow = true;
-            Position = new Point(-1, -1);
-            Size = new Size(1280, 720);
-            FramesPerSecond = 0.0;
-            UpdatesPerSecond = 0.0;
-            API = GraphicsAPI.Default;
-            WindowState = WindowState.Normal;
-            WindowBorder = WindowBorder.Resizable;
-            VSync = VSyncMode.On;
+            UseSingleThreadedWindow = useSingleThreadedWindow;
+            Position = position;
+            Size = size;
+            FramesPerSecond = framesPerSecond;
+            UpdatesPerSecond = updatesPerSecond;
+            API = api;
+            WindowState = windowState;
+            WindowBorder = windowBorder;
+            VSync = vSync;
         }
 
         /// <summary>
         /// Convinience wrapper around creating a new WindowProperties with the default values.
         /// </summary>
-        public static WindowOptions Default { get; }
+        public static WindowOptions Default => new WindowOptions(true, new Point(-1, -1),
+            new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
+            WindowState.Normal, WindowBorder.Resizable, VSyncMode.On);
     }
 }
