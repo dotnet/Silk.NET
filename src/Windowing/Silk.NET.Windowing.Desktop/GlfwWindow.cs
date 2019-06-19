@@ -237,6 +237,8 @@ namespace Silk.NET.Windowing.Desktop
 
                 // Create window
                 WindowPtr = glfw.CreateWindow(_size.Width, _size.Height, _title, null, null);
+                
+                MakeCurrent();
 
                 WindowState = options.WindowState;
                 Position = options.Position;
@@ -253,37 +255,43 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public void Close()
         {
-            throw new NotImplementedException();
+            unsafe {
+                glfw.SetWindowShouldClose(WindowPtr, true);
+            }
         }
 
         /// <inheritdoc />
         public void ProcessEvents()
         {
-            throw new NotImplementedException();
+            glfw.PollEvents();
         }
 
         /// <inheritdoc />
         public void SwapBuffers()
         {
-            throw new NotImplementedException();
+            unsafe {
+                glfw.SwapBuffers(WindowPtr);
+            }
         }
 
         /// <inheritdoc />
         public void MakeCurrent()
         {
-            throw new NotImplementedException();
+            unsafe {
+                glfw.MakeContextCurrent(WindowPtr);
+            }
         }
 
         /// <inheritdoc />
         public Point PointToClient(Point point)
         {
-            throw new NotImplementedException();
+            return new Point(point.X - _position.X, point.Y - _position.Y);
         }
 
         /// <inheritdoc />
         public Point PointToScreen(Point point)
         {
-            throw new NotImplementedException();
+            return new Point(point.X + _position.X, point.Y + _position.Y);
         }
     }
 }
