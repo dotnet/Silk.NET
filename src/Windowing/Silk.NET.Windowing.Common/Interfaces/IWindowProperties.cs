@@ -52,6 +52,11 @@ namespace Silk.NET.Windowing.Common
         /// Gets the graphics API the window will use.
         /// </summary>
         GraphicsAPI API { get; }
+        
+        /// <summary>
+        /// The window title.
+        /// </summary>
+        string Title { get; set; }
 
         /// <summary>
         /// Gets or sets the window state.

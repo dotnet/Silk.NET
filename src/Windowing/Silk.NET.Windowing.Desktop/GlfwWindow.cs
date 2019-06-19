@@ -72,6 +72,22 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public GraphicsAPI API { get; }
 
+        private string _title;
+
+        /// <inheritdoc />
+        public string Title
+        {
+            get => _title;
+            set
+            {
+                unsafe {
+                    glfw.SetWindowTitle(WindowPtr, value);
+                }
+
+                _title = value;
+            }
+        }
+
         private WindowState _windowState;
 
         /// <inheritdoc />

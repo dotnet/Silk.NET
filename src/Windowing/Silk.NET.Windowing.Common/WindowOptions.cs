@@ -29,6 +29,9 @@ namespace Silk.NET.Windowing.Common
         
         /// <inheritdoc />
         public GraphicsAPI API { get; set; }
+
+        /// <inheritdoc />
+        public string Title { get; set; }
         
         /// <inheritdoc />
         public WindowState WindowState { get; set; }
@@ -43,7 +46,8 @@ namespace Silk.NET.Windowing.Common
         /// Creates a new WindowOptions struct, with sensible defaults.
         /// </summary>
         public WindowOptions(bool useSingleThreadedWindow, Point position, Size size, double framesPerSecond,
-            double updatesPerSecond, GraphicsAPI api, WindowState windowState, WindowBorder windowBorder, VSyncMode vSync)
+            double updatesPerSecond, GraphicsAPI api, string title, WindowState windowState, WindowBorder windowBorder,
+            VSyncMode vSync)
         {
             UseSingleThreadedWindow = useSingleThreadedWindow;
             Position = position;
@@ -51,6 +55,7 @@ namespace Silk.NET.Windowing.Common
             FramesPerSecond = framesPerSecond;
             UpdatesPerSecond = updatesPerSecond;
             API = api;
+            Title = title;
             WindowState = windowState;
             WindowBorder = windowBorder;
             VSync = vSync;
@@ -60,7 +65,7 @@ namespace Silk.NET.Windowing.Common
         /// Convinience wrapper around creating a new WindowProperties with the default values.
         /// </summary>
         public static WindowOptions Default { get; } = new WindowOptions(true, new Point(-1, -1),
-            new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
-            WindowState.Normal, WindowBorder.Resizable, VSyncMode.On);
+            new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default, 
+            "Silk.NET Window", WindowState.Normal, WindowBorder.Resizable, VSyncMode.On);
     }
 }
