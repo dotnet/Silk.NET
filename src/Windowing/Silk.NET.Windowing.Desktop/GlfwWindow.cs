@@ -283,6 +283,8 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public void Run()
         {
+            OnLoad();
+            
             IsRunningSlowly = false;
             
             // Calculate the update speed.
