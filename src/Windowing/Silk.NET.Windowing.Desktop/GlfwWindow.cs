@@ -150,7 +150,6 @@ namespace Silk.NET.Windowing.Desktop
                 }
 
                 _windowState = value;
-                OnWindowStateChanged(value);
             }
         }
 
@@ -401,6 +400,8 @@ namespace Silk.NET.Windowing.Desktop
         private GlfwCallbacks.WindowSizeCallback onResize;
         private GlfwCallbacks.WindowCloseCallback onClosing;
         private GlfwCallbacks.WindowFocusCallback onFocusChanged;
+        private GlfwCallbacks.WindowIconifyCallback onMinimized;
+        private GlfwCallbacks.WindowMaximizeCallback onMaximized;
         private GlfwCallbacks.DropCallback onFileDrop;
 
         /// <summary>
@@ -429,6 +430,55 @@ namespace Silk.NET.Windowing.Desktop
             
             onFocusChanged = (window, isFocused) => OnFocusChanged(isFocused);
             glfw.SetWindowFocusCallback(WindowPtr, onFocusChanged);
+
+            onMinimized = (window, isMinimized) =>
+            {
+                WindowState state;
+                // If minimized, we immediately know what value the new WindowState is.
+                if (isMinimized) {
+                    state = WindowState.Minimized;
+                }
+                else {
+                    // Otherwise, we have to querry a few things to figure out out.
+                    if (glfw.GetWindowAttrib(WindowPtr, WindowAttributeGetter.Maximized)) {
+                        state = WindowState.Maximized;
+                    }
+                    else if (glfw.GetWindowMonitor(WindowPtr) != null) {
+                        state = WindowState.Fullscreen;
+                    }
+                    else {
+                        state = WindowState.Normal;
+                    }
+                }
+
+                _windowState = state;
+                OnWindowStateChanged(state);
+            };
+            glfw.SetWindowIconifyCallback(WindowPtr, onMinimized);
+
+            onMaximized = (window, isMaximized) =>
+            {
+                // Same here as in onMinimized.
+                WindowState state;
+                if (isMaximized) {
+                    state = WindowState.Maximized;
+                }
+                else {
+                    if (glfw.GetWindowAttrib(WindowPtr, WindowAttributeGetter.Iconified)) {
+                        state = WindowState.Minimized;
+                    }
+                    else if (glfw.GetWindowMonitor(WindowPtr) != null) {
+                        state = WindowState.Fullscreen;
+                    }
+                    else {
+                        state = WindowState.Normal;
+                    }
+                }
+
+                _windowState = state;
+                OnWindowStateChanged(state);
+            };
+            glfw.SetWindowMaximizeCallback(WindowPtr, onMaximized);
 
             onFileDrop = (window, count, paths) =>
             {
