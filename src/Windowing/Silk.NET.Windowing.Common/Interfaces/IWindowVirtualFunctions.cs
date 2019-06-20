@@ -54,6 +54,11 @@ namespace Silk.NET.Windowing.Common
         void OnFileDrop(string[] files);
 
         /// <summary>
+        /// Called when the window first begins to run.
+        /// </summary>
+        void OnLoad();
+
+        /// <summary>
         /// Called when an update should be run.
         /// </summary>
         /// <param name="delta">The number of milliseconds since the last update event.</param>

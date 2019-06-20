@@ -511,55 +511,49 @@ namespace Silk.NET.Windowing.Desktop
             
         }
 
-        /// <summary>
-        /// Called when the window is about to close.
-        /// </summary>
+        /// <inheritdoc />
         public virtual void OnClosing()
         {
             
         }
 
-        /// <summary>
-        /// Called when the window state is changed.
-        /// </summary>
-        /// <param name="newState">The new state of the window.</param>
+        /// <inheritdoc />
         public virtual void OnWindowStateChanged(WindowState newState)
         {
             
         }
 
-        /// <summary>
-        /// Called when the window focus changes.
-        /// </summary>
-        /// <param name="isFocused">If the window is focused or not.</param>
+        /// <inheritdoc />
         public virtual void OnFocusChanged(bool isFocused)
         {
             
         }
 
-        /// <summary>
-        /// Called when the window visibility changes.
-        /// </summary>
-        /// <param name="isVisible">If the window is visible or not.</param>
+        /// <inheritdoc />
         public virtual void OnVisibilityChanged(bool isVisible)
         {
             
         }
 
-        /// <summary>
-        /// Called when the user drops files onto the window.
-        /// </summary>
-        /// <param name="files">An array of paths to the files dropped.</param>
+        /// <inheritdoc />
         public virtual void OnFileDrop(string[] files)
         {
             
         }
 
+        /// <inheritdoc />
+        public virtual void OnLoad()
+        {
+            
+        }
+
+        /// <inheritdoc />
         public virtual void OnUpdate(double delta)
         {
             
         }
 
+        /// <inheritdoc />
         public virtual void OnRender(double delta)
         {
             
