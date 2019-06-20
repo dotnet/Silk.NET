@@ -3,6 +3,10 @@
     
 Example: Proposal API for Input via keyboards, mice, and controllers.
 
+# Contributors
+- Your Name, Your Company/Silk.NET Contributors
+- Dylan P, Ultz Limited
+
 # Current Status
 - [x] Proposed
 - [ ] Discussed with API Review Board (ARB)
