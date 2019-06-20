@@ -139,6 +139,13 @@ namespace Silk.NET.GLFW
         public delegate void WindowIconifyCallback(WindowHandle* window, bool iconified);
 
         /// <summary>
+        /// The function signature for window maximize callback functions.
+        /// </summary>
+        /// <param name="window">The window that was maximized or restored.</param>
+        /// <param name="maximized"><c>true</c> if the window was maximized, or <c>false</c> if it was restored.</param>
+        public delegate void WindowMaximizeCallback(WindowHandle* window, bool maximized);
+
+        /// <summary>
         /// The function signature for window position callback functions.
         /// </summary>
         /// <param name="window">The window that was moved.</param>

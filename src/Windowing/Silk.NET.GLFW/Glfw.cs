@@ -346,6 +346,10 @@ namespace Silk.NET.GLFW
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.WindowIconifyCallback SetWindowIconifyCallback(WindowHandle* window,
             GlfwCallbacks.WindowIconifyCallback callback);
+        
+        /// <inheritdoc />
+        public abstract unsafe GlfwCallbacks.WindowMaximizeCallback SetWindowMaximizeCallback(WindowHandle* window,
+            GlfwCallbacks.WindowMaximizeCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe void SetWindowTitle(WindowHandle* window, string title);

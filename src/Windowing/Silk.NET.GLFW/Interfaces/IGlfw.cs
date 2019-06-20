@@ -2816,6 +2816,28 @@ namespace Silk.NET.GLFW
 
         /// <summary>
         /// <para>
+        /// This function sets the maximizing callback of the specified window,
+        /// which is called when the window is maximized or restored.
+        /// </para>
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="callback">The new callback, or <c>null</c> to remove the currently set callback.</param>
+        /// <returns>
+        /// The previously set callback, or <c>null</c> if no callback was set or the library had not been initialized.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// This function must only be called from the main thread.
+        /// </para>
+        /// <para>
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
+        /// </para>
+        /// </remarks>
+        unsafe GlfwCallbacks.WindowMaximizeCallback SetWindowMaximizeCallback(WindowHandle* window,
+            GlfwCallbacks.WindowMaximizeCallback callback);
+
+        /// <summary>
+        /// <para>
         /// This function sets the monitor that the window uses for full screen mode or,
         /// if the monitor is <c>null</c>, makes it windowed mode.
         /// </para>
