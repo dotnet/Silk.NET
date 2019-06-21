@@ -17,7 +17,7 @@ namespace Silk.NET.Windowing.Desktop
     /// </summary>
     public class GlfwWindow : IWindow
     {
-        private Glfw glfw = Glfw.GetAPI();
+        private Glfw glfw = GlfwProvider.GLFW.Value;
         private unsafe WindowHandle* WindowPtr;
         
         private Thread renderThread;
@@ -309,11 +309,13 @@ namespace Silk.NET.Windowing.Desktop
                 renderThread.Start();
             }
             
-            renderClock = new Stopwatch();
             updateClock = new Stopwatch();
-            
-            renderClock.Start();
             updateClock.Start();
+
+            if (UseSingleThreadedWindow) {
+                renderClock = new Stopwatch();
+                renderClock.Start();
+            }
 
             // Start the update loop.
             unsafe {
@@ -341,6 +343,9 @@ namespace Silk.NET.Windowing.Desktop
 
         private void StartRenderThread()
         {
+            renderClock = new Stopwatch();
+            renderClock.Start();
+            
             unsafe {
                 while (!glfw.WindowShouldClose(WindowPtr)) {
                     RaiseRenderFrame();
@@ -348,7 +353,7 @@ namespace Silk.NET.Windowing.Desktop
             }
         }
         
-        private void RaiseRenderFrame()
+        public void RaiseRenderFrame()
         {
             OnRender(renderClock.Elapsed.TotalMilliseconds);
             renderClock.Restart();
