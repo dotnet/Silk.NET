@@ -9,7 +9,9 @@ namespace Silk.NET.Windowing.Testing
     {
         static void Main(string[] args)
         {
-            var window = new GlfwWindow(WindowOptions.Default);
+            var options = WindowOptions.Default;
+            options.UpdatesPerSecond = 60.0;
+            var window = new TestWindow(options);
             window.Run();
         }
     }

@@ -309,9 +309,12 @@ namespace Silk.NET.Windowing.Desktop
                 renderThread.Start();
             }
             
+            // Initialize update clock.
             updateClock = new Stopwatch();
             updateClock.Start();
 
+            // If using a single thread, clock must be initialized here.
+            // Otherwise, it needs to go in StartRenderThread.
             if (UseSingleThreadedWindow) {
                 renderClock = new Stopwatch();
                 renderClock.Start();
@@ -334,11 +337,24 @@ namespace Silk.NET.Windowing.Desktop
                 }
             }
         }
+
+        private double updateEpsilon = 0.0;
         
         private void RaiseUpdateFrame()
         {
-            OnUpdate(updateClock.Elapsed.TotalMilliseconds);
-            updateClock.Restart();
+            var elapsed = updateClock.Elapsed.TotalMilliseconds;
+
+            while (elapsed > 0 && elapsed + updateEpsilon >= updatePeriod) {
+                OnUpdate(elapsed);
+                
+                updateEpsilon += elapsed - updatePeriod;
+                
+                updateClock.Restart();
+
+                if (UpdatesPerSecond <= double.Epsilon) {
+                    break;
+                }
+            }
         }
 
         private void StartRenderThread()
