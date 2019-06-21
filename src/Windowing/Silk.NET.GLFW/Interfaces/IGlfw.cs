@@ -14,7 +14,7 @@ namespace Silk.NET.GLFW
     /// Defines the public interface of the GLFW library.
     /// </summary>
     [NativeSymbols(Prefix = "glfw")]
-    internal interface IGlfw
+    public interface IGlfw
     {
         // XML-documentation is from https://www.glfw.org/docs/latest/
         // Still missing in documentation
