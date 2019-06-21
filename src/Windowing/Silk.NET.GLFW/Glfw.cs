@@ -421,5 +421,12 @@ namespace Silk.NET.GLFW
         {
             return LibraryLoader.Load<Glfw>(new GlfwLibraryNameContainer());
         }
+        
+        public override SearchPathContainer SearchPaths { get; } = new GlfwLibraryNameContainer();
+
+        public override bool IsExtensionPresent(string name)
+        {
+            throw new NotSupportedException("Extensions are invalid for GLFW");
+        }
     }
 }
