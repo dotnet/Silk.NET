@@ -1,8 +1,4 @@
 using System;
-using System.Diagnostics;
-using System.Drawing;
-using System.Security.Cryptography.X509Certificates;
-using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
 using Silk.NET.Windowing.Desktop;
 
