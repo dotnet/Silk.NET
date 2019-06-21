@@ -19,10 +19,9 @@ namespace Silk.NET.Windowing.Desktop
     {
         private Glfw glfw = GlfwProvider.GLFW.Value;
         private unsafe WindowHandle* WindowPtr;
-        
-        private Thread renderThread;
-        private Stopwatch renderClock;
-        private Stopwatch updateClock;
+
+        private Timer renderTimer;
+        private Timer updateTimer;
 
         private double renderPeriod;
         private double updatePeriod;
@@ -303,21 +302,8 @@ namespace Silk.NET.Windowing.Desktop
                 renderPeriod = 1.0 / FramesPerSecond;
             }
 
-            // Start the render thread if using multiple threads.
-            if (!UseSingleThreadedWindow) {
-                renderThread = new Thread(StartRenderThread);
-                renderThread.Start();
-            }
-            
-            // Initialize update clock.
-            updateClock = new Stopwatch();
-            updateClock.Start();
-
-            // If using a single thread, clock must be initialized here.
-            // Otherwise, it needs to go in StartRenderThread.
-            if (UseSingleThreadedWindow) {
-                renderClock = new Stopwatch();
-                renderClock.Start();
+            if (updatePeriod > double.Epsilon) {
+                updateTimer = new Timer();
             }
 
             // Start the update loop.
@@ -325,10 +311,12 @@ namespace Silk.NET.Windowing.Desktop
                 while (!glfw.WindowShouldClose(WindowPtr)) {
                     ProcessEvents();
                     
-                    RaiseUpdateFrame();
+                    if (updatePeriod <= double.Epsilon) {
+                        OnUpdate(0.0);
+                    }
 
-                    if (UseSingleThreadedWindow) {
-                        RaiseRenderFrame();
+                    if (renderPeriod <= double.Epsilon) {
+                        OnRender(0.0);
                     }
 
                     if (VSync == VSyncMode.Adaptive) {
@@ -337,42 +325,15 @@ namespace Silk.NET.Windowing.Desktop
                 }
             }
         }
-
-        private double updateEpsilon = 0.0;
         
         private void RaiseUpdateFrame()
         {
-            var elapsed = updateClock.Elapsed.TotalMilliseconds;
-
-            while (elapsed > 0 && elapsed + updateEpsilon >= updatePeriod) {
-                OnUpdate(elapsed);
-                
-                updateEpsilon += elapsed - updatePeriod;
-                
-                updateClock.Restart();
-
-                if (UpdatesPerSecond <= double.Epsilon) {
-                    break;
-                }
-            }
-        }
-
-        private void StartRenderThread()
-        {
-            renderClock = new Stopwatch();
-            renderClock.Start();
-            
-            unsafe {
-                while (!glfw.WindowShouldClose(WindowPtr)) {
-                    RaiseRenderFrame();
-                }
-            }
+            OnUpdate(updatePeriod);
         }
         
         public void RaiseRenderFrame()
         {
-            OnRender(renderClock.Elapsed.TotalMilliseconds);
-            renderClock.Restart();
+            OnRender(renderPeriod);
         }
 
         /// <inheritdoc />

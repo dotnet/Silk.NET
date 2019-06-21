@@ -13,7 +13,13 @@ namespace Silk.NET.Windowing.Testing
 
         public override void OnUpdate(double delta)
         {
-            Console.WriteLine("{0}", delta);
+        }
+
+        public override void OnFileDrop(string[] files)
+        {
+            foreach (var file in files) {
+                Console.WriteLine(file);
+            }
         }
     }
 }
