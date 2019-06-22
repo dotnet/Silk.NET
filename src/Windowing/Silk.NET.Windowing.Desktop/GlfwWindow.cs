@@ -4,11 +4,12 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
+using System.Timers;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
+using Timer = System.Timers.Timer;
 
 namespace Silk.NET.Windowing.Desktop
 {
@@ -303,7 +304,15 @@ namespace Silk.NET.Windowing.Desktop
             }
 
             if (updatePeriod > double.Epsilon) {
-                updateTimer = new Timer();
+                updateTimer = new Timer(updatePeriod);
+                updateTimer.Elapsed += RaiseUpdateFrame;
+                updateTimer.Start();
+            }
+
+            if (renderPeriod > double.Epsilon) {
+                renderTimer = new Timer(renderPeriod);
+                renderTimer.Elapsed += RaiseRenderFrame;
+                renderTimer.Start();
             }
 
             // Start the update loop.
@@ -326,12 +335,12 @@ namespace Silk.NET.Windowing.Desktop
             }
         }
         
-        private void RaiseUpdateFrame()
+        private void RaiseUpdateFrame(object _o, EventArgs _e)
         {
             OnUpdate(updatePeriod);
         }
         
-        public void RaiseRenderFrame()
+        public void RaiseRenderFrame(object _o, EventArgs _e)
         {
             OnRender(renderPeriod);
         }
