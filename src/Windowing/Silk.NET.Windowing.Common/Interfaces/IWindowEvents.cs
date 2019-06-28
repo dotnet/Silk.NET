@@ -24,49 +24,43 @@ namespace Silk.NET.Windowing.Common
         event EventHandler<Size> OnResize;
 
         /// <summary>
-        /// Called when the window is about to close.
+        /// Raised when the window is about to close.
         /// </summary>
         event EventHandler OnClosing;
 
         /// <summary>
-        /// Called when the window state is changed.
+        /// Raised when the window state is changed.
         /// </summary>
-        /// <param name="newState">The new state of the window.</param>
         event EventHandler<WindowState> OnStateChanged;
 
         /// <summary>
-        /// Called when the window focus changes.
+        /// Raised when the window focus changes.
         /// </summary>
-        /// <param name="isFocused">If the window is focused or not.</param>
         event EventHandler<bool> OnFocusChanged;
 
         /// <summary>
-        /// Called when the window visibility changes.
+        /// Raised when the window visibility changes.
         /// </summary>
-        /// <param name="isVisible">If the window is visible or not.</param>
         event EventHandler<bool> OnVisibilityChanged;
 
         /// <summary>
-        /// Called when the user drops files onto the window.
+        /// Raised when the user drops files onto the window.
         /// </summary>
-        /// <param name="files">An array of paths to the files dropped.</param>
         event EventHandler<string[]> OnFileDrop;
 
         /// <summary>
-        /// Called when the window first begins to run.
+        /// Raised when the window first begins to run.
         /// </summary>
         event EventHandler OnLoad;
 
         /// <summary>
-        /// Called when an update should be run.
+        /// Raised when an update should be run.
         /// </summary>
-        /// <param name="delta">The number of milliseconds since the last update event.</param>
         event EventHandler<double> OnUpdate;
 
         /// <summary>
-        /// Called when a frame should be rendered.
+        /// Raised when a frame should be rendered.
         /// </summary>
-        /// <param name="delta">The number of milliseconds since the last render event.</param>
         event EventHandler<double> OnRender;
     }
 }
