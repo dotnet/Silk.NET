@@ -5,6 +5,7 @@
 
 using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Timers;
 using Silk.NET.GLFW;
@@ -475,16 +476,16 @@ namespace Silk.NET.Windowing.Desktop
 
             onFileDrop = (window, count, paths) =>
             {
-                var pathsStrings = (char**)paths;
-
                 var arrayOfPaths = new string[count];
 
+                if (count == 0 || paths == IntPtr.Zero) {
+                    return;
+                }
+                
                 for (var i = 0; i < count; i++)
                 {
-                    if (pathsStrings != null)
-                    {
-                        arrayOfPaths[i] = new string(pathsStrings[i]);
-                    }
+                    var p = Marshal.ReadIntPtr(paths, i * IntPtr.Size);
+                    arrayOfPaths[i] = Marshal.PtrToStringAnsi(p);
                 }
 
                 OnFileDrop(arrayOfPaths);
