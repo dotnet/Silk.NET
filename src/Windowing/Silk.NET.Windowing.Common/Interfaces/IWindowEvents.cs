@@ -16,51 +16,51 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// Raised when the window is moved.
         /// </summary>
-        event EventHandler<Point> OnMove;
+        event Action<Point> OnMove;
 
         /// <summary>
         /// Raised when the window is resized.
         /// </summary>
-        event EventHandler<Size> OnResize;
+        event Action<Size> OnResize;
 
         /// <summary>
         /// Raised when the window is about to close.
         /// </summary>
-        event EventHandler OnClosing;
+        event Action OnClosing;
 
         /// <summary>
         /// Raised when the window state is changed.
         /// </summary>
-        event EventHandler<WindowState> OnStateChanged;
+        event Action<WindowState> OnStateChanged;
 
         /// <summary>
         /// Raised when the window focus changes.
         /// </summary>
-        event EventHandler<bool> OnFocusChanged;
+        event Action<bool> OnFocusChanged;
 
         /// <summary>
         /// Raised when the window visibility changes.
         /// </summary>
-        event EventHandler<bool> OnVisibilityChanged;
+        event Action<bool> OnVisibilityChanged;
 
         /// <summary>
         /// Raised when the user drops files onto the window.
         /// </summary>
-        event EventHandler<string[]> OnFileDrop;
+        event Action<string[]> OnFileDrop;
 
         /// <summary>
         /// Raised when the window first begins to run.
         /// </summary>
-        event EventHandler OnLoad;
+        event Action OnLoad;
 
         /// <summary>
         /// Raised when an update should be run.
         /// </summary>
-        event EventHandler<double> OnUpdate;
+        event Action<double> OnUpdate;
 
         /// <summary>
         /// Raised when a frame should be rendered.
         /// </summary>
-        event EventHandler<double> OnRender;
+        event Action<double> OnRender;
     }
 }
