@@ -15,7 +15,7 @@ namespace Silk.NET.Windowing.Testing
             window.Run();
         }
 
-        public static void OnFileDrop(object e, string[] args)
+        public static void OnFileDrop(string[] args)
         {
             foreach (var file in args) {
                 Console.WriteLine(file);
