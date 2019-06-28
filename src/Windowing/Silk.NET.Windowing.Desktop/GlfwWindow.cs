@@ -6,8 +6,6 @@
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
-using System.Threading;
-using System.Timers;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
 using Timer = System.Timers.Timer;
@@ -48,6 +46,7 @@ namespace Silk.NET.Windowing.Desktop
                 }
 
                 _isVisible = value;
+                OnVisibilityChanged?.Invoke(this, value);
             }
         }
 
@@ -284,7 +283,7 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public void Run()
         {
-            OnLoad();
+            OnLoad?.Invoke(this, EventArgs.Empty);
             
             IsRunningSlowly = false;
             
@@ -322,11 +321,11 @@ namespace Silk.NET.Windowing.Desktop
                     ProcessEvents();
                     
                     if (updatePeriod <= double.Epsilon) {
-                        OnUpdate(0.0);
+                        OnUpdate?.Invoke(this, 0.0);
                     }
 
                     if (renderPeriod <= double.Epsilon) {
-                        OnRender(0.0);
+                        OnRender?.Invoke(this, 0.0);
                     }
 
                     if (VSync == VSyncMode.Adaptive) {
@@ -338,12 +337,12 @@ namespace Silk.NET.Windowing.Desktop
         
         private void RaiseUpdateFrame(object _o, EventArgs _e)
         {
-            OnUpdate(updatePeriod);
+            OnUpdate?.Invoke(this, updatePeriod);
         }
         
         public void RaiseRenderFrame(object _o, EventArgs _e)
         {
-            OnRender(renderPeriod);
+            OnRender?.Invoke(this, renderPeriod);
         }
 
         /// <inheritdoc />
@@ -407,7 +406,7 @@ namespace Silk.NET.Windowing.Desktop
             {
                 var point = new Point(x, y);
                 _position = point;
-                OnMove(point);
+                OnMove?.Invoke(this, point);
             };
             glfw.SetWindowPosCallback(WindowPtr, onMove);
             
@@ -415,14 +414,14 @@ namespace Silk.NET.Windowing.Desktop
             {
                 var size = new Size(width, height);
                 _size = size;
-                OnResize(size);
+                OnResize?.Invoke(this, size);
             };
             glfw.SetWindowSizeCallback(WindowPtr, onResize);
             
-            onClosing = (window) => OnClosing();
+            onClosing = (window) => OnClosing?.Invoke(this, EventArgs.Empty);
             glfw.SetWindowCloseCallback(WindowPtr, onClosing);
             
-            onFocusChanged = (window, isFocused) => OnFocusChanged(isFocused);
+            onFocusChanged = (window, isFocused) => OnFocusChanged?.Invoke(this, isFocused);
             glfw.SetWindowFocusCallback(WindowPtr, onFocusChanged);
 
             onMinimized = (window, isMinimized) =>
@@ -446,7 +445,7 @@ namespace Silk.NET.Windowing.Desktop
                 }
 
                 _windowState = state;
-                OnWindowStateChanged(state);
+                OnStateChanged?.Invoke(this, state);
             };
             glfw.SetWindowIconifyCallback(WindowPtr, onMinimized);
 
@@ -470,7 +469,7 @@ namespace Silk.NET.Windowing.Desktop
                 }
 
                 _windowState = state;
-                OnWindowStateChanged(state);
+                OnStateChanged?.Invoke(this, state);
             };
             glfw.SetWindowMaximizeCallback(WindowPtr, onMaximized);
 
@@ -488,69 +487,42 @@ namespace Silk.NET.Windowing.Desktop
                     arrayOfPaths[i] = Marshal.PtrToStringAnsi(p);
                 }
 
-                OnFileDrop(arrayOfPaths);
+                OnFileDrop?.Invoke(this, arrayOfPaths);
                 
             };
             glfw.SetDropCallback(WindowPtr, onFileDrop);
         }
+        
+        // Events
 
         /// <inheritdoc />
-        public virtual void OnMove(Point newPosition)
-        {
-        }
+        public event EventHandler<Point> OnMove;
 
         /// <inheritdoc />
-        public virtual void OnResize(Size newSize)
-        {
-            
-        }
+        public event EventHandler<Size> OnResize;
 
         /// <inheritdoc />
-        public virtual void OnClosing()
-        {
-            
-        }
+        public event EventHandler OnClosing;
 
         /// <inheritdoc />
-        public virtual void OnWindowStateChanged(WindowState newState)
-        {
-            
-        }
+        public event EventHandler<WindowState> OnStateChanged;
 
         /// <inheritdoc />
-        public virtual void OnFocusChanged(bool isFocused)
-        {
-            
-        }
+        public event EventHandler<bool> OnFocusChanged;
 
         /// <inheritdoc />
-        public virtual void OnVisibilityChanged(bool isVisible)
-        {
-            
-        }
+        public event EventHandler<bool> OnVisibilityChanged;
 
         /// <inheritdoc />
-        public virtual void OnFileDrop(string[] files)
-        {
-            
-        }
+        public event EventHandler<string[]> OnFileDrop;
 
         /// <inheritdoc />
-        public virtual void OnLoad()
-        {
-            
-        }
+        public event EventHandler OnLoad;
 
         /// <inheritdoc />
-        public virtual void OnUpdate(double delta)
-        {
-            
-        }
+        public event EventHandler<double> OnUpdate;
 
         /// <inheritdoc />
-        public virtual void OnRender(double delta)
-        {
-            
-        }
+        public event EventHandler<double> OnRender;
     }
 }

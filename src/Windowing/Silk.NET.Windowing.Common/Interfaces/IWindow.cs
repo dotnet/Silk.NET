@@ -10,7 +10,7 @@ namespace Silk.NET.Windowing.Common
     /// <summary>
     /// An interface representing a window.
     /// </summary>
-    public interface IWindow : IWindowProperties, IWindowFunctions, IWindowVirtualFunctions
+    public interface IWindow : IWindowProperties, IWindowFunctions, IWindowEvents
     {
         /// <summary>
         /// A handle to the underlying window.

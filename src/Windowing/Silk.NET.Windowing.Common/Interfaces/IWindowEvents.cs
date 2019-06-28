@@ -3,71 +3,70 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Drawing;
 
 namespace Silk.NET.Windowing.Common
 {
     /// <summary>
-    /// Contains all virtual window functions.
+    /// Contains all window events.
     /// </summary>
-    public interface IWindowVirtualFunctions
+    public interface IWindowEvents
     {
         /// <summary>
-        /// Called when the window is moved.
+        /// Raised when the window is moved.
         /// </summary>
-        /// <param name="newPosition">The new position of the window.</param>
-        void OnMove(Point newPosition);
+        event EventHandler<Point> OnMove;
 
         /// <summary>
-        /// Called when the window is resized.
+        /// Raised when the window is resized.
         /// </summary>
-        /// <param name="newSize">The new size of the window.</param>
-        void OnResize(Size newSize);
+        event EventHandler<Size> OnResize;
 
         /// <summary>
         /// Called when the window is about to close.
         /// </summary>
-        void OnClosing();
+        event EventHandler OnClosing;
 
         /// <summary>
         /// Called when the window state is changed.
         /// </summary>
         /// <param name="newState">The new state of the window.</param>
-        void OnWindowStateChanged(WindowState newState);
+        event EventHandler<WindowState> OnStateChanged;
 
         /// <summary>
         /// Called when the window focus changes.
         /// </summary>
         /// <param name="isFocused">If the window is focused or not.</param>
-        void OnFocusChanged(bool isFocused);
+        event EventHandler<bool> OnFocusChanged;
 
         /// <summary>
         /// Called when the window visibility changes.
         /// </summary>
         /// <param name="isVisible">If the window is visible or not.</param>
-        void OnVisibilityChanged(bool isVisible);
+        event EventHandler<bool> OnVisibilityChanged;
 
         /// <summary>
         /// Called when the user drops files onto the window.
         /// </summary>
         /// <param name="files">An array of paths to the files dropped.</param>
-        void OnFileDrop(string[] files);
+        event EventHandler<string[]> OnFileDrop;
 
         /// <summary>
         /// Called when the window first begins to run.
         /// </summary>
-        void OnLoad();
+        event EventHandler OnLoad;
 
         /// <summary>
         /// Called when an update should be run.
         /// </summary>
         /// <param name="delta">The number of milliseconds since the last update event.</param>
-        void OnUpdate(double delta);
+        event EventHandler<double> OnUpdate;
 
         /// <summary>
         /// Called when a frame should be rendered.
         /// </summary>
         /// <param name="delta">The number of milliseconds since the last render event.</param>
-        void OnRender(double delta);
+        event EventHandler<double> OnRender;
     }
 }
