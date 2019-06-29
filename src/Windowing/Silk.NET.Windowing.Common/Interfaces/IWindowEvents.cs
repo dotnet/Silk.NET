@@ -39,11 +39,6 @@ namespace Silk.NET.Windowing.Common
         event Action<bool> OnFocusChanged;
 
         /// <summary>
-        /// Raised when the window visibility changes.
-        /// </summary>
-        event Action<bool> OnVisibilityChanged;
-
-        /// <summary>
         /// Raised when the user drops files onto the window.
         /// </summary>
         event Action<string[]> OnFileDrop;

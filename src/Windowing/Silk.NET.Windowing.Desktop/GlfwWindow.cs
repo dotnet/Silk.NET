@@ -46,7 +46,6 @@ namespace Silk.NET.Windowing.Desktop
                 }
 
                 _isVisible = value;
-                OnVisibilityChanged?.Invoke(value);
             }
         }
 
@@ -509,9 +508,6 @@ namespace Silk.NET.Windowing.Desktop
 
         /// <inheritdoc />
         public event Action<bool> OnFocusChanged;
-
-        /// <inheritdoc />
-        public event Action<bool> OnVisibilityChanged;
 
         /// <inheritdoc />
         public event Action<string[]> OnFileDrop;

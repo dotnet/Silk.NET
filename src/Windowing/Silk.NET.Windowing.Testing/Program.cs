@@ -23,7 +23,6 @@ namespace Silk.NET.Windowing.Testing
             window.OnLoad += OnLoad;
             window.OnClosing += OnClosing;
             window.OnFocusChanged += OnFocusChanged;
-            window.OnVisibilityChanged += OnVisibilityChanged;
             
             window.Run();
         }
@@ -63,11 +62,6 @@ namespace Silk.NET.Windowing.Testing
         public static void OnFocusChanged(bool isFocused)
         {
             Console.WriteLine($"Focused = {isFocused}");
-        }
-
-        public static void OnVisibilityChanged(bool isVisible)
-        {
-           Console.WriteLine($"Visible = {isVisible}"); 
         }
     }
 }
