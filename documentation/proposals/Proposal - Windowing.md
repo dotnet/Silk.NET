@@ -28,7 +28,7 @@
 /// <summary>
 /// Base interface for a window.
 /// </summary>
-public interface IWindow : IWindowProperties, IWindowFunctions, IWindowVirtualFunctions
+public interface IWindow : IWindowProperties, IWindowFunctions, IWindowEvents
 {
 	/// <summary>
 	/// A handle to the underlying window.
@@ -150,44 +150,55 @@ public interface IWindowFunctions
 /// <summary>
 /// Contains all window virtual functions.
 /// </summary>
-public interface IWindowVirtualFunctions
+public interface IWindowEvents
 {
-	/// <summary>
-	/// Called when the window moves.
-	/// </summary>
-	virtual void OnMove(point newPosition);
+    /// <summary>
+    /// Raised when the window is moved.
+    /// </summary>
+    event Action<Point> OnMove;
 
-	/// <summary>
-	/// Called when the window is resized.
-	/// </summary>
-	virtual void OnResize(Size newSize);
+    /// <summary>
+    /// Raised when the window is resized.
+    /// </summary>
+    event Action<Size> OnResize;
 
-	/// <summary>
-	/// Called when the window is about to close.
-	/// </summary>
-	virtual void OnClosing();
+    /// <summary>
+    /// Raised when the window is about to close.
+    /// </summary>
+    event Action OnClosing;
 
-	/// <summary>
-	/// Called when the window's state is changed..
-	/// </summary>
-	virtual void OnWindowStateChanged(WindowState newState);
+    /// <summary>
+    /// Raised when the window state is changed.
+    /// </summary>
+    event Action<WindowState> OnStateChanged;
 
-	/// <summary>
-	/// Called when the window's focus changes.
-	/// </summary>
-	virtual void OnFocusChanged(bool isFocused);
+    /// <summary>
+    /// Raised when the window focus changes.
+    /// </summary>
+    event Action<bool> OnFocusChanged;
 
-	/// <summary>
-	/// Called when the window's visibility changes.
-	/// </summary>
-	virtual void OnVisibilityChanged(bool isVisible);
+    /// <summary>
+    /// Raised when the user drops files onto the window.
+    /// </summary>
+    event Action<string[]> OnFileDrop;
 
-	/// <summary>
-	/// Called when the user drops files onto the window.
-	/// </summary>
-	virtual void OnFileDrop(string[] filePaths);
+    /// <summary>
+    /// Raised when the window first begins to run.
+    /// </summary>
+    event Action OnLoad;
+
+    /// <summary>
+    /// Raised when an update should be run.
+    /// </summary>
+    event Action<double> OnUpdate;
+
+    /// <summary>
+    /// Raised when a frame should be rendered.
+    /// </summary>
+    event Action<double> OnRender;
 }
 ```
+
 - The GLFW or Native platforms can't be referenced by the main windowing package. This means that we nede to work out our own cross-platform windowing management API. We have decided to use `ISilkPlatform`, static class `Silk` for platform registration via reflection, and static class `Window` for Window creation.
 
 ```cs
