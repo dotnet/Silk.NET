@@ -354,6 +354,11 @@ namespace Silk.NET.Windowing.Desktop
                 renderTimer.Start();
             }
 
+            if (!UseSingleThreadedWindow) {
+                UpdateDispatcher = new Dispatcher();
+                RenderDispatcher = new Dispatcher();
+            }
+
             // Start the update loop.
             unsafe {
                 while (!glfw.WindowShouldClose(WindowPtr)) {
