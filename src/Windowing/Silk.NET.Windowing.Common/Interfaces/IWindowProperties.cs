@@ -18,13 +18,14 @@ namespace Silk.NET.Windowing.Common
         bool IsVisible { get; set; }
         
         /// <summary>
-        /// Gets whether or not the window should use a single-threaded implementation. If false,
-        /// rendering will be moved to its own thread.
+        /// If true, both updates and rendering will happen on the same thread. If false, both updating and rendering
+        /// will be run on their own threads. Default is true.
         /// </summary>
         bool UseSingleThreadedWindow { get; }
 
         /// <summary>
-        /// Gets or sets the position of the top-left corner of the window on the desktop.
+        /// The position of the window. Integer vector. If set to -1, use the backend default.
+        /// Default is -1 for both components.
         /// </summary>
         /// <remarks>
         /// <para>
