@@ -18,9 +18,14 @@ namespace Silk.NET.Windowing.Desktop
     /// </summary>
     public class GlfwWindow : IWindow
     {
+        // Glfw stuff
         private Glfw glfw = GlfwProvider.GLFW.Value;
         private Dispatcher glfwThread = GlfwProvider.ThreadDispatcher;
         private unsafe WindowHandle* WindowPtr;
+        
+        // Threading stuff
+        private Dispatcher UpdateDispatcher;
+        private Dispatcher RenderDispatcher;
 
         private Timer renderTimer;
         private Timer updateTimer;
@@ -355,11 +360,21 @@ namespace Silk.NET.Windowing.Desktop
                     ProcessEvents();
                     
                     if (updatePeriod <= double.Epsilon) {
-                        OnUpdate?.Invoke(0.0);
+                        if (UseSingleThreadedWindow) {
+                            OnUpdate?.Invoke(0.0);
+                        }
+                        else {
+                            UpdateDispatcher.Invoke(() => OnUpdate?.Invoke(0.0));
+                        }
                     }
 
                     if (renderPeriod <= double.Epsilon) {
-                        OnRender?.Invoke(0.0);
+                        if (UseSingleThreadedWindow) {
+                            OnRender?.Invoke(0.0);
+                        }
+                        else {
+                            RenderDispatcher.Invoke(() => OnRender?.Invoke(0.0));
+                        }
                     }
 
                     if (VSync == VSyncMode.Adaptive) {
@@ -371,12 +386,22 @@ namespace Silk.NET.Windowing.Desktop
         
         private void RaiseUpdateFrame(object _o, EventArgs _e)
         {
-            OnUpdate?.Invoke(updatePeriod);
+            if (UseSingleThreadedWindow) {
+                OnUpdate?.Invoke(0.0);
+            }
+            else {
+                UpdateDispatcher.Invoke(() => OnUpdate?.Invoke(0.0));
+            }
         }
         
         public void RaiseRenderFrame(object _o, EventArgs _e)
         {
-            OnRender?.Invoke(renderPeriod);
+            if (UseSingleThreadedWindow) {
+                OnRender?.Invoke(renderPeriod);
+            }
+            else {
+                RenderDispatcher.Invoke(() => OnRender?.Invoke(renderPeriod));
+            }
         }
 
         /// <inheritdoc />
