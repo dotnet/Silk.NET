@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Threading;
 using Silk.NET.Windowing.Common;
 using Silk.NET.Windowing.Desktop;
 
@@ -10,6 +11,8 @@ namespace Silk.NET.Windowing.Testing
         private static void Main()
         {
             var options = WindowOptions.Default;
+
+            options.UseSingleThreadedWindow = true;
             
             options.UpdatesPerSecond = 60.0;
             options.FramesPerSecond = 60.0;
@@ -23,6 +26,11 @@ namespace Silk.NET.Windowing.Testing
             window.OnLoad += OnLoad;
             window.OnClosing += OnClosing;
             window.OnFocusChanged += OnFocusChanged;
+
+            window.OnRender += OnRender;
+            window.OnUpdate += OnUpdate;
+            
+            Console.WriteLine($"Entry thread is {Thread.CurrentThread.ManagedThreadId}");
             
             window.Run();
         }
@@ -62,6 +70,16 @@ namespace Silk.NET.Windowing.Testing
         public static void OnFocusChanged(bool isFocused)
         {
             Console.WriteLine($"Focused = {isFocused}");
+        }
+
+        public static void OnRender(double delta)
+        {
+            Console.WriteLine($"Render {delta}");
+        }
+
+        public static void OnUpdate(double delta)
+        {
+            Console.WriteLine($"Update {delta}");
         }
     }
 }

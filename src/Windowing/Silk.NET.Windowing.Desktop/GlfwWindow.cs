@@ -6,10 +6,10 @@
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using System.Threading;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
 using Ultz.Dispatcher;
-using Timer = System.Timers.Timer;
 
 namespace Silk.NET.Windowing.Desktop
 {
@@ -23,17 +23,25 @@ namespace Silk.NET.Windowing.Desktop
         private Dispatcher glfwThread = GlfwProvider.ThreadDispatcher;
         private unsafe WindowHandle* WindowPtr;
         
-        // Threading stuff
+        // Main loop-related things
+        
+        // Dispatcher for the update and render threads
         private Dispatcher UpdateDispatcher;
         private Dispatcher RenderDispatcher;
 
-        private Timer renderTimer;
-        private Timer updateTimer;
-
+        // The period for rendering and updating. In essence, the delay between events being fired off.
         private double renderPeriod;
         private double updatePeriod;
+
+        // The timestamp of the last update/render being run. Used to calculate delta.
+        private double renderLastTime;
+        private double updateLastTime;
+
+        // The number of frames that the window has been running slowly for.
+        private int _isRunningSlowlyTries;
         
-        public bool IsRunningSlowly { get; private set; }
+        /// <inheritdoc />
+        public bool IsRunningSlowly => _isRunningSlowlyTries > 5;
 
         private bool _isVisible;
 
@@ -299,6 +307,9 @@ namespace Silk.NET.Windowing.Desktop
 
                 MakeCurrent();
 
+                FramesPerSecond = options.FramesPerSecond;
+                UpdatesPerSecond = options.UpdatesPerSecond;
+                
                 WindowState = options.WindowState;
                 Position = options.Position;
                 VSync = options.VSync;
@@ -322,12 +333,16 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public void Run()
         {
+            // Run OnLoad.
             OnLoad?.Invoke();
             
-            IsRunningSlowly = false;
+            // Initialize some variables
+            _isRunningSlowlyTries = 0;
+            renderLastTime = 0.0;
+            updateLastTime = 0.0;
             
             // Calculate the update speed.
-            if (UpdatesPerSecond < double.Epsilon) {
+            if (UpdatesPerSecond <= double.Epsilon) {
                 updatePeriod = 0.0;
             }
             else {
@@ -335,51 +350,33 @@ namespace Silk.NET.Windowing.Desktop
             }
             
             // Calculate the render speed.
-            if (FramesPerSecond < double.Epsilon) {
+            if (FramesPerSecond <= double.Epsilon) {
                 renderPeriod = 0.0;
             }
             else {
                 renderPeriod = 1.0 / FramesPerSecond;
             }
-
-            if (updatePeriod > double.Epsilon) {
-                updateTimer = new Timer(updatePeriod);
-                updateTimer.Elapsed += RaiseUpdateFrame;
-                updateTimer.Start();
-            }
-
-            if (renderPeriod > double.Epsilon) {
-                renderTimer = new Timer(renderPeriod);
-                renderTimer.Elapsed += RaiseRenderFrame;
-                renderTimer.Start();
-            }
-
-            if (!UseSingleThreadedWindow) {
-                UpdateDispatcher = new Dispatcher();
-                RenderDispatcher = new Dispatcher();
-            }
+            
+            UpdateDispatcher = new Dispatcher();
+            RenderDispatcher = new Dispatcher();
 
             // Start the update loop.
             unsafe {
                 while (!glfw.WindowShouldClose(WindowPtr)) {
                     ProcessEvents();
                     
-                    if (updatePeriod <= double.Epsilon) {
-                        if (UseSingleThreadedWindow) {
-                            OnUpdate?.Invoke(0.0);
-                        }
-                        else {
-                            UpdateDispatcher.Invoke(() => OnUpdate?.Invoke(0.0));
-                        }
+                    if (UseSingleThreadedWindow) {
+                        RaiseUpdateFrame();
+                    }
+                    else {
+                        UpdateDispatcher.Invoke(RaiseUpdateFrame);
                     }
 
-                    if (renderPeriod <= double.Epsilon) {
-                        if (UseSingleThreadedWindow) {
-                            OnRender?.Invoke(0.0);
-                        }
-                        else {
-                            RenderDispatcher.Invoke(() => OnRender?.Invoke(0.0));
-                        }
+                    if (UseSingleThreadedWindow) {
+                        RaiseRenderFrame();
+                    }
+                    else {
+                        RenderDispatcher.Invoke(RaiseRenderFrame);
                     }
 
                     if (VSync == VSyncMode.Adaptive) {
@@ -389,24 +386,48 @@ namespace Silk.NET.Windowing.Desktop
             }
         }
         
-        private void RaiseUpdateFrame(object _o, EventArgs _e)
+        private void RaiseUpdateFrame()
         {
-            if (UseSingleThreadedWindow) {
-                OnUpdate?.Invoke(0.0);
+            // If using a capped framerate, we have to do some synchronization-related things before rendering.
+            if (UpdatesPerSecond > double.Epsilon) {
+                // Calculate the amount of time to sleep.
+                var sleepTime = updatePeriod - (glfw.GetTime() - updateLastTime);
+
+                // If the result is negative, that means the frame is running slowly. Mark as such and don't sleep.
+                if (sleepTime < 0.0) {
+                    _isRunningSlowlyTries += 1;
+                }
+                // Else, sleep for that amount of time.
+                else {
+                    _isRunningSlowlyTries = 0;
+                    Thread.Sleep((int)(1000 * sleepTime));
+                }
             }
-            else {
-                UpdateDispatcher.Invoke(() => OnUpdate?.Invoke(0.0));
-            }
+
+            // Calculate delta and run frame.
+            var delta = glfw.GetTime() - updateLastTime;
+            OnUpdate?.Invoke(delta);
+            updateLastTime = glfw.GetTime();
         }
         
-        public void RaiseRenderFrame(object _o, EventArgs _e)
+        private void RaiseRenderFrame()
         {
-            if (UseSingleThreadedWindow) {
-                OnRender?.Invoke(renderPeriod);
+            // If using a capped framerate, we have to do some synchronization-related things before rendering.
+            if (FramesPerSecond > double.Epsilon) {
+                // Calculate the amount of time to sleep.
+                var sleepTime = renderPeriod - (glfw.GetTime() - renderLastTime);
+
+                // If the result is negative, that means the frame is running slowly, so don't sleep.
+                if (sleepTime > 0.0) {
+                    // Else, sleep for that amount of time.
+                    Thread.Sleep((int)(1000 * sleepTime));
+                }
             }
-            else {
-                RenderDispatcher.Invoke(() => OnRender?.Invoke(renderPeriod));
-            }
+
+            // Calculate delta and run frame.
+            var delta = glfw.GetTime() - renderLastTime;
+            OnRender?.Invoke(delta);
+            renderLastTime = glfw.GetTime();
         }
 
         /// <inheritdoc />
