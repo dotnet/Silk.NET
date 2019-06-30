@@ -22,7 +22,9 @@
 
 ## Interfaces
 
-- The main interface is `IWindow`, an interface representing a window. It contains only one property of its own, and mostly serves to implement the other `IWindow*` interfaces for the sake of convenience.
+- The main interface is `IWindow`, an interface representing a window. It contains very little of its own, and mostly serves to implement the other `IWindow*` interfaces for the sake of convenience.
+
+- Certain backends (such as GLFW) have limits as to what functions can be called on threads that the windowing system wasn't initialized. In these cases, [Ultz.Dispatcher](https://github.com/Ultz/Dispatcher) should be used as a workaround for multithreading. The `Invoke` methods provide user-access to the main UI thread.
 
 ```cs
 /// <summary>
@@ -34,6 +36,16 @@ public interface IWindow : IWindowProperties, IWindowFunctions, IWindowEvents
 	/// A handle to the underlying window.
 	/// </summary>
 	IntPtr Handle { get; }
+	
+	/// <summary>
+        /// Invokes this delegate on the window's main thread.
+        /// </summary>
+        object Invoke(Delegate d);
+
+        /// <summary>
+        /// Invokes this delegate on the window's main thread, with the provided arguments.
+        /// </summary>
+        object Invoke(Delegate d, params object[] args);
 }
 ```
 
@@ -46,12 +58,12 @@ public interface IWindow : IWindowProperties, IWindowFunctions, IWindowEvents
 public interface IWindowProperties
 {
 	/// <summary>
-	/// If true, both updates and rendering will happen on the same thread. If false, rendering will be run on its own thread. Default is true.
+	/// If true, both updates and rendering will happen on the same thread. If false, both updating and rendering will be run on their own threads. Default is true.
 	/// </summary>
 	bool UseSingleThreadedWindow { get; }
 
 	/// <summary>
-	/// The position of the window. Integer vector. Default is GLFW_DONT_CARE for both components.
+	/// The position of the window. Integer vector. If set to -1, use the backend default. Default is -1 for both components.
 	/// </summary>
 	Point Position { get; set; }
 
@@ -97,7 +109,7 @@ public interface IWindowProperties
 }
 ```
 
-- Next is IWindowFunctions. This is very standard.
+- Next is IWindowFunctions. This is very standard for windows, since most functionality will be provided by users via callbacks.
 
 ```cs
 /// <summary>
@@ -144,7 +156,7 @@ public interface IWindowFunctions
 }
 ```
 
-- Several events GLFW provides have been omitted. Everything related to input has been removed, as it would be redundant to have both input-handling here and in Silk.NET.Input. In addition, certain events (such as WindowBorderChanged) have been omitted, as those variables will only ever be updated when the user updates them manually.
+- Next is `IWindowEvents`. Several events GLFW provides have been omitted. Everything related to input has been removed, as it would be redundant to have both input-handling here and in Silk.NET.Input. In addition, certain events (such as WindowBorderChanged) have been omitted, as those variables will only ever be updated when the user updates them manually.
 
 ```cs
 /// <summary>
@@ -259,6 +271,8 @@ public class GlfwWindow : IWindow
 ```
 
 ## Structs
+
+- To avoid having an excessive number of constructors, and to allow for multiple defaults for multiple situations, we initialize objects Vulkan-style; we fill out a struct with all the properties, and pass that to the constructor.
 
 ```cs
 /// <summary>
