@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
+using Ultz.Dispatcher;
 using Timer = System.Timers.Timer;
 
 namespace Silk.NET.Windowing.Desktop
@@ -18,6 +19,7 @@ namespace Silk.NET.Windowing.Desktop
     public class GlfwWindow : IWindow
     {
         private Glfw glfw = GlfwProvider.GLFW.Value;
+        private Dispatcher glfwThread = GlfwProvider.ThreadDispatcher;
         private unsafe WindowHandle* WindowPtr;
 
         private Timer renderTimer;
@@ -36,14 +38,17 @@ namespace Silk.NET.Windowing.Desktop
             get => _isVisible;
             set
             {
-                unsafe {
-                    if (value) {
-                        glfw.ShowWindow(WindowPtr);
+                glfwThread.Invoke(() =>
+                {
+                    unsafe {
+                        if (value) {
+                            glfw.ShowWindow(WindowPtr);
+                        }
+                        else {
+                            glfw.HideWindow(WindowPtr);
+                        }
                     }
-                    else {
-                        glfw.HideWindow(WindowPtr);
-                    }
-                }
+                });
 
                 _isVisible = value;
             }
@@ -71,9 +76,12 @@ namespace Silk.NET.Windowing.Desktop
             get => _position;
             set
             {
-                unsafe {
-                    glfw.SetWindowPos(WindowPtr, value.X, value.Y);
-                }
+                glfwThread.Invoke(() =>
+                {
+                    unsafe {
+                        glfw.SetWindowPos(WindowPtr, value.X, value.Y);
+                    }
+                });
 
                 _position = value;
             }
@@ -87,9 +95,12 @@ namespace Silk.NET.Windowing.Desktop
             get => _size;
             set
             {
-                unsafe {
-                    glfw.SetWindowSize(WindowPtr, value.Width, value.Height);
-                }
+                glfwThread.Invoke(() =>
+                {
+                    unsafe {
+                        glfw.SetWindowSize(WindowPtr, value.Width, value.Height);
+                    }
+                });
 
                 _size = value;
             }
@@ -112,9 +123,12 @@ namespace Silk.NET.Windowing.Desktop
             get => _title;
             set
             {
-                unsafe {
-                    glfw.SetWindowTitle(WindowPtr, value);
-                }
+                glfwThread.Invoke(() =>
+                {
+                    unsafe {
+                        glfw.SetWindowTitle(WindowPtr, value);
+                    }
+                });
 
                 _title = value;
             }
@@ -128,25 +142,28 @@ namespace Silk.NET.Windowing.Desktop
             get => _windowState;
             set
             {
-                unsafe {
-                    switch (value) {
-                        case WindowState.Normal:
-                            glfw.RestoreWindow(WindowPtr);
-                            break;
-                        case WindowState.Minimized:
-                            glfw.IconifyWindow(WindowPtr);
-                            break;
-                        case WindowState.Maximized:
-                            glfw.MaximizeWindow(WindowPtr);
-                            break;
-                        case WindowState.Fullscreen:
-                            var monitor = glfw.GetWindowMonitor(WindowPtr);
-                            var mode = glfw.GetVideoMode(monitor);
-                            glfw.SetWindowMonitor(WindowPtr, monitor, 0, 0, mode->Width, mode->Height,
-                                mode->RefreshRate);
-                            break;
+                glfwThread.Invoke(() =>
+                {
+                    unsafe {
+                        switch (value) {
+                            case WindowState.Normal:
+                                glfw.RestoreWindow(WindowPtr);
+                                break;
+                            case WindowState.Minimized:
+                                glfw.IconifyWindow(WindowPtr);
+                                break;
+                            case WindowState.Maximized:
+                                glfw.MaximizeWindow(WindowPtr);
+                                break;
+                            case WindowState.Fullscreen:
+                                var monitor = glfw.GetWindowMonitor(WindowPtr);
+                                var mode = glfw.GetVideoMode(monitor);
+                                glfw.SetWindowMonitor(WindowPtr, monitor, 0, 0, mode->Width, mode->Height,
+                                    mode->RefreshRate);
+                                break;
+                        }
                     }
-                }
+                });
 
                 _windowState = value;
             }
@@ -160,24 +177,27 @@ namespace Silk.NET.Windowing.Desktop
             get => _windowBorder;
             set
             {
-                unsafe {
-                    switch (value) {
-                        case WindowBorder.Hidden:
-                            glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, false);
-                            glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, false);
-                            break;
+                glfwThread.Invoke(() =>
+                {
+                    unsafe {
+                        switch (value) {
+                            case WindowBorder.Hidden:
+                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, false);
+                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, false);
+                                break;
 
-                        case WindowBorder.Resizable:
-                            glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, true);
-                            glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, true);
-                            break;
+                            case WindowBorder.Resizable:
+                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, true);
+                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, true);
+                                break;
 
-                        case WindowBorder.Fixed:
-                            glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, true);
-                            glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, false);
-                            break;
+                            case WindowBorder.Fixed:
+                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, true);
+                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, false);
+                                break;
+                        }
                     }
-                }
+                });
 
                 _windowBorder = value;
             }
@@ -215,7 +235,10 @@ namespace Silk.NET.Windowing.Desktop
                 // Title and Size must be set before the window is created.
                 _title = options.Title;
                 _size = options.Size;
+                
+                _windowBorder = WindowBorder;
 
+                glfwThread.Invoke(() =>;
                 // Set window border.
                 switch (options.WindowBorder) {
                     case WindowBorder.Hidden:
@@ -233,8 +256,6 @@ namespace Silk.NET.Windowing.Desktop
                         glfw.WindowHint(WindowHintBool.Resizable, false);
                         break;
                 }
-
-                _windowBorder = WindowBorder;
 
                 // Set window API.
                 switch (options.API.API) {
@@ -267,7 +288,12 @@ namespace Silk.NET.Windowing.Desktop
                     options.API.Profile == ContextProfile.Core ? OpenGlProfile.Core : OpenGlProfile.Compat);
 
                 // Create window
-                WindowPtr = glfw.CreateWindow(_size.Width, _size.Height, _title, null, null);
+                WindowPtr = glfwThread.Invoke(() =>
+                {
+                    unsafe {
+                        return glfw.CreateWindow(_size.Width, _size.Height, _title, null, null);
+                    }
+                });
 
                 MakeCurrent();
 
@@ -355,7 +381,10 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public void ProcessEvents()
         {
-            glfw.PollEvents();
+            glfwThread.Invoke(() =>
+            {
+                glfw.PollEvents();
+            });
         }
 
         /// <inheritdoc />
@@ -407,7 +436,6 @@ namespace Silk.NET.Windowing.Desktop
                 _position = point;
                 OnMove?.Invoke(point);
             };
-            glfw.SetWindowPosCallback(WindowPtr, onMove);
             
             onResize = (window, width, height) =>
             {
@@ -415,13 +443,10 @@ namespace Silk.NET.Windowing.Desktop
                 _size = size;
                 OnResize?.Invoke(size);
             };
-            glfw.SetWindowSizeCallback(WindowPtr, onResize);
             
             onClosing = (window) => OnClosing?.Invoke();
-            glfw.SetWindowCloseCallback(WindowPtr, onClosing);
             
             onFocusChanged = (window, isFocused) => OnFocusChanged?.Invoke(isFocused);
-            glfw.SetWindowFocusCallback(WindowPtr, onFocusChanged);
 
             onMinimized = (window, isMinimized) =>
             {
@@ -446,7 +471,6 @@ namespace Silk.NET.Windowing.Desktop
                 _windowState = state;
                 OnStateChanged?.Invoke(state);
             };
-            glfw.SetWindowIconifyCallback(WindowPtr, onMinimized);
 
             onMaximized = (window, isMaximized) =>
             {
@@ -470,7 +494,6 @@ namespace Silk.NET.Windowing.Desktop
                 _windowState = state;
                 OnStateChanged?.Invoke(state);
             };
-            glfw.SetWindowMaximizeCallback(WindowPtr, onMaximized);
 
             onFileDrop = (window, count, paths) =>
             {
@@ -489,7 +512,17 @@ namespace Silk.NET.Windowing.Desktop
                 OnFileDrop?.Invoke(arrayOfPaths);
                 
             };
-            glfw.SetDropCallback(WindowPtr, onFileDrop);
+
+            glfwThread.Invoke(() =>
+            {
+                glfw.SetWindowPosCallback(WindowPtr, onMove);
+                glfw.SetWindowSizeCallback(WindowPtr, onResize);
+                glfw.SetWindowCloseCallback(WindowPtr, onClosing);
+                glfw.SetWindowFocusCallback(WindowPtr, onFocusChanged);
+                glfw.SetWindowIconifyCallback(WindowPtr, onMinimized);
+                glfw.SetWindowMaximizeCallback(WindowPtr, onMaximized);
+                glfw.SetDropCallback(WindowPtr, onFileDrop);
+            });
         }
         
         // Events

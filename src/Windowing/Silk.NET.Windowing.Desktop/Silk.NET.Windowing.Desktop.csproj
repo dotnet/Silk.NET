@@ -10,4 +10,8 @@
       <ProjectReference Include="..\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Ultz.Dispatcher" Version="1.0.0" />
+    </ItemGroup>
+
 </Project>
