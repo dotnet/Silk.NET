@@ -22,5 +22,20 @@ namespace Silk.NET.Windowing.Common
         /// to do things such as lowering visual fidelity to increase framerates on lower-end machines.
         /// </summary>
         bool IsRunningSlowly { get; }
+
+        /// <summary>
+        /// Invokes this delegate on the window's main thread.
+        /// </summary>
+        /// <param name="d">The delegate to run.</param>
+        /// <returns>An object returned from the delegate.</returns>
+        object Invoke(Delegate d);
+
+        /// <summary>
+        /// Invokes this delegate on the window's main thread, with the provided arguments.
+        /// </summary>
+        /// <param name="d">The delegate to run.</param>
+        /// <param name="args">The delegate's arguments.</param>
+        /// <returns>An object returned from the delegate.</returns>
+        object Invoke(Delegate d, params object[] args);
     }
 }

@@ -303,6 +303,18 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
+        public object Invoke(Delegate d)
+        {
+            return glfwThread.Invoke(d);
+        }
+
+        /// <inheritdoc />
+        public object Invoke(Delegate d, params object[] args)
+        {
+            return glfwThread.Invoke(d, args);
+        }
+
+        /// <inheritdoc />
         public void Run()
         {
             OnLoad?.Invoke();

@@ -11,7 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Ultz.Dispatcher" Version="1.0.0" />
+      <PackageReference Include="Ultz.Dispatcher" Version="1.1.0" />
     </ItemGroup>
 
 </Project>

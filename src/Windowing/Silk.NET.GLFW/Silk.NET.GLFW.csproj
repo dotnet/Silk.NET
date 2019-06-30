@@ -8,8 +8,8 @@
     
     <ItemGroup>
       <PackageReference Include="AdvancedDLSupport" Version="3.0.0" />
-      <PackageReference Include="opentoolkit.redist.glfw" Version="3.3.0-pre20190419183326" />
-      <PackageReference Include="Ultz.Dispatcher" Version="1.0.0" />
+      <PackageReference Include="opentoolkit.redist.glfw" Version="3.3.0-pre20190424184726" />
+      <PackageReference Include="Ultz.Dispatcher" Version="1.1.0" />
     </ItemGroup>
     
     <ItemGroup>
