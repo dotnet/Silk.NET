@@ -377,6 +377,8 @@ namespace Silk.NET.Windowing.Desktop
                     if (VSync == VSyncMode.Adaptive) {
                         glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
                     }
+                    
+                    SwapBuffers();
                 }
             }
         }

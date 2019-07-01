@@ -19,7 +19,7 @@ namespace Silk.NET.Windowing.Testing
             options.UpdatesPerSecond = 0.0;
             options.FramesPerSecond = 0.0;
 
-            options.WindowState = WindowState.Fullscreen;
+            // options.WindowState = WindowState.Fullscreen;
             
             window = new GlfwWindow(options);
             
