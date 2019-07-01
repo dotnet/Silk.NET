@@ -16,9 +16,9 @@ namespace Silk.NET.Windowing.Common
         None = 0,
         
         /// <summary>
-        /// Identical to <see cref="None"/>
+        /// Use Vulkan. Silk.NET doesn't support this yet.
         /// </summary>
-        Vulkan = None,
+        Vulkan,
         
         /// <summary>
         /// Use core OpenGL. This is standard for software intended for desktop computers.

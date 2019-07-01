@@ -4,7 +4,6 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -275,6 +274,7 @@ namespace Silk.NET.Windowing.Desktop
                     // Set window API.
                     switch (options.API.API) {
                         case ContextAPI.None:
+                        case ContextAPI.Vulkan:
                             glfw.WindowHint(WindowHintClientApi.ClientApi, ClientApi.NoApi);
                             break;
                         case ContextAPI.OpenGL:
