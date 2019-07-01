@@ -11,7 +11,7 @@
 - [x] Proposed
 - [x] Discussed with API Review Board (ARB)
 - [x] Approved
-- [ ] Implemented
+- [x] Implemented
 
 # Design Decisions
 - I was dissatisfied with the windowing system I worked on, primarily because I felt it was too large and bloated. It suffered from attempting to recreate an older API, instead of being a true new beginning. With this proposal, I hope to create a new API that feels familiar, but is much cleaner and easier to work with.
