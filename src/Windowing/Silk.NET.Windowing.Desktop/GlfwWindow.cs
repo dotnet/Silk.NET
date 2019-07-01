@@ -396,7 +396,7 @@ namespace Silk.NET.Windowing.Desktop
                 // Else, sleep for that amount of time.
                 else {
                     _isRunningSlowlyTries = 0;
-                    Task.Delay((int)(1000*sleepTime)).GetAwaiter().GetResult();
+                    Thread.Sleep((int)(1000*sleepTime));
                 }
             }
 
