@@ -8,6 +8,7 @@
 //
 
 using AdvancedDLSupport;
+using Silk.NET.Core.Native;
 using Silk.NET.OpenAL.Interfaces;
 
 namespace Silk.NET.OpenAL.Extensions
@@ -15,7 +16,7 @@ namespace Silk.NET.OpenAL.Extensions
     /// <summary>
     /// Base class for OpenAL context extensions.
     /// </summary>
-    public abstract class ContextExtensionBase : NativeLibraryBase, IContextExtensions
+    public abstract class ContextExtensionBase : NativeExtension<ALContext>, IContextExtensions
     {
         /// <inheritdoc cref="NativeLibraryBase"/>
         protected ContextExtensionBase(string path, ImplementationOptions options)
