@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Drawing;
 
 namespace Silk.NET.Windowing.Common
@@ -50,5 +51,20 @@ namespace Silk.NET.Windowing.Common
         /// <param name="point">The point to transform.</param>
         /// <returns></returns>
         Point PointToScreen(Point point);
+        
+        /// <summary>
+        /// Invokes this delegate on the window's main thread.
+        /// </summary>
+        /// <param name="d">The delegate to run.</param>
+        /// <returns>An object returned from the delegate.</returns>
+        object Invoke(Delegate d);
+
+        /// <summary>
+        /// Invokes this delegate on the window's main thread, with the provided arguments.
+        /// </summary>
+        /// <param name="d">The delegate to run.</param>
+        /// <param name="args">The delegate's arguments.</param>
+        /// <returns>An object returned from the delegate.</returns>
+        object Invoke(Delegate d, params object[] args);
     }
 }
