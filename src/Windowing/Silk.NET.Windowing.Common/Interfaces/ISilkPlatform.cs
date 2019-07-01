@@ -1,3 +1,5 @@
+using Silk.NET.Windowing.Common;
+
 namespace Silk.NET.Windowing.Common
 {
     public interface ISilkPlatform

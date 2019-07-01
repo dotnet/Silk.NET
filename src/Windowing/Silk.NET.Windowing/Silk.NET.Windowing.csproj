@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Silk.NET.Windowing.Desktop\Silk.NET.Windowing.Desktop.csproj" />
+    </ItemGroup>
+
+</Project>

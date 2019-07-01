@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Drawing;
+using Silk.NET.Windowing.Common;
 
 namespace Silk.NET.Windowing.Common
 {

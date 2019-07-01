@@ -1,5 +1,6 @@
 using System;
 using System.Runtime.InteropServices;
+
 // ReSharper disable InconsistentNaming
 
 namespace Silk.NET.Core.Loader

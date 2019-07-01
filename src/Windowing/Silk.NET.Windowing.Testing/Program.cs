@@ -2,13 +2,13 @@
 using System.Drawing;
 using System.Threading;
 using Silk.NET.Windowing.Common;
-using Silk.NET.Windowing.Desktop;
+using Silk.NET.Windowing.Common;
 
 namespace Silk.NET.Windowing.Testing
 {
     internal class Program
     {
-        public static GlfwWindow window;
+        public static IWindow window;
         
         private static void Main()
         {
@@ -21,7 +21,7 @@ namespace Silk.NET.Windowing.Testing
 
             // options.WindowState = WindowState.Fullscreen;
             
-            window = new GlfwWindow(options);
+            window = Window.Create(options);
             
             window.MakeCurrent();
 
