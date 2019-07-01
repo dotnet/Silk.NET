@@ -29,7 +29,7 @@ namespace Silk.NET.Core.Loader
             return _builder.ActivateClass<T1>(nameContainer.GetLibraryName());
         }
 
-        public static T1 Load<T1, T2>(T2 baseApi) where T1 : NativeExtension where T2 : NativeAPI
+        public static T1 Load<T1, T2>(T2 baseApi) where T1 : NativeExtension<T2> where T2 : NativeAPI
         {
             return baseApi.IsExtensionPresent(GetExtensionAttribute(typeof(T1)).Name)
                 ? _builder.ActivateClass<T1>(baseApi.SearchPaths.GetLibraryName())
