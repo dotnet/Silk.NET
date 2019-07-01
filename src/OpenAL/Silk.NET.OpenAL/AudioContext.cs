@@ -10,7 +10,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Silk.NET.Core;
 using Silk.NET.Core.Loader;
 
 namespace Silk.NET.OpenAL
@@ -25,11 +24,11 @@ namespace Silk.NET.OpenAL
 
         private static readonly object AudioContextLock = new object();
 
-        private static readonly Dictionary<ContextHandle, AudioContext> AvailableContexts =
-            new Dictionary<ContextHandle, AudioContext>();
+        private static readonly Dictionary<IntPtr, AudioContext> AvailableContexts =
+            new Dictionary<IntPtr, AudioContext>();
 
         private bool _contextExists;
-        private ContextHandle _contextHandle;
+        private IntPtr _contextHandle;
 
         private string _deviceName;
         private bool _disposed;
@@ -77,14 +76,14 @@ namespace Silk.NET.OpenAL
             {
                 unsafe
                 {
-                    var contextHandle = context?._contextHandle ?? ContextHandle.Zero;
+                    var contextHandle = context?._contextHandle ?? IntPtr.Zero;
 
                     if (ContextAPI.MakeContextCurrent(contextHandle))
                     {
                         return;
                     }
 
-                    var contextPtr = (Context*)contextHandle.Handle;
+                    var contextPtr = (Context*)contextHandle;
                     var deviceHandle = ContextAPI.GetContextsDevice(contextPtr);
                     var error = ContextAPI.GetError(deviceHandle);
 
@@ -430,7 +429,7 @@ namespace Silk.NET.OpenAL
                 _contextHandle = ContextAPI.CreateContextHandle(Device, ptr);
             }
 
-            if (_contextHandle == ContextHandle.Zero)
+            if (_contextHandle == IntPtr.Zero)
             {
                 ContextAPI.CloseDevice(Device);
                 throw new AudioContextException
@@ -524,7 +523,7 @@ namespace Silk.NET.OpenAL
 
             unsafe
             {
-                ContextAPI.ProcessContext((Context*)_contextHandle.Handle);
+                ContextAPI.ProcessContext((Context*)_contextHandle);
             }
 
             IsProcessing = true;
@@ -559,7 +558,7 @@ namespace Silk.NET.OpenAL
 
             unsafe
             {
-                ContextAPI.SuspendContext((Context*)_contextHandle.Handle);
+                ContextAPI.SuspendContext((Context*)_contextHandle);
             }
 
             IsProcessing = false;
@@ -593,13 +592,13 @@ namespace Silk.NET.OpenAL
                     IsCurrent = false;
                 }
 
-                if (_contextHandle != ContextHandle.Zero)
+                if (_contextHandle != IntPtr.Zero)
                 {
                     AvailableContexts.Remove(_contextHandle);
 
                     unsafe
                     {
-                        ContextAPI.DestroyContext((Context*)_contextHandle.Handle);
+                        ContextAPI.DestroyContext((Context*)_contextHandle);
                     }
                 }
 

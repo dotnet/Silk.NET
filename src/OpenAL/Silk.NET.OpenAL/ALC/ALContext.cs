@@ -9,7 +9,6 @@
 
 using System;
 using AdvancedDLSupport;
-using Silk.NET.Core;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.OpenAL.Extensions;
@@ -53,20 +52,20 @@ namespace Silk.NET.OpenAL
         public abstract unsafe Context* CreateContext(Device* device, int* attributeList);
 
         /// <inheritdoc cref="CreateContext"/>
-        public unsafe ContextHandle CreateContextHandle(Device* device, int* attributeList)
+        public unsafe IntPtr CreateContextHandle(Device* device, int* attributeList)
         {
-            return new ContextHandle(CreateContext(device, attributeList));
+            return new IntPtr(CreateContext(device, attributeList));
         }
 
         /// <inheritdoc />
         public abstract unsafe bool MakeContextCurrent(Context* context);
 
         /// <inheritdoc cref="MakeContextCurrent(Context*)"/>
-        public bool MakeContextCurrent(ContextHandle context)
+        public bool MakeContextCurrent(IntPtr context)
         {
             unsafe
             {
-                return MakeContextCurrent((Context*)context.Handle);
+                return MakeContextCurrent((Context*)context);
             }
         }
 
@@ -83,11 +82,11 @@ namespace Silk.NET.OpenAL
         public abstract unsafe Context* GetCurrentContext();
 
         /// <inheritdoc cref="GetCurrentContext"/>
-        public ContextHandle GetCurrentContextHandle()
+        public IntPtr GetCurrentContextHandle()
         {
             unsafe
             {
-                return new ContextHandle(GetCurrentContext());
+                return new IntPtr(GetCurrentContext());
             }
         }
 

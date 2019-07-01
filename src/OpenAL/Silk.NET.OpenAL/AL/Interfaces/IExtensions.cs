@@ -8,7 +8,6 @@
 //
 
 using AdvancedDLSupport;
-using Silk.NET.Core.Extensions;
 
 namespace Silk.NET.OpenAL.Interfaces
 {
@@ -17,7 +16,7 @@ namespace Silk.NET.OpenAL.Interfaces
     /// used to constrain extension implementation classes.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    public interface IExtensions : IAPIExtension
+    public interface IExtensions : IAlExtension
     {
     }
 }

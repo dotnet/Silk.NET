@@ -9,10 +9,8 @@
 
 using System;
 using AdvancedDLSupport;
-using Silk.NET.Core;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Silk.NET.OpenAL.Attributes;
 using Silk.NET.OpenAL.Interfaces;
 using System.Numerics;
 
@@ -198,9 +196,6 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         public SearchPathContainer NameContainer { get; } = new OpenALLibraryNameContainer();
-
-        /// <inheritdoc />
-        public abstract bool IsExtensionPresent(string name);
 
         /// <inheritdoc />
         public abstract IntPtr GetProcAddress(string name);

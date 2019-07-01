@@ -1,5 +1,3 @@
-using Silk.NET.Core.Exceptions;
-using Silk.NET.Core.Extensions;
 using Silk.NET.Core.Loader;
 using Silk.NET.OpenAL.Interfaces;
 
@@ -22,14 +20,14 @@ namespace Silk.NET.OpenAL.Extensions
             (Device* device, IContextExtensions baseAPI)
             where TContextExtension : ContextExtensionBase
         {
-            var extensionMetadata = ExtensionLoader.GetAPIExtensionMetadata<TContextExtension>();
+            var extensionMetadata = LibraryLoader<TContextExtension>();
 
             if (!baseAPI.IsExtensionPresent(device, extensionMetadata.ExtensionName))
             {
                 throw new ExtensionNotSupportedException(extensionMetadata.ExtensionName);
             }
 
-            return APILoader.Load<TContextExtension>(new OpenALLibraryNameContainer());
+            return LibraryLoader.Load<TContextExtension>(new OpenALLibraryNameContainer());
         }
     }
 }
