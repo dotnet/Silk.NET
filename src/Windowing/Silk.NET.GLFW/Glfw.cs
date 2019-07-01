@@ -413,6 +413,9 @@ namespace Silk.NET.GLFW
         public abstract unsafe int CreateWindowSurface(VkHandle instance, WindowHandle* window, void* allocator,
             VkHandle surface);
 
+        /// <inheritdoc />
+        public abstract IntPtr GetProcAddress(string name);
+
         /// <summary>
         /// Gets an instance of the API.
         /// </summary>

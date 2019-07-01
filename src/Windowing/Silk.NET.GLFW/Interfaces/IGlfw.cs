@@ -3644,5 +3644,43 @@ namespace Silk.NET.GLFW
         /// <c>VK_SUCCESS</c> if successful, or a Vulkan error code if an error occurred.
         /// </returns>
         unsafe int CreateWindowSurface(VkHandle instance, WindowHandle* window, void* allocator, VkHandle surface);
+
+        /// <summary>
+        /// <para>
+        /// Returns the address of the specified function for the current context.
+        /// </para>
+        /// <para>
+        /// This function returns the address of the specified OpenGL or OpenGL ES core
+        /// or extension function, if it is supported by the current context.
+        /// </para>
+        /// <para>
+        /// A context must be current on the calling thread.  Calling this function without a current context will
+        /// cause a <see cref="ErrorCode.NoContext"/> error. This function does not apply to Vulkan.  If you are rendering
+        /// with Vulkan, see <see cref="GetInstanceProcAddress"/>, <see cref="GetInstanceProcAddr"/> and
+        /// <see cref="GetDeviceProcAddr"/> instead.
+        /// </para>
+        /// <para>
+        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.NoContext"/> and
+        /// <see cref="ErrorCode.PlatformError"/>.
+        /// </para>
+        /// <remarks>
+        /// <para>
+        /// The address of a given function is not guaranteed to be the same between contexts.
+        /// </para>
+        /// <para>
+        /// This function may return a non-<see cref="IntPtr.Zero"/> address despite the associated version or extension not being
+        /// available.  Always check the context version or extension string first.
+        /// </para>
+        /// <para>
+        /// The returned function pointer is valid until the context is destroyed or the library is terminated.
+        /// </para>
+        /// <para>
+        /// This function may be called from any thread.
+        /// </para>
+        /// </remarks>
+        /// </summary>
+        /// <param name="name">The ASCII encoded name of the function.</param>
+        /// <returns>The address of the function, or IntPtr.Zero if an error occurred.</returns>
+        IntPtr GetProcAddress(string name);
     }
 }
