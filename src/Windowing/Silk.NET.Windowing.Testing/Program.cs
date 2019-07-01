@@ -8,16 +8,18 @@ namespace Silk.NET.Windowing.Testing
 {
     internal class Program
     {
+        public static GlfwWindow window;
+        
         private static void Main()
         {
             var options = WindowOptions.Default;
 
             options.UseSingleThreadedWindow = true;
             
-            options.UpdatesPerSecond = 60.0;
-            options.FramesPerSecond = 60.0;
+            options.UpdatesPerSecond = 300.0;
+            options.FramesPerSecond = 300.0;
             
-            var window = new GlfwWindow(options);
+            window = new GlfwWindow(options);
 
             window.OnFileDrop += OnFileDrop;
             window.OnMove += OnMove;
@@ -79,6 +81,7 @@ namespace Silk.NET.Windowing.Testing
 
         public static void OnUpdate(double delta)
         {
+            Console.WriteLine($"{window.IsRunningSlowly}");
             Console.WriteLine($"Update {delta}");
         }
     }
