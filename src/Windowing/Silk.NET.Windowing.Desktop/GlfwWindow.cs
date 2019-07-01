@@ -73,7 +73,7 @@ namespace Silk.NET.Windowing.Desktop
             get
             {
                 unsafe {
-                    return new IntPtr(WindowPtr);
+                    return (IntPtr)WindowPtr;
                 }
             }
         }
