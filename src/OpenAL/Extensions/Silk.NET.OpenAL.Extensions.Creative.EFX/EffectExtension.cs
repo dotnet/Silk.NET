@@ -9,7 +9,6 @@
 
 using AdvancedDLSupport;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using System.Numerics;
 

@@ -1,6 +1,5 @@
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Silk.NET.OpenAL.Interfaces;
 
 namespace Silk.NET.OpenAL.Extensions
 {
@@ -17,7 +16,7 @@ namespace Silk.NET.OpenAL.Extensions
         /// <typeparam name="TContextExtension">The extension type.</typeparam>
         /// <returns>The extension.</returns>
         /// <exception cref="ExtensionNotSupportedException">Thrown if the API doesn't support the extension.</exception>
-        internal static unsafe TContextExtension LoadContextExtension<TContextExtension>(ALContext baseApi)
+        internal static TContextExtension LoadContextExtension<TContextExtension>(ALContext baseApi)
             where TContextExtension:NativeExtension<ALContext>
         {
             return LibraryLoader.Load<TContextExtension, ALContext>(baseApi);
