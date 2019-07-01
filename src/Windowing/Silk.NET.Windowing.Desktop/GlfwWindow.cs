@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -386,7 +387,9 @@ namespace Silk.NET.Windowing.Desktop
         private void RaiseUpdateFrame()
         {
             // If using a capped framerate, we have to do some synchronization-related things before rendering.
-            if (UpdatesPerSecond > double.Epsilon) {
+            // This is only necessary if VSync is disabled.
+            if (UpdatesPerSecond > double.Epsilon
+                && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive && IsRunningSlowly)) {
                 // Calculate the amount of time to sleep.
                 var sleepTime = updatePeriod - (glfw.GetTime() - updateLastTime);
 
@@ -410,14 +413,19 @@ namespace Silk.NET.Windowing.Desktop
         private void RaiseRenderFrame()
         {
             // If using a capped framerate, we have to do some synchronization-related things before rendering.
-            if (FramesPerSecond > double.Epsilon) {
+            if (FramesPerSecond > double.Epsilon
+                && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive && IsRunningSlowly)) {
                 // Calculate the amount of time to sleep.
                 var sleepTime = renderPeriod - (glfw.GetTime() - renderLastTime);
 
                 // If the result is negative, that means the frame is running slowly, so don't sleep.
                 if (sleepTime > 0.0) {
                     // Else, sleep for that amount of time.
+                    var timeBefore = glfw.GetTime();
                     Thread.Sleep((int)(1000 * sleepTime));
+                    var timeAfter = glfw.GetTime();
+                    
+                    Console.WriteLine($"Tried sleeping for {sleepTime}, slept for {timeAfter - timeBefore}, variance of {(timeAfter - timeBefore) -sleepTime}\n");
                 }
             }
 

@@ -16,8 +16,8 @@ namespace Silk.NET.Windowing.Testing
 
             options.UseSingleThreadedWindow = true;
             
-            options.UpdatesPerSecond = 0.0;
-            options.FramesPerSecond = 0.0;
+            options.UpdatesPerSecond = 60.0;
+            options.FramesPerSecond = 60.0;
 
             // options.WindowState = WindowState.Fullscreen;
             
@@ -36,7 +36,7 @@ namespace Silk.NET.Windowing.Testing
             window.OnRender += OnRender;
             window.OnUpdate += OnUpdate;
 
-            window.VSync = VSyncMode.On;
+            window.VSync = VSyncMode.Off;
             
             Console.WriteLine($"Entry thread is {Thread.CurrentThread.ManagedThreadId}");
             
