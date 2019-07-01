@@ -367,15 +367,10 @@ namespace Silk.NET.Windowing.Desktop
                     
                     if (UseSingleThreadedWindow) {
                         RaiseUpdateFrame();
-                    }
-                    else {
-                        UpdateDispatcher.Invoke(RaiseUpdateFrame);
-                    }
-
-                    if (UseSingleThreadedWindow) {
                         RaiseRenderFrame();
                     }
                     else {
+                        UpdateDispatcher.Invoke(RaiseUpdateFrame);
                         RenderDispatcher.Invoke(RaiseRenderFrame);
                     }
 
