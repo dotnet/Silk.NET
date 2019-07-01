@@ -10,8 +10,6 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
-using Silk.NET.Windowing.Common;
-using Silk.NET.Windowing.Common;
 using Ultz.Dispatcher;
 
 namespace Silk.NET.Windowing.Desktop

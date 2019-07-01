@@ -6,7 +6,6 @@
 using System.IO;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
-using Silk.NET.Windowing.Common;
 
 namespace Silk.NET.Windowing.Desktop
 {
