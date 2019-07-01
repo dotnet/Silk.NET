@@ -7,7 +7,6 @@ using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Threading;
-using System.Threading.Tasks;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
 using Ultz.Dispatcher;
@@ -170,7 +169,7 @@ namespace Silk.NET.Windowing.Desktop
                                 glfw.MaximizeWindow(WindowPtr);
                                 break;
                             case WindowState.Fullscreen:
-                                var monitor = glfw.GetWindowMonitor(WindowPtr);
+                                var monitor = glfw.GetPrimaryMonitor();
                                 var mode = glfw.GetVideoMode(monitor);
                                 glfw.SetWindowMonitor(WindowPtr, monitor, 0, 0, mode->Width, mode->Height,
                                     mode->RefreshRate);

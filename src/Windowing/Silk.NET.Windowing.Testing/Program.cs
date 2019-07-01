@@ -16,12 +16,14 @@ namespace Silk.NET.Windowing.Testing
 
             options.UseSingleThreadedWindow = true;
             
-            options.UpdatesPerSecond = 60.0;
-            options.FramesPerSecond = 60.0;
+            options.UpdatesPerSecond = 0.0;
+            options.FramesPerSecond = 0.0;
 
-            //options.WindowState = WindowState.Fullscreen;
+            options.WindowState = WindowState.Fullscreen;
             
             window = new GlfwWindow(options);
+            
+            window.MakeCurrent();
 
             window.OnFileDrop += OnFileDrop;
             window.OnMove += OnMove;
