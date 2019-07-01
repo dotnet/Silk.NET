@@ -22,13 +22,13 @@
 
 ## Interfaces
 
-- The main interface is `IWindow`, an interface representing a window. It contains only one property of its own, and mostly serves to implement the other `IWindow*` interfaces for the sake of convenience.
+- The main interface is `IWindow`, an interface representing a window. It contains very little of its own, and mostly serves to implement the other `IWindow*` interfaces for the sake of convenience.
 
 ```cs
 /// <summary>
 /// Base interface for a window.
 /// </summary>
-public interface IWindow : IWindowProperties, IWindowFunctions, IWindowVirtualFunctions
+public interface IWindow : IWindowProperties, IWindowFunctions, IWindowEvents
 {
 	/// <summary>
 	/// A handle to the underlying window.
@@ -46,12 +46,12 @@ public interface IWindow : IWindowProperties, IWindowFunctions, IWindowVirtualFu
 public interface IWindowProperties
 {
 	/// <summary>
-	/// If true, both updates and rendering will happen on the same thread. If false, rendering will be run on its own thread. Default is true.
+	/// If true, both updates and rendering will happen on the same thread. If false, both updating and rendering will be run on their own threads. Default is true.
 	/// </summary>
 	bool UseSingleThreadedWindow { get; }
 
 	/// <summary>
-	/// The position of the window. Integer vector. Default is GLFW_DONT_CARE for both components.
+	/// The position of the window. Integer vector. If set to -1, use the backend default. Default is -1 for both components.
 	/// </summary>
 	Point Position { get; set; }
 
@@ -97,7 +97,9 @@ public interface IWindowProperties
 }
 ```
 
-- Next is IWindowFunctions. This is very standard.
+- Next is IWindowFunctions. This is very standard for windows, since most functionality will be provided by users via callbacks.
+
+- Certain backends (such as GLFW) have limits as to what functions can be called on threads that the windowing system wasn't initialized. In these cases, [Ultz.Dispatcher](https://github.com/Ultz/Dispatcher) should be used as a workaround for multithreading. The `Invoke` methods provide user-access to the main UI thread.
 
 ```cs
 /// <summary>
@@ -141,53 +143,74 @@ public interface IWindowFunctions
 	/// The point transformed to screen coordinates.
 	/// </returns>
 	Point PointToScreen(Point point);
+	
+	/// <summary>
+        /// Invokes this delegate on the window's main thread.
+        /// </summary>
+        object Invoke(Delegate d);
+
+        /// <summary>
+        /// Invokes this delegate on the window's main thread, with the provided arguments.
+        /// </summary>
+        object Invoke(Delegate d, params object[] args);
 }
 ```
 
-- Several events GLFW provides have been omitted. Everything related to input has been removed, as it would be redundant to have both input-handling here and in Silk.NET.Input. In addition, certain events (such as WindowBorderChanged) have been omitted, as those variables will only ever be updated when the user updates them manually.
+- Next is `IWindowEvents`. Several events GLFW provides have been omitted. Everything related to input has been removed, as it would be redundant to have both input-handling here and in Silk.NET.Input. In addition, certain events (such as WindowBorderChanged) have been omitted, as those variables will only ever be updated when the user updates them manually.
 
 ```cs
 /// <summary>
 /// Contains all window virtual functions.
 /// </summary>
-public interface IWindowVirtualFunctions
+public interface IWindowEvents
 {
-	/// <summary>
-	/// Called when the window moves.
-	/// </summary>
-	virtual void OnMove(point newPosition);
+    /// <summary>
+    /// Raised when the window is moved.
+    /// </summary>
+    event Action<Point> OnMove;
 
-	/// <summary>
-	/// Called when the window is resized.
-	/// </summary>
-	virtual void OnResize(Size newSize);
+    /// <summary>
+    /// Raised when the window is resized.
+    /// </summary>
+    event Action<Size> OnResize;
 
-	/// <summary>
-	/// Called when the window is about to close.
-	/// </summary>
-	virtual void OnClosing();
+    /// <summary>
+    /// Raised when the window is about to close.
+    /// </summary>
+    event Action OnClosing;
 
-	/// <summary>
-	/// Called when the window's state is changed..
-	/// </summary>
-	virtual void OnWindowStateChanged(WindowState newState);
+    /// <summary>
+    /// Raised when the window state is changed.
+    /// </summary>
+    event Action<WindowState> OnStateChanged;
 
-	/// <summary>
-	/// Called when the window's focus changes.
-	/// </summary>
-	virtual void OnFocusChanged(bool isFocused);
+    /// <summary>
+    /// Raised when the window focus changes.
+    /// </summary>
+    event Action<bool> OnFocusChanged;
 
-	/// <summary>
-	/// Called when the window's visibility changes.
-	/// </summary>
-	virtual void OnVisibilityChanged(bool isVisible);
+    /// <summary>
+    /// Raised when the user drops files onto the window.
+    /// </summary>
+    event Action<string[]> OnFileDrop;
 
-	/// <summary>
-	/// Called when the user drops files onto the window.
-	/// </summary>
-	virtual void OnFileDrop(string[] filePaths);
+    /// <summary>
+    /// Raised when the window first begins to run.
+    /// </summary>
+    event Action OnLoad;
+
+    /// <summary>
+    /// Raised when an update should be run.
+    /// </summary>
+    event Action<double> OnUpdate;
+
+    /// <summary>
+    /// Raised when a frame should be rendered.
+    /// </summary>
+    event Action<double> OnRender;
 }
 ```
+
 - The GLFW or Native platforms can't be referenced by the main windowing package. This means that we nede to work out our own cross-platform windowing management API. We have decided to use `ISilkPlatform`, static class `Silk` for platform registration via reflection, and static class `Window` for Window creation.
 
 ```cs
@@ -248,6 +271,8 @@ public class GlfwWindow : IWindow
 ```
 
 ## Structs
+
+- To avoid having an excessive number of constructors, and to allow for multiple defaults for multiple situations, we initialize objects Vulkan-style; we fill out a struct with all the properties, and pass that to the constructor.
 
 ```cs
 /// <summary>
