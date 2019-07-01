@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Threading;
@@ -33,9 +34,9 @@ namespace Silk.NET.Windowing.Desktop
         private double renderPeriod;
         private double updatePeriod;
 
-        // The timestamp of the last update/render being run. Used to calculate delta.
-        private double renderLastTime;
-        private double updateLastTime;
+        // The stopwatches. Used to calculate delta.
+        private Stopwatch renderStopwatch;
+        private Stopwatch updateStopwatch;
 
         // The number of frames that the window has been running slowly for.
         private int _isRunningSlowlyTries;
@@ -339,8 +340,8 @@ namespace Silk.NET.Windowing.Desktop
             
             // Initialize some variables
             _isRunningSlowlyTries = 0;
-            renderLastTime = 0.0;
-            updateLastTime = 0.0;
+            renderStopwatch = new Stopwatch();
+            updateStopwatch = new Stopwatch();
             
             // Calculate the update speed.
             if (UpdatesPerSecond <= double.Epsilon) {
@@ -391,7 +392,7 @@ namespace Silk.NET.Windowing.Desktop
             if (UpdatesPerSecond > double.Epsilon
                 && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive && IsRunningSlowly)) {
                 // Calculate the amount of time to sleep.
-                var sleepTime = updatePeriod - (glfw.GetTime() - updateLastTime);
+                var sleepTime = updatePeriod - updateStopwatch.Elapsed.TotalSeconds;
 
                 // If the result is negative, that means the frame is running slowly. Mark as such and don't sleep.
                 if (sleepTime < 0.0) {
@@ -405,9 +406,9 @@ namespace Silk.NET.Windowing.Desktop
             }
 
             // Calculate delta and run frame.
-            var delta = glfw.GetTime() - updateLastTime;
+            var delta = updateStopwatch.Elapsed.TotalSeconds;
             OnUpdate?.Invoke(delta);
-            updateLastTime = glfw.GetTime();
+            updateStopwatch.Restart();
         }
         
         private void RaiseRenderFrame()
@@ -416,23 +417,24 @@ namespace Silk.NET.Windowing.Desktop
             if (FramesPerSecond > double.Epsilon
                 && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive && IsRunningSlowly)) {
                 // Calculate the amount of time to sleep.
-                var sleepTime = renderPeriod - (glfw.GetTime() - renderLastTime);
+                var sleepTime = renderPeriod - renderStopwatch.Elapsed.TotalSeconds;
 
                 // If the result is negative, that means the frame is running slowly, so don't sleep.
                 if (sleepTime > 0.0) {
                     // Else, sleep for that amount of time.
-                    var timeBefore = glfw.GetTime();
+                    var timeBefore = renderStopwatch.Elapsed.TotalSeconds;
                     Thread.Sleep((int)(1000 * sleepTime));
-                    var timeAfter = glfw.GetTime();
+                    var timeAfter = renderStopwatch.Elapsed.TotalSeconds;
                     
-                    Console.WriteLine($"Tried sleeping for {sleepTime}, slept for {timeAfter - timeBefore}, variance of {(timeAfter - timeBefore) -sleepTime}\n");
+                    Console.WriteLine($"Tried sleeping for {sleepTime}, slept for {timeAfter - timeBefore}," +
+                                      $"variance of {(timeAfter - timeBefore) -sleepTime}\n");
                 }
             }
 
             // Calculate delta and run frame.
-            var delta = glfw.GetTime() - renderLastTime;
+            var delta = renderStopwatch.Elapsed.TotalSeconds;
             OnRender?.Invoke(delta);
-            renderLastTime = glfw.GetTime();
+            renderStopwatch.Restart();
         }
 
         /// <inheritdoc />
