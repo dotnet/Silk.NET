@@ -44,7 +44,7 @@ namespace Silk.NET.OpenAL
         public TExtension GetExtension<TExtension>()
             where TExtension : NativeExtension<AL>
         {
-            return LibraryLoader.Load<TExtension>(new OpenALLibraryNameContainer());
+            return LibraryLoader.Load<TExtension, AL>(this);
         }
 
         /// <inheritdoc />

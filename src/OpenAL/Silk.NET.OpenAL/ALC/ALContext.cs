@@ -45,7 +45,7 @@ namespace Silk.NET.OpenAL
         public unsafe TContextExtension GetExtension<TContextExtension>(Device* device)
             where TContextExtension : ContextExtensionBase
         {
-            return ALExtensionLoader.LoadContextExtension<TContextExtension>(device, this);
+            return ALExtensionLoader.LoadContextExtension<TContextExtension>(this);
         }
 
         /// <inheritdoc />
