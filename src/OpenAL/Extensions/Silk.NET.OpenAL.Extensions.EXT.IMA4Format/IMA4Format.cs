@@ -8,11 +8,10 @@
 //
 
 using AdvancedDLSupport;
-using OpenToolkit.Core.Extensions;
-using OpenToolkit.Core.Loader;
-using OpenToolkit.OpenAL.Extensions;
+using Silk.NET.Core.Attributes;
+using Silk.NET.OpenAL.Extensions;
 
-namespace OpenToolkit.OpenAL.Native.Extensions.EXT.IMA4Format
+namespace Silk.NET.OpenAL.Native.Extensions.EXT.IMA4Format
 {
     /// <summary>
     /// Exposes the multi-channel buffers extension by Creative Labs.

@@ -9,7 +9,7 @@
 
 using AdvancedDLSupport;
 
-namespace OpenToolkit.OpenAL.Extensions.Creative.MultiChannelBuffers
+namespace Silk.NET.OpenAL.Extensions.Creative.MultiChannelBuffers
 {
     /// <summary>
     /// Defines the public interface for buffer-related functions of the multi-channel buffers extension.

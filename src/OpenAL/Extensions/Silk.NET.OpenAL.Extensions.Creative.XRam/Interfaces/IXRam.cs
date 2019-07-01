@@ -9,9 +9,9 @@
 
 using System;
 using AdvancedDLSupport;
-using OpenToolkit.OpenAL.Interfaces;
+using Silk.NET.OpenAL.Interfaces;
 
-namespace OpenToolkit.OpenAL.Extensions.Creative.XRam
+namespace Silk.NET.OpenAL.Extensions.Creative.XRam
 {
     /// <summary>
     /// Defines the public interface of the X-RAM extension.

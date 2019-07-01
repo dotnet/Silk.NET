@@ -9,11 +9,10 @@
 
 using System;
 using AdvancedDLSupport;
-using OpenToolkit.Core.Extensions;
-using OpenToolkit.Core.Loader;
-using OpenToolkit.OpenAL.Attributes;
+using Silk.NET.OpenAL.Attributes;
+using Silk.NET.Core.Attributes;
 
-namespace OpenToolkit.OpenAL.Extensions.EXT.Capture
+namespace Silk.NET.OpenAL.Extensions.EXT.Capture
 {
     /// <summary>
     /// Exposes the API in the Capture extension.

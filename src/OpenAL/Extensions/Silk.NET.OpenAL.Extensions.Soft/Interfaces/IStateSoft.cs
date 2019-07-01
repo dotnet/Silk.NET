@@ -9,10 +9,10 @@
 
 using System;
 using AdvancedDLSupport;
-using OpenToolkit.OpenAL.Interfaces;
+using Silk.NET.OpenAL.Interfaces;
 
 // ReSharper disable ExplicitCallerInfoArgument
-namespace OpenToolkit.OpenAL.Extensions.Soft
+namespace Silk.NET.OpenAL.Extensions.Soft
 {
     /// <summary>
     /// Defines the public interface for the state-related functions of OpenAL 1.1 (OpenAL Soft).

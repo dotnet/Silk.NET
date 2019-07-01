@@ -9,7 +9,7 @@
 
 using AdvancedDLSupport;
 
-namespace OpenToolkit.OpenAL.Extensions.EXT.Capture
+namespace Silk.NET.OpenAL.Extensions.EXT.Capture
 {
     /// <summary>
     /// Defines the public API of capture-related functions in the Capture extension.

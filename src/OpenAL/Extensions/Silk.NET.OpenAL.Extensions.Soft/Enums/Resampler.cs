@@ -7,7 +7,7 @@
 // of the MIT license. See the LICENSE file for details.
 //
 
-namespace OpenToolkit.OpenAL.Extensions.Soft
+namespace Silk.NET.OpenAL.Extensions.Soft
 {
     /// <summary>
     /// A set of resamplers defined in OpenAL Soft.

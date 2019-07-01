@@ -9,8 +9,8 @@
 
 using System;
 using AdvancedDLSupport;
-using Silk.NET.Core.Extensions;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Native;
 
 namespace Silk.NET.OpenAL.Extensions.Creative.EFX
 {
@@ -18,7 +18,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative.EFX
     /// Exposes the context-related functions of the Effects Extension.
     /// </summary>
     [Extension("AL_EXT_EFX")]
-    public abstract class EffectExtensionContext : ExtensionBase, IEFXContext
+    public abstract class EffectExtensionContext : NativeExtension<AL>, IEFXContext
     {
         /// <inheritdoc cref="ExtensionBase" />
         protected EffectExtensionContext(string path, ImplementationOptions options)

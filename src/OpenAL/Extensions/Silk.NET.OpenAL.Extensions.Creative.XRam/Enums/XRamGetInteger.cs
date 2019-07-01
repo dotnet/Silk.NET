@@ -7,7 +7,7 @@
 // of the MIT license. See the LICENSE file for details.
 //
 
-namespace OpenToolkit.OpenAL.Extensions.Creative.XRam
+namespace Silk.NET.OpenAL.Extensions.Creative.XRam
 {
     /// <summary>
     /// A list of valid <see cref="int"/> <see cref="IXRam.GetInteger"/> parameters.

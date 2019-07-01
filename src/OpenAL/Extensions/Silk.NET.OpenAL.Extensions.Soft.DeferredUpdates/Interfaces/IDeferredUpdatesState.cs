@@ -8,10 +8,10 @@
 //
 
 using AdvancedDLSupport;
-using OpenToolkit.OpenAL.Interfaces;
+using Silk.NET.OpenAL.Interfaces;
 
 // ReSharper disable ExplicitCallerInfoArgument
-namespace OpenToolkit.OpenAL.Extensions.Soft.DeferredUpdates
+namespace Silk.NET.OpenAL.Extensions.Soft.DeferredUpdates
 {
     /// <summary>
     /// Defines the public API of state-related functions in the Deferred Updates extension.

@@ -11,17 +11,19 @@ using System;
 using System.Buffers;
 using System.ComponentModel;
 using AdvancedDLSupport;
-using OpenToolkit.Core.Extensions;
-using OpenToolkit.Core.Loader;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Loader;
+using Silk.NET.Core.Native;
+
 
 // ReSharper disable VirtualMemberCallInConstructor
-namespace OpenToolkit.OpenAL.Extensions.Creative.XRam
+namespace Silk.NET.OpenAL.Extensions.Creative.XRam
 {
     /// <summary>
     /// Exposes the X-RAM extension by Creative Labs.
     /// </summary>
     [Extension("EAX-RAM")]
-    public abstract class XRam : ExtensionBase, IXRam
+    public abstract class XRam : NativeExtension<AL>, IXRam
     {
         private readonly int _bufferStorageModeAutomatic;
         private readonly int _bufferStorageModeHardware;
@@ -195,5 +197,13 @@ namespace OpenToolkit.OpenAL.Extensions.Creative.XRam
 
             throw new InvalidEnumArgumentException(nameof(value), value, typeof(BufferStorageMode));
         }
+
+        public SearchPathContainer NameContainer { get; }
+        
+        public abstract bool IsExtensionPresent(string name);
+
+        public abstract IntPtr GetProcAddress(string name);
+
+        public abstract int GetEnumValue(string name);
     }
 }

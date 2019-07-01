@@ -7,15 +7,17 @@
 // of the MIT license. See the LICENSE file for details.
 //
 
+using System;
 using AdvancedDLSupport;
-using OpenToolkit.Core.Extensions;
+using Silk.NET.Core.Loader;
+using Silk.NET.Core.Native;
 
-namespace OpenToolkit.OpenAL.Extensions.Soft.DeferredUpdates
+namespace Silk.NET.OpenAL.Extensions.Soft.DeferredUpdates
 {
     /// <summary>
     /// Exposes the public API of the OpenAL Soft Deferred Updates extension.
     /// </summary>
-    public abstract class DeferredUpdates : ExtensionBase, IDeferredUpdatesState
+    public abstract class DeferredUpdates : NativeExtension<AL>, IDeferredUpdatesState
     {
         /// <inheritdoc cref ="ExtensionBase"/>
         protected DeferredUpdates(string path, ImplementationOptions options)
@@ -31,5 +33,10 @@ namespace OpenToolkit.OpenAL.Extensions.Soft.DeferredUpdates
 
         /// <inheritdoc />
         public abstract void ProcessUpdates();
+
+        public abstract SearchPathContainer NameContainer { get; }
+        public abstract bool IsExtensionPresent(string name);
+        public abstract IntPtr GetProcAddress(string name);
+        public abstract int GetEnumValue(string name);
     }
 }

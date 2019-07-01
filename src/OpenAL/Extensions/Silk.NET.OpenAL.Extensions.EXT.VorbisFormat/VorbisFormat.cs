@@ -8,10 +8,9 @@
 //
 
 using AdvancedDLSupport;
-using OpenToolkit.Core.Extensions;
-using OpenToolkit.Core.Loader;
+using Silk.NET.Core.Attributes;
 
-namespace OpenToolkit.OpenAL.Extensions.EXT.VorbisFormat
+namespace Silk.NET.OpenAL.Extensions.EXT.VorbisFormat
 {
     /// <summary>
     /// Exposes the multi-channel buffers extension by Creative Labs.

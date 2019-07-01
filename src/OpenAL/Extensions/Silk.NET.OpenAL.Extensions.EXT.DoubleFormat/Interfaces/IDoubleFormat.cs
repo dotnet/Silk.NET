@@ -9,7 +9,7 @@
 
 using AdvancedDLSupport;
 
-namespace OpenToolkit.OpenAL.Extensions.EXT.DoubleFormat
+namespace Silk.NET.OpenAL.Extensions.EXT.DoubleFormat
 {
     /// <summary>
     /// Defines the public interface for buffer-related functions of the multi-channel buffers extension.

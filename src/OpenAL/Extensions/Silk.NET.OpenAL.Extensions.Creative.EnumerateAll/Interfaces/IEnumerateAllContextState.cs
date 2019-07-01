@@ -10,7 +10,7 @@
 using AdvancedDLSupport;
 
 // ReSharper disable ExplicitCallerInfoArgument
-namespace OpenToolkit.OpenAL.Extensions.Creative.EnumerateAll
+namespace Silk.NET.OpenAL.Extensions.Creative.EnumerateAll
 {
     /// <summary>
     /// Defines the public API of the context-related functions of the EnumerateAll extension.

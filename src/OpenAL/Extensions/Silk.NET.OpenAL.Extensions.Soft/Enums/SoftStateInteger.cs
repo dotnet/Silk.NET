@@ -7,7 +7,7 @@
 // of the MIT license. See the LICENSE file for details.
 //
 
-namespace OpenToolkit.OpenAL.Extensions.Soft
+namespace Silk.NET.OpenAL.Extensions.Soft
 {
     /// <summary>
     /// A list of valid <see cref="int"/> <see cref="IStateSoft.GetInteger"/> parameters.

@@ -9,14 +9,15 @@
 
 using System;
 using AdvancedDLSupport;
-using OpenToolkit.Core.Extensions;
+using Silk.NET.Core.Loader;
+using Silk.NET.Core.Native;
 
-namespace OpenToolkit.OpenAL.Extensions.Soft
+namespace Silk.NET.OpenAL.Extensions.Soft
 {
     /// <summary>
     /// Exposes the public API of functions added by OpenAL Soft.
     /// </summary>
-    public abstract class Soft : ExtensionBase, IStateSoft
+    public abstract class Soft : NativeExtension<AL>, IStateSoft
     {
         /// <inheritdoc cref="ExtensionBase" />
         protected Soft(string path, ImplementationOptions options)
@@ -38,5 +39,10 @@ namespace OpenToolkit.OpenAL.Extensions.Soft
 
         /// <inheritdoc />
         public abstract IntPtr GetPointer(StatePointer param);
+
+        public abstract SearchPathContainer NameContainer { get; }
+        public abstract bool IsExtensionPresent(string name);
+        public abstract IntPtr GetProcAddress(string name);
+        public abstract int GetEnumValue(string name);
     }
 }

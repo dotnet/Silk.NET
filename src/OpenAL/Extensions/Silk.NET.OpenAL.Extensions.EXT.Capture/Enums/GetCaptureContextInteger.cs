@@ -7,7 +7,7 @@
 // of the MIT license. See the LICENSE file for details.
 //
 
-namespace OpenToolkit.OpenAL.Extensions.EXT.Capture
+namespace Silk.NET.OpenAL.Extensions.EXT.Capture
 {
     /// <summary>
     /// Defines valid values for the <see cref="ICaptureContextState.GetContextProperty"/> method.

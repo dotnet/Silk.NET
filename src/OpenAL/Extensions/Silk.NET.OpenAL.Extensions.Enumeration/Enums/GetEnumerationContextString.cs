@@ -7,7 +7,7 @@
 // of the MIT license. See the LICENSE file for details.
 //
 
-namespace OpenToolkit.OpenAL.Extensions.Enumeration
+namespace Silk.NET.OpenAL.Extensions.Enumeration
 {
     /// <summary>
     /// Defines available parameters for <see cref="IEnumerationContextState.GetString(Device*, GetEnumerationContextString)" />.

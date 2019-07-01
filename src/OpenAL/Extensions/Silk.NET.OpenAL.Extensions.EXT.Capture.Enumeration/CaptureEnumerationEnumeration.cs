@@ -11,11 +11,10 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using AdvancedDLSupport;
-using OpenToolkit.Core.Extensions;
-using OpenToolkit.Core.Loader;
-using OpenToolkit.OpenAL.Extensions.EXT.Capture.Enumeration;
+using Silk.NET.Core.Attributes;
+using Silk.NET.OpenAL.Extensions.EXT.Capture.Enumeration;
 
-namespace OpenToolkit.OpenAL.Extensions.Enumeration
+namespace Silk.NET.OpenAL.Extensions.Enumeration
 {
     /// <summary>
     /// Exposes the API in the CaptureEnumerationEnumeration extension.
@@ -35,7 +34,7 @@ namespace OpenToolkit.OpenAL.Extensions.Enumeration
         /// <inheritdoc />
         public abstract unsafe char* GetStringList(Device* device, GetCaptureContextStringList param);
 
-        /// <inheritdoc cref="GetStringList(OpenToolkit.OpenAL.Device*,OpenToolkit.OpenAL.Extensions.EXT.Capture.Enumeration.GetCaptureContextStringList)"/>
+        /// <inheritdoc cref="GetStringList(Silk.NET.OpenAL.Device*,GetCaptureContextStringList)"/>
         public IEnumerable<string> GetStringList(GetCaptureContextStringList param)
         {
             unsafe

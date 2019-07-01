@@ -10,7 +10,7 @@
 using AdvancedDLSupport;
 
 // ReSharper disable ExplicitCallerInfoArgument
-namespace OpenToolkit.OpenAL.Extensions.EXT.Capture.Enumeration
+namespace Silk.NET.OpenAL.Extensions.EXT.Capture.Enumeration
 {
     /// <summary>
     /// Defines the public API of the context-related functions of the Capture extension.

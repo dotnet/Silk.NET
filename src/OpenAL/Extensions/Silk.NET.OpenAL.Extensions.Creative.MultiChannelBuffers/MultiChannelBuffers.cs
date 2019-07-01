@@ -8,10 +8,9 @@
 //
 
 using AdvancedDLSupport;
-using OpenToolkit.Core.Extensions;
-using OpenToolkit.Core.Loader;
+using Silk.NET.Core.Attributes;
 
-namespace OpenToolkit.OpenAL.Extensions.Creative.MultiChannelBuffers
+namespace Silk.NET.OpenAL.Extensions.Creative.MultiChannelBuffers
 {
     /// <summary>
     /// Exposes the multi-channel buffers extension by Creative Labs.

@@ -8,7 +8,7 @@
 //
 
 using AdvancedDLSupport;
-using Silk.NET.Mathematics;
+using System.Numerics;
 
 // ReSharper disable ExplicitCallerInfoArgument
 namespace Silk.NET.OpenAL.Extensions.Creative.EFX

@@ -11,10 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using AdvancedDLSupport;
-using OpenToolkit.Core.Extensions;
-using OpenToolkit.Core.Loader;
+using Silk.NET.Core.Attributes;
 
-namespace OpenToolkit.OpenAL.Extensions.Creative.EnumerateAll
+namespace Silk.NET.OpenAL.Extensions.Creative.EnumerateAll
 {
     /// <summary>
     /// Exposes the API in the EnumerateAll extension.

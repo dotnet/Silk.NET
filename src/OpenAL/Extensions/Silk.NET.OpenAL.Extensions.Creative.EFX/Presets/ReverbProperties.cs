@@ -7,7 +7,7 @@
 // of the MIT license. See the LICENSE file for details.
 //
 
-using Silk.NET.Mathematics;
+using System.Numerics;
 
 namespace Silk.NET.OpenAL.Extensions.Creative.EFX
 {

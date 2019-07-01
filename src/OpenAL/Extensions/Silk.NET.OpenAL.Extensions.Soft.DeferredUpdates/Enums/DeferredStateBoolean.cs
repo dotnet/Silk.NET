@@ -7,7 +7,7 @@
 // of the MIT license. See the LICENSE file for details.
 //
 
-namespace OpenToolkit.OpenAL.Extensions.Soft.DeferredUpdates
+namespace Silk.NET.OpenAL.Extensions.Soft.DeferredUpdates
 {
     /// <summary>
     /// A list of valid <see cref="bool"/> <see cref="IDeferredUpdatesState.GetBoolean"/> parameters.

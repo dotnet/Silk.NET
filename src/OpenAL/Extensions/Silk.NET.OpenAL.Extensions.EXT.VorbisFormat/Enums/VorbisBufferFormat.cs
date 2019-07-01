@@ -7,7 +7,7 @@
 // of the MIT license. See the LICENSE file for details.
 //
 
-namespace OpenToolkit.OpenAL.Extensions.EXT.VorbisFormat
+namespace Silk.NET.OpenAL.Extensions.EXT.VorbisFormat
 {
     /// <summary>
     /// Defines valid format specifiers for sound samples. This covers the additions from the multi-channel buffers

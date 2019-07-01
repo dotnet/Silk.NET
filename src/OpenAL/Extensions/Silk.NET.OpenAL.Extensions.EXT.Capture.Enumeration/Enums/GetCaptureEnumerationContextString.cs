@@ -7,7 +7,7 @@
 // of the MIT license. See the LICENSE file for details.
 //
 
-namespace OpenToolkit.OpenAL.Extensions.EXT.Capture.Enumeration
+namespace Silk.NET.OpenAL.Extensions.EXT.Capture.Enumeration
 {
     /// <summary>
     /// Defines available parameters for <see cref="ICaptureEnumerationContextState.GetString(Device*,GetCaptureEnumerationContextString)" />.

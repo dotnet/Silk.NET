@@ -7,7 +7,7 @@
 // of the MIT license. See the LICENSE file for details.
 //
 
-namespace OpenToolkit.OpenAL.Extensions.Creative.EnumerateAll
+namespace Silk.NET.OpenAL.Extensions.Creative.EnumerateAll
 {
     /// <summary>
     /// Defines available parameters for <see cref="IEnumerateAllContextState.GetStringList" />.
