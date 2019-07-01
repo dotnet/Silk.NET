@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Threading;
+using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
 
-namespace Silk.NET.Windowing.Testing
+namespace BlankWindow
 {
     internal class Program
     {
