@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Silk.NET.GLFW\Silk.NET.GLFW.csproj" />
+      <ProjectReference Include="..\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Ultz.Dispatcher" Version="1.1.0" />
+    </ItemGroup>
+
+</Project>
