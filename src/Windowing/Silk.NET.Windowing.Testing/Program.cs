@@ -14,7 +14,7 @@ namespace Silk.NET.Windowing.Testing
         {
             var options = WindowOptions.Default;
 
-            options.UseSingleThreadedWindow = true;
+            options.UseSingleThreadedWindow = false;
             
             options.UpdatesPerSecond = 60.0;
             options.FramesPerSecond = 60.0;
