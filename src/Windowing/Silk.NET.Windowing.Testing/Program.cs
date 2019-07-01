@@ -16,8 +16,10 @@ namespace Silk.NET.Windowing.Testing
 
             options.UseSingleThreadedWindow = true;
             
-            options.UpdatesPerSecond = 300.0;
-            options.FramesPerSecond = 300.0;
+            options.UpdatesPerSecond = 0.0;
+            options.FramesPerSecond = 0.0;
+
+            //options.WindowState = WindowState.Fullscreen;
             
             window = new GlfwWindow(options);
 
@@ -31,6 +33,8 @@ namespace Silk.NET.Windowing.Testing
 
             window.OnRender += OnRender;
             window.OnUpdate += OnUpdate;
+
+            window.VSync = VSyncMode.On;
             
             Console.WriteLine($"Entry thread is {Thread.CurrentThread.ManagedThreadId}");
             
@@ -76,13 +80,12 @@ namespace Silk.NET.Windowing.Testing
 
         public static void OnRender(double delta)
         {
-            Console.WriteLine($"Render {delta}");
+            Console.WriteLine($"Render {1 / delta}");
         }
 
         public static void OnUpdate(double delta)
         {
-            Console.WriteLine($"{window.IsRunningSlowly}");
-            Console.WriteLine($"Update {delta}");
+            Console.WriteLine($"Update {1 / delta}");
         }
     }
 }
