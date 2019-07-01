@@ -24,8 +24,6 @@
 
 - The main interface is `IWindow`, an interface representing a window. It contains very little of its own, and mostly serves to implement the other `IWindow*` interfaces for the sake of convenience.
 
-- Certain backends (such as GLFW) have limits as to what functions can be called on threads that the windowing system wasn't initialized. In these cases, [Ultz.Dispatcher](https://github.com/Ultz/Dispatcher) should be used as a workaround for multithreading. The `Invoke` methods provide user-access to the main UI thread.
-
 ```cs
 /// <summary>
 /// Base interface for a window.
@@ -36,16 +34,6 @@ public interface IWindow : IWindowProperties, IWindowFunctions, IWindowEvents
 	/// A handle to the underlying window.
 	/// </summary>
 	IntPtr Handle { get; }
-	
-	/// <summary>
-        /// Invokes this delegate on the window's main thread.
-        /// </summary>
-        object Invoke(Delegate d);
-
-        /// <summary>
-        /// Invokes this delegate on the window's main thread, with the provided arguments.
-        /// </summary>
-        object Invoke(Delegate d, params object[] args);
 }
 ```
 
@@ -111,6 +99,8 @@ public interface IWindowProperties
 
 - Next is IWindowFunctions. This is very standard for windows, since most functionality will be provided by users via callbacks.
 
+- Certain backends (such as GLFW) have limits as to what functions can be called on threads that the windowing system wasn't initialized. In these cases, [Ultz.Dispatcher](https://github.com/Ultz/Dispatcher) should be used as a workaround for multithreading. The `Invoke` methods provide user-access to the main UI thread.
+
 ```cs
 /// <summary>
 /// Contains all windowing functions.
@@ -153,6 +143,16 @@ public interface IWindowFunctions
 	/// The point transformed to screen coordinates.
 	/// </returns>
 	Point PointToScreen(Point point);
+	
+	/// <summary>
+        /// Invokes this delegate on the window's main thread.
+        /// </summary>
+        object Invoke(Delegate d);
+
+        /// <summary>
+        /// Invokes this delegate on the window's main thread, with the provided arguments.
+        /// </summary>
+        object Invoke(Delegate d, params object[] args);
 }
 ```
 
