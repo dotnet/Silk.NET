@@ -16,7 +16,7 @@ namespace Silk.NET.OpenAL.Interfaces
     /// used to constrain extension implementation classes.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    public interface IExtensions : IAlExtension
+    public interface IExtensions : IALExtension
     {
     }
 }

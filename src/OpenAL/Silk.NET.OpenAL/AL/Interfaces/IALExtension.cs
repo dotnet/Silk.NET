@@ -7,7 +7,7 @@ namespace Silk.NET.OpenAL.Interfaces
     /// <summary>
     /// Defines the API surface of an OpenAL extension.
     /// </summary>
-    public interface IAlExtension
+    public interface IALExtension
     {
         /// <summary>
         /// Gets the library name container for this extension.

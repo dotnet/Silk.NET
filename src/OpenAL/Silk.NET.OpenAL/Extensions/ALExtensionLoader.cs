@@ -20,13 +20,6 @@ namespace Silk.NET.OpenAL.Extensions
             (Device* device, IContextExtensions baseAPI)
             where TContextExtension : ContextExtensionBase
         {
-            var extensionMetadata = LibraryLoader<TContextExtension>();
-
-            if (!baseAPI.IsExtensionPresent(device, extensionMetadata.ExtensionName))
-            {
-                throw new ExtensionNotSupportedException(extensionMetadata.ExtensionName);
-            }
-
             return LibraryLoader.Load<TContextExtension>(new OpenALLibraryNameContainer());
         }
     }
