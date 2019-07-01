@@ -4,8 +4,6 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Linq;
-using System.Reflection;
 using Silk.NET.Windowing.Common;
 using Silk.NET.Windowing.Desktop;
 

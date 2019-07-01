@@ -3,8 +3,6 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using Silk.NET.Windowing.Common;
-
 namespace Silk.NET.Windowing.Common
 {
     /// <summary>
