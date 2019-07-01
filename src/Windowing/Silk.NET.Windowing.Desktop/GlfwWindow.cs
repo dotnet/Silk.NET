@@ -7,6 +7,7 @@ using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Threading.Tasks;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
 using Ultz.Dispatcher;
@@ -395,7 +396,7 @@ namespace Silk.NET.Windowing.Desktop
                 // Else, sleep for that amount of time.
                 else {
                     _isRunningSlowlyTries = 0;
-                    Thread.Sleep((int)(1000 * sleepTime));
+                    Task.Delay((int)(1000*sleepTime)).GetAwaiter().GetResult();
                 }
             }
 
