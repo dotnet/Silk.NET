@@ -6,6 +6,7 @@
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 using Silk.NET.GLFW;
@@ -43,13 +44,16 @@ namespace Silk.NET.Windowing.Desktop
         
         /// <inheritdoc />
         public bool IsRunningSlowly => _isRunningSlowlyTries > 5;
-
-        private bool _isVisible;
-
+        
         /// <inheritdoc />
         public bool IsVisible
         {
-            get => _isVisible;
+            get
+            {
+                unsafe {
+                    return glfw.GetWindowAttrib(WindowPtr, WindowAttributeGetter.Visible);
+                }
+            }
             set
             {
                 glfwThread.Invoke(() =>
@@ -63,8 +67,6 @@ namespace Silk.NET.Windowing.Desktop
                         }
                     }
                 });
-
-                _isVisible = value;
             }
         }
 
