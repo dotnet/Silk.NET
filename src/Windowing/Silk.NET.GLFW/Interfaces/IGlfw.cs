@@ -2648,7 +2648,8 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GlfwCallbacks.ScrollCallback SetScrollCallback(WindowHandle* window, GlfwCallbacks.ScrollCallback callback);
+        unsafe GlfwCallbacks.ScrollCallback SetScrollCallback(WindowHandle* window,
+            GlfwCallbacks.ScrollCallback callback);
 
         /// <summary>
         /// <para>
@@ -3655,20 +3656,20 @@ namespace Silk.NET.GLFW
         /// </para>
         /// <para>
         /// A context must be current on the calling thread.  Calling this function without a current context will
-        /// cause a <see cref="ErrorCode.NoContext"/> error. This function does not apply to Vulkan.  If you are rendering
-        /// with Vulkan, see <see cref="GetInstanceProcAddress"/>, <see cref="GetInstanceProcAddr"/> and
-        /// <see cref="GetDeviceProcAddr"/> instead.
+        /// cause a <see cref="ErrorCode.NoContext" /> error. This function does not apply to Vulkan.  If you are rendering
+        /// with Vulkan, see <see cref="GetInstanceProcAddress" />, <see cref="GetInstanceProcAddr" /> and
+        /// <see cref="GetDeviceProcAddr" /> instead.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized"/>, <see cref="ErrorCode.NoContext"/> and
-        /// <see cref="ErrorCode.PlatformError"/>.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />, <see cref="ErrorCode.NoContext" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// <remarks>
         /// <para>
         /// The address of a given function is not guaranteed to be the same between contexts.
         /// </para>
         /// <para>
-        /// This function may return a non-<see cref="IntPtr.Zero"/> address despite the associated version or extension not being
+        /// This function may return a non-<see cref="IntPtr.Zero" /> address despite the associated version or extension not being
         /// available.  Always check the context version or extension string first.
         /// </para>
         /// <para>

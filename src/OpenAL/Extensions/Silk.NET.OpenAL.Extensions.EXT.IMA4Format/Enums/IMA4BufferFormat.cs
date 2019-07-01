@@ -1,11 +1,7 @@
-//
-// IMA4BufferFormat.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 namespace Silk.NET.OpenAL.Native.Extensions.EXT.IMA4Format
 {
@@ -23,6 +19,6 @@ namespace Silk.NET.OpenAL.Native.Extensions.EXT.IMA4Format
         /// <summary>
         /// 2 Channels, IMA4 ADPCM encoded data.
         /// </summary>
-        Stereo = 0x1301,
+        Stereo = 0x1301
     }
 }

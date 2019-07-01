@@ -1,11 +1,7 @@
-//
-// IEFXFilters.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using AdvancedDLSupport;
 
@@ -23,8 +19,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative.EFX
         /// </summary>
         /// <param name="count">The number of objects to generate.</param>
         /// <param name="filters">A pointer to the first element of the array where the handles will be stored.</param>
-        /// <seealso cref="DeleteFilters"/>
-        /// <seealso cref="IsFilter"/>
+        /// <seealso cref="DeleteFilters" />
+        /// <seealso cref="IsFilter" />
         unsafe void GenFilters(int count, uint* filters);
 
         /// <summary>
@@ -32,8 +28,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative.EFX
         /// </summary>
         /// <param name="count">The number of objects to delete.</param>
         /// <param name="filters">A pointer to the first element of the array where the handles are stored.</param>
-        /// <seealso cref="GenFilters"/>
-        /// <seealso cref="IsFilter"/>
+        /// <seealso cref="GenFilters" />
+        /// <seealso cref="IsFilter" />
         unsafe void DeleteFilters(int count, uint* filters);
 
         /// <summary>
@@ -41,8 +37,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative.EFX
         /// </summary>
         /// <param name="filter">The handle.</param>
         /// <returns>true if the handle is an filter handle; otherwise, false.</returns>
-        /// <seealso cref="GenFilters"/>
-        /// <seealso cref="DeleteFilters"/>
+        /// <seealso cref="GenFilters" />
+        /// <seealso cref="DeleteFilters" />
         bool IsFilter(uint filter);
 
         /// <summary>

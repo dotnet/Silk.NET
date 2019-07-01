@@ -1,14 +1,10 @@
-//
-// ISources.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
-using AdvancedDLSupport;
 using System.Numerics;
+using AdvancedDLSupport;
 
 // ReSharper disable ExplicitCallerInfoArgument
 namespace Silk.NET.OpenAL.Interfaces
@@ -24,8 +20,8 @@ namespace Silk.NET.OpenAL.Interfaces
         /// </summary>
         /// <param name="count">The number of objects to generate.</param>
         /// <param name="sources">A pointer to the first element of the array where the handles will be stored.</param>
-        /// <seealso cref="DeleteSources"/>
-        /// <seealso cref="IsSource"/>
+        /// <seealso cref="DeleteSources" />
+        /// <seealso cref="IsSource" />
         unsafe void GenSources(int count, uint* sources);
 
         /// <summary>
@@ -33,8 +29,8 @@ namespace Silk.NET.OpenAL.Interfaces
         /// </summary>
         /// <param name="count">The number of objects to delete.</param>
         /// <param name="sources">A pointer to the first element of the array where the handles are stored.</param>
-        /// <seealso cref="GenSources"/>
-        /// <seealso cref="IsSource"/>
+        /// <seealso cref="GenSources" />
+        /// <seealso cref="IsSource" />
         unsafe void DeleteSources(int count, uint* sources);
 
         /// <summary>
@@ -42,8 +38,8 @@ namespace Silk.NET.OpenAL.Interfaces
         /// </summary>
         /// <param name="source">The handle.</param>
         /// <returns>true if the handle is an source handle; otherwise, false.</returns>
-        /// <seealso cref="GenSources"/>
-        /// <seealso cref="DeleteSources"/>
+        /// <seealso cref="GenSources" />
+        /// <seealso cref="DeleteSources" />
         bool IsSource(uint source);
 
         /// <summary>
@@ -184,9 +180,9 @@ namespace Silk.NET.OpenAL.Interfaces
         /// Plays a source.
         /// </summary>
         /// <param name="source">The source.</param>
-        /// <seealso cref="SourcePause(uint)"/>
-        /// <seealso cref="SourceStop(uint)"/>
-        /// <seealso cref="SourceRewind(uint)"/>
+        /// <seealso cref="SourcePause(uint)" />
+        /// <seealso cref="SourceStop(uint)" />
+        /// <seealso cref="SourceRewind(uint)" />
         void SourcePlay(uint source);
 
         /// <summary>
@@ -194,9 +190,9 @@ namespace Silk.NET.OpenAL.Interfaces
         /// </summary>
         /// <param name="count">The number of sources to play.</param>
         /// <param name="sources">A pointer to the first element in an array of handles.</param>
-        /// <seealso cref="SourcePause(uint)"/>
-        /// <seealso cref="SourceStop(uint)"/>
-        /// <seealso cref="SourceRewind(uint)"/>
+        /// <seealso cref="SourcePause(uint)" />
+        /// <seealso cref="SourceStop(uint)" />
+        /// <seealso cref="SourceRewind(uint)" />
         [NativeSymbol("SourcePlayv")]
         unsafe void SourcePlay(int count, uint* sources);
 
@@ -204,9 +200,9 @@ namespace Silk.NET.OpenAL.Interfaces
         /// Pauses a source.
         /// </summary>
         /// <param name="source">The source.</param>
-        /// <seealso cref="SourcePlay(uint)"/>
-        /// <seealso cref="SourceStop(uint)"/>
-        /// <seealso cref="SourceRewind(uint)"/>
+        /// <seealso cref="SourcePlay(uint)" />
+        /// <seealso cref="SourceStop(uint)" />
+        /// <seealso cref="SourceRewind(uint)" />
         void SourcePause(uint source);
 
         /// <summary>
@@ -214,9 +210,9 @@ namespace Silk.NET.OpenAL.Interfaces
         /// </summary>
         /// <param name="count">The number of sources to pause.</param>
         /// <param name="sources">A pointer to the first element in an array of handles.</param>
-        /// <seealso cref="SourcePlay(uint)"/>
-        /// <seealso cref="SourceStop(uint)"/>
-        /// <seealso cref="SourceRewind(uint)"/>
+        /// <seealso cref="SourcePlay(uint)" />
+        /// <seealso cref="SourceStop(uint)" />
+        /// <seealso cref="SourceRewind(uint)" />
         [NativeSymbol("SourcePausev")]
         unsafe void SourcePause(int count, uint* sources);
 
@@ -224,9 +220,9 @@ namespace Silk.NET.OpenAL.Interfaces
         /// Stops a source.
         /// </summary>
         /// <param name="source">The source.</param>
-        /// <seealso cref="SourcePlay(uint)"/>
-        /// <seealso cref="SourcePause(uint)"/>
-        /// <seealso cref="SourceRewind(uint)"/>
+        /// <seealso cref="SourcePlay(uint)" />
+        /// <seealso cref="SourcePause(uint)" />
+        /// <seealso cref="SourceRewind(uint)" />
         void SourceStop(uint source);
 
         /// <summary>
@@ -234,9 +230,9 @@ namespace Silk.NET.OpenAL.Interfaces
         /// </summary>
         /// <param name="count">The number of sources to stop.</param>
         /// <param name="sources">A pointer to the first element in an array of handles.</param>
-        /// <seealso cref="SourcePlay(uint)"/>
-        /// <seealso cref="SourcePause(uint)"/>
-        /// <seealso cref="SourceRewind(uint)"/>
+        /// <seealso cref="SourcePlay(uint)" />
+        /// <seealso cref="SourcePause(uint)" />
+        /// <seealso cref="SourceRewind(uint)" />
         [NativeSymbol("SourceStopv")]
         unsafe void SourceStop(int count, uint* sources);
 
@@ -244,9 +240,9 @@ namespace Silk.NET.OpenAL.Interfaces
         /// Rewinds a source.
         /// </summary>
         /// <param name="source">The source.</param>
-        /// <seealso cref="SourcePlay(uint)"/>
-        /// <seealso cref="SourcePause(uint)"/>
-        /// <seealso cref="SourceStop(uint)"/>
+        /// <seealso cref="SourcePlay(uint)" />
+        /// <seealso cref="SourcePause(uint)" />
+        /// <seealso cref="SourceStop(uint)" />
         void SourceRewind(uint source);
 
         /// <summary>
@@ -254,16 +250,16 @@ namespace Silk.NET.OpenAL.Interfaces
         /// </summary>
         /// <param name="count">The number of sources to rewind.</param>
         /// <param name="sources">A pointer to the first element in an array of handles.</param>
-        /// <seealso cref="SourcePlay(uint)"/>
-        /// <seealso cref="SourcePause(uint)"/>
-        /// <seealso cref="SourceStop(uint)"/>
+        /// <seealso cref="SourcePlay(uint)" />
+        /// <seealso cref="SourcePause(uint)" />
+        /// <seealso cref="SourceStop(uint)" />
         [NativeSymbol("SourceRewindv")]
         unsafe void SourceRewind(int count, uint* sources);
 
         /// <summary>
         /// Queues a set of buffers on the source. All buffers attached to a source will be played in sequence, and the
         /// number of processed buffers can be detected using a call to
-        /// <see cref="GetSourceProperty(uint, SourceFloat ,out float)"/>.
+        /// <see cref="GetSourceProperty(uint, SourceFloat ,out float)" />.
         /// </summary>
         /// <param name="source">The source.</param>
         /// <param name="count">The number of buffers to queue.</param>
@@ -272,7 +268,7 @@ namespace Silk.NET.OpenAL.Interfaces
 
         /// <summary>
         /// Unqueues a set of buffers on the source. The number of processed buffers can be detected using a call to
-        /// <see cref="GetSourceProperty(uint, GetSourceInteger,out int)"/>, which is the maximum number of
+        /// <see cref="GetSourceProperty(uint, GetSourceInteger,out int)" />, which is the maximum number of
         /// buffers that can be unqueued during this call.
         /// </summary>
         /// <param name="source">The source.</param>

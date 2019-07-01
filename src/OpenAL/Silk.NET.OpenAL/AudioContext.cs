@@ -1,11 +1,7 @@
-﻿//
-// AudioContext.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+﻿// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using System.Collections.Generic;
@@ -36,67 +32,7 @@ namespace Silk.NET.OpenAL
         private bool _isSynchronized;
 
         /// <summary>
-        /// Gets the OpenToolkit.Audio.AudioContext which is current in the application.
-        /// </summary>
-        /// <remarks>
-        /// Only one AudioContext can be current in the application at any time,
-        ///  <b>regardless of the number of threads</b>.
-        /// </remarks>
-        public static AudioContext CurrentContext
-        {
-            get
-            {
-                lock (AudioContextLock)
-                {
-                    if (AvailableContexts.Count == 0)
-                    {
-                        return null;
-                    }
-
-                    AvailableContexts.TryGetValue(ContextAPI.GetCurrentContextHandle(), out var context);
-                    return context;
-                }
-            }
-        }
-
-        /// \internal
-        /// <summary>
-        /// Makes the specified AudioContext current in the calling thread.
-        /// </summary>
-        /// <param name="context">The OpenToolkit.Audio.AudioContext to make current, or null.</param>
-        /// <exception cref="ObjectDisposedException">
-        /// Occurs if this function is called after the AudioContext has been disposed.
-        /// </exception>
-        /// <exception cref="AudioContextException">
-        /// Occurs when the AudioContext could not be made current.
-        /// </exception>
-        private static void MakeCurrent(AudioContext context)
-        {
-            lock (AudioContextLock)
-            {
-                unsafe
-                {
-                    var contextHandle = context?._contextHandle ?? IntPtr.Zero;
-
-                    if (ContextAPI.MakeContextCurrent(contextHandle))
-                    {
-                        return;
-                    }
-
-                    var contextPtr = (Context*)contextHandle;
-                    var deviceHandle = ContextAPI.GetContextsDevice(contextPtr);
-                    var error = ContextAPI.GetError(deviceHandle);
-
-                    throw new AudioContextException
-                    (
-                        $"ALC {error} error detected at {(context != null ? context.ToString() : "null")}."
-                    );
-                }
-            }
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AudioContext"/> class using the default audio device.
+        /// Initializes a new instance of the <see cref="AudioContext" /> class using the default audio device.
         /// </summary>
         public AudioContext()
             : this(null)
@@ -104,7 +40,7 @@ namespace Silk.NET.OpenAL
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudioContext"/> class using the specified audio device and
+        /// Initializes a new instance of the <see cref="AudioContext" /> class using the specified audio device and
         /// device parameters.
         /// </summary>
         /// <param name="device">The name of the audio device to use.</param>
@@ -119,7 +55,7 @@ namespace Silk.NET.OpenAL
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudioContext"/> class using the specified audio device and
+        /// Initializes a new instance of the <see cref="AudioContext" /> class using the specified audio device and
         /// device parameters.
         /// </summary>
         /// <param name="device">The name of the audio device to use.</param>
@@ -135,7 +71,7 @@ namespace Silk.NET.OpenAL
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudioContext"/> class using the specified audio device and
+        /// Initializes a new instance of the <see cref="AudioContext" /> class using the specified audio device and
         /// device parameters.
         /// </summary>
         /// <param name="device">The device descriptor obtained through AudioContext.AvailableDevices.</param>
@@ -168,7 +104,7 @@ namespace Silk.NET.OpenAL
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudioContext"/> class using the specified audio device and
+        /// Initializes a new instance of the <see cref="AudioContext" /> class using the specified audio device and
         /// device parameters.
         /// </summary>
         /// <param name="device">The device descriptor obtained through AudioContext.AvailableDevices.</param>
@@ -185,8 +121,10 @@ namespace Silk.NET.OpenAL
         /// Occurs when an AudioContext already exists.
         /// </exception>
         /// <remarks>
-        /// For maximum compatibility, you are strongly recommended to use the default constructor.<para/>
-        /// Multiple AudioContexts are not supported at this point.<para/>
+        /// For maximum compatibility, you are strongly recommended to use the default constructor.
+        /// <para />
+        /// Multiple AudioContexts are not supported at this point.
+        /// <para />
         /// </remarks>
         public AudioContext
         (
@@ -198,20 +136,40 @@ namespace Silk.NET.OpenAL
         }
 
         /// <summary>
-        /// Gets or sets a value indicating whether the <see cref="AudioContext"/> is current.
+        /// Gets the OpenToolkit.Audio.AudioContext which is current in the application.
         /// </summary>
         /// <remarks>
-        /// Only one <see cref="AudioContext"/> can be current in the application at any time,
+        /// Only one AudioContext can be current in the application at any time,
+        /// <b>regardless of the number of threads</b>.
+        /// </remarks>
+        public static AudioContext CurrentContext
+        {
+            get
+            {
+                lock (AudioContextLock) {
+                    if (AvailableContexts.Count == 0) {
+                        return null;
+                    }
+
+                    AvailableContexts.TryGetValue(ContextAPI.GetCurrentContextHandle(), out var context);
+                    return context;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the <see cref="AudioContext" /> is current.
+        /// </summary>
+        /// <remarks>
+        /// Only one <see cref="AudioContext" /> can be current in the application at any time,
         /// <b>regardless of the number of threads</b>.
         /// </remarks>
         internal bool IsCurrent
         {
             get
             {
-                lock (AudioContextLock)
-                {
-                    if (AvailableContexts.Count == 0)
-                    {
+                lock (AudioContextLock) {
+                    if (AvailableContexts.Count == 0) {
                         return false;
                     }
 
@@ -231,13 +189,11 @@ namespace Silk.NET.OpenAL
         {
             get
             {
-                if (_disposed)
-                {
+                if (_disposed) {
                     throw new ObjectDisposedException(GetType().FullName);
                 }
 
-                unsafe
-                {
+                unsafe {
                     return ContextAPI.GetError(Device);
                 }
             }
@@ -253,8 +209,7 @@ namespace Silk.NET.OpenAL
         {
             get
             {
-                if (_disposed)
-                {
+                if (_disposed) {
                     throw new ObjectDisposedException(GetType().FullName);
                 }
 
@@ -272,8 +227,7 @@ namespace Silk.NET.OpenAL
         {
             get
             {
-                if (_disposed)
-                {
+                if (_disposed) {
                     throw new ObjectDisposedException(GetType().FullName);
                 }
 
@@ -289,12 +243,70 @@ namespace Silk.NET.OpenAL
         {
             get
             {
-                if (_disposed)
-                {
+                if (_disposed) {
                     throw new ObjectDisposedException(GetType().FullName);
                 }
 
                 return _deviceName;
+            }
+        }
+
+        /// <inheritdoc />
+        public void Dispose()
+        {
+            if (!_disposed) {
+                if (IsCurrent) {
+                    IsCurrent = false;
+                }
+
+                if (_contextHandle != IntPtr.Zero) {
+                    AvailableContexts.Remove(_contextHandle);
+
+                    unsafe {
+                        ContextAPI.DestroyContext((Context*) _contextHandle);
+                    }
+                }
+
+                unsafe {
+                    if (Device != null) {
+                        ContextAPI.CloseDevice(Device);
+                    }
+                }
+
+                _disposed = true;
+            }
+        }
+
+        /// \internal
+        /// <summary>
+        /// Makes the specified AudioContext current in the calling thread.
+        /// </summary>
+        /// <param name="context">The OpenToolkit.Audio.AudioContext to make current, or null.</param>
+        /// <exception cref="ObjectDisposedException">
+        /// Occurs if this function is called after the AudioContext has been disposed.
+        /// </exception>
+        /// <exception cref="AudioContextException">
+        /// Occurs when the AudioContext could not be made current.
+        /// </exception>
+        private static void MakeCurrent(AudioContext context)
+        {
+            lock (AudioContextLock) {
+                unsafe {
+                    var contextHandle = context?._contextHandle ?? IntPtr.Zero;
+
+                    if (ContextAPI.MakeContextCurrent(contextHandle)) {
+                        return;
+                    }
+
+                    var contextPtr = (Context*) contextHandle;
+                    var deviceHandle = ContextAPI.GetContextsDevice(contextPtr);
+                    var error = ContextAPI.GetError(deviceHandle);
+
+                    throw new AudioContextException
+                    (
+                        $"ALC {error} error detected at {(context != null ? context.ToString() : "null")}."
+                    );
+                }
             }
         }
 
@@ -324,8 +336,7 @@ namespace Silk.NET.OpenAL
         /// </remarks>
         private void CreateContext(string device, int frequency, int refreshRate, bool isSynchronous)
         {
-            if (frequency < 0)
-            {
+            if (frequency < 0) {
                 throw new ArgumentOutOfRangeException
                 (
                     nameof(frequency),
@@ -334,8 +345,7 @@ namespace Silk.NET.OpenAL
                 );
             }
 
-            if (refreshRate < 0)
-            {
+            if (refreshRate < 0) {
                 throw new ArgumentOutOfRangeException
                 (
                     nameof(refreshRate),
@@ -347,19 +357,17 @@ namespace Silk.NET.OpenAL
             // Build the attribute list
             var attributes = new List<int>();
 
-            if (frequency != 0)
-            {
-                attributes.Add((int)ContextAttributes.Frequency);
+            if (frequency != 0) {
+                attributes.Add((int) ContextAttributes.Frequency);
                 attributes.Add(frequency);
             }
 
-            if (refreshRate != 0)
-            {
-                attributes.Add((int)ContextAttributes.Refresh);
+            if (refreshRate != 0) {
+                attributes.Add((int) ContextAttributes.Refresh);
                 attributes.Add(refreshRate);
             }
 
-            attributes.Add((int)ContextAttributes.Sync);
+            attributes.Add((int) ContextAttributes.Sync);
             attributes.Add(isSynchronous ? 1 : 0);
 
             attributes.Add(0);
@@ -395,25 +403,21 @@ namespace Silk.NET.OpenAL
             IEnumerable<int> attributes
         )
         {
-            if (_contextExists)
-            {
+            if (_contextExists) {
                 throw new NotSupportedException("Multiple AudioContexts are not supported.");
             }
 
-            if (!string.IsNullOrEmpty(device))
-            {
+            if (!string.IsNullOrEmpty(device)) {
                 _deviceName = device;
                 Device = ContextAPI.OpenDevice(device); // try to open device by name
             }
 
-            if (Device == null)
-            {
+            if (Device == null) {
                 _deviceName = "IntPtr.Zero (null string)";
                 Device = ContextAPI.OpenDevice(null); // try to open unnamed default device
             }
 
-            if (Device == null)
-            {
+            if (Device == null) {
                 _deviceName = "None";
                 throw new AudioDeviceException
                 (
@@ -424,13 +428,11 @@ namespace Silk.NET.OpenAL
 
             CheckErrors();
 
-            fixed (int* ptr = attributes.ToArray())
-            {
+            fixed (int* ptr = attributes.ToArray()) {
                 _contextHandle = ContextAPI.CreateContextHandle(Device, ptr);
             }
 
-            if (_contextHandle == IntPtr.Zero)
-            {
+            if (_contextHandle == IntPtr.Zero) {
                 ContextAPI.CloseDevice(Device);
                 throw new AudioContextException
                 (
@@ -446,8 +448,7 @@ namespace Silk.NET.OpenAL
 
             _deviceName = ContextAPI.GetContextProperty(Device, GetContextString.DeviceSpecifier);
 
-            lock (AudioContextLock)
-            {
+            lock (AudioContextLock) {
                 AvailableContexts.Add(_contextHandle, this);
                 _contextExists = true;
             }
@@ -462,13 +463,11 @@ namespace Silk.NET.OpenAL
         /// <exception cref="AudioContextException">Raised when an invalid context is detected.</exception>
         public void CheckErrors()
         {
-            if (_disposed)
-            {
+            if (_disposed) {
                 throw new ObjectDisposedException(GetType().FullName);
             }
 
-            unsafe
-            {
+            unsafe {
                 new AudioDeviceErrorChecker(Device).Dispose();
             }
         }
@@ -484,12 +483,11 @@ namespace Silk.NET.OpenAL
         /// </exception>
         /// <remarks>
         /// Only one AudioContext can be current in the application at any time,
-        ///  <b>regardless of the number of threads</b>.
+        /// <b>regardless of the number of threads</b>.
         /// </remarks>
         public void MakeCurrent()
         {
-            if (_disposed)
-            {
+            if (_disposed) {
                 throw new ObjectDisposedException(GetType().FullName);
             }
 
@@ -516,14 +514,12 @@ namespace Silk.NET.OpenAL
         /// <seealso cref="IsSynchronized" />
         public void Process()
         {
-            if (_disposed)
-            {
+            if (_disposed) {
                 throw new ObjectDisposedException(GetType().FullName);
             }
 
-            unsafe
-            {
-                ContextAPI.ProcessContext((Context*)_contextHandle);
+            unsafe {
+                ContextAPI.ProcessContext((Context*) _contextHandle);
             }
 
             IsProcessing = true;
@@ -551,14 +547,12 @@ namespace Silk.NET.OpenAL
         /// <seealso cref="IsSynchronized" />
         public void Suspend()
         {
-            if (_disposed)
-            {
+            if (_disposed) {
                 throw new ObjectDisposedException(GetType().FullName);
             }
 
-            unsafe
-            {
-                ContextAPI.SuspendContext((Context*)_contextHandle);
+            unsafe {
+                ContextAPI.SuspendContext((Context*) _contextHandle);
             }
 
             IsProcessing = false;
@@ -571,51 +565,17 @@ namespace Silk.NET.OpenAL
         /// <returns>true if the extension is supported; false otherwise.</returns>
         public bool SupportsExtension(string extension)
         {
-            if (_disposed)
-            {
+            if (_disposed) {
                 throw new ObjectDisposedException(GetType().FullName);
             }
 
-            unsafe
-            {
+            unsafe {
                 return ContextAPI.IsExtensionPresent(Device, extension);
             }
         }
 
-        /// <inheritdoc />
-        public void Dispose()
-        {
-            if (!_disposed)
-            {
-                if (IsCurrent)
-                {
-                    IsCurrent = false;
-                }
-
-                if (_contextHandle != IntPtr.Zero)
-                {
-                    AvailableContexts.Remove(_contextHandle);
-
-                    unsafe
-                    {
-                        ContextAPI.DestroyContext((Context*)_contextHandle);
-                    }
-                }
-
-                unsafe
-                {
-                    if (Device != null)
-                    {
-                        ContextAPI.CloseDevice(Device);
-                    }
-                }
-
-                _disposed = true;
-            }
-        }
-
         /// <summary>
-        /// Finalizes an instance of the <see cref="AudioContext"/> class.
+        /// Finalizes an instance of the <see cref="AudioContext" /> class.
         /// </summary>
         ~AudioContext()
         {
@@ -628,9 +588,8 @@ namespace Silk.NET.OpenAL
         /// <returns>A <see cref="string" /> that desrcibes this instance.</returns>
         public override string ToString()
         {
-            unsafe
-            {
-                return $"{_deviceName} (handle: {_contextHandle}, device: {(long)Device})";
+            unsafe {
+                return $"{_deviceName} (handle: {_contextHandle}, device: {(long) Device})";
             }
         }
     }

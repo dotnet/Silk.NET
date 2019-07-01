@@ -1,11 +1,7 @@
-﻿//
-// SourceState.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+﻿// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 namespace Silk.NET.OpenAL
 {
@@ -32,6 +28,6 @@ namespace Silk.NET.OpenAL
         /// <summary>
         /// The source is not playing.
         /// </summary>
-        Stopped = 0x1014,
+        Stopped = 0x1014
     }
 }

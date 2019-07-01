@@ -1,11 +1,7 @@
-//
-// IState.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using AdvancedDLSupport;
 
@@ -87,7 +83,6 @@ namespace Silk.NET.OpenAL.Interfaces
         /// Doppler scale.
         /// Range: [0.0 - ]
         /// Default: 1.0
-        ///
         /// Sets the scale for source and listener velocities.
         /// </summary>
         /// <param name="value">The scale.</param>
@@ -95,10 +90,8 @@ namespace Silk.NET.OpenAL.Interfaces
 
         /// <summary>
         /// Speed of sound, in units per second.
-        ///
         /// Range: [0.0001 - ]
         /// Default: 343.3
-        ///
         /// Sets the speed at which sound waves are assumed to travel, when calculating the doppler effect.
         /// </summary>
         /// <param name="value">The speed of sound.</param>

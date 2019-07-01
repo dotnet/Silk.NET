@@ -14,12 +14,12 @@ namespace Silk.NET.Windowing.Common
         /// Don't use any API. This is necessary for linking an external API, such as Vulkan, to the window.
         /// </summary>
         None = 0,
-        
+
         /// <summary>
         /// Use Vulkan. Silk.NET doesn't support this yet.
         /// </summary>
         Vulkan,
-        
+
         /// <summary>
         /// Use core OpenGL. This is standard for software intended for desktop computers.
         /// </summary>

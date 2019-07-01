@@ -1,11 +1,7 @@
-//
-// IEFXEffectSlots.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using AdvancedDLSupport;
 
@@ -23,8 +19,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative.EFX
         /// </summary>
         /// <param name="count">The number of slots to create.</param>
         /// <param name="slots">The first element of the array to place the slots into.</param>
-        /// <seealso cref="DeleteAuxiliaryEffectSlots"/>
-        /// <seealso cref="IsAuxiliaryEffectSlot"/>
+        /// <seealso cref="DeleteAuxiliaryEffectSlots" />
+        /// <seealso cref="IsAuxiliaryEffectSlot" />
         unsafe void GenAuxiliaryEffectSlots(int count, uint* slots);
 
         /// <summary>
@@ -32,8 +28,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative.EFX
         /// </summary>
         /// <param name="count">The number of slots to delete.</param>
         /// <param name="slots">A pointer to the array of slots to delete.</param>
-        /// <seealso cref="GenAuxiliaryEffectSlots"/>
-        /// <seealso cref="IsAuxiliaryEffectSlot"/>
+        /// <seealso cref="GenAuxiliaryEffectSlots" />
+        /// <seealso cref="IsAuxiliaryEffectSlot" />
         unsafe void DeleteAuxiliaryEffectSlots(int count, uint* slots);
 
         /// <summary>

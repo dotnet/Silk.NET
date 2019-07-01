@@ -26,16 +26,14 @@ namespace Silk.NET.Windowing
         public static void Init()
         {
             var glfwPlatform = new GlfwPlatform();
-            if (glfwPlatform.IsApplicable)
-            {
+            if (glfwPlatform.IsApplicable) {
                 CurrentPlatform = glfwPlatform;
                 return;
             }
-            
+
             // TODO: Mobile
 
-            if (CurrentPlatform == null)
-            {
+            if (CurrentPlatform == null) {
                 throw new NotSupportedException("Couldn't find a suitable windowing platform.");
             }
         }

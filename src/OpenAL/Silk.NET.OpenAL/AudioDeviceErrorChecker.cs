@@ -1,11 +1,7 @@
-﻿//
-// AudioDeviceErrorChecker.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+﻿// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using Silk.NET.Core.Loader;
@@ -18,28 +14,28 @@ namespace Silk.NET.OpenAL
     /// </summary>
     public struct AudioDeviceErrorChecker : IDisposable
     {
-        private static readonly IContextErrors ErrorAPI = LibraryLoader.Load<ALContext>(new OpenALLibraryNameContainer());
+        private static readonly IContextErrors ErrorAPI =
+            LibraryLoader.Load<ALContext>(new OpenALLibraryNameContainer());
+
         private readonly unsafe Device* _device;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudioDeviceErrorChecker"/> struct.
+        /// Initializes a new instance of the <see cref="AudioDeviceErrorChecker" /> struct.
         /// </summary>
         /// <param name="device">The device to monitor.</param>
         public AudioDeviceErrorChecker(IntPtr device)
         {
-            if (device == IntPtr.Zero)
-            {
+            if (device == IntPtr.Zero) {
                 throw new AudioDeviceException();
             }
 
-            unsafe
-            {
-                _device = (Device*)device.ToPointer();
+            unsafe {
+                _device = (Device*) device.ToPointer();
             }
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudioDeviceErrorChecker"/> struct.
+        /// Initializes a new instance of the <see cref="AudioDeviceErrorChecker" /> struct.
         /// </summary>
         /// <param name="device">The device to monitor.</param>
         public unsafe AudioDeviceErrorChecker(Device* device)
@@ -47,21 +43,18 @@ namespace Silk.NET.OpenAL
         {
         }
 
-        /// <inheritdoc/>
+        /// <inheritdoc />
         public void Dispose()
         {
-            unsafe
-            {
+            unsafe {
                 var err = ErrorAPI.GetError(_device);
 
-                if (err == ContextError.NoError)
-                {
+                if (err == ContextError.NoError) {
                     return;
                 }
 
                 var message = $"Device {new UIntPtr(_device).ToString()} reported {err}.";
-                switch (err)
-                {
+                switch (err) {
                     case ContextError.OutOfMemory:
                     {
                         throw new OutOfMemoryException(message);

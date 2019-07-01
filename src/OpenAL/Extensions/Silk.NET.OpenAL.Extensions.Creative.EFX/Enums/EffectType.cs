@@ -1,11 +1,7 @@
-﻿//
-// EffectType.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+﻿// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 namespace Silk.NET.OpenAL.Extensions.Creative.EFX
 {
@@ -92,6 +88,6 @@ namespace Silk.NET.OpenAL.Extensions.Creative.EFX
         /// The EAX Reverb has a more advanced parameter set than EfxEffectType.Reverb, but is only natively supported on
         /// devices that support the EAX 3.0 or above.
         /// </summary>
-        EaxReverb = 0x8000,
+        EaxReverb = 0x8000
     }
 }

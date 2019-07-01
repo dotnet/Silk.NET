@@ -1,11 +1,7 @@
-//
-// IDeferredUpdatesState.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using AdvancedDLSupport;
 using Silk.NET.OpenAL.Interfaces;
@@ -28,8 +24,7 @@ namespace Silk.NET.OpenAL.Extensions.Soft.DeferredUpdates
         bool GetBoolean(DeferredStateBoolean param);
 
         /// <summary>
-        /// Defers updates until <see cref="ProcessUpdates"/> is called.
-        ///
+        /// Defers updates until <see cref="ProcessUpdates" /> is called.
         /// When called, samples will continue to render and be sent to the output device, but the effects of changing
         /// playback properties, such as the source or listener gain, or auxiliary slot gain or effect if EFX is
         /// supported, among others, will be deferred. Multiple changes can be batched so that they all apply at once at
@@ -39,8 +34,7 @@ namespace Silk.NET.OpenAL.Extensions.Soft.DeferredUpdates
         void DeferUpdates();
 
         /// <summary>
-        /// Resumes update processing, reverting a call to <see cref="DeferUpdates"/>.
-        ///
+        /// Resumes update processing, reverting a call to <see cref="DeferUpdates" />.
         /// Once called, all pending deferred updates will be processed. Any following state changes will also apply as
         /// normal.
         /// </summary>

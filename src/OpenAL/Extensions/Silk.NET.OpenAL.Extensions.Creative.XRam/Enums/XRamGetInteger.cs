@@ -1,16 +1,12 @@
-//
-// XRamGetInteger.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 namespace Silk.NET.OpenAL.Extensions.Creative.XRam
 {
     /// <summary>
-    /// A list of valid <see cref="int"/> <see cref="IXRam.GetInteger"/> parameters.
+    /// A list of valid <see cref="int" /> <see cref="IXRam.GetInteger" /> parameters.
     /// </summary>
     public enum XRamGetInteger
     {
@@ -22,6 +18,6 @@ namespace Silk.NET.OpenAL.Extensions.Creative.XRam
         /// <summary>
         /// Gets the amount of free X-RAM in bytes.
         /// </summary>
-        FreeRam,
+        FreeRam
     }
 }

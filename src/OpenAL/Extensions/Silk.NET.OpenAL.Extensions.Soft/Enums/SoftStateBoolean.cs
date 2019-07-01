@@ -1,16 +1,12 @@
-﻿//
-// SoftStateBoolean.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+﻿// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 namespace Silk.NET.OpenAL.Extensions.Soft
 {
     /// <summary>
-    /// A list of valid <see cref="bool"/> parameters for <see cref="IStateSoft.GetBoolean"/>. These enumeration members
+    /// A list of valid <see cref="bool" /> parameters for <see cref="IStateSoft.GetBoolean" />. These enumeration members
     /// are defined as extensions in the OpenAL Soft library.
     /// </summary>
     public enum SoftStateBoolean
@@ -28,6 +24,6 @@ namespace Silk.NET.OpenAL.Extensions.Soft
         /// <summary>
         /// Determines whether the default resampler is set.
         /// </summary>
-        IsResamplerDefault = 0x1211,
+        IsResamplerDefault = 0x1211
     }
 }

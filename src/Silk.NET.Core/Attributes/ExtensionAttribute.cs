@@ -13,7 +13,7 @@ namespace Silk.NET.Core.Attributes
         {
             Name = name;
         }
-        
+
         public string Name { get; }
     }
 }

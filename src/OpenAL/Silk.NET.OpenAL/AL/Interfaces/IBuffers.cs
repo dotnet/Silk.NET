@@ -1,14 +1,10 @@
-//
-// IBuffers.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
-using AdvancedDLSupport;
 using System.Numerics;
+using AdvancedDLSupport;
 
 // ReSharper disable ExplicitCallerInfoArgument
 namespace Silk.NET.OpenAL.Interfaces
@@ -24,8 +20,8 @@ namespace Silk.NET.OpenAL.Interfaces
         /// </summary>
         /// <param name="count">The number of objects to generate.</param>
         /// <param name="buffers">A pointer to the first element of the array where the handles will be stored.</param>
-        /// <seealso cref="DeleteBuffers"/>
-        /// <seealso cref="IsBuffer"/>
+        /// <seealso cref="DeleteBuffers" />
+        /// <seealso cref="IsBuffer" />
         unsafe void GenBuffers(int count, uint* buffers);
 
         /// <summary>
@@ -33,8 +29,8 @@ namespace Silk.NET.OpenAL.Interfaces
         /// </summary>
         /// <param name="count">The number of objects to delete.</param>
         /// <param name="buffers">A pointer to the first element of the array where the handles are stored.</param>
-        /// <seealso cref="GenBuffers"/>
-        /// <seealso cref="IsBuffer"/>
+        /// <seealso cref="GenBuffers" />
+        /// <seealso cref="IsBuffer" />
         unsafe void DeleteBuffers(int count, uint* buffers);
 
         /// <summary>
@@ -42,8 +38,8 @@ namespace Silk.NET.OpenAL.Interfaces
         /// </summary>
         /// <param name="buffer">The handle.</param>
         /// <returns>true if the handle is an buffer handle; otherwise, false.</returns>
-        /// <seealso cref="GenBuffers"/>
-        /// <seealso cref="DeleteBuffers"/>
+        /// <seealso cref="GenBuffers" />
+        /// <seealso cref="DeleteBuffers" />
         bool IsBuffer(uint buffer);
 
         /// <summary>

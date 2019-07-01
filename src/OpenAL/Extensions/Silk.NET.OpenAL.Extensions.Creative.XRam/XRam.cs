@@ -1,11 +1,7 @@
-//
-// XRam.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using System.Buffers;
@@ -25,14 +21,14 @@ namespace Silk.NET.OpenAL.Extensions.Creative.XRam
     [Extension("EAX-RAM")]
     public abstract class XRam : NativeExtension<AL>, IXRam
     {
+        private readonly int _bufferStorageModeAccessible;
         private readonly int _bufferStorageModeAutomatic;
         private readonly int _bufferStorageModeHardware;
-        private readonly int _bufferStorageModeAccessible;
-
-        private readonly int _ramSize;
         private readonly int _ramFree;
 
-        /// <inheritdoc cref="NativeLibraryBase"/>
+        private readonly int _ramSize;
+
+        /// <inheritdoc cref="NativeLibraryBase" />
         protected XRam(string path, ImplementationOptions options)
             : base(path, options)
         {
@@ -44,19 +40,39 @@ namespace Silk.NET.OpenAL.Extensions.Creative.XRam
             _ramFree = GetEnumValue("AL_EAX_RAM_FREE");
         }
 
-        /// <inheritdoc cref="GetInteger(int)"/>
-        public int GetInteger(XRamGetInteger param) => GetInteger(GetValueForEnum(param));
+        /// <inheritdoc />
+        public abstract int GetInteger(int param);
+
+        /// <inheritdoc />
+        public abstract bool SetBufferMode(int count, in uint[] buffers, int mode);
+
+        /// <inheritdoc />
+        public abstract int GetBufferMode(uint buffer, IntPtr reserved);
+
+        public SearchPathContainer NameContainer { get; }
+
+        public abstract bool IsExtensionPresent(string name);
+
+        public abstract IntPtr GetProcAddress(string name);
+
+        public abstract int GetEnumValue(string name);
+
+        /// <inheritdoc cref="GetInteger(int)" />
+        public int GetInteger(XRamGetInteger param)
+        {
+            return GetInteger(GetValueForEnum(param));
+        }
 
         /// <summary>
         /// Sets the storage mode of an array of OpenAL buffers.
         /// </summary>
-        /// <param name="count">The number of buffers pointed to by <paramref name="buffers"/>.</param>
+        /// <param name="count">The number of buffers pointed to by <paramref name="buffers" />.</param>
         /// <param name="buffers">An array of OpenAL buffer handles.</param>
         /// <param name="mode">The storage mode that should be used for all the given buffers.</param>
         /// <returns>
         /// true if all buffers were successfully set to the requested storage mode; otherwise, false.
         /// </returns>
-        /// <seealso cref="GetBufferMode(uint)"/>
+        /// <seealso cref="GetBufferMode(uint)" />
         public bool SetBufferMode(int count, in uint[] buffers, BufferStorageMode mode)
         {
             return SetBufferMode(count, in buffers, GetValueForEnum(mode));
@@ -70,19 +86,17 @@ namespace Silk.NET.OpenAL.Extensions.Creative.XRam
         /// <returns>
         /// true if the buffer was successfully set to the requested storage mode; otherwise, false.
         /// </returns>
-        /// <seealso cref="GetBufferMode(uint)"/>
+        /// <seealso cref="GetBufferMode(uint)" />
         public bool SetBufferMode(uint buffer, BufferStorageMode mode)
         {
             var pool = ArrayPool<uint>.Shared;
             var buffers = pool.Rent(1);
             buffers[0] = buffer;
 
-            try
-            {
+            try {
                 return SetBufferMode(1, in buffers, mode);
             }
-            finally
-            {
+            finally {
                 pool.Return(buffers, true);
             }
         }
@@ -95,23 +109,17 @@ namespace Silk.NET.OpenAL.Extensions.Creative.XRam
         /// <returns>
         /// true if all buffers were successfully set to the requested storage mode; otherwise, false.
         /// </returns>
-        /// <seealso cref="GetBufferMode(uint)"/>
+        /// <seealso cref="GetBufferMode(uint)" />
         public bool SetBufferMode(BufferStorageMode mode, params uint[] buffers)
         {
             return SetBufferMode(buffers.Length, in buffers, mode);
         }
 
-        /// <inheritdoc cref="GetBufferMode(uint, IntPtr)"/>
-        public BufferStorageMode GetBufferMode(uint buffer) => GetEnumForValue(GetBufferMode(buffer, IntPtr.Zero));
-
-        /// <inheritdoc />
-        public abstract int GetInteger(int param);
-
-        /// <inheritdoc />
-        public abstract bool SetBufferMode(int count, in uint[] buffers, int mode);
-
-        /// <inheritdoc />
-        public abstract int GetBufferMode(uint buffer, IntPtr reserved);
+        /// <inheritdoc cref="GetBufferMode(uint, IntPtr)" />
+        public BufferStorageMode GetBufferMode(uint buffer)
+        {
+            return GetEnumForValue(GetBufferMode(buffer, IntPtr.Zero));
+        }
 
         /// <summary>
         /// Gets the actual value as defined in OpenAL for the given enum member.
@@ -121,8 +129,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative.XRam
         /// <exception cref="InvalidEnumArgumentException">Thrown if the enum is not valid.</exception>
         private int GetValueForEnum(XRamGetInteger param)
         {
-            switch (param)
-            {
+            switch (param) {
                 case XRamGetInteger.RamSize:
                 {
                     return _ramSize;
@@ -135,7 +142,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative.XRam
 
                 default:
                 {
-                    throw new InvalidEnumArgumentException(nameof(param), (int)param, typeof(XRamGetInteger));
+                    throw new InvalidEnumArgumentException(nameof(param), (int) param, typeof(XRamGetInteger));
                 }
             }
         }
@@ -148,8 +155,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative.XRam
         /// <exception cref="InvalidEnumArgumentException">Thrown if the enum is not valid.</exception>
         private int GetValueForEnum(BufferStorageMode mode)
         {
-            switch (mode)
-            {
+            switch (mode) {
                 case BufferStorageMode.Automatic:
                 {
                     return _bufferStorageModeAutomatic;
@@ -167,7 +173,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative.XRam
 
                 default:
                 {
-                    throw new InvalidEnumArgumentException(nameof(mode), (int)mode, typeof(BufferStorageMode));
+                    throw new InvalidEnumArgumentException(nameof(mode), (int) mode, typeof(BufferStorageMode));
                 }
             }
         }
@@ -180,30 +186,19 @@ namespace Silk.NET.OpenAL.Extensions.Creative.XRam
         /// <exception cref="InvalidEnumArgumentException">Thrown if the value is not valid.</exception>
         private BufferStorageMode GetEnumForValue(int value)
         {
-            if (value == _bufferStorageModeAutomatic)
-            {
+            if (value == _bufferStorageModeAutomatic) {
                 return BufferStorageMode.Automatic;
             }
 
-            if (value == _bufferStorageModeHardware)
-            {
+            if (value == _bufferStorageModeHardware) {
                 return BufferStorageMode.Hardware;
             }
 
-            if (value == _bufferStorageModeAccessible)
-            {
+            if (value == _bufferStorageModeAccessible) {
                 return BufferStorageMode.Accessible;
             }
 
             throw new InvalidEnumArgumentException(nameof(value), value, typeof(BufferStorageMode));
         }
-
-        public SearchPathContainer NameContainer { get; }
-        
-        public abstract bool IsExtensionPresent(string name);
-
-        public abstract IntPtr GetProcAddress(string name);
-
-        public abstract int GetEnumValue(string name);
     }
 }

@@ -1,11 +1,7 @@
-//
-// FormatHelpers.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using System.Linq;
@@ -30,8 +26,7 @@ namespace Silk.NET.OpenAL.Attributes
             var enumType = typeof(TFormat);
             var member = enumType.GetMember(format.ToString()).First();
 
-            if (!(member.GetCustomAttribute(typeof(FormatSizeAttribute)) is FormatSizeAttribute sizeAttribute))
-            {
+            if (!(member.GetCustomAttribute(typeof(FormatSizeAttribute)) is FormatSizeAttribute sizeAttribute)) {
                 throw new InvalidOperationException("The given buffer format doesn't have a format size set.");
             }
 

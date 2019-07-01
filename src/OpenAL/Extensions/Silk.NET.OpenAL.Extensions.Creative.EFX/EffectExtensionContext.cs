@@ -1,11 +1,7 @@
-//
-// EffectExtensionContext.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using AdvancedDLSupport;
@@ -26,6 +22,9 @@ namespace Silk.NET.OpenAL.Extensions.Creative.EFX
         {
         }
 
+        /// <inheritdoc />
+        public abstract unsafe void GetContextProperty(IntPtr device, EFXContextInteger param, int size, int* data);
+
         /// <summary>
         /// Gets the major version of the Effect Extension.
         /// </summary>
@@ -33,8 +32,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative.EFX
         /// <returns>The major version.</returns>
         public int GetEFXMajorVersion(IntPtr device)
         {
-            unsafe
-            {
+            unsafe {
                 var result = 0;
                 GetContextProperty(device, EFXContextInteger.EFXMajorVersion, sizeof(int), &result);
 
@@ -49,8 +47,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative.EFX
         /// <returns>The minor version.</returns>
         public int GetEFXMinorVersion(IntPtr device)
         {
-            unsafe
-            {
+            unsafe {
                 var result = 0;
                 GetContextProperty(device, EFXContextInteger.EFXMinorVersion, sizeof(int), &result);
 
@@ -67,8 +64,5 @@ namespace Silk.NET.OpenAL.Extensions.Creative.EFX
         {
             return new Version(GetEFXMajorVersion(device), GetEFXMinorVersion(device));
         }
-
-        /// <inheritdoc />
-        public abstract unsafe void GetContextProperty(IntPtr device, EFXContextInteger param, int size, int* data);
     }
 }

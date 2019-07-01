@@ -1,11 +1,7 @@
-﻿//
-// ALContext.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+﻿// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using AdvancedDLSupport;
@@ -21,53 +17,17 @@ namespace Silk.NET.OpenAL
     /// </summary>
     public abstract class ALContext : NativeAPI, IALC
     {
-        /// <summary>
-        /// Gets an instance of the API.
-        /// </summary>
-        /// <returns>The instance.</returns>
-        public static ALContext GetAPI()
-        {
-            return LibraryLoader.Load<ALContext>(new OpenALLibraryNameContainer());
-        }
-
-        /// <inheritdoc cref="NativeLibraryBase"/>
+        /// <inheritdoc cref="NativeLibraryBase" />
         protected ALContext(string path, ImplementationOptions options)
             : base(path, options)
         {
         }
 
-        /// <summary>
-        /// Gets an instance of the API of an extension to the API.
-        /// </summary>
-        /// <typeparam name="TContextExtension">The extension type.</typeparam>
-        /// <param name="device">The device the context is on.</param>
-        /// <returns>The extension.</returns>
-        public unsafe TContextExtension GetExtension<TContextExtension>(Device* device)
-            where TContextExtension : ContextExtensionBase
-        {
-            return ALExtensionLoader.LoadContextExtension<TContextExtension>(this);
-        }
-
         /// <inheritdoc />
         public abstract unsafe Context* CreateContext(Device* device, int* attributeList);
 
-        /// <inheritdoc cref="CreateContext"/>
-        public unsafe IntPtr CreateContextHandle(Device* device, int* attributeList)
-        {
-            return new IntPtr(CreateContext(device, attributeList));
-        }
-
         /// <inheritdoc />
         public abstract unsafe bool MakeContextCurrent(Context* context);
-
-        /// <inheritdoc cref="MakeContextCurrent(Context*)"/>
-        public bool MakeContextCurrent(IntPtr context)
-        {
-            unsafe
-            {
-                return MakeContextCurrent((Context*)context);
-            }
-        }
 
         /// <inheritdoc />
         public abstract unsafe void ProcessContext(Context* context);
@@ -80,15 +40,6 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         public abstract unsafe Context* GetCurrentContext();
-
-        /// <inheritdoc cref="GetCurrentContext"/>
-        public IntPtr GetCurrentContextHandle()
-        {
-            unsafe
-            {
-                return new IntPtr(GetCurrentContext());
-            }
-        }
 
         /// <inheritdoc />
         public abstract unsafe Device* GetContextsDevice(Context* context);
@@ -116,5 +67,48 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         public abstract unsafe void GetContextProperty(Device* device, GetContextInteger param, int count, IntPtr data);
+
+        /// <summary>
+        /// Gets an instance of the API.
+        /// </summary>
+        /// <returns>The instance.</returns>
+        public static ALContext GetAPI()
+        {
+            return LibraryLoader.Load<ALContext>(new OpenALLibraryNameContainer());
+        }
+
+        /// <summary>
+        /// Gets an instance of the API of an extension to the API.
+        /// </summary>
+        /// <typeparam name="TContextExtension">The extension type.</typeparam>
+        /// <param name="device">The device the context is on.</param>
+        /// <returns>The extension.</returns>
+        public unsafe TContextExtension GetExtension<TContextExtension>(Device* device)
+            where TContextExtension : ContextExtensionBase
+        {
+            return ALExtensionLoader.LoadContextExtension<TContextExtension>(this);
+        }
+
+        /// <inheritdoc cref="CreateContext" />
+        public unsafe IntPtr CreateContextHandle(Device* device, int* attributeList)
+        {
+            return new IntPtr(CreateContext(device, attributeList));
+        }
+
+        /// <inheritdoc cref="MakeContextCurrent(Context*)" />
+        public bool MakeContextCurrent(IntPtr context)
+        {
+            unsafe {
+                return MakeContextCurrent((Context*) context);
+            }
+        }
+
+        /// <inheritdoc cref="GetCurrentContext" />
+        public IntPtr GetCurrentContextHandle()
+        {
+            unsafe {
+                return new IntPtr(GetCurrentContext());
+            }
+        }
     }
 }

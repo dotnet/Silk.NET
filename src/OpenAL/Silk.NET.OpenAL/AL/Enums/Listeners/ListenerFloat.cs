@@ -1,11 +1,7 @@
-﻿//
-// ListenerFloat.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+﻿// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 namespace Silk.NET.OpenAL
 {
@@ -19,6 +15,6 @@ namespace Silk.NET.OpenAL
         /// un-attenuated/unchanged. Each division by 2 equals an attenuation of -6dB. Each multiplicaton with 2 equals an
         /// amplification of +6dB. A value of 0.0f is interpreted as zero volume and the channel is effectively disabled.
         /// </summary>
-        Gain = 0x100A,
+        Gain = 0x100A
     }
 }

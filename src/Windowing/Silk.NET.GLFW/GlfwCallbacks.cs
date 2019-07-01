@@ -82,7 +82,8 @@ namespace Silk.NET.GLFW
         /// <param name="action">The <see cref="InputAction" /> for that <paramref name="key" />.</param>
         /// <param name="mods">Bit field describing which modifier keys were held down.</param>
         /// <seealso cref="IGlfw.SetKeyCallback" />
-        public delegate void KeyCallback(WindowHandle* window, Keys key, int scanCode, InputAction action, KeyModifiers mods);
+        public delegate void KeyCallback(WindowHandle* window, Keys key, int scanCode, InputAction action,
+            KeyModifiers mods);
 
         /// <summary>
         /// The function signature for monitor configuration callback functions.

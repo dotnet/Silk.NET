@@ -1,11 +1,7 @@
-//
-// FormatExtensionBase
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using AdvancedDLSupport;
@@ -20,14 +16,15 @@ namespace Silk.NET.OpenAL.Extensions
     public abstract class FormatExtensionBase<TExtendedBufferFormat> : NativeExtension<AL>
         where TExtendedBufferFormat : struct, Enum
     {
-        /// <inheritdoc cref="ExtensionBase"/>
+        /// <inheritdoc cref="ExtensionBase" />
         protected FormatExtensionBase(string path, ImplementationOptions options)
             : base(path, options)
         {
         }
 
-        /// <inheritdoc cref="BufferData"/>
-        public abstract unsafe void BufferData(uint buffer, TExtendedBufferFormat format, void* data, int size, int frequency);
+        /// <inheritdoc cref="BufferData" />
+        public abstract unsafe void BufferData(uint buffer, TExtendedBufferFormat format, void* data, int size,
+            int frequency);
 
         /// <summary>
         /// Fills a buffer with audio data.
@@ -40,11 +37,9 @@ namespace Silk.NET.OpenAL.Extensions
         public void BufferData<TElement>(uint buffer, TExtendedBufferFormat format, TElement[] data, int frequency)
             where TElement : unmanaged
         {
-            unsafe
-            {
+            unsafe {
                 var size = sizeof(TElement) * data.Length;
-                fixed (void* ptr = data)
-                {
+                fixed (void* ptr = data) {
                     BufferData(buffer, format, ptr, size, frequency);
                 }
             }

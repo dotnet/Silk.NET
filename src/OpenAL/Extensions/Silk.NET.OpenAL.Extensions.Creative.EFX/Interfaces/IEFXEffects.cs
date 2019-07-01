@@ -1,14 +1,10 @@
-//
-// IEFXEffects.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
-using AdvancedDLSupport;
 using System.Numerics;
+using AdvancedDLSupport;
 
 // ReSharper disable ExplicitCallerInfoArgument
 namespace Silk.NET.OpenAL.Extensions.Creative.EFX
@@ -24,8 +20,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative.EFX
         /// </summary>
         /// <param name="count">The number of objects to generate.</param>
         /// <param name="effects">A pointer to the first element of the array where the handles will be stored.</param>
-        /// <seealso cref="DeleteEffects"/>
-        /// <seealso cref="IsEffect"/>
+        /// <seealso cref="DeleteEffects" />
+        /// <seealso cref="IsEffect" />
         unsafe void GenEffects(int count, uint* effects);
 
         /// <summary>
@@ -33,8 +29,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative.EFX
         /// </summary>
         /// <param name="count">The number of objects to delete.</param>
         /// <param name="effects">A pointer to the first element of the array where the handles are stored.</param>
-        /// <seealso cref="GenEffects"/>
-        /// <seealso cref="IsEffect"/>
+        /// <seealso cref="GenEffects" />
+        /// <seealso cref="IsEffect" />
         unsafe void DeleteEffects(int count, uint* effects);
 
         /// <summary>
@@ -42,8 +38,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative.EFX
         /// </summary>
         /// <param name="effect">The handle.</param>
         /// <returns>true if the handle is an effect handle; otherwise, false.</returns>
-        /// <seealso cref="GenEffects"/>
-        /// <seealso cref="DeleteEffects"/>
+        /// <seealso cref="GenEffects" />
+        /// <seealso cref="DeleteEffects" />
         bool IsEffect(uint effect);
 
         /// <summary>

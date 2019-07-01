@@ -1,11 +1,7 @@
-//
-// IXRam.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using AdvancedDLSupport;
@@ -30,13 +26,13 @@ namespace Silk.NET.OpenAL.Extensions.Creative.XRam
         /// <summary>
         /// Sets the storage mode of an array of OpenAL buffers.
         /// </summary>
-        /// <param name="count">The number of buffers pointed to by <paramref name="buffers"/>.</param>
+        /// <param name="count">The number of buffers pointed to by <paramref name="buffers" />.</param>
         /// <param name="buffers">An array of OpenAL buffer handles.</param>
         /// <param name="mode">The storage mode that should be used for all the given buffers.</param>
         /// <returns>
         /// true if all buffers were successfully set to the requested storage mode; otherwise, false.
         /// </returns>
-        /// <seealso cref="GetBufferMode"/>
+        /// <seealso cref="GetBufferMode" />
         bool SetBufferMode(int count, in uint[] buffers, int mode);
 
         /// <summary>
@@ -45,7 +41,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative.XRam
         /// <param name="buffer">The handle of an OpenAL buffer.</param>
         /// <param name="reserved">Should be set to null.</param>
         /// <returns>The storage mode.</returns>
-        /// <seealso cref="SetBufferMode"/>
+        /// <seealso cref="SetBufferMode" />
         int GetBufferMode(uint buffer, IntPtr reserved);
     }
 }

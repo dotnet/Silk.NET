@@ -1,16 +1,12 @@
-//
-// Capture.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using System;
 using AdvancedDLSupport;
-using Silk.NET.OpenAL.Attributes;
 using Silk.NET.Core.Attributes;
+using Silk.NET.OpenAL.Attributes;
 
 namespace Silk.NET.OpenAL.Extensions.EXT.Capture
 {
@@ -20,27 +16,15 @@ namespace Silk.NET.OpenAL.Extensions.EXT.Capture
     [Extension("ALC_EXT_CAPTURE")]
     public abstract class Capture : ContextExtensionBase, ICaptureContext, ICaptureContextState
     {
-        /// <inheritdoc cref="ExtensionBase"/>
+        /// <inheritdoc cref="ExtensionBase" />
         protected Capture(string path, ImplementationOptions options)
             : base(path, options)
         {
         }
 
         /// <inheritdoc />
-        public abstract unsafe Device* CaptureOpenDevice(string deviceName, uint frequency, BufferFormat format, int size);
-
-        /// <inheritdoc cref="CaptureOpenDevice"/>
-        public unsafe Device* CaptureOpenDevice<TBufferFormat>
-        (
-            string deviceName,
-            uint frequency,
-            TBufferFormat format,
-            int size
-        )
-            where TBufferFormat : struct, Enum
-        {
-            return CaptureOpenDevice(deviceName, frequency, (BufferFormat)(object)format, size);
-        }
+        public abstract unsafe Device* CaptureOpenDevice(string deviceName, uint frequency, BufferFormat format,
+            int size);
 
         /// <inheritdoc />
         public abstract unsafe bool CaptureCloseDevice(Device* device);
@@ -53,6 +37,23 @@ namespace Silk.NET.OpenAL.Extensions.EXT.Capture
 
         /// <inheritdoc />
         public abstract unsafe void CaptureSamples(Device* device, void* buffer, int sampleCount);
+
+        /// <inheritdoc />
+        public abstract unsafe void GetContextProperty(Device* device, GetCaptureContextInteger param, int count,
+            void* data);
+
+        /// <inheritdoc cref="CaptureOpenDevice" />
+        public unsafe Device* CaptureOpenDevice<TBufferFormat>
+        (
+            string deviceName,
+            uint frequency,
+            TBufferFormat format,
+            int size
+        )
+            where TBufferFormat : struct, Enum
+        {
+            return CaptureOpenDevice(deviceName, frequency, (BufferFormat) (object) format, size);
+        }
 
         /// <summary>
         /// Completes a capture operation. This call does not block.
@@ -109,8 +110,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT.Capture
             var internalBufferSize = sampleCount * formatSize;
             var managedBufferElementCount = internalBufferSize / managedFormatSize;
 
-            if (buffer.Length < managedBufferElementCount)
-            {
+            if (buffer.Length < managedBufferElementCount) {
                 throw new ArgumentException
                 (
                     "The buffer wasn't large enough to contain all of the requested samples.",
@@ -118,8 +118,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT.Capture
                 );
             }
 
-            fixed (void* ptr = buffer)
-            {
+            fixed (void* ptr = buffer) {
                 CaptureSamples(device, ptr, sampleCount);
             }
         }
@@ -145,10 +144,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT.Capture
             return new AudioCapture<TBufferFormat>(this, deviceName, frequency, sampleFormat, bufferSize);
         }
 
-        /// <inheritdoc />
-        public abstract unsafe void GetContextProperty(Device* device, GetCaptureContextInteger param, int count, void* data);
-
-        /// <inheritdoc cref="GetContextProperty"/>
+        /// <inheritdoc cref="GetContextProperty" />
         public unsafe int GetAvailableSamples(Device* device)
         {
             var result = 0;

@@ -1,11 +1,7 @@
-﻿//
-// StateString.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+﻿// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 namespace Silk.NET.OpenAL
 {
@@ -32,6 +28,6 @@ namespace Silk.NET.OpenAL
         /// <summary>
         /// Gets a list of all available Extensions, separated with spaces.
         /// </summary>
-        Extensions = 0xB004,
+        Extensions = 0xB004
     }
 }

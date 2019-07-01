@@ -1,11 +1,7 @@
-//
-// VorbisBufferFormat.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 namespace Silk.NET.OpenAL.Extensions.EXT.VorbisFormat
 {
@@ -18,6 +14,6 @@ namespace Silk.NET.OpenAL.Extensions.EXT.VorbisFormat
         /// <summary>
         /// Ogg Vorbis encoded data.
         /// </summary>
-        Vorbis = 0x10003,
+        Vorbis = 0x10003
     }
 }

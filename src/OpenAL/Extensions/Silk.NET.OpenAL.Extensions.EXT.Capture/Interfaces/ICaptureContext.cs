@@ -1,11 +1,7 @@
-//
-// ICaptureContext
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using AdvancedDLSupport;
 
@@ -36,14 +32,11 @@ namespace Silk.NET.OpenAL.Extensions.EXT.Capture
 
         /// <summary>
         /// Begins a capture operation.
-        ///
         /// CaptureStart will begin recording to an internal ring buffer of the size specified when opening the capture
         /// device. The application can then retrieve the number of samples currently available using
-        /// <see cref="GetCaptureContextInteger.CaptureSamples"/> with <see cref="ICaptureContextState.GetContextProperty"/>
-        ///
+        /// <see cref="GetCaptureContextInteger.CaptureSamples" /> with <see cref="ICaptureContextState.GetContextProperty" />
         /// When the application determines that enough samples are available for processing, then it can obtain them
-        /// with a call to <see cref="CaptureSamples"/>.
-        ///
+        /// with a call to <see cref="CaptureSamples" />.
         /// </summary>
         /// <param name="device">The device.</param>
         unsafe void CaptureStart(Device* device);

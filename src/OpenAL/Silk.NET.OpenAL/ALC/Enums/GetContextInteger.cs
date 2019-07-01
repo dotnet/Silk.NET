@@ -1,18 +1,15 @@
-﻿//
-// GetContextInteger.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+﻿// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 using Silk.NET.OpenAL.Interfaces;
 
 namespace Silk.NET.OpenAL
 {
     /// <summary>
-    /// Defines available parameters for <see cref="IContextState.GetContextProperty(Device*, GetContextInteger, int, System.IntPtr)"/>.
+    /// Defines available parameters for
+    /// <see cref="IContextState.GetContextProperty(Device*, GetContextInteger, int, System.IntPtr)" />.
     /// </summary>
     public enum GetContextInteger
     {
@@ -36,6 +33,6 @@ namespace Silk.NET.OpenAL
         /// Expects a destination of ALC_ATTRIBUTES_SIZE, and provides an attribute list for the current context of the
         /// specified device. NULL is an invalid device.
         /// </summary>
-        AllAttributes = 0x1003,
+        AllAttributes = 0x1003
     }
 }

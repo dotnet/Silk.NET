@@ -1,11 +1,7 @@
-﻿//
-// AudioContextException.cs
-//
-// Copyright (C) 2019 OpenTK
-//
-// This software may be modified and distributed under the terms
+﻿// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
 
 namespace Silk.NET.OpenAL
 {
@@ -15,14 +11,14 @@ namespace Silk.NET.OpenAL
     public class AudioContextException : AudioException
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudioContextException"/> class.
+        /// Initializes a new instance of the <see cref="AudioContextException" /> class.
         /// </summary>
         public AudioContextException()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="AudioContextException"/> class.
+        /// Initializes a new instance of the <see cref="AudioContextException" /> class.
         /// </summary>
         /// <param name="message">The error message of the AudioContextException.</param>
         public AudioContextException(string message)
