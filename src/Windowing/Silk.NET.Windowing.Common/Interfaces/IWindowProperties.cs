@@ -13,10 +13,10 @@ namespace Silk.NET.Windowing.Common
     public interface IWindowProperties
     {
         /// <summary>
-        /// Gets or sets whether or not the window is visible. 
+        /// Gets or sets whether or not the window is visible.
         /// </summary>
         bool IsVisible { get; set; }
-        
+
         /// <summary>
         /// If true, both updates and rendering will happen on the same thread. If false, both updating and rendering
         /// will be run on their own threads. Default is true.
@@ -58,7 +58,7 @@ namespace Silk.NET.Windowing.Common
         /// Gets the graphics API the window will use.
         /// </summary>
         GraphicsAPI API { get; }
-        
+
         /// <summary>
         /// The window title.
         /// </summary>

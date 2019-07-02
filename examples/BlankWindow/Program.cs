@@ -14,20 +14,20 @@ namespace BlankWindow
     internal class Program
     {
         public static IWindow window;
-        
+
         private static void Main()
         {
             var options = WindowOptions.Default;
 
             options.UseSingleThreadedWindow = false;
-            
+
             options.UpdatesPerSecond = 60.0;
             options.FramesPerSecond = 60.0;
 
             // options.WindowState = WindowState.Fullscreen;
-            
+
             window = Window.Create(options);
-            
+
             window.MakeCurrent();
 
             window.OnFileDrop += OnFileDrop;
@@ -42,9 +42,9 @@ namespace BlankWindow
             window.OnUpdate += OnUpdate;
 
             window.VSync = VSyncMode.Off;
-            
+
             Console.WriteLine($"Entry thread is {Thread.CurrentThread.ManagedThreadId}");
-            
+
             window.Run();
         }
 

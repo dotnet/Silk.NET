@@ -22,7 +22,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         public static Dispatcher ThreadDispatcher { get; internal set; }
-        
+
         /// <summary>
         /// Gets a GLFW interface implementation lazily.
         /// </summary>
@@ -31,7 +31,7 @@ namespace Silk.NET.GLFW
             if (ThreadDispatcher == null) {
                 ThreadDispatcher = new Dispatcher();
             }
-            
+
             var glfw = Glfw.GetAPI();
 
             ThreadDispatcher.Invoke(() =>
@@ -39,7 +39,7 @@ namespace Silk.NET.GLFW
                 glfw.Init();
                 glfw.SetErrorCallback(Glfw.ErrorCallback);
             });
-            
+
             return glfw;
         });
 
@@ -58,7 +58,7 @@ namespace Silk.NET.GLFW
                     glfw.Init();
                     glfw.SetErrorCallback(Glfw.ErrorCallback);
                 });
-                
+
                 return glfw;
             });
         }

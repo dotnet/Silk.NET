@@ -11,8 +11,7 @@ namespace Silk.NET.Windowing
     {
         public static IWindow Create(WindowOptions options)
         {
-            if (Silk.CurrentPlatform == null)
-            {
+            if (Silk.CurrentPlatform == null) {
                 Silk.Init();
             }
 

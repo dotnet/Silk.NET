@@ -15,12 +15,10 @@ namespace Silk.NET.Windowing.Desktop
         {
             get
             {
-                try
-                {
+                try {
                     Glfw.GetAPI(); // activate the class so we can determine if we can activate the class
                 }
-                catch (FileNotFoundException)
-                {
+                catch (FileNotFoundException) {
                     return false;
                 }
 
