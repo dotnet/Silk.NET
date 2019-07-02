@@ -13,7 +13,7 @@ namespace Silk.NET.Core.Loader
     public static class LibraryLoader
     {
         private const ImplementationOptions Options = ImplementationOptions.UseIndirectCalls |
-                                                      ImplementationOptions.EnableDllMapSupport |
+                                                      ImplementationOptions.UseLazyBinding |
                                                       ImplementationOptions.SuppressSecurity |
                                                       ImplementationOptions.EnableOptimizations;
 
