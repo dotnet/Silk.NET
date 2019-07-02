@@ -6,7 +6,7 @@
 namespace Silk.NET.OpenAL
 {
     /// <summary>
-    /// Represents exceptions related to an OpenToolkit.Audio device.
+    /// Represents exceptions related to a <see cref="Device" />.
     /// </summary>
     public class AudioDeviceException : AudioException
     {

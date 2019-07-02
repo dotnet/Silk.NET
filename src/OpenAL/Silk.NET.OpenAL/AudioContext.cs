@@ -136,7 +136,7 @@ namespace Silk.NET.OpenAL
         }
 
         /// <summary>
-        /// Gets the OpenToolkit.Audio.AudioContext which is current in the application.
+        /// Gets the <see cref="AudioContext" /> which is current in the application.
         /// </summary>
         /// <remarks>
         /// Only one AudioContext can be current in the application at any time,
@@ -281,7 +281,7 @@ namespace Silk.NET.OpenAL
         /// <summary>
         /// Makes the specified AudioContext current in the calling thread.
         /// </summary>
-        /// <param name="context">The OpenToolkit.Audio.AudioContext to make current, or null.</param>
+        /// <param name="context">The <see cref="AudioContext" /> to make current, or null.</param>
         /// <exception cref="ObjectDisposedException">
         /// Occurs if this function is called after the AudioContext has been disposed.
         /// </exception>

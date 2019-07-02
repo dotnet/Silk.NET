@@ -98,7 +98,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT.Capture
         }
 
         /// <summary>
-        /// Gets the OpenToolkit.Audio.BufferFormat for this instance.
+        /// Gets the <<see cref="BufferFormat" /> for this instance.
         /// </summary>
         public TBufferFormat SampleFormat { get; }
 

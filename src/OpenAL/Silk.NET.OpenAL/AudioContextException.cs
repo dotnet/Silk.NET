@@ -6,7 +6,7 @@
 namespace Silk.NET.OpenAL
 {
     /// <summary>
-    /// Represents exceptions related to an OpenToolkit.Audio.AudioContext.
+    /// Represents exceptions related to an <see cref="AudioContext" />.
     /// </summary>
     public class AudioContextException : AudioException
     {

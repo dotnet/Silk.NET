@@ -8,7 +8,7 @@ using System;
 namespace Silk.NET.OpenAL
 {
     /// <summary>
-    /// Represents exceptions related to the OpenToolkit.Audio subsystem.
+    /// Represents exceptions related to the audio subsystem.
     /// </summary>
     public class AudioException : Exception
     {
