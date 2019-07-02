@@ -33,6 +33,8 @@ namespace Silk.NET.GLFW
         public static GlfwCallbacks.ErrorCallback ErrorCallback { get; } = (errorCode, description) =>
             throw new GlfwException(description) {ErrorCode = errorCode};
 
+        public override SearchPathContainer SearchPaths { get; } = new GlfwLibraryNameContainer();
+
         /// <inheritdoc />
         public abstract bool Init();
 
@@ -309,7 +311,8 @@ namespace Silk.NET.GLFW
         public abstract GlfwCallbacks.ErrorCallback SetErrorCallback(GlfwCallbacks.ErrorCallback callback);
 
         /// <inheritdoc />
-        public abstract unsafe void SetInputMode(WindowHandle* window, CursorStateAttribute mode, CursorModeValue value);
+        public abstract unsafe void SetInputMode(WindowHandle* window, CursorStateAttribute mode,
+            CursorModeValue value);
 
         /// <inheritdoc />
         public abstract unsafe void SetInputMode(WindowHandle* window, StickyAttributes mode, bool value);
@@ -346,7 +349,7 @@ namespace Silk.NET.GLFW
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.WindowIconifyCallback SetWindowIconifyCallback(WindowHandle* window,
             GlfwCallbacks.WindowIconifyCallback callback);
-        
+
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.WindowMaximizeCallback SetWindowMaximizeCallback(WindowHandle* window,
             GlfwCallbacks.WindowMaximizeCallback callback);
@@ -424,8 +427,6 @@ namespace Silk.NET.GLFW
         {
             return LibraryLoader.Load<Glfw>(new GlfwLibraryNameContainer());
         }
-        
-        public override SearchPathContainer SearchPaths { get; } = new GlfwLibraryNameContainer();
 
         public override bool IsExtensionPresent(string name)
         {
