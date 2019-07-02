@@ -69,23 +69,8 @@ namespace Generator.Common.Functions
         /// </summary>
         public string ExtensionName { get; set; }
 
-        /// <summary>
-        /// Gets or sets a value indicating whether the new keyword is set.
-        /// </summary>
-        public bool New { get; set; } = false;
-
         /// <inheritdoc />
         public override string ToString()
-        {
-            return ToString(false);
-        }
-
-        /// <summary>
-        /// Converts this instance to a string.
-        /// </summary>
-        /// <param name="ignoreStyleGuide">Whether to ignore the style guide.</param>
-        /// <returns>This instance as a string.</returns>
-        public string ToString(bool ignoreStyleGuide)
         {
             var sb = new StringBuilder();
 
@@ -128,51 +113,6 @@ namespace Generator.Common.Functions
             }
 
             sb.Append(";");
-            if (sb.ToString().Length <= 90 || ignoreStyleGuide)
-            {
-                return sb.ToString();
-            }
-
-            sb = new StringBuilder();
-
-            GetDeclarationString(sb);
-
-            sb.AppendLine();
-            sb.AppendLine("(");
-            if (Parameters.Count > 0)
-            {
-                var parameterDeclarations = Parameters.Select(GetDeclarationString).ToList();
-                for (var index = 0; index < parameterDeclarations.Count; index++)
-                {
-                    if (index != 0)
-                    {
-                        sb.AppendLine(",");
-                    }
-
-                    var parameterDeclaration = parameterDeclarations[index];
-                    sb.Append("    " + parameterDeclaration);
-                }
-            }
-
-            sb.AppendLine();
-            sb.Append(")");
-
-            if (GenericTypeParameters.Count != 0)
-            {
-                for (var index = 0; index < GenericTypeParameters.Count; index++)
-                {
-                    sb.AppendLine();
-                    var p = GenericTypeParameters[index];
-                    var constraints = p.Constraints.Any()
-                        ? string.Join(", ", p.Constraints)
-                        : "struct";
-
-                    sb.Append($"where {p.Name} : {constraints}");
-                }
-            }
-
-            sb.Append(";");
-
             return sb.ToString();
         }
 

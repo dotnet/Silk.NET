@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -44,6 +45,7 @@ namespace Generator.Convert
                 profileConstructor.WriteProfiles();
             }
 
+            Console.WriteLine("Baking raw profiles...");
             ProfileBakery.Bake
             (
                 CliOptions.BakeryInformation.Any()
@@ -53,6 +55,7 @@ namespace Generator.Convert
                 CliOptions.OutputFolder,
                 CliOptions.PrettyPrinted
             );
+            Console.WriteLine("Finishing up...");
             if (!CliOptions.PreserveRawAPIs)
             {
                 ProfileBakery.DeleteRawAPIs(CliOptions.OutputFolder);

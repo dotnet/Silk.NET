@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -41,7 +42,8 @@ namespace Generator.Convert.Baking
                 Name = information.Name,
                 Namespace = information.Namespace,
                 ExtensionsNamespace = information.ExtensionsNamespace,
-                OutputFolder = information.OutputFolder
+                OutputFolder = information.OutputFolder,
+                ClassName = information.ClassName
             };
             profile.Projects.Add
             (
@@ -85,6 +87,8 @@ namespace Generator.Convert.Baking
                 Path.Combine(folder, information.Name + ".json"),
                 JsonConvert.SerializeObject(profile, pretty ? Formatting.Indented : Formatting.None)
             );
+            
+            Console.WriteLine("Created profile \""+information.Name+"\".");
             return Task.CompletedTask;
         }
 

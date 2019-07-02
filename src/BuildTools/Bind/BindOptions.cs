@@ -26,18 +26,6 @@ namespace Generator.Bind
         public IEnumerable<string> InputFiles { get; set; }
 
         /// <summary>
-        /// Gets or sets the base input path where the binder looks for specification files.
-        /// </summary>
-        [Option
-        (
-            'h',
-            "helper-files",
-            HelpText = "The helper files containing extra C# code.",
-            Required = true
-        )]
-        public IEnumerable<string> Helpers { get; set; }
-
-        /// <summary>
         /// Gets or sets the base output path where the binder will write the generated files.
         /// </summary>
         [Option

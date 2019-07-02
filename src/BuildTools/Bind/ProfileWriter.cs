@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Generator.Common;
+using MoreLinq.Extensions;
 using Enum = Generator.Common.Enums.Enum;
 
 namespace Generator.Bind
@@ -32,207 +33,165 @@ namespace Generator.Bind
             new Lazy<string>(() => File.ReadAllText(Binder.CliOptions.License));
 
         /// <summary>
-        /// Asynchronously writes this enum to a file.
+        /// Writes this enum to a file.
         /// </summary>
         /// <param name="enum">The enum to write.</param>
         /// <param name="file">The file to write to.</param>
         /// <param name="profile">The subsystem containing this enum.</param>
         /// <param name="project">The project containing this enum.</param>
-        /// <returns>The asynchronous task.</returns>
-        public static async Task WriteEnumAsync(this Enum @enum, string file, Profile profile, Project project)
+        public static void WriteEnum(this Enum @enum, string file, Profile profile, Project project)
         {
             var sw = new StreamWriter(file);
-            await sw.WriteLineAsync(LicenseText.Value);
-            await sw.WriteLineAsync();
-            await sw.WriteLineAsync("using System;");
-            await sw.WriteLineAsync();
+            sw.WriteLine(LicenseText.Value);
+            sw.WriteLine();
+            sw.WriteLine("using System;");
+            sw.WriteLine();
             var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
-            await sw.WriteLineAsync("namespace " + ns + project.Namespace);
-            await sw.WriteLineAsync("{");
+            sw.WriteLine("namespace " + ns + project.Namespace);
+            sw.WriteLine("{");
             foreach (var attr in @enum.Attributes)
             {
-                await sw.WriteLineAsync("    " + attr);
+                sw.WriteLine("    " + attr);
             }
 
-            await sw.WriteLineAsync("    public enum " + @enum.Name + " : uint");
-            await sw.WriteLineAsync("    {");
+            sw.WriteLine("    public enum " + @enum.Name + " : uint");
+            sw.WriteLine("    {");
             for (var index = 0; index < @enum.Tokens.Count; index++)
             {
                 var token = @enum.Tokens[index];
 
-                await sw.WriteLineAsync
+                sw.WriteLine
                 (
                     "        " + token.Name + " = " + token.Value +
                     (index != @enum.Tokens.Count ? "," : string.Empty)
                 );
             }
 
-            await sw.WriteLineAsync("    }");
-            await sw.WriteLineAsync("}");
-            await sw.FlushAsync();
+            sw.WriteLine("    }");
+            sw.WriteLine("}");
+            sw.Flush();
             sw.Dispose();
         }
 
         /// <summary>
-        /// Asynchronously writes this interface to a file.
+        /// Writes this interface to a file.
         /// </summary>
         /// <param name="interface">The interface.</param>
         /// <param name="file">The file to write to.</param>
         /// <param name="profile">The subsystem containing this interface.</param>
         /// <param name="project">The project containing this interface.</param>
-        /// <returns>The asynchronous task.</returns>
-        public static async Task WriteInterfaceAsync
-            (this Interface @interface, string file, Profile profile, Project project)
+        public static void WriteInterface(this Interface @interface, string file, Profile profile, Project project)
         {
             var sw = new StreamWriter(file);
-            await sw.WriteAsync(LicenseText.Value);
-            await sw.WriteLineAsync("using System;");
-            await sw.WriteLineAsync("using System.Runtime.InteropServices;");
-            await sw.WriteLineAsync("using System.Text;");
-            await sw.WriteLineAsync("using Silk.NET.Core;");
-            await sw.WriteLineAsync("using AdvancedDLSupport;");
-            await sw.WriteLineAsync();
+            sw.Write(LicenseText.Value);
+            sw.WriteLine("using System;");
+            sw.WriteLine("using System.Runtime.InteropServices;");
+            sw.WriteLine("using System.Text;");
+            sw.WriteLine("using Silk.NET.Core;");
+            sw.WriteLine("using AdvancedDLSupport;");
+            sw.WriteLine();
             var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
-            await sw.WriteLineAsync("namespace " + ns + project.Namespace);
-            await sw.WriteLineAsync("{");
+            sw.WriteLine("namespace " + ns + project.Namespace);
+            sw.WriteLine("{");
             foreach (var attr in @interface.Attributes)
             {
-                await sw.WriteLineAsync("    " + attr);
+                sw.WriteLine("    " + attr);
             }
 
-            await sw.WriteLineAsync("    internal interface " + @interface.Name);
-            await sw.WriteAsync("    {");
+            sw.WriteLine("    internal interface " + @interface.Name);
+            sw.Write("    {");
             for (var index = 0; index < @interface.Functions.Count; index++)
             {
-                await sw.WriteLineAsync();
+                sw.WriteLine();
                 var function = @interface.Functions[index];
                 using (var sr = new StringReader(function.Doc))
                 {
                     string line;
-                    while ((line = await sr.ReadLineAsync()) != null)
+                    while ((line = sr.ReadLine()) != null)
                     {
-                        await sw.WriteLineAsync("        " + line);
+                        sw.WriteLine("        " + line);
                     }
                 }
 
                 foreach (var attr in function.Attributes)
                 {
-                    await sw.WriteLineAsync("        " + attr);
+                    sw.WriteLine("        " + attr);
                 }
 
-                await sw.WriteLineAsync
+                sw.WriteLine
                 (
                     "        [NativeSymbol(\"" + profile.FunctionPrefix + function.NativeName + "\")]"
                 );
                 using (var sr = new StringReader(function.ToString()))
                 {
                     string line;
-                    while ((line = await sr.ReadLineAsync()) != null)
+                    while ((line = sr.ReadLine()) != null)
                     {
-                        await sw.WriteLineAsync("        " + line);
+                        sw.WriteLine("        " + line);
                     }
                 }
             }
 
-            await sw.WriteLineAsync("    }");
-            await sw.WriteLineAsync("}");
-            await sw.FlushAsync();
+            sw.WriteLine("    }");
+            sw.WriteLine("}");
+            sw.Flush();
             sw.Dispose();
         }
 
-        public static async Task WriteMetaInterfaceAsync(this Project project, Profile profile, string file)
+        public static void WriteMetaInterface(this Project project, Profile profile, string file)
         {
             var sw = new StreamWriter(file);
-            await sw.WriteAsync(LicenseText.Value);
-            await sw.WriteLineAsync();
-            await sw.WriteLineAsync("namespace " + profile.Namespace + project.Namespace);
-            await sw.WriteLineAsync("{");
+            sw.Write(LicenseText.Value);
+            sw.WriteLine();
+            sw.WriteLine("namespace " + profile.Namespace + project.Namespace);
+            sw.WriteLine("{");
             var names = project.Interfaces.Select(x => x.Value.Name).ToArray();
-            await sw.WriteAsync("    internal interface I" + profile.FunctionPrefix.ToUpper() + " : " + names[0]);
+            sw.Write("    internal interface I" + profile.ClassName + " : " + names[0]);
             for (var i = 1; i < names.Length; i++)
             {
-                await sw.WriteLineAsync(",");
-                await sw.WriteAsync("        " + names[i]);
+                sw.WriteLine(",");
+                sw.Write("        " + names[i]);
             }
 
-            await sw.WriteLineAsync();
-            await sw.WriteLineAsync("    {");
-            await sw.WriteLineAsync("    }");
-            await sw.WriteLineAsync("}");
-            await sw.FlushAsync();
+            sw.WriteLine();
+            sw.WriteLine("    {");
+            sw.WriteLine("    }");
+            sw.WriteLine("}");
+            sw.Flush();
             sw.Close();
         }
 
-        public static async Task WriteMixedModeClassAsync(this Project project, Profile profile, string file)
+        public static void WriteMixedModeClass(this Project project, Profile profile, string file)
         {
             // public abstract class MixedModeClass : IMixedModeClass
             // {
             // }
             var sw = new StreamWriter(file);
-            await sw.WriteAsync(LicenseText.Value);
-            await sw.WriteLineAsync("using System;");
-            await sw.WriteLineAsync("using System.Runtime.InteropServices;");
-            await sw.WriteLineAsync("using System.Text;");
-            await sw.WriteLineAsync("using Silk.NET.Core;");
-            await sw.WriteLineAsync("using AdvancedDLSupport;");
-            await sw.WriteLineAsync();
+            sw.Write(LicenseText.Value);
+            sw.WriteLine("using System;");
+            sw.WriteLine("using System.Runtime.InteropServices;");
+            sw.WriteLine("using System.Text;");
+            sw.WriteLine("using Silk.NET.Core;");
+            sw.WriteLine("using AdvancedDLSupport;");
+            sw.WriteLine();
             var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
-            await sw.WriteLineAsync("namespace " + ns + project.Namespace);
-            await sw.WriteLineAsync("{");
-            var nm = project.IsRoot ? profile.FunctionPrefix.ToUpper() : project.Namespace.Split('.').Last();
-            var @base = project.IsRoot ? "NativeLibraryBase" : "ExtensionBase";
-            await sw.WriteLineAsync("    public abstract class " + nm + " : " + @base + ", I" + nm);
-            await sw.WriteLineAsync("    {");
-            await sw.WriteLineAsync("        /// <inheritdoc cref=\"" + @base + "\"/>");
-            await sw.WriteLineAsync("        protected " + nm + "(string path, ImplementationOptions options)");
-            await sw.WriteLineAsync("            : base(path, options)");
-            await sw.WriteLineAsync("        {");
-            await sw.WriteLineAsync("        }");
+            sw.WriteLine("namespace " + ns + project.Namespace);
+            sw.WriteLine("{");
+            var nm = project.IsRoot ? profile.ClassName : project.Namespace.Split('.').Last();
             if (project.IsRoot)
             {
-                await sw.WriteLineAsync();
-                await sw.WriteLineAsync
-                (
-                    "        public IPlatformLibraryNameContainer NameContainer { get; } = new " +
-                    profile.Names.ClassName + "();"
-                );
+                
             }
-
-            foreach (var kvp in project.Interfaces)
-            {
-                await sw.WriteLineAsync();
-                await sw.WriteLineAsync("        // " + kvp.Key);
-                foreach (var function in kvp.Value.Functions)
-                {
-                    await sw.WriteLineAsync();
-                    var lines = function.ToString().ReadAllLines().ToArray();
-                    await sw.WriteLineAsync("        /// <inheritdoc />");
-                    await sw.WriteLineAsync("        public abstract " + lines[0]);
-                    for (var i = 1; i < lines.Length; i++)
-                    {
-                        await sw.WriteLineAsync("        " + lines[i]);
-                    }
-                }
-            }
-
-            //if (project.IsRoot) TODO
-            //{
-            //    await sw.WriteLineAsync();
-            //    await sw.WriteLineAsync("    public static "+nm+" GetApi()");
-            //    await sw.WriteLineAsync("    {");
-            //}
-
-            await sw.FlushAsync();
+            sw.Flush();
         }
 
         /// <summary>
-        /// Asynchronously writes this project in the given folder, with the given settings and parent subsystem.
+        /// Writes this project in the given folder, with the given settings and parent subsystem.
         /// </summary>
         /// <param name="project">The project to write.</param>
         /// <param name="folder">The folder to write this project to.</param>
         /// <param name="profile">The parent subsystem.</param>
-        /// <returns>The asynchronous task.</returns>
-        public static async Task WriteAsync(this Project project, string folder, Profile profile)
+        public static void Write(this Project project, string folder, Profile profile)
         {
             if (!Directory.Exists(folder))
             {
@@ -249,40 +208,37 @@ namespace Generator.Bind
                 Directory.CreateDirectory(Path.Combine(folder, InterfacesSubfolder));
             }
 
-            await project.WriteProjectFileAsync(folder, profile);
+            project.WriteProjectFile(folder, profile);
 
-            var interfaceTasks = project.Interfaces.Select
+            project.Interfaces.ForEach(x => x.Value.WriteInterface
             (
-                x => x.Value.WriteInterfaceAsync
-                    (Path.Combine(folder, InterfacesSubfolder, x.Value.Name + ".cs"), profile, project)
+                Path.Combine(folder, InterfacesSubfolder, x.Value.Name + ".cs"), profile, project)
             );
-            var enumTasks = project.Enums.Select
+
+            project.Enums.ForEach
             (
-                x => x.WriteEnumAsync(Path.Combine(folder, EnumsSubfolder, x.Name + ".cs"), profile, project)
+                x => x.WriteEnum(Path.Combine(folder, EnumsSubfolder, x.Name + ".cs"), profile, project)
             );
 
             if (project.IsRoot)
             {
-                await project.WriteMetaInterfaceAsync
+                project.WriteMetaInterface
                 (
                     profile, Path.Combine(folder, InterfacesSubfolder, "I" + profile.FunctionPrefix.ToUpper() + ".cs")
                 );
             }
 
-            var nm = project.IsRoot ? profile.FunctionPrefix.ToUpper() : project.Namespace.Split('.').Last();
-            await project.WriteMixedModeClassAsync(profile, Path.Combine(folder, nm) + ".cs");
-
-            await Task.WhenAll(interfaceTasks.Concat(enumTasks));
+            var nm = project.IsRoot ? profile.ClassName : project.Namespace.Split('.').Last();
+            project.WriteMixedModeClass(profile, Path.Combine(folder, nm) + ".gen.cs");
         }
 
         /// <summary>
-        /// Asynchronously writes the project file to the given folder.
+        /// Writes the project file to the given folder.
         /// </summary>
         /// <param name="project">The project to write.</param>
         /// <param name="folder">The folder that should contain the project file.</param>
         /// <param name="prof">The parent profile.</param>
-        /// <returns>The asynchronous task.</returns>
-        private static async Task WriteProjectFileAsync(this Project project, string folder, Profile prof)
+        private static void WriteProjectFile(this Project project, string folder, Profile prof)
         {
             if (File.Exists(Path.Combine(folder, project.GetProjectName(prof) + ".csproj")))
             {
@@ -291,20 +247,20 @@ namespace Generator.Bind
 
             Debug.WriteLine(folder + "/" + project.GetProjectName(prof) + ".csproj");
             var csproj = new StreamWriter(Path.Combine(folder, project.GetProjectName(prof) + ".csproj"));
-            await csproj.WriteLineAsync("<Project Sdk=\"Microsoft.NET.Sdk\">");
-            await csproj.WriteLineAsync();
-            await csproj.WriteLineAsync("  <PropertyGroup>");
-            await csproj.WriteLineAsync("    <TargetFramework>netstandard2.0</TargetFramework>");
-            await csproj.WriteLineAsync("    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>");
-            await csproj.WriteLineAsync("    <LangVersion>latest</LangVersion>");
-            await csproj.WriteLineAsync("    <RootNamespace>" + project.GetNamespace(prof) + "</RootNamespace>");
-            await csproj.WriteLineAsync("    <AssemblyName>" + project.GetNamespace(prof) + "</AssemblyName>");
-            await csproj.WriteLineAsync("  </PropertyGroup>");
-            await csproj.WriteLineAsync();
-            await csproj.WriteLineAsync("  <ItemGroup>");
+            csproj.WriteLine("<Project Sdk=\"Microsoft.NET.Sdk\">");
+            csproj.WriteLine();
+            csproj.WriteLine("  <PropertyGroup>");
+            csproj.WriteLine("    <TargetFramework>netstandard2.0</TargetFramework>");
+            csproj.WriteLine("    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>");
+            csproj.WriteLine("    <LangVersion>latest</LangVersion>");
+            csproj.WriteLine("    <RootNamespace>" + project.GetNamespace(prof) + "</RootNamespace>");
+            csproj.WriteLine("    <AssemblyName>" + project.GetNamespace(prof) + "</AssemblyName>");
+            csproj.WriteLine("  </PropertyGroup>");
+            csproj.WriteLine();
+            csproj.WriteLine("  <ItemGroup>");
             if (!project.IsRoot)
             {
-                await csproj.WriteLineAsync
+                csproj.WriteLine
                 (
                     "    <ProjectReference Include=\"$(SilkSolutionRoot)\\src\\" +
                     prof.OutputFolder + "\\" + prof.Projects["Core"].GetProjectName(prof)
@@ -313,36 +269,35 @@ namespace Generator.Bind
             }
             else
             {
-                await csproj.WriteLineAsync
+                csproj.WriteLine
                 (
                     "    <ProjectReference Include=\"$(SilkSolutionRoot)\\src\\OpenTK.Core\\OpenTK.Core.csproj\" />"
                 );
             }
 
-            await csproj.WriteLineAsync("  </ItemGroup>");
-            await csproj.WriteLineAsync();
+            csproj.WriteLine("  </ItemGroup>");
+            csproj.WriteLine();
             if (!project.IsRoot)
             {
-                await csproj.WriteLineAsync("  <Import Project=\"..\\..\\..\\..\\props\\common.props\" />");
+                csproj.WriteLine("  <Import Project=\"..\\..\\..\\..\\props\\common.props\" />");
             }
             else
             {
-                await csproj.WriteLineAsync("  <Import Project=\"..\\..\\..\\props\\common.props\" />");
+                csproj.WriteLine("  <Import Project=\"..\\..\\..\\props\\common.props\" />");
             }
 
-            await csproj.WriteLineAsync("  <Import Project=\"$(SilkSolutionRoot)\\props\\nuget-common.props\" />");
-            await csproj.WriteLineAsync("  <Import Project=\"$(SilkSolutionRoot)\\props\\stylecop.props\" />");
-            await csproj.WriteLineAsync("</Project>");
-            await csproj.FlushAsync();
+            csproj.WriteLine("  <Import Project=\"$(SilkSolutionRoot)\\props\\nuget-common.props\" />");
+            csproj.WriteLine("  <Import Project=\"$(SilkSolutionRoot)\\props\\stylecop.props\" />");
+            csproj.WriteLine("</Project>");
+            csproj.Flush();
             csproj.Dispose();
         }
 
         /// <summary>
-        /// Asynchronously writes all of the projects, interfaces, and enums to disk.
+        /// Writes all of the projects, interfaces, and enums to disk.
         /// </summary>
         /// <param name="profile">The profile containing the profiles, interfaces, and enums.</param>
-        /// <returns>The asynchronous task.</returns>
-        public static async Task FlushAsync(this Profile profile)
+        public static void Flush(this Profile profile)
         {
             var outFolder = profile.OutputFolder;
             var rootFolder = Path.Combine(Binder.CliOptions.OutputPath, outFolder);
@@ -356,10 +311,11 @@ namespace Generator.Bind
                 Directory.CreateDirectory(Path.Combine(rootFolder, "Extensions"));
             }
 
-            var projectTasks = profile.Projects.Select
+            Console.WriteLine("Loaded \"" + profile.Name + "\", writing " + profile.Projects.Count + " projects...");
+            profile.Projects.ForEach
             (
                 x =>
-                    x.Value.WriteAsync
+                    x.Value.Write
                     (
                         x.Key == "Core"
                             ? Path.Combine(rootFolder, x.Value.GetProjectName(profile))
@@ -367,7 +323,7 @@ namespace Generator.Bind
                         profile
                     )
             );
-            await Task.WhenAll(projectTasks);
+            Console.WriteLine("Successfully wrote \"" + profile.Name + "\" to disk.");
         }
     }
 }

@@ -57,6 +57,7 @@ namespace Generator.Convert
         /// <returns>The profiles constructed from the XML files.</returns>
         public IEnumerable<Profile> ReadProfiles()
         {
+            Console.WriteLine("Reading raw profiles...");
             var parser = new GLXmlParser {Prefix = Prefix};
             var sigs = InputFiles.Select(x => parser.Parse(x)).ToList();
 
@@ -127,6 +128,8 @@ namespace Generator.Convert
                     outStream.Flush();
                 }
             }
+            
+            Console.WriteLine("Raw profiles have been successfully converted.");
         }
 
         /// <summary>

@@ -23,6 +23,7 @@ namespace Silk.NET.BuildTools
         {
             Console.WriteLine("Silk.NET Build Tools");
             Console.WriteLine($"(C) {DateTime.Now.Year} Ultz Limited");
+            Console.WriteLine();
             var sw = new Stopwatch();
             sw.Start();
             Switch(args);
@@ -52,10 +53,15 @@ namespace Silk.NET.BuildTools
             if (File.Exists(args[0]))
             {
                 Environment.CurrentDirectory = Path.GetDirectoryName(args[0]);
-                foreach (var task in JsonConvert.DeserializeObject<PipelineTask[]>
-                    (File.ReadAllText(Path.GetFileName(args[0]))))
+                var tasks = JsonConvert.DeserializeObject<PipelineTask[]>
+                    (File.ReadAllText(Path.GetFileName(args[0])));
+                for (var index = 0; index < tasks.Length; index++)
                 {
+                    var task = tasks[index];
+                    Console.WriteLine("Starting task \"" + task.Task + "\" (" + index + ")...");
                     Switch(new[] {task.Task}.Concat(task.Args).ToArray());
+                    Console.WriteLine("Task completed successfully.");
+                    Console.WriteLine();
                 }
             }
             else

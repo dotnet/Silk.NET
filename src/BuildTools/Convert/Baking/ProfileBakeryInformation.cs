@@ -49,15 +49,9 @@ namespace Generator.Convert.Baking
         public string FunctionPrefix { get; set; }
 
         /// <summary>
-        /// Gets all of the out-of-the-box-supported bakery info.
+        /// Gets or sets the class name for this profile.
         /// </summary>
-        public static List<ProfileBakeryInformation> Default { get; } = new List<ProfileBakeryInformation>
-        {
-            GLCore,
-            GLCompatibility,
-            GLES
-            /* GLSC */
-        };
+        public string ClassName { get; set; }
         // ReSharper disable InconsistentNaming
 
         /// <summary>
@@ -69,6 +63,7 @@ namespace Generator.Convert.Baking
             .WithNamespaces("Silk.NET.OpenGLES", "Silk.NET.OpenGLES.Extensions")
             .WithName("GLES")
             .WithOutputFolder("OpenGL")
+            .WithClassName("OpenGLES")
             .WithLibraries
             (
                 "OpenGLESLibraryNameContainer",
@@ -93,6 +88,7 @@ namespace Generator.Convert.Baking
             .WithNamespaces("Silk.NET.OpenGL", "Silk.NET.OpenGL.Extensions")
             .WithName("OpenGL")
             .WithOutputFolder("OpenGL")
+            .WithClassName("OpenGL")
             .WithLibraries
             (
                 "OpenGLLibraryNameContainer",
@@ -118,6 +114,7 @@ namespace Generator.Convert.Baking
             .WithNamespaces("Silk.NET.OpenGL.Core", "Silk.NET.OpenGL.Core.Extensions")
             .WithName("OpenGL (Core Profile)")
             .WithOutputFolder("OpenGL")
+            .WithClassName("OpenGL")
             .WithLibraries
             (
                 "GLCoreLibraryNameContainer",
@@ -130,6 +127,16 @@ namespace Generator.Convert.Baking
             .WithPrefix("gl")
             .Result;
 
+        /// <summary>
+        /// Gets all of the out-of-the-box-supported bakery info.
+        /// </summary>
+        public static List<ProfileBakeryInformation> Default { get; } = new List<ProfileBakeryInformation>
+        {
+            GLCore,
+            GLCompatibility,
+            GLES
+            /* GLSC */
+        };
 /*
 *        /// <summary>
 *        /// Gets <see cref="ProfileBakeryInformation"/> implementing OpenGL Safety Critical, version 2.0.

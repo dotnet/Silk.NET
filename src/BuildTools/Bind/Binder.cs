@@ -3,10 +3,12 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Generator.Common;
+using MoreLinq.Extensions;
 using Newtonsoft.Json;
 
 namespace Generator.Bind
@@ -28,14 +30,10 @@ namespace Generator.Bind
         public static void Bind(BindOptions args)
         {
             CliOptions = args;
-            Task.WhenAll
-                (
-                    CliOptions.InputFiles.Select(File.ReadAllText)
-                        .Select(JsonConvert.DeserializeObject<Profile>)
-                        .Select(x => x.FlushAsync())
-                )
-                .GetAwaiter()
-                .GetResult();
+            Console.WriteLine("Loading profiles...");
+            CliOptions.InputFiles.Select(File.ReadAllText)
+                .Select(JsonConvert.DeserializeObject<Profile>)
+                .ForEach(x => x.Flush());
         }
     }
 }

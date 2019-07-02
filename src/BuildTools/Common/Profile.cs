@@ -41,6 +41,11 @@ namespace Generator.Common
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the name of the mixed-mode class.
+        /// </summary>
+        public string ClassName { get; set; }
+
+        /// <summary>
         /// Gets or sets the version of this profile.
         /// </summary>
         public string Version { get; set; }

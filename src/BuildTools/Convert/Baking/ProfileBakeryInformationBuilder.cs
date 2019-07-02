@@ -108,5 +108,16 @@ namespace Generator.Convert.Baking
             Result.OutputFolder = folder;
             return this;
         }
+
+        /// <summary>
+        /// Sets the class name.
+        /// </summary>
+        /// <param name="className">The class name.</param>
+        /// <returns>This instance (for chaining purposes).</returns>
+        public ProfileBakeryInformationBuilder WithClassName(string className)
+        {
+            Result.ClassName = className;
+            return this;
+        }
     }
 }
