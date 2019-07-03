@@ -232,15 +232,26 @@ namespace Generator.Convert.Construction
                 "Core",
                 new Project {CategoryName = "Core", ExtensionName = "Core", IsRoot = true, Namespace = string.Empty}
             );
-            profile.Projects["Core"].Enums.AddRange(enums.Select(ParseEnum));
             var funs = functions.ToList();
-            var parsed = funs.Select(ParseFunction).ToList();
+            var parsedFunctions = funs.Select(ParseFunction).ToList();
+            var parsedEnums = enums.Select(ParseEnum).ToList();
             foreach (var typeMap in profile.TypeMaps)
             {
-                TypeMapper.Map(typeMap, parsed);
+                TypeMapper.Map(typeMap, parsedFunctions);
             }
 
-            profile.WriteFunctions(parsed);
+            profile.WriteFunctions(parsedFunctions);
+            profile.WriteEnums(parsedEnums);
+        }
+
+        /// <summary>
+        /// Writes a collection of enums to their appropriate projects.
+        /// </summary>
+        /// <param name="profile">The profile to write the projects to.</param>
+        /// <param name="enums">The enums to write.</param>
+        public static void WriteEnums(this Profile profile, IEnumerable<Enum> enums)
+        {
+            // TODO completely redo the project split-up thing, so that NV functions & enums go in the NV package etc...
         }
 
         /// <summary>
