@@ -304,32 +304,26 @@ namespace Silk.NET.Windowing.Desktop
         {
             get => _windowBorder;
             set
-            {
-                bool isDecorated;
-                bool isResizable;
-                
-                switch (value) {
-                    case WindowBorder.Hidden:
-                        isDecorated = false;
-                        isResizable = false;
-                        break;
-
-                    case WindowBorder.Resizable:
-                        isDecorated = true;
-                        isResizable = true;
-                        break;
-
-                    case WindowBorder.Fixed:
-                        isDecorated = true;
-                        isResizable = false;
-                        break;
-                }
-                
+            {   
                 glfwThread.Invoke(() =>
                 {
                     unsafe {
-                        glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, isDecorated);
-                        glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, isResizable);
+                        switch (value) {
+                            case WindowBorder.Hidden:
+                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, false);
+                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, false);
+                                break;
+
+                            case WindowBorder.Resizable:
+                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, true);
+                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, true);
+                                break;
+
+                            case WindowBorder.Fixed:
+                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, true);
+                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, false);
+                                break;
+                        }
                     }
                 });
 
