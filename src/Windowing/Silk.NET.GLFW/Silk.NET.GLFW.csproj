@@ -8,11 +8,16 @@
     
     <ItemGroup>
       <PackageReference Include="AdvancedDLSupport" Version="3.0.0" />
-      <PackageReference Include="opentoolkit.redist.glfw" Version="3.3.0-pre20190424184726" />
       <PackageReference Include="Ultz.Dispatcher" Version="1.1.0" />
     </ItemGroup>
     
     <ItemGroup>
       <ProjectReference Include="..\..\Silk.NET.Core\Silk.NET.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Content Include="..\..\..\build\native\glfw\*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 </Project>
