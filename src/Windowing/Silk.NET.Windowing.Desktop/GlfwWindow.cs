@@ -58,6 +58,9 @@ namespace Silk.NET.Windowing.Desktop
         private double updatePeriod;
         private double renderPeriod;
 
+        private double updatesPerSecond;
+        private double framesPerSecond;
+
         public GlfwWindow(WindowOptions options)
         {
             unsafe {
@@ -212,10 +215,36 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
-        public double FramesPerSecond { get; }
+        public double FramesPerSecond {
+            get => framesPerSecond;
+            set
+            {
+                framesPerSecond = value;
+
+                if (value <= double.Epsilon) {
+                    renderPeriod = 0.0;
+                    return;
+                }
+                
+                renderPeriod = 1.0 / value;
+            }
+        }
 
         /// <inheritdoc />
-        public double UpdatesPerSecond { get; }
+        public double UpdatesPerSecond
+        {
+            get => updatesPerSecond;
+            set
+            {
+                updatesPerSecond = value;
+                
+                if (value <= double.Epsilon) {
+                    updatePeriod = 0.0;
+                    return;
+                }
+                updatePeriod = 1.0 / value;
+            }
+        }
 
         /// <inheritdoc />
         public GraphicsAPI API { get; }
@@ -358,22 +387,6 @@ namespace Silk.NET.Windowing.Desktop
             
             UpdateDispatcher = new Dispatcher();
             RenderDispatcher = new Dispatcher();
-
-            // Calculate the update speed.
-            if (UpdatesPerSecond <= double.Epsilon) {
-                updatePeriod = 0.0;
-            }
-            else {
-                updatePeriod = 1.0 / UpdatesPerSecond;
-            }
-
-            // Calculate the render speed.
-            if (FramesPerSecond <= double.Epsilon) {
-                renderPeriod = 0.0;
-            }
-            else {
-                renderPeriod = 1.0 / FramesPerSecond;
-            }
 
             // Start the update loop.
             unsafe {
