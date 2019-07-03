@@ -17,7 +17,7 @@ namespace Silk.NET.Windowing.Common
         /// Start this window's update/render loop.
         /// </summary>
         void Run();
-        
+
         /// <summary>
         /// Close this window.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Silk.NET.Windowing.Common
         /// <param name="point">The point to transform.</param>
         /// <returns></returns>
         Point PointToScreen(Point point);
-        
+
         /// <summary>
         /// Invokes this delegate on the window's main thread.
         /// </summary>

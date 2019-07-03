@@ -34,7 +34,7 @@ namespace Silk.NET.Windowing.Common
         }
 
         /// <summary>
-        /// Creates a new APIVersion from a <see cref="System.Version"/>
+        /// Creates a new APIVersion from a <see cref="System.Version" />
         /// </summary>
         /// <param name="version">The version to use.</param>
         public APIVersion(Version version)

@@ -15,7 +15,7 @@ namespace Silk.NET.Core.Native
         protected NativeAPI(string path, ImplementationOptions options) : base(path, options)
         {
         }
-        
+
         public abstract SearchPathContainer SearchPaths { get; }
 
         public abstract bool IsExtensionPresent(string name);
