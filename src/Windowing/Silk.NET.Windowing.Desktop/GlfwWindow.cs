@@ -480,6 +480,9 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public event Action<double> OnRender;
 
+        /// <summary>
+        /// Run an OnUpdate event.
+        /// </summary>
         private void RaiseUpdateFrame()
         {
             // If using a capped framerate without vsync, we have to do some synchronization-related things
@@ -506,6 +509,9 @@ namespace Silk.NET.Windowing.Desktop
             updateStopwatch.Restart();
         }
 
+        /// <summary>
+        /// Run an OnRender event.
+        /// </summary>
         private void RaiseRenderFrame()
         {
             // Identical to RaiseUpdateFrame.
