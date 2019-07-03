@@ -60,6 +60,10 @@ namespace Generator.Convert
             Console.WriteLine("Reading raw profiles...");
             var parser = new GLXmlParser {Prefix = Prefix};
             var sigs = InputFiles.Select(x => parser.Parse(x)).ToList();
+            if (Converter.CliOptions.IncludeXML)
+            {
+                new XDocument(new XElement("signatures", sigs)).Save(Path.Combine(OutputFolder, Prefix + "Signatures.xml"));
+            }
 
             // Merge any duplicate enum entries (in case an enum is declared
             // in multiple files with different entries in each file).

@@ -84,6 +84,18 @@ namespace Generator.Convert
         public bool PreserveRawAPIs { get; set; } = false;
 
         /// <summary>
+        /// Gets or sets a value indicating whether the transformed (interchange) XML should also be output.
+        /// </summary>
+        [Option
+        (
+            'x',
+            "preserve-xml",
+            HelpText = "Indicates whether the transformed (interchange) XML should also be output.",
+            Default = false
+        )]
+        public bool IncludeXML { get; set; } = false;
+
+        /// <summary>
         /// Gets or sets the paths of the typemaps to be used.
         /// </summary>
         [Option('t', "typemaps", HelpText = "The paths of the typemaps to use.", Required = false)]
