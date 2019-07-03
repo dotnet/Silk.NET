@@ -250,7 +250,7 @@ namespace Generator.Convert.XML
 
                     var enum_name = TrimName(feature.Attribute("name").Value);
 
-                    var e = new XElement("enum", new XAttribute("name", enum_name));
+                    var e = new XElement("enum", new XAttribute("name", enum_name), new XAttribute("for", feature.Attribute("name").Value));
                     foreach (var token in
                         feature.Elements("enum")
                             .Concat(feature.Elements("require").Elements("enum")))
