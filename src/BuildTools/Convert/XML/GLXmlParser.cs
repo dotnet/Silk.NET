@@ -219,9 +219,16 @@ namespace Generator.Convert.XML
             // explicitly repeated. For example:
             // <extension name="GL_AMD_performance_monitor" supported="gl|gles2">
             // means that its enums must go to both the gl and gles2 APIs.
+            
+            // Note that we no longer use the <group> definitions in the Khronos spec, though all of the functionality
+            // is there to add them in should they mature again.
+            // see also: https://github.com/KhronosGroup/OpenGL-Registry/issues/280
+            // see also: https://github.com/KhronosGroup/OpenGL-Registry/issues/109
+            // see also: https://github.com/KhronosGroup/OpenGL-Registry/pull/273
+            // see also: https://discordapp.com/channels/521092042781229087/587346162802229298/590211773399826438
             foreach (var feature in
                 features.Concat(extensions)
-                    .Concat(groups)
+//                  .Concat(groups)
                     .OrderBy(f => TrimName(f.Attribute("name").Value)))
             {
                 var version = feature.Attribute("number") != null ? feature.Attribute("number").Value : null;
