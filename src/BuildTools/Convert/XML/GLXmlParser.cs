@@ -226,6 +226,7 @@ namespace Generator.Convert.XML
             // see also: https://github.com/KhronosGroup/OpenGL-Registry/issues/109
             // see also: https://github.com/KhronosGroup/OpenGL-Registry/pull/273
             // see also: https://discordapp.com/channels/521092042781229087/587346162802229298/590211773399826438
+            // see also: https://github.com/Ultz/Silk.NET/commit/f5f112bbd42d2f547cdab6ddd767609dfcfa99d9
             foreach (var feature in
                 features.Concat(extensions)
 //                  .Concat(groups)
@@ -257,7 +258,7 @@ namespace Generator.Convert.XML
 
                     var enum_name = TrimName(feature.Attribute("name").Value);
 
-                    var e = new XElement("enum", new XAttribute("name", enum_name), new XAttribute("for", feature.Attribute("name").Value));
+                    var e = new XElement("enum", new XAttribute("name", enum_name), new XAttribute("for", enum_name));
                     foreach (var token in
                         feature.Elements("enum")
                             .Concat(feature.Elements("require").Elements("enum")))
