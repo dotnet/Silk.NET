@@ -504,12 +504,7 @@ namespace Silk.NET.Windowing.Desktop
                 // If the result is negative, that means the frame is running slowly, so don't sleep.
                 if (sleepTime > 0.0) {
                     // Else, sleep for that amount of time.
-                    var timeBefore = renderStopwatch.Elapsed.TotalSeconds;
                     Thread.Sleep((int) (1000 * sleepTime));
-                    var timeAfter = renderStopwatch.Elapsed.TotalSeconds;
-
-                    Console.WriteLine($"Tried sleeping for {sleepTime}, slept for {timeAfter - timeBefore}," +
-                                      $"variance of {timeAfter - timeBefore - sleepTime}\n");
                 }
             }
 
