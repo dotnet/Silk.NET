@@ -1,7 +1,7 @@
 [
     {
         "Task": "convert",
-        "Args": ["-p", "gl", "-o", "../binder_specifications", "-i", "../gl.xml", "-f", "-t", "../binder_typemaps/gl.json", "../binder_typemaps/csharp.json", "-d", "../docs.gl"]
+        "Args": ["-p", "gl", "-o", "../binder_specifications", "-i", "../gl.xml", "-f", "-t", "../binder_typemaps/gl.json", "../binder_typemaps/csharp.json", "-d", "../docs.gl", "-x"]
     },
     {
         "Task": "bind",
