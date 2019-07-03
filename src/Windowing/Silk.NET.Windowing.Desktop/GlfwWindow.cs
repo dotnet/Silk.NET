@@ -61,6 +61,10 @@ namespace Silk.NET.Windowing.Desktop
         private double updatesPerSecond;
         private double framesPerSecond;
 
+        /// <summary>
+        /// Create and open a new GlfwWindow.
+        /// </summary>
+        /// <param name="options">The options to use for this window.</param>
         public GlfwWindow(WindowOptions options)
         {
             unsafe {
