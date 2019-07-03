@@ -26,11 +26,12 @@ namespace Generator.Convert.Construction.Trimmers
         }
 
         /// <inheritdoc />
-        public void Trim(Function trimmable)
+        public Function Trim(Function trimmable)
         {
-            var extensionNameIndex = trimmable.Name.LastIndexOf
+            var extensionNameIndex = trimmable.NativeName.LastIndexOf
                 (trimmable.ExtensionName, StringComparison.OrdinalIgnoreCase);
-            trimmable.Name = trimmable.Name.Remove(extensionNameIndex);
+            trimmable.Name = trimmable.NativeName.Remove(extensionNameIndex);
+            return trimmable;
         }
 
         /// <inheritdoc />
@@ -57,7 +58,7 @@ namespace Generator.Convert.Construction.Trimmers
         }
 
         /// <inheritdoc />
-        public void Trim(string trimmable)
+        public string Trim(string trimmable)
         {
             var sb = new StringBuilder();
 
@@ -73,7 +74,7 @@ namespace Generator.Convert.Construction.Trimmers
                 sb.Insert(0, trimmable[i]);
             }
 
-            trimmable = sb.ToString();
+            return sb.ToString();
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Generator.Common.Functions;
 using Generator.Convert.Construction.Trimmers;
+using JetBrains.Annotations;
 
 namespace Generator.Convert.Construction
 {
@@ -18,82 +19,51 @@ namespace Generator.Convert.Construction
     public static class NameTrimmer
     {
         /// <summary>
-        /// Gets a collection of trimmers supported out-of-the-box.
+        /// Gets the possible variations on the given entry point. Typically, this boils down to the
+        /// following three cases, in order:
+        ///
+        /// * FunctionNamefvEXT
+        /// * FunctionNamefv
+        /// * FunctionName
+        ///
+        /// Care should be taken when creating new overrides that the intended function is targeted.
         /// </summary>
-        public static IReadOnlyList<ITrimmer<Function>> FunctionTrimmers { get; } = new ITrimmer<Function>[]
+        /// <param name="functionEntrypoint">The entrypoint to create variations of.</param>
+        /// <returns>The name variations, ordered by length, starting with the longest.</returns>
+        [NotNull]
+        [ItemNotNull]
+        public static IEnumerable<string> GetNameVariations(string functionEntrypoint)
         {
-            new ExtensionNameTrimmer(),
-            new DataTypeNameTrimmer()
-        };
+            var extensionTrimmer =new ExtensionNameTrimmer();
+            var dataTypeTrimmer = new DataTypeNameTrimmer();
 
-        /// <summary>
-        /// Gets a collection of trimmers supported out-of-the-box.
-        /// </summary>
-        public static IReadOnlyList<ITrimmer<string>> StringTrimmers { get; } = new ITrimmer<string>[]
-        {
-            new ExtensionNameTrimmer(),
-            new DataTypeNameTrimmer()
-        };
+            var variations = new List<string>();
+            var currentVariation = functionEntrypoint;
 
-        /// <summary>
-        /// Trims the given functions with the default trimmers.
-        /// </summary>
-        /// <param name="functions">The functions to trim.</param>
-        public static void Trim(IEnumerable<Function> functions)
-        {
-            Task.WhenAll(functions.Select(FullTrimAsync)).GetAwaiter().GetResult();
-        }
+            variations.Add(currentVariation);
 
-        private static async Task FullTrimAsync(Function arg)
-        {
-            var str = arg.NativeName + string.Empty; // copies the string
-            await TrimAsync(str);
-            arg.Name = str;
-        }
-
-        /// <summary>
-        /// Asynchronously trims the given function.
-        /// </summary>
-        /// <param name="function">The function to trim.</param>
-        /// <returns>An asynchronous task.</returns>
-        public static Task TrimAsync(Function function)
-        {
-            foreach (var functionTrimmer in FunctionTrimmers)
+            if (extensionTrimmer.IsRelevant(currentVariation))
             {
-                if (functionTrimmer.IsRelevant(function))
-                {
-                    functionTrimmer.Trim(function);
-                }
+                currentVariation = extensionTrimmer.Trim(currentVariation);
+                variations.Add(currentVariation);
             }
 
-            return Task.CompletedTask;
-        }
-
-        /// <summary>
-        /// Trims the given functions with the default trimmers.
-        /// </summary>
-        /// <param name="functions">The functions to trim.</param>
-        public static void Trim(IEnumerable<string> functions)
-        {
-            Task.WhenAll(functions.Select(TrimAsync)).GetAwaiter().GetResult();
-        }
-
-        /// <summary>
-        /// Asynchronously trims the given function.
-        /// </summary>
-        /// <param name="function">The function to trim.</param>
-        /// <returns>An asynchronous task.</returns>
-        public static Task TrimAsync(string function)
-        {
-            foreach (var functionTrimmer in StringTrimmers)
+            if (dataTypeTrimmer.IsRelevant(currentVariation))
             {
-                if (functionTrimmer.IsRelevant(function))
-                {
-                    functionTrimmer.Trim(function);
-                }
+                variations.Add(dataTypeTrimmer.Trim(currentVariation));
             }
 
-            return Task.CompletedTask;
+            return variations.Distinct().OrderByDescending(v => v.Length);
+        }
+
+        /// <summary>
+        /// Synchronously trims the given string.
+        /// </summary>
+        /// <param name="functionName">The string to trim.</param>
+        /// <returns>A trimmed string.</returns>
+        public static string Trim(string functionName)
+        {
+            return GetNameVariations(functionName).Last();
         }
     }
 }

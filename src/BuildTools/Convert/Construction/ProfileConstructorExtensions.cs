@@ -88,7 +88,7 @@ namespace Generator.Convert.Construction
             var returnType = ParsingHelpers.ParseTypeSignature(returnElement);
             return new Function
             {
-                Name = NativeIdentifierTranslator.TranslateIdentifierName(functionName),
+                Name = NameTrimmer.Trim(functionName),
                 NativeName = functionName,
                 Parameters = parameters.ToList(),
                 ReturnType = returnType,

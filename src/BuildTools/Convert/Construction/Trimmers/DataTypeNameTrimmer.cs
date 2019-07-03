@@ -52,9 +52,10 @@ namespace Generator.Convert.Construction.Trimmers
         }
 
         /// <inheritdoc />
-        public void Trim(Function trimmable)
+        public Function Trim(Function trimmable)
         {
-            Trim(trimmable.Name);
+            trimmable.Name = Trim(trimmable.NativeName);
+            return trimmable;
         }
 
         /// <inheritdoc />
@@ -74,10 +75,10 @@ namespace Generator.Convert.Construction.Trimmers
         }
 
         /// <inheritdoc />
-        public void Trim(string name)
+        public string Trim(string name)
         {
             var match = Endings.Match(name);
-            name = name.Remove(match.Index);
+            return name.Remove(match.Index);
         }
     }
 }
