@@ -1,0 +1,38 @@
+<Project>
+  <PropertyGroup>
+    <glfw_Platform Condition="'$(RuntimeIdentifier)' == 'win-x64'">win64</glfw_Platform>
+    <glfw_Platform Condition="'$(RuntimeIdentifier)' == 'win-x86'">win86</glfw_Platform>
+    <glfw_Platform Condition="'$(RuntimeIdentifier)' == 'linux-x64'">linux</glfw_Platform>
+    <glfw_Platform Condition="'$(glfw_Platform)' == ''">any</glfw_Platform>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(TargetFrameworkIdentifier)' == '.NETFramework'">
+    <None Include="$(MSBuildThisFileDirectory)\..\runtimes\win-x64\native\glfw3-x64.dll">
+      <Link>glfw3-x64.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)\..\runtimes\win-x86\native\glfw3-x86.dll">
+      <Link>glfw3-x86.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </None>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFrameworkIdentifier)' != '.NETFramework'">
+    <None Include="$(MSBuildThisFileDirectory)\..\runtimes\win-x64\native\glfw3-x64.dll" Condition="'$(glfw_Platform)' == 'win64' Or '$(glfw_Platform)' == 'any'">
+      <Link>glfw3-x64.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)\..\runtimes\win-x86\native\glfw3-x86.dll" Condition="'$(glfw_Platform)' == 'win86' Or '$(glfw_Platform)' == 'any'">
+      <Link>glfw3-x86.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </None>
+    <None Include="$(MSBuildThisFileDirectory)\..\runtimes\linux-x64\native\libglfw.so.3.3" Condition="'$(glfw_Platform)' == 'linux' Or '$(glfw_Platform)' == 'any'">
+      <Link>libglfw.so.3.3</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Visible>false</Visible>
+    </None>
+    <!-- TODO: Add Mac support -->
+  </ItemGroup>
+</Project>

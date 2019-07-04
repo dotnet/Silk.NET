@@ -47,12 +47,12 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// The number of rendering operations to run every second.
         /// </summary>
-        double FramesPerSecond { get; }
+        double FramesPerSecond { get; set; }
 
         /// <summary>
         /// The number of update operations to run every second.
         /// </summary>
-        double UpdatesPerSecond { get; }
+        double UpdatesPerSecond { get; set; }
 
         /// <summary>
         /// Gets the graphics API the window will use.
