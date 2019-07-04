@@ -252,7 +252,39 @@ namespace Generator.Convert.Construction
         /// <param name="enums">The enums to write.</param>
         public static void WriteEnums(this Profile profile, IEnumerable<Enum> enums)
         {
-            // TODO completely redo the project split-up thing, so that NV functions & enums go in the NV package etc...
+            var mergedEnums = new Dictionary<string, Enum>();
+            var gl = profile.ClassName.ToUpper();
+            mergedEnums.Add(gl + "Enum", new Enum() {Name = gl + "Enum", ExtensionName = "Core"});
+            
+            // first, we need to categorise the enums into "Core", or their vendor (i.e. "NV", "SGI", "KHR" etc)
+            foreach (var @enum in enums)
+            {
+                if (@enum.ExtensionName == "Core")
+                {
+                    mergedEnums[gl + "Enum"].Tokens.AddRange(@enum.Tokens);
+                }
+                else
+                {
+                    var suffix = FormatCategory(@enum.ExtensionName);
+                    var newEnumName = /* gl +*/ suffix;
+                    if (!mergedEnums.ContainsKey(gl + suffix))
+                    {
+                        mergedEnums.Add
+                        (
+                            newEnumName,
+                            new Enum() {Name = newEnumName, ExtensionName = newEnumName.Substring(2)}
+                        );
+                    }
+                    mergedEnums[gl + suffix].Tokens.AddRange(@enum.Tokens);
+                }
+            }
+            
+            // now that we've categorised them, lets add them into their appropriate projects.
+            foreach (var (_, @enum) in mergedEnums)
+            {
+                // no need to run any checks, all the projects have been made in WriteFunctions
+                profile.Projects[@enum.ExtensionName].Enums.Add(@enum);
+            }
         }
 
         /// <summary>
@@ -264,8 +296,9 @@ namespace Generator.Convert.Construction
         {
             foreach (var function in functions)
             {
-                foreach (var category in function.Categories)
+                foreach (var rawCategory in function.Categories)
                 {
+                    var category = FormatCategory(rawCategory);
                     // check that the root project exists
                     if (!profile.Projects.ContainsKey("Core"))
                     {
@@ -288,8 +321,8 @@ namespace Generator.Convert.Construction
                             category,
                             new Project
                             {
-                                CategoryName = category, ExtensionName = function.ExtensionName, IsRoot = false,
-                                Namespace = "." + Utilities.ConvertExtensionNameToNamespace(category)
+                                CategoryName = category, ExtensionName = category, IsRoot = false,
+                                Namespace = "." + category
                             }
                         );
                     }
@@ -298,13 +331,13 @@ namespace Generator.Convert.Construction
                     if
                     (
                         !profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
-                            .Interfaces.ContainsKey(category)
+                            .Interfaces.ContainsKey(rawCategory)
                     )
                     {
                         profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
                             .Interfaces.Add
                             (
-                                category,
+                                rawCategory,
                                 new Interface
                                 {
                                     Name = "I" + NativeIdentifierTranslator.TranslateIdentifierName(category)
@@ -314,10 +347,15 @@ namespace Generator.Convert.Construction
 
                     // add the function to the interface
                     profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
-                        .Interfaces[category]
+                        .Interfaces[rawCategory]
                         .Functions.Add(function);
                 }
             }
+        }
+        
+        private static string FormatCategory(string rawCategory)
+        {
+            return rawCategory.Split('_').FirstOrDefault();
         }
     }
 }
