@@ -63,7 +63,7 @@ namespace Generator.Convert.Baking
             .WithNamespaces("Silk.NET.OpenGLES", "Silk.NET.OpenGLES.Extensions")
             .WithName("GLES")
             .WithOutputFolder("OpenGL")
-            .WithClassName("OpenGLES")
+            .WithClassName("GL")
             .WithLibraries
             (
                 "OpenGLESLibraryNameContainer",
@@ -88,7 +88,7 @@ namespace Generator.Convert.Baking
             .WithNamespaces("Silk.NET.OpenGL", "Silk.NET.OpenGL.Extensions")
             .WithName("OpenGL")
             .WithOutputFolder("OpenGL")
-            .WithClassName("OpenGL")
+            .WithClassName("GL")
             .WithLibraries
             (
                 "OpenGLLibraryNameContainer",
@@ -114,7 +114,7 @@ namespace Generator.Convert.Baking
             .WithNamespaces("Silk.NET.OpenGL.Core", "Silk.NET.OpenGL.Core.Extensions")
             .WithName("OpenGL (Core Profile)")
             .WithOutputFolder("OpenGL")
-            .WithClassName("OpenGL")
+            .WithClassName("GL")
             .WithLibraries
             (
                 "GLCoreLibraryNameContainer",
