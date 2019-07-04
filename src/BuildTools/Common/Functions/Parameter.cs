@@ -3,12 +3,14 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
+
 namespace Generator.Common.Functions
 {
     /// <summary>
     /// Represents a parameter of a C# function.
     /// </summary>
-    public class Parameter
+    public class Parameter : IEquatable<Parameter>
     {
         /// <summary>
         /// Gets or sets the name of the parameter.
@@ -29,5 +31,53 @@ namespace Generator.Common.Functions
         /// Gets or sets the flow of the pointer.
         /// </summary>
         public FlowDirection Flow { get; set; }
+
+        public bool Equals(Parameter other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            return string.Equals(Name, other.Name) &&
+                   Type.Equals(other.Type);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != this.GetType())
+            {
+                return false;
+            }
+
+            return Equals((Parameter) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = (Name != null ? Name.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (Type != null ? Type.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (Count != null ? Count.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (int) Flow;
+                return hashCode;
+            }
+        }
     }
 }

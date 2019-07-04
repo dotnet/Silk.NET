@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace Generator.Common.Functions
     /// <summary>
     /// Represents a C# function.
     /// </summary>
-    public class Function
+    public class Function : IEquatable<Function>
     {
         /// <summary>
         /// Gets or sets the name of this function.
@@ -198,6 +199,61 @@ namespace Generator.Common.Functions
             sb.Append(parameter.Name);
 
             return sb.ToString();
+        }
+
+        public bool Equals(Function other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            return string.Equals(Name, other.Name) &&
+                   ReturnType.Equals(other.ReturnType) &&
+                   Parameters.SequenceEqual(other.Parameters) &&
+                   GenericTypeParameters.SequenceEqual(other.GenericTypeParameters);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != this.GetType())
+            {
+                return false;
+            }
+
+            return Equals((Function) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hashCode = (Name != null ? Name.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (ReturnType != null ? ReturnType.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (NativeName != null ? NativeName.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ Parameters.GetHashCode();
+                hashCode = (hashCode * 397) ^ Categories.GetHashCode();
+                hashCode = (hashCode * 397) ^ GenericTypeParameters.GetHashCode();
+                hashCode = (hashCode * 397) ^ (Attributes != null ? Attributes.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (Doc != null ? Doc.GetHashCode() : 0);
+                hashCode = (hashCode * 397) ^ (ExtensionName != null ? ExtensionName.GetHashCode() : 0);
+                return hashCode;
+            }
         }
     }
 }
