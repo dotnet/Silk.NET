@@ -31,6 +31,6 @@
                  PackagePath="runtimes/linux-x64/native"
                  InProject="false" />
 
-    <None Include="Silk.NET.GLFW.targets" PackagePath="build/" />
+    <Content Include="Silk.NET.GLFW.targets" PackagePath="build/" />
     </ItemGroup>
 </Project>
