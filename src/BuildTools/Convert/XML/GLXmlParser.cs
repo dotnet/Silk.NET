@@ -592,24 +592,8 @@ namespace Generator.Convert.XML
             //   -> <param name="length" type="GLsizei" count="1" />
             var proto = e.Value;
             var name = e.Element("name").Value;
-            var group = e.Attribute("group");
 
             var ret = proto.Remove(proto.LastIndexOf(name)).Trim();
-
-            if (group != null)
-            {
-                var words = ret.Split(" ".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-                if (words[0] == "struct" || words[0] == "const")
-                {
-                    words[1] = group.Value;
-                }
-                else
-                {
-                    words[0] = group.Value;
-                }
-
-                ret = string.Join(" ", words);
-            }
 
             return ret;
         }
