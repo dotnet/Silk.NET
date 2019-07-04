@@ -4,6 +4,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
+using System.Linq;
+using Generator.Common;
 using Generator.Common.Functions;
 
 namespace Generator.Convert.Construction
@@ -32,6 +34,30 @@ namespace Generator.Convert.Construction
                     if (map.ContainsKey(parameter.Type.Name))
                     {
                         parameter.Type.Name = map[parameter.Type.Name];
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Replaces the type names of GLenum parameters with their associated enums.
+        /// </summary>
+        /// <param name="profile">The profile to map.</param>
+        public static void MapEnums(Profile profile)
+        {
+            foreach (var project in profile.Projects.Values)
+            {
+                foreach (var @interface in project.Interfaces.Values)
+                {
+                    foreach (var function in @interface.Functions)
+                    {
+                        foreach (var parameter in function.Parameters)
+                        {
+                            if (parameter.Type.Name == "GLenum")
+                            {
+                                parameter.Type.Name = project.Enums.First().Name;
+                            }
+                        }
                     }
                 }
             }

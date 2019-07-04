@@ -245,7 +245,7 @@ namespace Generator.Convert.Construction
             profile.WriteFunctions(parsedFunctions);
             profile.WriteEnums(parsedEnums);
             
-            // TODO replace usages of GLenum in parameters with the correct enum
+            TypeMapper.MapEnums(profile);
         }
 
         /// <summary>
