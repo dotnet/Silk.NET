@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
@@ -243,6 +244,8 @@ namespace Generator.Convert.Construction
 
             profile.WriteFunctions(parsedFunctions);
             profile.WriteEnums(parsedEnums);
+            
+            // TODO replace usages of GLenum in parameters with the correct enum
         }
 
         /// <summary>
@@ -266,23 +269,34 @@ namespace Generator.Convert.Construction
                 else
                 {
                     var suffix = FormatCategory(@enum.ExtensionName);
-                    var newEnumName = /* gl +*/ suffix;
-                    if (!mergedEnums.ContainsKey(gl + suffix))
+                    if (!mergedEnums.ContainsKey(suffix))
                     {
                         mergedEnums.Add
                         (
-                            newEnumName,
-                            new Enum() {Name = newEnumName, ExtensionName = newEnumName.Substring(2)}
+                            suffix,
+                            new Enum() {Name = suffix, ExtensionName = suffix}
                         );
                     }
-                    mergedEnums[gl + suffix].Tokens.AddRange(@enum.Tokens);
+                    mergedEnums[suffix].Tokens.AddRange(@enum.Tokens);
                 }
             }
             
             // now that we've categorised them, lets add them into their appropriate projects.
             foreach (var (_, @enum) in mergedEnums)
             {
-                // no need to run any checks, all the projects have been made in WriteFunctions
+                if (!profile.Projects.ContainsKey(@enum.ExtensionName))
+                {
+                    profile.Projects.Add
+                    (
+                        @enum.ExtensionName,
+                        new Project
+                        {
+                            CategoryName = @enum.ExtensionName, ExtensionName = @enum.ExtensionName, IsRoot = false,
+                            Namespace = "." + @enum.ExtensionName
+                        }
+                    );
+                }
+
                 profile.Projects[@enum.ExtensionName].Enums.Add(@enum);
             }
         }
@@ -340,7 +354,7 @@ namespace Generator.Convert.Construction
                                 rawCategory,
                                 new Interface
                                 {
-                                    Name = "I" + NativeIdentifierTranslator.TranslateIdentifierName(category)
+                                    Name = "I" + NativeIdentifierTranslator.TranslateIdentifierName(rawCategory)
                                 }
                             );
                     }
