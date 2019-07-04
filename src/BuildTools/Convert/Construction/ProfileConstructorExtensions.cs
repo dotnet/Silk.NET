@@ -37,7 +37,8 @@ namespace Generator.Convert.Construction
                     element.Attribute("name")?.Value
                     ?? throw new InvalidOperationException("No name attribute.")
                 ),
-                NativeName = element.Attribute("name")?.Value
+                NativeName = element.Attribute("name")?.Value,
+                ExtensionName = element.Attribute("extension")?.Value
             };
             foreach (var child in element.Elements("token"))
             {

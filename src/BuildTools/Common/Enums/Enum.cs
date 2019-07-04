@@ -28,6 +28,12 @@ namespace Generator.Common.Enums
         public string NativeName { get; set; } = string.Empty;
 
         /// <summary>
+        /// Gets or sets the extension to which this enum belongs. Generally, this is either Core or the
+        /// enum's <see cref="NativeName"/>.
+        /// </summary>
+        public string ExtensionName { get; set; } = string.Empty;
+
+        /// <summary>
         /// Gets or sets a list of attributes.
         /// </summary>
         public List<Attribute> Attributes { get; set; } = new List<Attribute>();
