@@ -253,41 +253,27 @@ namespace Generator.Bind
             csproj.WriteLine("    <TargetFramework>netstandard2.0</TargetFramework>");
             csproj.WriteLine("    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>");
             csproj.WriteLine("    <LangVersion>latest</LangVersion>");
-            csproj.WriteLine("    <RootNamespace>" + project.GetNamespace(prof) + "</RootNamespace>");
-            csproj.WriteLine("    <AssemblyName>" + project.GetNamespace(prof) + "</AssemblyName>");
             csproj.WriteLine("  </PropertyGroup>");
             csproj.WriteLine();
             csproj.WriteLine("  <ItemGroup>");
             if (!project.IsRoot)
             {
-                csproj.WriteLine
+                var core = Path.GetRelativePath
                 (
-                    "    <ProjectReference Include=\"$(SilkSolutionRoot)\\src\\" +
-                    prof.OutputFolder + "\\" + prof.Projects["Core"].GetProjectName(prof)
-                    + "\\" + prof.Projects["Core"].GetProjectName(prof) + ".csproj\" />"
+                    folder,
+                    Path.Combine
+                    (
+                        Binder.CliOptions.OutputPath,
+                        prof.OutputFolder,
+                        prof.Projects["Core"].GetProjectName(prof)
+                    )
                 );
-            }
-            else
-            {
-                csproj.WriteLine
-                (
-                    "    <ProjectReference Include=\"$(SilkSolutionRoot)\\src\\OpenTK.Core\\OpenTK.Core.csproj\" />"
-                );
+                csproj.WriteLine($"    <ProjectReference Include=\"{core}\" />");
             }
 
             csproj.WriteLine("  </ItemGroup>");
             csproj.WriteLine();
-            if (!project.IsRoot)
-            {
-                csproj.WriteLine("  <Import Project=\"..\\..\\..\\..\\props\\common.props\" />");
-            }
-            else
-            {
-                csproj.WriteLine("  <Import Project=\"..\\..\\..\\props\\common.props\" />");
-            }
-
-            csproj.WriteLine("  <Import Project=\"$(SilkSolutionRoot)\\props\\nuget-common.props\" />");
-            csproj.WriteLine("  <Import Project=\"$(SilkSolutionRoot)\\props\\stylecop.props\" />");
+            csproj.WriteLine($"  <Import Project=\"{Path.GetRelativePath(folder, Binder.CliOptions.Props)}\" />");
             csproj.WriteLine("</Project>");
             csproj.Flush();
             csproj.Dispose();
