@@ -69,7 +69,7 @@ namespace Generator.Convert
             // in multiple files with different entries in each file).
             var entries = MergeDuplicates(sigs);
             SortTokens(entries);
-            return Task.WhenAll(sigs.SelectMany(s => s).Select(ReadProfileAsync)).GetAwaiter().GetResult();
+            return Task.WhenAll(sigs.SelectMany(s => s).Select(x => ReadProfileAsync(x))).GetAwaiter().GetResult();
         }
 
         /// <summary>
@@ -83,7 +83,8 @@ namespace Generator.Convert
             {
                 Name = api.Attribute("name")?.Value,
                 Version = api.Attribute("version")?.Value ?? string.Empty,
-                TypeMaps = TypeMaps ?? new List<Dictionary<string, string>>() // NRE
+                TypeMaps = TypeMaps ?? new List<Dictionary<string, string>>(), // NRE
+                ClassName = Prefix.ToUpper()
             };
             var elements = api.Elements()
                 .OrderBy(s => s.Name.LocalName)
