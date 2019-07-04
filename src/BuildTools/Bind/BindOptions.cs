@@ -48,5 +48,17 @@ namespace Generator.Bind
             Required = true
         )]
         public string License { get; set; }
+
+        /// <summary>
+        /// Gets or sets the path to the binding's props file.
+        /// </summary>
+        [Option
+        (
+            'p',
+            "props",
+            HelpText = "The path to the binding's props file.",
+            Required = true
+        )]
+        public string Props { get; set; }
     }
 }
