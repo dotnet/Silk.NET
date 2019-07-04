@@ -65,6 +65,8 @@ namespace Generator.Convert.Baking
             profile.FunctionPrefix = information.FunctionPrefix;
             profile.Names = information.NameContainer;
 
+            MergeAll(profile);
+
             // bake in the documentation
             if (!string.IsNullOrWhiteSpace(Converter.CliOptions.DocumentationFolder))
             {
@@ -80,6 +82,45 @@ namespace Generator.Convert.Baking
             
             Console.WriteLine("Created profile \""+information.Name+"\".");
             return Task.CompletedTask;
+        }
+
+        private static void MergeAll(Profile profile) // this method could also be called Stir ;)
+        {
+            foreach (var project in profile.Projects.Values)
+            {
+                var enums = new Dictionary<string, Common.Enums.Enum>();
+                var interfaces = new Dictionary<string, Interface>();
+                foreach (var enumeration in project.Enums)
+                {
+                    if (enums.ContainsKey(enumeration.Name))
+                    {
+                        enums[enumeration.Name].Tokens.AddRange(enumeration.Tokens);
+                    }
+                    else
+                    {
+                        enums.Add(enumeration.Name, enumeration);
+                    }
+                }
+
+                foreach (var @interface in project.Interfaces.Values)
+                {
+                    if (interfaces.ContainsKey(@interface.Name))
+                    {
+                        foreach (var function in @interface.Functions)
+                        {
+                            if (interfaces[@interface.Name].Functions.Any(x => x.Equals(function)))
+                            {
+                                continue;
+                            }
+                            interfaces[@interface.Name].Functions.Add(function);
+                        }
+                    }
+                    else
+                    {
+                        interfaces.Add(@interface.Name, @interface);
+                    }
+                }
+            }
         }
 
         /// <summary>
