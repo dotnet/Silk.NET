@@ -15,7 +15,6 @@ namespace Generator.Bind.Overloading
 
         public static IEnumerable<Overload> GetOverloads(Project project)
         {
-            // TODO: this could be optimized by implementing parallelism
             foreach (var @interface in project.Interfaces.Values)
             {
                 foreach (var function in @interface.Functions)
