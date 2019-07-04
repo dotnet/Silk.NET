@@ -71,12 +71,6 @@ namespace Generator.Convert.Baking
                 DocumentationWriter.Write(profile, Converter.CliOptions.DocumentationFolder);
             }
 
-            TypeMapper.Map
-            (
-                profile.Projects.SelectMany(x => x.Value.Enums).ToDictionary(x => x.NativeName, x => x.Name),
-                profile.Projects.SelectMany(x => x.Value.Interfaces).SelectMany(x => x.Value.Functions)
-            );
-
             // save this to disk
             File.WriteAllText
             (
