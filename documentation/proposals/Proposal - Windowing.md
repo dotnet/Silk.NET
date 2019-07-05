@@ -488,8 +488,8 @@ public enum ContextProfile
     Core = 0,
 
     /// <summary>
-    /// Uses a compatability OpenGL context, allowing for some deprecated functionality. This should only ever be
-    /// used for maintaining legacy code; no newly-written software should use this.
+    /// Uses a compatability OpenGL context, allowing for some deprecated functionality. This should
+    /// only ever be used for maintaining legacy code; no newly-written software should use this.
     /// </summary>
     Compatability
 }
