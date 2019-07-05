@@ -6,7 +6,7 @@
 namespace Silk.NET.Windowing.Common
 {
     /// <summary>
-    /// An interface that provides windowing for its respective .NET platform.
+    /// An interface that provides windowing for its respective native backend.
     /// </summary>
     public interface ISilkPlatform
     {
