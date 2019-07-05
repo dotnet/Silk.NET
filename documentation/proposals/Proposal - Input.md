@@ -16,7 +16,8 @@ Proposal API for Input via keyboards, mice, and controllers.
 - Vibration has been excluded from this proposal, as we'd like to come up with a complete API for HD Rumble etc.
 - I've decided to use interfaces for nearly everything, so that the implementation has more control.
 - All modifications of states (i.e. functions) will go within the interface, whereas structs are used for read-only data.
-- In implementations, once an IJoystick, IGamepad, or other IInputDevice object has been created, **it must not be destroyed until disconnected**. This is to preserve event bindings.
+- **IMPLEMENTATION DETAIL/REQUIREMENT:** In implementations, once an IJoystick, IGamepad, or other IInputDevice object has been created, **it must not be destroyed until its IInputContext is disposed**. This is to preserve event bindings.
+- ButtonDown/Up and KeyDown/Up events (and similar) all fire once, when the key is first pushed down or up. I intend to champion a few extension packages to support more use cases, but I've kept this API pretty barebones.
 
 # Proposed API
 ## Interfaces
@@ -50,6 +51,31 @@ public interface IGamepad : IInputDevice
 }
 ```
 
+### IKeyboard
+```cs
+public interface IKeyboard : IInputDevice
+{
+    IReadOnlyCollection<Key> SupportedKeys { get; }
+    bool IsKeyPressed(Key key);
+    bool IsKeyPressed(uint scancode);
+    event Action<IKeyboard, Key> KeyDown;
+    event Action<IKeyboard, Key> KeyUp;
+}
+```
+
+### IMouse
+```cs
+public interface IMouse : IInputDevice
+{
+    IReadOnlyCollection<MouseButton> SupportedButtons { get; }
+    IReadOnlyCollection<ScrollWheel> ScrollWheels { get; }
+    bool IsButtonPressed(MouseButton btn);
+    event Action<IMouse, MouseButton> MouseDown;
+    event Action<IMouse, MouseButton> MouseUp;
+    event Action<IMouse, ScrollWheel> Scroll;
+}
+```
+
 ### IInputDevice
 ```cs
 public interface IInputDevice
@@ -63,7 +89,7 @@ public interface IInputDevice
 
 ### IInputContext
 ```cs
-public interface IInputContext
+public interface IInputContext : IDisposable
 {
     IntPtr Handle { get; }
     IReadOnlyCollection<IGamepad> Gamepads { get; }
@@ -96,6 +122,15 @@ public static class InputWindowExtensions
 ```
 
 ## Structs
+### ScrollWheel
+```cs
+public struct ScrollWheel
+{
+    public float X { get; }
+    public float Y { get; }
+}
+```
+
 ### Button
 ```cs
 public struct Button
@@ -197,5 +232,159 @@ public enum ButtonName
     RightStick,
     RightTrigger,
     Start
+}
+```
+
+### Key
+```cs
+public enum Key
+{
+    Unknown = 0,
+    ShiftLeft,
+    LShift = ShiftLeft,
+    ShiftRight,
+    RShift = ShiftRight,
+    ControlLeft,
+    LControl = ControlLeft,
+    ControlRight,
+    RControl = ControlRight,
+    AltLeft,
+    LAlt = AltLeft,
+    AltRight,
+    RAlt = AltRight,
+    WinLeft,
+    LWin = WinLeft,
+    WinRight,
+    RWin = WinRight,
+    Menu,
+    F1,
+    F2,
+    F3,
+    F4,
+    F5,
+    F6,
+    F7,
+    F8,
+    F9,
+    F10,
+    F11,
+    F12,
+    F13,
+    F14,
+    F15,
+    F16,
+    F17,
+    F18,
+    F19,
+    F20,
+    F21,
+    F22,
+    F23,
+    F24,
+    F25,
+    F26,
+    F27,
+    F28,
+    F29,
+    F30,
+    F31,
+    F32,
+    F33,
+    F34,
+    F35,
+    Up,
+    Down,
+    Left,
+    Right,
+    Enter,
+    Escape,
+    Space,
+    Tab,
+    BackSpace,
+    Back = BackSpace,
+    Insert,
+    Delete,
+    PageUp,
+    PageDown,
+    Home,
+    End,
+    CapsLock,
+    ScrollLock,
+    PrintScreen,
+    Pause,
+    NumLock,
+    Clear,
+    Sleep,
+    Keypad0,
+    Keypad1,
+    Keypad2,
+    Keypad3,
+    Keypad4,
+    Keypad5,
+    Keypad6,
+    Keypad7,
+    Keypad8,
+    Keypad9,
+    KeypadDivide,
+    KeypadMultiply,
+    KeypadSubtract,
+    KeypadMinus = KeypadSubtract,
+    KeypadAdd,
+    KeypadPlus = KeypadAdd,
+    KeypadDecimal,
+    KeypadPeriod = KeypadDecimal,
+    KeypadEnter,
+    A,
+    B,
+    C,
+    D,
+    E,
+    F,
+    G,
+    H,
+    I,
+    J,
+    K,
+    L,
+    M,
+    N,
+    O,
+    P,
+    Q,
+    R,
+    S,
+    T,
+    U,
+    V,
+    W,
+    X,
+    Y,
+    Z,
+    Number0,
+    Number1,
+    Number2,
+    Number3,
+    Number4,
+    Number5,
+    Number6,
+    Number7,
+    Number8,
+    Number9,
+    Tilde,
+    Grave = Tilde,
+    Minus,
+    Plus,
+    BracketLeft,
+    LBracket = BracketLeft,
+    BracketRight,
+    RBracket = BracketRight,
+    Semicolon,
+    Quote,
+    Comma,
+    Period,
+    Slash,
+    BackSlash,
+    NonUSBackSlash,
+    LastKey
 }
 ```
