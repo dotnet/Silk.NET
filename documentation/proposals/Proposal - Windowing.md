@@ -24,6 +24,8 @@
 
 - The main interface is `IWindow`, an interface representing a window. It contains very little of its own, and mostly serves to implement the other `IWindow*` interfaces for the sake of convenience.
 
+- A few properties are implemented here instead of IWindowProperties; this is to avoid forcing WindowOptions to implement them as well, since they aren't needed in that context.
+
 ```cs
 /// <summary>
 /// Base interface for a window.
@@ -34,6 +36,13 @@ public interface IWindow : IWindowProperties, IWindowFunctions, IWindowEvents
 	/// A handle to the underlying window.
 	/// </summary>
 	IntPtr Handle { get; }
+	
+	/// <summary>
+        /// If true, the window has failed to reach the target framerate for multiple consecutive frames, as defined
+        /// in <see cref="IWindowProperties.IsRunningSlowlyThreshold"/>. You can use this to do things such as lowering
+        /// visual fidelity to increase framerates on lower-end machines.
+        /// </summary>
+        bool IsRunningSlowly { get; }
 }
 ```
 
