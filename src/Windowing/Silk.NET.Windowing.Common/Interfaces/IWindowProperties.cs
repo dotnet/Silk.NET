@@ -82,6 +82,6 @@ namespace Silk.NET.Windowing.Common
         /// The number of frames the window needs to be running slowly for before <see cref="IWindow.IsRunningSlowly"/>
         /// is set to true.
         /// </summary>
-        int IsRunningSlowlyThreshold { get; set; }
+        int RunningSlowTolerance { get; set; }
     }
 }

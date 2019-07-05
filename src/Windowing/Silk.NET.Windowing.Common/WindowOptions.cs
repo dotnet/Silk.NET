@@ -46,7 +46,7 @@ namespace Silk.NET.Windowing.Common
         public VSyncMode VSync { get; set; }
         
         /// <inheritdoc />
-        public int IsRunningSlowlyThreshold { get; set; }
+        public int RunningSlowTolerance { get; set; }
 
         /// <summary>
         /// Creates a new WindowOptions struct, with sensible defaults.
@@ -67,7 +67,7 @@ namespace Silk.NET.Windowing.Common
             WindowState = windowState;
             WindowBorder = windowBorder;
             VSync = vSync;
-            IsRunningSlowlyThreshold = isRunningSlowlyThreshold;
+            RunningSlowTolerance = isRunningSlowlyThreshold;
         }
 
         /// <summary>
