@@ -396,6 +396,81 @@ public struct APIVersion
 
 ```cs
 /// <summary>
+/// Represents which API the graphics context should use.
+/// </summary>
+public enum ContextAPI
+{
+    /// <summary>
+    /// Don't use any API. This is necessary for linking an external API, such as Vulkan, to the window.
+    /// </summary>
+    None = 0,
+
+    /// <summary>
+    /// Use Vulkan. Silk.NET doesn't support this yet.
+    /// </summary>
+    Vulkan,
+
+    /// <summary>
+    /// Use core OpenGL. This is standard for software intended for desktop computers.
+    /// </summary>
+    OpenGL,
+
+    /// <summary>
+    /// Use OpenGL ES. This is standard for software intended to be compatable with embedded systems, such as phones.
+    /// </summary>
+    OpenGLES
+}
+```
+
+```cs
+/// <summary>
+/// Represents flags related to the OpenGL context.
+/// </summary>
+[Flags]
+public enum ContextFlags
+{
+    /// <summary>
+    /// No flags enabled.
+    /// </summary>
+    Default = 0,
+
+    /// <summary>
+    /// Enables debug context; debug contexts provide more debugging info, but can run slower.
+    /// </summary>
+    Debug = 1,
+
+    /// <summary>
+    /// Enables forward compatability; this context won't support anything marked as deprecated in the current
+    /// version.
+    /// </summary>
+    /// <remarks>On OpenGL contexts older than 3.0, this flag does nothing.</remarks>
+    ForwardCompatible = 2
+}
+```
+
+- Despite GLFW supporting a "don't care" option for the profile, we decided not to include it in the surface API; allowing the backend to choose the profile could introduce platform inconsistencies.
+
+```cs
+/// <summary>
+/// Represents the context profile OpenGL should use.
+/// </summary>
+public enum ContextProfile
+{
+    /// <summary>
+    /// Uses a core OpenGL context, which removes some deprecated functionality.
+    /// </summary>
+    Core = 0,
+
+    /// <summary>
+    /// Uses a compatability OpenGL context, allowing for some deprecated functionality. This should only ever be
+    /// used for maintaining legacy code; no newly-written software should use this.
+    /// </summary>
+    Compatability
+}
+```
+
+```cs
+/// <summary>
 /// The vertical synchronization mode to use.
 /// </summary>
 public enum VSyncMode
@@ -415,5 +490,56 @@ public enum VSyncMode
     /// it will be enabled. If the framerate is uncapped, this is the same as <see cref="On"/>. 
     /// </summary>
     Adaptive,
+}
+```
+
+```cs
+/// <summary>
+/// Represents the window border.
+/// </summary>
+public enum WindowBorder
+{
+    /// <summary>
+    /// The window can be resized by clicking and dragging its border.
+    /// </summary>
+    Resizable = 0,
+
+    /// <summary>
+    /// The window border is visible, but cannot be resized. All window-resizings must happen solely in the code.
+    /// </summary>
+    Fixed,
+
+    /// <summary>
+    /// The window border is hidden.
+    /// </summary>
+    Hidden
+}
+```
+
+```cs
+/// <summary>
+/// Represents the current state of the window.
+/// </summary>
+public enum WindowState
+{
+    /// <summary>
+    /// The window is in its regular configuration.
+    /// </summary>
+    Normal = 0,
+
+    /// <summary>
+    /// The window has been minimized to the task bar.
+    /// </summary>
+    Minimized,
+
+    /// <summary>
+    /// The window has been maximized, covering the entire desktop, but not the taskbar.
+    /// </summary>
+    Maximized,
+
+    /// <summary>
+    /// The window has been fullscreened, covering the entire surface of the monitor.
+    /// </summary>
+    Fullscreen
 }
 ```
