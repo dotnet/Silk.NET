@@ -42,11 +42,9 @@ public interface IGamepad : IInputDevice
     IReadOnlyCollection<Button> Buttons { get; }
     IReadOnlyCollection<Thumbstick> Thumbsticks { get; }
     IReadOnlyCollection<Trigger> Triggers { get; }
-    IReadOnlyCollection<DPad> DPads { get; }
     Deadzone Deadzone { get; set; }
     event Action<IGamepad, Button> ButtonDown;
     event Action<IGamepad, Button> ButtonUp;
-    event Action<IGamepad, DPad> DPadPositionChanged;
     event Action<IGamepad, Thumbstick> ThumbstickMoved;
     event Action<IGamepad, Hat> HatMoved;
 }
@@ -112,15 +110,6 @@ public struct Trigger
 }
 ```
 
-### DPad
-```cs
-public struct DPad
-{
-    public int Index { get; }
-    public Position2D Position { get; }
-}
-```
-
 ### Hat
 ```cs
 public struct Hat
@@ -160,5 +149,29 @@ public enum DeadzoneMethod
     Traditional,
     // y = (1 - d)x + (d * sgn(x))
     AdaptiveGradient
+}
+```
+
+### ButtonName
+```cs
+public enum ButtonName
+{
+    A,
+    B,
+    X,
+    Y,
+    Back,
+    Home,
+    DPadUp,
+    DPadDown,
+    DPadLeft,
+    DPadRight,
+    LeftBumper,
+    LeftStick,
+    LeftTrigger,
+    RightBumper,
+    RightStick,
+    RightTrigger,
+    Start
 }
 ```
