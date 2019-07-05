@@ -231,7 +231,9 @@ public interface IWindowEvents
 }
 ```
 
-- The GLFW or Native platforms can't be referenced by the main windowing package. This means that we need to work out our own cross-platform windowing management API. We have decided to use `ISilkPlatform`, static class `Silk` for platform registration via reflection, and static class `Window` for Window creation.
+- The GLFW or Native platforms can't be referenced by the main windowing package. This means that we need to work out our own cross-platform windowing platform management API.
+
+- To do so, we add `ISilkPlatform`. Every windowing platform package must include, at minimum, two classes: An implementation of `IWindow`, and an implementation of `ISilkPlatform`.
 
 ```cs
 /// <summary>
@@ -256,6 +258,8 @@ public interface ISilkPlatform
 
 ## Classes
 
+- To easily get the proper `ISilkPlatform` for the current configuration, we add a new static class, `Silk`, which will automatically select an applicable platform.
+
 ```cs
 /// <summary>
 /// Provides methods and properties for configuring Silk.NET's Windowing system. In most cases, the end
@@ -264,19 +268,40 @@ public interface ISilkPlatform
 public static Silk
 {
     /// <summary>
-    /// Gets or sets the current windowing platform used by Silk.NET.
+    /// Gets or sets the current windowing platform.
     /// </summary>
-    // Implementation Detail: the setter should throw an InvalidOperationException if the platform that
-    // the user is trying to set is not applicable.
+    /// <exception cref="InvalidOperationException">
+    /// Thrown if the set platform is not applicable.
+    /// </exception>
     public static ISilkPlatform CurrentPlatform { get; set; }
     
     /// <summary>
     /// Searches for Silk.NET platforms in the current AppDomain via reflection, and picks the first
     /// applicable one.
     /// </summary>
+    /// <exception cref="NotSupportedException">
+    /// Thrown if no applicable <see cref="ISilkPlatform" /> was found.
+    /// </exception>
     // Discussion Point: we could have an overload taking an AppDomain as a parameter, just in case
     // someone has an exotic use case.
     public static void Init();
+}
+```
+
+- To further simplify the process for end users, we add one more new static class, `Window`, which will wrap the process of getting the proper platform and getting a window from it.
+
+```cs
+/// <summary>
+/// Convenience wrapper for easily creating a Silk.NET window.
+/// </summary>
+public static class Window
+{
+    /// <summary>
+    /// Create a window on the current platform.
+    /// </summary>
+    /// <param name="options">The window to use.</param>
+    /// <returns>A Silk.NET window using the current platform.</returns>
+    public static IWindow Create(WindowOptions options);
 }
 ```
 
