@@ -29,6 +29,7 @@ public interface IJoystick : IInputDevice
     IReadOnlyCollection<Axis> Axes { get; }
     IReadOnlyCollection<Button> Buttons { get; }
     IReadOnlyCollection<Hat> Hats { get; }
+    Deadzone Deadzone { get; set; }
     event Action<IJoystick, Button> ButtonDown;
     event Action<IJoystick, Button> ButtonUp;
     event Action<IJoystick, Axis> AxisMoved;
