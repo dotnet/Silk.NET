@@ -19,7 +19,7 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Gets or sets the current windowing platform.
         /// </summary>
-        /// /// <exception cref="NotSupportedException">
+        /// /// <exception cref="InvalidOperationException">
         /// Thrown if the set platform is not applicable.
         /// </exception>
         public static ISilkPlatform CurrentPlatform
@@ -28,7 +28,7 @@ namespace Silk.NET.Windowing
             set
             {
                 if (!value.IsApplicable) {
-                    throw new NotSupportedException("Requested platform is not applicable");
+                    throw new InvalidOperationException("Requested platform is not applicable");
                 }
 
                 _currentPlatform = value;
