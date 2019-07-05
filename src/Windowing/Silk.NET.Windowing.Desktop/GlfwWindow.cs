@@ -222,7 +222,7 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public double FramesPerSecond
         {
-            get => Math.Round(1.0 / renderPeriod);
+            get => 1.0 / renderPeriod;
             set
             {
                 if (value <= double.Epsilon) {
@@ -237,7 +237,7 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public double UpdatesPerSecond
         {
-            get => Math.Round(1.0 / updatePeriod);
+            get => 1.0 / updatePeriod;
             set
             {
                 if (value <= double.Epsilon) {
