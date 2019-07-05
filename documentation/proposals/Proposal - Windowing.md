@@ -94,6 +94,12 @@ public interface IWindowProperties
 	/// The vertical synchronization mode to use. Default is On.
 	/// </summary>
 	VSyncMode VSync { get; set; }
+	
+	/// <summary>
+        /// The number of frames the window needs to be running slowly for before <see cref="IWindow.IsRunningSlowly"/>
+        /// is set to true. Default is 5.
+        /// </summary>
+        int IsRunningSlowlyThreshold { get; set; }
 }
 ```
 
