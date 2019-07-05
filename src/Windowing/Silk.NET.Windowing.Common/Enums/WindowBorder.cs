@@ -11,7 +11,7 @@ namespace Silk.NET.Windowing.Common
     public enum WindowBorder
     {
         /// <summary>
-        /// The window can be resized by grabbing its border.
+        /// The window can be resized by clicking and dragging its border.
         /// </summary>
         Resizable = 0,
 
