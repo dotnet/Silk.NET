@@ -531,7 +531,8 @@ public enum WindowBorder
     Resizable = 0,
 
     /// <summary>
-    /// The window border is visible, but cannot be resized. All window-resizings must happen solely in the code.
+    /// The window border is visible, but cannot be resized. All window-resizings must happen
+    /// solely in the code.
     /// </summary>
     Fixed,
 
