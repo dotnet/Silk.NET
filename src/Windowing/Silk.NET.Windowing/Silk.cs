@@ -14,25 +14,10 @@ namespace Silk.NET.Windowing
     /// </summary>
     public static class Silk
     {
-        private static ISilkPlatform _currentPlatform { get; set; }
-        
         /// <summary>
         /// Gets or sets the current windowing platform.
         /// </summary>
-        /// /// <exception cref="InvalidOperationException">
-        /// Thrown if the set platform is not applicable.
-        /// </exception>
-        public static ISilkPlatform CurrentPlatform
-        {
-            get => _currentPlatform;
-            set
-            {
-                if (!value.IsApplicable) {
-                    throw new InvalidOperationException("Requested platform is not applicable");
-                }
-
-                _currentPlatform = value;
-            } }
+        public static ISilkPlatform CurrentPlatform { get; set; }
 
         /// <summary>
         /// Reflects over the current AppDomain in an attempt to resolve an <see cref="ISilkPlatform" />.
