@@ -314,9 +314,10 @@ public static class Window
 public class GlfwWindow : IWindow
 {
 	/// <summary>
-	/// Convinience wrapper around creating a new WindowOptions with the default struct.
-	/// </summary>
-	public GlfwWindow(WindowOptions options = WindowOptions.Default);
+        /// Create and open a new GlfwWindow.
+        /// </summary>
+        /// <param name="options">The options to use for this window.</param>
+	public GlfwWindow(WindowOptions options);
 }
 ```
 
