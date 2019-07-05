@@ -270,9 +270,6 @@ public static Silk
     /// <summary>
     /// Gets or sets the current windowing platform.
     /// </summary>
-    /// <exception cref="InvalidOperationException">
-    /// Thrown if the set platform is not applicable.
-    /// </exception>
     public static ISilkPlatform CurrentPlatform { get; set; }
     
     /// <summary>
@@ -282,8 +279,6 @@ public static Silk
     /// <exception cref="NotSupportedException">
     /// Thrown if no applicable <see cref="ISilkPlatform" /> was found.
     /// </exception>
-    // Discussion Point: we could have an overload taking an AppDomain as a parameter, just in case
-    // someone has an exotic use case.
     public static void Init();
 }
 ```
