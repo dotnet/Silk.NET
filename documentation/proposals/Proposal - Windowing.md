@@ -146,7 +146,7 @@ public interface IWindowFunctions
 	/// Transforms the specified point from screen to client coordinates.
 	/// </summary>
 	/// <param name="point">
-	/// A <see cref="Vector2" /> to transform.
+	/// The <see cref="Point" /> to transform.
 	/// </param>
 	/// <returns>
 	/// The point transformed to client coordinates.
@@ -157,7 +157,7 @@ public interface IWindowFunctions
 	/// Transforms the specified point from client to screen coordinates.
 	/// </summary>
 	/// <param name="point">
-	/// The <see cref="Vector2" /> to transform.
+	/// The <see cref="Point" /> to transform.
 	/// </param>
 	/// <returns>
 	/// The point transformed to screen coordinates.
