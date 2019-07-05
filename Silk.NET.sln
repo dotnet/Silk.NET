@@ -59,6 +59,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenAL.Extensions.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenAL.Extensions.Soft.DeferredUpdates", "src\OpenAL\Extensions\Silk.NET.OpenAL.Extensions.Soft.DeferredUpdates\Silk.NET.OpenAL.Extensions.Soft.DeferredUpdates.csproj", "{50987EDD-9F49-4981-ADAE-98F01F4A4FBA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Properties", "Build Properties", "{21F1A5E2-9861-49A6-934D-DF5AAA03AFFE}"
+ProjectSection(SolutionItems) = preProject
+	build\props\bindings.props = build\props\bindings.props
+	build\props\common.props = build\props\common.props
+EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
