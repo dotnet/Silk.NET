@@ -24,7 +24,7 @@
 
 - The main interface is `IWindow`, an interface representing a window. It contains very little of its own, and mostly serves to implement the other `IWindow*` interfaces for the sake of convenience.
 
-- A few properties are implemented here instead of IWindowProperties; this is to avoid forcing WindowOptions to implement them as well, since they aren't needed in that context.
+- A few properties are implemented here instead of `IWindowProperties`; this is to avoid forcing `WindowOptions` to implement them as well, since they aren't needed in that context.
 
 ```cs
 /// <summary>
@@ -117,7 +117,7 @@ public interface IWindowProperties
 }
 ```
 
-- Next is IWindowFunctions. This is very standard for windows, since most functionality will be provided by users via callbacks.
+- Next is `IWindowFunctions`. This is very standard for windows, since most functionality will be provided by users via callbacks.
 
 - Certain backends (such as GLFW) have limits as to what functions can be called on threads that the windowing system wasn't initialized. In these cases, [Ultz.Dispatcher](https://github.com/Ultz/Dispatcher) should be used as a workaround for multithreading. The `Invoke` methods provide user-access to the main UI thread.
 
@@ -176,7 +176,7 @@ public interface IWindowFunctions
 }
 ```
 
-- Next is `IWindowEvents`. Several events GLFW provides have been omitted. Everything related to input has been removed, as it would be redundant to have both input-handling here and in Silk.NET.Input. In addition, certain events (such as WindowBorderChanged) have been omitted, as those variables will only ever be updated when the user updates them manually.
+- Next is `IWindowEvents`. Several events GLFW provides have been omitted. Everything related to input has been removed, as it would be redundant to have input-handling both here and in `Silk.NET.Input`. In addition, certain events (such as `WindowBorderChanged`) have been omitted, as those variables will only ever be updated when the user updates them manually.
 
 ```cs
 /// <summary>
@@ -231,7 +231,7 @@ public interface IWindowEvents
 }
 ```
 
-- The GLFW or Native platforms can't be referenced by the main windowing package. This means that we nede to work out our own cross-platform windowing management API. We have decided to use `ISilkPlatform`, static class `Silk` for platform registration via reflection, and static class `Window` for Window creation.
+- The GLFW or Native platforms can't be referenced by the main windowing package. This means that we need to work out our own cross-platform windowing management API. We have decided to use `ISilkPlatform`, static class `Silk` for platform registration via reflection, and static class `Window` for Window creation.
 
 ```cs
 /// <summary>
@@ -280,7 +280,7 @@ public static Silk
 }
 ```
 
-- We have our GlfwWindow class. For the purposes of compatability with other backends, there should be as few extra properties that aren't in IWindow as possible.
+- We have our `GlfwWindow` class. For the purposes of compatability with other backends, there should be as few extra properties that aren't in `IWindow` as possible.
 
 ```cs
 /// <summary>
@@ -320,7 +320,7 @@ public struct WindowOptions : IWindowProperties
 }
 ```
 
-- All variables related to the graphics API are contained in the GraphicsAPI struct:
+- All variables related to the graphics API are contained in the `GraphicsAPI` struct:
 
 ```cs
 /// <summary>
@@ -362,7 +362,7 @@ public struct GraphicsAPI
 }
 ```
 
-- Since System.Version includes more integers than is necessary for our purposes, a new APIVersion struct was created instead:
+- Since `System.Version` includes more integers than is necessary for our purposes, a new `APIVersion` struct was created instead:
 
 ```cs
 /// <summary>
