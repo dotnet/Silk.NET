@@ -1,4 +1,4 @@
-Since the frequency is already﻿# Summary
+# Summary
 - API proposal for Silk.NET.Windowing.
 
 # Contributors
@@ -467,7 +467,8 @@ public enum ContextFlags
     Debug = 1,
 
     /// <summary>
-    /// Enables forward compatability; this context won't support anything marked as deprecated in the current
+    /// Enables forward compatability; this context won't support anything marked as deprecated
+    /// in the current
     /// version.
     /// </summary>
     /// <remarks>On OpenGL contexts older than 3.0, this flag does nothing.</remarks>
