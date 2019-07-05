@@ -1,4 +1,4 @@
-﻿# Summary
+Since the frequency is already﻿# Summary
 - API proposal for Silk.NET.Windowing.
 
 # Contributors
@@ -442,7 +442,8 @@ public enum ContextAPI
     OpenGL,
 
     /// <summary>
-    /// Use OpenGL ES. This is standard for software intended to be compatable with embedded systems, such as phones.
+    /// Use OpenGL ES. This is standard for software intended to be compatable with embedded systems,
+    /// such as phones.
     /// </summary>
     OpenGLES
 }
