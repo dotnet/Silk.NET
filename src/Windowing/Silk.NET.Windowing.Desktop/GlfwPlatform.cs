@@ -9,8 +9,12 @@ using Silk.NET.Windowing.Common;
 
 namespace Silk.NET.Windowing.Desktop
 {
+    /// <summary>
+    /// A GLFW-based backend.
+    /// </summary>
     public class GlfwPlatform : ISilkPlatform
     {
+        /// <inheritdoc />
         public bool IsApplicable
         {
             get
@@ -26,6 +30,7 @@ namespace Silk.NET.Windowing.Desktop
             }
         }
 
+        /// <inheritdoc />
         public IWindow GetWindow(WindowOptions options)
         {
             return new GlfwWindow(options);
