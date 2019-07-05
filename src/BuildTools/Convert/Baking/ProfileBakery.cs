@@ -65,7 +65,7 @@ namespace Generator.Convert.Baking
             profile.FunctionPrefix = information.FunctionPrefix;
             profile.Names = information.NameContainer;
 
-            MergeAll(profile);
+            MergeAll(profile); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
 
             // bake in the documentation
             if (!string.IsNullOrWhiteSpace(Converter.CliOptions.DocumentationFolder))
@@ -120,6 +120,9 @@ namespace Generator.Convert.Baking
                         interfaces.Add(@interface.Name, @interface);
                     }
                 }
+
+                project.Enums = enums.Values.ToList();
+                project.Interfaces = interfaces;
             }
         }
 
