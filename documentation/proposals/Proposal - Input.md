@@ -22,7 +22,7 @@ Proposal API for Input via keyboards, mice, and controllers.
 ## Interfaces
 
 ### IJoystick
-```
+```cs
 public interface IJoystick : IInputDevice
 {
     IReadOnlyCollection<Axis> Axes { get; }
@@ -36,7 +36,7 @@ public interface IJoystick : IInputDevice
 ```
 
 ### IGamepad
-```
+```cs
 public interface IGamepad : IInputDevice
 {
     IReadOnlyCollection<Button> Buttons { get; }
@@ -46,7 +46,7 @@ public interface IGamepad : IInputDevice
 ```
 
 ### IInputDevice
-```
+```cs
 public interface IInputDevice
 {
     string Name { get; }
