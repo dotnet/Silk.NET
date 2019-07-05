@@ -146,7 +146,7 @@ public interface IWindowFunctions
 	/// Transforms the specified point from screen to client coordinates.
 	/// </summary>
 	/// <param name="point">
-	/// A <see cref="Vector2" /> to transform.
+	/// The <see cref="Point" /> to transform.
 	/// </param>
 	/// <returns>
 	/// The point transformed to client coordinates.
@@ -157,7 +157,7 @@ public interface IWindowFunctions
 	/// Transforms the specified point from client to screen coordinates.
 	/// </summary>
 	/// <param name="point">
-	/// The <see cref="Vector2" /> to transform.
+	/// The <see cref="Point" /> to transform.
 	/// </param>
 	/// <returns>
 	/// The point transformed to screen coordinates.
@@ -314,9 +314,10 @@ public static class Window
 public class GlfwWindow : IWindow
 {
 	/// <summary>
-	/// Convinience wrapper around creating a new WindowOptions with the default struct.
-	/// </summary>
-	public GlfwWindow(WindowOptions options = WindowOptions.Default);
+        /// Create and open a new GlfwWindow.
+        /// </summary>
+        /// <param name="options">The options to use for this window.</param>
+	public GlfwWindow(WindowOptions options);
 }
 ```
 
@@ -487,8 +488,8 @@ public enum ContextProfile
     Core = 0,
 
     /// <summary>
-    /// Uses a compatability OpenGL context, allowing for some deprecated functionality. This should only ever be
-    /// used for maintaining legacy code; no newly-written software should use this.
+    /// Uses a compatability OpenGL context, allowing for some deprecated functionality. This should
+    /// only ever be used for maintaining legacy code; no newly-written software should use this.
     /// </summary>
     Compatability
 }
@@ -530,7 +531,8 @@ public enum WindowBorder
     Resizable = 0,
 
     /// <summary>
-    /// The window border is visible, but cannot be resized. All window-resizings must happen solely in the code.
+    /// The window border is visible, but cannot be resized. All window-resizings must happen
+    /// solely in the code.
     /// </summary>
     Fixed,
 
