@@ -7,8 +7,16 @@ using Silk.NET.Windowing.Common;
 
 namespace Silk.NET.Windowing
 {
+    /// <summary>
+    /// Convenience wrapper for easily creating a Silk.NET window.
+    /// </summary>
     public static class Window
     {
+        /// <summary>
+        /// Create a window on the current platform.
+        /// </summary>
+        /// <param name="options">The window to use.</param>
+        /// <returns>A Silk.NET window using the current platform.</returns>
         public static IWindow Create(WindowOptions options)
         {
             if (Silk.CurrentPlatform == null) {
