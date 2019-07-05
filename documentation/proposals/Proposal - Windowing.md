@@ -276,7 +276,7 @@ public static Silk
     public static ISilkPlatform CurrentPlatform { get; set; }
     
     /// <summary>
-    /// Searches for Silk.NET platforms in the current AppDomain via reflection, and picks the first
+    /// Searches for references to official Silk.NET platforms, and picks the first applicable one for this environment.
     /// applicable one.
     /// </summary>
     /// <exception cref="NotSupportedException">
