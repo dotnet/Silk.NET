@@ -28,10 +28,10 @@ public interface IJoystick : IInputDevice
     IReadOnlyCollection<Axis> Axes { get; }
     IReadOnlyCollection<Button> Buttons { get; }
     IReadOnlyCollection<Hat> Hats { get; }
-    event Action<Button> ButtonDown;
-    event Action<Button> ButtonUp;
-    event Action<Axis> AxisMoved;
-    event Action<Hat> HatMoved;
+    event Action<IJoystick, Button> ButtonDown;
+    event Action<IJoystick, Button> ButtonUp;
+    event Action<IJoystick, Axis> AxisMoved;
+    event Action<IJoystick, Hat> HatMoved;
 }
 ```
 
@@ -44,11 +44,11 @@ public interface IGamepad : IInputDevice
     IReadOnlyCollection<Trigger> Triggers { get; }
     IReadOnlyCollection<DPad> DPads { get; }
     Deadzone Deadzone { get; set; }
-    event Action<Button> ButtonDown;
-    event Action<Button> ButtonUp;
-    event Action<DPad> DPadPositionChanged;
-    event Action<Thumbstick> ThumbstickMoved;
-    event Action<Hat> HatMoved;
+    event Action<IGamepad, Button> ButtonDown;
+    event Action<IGamepad, Button> ButtonUp;
+    event Action<IGamepad, DPad> DPadPositionChanged;
+    event Action<IGamepad, Thumbstick> ThumbstickMoved;
+    event Action<IGamepad, Hat> HatMoved;
 }
 ```
 
@@ -59,6 +59,7 @@ public interface IInputDevice
     string Name { get; }
     int Index { get; }
     bool IsConnected { get; }
+    event Action Disconnected;
 }
 ```
 
