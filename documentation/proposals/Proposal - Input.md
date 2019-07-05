@@ -83,7 +83,7 @@ public interface IInputDevice
     string Name { get; }
     int Index { get; }
     bool IsConnected { get; }
-    event Action<IInputDevice> Disconnected;
+    event Action<IInputDevice, bool> ConnectionChanged;
 }
 ```
 
