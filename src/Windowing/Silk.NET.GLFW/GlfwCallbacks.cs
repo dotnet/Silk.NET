@@ -105,7 +105,7 @@ namespace Silk.NET.GLFW
         /// <seealso cref="IGlfw.SetMouseButtonCallback" />
         public delegate void
             MouseButtonCallback(WindowHandle* window, int button, InputAction action,
-                int mods); // TODO: Make enums for int params in callback
+                KeyModifiers mods);
 
         /// <summary>
         /// The function signature for scroll callback functions.

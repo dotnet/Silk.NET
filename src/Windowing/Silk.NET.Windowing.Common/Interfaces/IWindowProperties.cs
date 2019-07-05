@@ -13,19 +13,18 @@ namespace Silk.NET.Windowing.Common
     public interface IWindowProperties
     {
         /// <summary>
-        /// Gets or sets whether or not the window is visible.
+        /// Whether or not the window is visible.
         /// </summary>
         bool IsVisible { get; set; }
 
         /// <summary>
         /// If true, both updates and rendering will happen on the same thread. If false, both updating and rendering
-        /// will be run on their own threads. Default is true.
+        /// will be run on their own threads.
         /// </summary>
         bool UseSingleThreadedWindow { get; }
 
         /// <summary>
-        /// The position of the window. Integer vector. If set to -1, use the backend default.
-        /// Default is -1 for both components.
+        /// The position of the window. If set to -1, use the backend default.
         /// </summary>
         /// <remarks>
         /// <para>
@@ -35,7 +34,7 @@ namespace Silk.NET.Windowing.Common
         Point Position { get; set; }
 
         /// <summary>
-        /// Gets or sets the size of the window in pixels.
+        /// The size of the window in pixels.
         /// </summary>
         /// <remarks>
         /// <para>
@@ -47,15 +46,15 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// The number of rendering operations to run every second.
         /// </summary>
-        double FramesPerSecond { get; }
+        double FramesPerSecond { get; set; }
 
         /// <summary>
         /// The number of update operations to run every second.
         /// </summary>
-        double UpdatesPerSecond { get; }
+        double UpdatesPerSecond { get; set; }
 
         /// <summary>
-        /// Gets the graphics API the window will use.
+        /// The graphics API to use, and associated configurations.
         /// </summary>
         GraphicsAPI API { get; }
 
@@ -65,18 +64,24 @@ namespace Silk.NET.Windowing.Common
         string Title { get; set; }
 
         /// <summary>
-        /// Gets or sets the window state.
+        /// The window state.
         /// </summary>
         WindowState WindowState { get; set; }
 
         /// <summary>
-        /// Gets or sets the window border.
+        /// The window border.
         /// </summary>
         WindowBorder WindowBorder { get; set; }
 
         /// <summary>
-        /// Gets or sets the VSync mode.
+        /// The VSync mode.
         /// </summary>
         VSyncMode VSync { get; set; }
+        
+        /// <summary>
+        /// The number of frames the window needs to be running slowly for before <see cref="IWindow.IsRunningSlowly"/>
+        /// is set to true.
+        /// </summary>
+        int RunningSlowTolerance { get; set; }
     }
 }

@@ -22,7 +22,9 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Reflects over the current AppDomain in an attempt to resolve an <see cref="ISilkPlatform" />.
         /// </summary>
-        /// <exception cref="NotSupportedException">Thrown f no applicable <see cref="ISilkPlatform" /> was found.</exception>
+        /// <exception cref="NotSupportedException">
+        /// Thrown if no applicable <see cref="ISilkPlatform" /> was found.
+        /// </exception>
         public static void Init()
         {
             var glfwPlatform = new GlfwPlatform();

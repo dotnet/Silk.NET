@@ -44,6 +44,9 @@ namespace Silk.NET.Windowing.Common
 
         /// <inheritdoc />
         public VSyncMode VSync { get; set; }
+        
+        /// <inheritdoc />
+        public int RunningSlowTolerance { get; set; }
 
         /// <summary>
         /// Creates a new WindowOptions struct, with sensible defaults.
@@ -51,7 +54,7 @@ namespace Silk.NET.Windowing.Common
         public WindowOptions(bool isVisible, bool useSingleThreadedWindow, Point position, Size size,
             double framesPerSecond,
             double updatesPerSecond, GraphicsAPI api, string title, WindowState windowState, WindowBorder windowBorder,
-            VSyncMode vSync)
+            VSyncMode vSync, int isRunningSlowlyThreshold)
         {
             IsVisible = isVisible;
             UseSingleThreadedWindow = useSingleThreadedWindow;
@@ -64,6 +67,7 @@ namespace Silk.NET.Windowing.Common
             WindowState = windowState;
             WindowBorder = windowBorder;
             VSync = vSync;
+            RunningSlowTolerance = isRunningSlowlyThreshold;
         }
 
         /// <summary>
@@ -71,6 +75,6 @@ namespace Silk.NET.Windowing.Common
         /// </summary>
         public static WindowOptions Default { get; } = new WindowOptions(true, true, new Point(-1, -1),
             new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
-            "Silk.NET Window", WindowState.Normal, WindowBorder.Resizable, VSyncMode.On);
+            "Silk.NET Window", WindowState.Normal, WindowBorder.Resizable, VSyncMode.On, 5);
     }
 }

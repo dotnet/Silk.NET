@@ -22,47 +22,46 @@ namespace Silk.NET.Windowing.Desktop
         // The number of frames that the window has been running slowly for.
         private int _isRunningSlowlyTries;
 
+        // Cache variables
         private Point _position;
-
         private Size _size;
-
         private string _title;
-
         private VSyncMode _vSync;
-
         private WindowBorder _windowBorder;
-
         private WindowState _windowState;
 
         // Glfw stuff
         private Glfw glfw = GlfwProvider.GLFW.Value;
         private Dispatcher glfwThread = GlfwProvider.ThreadDispatcher;
+        private unsafe WindowHandle* WindowPtr;
+
+        // Callbacks
         private GlfwCallbacks.WindowCloseCallback onClosing;
         private GlfwCallbacks.DropCallback onFileDrop;
         private GlfwCallbacks.WindowFocusCallback onFocusChanged;
         private GlfwCallbacks.WindowMaximizeCallback onMaximized;
         private GlfwCallbacks.WindowIconifyCallback onMinimized;
-
-        // Callbacks
-
         private GlfwCallbacks.WindowPosCallback onMove;
         private GlfwCallbacks.WindowSizeCallback onResize;
-        private Dispatcher RenderDispatcher;
-
-        // The period for rendering and updating. In essence, the delay between events being fired off.
-        private double renderPeriod;
-
-        // The stopwatches. Used to calculate delta.
-        private Stopwatch renderStopwatch;
 
         // Main loop-related things
+        
+        // The stopwatches. Used to calculate delta.
+        private Stopwatch renderStopwatch;
+        private Stopwatch updateStopwatch;
 
         // Dispatcher for the update and render threads
         private Dispatcher UpdateDispatcher;
+        private Dispatcher RenderDispatcher;
+        
+        // Update and render period. Represents the time in seconds that each frame should take.
         private double updatePeriod;
-        private Stopwatch updateStopwatch;
-        private unsafe WindowHandle* WindowPtr;
+        private double renderPeriod;
 
+        /// <summary>
+        /// Create and open a new GlfwWindow.
+        /// </summary>
+        /// <param name="options">The options to use for this window.</param>
         public GlfwWindow(WindowOptions options)
         {
             unsafe {
@@ -135,13 +134,17 @@ namespace Silk.NET.Windowing.Desktop
                 WindowState = options.WindowState;
                 Position = options.Position;
                 VSync = options.VSync;
+                RunningSlowTolerance = options.RunningSlowTolerance;
 
                 InitializeCallbacks();
             }
         }
+        
+        /// <inheritdoc />
+        public int RunningSlowTolerance { get; set; }
 
         /// <inheritdoc />
-        public bool IsRunningSlowly => _isRunningSlowlyTries > 5;
+        public bool IsRunningSlowly => _isRunningSlowlyTries > RunningSlowTolerance;
 
         /// <inheritdoc />
         public bool IsVisible
@@ -217,10 +220,33 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
-        public double FramesPerSecond { get; }
+        public double FramesPerSecond
+        {
+            get => 1.0 / renderPeriod;
+            set
+            {
+                if (value <= double.Epsilon) {
+                    renderPeriod = 0.0;
+                    return;
+                }
+                
+                renderPeriod = 1.0 / value;
+            }
+        }
 
         /// <inheritdoc />
-        public double UpdatesPerSecond { get; }
+        public double UpdatesPerSecond
+        {
+            get => 1.0 / updatePeriod;
+            set
+            {
+                if (value <= double.Epsilon) {
+                    updatePeriod = 0.0;
+                    return;
+                }
+                updatePeriod = 1.0 / value;
+            }
+        }
 
         /// <inheritdoc />
         public GraphicsAPI API { get; }
@@ -280,7 +306,7 @@ namespace Silk.NET.Windowing.Desktop
         {
             get => _windowBorder;
             set
-            {
+            {   
                 glfwThread.Invoke(() =>
                 {
                     unsafe {
@@ -351,25 +377,10 @@ namespace Silk.NET.Windowing.Desktop
 
             // Initialize some variables
             _isRunningSlowlyTries = 0;
+            
             renderStopwatch = new Stopwatch();
             updateStopwatch = new Stopwatch();
-
-            // Calculate the update speed.
-            if (UpdatesPerSecond <= double.Epsilon) {
-                updatePeriod = 0.0;
-            }
-            else {
-                updatePeriod = 1.0 / UpdatesPerSecond;
-            }
-
-            // Calculate the render speed.
-            if (FramesPerSecond <= double.Epsilon) {
-                renderPeriod = 0.0;
-            }
-            else {
-                renderPeriod = 1.0 / FramesPerSecond;
-            }
-
+            
             UpdateDispatcher = new Dispatcher();
             RenderDispatcher = new Dispatcher();
 
@@ -467,10 +478,13 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public event Action<double> OnRender;
 
+        /// <summary>
+        /// Run an OnUpdate event.
+        /// </summary>
         private void RaiseUpdateFrame()
         {
-            // If using a capped framerate, we have to do some synchronization-related things before rendering.
-            // This is only necessary if VSync is disabled.
+            // If using a capped framerate without vsync, we have to do some synchronization-related things
+            // before rendering.
             if (UpdatesPerSecond > double.Epsilon
                 && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive && IsRunningSlowly)) {
                 // Calculate the amount of time to sleep.
@@ -493,27 +507,21 @@ namespace Silk.NET.Windowing.Desktop
             updateStopwatch.Restart();
         }
 
+        /// <summary>
+        /// Run an OnRender event.
+        /// </summary>
         private void RaiseRenderFrame()
         {
-            // If using a capped framerate, we have to do some synchronization-related things before rendering.
+            // Identical to RaiseUpdateFrame.
             if (FramesPerSecond > double.Epsilon
                 && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive && IsRunningSlowly)) {
-                // Calculate the amount of time to sleep.
                 var sleepTime = renderPeriod - renderStopwatch.Elapsed.TotalSeconds;
 
-                // If the result is negative, that means the frame is running slowly, so don't sleep.
                 if (sleepTime > 0.0) {
-                    // Else, sleep for that amount of time.
-                    var timeBefore = renderStopwatch.Elapsed.TotalSeconds;
                     Thread.Sleep((int) (1000 * sleepTime));
-                    var timeAfter = renderStopwatch.Elapsed.TotalSeconds;
-
-                    Console.WriteLine($"Tried sleeping for {sleepTime}, slept for {timeAfter - timeBefore}," +
-                                      $"variance of {timeAfter - timeBefore - sleepTime}\n");
                 }
             }
 
-            // Calculate delta and run frame.
             var delta = renderStopwatch.Elapsed.TotalSeconds;
             OnRender?.Invoke(delta);
             renderStopwatch.Restart();
