@@ -57,17 +57,41 @@ public interface IInputDevice
     string Name { get; }
     int Index { get; }
     bool IsConnected { get; }
-    event Action Disconnected;
+    event Action<IInputDevice> Disconnected;
 }
 ```
 
-### IInputPlatform
+### IInputContext
+```cs
+public interface IInputContext
+{
+    IntPtr Handle { get; }
+    IReadOnlyCollection<IGamepad> Gamepads { get; }
+    IReadOnlyCollection<IJoystick> Joysticks { get; }
+    IReadOnlyCollection<IKeyboard> Keyboards { get; }
+    IReadOnlyCollection<IMouse> Mice { get; }
+    IReadOnlyCollection<IInputDevice> OtherDevices { get; }
+}
+```
+
+### IInputPlatform\<T\>
 ```cs
 public interface IInputPlatform
 {
-    IReadOnlyCollection<IGamepad> Gamepads { get; }
-    IReadOnlyCollection<IJoystick> Joysticks { get; }
-    IReadOnlyCollection<IInputDevice> OtherDevices { get; }
+    bool IsApplicable(IWindow window);
+    IInputContext GetInput(IWindow window);
+}
+```
+
+## Classes
+
+### InputWindowExtensions
+```cs
+public static class InputWindowExtensions
+{
+    public static void RegisterInputPlatform(IInputPlatform platform);
+    public static void DeregisterInputPlatform(IInputPlatform platform);
+    public static IInputContext GetInput(this IWindow window);
 }
 ```
 
