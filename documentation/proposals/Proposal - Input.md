@@ -13,10 +13,9 @@ Proposal API for Input via keyboards, mice, and controllers.
 - [ ] Implemented
 
 # Design Decisions
-- Deadzones have been excluded from this proposal, given that we're still working out the math for the Adaptive Gradient deadzone, which also warrants its own proposal for further explanation.
-- Vibration has also been excluded from this proposal, as we'd like to come up with a complete API for HD Rumble etc.
-- I've decided to use interfaces for nearly everything, so that the implemenetation has more control.
-- All modifications of states (i.e. functions) will go within the interface, whereas structs are used for
+- Vibration has been excluded from this proposal, as we'd like to come up with a complete API for HD Rumble etc.
+- I've decided to use interfaces for nearly everything, so that the implementation has more control.
+- All modifications of states (i.e. functions) will go within the interface, whereas structs are used for read-only data.
 
 # Proposed API
 ## Interfaces
@@ -41,7 +40,8 @@ public interface IGamepad : IInputDevice
 {
     IReadOnlyCollection<Button> Buttons { get; }
     IReadOnlyCollection<Thumbstick> Thumbsticks { get; }
-    IReadOnlyCollection<Trigger> Triggets { get; }
+    IReadOnlyCollection<Trigger> Triggers { get; }
+    IReadOnlyCollection<DPad> DPads { get; }
 }
 ```
 
@@ -94,23 +94,53 @@ public struct Trigger
 }
 ```
 
+### DPad
+```cs
+public struct DPad
+{
+    public int Index { get; }
+    public 2DPosition Position { get; }
+}
+```
+
 ### Hat
 ```cs
 public struct Hat
 {
     public int Index { get; }
-    public HatPosition Position { get; }
+    public 2DPosition Position { get; }
+}
+```
+
+### Deadzone
+```cs
+public struct Deadzone
+{
+    public float Value { get; }
+    public DeadzoneMethod Method { get; }
 }
 ```
 
 ## Enums
-### HatPosition
+### 2DPosition
 ```cs
 [Flags] // flags so we can support top left and top right etc (Up | Left, Up | Right)
-public enum HatPosition
+public enum 2DPosition
 {
     Up,
     Down,
     Left,
     Right
 }
+```
+
+### DeadzoneMethod
+```cs
+public enum DeadzoneMethod
+{
+    // y = x except where |x| is between 0 and d (the deadzone value)
+    Traditional,
+    // y = (1 - d)x + (d * sgn(x))
+    AdaptiveGradient
+}
+```
