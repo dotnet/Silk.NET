@@ -58,9 +58,6 @@ namespace Silk.NET.Windowing.Desktop
         private double updatePeriod;
         private double renderPeriod;
 
-        private double updatesPerSecond;
-        private double framesPerSecond;
-
         /// <summary>
         /// Create and open a new GlfwWindow.
         /// </summary>
@@ -223,12 +220,11 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
-        public double FramesPerSecond {
-            get => framesPerSecond;
+        public double FramesPerSecond
+        {
+            get => Math.Round(1.0 / renderPeriod);
             set
             {
-                framesPerSecond = value;
-
                 if (value <= double.Epsilon) {
                     renderPeriod = 0.0;
                     return;
@@ -241,11 +237,9 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public double UpdatesPerSecond
         {
-            get => updatesPerSecond;
+            get => Math.Round(1.0 / updatePeriod);
             set
             {
-                updatesPerSecond = value;
-                
                 if (value <= double.Epsilon) {
                     updatePeriod = 0.0;
                     return;
