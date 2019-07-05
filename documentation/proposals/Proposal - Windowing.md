@@ -32,17 +32,17 @@
 /// </summary>
 public interface IWindow : IWindowProperties, IWindowFunctions, IWindowEvents
 {
-	/// <summary>
-	/// A handle to the underlying window.
-	/// </summary>
-	IntPtr Handle { get; }
-	
-	/// <summary>
-        /// If true, the window has failed to reach the target framerate for multiple consecutive frames,
-	/// as defined in <see cref="IWindowProperties.IsRunningSlowlyThreshold"/>. You can use this to
-	/// do things such as lowering visual fidelity to increase framerates on lower-end machines.
-        /// </summary>
-        bool IsRunningSlowly { get; }
+    /// <summary>
+    /// A handle to the underlying window.
+    /// </summary>
+    IntPtr Handle { get; }
+
+    /// <summary>
+    /// If true, the window has failed to reach the target framerate for multiple consecutive frames,
+    /// as defined in <see cref="IWindowProperties.IsRunningSlowlyThreshold"/>. You can use this to
+    /// do things such as lowering visual fidelity to increase framerates on lower-end machines.
+    /// </summary>
+    bool IsRunningSlowly { get; }
 }
 ```
 
@@ -54,66 +54,66 @@ public interface IWindow : IWindowProperties, IWindowFunctions, IWindowEvents
 /// </summary>
 public interface IWindowProperties
 {
-	/// <summary>
-        /// If true, both updates and rendering will happen on the same thread. If false, both updating
-        /// and rendering will be run on their own threads. Default is true.
-        /// </summary>
-        bool UseSingleThreadedWindow { get; }
+    /// <summary>
+    /// If true, both updates and rendering will happen on the same thread. If false, both updating
+    /// and rendering will be run on their own threads. Default is true.
+    /// </summary>
+    bool UseSingleThreadedWindow { get; }
 
-	/// <summary>
-	/// The position of the window. Integer vector. If set to -1, use the backend default.
-	/// Default is -1 for both components.
-	/// </summary>
-	Point Position { get; set; }
+    /// <summary>
+    /// The position of the window. Integer vector. If set to -1, use the backend default.
+    /// Default is -1 for both components.
+    /// </summary>
+    Point Position { get; set; }
 
-	/// <summary>
-	/// The size of the window. Integer vector. Default is 1280 x 720.
-	/// </summary>
-	Size Size { get; set; }
+    /// <summary>
+    /// The size of the window. Integer vector. Default is 1280 x 720.
+    /// </summary>
+    Size Size { get; set; }
 
-	/// <summary>
-	/// The number of rendering operations to run per second. If 0, the framerate will be uncapped.
-	/// Default is 0.
-	/// </summary>
-	double FramesPerSecond { get; }
+    /// <summary>
+    /// The number of rendering operations to run per second. If 0, the framerate will be uncapped.
+    /// Default is 0.
+    /// </summary>
+    double FramesPerSecond { get; }
 
-	/// <summary>
-	/// The number of update operations to run per second. If 0, the update rate will be uncapped.
-	/// Default is 0.
-	/// </summary>
-	double UpdatesPerSecond { get; }
+    /// <summary>
+    /// The number of update operations to run per second. If 0, the update rate will be uncapped.
+    /// Default is 0.
+    /// </summary>
+    double UpdatesPerSecond { get; }
 
-	/// <summary>
-	/// The graphics API to use, and associated configurations.
-	/// Default is OpenGL 3.3 forward-compatable core profile.
-	/// </summary>
-	GraphicsAPI API { get; }
+    /// <summary>
+    /// The graphics API to use, and associated configurations.
+    /// Default is OpenGL 3.3 forward-compatable core profile.
+    /// </summary>
+    GraphicsAPI API { get; }
+    
+    /// <summary>
+    /// The title of the window. Default is "Silk.NET Window".
+    /// </summary>
+    string Title { get; set; }
+    
+    /// <summary>
+    /// The state of the window. Default is Normal.
+    /// </summary>
+    WindowState WindowState { get; set; }
 
-	/// <summary>
-	/// The title of the window. Default is "Silk.NET Window".
-	/// </summary>
-	string Title { get; set; }
-
-	/// <summary>
-	/// The state of the window. Default is Normal.
-	/// </summary>
-	WindowState WindowState { get; set; }
-
-	/// <summary>
-	/// The type of border the window has. Default is Resizable.
-	/// </summary>
-	WindowBorder WindowBorder { get; set; }
-
-	/// <summary>
-	/// The vertical synchronization mode to use. Default is On.
-	/// </summary>
-	VSyncMode VSync { get; set; }
+    /// <summary>
+    /// The type of border the window has. Default is Resizable.
+    /// </summary>
+    WindowBorder WindowBorder { get; set; }
+    
+    /// <summary>
+    /// The vertical synchronization mode to use. Default is On.
+    /// </summary>
+    VSyncMode VSync { get; set; }
 	
-	/// <summary>
-        /// The number of frames the window needs to be running slowly for before
-        /// <see cref="IWindow.IsRunningSlowly"/> is set to true. Default is 5.
-        /// </summary>
-        int IsRunningSlowlyThreshold { get; set; }
+    /// <summary>
+    /// The number of frames the window needs to be running slowly for before
+    /// <see cref="IWindow.IsRunningSlowly"/> is set to true. Default is 5.
+    /// </summary>
+    int IsRunningSlowlyThreshold { get; set; }
 }
 ```
 
@@ -127,52 +127,52 @@ public interface IWindowProperties
 /// </summary>
 public interface IWindowFunctions
 {
-	/// <summary>
-	/// Closes this window.
-	/// </summary>
-	void Close();
+    /// <summary>
+    /// Closes this window.
+    /// </summary>
+    void Close();
 
-	/// <summary>
-	/// Processes pending window events.
-	/// </summary>
-	void ProcessEvents();
+    /// <summary>
+    /// Processes pending window events.
+    /// </summary>
+    void ProcessEvents();
 
-	/// <summary>
-	/// Makes the GraphicsContext current on the calling thread.
-	/// </summary>
-	void MakeCurrent();
+    /// <summary>
+    /// Makes the GraphicsContext current on the calling thread.
+    /// </summary>
+    void MakeCurrent();
 
-	/// <summary>
-	/// Transforms the specified point from screen to client coordinates.
-	/// </summary>
-	/// <param name="point">
-	/// The <see cref="Point" /> to transform.
-	/// </param>
-	/// <returns>
-	/// The point transformed to client coordinates.
-	/// </returns>
-	Point PointToClient(Point point);
+    /// <summary>
+    /// Transforms the specified point from screen to client coordinates.
+    /// </summary>
+    /// <param name="point">
+    /// The <see cref="Point" /> to transform.
+    /// </param>
+    /// <returns>
+    /// The point transformed to client coordinates.
+    /// </returns>
+    Point PointToClient(Point point);
 
-	/// <summary>
-	/// Transforms the specified point from client to screen coordinates.
-	/// </summary>
-	/// <param name="point">
-	/// The <see cref="Point" /> to transform.
-	/// </param>
-	/// <returns>
-	/// The point transformed to screen coordinates.
-	/// </returns>
-	Point PointToScreen(Point point);
-	
-	/// <summary>
-        /// Invokes this delegate on the window's main thread.
-        /// </summary>
-        object Invoke(Delegate d);
+    /// <summary>
+    /// Transforms the specified point from client to screen coordinates.
+    /// </summary>
+    /// <param name="point">
+    /// The <see cref="Point" /> to transform.
+    /// </param>
+    /// <returns>
+    /// The point transformed to screen coordinates.
+    /// </returns>
+    Point PointToScreen(Point point);
 
-        /// <summary>
-        /// Invokes this delegate on the window's main thread, with the provided arguments.
-        /// </summary>
-        object Invoke(Delegate d, params object[] args);
+    /// <summary>
+    /// Invokes this delegate on the window's main thread.
+    /// </summary>
+    object Invoke(Delegate d);
+
+    /// <summary>
+    /// Invokes this delegate on the window's main thread, with the provided arguments.
+    /// </summary>
+    object Invoke(Delegate d, params object[] args);
 }
 ```
 
@@ -331,18 +331,18 @@ public class GlfwWindow : IWindow
 /// </summary>
 public struct WindowOptions : IWindowProperties
 {
-	// Contains everything from IWindowProperties,
-	// but with setters for all functions that don't have them.
+    // Contains everything from IWindowProperties,
+    // but with setters for all functions that don't have them.
 
-	/// <summary>
-	/// Creates a new WindowOptions struct, with sensible defaults.
-	/// </summary>
-	public WindowOptions(/*all properties from IWindowProperties*/);
+    /// <summary>
+    /// Creates a new WindowOptions struct, with sensible defaults.
+    /// </summary>
+    public WindowOptions(/*all properties from IWindowProperties*/);
 
-	/// <summary>
-	/// Convinience wrapper around creating a new WindowProperties with the default values.
-	/// </summary>
-	public static WindowOptions Default => new WindowOptions(/*sensible defaults*/);
+    /// <summary>
+    /// Convinience wrapper around creating a new WindowProperties with the default values.
+    /// </summary>
+    public static WindowOptions Default => new WindowOptions(/*sensible defaults*/);
 }
 ```
 
@@ -354,37 +354,37 @@ public struct WindowOptions : IWindowProperties
 /// </summary>
 public struct GraphicsAPI
 {
-	/// <summary>
-	/// The render API to use.
-	/// </summary>
-	public ContextAPI API { get; set; }
+    /// <summary>
+    /// The render API to use.
+    /// </summary>
+    public ContextAPI API { get; set; }
 
-	/// <summary>
-	/// The profile to use.
-	/// </summary>
-	public ContextProfile Profile { get; set; }
+    /// <summary>
+    /// The profile to use.
+    /// </summary>
+    public ContextProfile Profile { get; set; }
 
-	/// <summary>
-	/// Context creation flags.
-	/// </summary>
-	public ContextFlags Flags { get; set; }
+    /// <summary>
+    /// Context creation flags.
+    /// </summary>
+    public ContextFlags Flags { get; set; }
 
-	/// <summary>
-	/// The version of the API to use.
-	/// </summary>
-	public APIVersion Version { get; set; }
+    /// <summary>
+    /// The version of the API to use.
+    /// </summary>
+    public APIVersion Version { get; set; }
 
-	/// <summary>
-	/// Creates a new GraphicsAPI struct.
-	/// </summary>
-	public GraphicsAPI(api, profile, flags, version);
-	
-	/// <summary>
-	/// The default graphics API. This is OpenGL 3.3 core profile, with forward
-	/// compatability enabled.
-	/// </summary>
-	public static GraphicsAPI Default => new GraphicsAPI(ContextAPI.OpenGL,
-		ContextProfile.Core, ContextFlags.ForwardCompatible, new APIVersion(3, 3));
+    /// <summary>
+    /// Creates a new GraphicsAPI struct.
+    /// </summary>
+    public GraphicsAPI(api, profile, flags, version);
+
+    /// <summary>
+    /// The default graphics API. This is OpenGL 3.3 core profile, with forward
+    /// compatability enabled.
+    /// </summary>
+    public static GraphicsAPI Default => new GraphicsAPI(ContextAPI.OpenGL,
+        ContextProfile.Core, ContextFlags.ForwardCompatible, new APIVersion(3, 3));
 }
 ```
 
