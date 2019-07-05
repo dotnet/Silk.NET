@@ -137,13 +137,17 @@ namespace Silk.NET.Windowing.Desktop
                 WindowState = options.WindowState;
                 Position = options.Position;
                 VSync = options.VSync;
+                IsRunningSlowlyThreshold = options.IsRunningSlowlyThreshold;
 
                 InitializeCallbacks();
             }
         }
+        
+        /// <inheritdoc />
+        public int IsRunningSlowlyThreshold { get; set; }
 
         /// <inheritdoc />
-        public bool IsRunningSlowly => _isRunningSlowlyTries > 5;
+        public bool IsRunningSlowly => _isRunningSlowlyTries > IsRunningSlowlyThreshold;
 
         /// <inheritdoc />
         public bool IsVisible
