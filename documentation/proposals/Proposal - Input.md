@@ -16,6 +16,7 @@ Proposal API for Input via keyboards, mice, and controllers.
 - Vibration has been excluded from this proposal, as we'd like to come up with a complete API for HD Rumble etc.
 - I've decided to use interfaces for nearly everything, so that the implementation has more control.
 - All modifications of states (i.e. functions) will go within the interface, whereas structs are used for read-only data.
+- In implementations, once an IJoystick, IGamepad, or other IInputDevice object has been created, **it must not be destroyed until disconnected**. This is to preserve event bindings.
 
 # Proposed API
 ## Interfaces
@@ -42,6 +43,12 @@ public interface IGamepad : IInputDevice
     IReadOnlyCollection<Thumbstick> Thumbsticks { get; }
     IReadOnlyCollection<Trigger> Triggers { get; }
     IReadOnlyCollection<DPad> DPads { get; }
+    Deadzone Deadzone { get; set; }
+    event Action<Button> ButtonDown;
+    event Action<Button> ButtonUp;
+    event Action<DPad> DPadPositionChanged;
+    event Action<Thumbstick> ThumbstickMoved;
+    event Action<Hat> HatMoved;
 }
 ```
 
@@ -52,6 +59,16 @@ public interface IInputDevice
     string Name { get; }
     int Index { get; }
     bool IsConnected { get; }
+}
+```
+
+### IInputPlatform
+```cs
+public interface IInputPlatform
+{
+    IReadOnlyCollection<IGamepad> Gamepads { get; }
+    IReadOnlyCollection<IJoystick> Joysticks { get; }
+    IReadOnlyCollection<IInputDevice> OtherDevices { get; }
 }
 ```
 
@@ -99,7 +116,7 @@ public struct Trigger
 public struct DPad
 {
     public int Index { get; }
-    public 2DPosition Position { get; }
+    public Position2D Position { get; }
 }
 ```
 
@@ -108,7 +125,7 @@ public struct DPad
 public struct Hat
 {
     public int Index { get; }
-    public 2DPosition Position { get; }
+    public Position2D Position { get; }
 }
 ```
 
@@ -122,10 +139,10 @@ public struct Deadzone
 ```
 
 ## Enums
-### 2DPosition
+### Position2D
 ```cs
 [Flags] // flags so we can support top left and top right etc (Up | Left, Up | Right)
-public enum 2DPosition
+public enum Position2D
 {
     Up,
     Down,
