@@ -38,9 +38,9 @@ public interface IWindow : IWindowProperties, IWindowFunctions, IWindowEvents
 	IntPtr Handle { get; }
 	
 	/// <summary>
-        /// If true, the window has failed to reach the target framerate for multiple consecutive frames, as defined
-        /// in <see cref="IWindowProperties.IsRunningSlowlyThreshold"/>. You can use this to do things such as lowering
-        /// visual fidelity to increase framerates on lower-end machines.
+        /// If true, the window has failed to reach the target framerate for multiple consecutive frames,
+	/// as defined in <see cref="IWindowProperties.IsRunningSlowlyThreshold"/>. You can use this to
+	/// do things such as lowering visual fidelity to increase framerates on lower-end machines.
         /// </summary>
         bool IsRunningSlowly { get; }
 }
@@ -55,12 +55,14 @@ public interface IWindow : IWindowProperties, IWindowFunctions, IWindowEvents
 public interface IWindowProperties
 {
 	/// <summary>
-	/// If true, both updates and rendering will happen on the same thread. If false, both updating and rendering will be run on their own threads. Default is true.
-	/// </summary>
-	bool UseSingleThreadedWindow { get; }
+        /// If true, both updates and rendering will happen on the same thread. If false, both updating
+        /// and rendering will be run on their own threads. Default is true.
+        /// </summary>
+        bool UseSingleThreadedWindow { get; }
 
 	/// <summary>
-	/// The position of the window. Integer vector. If set to -1, use the backend default. Default is -1 for both components.
+	/// The position of the window. Integer vector. If set to -1, use the backend default.
+	/// Default is -1 for both components.
 	/// </summary>
 	Point Position { get; set; }
 
@@ -70,17 +72,20 @@ public interface IWindowProperties
 	Size Size { get; set; }
 
 	/// <summary>
-	/// The number of rendering operations to run per second. If 0, the framerate will be uncapped. Default is 0.
+	/// The number of rendering operations to run per second. If 0, the framerate will be uncapped.
+	/// Default is 0.
 	/// </summary>
 	double FramesPerSecond { get; }
 
 	/// <summary>
-	/// The number of update operations to run per second. If 0, the update rate will be uncapped. Default is 0.
+	/// The number of update operations to run per second. If 0, the update rate will be uncapped.
+	/// Default is 0.
 	/// </summary>
 	double UpdatesPerSecond { get; }
 
 	/// <summary>
-	/// The graphics API to use, and associated configurations. Default is OpenGL 3.3 forward-compatable core profile.
+	/// The graphics API to use, and associated configurations.
+	/// Default is OpenGL 3.3 forward-compatable core profile.
 	/// </summary>
 	GraphicsAPI API { get; }
 
@@ -105,8 +110,8 @@ public interface IWindowProperties
 	VSyncMode VSync { get; set; }
 	
 	/// <summary>
-        /// The number of frames the window needs to be running slowly for before <see cref="IWindow.IsRunningSlowly"/>
-        /// is set to true. Default is 5.
+        /// The number of frames the window needs to be running slowly for before
+        /// <see cref="IWindow.IsRunningSlowly"/> is set to true. Default is 5.
         /// </summary>
         int IsRunningSlowlyThreshold { get; set; }
 }
@@ -235,7 +240,8 @@ public interface IWindowEvents
 public interface ISilkPlatform
 {
     /// <summary>
-    /// Gets a value indicating whether this <see cref="ISilkPlatform"> should be used, based on the current runtime/environment.
+    /// Gets a value indicating whether this <see cref="ISilkPlatform"> should be used, based on the
+    /// current runtime/environment.
     /// </summary>
     bool IsApplicable { get; }
     
@@ -252,20 +258,24 @@ public interface ISilkPlatform
 
 ```cs
 /// <summary>
-/// Provides methods and properties for configuring Silk.NET's Windowing system. In most cases, the end user shouldn't use this class.
+/// Provides methods and properties for configuring Silk.NET's Windowing system. In most cases, the end
+/// user shouldn't use this class.
 /// </summary>
 public static Silk
 {
     /// <summary>
     /// Gets or sets the current windowing platform used by Silk.NET.
     /// </summary>
-    // Implementation Detail: the setter should throw an InvalidOperationException if the platform that the user is trying to set is not applicable.
+    // Implementation Detail: the setter should throw an InvalidOperationException if the platform that
+    // the user is trying to set is not applicable.
     public static ISilkPlatform CurrentPlatform { get; set; }
     
     /// <summary>
-    /// Searches for Silk.NET platforms in the current AppDomain via reflection, and picks the first applicable one.
+    /// Searches for Silk.NET platforms in the current AppDomain via reflection, and picks the first
+    /// applicable one.
     /// </summary>
-    // Discussion Point: we could have an overload taking an AppDomain as a parameter, just in case someone has an exotic use case.
+    // Discussion Point: we could have an overload taking an AppDomain as a parameter, just in case
+    // someone has an exotic use case.
     public static void Init();
 }
 ```
@@ -295,7 +305,8 @@ public class GlfwWindow : IWindow
 /// </summary>
 public struct WindowOptions : IWindowProperties
 {
-	// Contains everything from IWindowProperties, but with setters for all functions that don't have them.
+	// Contains everything from IWindowProperties,
+	// but with setters for all functions that don't have them.
 
 	/// <summary>
 	/// Creates a new WindowOptions struct, with sensible defaults.
@@ -338,14 +349,16 @@ public struct GraphicsAPI
 	public APIVersion Version { get; set; }
 
 	/// <summary>
-	/// Creates a new GraphicsAPI struct. Defaults to OpenGL 3.3 core profile with forward compatability.
+	/// Creates a new GraphicsAPI struct.
 	/// </summary>
 	public GraphicsAPI(api, profile, flags, version);
 	
 	/// <summary>
-	/// The default graphics API. This is OpenGL 3.3 core profile, with forward compatability enabled.
+	/// The default graphics API. This is OpenGL 3.3 core profile, with forward
+	/// compatability enabled.
 	/// </summary>
-	public static GraphicsAPI Default => new GraphicsAPI(ContextAPI.OpenGL, ContextProfile.Core, ContextFlags.ForwardCompatible, new APIVersion(3, 3));
+	public static GraphicsAPI Default => new GraphicsAPI(ContextAPI.OpenGL,
+		ContextProfile.Core, ContextFlags.ForwardCompatible, new APIVersion(3, 3));
 }
 ```
 
@@ -398,8 +411,8 @@ public enum VSyncMode
     On,
 
     /// <summary>
-    /// Use adaptive VSync. If the window has failed to reach the target framerate for five consecutive frames,
-    /// VSync will be disabled. Otherwise, it will be enabled. If the framerate is uncapped, this is the same as <see cref="On"/>. 
+    /// Use adaptive VSync. If the window IsRunningSlowly, VSync will be disabled. Otherwise,
+    /// it will be enabled. If the framerate is uncapped, this is the same as <see cref="On"/>. 
     /// </summary>
     Adaptive,
 }
