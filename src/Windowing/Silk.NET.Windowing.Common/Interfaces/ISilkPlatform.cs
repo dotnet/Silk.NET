@@ -11,7 +11,7 @@ namespace Silk.NET.Windowing.Common
     public interface ISilkPlatform
     {
         /// <summary>
-        /// Gets a value indicating whether this <see cref="ISilkPlatform"> should be used, based on the
+        /// Gets a value indicating whether this <see cref="ISilkPlatform"/> should be used, based on the
         /// current runtime/environment.
         /// </summary>
         bool IsApplicable { get; }
