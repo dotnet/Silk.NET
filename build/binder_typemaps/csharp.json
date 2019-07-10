@@ -21,7 +21,6 @@
   "String": "string",
   "GLvoid*": "IntPtr",
   "GLchar*": "string",
-  "GLchar**": "string[]",
   "GLcharARB*": "string",
   "GLfloat*": "float*",
   "GLdouble*": "double*",
