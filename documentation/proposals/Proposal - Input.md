@@ -118,7 +118,7 @@ public interface IInputPlatform
 public static class InputWindowExtensions
 {
     public static void RegisterInputPlatform(IInputPlatform platform);
-    public static void DeregisterInputPlatform(IInputPlatform platform);
+    public static void UnregisterInputPlatform(IInputPlatform platform);
     public static IInputContext GetInput(this IWindow window);
 }
 ```

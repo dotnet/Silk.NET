@@ -15,7 +15,7 @@ namespace Silk.NET.Input.Common
             throw new NotImplementedException();
         }
 
-        public static void DeregisterInputPlatform(IInputPlatform platform)
+        public static void UnregisterInputPlatform(IInputPlatform platform)
         {
             throw new NotImplementedException();
         }
