@@ -200,14 +200,19 @@ namespace Generator.Bind
                 sw.WriteLine();
                 sw.WriteLine("        public static " + profile.ClassName + " GetApi()");
                 sw.WriteLine("        {");
-                sw.WriteLine($"            return LibraryLoader<{profile.ClassName}>(new {profile.Names.ClassName}());");
+                sw.WriteLine($"             return LibraryLoader<{profile.ClassName}>.Load(new {profile.Names.ClassName}());");
                 sw.WriteLine("        }");
                 sw.WriteLine();
                 sw.WriteLine("        public bool TryGetExtension<T>(out T ext)");
                 sw.WriteLine("            where T:NativeExtension<" + profile.ClassName + ">");
                 sw.WriteLine("        {");
-                sw.WriteLine($"            ext = LibraryLoader<{profile.ClassName}>.Load<T>(this);");
+                sw.WriteLine($"             ext = LibraryLoader<{profile.ClassName}>.Load<T>(this);");
                 sw.WriteLine("             return ext != null;");
+                sw.WriteLine("        }");
+                sw.WriteLine();
+                sw.WriteLine($"        public {profile.ClassName}(string path, ImplementationOptions opts)");
+                sw.WriteLine("            : base(path, opts)");
+                sw.WriteLine("        {");
                 sw.WriteLine("        }");
                 sw.WriteLine();
                 sw.WriteLine
@@ -252,7 +257,11 @@ namespace Generator.Bind
                         }
                         sw.WriteLine();
                     }
-
+                    sw.WriteLine();
+                    sw.WriteLine($"        public {profile.ClassName}(string path, ImplementationOptions opts)");
+                    sw.WriteLine("            : base(path, opts)");
+                    sw.WriteLine("        {");
+                    sw.WriteLine("        }");
                     sw.Flush();
                 }
             }
