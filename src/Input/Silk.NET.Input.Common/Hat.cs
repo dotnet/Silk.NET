@@ -9,5 +9,11 @@ namespace Silk.NET.Input.Common
     {
         public int Index { get; }
         public Position2D Position { get; }
+
+        public Hat(int index, Position2D position)
+        {
+            Index = index;
+            Position = position;
+        }
     }
 }

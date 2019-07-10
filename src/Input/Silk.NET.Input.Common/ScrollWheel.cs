@@ -9,5 +9,11 @@ namespace Silk.NET.Input.Common
     {
         public float X { get; }
         public float Y { get; }
+
+        public ScrollWheel(float x, float y)
+        {
+            X = x;
+            Y = y;
+        }
     }
 }

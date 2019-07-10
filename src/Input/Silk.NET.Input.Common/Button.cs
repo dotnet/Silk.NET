@@ -10,5 +10,12 @@ namespace Silk.NET.Input.Common
         public ButtonName Name { get; }
         public int Index { get; }
         public bool Pressed { get; }
+
+        public Button(ButtonName name, int index, bool pressed)
+        {
+            Name = name;
+            Index = index;
+            Pressed = pressed;
+        }
     }
 }

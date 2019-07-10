@@ -10,5 +10,12 @@ namespace Silk.NET.Input.Common
         public int Index { get; }
         public float Position { get; }
         public float Direction { get; }
+
+        public Thumbstick(int index, float position, float direction)
+        {
+            Index = index;
+            Position = position;
+            Direction = direction;
+        }
     }
 }
