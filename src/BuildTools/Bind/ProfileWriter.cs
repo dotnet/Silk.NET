@@ -87,7 +87,7 @@ namespace Generator.Bind
             sw.WriteLine("using System;");
             sw.WriteLine("using System.Runtime.InteropServices;");
             sw.WriteLine("using System.Text;");
-            sw.WriteLine("using Silk.NET.Core;");
+            sw.WriteLine("using Silk.NET.Core.Native;");
             sw.WriteLine("using AdvancedDLSupport;");
             sw.WriteLine();
             var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
@@ -161,28 +161,101 @@ namespace Generator.Bind
             sw.Close();
         }
 
-        public static void WriteMixedModeClass(this Project project, Profile profile, string file)
+        public static void WriteMixedModeClasses(this Project project, Profile profile, string folder)
         {
             // public abstract class MixedModeClass : IMixedModeClass
             // {
             // }
-            var sw = new StreamWriter(file);
-            sw.Write(LicenseText.Value);
-            sw.WriteLine("using System;");
-            sw.WriteLine("using System.Runtime.InteropServices;");
-            sw.WriteLine("using System.Text;");
-            sw.WriteLine("using Silk.NET.Core;");
-            sw.WriteLine("using AdvancedDLSupport;");
-            sw.WriteLine();
-            var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
-            sw.WriteLine("namespace " + ns + project.Namespace);
-            sw.WriteLine("{");
-            var nm = project.IsRoot ? profile.ClassName : project.Namespace.Split('.').Last();
             if (project.IsRoot)
             {
+                var sw = new StreamWriter(Path.Combine(folder, profile.ClassName + ".gen.cs"));
+                sw.Write(LicenseText.Value);
+                sw.WriteLine("using System;");
+                sw.WriteLine("using System.Runtime.InteropServices;");
+                sw.WriteLine("using System.Text;");
+                sw.WriteLine("using Silk.NET.Core.Native;");
+                sw.WriteLine("using Silk.NET.Core.Loader;");
+                sw.WriteLine("using AdvancedDLSupport;");
+                sw.WriteLine();
+                sw.WriteLine("namespace " + profile.Namespace + project.Namespace);
+                sw.WriteLine("{");
+                sw.WriteLine("    public partial class " + profile.ClassName + " : NativeAPI, I" + profile.ClassName);
+                sw.WriteLine("    {");
+                var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).RemoveDuplicates();
+                foreach (var function in allFunctions)
+                {
+                    sw.WriteLine("        /// <inheritdoc />");
+                    using (var sr = new StringReader(function.ToString()))
+                    {
+                        string line;
+                        var flPrefix = "public abstract ";
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            sw.WriteLine($"        {flPrefix}{line}");
+                            flPrefix = string.Empty;
+                        }
+                    }
+                    sw.WriteLine();
+                }
+                sw.WriteLine();
+                sw.WriteLine("        public static " + profile.ClassName + " GetApi()");
+                sw.WriteLine("        {");
+                sw.WriteLine($"            return LibraryLoader<{profile.ClassName}>(new {profile.Names.ClassName}());");
+                sw.WriteLine("        }");
+                sw.WriteLine();
+                sw.WriteLine("        public bool TryGetExtension<T>(out T ext)");
+                sw.WriteLine("            where T:NativeExtension<" + profile.ClassName + ">");
+                sw.WriteLine("        {");
+                sw.WriteLine($"            ext = LibraryLoader<{profile.ClassName}>.Load<T>(this);");
+                sw.WriteLine("             return ext != null;");
+                sw.WriteLine("        }");
+                sw.WriteLine();
+                sw.WriteLine
+                (
+                    "        public SearchPathContainer SearchPaths { get; } = new "
+                             + profile.Names.ClassName + "();"
+                );
                 
+                sw.Flush();
             }
-            sw.Flush();
+            else
+            {
+                foreach (var (key, i) in project.Interfaces)
+                {
+                    var name = key.Substring(1);
+                    var sw = new StreamWriter(Path.Combine(folder, name + ".gen.cs"));
+                    sw.Write(LicenseText.Value);
+                    sw.WriteLine("using System;");
+                    sw.WriteLine("using System.Runtime.InteropServices;");
+                    sw.WriteLine("using System.Text;");
+                    sw.WriteLine("using " + profile.Projects["Core"].GetNamespace(profile) + ";");
+                    sw.WriteLine("using Silk.NET.Core.Loader;");
+                    sw.WriteLine("using Silk.NET.Core.Native;");
+                    sw.WriteLine("using AdvancedDLSupport;");
+                    sw.WriteLine();
+                    sw.WriteLine("namespace " + profile.ExtensionsNamespace + project.Namespace);
+                    sw.WriteLine("{");
+                    sw.WriteLine($"    public partial class {name} : NativeExtension<{profile.ClassName}>, I{name}");
+                    sw.WriteLine("    {");
+                    foreach (var function in i.Functions)
+                    {
+                        sw.WriteLine("        /// <inheritdoc />");
+                        using (var sr = new StringReader(function.ToString()))
+                        {
+                            string line;
+                            var flPrefix = "public abstract ";
+                            while ((line = sr.ReadLine()) != null)
+                            {
+                                sw.WriteLine($"        {flPrefix}{line}");
+                                flPrefix = string.Empty;
+                            }
+                        }
+                        sw.WriteLine();
+                    }
+
+                    sw.Flush();
+                }
+            }
         }
 
         /// <summary>
@@ -212,24 +285,24 @@ namespace Generator.Bind
 
             project.Interfaces.ForEach(x => x.Value.WriteInterface
             (
-                Path.Combine(folder, InterfacesSubfolder, x.Value.Name + ".cs"), profile, project)
+                Path.Combine(folder, InterfacesSubfolder, x.Value.Name + ".gen.cs"), profile, project)
             );
 
             project.Enums.ForEach
             (
-                x => x.WriteEnum(Path.Combine(folder, EnumsSubfolder, x.Name + ".cs"), profile, project)
+                x => x.WriteEnum(Path.Combine(folder, EnumsSubfolder, x.Name + ".gen.cs"), profile, project)
             );
 
             if (project.IsRoot)
             {
                 project.WriteMetaInterface
                 (
-                    profile, Path.Combine(folder, InterfacesSubfolder, "I" + profile.FunctionPrefix.ToUpper() + ".cs")
+                    profile,
+                    Path.Combine(folder, InterfacesSubfolder, "I" + profile.FunctionPrefix.ToUpper() + ".gen.cs")
                 );
             }
 
-            var nm = project.IsRoot ? profile.ClassName : project.Namespace.Split('.').Last();
-            project.WriteMixedModeClass(profile, Path.Combine(folder, nm) + ".gen.cs");
+            project.WriteMixedModeClasses(profile, folder);
         }
 
         /// <summary>
