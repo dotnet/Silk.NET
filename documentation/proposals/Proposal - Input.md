@@ -1,10 +1,11 @@
-# Summary    
+﻿# Summary    
 Proposal API for Input via keyboards, mice, and controllers.
 
 # Contributors
 - Dylan Perks, Ultz Limited
 - Aaron Pearson, Ultz Limited
 - Vassalware, Silk.NET Contributors
+- Void, Silk.NET codeowners
 
 # Current Status
 - [x] Proposed
@@ -387,5 +388,24 @@ public enum Key
     BackSlash,
     NonUSBackSlash,
     LastKey
+}
+```
+
+### MouseButton
+```cs
+public enum MouseButton
+{
+	Left,
+	Middle,
+	Right,
+	Button4,
+	Button5,
+	Button6,
+	Button7,
+	Button8,
+	Button9,
+	Button10,
+	Button11,
+	Button12
 }
 ```
