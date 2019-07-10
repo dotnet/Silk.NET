@@ -68,7 +68,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization;
 
-namespace Silk.NET.Core
+namespace Silk.NET.Core.Math
 {
     /// <summary>
     /// The name Half is derived from half-precision floating-point number.
@@ -331,7 +331,7 @@ namespace Silk.NET.Core
         }
 
         /// <summary>
-        /// Converts a System.Single to a Silk.NET.Core.Half.
+        /// Converts a System.Single to a Silk.NET.Core.Math.Half.
         /// </summary>
         /// <param name="f">
         /// The <see cref="float"/> value to convert.
@@ -346,7 +346,7 @@ namespace Silk.NET.Core
         }
 
         /// <summary>
-        /// Converts a System.Double to a Silk.NET.Core.Half.
+        /// Converts a System.Double to a Silk.NET.Core.Math.Half.
         /// </summary>
         /// <param name="d">
         /// The <see cref="double"/> value to convert.
@@ -361,7 +361,7 @@ namespace Silk.NET.Core
         }
 
         /// <summary>
-        /// Converts a Silk.NET.Core.Half to a System.Single.
+        /// Converts a Silk.NET.Core.Math.Half to a System.Single.
         /// </summary>
         /// <param name="h">
         /// The <see cref="Half"/> value to convert.
@@ -376,7 +376,7 @@ namespace Silk.NET.Core
         }
 
         /// <summary>
-        /// Converts a Silk.NET.Core.Half to a System.Double.
+        /// Converts a Silk.NET.Core.Math.Half to a System.Double.
         /// </summary>
         /// <param name="h">
         /// The <see cref="Half"/> value to convert.
@@ -453,9 +453,9 @@ namespace Silk.NET.Core
         }
 
         /// <summary>
-        /// Returns a value indicating whether this instance is equal to a specified Silk.NET.Core.Half value.
+        /// Returns a value indicating whether this instance is equal to a specified Silk.NET.Core.Math.Half value.
         /// </summary>
-        /// <param name="other">Silk.NET.Core.Half object to compare to this instance..</param>
+        /// <param name="other">Silk.NET.Core.Math.Half object to compare to this instance..</param>
         /// <returns>True, if other is equal to this instance; false otherwise.</returns>
         [Pure]
         public bool Equals(Half other)
@@ -498,16 +498,16 @@ namespace Silk.NET.Core
         /// A signed number indicating the relative values of this instance and value. If the number is:
         ///  <para>
         /// Less than zero, then this instance is less than other, or this instance is not a number
-        /// (Silk.NET.Core.Half.NaN) and other is a number.
+        /// (Silk.NET.Core.Math.Half.NaN) and other is a number.
         ///  </para>
         ///  <para>
         /// Zero: this instance is equal to value, or both this instance and other
-        /// are not a number (Silk.NET.Core.Half.NaN), Silk.NET.Core.Half.PositiveInfinity, or
-        /// Silk.NET.Core.Half.NegativeInfinity.
+        /// are not a number (Silk.NET.Core.Math.Half.NaN), Silk.NET.Core.Math.Half.PositiveInfinity, or
+        /// Silk.NET.Core.Math.Half.NegativeInfinity.
         ///  </para>
         ///  <para>
         /// Greater than zero: this instance is greater than othrs, or this instance is a number
-        /// and other is not a number (Silk.NET.Core.Half.NaN).
+        /// and other is not a number (Silk.NET.Core.Math.Half.NaN).
         ///  </para>
         /// </returns>
         [Pure]
