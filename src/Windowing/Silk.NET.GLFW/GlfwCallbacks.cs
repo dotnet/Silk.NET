@@ -104,7 +104,7 @@ namespace Silk.NET.GLFW
         /// <param name="mods">Bit field describing which modifier keys were held down.</param>
         /// <seealso cref="IGlfw.SetMouseButtonCallback" />
         public delegate void
-            MouseButtonCallback(WindowHandle* window, int button, InputAction action,
+            MouseButtonCallback(WindowHandle* window, MouseButton button, InputAction action,
                 KeyModifiers mods);
 
         /// <summary>
