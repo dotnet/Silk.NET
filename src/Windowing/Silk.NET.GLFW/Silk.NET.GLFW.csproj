@@ -16,20 +16,11 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="..\..\..\build\native\glfw\glfw3-x64.dll"
-               Link="runtimes/win-x64/native/glfw3-x64.dll"
-               PackagePath="runtimes/win-x64/native"
-               InProject="false" />
+      <Content Include="..\..\..\build\native\glfw\glfw3-x64.dll" Link="runtimes/win-x64/native/glfw3-x64.dll" PackagePath="runtimes/win-x64/native" InProject="false" />
 
-      <Content Include="..\..\..\build\native\glfw\glfw3-x86.dll"
-               Link="runtimes/win-x86/native/glfw3-x86.dll"
-               PackagePath="runtimes/win-x86/native"
-               InProject="false" />
+      <Content Include="..\..\..\build\native\glfw\glfw3-x86.dll" Link="runtimes/win-x86/native/glfw3-x86.dll" PackagePath="runtimes/win-x86/native" InProject="false" />
 
-      <Content Include="..\..\..\build\native\glfw\libglfw.so.3.3"
-               Link="runtimes/linux-x64/native/libglfw.so.3.3"
-               PackagePath="runtimes/linux-x64/native"
-               InProject="false" />
+      <Content Include="..\..\..\build\native\glfw\libglfw.so.3.3" Link="runtimes/linux-x64/native/libglfw.so.3.3" PackagePath="runtimes/linux-x64/native" InProject="false" />
 
       <Content Include="Silk.NET.GLFW.targets" PackagePath="build/" />
     </ItemGroup>

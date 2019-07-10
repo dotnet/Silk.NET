@@ -1,10 +1,11 @@
-# Summary    
+﻿# Summary    
 Proposal API for Input via keyboards, mice, and controllers.
 
 # Contributors
 - Dylan Perks, Ultz Limited
 - Aaron Pearson, Ultz Limited
 - Vassalware, Silk.NET Contributors
+- Void, Silk.NET codeowners
 
 # Current Status
 - [x] Proposed
@@ -117,7 +118,7 @@ public interface IInputPlatform
 public static class InputWindowExtensions
 {
     public static void RegisterInputPlatform(IInputPlatform platform);
-    public static void DeregisterInputPlatform(IInputPlatform platform);
+    public static void UnregisterInputPlatform(IInputPlatform platform);
     public static IInputContext GetInput(this IWindow window);
 }
 ```
@@ -129,6 +130,8 @@ public struct ScrollWheel
 {
     public float X { get; }
     public float Y { get; }
+    
+    public ScrollWheel(float x, float y);
 }
 ```
 
@@ -139,6 +142,8 @@ public struct Button
     public ButtonName Name { get; }
     public int Index { get; }
     public bool Pressed { get; }
+    
+    public Button(ButtonName name, int index, bool pressed);
 }
 ```
 
@@ -148,6 +153,8 @@ public struct Axis
 {
     public int Index { get; }
     public float Position { get; }
+    
+    public Axis(int index, float position);
 }
 ```
 
@@ -158,6 +165,8 @@ public struct Thumbstick
     public int Index { get; }
     public float Position { get; }
     public float Direction { get; }
+    
+    public Thumbstick(int index, float position, float direction);
 }
 ```
 
@@ -167,6 +176,8 @@ public struct Trigger
 {
     public int Index { get; }
     public float Position { get; }
+    
+    public Trigger(int index, float position);
 }
 ```
 
@@ -176,6 +187,8 @@ public struct Hat
 {
     public int Index { get; }
     public Position2D Position { get; }
+    
+    public Hat(int index, Position2D position);
 }
 ```
 
@@ -185,6 +198,8 @@ public struct Deadzone
 {
     public float Value { get; }
     public DeadzoneMethod Method { get; }
+    
+    public Deadzone(float value, DeadzoneMethod method);
 }
 ```
 
@@ -387,5 +402,24 @@ public enum Key
     BackSlash,
     NonUSBackSlash,
     LastKey
+}
+```
+
+### MouseButton
+```cs
+public enum MouseButton
+{
+    Left,
+    Middle,
+    Right,
+    Button4,
+    Button5,
+    Button6,
+    Button7,
+    Button8,
+    Button9,
+    Button10,
+    Button11,
+    Button12
 }
 ```
