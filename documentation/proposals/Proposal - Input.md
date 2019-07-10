@@ -130,6 +130,8 @@ public struct ScrollWheel
 {
     public float X { get; }
     public float Y { get; }
+    
+    public ScrollWheel(float x, float y);
 }
 ```
 
@@ -140,6 +142,8 @@ public struct Button
     public ButtonName Name { get; }
     public int Index { get; }
     public bool Pressed { get; }
+    
+    public Button(ButtonName name, int index, bool pressed);
 }
 ```
 
@@ -149,6 +153,8 @@ public struct Axis
 {
     public int Index { get; }
     public float Position { get; }
+    
+    public Axis(int index, float position);
 }
 ```
 
@@ -159,6 +165,8 @@ public struct Thumbstick
     public int Index { get; }
     public float Position { get; }
     public float Direction { get; }
+    
+    public Thumbstick(int index, float position, float direction);
 }
 ```
 
@@ -168,6 +176,8 @@ public struct Trigger
 {
     public int Index { get; }
     public float Position { get; }
+    
+    public Trigger(int index, float position);
 }
 ```
 
@@ -177,6 +187,8 @@ public struct Hat
 {
     public int Index { get; }
     public Position2D Position { get; }
+    
+    public Hat(int index, Position2D position);
 }
 ```
 
@@ -186,6 +198,8 @@ public struct Deadzone
 {
     public float Value { get; }
     public DeadzoneMethod Method { get; }
+    
+    public Deadzone(float value, DeadzoneMethod method);
 }
 ```
 
