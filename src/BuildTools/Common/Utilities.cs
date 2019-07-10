@@ -174,7 +174,7 @@ namespace Generator.Common
             var ret = new List<T>();
             foreach (var item in enumerable)
             {
-                if (!ret.Contains(item))
+                if (!ret.Any(x => x.Equals(item)))
                 {
                     ret.Add(item);
                 }
