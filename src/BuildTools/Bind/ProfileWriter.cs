@@ -258,7 +258,7 @@ namespace Generator.Bind
                         sw.WriteLine();
                     }
                     sw.WriteLine();
-                    sw.WriteLine($"        public {profile.ClassName}(string path, ImplementationOptions opts)");
+                    sw.WriteLine($"        public {name}(string path, ImplementationOptions opts)");
                     sw.WriteLine("            : base(path, opts)");
                     sw.WriteLine("        {");
                     sw.WriteLine("        }");
