@@ -5,12 +5,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
-using Generator.Common.Enums;
 using Generator.Common.Functions;
 using Generator.Convert.XML;
 using JetBrains.Annotations;
@@ -84,43 +82,6 @@ namespace Generator.Convert.Construction
                 : new Version(versionString);
 
             return version;
-        }
-
-        /// <summary>
-        /// Parses a token signatures from the given <see cref="XElement" />.
-        /// </summary>
-        /// <param name="tokenElement">The token element.</param>
-        /// <returns>A parsed token.</returns>
-        [NotNull]
-        public static Token ParseTokenSignature([NotNull] XElement tokenElement)
-        {
-            var tokenName = tokenElement.GetRequiredAttribute("name").Value;
-            var tokenValueHexStr = tokenElement.GetRequiredAttribute("value").Value;
-
-            if (tokenValueHexStr.StartsWith("0x"))
-            {
-                tokenValueHexStr = tokenValueHexStr.Substring(2);
-            }
-
-            if (!long.TryParse
-                (tokenValueHexStr, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var tokenValue))
-            {
-                if (!long.TryParse(tokenValueHexStr, out tokenValue))
-                {
-                    throw new InvalidDataException("Token value was not in a valid format.");
-                }
-            }
-
-            var tokenDeprecationVersion = ParseVersion(tokenElement, "deprecated");
-
-            var tokenRemarks = tokenElement.Attribute("remark")?.Value;
-
-            // TODO: Deprecated attribute
-            return new Token
-            {
-                Name = NativeIdentifierTranslator.TranslateIdentifierName(tokenName), NativeName = tokenName,
-                Value = "0x" + tokenValueHexStr
-            };
         }
 
         /// <summary>
