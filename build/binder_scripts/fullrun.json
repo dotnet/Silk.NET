@@ -5,6 +5,6 @@
     },
     {
         "Task": "bind",
-        "Args": ["-i", "../binder_specifications/OpenGL.json", "../binder_specifications/GLES.json", "../binder_specifications/OpenGL (Core Profile).json", "-o", "../../src", "-l", "../LICENSE_HEADER.txt", "-p", "../props/bindings.props"]
+        "Args": ["-i", "../binder_specifications/OpenGL.json", "../binder_specifications/GLES.json", "../binder_specifications/OpenGL (Compatibility Profile).json", "-o", "../../src", "-l", "../LICENSE_HEADER.txt", "-p", "../props/bindings.props"]
     }
 ]
