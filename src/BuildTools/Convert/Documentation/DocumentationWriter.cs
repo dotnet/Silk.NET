@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Generator.Common;
 using Humanizer;
+using MoreLinq.Extensions;
 
 namespace Generator.Convert.Documentation
 {
@@ -36,7 +37,7 @@ namespace Generator.Convert.Documentation
         /// <param name="doc">The documentation to write.</param>
         public static void Write(Profile profile, ProfileDocumentation doc)
         {
-            Task.WhenAll(profile.Projects.Select(x => WriteAsync(x.Value, doc)));
+            profile.Projects.ForEach(x => Write(x.Value, doc));
         }
 
         /// <summary>
@@ -44,10 +45,9 @@ namespace Generator.Convert.Documentation
         /// </summary>
         /// <param name="project">The project to write to.</param>
         /// <param name="doc">The documentation to write.</param>
-        /// <returns>An asynchronous task.</returns>
-        public static async Task WriteAsync(Project project, ProfileDocumentation doc)
+        public static void Write(Project project, ProfileDocumentation doc)
         {
-            await Task.WhenAll(project.Interfaces.Select(x => WriteAsync(x.Value, doc)));
+            project.Interfaces.ForEach(x => Write(x.Value, doc));
         }
 
         /// <summary>
@@ -55,8 +55,7 @@ namespace Generator.Convert.Documentation
         /// </summary>
         /// <param name="interface">The interface to write to.</param>
         /// <param name="doc">The documentation to write.</param>
-        /// <returns>An asynchronous task.</returns>
-        public static Task WriteAsync(Interface @interface, ProfileDocumentation doc)
+        public static void Write(Interface @interface, ProfileDocumentation doc)
         {
             foreach (var function in @interface.Functions)
             {
@@ -108,8 +107,6 @@ namespace Generator.Convert.Documentation
                     function.Doc = sb.ToString();
                 }
             }
-
-            return Task.CompletedTask;
         }
 
         /// <summary>
