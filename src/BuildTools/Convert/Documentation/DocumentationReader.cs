@@ -28,34 +28,27 @@ namespace Generator.Convert.Documentation
         /// <param name="directory">The directory which contains the docs.gl XHTML files.</param>
         /// <param name="prefix">The prefix to be removed from the function names.</param>
         /// <returns>A dictionary where the function name is the key, and its documentation is the value.</returns>
-        public static async Task<ProfileDocumentation> ReadDocumentationAsync(string directory, string prefix)
+        public static ProfileDocumentation ReadDocumentation(string directory, string prefix)
         {
             return new ProfileDocumentation
             {
-                Functions = (await Task.WhenAll
-                    (
-                        Directory.GetFiles(directory, "*.xhtml")
-                            .Select(ReadDocumentationAsync)
-                    ))
+                Functions = Directory.GetFiles(directory, "*.xhtml").Select(ReadDocumentation)
                     .ToDictionary(x => x.Key.Substring(prefix.Length), x => x.Value)
             };
         }
 
-        private static Task<KeyValuePair<string, FunctionDocumentation>> ReadDocumentationAsync(string xhtmlFile)
+        private static KeyValuePair<string, FunctionDocumentation> ReadDocumentation(string xhtmlFile)
         {
             if (!File.Exists(xhtmlFile))
             {
-                return Task.FromResult
+                return new KeyValuePair<string, FunctionDocumentation>
                 (
-                    new KeyValuePair<string, FunctionDocumentation>
-                    (
-                        Path.GetFileNameWithoutExtension(xhtmlFile),
-                        new FunctionDocumentation
-                        {
-                            Summary = "To be added.",
-                            Parameters = new Dictionary<string, ParameterDocumentation>()
-                        }
-                    )
+                    Path.GetFileNameWithoutExtension(xhtmlFile),
+                    new FunctionDocumentation
+                    {
+                        Summary = "To be added.",
+                        Parameters = new Dictionary<string, ParameterDocumentation>()
+                    }
                 );
             }
 
@@ -64,13 +57,10 @@ namespace Generator.Convert.Documentation
             {
                 var m = RedirectRegex.Match(file);
                 var redirected = Path.Combine(Path.GetDirectoryName(xhtmlFile), m.Groups["redirect"].Value + ".xhtml");
-                return Task.FromResult
+                return new KeyValuePair<string, FunctionDocumentation>
                 (
-                    new KeyValuePair<string, FunctionDocumentation>
-                    (
-                        Path.GetFileNameWithoutExtension(xhtmlFile),
-                        ReadDocumentationAsync(redirected).GetAwaiter().GetResult().Value
-                    )
+                    Path.GetFileNameWithoutExtension(xhtmlFile),
+                    ReadDocumentation(redirected).Value
                 );
             }
 
@@ -130,13 +120,10 @@ namespace Generator.Convert.Documentation
                                   )
                                   .TrimEnd('.') + ".";
 
-            return Task.FromResult
+            return new KeyValuePair<string, FunctionDocumentation>
             (
-                new KeyValuePair<string, FunctionDocumentation>
-                (
-                    Path.GetFileNameWithoutExtension(xhtmlFile),
-                    new FunctionDocumentation {Summary = description, Parameters = parameters}
-                )
+                Path.GetFileNameWithoutExtension(xhtmlFile),
+                new FunctionDocumentation {Summary = description, Parameters = parameters}
             );
         }
 
@@ -169,7 +156,7 @@ namespace Generator.Convert.Documentation
         /// <returns>The parsed documentation.</returns>
         public static ProfileDocumentation ReadProfileDocumentation(string directory, string prefix)
         {
-            return ReadDocumentationAsync(directory, prefix).GetAwaiter().GetResult();
+            return ReadDocumentation(directory, prefix);
         }
     }
 }
