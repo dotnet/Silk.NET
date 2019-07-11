@@ -76,21 +76,11 @@ namespace Generator.Convert.Documentation
 
             var document = new HtmlDocument();
             document.LoadHtml(file);
-            var div = document.DocumentNode.ChildNodes.FirstOrDefault(x => x.Name == "div")
-                ?.ChildNodes.FirstOrDefault
-                (
-                    x => x.HasClass("refsect1") && x.ChildNodes.Any(y => y.Name == "h2" && y.InnerText == "Parameters")
-                );
+            var variableList = document.DocumentNode.SelectNodes("//dl[contains(@class, 'variablelist')]")?.FirstOrDefault()?.ChildNodes;
 
             var parameters = new Dictionary<string, ParameterDocumentation>();
-            if (div != null)
+            if (variableList != null)
             {
-                var variableList = div?.ChildNodes.FirstOrDefault(x => x.HasClass("variablelist"))
-                    ?
-                    .ChildNodes
-                    .FirstOrDefault(x => x.Name == "dl")
-                    ?
-                    .ChildNodes;
                 var dt = string.Empty; // parameter name
                 foreach (var child in variableList)
                 {
@@ -100,16 +90,26 @@ namespace Generator.Convert.Documentation
                     }
                     else if (child.Name == "dd")
                     {
-                        parameters[dt] = new ParameterDocumentation
+                        var names = new[] { dt.Trim() };
+                        if (dt.Contains(", "))
                         {
-                            Summary = StyleGuideCompliance(FixWhitespace(MegaTrim(child.InnerText))).Trim()
-                        };
+                            names = dt.Split(", ".ToCharArray());
+                        }
+
+                        foreach (var name in names)
+                        {
+                            parameters[name.Trim()] = new ParameterDocumentation
+                            {
+                                Summary = StyleGuideCompliance(FixWhitespace(MegaTrim(child.InnerText))).Trim()
+                            };
+                        }
+                        
                         dt = string.Empty;
                     }
                 }
             }
 
-            div = document.DocumentNode.ChildNodes.FirstOrDefault(x => x.Name == "div")
+            var div = document.DocumentNode.ChildNodes.FirstOrDefault(x => x.Name == "div")
                 ?.ChildNodes.FirstOrDefault
                 (
                     x => x.HasClass("refnamediv") && x.ChildNodes.Any(y => y.Name == "h2" && y.InnerText == "Name")
