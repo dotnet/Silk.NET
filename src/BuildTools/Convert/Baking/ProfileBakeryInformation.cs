@@ -85,8 +85,8 @@ namespace Generator.Convert.Baking
             .Implements("gl-2.0", "gl-2.1")
             .Implements("gl-3.0", "gl-3.1", "gl-3.2", "gl-3.3")
             .Implements("gl-4.0", "gl-4.1", "gl-4.2", "gl-4.3", "gl-4.4", "gl-4.5", "gl-4.6")
-            .WithNamespaces("Silk.NET.OpenGL", "Silk.NET.OpenGL.Extensions")
-            .WithName("OpenGL")
+            .WithNamespaces("Silk.NET.OpenGL.Legacy", "Silk.NET.OpenGL.Legacy.Extensions")
+            .WithName("OpenGL (Compatibility Profile)")
             .WithOutputFolder("OpenGL")
             .WithClassName("GL")
             .WithLibraries
@@ -111,8 +111,8 @@ namespace Generator.Convert.Baking
             .Implements("glcore-3.0", "glcore-3.1", "glcore-3.2", "glcore-3.3")
             .Implements("glcore-4.0", "glcore-4.1", "glcore-4.2", "glcore-4.3", "glcore-4.4", "glcore-4.5")
             .Implements("glcore-4.6")
-            .WithNamespaces("Silk.NET.OpenGL.Core", "Silk.NET.OpenGL.Core.Extensions")
-            .WithName("OpenGL (Core Profile)")
+            .WithNamespaces("Silk.NET.OpenGL", "Silk.NET.OpenGL.Extensions")
+            .WithName("OpenGL")
             .WithOutputFolder("OpenGL")
             .WithClassName("GL")
             .WithLibraries
