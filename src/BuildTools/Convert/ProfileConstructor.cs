@@ -73,10 +73,9 @@ namespace Generator.Convert
         }
 
         /// <summary>
-        /// Asynchronously reads a profile from the given XML block.
+        /// Reads a profile from the given XML block.
         /// </summary>
         /// <param name="api">The XML block.</param>
-        /// <returns>An asynchronous task.</returns>
         private Profile ReadProfile(XElement api)
         {
             var profile = new Profile
