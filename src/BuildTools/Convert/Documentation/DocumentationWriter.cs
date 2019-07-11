@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Generator.Common;
+using Generator.Convert.Construction;
 using Humanizer;
 using MoreLinq.Extensions;
 
@@ -59,9 +60,13 @@ namespace Generator.Convert.Documentation
         {
             foreach (var function in @interface.Functions)
             {
-                if (doc.Functions.ContainsKey(function.Name))
+                if (NameTrimmer.GetNameVariations(function.NativeName).Any(doc.Functions.ContainsKey))
                 {
-                    doc.Functions[function.Name].Write(function);
+                    doc.Functions
+                    [
+                        NameTrimmer.GetNameVariations(function.NativeName).FirstOrDefault(doc.Functions.ContainsKey)
+                    ]
+                    .Write(function);
                 }
                 else
                 {
