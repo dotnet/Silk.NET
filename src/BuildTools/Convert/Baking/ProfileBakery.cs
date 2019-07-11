@@ -22,14 +22,13 @@ namespace Generator.Convert.Baking
     public class ProfileBakery
     {
         /// <summary>
-        /// Asynchronously bakes APIs together given the <see cref="ProfileBakeryInformation" />, and outputs the baked
+        /// Bakes APIs together given the <see cref="ProfileBakeryInformation" />, and outputs the baked
         /// profile to the given folder.
         /// </summary>
         /// <param name="information">The information of what APIs to bake.</param>
         /// <param name="folder">The output folder.</param>
         /// <param name="pretty">Whether the output JSON should be pretty-printed.</param>
-        /// <returns>An asynchronous task.</returns>
-        public static Task BakeAsync(ProfileBakeryInformation information, string folder, bool pretty)
+        public static void Bake(ProfileBakeryInformation information, string folder, bool pretty)
         {
             // get APIs implemented
             var impl = information.Implements.Select(x => File.ReadAllText(Path.Combine(folder, "api-" + x + ".json")))
@@ -81,7 +80,6 @@ namespace Generator.Convert.Baking
             );
             
             Console.WriteLine("Created profile \""+information.Name+"\".");
-            return Task.CompletedTask;
         }
 
         private static void MergeAll(Profile profile) // this method could also be called Stir ;)
@@ -127,19 +125,6 @@ namespace Generator.Convert.Baking
         }
 
         /// <summary>
-        /// Asynchronously bakes multiple sets of APIs together, and outputs them to the given folder.
-        /// </summary>
-        /// <param name="information">The information for the sets of APIs.</param>
-        /// <param name="folder">The output folder.</param>
-        /// <param name="pretty">Whether the output JSON should be pretty-printed.</param>
-        /// <returns>An asynchronous task.</returns>
-        public static async Task BakeAsync
-            (IEnumerable<ProfileBakeryInformation> information, string folder, bool pretty)
-        {
-            await Task.WhenAll(information.Select(info => BakeAsync(info, folder, pretty)));
-        }
-
-        /// <summary>
         /// Deletes all of the unbaked/raw APIs in a folder.
         /// </summary>
         /// <param name="folder">The folder to search and destroy APIs in.</param>
@@ -161,7 +146,7 @@ namespace Generator.Convert.Baking
         /// <param name="pretty">Whether the output JSON should be pretty-printed.</param>
         public static void Bake(IEnumerable<ProfileBakeryInformation> information, string folder, bool pretty)
         {
-            BakeAsync(information, folder, pretty).GetAwaiter().GetResult();
+            information.ForEach(b => Bake(b, folder, pretty));
         }
     }
 }
