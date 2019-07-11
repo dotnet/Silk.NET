@@ -69,7 +69,7 @@ namespace Generator.Convert
             // in multiple files with different entries in each file).
             var entries = MergeDuplicates(sigs);
             SortTokens(entries);
-            return Task.WhenAll(sigs.SelectMany(s => s).Select(x => ReadProfileAsync(x))).GetAwaiter().GetResult();
+            return sigs.SelectMany(s => s).Select(ReadProfile);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Generator.Convert
         /// </summary>
         /// <param name="api">The XML block.</param>
         /// <returns>An asynchronous task.</returns>
-        private Task<Profile> ReadProfileAsync(XElement api)
+        private Profile ReadProfile(XElement api)
         {
             var profile = new Profile
             {
@@ -96,7 +96,7 @@ namespace Generator.Convert
             var enums = elements.Where(x => x.Name == "enum");
             var functions = elements.Where(x => x.Name == "function");
             profile.ParseXml(enums, functions);
-            return Task.FromResult(profile);
+            return profile;
         }
 
         /// <summary>
