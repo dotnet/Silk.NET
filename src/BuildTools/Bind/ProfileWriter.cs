@@ -347,7 +347,8 @@ namespace Generator.Bind
                     (
                         Binder.CliOptions.OutputPath,
                         prof.OutputFolder,
-                        prof.Projects["Core"].GetProjectName(prof)
+                        prof.Projects["Core"].GetProjectName(prof),
+                        prof.Projects["Core"].GetProjectName(prof) + ".csproj"
                     )
                 );
                 csproj.WriteLine($"    <ProjectReference Include=\"{core}\" />");
