@@ -6,7 +6,7 @@
 namespace Silk.NET.Input.Common
 {
     /// <summary>
-    /// Represents a joystick hat, a D-Pad.
+    /// Represents a joystick hat.
     /// </summary>
     public struct Hat
     {
