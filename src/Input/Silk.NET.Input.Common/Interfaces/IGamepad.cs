@@ -51,6 +51,6 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// Called when a trigger is moved.
         /// </summary>
-        event Action<IGamepad, Thumbstick> TriggerMoved;
+        event Action<IGamepad, Trigger> TriggerMoved;
     }
 }
