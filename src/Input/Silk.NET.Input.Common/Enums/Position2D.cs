@@ -10,10 +10,10 @@ namespace Silk.NET.Input.Common
     [Flags]
     public enum Position2D
     {
-        Up,
-        Down,
-        Left,
-        Right,
+        Up = 1,
+        Down = 2,
+        Left = 4,
+        Right = 8,
         
         UpLeft = Up | Left,
         UpRight = Up | Right,
