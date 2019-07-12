@@ -7,6 +7,9 @@ using System;
 
 namespace Silk.NET.Input.Common
 {
+    /// <summary>
+    /// Represents the position of a joystick <see cref="Hat"/>
+    /// </summary>
     [Flags]
     public enum Position2D
     {

@@ -5,6 +5,14 @@
 
 namespace Silk.NET.Input.Common
 {
+    /// <summary>
+    /// Represents the keys on a keyboard.
+    /// </summary>
+    /// <remarks>
+    /// <para>
+    /// The exact number of function keys provided depends on the current input backend.
+    /// </para>
+    /// </remarks>
     public enum Key
     {
         Unknown = 0,
