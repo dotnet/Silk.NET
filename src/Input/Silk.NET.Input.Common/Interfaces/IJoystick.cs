@@ -14,7 +14,7 @@ namespace Silk.NET.Input.Common
     public interface IJoystick : IInputDevice
     {
         /// <summary>
-        /// A list of all axes supported by this joystick.
+        /// A list of all axes reported by this joystick.
         /// </summary>
         IReadOnlyCollection<Axis> Axes { get; }
         
