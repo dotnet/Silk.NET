@@ -36,6 +36,9 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// Called when a button on this joystick is pressed.
         /// </summary>
+        /// <remarks>
+        /// This event is only called when the button is first pressed, and not every frame where the button is still pressed.
+        /// </remarks>
         event Action<IJoystick, Button> ButtonDown;
         
         /// <summary>
