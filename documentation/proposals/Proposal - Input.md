@@ -49,7 +49,7 @@ public interface IGamepad : IInputDevice
     event Action<IGamepad, Button> ButtonDown;
     event Action<IGamepad, Button> ButtonUp;
     event Action<IGamepad, Thumbstick> ThumbstickMoved;
-    event Action<IGamepad, Thumbstick> TriggerMoved;
+    event Action<IGamepad, Trigger> TriggerMoved;
 }
 ```
 

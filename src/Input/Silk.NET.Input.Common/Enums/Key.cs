@@ -5,6 +5,14 @@
 
 namespace Silk.NET.Input.Common
 {
+    /// <summary>
+    /// Represents the keys on a keyboard.
+    /// </summary>
+    /// <remarks>
+    /// <para>
+    /// When using some backends, only a certain number of function keys may be available. For example, if the backend only supports up to F12, events regarding F13 through F35 will never be raised.
+    /// </para>
+    /// </remarks>
     public enum Key
     {
         Unknown = 0,
