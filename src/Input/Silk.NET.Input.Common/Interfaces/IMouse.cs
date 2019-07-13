@@ -26,8 +26,8 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// Checks if a specific button is currently pressed.
         /// </summary>
-        /// <param name="btn"></param>
-        /// <returns></returns>
+        /// <param name="btn">The button to check.</param>
+        /// <returns>Whether or not the button is pressed down.</returns>
         bool IsButtonPressed(MouseButton btn);
         
         /// <summary>
