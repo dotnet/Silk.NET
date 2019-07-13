@@ -44,6 +44,9 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// Called when a button on this joystick is released.
         /// </summary>
+        /// <remarks>
+        /// This event is only called when the button is first released, and not every frame where the button is still released.
+        /// </remarks>
         event Action<IJoystick, Button> ButtonUp;
         
         /// <summary>
