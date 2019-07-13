@@ -24,7 +24,7 @@ namespace Silk.NET.Input.Common
         IReadOnlyCollection<Button> Buttons { get; }
         
         /// <summary>
-        /// A list of all hats supported by this joystick.
+        /// A list of all hats reported by this joystick.
         /// </summary>
         IReadOnlyCollection<Hat> Hats { get; }
         
