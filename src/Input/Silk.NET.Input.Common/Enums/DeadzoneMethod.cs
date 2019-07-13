@@ -11,7 +11,7 @@ namespace Silk.NET.Input.Common
     public enum DeadzoneMethod
     {
         /// <summary>
-        /// The traditional deadzone method.
+        /// The traditional deadzone method, where the reported value is directly proportional with the actual value until the actual value is within the deadzone - the reported value will be 0 in this case.
         /// </summary>
         /// <remarks>
         /// <para>
