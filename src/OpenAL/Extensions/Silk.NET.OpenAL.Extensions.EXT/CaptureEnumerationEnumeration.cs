@@ -8,29 +8,30 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using AdvancedDLSupport;
 using Silk.NET.Core.Attributes;
+using Silk.NET.OpenAL.Extensions.EXT.Enumeration;
 
-namespace Silk.NET.OpenAL.Extensions.Creative
+namespace Silk.NET.OpenAL.Extensions.EXT
 {
     /// <summary>
-    /// Exposes the API in the EnumerateAll extension.
+    /// Exposes the API in the CaptureEnumerationEnumeration extension.
     /// </summary>
-    [Extension("ALC_ENUMERATE_ALL_EXT")]
-    public abstract class EnumerateAll : ContextExtensionBase, IEnumerateAllContextState
+    [Extension("ALC_ENUMERATION_EXT")]
+    public abstract class CaptureEnumerationEnumeration : ContextExtensionBase, ICaptureEnumerationContextState
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected EnumerateAll(string path, ImplementationOptions options)
+        protected CaptureEnumerationEnumeration(string path, ImplementationOptions options)
             : base(path, options)
         {
         }
 
         /// <inheritdoc />
-        public abstract unsafe string GetString(Device* device, GetEnumerateAllContextString param);
+        public abstract unsafe string GetString(Device* device, GetCaptureEnumerationContextString param);
 
         /// <inheritdoc />
-        public abstract unsafe char* GetStringList(Device* device, GetEnumerateAllContextStringList param);
+        public abstract unsafe char* GetStringList(Device* device, GetCaptureContextStringList param);
 
-        /// <inheritdoc cref="GetStringList(Device*, GetEnumerateAllContextStringList)" />
-        public IEnumerable<string> GetStringList(GetEnumerateAllContextStringList param)
+        /// <inheritdoc cref="GetStringList(Silk.NET.OpenAL.Device*,GetCaptureContextStringList)" />
+        public IEnumerable<string> GetStringList(GetCaptureContextStringList param)
         {
             unsafe {
                 var result = GetStringList(null, param);

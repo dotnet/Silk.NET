@@ -13,7 +13,7 @@ using Silk.NET.Core.Native;
 
 
 // ReSharper disable VirtualMemberCallInConstructor
-namespace Silk.NET.OpenAL.Extensions.Creative.XRam
+namespace Silk.NET.OpenAL.Extensions.Creative
 {
     /// <summary>
     /// Exposes the X-RAM extension by Creative Labs.

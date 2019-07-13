@@ -6,13 +6,13 @@
 using AdvancedDLSupport;
 
 // ReSharper disable ExplicitCallerInfoArgument
-namespace Silk.NET.OpenAL.Extensions.Creative
+namespace Silk.NET.OpenAL.Extensions.EXT.Enumeration
 {
     /// <summary>
-    /// Defines the public API of the context-related functions of the EnumerateAll extension.
+    /// Defines the public API of the context-related functions of the Capture extension.
     /// </summary>
     [NativeSymbols(Prefix = "alc")]
-    internal interface IEnumerateAllContextState
+    internal interface ICaptureEnumerationContextState
     {
         /// <summary>
         /// Gets a named property on the context.
@@ -20,7 +20,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <param name="device">The device for the context.</param>
         /// <param name="param">The named property.</param>
         /// <returns>The value.</returns>
-        unsafe string GetString(Device* device, GetEnumerateAllContextString param);
+        unsafe string GetString(Device* device, GetCaptureEnumerationContextString param);
 
         /// <summary>
         /// Gets a named property on the context.
@@ -29,6 +29,6 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <param name="param">The named property.</param>
         /// <returns>The value.</returns>
         [NativeSymbol("GetString")]
-        unsafe char* GetStringList(Device* device, GetEnumerateAllContextStringList param);
+        unsafe char* GetStringList(Device* device, GetCaptureContextStringList param);
     }
 }

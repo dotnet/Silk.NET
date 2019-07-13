@@ -6,16 +6,16 @@
 using AdvancedDLSupport;
 using Silk.NET.Core.Attributes;
 
-namespace Silk.NET.OpenAL.Extensions.Creative
+namespace Silk.NET.OpenAL.Extensions.EXT
 {
     /// <summary>
     /// Exposes the multi-channel buffers extension by Creative Labs.
     /// </summary>
-    [Extension("AL_EXT_EFX")]
-    public abstract class MultiChannelBuffers : FormatExtensionBase<MultiChannelBufferFormat>, IMultiChannelBuffers
+    [Extension("AL_EXT_MULAW")]
+    public abstract class MULAWFormat : FormatExtensionBase<MULAWBufferFormat>, IMULAWFormat
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected MultiChannelBuffers(string path, ImplementationOptions options)
+        protected MULAWFormat(string path, ImplementationOptions options)
             : base(path, options)
         {
         }

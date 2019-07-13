@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-namespace Silk.NET.OpenAL.Extensions.Creative.XRam
+namespace Silk.NET.OpenAL.Extensions.Creative
 {
     /// <summary>
     /// This enum is used to abstract the need of using AL.GetEnumValue() with the extension. The values do not
