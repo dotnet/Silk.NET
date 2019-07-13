@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-namespace Silk.NET.OpenAL.Extensions.Soft.DeferredUpdates
+namespace Silk.NET.OpenAL.Extensions.Soft
 {
     /// <summary>
     /// A list of valid <see cref="bool" /> <see cref="IDeferredUpdatesState.GetBoolean" /> parameters.

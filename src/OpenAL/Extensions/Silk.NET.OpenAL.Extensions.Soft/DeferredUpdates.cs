@@ -8,7 +8,7 @@ using AdvancedDLSupport;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 
-namespace Silk.NET.OpenAL.Extensions.Soft.DeferredUpdates
+namespace Silk.NET.OpenAL.Extensions.Soft
 {
     /// <summary>
     /// Exposes the public API of the OpenAL Soft Deferred Updates extension.
