@@ -10,7 +10,7 @@ namespace Silk.NET.Input.Common
     /// </summary>
     /// <remarks>
     /// <para>
-    /// The exact number of function keys provided depends on the current input backend.
+    /// When using some backends, only a certain number of function keys may be available. For example, if the backend only supports up to F12, events regarding F13 through F35 will never be raised.
     /// </para>
     /// </remarks>
     public enum Key
