@@ -5,6 +5,14 @@
 
 namespace Silk.NET.Input.Common
 {
+    /// <summary>
+    /// Represents the indices of the mouse buttons.
+    /// </summary>
+    /// <remarks>
+    /// <para>
+    /// The number of buttons provided depends on the input backend currently being used.
+    /// </para>
+    /// </remarks>
     public enum MouseButton
     {
         Left,

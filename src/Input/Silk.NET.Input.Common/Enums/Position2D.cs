@@ -7,13 +7,16 @@ using System;
 
 namespace Silk.NET.Input.Common
 {
+    /// <summary>
+    /// Represents the position of a joystick <see cref="Hat"/>
+    /// </summary>
     [Flags]
     public enum Position2D
     {
-        Up,
-        Down,
-        Left,
-        Right,
+        Up = 1,
+        Down = 2,
+        Left = 4,
+        Right = 8,
         
         UpLeft = Up | Left,
         UpRight = Up | Right,
