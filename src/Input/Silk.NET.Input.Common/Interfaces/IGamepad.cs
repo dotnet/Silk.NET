@@ -36,6 +36,9 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// Called when a button is pressed.
         /// </summary>
+        /// <remarks>
+        /// This event is only called when the button is first pressed, and not every frame where the button is still pressed.
+        /// </remarks>
         event Action<IGamepad, Button> ButtonDown;
         
         /// <summary>
