@@ -19,7 +19,7 @@ namespace Silk.NET.Input.Common
         IReadOnlyCollection<Axis> Axes { get; }
         
         /// <summary>
-        /// A list of all buttons supported by this joystick.
+        /// A list of all buttons reported by this joystick.
         /// </summary>
         IReadOnlyCollection<Button> Buttons { get; }
         
