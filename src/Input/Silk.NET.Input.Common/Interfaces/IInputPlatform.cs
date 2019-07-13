@@ -17,6 +17,13 @@ namespace Silk.NET.Input.Common
         /// </summary>
         /// <param name="window">The window to check.</param>
         /// <returns>Whether or not this platform is applicable.</returns>
+        /// <remarks>
+        /// Generally, each Input package will also have a matching Windowing package,
+        /// and the Input package will reference the Windowing package. IsApplicable works
+        /// by checking that the given window is an instance created by the Windowing
+        /// package the Input package references. For example, GlfwInputPlatform will only
+        /// be applicable for a GlfwWindow.
+        /// </remarks>
         bool IsApplicable(IWindow window);
         
         /// <summary>
