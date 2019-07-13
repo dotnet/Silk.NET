@@ -5,6 +5,9 @@
 
 namespace Silk.NET.Input.Common
 {
+    /// <summary>
+    /// The different names a <see cref="Button"/> can have.
+    /// </summary>
     public enum ButtonName
     {
         A,

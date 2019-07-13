@@ -53,47 +53,47 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// The 1 key.
         /// </summary>
-        D1 = 49,
+        Number1 = 49,
 
         /// <summary>
         /// The 2 key.
         /// </summary>
-        D2 = 50,
+        Number2 = 50,
 
         /// <summary>
         /// The 3 key.
         /// </summary>
-        D3 = 51,
+        Number3 = 51,
 
         /// <summary>
         /// The 4 key.
         /// </summary>
-        D4 = 52,
+        Number4 = 52,
 
         /// <summary>
         /// The 5 key.
         /// </summary>
-        D5 = 53,
+        Number5 = 53,
 
         /// <summary>
         /// The 6 key.
         /// </summary>
-        D6 = 54,
+        Number6 = 54,
 
         /// <summary>
         /// The 7 key.
         /// </summary>
-        D7 = 55,
+        Number7 = 55,
 
         /// <summary>
         /// The 8 key.
         /// </summary>
-        D8 = 56,
+        Number8 = 56,
 
         /// <summary>
         /// The 9 key.
         /// </summary>
-        D9 = 57,
+        Number9 = 57,
 
         /// <summary>
         /// The semicolon key.
@@ -243,7 +243,7 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// The backslash.
         /// </summary>
-        Backslash = 92 /* \ */,
+        BackSlash = 92 /* \ */,
 
         /// <summary>
         /// The right bracket(closing bracket) key.
@@ -488,87 +488,87 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// The 0 key on the key pad.
         /// </summary>
-        KeyPad0 = 320,
+        Keypad0 = 320,
 
         /// <summary>
         /// The 1 key on the key pad.
         /// </summary>
-        KeyPad1 = 321,
+        Keypad1 = 321,
 
         /// <summary>
         /// The 2 key on the key pad.
         /// </summary>
-        KeyPad2 = 322,
+        Keypad2 = 322,
 
         /// <summary>
         /// The 3 key on the key pad.
         /// </summary>
-        KeyPad3 = 323,
+        Keypad3 = 323,
 
         /// <summary>
         /// The 4 key on the key pad.
         /// </summary>
-        KeyPad4 = 324,
+        Keypad4 = 324,
 
         /// <summary>
         /// The 5 key on the key pad.
         /// </summary>
-        KeyPad5 = 325,
+        Keypad5 = 325,
 
         /// <summary>
         /// The 6 key on the key pad.
         /// </summary>
-        KeyPad6 = 326,
+        Keypad6 = 326,
 
         /// <summary>
         /// The 7 key on the key pad.
         /// </summary>
-        KeyPad7 = 327,
+        Keypad7 = 327,
 
         /// <summary>
         /// The 8 key on the key pad.
         /// </summary>
-        KeyPad8 = 328,
+        Keypad8 = 328,
 
         /// <summary>
         /// The 9 key on the key pad.
         /// </summary>
-        KeyPad9 = 329,
+        Keypad9 = 329,
 
         /// <summary>
         /// The decimal key on the key pad.
         /// </summary>
-        KeyPadDecimal = 330,
+        KeypadDecimal = 330,
 
         /// <summary>
         /// The divide key on the key pad.
         /// </summary>
-        KeyPadDivide = 331,
+        KeypadDivide = 331,
 
         /// <summary>
         /// The multiply key on the key pad.
         /// </summary>
-        KeyPadMultiply = 332,
+        KeypadMultiply = 332,
 
         /// <summary>
         /// The subtract key on the key pad.
         /// </summary>
-        KeyPadSubtract = 333,
+        KeypadSubtract = 333,
 
         /// <summary>
         /// The add key on the key pad.
         /// </summary>
-        KeyPadAdd = 334,
+        KeypadAdd = 334,
 
         /// <summary>
         /// The enter key on the key pad.
         /// </summary>
-        KeyPadEnter = 335,
+        KeypadEnter = 335,
 
         /// <summary>
         /// The equal key on the key pad.
         /// </summary>
-        KeyPadEqual = 336,
+        KeypadEqual = 336,
 
         /// <summary>
         /// The left shift key.
