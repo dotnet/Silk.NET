@@ -44,6 +44,9 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// Called when a button is released.
         /// </summary>
+        /// <remarks>
+        /// This event is only called when the button is first released, and not every frame where the button is still released.
+        /// </remarks>
         event Action<IGamepad, Button> ButtonUp;
         
         /// <summary>
