@@ -5,10 +5,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Generator.Common;
+using Generator.Common.Enums;
+using Generator.Common.Functions;
 using Generator.Convert.Construction;
 using Generator.Convert.Documentation;
 using MoreLinq.Extensions;
@@ -65,6 +68,7 @@ namespace Generator.Convert.Baking
             profile.Names = information.NameContainer;
 
             MergeAll(profile); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
+            CheckForDuplicates(profile);
 
             // bake in the documentation
             if (!string.IsNullOrWhiteSpace(Converter.CliOptions.DocumentationFolder))
@@ -78,8 +82,8 @@ namespace Generator.Convert.Baking
                 Path.Combine(folder, information.Name + ".json"),
                 JsonConvert.SerializeObject(profile, pretty ? Formatting.Indented : Formatting.None)
             );
-            
-            Console.WriteLine("Created profile \""+information.Name+"\".");
+
+            Console.WriteLine("Created profile \"" + information.Name + "\".");
         }
 
         private static void MergeAll(Profile profile) // this method could also be called Stir ;)
@@ -110,6 +114,7 @@ namespace Generator.Convert.Baking
                             {
                                 continue;
                             }
+
                             interfaces[@interface.Name].Functions.Add(function);
                         }
                     }
@@ -121,6 +126,49 @@ namespace Generator.Convert.Baking
 
                 project.Enums = enums.Values.ToList();
                 project.Interfaces = interfaces;
+            }
+        }
+
+        private static void CheckForDuplicates(Profile profile)
+        {
+            foreach (var project in profile.Projects)
+            {
+                foreach (var @interface in project.Value.Interfaces)
+                {
+                    var functions = new List<Function>();
+                    foreach (var f in @interface.Value.Functions)
+                    {
+                        if (functions.Any(x => x.Equals(f))) continue;
+                        functions.Add(f);
+                    }
+
+                    @interface.Value.Functions = functions;
+                }
+
+                foreach (var @enum in project.Value.Enums)
+                {
+                    var tokens = new List<Token>();
+                    foreach (var token in @enum.Tokens)
+                    {
+                        var existingToken = tokens.FirstOrDefault(x => x.Name == token.Name);
+                        if (!(existingToken is null))
+                        {
+                            if (existingToken.Value != token.Value)
+                            {
+                                Debug.WriteLine("Warning: Two tokens with the same name but different values.");
+                                Debug.WriteLine("    " + existingToken.Name + " = " + existingToken.Value);
+                                Debug.WriteLine("    " + token.Name + " = " + token.Value);
+                                Debug.WriteLine(existingToken.Value + " will be used.");
+                            }
+
+                            continue;
+                        }
+
+                        tokens.Add(token);
+                    }
+
+                    @enum.Tokens = tokens;
+                }
             }
         }
 
