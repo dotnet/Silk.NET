@@ -15,4 +15,6 @@
     <PackageReference Include="System.Memory" Version="4.5.1" />
   </ItemGroup>
 
+  <Import Project="..\..\..\..\build\props\bindings.props" />
+
 </Project>

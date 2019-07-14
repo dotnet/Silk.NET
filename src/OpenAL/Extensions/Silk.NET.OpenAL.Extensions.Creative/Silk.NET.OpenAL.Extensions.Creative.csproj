@@ -9,4 +9,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Silk.NET.OpenAL\Silk.NET.OpenAL.csproj" />
   </ItemGroup>
+
+  <Import Project="..\..\..\..\build\props\bindings.props" />
 </Project>
