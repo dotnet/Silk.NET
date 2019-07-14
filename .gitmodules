@@ -1,0 +1,3 @@
+[submodule "build/docs.gl"]
+	path = build/docs.gl
+	url = https://github.com/BSVino/docs.gl

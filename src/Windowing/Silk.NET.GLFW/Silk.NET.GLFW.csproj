@@ -10,10 +10,6 @@
       <PackageReference Include="AdvancedDLSupport" Version="3.0.0" />
       <PackageReference Include="Ultz.Dispatcher" Version="1.1.0" />
     </ItemGroup>
-    
-    <ItemGroup>
-      <ProjectReference Include="..\..\Silk.NET.Core\Silk.NET.Core.csproj" />
-    </ItemGroup>
 
     <ItemGroup>
       <Content Include="..\..\..\build\native\glfw\glfw3-x64.dll" Link="runtimes/win-x64/native/glfw3-x64.dll" PackagePath="runtimes/win-x64/native" InProject="false" />
@@ -24,4 +20,6 @@
 
       <Content Include="Silk.NET.GLFW.targets" PackagePath="build/" />
     </ItemGroup>
+
+    <Import Project="..\..\..\build\props\bindings.props" />
 </Project>

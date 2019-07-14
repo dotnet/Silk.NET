@@ -1,0 +1,7 @@
+OpenGL/**/Enums/*.cs
+OpenGL/**/Interfaces/*.cs
+OpenCL/**/Enums/*.cs
+OpenCL/**/Interfaces/*.cs
+Vulkan/**/Enums/*.cs
+Vulkan/**/Interfaces/*.cs
+*.gen.cs

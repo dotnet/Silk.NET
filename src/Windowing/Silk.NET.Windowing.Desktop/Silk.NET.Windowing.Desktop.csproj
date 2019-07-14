@@ -14,4 +14,6 @@
       <PackageReference Include="Ultz.Dispatcher" Version="1.1.0" />
     </ItemGroup>
 
+    <Import Project="..\..\..\build\props\common.props" />
+
 </Project>

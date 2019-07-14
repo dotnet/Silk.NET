@@ -18,7 +18,7 @@ namespace Silk.NET.GLFW
         /// if the context uses a known profile, or <see cref="NET.GLFW.OpenGlProfile.Any" />
         /// if the OpenGL profile is unknown or the context is an OpenGL ES context.
         /// Note that the returned profile may not match the profile bits of the context flags,
-        /// as GLFW will try other means of detecting the profile when no bits are set. TODO: enum for missing crefs
+        /// as GLFW will try other means of detecting the profile when no bits are set.
         /// </summary>
         OpenGlProfile = 0x00022008
     }
