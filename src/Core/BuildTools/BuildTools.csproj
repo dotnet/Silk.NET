@@ -16,4 +16,6 @@
       <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     </ItemGroup>
 
+    <Import Project="..\..\..\build\props\common.props" />
+
 </Project>

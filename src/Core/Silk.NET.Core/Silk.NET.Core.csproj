@@ -9,4 +9,6 @@
       <PackageReference Include="AdvancedDLSupport" Version="3.0.0" />
     </ItemGroup>
 
+    <Import Project="..\..\..\build\props\common.props" />
+
 </Project>
