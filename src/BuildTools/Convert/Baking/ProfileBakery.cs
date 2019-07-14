@@ -31,10 +31,12 @@ namespace Generator.Convert.Baking
         public static void Bake(ProfileBakeryInformation information, string folder, bool pretty)
         {
             // get APIs implemented
+            Console.WriteLine("    Loading unbaked APIs...");
             var impl = information.Implements.Select(x => File.ReadAllText(Path.Combine(folder, "api-" + x + ".json")))
                 .Select(JsonConvert.DeserializeObject<Profile>)
                 .ToList();
 
+            Console.WriteLine("    Creating empty profile...");
             // create the profile
             var profile = new Profile
             {
@@ -54,24 +56,32 @@ namespace Generator.Convert.Baking
             );
 
             // bake in the implemented interfaces, enums, and extension projects
+            Console.WriteLine("    Separating unbaked APIs...");
             var extProjects = impl.SelectMany(x => x.Projects.Where(y => y.Key != "Core"));
             var coreProjects = impl.Select(x => x.Projects["Core"]).ToList();
             var coreFunc = coreProjects.SelectMany(x => x.Interfaces);
             var coreEnums = coreProjects.SelectMany(x => x.Enums);
+
+            Console.WriteLine("    Adding core interfaces...");
             profile.Projects["Core"].Interfaces = profile.Projects["Core"].Interfaces.Concat(coreFunc).ToDictionary();
+            Console.WriteLine("    Adding core enums...");
             profile.Projects["Core"].Enums.AddRange(coreEnums);
+            Console.WriteLine("    Adding extensions...");
             profile.Projects = profile.Projects.Concat(extProjects).ToDictionary();
             profile.FunctionPrefix = information.FunctionPrefix;
             profile.Names = information.NameContainer;
 
             MergeAll(profile); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
 
+            Console.WriteLine("    Documenting functions...");
+            
             // bake in the documentation
             if (!string.IsNullOrWhiteSpace(Converter.CliOptions.DocumentationFolder))
             {
                 DocumentationWriter.Write(profile, Converter.CliOptions.DocumentationFolder);
             }
 
+            Console.WriteLine("    Saving profile...");
             // save this to disk
             File.WriteAllText
             (
@@ -88,6 +98,8 @@ namespace Generator.Convert.Baking
             {
                 var enums = new Dictionary<string, Common.Enums.Enum>();
                 var interfaces = new Dictionary<string, Interface>();
+                
+                Console.WriteLine("    Baking enums...");
                 foreach (var enumeration in project.Enums)
                 {
                     if (enums.ContainsKey(enumeration.Name))
@@ -100,6 +112,7 @@ namespace Generator.Convert.Baking
                     }
                 }
 
+                Console.WriteLine("    Baking interfaces...");
                 foreach (var @interface in project.Interfaces.Values)
                 {
                     if (interfaces.ContainsKey(@interface.Name))
@@ -119,6 +132,7 @@ namespace Generator.Convert.Baking
                     }
                 }
 
+                Console.WriteLine("    Implementing baked profile...");
                 project.Enums = enums.Values.ToList();
                 project.Interfaces = interfaces;
             }
