@@ -234,7 +234,7 @@ namespace Generator.Bind
                 }
                 sw.WriteLine
                 (
-                    "        public SearchPathContainer SearchPaths { get; } = new "
+                    "        public override SearchPathContainer SearchPaths { get; } = new "
                              + profile.Names.ClassName + "();"
                 );
                 sw.WriteLine();
