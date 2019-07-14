@@ -172,7 +172,7 @@ namespace Generator.Bind
                 sw.WriteLine("    /// <summary>");
                 sw.WriteLine($"    /// Contains the library name of {profile.Name}.");
                 sw.WriteLine("    /// </summary>");
-                sw.WriteLine($"    internal class {profile.Names.ClassName} : PlatformLibraryNameContainerBase");
+                sw.WriteLine($"    internal class {profile.Names.ClassName} : SearchPathContainer");
                 sw.WriteLine("    {");
                 sw.WriteLine("        /// <inheritdoc />");
                 sw.WriteLine($"        public override string Linux => \"{profile.Names.Linux}\";");
@@ -187,7 +187,10 @@ namespace Generator.Bind
                 sw.WriteLine($"        public override string IOS => \"{profile.Names.IOS}\";");
                 sw.WriteLine();
                 sw.WriteLine("        /// <inheritdoc />");
-                sw.WriteLine($"        public override string Windows => \"{profile.Names.Windows}\";");
+                sw.WriteLine($"        public override string Windows64 => \"{profile.Names.Windows}\";");
+                sw.WriteLine();
+                sw.WriteLine("        /// <inheritdoc />");
+                sw.WriteLine($"        public override string Windows86 => \"{profile.Names.Windows}\";");
                 sw.WriteLine("    }");
                 sw.WriteLine("}");
             }
