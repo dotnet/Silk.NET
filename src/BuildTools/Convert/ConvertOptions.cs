@@ -54,9 +54,14 @@ namespace Generator.Convert
 
         /// <summary>
         /// Gets or sets a list of paths to JSON <see cref="ProfileBakeryInformation" /> files.
-        /// Defaults to <see cref="ProfileBakeryInformation.Default" />.
         /// </summary>
-        [Option('b', "bakery-info", HelpText = "A list of paths to JSON ProfileBakeryInformation files.")]
+        [Option
+        (
+            'b',
+            "bakery-info",
+            HelpText = "A list of paths to JSON ProfileBakeryInformation files.",
+            Required = true
+        )]
         public IEnumerable<string> BakeryInformation { get; set; }
 
         /// <summary>

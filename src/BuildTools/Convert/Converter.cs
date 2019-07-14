@@ -48,10 +48,9 @@ namespace Generator.Convert
             Console.WriteLine("Baking raw profiles...");
             ProfileBakery.Bake
             (
-                CliOptions.BakeryInformation.Any()
-                    ? CliOptions.BakeryInformation.Select(File.ReadAllText)
-                        .Select(JsonConvert.DeserializeObject<ProfileBakeryInformation>)
-                    : ProfileBakeryInformation.Default,
+                CliOptions.BakeryInformation
+                    .Select(File.ReadAllText)
+                    .SelectMany(JsonConvert.DeserializeObject<ProfileBakeryInformation[]>),
                 CliOptions.OutputFolder,
                 CliOptions.PrettyPrinted
             );
