@@ -160,6 +160,38 @@ namespace Generator.Bind
             sw.Flush();
             sw.Close();
         }
+        
+        public static void WriteNameContainer(this Project project, Profile profile, string file)
+        {
+            using (var sw = new StreamWriter(file))
+            {
+                sw.WriteLine("using Silk.NET.Core.Loader;");
+                sw.WriteLine();
+                sw.WriteLine("namespace " + profile.Namespace + project.Namespace);
+                sw.WriteLine("{");
+                sw.WriteLine("    /// <summary>");
+                sw.WriteLine($"    /// Contains the library name of {profile.Name}.");
+                sw.WriteLine("    /// </summary>");
+                sw.WriteLine($"    internal class {profile.Names.ClassName} : PlatformLibraryNameContainerBase");
+                sw.WriteLine("    {");
+                sw.WriteLine("        /// <inheritdoc />");
+                sw.WriteLine($"        public override string Linux => \"{profile.Names.Linux}\";");
+                sw.WriteLine();
+                sw.WriteLine("        /// <inheritdoc />");
+                sw.WriteLine($"        public override string MacOS => \"{profile.Names.MacOS}\";");
+                sw.WriteLine();
+                sw.WriteLine("        /// <inheritdoc />");
+                sw.WriteLine($"        public override string Android => \"{profile.Names.Android}\";");
+                sw.WriteLine();
+                sw.WriteLine("        /// <inheritdoc />");
+                sw.WriteLine($"        public override string IOS => \"{profile.Names.IOS}\";");
+                sw.WriteLine();
+                sw.WriteLine("        /// <inheritdoc />");
+                sw.WriteLine($"        public override string Windows => \"{profile.Names.Windows}\";");
+                sw.WriteLine("    }");
+                sw.WriteLine("}");
+            }
+        }
 
         public static void WriteMixedModeClasses(this Project project, Profile profile, string folder)
         {
@@ -236,7 +268,10 @@ namespace Generator.Bind
                     sw.WriteLine("}");
                     sw.WriteLine();
                     sw.Flush();
+                    sw.Dispose();
                 }
+                
+                project.WriteNameContainer(profile, Path.Combine(folder, profile.Names.ClassName + ".cs"));
             }
             else
             {
