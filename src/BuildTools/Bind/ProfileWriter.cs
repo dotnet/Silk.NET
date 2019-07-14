@@ -316,6 +316,9 @@ namespace Generator.Bind
                     sw.WriteLine("            : base(path, opts)");
                     sw.WriteLine("        {");
                     sw.WriteLine("        }");
+                    sw.WriteLine("    }");
+                    sw.WriteLine("}");
+                    sw.WriteLine();
                     sw.Flush();
                 }
             }
