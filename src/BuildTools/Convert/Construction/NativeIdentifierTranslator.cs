@@ -8,6 +8,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using Generator.Common;
 using Humanizer;
 using JetBrains.Annotations;
 
@@ -86,7 +87,7 @@ namespace Generator.Convert.Construction
             }
 
             var newName = builder.ToString().Pascalize();
-            return newName;
+            return newName.CheckMemberName(Converter.CliOptions.Prefix);
         }
     }
 }

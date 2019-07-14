@@ -5,6 +5,7 @@
 
 using System.Linq;
 using System.Text.RegularExpressions;
+using Generator.Common;
 using Generator.Common.Functions;
 
 namespace Generator.Convert.Construction.Trimmers
@@ -54,7 +55,7 @@ namespace Generator.Convert.Construction.Trimmers
         /// <inheritdoc />
         public Function Trim(Function trimmable)
         {
-            trimmable.Name = Trim(trimmable.NativeName);
+            trimmable.Name = Trim(trimmable.NativeName).CheckMemberName(Converter.CliOptions.Prefix);
             return trimmable;
         }
 

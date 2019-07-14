@@ -203,5 +203,15 @@ namespace Generator.Common
 
             return builder.ToString();
         }
+
+        public static string CheckMemberName(this string name, string fPrefix)
+        {
+            if (!"ABCDEFGHIJKLMNOPQRSTUVWXYZ_".ToCharArray().Contains(name[0]))
+            {
+                return fPrefix.ToUpper() + name;
+            }
+
+            return name;
+        }
     }
 }

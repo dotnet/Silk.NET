@@ -83,7 +83,7 @@ namespace Generator.Convert
                 Name = api.Attribute("name")?.Value,
                 Version = api.Attribute("version")?.Value ?? string.Empty,
                 TypeMaps = TypeMaps ?? new List<Dictionary<string, string>>(), // NRE
-                ClassName = Prefix.ToUpper()
+                ClassName = Prefix.ToUpper().CheckMemberName(Converter.CliOptions.Prefix)
             };
             var elements = api.Elements()
                 .OrderBy(s => s.Name.LocalName)

@@ -36,7 +36,7 @@ namespace Generator.Convert.Construction
             {
                 Name = NativeIdentifierTranslator.TranslateIdentifierName
                 (
-                    element.Attribute("name")?.Value
+                    element.Attribute("name")?.Value.CheckMemberName(Converter.CliOptions.Prefix)
                     ?? throw new InvalidOperationException("No name attribute.")
                 ),
                 NativeName = element.Attribute("name")?.Value,
@@ -49,7 +49,8 @@ namespace Generator.Convert.Construction
                 (
                     new Token
                     {
-                        Name = NativeIdentifierTranslator.TranslateIdentifierName(child.Attribute("name")?.Value),
+                        Name = NativeIdentifierTranslator.TranslateIdentifierName(child.Attribute("name")?.Value)
+                            .CheckMemberName(Converter.CliOptions.Prefix),
                         NativeName = child.Attribute("name")?.Value,
                         Value = FormatToken(child.Attribute("value")?.Value),
                         Attributes = deprecatedSince != null
@@ -91,7 +92,7 @@ namespace Generator.Convert.Construction
             var returnType = ParsingHelpers.ParseTypeSignature(returnElement);
             return new Function
             {
-                Name = NameTrimmer.Trim(functionName),
+                Name = NameTrimmer.Trim(functionName).CheckMemberName(Converter.CliOptions.Prefix),
                 NativeName = functionName,
                 Parameters = parameters.ToList(),
                 ReturnType = returnType,
@@ -257,7 +258,7 @@ namespace Generator.Convert.Construction
         public static void WriteEnums(this Profile profile, IEnumerable<Enum> enums)
         {
             var mergedEnums = new Dictionary<string, Enum>();
-            var gl = profile.ClassName.ToUpper();
+            var gl = profile.ClassName.ToUpper().CheckMemberName(Converter.CliOptions.Prefix);
             mergedEnums.Add(gl + "Enum", new Enum() {Name = gl + "Enum", ExtensionName = "Core"});
             
             // first, we need to categorise the enums into "Core", or their vendor (i.e. "NV", "SGI", "KHR" etc)
@@ -275,7 +276,7 @@ namespace Generator.Convert.Construction
                         mergedEnums.Add
                         (
                             suffix,
-                            new Enum() {Name = suffix, ExtensionName = suffix}
+                            new Enum{Name = suffix.CheckMemberName(Converter.CliOptions.Prefix), ExtensionName = suffix}
                         );
                     }
                     mergedEnums[suffix].Tokens.AddRange(@enum.Tokens);
@@ -293,7 +294,7 @@ namespace Generator.Convert.Construction
                         new Project
                         {
                             CategoryName = @enum.ExtensionName, ExtensionName = @enum.ExtensionName, IsRoot = false,
-                            Namespace = "." + @enum.ExtensionName
+                            Namespace = "." + @enum.ExtensionName.CheckMemberName(Converter.CliOptions.Prefix)
                         }
                     );
                 }
@@ -337,7 +338,7 @@ namespace Generator.Convert.Construction
                             new Project
                             {
                                 CategoryName = category, ExtensionName = category, IsRoot = false,
-                                Namespace = "." + category
+                                Namespace = "." + category.CheckMemberName(Converter.CliOptions.Prefix)
                             }
                         );
                     }
@@ -356,6 +357,7 @@ namespace Generator.Convert.Construction
                                 new Interface
                                 {
                                     Name = "I" + NativeIdentifierTranslator.TranslateIdentifierName(rawCategory)
+                                        .CheckMemberName(Converter.CliOptions.Prefix)
                                 }
                             );
                     }

@@ -5,6 +5,7 @@
 
 using System;
 using System.Text;
+using Generator.Common;
 using Generator.Common.Functions;
 
 namespace Generator.Convert.Construction.Trimmers
@@ -30,7 +31,7 @@ namespace Generator.Convert.Construction.Trimmers
         {
             var extensionNameIndex = trimmable.NativeName.LastIndexOf
                 (trimmable.ExtensionName, StringComparison.OrdinalIgnoreCase);
-            trimmable.Name = trimmable.NativeName.Remove(extensionNameIndex);
+            trimmable.Name = trimmable.NativeName.Remove(extensionNameIndex).CheckMemberName(Converter.CliOptions.Prefix);
             return trimmable;
         }
 
