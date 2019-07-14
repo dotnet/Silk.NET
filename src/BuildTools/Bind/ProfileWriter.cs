@@ -247,7 +247,7 @@ namespace Generator.Bind
                 if (!File.Exists(Path.Combine(folder, profile.ClassName + ".cs")))
                 {
                     sw = new StreamWriter(Path.Combine(folder, profile.ClassName + ".cs"));
-                    sw.WriteLine("using Silk.NET.Core;");
+                    sw.WriteLine("using Silk.NET.Core.Loader;");
                     sw.WriteLine();
                     sw.WriteLine("namespace " + profile.Namespace + project.Namespace);
                     sw.WriteLine("{");
