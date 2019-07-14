@@ -83,7 +83,7 @@ namespace Generator.Bind
         public static void WriteInterface(this Interface @interface, string file, Profile profile, Project project)
         {
             var sw = new StreamWriter(file);
-            sw.Write(LicenseText.Value);
+            sw.WriteLine(LicenseText.Value);
             sw.WriteLine("using System;");
             sw.WriteLine("using System.Runtime.InteropServices;");
             sw.WriteLine("using System.Text;");
@@ -141,8 +141,7 @@ namespace Generator.Bind
         public static void WriteMetaInterface(this Project project, Profile profile, string file)
         {
             var sw = new StreamWriter(file);
-            sw.Write(LicenseText.Value);
-            sw.WriteLine();
+            sw.WriteLine(LicenseText.Value);
             sw.WriteLine("namespace " + profile.Namespace + project.Namespace);
             sw.WriteLine("{");
             var names = project.Interfaces.Select(x => x.Value.Name).ToArray();
@@ -165,6 +164,7 @@ namespace Generator.Bind
         {
             using (var sw = new StreamWriter(file))
             {
+                sw.WriteLine(LicenseText.Value);
                 sw.WriteLine("using Silk.NET.Core.Loader;");
                 sw.WriteLine();
                 sw.WriteLine("namespace " + profile.Namespace + project.Namespace);
