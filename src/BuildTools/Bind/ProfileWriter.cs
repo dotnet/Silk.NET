@@ -214,7 +214,7 @@ namespace Generator.Bind
                 sw.WriteLine();
                 sw.WriteLine("namespace " + profile.Namespace + project.Namespace);
                 sw.WriteLine("{");
-                sw.WriteLine("    public partial class " + profile.ClassName + " : NativeAPI, I" + profile.ClassName);
+                sw.WriteLine($"    public abstract partial class {profile.ClassName} : NativeAPI, I{profile.ClassName}");
                 sw.WriteLine("    {");
                 var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).RemoveDuplicates();
                 foreach (var function in allFunctions)
@@ -293,7 +293,7 @@ namespace Generator.Bind
                     sw.WriteLine();
                     sw.WriteLine("namespace " + profile.ExtensionsNamespace + project.Namespace);
                     sw.WriteLine("{");
-                    sw.WriteLine($"    public partial class {name} : NativeExtension<{profile.ClassName}>, I{name}");
+                    sw.WriteLine($"    public abstract partial class {name} : NativeExtension<{profile.ClassName}>, I{name}");
                     sw.WriteLine("    {");
                     foreach (var function in i.Functions)
                     {
