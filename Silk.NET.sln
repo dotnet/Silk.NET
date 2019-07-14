@@ -35,7 +35,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenAL.Extensions.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenAL.Extensions.Soft", "src\OpenAL\Extensions\Silk.NET.OpenAL.Extensions.Soft\Silk.NET.OpenAL.Extensions.Soft.csproj", "{94D7D3A3-3640-4791-BE19-CA50C59187C6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Input", "Input", "{AE36230C-E8F4-4332-9F50-9253E6511FED}"
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenAL.Extensions.Soft.DeferredUpdates", "src\OpenAL\Extensions\Silk.NET.OpenAL.Extensions.Soft.DeferredUpdates\Silk.NET.OpenAL.Extensions.Soft.DeferredUpdates.csproj", "{50987EDD-9F49-4981-ADAE-98F01F4A4FBA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Properties", "Build Properties", "{21F1A5E2-9861-49A6-934D-DF5AAA03AFFE}"
