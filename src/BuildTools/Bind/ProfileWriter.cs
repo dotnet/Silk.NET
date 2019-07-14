@@ -54,7 +54,7 @@ namespace Generator.Bind
                 sw.WriteLine("    " + attr);
             }
 
-            sw.WriteLine("    public enum " + @enum.Name + " : uint");
+            sw.WriteLine("    public enum " + @enum.Name);
             sw.WriteLine("    {");
             for (var index = 0; index < @enum.Tokens.Count; index++)
             {
