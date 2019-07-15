@@ -1,0 +1,82 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
+using System;
+using System.Linq;
+using Silk.NET.GLFW;
+using Silk.NET.Input.Common;
+using Ultz.Dispatcher.Unsafe;
+
+namespace Silk.NET.Input.Desktop
+{
+    internal static class Util
+    {
+        private static string[] _glfwKeys = Enum.GetNames(typeof(Keys));
+        public static object Do(Delegate @delegate)
+        {
+            return GlfwProvider.ThreadDispatcher.Invoke(@delegate);
+        }
+        
+        public static void Do(Action @delegate)
+        {
+            GlfwProvider.ThreadDispatcher.Invoke(@delegate);
+        }
+
+        public static T Do<T>(Func<T> @delegate)
+        {
+            return GlfwProvider.ThreadDispatcher.Invoke(@delegate);
+        }
+
+        public static unsafe T* Do<T>(Func<UnsafeDispatch<T>> @delegate)
+            where T:unmanaged
+        {
+            return GlfwProvider.ThreadDispatcher.Invoke(@delegate);
+        }
+
+        public static float ApplyDeadzone(Deadzone deadzone, float val)
+        {
+            switch (deadzone.Method)
+            {
+                case DeadzoneMethod.Traditional:
+                    return Math.Abs(val) < deadzone.Value ? 0 : val;
+                case DeadzoneMethod.AdaptiveGradient:
+                    return (1 - deadzone.Value) * val + deadzone.Value * Math.Sign(val);
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        public static Glfw Glfw => GlfwProvider.GLFW.Value;
+        public static Key[] SupportedKeys { get; } // this is expensive, but only runs once.
+            = Enum.GetNames(typeof(Key)).Where(_glfwKeys.Contains).Select(StringToSilkKey).ToArray();
+
+        public static Key StringToSilkKey(string s)
+        {
+            if (Enum.TryParse<Key>(s, out var k))
+            {
+                return k;
+            }
+            throw new ArgumentOutOfRangeException(nameof(s), $"Key name mismatch (couldn't find a Key value for {s}");
+        }
+
+        public static Keys SilkKeyToGlfwKey(Key k)
+        {
+            if (Enum.TryParse<Keys>(k.ToString(), out var gk))
+            {
+                return gk;
+            }
+            throw new ArgumentOutOfRangeException(nameof(k));
+        }
+
+        public static Key GlfwKeyToSilkKey(Keys k)
+        {
+            if (Enum.TryParse<Key>(k.ToString(), out var sk))
+            {
+                return sk;
+            }
+            throw new ArgumentOutOfRangeException(nameof(k));
+        }
+    }
+}

@@ -981,7 +981,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
-        unsafe int GetKey(WindowHandle* window, int key);
+        unsafe int GetKey(WindowHandle* window, Keys key);
 
         /// <summary>
         /// <para>

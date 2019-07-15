@@ -16,17 +16,17 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// A list of all axes reported by this joystick.
         /// </summary>
-        IReadOnlyCollection<Axis> Axes { get; }
+        IReadOnlyList<Axis> Axes { get; }
         
         /// <summary>
         /// A list of all buttons reported by this joystick.
         /// </summary>
-        IReadOnlyCollection<Button> Buttons { get; }
+        IReadOnlyList<Button> Buttons { get; }
         
         /// <summary>
         /// A list of all hats reported by this joystick.
         /// </summary>
-        IReadOnlyCollection<Hat> Hats { get; }
+        IReadOnlyList<Hat> Hats { get; }
         
         /// <summary>
         /// The deadzone to use for this joystick's axes.
