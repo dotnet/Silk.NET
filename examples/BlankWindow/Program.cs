@@ -6,6 +6,7 @@
 using System;
 using System.Drawing;
 using System.Threading;
+using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
 
@@ -13,6 +14,7 @@ namespace BlankWindow
 {
     internal class Program
     {
+        public static GL gl;
         public static IWindow window;
 
         private static void Main()
@@ -44,6 +46,8 @@ namespace BlankWindow
             window.VSync = VSyncMode.Off;
 
             Console.WriteLine($"Entry thread is {Thread.CurrentThread.ManagedThreadId}");
+
+            gl = GL.GetApi();
 
             window.Run();
         }
