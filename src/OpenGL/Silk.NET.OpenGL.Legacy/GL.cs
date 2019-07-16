@@ -1,3 +1,4 @@
+using System;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 
@@ -15,6 +16,10 @@ namespace Silk.NET.OpenGL.Legacy
         {
              ext = LibraryLoader<GL>.Load<T>(this);
              return ext != null;
+        }
+        public override bool IsExtensionPresent(string extension)
+        {
+            throw new NotImplementedException();
         }
     }
 }
