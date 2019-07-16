@@ -267,6 +267,10 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine($"             ext = LibraryLoader<{profile.ClassName}>.Load<T>(this);");
                     sw.WriteLine("             return ext != null;");
                     sw.WriteLine("        }");
+                    sw.WriteLine("        public bool IsExtensionPresent(string extension)");
+                    sw.WriteLine("        {");
+                    sw.WriteLine("            throw new NotImplementedException();");
+                    sw.WriteLine("        }");
                     sw.WriteLine("    }");
                     sw.WriteLine("}");
                     sw.WriteLine();
