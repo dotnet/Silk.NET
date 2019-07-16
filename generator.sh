@@ -1,9 +1,9 @@
 #!/bin/sh
 
-if [ -z $1 ]; then
+if [ -z "$@" ]; then
     export AddArgs="build/binder_scripts/build.json";
 else
-    export AddArgs=$1;
+    export AddArgs="$@"
 fi
 
 dotnet run --configuration Release -p src/Core/BuildTools/BuildTools.csproj $AddArgs
