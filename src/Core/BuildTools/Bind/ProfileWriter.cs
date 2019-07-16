@@ -7,11 +7,11 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using Generator.Common;
 using MoreLinq.Extensions;
-using Enum = Generator.Common.Enums.Enum;
+using Silk.NET.BuildTools.Common;
+using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
-namespace Generator.Bind
+namespace Silk.NET.BuildTools.Bind
 {
     /// <summary>
     /// Contains methods for writing profiles to disk.

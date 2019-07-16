@@ -10,7 +10,7 @@ using System.Text;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 
-namespace Generator.Common.Functions
+namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>
     /// Represents a C# function.

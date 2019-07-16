@@ -4,10 +4,10 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
-using Generator.Common.Functions;
 using JetBrains.Annotations;
+using Silk.NET.BuildTools.Common.Functions;
 
-namespace Generator.Bind.Overloading
+namespace Silk.NET.BuildTools.Bind.Overloading
 {
     /// <summary>
     /// Represents a class that can create a set of overloads from a given base signature.

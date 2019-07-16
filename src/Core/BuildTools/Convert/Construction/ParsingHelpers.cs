@@ -9,13 +9,13 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
-using Generator.Common.Functions;
-using Generator.Convert.XML;
 using JetBrains.Annotations;
 using Microsoft.CodeAnalysis.CSharp;
-using Type = Generator.Common.Functions.Type;
+using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Convert.XML;
+using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
-namespace Generator.Convert.Construction
+namespace Silk.NET.BuildTools.Convert.Construction
 {
     /// <summary>
     /// Shared functionality for the parsing classes.

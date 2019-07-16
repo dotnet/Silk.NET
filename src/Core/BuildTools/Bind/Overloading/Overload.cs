@@ -4,9 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Text;
-using Generator.Common.Functions;
+using Silk.NET.BuildTools.Common.Functions;
 
-namespace Generator.Bind.Overloading
+namespace Silk.NET.BuildTools.Bind.Overloading
 {
     public class Overload
     {

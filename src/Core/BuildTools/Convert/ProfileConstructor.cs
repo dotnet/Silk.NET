@@ -7,14 +7,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Xml.Linq;
-using Generator.Common;
-using Generator.Convert.Construction;
-using Generator.Convert.XML;
 using Newtonsoft.Json;
+using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Convert.Construction;
+using Silk.NET.BuildTools.Convert.XML;
 
-namespace Generator.Convert
+namespace Silk.NET.BuildTools.Convert
 {
     /// <summary>
     /// A class for reading and creating profiles from XML.

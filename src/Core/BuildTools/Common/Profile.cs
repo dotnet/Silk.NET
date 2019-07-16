@@ -6,7 +6,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Generator.Common
+namespace Silk.NET.BuildTools.Common
 {
     /// <summary>
     /// Represents a subsystem as defined in GitHub issue #823.

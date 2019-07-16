@@ -8,11 +8,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using HtmlAgilityPack;
 using Humanizer;
 
-namespace Generator.Convert.Documentation
+namespace Silk.NET.BuildTools.Convert.Documentation
 {
     /// <summary>
     /// Contains methods for reading docs.gl XHTML files.

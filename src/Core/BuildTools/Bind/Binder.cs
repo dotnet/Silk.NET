@@ -6,12 +6,11 @@
 using System;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
-using Generator.Common;
 using MoreLinq.Extensions;
 using Newtonsoft.Json;
+using Silk.NET.BuildTools.Common;
 
-namespace Generator.Bind
+namespace Silk.NET.BuildTools.Bind
 {
     /// <summary>
     /// The entry point for the bindings writer.

@@ -4,9 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
-using Generator.Common;
+using Silk.NET.BuildTools.Common;
 
-namespace Generator.Bind.Overloading
+namespace Silk.NET.BuildTools.Bind.Overloading
 {
     public static class Overloader
     {

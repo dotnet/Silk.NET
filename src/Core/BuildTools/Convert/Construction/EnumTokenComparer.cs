@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
 
-namespace Generator.Convert.Construction
+namespace Silk.NET.BuildTools.Convert.Construction
 {
     /// <summary>
     /// An equality comparer that compares enum names.

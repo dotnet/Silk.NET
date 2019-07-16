@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Generator.Common.Functions
+namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>
     /// Represents a parameter of a C# function.

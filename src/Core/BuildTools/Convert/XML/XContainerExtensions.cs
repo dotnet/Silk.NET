@@ -10,7 +10,7 @@ using System.Reflection;
 using System.Xml.Linq;
 using JetBrains.Annotations;
 
-namespace Generator.Convert.XML
+namespace Silk.NET.BuildTools.Convert.XML
 {
     /// <summary>
     /// Extension methods for the <see cref="XContainer" /> class.

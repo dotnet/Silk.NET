@@ -6,9 +6,9 @@
 using System.Collections.Generic;
 using CommandLine;
 using CommandLine.Text;
-using Generator.Convert.Baking;
+using Silk.NET.BuildTools.Convert.Baking;
 
-namespace Generator.Convert
+namespace Silk.NET.BuildTools.Convert
 {
     /// <summary>
     /// A container class used by <see cref="CommandLine.Parser" /> to parse command line arguments.

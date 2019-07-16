@@ -7,10 +7,10 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Generator.Convert.Baking;
 using Newtonsoft.Json;
+using Silk.NET.BuildTools.Convert.Baking;
 
-namespace Generator.Convert
+namespace Silk.NET.BuildTools.Convert
 {
     /// <summary>
     /// The entry point for the bindings converter.

@@ -12,7 +12,7 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
-namespace Generator.Convert.XML
+namespace Silk.NET.BuildTools.Convert.XML
 {
     /// <summary>
     /// A class which parses Khronos XML files and converts them to a friendlier format.

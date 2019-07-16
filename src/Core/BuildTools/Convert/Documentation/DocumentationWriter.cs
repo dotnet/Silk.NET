@@ -7,13 +7,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Generator.Common;
-using Generator.Convert.Construction;
 using Humanizer;
 using MoreLinq.Extensions;
+using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Convert.Construction;
 
-namespace Generator.Convert.Documentation
+namespace Silk.NET.BuildTools.Convert.Documentation
 {
     /// <summary>
     /// Contains methods for writing documentation to profiles.

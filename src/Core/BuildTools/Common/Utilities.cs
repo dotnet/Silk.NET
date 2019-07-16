@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using JetBrains.Annotations;
 
-namespace Generator.Common
+namespace Silk.NET.BuildTools.Common
 {
     /// <summary>
     /// Various utilities for use by the tool.
