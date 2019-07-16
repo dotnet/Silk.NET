@@ -439,7 +439,7 @@ namespace Silk.NET.BuildTools.Convert.XML
                 foreach (var api in apis.Values)
                 {
                     i++;
-                    var apiname = api.Attribute("name")?.Value;
+                    var apiname = api.Attribute("name").Value;
                     var cmd_version = version.Length > i ? version[i] : version[0];
 
                     // Mark all deprecated functions as such
