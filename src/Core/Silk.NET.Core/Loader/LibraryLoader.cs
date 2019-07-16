@@ -21,7 +21,7 @@ namespace Silk.NET.Core.Loader
 
         static LibraryLoader()
         {
-            _builder = new NativeLibraryBuilder();
+            _builder = new NativeLibraryBuilder(Options);
         }
 
         public static T1 Load<T1>(SearchPathContainer nameContainer) where T1 : NativeAPI
