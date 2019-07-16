@@ -8,11 +8,11 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using Generator.Common;
 using Humanizer;
 using JetBrains.Annotations;
+using Silk.NET.BuildTools.Common;
 
-namespace Generator.Convert.Construction
+namespace Silk.NET.BuildTools.Convert.Construction
 {
     /// <summary>
     /// Translates an identifier (a type name, a constant name, etc) into a .NET-style identifier.

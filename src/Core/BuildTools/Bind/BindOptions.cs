@@ -6,7 +6,7 @@
 using System.Collections.Generic;
 using CommandLine;
 
-namespace Generator.Bind
+namespace Silk.NET.BuildTools.Bind
 {
     /// <summary>
     /// Holds command-line arguments, parsed from the command line.

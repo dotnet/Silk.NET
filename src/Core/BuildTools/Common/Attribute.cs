@@ -6,7 +6,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Generator.Common
+namespace Silk.NET.BuildTools.Common
 {
     /// <summary>
     /// Represents a C# attribute.

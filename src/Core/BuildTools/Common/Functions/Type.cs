@@ -6,7 +6,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace Generator.Common.Functions
+namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>
     /// Represents a C# type signature.
@@ -103,12 +103,7 @@ namespace Generator.Common.Functions
                 return true;
             }
 
-            if (obj.GetType() != this.GetType())
-            {
-                return false;
-            }
-
-            return Equals((Type) obj);
+            return obj is Type type && Equals(type);
         }
 
         public override int GetHashCode()

@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Generator.Common.Functions
+namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>
     /// Represents a C# generic type parameter.
@@ -61,12 +61,7 @@ namespace Generator.Common.Functions
                 return true;
             }
 
-            if (obj.GetType() != this.GetType())
-            {
-                return false;
-            }
-
-            return Equals((GenericTypeParameter) obj);
+            return obj is GenericTypeParameter parameter && Equals(parameter);
         }
 
         public override int GetHashCode()

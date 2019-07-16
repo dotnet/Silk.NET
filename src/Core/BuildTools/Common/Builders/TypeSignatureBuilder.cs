@@ -3,10 +3,10 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using Generator.Common.Functions;
 using JetBrains.Annotations;
+using Silk.NET.BuildTools.Common.Functions;
 
-namespace Generator.Common.Builders
+namespace Silk.NET.BuildTools.Common.Builders
 {
     /// <summary>
     /// Acts as a builder for new instances of <see cref="TypeSignature" />s, based on existing instances.

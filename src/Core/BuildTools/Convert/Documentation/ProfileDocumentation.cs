@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Generator.Convert.Documentation
+namespace Silk.NET.BuildTools.Convert.Documentation
 {
     /// <summary>
     /// Represents parsed documentation for all functions in a profile.

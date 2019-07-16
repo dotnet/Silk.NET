@@ -10,7 +10,7 @@ using System.Text;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 
-namespace Generator.Common.Functions
+namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>
     /// Represents a C# function.
@@ -231,12 +231,7 @@ namespace Generator.Common.Functions
                 return true;
             }
 
-            if (obj.GetType() != this.GetType())
-            {
-                return false;
-            }
-
-            return Equals((Function) obj);
+            return obj is Function function && Equals(function);
         }
 
         public override int GetHashCode()

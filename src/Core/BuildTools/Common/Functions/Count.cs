@@ -9,7 +9,7 @@ using System.Linq;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 
-namespace Generator.Common.Functions
+namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>
     /// Represents a computed or static element count of a parameter. A computed parameter varies its count based on the
@@ -145,12 +145,7 @@ namespace Generator.Common.Functions
                 return $"COMPSIZE({string.Join(", ", ComputedFromNames)})";
             }
 
-            if (IsReference)
-            {
-                return $"valueof({ValueReference.Name})";
-            }
-
-            return StaticCount.ToString();
+            return IsReference ? $"valueof({ValueReference.Name})" : StaticCount.ToString();
         }
     }
 }

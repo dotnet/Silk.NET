@@ -12,7 +12,7 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
-namespace Generator.Convert.XML
+namespace Silk.NET.BuildTools.Convert.XML
 {
     /// <summary>
     /// A class which parses Khronos XML files and converts them to a friendlier format.
@@ -47,7 +47,7 @@ namespace Generator.Convert.XML
         /// <returns>A friendlier representation of the XML file.</returns>
         public IEnumerable<XElement> Parse(string path)
         {
-            string[] contents = null;
+            string[] contents;
             if (path.StartsWith("http://") || path.StartsWith("https://"))
             {
                 // Download from the specified url into a temporary file
@@ -100,12 +100,7 @@ namespace Generator.Convert.XML
                 return name.Remove(0, EnumPrefix.Length);
             }
 
-            if (name.StartsWith(FuncPrefix))
-            {
-                return name.Remove(0, FuncPrefix.Length);
-            }
-
-            return name;
+            return name.StartsWith(FuncPrefix) ? name.Remove(0, FuncPrefix.Length) : name;
         }
 
         /// <summary>
@@ -142,14 +137,14 @@ namespace Generator.Convert.XML
         /// <param name="feature">The XML element.</param>
         /// <returns>All API names in this XML element.</returns>
         /// <exception cref="NotSupportedException">The feature type is unknown.</exception>
-        private static string[] GetApiNames(XElement feature)
+        private static IEnumerable<string> GetApiNames(XElement feature)
         {
-            string[] apinames = null;
+            string[] apinames;
             switch (feature.Name.LocalName)
             {
                 case "feature":
                 {
-                    var v = feature.Attribute("api") != null ? feature.Attribute("api").Value : "gl|glcore";
+                    var v = feature.Attribute("api") != null ? feature.Attribute("api")?.Value : "gl|glcore";
                     if (v == "gl")
                     {
                         // Add all gl features to both compatibility (gl) and core (glcore) profiles.
@@ -158,14 +153,14 @@ namespace Generator.Convert.XML
                         v = "gl|glcore";
                     }
 
-                    apinames = v.Split('|');
+                    apinames = v?.Split('|');
                     break;
                 }
 
                 case "extension":
                 {
-                    var v = feature.Attribute("supported") != null ? feature.Attribute("supported").Value : "gl|glcore";
-                    apinames = v.Split('|');
+                    var v = feature.Attribute("supported") != null ? feature.Attribute("supported")?.Value : "gl|glcore";
+                    apinames = v?.Split('|');
                     break;
                 }
 
@@ -186,10 +181,14 @@ namespace Generator.Convert.XML
 
         private IEnumerable<XElement> ParseEnums(XDocument input)
         {
+            if (input.Root == null)
+            {
+                throw new NullReferenceException();
+            }
+            
             var features = input.Root.Elements("feature");
             var extensions = input.Root.Elements("extensions").Elements("extension");
             var enumerations = input.Root.Elements("enums").Elements("enum");
-            var groups = input.Root.Elements("groups").Elements("group");
             var apis = new SortedDictionary<string, XElement>();
 
             // Build a list of all available tokens.
@@ -197,6 +196,12 @@ namespace Generator.Convert.XML
             // so we need to keep separate lists for each API. Tokens
             // that are common go to the "default" list.
             var enums = new Dictionary<string, SortedDictionary<string, string>>();
+            
+            if (enumerations == null)
+            {
+                throw new NullReferenceException();
+            }
+            
             foreach (var e in enumerations)
             {
                 var api = (e.Attribute("api") ?? new XAttribute("api", "default")).Value;
@@ -208,8 +213,8 @@ namespace Generator.Convert.XML
                 enums[api]
                     .Add
                     (
-                        TrimName(e.Attribute("name").Value),
-                        e.Attribute("value").Value
+                        TrimName(e.Attribute("name")?.Value),
+                        e.Attribute("value")?.Value
                     );
             }
 
@@ -227,12 +232,9 @@ namespace Generator.Convert.XML
             // see also: https://github.com/KhronosGroup/OpenGL-Registry/pull/273
             // see also: https://discordapp.com/channels/521092042781229087/587346162802229298/590211773399826438
             // see also: https://github.com/Ultz/Silk.NET/commit/f5f112bbd42d2f547cdab6ddd767609dfcfa99d9
-            foreach (var feature in
-                features.Concat(extensions)
-//                  .Concat(groups)
-                    .OrderBy(f => TrimName(f.Attribute("name").Value)))
+            foreach (var feature in features.Concat(extensions).OrderBy(f => TrimName(f.Attribute("name")?.Value)))
             {
-                var version = feature.Attribute("number") != null ? feature.Attribute("number").Value : null;
+                var version = feature.Attribute("number") != null ? feature.Attribute("number")?.Value : null;
                 var apinames = GetApiNames(feature);
 
                 // An enum may belong to one or more APIs.
@@ -269,9 +271,8 @@ namespace Generator.Convert.XML
                                 : enum_name
                         )
                     );
-                    foreach (var token in
-                        feature.Elements("enum")
-                            .Concat(feature.Elements("require").Elements("enum")))
+                    
+                    foreach (var token in feature.Elements("enum").Concat(feature.Elements("require").Elements("enum")))
                     {
                         var token_name = TrimName(token.Attribute("name").Value);
                         var token_value =
@@ -303,7 +304,7 @@ namespace Generator.Convert.XML
 
                 foreach (var api in apis.Values)
                 {
-                    var apiname = api.Attribute("name").Value;
+                    var apiname = api.Attribute("name")?.Value;
 
                     // Mark deprecated enums
                     foreach (var token in feature.Elements("remove").Elements("enum"))
@@ -312,23 +313,25 @@ namespace Generator.Convert.XML
                         var deprecated =
                             api.Elements("enum")
                                 .Elements("token")
-                                .FirstOrDefault(t => t.Attribute("name").Value == token_name);
+                                .FirstOrDefault(t => t.Attribute("name")?.Value == token_name);
 
-                        if (deprecated != null)
+                        if (deprecated == null)
                         {
-                            if (apiname == "glcore")
-                            {
-                                // These tokens do not exist in the glcore profile, remove them
-                                api.Elements("enum")
-                                    .Elements("token")
-                                    .First(t => t.Attribute("name").Value == token_name)
-                                    .Remove();
-                            }
-                            else
-                            {
-                                // These tokens exist in all other profiles, mark them as deprecated.
-                                deprecated.Add(new XAttribute("deprecated", version));
-                            }
+                            continue;
+                        }
+
+                        if (apiname == "glcore")
+                        {
+                            // These tokens do not exist in the glcore profile, remove them
+                            api.Elements("enum")
+                                .Elements("token")
+                                .First(t => t.Attribute("name")?.Value == token_name)
+                                .Remove();
+                        }
+                        else
+                        {
+                            // These tokens exist in all other profiles, mark them as deprecated.
+                            deprecated.Add(new XAttribute("deprecated", version ?? throw new NullReferenceException()));
                         }
                     }
                 }
@@ -350,6 +353,11 @@ namespace Generator.Convert.XML
             // It also includes information about the return type and parameters. These
             // are then parsed by the binding generator in order to create the necessary
             // overloads for correct use.
+            if (input.Root == null)
+            {
+                throw new NullReferenceException();
+            }
+            
             var features = input.Root.Elements("feature");
             var extensions = input.Root.Elements("extensions").Elements("extension");
             var apis = new SortedDictionary<string, XElement>();
@@ -368,12 +376,17 @@ namespace Generator.Convert.XML
             // information about versioning, extension support and deprecation.
             foreach (var feature in features.Concat(extensions))
             {
-                var category = TrimName(feature.Attribute("name").Value);
+                var category = TrimName(feature.Attribute("name")?.Value);
                 var apinames = GetApiNames(feature);
 
                 var version =
-                    (feature.Attribute("number") != null ? feature.Attribute("number").Value : string.Empty)?
+                    (feature.Attribute("number") != null ? feature.Attribute("number")?.Value : string.Empty)?
                     .Split('|');
+
+                if (version == null)
+                {
+                    throw new NullReferenceException();
+                }
 
                 var i = -1;
                 foreach (var apiname in apinames)
@@ -403,9 +416,8 @@ namespace Generator.Convert.XML
                     foreach (var command in feature.Elements("require").Elements("command"))
                     {
                         var cmd_name = TrimName(command.Attribute("name").Value);
-                        var cmd_extension =
-                            ExtensionRegex.Match(cmd_name).Value ??
-                            (feature.Name == "extension" ? category.Substring(0, category.IndexOf("_")) : "Core");
+                        var cmd_extension = ExtensionRegex.Match(cmd_name).Value;
+                        
                         if (string.IsNullOrEmpty(cmd_extension))
                         {
                             cmd_extension = "Core";
@@ -433,25 +445,26 @@ namespace Generator.Convert.XML
                     // Mark all deprecated functions as such
                     foreach (var command in feature.Elements("remove").Elements("command"))
                     {
-                        var deprecated_name = TrimName(command.Attribute("name").Value);
+                        var deprecated_name = TrimName(command.Attribute("name")?.Value);
                         var deprecated =
                             api.Elements("function")
-                                .FirstOrDefault(t => t.Attribute("name").Value == deprecated_name);
+                                .FirstOrDefault(t => t.Attribute("name")?.Value == deprecated_name);
 
-                        if (deprecated != null)
+                        if (deprecated == null) {
+                            continue;
+                        }
+                        
+                        if (apiname == "glcore")
                         {
-                            if (apiname == "glcore")
-                            {
-                                // These tokens do not exist in the glcore profile, remove them
-                                api.Elements("function")
-                                    .First(t => t.Attribute("name").Value == deprecated_name)
-                                    .Remove();
-                            }
-                            else
-                            {
-                                // These tokens exist in all other profiles, mark them as deprecated.
-                                deprecated.Add(new XAttribute("deprecated", cmd_version));
-                            }
+                            // These tokens do not exist in the glcore profile, remove them
+                            api.Elements("function")
+                                .First(t => t.Attribute("name")?.Value == deprecated_name)
+                                .Remove();
+                        }
+                        else
+                        {
+                            // These tokens exist in all other profiles, mark them as deprecated.
+                            deprecated.Add(new XAttribute("deprecated", cmd_version));
                         }
                     }
                 }
@@ -466,17 +479,17 @@ namespace Generator.Convert.XML
         /// <param name="api">The API.</param>
         /// <param name="function">The function to add to the API.</param>
         /// <exception cref="InvalidOperationException">The function has multiple extensions.</exception>
-        private void Merge(XElement api, XElement function)
+        private static void Merge(XElement api, XElement function)
         {
             var type = function.Name.LocalName;
-            var name = function.Attribute("name").Value;
-            var f = api.Elements(type).FirstOrDefault(p => p.Attribute("name").Value == name);
+            var name = function.Attribute("name")?.Value;
+            var f = api.Elements(type).FirstOrDefault(p => p.Attribute("name")?.Value == name);
             if (f != null)
             {
                 f.SetAttributeValue
                 (
                     "category",
-                    string.Join("|", f.Attribute("category").Value, function.Attribute("category").Value)
+                    string.Join("|", f.Attribute("category")?.Value, function.Attribute("category")?.Value)
                 );
                 f.SetAttributeValue
                 (
@@ -485,7 +498,7 @@ namespace Generator.Convert.XML
                 );
 
                 // Sanity check: one function cannot belong to two different extensions
-                if (f.Attribute("extension").Value != function.Attribute("extension").Value)
+                if (f.Attribute("extension")?.Value != function.Attribute("extension")?.Value)
                 {
                     throw new InvalidOperationException("Different extensions for the same function");
                 }
@@ -527,7 +540,7 @@ namespace Generator.Convert.XML
                 var param = FunctionParameterType(parameter);
 
                 var p = new XElement("param");
-                var pname = new XAttribute("name", parameter.Element("name").Value);
+                var pname = new XAttribute("name", parameter.Element("name")?.Value ?? throw new NullReferenceException());
                 var type = new XAttribute
                 (
                     "type",
@@ -538,7 +551,7 @@ namespace Generator.Convert.XML
                 );
 
                 var count = parameter.Attribute("len") != null
-                    ? new XAttribute("count", parameter.Attribute("len").Value)
+                    ? new XAttribute("count", parameter.Attribute("len")?.Value ?? throw new NullReferenceException())
                     : null;
 
                 var flow = new XAttribute
@@ -568,7 +581,7 @@ namespace Generator.Convert.XML
         /// <returns>The trimmed name.</returns>
         private string FunctionName(XElement e)
         {
-            return TrimName(e.Element("proto").Element("name").Value);
+            return TrimName(e.Element("proto")?.Element("name")?.Value);
         }
 
         /// <summary>
@@ -576,7 +589,7 @@ namespace Generator.Convert.XML
         /// </summary>
         /// <param name="e">The proto element.</param>
         /// <returns>The type signature represented by the proto element.</returns>
-        private string FunctionParameterType(XElement e)
+        private static string FunctionParameterType(XElement e)
         {
             // Parse the C-like <proto> element. Possible instances:
             // Return types:
@@ -591,9 +604,9 @@ namespace Generator.Convert.XML
             // - <param len="1"><ptype>GLsizei</ptype> *<name>length</name></param>
             //   -> <param name="length" type="GLsizei" count="1" />
             var proto = e.Value;
-            var name = e.Element("name").Value;
+            var name = e.Element("name")?.Value;
 
-            var ret = proto.Remove(proto.LastIndexOf(name)).Trim();
+            var ret = proto.Remove(proto.LastIndexOf(name, StringComparison.Ordinal)).Trim();
 
             return ret;
         }
@@ -607,12 +620,7 @@ namespace Generator.Convert.XML
         /// <returns>The attribute.</returns>
         private static XAttribute Lookup(IDictionary<string, XElement> categories, string cmdName, string attribute)
         {
-            if (categories.ContainsKey(cmdName))
-            {
-                return categories[cmdName].Attribute(attribute);
-            }
-
-            return null;
+            return categories.ContainsKey(cmdName) ? categories[cmdName].Attribute(attribute) : null;
         }
     }
 }

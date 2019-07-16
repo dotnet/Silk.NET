@@ -5,10 +5,10 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Generator.Common;
-using Generator.Common.Functions;
+using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Functions;
 
-namespace Generator.Convert.Construction
+namespace Silk.NET.BuildTools.Convert.Construction
 {
     /// <summary>
     /// A collection of methods for replacing type names using a dictionary.

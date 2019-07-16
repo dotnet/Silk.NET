@@ -5,10 +5,10 @@
 
 using System.Linq;
 using System.Text.RegularExpressions;
-using Generator.Common;
-using Generator.Common.Functions;
+using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Functions;
 
-namespace Generator.Convert.Construction.Trimmers
+namespace Silk.NET.BuildTools.Convert.Construction.Trimmers
 {
     /// <inheritdoc cref="ITrimmer{TTrimmable}" />
     /// <summary>

@@ -10,9 +10,9 @@ using System.IO;
 using System.Linq;
 using CommandLine;
 using CommandLine.Text;
-using Generator.Bind;
-using Generator.Convert;
 using Newtonsoft.Json;
+using Silk.NET.BuildTools.Bind;
+using Silk.NET.BuildTools.Convert;
 using Silk.NET.BuildTools.Pipeline;
 
 namespace Silk.NET.BuildTools

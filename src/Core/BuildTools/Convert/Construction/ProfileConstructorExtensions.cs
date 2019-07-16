@@ -10,15 +10,15 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using Generator.Common;
-using Generator.Common.Enums;
-using Generator.Common.Functions;
-using Generator.Convert.XML;
 using JetBrains.Annotations;
-using Attribute = Generator.Common.Attribute;
-using Enum = Generator.Common.Enums.Enum;
+using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Enums;
+using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Convert.XML;
+using Attribute = Silk.NET.BuildTools.Common.Attribute;
+using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
-namespace Generator.Convert.Construction
+namespace Silk.NET.BuildTools.Convert.Construction
 {
     /// <summary>
     /// A collection of extension methods for parsing and constructing profiles.
@@ -82,8 +82,7 @@ namespace Generator.Convert.Construction
                 .Value
                 .Split(new[] {'|'}, StringSplitOptions.RemoveEmptyEntries);
             var functionExtensions = element.GetRequiredAttribute("extension").Value;
-
-            var functionVersion = ParsingHelpers.ParseVersion(element, defaultVersion: new Version(0, 0));
+            
             var functionDeprecationVersion = ParsingHelpers.ParseVersion(element, "deprecated");
 
             var parameters = ParseParameters(element);
@@ -137,7 +136,7 @@ namespace Generator.Convert.Construction
                     out var computedCountParameterNames,
                     out var hasValueReference,
                     out var valueReferenceName,
-                    out var valueReferenceExpression
+                    out var _
                 );
 
                 if (hasComputedCount)

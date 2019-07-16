@@ -5,7 +5,7 @@
 
 using JetBrains.Annotations;
 
-namespace Generator.Convert.Construction.Trimmers
+namespace Silk.NET.BuildTools.Convert.Construction.Trimmers
 {
     /// <summary>
     /// Represents a class that can trim the identifier for some type in some fashion.

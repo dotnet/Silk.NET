@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-namespace Generator.Convert.Baking
+namespace Silk.NET.BuildTools.Convert.Baking
 {
     /// <summary>
     /// A builder class for <see cref="ProfileBakeryInformation" />.
