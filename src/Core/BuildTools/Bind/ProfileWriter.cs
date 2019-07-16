@@ -144,7 +144,7 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("namespace " + profile.Namespace + project.Namespace);
             sw.WriteLine("{");
             var names = project.Interfaces.Select(x => x.Value.Name).ToArray();
-            sw.Write("    internal interface I" + profile.ClassName + " : " + names[0]);
+            sw.Write("    public interface I" + profile.ClassName + " : " + names[0]);
             for (var i = 1; i < names.Length; i++)
             {
                 sw.WriteLine(",");
