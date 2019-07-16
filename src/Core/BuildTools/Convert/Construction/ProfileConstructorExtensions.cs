@@ -82,8 +82,7 @@ namespace Silk.NET.BuildTools.Convert.Construction
                 .Value
                 .Split(new[] {'|'}, StringSplitOptions.RemoveEmptyEntries);
             var functionExtensions = element.GetRequiredAttribute("extension").Value;
-
-            var functionVersion = ParsingHelpers.ParseVersion(element, defaultVersion: new Version(0, 0));
+            
             var functionDeprecationVersion = ParsingHelpers.ParseVersion(element, "deprecated");
 
             var parameters = ParseParameters(element);
@@ -137,7 +136,7 @@ namespace Silk.NET.BuildTools.Convert.Construction
                     out var computedCountParameterNames,
                     out var hasValueReference,
                     out var valueReferenceName,
-                    out var valueReferenceExpression
+                    out var _
                 );
 
                 if (hasComputedCount)
