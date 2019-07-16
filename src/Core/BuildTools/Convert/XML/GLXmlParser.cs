@@ -100,12 +100,7 @@ namespace Silk.NET.BuildTools.Convert.XML
                 return name.Remove(0, EnumPrefix.Length);
             }
 
-            if (name.StartsWith(FuncPrefix))
-            {
-                return name.Remove(0, FuncPrefix.Length);
-            }
-
-            return name;
+            return name.StartsWith(FuncPrefix) ? name.Remove(0, FuncPrefix.Length) : name;
         }
 
         /// <summary>
