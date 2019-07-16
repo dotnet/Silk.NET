@@ -6,4 +6,4 @@ else
     export AddArgs=$1;
 fi
 
-dotnet run -p src/Core/BuildTools/BuildTools.csproj $AddArgs
+dotnet run --configuration Release -p src/Core/BuildTools/BuildTools.csproj $AddArgs
