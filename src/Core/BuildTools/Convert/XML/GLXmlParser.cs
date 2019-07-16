@@ -309,7 +309,7 @@ namespace Silk.NET.BuildTools.Convert.XML
                     // Mark deprecated enums
                     foreach (var token in feature.Elements("remove").Elements("enum"))
                     {
-                        var token_name = TrimName(token.Attribute("name")?.Value);
+                        var token_name = TrimName(token.Attribute("name").Value);
                         var deprecated =
                             api.Elements("enum")
                                 .Elements("token")
