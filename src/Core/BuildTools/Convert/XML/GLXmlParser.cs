@@ -115,7 +115,7 @@ namespace Silk.NET.BuildTools.Convert.XML
             var elements = new SortedDictionary<string, XElement>();
             foreach (var e in ParseEnums(input).Concat(ParseFunctions(input)))
             {
-                var name = e.Attribute("name")?.Value;
+                var name = e.Attribute("name").Value;
                 var version = (e.Attribute("version") ?? new XAttribute("version", string.Empty)).Value;
                 var key = name + version;
                 if (!elements.ContainsKey(key))
