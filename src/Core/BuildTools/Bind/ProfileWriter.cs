@@ -7,7 +7,6 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 using Generator.Common;
 using MoreLinq.Extensions;
 using Enum = Generator.Common.Enums.Enum;
@@ -98,7 +97,7 @@ namespace Generator.Bind
                 sw.WriteLine("    " + attr);
             }
 
-            sw.WriteLine("    internal interface " + @interface.Name);
+            sw.WriteLine("    public interface " + @interface.Name);
             sw.Write("    {");
             for (var index = 0; index < @interface.Functions.Count; index++)
             {
