@@ -181,9 +181,14 @@ namespace Silk.NET.BuildTools.Convert.XML
 
         private IEnumerable<XElement> ParseEnums(XDocument input)
         {
-            var features = input.Root?.Elements("feature");
-            var extensions = input.Root?.Elements("extensions").Elements("extension");
-            var enumerations = input.Root?.Elements("enums").Elements("enum");
+            if (input.Root == null)
+            {
+                throw new NullReferenceException();
+            }
+            
+            var features = input.Root.Elements("feature");
+            var extensions = input.Root.Elements("extensions").Elements("extension");
+            var enumerations = input.Root.Elements("enums").Elements("enum");
             var apis = new SortedDictionary<string, XElement>();
 
             // Build a list of all available tokens.
@@ -192,13 +197,16 @@ namespace Silk.NET.BuildTools.Convert.XML
             // that are common go to the "default" list.
             var enums = new Dictionary<string, SortedDictionary<string, string>>();
             
-            if (enumerations == null) {
+            if (enumerations == null)
+            {
                 throw new NullReferenceException();
             }
             
-            foreach (var e in enumerations) {
+            foreach (var e in enumerations)
+            {
                 var api = (e.Attribute("api") ?? new XAttribute("api", "default")).Value;
-                if (!enums.ContainsKey(api)) {
+                if (!enums.ContainsKey(api))
+                {
                     enums.Add(api, new SortedDictionary<string, string>());
                 }
 
@@ -224,9 +232,7 @@ namespace Silk.NET.BuildTools.Convert.XML
             // see also: https://github.com/KhronosGroup/OpenGL-Registry/pull/273
             // see also: https://discordapp.com/channels/521092042781229087/587346162802229298/590211773399826438
             // see also: https://github.com/Ultz/Silk.NET/commit/f5f112bbd42d2f547cdab6ddd767609dfcfa99d9
-            foreach (var feature in
-                (features ?? throw new NullReferenceException()).Concat(extensions)
-                    .OrderBy(f => TrimName(f.Attribute("name")?.Value)))
+            foreach (var feature in features.Concat(extensions).OrderBy(f => TrimName(f.Attribute("name")?.Value)))
             {
                 var version = feature.Attribute("number") != null ? feature.Attribute("number")?.Value : null;
                 var apinames = GetApiNames(feature);
@@ -265,9 +271,8 @@ namespace Silk.NET.BuildTools.Convert.XML
                                 : enum_name
                         )
                     );
-                    foreach (var token in
-                        feature.Elements("enum")
-                            .Concat(feature.Elements("require").Elements("enum")))
+                    
+                    foreach (var token in feature.Elements("enum").Concat(feature.Elements("require").Elements("enum")))
                     {
                         var token_name = TrimName(token.Attribute("name")?.Value);
                         var token_value =
@@ -310,7 +315,8 @@ namespace Silk.NET.BuildTools.Convert.XML
                                 .Elements("token")
                                 .FirstOrDefault(t => t.Attribute("name")?.Value == token_name);
 
-                        if (deprecated == null) {
+                        if (deprecated == null)
+                        {
                             continue;
                         }
 
@@ -347,7 +353,8 @@ namespace Silk.NET.BuildTools.Convert.XML
             // It also includes information about the return type and parameters. These
             // are then parsed by the binding generator in order to create the necessary
             // overloads for correct use.
-            if (input.Root == null) {
+            if (input.Root == null)
+            {
                 throw new NullReferenceException();
             }
             
@@ -376,7 +383,8 @@ namespace Silk.NET.BuildTools.Convert.XML
                     (feature.Attribute("number") != null ? feature.Attribute("number")?.Value : string.Empty)?
                     .Split('|');
 
-                if (version == null) {
+                if (version == null)
+                {
                     throw new NullReferenceException();
                 }
 
