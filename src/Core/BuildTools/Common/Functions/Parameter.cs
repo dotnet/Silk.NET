@@ -60,7 +60,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                 return true;
             }
 
-            return obj.GetType() == GetType() && Equals((GenericTypeParameter) obj);
+            return obj is Parameter && Equals((GenericTypeParameter) obj);
         }
 
         public override int GetHashCode()

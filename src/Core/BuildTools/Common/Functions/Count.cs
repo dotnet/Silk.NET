@@ -145,12 +145,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                 return $"COMPSIZE({string.Join(", ", ComputedFromNames)})";
             }
 
-            if (IsReference)
-            {
-                return $"valueof({ValueReference.Name})";
-            }
-
-            return StaticCount.ToString();
+            return IsReference ? $"valueof({ValueReference.Name})" : StaticCount.ToString();
         }
     }
 }
