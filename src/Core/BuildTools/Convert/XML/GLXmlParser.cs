@@ -274,7 +274,7 @@ namespace Silk.NET.BuildTools.Convert.XML
                     
                     foreach (var token in feature.Elements("enum").Concat(feature.Elements("require").Elements("enum")))
                     {
-                        var token_name = TrimName(token.Attribute("name")?.Value);
+                        var token_name = TrimName(token.Attribute("name").Value);
                         var token_value =
                             enums.ContainsKey(apiname) && enums[apiname].ContainsKey(token_name)
                                 ? enums[apiname][token_name]
