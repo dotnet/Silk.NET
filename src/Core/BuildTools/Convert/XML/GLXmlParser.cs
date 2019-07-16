@@ -258,7 +258,7 @@ namespace Silk.NET.BuildTools.Convert.XML
 
                     var api = apis[key];
 
-                    var enum_name = TrimName(feature.Attribute("name")?.Value);
+                    var enum_name = TrimName(feature.Attribute("name").Value);
 
                     var e = new XElement
                     (
