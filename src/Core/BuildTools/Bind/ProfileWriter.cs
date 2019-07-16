@@ -249,6 +249,7 @@ namespace Silk.NET.BuildTools.Bind
                 if (!File.Exists(Path.Combine(folder, profile.ClassName + ".cs")))
                 {
                     sw = new StreamWriter(Path.Combine(folder, profile.ClassName + ".cs"));
+                    sw.WriteLine("using System;");
                     sw.WriteLine("using Silk.NET.Core.Loader;");
                     sw.WriteLine("using Silk.NET.Core.Native;");
                     sw.WriteLine();
@@ -267,7 +268,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine($"             ext = LibraryLoader<{profile.ClassName}>.Load<T>(this);");
                     sw.WriteLine("             return ext != null;");
                     sw.WriteLine("        }");
-                    sw.WriteLine("        public bool IsExtensionPresent(string extension)");
+                    sw.WriteLine("        public override bool IsExtensionPresent(string extension)");
                     sw.WriteLine("        {");
                     sw.WriteLine("            throw new NotImplementedException();");
                     sw.WriteLine("        }");
