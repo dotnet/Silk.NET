@@ -415,7 +415,7 @@ namespace Silk.NET.BuildTools.Convert.XML
 
                     foreach (var command in feature.Elements("require").Elements("command"))
                     {
-                        var cmd_name = TrimName(command.Attribute("name")?.Value);
+                        var cmd_name = TrimName(command.Attribute("name").Value);
                         var cmd_extension = ExtensionRegex.Match(cmd_name).Value;
                         
                         if (string.IsNullOrEmpty(cmd_extension))
