@@ -1,4 +1,5 @@
-﻿using Silk.NET.Input.Common;
+﻿using System;
+using Silk.NET.Input.Common;
 using Silk.NET.Input.Desktop;
 using Silk.NET.Windowing.Common;
 using Silk.NET.Windowing.Desktop;
@@ -15,9 +16,11 @@ namespace InputTest
             inputContext.ConnectionChanged += ControllerConnected;
         }
 
-        public static void ControllerConnected(IInputDevice device, bool state)
+        public static void ControllerConnected(IInputDevice device, bool isConnected)
         {
-            
+            Console.WriteLine(isConnected
+                ? $"Controller {device.Name} connected"
+                : $"Controller {device.Name} disconnected");
         }
     }
 }
