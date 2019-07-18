@@ -21,7 +21,6 @@ namespace Silk.NET.Input.Desktop
         public string Name => Util.Do(() => Util.Glfw.GetJoystickName(Index));
         public int Index { get; }
         public bool IsConnected => Util.Do(() => Util.Glfw.JoystickPresent(Index));
-        public event Action<IInputDevice, bool> ConnectionChanged;
         public IReadOnlyList<Axis> Axes => GetAxes(Index, this);
         public IReadOnlyList<Button> Buttons { get; }
         public IReadOnlyList<Hat> Hats { get; }

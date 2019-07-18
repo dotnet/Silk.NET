@@ -19,7 +19,6 @@ namespace Silk.NET.Input.Desktop
         public string Name => Util.Do(() => Util.Glfw.GetGamepadName(Index));
         public int Index { get; }
         public bool IsConnected => Util.Do(() => Util.Glfw.JoystickIsGamepad(Index));
-        public event Action<IInputDevice, bool> ConnectionChanged;
         public IReadOnlyList<Button> Buttons { get; }
         public IReadOnlyList<Thumbstick> Thumbsticks { get; }
         public IReadOnlyList<Trigger> Triggers { get; }

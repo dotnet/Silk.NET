@@ -22,7 +22,6 @@ namespace Silk.NET.Input.Desktop
         public string Name { get; } = $"Silk.NET Keyboard (GLFW)";
         public int Index { get; } = 0;
         public bool IsConnected { get; } = true;
-        public event Action<IInputDevice, bool> ConnectionChanged;
         public IReadOnlyList<Key> SupportedKeys { get; } = Util.SupportedKeys;
         public unsafe bool IsKeyPressed(Key key)
         {
