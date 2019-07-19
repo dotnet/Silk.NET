@@ -3,6 +3,8 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
+
 namespace Silk.NET.Input.Common
 {
     /// <summary>
@@ -29,6 +31,26 @@ namespace Silk.NET.Input.Common
         {
             Value = value;
             Method = method;
+        }
+
+        /// <summary>
+        /// Applies this deadzone to a raw input value.
+        /// </summary>
+        /// <param name="raw">The raw input value to apply the deadzone to.</param>
+        /// <returns>The input with deadzone applied.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">If the deadzone method isn't part of
+        /// <see cref="DeadzoneMethod"/></exception>
+        public float Apply(float raw)
+        {
+            switch (Method)
+            {
+                case DeadzoneMethod.Traditional:
+                    return Math.Abs(raw) < Value ? 0 : raw;
+                case DeadzoneMethod.AdaptiveGradient:
+                    return (1 - Value) * raw + Value * Math.Sign(raw);
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
         }
     }
 }

@@ -14,7 +14,6 @@ namespace Silk.NET.Input.Desktop
         public string Name { get; } = "Silk.NET Mouse (GLFW)";
         public int Index { get; } = 0;
         public bool IsConnected { get; } = true;
-        public event Action<IInputDevice, bool> ConnectionChanged;
         public IReadOnlyList<MouseButton> SupportedButtons { get; }
         public IReadOnlyList<ScrollWheel> ScrollWheels { get; }
         public bool IsButtonPressed(MouseButton btn)

@@ -3,8 +3,6 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System;
-
 namespace Silk.NET.Input.Common
 {
     /// <summary>
@@ -26,10 +24,5 @@ namespace Silk.NET.Input.Common
         /// Whether or not this device is currently connected.
         /// </summary>
         bool IsConnected { get; }
-        
-        /// <summary>
-        /// Called when the connection of this device changes.
-        /// </summary>
-        event Action<IInputDevice, bool> ConnectionChanged;
     }
 }

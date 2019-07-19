@@ -54,5 +54,10 @@ namespace Silk.NET.Input.Common
         /// support other devices.
         /// </remarks>
         IReadOnlyList<IInputDevice> OtherDevices { get; }
+        
+        /// <summary>
+        /// Called when the connection status of a device changes.
+        /// </summary>
+        event Action<IInputDevice, bool> ConnectionChanged;
     }
 }

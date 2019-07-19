@@ -57,5 +57,8 @@ namespace Silk.NET.Input.Desktop
         {
             throw new NotImplementedException();
         }
+        
+        /// <inheritdoc />
+        public event Action<IInputDevice, bool> ConnectionChanged;
     }
 }

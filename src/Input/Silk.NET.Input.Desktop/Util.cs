@@ -35,19 +35,6 @@ namespace Silk.NET.Input.Desktop
             return GlfwProvider.ThreadDispatcher.Invoke(@delegate);
         }
 
-        public static float ApplyDeadzone(Deadzone deadzone, float val)
-        {
-            switch (deadzone.Method)
-            {
-                case DeadzoneMethod.Traditional:
-                    return Math.Abs(val) < deadzone.Value ? 0 : val;
-                case DeadzoneMethod.AdaptiveGradient:
-                    return (1 - deadzone.Value) * val + deadzone.Value * Math.Sign(val);
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
-
         public static Glfw Glfw => GlfwProvider.GLFW.Value;
         public static Key[] SupportedKeys { get; } // this is expensive, but only runs once.
             = Enum.GetNames(typeof(Key)).Where(_glfwKeys.Contains).Select(StringToSilkKey).ToArray();
