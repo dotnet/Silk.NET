@@ -34,11 +34,6 @@ namespace Silk.NET.Windowing.Common
         void SwapBuffers();
 
         /// <summary>
-        /// Makes this window's rendering API current for the calling thread.
-        /// </summary>
-        void MakeCurrent();
-
-        /// <summary>
         /// Converts this point to client coordinates.
         /// </summary>
         /// <param name="point">The point to transform.</param>

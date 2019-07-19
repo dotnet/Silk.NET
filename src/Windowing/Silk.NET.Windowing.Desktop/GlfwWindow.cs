@@ -71,6 +71,8 @@ namespace Silk.NET.Windowing.Desktop
 
                 _windowBorder = WindowBorder;
 
+                UseSingleThreadedWindow = options.UseSingleThreadedWindow;
+
                 glfwThread.Invoke(() =>
                 {
                     // Set window border.
@@ -126,7 +128,20 @@ namespace Silk.NET.Windowing.Desktop
                     WindowPtr = glfw.CreateWindow(_size.Width, _size.Height, _title, null, null);
                 });
 
-                MakeCurrent();
+                if (UseSingleThreadedWindow) {
+                    glfw.MakeContextCurrent(WindowPtr);
+                }
+                else {
+                    glfw.MakeContextCurrent(null);
+                    
+                    UpdateDispatcher = new Dispatcher();
+                    RenderDispatcher = new Dispatcher();
+                    
+                    RenderDispatcher.Invoke(() =>
+                    {
+                        glfw.MakeContextCurrent(WindowPtr);
+                    });
+                }
 
                 FramesPerSecond = options.FramesPerSecond;
                 UpdatesPerSecond = options.UpdatesPerSecond;
@@ -339,19 +354,40 @@ namespace Silk.NET.Windowing.Desktop
             get => _vSync;
             set
             {
-                switch (value) {
-                    case VSyncMode.Off:
-                        glfw.SwapInterval(0);
-                        break;
+                if (UseSingleThreadedWindow) {
+                    switch (value) {
+                        case VSyncMode.Off:
+                            glfw.SwapInterval(0);
+                            break;
 
-                    case VSyncMode.On:
-                        glfw.SwapInterval(1);
-                        break;
+                        case VSyncMode.On:
+                            glfw.SwapInterval(1);
+                            break;
 
-                    default:
-                        glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
-                        break;
+                        default:
+                            glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
+                            break;
+                    }
                 }
+                else {
+                    RenderDispatcher.Invoke(() =>
+                    {
+                        switch (value) {
+                            case VSyncMode.Off:
+                                glfw.SwapInterval(0);
+                                break;
+
+                            case VSyncMode.On:
+                                glfw.SwapInterval(1);
+                                break;
+
+                            default:
+                                glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
+                                break;
+                        }
+                    });
+                }
+                
 
                 _vSync = value;
             }
@@ -360,13 +396,13 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public object Invoke(Delegate d)
         {
-            return glfwThread.Invoke(d);
+            return RenderDispatcher.Invoke(d);
         }
 
         /// <inheritdoc />
         public object Invoke(Delegate d, params object[] args)
         {
-            return glfwThread.Invoke(d, args);
+            return RenderDispatcher.Invoke(d, args);
         }
 
         /// <inheritdoc />
@@ -380,9 +416,6 @@ namespace Silk.NET.Windowing.Desktop
             
             renderStopwatch = new Stopwatch();
             updateStopwatch = new Stopwatch();
-            
-            UpdateDispatcher = new Dispatcher();
-            RenderDispatcher = new Dispatcher();
 
             // Start the update loop.
             unsafe {
@@ -396,10 +429,6 @@ namespace Silk.NET.Windowing.Desktop
                     else {
                         UpdateDispatcher.Invoke(RaiseUpdateFrame);
                         RenderDispatcher.Invoke(RaiseRenderFrame);
-                    }
-
-                    if (VSync == VSyncMode.Adaptive) {
-                        glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
                     }
 
                     SwapBuffers();
@@ -426,14 +455,6 @@ namespace Silk.NET.Windowing.Desktop
         {
             unsafe {
                 glfw.SwapBuffers(WindowPtr);
-            }
-        }
-
-        /// <inheritdoc />
-        public void MakeCurrent()
-        {
-            unsafe {
-                glfw.MakeContextCurrent(WindowPtr);
             }
         }
 
@@ -525,6 +546,11 @@ namespace Silk.NET.Windowing.Desktop
             var delta = renderStopwatch.Elapsed.TotalSeconds;
             OnRender?.Invoke(delta);
             renderStopwatch.Restart();
+            
+            // This has to be called on the thread with the graphics context
+            if (VSync == VSyncMode.Adaptive) {
+                glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
+            }
         }
 
         /// <summary>

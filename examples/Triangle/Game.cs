@@ -3,7 +3,9 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Drawing;
+using System.Threading;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
@@ -19,18 +21,19 @@ namespace Triangle
         {
             var options = WindowOptions.Default;
 
+            options.UseSingleThreadedWindow = false;
+
             window = Window.Create(options);
 
             window.OnLoad += OnLoad;
             window.OnRender += OnRender;
             window.OnResize += OnResize;
-
+            
             gl = GL.GetApi();
         }
 
         public void Run()
         {
-            window.MakeCurrent();
             window.Run();
         }
         
