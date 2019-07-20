@@ -371,7 +371,7 @@ namespace Silk.NET.Windowing.Desktop
         {
             if (UseSingleThreadedWindow)
             {
-                throw new NotSupportedException("Invoke call is invalid on a single-threaded window.");
+                return d.DynamicInvoke(args);
             }
             
             if (Thread.CurrentThread.ManagedThreadId == MainThread)
