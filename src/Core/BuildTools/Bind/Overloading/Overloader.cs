@@ -10,8 +10,14 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 {
     public static class Overloader
     {
-        // TODO: Implement overloaders
-        public static readonly IFunctionOverloader[] Pipeline = new IFunctionOverloader[0];
+        public static readonly IFunctionOverloader[] Pipeline = 
+        {
+            new ArrayParameterOverloader(),
+            new PointerParameterOverloader(),
+            new ReturnTypeOverloader(),
+            new PointerReturnValueOverloader(),
+            new StaticCountOverloader(),
+        };
 
         public static IEnumerable<Overload> GetOverloads(Project project)
         {
@@ -25,6 +31,20 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                         {
                             yield return overload;
                         }
+                    }
+                }
+            }
+        }
+
+        public static IEnumerable<Overload> GetOverloads(Interface @interface)
+        {
+            foreach (var function in @interface.Functions)
+            {
+                foreach (var overloader in Pipeline)
+                {
+                    foreach (var overload in overloader.CreateOverloads(function))
+                    {
+                        yield return overload;
                     }
                 }
             }

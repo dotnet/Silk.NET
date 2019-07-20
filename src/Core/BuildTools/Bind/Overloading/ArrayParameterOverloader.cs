@@ -14,7 +14,7 @@ using Silk.NET.BuildTools.Common.Functions;
 
 namespace Silk.NET.BuildTools.Bind.Overloading
 {
-    public class ArrayParameterOverloader
+    public class ArrayParameterOverloader : IFunctionOverloader
     {
         /// <summary>
         /// Determines whether or not the overloader is applicable for the given function.
