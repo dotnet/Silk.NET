@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Triangle
+﻿namespace Triangle
 {
     internal class Program
     {
