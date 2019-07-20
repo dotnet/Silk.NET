@@ -131,7 +131,15 @@ namespace Silk.NET.Windowing.Desktop
                     WindowPtr = glfw.CreateWindow(_size.Width, _size.Height, _title, null, null);
                 });
 
-                initialOptions = options;
+                glfw.MakeContextCurrent(WindowPtr);
+
+                FramesPerSecond = initialOptions.FramesPerSecond;
+                UpdatesPerSecond = initialOptions.UpdatesPerSecond;
+
+                WindowState = initialOptions.WindowState;
+                Position = initialOptions.Position;
+                VSync = initialOptions.VSync;
+                RunningSlowTolerance = initialOptions.RunningSlowTolerance;
             }
         }
         
@@ -380,16 +388,10 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public unsafe void Run()
         {
-            // Initialize the window with the options we were given.
-            glfw.MakeContextCurrent(WindowPtr);
-
-            FramesPerSecond = initialOptions.FramesPerSecond;
-            UpdatesPerSecond = initialOptions.UpdatesPerSecond;
-
-            WindowState = initialOptions.WindowState;
-            Position = initialOptions.Position;
-            VSync = initialOptions.VSync;
-            RunningSlowTolerance = initialOptions.RunningSlowTolerance;
+            if (glfw.GetCurrentContext() != WindowPtr)
+            {
+                glfw.MakeContextCurrent(WindowPtr);
+            }
 
             InitializeCallbacks();
 

@@ -22,7 +22,7 @@ namespace Silk.NET.Windowing.Desktop
                 try {
                     Glfw.GetAPI(); // activate the class so we can determine if we can activate the class
                 }
-                catch (FileNotFoundException) {
+                catch {
                     return false;
                 }
 
