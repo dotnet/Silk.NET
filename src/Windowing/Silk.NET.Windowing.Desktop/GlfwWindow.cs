@@ -60,9 +60,6 @@ namespace Silk.NET.Windowing.Desktop
         private double updatePeriod;
         private double renderPeriod;
 
-        // Track the initial options, so that we can apply them when we come to run the window.
-        private WindowOptions initialOptions;
-
         /// <summary>
         /// Create and open a new GlfwWindow.
         /// </summary>
@@ -130,16 +127,20 @@ namespace Silk.NET.Windowing.Desktop
                     // Create window
                     WindowPtr = glfw.CreateWindow(_size.Width, _size.Height, _title, null, null);
                 });
+            
+                InvokeQueue = new ConcurrentQueue<Task>();
+                MainThread = Thread.CurrentThread.ManagedThreadId;
 
                 glfw.MakeContextCurrent(WindowPtr);
 
-                FramesPerSecond = initialOptions.FramesPerSecond;
-                UpdatesPerSecond = initialOptions.UpdatesPerSecond;
+                FramesPerSecond = options.FramesPerSecond;
+                UpdatesPerSecond = options.UpdatesPerSecond;
 
-                WindowState = initialOptions.WindowState;
-                Position = initialOptions.Position;
-                VSync = initialOptions.VSync;
-                RunningSlowTolerance = initialOptions.RunningSlowTolerance;
+                WindowState = options.WindowState;
+                Position = options.Position;
+                VSync = options.VSync;
+                RunningSlowTolerance = options.RunningSlowTolerance;
+                UseSingleThreadedWindow = options.UseSingleThreadedWindow;
             }
         }
         
@@ -411,7 +412,6 @@ namespace Silk.NET.Windowing.Desktop
             renderStopwatch = new Stopwatch();
             updateStopwatch = new Stopwatch();
             
-            InvokeQueue = new ConcurrentQueue<Task>();
             MainThread = Thread.CurrentThread.ManagedThreadId;
 
             // Start the update loop.
