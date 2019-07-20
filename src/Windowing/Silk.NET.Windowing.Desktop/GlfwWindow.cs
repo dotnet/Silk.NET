@@ -4,10 +4,12 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Threading;
+using System.Threading.Tasks;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
 using Ultz.Dispatcher;
@@ -50,13 +52,16 @@ namespace Silk.NET.Windowing.Desktop
         private Stopwatch renderStopwatch;
         private Stopwatch updateStopwatch;
 
-        // Dispatcher for the update and render threads
-        private Dispatcher UpdateDispatcher;
-        private Dispatcher RenderDispatcher;
+        // Invoke method variables
+        private ConcurrentQueue<Task> InvokeQueue;
+        private int MainThread = -1;
         
         // Update and render period. Represents the time in seconds that each frame should take.
         private double updatePeriod;
         private double renderPeriod;
+
+        // Track the initial options, so that we can apply them when we come to run the window.
+        private WindowOptions initialOptions;
 
         /// <summary>
         /// Create and open a new GlfwWindow.
@@ -126,17 +131,7 @@ namespace Silk.NET.Windowing.Desktop
                     WindowPtr = glfw.CreateWindow(_size.Width, _size.Height, _title, null, null);
                 });
 
-                MakeCurrent();
-
-                FramesPerSecond = options.FramesPerSecond;
-                UpdatesPerSecond = options.UpdatesPerSecond;
-
-                WindowState = options.WindowState;
-                Position = options.Position;
-                VSync = options.VSync;
-                RunningSlowTolerance = options.RunningSlowTolerance;
-
-                InitializeCallbacks();
+                initialOptions = options;
             }
         }
         
@@ -360,18 +355,44 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public object Invoke(Delegate d)
         {
-            return glfwThread.Invoke(d);
+            return Invoke(d, new object[0]);
         }
 
         /// <inheritdoc />
         public object Invoke(Delegate d, params object[] args)
         {
-            return glfwThread.Invoke(d, args);
+            if (UseSingleThreadedWindow)
+            {
+                throw new NotSupportedException("Invoke call is invalid on a single-threaded window.");
+            }
+            
+            if (Thread.CurrentThread.ManagedThreadId == MainThread)
+            {
+                throw new InvalidOperationException("Invoke call is invalid, caller is already on the render thread.");
+            }
+            
+            var task = new Task<object>(() => d.DynamicInvoke(args));
+            InvokeQueue.Enqueue(task);
+            SpinWait.SpinUntil(() => task.IsCompleted);
+            return task.Result;
         }
 
         /// <inheritdoc />
-        public void Run()
+        public unsafe void Run()
         {
+            // Initialize the window with the options we were given.
+            glfw.MakeContextCurrent(WindowPtr);
+
+            FramesPerSecond = initialOptions.FramesPerSecond;
+            UpdatesPerSecond = initialOptions.UpdatesPerSecond;
+
+            WindowState = initialOptions.WindowState;
+            Position = initialOptions.Position;
+            VSync = initialOptions.VSync;
+            RunningSlowTolerance = initialOptions.RunningSlowTolerance;
+
+            InitializeCallbacks();
+
             // Run OnLoad.
             OnLoad?.Invoke();
 
@@ -381,29 +402,40 @@ namespace Silk.NET.Windowing.Desktop
             renderStopwatch = new Stopwatch();
             updateStopwatch = new Stopwatch();
             
-            UpdateDispatcher = new Dispatcher();
-            RenderDispatcher = new Dispatcher();
+            InvokeQueue = new ConcurrentQueue<Task>();
+            MainThread = Thread.CurrentThread.ManagedThreadId;
 
             // Start the update loop.
-            unsafe {
-                while (!glfw.WindowShouldClose(WindowPtr)) {
-                    ProcessEvents();
+            while (!glfw.WindowShouldClose(WindowPtr))
+            {
+                ProcessEvents();
 
-                    if (UseSingleThreadedWindow) {
-                        RaiseUpdateFrame();
-                        RaiseRenderFrame();
-                    }
-                    else {
-                        UpdateDispatcher.Invoke(RaiseUpdateFrame);
-                        RenderDispatcher.Invoke(RaiseRenderFrame);
-                    }
-
-                    if (VSync == VSyncMode.Adaptive) {
-                        glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
-                    }
-
-                    SwapBuffers();
+                if (UseSingleThreadedWindow) {
+                    RaiseUpdateFrame();
+                    RaiseRenderFrame();
                 }
+                else {
+                    // Raise UpdateFrame, but don't await it yet.
+                    var task = Task.Run(RaiseUpdateFrame);
+
+                    // Loop while we're still updating - the Update thread might be calling the main thread
+                    while (!task.IsCompleted)
+                    {
+                        if (!InvokeQueue.IsEmpty && InvokeQueue.TryDequeue(out var invokeCall))
+                        {
+                            invokeCall.GetAwaiter().GetResult();
+                        }
+                    }
+
+                    // Raise render.
+                    RaiseRenderFrame();
+                }
+
+                if (VSync == VSyncMode.Adaptive) {
+                    glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
+                }
+
+                SwapBuffers();
             }
         }
 
@@ -426,14 +458,6 @@ namespace Silk.NET.Windowing.Desktop
         {
             unsafe {
                 glfw.SwapBuffers(WindowPtr);
-            }
-        }
-
-        /// <inheritdoc />
-        public void MakeCurrent()
-        {
-            unsafe {
-                glfw.MakeContextCurrent(WindowPtr);
             }
         }
 

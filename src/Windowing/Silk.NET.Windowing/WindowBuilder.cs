@@ -10,7 +10,7 @@ namespace Silk.NET.Windowing
 {
     public class WindowBuilder
     {
-        private WindowOptions _options = new WindowOptions(true, true, new Point(-1, -1),
+        private WindowOptions _options = new WindowOptions(true, true, new Point(50, 50),
             new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
             "Silk.NET Window", WindowState.Normal, WindowBorder.Resizable, VSyncMode.On, 5);
 
