@@ -73,6 +73,8 @@ namespace Silk.NET.Windowing.Desktop
 
                 _windowBorder = WindowBorder;
 
+                UseSingleThreadedWindow = options.UseSingleThreadedWindow;
+
                 glfwThread.Invoke(() =>
                 {
                     // Set window border.
@@ -553,6 +555,11 @@ namespace Silk.NET.Windowing.Desktop
             var delta = renderStopwatch.Elapsed.TotalSeconds;
             OnRender?.Invoke(delta);
             renderStopwatch.Restart();
+            
+            // This has to be called on the thread with the graphics context
+            if (VSync == VSyncMode.Adaptive) {
+                glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
+            }
         }
 
         /// <summary>
