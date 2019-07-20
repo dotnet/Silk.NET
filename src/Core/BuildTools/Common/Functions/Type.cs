@@ -72,6 +72,15 @@ namespace Silk.NET.BuildTools.Common.Functions
                    && IsPointer;
         }
 
+        /// <summary>
+        /// Returns a value indicating whether this signature represents an IntPtr.
+        /// </summary>
+        /// <returns>A value indicating whether this signature represents an IntPtr.</returns>
+        public bool IsIntPtr()
+        {
+            return Name == "IntPtr" && IndirectionLevels == 0;
+        }
+
         public bool Equals(Type other)
         {
             if (ReferenceEquals(null, other))
