@@ -73,8 +73,6 @@ namespace Silk.NET.Windowing.Desktop
 
                 _windowBorder = WindowBorder;
 
-                UseSingleThreadedWindow = options.UseSingleThreadedWindow;
-
                 glfwThread.Invoke(() =>
                 {
                     // Set window border.
