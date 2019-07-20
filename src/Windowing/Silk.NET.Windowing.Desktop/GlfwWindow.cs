@@ -379,7 +379,7 @@ namespace Silk.NET.Windowing.Desktop
         {
             if (UseSingleThreadedWindow || Thread.CurrentThread.ManagedThreadId == MainThread)
             {
-                throw new InvalidOperationException("Invoke call is invalid, caller is already on the render thread.");
+                return d.DynamicInvoke(args);
             }
             
             var task = new Task<object>(() => d.DynamicInvoke(args));
