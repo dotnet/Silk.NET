@@ -41,6 +41,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             Function oldFunction)
         {
             var sb = new StringBuilder();
+            sb.AppendLine("// PointerReturnValueOverloader");
             sb.Append("return (void*) " + oldFunction.Name + "(");
             sb.Append(string.Join(", ", function.Parameters.Select(x => ConvertName(x.Name))));
             sb.AppendLine(");");

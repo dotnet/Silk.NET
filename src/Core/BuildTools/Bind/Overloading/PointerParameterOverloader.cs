@@ -125,6 +125,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         private static Overload ToPointer(Function function, Function old)
         {
             var sb = new StringBuilder();
+            sb.AppendLine("// PointerParameterOverloader");
             if (function.ReturnType.ToString() != "void")
             {
                 sb.Append("return ");
@@ -155,6 +156,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             var sb = new StringBuilder();
             var parameters = new List<string>();
             var ind = string.Empty;
+            sb.AppendLine("// PointerParameterOverloader");
             foreach (var param in function.Parameters)
             {
                 var nm = Utilities.CSharpKeywords.Contains(param.Name) ? "@" + param.Name : param.Name;

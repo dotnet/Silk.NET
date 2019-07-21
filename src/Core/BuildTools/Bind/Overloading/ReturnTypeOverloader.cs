@@ -96,6 +96,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             var strParams = newParameters.Select(x => Utilities.CSharpKeywords.Contains(x.Name) ? "@" + x.Name : x.Name)
                 .Concat(new[] { "ret" });
 
+            sb.AppendLine("// ReturnTypeOverloader");
             sb.AppendLine(lastParameterType + " ret = null;");
             sb.Append(function.Name + "(");
             sb.Append(string.Join(", ", strParams));
