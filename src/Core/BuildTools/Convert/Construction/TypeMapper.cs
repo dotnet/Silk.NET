@@ -24,14 +24,22 @@ namespace Silk.NET.BuildTools.Convert.Construction
         {
             foreach (var function in functions)
             {
-                if (map.ContainsKey(function.ReturnType.Name))
+                if (map.ContainsKey(function.ReturnType.ToString()))
+                {
+                    function.ReturnType = ParsingHelpers.ParseTypeSignature(map[function.ReturnType.ToString()]);
+                }
+                else if (map.ContainsKey(function.ReturnType.Name))
                 {
                     function.ReturnType.Name = map[function.ReturnType.Name];
                 }
 
                 foreach (var parameter in function.Parameters)
                 {
-                    if (map.ContainsKey(parameter.Type.Name))
+                    if (map.ContainsKey(parameter.Type.ToString()))
+                    {
+                        parameter.Type = ParsingHelpers.ParseTypeSignature(map[parameter.Type.ToString()]);
+                    }
+                    else if (map.ContainsKey(parameter.Type.Name))
                     {
                         parameter.Type.Name = map[parameter.Type.Name];
                     }
