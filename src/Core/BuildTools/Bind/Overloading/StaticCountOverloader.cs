@@ -19,8 +19,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         {
             return (x.Count?.IsStatic ?? false) &&
                    x.Type.IndirectionLevels == 1 &&
-                   !x.Type.IsVoidPointer() &&
-                   x.Flow == FlowDirection.In;
+                   !x.Type.IsVoidPointer();
         }
         public IEnumerable<Overload> CreateOverloads(Function function)
         {
