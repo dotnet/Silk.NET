@@ -171,7 +171,13 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 }
             }
 
-            sb.AppendLine(ind + function.Name + "(" + string.Join(", ", parameters) + ");");
+            sb.Append(ind);
+            if (function.ReturnType.ToString() != "void")
+            {
+                sb.Append("return ");
+            }
+
+            sb.AppendLine(function.Name + "(" + string.Join(", ", parameters) + ");");
 
             while (!string.IsNullOrEmpty(ind))
             {
