@@ -18,6 +18,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             new ReturnTypeOverloader(),
             new PointerReturnValueOverloader(),
             new StaticCountOverloader(),
+            new FlowPointerOverloader()
         };
 
         public static IEnumerable<Overload> GetOverloads(Project project)
