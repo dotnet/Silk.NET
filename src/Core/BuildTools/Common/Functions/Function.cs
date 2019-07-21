@@ -70,12 +70,16 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         public string ExtensionName { get; set; }
 
-        /// <inheritdoc />
         public override string ToString()
+        {
+            return ToString(null);
+        }
+
+        public string ToString(bool? @unsafe)
         {
             var sb = new StringBuilder();
 
-            GetDeclarationString(sb);
+            GetDeclarationString(sb, @unsafe);
 
             sb.Append("(");
             if (Parameters.Count > 0)
@@ -117,9 +121,9 @@ namespace Silk.NET.BuildTools.Common.Functions
             return sb.ToString();
         }
 
-        private void GetDeclarationString(StringBuilder sb)
+        private void GetDeclarationString(StringBuilder sb, bool? @unsafe)
         {
-            if (Parameters.Any(p => p.Type.IsPointer) || ReturnType.IsPointer)
+            if (Parameters.Any(p => p.Type.IsPointer) || ReturnType.IsPointer || @unsafe.HasValue && @unsafe.Value)
             {
                 sb.Append("unsafe ");
             }
@@ -172,7 +176,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                 else if (parameter.Count.IsReference)
                 {
                     // ReSharper disable once PossibleNullReferenceException
-                    attributes.Add($"Count(Parameter = \"{parameter.Count.ValueReference.Name}\")");
+                    attributes.Add($"Count(Parameter = \"{parameter.Count.ValueReference}\")");
                 }
             }
 
@@ -214,8 +218,7 @@ namespace Silk.NET.BuildTools.Common.Functions
             }
 
             return string.Equals(Name, other.Name) &&
-                   ReturnType.Equals(other.ReturnType) &&
-                   Parameters.SequenceEqual(other.Parameters) &&
+                   Parameters.Select(x => x.Type).SequenceEqual(other.Parameters.Select(x => x.Type)) &&
                    GenericTypeParameters.SequenceEqual(other.GenericTypeParameters);
         }
 

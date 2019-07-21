@@ -44,8 +44,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                 return true;
             }
 
-            return string.Equals(Name, other.Name) &&
-                   Type.Equals(other.Type);
+            return Type.Equals(other.Type);
         }
 
         public override bool Equals(object obj)
