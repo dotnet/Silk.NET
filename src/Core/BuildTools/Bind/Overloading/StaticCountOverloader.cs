@@ -38,7 +38,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 if (IsApplicable(param))
                 {
                     var t = new TypeSignatureBuilder(param.Type).WithIndirectionLevel(0).WithArrayDimensions(1).Build();
-                    sb.Append("// StaticCountOverloader");
+                    sb.AppendLine("// StaticCountOverloader");
                     sb.AppendLine("var " + param.Name + " = stackalloc " + param.Type.Name);
                     sb.AppendLine("[" + param.Count.StaticCount + "];");
                     for (var j = 0; j < param.Count.StaticCount; j++)
