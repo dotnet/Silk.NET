@@ -1,7 +1,6 @@
 using System;
 using System.Drawing;
 using System.Numerics;
-using System.Runtime.InteropServices;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 

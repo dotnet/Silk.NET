@@ -11,7 +11,6 @@ using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 using JetBrains.Annotations;
-using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;

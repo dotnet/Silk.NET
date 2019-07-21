@@ -3,9 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System;
 using System.Drawing;
-using System.Threading;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
@@ -17,8 +15,8 @@ namespace Triangle
         private IWindow window;
         private GL gl;
 
-        private uint* vao;
-        private uint* vbo;
+        private uint vbo;
+        private uint vao;
         
         private float[] vertices = {
             -0.5f, -0.5f, 0.0f, //Bottom-left vertex
@@ -50,8 +48,8 @@ namespace Triangle
         {
             gl.ClearColor(1.0f, 0.4f, 0.3f, 1.0f);
 
-            gl.GenBuffers(1, vbo);
-            gl.BindBuffer((int)GLEnum.ArrayBuffer, *vbo);
+            vbo = gl.GenBuffer(1);
+            gl.BindBuffer((int)GLEnum.ArrayBuffer, vbo);
 
             //var size = (uint)vertices.Length * sizeof(float);
             //gl.BufferData((int)GLEnum.ArrayBuffer, new UIntPtr(size), vertices, (int)GLEnum.StaticDraw);
@@ -60,7 +58,7 @@ namespace Triangle
         public void OnRender(double delta)
         {
             gl.Clear((uint)GLEnum.ColorBufferBit);
-            
+
             window.SwapBuffers();
         }
 
