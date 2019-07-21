@@ -71,29 +71,30 @@ namespace Silk.NET.BuildTools.Convert.Documentation
             if (variableList != null)
             {
                 var dt = string.Empty; // parameter name
-                foreach (var child in variableList)
-                {
-                    if (child.Name == "dt")
-                    {
-                        dt = MegaTrim(child.InnerText);
-                    }
-                    else if (child.Name == "dd")
-                    {
-                        var names = new[] { dt.Trim() };
-                        if (dt.Contains(", "))
+                foreach (var child in variableList) {
+                    switch (child.Name) {
+                        case "dt":
+                            dt = MegaTrim(child.InnerText);
+                            break;
+                        case "dd":
                         {
-                            names = dt.Split(", ".ToCharArray());
-                        }
-
-                        foreach (var name in names)
-                        {
-                            parameters[name.Trim()] = new ParameterDocumentation
+                            var names = new[] { dt.Trim() };
+                            if (dt.Contains(", "))
                             {
-                                Summary = StyleGuideCompliance(FixWhitespace(MegaTrim(child.InnerText))).Trim()
-                            };
-                        }
+                                names = dt.Split(", ".ToCharArray());
+                            }
+
+                            foreach (var name in names)
+                            {
+                                parameters[name.Trim()] = new ParameterDocumentation
+                                {
+                                    Summary = StyleGuideCompliance(FixWhitespace(MegaTrim(child.InnerText))).Trim()
+                                };
+                            }
                         
-                        dt = string.Empty;
+                            dt = string.Empty;
+                            break;
+                        }
                     }
                 }
             }
@@ -103,6 +104,11 @@ namespace Silk.NET.BuildTools.Convert.Documentation
                 (
                     x => x.HasClass("refnamediv") && x.ChildNodes.Any(y => y.Name == "h2" && y.InnerText == "Name")
                 );
+
+            if (div == null) {
+                throw new InvalidOperationException("No div in provided document");
+            }
+            
             div.RemoveChild(div.ChildNodes.FirstOrDefault(x => x.Name == "h2"));
             var description = StyleGuideCompliance
                                   (
