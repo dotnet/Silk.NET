@@ -95,7 +95,7 @@ namespace Silk.NET.BuildTools.Convert.Documentation
                                 // ReSharper disable once PossibleNullReferenceException
                                 sb.AppendLine
                                 (
-                                    $"/// This parameter's element count is taken from {parameter.Count.ValueReference.Name}."
+                                    $"/// This parameter's element count is taken from {parameter.Count.ValueReference}."
                                 );
                             }
                         }
