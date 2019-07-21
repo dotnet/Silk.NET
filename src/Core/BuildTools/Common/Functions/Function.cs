@@ -149,19 +149,6 @@ namespace Silk.NET.BuildTools.Common.Functions
 
             var attributes = new List<string>();
 
-            // if (parameter.Flow == FlowDirection.Out)
-            // {
-            //     attributes.Add("Out");
-            // }
-            // else if (parameter.Flow == FlowDirection.In)
-            // {
-            //     attributes.Add("In");
-            // }
-            // else if (parameter.Flow == FlowDirection.Undefined)
-            // {
-            //     attributes.Add("In");
-            //     attributes.Add("Out");
-            // }
             if (!(parameter.Count is null))
             {
                 if (parameter.Count.IsStatic)
@@ -178,6 +165,17 @@ namespace Silk.NET.BuildTools.Common.Functions
                     // ReSharper disable once PossibleNullReferenceException
                     attributes.Add($"Count(Parameter = \"{parameter.Count.ValueReference}\")");
                 }
+            }
+
+            // ReSharper disable once SwitchStatementMissingSomeCases
+            switch (parameter.Flow)
+            {
+                case FlowDirection.In:
+                    attributes.Add("Flow(FlowDirection.In)");
+                    break;
+                case FlowDirection.Out:
+                    attributes.Add("Flow(FlowDirection.Out)");
+                    break;
             }
 
             if (attributes.Count != 0)
