@@ -245,7 +245,7 @@ namespace Silk.NET.BuildTools.Convert.Construction
 
                 hasComputedCount = true;
 
-                return null;
+                return new Count(computedCountParameterNames);
             }
 
             if (SyntaxFacts.IsValidIdentifier(countData))
@@ -254,7 +254,7 @@ namespace Silk.NET.BuildTools.Convert.Construction
                 valueReferenceName = countData;
 
                 hasValueReference = true;
-                return null;
+                return new Count(valueReferenceName);
             }
 
             // Some counts are a value reference along with some sort of numerical operation - let's skip forward in
@@ -270,57 +270,10 @@ namespace Silk.NET.BuildTools.Convert.Construction
                 valueReferenceExpression = dataAfterFirstInvalidCharacter;
 
                 hasValueReference = true;
-                return null;
+                return new Count(valueReferenceName);
             }
 
             throw new InvalidDataException("No valid count could be parsed from the input.");
-        }
-
-        /// <summary>
-        /// Resolves the target parameter of reference count signatures in the given set of parameters.
-        /// </summary>
-        /// <param name="parameters">The complete parameter set.</param>
-        /// <param name="parametersWithValueReferenceCounts">The parameters with reference counts.</param>
-        public static void ResolveReferenceCountSignatures
-        (
-            [NotNull] [ItemNotNull] IReadOnlyCollection<Parameter> parameters,
-            [NotNull]
-            IEnumerable<(Parameter parameter, string parameterReferenceName)> parametersWithValueReferenceCounts
-        )
-        {
-            foreach (var (parameter, valueReferenceName) in parametersWithValueReferenceCounts)
-            {
-                var referenceParameter = parameters.FirstOrDefault(p => p.Name == valueReferenceName)
-                                         ?? throw new InvalidDataException
-                                         (
-                                             "Referenced parameter in count attribute not found."
-                                         );
-
-                var countSignature = new Count(referenceParameter);
-
-                parameter.Count = countSignature;
-            }
-        }
-
-        /// <summary>
-        /// Resolves the target parameters of computed count signatures in the given set of parameters.
-        /// </summary>
-        /// <param name="parameters">The complete parameter set.</param>
-        /// <param name="parametersWithComputedCounts">The parameters with computed counts.</param>
-        public static void ResolveComputedCountSignatures
-        (
-            [NotNull] [ItemNotNull] IReadOnlyCollection<Parameter> parameters,
-            [NotNull] IEnumerable<(Parameter parameter, IReadOnlyList<string> computedCountParameterNames)>
-                parametersWithComputedCounts
-        )
-        {
-            foreach (var (parameter, computedCountNames) in parametersWithComputedCounts)
-            {
-                var computedParameters = parameters.Where(p => computedCountNames.Contains(p.Name)).ToList();
-                var countSignature = new Count(computedParameters);
-
-                parameter.Count = countSignature;
-            }
         }
     }
 }

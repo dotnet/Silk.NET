@@ -46,16 +46,16 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Initializes a new instance of the <see cref="Count" /> class.
         /// </summary>
         /// <param name="computedFrom">The parameters the count is computed from.</param>
-        public Count([NotNull] IReadOnlyList<Parameter> computedFrom)
+        public Count([NotNull] IReadOnlyList<string> computedFrom)
         {
-            ComputedFromNames = computedFrom.Select(x => x.Name).ToList();
+            ComputedFromNames = computedFrom.ToList();
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Count" /> class.
         /// </summary>
         /// <param name="valueReference">The parameter the count is taken from.</param>
-        public Count([CanBeNull] Parameter valueReference)
+        public Count([CanBeNull] string valueReference)
         {
             ValueReference = valueReference;
             ComputedFromNames = new List<string>();
@@ -94,8 +94,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets or sets the parameter that the count is taken from.
         /// </summary>
         [CanBeNull]
-        [JsonIgnore]
-        public Parameter ValueReference { get; set; }
+        public string ValueReference { get; set; }
 
         /// <summary>
         /// Gets or sets the function that the parameter in question is part of.
@@ -145,7 +144,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                 return $"COMPSIZE({string.Join(", ", ComputedFromNames)})";
             }
 
-            return IsReference ? $"valueof({ValueReference.Name})" : StaticCount.ToString();
+            return IsReference ? $"valueof({ValueReference})" : StaticCount.ToString();
         }
     }
 }
