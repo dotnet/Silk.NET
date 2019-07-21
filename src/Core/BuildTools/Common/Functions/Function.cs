@@ -190,6 +190,11 @@ namespace Silk.NET.BuildTools.Common.Functions
                 sb.Append("out ");
             }
 
+            if (parameter.Type.IsIn)
+            {
+                sb.Append("in ");
+            }
+
             if (parameter.Type.IsByRef)
             {
                 sb.Append("ref ");
