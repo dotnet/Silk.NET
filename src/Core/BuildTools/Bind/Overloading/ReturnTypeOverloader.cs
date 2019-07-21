@@ -112,7 +112,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             }
 
             var sizeParameterType = newParameters.Last().Type;
-            if (!sizeParameterType.Name.StartsWith("int", StringComparison.OrdinalIgnoreCase) || sizeParameterType.IsPointer)
+            if (sizeParameterType.Name != "int" || sizeParameterType.IsPointer)
             {
                 yield return new Overload(functionBuilder
                     .WithParameters(newParameters)
@@ -121,6 +121,8 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 yield break;
             }
 
+            var n = newParameters.Last().Name;
+            sb.Insert(0, "var " + (Utilities.CSharpKeywords.Contains(n) ? "@" : "") + n + " = 1;\n");
             newParameters = SkipLastExtension.SkipLast(newParameters, 1).ToList();
             yield return new Overload
             (
