@@ -7,8 +7,12 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Xml.Linq;
 using MoreLinq.Extensions;
+using Silk.NET.BuildTools.Bind.Overloading;
 using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Convert.XML;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
 namespace Silk.NET.BuildTools.Bind
@@ -99,10 +103,9 @@ namespace Silk.NET.BuildTools.Bind
 
             sw.WriteLine("    public interface " + @interface.Name);
             sw.Write("    {");
-            for (var index = 0; index < @interface.Functions.Count; index++)
+            foreach (var function in @interface.Functions)
             {
                 sw.WriteLine();
-                var function = @interface.Functions[index];
                 using (var sr = new StringReader(function.Doc))
                 {
                     string line;
@@ -231,6 +234,37 @@ namespace Silk.NET.BuildTools.Bind
                     }
                     sw.WriteLine();
                 }
+
+                foreach (var overload in Overloader.GetOverloads(project))
+                {
+                    using (var sr = new StringReader(overload.Signature.Doc))
+                    {
+                        string line;
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            sw.WriteLine("        " + line);
+                        }
+                    }
+
+                    foreach (var attr in overload.Signature.Attributes)
+                    {
+                        sw.WriteLine("        [" + attr.Name + "(" + string.Join(", ", attr.Arguments) + ")]");
+                    }
+
+                    sw.WriteLine("        public " + overload.Signature.ToString(overload.Unsafe).TrimEnd(';'));
+                    sw.WriteLine("        {");
+                    using (var sr = new StringReader(overload.CodeBlock))
+                    {
+                        string line;
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            sw.WriteLine($"            {line}");
+                        }
+                    }
+                    sw.WriteLine("        }");
+                    sw.WriteLine();
+                }
+
                 sw.WriteLine
                 (
                     "        public override SearchPathContainer SearchPaths { get; } = new "
@@ -316,7 +350,37 @@ namespace Silk.NET.BuildTools.Bind
                         }
                         sw.WriteLine();
                     }
-                    sw.WriteLine();
+
+                    foreach (var overload in Overloader.GetOverloads(i))
+                    {
+                        using (var sr = new StringReader(overload.Signature.Doc))
+                        {
+                            string line;
+                            while ((line = sr.ReadLine()) != null)
+                            {
+                                sw.WriteLine("        " + line);
+                            }
+                        }
+
+                        foreach (var attr in overload.Signature.Attributes)
+                        {
+                            sw.WriteLine("        [" + attr.Name + "(" + string.Join(", ", attr.Arguments) + ")]");
+                        }
+
+                        sw.WriteLine("        public " + overload.Signature.ToString(overload.Unsafe).TrimEnd(';'));
+                        sw.WriteLine("        {");
+                        using (var sr = new StringReader(overload.CodeBlock))
+                        {
+                            string line;
+                            while ((line = sr.ReadLine()) != null)
+                            {
+                                sw.WriteLine($"            {line}");
+                            }
+                        }
+                        sw.WriteLine("        }");
+                        sw.WriteLine();
+                    }
+
                     sw.WriteLine($"        public {name}(string path, ImplementationOptions opts)");
                     sw.WriteLine("            : base(path, opts)");
                     sw.WriteLine("        {");

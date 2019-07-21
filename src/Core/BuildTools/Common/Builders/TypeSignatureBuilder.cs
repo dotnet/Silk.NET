@@ -21,6 +21,8 @@ namespace Silk.NET.BuildTools.Common.Builders
 
         private bool _newIsOut;
 
+        private bool _newIsIn;
+
         [NotNull] private string _newName;
 
         /// <summary>
@@ -32,6 +34,9 @@ namespace Silk.NET.BuildTools.Common.Builders
             _newName = typeSignature.Name;
             _newIndirectionLevel = typeSignature.IndirectionLevels;
             _newArrayDimensions = typeSignature.ArrayDimensions;
+            _newIsByRef = typeSignature.IsByRef;
+            _newIsIn = typeSignature.IsIn;
+            _newIsOut = typeSignature.IsOut;
         }
 
         /// <summary>
@@ -107,8 +112,15 @@ namespace Silk.NET.BuildTools.Common.Builders
                 IndirectionLevels = _newIndirectionLevel,
                 ArrayDimensions = _newArrayDimensions,
                 IsByRef = _newIsByRef,
-                IsOut = _newIsOut
+                IsOut = _newIsOut,
+                IsIn = _newIsIn
             };
+        }
+
+        public TypeSignatureBuilder WithIsIn(bool b)
+        {
+            _newIsIn = b;
+            return this;
         }
     }
 }

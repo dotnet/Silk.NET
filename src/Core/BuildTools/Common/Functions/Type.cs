@@ -50,6 +50,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         public bool IsOut { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this type is an in type.
+        /// </summary>
+        public bool IsIn { get; set; }
+
         /// <inheritdoc />
         public override string ToString()
         {
@@ -72,6 +77,15 @@ namespace Silk.NET.BuildTools.Common.Functions
                    && IsPointer;
         }
 
+        /// <summary>
+        /// Returns a value indicating whether this signature represents an IntPtr.
+        /// </summary>
+        /// <returns>A value indicating whether this signature represents an IntPtr.</returns>
+        public bool IsIntPtr()
+        {
+            return Name == "IntPtr" && IndirectionLevels == 0;
+        }
+
         public bool Equals(Type other)
         {
             if (ReferenceEquals(null, other))
@@ -88,7 +102,8 @@ namespace Silk.NET.BuildTools.Common.Functions
                    ArrayDimensions == other.ArrayDimensions &&
                    string.Equals(Name, other.Name) &&
                    IsByRef == other.IsByRef &&
-                   IsOut == other.IsOut;
+                   IsOut == other.IsOut &&
+                   IsIn == other.IsIn;
         }
 
         public override bool Equals(object obj)
@@ -115,6 +130,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                 hashCode = (hashCode * 397) ^ (Name != null ? Name.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ IsByRef.GetHashCode();
                 hashCode = (hashCode * 397) ^ IsOut.GetHashCode();
+                hashCode = (hashCode * 397) ^ IsIn.GetHashCode();
                 return hashCode;
             }
         }
