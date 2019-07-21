@@ -120,11 +120,6 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("        " + attr);
                 }
 
-                foreach (var attr in function.Attributes)
-                {
-                    sw.WriteLine("        [" + attr.Name + "(" + string.Join(", ", attr.Arguments) + ")]");
-                }
-
                 sw.WriteLine
                 (
                     "        [NativeSymbol(\"" + profile.FunctionPrefix + function.NativeName + "\")]"
