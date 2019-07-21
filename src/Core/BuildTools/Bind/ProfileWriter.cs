@@ -11,6 +11,7 @@ using System.Xml.Linq;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Bind.Overloading;
 using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Convert.XML;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
@@ -102,10 +103,9 @@ namespace Silk.NET.BuildTools.Bind
 
             sw.WriteLine("    public interface " + @interface.Name);
             sw.Write("    {");
-            for (var index = 0; index < @interface.Functions.Count; index++)
+            foreach (var function in @interface.Functions)
             {
                 sw.WriteLine();
-                var function = @interface.Functions[index];
                 using (var sr = new StringReader(function.Doc))
                 {
                     string line;
@@ -118,6 +118,11 @@ namespace Silk.NET.BuildTools.Bind
                 foreach (var attr in function.Attributes)
                 {
                     sw.WriteLine("        " + attr);
+                }
+
+                foreach (var attr in function.Attributes)
+                {
+                    sw.WriteLine("        [" + attr.Name + "(" + string.Join(", ", attr.Arguments) + ")]");
                 }
 
                 sw.WriteLine
@@ -246,6 +251,11 @@ namespace Silk.NET.BuildTools.Bind
                         }
                     }
 
+                    foreach (var attr in overload.Signature.Attributes)
+                    {
+                        sw.WriteLine("        [" + attr.Name + "(" + string.Join(", ", attr.Arguments) + ")]");
+                    }
+
                     sw.WriteLine("        public " + overload.Signature.ToString(overload.Unsafe).TrimEnd(';'));
                     sw.WriteLine("        {");
                     using (var sr = new StringReader(overload.CodeBlock))
@@ -355,6 +365,11 @@ namespace Silk.NET.BuildTools.Bind
                             {
                                 sw.WriteLine("        " + line);
                             }
+                        }
+
+                        foreach (var attr in overload.Signature.Attributes)
+                        {
+                            sw.WriteLine("        [" + attr.Name + "(" + string.Join(", ", attr.Arguments) + ")]");
                         }
 
                         sw.WriteLine("        public " + overload.Signature.ToString(overload.Unsafe).TrimEnd(';'));
