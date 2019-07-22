@@ -200,8 +200,6 @@ namespace Silk.NET.BuildTools.Bind
             // }
             if (project.IsRoot)
             {
-                var partial = File.Exists(Path.Combine(folder, profile.ClassName + ".cs")) ? "partial" : "";
-                
                 var sw = new StreamWriter(Path.Combine(folder, profile.ClassName + ".gen.cs"));
                 sw.Write(LicenseText.Value);
                 sw.WriteLine("using System;");
@@ -213,7 +211,7 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine();
                 sw.WriteLine("namespace " + profile.Namespace + project.Namespace);
                 sw.WriteLine("{");
-                sw.WriteLine($"    public abstract {partial} class {profile.ClassName} : NativeAPI, I{profile.ClassName}");
+                sw.WriteLine($"    public abstract partial class {profile.ClassName} : NativeAPI, I{profile.ClassName}");
                 sw.WriteLine("    {");
                 var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).RemoveDuplicates();
                 foreach (var function in allFunctions)
@@ -315,9 +313,9 @@ namespace Silk.NET.BuildTools.Bind
             }
             else
             {
-                foreach (var (key, i) in project.Interfaces) {
+                foreach (var (key, i) in project.Interfaces)
+                {
                     var name = key.Substring(1);
-                    var partial = File.Exists(Path.Combine(folder, name + ".cs")) ? "partial" : "";
                     var sw = new StreamWriter(Path.Combine(folder, name + ".gen.cs"));
                     sw.Write(LicenseText.Value);
                     sw.WriteLine("using System;");
@@ -330,7 +328,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine();
                     sw.WriteLine("namespace " + profile.ExtensionsNamespace + project.Namespace);
                     sw.WriteLine("{");
-                    sw.WriteLine($"    public abstract {partial} class {name} : NativeExtension<{profile.ClassName}>, I{name}");
+                    sw.WriteLine($"    public abstract partial class {name} : NativeExtension<{profile.ClassName}>, I{name}");
                     sw.WriteLine("    {");
                     foreach (var function in i.Functions)
                     {
