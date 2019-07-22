@@ -66,6 +66,11 @@ namespace Silk.NET.BuildTools.Convert.Construction
                                 parameter.Type.Name = project.Enums.First().Name;
                             }
                         }
+
+                        if (function.ReturnType.Name == "GLenum")
+                        {
+                            function.ReturnType.Name = project.Enums.First().Name;
+                        }
                     }
                 }
             }
