@@ -41,6 +41,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the original name of this type, before mapping.
+        /// </summary>
+        public string OriginalName { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether this type is by ref.
         /// </summary>
         public bool IsByRef { get; set; }
