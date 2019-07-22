@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Generator.Common.Enums
+namespace Silk.NET.BuildTools.Common.Enums
 {
     /// <summary>
     /// Represents an enum token.

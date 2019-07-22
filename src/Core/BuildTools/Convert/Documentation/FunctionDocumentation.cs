@@ -5,10 +5,10 @@
 
 using System.Collections.Generic;
 using System.Text;
-using Generator.Common.Functions;
 using Humanizer;
+using Silk.NET.BuildTools.Common.Functions;
 
-namespace Generator.Convert.Documentation
+namespace Silk.NET.BuildTools.Convert.Documentation
 {
     /// <summary>
     /// Represents documentation for a function.
@@ -67,7 +67,7 @@ namespace Generator.Convert.Documentation
                         // ReSharper disable once PossibleNullReferenceException
                         sb.AppendLine
                         (
-                            $"/// This parameter's element count is taken from {parameter.Count.ValueReference.Name}."
+                            $"/// This parameter's element count is taken from {parameter.Count.ValueReference}."
                         );
                         sb.AppendLine("///");
                     }

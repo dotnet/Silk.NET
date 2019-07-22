@@ -7,12 +7,15 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
-using Generator.Common;
+using System.Xml.Linq;
 using MoreLinq.Extensions;
-using Enum = Generator.Common.Enums.Enum;
+using Silk.NET.BuildTools.Bind.Overloading;
+using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Convert.XML;
+using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
-namespace Generator.Bind
+namespace Silk.NET.BuildTools.Bind
 {
     /// <summary>
     /// Contains methods for writing profiles to disk.
@@ -98,12 +101,11 @@ namespace Generator.Bind
                 sw.WriteLine("    " + attr);
             }
 
-            sw.WriteLine("    internal interface " + @interface.Name);
+            sw.WriteLine("    public interface " + @interface.Name);
             sw.Write("    {");
-            for (var index = 0; index < @interface.Functions.Count; index++)
+            foreach (var function in @interface.Functions)
             {
                 sw.WriteLine();
-                var function = @interface.Functions[index];
                 using (var sr = new StringReader(function.Doc))
                 {
                     string line;
@@ -145,7 +147,7 @@ namespace Generator.Bind
             sw.WriteLine("namespace " + profile.Namespace + project.Namespace);
             sw.WriteLine("{");
             var names = project.Interfaces.Select(x => x.Value.Name).ToArray();
-            sw.Write("    internal interface I" + profile.ClassName + " : " + names[0]);
+            sw.Write("    public interface I" + profile.ClassName + " : " + names[0]);
             for (var i = 1; i < names.Length; i++)
             {
                 sw.WriteLine(",");
@@ -232,6 +234,37 @@ namespace Generator.Bind
                     }
                     sw.WriteLine();
                 }
+
+                foreach (var overload in Overloader.GetOverloads(project))
+                {
+                    using (var sr = new StringReader(overload.Signature.Doc))
+                    {
+                        string line;
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            sw.WriteLine("        " + line);
+                        }
+                    }
+
+                    foreach (var attr in overload.Signature.Attributes)
+                    {
+                        sw.WriteLine("        [" + attr.Name + "(" + string.Join(", ", attr.Arguments) + ")]");
+                    }
+
+                    sw.WriteLine("        public " + overload.Signature.ToString(overload.Unsafe).TrimEnd(';'));
+                    sw.WriteLine("        {");
+                    using (var sr = new StringReader(overload.CodeBlock))
+                    {
+                        string line;
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            sw.WriteLine($"            {line}");
+                        }
+                    }
+                    sw.WriteLine("        }");
+                    sw.WriteLine();
+                }
+
                 sw.WriteLine
                 (
                     "        public override SearchPathContainer SearchPaths { get; } = new "
@@ -250,6 +283,7 @@ namespace Generator.Bind
                 if (!File.Exists(Path.Combine(folder, profile.ClassName + ".cs")))
                 {
                     sw = new StreamWriter(Path.Combine(folder, profile.ClassName + ".cs"));
+                    sw.WriteLine("using System;");
                     sw.WriteLine("using Silk.NET.Core.Loader;");
                     sw.WriteLine("using Silk.NET.Core.Native;");
                     sw.WriteLine();
@@ -267,6 +301,11 @@ namespace Generator.Bind
                     sw.WriteLine("        {");
                     sw.WriteLine($"             ext = LibraryLoader<{profile.ClassName}>.Load<T>(this);");
                     sw.WriteLine("             return ext != null;");
+                    sw.WriteLine("        }");
+                    sw.WriteLine();
+                    sw.WriteLine("        public override bool IsExtensionPresent(string extension)");
+                    sw.WriteLine("        {");
+                    sw.WriteLine("            throw new NotImplementedException();");
                     sw.WriteLine("        }");
                     sw.WriteLine("    }");
                     sw.WriteLine("}");
@@ -311,7 +350,37 @@ namespace Generator.Bind
                         }
                         sw.WriteLine();
                     }
-                    sw.WriteLine();
+
+                    foreach (var overload in Overloader.GetOverloads(i))
+                    {
+                        using (var sr = new StringReader(overload.Signature.Doc))
+                        {
+                            string line;
+                            while ((line = sr.ReadLine()) != null)
+                            {
+                                sw.WriteLine("        " + line);
+                            }
+                        }
+
+                        foreach (var attr in overload.Signature.Attributes)
+                        {
+                            sw.WriteLine("        [" + attr.Name + "(" + string.Join(", ", attr.Arguments) + ")]");
+                        }
+
+                        sw.WriteLine("        public " + overload.Signature.ToString(overload.Unsafe).TrimEnd(';'));
+                        sw.WriteLine("        {");
+                        using (var sr = new StringReader(overload.CodeBlock))
+                        {
+                            string line;
+                            while ((line = sr.ReadLine()) != null)
+                            {
+                                sw.WriteLine($"            {line}");
+                            }
+                        }
+                        sw.WriteLine("        }");
+                        sw.WriteLine();
+                    }
+
                     sw.WriteLine($"        public {name}(string path, ImplementationOptions opts)");
                     sw.WriteLine("            : base(path, opts)");
                     sw.WriteLine("        {");

@@ -5,10 +5,10 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Generator.Common;
-using Generator.Common.Functions;
+using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Functions;
 
-namespace Generator.Convert.Construction
+namespace Silk.NET.BuildTools.Convert.Construction
 {
     /// <summary>
     /// A collection of methods for replacing type names using a dictionary.
@@ -24,14 +24,22 @@ namespace Generator.Convert.Construction
         {
             foreach (var function in functions)
             {
-                if (map.ContainsKey(function.ReturnType.Name))
+                if (map.ContainsKey(function.ReturnType.ToString()))
+                {
+                    function.ReturnType = ParsingHelpers.ParseTypeSignature(map[function.ReturnType.ToString()]);
+                }
+                else if (map.ContainsKey(function.ReturnType.Name))
                 {
                     function.ReturnType.Name = map[function.ReturnType.Name];
                 }
 
                 foreach (var parameter in function.Parameters)
                 {
-                    if (map.ContainsKey(parameter.Type.Name))
+                    if (map.ContainsKey(parameter.Type.ToString()))
+                    {
+                        parameter.Type = ParsingHelpers.ParseTypeSignature(map[parameter.Type.ToString()]);
+                    }
+                    else if (map.ContainsKey(parameter.Type.Name))
                     {
                         parameter.Type.Name = map[parameter.Type.Name];
                     }

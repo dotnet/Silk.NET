@@ -4,9 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
-using Generator.Common.Enums;
+using Silk.NET.BuildTools.Common.Enums;
 
-namespace Generator.Common
+namespace Silk.NET.BuildTools.Common
 {
     /// <summary>
     /// Represents a project, whether root or extension, containing <see cref="Interface" />s and <see cref="Enum" />s.

@@ -3,10 +3,10 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using Generator.Common.Functions;
 using JetBrains.Annotations;
+using Silk.NET.BuildTools.Common.Functions;
 
-namespace Generator.Common.Builders
+namespace Silk.NET.BuildTools.Common.Builders
 {
     /// <summary>
     /// Acts as a builder for new instances of <see cref="TypeSignature" />s, based on existing instances.
@@ -21,6 +21,8 @@ namespace Generator.Common.Builders
 
         private bool _newIsOut;
 
+        private bool _newIsIn;
+
         [NotNull] private string _newName;
 
         /// <summary>
@@ -32,6 +34,9 @@ namespace Generator.Common.Builders
             _newName = typeSignature.Name;
             _newIndirectionLevel = typeSignature.IndirectionLevels;
             _newArrayDimensions = typeSignature.ArrayDimensions;
+            _newIsByRef = typeSignature.IsByRef;
+            _newIsIn = typeSignature.IsIn;
+            _newIsOut = typeSignature.IsOut;
         }
 
         /// <summary>
@@ -107,8 +112,15 @@ namespace Generator.Common.Builders
                 IndirectionLevels = _newIndirectionLevel,
                 ArrayDimensions = _newArrayDimensions,
                 IsByRef = _newIsByRef,
-                IsOut = _newIsOut
+                IsOut = _newIsOut,
+                IsIn = _newIsIn
             };
+        }
+
+        public TypeSignatureBuilder WithIsIn(bool b)
+        {
+            _newIsIn = b;
+            return this;
         }
     }
 }

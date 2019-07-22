@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-namespace Generator.Common.Functions
+namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>
     /// Enumerates the possible flows of a parameter (ie. is this parameter

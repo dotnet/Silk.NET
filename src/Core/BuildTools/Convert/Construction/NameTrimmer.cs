@@ -3,15 +3,12 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Generator.Common.Functions;
-using Generator.Convert.Construction.Trimmers;
 using JetBrains.Annotations;
+using Silk.NET.BuildTools.Convert.Construction.Trimmers;
 
-namespace Generator.Convert.Construction
+namespace Silk.NET.BuildTools.Convert.Construction
 {
     /// <summary>
     /// A collection of functions for altering the endings of function names.

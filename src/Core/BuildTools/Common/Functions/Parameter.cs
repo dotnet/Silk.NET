@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Generator.Common.Functions
+namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>
     /// Represents a parameter of a C# function.
@@ -44,8 +44,7 @@ namespace Generator.Common.Functions
                 return true;
             }
 
-            return string.Equals(Name, other.Name) &&
-                   Type.Equals(other.Type);
+            return Type.Equals(other.Type);
         }
 
         public override bool Equals(object obj)
@@ -60,12 +59,7 @@ namespace Generator.Common.Functions
                 return true;
             }
 
-            if (obj.GetType() != this.GetType())
-            {
-                return false;
-            }
-
-            return Equals((Parameter) obj);
+            return obj is Parameter parameter && Equals(parameter);
         }
 
         public override int GetHashCode()

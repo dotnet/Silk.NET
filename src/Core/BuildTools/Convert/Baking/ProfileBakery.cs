@@ -8,16 +8,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
-using Generator.Common;
-using Generator.Common.Enums;
-using Generator.Common.Functions;
-using Generator.Convert.Construction;
-using Generator.Convert.Documentation;
 using MoreLinq.Extensions;
 using Newtonsoft.Json;
+using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Enums;
+using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Convert.Documentation;
 
-namespace Generator.Convert.Baking
+namespace Silk.NET.BuildTools.Convert.Baking
 {
     /// <summary>
     /// A collection of methods for baking/fusing APIs together.

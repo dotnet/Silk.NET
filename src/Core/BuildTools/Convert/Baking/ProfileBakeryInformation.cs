@@ -4,9 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
-using Generator.Common;
+using Silk.NET.BuildTools.Common;
 
-namespace Generator.Convert.Baking
+namespace Silk.NET.BuildTools.Convert.Baking
 {
     /// <summary>
     /// Represents information to be passed to the profile bakery (a script or recipe if you will).

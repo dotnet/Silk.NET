@@ -6,7 +6,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace Generator.Common.Functions
+namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>
     /// Represents a C# type signature.
@@ -50,6 +50,11 @@ namespace Generator.Common.Functions
         /// </summary>
         public bool IsOut { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this type is an in type.
+        /// </summary>
+        public bool IsIn { get; set; }
+
         /// <inheritdoc />
         public override string ToString()
         {
@@ -72,6 +77,15 @@ namespace Generator.Common.Functions
                    && IsPointer;
         }
 
+        /// <summary>
+        /// Returns a value indicating whether this signature represents an IntPtr.
+        /// </summary>
+        /// <returns>A value indicating whether this signature represents an IntPtr.</returns>
+        public bool IsIntPtr()
+        {
+            return Name == "IntPtr" && IndirectionLevels == 0;
+        }
+
         public bool Equals(Type other)
         {
             if (ReferenceEquals(null, other))
@@ -88,7 +102,8 @@ namespace Generator.Common.Functions
                    ArrayDimensions == other.ArrayDimensions &&
                    string.Equals(Name, other.Name) &&
                    IsByRef == other.IsByRef &&
-                   IsOut == other.IsOut;
+                   IsOut == other.IsOut &&
+                   IsIn == other.IsIn;
         }
 
         public override bool Equals(object obj)
@@ -103,12 +118,7 @@ namespace Generator.Common.Functions
                 return true;
             }
 
-            if (obj.GetType() != this.GetType())
-            {
-                return false;
-            }
-
-            return Equals((Type) obj);
+            return obj is Type type && Equals(type);
         }
 
         public override int GetHashCode()
@@ -120,6 +130,7 @@ namespace Generator.Common.Functions
                 hashCode = (hashCode * 397) ^ (Name != null ? Name.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ IsByRef.GetHashCode();
                 hashCode = (hashCode * 397) ^ IsOut.GetHashCode();
+                hashCode = (hashCode * 397) ^ IsIn.GetHashCode();
                 return hashCode;
             }
         }

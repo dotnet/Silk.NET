@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-namespace Generator.Convert.Documentation
+namespace Silk.NET.BuildTools.Convert.Documentation
 {
     /// <summary>
     /// Represents documentation for a function's parameter.
