@@ -1,7 +1,7 @@
 {
   "GLenum": "GLEnum",
   "GLsizei": "uint",
-  "GLsizeiptr": "uint",
+  "GLsizeiptr": "UIntPtr",
   "GLintptr": "IntPtr",
   "GLboolean": "bool",
   "GLbitfield": "uint",

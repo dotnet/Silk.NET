@@ -8927,7 +8927,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -9014,7 +9014,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -16585,7 +16585,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -17555,7 +17555,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -18373,7 +18373,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -20657,7 +20657,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -30971,7 +30971,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -39216,7 +39216,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -39309,7 +39309,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -39392,7 +39392,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -39468,7 +39468,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -39888,7 +39888,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -43915,7 +43915,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -43972,7 +43972,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -46579,7 +46579,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -53556,7 +53556,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -57683,7 +57683,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false
@@ -72390,7 +72390,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "uint",
+                    "Name": "UIntPtr",
                     "IsByRef": false,
                     "IsOut": false,
                     "IsIn": false

@@ -86,6 +86,15 @@ namespace Silk.NET.BuildTools.Common.Functions
             return Name == "IntPtr" && IndirectionLevels == 0;
         }
 
+        /// <summary>
+        /// Returns a value indicating whether this signature represents a UIntPtr.
+        /// </summary>
+        /// <returns>A value indicating whether this signature represents a UIntPtr.</returns>
+        public bool IsUIntPtr()
+        {
+            return Name == "UIntPtr" && IndirectionLevels == 0;
+        }
+
         public bool Equals(Type other)
         {
             if (ReferenceEquals(null, other))
