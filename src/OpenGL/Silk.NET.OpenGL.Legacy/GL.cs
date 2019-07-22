@@ -33,20 +33,17 @@ namespace Silk.NET.OpenGL.Legacy
         {
             BlendColor(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
         }
-
-        [CLSCompliant(false)]
+        
         public void Uniform2(int location, ref Vector2 vector)
         {
             Uniform2(location, vector.X, vector.Y);
         }
-
-        [CLSCompliant(false)]
+        
         public void Uniform3(int location, ref Vector3 vector)
         {
             Uniform3(location, vector.X, vector.Y, vector.Z);
         }
-
-        [CLSCompliant(false)]
+        
         public void Uniform4(int location, ref Vector4 vector)
         {
             Uniform4(location, vector.X, vector.Y, vector.Z, vector.W);
@@ -76,20 +73,17 @@ namespace Silk.NET.OpenGL.Legacy
         {
             Uniform4(location, quaternion.X, quaternion.Y, quaternion.Z, quaternion.W);
         }
-
-        [CLSCompliant(false)]
+        
         public void ProgramUniform2(uint program, int location, ref Vector2 vector)
         {
             ProgramUniform2(program, location, vector.X, vector.Y);
         }
-
-        [CLSCompliant(false)]
+        
         public void ProgramUniform3(uint program, int location, ref Vector3 vector)
         {
             ProgramUniform3(program, location, vector.X, vector.Y, vector.Z);
         }
-
-        [CLSCompliant(false)]
+        
         public void ProgramUniform4(uint program, int location, ref Vector4 vector)
         {
             ProgramUniform4(program, location, vector.X, vector.Y, vector.Z, vector.W);
@@ -134,7 +128,7 @@ namespace Silk.NET.OpenGL.Legacy
             unsafe
             {
                 var length = @string.Length;
-                var strings = (new string[] {@string});
+                var strings = (new[] {@string});
                 fixed (char* strs = strings[0])
                 {
                     ShaderSource(shader, 1u, strs, length);
@@ -180,20 +174,17 @@ namespace Silk.NET.OpenGL.Legacy
             info = null;
             GetProgramInfoLog(program, lengthu * 2u, lengthu, info);
         }
-
-        [CLSCompliant(false)]
+        
         public void VertexAttrib2(uint index, ref Vector2 v)
         {
             VertexAttrib2(index, v.X, v.Y);
         }
-
-        [CLSCompliant(false)]
+        
         public void VertexAttrib3(uint index, ref Vector3 v)
         {
             VertexAttrib3(index, v.X, v.Y, v.Z);
         }
-
-        [CLSCompliant(false)]
+        
         public void VertexAttrib4(uint index, ref Vector4 v)
         {
             VertexAttrib4(index, v.X, v.Y, v.Z, v.W);
@@ -213,8 +204,7 @@ namespace Silk.NET.OpenGL.Legacy
         {
             VertexAttrib4(index, v.X, v.Y, v.Z, v.W);
         }
-
-        [CLSCompliant(false)]
+        
         public void VertexAttribPointer(uint index, int size, GLEnum type, bool normalized, uint stride, int offset)
         {
             unsafe
