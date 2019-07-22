@@ -217,7 +217,7 @@ namespace Silk.NET.BuildTools.Convert.Construction
                 throw new InvalidDataException("Could not parse the parameter flow.");
             }
 
-            var paramCountStr = paramElement.GetRequiredAttribute("count").Value;
+            var paramCountStr = paramElement.Attribute("count")?.Value;
             var countSignature = ParsingHelpers.ParseCountSignature
             (
                 paramCountStr,

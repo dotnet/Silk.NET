@@ -1,5 +1,5 @@
 {
-  "GLenum": "int",
+  "GLenum": "GLEnum",
   "GLsizei": "uint",
   "GLsizeiptr": "uint",
   "GLintptr": "IntPtr",
