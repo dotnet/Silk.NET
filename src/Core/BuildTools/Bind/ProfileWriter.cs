@@ -44,8 +44,6 @@ namespace Silk.NET.BuildTools.Bind
             var sw = new StreamWriter(file);
             sw.WriteLine(LicenseText.Value);
             sw.WriteLine();
-            sw.WriteLine("using System;");
-            sw.WriteLine();
             var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
             sw.WriteLine("namespace " + ns + project.Namespace);
             sw.WriteLine("{");
