@@ -120,9 +120,9 @@ namespace Silk.NET.OpenGL
             ProgramUniform4(program, location, quaternion.X, quaternion.Y, quaternion.Z, quaternion.W);
         }
 
-        public string GetActiveAttrib(uint program, uint index, out int size, out int type)
+        public string GetActiveAttrib(uint program, uint index, out int size, out GLEnum type)
         {
-            GetProgram(program, (int)GLEnum.ActiveAttributeMaxLength, out var length);
+            GetProgram(program, GLEnum.ActiveAttributeMaxLength, out var length);
             string str = null;
             var lengthu = (uint) length;
             GetActiveAttrib(program, index, lengthu == 0 ? 1 : lengthu * 2, out lengthu, out size, out type, str);
@@ -133,49 +133,44 @@ namespace Silk.NET.OpenGL
         {
             unsafe
             {
-                int length = @string.Length;
+                var length = @string.Length;
                 var strings = (new string[] {@string});
                 fixed (char* strs = strings[0])
                 {
-                    ShaderSource((uint) shader, 1u, strs, length);
+                    ShaderSource(shader, 1u, strs, length);
                 }
             }
         }
 
         public string GetShaderInfoLog(uint shader)
         {
-            string info;
-            GetShaderInfoLog(shader, out info);
+            GetShaderInfoLog(shader, out var info);
             return info;
         }
 
         public void GetShaderInfoLog(uint shader, out string info)
         {
-            unsafe
+            GetShader(shader, GLEnum.InfoLogLength, out var length);
+            if (length == 0)
             {
-                GetShader(shader, (int)GLEnum.InfoLogLength, out var length);
-                if (length == 0)
-                {
-                    info = string.Empty;
-                    return;
-                }
-
-                var lengthu = (uint) length;
-                info = null;
-                GetShaderInfoLog(shader, lengthu * 2, out lengthu, info);
+                info = string.Empty;
+                return;
             }
+
+            var lengthu = (uint) length;
+            info = null;
+            GetShaderInfoLog(shader, lengthu * 2, out lengthu, info);
         }
 
         public string GetProgramInfoLog(uint program)
         {
-            string info;
-            GetProgramInfoLog(program, out info);
+            GetProgramInfoLog(program, out var info);
             return info;
         }
 
         public void GetProgramInfoLog(uint program, out string info)
         {
-            GetProgram(program, (int)GLEnum.InfoLogLength, out var length); if (length == 0)
+            GetProgram(program, GLEnum.InfoLogLength, out var length); if (length == 0)
             {
                 info = string.Empty;
                 return;
@@ -219,23 +214,13 @@ namespace Silk.NET.OpenGL
             VertexAttrib4(index, v.X, v.Y, v.Z, v.W);
         }
 
-        public void VertexAttribPointer(uint index, int size, GLEnum type, bool normalized, int stride, int offset)
-        {
-            VertexAttribPointer(index, size, type, normalized, stride, offset);
-        }
-
         [CLSCompliant(false)]
         public void VertexAttribPointer(uint index, int size, GLEnum type, bool normalized, uint stride, int offset)
         {
             unsafe
             {
-                VertexAttribPointer(index, size, (int)type, normalized, stride, ((IntPtr)offset).ToPointer());
+                VertexAttribPointer(index, size, type, normalized, stride, ((IntPtr)offset).ToPointer());
             }
-        }
-
-        public void DrawElements(GLEnum mode, int count, GLEnum type, int offset)
-        {
-            DrawElements(mode, count, type, offset);
         }
 
         public void GetFloat(GLEnum pname, out Vector2 vector)
@@ -244,12 +229,12 @@ namespace Silk.NET.OpenGL
             {
                 fixed (Vector2* ptr = &vector)
                 {
-                    GetFloat((int)pname, (float*)ptr);
+                    GetFloat(pname, (float*)ptr);
                 }
             }
         }
 
-        public void GetFloat(int pname, out Vector3 vector)
+        public void GetFloat(GLEnum pname, out Vector3 vector)
         {
             unsafe
             {
@@ -260,7 +245,7 @@ namespace Silk.NET.OpenGL
             }
         }
 
-        public void GetFloat(int pname, out Vector4 vector)
+        public void GetFloat(GLEnum pname, out Vector4 vector)
         {
             unsafe
             {
@@ -271,7 +256,7 @@ namespace Silk.NET.OpenGL
             }
         }
 
-        public void GetFloat(int pname, out Matrix4x4 matrix)
+        public void GetFloat(GLEnum pname, out Matrix4x4 matrix)
         {
             unsafe
             {
@@ -298,4 +283,3 @@ namespace Silk.NET.OpenGL
         }
     }
 }
-

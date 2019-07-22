@@ -133,19 +133,18 @@ namespace Silk.NET.OpenGLES
         {
             unsafe
             {
-                int length = @string.Length;
-                var strings = (new string[] {@string});
+                var length = @string.Length;
+                var strings = (new[] {@string});
                 fixed (char* strs = strings[0])
                 {
-                    ShaderSource((uint) shader, 1u, strs, length);
+                    ShaderSource(shader, 1u, strs, length);
                 }
             }
         }
 
         public string GetShaderInfoLog(uint shader)
         {
-            string info;
-            GetShaderInfoLog(shader, out info);
+            GetShaderInfoLog(shader, out var info);
             return info;
         }
 
@@ -165,8 +164,7 @@ namespace Silk.NET.OpenGLES
 
         public string GetProgramInfoLog(uint program)
         {
-            string info;
-            GetProgramInfoLog(program, out info);
+            GetProgramInfoLog(program, out var info);
             return info;
         }
 
@@ -216,11 +214,6 @@ namespace Silk.NET.OpenGLES
             VertexAttrib4(index, v.X, v.Y, v.Z, v.W);
         }
 
-        public void VertexAttribPointer(uint index, int size, GLEnum type, bool normalized, int stride, int offset)
-        {
-            VertexAttribPointer(index, size, type, normalized, stride, offset);
-        }
-
         [CLSCompliant(false)]
         public void VertexAttribPointer(uint index, int size, GLEnum type, bool normalized, uint stride, int offset)
         {
@@ -228,11 +221,6 @@ namespace Silk.NET.OpenGLES
             {
                 VertexAttribPointer(index, size, type, normalized, stride, ((IntPtr)offset).ToPointer());
             }
-        }
-
-        public void DrawElements(GLEnum mode, int count, GLEnum type, int offset)
-        {
-            DrawElements(mode, count, type, offset);
         }
 
         public void GetFloat(GLEnum pname, out Vector2 vector)
