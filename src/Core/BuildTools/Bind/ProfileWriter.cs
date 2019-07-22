@@ -54,7 +54,7 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine("    " + attr);
             }
 
-            sw.WriteLine("    public enum " + @enum.Name);
+            sw.WriteLine("    public enum " + @enum.Name + " : int");
             sw.WriteLine("    {");
             for (var index = 0; index < @enum.Tokens.Count; index++)
             {
