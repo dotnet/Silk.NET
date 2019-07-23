@@ -35,5 +35,15 @@ namespace Silk.NET.Input.Desktop
 
         public event Action<IKeyboard, Key> KeyDown;
         public event Action<IKeyboard, Key> KeyUp;
+
+        internal void RaisePressEvent(Keys key, int scancode, KeyModifiers mods)
+        {
+            KeyDown?.Invoke(this, Util.GlfwKeyToSilkKey(key));
+        }
+
+        internal void RaiseReleaseEvent(Keys key, int scancode, KeyModifiers mods)
+        {
+            KeyUp?.Invoke(this, Util.GlfwKeyToSilkKey(key));
+        }
     }
 }

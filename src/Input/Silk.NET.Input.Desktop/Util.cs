@@ -8,6 +8,7 @@ using System.Linq;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
 using Ultz.Dispatcher.Unsafe;
+using MouseButton = Silk.NET.Input.Common.MouseButton;
 
 namespace Silk.NET.Input.Desktop
 {
@@ -60,6 +61,15 @@ namespace Silk.NET.Input.Desktop
         public static Key GlfwKeyToSilkKey(Keys k)
         {
             if (Enum.TryParse<Key>(k.ToString(), out var sk))
+            {
+                return sk;
+            }
+            throw new ArgumentOutOfRangeException(nameof(k));
+        }
+
+        public static MouseButton GlfwButtonToSilkButton(GLFW.MouseButton k)
+        {
+            if (Enum.TryParse<MouseButton>(k.ToString(), out var sk))
             {
                 return sk;
             }

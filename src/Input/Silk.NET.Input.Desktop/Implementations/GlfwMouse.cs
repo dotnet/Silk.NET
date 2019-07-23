@@ -11,6 +11,10 @@ namespace Silk.NET.Input.Desktop
 {
     public class GlfwMouse : IMouse
     {
+        public GlfwMouse(GlfwInputContext inputContext)
+        {
+        }
+
         public string Name { get; } = "Silk.NET Mouse (GLFW)";
         public int Index { get; } = 0;
         public bool IsConnected { get; } = true;
@@ -24,5 +28,20 @@ namespace Silk.NET.Input.Desktop
         public event Action<IMouse, MouseButton> MouseDown;
         public event Action<IMouse, MouseButton> MouseUp;
         public event Action<IMouse, ScrollWheel> Scroll;
+
+        internal void RaiseMouseDown(MouseButton btn)
+        {
+            MouseDown?.Invoke(this, btn);
+        }
+
+        internal void RaiseMouseUp(MouseButton btn)
+        {
+            MouseUp?.Invoke(this, btn);
+        }
+
+        internal void RaiseScroll(ScrollWheel wheel)
+        {
+            Scroll?.Invoke(this, wheel);
+        }
     }
 }
