@@ -7,34 +7,26 @@ using System.Text;
 
 namespace Silk.NET.Input.Desktop.Collections
 {
-    public unsafe class GlfwThumbstickCollection : IReadOnlyList<Thumbstick>
+    public unsafe class GlfwButtonCollection : IReadOnlyList<Button>
     {
-        private float* _positions, _directions;
+        private bool* _bools;
         private int _count;
+        private readonly GlfwKeyboard _keyboard;
 
-        public GlfwThumbstickCollection(float* positions, float* directions, int count)
+        public GlfwButtonCollection(bool* bools, int count, GlfwKeyboard keyboard)
         {
-            _positions = positions;
-            _directions = directions;
+            _bools = bools;
             _count = count;
+            _keyboard = keyboard;
         }
 
         public int Count => _count;
 
-        public Thumbstick this[int index] => index < _count
-            ? new Thumbstick(index, Get(_positions, index), Get(_directions, index))
+        public Button this[int index] => index < _count
+            ? new Button ((ButtonName)index, index, Get(_bools, index))
             : throw new ArgumentOutOfRangeException();
 
-        public static float Get(float* floats, int index)
-        {
-            return (float)Marshal.PtrToStructure
-            (
-                Marshal.ReadIntPtr((IntPtr)floats, index * IntPtr.Size),
-                typeof(float)
-            );
-        }
-
-        public IEnumerator<Thumbstick> GetEnumerator()
+        public IEnumerator<Button> GetEnumerator()
         {
             return new Enumerator(this);
         }
@@ -44,12 +36,20 @@ namespace Silk.NET.Input.Desktop.Collections
             return GetEnumerator();
         }
 
-        private struct Enumerator : IEnumerator<Thumbstick>
+        public static bool Get(bool* bools, int index)
         {
-            private GlfwThumbstickCollection _col;
+            return (bool)Marshal.PtrToStructure
+            (
+                Marshal.ReadIntPtr((IntPtr)bools, index * IntPtr.Size),
+                typeof(float)
+            );
+        }
+        private struct Enumerator : IEnumerator<Button>
+        {
+            private GlfwButtonCollection _col;
             private int _current;
 
-            public Enumerator(GlfwThumbstickCollection col)
+            public Enumerator(GlfwButtonCollection col)
             {
                 _col = col;
                 _current = 0;
@@ -64,7 +64,7 @@ namespace Silk.NET.Input.Desktop.Collections
                     return false;
                 }
 
-                Current = new Thumbstick(_current, Get(_col._positions, _current), Get(_col._directions, _current));
+                Current = new Button((ButtonName)_current, _current, Get(_col._bools, _current));
                 _current++;
                 return true;
             }
@@ -75,7 +75,7 @@ namespace Silk.NET.Input.Desktop.Collections
                 _current = 0;
             }
 
-            public Thumbstick Current { get; set; }
+            public Button Current { get; set; }
 
             object IEnumerator.Current => Current;
 
