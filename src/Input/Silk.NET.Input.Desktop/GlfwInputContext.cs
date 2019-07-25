@@ -63,15 +63,10 @@ namespace Silk.NET.Input.Desktop
             {
                 _joysticks[i].Update();
             }
-            // TODO:
-            // foreach joystick in this.Joysticks
-            //   foreach axis in joystick.Axes
-            //     if (axis.Position != someCachedValue)
-            //       joystick.RaiseAxisMove(axis)
-            //   foreach button in joystick.Buttons
-            //     if (button.Pressed != someCachedValue)
-            //       joystick.RaiseButtonDown(button)
-            // etc. etc.
+            for (int i = 0; i < _gamepads.Count; i++)
+            {
+                _gamepads[i].Update();
+            }
         }
         
         /// <inheritdoc />
