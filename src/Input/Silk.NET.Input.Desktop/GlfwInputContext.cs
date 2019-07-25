@@ -59,6 +59,10 @@ namespace Silk.NET.Input.Desktop
 
         public void WindowUpdate(double obj)
         {
+            for (int i = 0; i < _joysticks.Count; i++)
+            {
+                _joysticks[i].Update();
+            }
             // TODO:
             // foreach joystick in this.Joysticks
             //   foreach axis in joystick.Axes

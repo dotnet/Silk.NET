@@ -22,6 +22,7 @@ namespace Silk.NET.Input.Desktop
         public int Index { get; }
         public bool IsConnected => Util.Do(() => Util.Glfw.JoystickPresent(Index));
         public IReadOnlyList<Axis> Axes => GetAxes(Index, this);
+        private List<Axis> _cachedAxes => new List<Axis>();
         public IReadOnlyList<Button> Buttons { get; }
         public IReadOnlyList<Hat> Hats { get; }
         public Deadzone Deadzone { get; set; }
@@ -29,6 +30,18 @@ namespace Silk.NET.Input.Desktop
         public event Action<IJoystick, Button> ButtonUp;
         public event Action<IJoystick, Axis> AxisMoved;
         public event Action<IJoystick, Hat> HatMoved;
+
+        public void Update()
+        {
+            IReadOnlyList<Axis> axes = Axes;
+            for (int i = 0; i < axes.Count; i++)
+            {
+                if (!axes[i].Equals(_cachedAxes.Count > i ? _cachedAxes[i] : axes[i]))
+                {
+                    AxisMoved?.Invoke(this, axes[i]);
+                }
+            }
+        }
 
         private static unsafe IReadOnlyList<Axis> GetAxes(int i, GlfwJoystick joystick)
         {
