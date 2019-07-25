@@ -57,6 +57,7 @@ namespace Silk.NET.Input.Desktop.Collections
             {
                 _col = col;
                 _current = 0;
+                Current = default;
             }
             
             public bool MoveNext()
