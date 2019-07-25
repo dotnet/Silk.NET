@@ -12,6 +12,12 @@ namespace Silk.NET.Input.Desktop.Collections
         public Position2D* _positions;
         public int _count;
 
+        public GlfwHatCollection(Position2D* positions, int count)
+        {
+            _positions = positions;
+            _count = count;
+        }
+
         public Hat this[int index] => index < _count
             ? new Hat(index, Get(_positions, index))
             : throw new ArgumentOutOfRangeException();

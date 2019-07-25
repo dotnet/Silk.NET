@@ -11,13 +11,13 @@ namespace Silk.NET.Input.Desktop.Collections
     {
         private bool* _bools;
         private int _count;
-        private readonly GlfwKeyboard _keyboard;
+        private readonly GlfwJoystick joystick;
 
-        public GlfwButtonCollection(bool* bools, int count, GlfwKeyboard keyboard)
+        public GlfwButtonCollection(bool* bools, int count, GlfwJoystick _joystick)
         {
             _bools = bools;
             _count = count;
-            _keyboard = keyboard;
+            joystick = _joystick;
         }
 
         public int Count => _count;
