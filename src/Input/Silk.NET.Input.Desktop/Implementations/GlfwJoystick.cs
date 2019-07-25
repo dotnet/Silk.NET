@@ -22,11 +22,11 @@ namespace Silk.NET.Input.Desktop
         public int Index { get; }
         public bool IsConnected => Util.Do(() => Util.Glfw.JoystickPresent(Index)) && !Util.Glfw.JoystickIsGamepad(Index);
         public IReadOnlyList<Axis> Axes => GetAxes(Index, this);
-        private List<Axis> _cachedAxes => new List<Axis>();
+        private List<Axis> _cachedAxes = new List<Axis>();
         public IReadOnlyList<Button> Buttons { get; }
-        private List<Button> _cachedButtons => new List<Button>();
+        private List<Button> _cachedButtons = new List<Button>();
         public IReadOnlyList<Hat> Hats { get; }
-        private List<Hat> _cachedHats => new List<Hat>();
+        private List<Hat> _cachedHats = new List<Hat>();
         public Deadzone Deadzone { get; set; }
         public event Action<IJoystick, Button> ButtonDown;
         public event Action<IJoystick, Button> ButtonUp;
@@ -35,7 +35,7 @@ namespace Silk.NET.Input.Desktop
 
         public void Update()
         {
-            if (Util.Glfw.JoystickIsGamepad(Index))
+            if (!Util.Glfw.JoystickIsGamepad(Index))
             {
                 return;
             }

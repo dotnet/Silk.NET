@@ -20,12 +20,51 @@ namespace Silk.NET.Input.Desktop
         public int Index { get; }
         public bool IsConnected => Util.Do(() => Util.Glfw.JoystickIsGamepad(Index));
         public IReadOnlyList<Button> Buttons { get; }
+        private List<Button> _cachedButtons = new List<Button>();
         public IReadOnlyList<Thumbstick> Thumbsticks { get; }
+        private List<Thumbstick> _cachedThumbsticks = new List<Thumbstick>();
         public IReadOnlyList<Trigger> Triggers { get; }
+        private List<Trigger> _cachedTriggers = new List<Trigger>();
         public Deadzone Deadzone { get; set; }
         public event Action<IGamepad, Button> ButtonDown;
         public event Action<IGamepad, Button> ButtonUp;
         public event Action<IGamepad, Thumbstick> ThumbstickMoved;
         public event Action<IGamepad, Trigger> TriggerMoved;
+
+        public void Update()
+        {
+            if (Util.Glfw.JoystickIsGamepad(Index))
+            {
+                return;
+            }
+
+            IReadOnlyList<Button> buttons = Buttons;
+            for (int i = 0; i < buttons.Count; i++)
+            {
+                if (!buttons[i].Equals(_cachedButtons.Count > i ? _cachedButtons[i] : buttons[i]))
+                {
+                    _cachedButtons[i] = buttons[i];
+                    (buttons[i].Pressed ? ButtonDown : ButtonUp)?.Invoke(this, buttons[i]);
+                }
+            }
+            IReadOnlyList<Thumbstick> thumbsticks = Thumbsticks;
+            for (int i = 0; i < thumbsticks.Count; i++)
+            {
+                if (!thumbsticks[i].Equals(_cachedThumbsticks.Count > i ? _cachedThumbsticks[i] : thumbsticks[i]))
+                {
+                    _cachedThumbsticks[i] = thumbsticks[i];
+                    ThumbstickMoved?.Invoke(this, thumbsticks[i]);
+                }
+            }
+            IReadOnlyList<Trigger> triggers = Triggers;
+            for (int i = 0; i < triggers.Count; i++)
+            {
+                if (!triggers[i].Equals(_cachedTriggers.Count > i ? _cachedTriggers[i] : triggers[i]))
+                {
+                    _cachedTriggers[i] = triggers[i];
+                    TriggerMoved?.Invoke(this, triggers[i]);
+                }
+            }
+        }
     }
 }
