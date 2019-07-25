@@ -18,7 +18,7 @@ namespace Silk.NET.Input.Desktop
 
         public string Name => Util.Do(() => Util.Glfw.GetGamepadName(Index));
         public int Index { get; }
-        public bool IsConnected => Util.Do(() => Util.Glfw.JoystickIsGamepad(Index));
+        public bool IsConnected => Util.Do(() => Util.Glfw.JoystickIsGamepad(Index)) && Util.Glfw.JoystickIsGamepad(Index);
         public IReadOnlyList<Button> Buttons { get; }
         private List<Button> _cachedButtons = new List<Button>();
         public IReadOnlyList<Thumbstick> Thumbsticks { get; }
