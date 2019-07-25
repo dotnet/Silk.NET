@@ -20,7 +20,7 @@ namespace Silk.NET.Input.Desktop
 
         public string Name => Util.Do(() => Util.Glfw.GetJoystickName(Index));
         public int Index { get; }
-        public bool IsConnected => Util.Do(() => Util.Glfw.JoystickPresent(Index)) && !Util.Glfw.JoystickIsGamepad(Index);
+        public bool IsConnected => Util.Do(() => Util.Glfw.JoystickPresent(Index) && !Util.Glfw.JoystickIsGamepad(Index));
         public IReadOnlyList<Axis> Axes => GetAxes(Index, this);
         private List<Axis> _cachedAxes = new List<Axis>();
         public IReadOnlyList<Button> Buttons { get; }
