@@ -1,4 +1,4 @@
-﻿# Summary    
+# Summary    
 Proposal API for Input via keyboards, mice, and controllers.
 
 # Contributors
@@ -163,6 +163,8 @@ public struct Axis
 public struct Thumbstick
 {
     public int Index { get; }
+    public float X { get; }
+    public float Y { get; }
     public float Position { get; }
     public float Direction { get; }
     
