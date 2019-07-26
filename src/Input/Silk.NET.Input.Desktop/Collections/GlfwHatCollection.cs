@@ -35,11 +35,7 @@ namespace Silk.NET.Input.Desktop.Collections
         }
         public static Position2D Get(Position2D* positions, int index)
         {
-            return (Position2D)Marshal.PtrToStructure
-            (
-                Marshal.ReadIntPtr((IntPtr)positions, index * IntPtr.Size),
-                typeof(float)
-            );
+            return (Position2D) Marshal.ReadInt32((IntPtr) positions, index * IntPtr.Size);
         }
 
         private struct Enumerator : IEnumerator<Hat>

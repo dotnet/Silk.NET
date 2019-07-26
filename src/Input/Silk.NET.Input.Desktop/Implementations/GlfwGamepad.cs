@@ -11,6 +11,9 @@ namespace Silk.NET.Input.Desktop
 {
     public class GlfwGamepad : IGamepad
     {
+        private List<Button> _cachedButtons = new List<Button>();
+        private List<Thumbstick> _cachedThumbsticks = new List<Thumbstick>();
+        private List<Trigger> _cachedTriggers = new List<Trigger>();
         public GlfwGamepad(int i)
         {
             Index = i;
@@ -20,11 +23,8 @@ namespace Silk.NET.Input.Desktop
         public int Index { get; }
         public bool IsConnected => Util.Do(() => Util.Glfw.JoystickIsGamepad(Index) && Util.Glfw.JoystickIsGamepad(Index));
         public IReadOnlyList<Button> Buttons { get; }
-        private List<Button> _cachedButtons = new List<Button>();
         public IReadOnlyList<Thumbstick> Thumbsticks { get; }
-        private List<Thumbstick> _cachedThumbsticks = new List<Thumbstick>();
         public IReadOnlyList<Trigger> Triggers { get; }
-        private List<Trigger> _cachedTriggers = new List<Trigger>();
         public Deadzone Deadzone { get; set; }
         public event Action<IGamepad, Button> ButtonDown;
         public event Action<IGamepad, Button> ButtonUp;

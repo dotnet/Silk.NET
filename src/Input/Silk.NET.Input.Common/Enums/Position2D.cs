@@ -13,6 +13,7 @@ namespace Silk.NET.Input.Common
     [Flags]
     public enum Position2D
     {
+        Centered = 0,
         Up = 1,
         Down = 2,
         Left = 4,

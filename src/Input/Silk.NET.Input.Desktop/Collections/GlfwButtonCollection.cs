@@ -9,21 +9,21 @@ namespace Silk.NET.Input.Desktop.Collections
 {
     public unsafe class GlfwButtonCollection : IReadOnlyList<Button>
     {
-        private bool* _bools;
+        private byte* _bytes;
         private int _count;
-        private readonly GlfwJoystick joystick;
+        private readonly GlfwJoystick _joystick;
 
-        public GlfwButtonCollection(bool* bools, int count, GlfwJoystick _joystick)
+        public GlfwButtonCollection(byte* bytes, int count, GlfwJoystick joystick)
         {
-            _bools = bools;
+            _bytes = bytes;
             _count = count;
-            joystick = _joystick;
+            _joystick = joystick;
         }
 
         public int Count => _count;
 
         public Button this[int index] => index < _count
-            ? new Button ((ButtonName)index, index, Get(_bools, index))
+            ? new Button ((ButtonName)index, index, Get(_bytes, index) != 0)
             : throw new ArgumentOutOfRangeException();
 
         public IEnumerator<Button> GetEnumerator()
@@ -36,12 +36,12 @@ namespace Silk.NET.Input.Desktop.Collections
             return GetEnumerator();
         }
 
-        public static bool Get(bool* bools, int index)
+        public static byte Get(byte* bytes, int index)
         {
-            return (bool)Marshal.PtrToStructure
+            return (byte)Marshal.PtrToStructure
             (
-                Marshal.ReadIntPtr((IntPtr)bools, index * IntPtr.Size),
-                typeof(float)
+                Marshal.ReadIntPtr((IntPtr)bytes, index * IntPtr.Size),
+                typeof(byte)
             );
         }
         private struct Enumerator : IEnumerator<Button>
@@ -64,7 +64,7 @@ namespace Silk.NET.Input.Desktop.Collections
                     return false;
                 }
 
-                Current = new Button((ButtonName)_current, _current, Get(_col._bools, _current));
+                Current = new Button((ButtonName)_current, _current, Get(_col._bytes, _current) != 0);
                 _current++;
                 return true;
             }
