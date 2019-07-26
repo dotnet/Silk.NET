@@ -6,6 +6,8 @@
 using System;
 using System.Collections.Generic;
 using Silk.NET.Input.Common;
+using Silk.NET.Input.Desktop.Collections;
+using Ultz.Dispatcher.Unsafe;
 
 namespace Silk.NET.Input.Desktop
 {
@@ -22,9 +24,9 @@ namespace Silk.NET.Input.Desktop
         public string Name => Util.Do(() => Util.Glfw.GetGamepadName(Index));
         public int Index { get; }
         public bool IsConnected => Util.Do(() => Util.Glfw.JoystickIsGamepad(Index) && Util.Glfw.JoystickIsGamepad(Index));
-        public IReadOnlyList<Button> Buttons { get; }
-        public IReadOnlyList<Thumbstick> Thumbsticks { get; }
-        public IReadOnlyList<Trigger> Triggers { get; }
+        public IReadOnlyList<Button> Buttons => GetButtons(Index);
+        public IReadOnlyList<Thumbstick> Thumbsticks => GetThumbsticks(Index);
+        public IReadOnlyList<Trigger> Triggers => GetTriggers(Index);
         public Deadzone Deadzone { get; set; }
         public event Action<IGamepad, Button> ButtonDown;
         public event Action<IGamepad, Button> ButtonUp;
@@ -64,6 +66,30 @@ namespace Silk.NET.Input.Desktop
                     _cachedTriggers[i] = triggers[i];
                     TriggerMoved?.Invoke(this, triggers[i]);
                 }
+            }
+        }
+        private static unsafe IReadOnlyList<Button> GetButtons(int i)
+        {
+            var count = 0;
+            var bytes = Util.Do(() => (UnsafeDispatch<byte>)Util.Glfw.GetJoystickButtons(i, out count));
+            return new GlfwButtonCollection(bytes, count);
+        }
+        private static unsafe IReadOnlyList<Thumbstick> GetThumbsticks(int i)
+        {
+            var count = 0;
+            var floats = Util.Do(() => (UnsafeDispatch<float>)Util.Glfw.GetJoystickAxes(i, out count));
+            fixed(float* x = new float[] { floats[0], floats[2] }, y = new float[] { floats[1], floats[3] })
+            {
+                return new GlfwThumbstickCollection(x, y, count);
+            }
+        }
+        private static unsafe IReadOnlyList<Trigger> GetTriggers(int i)
+        {
+            var count = 0;
+            var floats = Util.Do(() => (UnsafeDispatch<float>)Util.Glfw.GetJoystickAxes(i, out count));
+            fixed(float* triggers = new float[] { floats[4], floats[5] })
+            {
+                return new GlfwTriggerCollection(floats, count);
             }
         }
     }

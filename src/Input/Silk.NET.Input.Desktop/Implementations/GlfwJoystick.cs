@@ -25,9 +25,9 @@ namespace Silk.NET.Input.Desktop
         public string Name => Util.Do(() => Util.Glfw.GetJoystickName(Index));
         public int Index { get; }
         public bool IsConnected => Util.Do(() => Util.Glfw.JoystickPresent(Index) && !Util.Glfw.JoystickIsGamepad(Index));
-        public IReadOnlyList<Axis> Axes => GetAxes(Index, this);
-        public IReadOnlyList<Button> Buttons => GetButtons(Index, this);
-        public IReadOnlyList<Hat> Hats => GetHats(Index, this);
+        public IReadOnlyList<Axis> Axes => GetAxes(Index);
+        public IReadOnlyList<Button> Buttons => GetButtons(Index);
+        public IReadOnlyList<Hat> Hats => GetHats(Index);
         public Deadzone Deadzone { get; set; }
         public event Action<IJoystick, Button> ButtonDown;
         public event Action<IJoystick, Button> ButtonUp;
@@ -70,21 +70,21 @@ namespace Silk.NET.Input.Desktop
             }
         }
 
-        private static unsafe IReadOnlyList<Axis> GetAxes(int i, GlfwJoystick joystick)
+        private static unsafe IReadOnlyList<Axis> GetAxes(int i)
         {
             var count = 0;
             var floats = Util.Do(() => (UnsafeDispatch<float>)Util.Glfw.GetJoystickAxes(i, out count));
-            return new GlfwAxisCollection(floats, count, joystick);
+            return new GlfwAxisCollection(floats, count);
         }
 
-        private static unsafe IReadOnlyList<Button> GetButtons(int i, GlfwJoystick joystick)
+        private static unsafe IReadOnlyList<Button> GetButtons(int i)
         {
             var count = 0;
             var bytes = Util.Do(() => (UnsafeDispatch<byte>)Util.Glfw.GetJoystickButtons(i, out count));
-            return new GlfwButtonCollection(bytes, count, joystick);
+            return new GlfwButtonCollection(bytes, count);
         }
 
-        private static unsafe IReadOnlyList<Hat> GetHats(int i, GlfwJoystick joystick)
+        private static unsafe IReadOnlyList<Hat> GetHats(int i)
         {
             var count = 0;
             var hats = Util.Do(() => (UnsafeDispatch<JoystickHats>)Util.Glfw.GetJoystickHats(i, out count));

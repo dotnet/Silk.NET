@@ -15,13 +15,11 @@ namespace Silk.NET.Input.Desktop.Collections
     {
         private float* _floats;
         private int _count;
-        private readonly GlfwJoystick _joystick;
 
-        public GlfwAxisCollection(float* floats, int count, GlfwJoystick joystick)
+        public GlfwAxisCollection(float* floats, int count)
         {
             _floats = floats;
             _count = count;
-            _joystick = joystick;
         }
         public IEnumerator<Axis> GetEnumerator()
         {

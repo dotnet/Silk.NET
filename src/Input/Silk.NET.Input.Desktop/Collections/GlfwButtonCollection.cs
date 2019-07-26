@@ -1,4 +1,4 @@
-﻿using Silk.NET.Input.Common;
+using Silk.NET.Input.Common;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,13 +11,11 @@ namespace Silk.NET.Input.Desktop.Collections
     {
         private byte* _bytes;
         private int _count;
-        private readonly GlfwJoystick _joystick;
 
-        public GlfwButtonCollection(byte* bytes, int count, GlfwJoystick joystick)
+        public GlfwButtonCollection(byte* bytes, int count)
         {
             _bytes = bytes;
             _count = count;
-            _joystick = joystick;
         }
 
         public int Count => _count;

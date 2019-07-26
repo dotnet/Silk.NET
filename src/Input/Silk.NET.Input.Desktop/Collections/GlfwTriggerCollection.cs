@@ -1,4 +1,4 @@
-﻿using Silk.NET.Input.Common;
+using Silk.NET.Input.Common;
 using System;
 using System.Collections;
 using System.Collections.Generic;
