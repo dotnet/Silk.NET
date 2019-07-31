@@ -28,7 +28,7 @@ namespace Silk.NET.Input.Desktop.Collections
         }
         public IEnumerator<IGamepad> GetEnumerator()
         {
-            return new Enumerator();
+            return new Enumerator(_ctx);
         }
 
         public int Count { get; }

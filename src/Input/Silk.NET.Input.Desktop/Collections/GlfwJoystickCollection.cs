@@ -28,7 +28,7 @@ namespace Silk.NET.Input.Desktop.Collections
         }
         public IEnumerator<IJoystick> GetEnumerator()
         {
-            return new Enumerator();
+            return new Enumerator(_glfwInputContext);
         }
 
         public int Count
