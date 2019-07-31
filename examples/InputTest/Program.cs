@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Silk.NET.Input;
 using Silk.NET.Input.Common;
@@ -20,33 +21,175 @@ namespace InputTest
             Console.ReadLine();
             var input = window.GetInput();
             input.ConnectionChanged += ControllerConnected;
-            foreach (var inputGamepad in input.Gamepads)
+            Console.WriteLine("Now, go press buttons in the window and you'll see the feedback here.");
+            foreach (var gamepad in input.Gamepads)
             {
-                Console.WriteLine("Discovered controller " + inputGamepad.Index);
-                inputGamepad.ButtonDown += InputGamepadOnButtonDown;
-                inputGamepad.ButtonUp += InputGamepadOnButtonUp;
-                foreach (var inputGamepadButton in inputGamepad.Buttons)
-                {
-                    Console.WriteLine("Controller ");
-                }
+                ControllerConnected(gamepad, gamepad.IsConnected);
             }
+            
+            foreach (var joystick in input.Joysticks)
+            {
+                ControllerConnected(joystick, joystick.IsConnected);
+            }
+
+            foreach (var keyboard in input.Keyboards)
+            {
+                ControllerConnected(keyboard, keyboard.IsConnected);
+            }
+
+            Console.ReadLine();
+        }
+
+        private static void GamepadOnTriggerMoved(IGamepad g, Trigger t)
+        {
+            Console.WriteLine("G" + g.Index + "> " + t.Index + " trigger moved: " + t.Position);
+        }
+
+        private static void GamepadOnThumbstickMoved(IGamepad g, Thumbstick t)
+        {
+            Console.WriteLine("G" + g.Index + "> " + t.Index + " thumbstick moved: (" + t.X + ", " + t.Y + ")");
+        }
+
+        private static void JoystickOnHatMoved(IJoystick arg1, Hat arg2)
+        {
+            Console.WriteLine("J" + arg1.Index + "> " + arg2.Index + " hat moved: " + arg2.Position);
+        }
+
+        private static void JoystickOnAxisMoved(IJoystick arg1, Axis arg2)
+        {
+            Console.WriteLine("J" + arg1.Index + "> " + arg2.Index + " axis moved: " + arg2.Position);
+        }
+
+        private static void JoystickOnButtonUp(IJoystick arg1, Button arg2)
+        {
+            Console.WriteLine("J" + arg1.Index + "> " + arg2.Name + " down.");
+        }
+
+        private static void JoystickOnButtonDown(IJoystick arg1, Button arg2)
+        {
+            Console.WriteLine("J" + arg1.Index + "> " + arg2.Name + " down.");
         }
 
         private static void InputGamepadOnButtonDown(IGamepad arg1, Button arg2)
         {
-            Console.WriteLine(arg1.Index + "> " + arg2.Name + " down.");
+            Console.WriteLine("G" + arg1.Index + "> " + arg2.Name + " down.");
         }
 
         private static void InputGamepadOnButtonUp(IGamepad arg1, Button arg2)
         {
-            Console.WriteLine(arg1.Index + "> " + arg2.Name + " up.");
+            Console.WriteLine("G" + arg1.Index + "> " + arg2.Name + " up.");
         }
 
         public static void ControllerConnected(IInputDevice device, bool isConnected)
         {
             Console.WriteLine(isConnected
-                ? $"Controller {device.Name} connected"
-                : $"Controller {device.Name} disconnected");
+                ? $"Device {device.Name} connected"
+                : $"Device {device.Name} disconnected");
+            if (device is IGamepad gamepad)
+            {
+                Console.WriteLine("Discovered controller " + gamepad.Index + " (Connected: " + isConnected + ")");
+                if (isConnected)
+                {
+                    gamepad.ButtonDown += InputGamepadOnButtonDown;
+                    gamepad.ButtonUp += InputGamepadOnButtonUp;
+                    gamepad.ThumbstickMoved += GamepadOnThumbstickMoved;
+                    gamepad.TriggerMoved += GamepadOnTriggerMoved;
+                }
+                else
+                {
+                    gamepad.ButtonDown -= InputGamepadOnButtonDown;
+                    gamepad.ButtonUp -= InputGamepadOnButtonUp;
+                    gamepad.ThumbstickMoved -= GamepadOnThumbstickMoved;
+                    gamepad.TriggerMoved -= GamepadOnTriggerMoved;
+                }
+
+                Console.Write("    Buttons: ");
+                const string s = "\n             ";
+                Console.WriteLine(string.Join(s, gamepad.Buttons.Select(x => x.Name + (x.Pressed ? "(1)" : "(0)"))));
+                Console.WriteLine("    " + gamepad.Thumbsticks.Count + " thumbsticks found.");
+                Console.WriteLine("    " + gamepad.Triggers.Count + " triggers found.");
+            }
+            else if (device is IJoystick joystick)
+            {
+                Console.WriteLine("Discovered joystick " + joystick.Index + " (Connected: " + isConnected + ")");
+                if (isConnected)
+                {
+                    joystick.ButtonDown += JoystickOnButtonDown;
+                    joystick.ButtonUp += JoystickOnButtonUp;
+                    joystick.AxisMoved += JoystickOnAxisMoved;
+                    joystick.HatMoved += JoystickOnHatMoved;
+                }
+                else
+                {
+                    joystick.ButtonDown -= JoystickOnButtonDown;
+                    joystick.ButtonUp -= JoystickOnButtonUp;
+                    joystick.AxisMoved -= JoystickOnAxisMoved;
+                    joystick.HatMoved -= JoystickOnHatMoved;
+                }
+
+                Console.Write("    Buttons: ");
+                const string s = "\n             ";
+                Console.WriteLine(string.Join(s, joystick.Buttons.Select(x => x.Name + (x.Pressed ? "(1)" : "(0)"))));
+            }
+            else if (device is IKeyboard keyboard)
+            {
+                Console.WriteLine("Discovered keyboard " + keyboard.Index + " (Connected: " + isConnected + ")");
+                if (isConnected)
+                {
+                    keyboard.KeyDown += KeyboardOnKeyDown;
+                    keyboard.KeyUp += KeyboardOnKeyUp;
+                }
+                else
+                {
+                    keyboard.KeyDown -= KeyboardOnKeyDown;
+                    keyboard.KeyUp -= KeyboardOnKeyUp;
+                }
+
+                Console.Write("    Buttons: ");
+                Console.WriteLine(string.Join(", ", keyboard.SupportedKeys.Select(x => x)));
+            }
+            else if (device is IMouse mouse)
+            {
+                Console.WriteLine("Discovered mouse " + mouse.Index + " (Connected: " + isConnected + ")");
+                if (isConnected)
+                {
+                    mouse.MouseUp += MouseOnMouseUp;
+                    mouse.MouseDown += MouseOnMouseDown;
+                    mouse.Scroll += MouseOnScroll;
+                }
+                else
+                {
+                }
+
+                Console.Write("    Buttons: ");
+                Console.WriteLine(string.Join(", ", mouse.SupportedButtons.Select(x => x)));
+                Console.WriteLine("    " + mouse.ScrollWheels.Count + " scroll wheels.");
+            }
+        }
+
+        private static void MouseOnScroll(IMouse arg1, ScrollWheel arg2)
+        {
+            Console.WriteLine("K" + arg1.Index + "> Scrolled: (" + arg2.X + ", " + arg2.Y + ")");
+        }
+
+        private static void MouseOnMouseDown(IMouse arg1, MouseButton arg2)
+        {
+            Console.WriteLine("M" + arg1.Index + "> " + arg2 + " down.");
+        }
+
+        private static void MouseOnMouseUp(IMouse arg1, MouseButton arg2)
+        {
+            Console.WriteLine("M" + arg1.Index + "> " + arg2 + " up.");
+        }
+
+        private static void KeyboardOnKeyUp(IKeyboard arg1, Key arg2)
+        {
+            Console.WriteLine("K" + arg1.Index + "> " + arg2 + " up.");
+        }
+
+        private static void KeyboardOnKeyDown(IKeyboard arg1, Key arg2)
+        {
+            Console.WriteLine("K" + arg1.Index + "> " + arg2 + " down.");
         }
     }
 }
