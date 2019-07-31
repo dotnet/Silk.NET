@@ -7,12 +7,9 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Xml.Linq;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Bind.Overloading;
 using Silk.NET.BuildTools.Common;
-using Silk.NET.BuildTools.Common.Functions;
-using Silk.NET.BuildTools.Convert.XML;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
 namespace Silk.NET.BuildTools.Bind

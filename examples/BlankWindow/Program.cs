@@ -28,8 +28,6 @@ namespace BlankWindow
 
             window = Window.Create(options);
 
-            window.MakeCurrent();
-
             window.OnFileDrop += OnFileDrop;
             window.OnMove += OnMove;
             window.OnResize += OnResize;

@@ -31,7 +31,7 @@ namespace Silk.NET.GLFW
         /// </summary>
         /// <seealso cref="SetErrorCallback" />
         public static GlfwCallbacks.ErrorCallback ErrorCallback { get; } = (errorCode, description) =>
-            throw new GlfwException(description) {ErrorCode = errorCode};
+            throw new GlfwException($"{errorCode}: {description}") {ErrorCode = errorCode};
 
         public override SearchPathContainer SearchPaths { get; } = new GlfwLibraryNameContainer();
 
