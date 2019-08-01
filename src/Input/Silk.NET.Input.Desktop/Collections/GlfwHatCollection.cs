@@ -1,4 +1,4 @@
-﻿using Silk.NET.Input.Common;
+using Silk.NET.Input.Common;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,7 +19,7 @@ namespace Silk.NET.Input.Desktop.Collections
         }
 
         public Hat this[int index] => index < _count
-            ? new Hat(index, Get(_positions, index))
+            ? new Hat(index, _positions[index])
             : throw new ArgumentOutOfRangeException();
 
         public int Count => _count;
@@ -32,10 +32,6 @@ namespace Silk.NET.Input.Desktop.Collections
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
-        }
-        public static Position2D Get(Position2D* positions, int index)
-        {
-            return (Position2D) Marshal.ReadInt32((IntPtr) positions, index * IntPtr.Size);
         }
 
         private struct Enumerator : IEnumerator<Hat>
@@ -58,7 +54,7 @@ namespace Silk.NET.Input.Desktop.Collections
                     return false;
                 }
 
-                Current = new Hat(_current, Get(_col._positions, _current));
+                Current = new Hat(_current, _col._positions[_current]);
                 _current++;
                 return true;
             }
