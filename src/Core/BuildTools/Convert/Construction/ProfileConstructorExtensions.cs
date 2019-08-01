@@ -32,27 +32,46 @@ namespace Silk.NET.BuildTools.Convert.Construction
         /// <returns>The resultant enum.</returns>
         public static Enum ParseEnum(XElement element)
         {
+            var elementName = element.Attribute("name"); 
+            if (elementName == null) {
+                throw new InvalidOperationException("No name attribute");
+            }
+
+            var elementExtension = element.Attribute("extension");
+            if (elementExtension == null) {
+                throw new InvalidOperationException("No extension attribute");
+            }
+
             var result = new Enum
             {
                 Name = NativeIdentifierTranslator.TranslateIdentifierName
                 (
-                    element.Attribute("name")?.Value.CheckMemberName(Converter.CliOptions.Prefix)
+                    elementName.Value.CheckMemberName(Converter.CliOptions.Prefix)
                     ?? throw new InvalidOperationException("No name attribute.")
                 ),
-                NativeName = element.Attribute("name")?.Value,
-                ExtensionName = element.Attribute("extension")?.Value
+                NativeName = elementName.Value,
+                ExtensionName = elementExtension.Value
             };
-            foreach (var child in element.Elements("token"))
-            {
+            foreach (var child in element.Elements("token")) {
+                var childName = child.Attribute("name");
+                if (childName == null) {
+                    throw new InvalidOperationException("Child has no name attribute");
+                }
+
+                var childValue = child.Attribute("value");
+                if (childValue == null) {
+                    throw new InvalidOperationException("Child has no value attribute");
+                }
+                
                 var deprecatedSince = ParsingHelpers.ParseVersion(child, "deprecated");
                 result.Tokens.Add
                 (
                     new Token
                     {
-                        Name = NativeIdentifierTranslator.TranslateIdentifierName(child.Attribute("name")?.Value)
+                        Name = NativeIdentifierTranslator.TranslateIdentifierName(childName.Value)
                             .CheckMemberName(Converter.CliOptions.Prefix),
-                        NativeName = child.Attribute("name")?.Value,
-                        Value = FormatToken(child.Attribute("value")?.Value),
+                        NativeName = childName.Value,
+                        Value = FormatToken(childValue.Value),
                         Attributes = deprecatedSince != null
                             ? new List<Attribute>
                             {
@@ -136,7 +155,7 @@ namespace Silk.NET.BuildTools.Convert.Construction
                     out var computedCountParameterNames,
                     out var hasValueReference,
                     out var valueReferenceName,
-                    out var _
+                    out _
                 );
 
                 if (hasComputedCount)

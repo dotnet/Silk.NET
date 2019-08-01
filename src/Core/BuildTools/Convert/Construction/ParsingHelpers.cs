@@ -160,7 +160,13 @@ namespace Silk.NET.BuildTools.Convert.Construction
                 typeName = typeName.Remove(firstArrayIndex);
             }
 
-            return new Type {Name = typeName, IndirectionLevels = pointerLevel, ArrayDimensions = arrayLevel};
+            return new Type
+            {
+                Name = typeName,
+                OriginalName = typeName,
+                IndirectionLevels = pointerLevel,
+                ArrayDimensions = arrayLevel
+            };
         }
 
         /// <summary>

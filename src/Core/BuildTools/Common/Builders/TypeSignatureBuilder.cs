@@ -23,6 +23,8 @@ namespace Silk.NET.BuildTools.Common.Builders
 
         private bool _newIsIn;
 
+        private string _newOriginalName;
+
         [NotNull] private string _newName;
 
         /// <summary>
@@ -37,6 +39,7 @@ namespace Silk.NET.BuildTools.Common.Builders
             _newIsByRef = typeSignature.IsByRef;
             _newIsIn = typeSignature.IsIn;
             _newIsOut = typeSignature.IsOut;
+            _newOriginalName = typeSignature.OriginalName;
         }
 
         /// <summary>
@@ -113,7 +116,8 @@ namespace Silk.NET.BuildTools.Common.Builders
                 ArrayDimensions = _newArrayDimensions,
                 IsByRef = _newIsByRef,
                 IsOut = _newIsOut,
-                IsIn = _newIsIn
+                IsIn = _newIsIn,
+                OriginalName = _newOriginalName
             };
         }
 

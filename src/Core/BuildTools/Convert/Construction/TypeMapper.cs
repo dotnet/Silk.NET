@@ -61,10 +61,15 @@ namespace Silk.NET.BuildTools.Convert.Construction
                     {
                         foreach (var parameter in function.Parameters)
                         {
-                            if (parameter.Type.Name == "GLenum")
+                            if (parameter.Type.OriginalName == "GLenum")
                             {
                                 parameter.Type.Name = project.Enums.First().Name;
                             }
+                        }
+
+                        if (function.ReturnType.OriginalName == "GLenum")
+                        {
+                            function.ReturnType.Name = project.Enums.First().Name;
                         }
                     }
                 }

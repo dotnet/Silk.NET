@@ -113,11 +113,15 @@ namespace Silk.NET.BuildTools.Convert.XML
             var input = XDocument.Parse(string.Join(" ", lines));
 
             var elements = new SortedDictionary<string, XElement>();
-            foreach (var e in ParseEnums(input).Concat(ParseFunctions(input)))
-            {
-                var name = e.Attribute("name").Value;
+
+            foreach (var e in ParseEnums(input).Concat(ParseFunctions(input))) {
+                var name = e.Attribute("name");
+                if (name == null) {
+                    throw new InvalidOperationException("No name attribute on child");
+                }
+                
                 var version = (e.Attribute("version") ?? new XAttribute("version", string.Empty)).Value;
-                var key = name + version;
+                var key = name.Value + version;
                 if (!elements.ContainsKey(key))
                 {
                     elements.Add(key, e);
@@ -144,7 +148,9 @@ namespace Silk.NET.BuildTools.Convert.XML
             {
                 case "feature":
                 {
-                    var v = feature.Attribute("api") != null ? feature.Attribute("api")?.Value : "gl|glcore";
+                    var api = feature.Attribute("api");
+                    var v = api == null ? "gl|glcore" : api.Value;
+                    
                     if (v == "gl")
                     {
                         // Add all gl features to both compatibility (gl) and core (glcore) profiles.
@@ -153,14 +159,15 @@ namespace Silk.NET.BuildTools.Convert.XML
                         v = "gl|glcore";
                     }
 
-                    apinames = v?.Split('|');
+                    apinames = v.Split('|');
                     break;
                 }
 
                 case "extension":
                 {
-                    var v = feature.Attribute("supported") != null ? feature.Attribute("supported")?.Value : "gl|glcore";
-                    apinames = v?.Split('|');
+                    var supported = feature.Attribute("supported");
+                    var v = supported != null ? supported.Value : "gl|glcore";
+                    apinames = v.Split('|');
                     break;
                 }
 
@@ -232,9 +239,8 @@ namespace Silk.NET.BuildTools.Convert.XML
             // see also: https://github.com/KhronosGroup/OpenGL-Registry/pull/273
             // see also: https://discordapp.com/channels/521092042781229087/587346162802229298/590211773399826438
             // see also: https://github.com/Ultz/Silk.NET/commit/f5f112bbd42d2f547cdab6ddd767609dfcfa99d9
-            foreach (var feature in features.Concat(extensions).OrderBy(f => TrimName(f.Attribute("name")?.Value)))
-            {
-                var version = feature.Attribute("number") != null ? feature.Attribute("number")?.Value : null;
+            foreach (var feature in features.Concat(extensions).OrderBy(f => TrimName(f.Attribute("name")?.Value))) {
+                var version = feature.Attribute("number")?.Value;
                 var apinames = GetApiNames(feature);
 
                 // An enum may belong to one or more APIs.
@@ -258,7 +264,12 @@ namespace Silk.NET.BuildTools.Convert.XML
 
                     var api = apis[key];
 
-                    var enum_name = TrimName(feature.Attribute("name").Value);
+                    var featureName = feature.Attribute("name");
+                    if (featureName == null) {
+                        throw new InvalidOperationException("Feature has no name");
+                    }
+                    
+                    var enum_name = TrimName(featureName.Value);
 
                     var e = new XElement
                     (
@@ -274,7 +285,13 @@ namespace Silk.NET.BuildTools.Convert.XML
                     
                     foreach (var token in feature.Elements("enum").Concat(feature.Elements("require").Elements("enum")))
                     {
-                        var token_name = TrimName(token.Attribute("name").Value);
+                        var rawTokenName = token.Attribute("name");
+                        if (rawTokenName == null) {
+                            throw new InvalidOperationException("Token has no name");
+                        } 
+                        
+                        var token_name = TrimName(rawTokenName.Value);
+                        
                         var token_value =
                             enums.ContainsKey(apiname) && enums[apiname].ContainsKey(token_name)
                                 ? enums[apiname][token_name]
@@ -309,7 +326,13 @@ namespace Silk.NET.BuildTools.Convert.XML
                     // Mark deprecated enums
                     foreach (var token in feature.Elements("remove").Elements("enum"))
                     {
-                        var token_name = TrimName(token.Attribute("name").Value);
+                        var rawTokenName = token.Attribute("name");
+                        if (rawTokenName == null) {
+                            throw new InvalidOperationException("Token has no name");
+                        } 
+                        
+                        var token_name = TrimName(rawTokenName.Value);
+                        
                         var deprecated =
                             api.Elements("enum")
                                 .Elements("token")
@@ -413,9 +436,13 @@ namespace Silk.NET.BuildTools.Convert.XML
 
                     var api = apis[key];
 
-                    foreach (var command in feature.Elements("require").Elements("command"))
-                    {
-                        var cmd_name = TrimName(command.Attribute("name").Value);
+                    foreach (var command in feature.Elements("require").Elements("command")) {
+                        var rawCmdName = command.Attribute("name");
+                        if (rawCmdName == null) {
+                            throw new InvalidOperationException("Command has no name");
+                        }
+                        
+                        var cmd_name = TrimName(rawCmdName.Value);
                         var cmd_extension = ExtensionRegex.Match(cmd_name).Value;
                         
                         if (string.IsNullOrEmpty(cmd_extension))
@@ -439,7 +466,12 @@ namespace Silk.NET.BuildTools.Convert.XML
                 foreach (var api in apis.Values)
                 {
                     i++;
-                    var apiname = api.Attribute("name").Value;
+                    
+                    var apiname = api.Attribute("name");
+                    if (apiname == null) {
+                        throw new InvalidOperationException("API has no name");
+                    }
+                    
                     var cmd_version = version.Length > i ? version[i] : version[0];
 
                     // Mark all deprecated functions as such
@@ -454,7 +486,7 @@ namespace Silk.NET.BuildTools.Convert.XML
                             continue;
                         }
                         
-                        if (apiname == "glcore")
+                        if (apiname.Value == "glcore")
                         {
                             // These tokens do not exist in the glcore profile, remove them
                             api.Elements("function")
@@ -604,9 +636,12 @@ namespace Silk.NET.BuildTools.Convert.XML
             // - <param len="1"><ptype>GLsizei</ptype> *<name>length</name></param>
             //   -> <param name="length" type="GLsizei" count="1" />
             var proto = e.Value;
-            var name = e.Element("name")?.Value;
+            var name = e.Element("name");
+            if (name == null) {
+                throw new InvalidOperationException("Name is null");
+            }
 
-            var ret = proto.Remove(proto.LastIndexOf(name, StringComparison.Ordinal)).Trim();
+            var ret = proto.Remove(proto.LastIndexOf(name.Value, StringComparison.Ordinal)).Trim();
 
             return ret;
         }

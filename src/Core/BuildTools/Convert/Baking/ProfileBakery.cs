@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Convert.Construction;
 using Silk.NET.BuildTools.Convert.Documentation;
 
 namespace Silk.NET.BuildTools.Convert.Baking
@@ -67,6 +68,7 @@ namespace Silk.NET.BuildTools.Convert.Baking
 
             MergeAll(profile); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
             CheckForDuplicates(profile);
+            TypeMapper.MapEnums(profile); // we need to map the enums to make sure they are correct for their extension.
 
             // bake in the documentation
             if (!string.IsNullOrWhiteSpace(Converter.CliOptions.DocumentationFolder))
