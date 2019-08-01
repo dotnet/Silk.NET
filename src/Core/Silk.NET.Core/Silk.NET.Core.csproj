@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="AdvancedDLSupport" Version="3.0.0" />
+      <PackageReference Include="Ultz.Private.AdvancedDLSupport" Version="4.0.0" />
       <PackageReference Include="System.Numerics.Vectors" Version="4.6.0-preview5.19224.8" />
     </ItemGroup>
 

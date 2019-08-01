@@ -24,13 +24,13 @@ namespace Silk.NET.Input.Desktop
 
         public static unsafe void RegisterContext(GlfwInputContext ctx)
         {
-            Contexts.Add(ctx);
-
             if (Contexts.Any(x => x._window == ctx._window))
             {
                 return;
             }
             
+            Contexts.Add(ctx);
+
             // register callbacks
             Util.Do(() => Util.Glfw.SetKeyCallback((WindowHandle*) ctx._window.Handle, KeyCallback));
             Util.Do(() => Util.Glfw.SetMouseButtonCallback((WindowHandle*)ctx._window.Handle, MouseCallback));

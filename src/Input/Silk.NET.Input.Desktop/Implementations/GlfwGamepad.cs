@@ -35,7 +35,7 @@ namespace Silk.NET.Input.Desktop
 
         public void Update()
         {
-            if (Util.Glfw.JoystickIsGamepad(Index))
+            if (!Util.Glfw.JoystickIsGamepad(Index))
             {
                 return;
             }

@@ -17,8 +17,6 @@ namespace InputTest
         {
             var window = Window.Create(WindowOptions.Default);
             Task.Run(() => window.Run());
-            Console.Write("Connect your controller(s) and press ENTER (in the console window).");
-            Console.ReadLine();
             var input = window.GetInput();
             input.ConnectionChanged += ControllerConnected;
             Console.WriteLine("Now, go press buttons in the window and you'll see the feedback here.");

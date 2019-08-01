@@ -39,6 +39,7 @@ namespace Silk.NET.Input.Desktop.Collections
 
         public static float Get(float* floats, int index)
         {
+            Console.WriteLine("bing");
             return (float) Marshal.PtrToStructure
             (
                 Marshal.ReadIntPtr((IntPtr) floats, index * IntPtr.Size),
