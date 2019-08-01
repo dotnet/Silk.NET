@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Silk.NET.Input;
@@ -14,7 +15,6 @@ namespace InputTest
     {
         private static void Main()
         {
-
             var window = Window.Create(WindowOptions.Default);
             Task.Run(() => window.Run());
             Console.Write("Connect your controller(s) and press ENTER (in the console window).");
@@ -85,7 +85,7 @@ namespace InputTest
             Console.WriteLine(isConnected
                 ? $"Device {device.Name} connected"
                 : $"Device {device.Name} disconnected");
-            if (device is IGamepad gamepad)
+            if (device is IGamepad gamepad && device.IsConnected)
             {
                 Console.WriteLine("Discovered controller " + gamepad.Index + " (Connected: " + isConnected + ")");
                 if (isConnected)
