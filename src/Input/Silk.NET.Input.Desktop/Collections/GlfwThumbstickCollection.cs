@@ -22,18 +22,8 @@ namespace Silk.NET.Input.Desktop.Collections
         public int Count => _count;
 
         public Thumbstick this[int index] => index < _count
-            ? new Thumbstick(index, Get(_x, index), Get(_y, index))
+            ? new Thumbstick(index, _x[index], _y[index])
             : throw new ArgumentOutOfRangeException();
-
-        public static float Get(float* floats, int index)
-        {
-            Console.WriteLine("bong ");
-            return (float)Marshal.PtrToStructure
-            (
-                Marshal.ReadIntPtr((IntPtr)floats, index * IntPtr.Size),
-                typeof(float)
-            );
-        }
 
         public IEnumerator<Thumbstick> GetEnumerator()
         {
@@ -65,7 +55,7 @@ namespace Silk.NET.Input.Desktop.Collections
                     return false;
                 }
 
-                Current = new Thumbstick(_current, Get(_col._x, _current), Get(_col._y, _current));
+                Current = new Thumbstick(_current, _col._x[_current], _col._y[_current]);
                 _current++;
                 return true;
             }

@@ -19,7 +19,7 @@ namespace Silk.NET.Input.Desktop.Collections
         }
 
         public Trigger this[int index] => index < Count
-            ? new Trigger(index, Get(_floats, index))
+            ? new Trigger(index, _floats[index])
             : throw new ArgumentOutOfRangeException();
 
         public int Count => _count;
@@ -32,16 +32,6 @@ namespace Silk.NET.Input.Desktop.Collections
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
-        }
-
-        public static float Get(float* floats, int index)
-        {
-            Console.WriteLine("bang");
-            return (float)Marshal.PtrToStructure
-            (
-                Marshal.ReadIntPtr((IntPtr)floats, index * IntPtr.Size),
-                typeof(float)
-            );
         }
 
         private struct Enumerator : IEnumerator<Trigger>
@@ -64,7 +54,7 @@ namespace Silk.NET.Input.Desktop.Collections
                     return false;
                 }
 
-                Current = new Trigger(_current, Get(_col._floats, _current));
+                Current = new Trigger(_current, _col._floats[_current]);
                 _current++;
                 return true;
             }

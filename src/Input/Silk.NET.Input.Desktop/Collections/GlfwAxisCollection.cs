@@ -34,18 +34,8 @@ namespace Silk.NET.Input.Desktop.Collections
         public int Count => _count;
 
         public Axis this[int index] => index < _count
-            ? new Axis(index, Get(_floats, index))
+            ? new Axis(index, _floats[index])
             : throw new ArgumentOutOfRangeException();
-
-        public static float Get(float* floats, int index)
-        {
-            Console.WriteLine("bing");
-            return (float) Marshal.PtrToStructure
-            (
-                Marshal.ReadIntPtr((IntPtr) floats, index * IntPtr.Size),
-                typeof(float)
-            );
-        }
         
         private struct Enumerator : IEnumerator<Axis>
         {
@@ -67,7 +57,7 @@ namespace Silk.NET.Input.Desktop.Collections
                     return false;
                 }
 
-                Current = new Axis(_current, Get(_col._floats, _current));
+                Current = new Axis(_current, _col._floats[_current]);
                 _current++;
                 return true;
             }
