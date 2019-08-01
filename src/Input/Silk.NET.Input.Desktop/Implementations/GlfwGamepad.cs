@@ -43,7 +43,7 @@ namespace Silk.NET.Input.Desktop
             var buttons = Buttons;
             for (var i = 0; i < buttons.Count; i++)
             {
-                if (!buttons[i].Equals(_cachedButtons.Count > i ? _cachedButtons[i] : buttons[i]))
+                if (buttons[i].Pressed != (_cachedButtons.Count > i ? _cachedButtons[i] : buttons[i]).Pressed)
                 {
                     _cachedButtons[i] = buttons[i];
                     (buttons[i].Pressed ? ButtonDown : ButtonUp)?.Invoke(this, buttons[i]);
@@ -52,7 +52,8 @@ namespace Silk.NET.Input.Desktop
             var thumbsticks = Thumbsticks;
             for (var i = 0; i < thumbsticks.Count; i++)
             {
-                if (!thumbsticks[i].Equals(_cachedThumbsticks.Count > i ? _cachedThumbsticks[i] : thumbsticks[i]))
+                if (thumbsticks[i].X != (_cachedThumbsticks.Count > i ? _cachedThumbsticks[i] : thumbsticks[i]).X ||
+                    thumbsticks[i].Y != (_cachedThumbsticks.Count > i ? _cachedThumbsticks[i] : thumbsticks[i]).Y)
                 {
                     _cachedThumbsticks[i] = thumbsticks[i];
                     ThumbstickMoved?.Invoke(this, Util.ApplyDeadzone(thumbsticks[i], Deadzone));
@@ -61,7 +62,7 @@ namespace Silk.NET.Input.Desktop
             var triggers = Triggers;
             for (var i = 0; i < triggers.Count; i++)
             {
-                if (!triggers[i].Equals(_cachedTriggers.Count > i ? _cachedTriggers[i] : triggers[i]))
+                if (triggers[i].Position != (_cachedTriggers.Count > i ? _cachedTriggers[i] : triggers[i]).Position)
                 {
                     _cachedTriggers[i] = triggers[i];
                     TriggerMoved?.Invoke(this, triggers[i]);

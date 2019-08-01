@@ -44,7 +44,7 @@ namespace Silk.NET.Input.Desktop
             var axes = Axes;
             for (var i = 0; i < axes.Count; i++)
             {
-                if (!axes[i].Equals(_cachedAxes.Count > i ? _cachedAxes[i] : axes[i]))
+                if (axes[i].Position != (_cachedAxes.Count > i ? _cachedAxes[i] : axes[i]).Position)
                 {
                     _cachedAxes[i] = axes[i];
                     AxisMoved?.Invoke(this, Util.ApplyDeadzone(axes[i], Deadzone));
@@ -53,7 +53,7 @@ namespace Silk.NET.Input.Desktop
             var buttons = Buttons;
             for (var i = 0; i < buttons.Count; i++)
             {
-                if (!buttons[i].Equals(_cachedButtons.Count > i ? _cachedButtons[i] : buttons[i]))
+                if (buttons[i].Pressed != (_cachedButtons.Count > i ? _cachedButtons[i] : buttons[i]).Pressed)
                 {
                     _cachedButtons[i] = buttons[i];
                     (buttons[i].Pressed ? ButtonDown : ButtonUp)?.Invoke(this, buttons[i]);
@@ -62,7 +62,7 @@ namespace Silk.NET.Input.Desktop
             var hats = Hats;
             for (var i = 0; i < hats.Count; i++)
             {
-                if (!hats[i].Equals(_cachedHats.Count > i ? _cachedHats[i] : hats[i]))
+                if (hats[i].Position != (_cachedHats.Count > i ? _cachedHats[i] : hats[i]).Position)
                 {
                     _cachedHats[i] = hats[i];
                     HatMoved?.Invoke(this, hats[i]);
