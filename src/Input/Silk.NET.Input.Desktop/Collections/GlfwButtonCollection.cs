@@ -36,11 +36,7 @@ namespace Silk.NET.Input.Desktop.Collections
 
         public static byte Get(byte* bytes, int index)
         {
-            return (byte)Marshal.PtrToStructure
-            (
-                Marshal.ReadIntPtr((IntPtr)bytes, index * IntPtr.Size),
-                typeof(byte)
-            );
+            return Marshal.ReadByte((IntPtr) bytes, index);
         }
         private struct Enumerator : IEnumerator<Button>
         {
