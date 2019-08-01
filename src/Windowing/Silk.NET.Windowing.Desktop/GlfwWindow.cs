@@ -502,6 +502,7 @@ namespace Silk.NET.Windowing.Desktop
             }
 
             running = false;
+            glfwThread.Invoke(() => glfw.DestroyWindow(WindowPtr));
         }
 
         /// <inheritdoc />
