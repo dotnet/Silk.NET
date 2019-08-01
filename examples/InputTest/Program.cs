@@ -15,7 +15,9 @@ namespace InputTest
     {
         private static void Main()
         {
-            var window = Window.Create(WindowOptions.Default);
+            var opts = WindowOptions.Default;
+            opts.UseSingleThreadedWindow = false;
+            var window = Window.Create(opts);
             Task.Run(() => window.Run());
             var input = window.GetInput();
             input.ConnectionChanged += ControllerConnected;
