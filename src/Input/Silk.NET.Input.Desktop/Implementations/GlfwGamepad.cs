@@ -24,9 +24,9 @@ namespace Silk.NET.Input.Desktop
         public string Name => Util.Do(() => Util.Glfw.GetGamepadName(Index));
         public int Index { get; }
         public bool IsConnected => Util.Do(() => Util.Glfw.JoystickIsGamepad(Index) && Util.Glfw.JoystickIsGamepad(Index));
-        public IReadOnlyList<Button> Buttons => GetButtons(Index);
-        public IReadOnlyList<Thumbstick> Thumbsticks => GetThumbsticks(Index);
-        public IReadOnlyList<Trigger> Triggers => GetTriggers(Index);
+        public IReadOnlyList<Button> Buttons => IsConnected ? GetButtons(Index) : null;
+        public IReadOnlyList<Thumbstick> Thumbsticks => IsConnected ? GetThumbsticks(Index) : null;
+        public IReadOnlyList<Trigger> Triggers => IsConnected ? GetTriggers(Index) : null;
         public Deadzone Deadzone { get; set; }
         public event Action<IGamepad, Button> ButtonDown;
         public event Action<IGamepad, Button> ButtonUp;
@@ -40,8 +40,8 @@ namespace Silk.NET.Input.Desktop
                 return;
             }
 
-            IReadOnlyList<Button> buttons = Buttons;
-            for (int i = 0; i < buttons.Count; i++)
+            var buttons = Buttons;
+            for (var i = 0; i < buttons.Count; i++)
             {
                 if (!buttons[i].Equals(_cachedButtons.Count > i ? _cachedButtons[i] : buttons[i]))
                 {
@@ -49,17 +49,17 @@ namespace Silk.NET.Input.Desktop
                     (buttons[i].Pressed ? ButtonDown : ButtonUp)?.Invoke(this, buttons[i]);
                 }
             }
-            IReadOnlyList<Thumbstick> thumbsticks = Thumbsticks;
-            for (int i = 0; i < thumbsticks.Count; i++)
+            var thumbsticks = Thumbsticks;
+            for (var i = 0; i < thumbsticks.Count; i++)
             {
                 if (!thumbsticks[i].Equals(_cachedThumbsticks.Count > i ? _cachedThumbsticks[i] : thumbsticks[i]))
                 {
                     _cachedThumbsticks[i] = thumbsticks[i];
-                    ThumbstickMoved?.Invoke(this, thumbsticks[i]);
+                    ThumbstickMoved?.Invoke(this, Util.ApplyDeadzone(thumbsticks[i], Deadzone));
                 }
             }
-            IReadOnlyList<Trigger> triggers = Triggers;
-            for (int i = 0; i < triggers.Count; i++)
+            var triggers = Triggers;
+            for (var i = 0; i < triggers.Count; i++)
             {
                 if (!triggers[i].Equals(_cachedTriggers.Count > i ? _cachedTriggers[i] : triggers[i]))
                 {
@@ -78,7 +78,7 @@ namespace Silk.NET.Input.Desktop
         {
             var count = 0;
             var floats = Util.Do(() => (UnsafeDispatch<float>)Util.Glfw.GetJoystickAxes(i, out count));
-            fixed(float* x = new float[] { floats[0], floats[2] }, y = new float[] { floats[1], floats[3] })
+            fixed(float* x = new[] { floats[0], floats[2] }, y = new[] { floats[1], floats[3] })
             {
                 return new GlfwThumbstickCollection(x, y, count);
             }

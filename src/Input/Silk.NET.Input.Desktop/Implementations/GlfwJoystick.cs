@@ -47,7 +47,7 @@ namespace Silk.NET.Input.Desktop
                 if (!axes[i].Equals(_cachedAxes.Count > i ? _cachedAxes[i] : axes[i]))
                 {
                     _cachedAxes[i] = axes[i];
-                    AxisMoved?.Invoke(this, axes[i]);
+                    AxisMoved?.Invoke(this, Util.ApplyDeadzone(axes[i], Deadzone));
                 }
             }
             var buttons = Buttons;

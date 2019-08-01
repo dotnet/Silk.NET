@@ -75,5 +75,15 @@ namespace Silk.NET.Input.Desktop
             }
             throw new ArgumentOutOfRangeException(nameof(k));
         }
+
+        public static Thumbstick ApplyDeadzone(Thumbstick thumbstick, Deadzone deadzone)
+        {
+            return new Thumbstick(thumbstick.Index, deadzone.Apply(thumbstick.X), deadzone.Apply(thumbstick.Y));
+        }
+
+        public static Axis ApplyDeadzone(Axis axis, Deadzone deadzone)
+        {
+            return new Axis(axis.Index, deadzone.Apply(axis.Position));
+        }
     }
 }
