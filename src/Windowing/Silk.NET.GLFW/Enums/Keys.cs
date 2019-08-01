@@ -573,42 +573,42 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// The left shift key.
         /// </summary>
-        LeftShift = 340,
+        ShiftLeft = 340,
 
         /// <summary>
         /// The left control key.
         /// </summary>
-        LeftControl = 341,
+        ControlLeft = 341,
 
         /// <summary>
         /// The left alt key.
         /// </summary>
-        LeftAlt = 342,
+        AltLeft = 342,
 
         /// <summary>
         /// The left super key.
         /// </summary>
-        LeftSuper = 343,
+        SuperLeft = 343,
 
         /// <summary>
         /// The right shift key.
         /// </summary>
-        RightShift = 344,
+        ShiftRight = 344,
 
         /// <summary>
         /// The right control key.
         /// </summary>
-        RightControl = 345,
+        ControlRight = 345,
 
         /// <summary>
         /// The right alt key.
         /// </summary>
-        RightAlt = 346,
+        AltRight = 346,
 
         /// <summary>
         /// The right super key.
         /// </summary>
-        RightSuper = 347,
+        SuperRight = 347,
 
         /// <summary>
         /// The menu key.
