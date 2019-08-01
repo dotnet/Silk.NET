@@ -41,6 +41,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the original name of this type, before mapping.
+        /// </summary>
+        public string OriginalName { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether this type is by ref.
         /// </summary>
         public bool IsByRef { get; set; }
@@ -84,6 +89,15 @@ namespace Silk.NET.BuildTools.Common.Functions
         public bool IsIntPtr()
         {
             return Name == "IntPtr" && IndirectionLevels == 0;
+        }
+
+        /// <summary>
+        /// Returns a value indicating whether this signature represents a UIntPtr.
+        /// </summary>
+        /// <returns>A value indicating whether this signature represents a UIntPtr.</returns>
+        public bool IsUIntPtr()
+        {
+            return Name == "UIntPtr" && IndirectionLevels == 0;
         }
 
         public bool Equals(Type other)

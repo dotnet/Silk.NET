@@ -1,5 +1,4 @@
 {
-  "GLenum": "int",
   "GLsizei": "uint",
   "GLsizeiptr": "UIntPtr",
   "GLintptr": "IntPtr",

@@ -17,7 +17,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         /// <inheritdoc/>
         public IEnumerable<Overload> CreateOverloads(Function function)
         {
-            if (!function.Parameters.Any(p => p.Type.IsIntPtr()))
+            if (!function.Parameters.Any(p => p.Type.IsIntPtr() || p.Type.IsUIntPtr()))
             {
                 yield break;
             }
@@ -33,12 +33,12 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             for (var i = 0; i < baseParameters.Count; ++i)
             {
                 var parameter = baseParameters[i];
-                if (!parameter.Type.IsIntPtr())
+                if (!parameter.Type.IsIntPtr() && !parameter.Type.IsUIntPtr())
                 {
                     continue;
                 }
 
-                var genericTypeParameterName = baseParameters.Count(p => p.Type.IsIntPtr()) > 1
+                var genericTypeParameterName = baseParameters.Count(p => p.Type.IsIntPtr() || p.Type.IsUIntPtr()) > 1
                     ? $"T{newGenericTypeParameters.Count + 1}" : "T";
 
                 var genericTypeParameter = new GenericTypeParameter(
@@ -138,6 +138,10 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 if (param.Type.IsIntPtr())
                 {
                     list.Add("(IntPtr) " + nm);
+                }
+                else if (param.Type.IsUIntPtr())
+                {
+                    list.Add("(UIntPtr) " + nm);
                 }
                 else
                 {

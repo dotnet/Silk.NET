@@ -52,10 +52,12 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                     }
 
                     var newParameter = new ParameterSignatureBuilder(param).WithType(newParameterType.Build());
-                    parameters.Add(param.Name + "Ptr");
-                    var safeName = (Utilities.CSharpKeywords.Contains(param.Name) ? "@" : string.Empty) + param.Name;
-                    sb.AppendLine(ind + $"fixed ({param.Type} {param.Name}Ptr = &{safeName})");
+                    var ptrName = (param.Name + "Ptr").Replace("@", "");
+
+                    parameters.Add(ptrName);
+                    sb.AppendLine(ind + $"fixed ({param.Type} {ptrName} = &{param.Name})");
                     sb.AppendLine(ind + "{");
+                    
                     ind += "    ";
                     newParameters[i] = newParameter.Build();
                 }

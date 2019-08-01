@@ -98,10 +98,12 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
             sb.AppendLine("// ReturnTypeOverloader");
             sb.AppendLine(lastParameterType + " ret = null;");
+            sb.AppendLine("// ReSharper disable ExpressionIsAlwaysNull");
             sb.Append(function.Name + "(");
             sb.Append(string.Join(", ", strParams));
             sb.AppendLine(");");
             sb.AppendLine("return *ret;");
+            sb.AppendLine("// ReSharper restore ExpressionIsAlwaysNull");
 
             if (!newParameters.Any())
             {
@@ -113,7 +115,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             }
 
             var sizeParameterType = newParameters.Last().Type;
-            if (sizeParameterType.Name != "int" || sizeParameterType.IsPointer)
+            if ((sizeParameterType.Name != "int" && sizeParameterType.Name != "uint") || sizeParameterType.IsPointer)
             {
                 yield return new Overload(functionBuilder
                     .WithParameters(newParameters)
@@ -123,7 +125,9 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             }
 
             var n = newParameters.Last().Name;
-            sb.Insert(0, "var " + (Utilities.CSharpKeywords.Contains(n) ? "@" : "") + n + " = 1;\n");
+
+            sb.Insert(0, "const " + (sizeParameterType.Name == "uint" ? "uint " : "int ") +
+                         (Utilities.CSharpKeywords.Contains(n) ? "@" : "") + n + " = 1;\n");
             newParameters = SkipLastExtension.SkipLast(newParameters, 1).ToList();
             yield return new Overload
             (
