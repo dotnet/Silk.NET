@@ -28,56 +28,10 @@ namespace Silk.NET.Input.Desktop.Collections
         }
         public IEnumerator<IGamepad> GetEnumerator()
         {
-            return new Enumerator(_ctx);
+            return _ctx._gamepads.GetEnumerator();
         }
 
-        public int Count { get; }
-        
-        public struct Enumerator : IEnumerator<IGamepad>, IEnumerator
-        {
-            private int _current;
-            private GlfwInputContext _c;
-
-            public Enumerator(GlfwInputContext c)
-            {
-                _c = c;
-                _current = 0;
-                Current = null;
-            }
-            
-            public bool MoveNext()
-            {
-                if (_current == 16)
-                {
-                    return false;
-                }
-
-                for (; _current < 16; _current++)
-                {
-                    if (_c._gamepads[_current].IsConnected)
-                    {
-                        Current = _c._gamepads[_current];
-                        return true;
-                    }
-                }
-
-                return false;
-            }
-
-            public void Reset()
-            {
-                Current = null;
-                _current = 0;
-            }
-
-            public IGamepad Current { get; private set; }
-
-            object IEnumerator.Current => Current;
-
-            public void Dispose()
-            {
-            }
-        }
+        public int Count => 16;
 
         public IGamepad this[int i] => _ctx._gamepads[i];
     }
