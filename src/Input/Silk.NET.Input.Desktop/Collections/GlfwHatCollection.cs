@@ -1,4 +1,4 @@
-﻿using Silk.NET.Input.Common;
+using Silk.NET.Input.Common;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -35,7 +35,7 @@ namespace Silk.NET.Input.Desktop.Collections
         }
         public static Position2D Get(Position2D* positions, int index)
         {
-            return (Position2D) Marshal.ReadInt32((IntPtr) positions, index * IntPtr.Size);
+            return positions[index];
         }
 
         private struct Enumerator : IEnumerator<Hat>
