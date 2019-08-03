@@ -1,0 +1,22 @@
+trigger:
+- master
+
+pr:
+- master
+  
+jobs:
+- job: Build
+
+  pool:
+    vmImage: 'ubuntu-latest'
+
+  variables:
+    buildConfiguration: 'Release'
+
+  steps:
+  - script: dotnet run --configuration $(buildConfiguration) --project src/Core/BuildTools/BuildTools.csproj build/binder_scripts/build.json
+    displayName: 'Bind'
+  - script: dotnet pack --configuration $(buildConfiguration) --version-suffix build$(Build.BuildNumber)
+    displayName: 'Build/Pack'
+  - publish: build/output_packages
+    artifact: NuGet Packages
