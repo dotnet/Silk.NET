@@ -119,5 +119,11 @@ namespace Silk.NET.BuildTools.Convert.Baking
             Result.ClassName = className;
             return this;
         }
+
+        public ProfileBakeryInformationBuilder WithSymbolLoader(string loader)
+        {
+            Result.SymbolLoader = loader;
+            return this;
+        }
     }
 }

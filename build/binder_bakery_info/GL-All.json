@@ -35,7 +35,8 @@
       "ClassName": "GLCoreLibraryNameContainer"
     },
     "FunctionPrefix": "gl",
-    "ClassName": "GL"
+    "ClassName": "GL",
+    "SymbolLoader": "Silk.NET.Windowing.SilkLoader.OpenGL"
   },
   {
     "Name": "OpenGL (Compatibility Profile)",
@@ -73,7 +74,8 @@
       "ClassName": "OpenGLLibraryNameContainer"
     },
     "FunctionPrefix": "gl",
-    "ClassName": "GL"
+    "ClassName": "GL",
+    "SymbolLoader": "Silk.NET.Windowing.SilkLoader.OpenGL"
   },
   {
     "Name": "GLES",
@@ -96,6 +98,7 @@
       "ClassName": "OpenGLESLibraryNameContainer"
     },
     "FunctionPrefix": "gl",
-    "ClassName": "GL"
+    "ClassName": "GL",
+    "SymbolLoader": "Silk.NET.Windowing.SilkLoader.OpenGLES"
   }
 ]

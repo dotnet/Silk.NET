@@ -3,6 +3,8 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
+
 namespace Silk.NET.Windowing.Common
 {
     /// <summary>
@@ -22,5 +24,13 @@ namespace Silk.NET.Windowing.Common
         /// <param name="options">The initial settings this window should open with.</param>
         /// <returns>An implementation of <see cref="IWindow"/></returns>
         IWindow GetWindow(WindowOptions options);
+
+        /// <summary>
+        /// Gets a function pointer for the given function in the given API.
+        /// </summary>
+        /// <param name="api">The API to which the function belongs.</param>
+        /// <param name="name">The function name.</param>
+        /// <returns>The function pointer.</returns>
+        IntPtr GetProcAddress(ContextAPI api, string name);
     }
 }

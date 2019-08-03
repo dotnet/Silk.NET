@@ -44,7 +44,8 @@ namespace Silk.NET.BuildTools.Convert.Baking
                 Namespace = information.Namespace,
                 ExtensionsNamespace = information.ExtensionsNamespace,
                 OutputFolder = information.OutputFolder,
-                ClassName = information.ClassName
+                ClassName = information.ClassName,
+                SymbolLoaderName = information.SymbolLoader
             };
             profile.Projects.Add
             (
