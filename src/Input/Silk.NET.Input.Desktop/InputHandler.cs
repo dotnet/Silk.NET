@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
 using MouseButton = Silk.NET.GLFW.MouseButton;
@@ -40,54 +41,76 @@ namespace Silk.NET.Input.Desktop
 
         private static unsafe void ScrollCallback(WindowHandle* window, double offsetx, double offsety)
         {
-            // multiple contexts for one window should be allowed, but frowned upon
-            var allContexts = Contexts.Where(x => x._window.Handle == (IntPtr) window);
+            // run on a separate thread to prevent deadlocks on single-threaded windows
+            Task.Run
+            (
+                () =>
+                {
+                    // multiple contexts for one window should be allowed, but frowned upon
+                    var allContexts = Contexts.Where(x => x._window.Handle == (IntPtr) window);
 
-            foreach (var context in allContexts)
-            {
-                ((GlfwMouse)context._mouse).RaiseScroll(new ScrollWheel((float) offsetx, (float) offsety));
-            }
+                    foreach (var context in allContexts)
+                    {
+                        ((GlfwMouse) context._mouse).RaiseScroll(new ScrollWheel((float) offsetx, (float) offsety));
+                    }
+                }
+            );
         }
 
         private static void JoystickCallback(int joystick, ConnectedState state)
         {
-            Contexts.ForEach(x => x.RaiseConnectionChange(joystick, state));
+            // run on a separate thread to prevent deadlocks on single-threaded windows
+            Task.Run(() => Contexts.ForEach(x => x.RaiseConnectionChange(joystick, state)));
         }
 
         private static unsafe void MouseCallback(WindowHandle* window, MouseButton button, InputAction action, KeyModifiers mods)
         {
-            // multiple contexts for one window should be allowed, but frowned upon
-            var allContexts = Contexts.Where(x => x._window.Handle == (IntPtr) window);
+            // run on a separate thread to prevent deadlocks on single-threaded windows
+            Task.Run
+            (
+                () =>
+                {
+                    // multiple contexts for one window should be allowed, but frowned upon
+                    var allContexts = Contexts.Where(x => x._window.Handle == (IntPtr) window);
 
-            foreach (var context in allContexts)
-            {
-                if (action == InputAction.Press)
-                {
-                    ((GlfwMouse)context._mouse).RaiseMouseDown(Util.GlfwButtonToSilkButton(button));
-                } 
-                else if (action == InputAction.Release)
-                {
-                    ((GlfwMouse)context._mouse).RaiseMouseUp(Util.GlfwButtonToSilkButton(button));
+                    foreach (var context in allContexts)
+                    {
+                        if (action == InputAction.Press)
+                        {
+                            ((GlfwMouse) context._mouse).RaiseMouseDown(Util.GlfwButtonToSilkButton(button));
+                        }
+                        else if (action == InputAction.Release)
+                        {
+                            ((GlfwMouse) context._mouse).RaiseMouseUp(Util.GlfwButtonToSilkButton(button));
+                        }
+                    }
                 }
-            }
+            );
         }
 
         private static unsafe void KeyCallback(WindowHandle* window, Keys key, int scancode, InputAction action, KeyModifiers mods)
         {
-            // multiple contexts for one window should be allowed, but frowned upon
-            var allContexts = Contexts.Where(x => x._window.Handle == (IntPtr) window);
+            // run on a separate thread to prevent deadlocks on single-threaded windows
+            Task.Run
+            (
+                () =>
+                {
+                    // multiple contexts for one window should be allowed, but frowned upon
+                    var allContexts = Contexts.Where(x => x._window.Handle == (IntPtr) window);
 
-            foreach (var context in allContexts)
-            {
-                if (action == InputAction.Press)
-                {
-                    ((GlfwKeyboard) context._keyboard).RaisePressEvent(key, scancode, mods);
-                } 
-                else if (action == InputAction.Release)
-                {
-                    ((GlfwKeyboard) context._keyboard).RaiseReleaseEvent(key, scancode, mods);
+                    foreach (var context in allContexts)
+                    {
+                        if (action == InputAction.Press)
+                        {
+                            ((GlfwKeyboard) context._keyboard).RaisePressEvent(key, scancode, mods);
+                        }
+                        else if (action == InputAction.Release)
+                        {
+                            ((GlfwKeyboard) context._keyboard).RaiseReleaseEvent(key, scancode, mods);
+                        }
+                    }
                 }
-            }
+            );
         }
 
         public static void UnregisterContext(GlfwInputContext ctx)

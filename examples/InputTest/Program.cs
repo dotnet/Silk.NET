@@ -20,21 +20,30 @@ namespace InputTest
             var window = Window.Create(opts);
             Task.Run(() => window.Run());
             var input = window.GetInput();
-            input.ConnectionChanged += ControllerConnected;
+            input.ConnectionChanged += DoConnect;
             Console.WriteLine("Now, go press buttons in the window and you'll see the feedback here.");
             foreach (var gamepad in input.Gamepads)
             {
-                ControllerConnected(gamepad, gamepad.IsConnected);
+                if (!gamepad.IsConnected) continue;
+                DoConnect(gamepad, gamepad.IsConnected);
             }
             
             foreach (var joystick in input.Joysticks)
             {
-                ControllerConnected(joystick, joystick.IsConnected);
+                if (!joystick.IsConnected) continue;
+                DoConnect(joystick, joystick.IsConnected);
             }
 
             foreach (var keyboard in input.Keyboards)
             {
-                ControllerConnected(keyboard, keyboard.IsConnected);
+                if (!keyboard.IsConnected) continue;
+                DoConnect(keyboard, keyboard.IsConnected);
+            }
+
+            foreach (var mouse in input.Mice)
+            {
+                if (!mouse.IsConnected) continue;
+                DoConnect(mouse, mouse.IsConnected);
             }
 
             Console.ReadLine();
@@ -80,7 +89,7 @@ namespace InputTest
             Console.WriteLine("G" + arg1.Index + "> " + arg2.Name + " up.");
         }
 
-        public static void ControllerConnected(IInputDevice device, bool isConnected)
+        public static void DoConnect(IInputDevice device, bool isConnected)
         {
             Console.WriteLine(isConnected
                 ? $"Device {device.Name} connected"
@@ -159,6 +168,9 @@ namespace InputTest
                 }
                 else
                 {
+                    mouse.MouseUp -= MouseOnMouseUp;
+                    mouse.MouseDown -= MouseOnMouseDown;
+                    mouse.Scroll -= MouseOnScroll;
                 }
 
                 Console.Write("    Buttons: ");
