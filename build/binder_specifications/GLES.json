@@ -81977,6 +81977,7 @@
   "ClassName": "GL",
   "Version": null,
   "FunctionPrefix": "gl",
+  "SymbolLoaderName": "Silk.NET.Windowing.SilkLoader.OpenGLES",
   "Names": {
     "Linux": "libGLESv2.so",
     "Windows": "libGLESv2.dll",

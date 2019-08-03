@@ -17,6 +17,12 @@ namespace Silk.NET.OpenAL
     /// </summary>
     public abstract class ALContext : NativeAPI, IALC
     {
+        static ALContext()
+        {
+            LibraryLoader.CreateBuilder<ALContext>(ALLoader.Instance);
+        }
+
+
         /// <inheritdoc cref="NativeLibraryBase" />
         protected ALContext(string path, ImplementationOptions options)
             : base(path, options)
