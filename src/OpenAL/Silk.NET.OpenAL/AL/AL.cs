@@ -17,9 +17,14 @@ namespace Silk.NET.OpenAL
     /// </summary>
     public abstract class AL : NativeAPI, IAL
     {
+        static AL()
+        {
+            LibraryLoader.CreateBuilder<AL>(ALLoader.Instance);
+        }
+        
         /// <inheritdoc cref="NativeLibraryBase" />
         protected AL(string path, ImplementationOptions options)
-            : base(path, options, ALLoader.Instance, ALLoader.Instance)
+            : base(path, options)
         {
         }
 
