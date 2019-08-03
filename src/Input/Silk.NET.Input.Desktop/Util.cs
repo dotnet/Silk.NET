@@ -5,6 +5,7 @@
 
 using System;
 using System.Linq;
+using System.Threading;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
 using Ultz.Dispatcher.Unsafe;
@@ -15,6 +16,7 @@ namespace Silk.NET.Input.Desktop
     internal static class Util
     {
         private static string[] _glfwKeys = Enum.GetNames(typeof(Keys));
+        private static string[] _glfwButtons = Enum.GetNames(typeof(GLFW.MouseButton));
         public static object Do(Delegate @delegate)
         {
             return GlfwProvider.ThreadDispatcher.Invoke(@delegate);
@@ -39,6 +41,8 @@ namespace Silk.NET.Input.Desktop
         public static Glfw Glfw => GlfwProvider.GLFW.Value;
         public static Key[] SupportedKeys { get; } // this is expensive, but only runs once.
             = Enum.GetNames(typeof(Key)).Where(_glfwKeys.Contains).Select(StringToSilkKey).ToArray();
+        public static MouseButton[] SupportedButtons { get; } // this is expensive, but only runs once.
+            = Enum.GetNames(typeof(MouseButton)).Where(_glfwButtons.Contains).Select(StringToSilkButton).ToArray();
 
         public static Key StringToSilkKey(string s)
         {
@@ -46,7 +50,17 @@ namespace Silk.NET.Input.Desktop
             {
                 return k;
             }
-            throw new ArgumentOutOfRangeException(nameof(s), $"Key name mismatch (couldn't find a Key value for {s}");
+            throw new ArgumentOutOfRangeException(nameof(s), $"Key name mismatch (couldn't find a Key value for {s})");
+        }
+        
+        public static ButtonName IntToSilkButton(int i)
+        {
+            var s = ((GamepadButton) i).ToString();
+            if (Enum.TryParse<ButtonName>(s, out var k))
+            {
+                return k;
+            }
+            throw new ArgumentOutOfRangeException(nameof(s), $"Button name mismatch (couldn't find a ButtonName value for {s})");
         }
 
         public static Keys SilkKeyToGlfwKey(Key k)
@@ -65,6 +79,15 @@ namespace Silk.NET.Input.Desktop
                 return sk;
             }
             throw new ArgumentOutOfRangeException(nameof(k));
+        }
+
+        public static MouseButton StringToSilkButton(string s)
+        {
+            if (Enum.TryParse<MouseButton>(s, out var k))
+            {
+                return k;
+            }
+            throw new ArgumentOutOfRangeException(nameof(s), $"Button name mismatch (couldn't find a MouseButton value for {s})");
         }
 
         public static MouseButton GlfwButtonToSilkButton(GLFW.MouseButton k)

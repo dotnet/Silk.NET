@@ -17,6 +17,8 @@ namespace InputTest
         {
             var opts = WindowOptions.Default;
             opts.UseSingleThreadedWindow = false;
+            opts.FramesPerSecond = 60;
+            opts.UpdatesPerSecond = 60;
             var window = Window.Create(opts);
             Task.Run(() => window.Run());
             var input = window.GetInput();
@@ -81,7 +83,7 @@ namespace InputTest
 
         private static void InputGamepadOnButtonDown(IGamepad arg1, Button arg2)
         {
-            Console.WriteLine("G" + arg1.Index + "> " + arg2.Name + " down.");
+            Console.WriteLine("G" + arg1.Index + "> " + arg2.Name + " down. " + (int)arg2.Name);
         }
 
         private static void InputGamepadOnButtonUp(IGamepad arg1, Button arg2)

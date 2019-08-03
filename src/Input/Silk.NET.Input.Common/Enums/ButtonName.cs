@@ -22,10 +22,8 @@ namespace Silk.NET.Input.Common
         DPadRight,
         LeftBumper,
         LeftStick,
-        LeftTrigger,
         RightBumper,
         RightStick,
-        RightTrigger,
         Start
     }
 }

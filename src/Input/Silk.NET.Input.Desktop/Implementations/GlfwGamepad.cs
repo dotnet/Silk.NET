@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Silk.NET.Input.Common;
 using Silk.NET.Input.Desktop.Collections;
 using Ultz.Dispatcher.Unsafe;
@@ -43,54 +44,85 @@ namespace Silk.NET.Input.Desktop
             var buttons = Buttons;
             for (var i = 0; i < buttons.Count; i++)
             {
-                if (buttons[i].Pressed != (_cachedButtons.Count > i ? _cachedButtons[i] : buttons[i]).Pressed)
+                if (_cachedButtons.Count <= i)
+                {
+                    _cachedButtons[i] = default;
+                }
+                
+                if (buttons[i].Pressed != _cachedButtons[i].Pressed)
                 {
                     _cachedButtons[i] = buttons[i];
                     (buttons[i].Pressed ? ButtonDown : ButtonUp)?.Invoke(this, buttons[i]);
                 }
             }
+            
             var thumbsticks = Thumbsticks;
             for (var i = 0; i < thumbsticks.Count; i++)
             {
-                if (thumbsticks[i].X != (_cachedThumbsticks.Count > i ? _cachedThumbsticks[i] : thumbsticks[i]).X ||
-                    thumbsticks[i].Y != (_cachedThumbsticks.Count > i ? _cachedThumbsticks[i] : thumbsticks[i]).Y)
+                if (_cachedThumbsticks.Count <= i)
+                {
+                    _cachedThumbsticks[i] = default;
+                }
+
+                if (thumbsticks[i].X != _cachedThumbsticks[i].X || thumbsticks[i].Y != _cachedThumbsticks[i].Y)
                 {
                     _cachedThumbsticks[i] = thumbsticks[i];
                     ThumbstickMoved?.Invoke(this, Util.ApplyDeadzone(thumbsticks[i], Deadzone));
                 }
             }
+            
             var triggers = Triggers;
             for (var i = 0; i < triggers.Count; i++)
             {
-                if (triggers[i].Position != (_cachedTriggers.Count > i ? _cachedTriggers[i] : triggers[i]).Position)
+                if (_cachedTriggers.Count <= i)
+                {
+                    _cachedTriggers[i] = default;
+                }
+
+                if (triggers[i].Position != _cachedTriggers[i].Position)
                 {
                     _cachedTriggers[i] = triggers[i];
                     TriggerMoved?.Invoke(this, triggers[i]);
                 }
             }
         }
-        private static unsafe IReadOnlyList<Button> GetButtons(int i)
+        private unsafe IReadOnlyList<Button> GetButtons(int i)
         {
             var count = 0;
             var bytes = Util.Do(() => (UnsafeDispatch<byte>)Util.Glfw.GetJoystickButtons(i, out count));
+            if (count != _cachedButtons.Count)
+            {
+                _cachedButtons = new List<Button>();
+                _cachedButtons.AddRange(Enumerable.Range(0, count).Select(_ => (Button)default));
+            }
             return new GlfwButtonCollection(bytes, count);
         }
-        private static unsafe IReadOnlyList<Thumbstick> GetThumbsticks(int i)
+        private unsafe IReadOnlyList<Thumbstick> GetThumbsticks(int i)
         {
             var count = 0;
             var floats = Util.Do(() => (UnsafeDispatch<float>)Util.Glfw.GetJoystickAxes(i, out count));
+            if (count != _cachedThumbsticks.Count)
+            {
+                _cachedThumbsticks = new List<Thumbstick>();
+                _cachedThumbsticks.AddRange(Enumerable.Range(0, count).Select(_ => (Thumbstick)default));
+            }
             fixed(float* x = new[] { floats[0], floats[2] }, y = new[] { floats[1], floats[3] })
             {
                 return new GlfwThumbstickCollection(x, y, count);
             }
         }
-        private static unsafe IReadOnlyList<Trigger> GetTriggers(int i)
+        private unsafe IReadOnlyList<Trigger> GetTriggers(int i)
         {
             var count = 0;
             var floats = Util.Do(() => (UnsafeDispatch<float>)Util.Glfw.GetJoystickAxes(i, out count));
+            if (count != _cachedTriggers.Count)
+            {
+                _cachedTriggers = new List<Trigger>();
+                _cachedTriggers.AddRange(Enumerable.Range(0, count).Select(_ => (Trigger)default));
+            }
             fixed(float* triggers = new float[] { floats[4], floats[5] })
             {
-                return new GlfwTriggerCollection(floats, count);
+                return new GlfwTriggerCollection(triggers, count);
             }
         }
     }

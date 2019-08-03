@@ -21,7 +21,7 @@ namespace Silk.NET.Input.Desktop.Collections
         public int Count => _count;
 
         public Button this[int index] => index < _count
-            ? new Button ((ButtonName)index, index, _bytes[index] != 0)
+            ? new Button (Util.IntToSilkButton(index), index, _bytes[index] != 0)
             : throw new ArgumentOutOfRangeException();
 
         public IEnumerator<Button> GetEnumerator()
@@ -54,7 +54,7 @@ namespace Silk.NET.Input.Desktop.Collections
                     return false;
                 }
 
-                Current = new Button((ButtonName)_current, _current, _col._bytes[_current] != 0);
+                Current = new Button(Util.IntToSilkButton(_current), _current, _col._bytes[_current] != 0);
                 _current++;
                 return true;
             }

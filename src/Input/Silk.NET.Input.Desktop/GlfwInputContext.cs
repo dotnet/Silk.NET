@@ -74,6 +74,7 @@ namespace Silk.NET.Input.Desktop
 
         public void RaiseConnectionChange(int joystick, ConnectedState state)
         {
+            Console.WriteLine("Connection Change " + joystick + ", " + state);
             ConnectionChanged?.Invoke(Joysticks[joystick], state == ConnectedState.Connected);
         }
     }
