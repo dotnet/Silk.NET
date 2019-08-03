@@ -81977,6 +81977,7 @@
   "ClassName": "GL",
   "Version": null,
   "FunctionPrefix": "gl",
+  "SymbolLoaderName": null,
   "Names": {
     "Linux": "libGLESv2.so",
     "Windows": "libGLESv2.dll",
