@@ -19,7 +19,7 @@ namespace Silk.NET.OpenAL
     {
         /// <inheritdoc cref="NativeLibraryBase" />
         protected ALContext(string path, ImplementationOptions options)
-            : base(path, options)
+            : base(path, options, ALLoader.Instance, ALLoader.Instance)
         {
         }
 

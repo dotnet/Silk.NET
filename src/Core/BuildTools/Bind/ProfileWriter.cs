@@ -267,7 +267,12 @@ namespace Silk.NET.BuildTools.Bind
                 );
                 sw.WriteLine();
                 sw.WriteLine($"        public {profile.ClassName}(string path, ImplementationOptions opts)");
-                sw.WriteLine("            : base(path, opts)");
+                sw.WriteLine
+                (
+                    profile.SymbolLoaderName == null
+                        ? "            : base(path, opts)"
+                        : $"            : base(path, opts, {profile.SymbolLoaderName}, {profile.SymbolLoaderName})"
+                );
                 sw.WriteLine("        {");
                 sw.WriteLine("        }");
                 sw.WriteLine("    }");
@@ -377,7 +382,12 @@ namespace Silk.NET.BuildTools.Bind
                     }
 
                     sw.WriteLine($"        public {name}(string path, ImplementationOptions opts)");
-                    sw.WriteLine("            : base(path, opts)");
+                    sw.WriteLine
+                    (
+                        profile.SymbolLoaderName == null
+                            ? "            : base(path, opts)"
+                            : $"            : base(path, opts, {profile.SymbolLoaderName}, {profile.SymbolLoaderName})"
+                    );
                     sw.WriteLine("        {");
                     sw.WriteLine("        }");
                     sw.WriteLine("    }");

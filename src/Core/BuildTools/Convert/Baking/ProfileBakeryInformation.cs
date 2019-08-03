@@ -52,6 +52,11 @@ namespace Silk.NET.BuildTools.Convert.Baking
         /// Gets or sets the class name for this profile.
         /// </summary>
         public string ClassName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the symbol loader for this profile.
+        /// </summary>
+        public string SymbolLoader { get; set; }
         // ReSharper disable InconsistentNaming
 
         /// <summary>
@@ -64,6 +69,7 @@ namespace Silk.NET.BuildTools.Convert.Baking
             .WithName("GLES")
             .WithOutputFolder("OpenGL")
             .WithClassName("GL")
+            .WithSymbolLoader("Silk.NET.Windowing.SilkLoader.OpenGLES")
             .WithLibraries
             (
                 "OpenGLESLibraryNameContainer",
@@ -89,6 +95,7 @@ namespace Silk.NET.BuildTools.Convert.Baking
             .WithName("OpenGL (Compatibility Profile)")
             .WithOutputFolder("OpenGL")
             .WithClassName("GL")
+            .WithSymbolLoader("Silk.NET.Windowing.SilkLoader.OpenGL")
             .WithLibraries
             (
                 "OpenGLLibraryNameContainer",
@@ -114,6 +121,7 @@ namespace Silk.NET.BuildTools.Convert.Baking
             .WithNamespaces("Silk.NET.OpenGL", "Silk.NET.OpenGL.Extensions")
             .WithName("OpenGL")
             .WithOutputFolder("OpenGL")
+            .WithSymbolLoader("Silk.NET.Windowing.SilkLoader.OpenGL")
             .WithClassName("GL")
             .WithLibraries
             (

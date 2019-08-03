@@ -56,6 +56,11 @@ namespace Silk.NET.BuildTools.Common
         public string FunctionPrefix { get; set; }
 
         /// <summary>
+        /// Gets or sets the name of the symbol loader.
+        /// </summary>
+        public string SymbolLoaderName { get; set; }
+
+        /// <summary>
         /// Gets or sets the name container for this profile.
         /// </summary>
         public NameContainer Names { get; set; } = new NameContainer();
