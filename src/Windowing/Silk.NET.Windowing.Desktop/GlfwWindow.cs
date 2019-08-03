@@ -420,7 +420,7 @@ namespace Silk.NET.Windowing.Desktop
                 }
                 else {
                     // Raise UpdateFrame, but don't await it yet.
-                    var task = Task.Run(RaiseUpdateFrame);
+                    var task = Task.Run((Action)RaiseUpdateFrame); // cast to action, ambiguous call
 
                     // Loop while we're still updating - the Update thread might be calling the main thread
                     while (!task.IsCompleted)
