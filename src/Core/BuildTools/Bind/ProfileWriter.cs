@@ -270,6 +270,14 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine("            : base(path, opts)");
                 sw.WriteLine("        {");
                 sw.WriteLine("        }");
+                if (profile.SymbolLoaderName != null)
+                {
+                    sw.WriteLine();
+                    sw.WriteLine($"        static {profile.ClassName}()");
+                    sw.WriteLine("        {");
+                    sw.WriteLine($"            LibraryLoader.CreateBuilder<{profile.ClassName}>({profile.SymbolLoaderName});");
+                    sw.WriteLine("        }");
+                }
                 sw.WriteLine("    }");
                 sw.WriteLine("}");
                 sw.WriteLine();
