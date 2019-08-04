@@ -19,9 +19,9 @@ namespace Silk.NET.Input.Desktop
         internal List<GlfwJoystick> _joysticks;
         internal GlfwKeyboard _keyboard;
         internal GlfwMouse _mouse;
-        internal IWindow _window;
+        internal GlfwWindow _window;
 
-        public GlfwInputContext(IWindow window)
+        public GlfwInputContext(GlfwWindow window)
         {
             Handle = window.Handle;
             _window = window;
