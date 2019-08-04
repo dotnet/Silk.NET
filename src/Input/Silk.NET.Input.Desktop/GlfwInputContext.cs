@@ -10,6 +10,8 @@ using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
 using Silk.NET.Input.Desktop.Collections;
 using Silk.NET.Windowing.Common;
+using Silk.NET.Windowing.Desktop;
+
 
 namespace Silk.NET.Input.Desktop
 {
