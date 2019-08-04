@@ -45,6 +45,11 @@ namespace Silk.NET.BuildTools.Common
         public Dictionary<string, Interface> Interfaces { get; set; } = new Dictionary<string, Interface>();
 
         /// <summary>
+        /// Gets or sets this project's list of structs.
+        /// </summary>
+        public List<Struct> Structs { get; set; }
+
+        /// <summary>
         /// Gets or sets a list of code blocks to be inserted into a mixed-mode class. This does not include functions.
         /// </summary>
         public List<string> MixedModeBlocks { get; set; } = new List<string>();

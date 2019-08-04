@@ -4,9 +4,12 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp2.1</TargetFramework>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>8</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\src\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
+      <ProjectReference Include="..\..\src\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
       <ProjectReference Include="..\..\src\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
       <ProjectReference Include="..\..\src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
     </ItemGroup>

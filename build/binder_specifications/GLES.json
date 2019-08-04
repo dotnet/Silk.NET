@@ -32850,6 +32850,7 @@
           "Attributes": []
         }
       },
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "EXT": {
@@ -50000,6 +50001,7 @@
           "Attributes": []
         }
       },
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "QCOM": {
@@ -52123,6 +52125,7 @@
           "Attributes": []
         }
       },
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "INTEL": {
@@ -52971,6 +52974,7 @@
           "Attributes": []
         }
       },
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "NV": {
@@ -68983,6 +68987,7 @@
           "Attributes": []
         }
       },
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "AMD": {
@@ -69888,6 +69893,7 @@
           "Attributes": []
         }
       },
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "OES": {
@@ -76498,6 +76504,7 @@
           "Attributes": []
         }
       },
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "KHR": {
@@ -78901,6 +78908,7 @@
           "Attributes": []
         }
       },
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "ANGLE": {
@@ -79650,6 +79658,7 @@
           "Attributes": []
         }
       },
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "APPLE": {
@@ -80545,6 +80554,7 @@
           "Attributes": []
         }
       },
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "IMG": {
@@ -81487,6 +81497,7 @@
           "Attributes": []
         }
       },
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "OVR": {
@@ -81766,6 +81777,7 @@
           "Attributes": []
         }
       },
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "ANDROID": {
@@ -81783,6 +81795,7 @@
         }
       ],
       "Interfaces": {},
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "ARM": {
@@ -81829,6 +81842,7 @@
         }
       ],
       "Interfaces": {},
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "DMP": {
@@ -81875,6 +81889,7 @@
         }
       ],
       "Interfaces": {},
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "FJ": {
@@ -81900,6 +81915,7 @@
         }
       ],
       "Interfaces": {},
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "MESA": {
@@ -81925,6 +81941,7 @@
         }
       ],
       "Interfaces": {},
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "NVX": {
@@ -81942,6 +81959,7 @@
         }
       ],
       "Interfaces": {},
+      "Structs": null,
       "MixedModeBlocks": []
     },
     "VIV": {
@@ -81967,6 +81985,7 @@
         }
       ],
       "Interfaces": {},
+      "Structs": null,
       "MixedModeBlocks": []
     }
   },
@@ -81977,7 +81996,7 @@
   "ClassName": "GL",
   "Version": null,
   "FunctionPrefix": "gl",
-  "SymbolLoaderName": "Silk.NET.Windowing.SilkLoader.OpenGLES",
+  "SymbolLoaderName": "Silk.NET.Core.Loader.EGLSymbolLoader.Instance",
   "Names": {
     "Linux": "libGLESv2.so",
     "Windows": "libGLESv2.dll",

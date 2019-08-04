@@ -94,16 +94,14 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
             var sb = new StringBuilder();
             var strParams = newParameters.Select(x => Utilities.CSharpKeywords.Contains(x.Name) ? "@" + x.Name : x.Name)
-                .Concat(new[] { "ret" });
+                .Concat(new[] { "&ret" });
 
             sb.AppendLine("// ReturnTypeOverloader");
-            sb.AppendLine(lastParameterType + " ret = null;");
-            sb.AppendLine("// ReSharper disable ExpressionIsAlwaysNull");
+            sb.AppendLine(newReturnType + " ret = default;");
             sb.Append(function.Name + "(");
             sb.Append(string.Join(", ", strParams));
             sb.AppendLine(");");
-            sb.AppendLine("return *ret;");
-            sb.AppendLine("// ReSharper restore ExpressionIsAlwaysNull");
+            sb.AppendLine("return ret;");
 
             if (!newParameters.Any())
             {

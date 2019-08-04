@@ -1,6 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Numerics;
+using System.Runtime.InteropServices;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 
@@ -19,9 +22,17 @@ namespace Silk.NET.OpenGL
              ext = LibraryLoader<GL>.Load<T>(this);
              return ext != null;
         }
+
+        private List<string> _extensions;
         public override bool IsExtensionPresent(string extension)
         {
-            throw new NotImplementedException();
+            unsafe
+            {
+                _extensions ??= Enumerable.Range(0, GetInteger(GLEnum.NumExtensions))
+                    .Select(x => Marshal.PtrToStringAnsi((IntPtr) GetString(GLEnum.Extensions, (uint) x))).ToList();
+            }
+
+            return _extensions.Contains(extension);
         }
         
         public void ClearColor(Color color)
@@ -171,7 +182,7 @@ namespace Silk.NET.OpenGL
             }
 
             var lengthu = (uint) length;
-            info = null;
+            info = string.Empty;
             GetProgramInfoLog(program, lengthu * 2u, lengthu, info);
         }
         

@@ -1,11 +1,124 @@
-﻿namespace Triangle
+﻿using System;
+using System.Drawing;
+using Silk.NET.Input;
+using Silk.NET.Input.Common;
+using Silk.NET.OpenGL;
+using Silk.NET.Windowing;
+using Silk.NET.Windowing.Common;
+
+namespace Triangle
 {
-    internal class Program
+    public static class Program
     {
-        private static void Main()
+        private static readonly float[] _vertices =
         {
-            var game = new Game();
-            game.Run();
+            -0.5f, -0.5f, 0.0f,
+             0.5f, -0.5f, 0.0f,
+             0.0f,  0.5f, 0.0f
+        };
+
+        private static uint _vertexBufferObject;
+        private static uint _vertexArrayObject;
+        private static uint _shader;
+        private static GL _gl;
+        private static IInputContext _input;
+        private static IWindow _window;
+
+        private const string VertexShader = "#version 330\n\n" +
+
+                                             "out vec4 outputColor;\n\n" +
+
+                                             "void main()\n" +
+                                             "{\n" +
+                                             "    outputColor = vec4(1.0, 1.0, 0.0, 1.0);\n" +
+                                             "}\n";
+
+        private const string FragmentShader = "#version 330 core\n\n" +
+
+                                               "layout(location = 0) in vec3 aPosition;\n\n" +
+
+                                               "void main(void)\n" +
+                                               "{\n" +
+                                               "    gl_Position = vec4(aPosition, 1.0);\n" +
+                                               "}\n";
+
+        public static void Main(string[] args)
+        {
+            _window = Window.Create(WindowOptions.Default);
+            _window.OnLoad += OnLoad;
+            _window.OnRender += OnRenderFrame;
+            _window.OnUpdate += OnUpdateFrame;
+            _window.OnResize += OnResize;
+            _window.Run();
+            End();
+        }
+
+        private static unsafe void OnLoad()
+        {
+            _gl ??= GL.GetApi();
+            var vertShader = _gl.CreateShader(GLEnum.VertexShader);
+            var fragShader = _gl.CreateShader(GLEnum.FragmentShader);
+            _gl.ShaderSource(vertShader, VertexShader);
+            _gl.ShaderSource(fragShader, FragmentShader);
+            _gl.CompileShader(vertShader);
+            _gl.CompileShader(fragShader);
+            _shader = _gl.CreateProgram();
+            _gl.AttachShader(_shader, vertShader);
+            _gl.AttachShader(_shader, fragShader);
+            _gl.LinkProgram(_shader);
+            _gl.DetachShader(_shader, vertShader);
+            _gl.DetachShader(_shader, fragShader);
+            _gl.DeleteShader(fragShader);
+            _gl.DeleteShader(vertShader);
+            _gl.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+            _vertexBufferObject = _gl.GenBuffer();
+            _gl.BindBuffer(GLEnum.ArrayBuffer, _vertexBufferObject);
+            fixed (void* vertices = _vertices)
+            {
+                _gl.BufferData(GLEnum.ArrayBuffer, (uint) _vertices.Length * sizeof(float), vertices, GLEnum.StaticDraw);
+            }
+
+            _vertexArrayObject = _gl.GenVertexArray();
+            _gl.BindVertexArray(_vertexArrayObject);
+            _gl.VertexAttribPointer(0, 3, GLEnum.Float, false, 3 * sizeof(float), 0);
+            _gl.EnableVertexAttribArray(0);
+            _gl.BindBuffer(GLEnum.ArrayBuffer, _vertexBufferObject);
+            Console.WriteLine("done load");
+        }
+
+
+        private static void OnRenderFrame(double delta)
+        {
+            _gl.Clear((uint)GLEnum.ColorBufferBit);
+            _gl.UseProgram(_shader);
+            _gl.BindVertexArray(_vertexArrayObject);
+            _gl.DrawArrays(GLEnum.Triangles, 0, 3);
+        }
+
+
+        private static void OnUpdateFrame(double delta)
+        {
+            _input ??= _window.GetInput();
+            if (_input.Keyboards[0].IsKeyPressed(Key.Escape))
+            {
+                _window.Close();
+            }
+        }
+
+        private static void OnResize(Size size)
+        {
+            _gl.Viewport(0, 0, (uint) size.Width, (uint) size.Height);
+            Console.WriteLine("done resize");
+        }
+        
+        private static void End()
+        {
+            _gl.BindBuffer(GLEnum.ArrayBuffer, 0);
+            _gl.BindVertexArray(0);
+            _gl.UseProgram(0);
+            _gl.DeleteBuffer(_vertexBufferObject);
+            _gl.DeleteVertexArray(_vertexArrayObject);
+            _gl.DeleteProgram(_shader);
         }
     }
 }

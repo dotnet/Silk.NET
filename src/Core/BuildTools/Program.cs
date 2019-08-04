@@ -12,7 +12,7 @@ using CommandLine;
 using CommandLine.Text;
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Bind;
-using Silk.NET.BuildTools.Convert;
+using Silk.NET.BuildTools.GLXmlConvert;
 using Silk.NET.BuildTools.Pipeline;
 
 namespace Silk.NET.BuildTools
@@ -39,8 +39,8 @@ namespace Silk.NET.BuildTools
                 case "bind":
                     Binder.Bind(GetArgs<BindOptions>(args));
                     break;
-                case "convert":
-                    Converter.Convert(GetArgs<ConvertOptions>(args));
+                case "glxml":
+                    GLXmlConverter.Convert(GetArgs<GLXmlConvertOptions>(args));
                     break;
                 default:
                     PipelineFile(args);
