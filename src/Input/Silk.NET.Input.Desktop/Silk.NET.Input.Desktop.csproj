@@ -3,6 +3,7 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -11,9 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
-        <HintPath>..\..\..\..\..\..\.nuget\packages\system.memory\4.5.2\lib\netstandard2.0\System.Memory.dll</HintPath>
-      </Reference>
+      <PackageReference Include="System.Memory" Version="4.5.3" />
     </ItemGroup>
     
     <Import Project="..\..\..\build\props\common.props" />
