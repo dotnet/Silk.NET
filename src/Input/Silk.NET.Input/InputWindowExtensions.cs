@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Silk.NET.Core.Platform;
 using Silk.NET.Input.Common;
 using Silk.NET.Input.Desktop;
 using Silk.NET.Windowing.Common;
@@ -14,24 +15,13 @@ namespace Silk.NET.Input
 {
     public static class InputWindowExtensions
     {
-        private static List<IInputPlatform> _platforms = new List<IInputPlatform>();
         static InputWindowExtensions()
         {
-            RegisterInputPlatform(new GlfwInputPlatform());
+            SilkManager.Register<IInputPlatform>(new GlfwInputPlatform());
         }
-        public static void RegisterInputPlatform(IInputPlatform platform)
-        {
-            _platforms.Add(platform);
-        }
-
-        public static void UnregisterInputPlatform(IInputPlatform platform)
-        {
-            _platforms.Remove(platform);
-        }
-
         public static IInputContext GetInput(this IWindow window)
         {
-            return _platforms.FirstOrDefault(x => x.IsApplicable(window))?.GetInput(window) 
+            return SilkManager.GetOrDefault<IInputPlatform>()?.GetInput(window)
                 ?? throw new NotSupportedException("Couldn't find a suitable input platform for this window.");
         }
     }

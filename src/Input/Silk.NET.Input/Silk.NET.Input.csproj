@@ -8,5 +8,7 @@
       <ProjectReference Include="..\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
       <ProjectReference Include="..\Silk.NET.Input.Desktop\Silk.NET.Input.Desktop.csproj" />
     </ItemGroup>
+    
+    <Import Project="..\..\..\build\props\common.props" />
 
 </Project>
