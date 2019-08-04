@@ -19,6 +19,7 @@ jobs:
     inputs:
       packageType: sdk
       version: 3.0.0-preview7
+      includePreviewVersions: true
       installationPath: $(Agent.ToolsDirectory)/dotnet
   - script: dotnet run --configuration $(buildConfiguration) --project src/Core/BuildTools/BuildTools.csproj build/binder_scripts/build.json
     displayName: 'Bind'
