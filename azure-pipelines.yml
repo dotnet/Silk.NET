@@ -20,3 +20,9 @@ jobs:
     displayName: 'Build/Pack'
   - publish: build/output_packages
     artifact: NuGet Packages
+  - task: NuGetCommand@2
+    inputs:
+      command: 'push'
+      packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
+      nuGetFeedType: 'internal'
+      publishVstsFeed: '061abec9-b10b-4a9b-9c06-aa635c5e74a2/7ae6c815-0dc0-4193-bf95-042c360df875'
