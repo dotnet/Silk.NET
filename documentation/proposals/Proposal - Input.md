@@ -1,4 +1,4 @@
-﻿# Summary    
+# Summary    
 Proposal API for Input via keyboards, mice, and controllers.
 
 # Contributors
@@ -27,9 +27,9 @@ Proposal API for Input via keyboards, mice, and controllers.
 ```cs
 public interface IJoystick : IInputDevice
 {
-    IReadOnlyCollection<Axis> Axes { get; }
-    IReadOnlyCollection<Button> Buttons { get; }
-    IReadOnlyCollection<Hat> Hats { get; }
+    IReadOnlyList<Axis> Axes { get; }
+    IReadOnlyList<Button> Buttons { get; }
+    IReadOnlyList<Hat> Hats { get; }
     Deadzone Deadzone { get; set; }
     event Action<IJoystick, Button> ButtonDown;
     event Action<IJoystick, Button> ButtonUp;
@@ -42,9 +42,9 @@ public interface IJoystick : IInputDevice
 ```cs
 public interface IGamepad : IInputDevice
 {
-    IReadOnlyCollection<Button> Buttons { get; }
-    IReadOnlyCollection<Thumbstick> Thumbsticks { get; }
-    IReadOnlyCollection<Trigger> Triggers { get; }
+    IReadOnlyList<Button> Buttons { get; }
+    IReadOnlyList<Thumbstick> Thumbsticks { get; }
+    IReadOnlyList<Trigger> Triggers { get; }
     Deadzone Deadzone { get; set; }
     event Action<IGamepad, Button> ButtonDown;
     event Action<IGamepad, Button> ButtonUp;
@@ -57,7 +57,7 @@ public interface IGamepad : IInputDevice
 ```cs
 public interface IKeyboard : IInputDevice
 {
-    IReadOnlyCollection<Key> SupportedKeys { get; }
+    IReadOnlyList<Key> SupportedKeys { get; }
     bool IsKeyPressed(Key key);
     bool IsKeyPressed(uint scancode);
     event Action<IKeyboard, Key> KeyDown;
@@ -69,8 +69,8 @@ public interface IKeyboard : IInputDevice
 ```cs
 public interface IMouse : IInputDevice
 {
-    IReadOnlyCollection<MouseButton> SupportedButtons { get; }
-    IReadOnlyCollection<ScrollWheel> ScrollWheels { get; }
+    IReadOnlyList<MouseButton> SupportedButtons { get; }
+    IReadOnlyList<ScrollWheel> ScrollWheels { get; }
     bool IsButtonPressed(MouseButton btn);
     event Action<IMouse, MouseButton> MouseDown;
     event Action<IMouse, MouseButton> MouseUp;
@@ -94,11 +94,11 @@ public interface IInputDevice
 public interface IInputContext : IDisposable
 {
     IntPtr Handle { get; }
-    IReadOnlyCollection<IGamepad> Gamepads { get; }
-    IReadOnlyCollection<IJoystick> Joysticks { get; }
-    IReadOnlyCollection<IKeyboard> Keyboards { get; }
-    IReadOnlyCollection<IMouse> Mice { get; }
-    IReadOnlyCollection<IInputDevice> OtherDevices { get; }
+    IReadOnlyList<IGamepad> Gamepads { get; }
+    IReadOnlyList<IJoystick> Joysticks { get; }
+    IReadOnlyList<IKeyboard> Keyboards { get; }
+    IReadOnlyList<IMouse> Mice { get; }
+    IReadOnlyList<IInputDevice> OtherDevices { get; }
 }
 ```
 
@@ -163,6 +163,8 @@ public struct Axis
 public struct Thumbstick
 {
     public int Index { get; }
+    public float X { get; }
+    public float Y { get; }
     public float Position { get; }
     public float Direction { get; }
     

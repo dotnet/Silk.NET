@@ -981,7 +981,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
         /// </para>
         /// </remarks>
-        unsafe int GetKey(WindowHandle* window, int key);
+        unsafe int GetKey(WindowHandle* window, Keys key);
 
         /// <summary>
         /// <para>
@@ -2336,7 +2336,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GlfwCallbacks.CharCallback SetCharCallback(WindowHandle* window, GlfwCallbacks.CharCallback callback);
+        unsafe GlfwCallbacks.CharCallback SetCharCallback(WindowHandle* window, [DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.CharCallback callback);
 
         /// <summary>
         /// <para>
@@ -2369,7 +2369,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         unsafe GlfwCallbacks.CharModsCallback SetCharModsCallback(WindowHandle* window,
-            GlfwCallbacks.CharModsCallback callback);
+            [DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.CharModsCallback callback);
 
         /// <summary>
         /// <para>
@@ -2412,7 +2412,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         unsafe GlfwCallbacks.CursorEnterCallback SetCursorEnterCallback(WindowHandle* window,
-            GlfwCallbacks.CursorEnterCallback callback);
+            [DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.CursorEnterCallback callback);
 
         /// <summary>
         /// <para>
@@ -2438,7 +2438,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         unsafe GlfwCallbacks.CursorPosCallback SetCursorPosCallback(WindowHandle* window,
-            GlfwCallbacks.CursorPosCallback callback);
+            [DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.CursorPosCallback callback);
 
         /// <summary>
         /// <para>
@@ -2464,7 +2464,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GlfwCallbacks.DropCallback SetDropCallback(WindowHandle* window, GlfwCallbacks.DropCallback callback);
+        unsafe GlfwCallbacks.DropCallback SetDropCallback(WindowHandle* window, [DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.DropCallback callback);
 
         /// <summary>
         /// <para>
@@ -2494,7 +2494,7 @@ namespace Silk.NET.GLFW
         /// This function must only be called from the main thread.
         /// </para>
         /// </remarks>
-        GlfwCallbacks.ErrorCallback SetErrorCallback(GlfwCallbacks.ErrorCallback callback);
+        GlfwCallbacks.ErrorCallback SetErrorCallback([DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.ErrorCallback callback);
 
         /// <summary>
         /// <para>
@@ -2583,7 +2583,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        GlfwCallbacks.JoystickCallback SetJoystickCallback(GlfwCallbacks.JoystickCallback callback);
+        GlfwCallbacks.JoystickCallback SetJoystickCallback([DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.JoystickCallback callback);
 
         /// <summary>
         /// <para>
@@ -2624,7 +2624,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        unsafe GlfwCallbacks.KeyCallback SetKeyCallback(WindowHandle* window, GlfwCallbacks.KeyCallback callback);
+        unsafe GlfwCallbacks.KeyCallback SetKeyCallback(WindowHandle* window, [DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.KeyCallback callback);
 
         /// <summary>
         /// <para>
@@ -2649,7 +2649,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         unsafe GlfwCallbacks.ScrollCallback SetScrollCallback(WindowHandle* window,
-            GlfwCallbacks.ScrollCallback callback);
+            [DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.ScrollCallback callback);
 
         /// <summary>
         /// <para>
@@ -2669,7 +2669,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        GlfwCallbacks.MonitorCallback SetMonitorCallback(GlfwCallbacks.MonitorCallback callback);
+        GlfwCallbacks.MonitorCallback SetMonitorCallback([DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.MonitorCallback callback);
 
         /// <summary>
         /// <para>
@@ -2698,7 +2698,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         unsafe GlfwCallbacks.MouseButtonCallback SetMouseButtonCallback(WindowHandle* window,
-            GlfwCallbacks.MouseButtonCallback callback);
+            [DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.MouseButtonCallback callback);
 
         /// <summary>
         /// <para>
@@ -2731,7 +2731,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         unsafe GlfwCallbacks.WindowCloseCallback SetWindowCloseCallback(WindowHandle* window,
-            GlfwCallbacks.WindowCloseCallback callback);
+            [DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.WindowCloseCallback callback);
 
         /// <summary>
         /// <para>
@@ -2758,7 +2758,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         unsafe GlfwCallbacks.WindowFocusCallback SetWindowFocusCallback(WindowHandle* window,
-            GlfwCallbacks.WindowFocusCallback callback);
+            [DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.WindowFocusCallback callback);
 
         /// <summary>
         /// <para>
@@ -2813,7 +2813,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         unsafe GlfwCallbacks.WindowIconifyCallback SetWindowIconifyCallback(WindowHandle* window,
-            GlfwCallbacks.WindowIconifyCallback callback);
+            [DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.WindowIconifyCallback callback);
 
         /// <summary>
         /// <para>
@@ -2835,7 +2835,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         unsafe GlfwCallbacks.WindowMaximizeCallback SetWindowMaximizeCallback(WindowHandle* window,
-            GlfwCallbacks.WindowMaximizeCallback callback);
+            [DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.WindowMaximizeCallback callback);
 
         /// <summary>
         /// <para>
@@ -2936,7 +2936,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         unsafe GlfwCallbacks.WindowPosCallback SetWindowPosCallback(WindowHandle* window,
-            GlfwCallbacks.WindowPosCallback callback);
+            [DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.WindowPosCallback callback);
 
         /// <summary>
         /// <para>
@@ -2967,7 +2967,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         unsafe GlfwCallbacks.WindowRefreshCallback SetWindowRefreshCallback(WindowHandle* window,
-            GlfwCallbacks.WindowRefreshCallback callback);
+            [DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.WindowRefreshCallback callback);
 
         /// <summary>
         /// <para>
@@ -3026,7 +3026,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         unsafe GlfwCallbacks.WindowSizeCallback SetWindowSizeCallback(WindowHandle* window,
-            GlfwCallbacks.WindowSizeCallback callback);
+            [DelegateLifetime(DelegateLifetime.Persistent)]GlfwCallbacks.WindowSizeCallback callback);
 
         /// <summary>
         /// <para>

@@ -16,17 +16,17 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// A list of all available buttons.
         /// </summary>
-        IReadOnlyCollection<Button> Buttons { get; }
+        IReadOnlyList<Button> Buttons { get; }
         
         /// <summary>
         /// A list of all available thumbsticks.
         /// </summary>
-        IReadOnlyCollection<Thumbstick> Thumbsticks { get; }
+        IReadOnlyList<Thumbstick> Thumbsticks { get; }
         
         /// <summary>
         /// A list of all available triggers.
         /// </summary>
-        IReadOnlyCollection<Trigger> Triggers { get; }
+        IReadOnlyList<Trigger> Triggers { get; }
         
         /// <summary>
         /// The deadzone for this gamepad.

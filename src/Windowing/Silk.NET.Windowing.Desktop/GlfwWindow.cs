@@ -47,7 +47,7 @@ namespace Silk.NET.Windowing.Desktop
         private GlfwCallbacks.WindowSizeCallback onResize;
 
         // Main loop-related things
-        
+
         // The stopwatches. Used to calculate delta.
         private Stopwatch renderStopwatch;
         private Stopwatch updateStopwatch;
@@ -55,10 +55,13 @@ namespace Silk.NET.Windowing.Desktop
         // Invoke method variables
         private ConcurrentQueue<Task> InvokeQueue;
         private int MainThread = -1;
-        
+
         // Update and render period. Represents the time in seconds that each frame should take.
         private double updatePeriod;
         private double renderPeriod;
+
+        private WindowOptions initialOptions;
+        private bool running;
 
         /// <summary>
         /// Create and open a new GlfwWindow.
@@ -66,17 +69,353 @@ namespace Silk.NET.Windowing.Desktop
         /// <param name="options">The options to use for this window.</param>
         public GlfwWindow(WindowOptions options)
         {
-            unsafe {
+            unsafe
+            {
                 // Title and Size must be set before the window is created.
                 _title = options.Title;
                 _size = options.Size;
 
                 _windowBorder = WindowBorder;
 
-                glfwThread.Invoke(() =>
+                FramesPerSecond = options.FramesPerSecond;
+                UpdatesPerSecond = options.UpdatesPerSecond;
+
+                RunningSlowTolerance = options.RunningSlowTolerance;
+                UseSingleThreadedWindow = options.UseSingleThreadedWindow;
+
+                initialOptions = options;
+            }
+        }
+
+        /// <inheritdoc />
+        public int RunningSlowTolerance { get; set; }
+
+        /// <inheritdoc />
+        public bool IsRunningSlowly => _isRunningSlowlyTries > RunningSlowTolerance;
+
+        /// <inheritdoc />
+        public bool IsVisible
+        {
+            get
+            {
+                unsafe
+                {
+                    return running
+                        ? glfw.GetWindowAttrib(WindowPtr, WindowAttributeGetter.Visible)
+                        : initialOptions.IsVisible;
+                }
+            }
+            set
+            {
+                if (running)
+                {
+                    glfwThread.Invoke
+                    (
+                        () =>
+                        {
+                            Debug.WriteLine(Thread.CurrentThread.ManagedThreadId);
+                            unsafe
+                            {
+                                if (value)
+                                {
+                                    glfw.ShowWindow(WindowPtr);
+                                }
+                                else
+                                {
+                                    glfw.HideWindow(WindowPtr);
+                                }
+                            }
+                        }
+                    );
+                }
+
+                initialOptions.IsVisible = value;
+            }
+        }
+
+        /// <inheritdoc />
+        public IntPtr Handle
+        {
+            get
+            {
+                unsafe
+                {
+                    return running ? (IntPtr) WindowPtr : IntPtr.Zero;
+                }
+            }
+        }
+
+        /// <inheritdoc />
+        public bool UseSingleThreadedWindow { get; }
+
+        /// <inheritdoc />
+        public Point Position
+        {
+            get => _position;
+            set
+            {
+                if (running)
+                {
+                    glfwThread.Invoke
+                    (
+                        () =>
+                        {
+                            unsafe
+                            {
+                                glfw.SetWindowPos(WindowPtr, value.X, value.Y);
+                            }
+                        }
+                    );
+                }
+
+                _position = value;
+                initialOptions.Position = value;
+            }
+        }
+
+        /// <inheritdoc />
+        public Size Size
+        {
+            get => _size;
+            set
+            {
+                if (running)
+                {
+                    glfwThread.Invoke
+                    (
+                        () =>
+                        {
+                            unsafe
+                            {
+                                glfw.SetWindowSize(WindowPtr, value.Width, value.Height);
+                            }
+                        }
+                    );
+                }
+
+                initialOptions.Size = value;
+                _size = value;
+            }
+        }
+
+        /// <inheritdoc />
+        public double FramesPerSecond
+        {
+            get => 1.0 / renderPeriod;
+            set
+            {
+                if (value <= double.Epsilon)
+                {
+                    renderPeriod = 0.0;
+                    return;
+                }
+
+                renderPeriod = 1.0 / value;
+            }
+        }
+
+        /// <inheritdoc />
+        public double UpdatesPerSecond
+        {
+            get => 1.0 / updatePeriod;
+            set
+            {
+                if (value <= double.Epsilon)
+                {
+                    updatePeriod = 0.0;
+                    return;
+                }
+
+                updatePeriod = 1.0 / value;
+            }
+        }
+
+        /// <inheritdoc />
+        public GraphicsAPI API { get; }
+
+        /// <inheritdoc />
+        public string Title
+        {
+            get => _title;
+            set
+            {
+                if (running)
+                {
+                    glfwThread.Invoke
+                    (
+                        () =>
+                        {
+                            unsafe
+                            {
+                                glfw.SetWindowTitle(WindowPtr, value);
+                            }
+                        }
+                    );
+                }
+
+                initialOptions.Title = value;
+                _title = value;
+            }
+        }
+
+        /// <inheritdoc />
+        public WindowState WindowState
+        {
+            get => _windowState;
+            set
+            {
+                if (running)
+                {
+                    glfwThread.Invoke
+                    (
+                        () =>
+                        {
+                            unsafe
+                            {
+                                switch (value)
+                                {
+                                    case WindowState.Normal:
+                                        glfw.RestoreWindow(WindowPtr);
+                                        break;
+                                    case WindowState.Minimized:
+                                        glfw.IconifyWindow(WindowPtr);
+                                        break;
+                                    case WindowState.Maximized:
+                                        glfw.MaximizeWindow(WindowPtr);
+                                        break;
+                                    case WindowState.Fullscreen:
+                                        var monitor = glfw.GetPrimaryMonitor();
+                                        var mode = glfw.GetVideoMode(monitor);
+                                        glfw.SetWindowMonitor
+                                        (
+                                            WindowPtr, monitor, 0, 0, mode->Width, mode->Height,
+                                            mode->RefreshRate
+                                        );
+                                        break;
+                                }
+                            }
+                        }
+                    );
+                }
+
+                initialOptions.WindowState = value;
+                _windowState = value;
+            }
+        }
+
+        /// <inheritdoc />
+        public WindowBorder WindowBorder
+        {
+            get => _windowBorder;
+            set
+            {
+                if (running)
+                {
+                    glfwThread.Invoke
+                    (
+                        () =>
+                        {
+                            unsafe
+                            {
+                                switch (value)
+                                {
+                                    case WindowBorder.Hidden:
+                                        glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, false);
+                                        glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, false);
+                                        break;
+
+                                    case WindowBorder.Resizable:
+                                        glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, true);
+                                        glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, true);
+                                        break;
+
+                                    case WindowBorder.Fixed:
+                                        glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, true);
+                                        glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, false);
+                                        break;
+                                }
+                            }
+                        }
+                    );
+                }
+
+                initialOptions.WindowBorder = value;
+                _windowBorder = value;
+            }
+        }
+
+        /// <inheritdoc />
+        public VSyncMode VSync
+        {
+            get => _vSync;
+            set
+            {
+                if (running)
+                {
+                    this.Invoke
+                    (
+                        () =>
+                        {
+                            switch (value)
+                            {
+                                case VSyncMode.Off:
+                                    glfw.SwapInterval(0);
+                                    break;
+
+                                case VSyncMode.On:
+                                    glfw.SwapInterval(1);
+                                    break;
+
+                                default:
+                                    glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
+                                    break;
+                            }
+
+                            _vSync = value;
+                        }
+                    );
+                }
+                initialOptions.VSync = value;
+                _vSync = value;
+            }
+        }
+
+        /// <inheritdoc />
+        public object Invoke(Delegate d)
+        {
+            return Invoke(d, new object[0]);
+        }
+
+        /// <inheritdoc />
+        public object Invoke(Delegate d, params object[] args)
+        {
+            if (!running)
+            {
+                throw new InvalidOperationException("The window must be running to be able to invoke it.");
+            }
+            
+            if (Thread.CurrentThread.ManagedThreadId == MainThread)
+            {
+                return d.DynamicInvoke(args);
+            }
+
+            var task = new Task<object>(() => d.DynamicInvoke(args));
+            InvokeQueue.Enqueue(task);
+            SpinWait.SpinUntil(() => task.IsCompleted);
+            return task.Result;
+        }
+
+        /// <inheritdoc />
+        public unsafe void Run()
+        {
+            running = true;
+            glfwThread.Invoke
+            (
+                () =>
                 {
                     // Set window border.
-                    switch (options.WindowBorder) {
+                    switch (initialOptions.WindowBorder)
+                    {
                         case WindowBorder.Hidden:
                             glfw.WindowHint(WindowHintBool.Decorated, false);
                             glfw.WindowHint(WindowHintBool.Resizable, false);
@@ -94,7 +433,8 @@ namespace Silk.NET.Windowing.Desktop
                     }
 
                     // Set window API.
-                    switch (options.API.API) {
+                    switch (initialOptions.API.API)
+                    {
                         case ContextAPI.None:
                         case ContextAPI.Vulkan:
                             glfw.WindowHint(WindowHintClientApi.ClientApi, ClientApi.NoApi);
@@ -108,289 +448,39 @@ namespace Silk.NET.Windowing.Desktop
                     }
 
                     // Set API version.
-                    glfw.WindowHint(WindowHintInt.ContextVersionMajor, options.API.Version.MajorVersion);
-                    glfw.WindowHint(WindowHintInt.ContextVersionMinor, options.API.Version.MinorVersion);
+                    glfw.WindowHint(WindowHintInt.ContextVersionMajor, initialOptions.API.Version.MajorVersion);
+                    glfw.WindowHint(WindowHintInt.ContextVersionMinor, initialOptions.API.Version.MinorVersion);
 
                     // Set API flags
-                    if (options.API.Flags.HasFlag(ContextFlags.ForwardCompatible)) {
+                    if (initialOptions.API.Flags.HasFlag(ContextFlags.ForwardCompatible))
+                    {
                         glfw.WindowHint(WindowHintBool.OpenGLForwardCompat, true);
                     }
 
-                    if (options.API.Flags.HasFlag(ContextFlags.Debug)) {
+                    if (initialOptions.API.Flags.HasFlag(ContextFlags.Debug))
+                    {
                         glfw.WindowHint(WindowHintBool.OpenGLDebugContext, true);
                     }
 
                     // Set API profile
-                    glfw.WindowHint(WindowHintOpenGlProfile.OpenGlProfile,
-                        options.API.Profile == ContextProfile.Core ? OpenGlProfile.Core : OpenGlProfile.Compat);
+                    glfw.WindowHint
+                    (
+                        WindowHintOpenGlProfile.OpenGlProfile,
+                        initialOptions.API.Profile == ContextProfile.Core ? OpenGlProfile.Core : OpenGlProfile.Compat
+                    );
 
                     // Create window
                     WindowPtr = glfw.CreateWindow(_size.Width, _size.Height, _title, null, null);
-                });
-            
-                InvokeQueue = new ConcurrentQueue<Task>();
-                MainThread = Thread.CurrentThread.ManagedThreadId;
-
-                glfw.MakeContextCurrent(WindowPtr);
-
-                FramesPerSecond = options.FramesPerSecond;
-                UpdatesPerSecond = options.UpdatesPerSecond;
-
-                WindowState = options.WindowState;
-                Position = options.Position;
-                VSync = options.VSync;
-                RunningSlowTolerance = options.RunningSlowTolerance;
-                UseSingleThreadedWindow = options.UseSingleThreadedWindow;
-            }
-        }
-        
-        /// <inheritdoc />
-        public int RunningSlowTolerance { get; set; }
-
-        /// <inheritdoc />
-        public bool IsRunningSlowly => _isRunningSlowlyTries > RunningSlowTolerance;
-
-        /// <inheritdoc />
-        public bool IsVisible
-        {
-            get
-            {
-                unsafe {
-                    return glfw.GetWindowAttrib(WindowPtr, WindowAttributeGetter.Visible);
                 }
-            }
-            set
-            {
-                glfwThread.Invoke(() =>
-                {
-                    unsafe {
-                        if (value) {
-                            glfw.ShowWindow(WindowPtr);
-                        }
-                        else {
-                            glfw.HideWindow(WindowPtr);
-                        }
-                    }
-                });
-            }
-        }
+            );
 
-        /// <inheritdoc />
-        public IntPtr Handle
-        {
-            get
-            {
-                unsafe {
-                    return (IntPtr) WindowPtr;
-                }
-            }
-        }
+            InvokeQueue = new ConcurrentQueue<Task>();
+            MainThread = Thread.CurrentThread.ManagedThreadId;
 
-        /// <inheritdoc />
-        public bool UseSingleThreadedWindow { get; }
-
-        /// <inheritdoc />
-        public Point Position
-        {
-            get => _position;
-            set
-            {
-                glfwThread.Invoke(() =>
-                {
-                    unsafe {
-                        glfw.SetWindowPos(WindowPtr, value.X, value.Y);
-                    }
-                });
-
-                _position = value;
-            }
-        }
-
-        /// <inheritdoc />
-        public Size Size
-        {
-            get => _size;
-            set
-            {
-                glfwThread.Invoke(() =>
-                {
-                    unsafe {
-                        glfw.SetWindowSize(WindowPtr, value.Width, value.Height);
-                    }
-                });
-
-                _size = value;
-            }
-        }
-
-        /// <inheritdoc />
-        public double FramesPerSecond
-        {
-            get => 1.0 / renderPeriod;
-            set
-            {
-                if (value <= double.Epsilon) {
-                    renderPeriod = 0.0;
-                    return;
-                }
-                
-                renderPeriod = 1.0 / value;
-            }
-        }
-
-        /// <inheritdoc />
-        public double UpdatesPerSecond
-        {
-            get => 1.0 / updatePeriod;
-            set
-            {
-                if (value <= double.Epsilon) {
-                    updatePeriod = 0.0;
-                    return;
-                }
-                updatePeriod = 1.0 / value;
-            }
-        }
-
-        /// <inheritdoc />
-        public GraphicsAPI API { get; }
-
-        /// <inheritdoc />
-        public string Title
-        {
-            get => _title;
-            set
-            {
-                glfwThread.Invoke(() =>
-                {
-                    unsafe {
-                        glfw.SetWindowTitle(WindowPtr, value);
-                    }
-                });
-
-                _title = value;
-            }
-        }
-
-        /// <inheritdoc />
-        public WindowState WindowState
-        {
-            get => _windowState;
-            set
-            {
-                glfwThread.Invoke(() =>
-                {
-                    unsafe {
-                        switch (value) {
-                            case WindowState.Normal:
-                                glfw.RestoreWindow(WindowPtr);
-                                break;
-                            case WindowState.Minimized:
-                                glfw.IconifyWindow(WindowPtr);
-                                break;
-                            case WindowState.Maximized:
-                                glfw.MaximizeWindow(WindowPtr);
-                                break;
-                            case WindowState.Fullscreen:
-                                var monitor = glfw.GetPrimaryMonitor();
-                                var mode = glfw.GetVideoMode(monitor);
-                                glfw.SetWindowMonitor(WindowPtr, monitor, 0, 0, mode->Width, mode->Height,
-                                    mode->RefreshRate);
-                                break;
-                        }
-                    }
-                });
-
-                _windowState = value;
-            }
-        }
-
-        /// <inheritdoc />
-        public WindowBorder WindowBorder
-        {
-            get => _windowBorder;
-            set
-            {   
-                glfwThread.Invoke(() =>
-                {
-                    unsafe {
-                        switch (value) {
-                            case WindowBorder.Hidden:
-                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, false);
-                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, false);
-                                break;
-
-                            case WindowBorder.Resizable:
-                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, true);
-                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, true);
-                                break;
-
-                            case WindowBorder.Fixed:
-                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Decorated, true);
-                                glfw.SetWindowAttrib(WindowPtr, WindowAttributeSetter.Resizable, false);
-                                break;
-                        }
-                    }
-                });
-
-                _windowBorder = value;
-            }
-        }
-
-        /// <inheritdoc />
-        public VSyncMode VSync
-        {
-            get => _vSync;
-            set
-            {
-                this.Invoke
-                (
-                    () =>
-                    {
-                        switch (value)
-                        {
-                            case VSyncMode.Off:
-                                glfw.SwapInterval(0);
-                                break;
-
-                            case VSyncMode.On:
-                                glfw.SwapInterval(1);
-                                break;
-
-                            default:
-                                glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
-                                break;
-                        }
-
-                        _vSync = value;
-                    }
-                );
-            }
-        }
-
-        /// <inheritdoc />
-        public object Invoke(Delegate d)
-        {
-            return Invoke(d, new object[0]);
-        }
-
-        /// <inheritdoc />
-        public object Invoke(Delegate d, params object[] args)
-        {
-            if (UseSingleThreadedWindow || Thread.CurrentThread.ManagedThreadId == MainThread)
-            {
-                return d.DynamicInvoke(args);
-            }
-            
-            var task = new Task<object>(() => d.DynamicInvoke(args));
-            InvokeQueue.Enqueue(task);
-            SpinWait.SpinUntil(() => task.IsCompleted);
-            return task.Result;
-        }
-
-        /// <inheritdoc />
-        public unsafe void Run()
-        {
+            glfw.MakeContextCurrent(WindowPtr);
+            WindowState = initialOptions.WindowState;
+            Position = initialOptions.Position;
+            VSync = initialOptions.VSync;
             if (glfw.GetCurrentContext() != WindowPtr)
             {
                 glfw.MakeContextCurrent(WindowPtr);
@@ -403,10 +493,10 @@ namespace Silk.NET.Windowing.Desktop
 
             // Initialize some variables
             _isRunningSlowlyTries = 0;
-            
+
             renderStopwatch = new Stopwatch();
             updateStopwatch = new Stopwatch();
-            
+
             MainThread = Thread.CurrentThread.ManagedThreadId;
 
             // Start the update loop.
@@ -414,11 +504,13 @@ namespace Silk.NET.Windowing.Desktop
             {
                 ProcessEvents();
 
-                if (UseSingleThreadedWindow) {
+                if (UseSingleThreadedWindow)
+                {
                     RaiseUpdateFrame();
                     RaiseRenderFrame();
                 }
-                else {
+                else
+                {
                     // Raise UpdateFrame, but don't await it yet.
                     var task = Task.Run((Action)RaiseUpdateFrame); // cast to action, ambiguous call
 
@@ -435,16 +527,21 @@ namespace Silk.NET.Windowing.Desktop
                     RaiseRenderFrame();
                 }
 
-                if (VSync == VSyncMode.Adaptive) {
+                if (VSync == VSyncMode.Adaptive)
+                {
                     glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
                 }
             }
+
+            running = false;
+            glfwThread.Invoke(() => glfw.DestroyWindow(WindowPtr));
         }
 
         /// <inheritdoc />
         public void Close()
         {
-            unsafe {
+            unsafe
+            {
                 glfw.SetWindowShouldClose(WindowPtr, true);
             }
         }
@@ -458,7 +555,8 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public void SwapBuffers()
         {
-            unsafe {
+            unsafe
+            {
                 glfw.SwapBuffers(WindowPtr);
             }
         }
@@ -512,16 +610,19 @@ namespace Silk.NET.Windowing.Desktop
             // If using a capped framerate without vsync, we have to do some synchronization-related things
             // before rendering.
             if (UpdatesPerSecond > double.Epsilon
-                && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive && IsRunningSlowly)) {
+                && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive && IsRunningSlowly))
+            {
                 // Calculate the amount of time to sleep.
                 var sleepTime = updatePeriod - updateStopwatch.Elapsed.TotalSeconds;
 
                 // If the result is negative, that means the frame is running slowly. Mark as such and don't sleep.
-                if (sleepTime < 0.0) {
+                if (sleepTime < 0.0)
+                {
                     _isRunningSlowlyTries += 1;
                 }
                 // Else, sleep for that amount of time.
-                else {
+                else
+                {
                     _isRunningSlowlyTries = 0;
                     Thread.Sleep((int) (1000 * sleepTime));
                 }
@@ -540,10 +641,12 @@ namespace Silk.NET.Windowing.Desktop
         {
             // Identical to RaiseUpdateFrame.
             if (FramesPerSecond > double.Epsilon
-                && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive && IsRunningSlowly)) {
+                && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive && IsRunningSlowly))
+            {
                 var sleepTime = renderPeriod - renderStopwatch.Elapsed.TotalSeconds;
 
-                if (sleepTime > 0.0) {
+                if (sleepTime > 0.0)
+                {
                     Thread.Sleep((int) (1000 * sleepTime));
                 }
             }
@@ -551,9 +654,10 @@ namespace Silk.NET.Windowing.Desktop
             var delta = renderStopwatch.Elapsed.TotalSeconds;
             OnRender?.Invoke(delta);
             renderStopwatch.Restart();
-            
+
             // This has to be called on the thread with the graphics context
-            if (VSync == VSyncMode.Adaptive) {
+            if (VSync == VSyncMode.Adaptive)
+            {
                 glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
             }
         }
@@ -585,18 +689,23 @@ namespace Silk.NET.Windowing.Desktop
             {
                 WindowState state;
                 // If minimized, we immediately know what value the new WindowState is.
-                if (isMinimized) {
+                if (isMinimized)
+                {
                     state = WindowState.Minimized;
                 }
-                else {
+                else
+                {
                     // Otherwise, we have to querry a few things to figure out out.
-                    if (glfw.GetWindowAttrib(WindowPtr, WindowAttributeGetter.Maximized)) {
+                    if (glfw.GetWindowAttrib(WindowPtr, WindowAttributeGetter.Maximized))
+                    {
                         state = WindowState.Maximized;
                     }
-                    else if (glfw.GetWindowMonitor(WindowPtr) != null) {
+                    else if (glfw.GetWindowMonitor(WindowPtr) != null)
+                    {
                         state = WindowState.Fullscreen;
                     }
-                    else {
+                    else
+                    {
                         state = WindowState.Normal;
                     }
                 }
@@ -609,17 +718,22 @@ namespace Silk.NET.Windowing.Desktop
             {
                 // Same here as in onMinimized.
                 WindowState state;
-                if (isMaximized) {
+                if (isMaximized)
+                {
                     state = WindowState.Maximized;
                 }
-                else {
-                    if (glfw.GetWindowAttrib(WindowPtr, WindowAttributeGetter.Iconified)) {
+                else
+                {
+                    if (glfw.GetWindowAttrib(WindowPtr, WindowAttributeGetter.Iconified))
+                    {
                         state = WindowState.Minimized;
                     }
-                    else if (glfw.GetWindowMonitor(WindowPtr) != null) {
+                    else if (glfw.GetWindowMonitor(WindowPtr) != null)
+                    {
                         state = WindowState.Fullscreen;
                     }
-                    else {
+                    else
+                    {
                         state = WindowState.Normal;
                     }
                 }
@@ -632,11 +746,13 @@ namespace Silk.NET.Windowing.Desktop
             {
                 var arrayOfPaths = new string[count];
 
-                if (count == 0 || paths == IntPtr.Zero) {
+                if (count == 0 || paths == IntPtr.Zero)
+                {
                     return;
                 }
 
-                for (var i = 0; i < count; i++) {
+                for (var i = 0; i < count; i++)
+                {
                     var p = Marshal.ReadIntPtr(paths, i * IntPtr.Size);
                     arrayOfPaths[i] = Marshal.PtrToStringAnsi(p);
                 }
@@ -644,16 +760,19 @@ namespace Silk.NET.Windowing.Desktop
                 OnFileDrop?.Invoke(arrayOfPaths);
             };
 
-            glfwThread.Invoke(() =>
-            {
-                glfw.SetWindowPosCallback(WindowPtr, onMove);
-                glfw.SetWindowSizeCallback(WindowPtr, onResize);
-                glfw.SetWindowCloseCallback(WindowPtr, onClosing);
-                glfw.SetWindowFocusCallback(WindowPtr, onFocusChanged);
-                glfw.SetWindowIconifyCallback(WindowPtr, onMinimized);
-                glfw.SetWindowMaximizeCallback(WindowPtr, onMaximized);
-                glfw.SetDropCallback(WindowPtr, onFileDrop);
-            });
+            glfwThread.Invoke
+            (
+                () =>
+                {
+                    glfw.SetWindowPosCallback(WindowPtr, onMove);
+                    glfw.SetWindowSizeCallback(WindowPtr, onResize);
+                    glfw.SetWindowCloseCallback(WindowPtr, onClosing);
+                    glfw.SetWindowFocusCallback(WindowPtr, onFocusChanged);
+                    glfw.SetWindowIconifyCallback(WindowPtr, onMinimized);
+                    glfw.SetWindowMaximizeCallback(WindowPtr, onMaximized);
+                    glfw.SetDropCallback(WindowPtr, onFileDrop);
+                }
+            );
         }
     }
 }

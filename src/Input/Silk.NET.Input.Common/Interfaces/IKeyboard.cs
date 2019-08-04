@@ -16,7 +16,7 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// The keys this keyboard has available.
         /// </summary>
-        IReadOnlyCollection<Key> SupportedKeys { get; }
+        IReadOnlyList<Key> SupportedKeys { get; }
         
         /// <summary>
         /// Checks if a specific key is pressed.

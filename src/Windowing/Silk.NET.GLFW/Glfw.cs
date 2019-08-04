@@ -125,7 +125,7 @@ namespace Silk.NET.GLFW
         public abstract int GetKeyScancode(int key);
 
         /// <inheritdoc />
-        public abstract unsafe int GetKey(WindowHandle* window, int key);
+        public abstract unsafe int GetKey(WindowHandle* window, Keys key);
 
         /// <inheritdoc />
         public abstract unsafe int GetMouseButton(WindowHandle* window, int button);

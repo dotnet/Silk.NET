@@ -11,7 +11,7 @@ namespace Silk.NET.Input.Common
     /// <summary>
     /// An interface representing the input context.
     /// </summary>
-    public interface IInputContext
+    public interface IInputContext : IDisposable
     {
         /// <summary>
         /// A handle to the underlying window.
@@ -21,26 +21,43 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// A list of all available gamepads.
         /// </summary>
-        IReadOnlyCollection<IGamepad> Gamepads { get; }
+        IReadOnlyList<IGamepad> Gamepads { get; }
         
         /// <summary>
         /// A list of all available joysticks.
         /// </summary>
-        IReadOnlyCollection<IJoystick> Joysticks { get; }
+        IReadOnlyList<IJoystick> Joysticks { get; }
         
         /// <summary>
         /// A list of all available keyboards.
+        /// <remarks>
+        /// On some backends, this list may only contain 1 item. This is most likely because the underlying API doesn't
+        /// support multiple keyboards.
+        /// </remarks>
         /// </summary>
-        IReadOnlyCollection<IKeyboard> Keyboards { get; }
+        IReadOnlyList<IKeyboard> Keyboards { get; }
         
         /// <summary>
         /// A list of all available mice.
         /// </summary>
-        IReadOnlyCollection<IMouse> Mice { get; }
+        /// <remarks>
+        /// On some backends, this list may only contain 1 item. This is most likely because the underlying API doesn't
+        /// support multiple mice.
+        /// </remarks>
+        IReadOnlyList<IMouse> Mice { get; }
         
         /// <summary>
         /// A list of all other available input devices.
         /// </summary>
-        IReadOnlyCollection<IInputDevice> OtherDevices { get; }
+        /// <remarks>
+        /// On some backends, this list might be empty. This is most likely because the underlying API doesn't
+        /// support other devices.
+        /// </remarks>
+        IReadOnlyList<IInputDevice> OtherDevices { get; }
+        
+        /// <summary>
+        /// Called when the connection status of a device changes.
+        /// </summary>
+        event Action<IInputDevice, bool> ConnectionChanged;
     }
 }

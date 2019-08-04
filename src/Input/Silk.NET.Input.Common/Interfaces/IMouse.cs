@@ -16,12 +16,12 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// The buttons this mouse has available.
         /// </summary>
-        IReadOnlyCollection<MouseButton> SupportedButtons { get; }
+        IReadOnlyList<MouseButton> SupportedButtons { get; }
         
         /// <summary>
         /// The scroll wheels this mouse has available.
         /// </summary>
-        IReadOnlyCollection<ScrollWheel> ScrollWheels { get; }
+        IReadOnlyList<ScrollWheel> ScrollWheels { get; }
         
         /// <summary>
         /// Checks if a specific button is currently pressed.

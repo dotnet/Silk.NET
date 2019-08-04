@@ -10,17 +10,13 @@ namespace Silk.NET.GLFW
     /// </summary>
     public enum MouseButton
     {
-        MouseButton1 = 0,
-        MouseButton2,
-        MouseButton3,
-        MouseButton4,
-        MouseButton5,
-        MouseButton6,
-        MouseButton7,
-        MouseButton8,
-        MouseButtonLast = MouseButton8,
-        MouseButtonLeft = MouseButton1,
-        MouseButtonRight = MouseButton2,
-        MouseButtonMiddle = MouseButton3
+        Left = 0,
+        Right,
+        Middle,
+        Button4,
+        Button5,
+        Button6,
+        Button7,
+        Button8
     }
 }
