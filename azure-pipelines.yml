@@ -16,7 +16,13 @@ jobs:
   steps:
   - script: dotnet run --configuration $(buildConfiguration) --project src/Core/BuildTools/BuildTools.csproj build/binder_scripts/build.json
     displayName: 'Bind'
-  - script: dotnet pack --configuration $(buildConfiguration) --version-suffix build$(Build.BuildNumber)
+  - script: dotnet pack --configuration $(buildConfiguration) --version-suffix $(Build.BuildNumber)
     displayName: 'Build/Pack'
   - publish: build/output_packages
     artifact: NuGet Packages
+  - task: NuGetCommand@2
+    inputs:
+      command: 'push'
+      packagesToPush: 'build/output_packages/*.nupkg'
+      nuGetFeedType: 'internal'
+      publishVstsFeed: '061abec9-b10b-4a9b-9c06-aa635c5e74a2/7ae6c815-0dc0-4193-bf95-042c360df875'
