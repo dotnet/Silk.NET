@@ -17,8 +17,8 @@ namespace Silk.NET.Input.Desktop
     {
         internal List<GlfwGamepad> _gamepads;
         internal List<GlfwJoystick> _joysticks;
-        internal IKeyboard _keyboard;
-        internal IMouse _mouse;
+        internal GlfwKeyboard _keyboard;
+        internal GlfwMouse _mouse;
         internal IWindow _window;
 
         public GlfwInputContext(IWindow window)
@@ -74,7 +74,6 @@ namespace Silk.NET.Input.Desktop
 
         public void RaiseConnectionChange(int joystick, ConnectedState state)
         {
-            Console.WriteLine("Connection Change " + joystick + ", " + state);
             ConnectionChanged?.Invoke(Joysticks[joystick], state == ConnectedState.Connected);
         }
     }
