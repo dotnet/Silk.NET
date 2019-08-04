@@ -33,9 +33,10 @@ namespace Silk.NET.Input.Desktop
             Contexts.Add(ctx);
 
             // register callbacks
-            Util.Do(() => Util.Glfw.SetKeyCallback((WindowHandle*) ctx._window.Handle, KeyCallback));
-            Util.Do(() => Util.Glfw.SetMouseButtonCallback((WindowHandle*)ctx._window.Handle, MouseCallback));
-            Util.Do(() => Util.Glfw.SetScrollCallback((WindowHandle*)ctx._window.Handle, ScrollCallback));
+            var handle = (WindowHandle*) ctx._window.Handle;
+            Util.Do(() => Util.Glfw.SetKeyCallback(handle, KeyCallback));
+            Util.Do(() => Util.Glfw.SetMouseButtonCallback(handle, MouseCallback));
+            Util.Do(() => Util.Glfw.SetScrollCallback(handle, ScrollCallback));
             ctx._window.OnUpdate += ctx.WindowUpdate;
         }
 
