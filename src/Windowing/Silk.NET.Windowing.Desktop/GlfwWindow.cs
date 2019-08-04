@@ -489,7 +489,7 @@ namespace Silk.NET.Windowing.Desktop
             InitializeCallbacks();
 
             // Run OnLoad.
-            OnLoad?.Invoke();
+            Load?.Invoke();
 
             // Initialize some variables
             _isRunningSlowlyTries = 0;
@@ -576,31 +576,31 @@ namespace Silk.NET.Windowing.Desktop
         // Events
 
         /// <inheritdoc />
-        public event Action<Point> OnMove;
+        public event Action<Point> Move;
 
         /// <inheritdoc />
-        public event Action<Size> OnResize;
+        public event Action<Size> Resize;
 
         /// <inheritdoc />
-        public event Action OnClosing;
+        public event Action Closing;
 
         /// <inheritdoc />
-        public event Action<WindowState> OnStateChanged;
+        public event Action<WindowState> StateChanged;
 
         /// <inheritdoc />
-        public event Action<bool> OnFocusChanged;
+        public event Action<bool> FocusChanged;
 
         /// <inheritdoc />
-        public event Action<string[]> OnFileDrop;
+        public event Action<string[]> FileDrop;
 
         /// <inheritdoc />
-        public event Action OnLoad;
+        public event Action Load;
 
         /// <inheritdoc />
-        public event Action<double> OnUpdate;
+        public event Action<double> Update;
 
         /// <inheritdoc />
-        public event Action<double> OnRender;
+        public event Action<double> Render;
 
         /// <summary>
         /// Run an OnUpdate event.
@@ -630,7 +630,7 @@ namespace Silk.NET.Windowing.Desktop
 
             // Calculate delta and run frame.
             var delta = updateStopwatch.Elapsed.TotalSeconds;
-            OnUpdate?.Invoke(delta);
+            Update?.Invoke(delta);
             updateStopwatch.Restart();
         }
 
@@ -652,7 +652,7 @@ namespace Silk.NET.Windowing.Desktop
             }
 
             var delta = renderStopwatch.Elapsed.TotalSeconds;
-            OnRender?.Invoke(delta);
+            Render?.Invoke(delta);
             SwapBuffers();
             renderStopwatch.Restart();
 
@@ -672,19 +672,19 @@ namespace Silk.NET.Windowing.Desktop
             {
                 var point = new Point(x, y);
                 _position = point;
-                OnMove?.Invoke(point);
+                Move?.Invoke(point);
             };
 
             onResize = (window, width, height) =>
             {
                 var size = new Size(width, height);
                 _size = size;
-                OnResize?.Invoke(size);
+                Resize?.Invoke(size);
             };
 
-            onClosing = window => OnClosing?.Invoke();
+            onClosing = window => Closing?.Invoke();
 
-            onFocusChanged = (window, isFocused) => OnFocusChanged?.Invoke(isFocused);
+            onFocusChanged = (window, isFocused) => FocusChanged?.Invoke(isFocused);
 
             onMinimized = (window, isMinimized) =>
             {
@@ -712,7 +712,7 @@ namespace Silk.NET.Windowing.Desktop
                 }
 
                 _windowState = state;
-                OnStateChanged?.Invoke(state);
+                StateChanged?.Invoke(state);
             };
 
             onMaximized = (window, isMaximized) =>
@@ -740,7 +740,7 @@ namespace Silk.NET.Windowing.Desktop
                 }
 
                 _windowState = state;
-                OnStateChanged?.Invoke(state);
+                StateChanged?.Invoke(state);
             };
 
             onFileDrop = (window, count, paths) =>
@@ -758,7 +758,7 @@ namespace Silk.NET.Windowing.Desktop
                     arrayOfPaths[i] = Marshal.PtrToStringAnsi(p);
                 }
 
-                OnFileDrop?.Invoke(arrayOfPaths);
+                FileDrop?.Invoke(arrayOfPaths);
             };
 
             glfwThread.Invoke

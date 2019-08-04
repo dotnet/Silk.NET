@@ -28,16 +28,16 @@ namespace BlankWindow
 
             window = Window.Create(options);
 
-            window.OnFileDrop += OnFileDrop;
-            window.OnMove += OnMove;
-            window.OnResize += OnResize;
-            window.OnStateChanged += OnStateChanged;
-            window.OnLoad += OnLoad;
-            window.OnClosing += OnClosing;
-            window.OnFocusChanged += OnFocusChanged;
+            window.FileDrop += FileDrop;
+            window.Move += Move;
+            window.Resize += Resize;
+            window.StateChanged += StateChanged;
+            window.Load += Load;
+            window.Closing += Closing;
+            window.FocusChanged += FocusChanged;
 
-            window.OnRender += OnRender;
-            window.OnUpdate += OnUpdate;
+            window.Render += Render;
+            window.Update += Update;
 
             window.VSync = VSyncMode.Off;
 
@@ -46,49 +46,49 @@ namespace BlankWindow
             window.Run();
         }
 
-        public static void OnFileDrop(string[] args)
+        public static void FileDrop(string[] args)
         {
             foreach (var file in args) {
                 Console.WriteLine(file);
             }
         }
 
-        public static void OnMove(Point position)
+        public static void Move(Point position)
         {
             Console.WriteLine(position);
         }
 
-        public static void OnResize(Size size)
+        public static void Resize(Size size)
         {
             Console.WriteLine(size);
         }
 
-        public static void OnStateChanged(WindowState state)
+        public static void StateChanged(WindowState state)
         {
             Console.WriteLine(state);
         }
 
-        public static void OnLoad()
+        public static void Load()
         {
             Console.WriteLine("Finished loading");
         }
 
-        public static void OnClosing()
+        public static void Closing()
         {
             Console.WriteLine("Window is closing now");
         }
 
-        public static void OnFocusChanged(bool isFocused)
+        public static void FocusChanged(bool isFocused)
         {
             Console.WriteLine($"Focused = {isFocused}");
         }
 
-        public static void OnRender(double delta)
+        public static void Render(double delta)
         {
             Console.WriteLine($"Render {1 / delta}");
         }
 
-        public static void OnUpdate(double delta)
+        public static void Update(double delta)
         {
             Console.WriteLine($"Update {1 / delta}");
         }

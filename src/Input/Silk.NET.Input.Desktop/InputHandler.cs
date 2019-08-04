@@ -37,7 +37,7 @@ namespace Silk.NET.Input.Desktop
             Util.Do(() => Util.Glfw.SetKeyCallback(handle, KeyCallback));
             Util.Do(() => Util.Glfw.SetMouseButtonCallback(handle, MouseCallback));
             Util.Do(() => Util.Glfw.SetScrollCallback(handle, ScrollCallback));
-            ctx._window.OnUpdate += ctx.WindowUpdate;
+            ctx._window.Update += ctx.WindowUpdate;
         }
 
         private static unsafe void ScrollCallback(WindowHandle* window, double offsetx, double offsety)
@@ -117,7 +117,7 @@ namespace Silk.NET.Input.Desktop
         public static void UnregisterContext(GlfwInputContext ctx)
         {
             Contexts.Remove(ctx);
-            ctx._window.OnUpdate -= ctx.WindowUpdate;
+            ctx._window.Update -= ctx.WindowUpdate;
         }
     }
 }

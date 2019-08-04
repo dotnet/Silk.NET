@@ -6,6 +6,7 @@
             - Fixed a bug where calling an unloaded OpenGL function will throw a GlfwException.
             - Fixed a bug where GLFW wasn't swapping the buffers (no drawing will ever make it to the window!)
             - Refactored Silk.NET.Core, unifying the platform loading logic.
+            - Renamed OnRender to Render + other windowing events
             - Added mobile support.
         </PackageReleaseNotes>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>

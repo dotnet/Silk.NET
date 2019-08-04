@@ -45,15 +45,15 @@ namespace Triangle
         public static void Main(string[] args)
         {
             _window = Window.Create(WindowOptions.Default);
-            _window.OnLoad += OnLoad;
-            _window.OnRender += OnRenderFrame;
-            _window.OnUpdate += OnUpdateFrame;
-            _window.OnResize += OnResize;
+            _window.Load += Load;
+            _window.Render += RenderFrame;
+            _window.Update += UpdateFrame;
+            _window.Resize += Resize;
             _window.Run();
             End();
         }
 
-        private static unsafe void OnLoad()
+        private static unsafe void Load()
         {
             _gl ??= GL.GetApi();
             var vertShader = _gl.CreateShader(GLEnum.VertexShader);
@@ -87,7 +87,7 @@ namespace Triangle
         }
 
 
-        private static void OnRenderFrame(double delta)
+        private static void RenderFrame(double delta)
         {
             _gl.Clear((uint)GLEnum.ColorBufferBit);
             _gl.UseProgram(_shader);
@@ -96,7 +96,7 @@ namespace Triangle
         }
 
 
-        private static void OnUpdateFrame(double delta)
+        private static void UpdateFrame(double delta)
         {
             _input ??= _window.GetInput();
             if (_input.Keyboards[0].IsKeyPressed(Key.Escape))
@@ -105,7 +105,7 @@ namespace Triangle
             }
         }
 
-        private static void OnResize(Size size)
+        private static void Resize(Size size)
         {
             _gl.Viewport(0, 0, (uint) size.Width, (uint) size.Height);
             Console.WriteLine("done resize");
