@@ -15,10 +15,10 @@ namespace Silk.NET.Core.Loader
 {
     public static class LibraryLoader
     {
-        private const ImplementationOptions Options = ImplementationOptions.UseIndirectCalls |
-                                                      ImplementationOptions.UseLazyBinding |
-                                                      ImplementationOptions.SuppressSecurity |
-                                                      ImplementationOptions.EnableOptimizations;
+        public const ImplementationOptions Options = ImplementationOptions.UseIndirectCalls |
+                                                     ImplementationOptions.SuppressSecurity |
+                                                     ImplementationOptions.UseLazyBinding |
+                                                     ImplementationOptions.EnableOptimizations;
         
         private static Dictionary<Type, NativeLibraryBuilder> _builders = new Dictionary<Type, NativeLibraryBuilder>();
 
@@ -36,12 +36,11 @@ namespace Silk.NET.Core.Loader
                 : null;
         }
 
-        public static void CreateBuilder<T1>(IPlatformLoader loader = null) where T1:NativeAPI
+        public static void CreateBuilder<T1>(ISymbolLoader loader = null) where T1:NativeAPI
         {
             if (!_builders.ContainsKey(typeof(T1)) || loader != null)
             {
                 _builders[typeof(T1)] = new NativeLibraryBuilder(Options)
-                    .WithLibraryLoader(x => loader ?? x)
                     .WithSymbolLoader(x => loader ?? x);
             }
         }

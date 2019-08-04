@@ -12,7 +12,7 @@ namespace Silk.NET.Windowing.Desktop
     /// <summary>
     /// A GLFW-based backend.
     /// </summary>
-    public class GlfwPlatform : ISilkPlatform
+    public class GlfwPlatform : IWindowPlatform
     {
         /// <inheritdoc />
         public bool IsApplicable
@@ -34,12 +34,6 @@ namespace Silk.NET.Windowing.Desktop
         public IWindow GetWindow(WindowOptions options)
         {
             return new GlfwWindow(options);
-        }
-
-        /// <inheritdoc />
-        public IntPtr GetProcAddress(ContextAPI api, string name)
-        {
-            return GlfwProvider.GLFW.Value.GetProcAddress(name);
         }
     }
 }

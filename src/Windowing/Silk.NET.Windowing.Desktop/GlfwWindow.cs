@@ -653,6 +653,7 @@ namespace Silk.NET.Windowing.Desktop
 
             var delta = renderStopwatch.Elapsed.TotalSeconds;
             OnRender?.Invoke(delta);
+            SwapBuffers();
             renderStopwatch.Restart();
 
             // This has to be called on the thread with the graphics context

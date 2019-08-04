@@ -3,7 +3,10 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
+using Silk.NET.Core.Platform;
 using Silk.NET.Windowing.Common;
+using Silk.NET.Windowing.Desktop;
 
 namespace Silk.NET.Windowing
 {
@@ -19,13 +22,34 @@ namespace Silk.NET.Windowing
         /// <returns>A Silk.NET window using the current platform.</returns>
         public static IWindow Create(WindowOptions options)
         {
-            if (Silk.CurrentPlatform == null) {
-                Silk.Init();
+            if (!SilkManager.IsRegistered<IWindowPlatform>()) {
+                Init();
             }
 
             // We should have a platform now, as Silk.Init would've thrown otherwise.
             // ReSharper disable once PossibleNullReferenceException
-            return Silk.CurrentPlatform.GetWindow(options);
+            return SilkManager.Get<IWindowPlatform>().GetWindow(options);
+        }
+
+        /// <summary>
+        /// Attempts to resolve an <see cref="IWindowPlatform" />.
+        /// </summary>
+        /// <exception cref="NotSupportedException">
+        /// Thrown if no applicable <see cref="IWindowPlatform" /> was found.
+        /// </exception>
+        public static void Init()
+        {
+            var glfwPlatform = new GlfwPlatform();
+            if (glfwPlatform.IsApplicable) {
+                SilkManager.Register<IWindowPlatform>(glfwPlatform);
+                return;
+            }
+
+            // TODO: Mobile
+
+            if (!SilkManager.IsRegistered<IWindowPlatform>()) {
+                throw new NotSupportedException("Couldn't find a suitable windowing platform.");
+            }
         }
     }
 }
