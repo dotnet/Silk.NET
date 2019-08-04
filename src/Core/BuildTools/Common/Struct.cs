@@ -12,6 +12,7 @@ namespace Silk.NET.BuildTools.Common
     {
         public string Name { get; set; }
         public string NativeName { get; set; }
-        public List<Field> Fields { get; set; }
+        public List<Field> Fields { get; set; } = new List<Field>();
+        public List<Attribute> Attributes { get; set; } = new List<Attribute>();
     }
 }

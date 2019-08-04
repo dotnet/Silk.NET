@@ -29,6 +29,11 @@ namespace Silk.NET.BuildTools.Bind
         /// </summary>
         public const string InterfacesSubfolder = "Interfaces";
 
+        /// <summary>
+        /// The name of the subfolder containing <see cref="Struct" />s.
+        /// </summary>
+        public const string StructsSubfolder = "Structs";
+
         public static Lazy<string> LicenseText { get; } =
             new Lazy<string>(() => File.ReadAllText(Binder.CliOptions.License));
 
@@ -63,6 +68,38 @@ namespace Silk.NET.BuildTools.Bind
                     "        " + token.Name + " = " + token.Value +
                     (index != @enum.Tokens.Count ? "," : string.Empty)
                 );
+            }
+
+            sw.WriteLine("    }");
+            sw.WriteLine("}");
+            sw.Flush();
+            sw.Dispose();
+        }
+        /// <summary>
+        /// Writes this struct to a file.
+        /// </summary>
+        /// <param name="struct">The enum to write.</param>
+        /// <param name="file">The file to write to.</param>
+        /// <param name="profile">The subsystem containing this enum.</param>
+        /// <param name="project">The project containing this enum.</param>
+        public static void WriteStruct(this Struct @struct, string file, Profile profile, Project project)
+        {
+            var sw = new StreamWriter(file);
+            sw.WriteLine(LicenseText.Value);
+            sw.WriteLine();
+            var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
+            sw.WriteLine("namespace " + ns + project.Namespace);
+            sw.WriteLine("{");
+            foreach (var attr in @struct.Attributes)
+            {
+                sw.WriteLine("    " + attr);
+            }
+
+            sw.WriteLine("    public struct " + @struct.Name);
+            sw.WriteLine("    {");
+            foreach (var structField in @struct.Fields)
+            {
+                sw.WriteLine($"        public {structField.Type} {structField.Name}" + " { get; set; }");
             }
 
             sw.WriteLine("    }");
@@ -419,11 +456,21 @@ namespace Silk.NET.BuildTools.Bind
                 Directory.CreateDirectory(Path.Combine(folder, InterfacesSubfolder));
             }
 
+            if (!Directory.Exists(Path.Combine(folder, StructsSubfolder)))
+            {
+                Directory.CreateDirectory(Path.Combine(folder, StructsSubfolder));
+            }
+
             project.WriteProjectFile(folder, profile);
 
             project.Interfaces.ForEach(x => x.Value.WriteInterface
             (
                 Path.Combine(folder, InterfacesSubfolder, x.Value.Name + ".gen.cs"), profile, project)
+            );
+
+            project.Structs.ForEach(x => x.WriteStruct
+            (
+                    Path.Combine(folder, InterfacesSubfolder, x.Name + ".gen.cs"), profile, project)
             );
 
             project.Enums.ForEach

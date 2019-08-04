@@ -32850,7 +32850,7 @@
           "Attributes": []
         }
       },
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "EXT": {
@@ -50001,7 +50001,7 @@
           "Attributes": []
         }
       },
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "QCOM": {
@@ -52125,7 +52125,7 @@
           "Attributes": []
         }
       },
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "INTEL": {
@@ -52974,7 +52974,7 @@
           "Attributes": []
         }
       },
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "NV": {
@@ -68987,7 +68987,7 @@
           "Attributes": []
         }
       },
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "AMD": {
@@ -69893,7 +69893,7 @@
           "Attributes": []
         }
       },
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "OES": {
@@ -76504,7 +76504,7 @@
           "Attributes": []
         }
       },
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "KHR": {
@@ -78908,7 +78908,7 @@
           "Attributes": []
         }
       },
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "ANGLE": {
@@ -79658,7 +79658,7 @@
           "Attributes": []
         }
       },
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "APPLE": {
@@ -80554,7 +80554,7 @@
           "Attributes": []
         }
       },
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "IMG": {
@@ -81497,7 +81497,7 @@
           "Attributes": []
         }
       },
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "OVR": {
@@ -81777,7 +81777,7 @@
           "Attributes": []
         }
       },
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "ANDROID": {
@@ -81795,7 +81795,7 @@
         }
       ],
       "Interfaces": {},
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "ARM": {
@@ -81842,7 +81842,7 @@
         }
       ],
       "Interfaces": {},
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "DMP": {
@@ -81889,7 +81889,7 @@
         }
       ],
       "Interfaces": {},
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "FJ": {
@@ -81915,7 +81915,7 @@
         }
       ],
       "Interfaces": {},
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "MESA": {
@@ -81941,7 +81941,7 @@
         }
       ],
       "Interfaces": {},
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "NVX": {
@@ -81959,7 +81959,7 @@
         }
       ],
       "Interfaces": {},
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     },
     "VIV": {
@@ -81985,7 +81985,7 @@
         }
       ],
       "Interfaces": {},
-      "Structs": null,
+      "Structs": [],
       "MixedModeBlocks": []
     }
   },
