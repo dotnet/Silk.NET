@@ -14,13 +14,10 @@ jobs:
     buildConfiguration: 'Release'
 
   steps:
-  - task: UseDotNet@2
-    displayName: 'Install dotnet'
+  - task: DotNetCoreInstaller@0
+    displayName: 'Install .net core 3.0 (preview)'
     inputs:
-      packageType: sdk
-      version: 3.0.0-preview7
-      includePreviewVersions: true
-      installationPath: $(Agent.ToolsDirectory)/dotnet
+      version: '3.0.100-preview6-012264'
   - script: dotnet run --configuration $(buildConfiguration) --project src/Core/BuildTools/BuildTools.csproj build/binder_scripts/build.json
     displayName: 'Bind'
   - script: dotnet pack --configuration $(buildConfiguration) --version-suffix $(Build.BuildNumber)
