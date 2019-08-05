@@ -14,7 +14,11 @@ jobs:
     buildConfiguration: 'Release'
 
   steps:
-  - script: dotnet run --configuration $(buildConfiguration) --project src/Core/BuildTools/BuildTools.csproj build/binder_scripts/build.json
+  - task: DotNetCoreInstaller@0
+    displayName: 'Install .net core 3.0 (preview)'
+    inputs:
+      version: '3.0.100-preview6-012264'
+  - script: dotnet run -f netcoreapp30 --configuration $(buildConfiguration) --project src/Core/BuildTools/BuildTools.csproj build/binder_scripts/build.json
     displayName: 'Bind'
   - script: dotnet pack --configuration $(buildConfiguration) --version-suffix $(Build.BuildNumber)
     displayName: 'Build/Pack'
