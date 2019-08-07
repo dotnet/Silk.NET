@@ -75,7 +75,7 @@
     },
     "FunctionPrefix": "gl",
     "ClassName": "GL",
-    "SymbolLoader": "Silk.NET.Core.Loader.GLSymbolLoader.Instance"
+    "SymbolLoader": "Silk.NET.Core.Loader.GLSymbolLoader.Loader"
   },
   {
     "Name": "GLES",
@@ -99,6 +99,6 @@
     },
     "FunctionPrefix": "gl",
     "ClassName": "GL",
-    "SymbolLoader": "Silk.NET.Core.Loader.EGLSymbolLoader.Instance"
+    "SymbolLoader": "Silk.NET.Core.Loader.EGLSymbolLoader.Loader"
   }
 ]

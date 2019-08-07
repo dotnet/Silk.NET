@@ -81996,7 +81996,7 @@
   "ClassName": "GL",
   "Version": null,
   "FunctionPrefix": "gl",
-  "SymbolLoaderName": "Silk.NET.Core.Loader.EGLSymbolLoader.Instance",
+  "SymbolLoaderName": "Silk.NET.Core.Loader.EGLSymbolLoader.Loader",
   "Names": {
     "Linux": "libGLESv2.so",
     "Windows": "libGLESv2.dll",
