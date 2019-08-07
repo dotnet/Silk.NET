@@ -775,5 +775,9 @@ namespace Silk.NET.Windowing.Desktop
                 }
             );
         }
+
+        public void Dispose()
+        {
+        }
     }
 }

@@ -1,177 +1,179 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuildTools", "src\Core\BuildTools\BuildTools.csproj", "{FD24E9FF-1097-4777-A418-F2D88C558665}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildTools", "src\Core\BuildTools\BuildTools.csproj", "{FD24E9FF-1097-4777-A418-F2D88C558665}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windowing", "Windowing", "{23324041-2076-477C-A4BF-B385B8066C6C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.GLFW", "src\Windowing\Silk.NET.GLFW\Silk.NET.GLFW.csproj", "{BFE429EB-4C2E-4BF3-A302-C9C5A2FDA6D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.GLFW", "src\Windowing\Silk.NET.GLFW\Silk.NET.GLFW.csproj", "{BFE429EB-4C2E-4BF3-A302-C9C5A2FDA6D7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Core", "src\Core\Silk.NET.Core\Silk.NET.Core.csproj", "{136C6154-D300-4B82-80D3-17B637841A2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Core", "src\Core\Silk.NET.Core\Silk.NET.Core.csproj", "{136C6154-D300-4B82-80D3-17B637841A2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing.Common", "src\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj", "{A8DFEA18-E880-4303-BBCE-0F27EE214D44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Windowing.Common", "src\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj", "{A8DFEA18-E880-4303-BBCE-0F27EE214D44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing.Desktop", "src\Windowing\Silk.NET.Windowing.Desktop\Silk.NET.Windowing.Desktop.csproj", "{0A18FCAE-572E-47FF-B8E3-C97ED15132FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Windowing.Desktop", "src\Windowing\Silk.NET.Windowing.Desktop\Silk.NET.Windowing.Desktop.csproj", "{0A18FCAE-572E-47FF-B8E3-C97ED15132FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankWindow", "examples\BlankWindow\BlankWindow.csproj", "{E8C4587E-9424-438B-AEAF-A09E0234865A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlankWindow", "examples\BlankWindow\BlankWindow.csproj", "{E8C4587E-9424-438B-AEAF-A09E0234865A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing", "src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj", "{956F722C-DFD3-435E-9D2E-A0549C4D8BC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Windowing", "src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj", "{956F722C-DFD3-435E-9D2E-A0549C4D8BC0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenAL", "OpenAL", "{081E7761-B200-4DBF-8950-941464DECACE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenAL", "src\OpenAL\Silk.NET.OpenAL\Silk.NET.OpenAL.csproj", "{5A41E9D5-67F5-447C-8AE2-78FED7A45206}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenAL", "src\OpenAL\Silk.NET.OpenAL\Silk.NET.OpenAL.csproj", "{5A41E9D5-67F5-447C-8AE2-78FED7A45206}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{896B1A79-FEC8-4B7A-8A9C-0CC8EDA2CCFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenAL.Extensions.Creative", "src\OpenAL\Extensions\Silk.NET.OpenAL.Extensions.Creative\Silk.NET.OpenAL.Extensions.Creative.csproj", "{FC015604-3326-4BCC-9212-C5CB0DFB0D12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenAL.Extensions.Creative", "src\OpenAL\Extensions\Silk.NET.OpenAL.Extensions.Creative\Silk.NET.OpenAL.Extensions.Creative.csproj", "{FC015604-3326-4BCC-9212-C5CB0DFB0D12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenAL.Extensions.Enumeration", "src\OpenAL\Extensions\Silk.NET.OpenAL.Extensions.Enumeration\Silk.NET.OpenAL.Extensions.Enumeration.csproj", "{66F172D3-4AE5-4C6E-A035-0E0AE962F555}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenAL.Extensions.Enumeration", "src\OpenAL\Extensions\Silk.NET.OpenAL.Extensions.Enumeration\Silk.NET.OpenAL.Extensions.Enumeration.csproj", "{66F172D3-4AE5-4C6E-A035-0E0AE962F555}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenAL.Extensions.EXT", "src\OpenAL\Extensions\Silk.NET.OpenAL.Extensions.EXT\Silk.NET.OpenAL.Extensions.EXT.csproj", "{352E06E3-9D5E-4C2B-836D-C5538F8AA48D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenAL.Extensions.EXT", "src\OpenAL\Extensions\Silk.NET.OpenAL.Extensions.EXT\Silk.NET.OpenAL.Extensions.EXT.csproj", "{352E06E3-9D5E-4C2B-836D-C5538F8AA48D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenAL.Extensions.Soft", "src\OpenAL\Extensions\Silk.NET.OpenAL.Extensions.Soft\Silk.NET.OpenAL.Extensions.Soft.csproj", "{94D7D3A3-3640-4791-BE19-CA50C59187C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenAL.Extensions.Soft", "src\OpenAL\Extensions\Silk.NET.OpenAL.Extensions.Soft\Silk.NET.OpenAL.Extensions.Soft.csproj", "{94D7D3A3-3640-4791-BE19-CA50C59187C6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Properties", "Build Properties", "{21F1A5E2-9861-49A6-934D-DF5AAA03AFFE}"
-ProjectSection(SolutionItems) = preProject
-	build\props\bindings.props = build\props\bindings.props
-	build\props\common.props = build\props\common.props
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		build\props\bindings.props = build\props\bindings.props
+		build\props\common.props = build\props\common.props
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFAC}") = "Silk.NET.Input.Common", "src\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj", "{8FFF49D6-B029-400B-8510-1A088868DFA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Input.Common", "src\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj", "{8FFF49D6-B029-400B-8510-1A088868DFA6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Input", "Input", "{FA9D1C95-5585-4DEC-B226-1447A486C376}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenGL", "OpenGL", "{0E9C83A8-A413-4921-8F39-59519BFF939B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL", "src\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj", "{A01F43A5-B4ED-47C5-B426-D1AC3C94B5E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL", "src\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj", "{A01F43A5-B4ED-47C5-B426-D1AC3C94B5E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy", "src\OpenGL\Silk.NET.OpenGL.Legacy\Silk.NET.OpenGL.Legacy.csproj", "{446DD80A-CAF4-4E19-B87E-A43135E2D59D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy", "src\OpenGL\Silk.NET.OpenGL.Legacy\Silk.NET.OpenGL.Legacy.csproj", "{446DD80A-CAF4-4E19-B87E-A43135E2D59D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES", "src\OpenGL\Silk.NET.OpenGLES\Silk.NET.OpenGLES.csproj", "{24CE7080-FF44-46BF-886F-456F30E54442}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES", "src\OpenGL\Silk.NET.OpenGLES\Silk.NET.OpenGLES.csproj", "{24CE7080-FF44-46BF-886F-456F30E54442}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{CF69D5C3-4ACE-4458-BA5A-0E9A3B294CDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Extensions.AMD", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.AMD\Silk.NET.OpenGL.Extensions.AMD.csproj", "{F49FCBFD-2041-4936-89CF-095C77555CEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Extensions.AMD", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.AMD\Silk.NET.OpenGL.Extensions.AMD.csproj", "{F49FCBFD-2041-4936-89CF-095C77555CEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Extensions.APPLE", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.APPLE\Silk.NET.OpenGL.Extensions.APPLE.csproj", "{21BFFC67-4844-440A-8AA4-D4E6AC2DFE83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Extensions.APPLE", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.APPLE\Silk.NET.OpenGL.Extensions.APPLE.csproj", "{21BFFC67-4844-440A-8AA4-D4E6AC2DFE83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Extensions.ARB", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.ARB\Silk.NET.OpenGL.Extensions.ARB.csproj", "{4C5A0F3B-2333-4ED8-998B-CB891D786DD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Extensions.ARB", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.ARB\Silk.NET.OpenGL.Extensions.ARB.csproj", "{4C5A0F3B-2333-4ED8-998B-CB891D786DD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Extensions.EXT", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.EXT\Silk.NET.OpenGL.Extensions.EXT.csproj", "{28155265-C538-4D63-A9A4-2A225115BCC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Extensions.EXT", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.EXT\Silk.NET.OpenGL.Extensions.EXT.csproj", "{28155265-C538-4D63-A9A4-2A225115BCC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Extensions.INTEL", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.INTEL\Silk.NET.OpenGL.Extensions.INTEL.csproj", "{C1FE5A2C-7EF1-4112-B220-BB7EB60B6E41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Extensions.INTEL", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.INTEL\Silk.NET.OpenGL.Extensions.INTEL.csproj", "{C1FE5A2C-7EF1-4112-B220-BB7EB60B6E41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Extensions.KHR", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.KHR\Silk.NET.OpenGL.Extensions.KHR.csproj", "{224CB2E1-3923-4BA6-A202-DA290E55725A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Extensions.KHR", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.KHR\Silk.NET.OpenGL.Extensions.KHR.csproj", "{224CB2E1-3923-4BA6-A202-DA290E55725A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Extensions.NV", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.NV\Silk.NET.OpenGL.Extensions.NV.csproj", "{063B37FE-87A0-41BA-A61A-6870D4AEB76F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Extensions.NV", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.NV\Silk.NET.OpenGL.Extensions.NV.csproj", "{063B37FE-87A0-41BA-A61A-6870D4AEB76F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Extensions.OVR", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.OVR\Silk.NET.OpenGL.Extensions.OVR.csproj", "{7C56DB2E-0254-4A05-AE81-F09CE9B28C6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Extensions.OVR", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.OVR\Silk.NET.OpenGL.Extensions.OVR.csproj", "{7C56DB2E-0254-4A05-AE81-F09CE9B28C6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.AMD", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.AMD\Silk.NET.OpenGL.Legacy.Extensions.AMD.csproj", "{67CE45B7-997F-4396-AB90-FC6C7FBA07C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.AMD", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.AMD\Silk.NET.OpenGL.Legacy.Extensions.AMD.csproj", "{67CE45B7-997F-4396-AB90-FC6C7FBA07C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.APPLE", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.APPLE\Silk.NET.OpenGL.Legacy.Extensions.APPLE.csproj", "{B6DC6862-C2CB-43D7-AE0F-7A3A5EB41A34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.APPLE", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.APPLE\Silk.NET.OpenGL.Legacy.Extensions.APPLE.csproj", "{B6DC6862-C2CB-43D7-AE0F-7A3A5EB41A34}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.ARB", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.ARB\Silk.NET.OpenGL.Legacy.Extensions.ARB.csproj", "{ADFB4E80-301E-416F-B932-86FF242F5BBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.ARB", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.ARB\Silk.NET.OpenGL.Legacy.Extensions.ARB.csproj", "{ADFB4E80-301E-416F-B932-86FF242F5BBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.ATI", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.ATI\Silk.NET.OpenGL.Legacy.Extensions.ATI.csproj", "{B2C295D9-70AC-4D6E-BEC0-ABDBA8C3FC18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.ATI", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.ATI\Silk.NET.OpenGL.Legacy.Extensions.ATI.csproj", "{B2C295D9-70AC-4D6E-BEC0-ABDBA8C3FC18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.EXT", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.EXT\Silk.NET.OpenGL.Legacy.Extensions.EXT.csproj", "{C02D75ED-33EE-46D5-9AF1-A54E01206161}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.EXT", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.EXT\Silk.NET.OpenGL.Legacy.Extensions.EXT.csproj", "{C02D75ED-33EE-46D5-9AF1-A54E01206161}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.GL3DFX", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.GL3DFX\Silk.NET.OpenGL.Legacy.Extensions.GL3DFX.csproj", "{B81A79D9-6CEF-4FEB-9E40-CAB74F802E9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.GL3DFX", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.GL3DFX\Silk.NET.OpenGL.Legacy.Extensions.GL3DFX.csproj", "{B81A79D9-6CEF-4FEB-9E40-CAB74F802E9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.GREMEDY", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.GREMEDY\Silk.NET.OpenGL.Legacy.Extensions.GREMEDY.csproj", "{33C55873-FF79-4822-BDC5-CBFBCF78C12A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.GREMEDY", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.GREMEDY\Silk.NET.OpenGL.Legacy.Extensions.GREMEDY.csproj", "{33C55873-FF79-4822-BDC5-CBFBCF78C12A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.HP", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.HP\Silk.NET.OpenGL.Legacy.Extensions.HP.csproj", "{C3931003-EC0A-41D6-A481-8D3CD28556F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.HP", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.HP\Silk.NET.OpenGL.Legacy.Extensions.HP.csproj", "{C3931003-EC0A-41D6-A481-8D3CD28556F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.IBM", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.IBM\Silk.NET.OpenGL.Legacy.Extensions.IBM.csproj", "{AFD7A0F4-6C58-4E9D-A40B-1F03C1AFA136}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.IBM", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.IBM\Silk.NET.OpenGL.Legacy.Extensions.IBM.csproj", "{AFD7A0F4-6C58-4E9D-A40B-1F03C1AFA136}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.INGR", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.INGR\Silk.NET.OpenGL.Legacy.Extensions.INGR.csproj", "{7FB49D81-CE37-47D8-B62D-5954F72DE052}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.INGR", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.INGR\Silk.NET.OpenGL.Legacy.Extensions.INGR.csproj", "{7FB49D81-CE37-47D8-B62D-5954F72DE052}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.INTEL", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.INTEL\Silk.NET.OpenGL.Legacy.Extensions.INTEL.csproj", "{6CCD4C39-C953-4281-8135-1316B1A68248}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.INTEL", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.INTEL\Silk.NET.OpenGL.Legacy.Extensions.INTEL.csproj", "{6CCD4C39-C953-4281-8135-1316B1A68248}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.KHR", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.KHR\Silk.NET.OpenGL.Legacy.Extensions.KHR.csproj", "{E9754021-FBDD-460C-B966-B41019E3EF98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.KHR", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.KHR\Silk.NET.OpenGL.Legacy.Extensions.KHR.csproj", "{E9754021-FBDD-460C-B966-B41019E3EF98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.MESA", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.MESA\Silk.NET.OpenGL.Legacy.Extensions.MESA.csproj", "{7483030B-2CA2-4B60-9188-6BA5633EFBF1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.MESA", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.MESA\Silk.NET.OpenGL.Legacy.Extensions.MESA.csproj", "{7483030B-2CA2-4B60-9188-6BA5633EFBF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.MESAX", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.MESAX\Silk.NET.OpenGL.Legacy.Extensions.MESAX.csproj", "{7BAAFB8D-4FDE-4C77-9093-8ECAF93C1890}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.MESAX", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.MESAX\Silk.NET.OpenGL.Legacy.Extensions.MESAX.csproj", "{7BAAFB8D-4FDE-4C77-9093-8ECAF93C1890}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.NV", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.NV\Silk.NET.OpenGL.Legacy.Extensions.NV.csproj", "{3AE416D7-C523-415B-A3AF-B790A1B5C05F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.NV", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.NV\Silk.NET.OpenGL.Legacy.Extensions.NV.csproj", "{3AE416D7-C523-415B-A3AF-B790A1B5C05F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.NVX", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.NVX\Silk.NET.OpenGL.Legacy.Extensions.NVX.csproj", "{75DC2611-F3A9-4C17-A647-454097698434}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.NVX", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.NVX\Silk.NET.OpenGL.Legacy.Extensions.NVX.csproj", "{75DC2611-F3A9-4C17-A647-454097698434}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.OES", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.OES\Silk.NET.OpenGL.Legacy.Extensions.OES.csproj", "{2FBBB8C4-CCF3-4421-8514-9BC91A0933C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.OES", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.OES\Silk.NET.OpenGL.Legacy.Extensions.OES.csproj", "{2FBBB8C4-CCF3-4421-8514-9BC91A0933C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.OML", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.OML\Silk.NET.OpenGL.Legacy.Extensions.OML.csproj", "{7BB402A0-274C-4476-A9F9-884045F30376}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.OML", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.OML\Silk.NET.OpenGL.Legacy.Extensions.OML.csproj", "{7BB402A0-274C-4476-A9F9-884045F30376}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.OVR", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.OVR\Silk.NET.OpenGL.Legacy.Extensions.OVR.csproj", "{2A3247AB-750D-48E6-9B99-A876397404D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.OVR", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.OVR\Silk.NET.OpenGL.Legacy.Extensions.OVR.csproj", "{2A3247AB-750D-48E6-9B99-A876397404D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.PGI", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.PGI\Silk.NET.OpenGL.Legacy.Extensions.PGI.csproj", "{BF9F8BA0-81F1-457D-89DF-9466FD4868C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.PGI", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.PGI\Silk.NET.OpenGL.Legacy.Extensions.PGI.csproj", "{BF9F8BA0-81F1-457D-89DF-9466FD4868C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.REND", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.REND\Silk.NET.OpenGL.Legacy.Extensions.REND.csproj", "{4451DE2E-B803-46E2-A911-C4FF5B183FD4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.REND", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.REND\Silk.NET.OpenGL.Legacy.Extensions.REND.csproj", "{4451DE2E-B803-46E2-A911-C4FF5B183FD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.S3", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.S3\Silk.NET.OpenGL.Legacy.Extensions.S3.csproj", "{3934B088-9BB7-4D48-BDC3-DA2E9D0545E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.S3", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.S3\Silk.NET.OpenGL.Legacy.Extensions.S3.csproj", "{3934B088-9BB7-4D48-BDC3-DA2E9D0545E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.SGI", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.SGI\Silk.NET.OpenGL.Legacy.Extensions.SGI.csproj", "{63F82AE3-05F1-4C5C-A4C9-18EBFA01DF74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.SGI", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.SGI\Silk.NET.OpenGL.Legacy.Extensions.SGI.csproj", "{63F82AE3-05F1-4C5C-A4C9-18EBFA01DF74}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.SGIS", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.SGIS\Silk.NET.OpenGL.Legacy.Extensions.SGIS.csproj", "{800B088D-2C80-4B72-84C3-3FF1F3DCB42A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.SGIS", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.SGIS\Silk.NET.OpenGL.Legacy.Extensions.SGIS.csproj", "{800B088D-2C80-4B72-84C3-3FF1F3DCB42A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.SGIX", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.SGIX\Silk.NET.OpenGL.Legacy.Extensions.SGIX.csproj", "{C0066476-7E6C-47B0-B6AD-87669FF643D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.SGIX", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.SGIX\Silk.NET.OpenGL.Legacy.Extensions.SGIX.csproj", "{C0066476-7E6C-47B0-B6AD-87669FF643D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.SUN", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.SUN\Silk.NET.OpenGL.Legacy.Extensions.SUN.csproj", "{F1632267-F122-4F27-BDD9-501C8D087DF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.SUN", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.SUN\Silk.NET.OpenGL.Legacy.Extensions.SUN.csproj", "{F1632267-F122-4F27-BDD9-501C8D087DF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.SUNX", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.SUNX\Silk.NET.OpenGL.Legacy.Extensions.SUNX.csproj", "{318FBDE5-3045-4DE4-A489-F5A314D4D4B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.SUNX", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.SUNX\Silk.NET.OpenGL.Legacy.Extensions.SUNX.csproj", "{318FBDE5-3045-4DE4-A489-F5A314D4D4B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Legacy.Extensions.WIN", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.WIN\Silk.NET.OpenGL.Legacy.Extensions.WIN.csproj", "{B56BD145-5D19-4049-9700-CA1F024CE8A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGL.Legacy.Extensions.WIN", "src\OpenGL\Extensions\Silk.NET.OpenGL.Legacy.Extensions.WIN\Silk.NET.OpenGL.Legacy.Extensions.WIN.csproj", "{B56BD145-5D19-4049-9700-CA1F024CE8A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.AMD", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.AMD\Silk.NET.OpenGLES.Extensions.AMD.csproj", "{F7181088-183E-4267-B13D-59A8EE90FAD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.AMD", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.AMD\Silk.NET.OpenGLES.Extensions.AMD.csproj", "{F7181088-183E-4267-B13D-59A8EE90FAD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.ANDROID", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.ANDROID\Silk.NET.OpenGLES.Extensions.ANDROID.csproj", "{3FCBE160-964B-4066-A9D1-ADFEAAFAF0D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.ANDROID", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.ANDROID\Silk.NET.OpenGLES.Extensions.ANDROID.csproj", "{3FCBE160-964B-4066-A9D1-ADFEAAFAF0D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.ANGLE", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.ANGLE\Silk.NET.OpenGLES.Extensions.ANGLE.csproj", "{5B084D8A-795F-4641-B89D-823A369AB84C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.ANGLE", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.ANGLE\Silk.NET.OpenGLES.Extensions.ANGLE.csproj", "{5B084D8A-795F-4641-B89D-823A369AB84C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.APPLE", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.APPLE\Silk.NET.OpenGLES.Extensions.APPLE.csproj", "{DB5446E8-3884-4C77-8E17-F5C67584C514}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.APPLE", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.APPLE\Silk.NET.OpenGLES.Extensions.APPLE.csproj", "{DB5446E8-3884-4C77-8E17-F5C67584C514}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.ARM", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.ARM\Silk.NET.OpenGLES.Extensions.ARM.csproj", "{5AC8140B-D9C2-4317-948D-A447B846493A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.ARM", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.ARM\Silk.NET.OpenGLES.Extensions.ARM.csproj", "{5AC8140B-D9C2-4317-948D-A447B846493A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.DMP", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.DMP\Silk.NET.OpenGLES.Extensions.DMP.csproj", "{83A352A0-F1EE-4091-8785-25BBA1C5F4B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.DMP", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.DMP\Silk.NET.OpenGLES.Extensions.DMP.csproj", "{83A352A0-F1EE-4091-8785-25BBA1C5F4B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.EXT", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.EXT\Silk.NET.OpenGLES.Extensions.EXT.csproj", "{D8E37A9A-E94F-4A6A-9913-7EFB5494CE70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.EXT", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.EXT\Silk.NET.OpenGLES.Extensions.EXT.csproj", "{D8E37A9A-E94F-4A6A-9913-7EFB5494CE70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.FJ", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.FJ\Silk.NET.OpenGLES.Extensions.FJ.csproj", "{E247B4A2-5EB3-451B-8D24-06DB83023B85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.FJ", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.FJ\Silk.NET.OpenGLES.Extensions.FJ.csproj", "{E247B4A2-5EB3-451B-8D24-06DB83023B85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.IMG", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.IMG\Silk.NET.OpenGLES.Extensions.IMG.csproj", "{107CE915-3387-4A0D-A8C7-0859A0D3DF80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.IMG", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.IMG\Silk.NET.OpenGLES.Extensions.IMG.csproj", "{107CE915-3387-4A0D-A8C7-0859A0D3DF80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.INTEL", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.INTEL\Silk.NET.OpenGLES.Extensions.INTEL.csproj", "{9EA0B2F1-9C74-4817-9458-A8AB20B4CED7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.INTEL", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.INTEL\Silk.NET.OpenGLES.Extensions.INTEL.csproj", "{9EA0B2F1-9C74-4817-9458-A8AB20B4CED7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.KHR", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.KHR\Silk.NET.OpenGLES.Extensions.KHR.csproj", "{A48E9ECA-FA1A-4851-BF14-E434FCBBAB84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.KHR", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.KHR\Silk.NET.OpenGLES.Extensions.KHR.csproj", "{A48E9ECA-FA1A-4851-BF14-E434FCBBAB84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.MESA", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.MESA\Silk.NET.OpenGLES.Extensions.MESA.csproj", "{4F8FAA99-0491-4857-9252-685BF3B46AAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.MESA", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.MESA\Silk.NET.OpenGLES.Extensions.MESA.csproj", "{4F8FAA99-0491-4857-9252-685BF3B46AAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.NV", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.NV\Silk.NET.OpenGLES.Extensions.NV.csproj", "{7E00824E-34C5-4162-AA26-86F84A4FBA42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.NV", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.NV\Silk.NET.OpenGLES.Extensions.NV.csproj", "{7E00824E-34C5-4162-AA26-86F84A4FBA42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.NVX", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.NVX\Silk.NET.OpenGLES.Extensions.NVX.csproj", "{C8A6C654-015C-4218-B653-DFFD40D51492}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.NVX", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.NVX\Silk.NET.OpenGLES.Extensions.NVX.csproj", "{C8A6C654-015C-4218-B653-DFFD40D51492}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.OES", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.OES\Silk.NET.OpenGLES.Extensions.OES.csproj", "{1D221A69-EE04-476A-B660-32DFDB2DC162}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.OES", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.OES\Silk.NET.OpenGLES.Extensions.OES.csproj", "{1D221A69-EE04-476A-B660-32DFDB2DC162}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.OVR", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.OVR\Silk.NET.OpenGLES.Extensions.OVR.csproj", "{3BC72F4A-8B32-490A-9EA7-B68320991E15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.OVR", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.OVR\Silk.NET.OpenGLES.Extensions.OVR.csproj", "{3BC72F4A-8B32-490A-9EA7-B68320991E15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.QCOM", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.QCOM\Silk.NET.OpenGLES.Extensions.QCOM.csproj", "{6D2F52DB-2DB4-49EF-8DD1-212FA33CE034}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.QCOM", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.QCOM\Silk.NET.OpenGLES.Extensions.QCOM.csproj", "{6D2F52DB-2DB4-49EF-8DD1-212FA33CE034}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGLES.Extensions.VIV", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.VIV\Silk.NET.OpenGLES.Extensions.VIV.csproj", "{8D534FE1-6113-457A-97DD-FD42782580A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.OpenGLES.Extensions.VIV", "src\OpenGL\Extensions\Silk.NET.OpenGLES.Extensions.VIV\Silk.NET.OpenGLES.Extensions.VIV.csproj", "{8D534FE1-6113-457A-97DD-FD42782580A5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{0651C5EF-50AA-4598-8D9C-8F210ADD8490}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangle", "examples\Triangle\Triangle.csproj", "{3478F392-7055-4ECC-B388-7F115AA7EA5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Triangle", "examples\Triangle\Triangle.csproj", "{3478F392-7055-4ECC-B388-7F115AA7EA5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Input.Desktop", "src\Input\Silk.NET.Input.Desktop\Silk.NET.Input.Desktop.csproj", "{3908DEF6-7403-49F5-B8EC-5B3B12C325D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Input.Desktop", "src\Input\Silk.NET.Input.Desktop\Silk.NET.Input.Desktop.csproj", "{3908DEF6-7403-49F5-B8EC-5B3B12C325D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Input", "src\Input\Silk.NET.Input\Silk.NET.Input.csproj", "{020A8E88-B607-4281-BA0D-5ED03484A201}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Input", "src\Input\Silk.NET.Input\Silk.NET.Input.csproj", "{020A8E88-B607-4281-BA0D-5ED03484A201}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputTest", "examples\InputTest\InputTest.csproj", "{3E744E54-F450-4051-8919-04D9B591688E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InputTest", "examples\InputTest\InputTest.csproj", "{3E744E54-F450-4051-8919-04D9B591688E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing.Android", "src\Windowing\Silk.NET.Windowing.Android\Silk.NET.Windowing.Android.csproj", "{AF7A51B8-5E31-49B0-B879-1B5CB0BCBE00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -181,9 +183,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{FD24E9FF-1097-4777-A418-F2D88C558665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -330,18 +329,6 @@ Global
 		{94D7D3A3-3640-4791-BE19-CA50C59187C6}.Release|x64.Build.0 = Release|Any CPU
 		{94D7D3A3-3640-4791-BE19-CA50C59187C6}.Release|x86.ActiveCfg = Release|Any CPU
 		{94D7D3A3-3640-4791-BE19-CA50C59187C6}.Release|x86.Build.0 = Release|Any CPU
-		{8FFF49D6-B029-400B-8510-19088868DFA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8FFF49D6-B029-400B-8510-19088868DFA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8FFF49D6-B029-400B-8510-19088868DFA6}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{8FFF49D6-B029-400B-8510-19088868DFA6}.Debug|x64.Build.0 = Debug|Any CPU
-		{8FFF49D6-B029-400B-8510-19088868DFA6}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{8FFF49D6-B029-400B-8510-19088868DFA6}.Debug|x86.Build.0 = Debug|Any CPU
-		{8FFF49D6-B029-400B-8510-19088868DFA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8FFF49D6-B029-400B-8510-19088868DFA6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8FFF49D6-B029-400B-8510-19088868DFA6}.Release|x64.ActiveCfg = Release|Any CPU
-		{8FFF49D6-B029-400B-8510-19088868DFA6}.Release|x64.Build.0 = Release|Any CPU
-		{8FFF49D6-B029-400B-8510-19088868DFA6}.Release|x86.ActiveCfg = Release|Any CPU
-		{8FFF49D6-B029-400B-8510-19088868DFA6}.Release|x86.Build.0 = Release|Any CPU
 		{8FFF49D6-B029-400B-8510-1A088868DFA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8FFF49D6-B029-400B-8510-1A088868DFA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FFF49D6-B029-400B-8510-1A088868DFA6}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -1086,13 +1073,30 @@ Global
 		{3E744E54-F450-4051-8919-04D9B591688E}.Release|x64.Build.0 = Release|Any CPU
 		{3E744E54-F450-4051-8919-04D9B591688E}.Release|x86.ActiveCfg = Release|Any CPU
 		{3E744E54-F450-4051-8919-04D9B591688E}.Release|x86.Build.0 = Release|Any CPU
+		{AF7A51B8-5E31-49B0-B879-1B5CB0BCBE00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF7A51B8-5E31-49B0-B879-1B5CB0BCBE00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF7A51B8-5E31-49B0-B879-1B5CB0BCBE00}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AF7A51B8-5E31-49B0-B879-1B5CB0BCBE00}.Debug|x64.Build.0 = Debug|Any CPU
+		{AF7A51B8-5E31-49B0-B879-1B5CB0BCBE00}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AF7A51B8-5E31-49B0-B879-1B5CB0BCBE00}.Debug|x86.Build.0 = Debug|Any CPU
+		{AF7A51B8-5E31-49B0-B879-1B5CB0BCBE00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF7A51B8-5E31-49B0-B879-1B5CB0BCBE00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF7A51B8-5E31-49B0-B879-1B5CB0BCBE00}.Release|x64.ActiveCfg = Release|Any CPU
+		{AF7A51B8-5E31-49B0-B879-1B5CB0BCBE00}.Release|x64.Build.0 = Release|Any CPU
+		{AF7A51B8-5E31-49B0-B879-1B5CB0BCBE00}.Release|x86.ActiveCfg = Release|Any CPU
+		{AF7A51B8-5E31-49B0-B879-1B5CB0BCBE00}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{FD24E9FF-1097-4777-A418-F2D88C558665} = {0651C5EF-50AA-4598-8D9C-8F210ADD8490}
 		{BFE429EB-4C2E-4BF3-A302-C9C5A2FDA6D7} = {23324041-2076-477C-A4BF-B385B8066C6C}
+		{136C6154-D300-4B82-80D3-17B637841A2B} = {0651C5EF-50AA-4598-8D9C-8F210ADD8490}
 		{A8DFEA18-E880-4303-BBCE-0F27EE214D44} = {23324041-2076-477C-A4BF-B385B8066C6C}
 		{0A18FCAE-572E-47FF-B8E3-C97ED15132FA} = {23324041-2076-477C-A4BF-B385B8066C6C}
-		{956F722C-DFD3-435E-9D2E-A0549C4D8BC0} = {23324041-2076-477C-A4BF-B385B8066C6C}
 		{E8C4587E-9424-438B-AEAF-A09E0234865A} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
+		{956F722C-DFD3-435E-9D2E-A0549C4D8BC0} = {23324041-2076-477C-A4BF-B385B8066C6C}
 		{5A41E9D5-67F5-447C-8AE2-78FED7A45206} = {081E7761-B200-4DBF-8950-941464DECACE}
 		{896B1A79-FEC8-4B7A-8A9C-0CC8EDA2CCFC} = {081E7761-B200-4DBF-8950-941464DECACE}
 		{FC015604-3326-4BCC-9212-C5CB0DFB0D12} = {896B1A79-FEC8-4B7A-8A9C-0CC8EDA2CCFC}
@@ -1158,11 +1162,13 @@ Global
 		{3BC72F4A-8B32-490A-9EA7-B68320991E15} = {CF69D5C3-4ACE-4458-BA5A-0E9A3B294CDC}
 		{6D2F52DB-2DB4-49EF-8DD1-212FA33CE034} = {CF69D5C3-4ACE-4458-BA5A-0E9A3B294CDC}
 		{8D534FE1-6113-457A-97DD-FD42782580A5} = {CF69D5C3-4ACE-4458-BA5A-0E9A3B294CDC}
-		{FD24E9FF-1097-4777-A418-F2D88C558665} = {0651C5EF-50AA-4598-8D9C-8F210ADD8490}
-		{136C6154-D300-4B82-80D3-17B637841A2B} = {0651C5EF-50AA-4598-8D9C-8F210ADD8490}
 		{3478F392-7055-4ECC-B388-7F115AA7EA5A} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
 		{3908DEF6-7403-49F5-B8EC-5B3B12C325D4} = {FA9D1C95-5585-4DEC-B226-1447A486C376}
 		{020A8E88-B607-4281-BA0D-5ED03484A201} = {FA9D1C95-5585-4DEC-B226-1447A486C376}
 		{3E744E54-F450-4051-8919-04D9B591688E} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
+		{AF7A51B8-5E31-49B0-B879-1B5CB0BCBE00} = {23324041-2076-477C-A4BF-B385B8066C6C}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03A4D8D2-2C1B-4488-8442-698D88093522}
 	EndGlobalSection
 EndGlobal

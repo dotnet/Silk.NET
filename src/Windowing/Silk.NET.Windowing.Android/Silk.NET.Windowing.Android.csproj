@@ -1,0 +1,16 @@
+﻿<Project Sdk="MSBuild.Sdk.Extras/2.0.31">
+    <PropertyGroup>
+        <TargetFrameworks>monoandroid90</TargetFrameworks>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
+        <ProjectReference Include="..\..\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
+    </ItemGroup>
+    <!-- BUG: https://github.com/onovotny/MSBuildSdkExtras/issues/174 -->
+    <Target Name="_RemoveNonExistingResgenFile" BeforeTargets="CoreCompile" Condition="'$(_SdkSetAndroidResgenFile)' == 'true' And '$(AndroidResgenFile)' != '' And !Exists('$(AndroidResgenFile)')">
+        <ItemGroup>
+            <Compile Remove="$(AndroidResgenFile)" />
+        </ItemGroup>
+    </Target>
+</Project>

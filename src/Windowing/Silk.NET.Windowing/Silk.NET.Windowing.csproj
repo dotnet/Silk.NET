@@ -1,11 +1,16 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="MSBuild.Sdk.Extras/2.0.31">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFrameworks>netstandard2.0;xamarin.android90</TargetFrameworks>
     </PropertyGroup>
 
-    <ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
       <ProjectReference Include="..\Silk.NET.Windowing.Desktop\Silk.NET.Windowing.Desktop.csproj" />
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'xamarin.android90'">
+        <ProjectReference Include="..\Silk.NET.Windowing.Android\Silk.NET.Windowing.Android.csproj" />
+        <Reference Include="Mono.Android" />
     </ItemGroup>
 
     <Import Project="..\..\..\build\props\common.props" />
