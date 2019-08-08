@@ -15,11 +15,15 @@ jobs:
 
   steps:
   - task: DotNetCoreInstaller@0
-    displayName: 'Install .net core 3.0 (preview)'
+    displayName: 'Install .NET Core 2.2'
+    inputs:
+      version: '2.2.401'
+  - script: dotnet run --configuration $(buildConfiguration) --project src/Core/BuildTools/BuildTools.csproj build/binder_scripts/build.json
+    displayName: 'Bind'
+  - task: DotNetCoreInstaller@0
+    displayName: 'Install .NET Core 3.0 (Preview)'
     inputs:
       version: '3.0.100-preview6-012264'
-  - script: dotnet run -f netcoreapp30 --configuration $(buildConfiguration) --project src/Core/BuildTools/BuildTools.csproj build/binder_scripts/build.json
-    displayName: 'Bind'
   - script: dotnet pack --configuration $(buildConfiguration) --version-suffix $(Build.BuildNumber)
     displayName: 'Build/Pack'
   - publish: build/output_packages
