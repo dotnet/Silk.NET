@@ -8,7 +8,7 @@ jobs:
 - job: Build
 
   pool:
-    vmImage: 'ubuntu-latest'
+    vmImage: 'windows-latest'
 
   variables:
     buildConfiguration: 'Release'
@@ -24,8 +24,12 @@ jobs:
     displayName: 'Install .NET Core 3.0 (Preview)'
     inputs:
       version: '3.0.100-preview6-012264'
-  - script: dotnet pack --configuration $(buildConfiguration) --version-suffix $(Build.BuildNumber)
+  - task: VSBuild@1
     displayName: 'Build/Pack'
+    inputs:
+      solution: 'Silk.NET.sln'
+      configuration: Release
+      msbuildArgs: '/t:Pack'
   - publish: build/output_packages
     artifact: NuGet Packages
   - task: NuGetCommand@2
