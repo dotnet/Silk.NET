@@ -2,13 +2,13 @@
 using System.Drawing;
 using Silk.NET.Input;
 using Silk.NET.Input.Common;
-using Silk.NET.OpenGL;
+using Silk.NET.OpenGLES;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
 
-namespace Triangle
+namespace Triangle.OpenGLES
 {
-    public static class Program
+    public static class TriangleMobile
     {
         private static readonly float[] _vertices =
         {
@@ -42,7 +42,7 @@ namespace Triangle
                                                "    gl_Position = vec4(aPosition, 1.0);\n" +
                                                "}\n";
 
-        public static void Main(string[] args)
+        public static void Run()
         {
             _window = Window.Create(WindowOptions.Default);
             _window.Load += Load;

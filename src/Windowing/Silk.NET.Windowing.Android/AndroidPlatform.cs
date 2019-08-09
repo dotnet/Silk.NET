@@ -16,7 +16,21 @@ namespace Silk.NET.Windowing.Android
             {
                 throw new NotSupportedException("Multiple windows are not supported on Android.");
             }
+
+            if (Activity == null)
+            {
+                throw new InvalidOperationException
+                (
+                    "AndroidPlatform has not been initialized. To initialize it, pass the current Activity " +
+                    "as an argument to Window.Init(Activity)"
+                );
+            }
             return Current = new AndroidWindow(Activity, options);
+        }
+        
+        public static void Init(Activity activity)
+        {
+            Activity = activity;
         }
     }
 }

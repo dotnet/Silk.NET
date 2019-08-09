@@ -14,7 +14,6 @@ using Android.Opengl;
 using Android.Runtime;
 using Android.Views;
 using Silk.NET.Windowing.Common;
-using static Android.Opengl.EGL14;
 using Point = System.Drawing.Point;
 using Size = System.Drawing.Size;
 
@@ -36,34 +35,70 @@ namespace Silk.NET.Windowing.Android
         private double _renderPeriod;
         private EGLDisplay _display;
         private EGLSurface _surface;
-        private static readonly int[] _attribs = {
-            EglSurfaceType, EglWindowBit,
-            EglBlueSize, 8,
-            EglGreenSize, 8,
-            EglRedSize, 8,
-            EglNone
-        };
-
         private EGLConfig _config;
+        private AutoResetEvent _runEvent;
+        private ISurfaceHolder _holder;
+        private VSyncMode _vsync;
 
+        private static readonly int[] Attribs =
+        {
+            EGL14.EglSurfaceType, EGL14.EglWindowBit,
+            EGL14.EglBlueSize, 8,
+            EGL14.EglGreenSize, 8,
+            EGL14.EglRedSize, 8,
+            EGL14.EglNone
+        };
 
         // IWindow
         public bool IsVisible { get; set; }
         public bool UseSingleThreadedWindow { get; }
+
         public Point Position
         {
             get => default;
-            set {}
+            set { }
         }
 
         public unsafe Size Size
         {
-            get => Handle == IntPtr.Zero ? new Size(Android.GetWidth(_windowPtr), Android.GetHeight(_windowPtr)) : default;
+            get => Handle == IntPtr.Zero
+                ? new Size(Android.GetWidth(_windowPtr), Android.GetHeight(_windowPtr))
+                : default;
             set { }
         }
 
-        public double FramesPerSecond { get; set; }
-        public double UpdatesPerSecond { get; set; }
+        /// <inheritdoc />
+        public double FramesPerSecond
+        {
+            get => 1.0 / _renderPeriod;
+            set
+            {
+                if (value <= double.Epsilon)
+                {
+                    _renderPeriod = 0.0;
+                    return;
+                }
+
+                _renderPeriod = 1.0 / value;
+            }
+        }
+
+        /// <inheritdoc />
+        public double UpdatesPerSecond
+        {
+            get => 1.0 / _updatePeriod;
+            set
+            {
+                if (value <= double.Epsilon)
+                {
+                    _updatePeriod = 0.0;
+                    return;
+                }
+
+                _updatePeriod = 1.0 / value;
+            }
+        }
+
         public GraphicsAPI API { get; }
         public string Title { get; set; }
 
@@ -79,66 +114,104 @@ namespace Silk.NET.Windowing.Android
             set { }
         }
 
-        public VSyncMode VSync { get; set; }
+        public VSyncMode VSync
+        {
+            get => _vsync;
+            set
+            {
+                if (_running)
+                {
+                    switch (value)
+                    {
+                        case VSyncMode.Off:
+                        {
+                            EGL14.EglSwapInterval(_display, 0);
+                            break;
+                        }
+                        case VSyncMode.On:
+                        {
+                            EGL14.EglSwapInterval(_display, 1);
+                            break;
+                        }
+                        case VSyncMode.Adaptive:
+                        {
+                            EGL14.EglSwapInterval(_display, IsRunningSlowly ? 0 : 1);
+                            break;
+                        }
+                        default:
+                            throw new ArgumentOutOfRangeException(nameof(value), value, null);
+                    }
+                }
+
+                _vsync = value;
+            }
+        }
+
         public int RunningSlowTolerance { get; set; }
-        public event Action<Point> Move;
+        public event Action<Point> Move; // never called
         public event Action<Size> Resize;
         public event Action Closing;
-        public event Action<WindowState> StateChanged;
-        public event Action<bool> FocusChanged;
-        public event Action<string[]> FileDrop;
+        public event Action<WindowState> StateChanged; // never called
+        public event Action<bool> FocusChanged; // todo
+        public event Action<string[]> FileDrop; // never called
         public event Action Load;
         public event Action<double> Update;
         public event Action<double> Render;
-        public unsafe IntPtr Handle => (IntPtr) _windowPtr;
-        public bool IsRunningSlowly { get; }
+        unsafe IntPtr IWindow.Handle => (IntPtr) _windowPtr;
+        public bool IsRunningSlowly => _isRunningSlowlyTries > RunningSlowTolerance;
+
         public unsafe void Run()
         {
             _running = true;
-
+            _runEvent.WaitOne();
+            _windowPtr = Android.CreateNativeWindow(JNIEnv.Handle, _holder.Surface.Handle);
             _invokeQueue = new ConcurrentQueue<Task>();
             _mainThread = Thread.CurrentThread.ManagedThreadId;
-            if ((_display = EglGetDisplay(EglDefaultDisplay)) == EglNoDisplay)
+            if ((_display = EGL14.EglGetDisplay(EGL14.EglDefaultDisplay)) == EGL14.EglNoDisplay)
             {
-                throw new EglException("Couldn't get the default display, error code " + EglGetError());
+                throw new EglException("Couldn't get the default display, error code " + EGL14.EglGetError());
             }
 
-            if (!EglInitialize(_display, null, 0, null, 0))
+            if (!EGL14.EglInitialize(_display, null, 0, null, 0))
             {
-                throw new EglException("Couldn't initialize, error code " + EglGetError());
+                throw new EglException("Couldn't initialize, error code " + EGL14.EglGetError());
             }
 
             var configs = new EGLConfig[1];
             var numConfigs = new int[1];
-            if (!EglChooseConfig(_display, _attribs, 0, configs, 0, 1, numConfigs, 0)) {
-                throw new EglException("Couldn't choose config, error code " + EglGetError());
+            if (!EGL14.EglChooseConfig(_display, Attribs, 0, configs, 0, 1, numConfigs, 0))
+            {
+                throw new EglException("Couldn't choose config, error code " + EGL14.EglGetError());
             }
 
             _config = configs[0];
 
             var formats = new int[1];
-            if (!EglGetConfigAttrib(_display, _config, EglNativeVisualId, formats, 0)) {
-                throw new EglException("Couldn't get config attribute, error code " + EglGetError());
+            if (!EGL14.EglGetConfigAttrib(_display, _config, EGL14.EglNativeVisualId, formats, 0))
+            {
+                throw new EglException("Couldn't get config attribute, error code " + EGL14.EglGetError());
             }
 
             Android.SetBuffersGeometry(_windowPtr, 0, 0, formats[0]);
-            var win = new Java.Lang.Object((IntPtr)_windowPtr, JniHandleOwnership.DoNotTransfer);
+            var win = new Java.Lang.Object((IntPtr) _windowPtr, JniHandleOwnership.DoNotTransfer);
 
-            if ((_surface = EglCreateWindowSurface(_display, _config, win, null, 0)) == EglNoSurface) {
-                throw new EglException("Couldn't create surface, error code " + EglGetError());
+            if ((_surface = EGL14.EglCreateWindowSurface(_display, _config, win, null, 0)) == EGL14.EglNoSurface)
+            {
+                throw new EglException("Couldn't create surface, error code " + EGL14.EglGetError());
             }
-    
-            if ((_context = EglCreateContext(_display, _config, EglNoContext, null, 0)) == EglNoContext) {
-                throw new EglException("Couldn't create context, error code " + EglGetError());
-            }
-    
-            if (!EglMakeCurrent(_display, _surface, _surface, _context)) {
-                throw new EglException("Couldn't make context current, error code " + EglGetError());
-            }
-            
-            // todo vsync
 
-            InitializeCallbacks();
+            if ((_context = EGL14.EglCreateContext(_display, _config, EGL14.EglNoContext, null, 0)) ==
+                EGL14.EglNoContext)
+            {
+                throw new EglException("Couldn't create context, error code " + EGL14.EglGetError());
+            }
+
+            if (!EGL14.EglMakeCurrent(_display, _surface, _surface, _context))
+            {
+                throw new EglException("Couldn't make context current, error code " + EGL14.EglGetError());
+            }
+
+            VSync = _vsync; // inform EGL about the VSync preference
 
             // Run OnLoad.
             Load?.Invoke();
@@ -152,10 +225,8 @@ namespace Silk.NET.Windowing.Android
             _mainThread = Thread.CurrentThread.ManagedThreadId;
 
             // Start the update loop.
-            while (!_windowShouldClose && !AndroidPlatform.Activity.IsFinishing)
+            while (!_windowShouldClose)
             {
-                // TODO events
-                
                 if (UseSingleThreadedWindow)
                 {
                     RaiseUpdateFrame();
@@ -164,7 +235,7 @@ namespace Silk.NET.Windowing.Android
                 else
                 {
                     // Raise UpdateFrame, but don't await it yet.
-                    var task = Task.Run((Action)RaiseUpdateFrame); // cast to action, ambiguous call
+                    var task = Task.Run((Action) RaiseUpdateFrame); // cast to action, ambiguous call
 
                     // Loop while we're still updating - the Update thread might be calling the main thread
                     while (!task.IsCompleted)
@@ -181,45 +252,58 @@ namespace Silk.NET.Windowing.Android
 
                 if (VSync == VSyncMode.Adaptive)
                 {
-                    EglSwapInterval(_display, IsRunningSlowly ? 0 : 1);
+                    EGL14.EglSwapInterval(_display, IsRunningSlowly ? 0 : 1);
                 }
             }
 
+            EGL14.EglDestroyContext(_display, _context);
+            EGL14.EglDestroySurface(_display, _surface);
+            EGL14.EglTerminate(_display);
+            Android.ReleaseNativeWindow(_windowPtr);
+            _holder.Surface.Release();
             _running = false;
-        }
-
-        private void InitializeCallbacks()
-        {
-            throw new NotImplementedException();
         }
 
         public void Close()
         {
-            throw new NotImplementedException();
+            _windowShouldClose = true;
         }
 
         public Point PointToClient(Point point)
         {
-            throw new NotImplementedException();
+            return point;
         }
 
         public Point PointToScreen(Point point)
         {
-            throw new NotImplementedException();
+            return point;
         }
 
         public object Invoke(Delegate d)
         {
-            throw new NotImplementedException();
+            return Invoke(d, new object[0]);
         }
 
         public object Invoke(Delegate d, params object[] args)
         {
-            throw new NotImplementedException();
+            if (!_running)
+            {
+                throw new InvalidOperationException("The window must be running to be able to invoke it.");
+            }
+
+            if (Thread.CurrentThread.ManagedThreadId == _mainThread)
+            {
+                return d.DynamicInvoke(args);
+            }
+
+            var task = new Task<object>(() => d.DynamicInvoke(args));
+            _invokeQueue.Enqueue(task);
+            SpinWait.SpinUntil(() => task.IsCompleted);
+            return task.Result;
         }
-        
+
         // Implementation
-        
+
         /// <summary>
         /// Run an OnUpdate event.
         /// </summary>
@@ -271,49 +355,56 @@ namespace Silk.NET.Windowing.Android
 
             var delta = _renderStopwatch.Elapsed.TotalSeconds;
             Render?.Invoke(delta);
-            if (!EglSwapBuffers(_display, _surface))
+            if (!EGL14.EglSwapBuffers(_display, _surface))
             {
-                throw new EglException("Couldn't swap buffers, error code " + EglGetError());
+                throw new EglException("Couldn't swap buffers, error code " + EGL14.EglGetError());
             }
+
             _renderStopwatch.Restart();
 
             // This has to be called on the thread with the graphics context
             if (VSync == VSyncMode.Adaptive)
             {
-                EglSwapInterval(EglGetCurrentDisplay(), IsRunningSlowly ? 0 : 1);
+                EGL14.EglSwapInterval(EGL14.EglGetCurrentDisplay(), IsRunningSlowly ? 0 : 1);
             }
         }
-        
+
         // SurfaceView
-        public void Dispose()
+        void IDisposable.Dispose()
         {
-            throw new NotImplementedException();
         }
 
         public void SurfaceChanged(ISurfaceHolder holder, Format format, int width, int height)
         {
-            throw new NotImplementedException();
+            Resize?.Invoke(new Size(width, height));
         }
 
         public void SurfaceCreated(ISurfaceHolder holder)
         {
-            throw new NotImplementedException();
+            _holder = holder;
+            _runEvent.Set();
         }
 
         public void SurfaceDestroyed(ISurfaceHolder holder)
         {
-            throw new NotImplementedException();
+            _windowShouldClose = true;
+            Closing?.Invoke();
         }
 
-        [Register(".ctor", "(Landroid/content/Context;)V", "")]
         public AndroidWindow(Context context, WindowOptions opts) : base(context)
         {
-            // todo opts
+            _runEvent = new AutoResetEvent(false);
+            UseSingleThreadedWindow = opts.UseSingleThreadedWindow;
+            RunningSlowTolerance = opts.RunningSlowTolerance;
+            _vsync = opts.VSync;
+            API = opts.API;
         }
     }
 
     public class EglException : Exception
     {
-        public EglException(string str) : base(str){}
+        public EglException(string str) : base(str)
+        {
+        }
     }
 }

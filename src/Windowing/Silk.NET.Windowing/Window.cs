@@ -46,7 +46,7 @@ namespace Silk.NET.Windowing
                 return;
             }
 #elif XAMARIN_ANDROID
-            var androidPlatform = new Windowing.Android.AndroidPlatform();
+            var androidPlatform = new Android.AndroidPlatform();
             if (androidPlatform.IsApplicable)
             {
                 SilkManager.Register<IWindowPlatform>(androidPlatform);
@@ -57,17 +57,5 @@ namespace Silk.NET.Windowing
                 throw new NotSupportedException("Couldn't find a suitable windowing platform.");
             }
         }
-
-#if XAMARIN_ANDROID
-        /// <summary>
-        /// Attempts to resolve an <see cref="IWindowPlatform"/> equipped to use the given <see cref="Activity"/>
-        /// </summary>
-        /// <param name="activity">The activity to use.</param>
-        public static void Init(global::Android.App.Activity activity)
-        {
-            Android.AndroidPlatform.Activity = activity;
-            Init();
-        }
-#endif
     }
 }
