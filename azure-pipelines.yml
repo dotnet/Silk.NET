@@ -24,12 +24,8 @@ jobs:
     displayName: 'Install .NET Core 3.0 (Preview)'
     inputs:
       version: '3.0.100-preview6-012264'
-  - task: VSBuild@1
+  - script: dotnet pack --configuration $(buildConfiguration) --version-suffix $(Build.BuildNumber)
     displayName: 'Build/Pack'
-    inputs:
-      solution: 'Silk.NET.sln'
-      configuration: Release
-      msbuildArgs: '/t:Pack'
   - publish: build/output_packages
     artifact: NuGet Packages
   - task: NuGetCommand@2
