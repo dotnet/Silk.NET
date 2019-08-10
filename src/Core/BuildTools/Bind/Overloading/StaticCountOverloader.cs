@@ -10,8 +10,6 @@ using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
 
-#nullable disable
-
 namespace Silk.NET.BuildTools.Bind.Overloading
 {
     public class StaticCountOverloader : IFunctionOverloader
