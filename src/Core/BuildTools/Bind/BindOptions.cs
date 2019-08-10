@@ -5,7 +5,13 @@
 
 using System.Collections.Generic;
 using CommandLine;
+using JetBrains.Annotations;
 
+// nullable stays disabled since else the compiler produces warnings cause we don't initialize the variables.
+// all of the properties are required, therefore all of them will be not-null anyways.
+// marked them with the attribute. (note, this is Jetbrains for now. will change when (if) porting to .net core 3
+
+// !! TAKE CARE IF ADDING ADDITIONAL ARGUMENTS !!
 #nullable disable
 
 namespace Silk.NET.BuildTools.Bind
@@ -25,6 +31,7 @@ namespace Silk.NET.BuildTools.Bind
             HelpText = "The input files to write.",
             Required = true
         )]
+        [NotNull]
         public IEnumerable<string> InputFiles { get; set; }
 
         /// <summary>
@@ -37,6 +44,7 @@ namespace Silk.NET.BuildTools.Bind
             HelpText = "The base output path where the binder will write the generated files.",
             Required = true
         )]
+        [NotNull]
         public string OutputPath { get; set; }
 
         /// <summary>
@@ -49,6 +57,7 @@ namespace Silk.NET.BuildTools.Bind
             HelpText = "The path to the license header.",
             Required = true
         )]
+        [NotNull]
         public string License { get; set; }
 
         /// <summary>
@@ -61,6 +70,7 @@ namespace Silk.NET.BuildTools.Bind
             HelpText = "The path to the binding's props file.",
             Required = true
         )]
+        [NotNull]
         public string Props { get; set; }
     }
 }
