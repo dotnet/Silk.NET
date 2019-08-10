@@ -6,8 +6,6 @@
 using JetBrains.Annotations;
 using Silk.NET.BuildTools.Common.Functions;
 
-#nullable disable
-
 namespace Silk.NET.BuildTools.Common.Builders
 {
     /// <summary>
@@ -27,7 +25,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// Initializes a new instance of the <see cref="ParameterSignatureBuilder" /> class.
         /// </summary>
         /// <param name="parameterSignature">The signature.</param>
-        public ParameterSignatureBuilder([NotNull] Parameter parameterSignature)
+        public ParameterSignatureBuilder(Parameter parameterSignature)
         {
             _newName = parameterSignature.Name;
             _newType = parameterSignature.Type;
@@ -40,7 +38,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newName">The new name.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
         public ParameterSignatureBuilder WithName([NotNull] string newName)
         {
             _newName = newName;
@@ -52,7 +49,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newType">The new type.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
         public ParameterSignatureBuilder WithType([NotNull] Type newType)
         {
             _newType = newType;
@@ -64,7 +60,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newFlow">The new flow.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
         public ParameterSignatureBuilder WithFlow(FlowDirection newFlow)
         {
             _newFlow = newFlow;
@@ -76,7 +71,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newCount">The new count.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
         public ParameterSignatureBuilder WithCount([CanBeNull] Count newCount)
         {
             _newCount = newCount;
@@ -87,7 +81,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// Builds the final instance.
         /// </summary>
         /// <returns>The instance.</returns>
-        [NotNull]
         public Parameter Build()
         {
             return new Parameter
