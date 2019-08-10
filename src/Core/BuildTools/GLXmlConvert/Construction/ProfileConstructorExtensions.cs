@@ -110,15 +110,18 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
 
             var returnElement = element.GetRequiredElement("returns");
             var returnType = ParsingHelpers.ParseTypeSignature(returnElement);
+
+
             return new Function
-            {
-                Name = NameTrimmer.Trim(functionName).CheckMemberName(GLXmlConverter.CliOptions.Prefix),
-                NativeName = functionName,
-                Parameters = parameters.ToList(),
-                ReturnType = returnType,
-                Categories = functionCategories,
-                ExtensionName = functionExtensions,
-                Attributes = functionDeprecationVersion != null
+            (
+                NameTrimmer.Trim(functionName).CheckMemberName(GLXmlConverter.CliOptions.Prefix),
+                returnType,
+                functionName,
+                functionCategories,
+                null,
+                functionExtensions,
+                null,
+                functionDeprecationVersion != null
                     ? new List<Attribute>
                     {
                         new Attribute
@@ -127,8 +130,9 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                             Arguments = new List<string> {"\"Deprecated in " + functionDeprecationVersion + ".\""}
                         }
                     }
-                    : new List<Attribute>()
-            };
+                    : null,
+                parameters.ToList()
+            );
         }
 
         /// <summary>

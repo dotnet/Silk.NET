@@ -10,8 +10,6 @@ using System.Text;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 
-#nullable disable
-
 namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>
@@ -37,14 +35,12 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the parameters of the function.
         /// </summary>
-        [NotNull]
         [ItemNotNull]
-        public List<Parameter> Parameters { get; set; } = new List<Parameter>();
+        public List<Parameter> Parameters { get; set; }
 
         /// <summary>
         /// Gets or sets the categories in which this function falls under.
         /// </summary>
-        [NotNull]
         [ItemNotNull]
         [JsonIgnore]
         public string[] Categories { get; set; }
@@ -52,25 +48,36 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the generic type parameters of the function.
         /// </summary>
-        [NotNull]
         [ItemNotNull]
-        public List<GenericTypeParameter> GenericTypeParameters { get; set; } =
-            new List<GenericTypeParameter>();
+        public List<GenericTypeParameter> GenericTypeParameters { get; set; }
 
         /// <summary>
         /// Gets or sets a list of attributes to be applied to this function.
         /// </summary>
-        public List<Attribute> Attributes { get; set; } = new List<Attribute>();
+        public List<Attribute> Attributes { get; set; }
 
         /// <summary>
         /// Gets or sets the formatted XML documentation for this function.
         /// </summary>
-        public string Doc { get; set; }
+        public string? Doc { get; set; }
 
         /// <summary>
         /// Gets or sets the name (vendor) of the given extension.
         /// </summary>
         public string ExtensionName { get; set; }
+
+        public Function(string name, Type returnType, string nativeName, [NotNull] [ItemNotNull] string[] categories, string? doc, string extensionName, [ItemNotNull] List<GenericTypeParameter>? genericTypeParameters = null, [ItemNotNull] List<Attribute>? attributes = null, [ItemNotNull] List<Parameter>? parameters = null)
+        {
+            Name = name;
+            ReturnType = returnType;
+            NativeName = nativeName;
+            Categories = categories;
+            Doc = doc;
+            ExtensionName = extensionName;
+            GenericTypeParameters = genericTypeParameters ?? new List<GenericTypeParameter>();
+            Attributes = attributes ?? new List<Attribute>();
+            Parameters = parameters ?? new List<Parameter>();
+        }
 
         public override string ToString()
         {

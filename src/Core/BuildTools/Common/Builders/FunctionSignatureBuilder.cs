@@ -8,8 +8,6 @@ using System.Linq;
 using JetBrains.Annotations;
 using Silk.NET.BuildTools.Common.Functions;
 
-#nullable disable
-
 namespace Silk.NET.BuildTools.Common.Builders
 {
     /// <summary>
@@ -17,28 +15,29 @@ namespace Silk.NET.BuildTools.Common.Builders
     /// </summary>
     public sealed class FunctionSignatureBuilder
     {
-        [NotNull] private readonly string _newDoc;
-        [NotNull] private List<Attribute> _newAttributes;
+        
+        private readonly string _newDoc;
+        private List<Attribute> _newAttributes;
 
-        [NotNull] private IReadOnlyList<string> _newCategory;
+        private IReadOnlyList<string> _newCategory;
 
-        [NotNull] private string _newExtension;
+        private string _newExtension;
 
-        [NotNull] private IReadOnlyList<GenericTypeParameter> _newGenericTypeParameters;
+        private IReadOnlyList<GenericTypeParameter> _newGenericTypeParameters;
 
-        [NotNull] private string _newName;
+        private string _newName;
 
-        [NotNull] private string _newNativeEntrypoint;
+        private string _newNativeEntrypoint;
 
-        [NotNull] private IReadOnlyList<Parameter> _newParameters;
+        private IReadOnlyList<Parameter> _newParameters;
 
-        [NotNull] private Type _newReturnType;
+        private Type _newReturnType;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="FunctionSignatureBuilder" /> class.
         /// </summary>
         /// <param name="functionSignature">The signature.</param>
-        public FunctionSignatureBuilder([NotNull] Function functionSignature)
+        public FunctionSignatureBuilder(Function functionSignature)
         {
             _newName = functionSignature.Name;
             _newNativeEntrypoint = functionSignature.NativeName;
@@ -154,20 +153,18 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// Builds the final instance.
         /// </summary>
         /// <returns>The instance.</returns>
-        [NotNull]
         public Function Build()
         {
-            return new Function
-            {
-                Name = _newName,
-                NativeName = _newNativeEntrypoint,
-                Categories = _newCategory?.ToArray() ?? new string[0],
-                ExtensionName = _newExtension,
-                ReturnType = _newReturnType,
-                Parameters = _newParameters?.ToList() ?? new List<Parameter>(),
-                GenericTypeParameters = _newGenericTypeParameters?.ToList() ?? new List<GenericTypeParameter>(),
-                Attributes = _newAttributes, Doc = _newDoc
-            };
+            return new Function(
+                _newName,
+                _newReturnType,
+                _newNativeEntrypoint,
+                _newCategory?.ToArray() ?? new string[0],
+                _newDoc,
+                _newExtension,
+                _newGenericTypeParameters?.ToList(),
+                _newAttributes,
+                _newParameters?.ToList());
         }
     }
 }

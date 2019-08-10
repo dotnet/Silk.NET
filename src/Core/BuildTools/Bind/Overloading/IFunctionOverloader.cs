@@ -22,6 +22,6 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         /// <param name="function">The base function.</param>
         /// <returns>A set of code blocks.</returns>
         [NotNull]
-        IEnumerable<Overload> CreateOverloads([NotNull] Function function);
+        IEnumerable<Overload> CreateOverloads(Function function);
     }
 }
