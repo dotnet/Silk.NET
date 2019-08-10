@@ -16,7 +16,7 @@ namespace Silk.NET.BuildTools.Common.Builders
     public sealed class FunctionSignatureBuilder
     {
         
-        private readonly string _newDoc;
+        private readonly string? _newDoc;
         private List<Attribute> _newAttributes;
 
         private IReadOnlyList<string> _newCategory;
@@ -55,8 +55,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newName">The new name.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
-        public FunctionSignatureBuilder WithName([NotNull] string newName)
+        public FunctionSignatureBuilder WithName(string newName)
         {
             _newName = newName;
             return this;
@@ -67,8 +66,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newNativeEntrypoint">The new native entrypoint.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
-        public FunctionSignatureBuilder WithNativeEntrypoint([NotNull] string newNativeEntrypoint)
+        public FunctionSignatureBuilder WithNativeEntrypoint(string newNativeEntrypoint)
         {
             _newNativeEntrypoint = newNativeEntrypoint;
             return this;
@@ -79,8 +77,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newCategories">The new categories.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
-        public FunctionSignatureBuilder WithCategories([NotNull] IReadOnlyList<string> newCategories)
+        public FunctionSignatureBuilder WithCategories(IReadOnlyList<string> newCategories)
         {
             _newCategory = newCategories;
             return this;
@@ -91,8 +88,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newExtension">The new extension.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
-        public FunctionSignatureBuilder WithExtension([NotNull] string newExtension)
+        public FunctionSignatureBuilder WithExtension(string newExtension)
         {
             _newExtension = newExtension;
             return this;
@@ -103,8 +99,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newAttributes">The new attributes.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
-        public FunctionSignatureBuilder WithAttributes([NotNull] IReadOnlyList<Attribute> newAttributes)
+        public FunctionSignatureBuilder WithAttributes(IReadOnlyList<Attribute> newAttributes)
         {
             _newAttributes = newAttributes.ToList();
             return this;
@@ -115,8 +110,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newParameters">The new parameters.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
-        public FunctionSignatureBuilder WithParameters([NotNull] IReadOnlyList<Parameter> newParameters)
+        public FunctionSignatureBuilder WithParameters(IReadOnlyList<Parameter> newParameters)
         {
             _newParameters = newParameters;
             return this;
@@ -127,7 +121,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newGenericTypeParameters">The new generic type parameters.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
         public FunctionSignatureBuilder WithGenericTypeParameters
         (
             [NotNull] IReadOnlyList<GenericTypeParameter> newGenericTypeParameters
@@ -142,8 +135,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newReturnType">The new return type.</param>
         /// <returns>The builder, with the change applied.</returns>
-        [NotNull]
-        public FunctionSignatureBuilder WithReturnType([NotNull] Type newReturnType)
+        public FunctionSignatureBuilder WithReturnType(Type newReturnType)
         {
             _newReturnType = newReturnType;
             return this;
