@@ -4,6 +4,8 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp2.2</TargetFramework>
         <RootNamespace>Silk.NET.BuildTools</RootNamespace>
+        <Nullable>enable</Nullable>
+        <LangVersion>8</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>

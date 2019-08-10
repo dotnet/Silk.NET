@@ -5,6 +5,8 @@
 
 using System;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>

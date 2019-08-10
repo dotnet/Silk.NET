@@ -12,6 +12,8 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert.XML
 {
     /// <summary>

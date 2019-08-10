@@ -8,6 +8,8 @@ using CommandLine;
 using CommandLine.Text;
 using Silk.NET.BuildTools.GLXmlConvert.Baking;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert
 {
     /// <summary>

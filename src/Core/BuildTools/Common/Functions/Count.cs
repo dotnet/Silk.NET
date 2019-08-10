@@ -9,6 +9,8 @@ using System.Linq;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>

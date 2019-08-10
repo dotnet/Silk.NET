@@ -10,6 +10,8 @@ using MoreLinq.Extensions;
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.Bind
 {
     /// <summary>

@@ -8,6 +8,8 @@ using System.Text.RegularExpressions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Functions;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert.Construction.Trimmers
 {
     /// <inheritdoc cref="ITrimmer{TTrimmable}" />

@@ -11,6 +11,8 @@ using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 using Humanizer;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert.Documentation
 {
     /// <summary>

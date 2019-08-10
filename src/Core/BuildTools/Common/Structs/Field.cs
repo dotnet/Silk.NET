@@ -5,6 +5,8 @@
 
 using Silk.NET.BuildTools.Common.Functions;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.Common.Structs
 {
     public class Field

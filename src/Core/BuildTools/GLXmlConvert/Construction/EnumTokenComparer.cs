@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Xml.Linq;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert.Construction
 {
     /// <summary>

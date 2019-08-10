@@ -10,6 +10,8 @@ using System.Linq;
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.GLXmlConvert.Baking;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert
 {
     /// <summary>

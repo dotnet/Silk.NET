@@ -8,6 +8,8 @@ using System.Linq;
 using System.Xml.Linq;
 using JetBrains.Annotations;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert.XML
 {
     /// <summary>

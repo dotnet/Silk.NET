@@ -11,6 +11,8 @@ using Humanizer;
 using JetBrains.Annotations;
 using Silk.NET.BuildTools.Common;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert.Construction
 {
     /// <summary>

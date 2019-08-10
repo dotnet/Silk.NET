@@ -6,6 +6,8 @@
 using System.Collections.Generic;
 using Silk.NET.BuildTools.Common.Structs;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.Common
 {
     public class Struct

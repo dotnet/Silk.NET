@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using JetBrains.Annotations;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.Common
 {
     /// <summary>

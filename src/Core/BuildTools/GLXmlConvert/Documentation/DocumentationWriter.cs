@@ -12,6 +12,8 @@ using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.GLXmlConvert.Construction;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert.Documentation
 {
     /// <summary>

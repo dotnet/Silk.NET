@@ -7,6 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>

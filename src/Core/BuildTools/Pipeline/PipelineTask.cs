@@ -5,6 +5,8 @@
 
 using System.Collections.Generic;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.Pipeline
 {
     public class PipelineTask

@@ -6,6 +6,8 @@
 using System.Collections.Generic;
 using System.Text;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.Common
 {
     /// <summary>

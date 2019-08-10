@@ -6,6 +6,8 @@
 using System.Collections.Generic;
 using Silk.NET.BuildTools.Common.Enums;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.Common
 {
     /// <summary>

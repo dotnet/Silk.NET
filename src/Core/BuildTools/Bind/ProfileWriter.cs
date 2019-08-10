@@ -12,6 +12,8 @@ using Silk.NET.BuildTools.Bind.Overloading;
 using Silk.NET.BuildTools.Common;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.Bind
 {
     /// <summary>

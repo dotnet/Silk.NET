@@ -16,6 +16,8 @@ using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.GLXmlConvert.Construction;
 using Silk.NET.BuildTools.GLXmlConvert.Documentation;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert.Baking
 {
     /// <summary>

@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using Silk.NET.BuildTools.Common.Functions;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.Bind.Overloading
 {
     /// <summary>

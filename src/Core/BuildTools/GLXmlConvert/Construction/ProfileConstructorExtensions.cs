@@ -18,6 +18,8 @@ using Silk.NET.BuildTools.GLXmlConvert.XML;
 using Attribute = Silk.NET.BuildTools.Common.Attribute;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert.Construction
 {
     /// <summary>

@@ -8,6 +8,8 @@ using System.Text;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Functions;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert.Construction.Trimmers
 {
     /// <summary>

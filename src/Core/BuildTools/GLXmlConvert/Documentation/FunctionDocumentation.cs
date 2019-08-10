@@ -8,6 +8,8 @@ using System.Text;
 using Humanizer;
 using Silk.NET.BuildTools.Common.Functions;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert.Documentation
 {
     /// <summary>

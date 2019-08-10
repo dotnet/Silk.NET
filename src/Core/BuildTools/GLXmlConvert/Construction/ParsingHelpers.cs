@@ -15,6 +15,8 @@ using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.GLXmlConvert.XML;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert.Construction
 {
     /// <summary>

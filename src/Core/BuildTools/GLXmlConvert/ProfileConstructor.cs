@@ -13,6 +13,8 @@ using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.GLXmlConvert.Construction;
 using Silk.NET.BuildTools.GLXmlConvert.XML;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert
 {
     /// <summary>

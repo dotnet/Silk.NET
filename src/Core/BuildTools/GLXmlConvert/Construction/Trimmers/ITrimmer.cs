@@ -5,6 +5,8 @@
 
 using JetBrains.Annotations;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.GLXmlConvert.Construction.Trimmers
 {
     /// <summary>

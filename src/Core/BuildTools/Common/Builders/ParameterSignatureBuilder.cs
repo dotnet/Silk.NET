@@ -6,6 +6,8 @@
 using JetBrains.Annotations;
 using Silk.NET.BuildTools.Common.Functions;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.Common.Builders
 {
     /// <summary>

@@ -15,6 +15,8 @@ using Silk.NET.BuildTools.Bind;
 using Silk.NET.BuildTools.GLXmlConvert;
 using Silk.NET.BuildTools.Pipeline;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools
 {
     internal class Program

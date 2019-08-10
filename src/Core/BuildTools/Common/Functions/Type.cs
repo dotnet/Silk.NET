@@ -6,6 +6,8 @@
 using System;
 using Newtonsoft.Json;
 
+#nullable disable
+
 namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>
