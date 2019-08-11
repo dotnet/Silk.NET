@@ -4,12 +4,12 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using CommandLine;
-using JetBrains.Annotations;
 
 // nullable stays disabled since else the compiler produces warnings cause we don't initialize the variables.
 // all of the properties are required, therefore all of them will be not-null anyways.
-// marked them with the attribute. (note, this is Jetbrains for now. will change when (if) porting to .net core 3
+// marked them with the attribute.
 
 // !! TAKE CARE IF ADDING ADDITIONAL ARGUMENTS !!
 #nullable disable

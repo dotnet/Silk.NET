@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Silk.NET.BuildTools.Common.Enums
 {
@@ -38,6 +39,7 @@ namespace Silk.NET.BuildTools.Common.Enums
         /// </summary>
         public List<Attribute> Attributes { get; set; }
 
+        [JsonConstructor]
         public Token(string? name = null, string? nativeName = null, string? value = null, string? doc = null, List<Attribute>? attributes = null)
         {
             Name = name ?? string.Empty;

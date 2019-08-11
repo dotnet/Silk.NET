@@ -66,6 +66,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         public string ExtensionName { get; set; }
 
+        [JsonConstructor]
         public Function(string name, Type returnType, string nativeName, [NotNull] [ItemNotNull] string[] categories, string? doc, string extensionName, [ItemNotNull] List<GenericTypeParameter>? genericTypeParameters = null, [ItemNotNull] List<Attribute>? attributes = null, [ItemNotNull] List<Parameter>? parameters = null)
         {
             Name = name;

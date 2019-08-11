@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Silk.NET.BuildTools.Common.Enums
 {
@@ -38,6 +39,7 @@ namespace Silk.NET.BuildTools.Common.Enums
         /// </summary>
         public List<Attribute> Attributes { get; set; }
 
+        [JsonConstructor]
         public Enum(List<Token>? tokens = null, string? name = null, string? nativeName = null, string? extensionName = null, List<Attribute>? attributes = null)
         {
             Tokens = tokens ?? new List<Token>();

@@ -30,6 +30,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Initializes a new instance of the <see cref="Count" /> class.
         /// </summary>
         [Obsolete("This constructor is for JSON use only. Please use one of the overloads.")]
+        [JsonConstructor]
         public Count()
         {
         }

@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common.Functions;
 
 namespace Silk.NET.BuildTools.Common.Structs
@@ -14,6 +15,7 @@ namespace Silk.NET.BuildTools.Common.Structs
         public string NativeName { get; set; }
         public string NativeType { get; set; }
 
+        [JsonConstructor]
         public Field(Type type, string name, string nativeName, string nativeType)
         {
             Type = type;

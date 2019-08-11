@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json;
 
 namespace Silk.NET.BuildTools.Common.Functions
 {
@@ -14,6 +15,7 @@ namespace Silk.NET.BuildTools.Common.Functions
     /// </summary>
     public class GenericTypeParameter : IEquatable<GenericTypeParameter>
     {
+        [JsonConstructor]
         public GenericTypeParameter(string? genericTypeParameterName = null, IEnumerable<string>? constraints = null)
         {
             Name = genericTypeParameterName ?? string.Empty;
