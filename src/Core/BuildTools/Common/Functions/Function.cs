@@ -164,7 +164,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                 {
                     attributes.Add($"Count(Count = {parameter.Count.StaticCount})");
                 }
-                else if (parameter.Count.IsComputed)
+                else if (parameter.Count.IsComputed && parameter.Count.ComputedFromNames != null) // second check is redundant, but the compiler doesn't know (yet)
                 {
                     var parameterList = string.Join(", ", parameter.Count.ComputedFromNames);
                     attributes.Add($"Count(Computed = \"{parameterList}\")");

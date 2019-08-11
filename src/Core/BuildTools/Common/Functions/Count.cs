@@ -5,11 +5,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using System.Threading;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
-
-#nullable disable
 
 namespace Silk.NET.BuildTools.Common.Functions
 {
@@ -48,7 +48,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Initializes a new instance of the <see cref="Count" /> class.
         /// </summary>
         /// <param name="computedFrom">The parameters the count is computed from.</param>
-        public Count([NotNull] IReadOnlyList<string> computedFrom)
+        public Count(IReadOnlyList<string> computedFrom)
         {
             ComputedFromNames = computedFrom.ToList();
         }
@@ -57,7 +57,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Initializes a new instance of the <see cref="Count" /> class.
         /// </summary>
         /// <param name="valueReference">The parameter the count is taken from.</param>
-        public Count([CanBeNull] string valueReference)
+        public Count(string? valueReference)
         {
             ValueReference = valueReference;
             ComputedFromNames = new List<string>();
@@ -95,36 +95,39 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the parameter that the count is taken from.
         /// </summary>
-        [CanBeNull]
-        public string ValueReference { get; set; }
+        public string? ValueReference { get; set; }
 
         /// <summary>
         /// Gets or sets the function that the parameter in question is part of.
         /// </summary>
         [JsonIgnore]
-        public Function FunctionReference { get; set; }
+        public Function? FunctionReference { get; set; }
 
         /// <summary>
         /// Gets the parameters that the count is computed from.
         /// </summary>
-        [NotNull]
         [JsonIgnore]
-        public IReadOnlyList<Parameter> ComputedFrom => ComputedFromNames.Select
-            (
-                x => FunctionReference.Parameters.FirstOrDefault(y => y.Name == x)
-            )
-            .ToList();
+        public IReadOnlyList<Parameter>? ComputedFrom 
+            => FunctionReference is null 
+            ?
+                null
+            :
+                ComputedFromNames.Select
+                (
+                    x => FunctionReference.Parameters.FirstOrDefault(y => y.Name == x)
+                )
+                .ToList();
 
         /// <summary>
         /// Gets or sets the parameter names the count is computed from.
         /// </summary>
-        public List<string> ComputedFromNames { get; set; }
+        public List<string>? ComputedFromNames { get; set; }
 
         /// <summary>
         /// Gets a value indicating whether the count is computed from other parameters.
         /// </summary>
         [JsonIgnore]
-        public bool IsComputed => ComputedFromNames.Any();
+        public bool IsComputed => ComputedFromNames?.Any() ?? false;
 
         /// <summary>
         /// Gets a value indicating whether the count is a reference to the value of another parameter.
@@ -141,7 +144,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <inheritdoc />
         public override string ToString()
         {
-            if (IsComputed)
+            if (IsComputed && ComputedFromNames != null) /* Yes. That second check is redundant, but at this time the compiler doesn't know ._. */
             {
                 return $"COMPSIZE({string.Join(", ", ComputedFromNames)})";
             }
