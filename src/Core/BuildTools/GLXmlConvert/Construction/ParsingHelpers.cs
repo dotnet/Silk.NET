@@ -293,7 +293,6 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
 
                 if (SyntaxFacts.IsValidIdentifier(identifier) && IsMath(expression))
                 {
-
                     // the rest is likely a mathematical expression
                     valueReferenceName = identifier;
                     valueReferenceExpression = new string(expression);
