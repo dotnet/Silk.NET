@@ -28,6 +28,11 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             for (var i = 0; i < function.Parameters.Count; i++)
             {
                 var parameter = function.Parameters[i];
+                if (parameter.Type is null)
+                {
+                    continue;
+                }
+
                 if (parameter.Type.IsIntPtr())
                 {
                     @params[i] = new ParameterSignatureBuilder(parameter)

@@ -5,8 +5,6 @@
 
 using System;
 
-#nullable disable
-
 namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>
@@ -17,24 +15,24 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the name of the parameter.
         /// </summary>
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// Gets or sets the type of the parameter.
         /// </summary>
-        public Type Type { get; set; }
+        public Type? Type { get; set; }
 
         /// <summary>
         /// Gets or sets size information for this parameter.
         /// </summary>
-        public Count Count { get; set; }
+        public Count? Count { get; set; }
 
         /// <summary>
         /// Gets or sets the flow of the pointer.
         /// </summary>
         public FlowDirection Flow { get; set; }
 
-        public bool Equals(Parameter other)
+        public bool Equals(Parameter? other)
         {
             if (ReferenceEquals(null, other))
             {
@@ -46,10 +44,10 @@ namespace Silk.NET.BuildTools.Common.Functions
                 return true;
             }
 
-            return Type.Equals(other.Type);
+            return Type?.Equals(other.Type) ?? false;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj))
             {

@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using JetBrains.Annotations;
 using Newtonsoft.Json;
 
 #nullable disable
@@ -102,7 +103,7 @@ namespace Silk.NET.BuildTools.Common.Functions
             return Name == "UIntPtr" && IndirectionLevels == 0;
         }
 
-        public bool Equals(Type other)
+        public bool Equals([CanBeNull] Type other)
         {
             if (ReferenceEquals(null, other))
             {
@@ -122,7 +123,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                    IsIn == other.IsIn;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals([CanBeNull] object obj)
         {
             if (ReferenceEquals(null, obj))
             {

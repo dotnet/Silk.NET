@@ -17,7 +17,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
     {
         public IEnumerable<Overload> CreateOverloads(Function function)
         {
-            if (!function.Parameters.Any(x => x.Type.IsPointer && !x.Type.IsVoidPointer()))
+            if (!function.Parameters.Any(x => x.Type != null && x.Type.IsPointer && !x.Type.IsVoidPointer()))
             {
                 yield break;
             }
@@ -32,6 +32,8 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             for (var i = 0; i < function.Parameters.Count; i++)
             {
                 var param = function.Parameters[i];
+                if (param.Type is null)
+                    continue;
                 if (param.Type.IsPointer && !param.Type.IsVoidPointer())
                 {
                     var newParameterType = new TypeSignatureBuilder(param.Type)

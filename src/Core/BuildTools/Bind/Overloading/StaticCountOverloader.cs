@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,9 +17,10 @@ namespace Silk.NET.BuildTools.Bind.Overloading
     {
         private bool IsApplicable(Parameter x)
         {
-            return (x.Count?.IsStatic ?? false) &&
-                   x.Type.IndirectionLevels == 1 &&
-                   !x.Type.IsVoidPointer();
+            return x.Type != null 
+                   && (x.Count?.IsStatic ?? false) 
+                   && x.Type.IndirectionLevels == 1 
+                   && !x.Type.IsVoidPointer();
         }
         public IEnumerable<Overload> CreateOverloads(Function function)
         {
@@ -33,7 +35,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             for (var i = 0; i < newParameters.Count; i++)
             {
                 var param = newParameters[i];
-                if (!IsApplicable(param)) {
+                if (!IsApplicable(param) || param.Name is null || param.Type is null || param.Count is null) {
                     continue;
                 }
 
@@ -69,7 +71,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             }
 
             sb.Append(function.Name + "(");
-            sb.Append(string.Join(", ", function.Parameters.Select(x => Format(x.Name))));
+            sb.Append(string.Join(", ", function.Parameters.Select(x => x.Name != null ? Format(x.Name) : throw new ArgumentNullException(nameof(x) + ".Name"))));
             sb.Append(");");
             sb.AppendLine();
             

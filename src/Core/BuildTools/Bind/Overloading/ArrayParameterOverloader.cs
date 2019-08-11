@@ -50,7 +50,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
             var lastParameter = function.Parameters.Last();
 
-            if (!lastParameter.Type.IsPointer)
+            if (lastParameter.Type != null && !lastParameter.Type.IsPointer)
             {
                 return false;
             }
@@ -83,6 +83,11 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
             var arrayParameter = function.Parameters.Last();
             var arrayParameterType = arrayParameter.Type;
+            
+            if (arrayParameterType is null)
+            {
+                throw new ArgumentNullException(nameof(Function) + "." + nameof(Function.Parameters) + "." + nameof(Parameter.Type));
+            }
 
             var newName = function.Name.Singularize(false);
             var newParameters = SkipLastExtension.SkipLast(new List<Parameter>(function.Parameters), 2).ToList();

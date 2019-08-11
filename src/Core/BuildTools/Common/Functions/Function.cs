@@ -132,7 +132,7 @@ namespace Silk.NET.BuildTools.Common.Functions
 
         private void GetDeclarationString(StringBuilder sb, bool? @unsafe)
         {
-            if (Parameters.Any(p => p.Type.IsPointer) || ReturnType.IsPointer || @unsafe.HasValue && @unsafe.Value)
+            if (Parameters.Any(p => p.Type != null && p.Type.IsPointer) || ReturnType.IsPointer || @unsafe.HasValue && @unsafe.Value)
             {
                 sb.Append("unsafe ");
             }
@@ -193,19 +193,22 @@ namespace Silk.NET.BuildTools.Common.Functions
                 sb.Append("] ");
             }
 
-            if (parameter.Type.IsOut)
+            if (parameter.Type != null)
             {
-                sb.Append("out ");
-            }
+                if (parameter.Type.IsOut)
+                {
+                    sb.Append("out ");
+                }
 
-            if (parameter.Type.IsIn)
-            {
-                sb.Append("in ");
-            }
+                if (parameter.Type.IsIn)
+                {
+                    sb.Append("in ");
+                }
 
-            if (parameter.Type.IsByRef)
-            {
-                sb.Append("ref ");
+                if (parameter.Type.IsByRef)
+                {
+                    sb.Append("ref ");
+                }
             }
 
             sb.Append(parameter.Type);

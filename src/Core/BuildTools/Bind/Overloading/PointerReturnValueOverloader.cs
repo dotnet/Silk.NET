@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,7 +43,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             var sb = new StringBuilder();
             sb.AppendLine("// PointerReturnValueOverloader");
             sb.Append("return (void*) " + oldFunction.Name + "(");
-            sb.Append(string.Join(", ", function.Parameters.Select(x => ConvertName(x.Name))));
+            sb.Append(string.Join(", ", function.Parameters.Select(x => x.Name != null ? ConvertName(x.Name) : throw new ArgumentNullException(nameof(x)))));
             sb.AppendLine(");");
             return new Overload(function, sb, true);
         }

@@ -48,6 +48,11 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
             var lastParameter = function.Parameters.Last();
 
+            if (lastParameter.Type is null)
+            {
+                return false;
+            }
+
             if (!lastParameter.Type.IsPointer)
             {
                 return false;
@@ -80,6 +85,10 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             }
 
             var lastParameterType = function.Parameters.Last().Type;
+
+            if (lastParameterType is null)
+                yield break;
+            
             var newReturnType = new TypeSignatureBuilder(lastParameterType)
                 .WithIndirectionLevel(lastParameterType.IndirectionLevels - 1)
                 .WithArrayDimensions(0)
@@ -113,6 +122,10 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             }
 
             var sizeParameterType = newParameters.Last().Type;
+            
+            if (sizeParameterType is null)
+                yield break;
+
             if ((sizeParameterType.Name != "int" && sizeParameterType.Name != "uint") || sizeParameterType.IsPointer)
             {
                 yield return new Overload(functionBuilder

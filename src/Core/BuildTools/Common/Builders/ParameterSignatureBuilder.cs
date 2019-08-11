@@ -17,9 +17,9 @@ namespace Silk.NET.BuildTools.Common.Builders
 
         private FlowDirection _newFlow;
 
-        private string _newName;
+        private string? _newName;
 
-        private Type _newType;
+        private Type? _newType;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ParameterSignatureBuilder" /> class.

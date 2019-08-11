@@ -17,7 +17,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         /// <inheritdoc/>
         public IEnumerable<Overload> CreateOverloads(Function function)
         {
-            if (!function.Parameters.Any(p => p.Type.IsIntPtr()))
+            if (!function.Parameters.Any(p => p.Type != null && p.Type.IsIntPtr()))
             {
                 yield break;
             }
@@ -33,12 +33,17 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             for (var i = 0; i < baseParameters.Count; ++i)
             {
                 var parameter = baseParameters[i];
+                if (parameter.Type is null)
+                {
+                    continue;
+                }
+
                 if (!parameter.Type.IsIntPtr())
                 {
                     continue;
                 }
 
-                var genericTypeParameterName = baseParameters.Count(p => p.Type.IsIntPtr()) > 1
+                var genericTypeParameterName = baseParameters.Count(p => p.Type != null && p.Type.IsIntPtr()) > 1
                     ? $"T{newGenericTypeParameters.Count + 1}" : "T";
 
                 var genericTypeParameter = new GenericTypeParameter(
@@ -134,7 +139,11 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             var list = new List<string>();
             foreach (var param in old.Parameters)
             {
+                if (param.Type is null || param.Name is null)
+                    continue;
+                
                 var nm = Utilities.CSharpKeywords.Contains(param.Name) ? "@" + param.Name : param.Name;
+
                 if (param.Type.IsIntPtr())
                 {
                     list.Add("(IntPtr) " + nm);
@@ -158,10 +167,16 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             sb.AppendLine("// PointerParameterOverloader");
             foreach (var param in function.Parameters)
             {
+                if (param.Name is null || param.Type is null)
+                {
+                    continue;
+                }
+
                 var nm = Utilities.CSharpKeywords.Contains(param.Name) ? "@" + param.Name : param.Name;
-                if (function.GenericTypeParameters.Any(x => x.Name == param.Type.Name))
+                if (function.GenericTypeParameters.Any(x => param.Type != null && x.Name == param.Type.Name))
                 {
                     sb.AppendLine(ind + "fixed (" + param.Type.Name + "* " + param.Name + "Ptr = " + nm + ")");
+
                     sb.AppendLine(ind + "{");
                     ind += "    ";
                     parameters.Add(param.Name + "Ptr");
