@@ -251,7 +251,7 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine("{");
                 sw.WriteLine($"    public abstract partial class {profile.ClassName} : NativeAPI, I{profile.ClassName}");
                 sw.WriteLine("    {");
-                var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).RemoveDuplicates();
+                var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).Distinct();
                 foreach (var function in allFunctions)
                 {
                     sw.WriteLine("        /// <inheritdoc />");

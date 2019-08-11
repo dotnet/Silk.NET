@@ -7,9 +7,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using JetBrains.Annotations;
-
-#nullable disable
 
 namespace Silk.NET.BuildTools.Common
 {
@@ -21,7 +18,6 @@ namespace Silk.NET.BuildTools.Common
         /// <summary>
         /// Gets a list of keywords in the C# language.
         /// </summary>
-        [NotNull]
         public static List<string> CSharpKeywords => new List<string>
         {
             "abstract",
@@ -154,35 +150,12 @@ namespace Silk.NET.BuildTools.Common
         /// <returns>The individual lines in the string.</returns>
         public static IEnumerable<string> ReadAllLines(this string s)
         {
-            using (var sr = new StringReader(s))
+            using var sr = new StringReader(s);
+            string? line;
+            while ((line = sr.ReadLine()) != null)
             {
-                string line;
-                while ((line = sr.ReadLine()) != null)
-                {
-                    yield return line;
-                }
+                yield return line;
             }
-        }
-
-        /// <summary>
-        /// An extension method which returns the given enumerable without duplicate elements.
-        /// </summary>
-        /// <param name="enumerable">The enumerable to process.</param>
-        /// <typeparam name="T">The type contained within this enumerable.</typeparam>
-        /// <returns>An enumerable with no duplicates.</returns>
-        public static IEnumerable<T> RemoveDuplicates<T>(this IEnumerable<T> enumerable)
-        {
-            // note: this is required because ApiProfile.GetCategories() returns duplicates.
-            var ret = new List<T>();
-            foreach (var item in enumerable)
-            {
-                if (!ret.Any(x => x.Equals(item)))
-                {
-                    ret.Add(item);
-                }
-            }
-
-            return ret;
         }
 
         /// <summary>
@@ -190,7 +163,6 @@ namespace Silk.NET.BuildTools.Common
         /// </summary>
         /// <param name="arrayDimensions">The dimension.</param>
         /// <returns>The string.</returns>
-        [NotNull]
         public static string GetArrayDimensionString(int arrayDimensions)
         {
             if (arrayDimensions == 0)
@@ -206,9 +178,10 @@ namespace Silk.NET.BuildTools.Common
             return builder.ToString();
         }
 
+        private static readonly char[] memberNameValidChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ_".ToCharArray();
         public static string CheckMemberName(this string name, string fPrefix)
         {
-            if (!"ABCDEFGHIJKLMNOPQRSTUVWXYZ_".ToCharArray().Contains(name[0]))
+            if (!memberNameValidChars.Contains(name[0]))
             {
                 return fPrefix.ToUpper() + name;
             }
