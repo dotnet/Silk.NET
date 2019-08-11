@@ -79,13 +79,19 @@ namespace Silk.NET.BuildTools.GLXmlConvert
         /// <param name="api">The XML block.</param>
         private Profile ReadProfile(XElement api)
         {
-            var profile = new Profile
-            {
-                Name = api.Attribute("name")?.Value,
-                Version = api.Attribute("version")?.Value ?? string.Empty,
-                TypeMaps = TypeMaps ?? new List<Dictionary<string, string>>(), // NRE
-                ClassName = Prefix.ToUpper().CheckMemberName(GLXmlConverter.CliOptions.Prefix)
-            };
+            var profile = new Profile(
+                null,
+                null,
+                null,
+                api.Attribute("name")?.Value,
+                Prefix.ToUpper().CheckMemberName(GLXmlConverter.CliOptions.Prefix),
+                api.Attribute("version")?.Value,
+                null,
+                null,
+                null,
+                null,
+                TypeMaps
+            );
             var elements = api.Elements()
                 .OrderBy(s => s.Name.LocalName)
                 .ThenBy(s => (string) s.Attribute("value") ?? string.Empty)

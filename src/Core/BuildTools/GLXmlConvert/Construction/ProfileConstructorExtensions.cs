@@ -254,8 +254,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                 "Core",
                 new Project {CategoryName = "Core", ExtensionName = "Core", IsRoot = true, Namespace = string.Empty}
             );
-            var funs = functions.ToList();
-            var parsedFunctions = funs.Select(ParseFunction).ToList();
+            var parsedFunctions = functions.Select(ParseFunction).ToList();
             var parsedEnums = enums.Select(ParseEnum).ToList();
             foreach (var typeMap in profile.TypeMaps)
             {

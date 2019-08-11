@@ -40,15 +40,16 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
                 .ToList();
 
             // create the profile
-            var profile = new Profile
-            {
-                Name = information.Name,
-                Namespace = information.Namespace,
-                ExtensionsNamespace = information.ExtensionsNamespace,
-                OutputFolder = information.OutputFolder,
-                ClassName = information.ClassName,
-                SymbolLoaderName = information.SymbolLoader
-            };
+            var profile = new Profile(
+                information.Namespace,
+                information.ExtensionsNamespace,
+                information.OutputFolder,
+                information.Name,
+                information.ClassName,
+                null,
+                null,
+                information.SymbolLoader,
+                null);
             profile.Projects.Add
             (
                 "Core",

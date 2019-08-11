@@ -6,8 +6,6 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-#nullable disable
-
 namespace Silk.NET.BuildTools.Common
 {
     /// <summary>
@@ -19,7 +17,7 @@ namespace Silk.NET.BuildTools.Common
         /// Gets or sets a dictionary where the category names (or "Core", if the project isn't an extension)
         /// are the keys and <see cref="Project" />s are the values.
         /// </summary>
-        public Dictionary<string, Project> Projects { get; set; } = new Dictionary<string, Project>();
+        public Dictionary<string, Project> Projects { get; set; }
 
         /// <summary>
         /// Gets or sets the root namespace of this profile.
@@ -65,12 +63,28 @@ namespace Silk.NET.BuildTools.Common
         /// <summary>
         /// Gets or sets the name container for this profile.
         /// </summary>
-        public NameContainer Names { get; set; } // = new NameContainer();
+        public NameContainer Names { get; set; }
 
         /// <summary>
         /// Gets or sets a list of type maps to be applied to the projects in the order in which they're applied.
         /// </summary>
         [JsonIgnore]
-        public List<Dictionary<string, string>> TypeMaps { get; set; } = new List<Dictionary<string, string>>();
+        public List<Dictionary<string, string>> TypeMaps { get; set; }
+
+        [JsonConstructor]
+        public Profile(string? ns, string? extensionsNamespace, string? outputFolder, string? name, string? className, string? version, string? functionPrefix, string? symbolLoaderName, NameContainer? names, Dictionary<string, Project>? projects = null, List<Dictionary<string, string>>? typeMaps = null)
+        {
+            Projects = projects ?? new Dictionary<string, Project>();
+            Namespace = ns ?? string.Empty;
+            ExtensionsNamespace = extensionsNamespace ?? string.Empty;
+            OutputFolder = outputFolder ?? string.Empty;
+            Name = name ?? string.Empty;
+            ClassName = className ?? string.Empty;
+            Version = version ?? string.Empty;
+            FunctionPrefix = functionPrefix ?? string.Empty;
+            SymbolLoaderName = symbolLoaderName ?? string.Empty;
+            Names = names ?? new NameContainer(string.Empty, string.Empty, string.Empty, string.Empty, string.Empty, string.Empty);
+            TypeMaps = typeMaps ?? new List<Dictionary<string, string>>();
+        }
     }
 }
