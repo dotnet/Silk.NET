@@ -16,14 +16,12 @@ using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.GLXmlConvert.Construction;
 using Silk.NET.BuildTools.GLXmlConvert.Documentation;
 
-#nullable disable
-
 namespace Silk.NET.BuildTools.GLXmlConvert.Baking
 {
     /// <summary>
     /// A collection of methods for baking/fusing APIs together.
     /// </summary>
-    public class ProfileBakery
+    public static class ProfileBakery
     {
         /// <summary>
         /// Bakes APIs together given the <see cref="ProfileBakeryInformation" />, and outputs the baked
@@ -182,11 +180,12 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
         /// <param name="folder">The folder to search and destroy APIs in.</param>
         public static void DeleteRawAPIs(string folder)
         {
-            foreach (var file in Directory.GetFiles
-                    (folder)
-                .Where(x => Path.GetFileName(x).StartsWith("api-") && x.EndsWith(".json")))
+            foreach (var file in Directory.GetFiles(folder))
             {
-                File.Delete(file);
+                if (file != null && (Path.GetFileName(file).StartsWith("api-") && file.EndsWith(".json")))
+                {
+                    File.Delete(file);
+                }
             }
         }
 

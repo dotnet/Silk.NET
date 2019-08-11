@@ -32,8 +32,9 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             for (var i = 0; i < function.Parameters.Count; i++)
             {
                 var param = function.Parameters[i];
-                if (param.Type is null)
+                if (param.Type is null || param.Name is null)
                     continue;
+                
                 if (param.Type.IsPointer && !param.Type.IsVoidPointer())
                 {
                     var newParameterType = new TypeSignatureBuilder(param.Type)

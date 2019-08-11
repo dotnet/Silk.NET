@@ -3,8 +3,10 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using JetBrains.Annotations;
 using Silk.NET.BuildTools.Common.Functions;
+using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
 namespace Silk.NET.BuildTools.Common.Builders
 {
@@ -83,6 +85,11 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// <returns>The instance.</returns>
         public Parameter Build()
         {
+            if (_newName is null || _newCount is null || _newType is null)
+            {
+                throw new InvalidOperationException();
+            }
+            
             return new Parameter
             {
                 Name = Utilities.CSharpKeywords.Contains(_newName) ? "@" + _newName : _newName,

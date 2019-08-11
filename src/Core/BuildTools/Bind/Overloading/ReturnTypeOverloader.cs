@@ -87,8 +87,10 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             var lastParameterType = function.Parameters.Last().Type;
 
             if (lastParameterType is null)
+            {
                 yield break;
-            
+            }
+
             var newReturnType = new TypeSignatureBuilder(lastParameterType)
                 .WithIndirectionLevel(lastParameterType.IndirectionLevels - 1)
                 .WithArrayDimensions(0)
@@ -102,7 +104,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 .WithReturnType(newReturnType);
 
             var sb = new StringBuilder();
-            var strParams = newParameters.Select(x => Utilities.CSharpKeywords.Contains(x.Name) ? "@" + x.Name : x.Name)
+            var strParams = newParameters.Select(x => x.Name != null && Utilities.CSharpKeywords.Contains(x.Name) ? "@" + x.Name : x.Name)
                 .Concat(new[] { "&ret" });
 
             sb.AppendLine("// ReturnTypeOverloader");
@@ -124,7 +126,9 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             var sizeParameterType = newParameters.Last().Type;
             
             if (sizeParameterType is null)
+            {
                 yield break;
+            }
 
             if ((sizeParameterType.Name != "int" && sizeParameterType.Name != "uint") || sizeParameterType.IsPointer)
             {
@@ -136,6 +140,11 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             }
 
             var n = newParameters.Last().Name;
+
+            if (n is null)
+            {
+                yield break;
+            }
 
             sb.Insert(0, "const " + (sizeParameterType.Name == "uint" ? "uint " : "int ") +
                          (Utilities.CSharpKeywords.Contains(n) ? "@" : "") + n + " = 1;\n");
