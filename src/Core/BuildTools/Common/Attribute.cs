@@ -5,8 +5,7 @@
 
 using System.Collections.Generic;
 using System.Text;
-
-#nullable disable
+using Newtonsoft.Json;
 
 namespace Silk.NET.BuildTools.Common
 {
@@ -24,6 +23,13 @@ namespace Silk.NET.BuildTools.Common
         /// Gets or sets arguments to be added to this <see cref="Attribute" />'s constructors.
         /// </summary>
         public List<string> Arguments { get; set; }
+
+        [JsonConstructor]
+        public Attribute(string name, List<string> arguments)
+        {
+            Name = name;
+            Arguments = arguments;
+        }
 
         /// <inheritdoc />
         public override string ToString()

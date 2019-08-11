@@ -77,11 +77,10 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                         Attributes = deprecatedSince != null
                             ? new List<Attribute>
                             {
-                                new Attribute
-                                {
-                                    Name = "Obsolete",
-                                    Arguments = new List<string> {"\"Deprecated in " + deprecatedSince + ".\""}
-                                }
+                                new Attribute(
+                                    "Obsolete",
+                                    new List<string> {"\"Deprecated in " + deprecatedSince + ".\""}
+                                )
                             }
                             : new List<Attribute>()
                     }
@@ -124,11 +123,10 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                 functionDeprecationVersion != null
                     ? new List<Attribute>
                     {
-                        new Attribute
-                        {
-                            Name = "Obsolete",
-                            Arguments = new List<string> {"\"Deprecated in " + functionDeprecationVersion + ".\""}
-                        }
+                        new Attribute(
+                            "Obsolete",
+                            new List<string> {"\"Deprecated in " + functionDeprecationVersion + ".\""}
+                        )
                     }
                     : null,
                 parameters.ToList()
