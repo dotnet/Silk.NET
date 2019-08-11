@@ -372,11 +372,10 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                             .Interfaces.Add
                             (
                                 rawCategory,
-                                new Interface
-                                {
-                                    Name = "I" + NativeIdentifierTranslator.TranslateIdentifierName(rawCategory)
+                                new Interface(
+                                    "I" + NativeIdentifierTranslator.TranslateIdentifierName(rawCategory)
                                         .CheckMemberName(GLXmlConverter.CliOptions.Prefix)
-                                }
+                                )
                             );
                     }
 
