@@ -1,8 +1,8 @@
 trigger:
-- *
+- '*'
 
 pr:
-- *
+- '*'
   
 jobs:
 - job: Build
