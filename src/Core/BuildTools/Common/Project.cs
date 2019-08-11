@@ -4,9 +4,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common.Enums;
-
-#nullable disable
 
 namespace Silk.NET.BuildTools.Common
 {
@@ -38,23 +37,23 @@ namespace Silk.NET.BuildTools.Common
         /// <summary>
         /// Gets or sets a list of <see cref="Enum" />s contained within this <see cref="Project" />.
         /// </summary>
-        public List<Enum> Enums { get; set; } = new List<Enum>();
+        public List<Enum> Enums { get; set; }
 
         /// <summary>
         /// Gets or sets a dictionary where the category names are the keys, and <see cref="Interface" />s
         /// are the values.
         /// </summary>
-        public Dictionary<string, Interface> Interfaces { get; set; } = new Dictionary<string, Interface>();
+        public Dictionary<string, Interface> Interfaces { get; set; }
 
         /// <summary>
         /// Gets or sets this project's list of structs.
         /// </summary>
-        public List<Struct> Structs { get; set; } = new List<Struct>();
+        public List<Struct> Structs { get; set; }
 
         /// <summary>
         /// Gets or sets a list of code blocks to be inserted into a mixed-mode class. This does not include functions.
         /// </summary>
-        public List<string> MixedModeBlocks { get; set; } = new List<string>();
+        public List<string> MixedModeBlocks { get; set; }
 
         /// <summary>
         /// Gets the full project name of this project, given the profile's root namespace.
@@ -74,6 +73,19 @@ namespace Silk.NET.BuildTools.Common
         public string GetNamespace(Profile profile)
         {
             return (!IsRoot ? profile.ExtensionsNamespace : profile.Namespace) + Namespace;
+        }
+
+        [JsonConstructor]
+        public Project(string extensionName, string categoryName, string ns, bool isRoot, List<Enum>? enums = null, Dictionary<string, Interface>? interfaces = null, List<Struct>? structs = null, List<string>? mixedModeBlocks = null)
+        {
+            ExtensionName = extensionName;
+            CategoryName = categoryName;
+            Namespace = ns;
+            IsRoot = isRoot;
+            Enums = enums ?? new List<Enum>();
+            Interfaces = interfaces ?? new Dictionary<string, Interface>();
+            Structs = structs ?? new List<Struct>();
+            MixedModeBlocks = mixedModeBlocks ?? new List<string>();
         }
     }
 }

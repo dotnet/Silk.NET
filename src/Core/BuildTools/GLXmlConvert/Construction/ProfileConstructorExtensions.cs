@@ -252,7 +252,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
             profile.Projects.Add
             (
                 "Core",
-                new Project {CategoryName = "Core", ExtensionName = "Core", IsRoot = true, Namespace = string.Empty}
+                new Project ( "Core", "Core", string.Empty,  true)
             );
             var parsedFunctions = functions.Select(ParseFunction).ToList();
             var parsedEnums = enums.Select(ParseEnum).ToList();
@@ -309,10 +309,12 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                     (
                         @enum.ExtensionName,
                         new Project
-                        {
-                            CategoryName = @enum.ExtensionName, ExtensionName = @enum.ExtensionName, IsRoot = false,
-                            Namespace = "." + @enum.ExtensionName.CheckMemberName(GLXmlConverter.CliOptions.Prefix)
-                        }
+                        (
+                            @enum.ExtensionName,
+                            @enum.ExtensionName,
+                            "." + @enum.ExtensionName.CheckMemberName(GLXmlConverter.CliOptions.Prefix),
+                            false
+                        )
                     );
                 }
 
@@ -338,11 +340,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                         profile.Projects.Add
                         (
                             "Core",
-                            new Project
-                            {
-                                CategoryName = "Core", ExtensionName = "Core", IsRoot = true,
-                                Namespace = string.Empty
-                            }
+                            new Project("Core", "Core", string.Empty, true)
                         );
                     }
 
@@ -353,10 +351,12 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                         (
                             category,
                             new Project
-                            {
-                                CategoryName = category, ExtensionName = category, IsRoot = false,
-                                Namespace = "." + category.CheckMemberName(GLXmlConverter.CliOptions.Prefix)
-                            }
+                            (
+                                category,
+                                category,
+                                "." + category.CheckMemberName(GLXmlConverter.CliOptions.Prefix),
+                                false
+                            )
                         );
                     }
 

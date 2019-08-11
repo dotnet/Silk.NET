@@ -54,9 +54,9 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
             (
                 "Core",
                 new Project
-                {
-                    CategoryName = "Core", ExtensionName = "Core", Namespace = string.Empty, IsRoot = true
-                }
+                (
+                    "Core", "Core", string.Empty, true
+                )
             );
 
             // bake in the implemented interfaces, enums, and extension projects
