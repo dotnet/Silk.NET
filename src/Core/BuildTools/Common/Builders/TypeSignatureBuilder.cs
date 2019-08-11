@@ -6,8 +6,6 @@
 using JetBrains.Annotations;
 using Silk.NET.BuildTools.Common.Functions;
 
-#nullable disable
-
 namespace Silk.NET.BuildTools.Common.Builders
 {
     /// <summary>
@@ -27,7 +25,7 @@ namespace Silk.NET.BuildTools.Common.Builders
 
         private string _newOriginalName;
 
-        [NotNull] private string _newName;
+        private string _newName;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TypeSignatureBuilder" /> class.
@@ -49,8 +47,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newName">The new name.</param>
         /// <returns>The builder, with the name.</returns>
-        [NotNull]
-        public TypeSignatureBuilder WithName([NotNull] string newName)
+        public TypeSignatureBuilder WithName(string newName)
         {
             _newName = newName;
             return this;
@@ -73,7 +70,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="newArrayDimensions">The new array dimension.</param>
         /// <returns>The builder, with the name.</returns>
-        [NotNull]
         public TypeSignatureBuilder WithArrayDimensions(int newArrayDimensions)
         {
             _newArrayDimensions = newArrayDimensions;
@@ -85,7 +81,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="isByRef">The new by-ref value.</param>
         /// <returns>The builder, with the by-ref value.</returns>
-        [NotNull]
         public TypeSignatureBuilder WithByRef(bool isByRef)
         {
             _newIsByRef = isByRef;
@@ -97,7 +92,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// </summary>
         /// <param name="isOut">The new is-out value.</param>
         /// <returns>The builder, with the is-out value.</returns>
-        [NotNull]
         public TypeSignatureBuilder WithIsOut(bool isOut)
         {
             _newIsOut = isOut;
@@ -108,7 +102,6 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// Builds the final instance.
         /// </summary>
         /// <returns>The instance.</returns>
-        [NotNull]
         public Type Build()
         {
             return new Type
