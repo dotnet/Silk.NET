@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using JetBrains.Annotations;
@@ -259,6 +260,25 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                 return new Count(valueReferenceName);
             }
 
+            static bool IsMath(ReadOnlySpan<char> span)
+            {
+                for (int i = 0; i < span.Length; i++)
+                {
+                    if (span[i] != '+'
+                        && span[i] != '-'
+                        && span[i] != '*'
+                        && span[i] != '/'
+                        && span[i] != '^'
+                        && span[i] != ' '
+                        && !char.IsDigit(span[i]))
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
+
             // check for count with expression.
             if (char.IsLetter(countDataSpan[0]))
             {
@@ -271,23 +291,8 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                 var identifier = new string(countDataSpan.Slice(0, i));
                 var expression = countDataSpan.Slice(i);
 
-                if (SyntaxFacts.IsValidIdentifier(identifier))
+                if (SyntaxFacts.IsValidIdentifier(identifier) && IsMath(expression))
                 {
-
-                    for (i = 0; i < expression.Length; i++)
-                    {
-                        if (expression[i] != '+'
-                            && expression[i] != '-'
-                            && expression[i] != '*'
-                            && expression[i] != '/'
-                            && expression[i] != '^'
-                            && expression[i] != ' '
-                            && !char.IsDigit(expression[i]))
-                        {
-                            throw new InvalidDataException("No valid count could be parsed from the input.");
-                        }
-                    }
-                    
                     // the rest is likely a mathematical expression
                     valueReferenceName = identifier;
                     valueReferenceExpression = new string(expression);
