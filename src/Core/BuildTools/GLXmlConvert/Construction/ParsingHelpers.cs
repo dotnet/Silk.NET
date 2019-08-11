@@ -23,12 +23,6 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
     public static class ParsingHelpers
     {
         /// <summary>
-        /// A regular expression that matches the parameter names inside of a COMPSIZE(a,b,c) expression.
-        /// </summary>
-        public static readonly Regex ComputedSizeParametersRegex =
-            new Regex("(?<=COMPSIZE\\()(\\w+?,?)*(?=\\))", RegexOptions.Compiled);
-
-        /// <summary>
         /// A regular expression that matches most common mathematical symbols and the digits 0 to 9.
         /// </summary>
         public static readonly Regex MathematicalSymbolsAndNumbersRegex =
@@ -238,20 +232,28 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                 return new Count(staticCount);
             }
 
-            if (ComputedSizeParametersRegex.IsMatch(countData))
+            var countDataSpan = countData.AsSpan();
+            if (countDataSpan.StartsWith("COMPSIZE"))
             {
-                // It's a computed count, so we'll extract the names and let the count signature resolve in the second pass
-                var countParamNames = ComputedSizeParametersRegex
-                    .Matches(countData)
-                    .Select(m => m.Value)
-                    .First()
-                    .Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries);
+                var slice = countDataSpan.Slice(countDataSpan.IndexOf('(') + 1);
+                slice = slice.Slice(0, slice.IndexOf(')'));
 
-                computedCountParameterNames = countParamNames.ToList();
+                List<string> countList = new List<string>();
+                int endIndex;
+                do
+                {
+                    var lSlice = slice;
+                    endIndex = slice.IndexOf(',');
+                    if (endIndex != -1)
+                    {
+                        lSlice = slice.Slice(0, endIndex);
+                        slice = slice.Slice(endIndex + 1);
+                    }
 
-                hasComputedCount = true;
+                    countList.Add(new string(lSlice));
+                } while (endIndex != -1);
 
-                return new Count(computedCountParameterNames);
+                return new Count(countList);
             }
 
             if (SyntaxFacts.IsValidIdentifier(countData))
