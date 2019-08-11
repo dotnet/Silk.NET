@@ -12,18 +12,19 @@ jobs:
 
   variables:
     buildConfiguration: 'Release'
+    dotnetCoreVersion: '3.0.100-preview6-012264'
 
   steps:
   - task: DotNetCoreInstaller@0
     displayName: 'Install .NET Core 2.2'
     inputs:
-      version: '2.2.401'
+      version: $(dotnetCoreVersion)
   - script: dotnet run --configuration $(buildConfiguration) --project src/Core/BuildTools/BuildTools.csproj build/binder_scripts/build.json
     displayName: 'Bind'
   - task: DotNetCoreInstaller@0
     displayName: 'Install .NET Core 3.0 (Preview)'
     inputs:
-      version: '3.0.100-preview6-012264'
+      version: $(dotnetCoreVersion)
   - script: dotnet pack --configuration $(buildConfiguration) --version-suffix $(Build.BuildNumber)
     displayName: 'Build/Pack'
   - publish: build/output_packages
