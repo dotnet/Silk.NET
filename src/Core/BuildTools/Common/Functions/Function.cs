@@ -151,8 +151,7 @@ namespace Silk.NET.BuildTools.Common.Functions
             }
         }
 
-        [NotNull]
-        private string GetDeclarationString([NotNull] Parameter parameter)
+        private string GetDeclarationString(Parameter parameter)
         {
             var sb = new StringBuilder();
 
