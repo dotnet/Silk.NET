@@ -12,26 +12,23 @@ jobs:
 
   variables:
     buildConfiguration: 'Release'
+    dotnetCoreVersion: '3.0.100-preview6-012264'
 
   steps:
   - task: DotNetCoreInstaller@0
-    displayName: 'Install .NET Core 2.2'
-    inputs:
-      version: '2.2.401'
-  - script: dotnet run --configuration $(buildConfiguration) --project src/Core/BuildTools/BuildTools.csproj build/binder_scripts/build.json
-    displayName: 'Bind'
-  - task: DotNetCoreInstaller@0
     displayName: 'Install .NET Core 3.0 (Preview)'
     inputs:
-      version: '3.0.100-preview6-012264'
+      version: $(dotnetCoreVersion)
+  - script: dotnet run --configuration $(buildConfiguration) --project src/Core/BuildTools/BuildTools.csproj build/binder_scripts/build.json
+    displayName: 'Bind'
   - script: dotnet pack --configuration $(buildConfiguration) --version-suffix $(Build.BuildNumber)
     displayName: 'Build/Pack'
   - publish: build/output_packages
     artifact: NuGet Packages
   - task: NuGetCommand@2
+    condition: ne(variables['Build.Reason'], 'PullRequest')
     inputs:
       command: 'push'
       packagesToPush: 'build/output_packages/*.nupkg'
       nuGetFeedType: 'internal'
       publishVstsFeed: '061abec9-b10b-4a9b-9c06-aa635c5e74a2/7ae6c815-0dc0-4193-bf95-042c360df875'
-      condition: ne(variables['Build.Reason'], 'PullRequest')

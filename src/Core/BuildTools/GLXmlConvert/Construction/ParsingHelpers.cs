@@ -23,18 +23,6 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
     public static class ParsingHelpers
     {
         /// <summary>
-        /// A regular expression that matches the parameter names inside of a COMPSIZE(a,b,c) expression.
-        /// </summary>
-        public static readonly Regex ComputedSizeParametersRegex =
-            new Regex("(?<=COMPSIZE\\()(\\w+?,?)*(?=\\))", RegexOptions.Compiled);
-
-        /// <summary>
-        /// A regular expression that matches most common mathematical symbols and the digits 0 to 9.
-        /// </summary>
-        public static readonly Regex MathematicalSymbolsAndNumbersRegex =
-            new Regex("^[\\d[[:blank:]+\\-\\/()*!]+?$", RegexOptions.Compiled);
-
-        /// <summary>
         /// Parses a version from a given <see cref="XElement" />, returning a default value if the attribute is null.
         /// </summary>
         /// <param name="element">The element the attribute is on.</param>
@@ -238,20 +226,28 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                 return new Count(staticCount);
             }
 
-            if (ComputedSizeParametersRegex.IsMatch(countData))
+            var countDataSpan = countData.AsSpan();
+            if (countDataSpan.StartsWith("COMPSIZE"))
             {
-                // It's a computed count, so we'll extract the names and let the count signature resolve in the second pass
-                var countParamNames = ComputedSizeParametersRegex
-                    .Matches(countData)
-                    .Select(m => m.Value)
-                    .First()
-                    .Split(new[] {','}, StringSplitOptions.RemoveEmptyEntries);
+                var slice = countDataSpan.Slice(countDataSpan.IndexOf('(') + 1);
+                slice = slice.Slice(0, slice.IndexOf(')'));
 
-                computedCountParameterNames = countParamNames.ToList();
+                List<string> countList = new List<string>();
+                int endIndex;
+                do
+                {
+                    var lSlice = slice;
+                    endIndex = slice.IndexOf(',');
+                    if (endIndex != -1)
+                    {
+                        lSlice = slice.Slice(0, endIndex);
+                        slice = slice.Slice(endIndex + 1);
+                    }
 
-                hasComputedCount = true;
+                    countList.Add(new string(lSlice));
+                } while (endIndex != -1);
 
-                return new Count(computedCountParameterNames);
+                return new Count(countList);
             }
 
             if (SyntaxFacts.IsValidIdentifier(countData))
@@ -263,22 +259,44 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                 return new Count(valueReferenceName);
             }
 
-            // Some counts are a value reference along with some sort of numerical operation - let's skip forward in
-            // the string until we hit the first invalid character, and see if the rest are just numbers or math ops
-            var dataBeforeFirstInvalidCharacter = new string(countData.TakeWhile(char.IsLetterOrDigit).ToArray());
-            var dataAfterFirstInvalidCharacter = new string(countData.SkipWhile(char.IsLetterOrDigit).ToArray());
-
-            var isRestMath = MathematicalSymbolsAndNumbersRegex.IsMatch(dataAfterFirstInvalidCharacter);
-            if (SyntaxFacts.IsValidIdentifier(dataBeforeFirstInvalidCharacter) && isRestMath)
+            // check for count with expression.
+            if (char.IsLetter(countDataSpan[0]))
             {
-                // then the rest is likely a mathematical expression
-                valueReferenceName = dataBeforeFirstInvalidCharacter;
-                valueReferenceExpression = dataAfterFirstInvalidCharacter;
+                int i = 1;
+                while (char.IsLetterOrDigit(countDataSpan[i]))
+                {
+                    i++;
+                } // at this point there HAS to be some invalid letter there, so no for needed.
 
-                hasValueReference = true;
-                return new Count(valueReferenceName);
+                var identifier = new string(countDataSpan.Slice(0, i));
+                var expression = countDataSpan.Slice(i);
+
+                if (SyntaxFacts.IsValidIdentifier(identifier))
+                {
+
+                    for (i = 0; i < expression.Length; i++)
+                    {
+                        if (expression[i] != '+'
+                            && expression[i] != '-'
+                            && expression[i] != '*'
+                            && expression[i] != '/'
+                            && expression[i] != '^'
+                            && expression[i] != ' '
+                            && !char.IsDigit(expression[i]))
+                        {
+                            throw new InvalidDataException("No valid count could be parsed from the input.");
+                        }
+                    }
+                    
+                    // the rest is likely a mathematical expression
+                    valueReferenceName = identifier;
+                    valueReferenceExpression = new string(expression);
+
+                    hasValueReference = true;
+                    return new Count(valueReferenceName);
+                }
             }
-
+            
             throw new InvalidDataException("No valid count could be parsed from the input.");
         }
     }
