@@ -234,7 +234,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                    GenericTypeParameters.SequenceEqual(other.GenericTypeParameters);
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj))
             {

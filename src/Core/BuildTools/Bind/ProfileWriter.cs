@@ -137,10 +137,11 @@ namespace Silk.NET.BuildTools.Bind
             sw.Write("    {");
             foreach (var function in @interface.Functions)
             {
-                sw.WriteLine();
-                using (var sr = new StringReader(function.Doc))
+                if (!(function.Doc is null))
                 {
-                    string line;
+                    sw.WriteLine();
+                    using var sr = new StringReader(function.Doc);
+                    string? line;
                     while ((line = sr.ReadLine()) != null)
                     {
                         sw.WriteLine("        " + line);
@@ -158,7 +159,7 @@ namespace Silk.NET.BuildTools.Bind
                 );
                 using (var sr = new StringReader(function.ToString()))
                 {
-                    string line;
+                    string? line;
                     while ((line = sr.ReadLine()) != null)
                     {
                         sw.WriteLine("        " + line);
@@ -256,7 +257,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("        /// <inheritdoc />");
                     using (var sr = new StringReader(function.ToString()))
                     {
-                        string line;
+                        string? line;
                         var flPrefix = "public abstract ";
                         while ((line = sr.ReadLine()) != null)
                         {
@@ -269,9 +270,10 @@ namespace Silk.NET.BuildTools.Bind
 
                 foreach (var overload in Overloader.GetOverloads(project))
                 {
-                    using (var sr = new StringReader(overload.Signature.Doc))
+                    if (!(overload.Signature.Doc is null))
                     {
-                        string line;
+                        using var sr = new StringReader(overload.Signature.Doc);
+                        string? line;
                         while ((line = sr.ReadLine()) != null)
                         {
                             sw.WriteLine("        " + line);
@@ -287,7 +289,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("        {");
                     using (var sr = new StringReader(overload.CodeBlock))
                     {
-                        string line;
+                        string? line;
                         while ((line = sr.ReadLine()) != null)
                         {
                             sw.WriteLine($"            {line}");
@@ -380,7 +382,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine("        /// <inheritdoc />");
                         using (var sr = new StringReader(function.ToString()))
                         {
-                            string line;
+                            string? line;
                             var flPrefix = "public abstract ";
                             while ((line = sr.ReadLine()) != null)
                             {
@@ -393,9 +395,10 @@ namespace Silk.NET.BuildTools.Bind
 
                     foreach (var overload in Overloader.GetOverloads(i))
                     {
-                        using (var sr = new StringReader(overload.Signature.Doc))
+                        if (!(overload.Signature.Doc is null))
                         {
-                            string line;
+                            using var sr = new StringReader(overload.Signature.Doc);
+                            string? line;
                             while ((line = sr.ReadLine()) != null)
                             {
                                 sw.WriteLine("        " + line);
@@ -411,7 +414,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine("        {");
                         using (var sr = new StringReader(overload.CodeBlock))
                         {
-                            string line;
+                            string? line;
                             while ((line = sr.ReadLine()) != null)
                             {
                                 sw.WriteLine($"            {line}");
