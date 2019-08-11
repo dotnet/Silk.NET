@@ -43,7 +43,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
         /// <summary>
         /// Gets or sets the name container for this profile.
         /// </summary>
-        public NameContainer NameContainer { get; set; } = new NameContainer();
+        public NameContainer NameContainer { get; set; } // = new NameContainer();
 
         /// <summary>
         /// Gets or sets the function prefix for this profile.

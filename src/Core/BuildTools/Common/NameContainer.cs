@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-#nullable disable
+using Newtonsoft.Json;
 
 namespace Silk.NET.BuildTools.Common
 {
@@ -41,5 +41,16 @@ namespace Silk.NET.BuildTools.Common
         /// Gets or sets the class name of the output name container.
         /// </summary>
         public string ClassName { get; set; }
+
+        [JsonConstructor]
+        public NameContainer(string linux, string windows, string macOs, string android, string ios, string className)
+        {
+            Linux = linux;
+            Windows = windows;
+            MacOS = macOs;
+            Android = android;
+            IOS = ios;
+            ClassName = className;
+        }
     }
 }

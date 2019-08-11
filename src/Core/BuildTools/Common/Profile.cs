@@ -65,7 +65,7 @@ namespace Silk.NET.BuildTools.Common
         /// <summary>
         /// Gets or sets the name container for this profile.
         /// </summary>
-        public NameContainer Names { get; set; } = new NameContainer();
+        public NameContainer Names { get; set; } // = new NameContainer();
 
         /// <summary>
         /// Gets or sets a list of type maps to be applied to the projects in the order in which they're applied.
