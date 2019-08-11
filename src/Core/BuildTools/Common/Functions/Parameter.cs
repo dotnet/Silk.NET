@@ -34,7 +34,7 @@ namespace Silk.NET.BuildTools.Common.Functions
 
         public bool Equals(Parameter? other)
         {
-            if (ReferenceEquals(null, other))
+            if (other is null)
             {
                 return false;
             }

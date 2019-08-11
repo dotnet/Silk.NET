@@ -4,10 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Data.Common;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
-
-#nullable disable
 
 namespace Silk.NET.BuildTools.Common.Functions
 {
@@ -41,12 +40,12 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the name of this type.
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; set; } = string.Empty;
 
         /// <summary>
         /// Gets or sets the original name of this type, before mapping.
         /// </summary>
-        public string OriginalName { get; set; }
+        public string OriginalName { get; set; } = string.Empty;
 
         /// <summary>
         /// Gets or sets a value indicating whether this type is by ref.
@@ -103,9 +102,9 @@ namespace Silk.NET.BuildTools.Common.Functions
             return Name == "UIntPtr" && IndirectionLevels == 0;
         }
 
-        public bool Equals([CanBeNull] Type other)
+        public bool Equals(Type? other)
         {
-            if (ReferenceEquals(null, other))
+            if (other is null)
             {
                 return false;
             }
@@ -123,7 +122,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                    IsIn == other.IsIn;
         }
 
-        public override bool Equals([CanBeNull] object obj)
+        public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj))
             {
