@@ -5,8 +5,6 @@
 
 using Silk.NET.BuildTools.Common.Functions;
 
-#nullable disable
-
 namespace Silk.NET.BuildTools.Common.Structs
 {
     public class Field
@@ -15,5 +13,13 @@ namespace Silk.NET.BuildTools.Common.Structs
         public string Name { get; set; }
         public string NativeName { get; set; }
         public string NativeType { get; set; }
+
+        public Field(Type type, string name, string nativeName, string nativeType)
+        {
+            Type = type;
+            Name = name;
+            NativeName = nativeName;
+            NativeType = nativeType;
+        }
     }
 }
