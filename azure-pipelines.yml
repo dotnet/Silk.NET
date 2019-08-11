@@ -1,8 +1,8 @@
 trigger:
-- master
+- '*'
 
 pr:
-- master
+- '*'
   
 jobs:
 - job: Build
@@ -26,6 +26,7 @@ jobs:
   - publish: build/output_packages
     artifact: NuGet Packages
   - task: NuGetCommand@2
+    condition: ne(variables['Build.Reason'], 'PullRequest')
     inputs:
       command: 'push'
       packagesToPush: 'build/output_packages/*.nupkg'
