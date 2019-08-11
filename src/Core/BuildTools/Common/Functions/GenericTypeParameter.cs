@@ -7,8 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-#nullable disable
-
 namespace Silk.NET.BuildTools.Common.Functions
 {
     /// <summary>
@@ -16,14 +14,10 @@ namespace Silk.NET.BuildTools.Common.Functions
     /// </summary>
     public class GenericTypeParameter : IEquatable<GenericTypeParameter>
     {
-        public GenericTypeParameter()
+        public GenericTypeParameter(string? genericTypeParameterName = null, IEnumerable<string>? constraints = null)
         {
-        }
-
-        public GenericTypeParameter(string genericTypeParameterName, IEnumerable<string> constraints)
-        {
-            Name = genericTypeParameterName;
-            Constraints = constraints.ToList();
+            Name = genericTypeParameterName ?? string.Empty;
+            Constraints = constraints?.ToList() ?? new List<string>();
         }
 
         /// <summary>
@@ -34,11 +28,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets a list of generic type parameter constraints.
         /// </summary>
-        public List<string> Constraints { get; set; } = new List<string>();
+        public List<string> Constraints { get; set; }
 
-        public bool Equals(GenericTypeParameter other)
+        public bool Equals(GenericTypeParameter? other)
         {
-            if (ReferenceEquals(null, other))
+            if (other is null)
             {
                 return false;
             }
@@ -51,9 +45,9 @@ namespace Silk.NET.BuildTools.Common.Functions
             return string.Equals(Name, other.Name) && Constraints.SequenceEqual(other.Constraints);
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
-            if (ReferenceEquals(null, obj))
+            if (obj is null)
             {
                 return false;
             }
