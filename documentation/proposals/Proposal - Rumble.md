@@ -4,6 +4,7 @@ Proposal API for gamepad vibration.
 
 # Contributors
 - Dylan P, Ultz Limited
+- Frederik J, Silk.NET Contributors
 
 # Current Status
 - [x] Proposed
