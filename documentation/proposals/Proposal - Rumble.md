@@ -1,6 +1,6 @@
 # Summary
 
-Proposal API for gamepad vibration/rumble control. 
+Proposal API for gamepad vibration. 
 
 # Contributors
 - Dylan P, Ultz Limited
@@ -24,7 +24,7 @@ public interface IMotor
     /// </summary>
     int Index { get; }
     /// <summary>
-    /// How fast/intense this motor is moving/vibrating, between 0f and 1f.
+    /// The motor's vibration intensity, between 0f and 1f.
     /// </summary>
     /// <remarks>
     /// Some backends may truncate this value if variable intensity is not supported.
