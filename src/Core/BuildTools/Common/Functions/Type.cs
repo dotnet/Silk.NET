@@ -4,6 +4,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Newtonsoft.Json;
 
 namespace Silk.NET.BuildTools.Common.Functions
@@ -46,6 +48,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         public string OriginalName { get; set; }
 
         /// <summary>
+        /// Gets or sets the generic types arguments for this type.
+        /// </summary>
+        public List<Type> GenericTypes { get; set; } = new List<Type>();
+
+        /// <summary>
         /// Gets or sets a value indicating whether this type is by ref.
         /// </summary>
         public bool IsByRef { get; set; }
@@ -65,7 +72,8 @@ namespace Silk.NET.BuildTools.Common.Functions
         {
             return Name +
                    (IsPointer ? new string('*', IndirectionLevels) : string.Empty) +
-                   (IsArray ? Utilities.GetArrayDimensionString(ArrayDimensions) : string.Empty);
+                   (IsArray ? Utilities.GetArrayDimensionString(ArrayDimensions) : string.Empty) +
+                   (GenericTypes.Any() ? $"<{string.Join(", ", GenericTypes.Select(x => x.Name))}>" : string.Empty);
         }
 
         /// <summary>
