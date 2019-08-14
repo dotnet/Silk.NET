@@ -6,7 +6,6 @@
 using System.Collections.Generic;
 using CommandLine;
 using CommandLine.Text;
-using Silk.NET.BuildTools.GLXmlConvert.Baking;
 
 namespace Silk.NET.BuildTools.GLXmlConvert
 {
@@ -53,18 +52,6 @@ namespace Silk.NET.BuildTools.GLXmlConvert
         public IEnumerable<string> InputFiles { get; set; }
 
         /// <summary>
-        /// Gets or sets a list of paths to JSON <see cref="ProfileBakeryInformation" /> files.
-        /// </summary>
-        [Option
-        (
-            'b',
-            "bakery-info",
-            HelpText = "A list of paths to JSON ProfileBakeryInformation files.",
-            Required = true
-        )]
-        public IEnumerable<string> BakeryInformation { get; set; }
-
-        /// <summary>
         /// Gets or sets a value indicating whether the output files should be pretty printed.
         /// </summary>
         [Option
@@ -75,18 +62,6 @@ namespace Silk.NET.BuildTools.GLXmlConvert
             Default = false
         )]
         public bool PrettyPrinted { get; set; } = false;
-
-        /// <summary>
-        /// Gets or sets a value indicating whether the raw (unbaked) API files should be kept.
-        /// </summary>
-        [Option
-        (
-            'k',
-            "preserve",
-            HelpText = "Indicates that the raw (unbaked) API files shouldn't be deleted.",
-            Default = false
-        )]
-        public bool PreserveRawAPIs { get; set; } = false;
 
         /// <summary>
         /// Gets or sets a value indicating whether the transformed (interchange) XML should also be output.
@@ -135,12 +110,6 @@ namespace Silk.NET.BuildTools.GLXmlConvert
                 );
             }
         }
-
-        /// <summary>
-        /// Gets or sets the folder in which a docs.gl clone is contained.
-        /// </summary>
-        [Option('d', "docs", HelpText = "The folder in which a docs.gl clone is contained.", Required = false)]
-        public string DocumentationFolder { get; set; }
 
         /// <summary>
         /// Gets or sets a list of profile overrides.

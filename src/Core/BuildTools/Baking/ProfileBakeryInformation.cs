@@ -6,7 +6,7 @@
 using System.Collections.Generic;
 using Silk.NET.BuildTools.Common;
 
-namespace Silk.NET.BuildTools.GLXmlConvert.Baking
+namespace Silk.NET.BuildTools.Baking
 {
     /// <summary>
     /// Represents information to be passed to the profile bakery (a script or recipe if you will).

@@ -5,10 +5,10 @@
 
 using System;
 using System.Text;
-using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.GLXmlConvert;
 
-namespace Silk.NET.BuildTools.GLXmlConvert.Construction.Trimmers
+namespace Silk.NET.BuildTools.Common.Trimmers
 {
     /// <summary>
     /// Trims OpenGL extension names from OpenGL functions.

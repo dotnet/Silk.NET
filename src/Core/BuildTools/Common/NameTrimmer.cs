@@ -6,9 +6,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
-using Silk.NET.BuildTools.GLXmlConvert.Construction.Trimmers;
+using Silk.NET.BuildTools.Common.Trimmers;
 
-namespace Silk.NET.BuildTools.GLXmlConvert.Construction
+namespace Silk.NET.BuildTools.Common
 {
     /// <summary>
     /// A collection of functions for altering the endings of function names.

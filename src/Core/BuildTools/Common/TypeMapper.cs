@@ -5,10 +5,10 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.GLXmlConvert.Construction;
 
-namespace Silk.NET.BuildTools.GLXmlConvert.Construction
+namespace Silk.NET.BuildTools.Common
 {
     /// <summary>
     /// A collection of methods for replacing type names using a dictionary.

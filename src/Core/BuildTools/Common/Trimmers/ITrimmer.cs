@@ -5,7 +5,7 @@
 
 using JetBrains.Annotations;
 
-namespace Silk.NET.BuildTools.GLXmlConvert.Construction.Trimmers
+namespace Silk.NET.BuildTools.Common.Trimmers
 {
     /// <summary>
     /// Represents a class that can trim the identifier for some type in some fashion.

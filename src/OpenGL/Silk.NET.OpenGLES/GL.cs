@@ -6,7 +6,7 @@ using Silk.NET.Core.Native;
 
 namespace Silk.NET.OpenGLES
 {
-    partial class GL
+    public partial class GL
     {
         public static GL GetApi()
         {

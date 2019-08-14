@@ -233,20 +233,24 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                 var slice = countDataSpan.Slice(countDataSpan.IndexOf('(') + 1);
                 slice = slice.Slice(0, slice.IndexOf(')'));
 
-                List<string> countList = new List<string>();
-                int endIndex;
-                do
+                var countList = new List<string>();
+                var record = string.Empty;
+                foreach (var character in slice)
                 {
-                    var lSlice = slice;
-                    endIndex = slice.IndexOf(',');
-                    if (endIndex != -1)
+                    if (character == ',')
                     {
-                        lSlice = slice.Slice(0, endIndex);
-                        slice = slice.Slice(endIndex + 1);
+                        countList.Add(record.Trim());
+                        record = string.Empty;
+                        continue;
                     }
 
-                    countList.Add(new string(lSlice));
-                } while (endIndex != -1);
+                    record += character;
+                }
+
+                if (!string.IsNullOrWhiteSpace(record))
+                {
+                    countList.Add(record.Trim());
+                }
 
                 return new Count(countList);
             }

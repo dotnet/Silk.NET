@@ -9,7 +9,7 @@ using Silk.NET.Core.Native;
 
 namespace Silk.NET.OpenGL
 {
-    partial class GL
+    public partial class GL
     {
         public static GL GetApi()
         {

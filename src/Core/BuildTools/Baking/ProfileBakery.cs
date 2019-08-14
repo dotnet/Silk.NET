@@ -13,16 +13,33 @@ using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
-using Silk.NET.BuildTools.GLXmlConvert.Construction;
-using Silk.NET.BuildTools.GLXmlConvert.Documentation;
 
-namespace Silk.NET.BuildTools.GLXmlConvert.Baking
+namespace Silk.NET.BuildTools.Baking
 {
     /// <summary>
     /// A collection of methods for baking/fusing APIs together.
     /// </summary>
     public class ProfileBakery
     {
+        public static void Bake(BakeryOptions cliOptions)
+        {
+            Console.WriteLine("Baking raw profiles...");
+            Bake
+            (
+                cliOptions.BakeryInformation
+                    .Select(File.ReadAllText)
+                    .SelectMany(JsonConvert.DeserializeObject<ProfileBakeryInformation[]>),
+                cliOptions.Folder,
+                cliOptions.PrettyPrinted,
+                cliOptions.DocumentationFolder
+            );
+            Console.WriteLine("Finishing up...");
+            if (!cliOptions.PreserveRawAPIs)
+            {
+                DeleteRawAPIs(cliOptions.Folder);
+            }
+        }
+        
         /// <summary>
         /// Bakes APIs together given the <see cref="ProfileBakeryInformation" />, and outputs the baked
         /// profile to the given folder.
@@ -30,7 +47,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
         /// <param name="information">The information of what APIs to bake.</param>
         /// <param name="folder">The output folder.</param>
         /// <param name="pretty">Whether the output JSON should be pretty-printed.</param>
-        public static void Bake(ProfileBakeryInformation information, string folder, bool pretty)
+        public static void Bake(ProfileBakeryInformation information, string folder, bool pretty, string docs)
         {
             // get APIs implemented
             var impl = information.Implements.Select(x => File.ReadAllText(Path.Combine(folder, "api-" + x + ".json")))
@@ -72,9 +89,9 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
             TypeMapper.MapEnums(profile); // we need to map the enums to make sure they are correct for their extension.
 
             // bake in the documentation
-            if (!string.IsNullOrWhiteSpace(GLXmlConverter.CliOptions.DocumentationFolder))
+            if (!string.IsNullOrWhiteSpace(docs))
             {
-                DocumentationWriter.Write(profile, GLXmlConverter.CliOptions.DocumentationFolder);
+                DocumentationWriter.Write(profile, docs);
             }
 
             // save this to disk
@@ -193,9 +210,9 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
         /// <param name="information">The information for the sets of APIs.</param>
         /// <param name="folder">The output folder.</param>
         /// <param name="pretty">Whether the output JSON should be pretty-printed.</param>
-        public static void Bake(IEnumerable<ProfileBakeryInformation> information, string folder, bool pretty)
+        public static void Bake(IEnumerable<ProfileBakeryInformation> information, string folder, bool pretty, string d)
         {
-            information.ForEach(b => Bake(b, folder, pretty));
+            information.ForEach(b => Bake(b, folder, pretty, d));
         }
     }
 }

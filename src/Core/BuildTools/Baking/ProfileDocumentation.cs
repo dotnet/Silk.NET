@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Silk.NET.BuildTools.GLXmlConvert.Documentation
+namespace Silk.NET.BuildTools.Baking
 {
     /// <summary>
     /// Represents parsed documentation for all functions in a profile.

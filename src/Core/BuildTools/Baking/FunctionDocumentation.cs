@@ -8,7 +8,7 @@ using System.Text;
 using Humanizer;
 using Silk.NET.BuildTools.Common.Functions;
 
-namespace Silk.NET.BuildTools.GLXmlConvert.Documentation
+namespace Silk.NET.BuildTools.Baking
 {
     /// <summary>
     /// Represents documentation for a function.

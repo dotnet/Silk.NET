@@ -11,6 +11,7 @@ using System.Linq;
 using CommandLine;
 using CommandLine.Text;
 using Newtonsoft.Json;
+using Silk.NET.BuildTools.Baking;
 using Silk.NET.BuildTools.Bind;
 using Silk.NET.BuildTools.GLXmlConvert;
 using Silk.NET.BuildTools.Pipeline;
@@ -41,6 +42,9 @@ namespace Silk.NET.BuildTools
                     break;
                 case "glxml":
                     GLXmlConverter.Convert(GetArgs<GLXmlConvertOptions>(args));
+                    break;
+                case "bake":
+                    ProfileBakery.Bake(GetArgs<BakeryOptions>(args));
                     break;
                 default:
                     PipelineFile(args);

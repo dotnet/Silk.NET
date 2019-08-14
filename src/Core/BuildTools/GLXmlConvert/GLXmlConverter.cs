@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
-using Silk.NET.BuildTools.GLXmlConvert.Baking;
 
 namespace Silk.NET.BuildTools.GLXmlConvert
 {
@@ -43,21 +42,6 @@ namespace Silk.NET.BuildTools.GLXmlConvert
             })
             {
                 profileConstructor.WriteProfiles();
-            }
-
-            Console.WriteLine("Baking raw profiles...");
-            ProfileBakery.Bake
-            (
-                CliOptions.BakeryInformation
-                    .Select(File.ReadAllText)
-                    .SelectMany(JsonConvert.DeserializeObject<ProfileBakeryInformation[]>),
-                CliOptions.OutputFolder,
-                CliOptions.PrettyPrinted
-            );
-            Console.WriteLine("Finishing up...");
-            if (!CliOptions.PreserveRawAPIs)
-            {
-                ProfileBakery.DeleteRawAPIs(CliOptions.OutputFolder);
             }
         }
     }

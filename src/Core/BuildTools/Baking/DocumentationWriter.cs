@@ -10,9 +10,8 @@ using System.Text;
 using Humanizer;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
-using Silk.NET.BuildTools.GLXmlConvert.Construction;
 
-namespace Silk.NET.BuildTools.GLXmlConvert.Documentation
+namespace Silk.NET.BuildTools.Baking
 {
     /// <summary>
     /// Contains methods for writing documentation to profiles.
@@ -63,7 +62,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Documentation
                 {
                     doc.Functions
                     [
-                        NameTrimmer.GetNameVariations(function.NativeName).FirstOrDefault(doc.Functions.ContainsKey)
+                        NameTrimmer.GetNameVariations(function.NativeName).First(doc.Functions.ContainsKey)
                     ]
                     .Write(function);
                 }

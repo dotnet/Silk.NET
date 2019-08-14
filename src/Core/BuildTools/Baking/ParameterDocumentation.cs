@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-namespace Silk.NET.BuildTools.GLXmlConvert.Documentation
+namespace Silk.NET.BuildTools.Baking
 {
     /// <summary>
     /// Represents documentation for a function's parameter.

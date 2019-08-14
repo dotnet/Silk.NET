@@ -11,7 +11,7 @@ using System.Text.RegularExpressions;
 using HtmlAgilityPack;
 using Humanizer;
 
-namespace Silk.NET.BuildTools.GLXmlConvert.Documentation
+namespace Silk.NET.BuildTools.Baking
 {
     /// <summary>
     /// Contains methods for reading docs.gl XHTML files.
