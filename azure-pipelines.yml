@@ -12,7 +12,7 @@ jobs:
 
   variables:
     buildConfiguration: 'Release'
-    dotnetCoreVersion: '3.0.100-preview6-012264'
+    dotnetCoreVersion: '3.0.100-preview8-013656'
 
   steps:
   - task: DotNetCoreInstaller@0
