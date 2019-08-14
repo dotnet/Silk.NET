@@ -85,7 +85,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         /// <returns>The instance.</returns>
         public Parameter Build()
         {
-            if (_newName is null || _newCount is null || _newType is null)
+            if (_newName is null || _newType is null)
             {
                 throw new InvalidOperationException();
             }

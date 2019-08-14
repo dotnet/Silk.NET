@@ -259,9 +259,9 @@ namespace Silk.NET.BuildTools.Common.Functions
                 var hashCode = (Name != null ? Name.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (ReturnType != null ? ReturnType.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (NativeName != null ? NativeName.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ Parameters.GetHashCode();
-                hashCode = (hashCode * 397) ^ Categories.GetHashCode();
-                hashCode = (hashCode * 397) ^ GenericTypeParameters.GetHashCode();
+                hashCode = (hashCode * 397) ^ Parameters?.GetHashCode() ?? 0;
+                hashCode = (hashCode * 397) ^ Categories?.GetHashCode() ?? 0;
+                hashCode = (hashCode * 397) ^ GenericTypeParameters?.GetHashCode() ?? 0;
                 hashCode = (hashCode * 397) ^ (Attributes != null ? Attributes.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (Doc != null ? Doc.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (ExtensionName != null ? ExtensionName.GetHashCode() : 0);
