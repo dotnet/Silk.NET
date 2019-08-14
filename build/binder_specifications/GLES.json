@@ -7385,7 +7385,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"source\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"id\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"severity\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"buf\">\r\n/// To be added.\r\n/// This parameter's element count is computed from buf and length.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"source\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"id\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"severity\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"buf\">\r\n/// To be added.\r\n/// This parameter's element count is computed from buf und length.\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -7853,7 +7853,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"identifier\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"name\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"label\">\r\n/// To be added.\r\n/// This parameter's element count is computed from label and length.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"identifier\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"name\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"label\">\r\n/// To be added.\r\n/// This parameter's element count is computed from label und length.\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -7921,7 +7921,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"ptr\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"label\">\r\n/// To be added.\r\n/// This parameter's element count is computed from label and length.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"ptr\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"label\">\r\n/// To be added.\r\n/// This parameter's element count is computed from label und length.\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -8021,7 +8021,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"source\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"id\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"message\">\r\n/// To be added.\r\n/// This parameter's element count is computed from message and length.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"source\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"id\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"message\">\r\n/// To be added.\r\n/// This parameter's element count is computed from message und length.\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             }
           ],
@@ -10755,7 +10755,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Render primitives from array data.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP,\n/// GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN and GL_TRIANGLES are accepted.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// Specifies the number of elements to be rendered.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or\n/// GL_UNSIGNED_INT.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER\n/// to start reading indices from. If no buffer is bound, specifies a pointer to the location where the\n/// indices are stored.\r\n/// This parameter's element count is computed from count and type.\r\n///\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Render primitives from array data.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP,\n/// GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN and GL_TRIANGLES are accepted.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// Specifies the number of elements to be rendered.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or\n/// GL_UNSIGNED_INT.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER\n/// to start reading indices from. If no buffer is bound, specifies a pointer to the location where the\n/// indices are stored.\r\n/// This parameter's element count is computed from count und type.\r\n///\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -12780,7 +12780,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Returns the value of a uniform variable.\r\n/// </summary>\r\n/// <param name=\"program\">\r\n/// Specifies the program object to be queried.\r\n/// </param>\r\n/// <param name=\"location\">\r\n/// Specifies the location of the uniform variable to be queried.\r\n/// </param>\r\n/// <param name=\"@params\">\r\n/// To be added.\r\n/// This parameter's element count is computed from program and location.\r\n///\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Returns the value of a uniform variable.\r\n/// </summary>\r\n/// <param name=\"program\">\r\n/// Specifies the program object to be queried.\r\n/// </param>\r\n/// <param name=\"location\">\r\n/// Specifies the location of the uniform variable to be queried.\r\n/// </param>\r\n/// <param name=\"@params\">\r\n/// To be added.\r\n/// This parameter's element count is computed from program und location.\r\n///\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -12848,7 +12848,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Returns the value of a uniform variable.\r\n/// </summary>\r\n/// <param name=\"program\">\r\n/// Specifies the program object to be queried.\r\n/// </param>\r\n/// <param name=\"location\">\r\n/// Specifies the location of the uniform variable to be queried.\r\n/// </param>\r\n/// <param name=\"@params\">\r\n/// To be added.\r\n/// This parameter's element count is computed from program and location.\r\n///\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Returns the value of a uniform variable.\r\n/// </summary>\r\n/// <param name=\"program\">\r\n/// Specifies the program object to be queried.\r\n/// </param>\r\n/// <param name=\"location\">\r\n/// Specifies the location of the uniform variable to be queried.\r\n/// </param>\r\n/// <param name=\"@params\">\r\n/// To be added.\r\n/// This parameter's element count is computed from program und location.\r\n///\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -13654,7 +13654,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Read a block of pixels from the frame buffer.\r\n/// </summary>\r\n/// <param name=\"x\">\r\n/// Specify the window coordinates of the first pixel that is read from the frame buffer. This location\n/// is the lower left corner of a rectangular block of pixels.\r\n/// </param>\r\n/// <param name=\"y\">\r\n/// Specify the window coordinates of the first pixel that is read from the frame buffer. This location\n/// is the lower left corner of a rectangular block of pixels.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// Specify the dimensions of the pixel rectangle. width and height of one correspond to a single\n/// pixel.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// Specify the dimensions of the pixel rectangle. width and height of one correspond to a single\n/// pixel.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// Specifies the format of the pixel data. The following symbolic values are accepted: GL_RGBA, and\n/// GL_RGBA_INTEGER. An implementation-chosen format will also be accepted. This can be queried with\n/// glGet and GL_IMPLEMENTATION_COLOR_READ_FORMAT.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the data type of the pixel data. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_INT,\n/// GL_UNSIGNED_INT_2_10_10_10_REV, GL_INT, or GL_FLOAT. An implementation-chosen type will also be\n/// accepted. This can be queried with glGet and GL_IMPLEMENTATION_COLOR_READ_TYPE.\r\n/// </param>\r\n/// <param name=\"pixels\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format, type, width, and height.\r\n///\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Read a block of pixels from the frame buffer.\r\n/// </summary>\r\n/// <param name=\"x\">\r\n/// Specify the window coordinates of the first pixel that is read from the frame buffer. This location\n/// is the lower left corner of a rectangular block of pixels.\r\n/// </param>\r\n/// <param name=\"y\">\r\n/// Specify the window coordinates of the first pixel that is read from the frame buffer. This location\n/// is the lower left corner of a rectangular block of pixels.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// Specify the dimensions of the pixel rectangle. width and height of one correspond to a single\n/// pixel.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// Specify the dimensions of the pixel rectangle. width and height of one correspond to a single\n/// pixel.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// Specifies the format of the pixel data. The following symbolic values are accepted: GL_RGBA, and\n/// GL_RGBA_INTEGER. An implementation-chosen format will also be accepted. This can be queried with\n/// glGet and GL_IMPLEMENTATION_COLOR_READ_FORMAT.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the data type of the pixel data. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_INT,\n/// GL_UNSIGNED_INT_2_10_10_10_REV, GL_INT, or GL_FLOAT. An implementation-chosen type will also be\n/// accepted. This can be queried with glGet and GL_IMPLEMENTATION_COLOR_READ_TYPE.\r\n/// </param>\r\n/// <param name=\"pixels\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format, type, width und height.\r\n///\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -14555,7 +14555,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Specify a two-dimensional texture image.\r\n/// </summary>\r\n/// <param name=\"target\">\r\n/// Specifies the target texture. Must be GL_TEXTURE_2D, GL_TEXTURE_CUBE_MAP_POSITIVE_X,\n/// GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y,\n/// GL_TEXTURE_CUBE_MAP_POSITIVE_Z, or GL_TEXTURE_CUBE_MAP_NEGATIVE_Z.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap\n/// reduction image.\r\n/// </param>\r\n/// <param name=\"internalformat\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// Specifies the width of the texture image. All implementations support texture images that are at\n/// least 2048 texels wide.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// Specifies the height of the texture image. All implementations support texture images that are at\n/// least 2048 texels high.\r\n/// </param>\r\n/// <param name=\"border\">\r\n/// This value must be 0.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// Specifies the format of the pixel data. The following symbolic values are accepted: GL_RED,\n/// GL_RED_INTEGER, GL_RG, GL_RG_INTEGER, GL_RGB, GL_RGB_INTEGER, GL_RGBA, GL_RGBA_INTEGER,\n/// GL_DEPTH_COMPONENT, GL_DEPTH_STENCIL, GL_LUMINANCE_ALPHA, GL_LUMINANCE, and GL_ALPHA.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the data type of the pixel data. The following symbolic values are accepted:\n/// GL_UNSIGNED_BYTE, GL_BYTE, GL_UNSIGNED_SHORT, GL_SHORT, GL_UNSIGNED_INT, GL_INT, GL_HALF_FLOAT,\n/// GL_FLOAT, GL_UNSIGNED_SHORT_5_6_5, GL_UNSIGNED_SHORT_4_4_4_4, GL_UNSIGNED_SHORT_5_5_5_1,\n/// GL_UNSIGNED_INT_2_10_10_10_REV, GL_UNSIGNED_INT_10F_11F_11F_REV, GL_UNSIGNED_INT_5_9_9_9_REV,\n/// GL_UNSIGNED_INT_24_8, and GL_FLOAT_32_UNSIGNED_INT_24_8_REV.\r\n/// </param>\r\n/// <param name=\"pixels\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format, type, width, and height.\r\n///\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Specify a two-dimensional texture image.\r\n/// </summary>\r\n/// <param name=\"target\">\r\n/// Specifies the target texture. Must be GL_TEXTURE_2D, GL_TEXTURE_CUBE_MAP_POSITIVE_X,\n/// GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y,\n/// GL_TEXTURE_CUBE_MAP_POSITIVE_Z, or GL_TEXTURE_CUBE_MAP_NEGATIVE_Z.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap\n/// reduction image.\r\n/// </param>\r\n/// <param name=\"internalformat\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// Specifies the width of the texture image. All implementations support texture images that are at\n/// least 2048 texels wide.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// Specifies the height of the texture image. All implementations support texture images that are at\n/// least 2048 texels high.\r\n/// </param>\r\n/// <param name=\"border\">\r\n/// This value must be 0.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// Specifies the format of the pixel data. The following symbolic values are accepted: GL_RED,\n/// GL_RED_INTEGER, GL_RG, GL_RG_INTEGER, GL_RGB, GL_RGB_INTEGER, GL_RGBA, GL_RGBA_INTEGER,\n/// GL_DEPTH_COMPONENT, GL_DEPTH_STENCIL, GL_LUMINANCE_ALPHA, GL_LUMINANCE, and GL_ALPHA.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the data type of the pixel data. The following symbolic values are accepted:\n/// GL_UNSIGNED_BYTE, GL_BYTE, GL_UNSIGNED_SHORT, GL_SHORT, GL_UNSIGNED_INT, GL_INT, GL_HALF_FLOAT,\n/// GL_FLOAT, GL_UNSIGNED_SHORT_5_6_5, GL_UNSIGNED_SHORT_4_4_4_4, GL_UNSIGNED_SHORT_5_5_5_1,\n/// GL_UNSIGNED_INT_2_10_10_10_REV, GL_UNSIGNED_INT_10F_11F_11F_REV, GL_UNSIGNED_INT_5_9_9_9_REV,\n/// GL_UNSIGNED_INT_24_8, and GL_FLOAT_32_UNSIGNED_INT_24_8_REV.\r\n/// </param>\r\n/// <param name=\"pixels\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format, type, width und height.\r\n///\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -14965,7 +14965,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Specify a two-dimensional texture subimage.\r\n/// </summary>\r\n/// <param name=\"target\">\r\n/// Specifies the target texture. Must be GL_TEXTURE_2D, GL_TEXTURE_CUBE_MAP_POSITIVE_X,\n/// GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y,\n/// GL_TEXTURE_CUBE_MAP_POSITIVE_Z, or GL_TEXTURE_CUBE_MAP_NEGATIVE_Z.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap\n/// reduction image.\r\n/// </param>\r\n/// <param name=\"xoffset\">\r\n/// Specifies a texel offset in the x direction within the texture array.\r\n/// </param>\r\n/// <param name=\"yoffset\">\r\n/// Specifies a texel offset in the y direction within the texture array.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// Specifies the width of the texture subimage.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// Specifies the height of the texture subimage.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// Specifies the format of the pixel data. The following symbolic values are accepted: GL_RED,\n/// GL_RED_INTEGER, GL_RG, GL_RG_INTEGER, GL_RGB, GL_RGB_INTEGER, GL_RGBA, GL_RGBA_INTEGER,\n/// GL_DEPTH_COMPONENT, GL_DEPTH_STENCIL, GL_LUMINANCE_ALPHA, GL_LUMINANCE, and GL_ALPHA.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the data type of the pixel data. The following symbolic values are accepted:\n/// GL_UNSIGNED_BYTE, GL_BYTE, GL_UNSIGNED_SHORT, GL_SHORT, GL_UNSIGNED_INT, GL_INT, GL_HALF_FLOAT,\n/// GL_FLOAT, GL_UNSIGNED_SHORT_5_6_5, GL_UNSIGNED_SHORT_4_4_4_4, GL_UNSIGNED_SHORT_5_5_5_1,\n/// GL_UNSIGNED_INT_2_10_10_10_REV, GL_UNSIGNED_INT_10F_11F_11F_REV, GL_UNSIGNED_INT_5_9_9_9_REV,\n/// GL_UNSIGNED_INT_24_8, and GL_FLOAT_32_UNSIGNED_INT_24_8_REV.\r\n/// </param>\r\n/// <param name=\"pixels\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format, type, width, and height.\r\n///\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Specify a two-dimensional texture subimage.\r\n/// </summary>\r\n/// <param name=\"target\">\r\n/// Specifies the target texture. Must be GL_TEXTURE_2D, GL_TEXTURE_CUBE_MAP_POSITIVE_X,\n/// GL_TEXTURE_CUBE_MAP_NEGATIVE_X, GL_TEXTURE_CUBE_MAP_POSITIVE_Y, GL_TEXTURE_CUBE_MAP_NEGATIVE_Y,\n/// GL_TEXTURE_CUBE_MAP_POSITIVE_Z, or GL_TEXTURE_CUBE_MAP_NEGATIVE_Z.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap\n/// reduction image.\r\n/// </param>\r\n/// <param name=\"xoffset\">\r\n/// Specifies a texel offset in the x direction within the texture array.\r\n/// </param>\r\n/// <param name=\"yoffset\">\r\n/// Specifies a texel offset in the y direction within the texture array.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// Specifies the width of the texture subimage.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// Specifies the height of the texture subimage.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// Specifies the format of the pixel data. The following symbolic values are accepted: GL_RED,\n/// GL_RED_INTEGER, GL_RG, GL_RG_INTEGER, GL_RGB, GL_RGB_INTEGER, GL_RGBA, GL_RGBA_INTEGER,\n/// GL_DEPTH_COMPONENT, GL_DEPTH_STENCIL, GL_LUMINANCE_ALPHA, GL_LUMINANCE, and GL_ALPHA.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the data type of the pixel data. The following symbolic values are accepted:\n/// GL_UNSIGNED_BYTE, GL_BYTE, GL_UNSIGNED_SHORT, GL_SHORT, GL_UNSIGNED_INT, GL_INT, GL_HALF_FLOAT,\n/// GL_FLOAT, GL_UNSIGNED_SHORT_5_6_5, GL_UNSIGNED_SHORT_4_4_4_4, GL_UNSIGNED_SHORT_5_5_5_1,\n/// GL_UNSIGNED_INT_2_10_10_10_REV, GL_UNSIGNED_INT_10F_11F_11F_REV, GL_UNSIGNED_INT_5_9_9_9_REV,\n/// GL_UNSIGNED_INT_24_8, and GL_FLOAT_32_UNSIGNED_INT_24_8_REV.\r\n/// </param>\r\n/// <param name=\"pixels\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format, type, width und height.\r\n///\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -16919,7 +16919,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Define an array of generic vertex attribute data.\r\n/// </summary>\r\n/// <param name=\"index\">\r\n/// Specifies the index of the generic vertex attribute to be modified.\r\n/// </param>\r\n/// <param name=\"size\">\r\n/// Specifies the number of components per generic vertex attribute. Must be 1, 2, 3, 4. The initial\n/// value is 4.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the data type of each component in the array. The symbolic constants GL_BYTE,\n/// GL_UNSIGNED_BYTE, GL_SHORT, GL_UNSIGNED_SHORT, GL_INT, and GL_UNSIGNED_INT are accepted by both\n/// functions. Additionally GL_HALF_FLOAT, GL_FLOAT, GL_FIXED, GL_INT_2_10_10_10_REV, and\n/// GL_UNSIGNED_INT_2_10_10_10_REV are accepted by glVertexAttribPointer. The initial value is GL_FLOAT.\r\n/// </param>\r\n/// <param name=\"normalized\">\r\n/// For glVertexAttribPointer, specifies whether fixed-point data values should be normalized (GL_TRUE)\n/// or converted directly as fixed-point values (GL_FALSE) when they are accessed. This parameter is\n/// ignored if type is GL_FIXED.\r\n/// </param>\r\n/// <param name=\"stride\">\r\n/// Specifies the byte offset between consecutive generic vertex attributes. If stride is 0, the\n/// generic vertex attributes are understood to be tightly packed in the array. The initial value is 0.\r\n/// </param>\r\n/// <param name=\"pointer\">\r\n/// Specifies a pointer to the first generic vertex attribute in the array. If a non-zero buffer is\n/// currently bound to the GL_ARRAY_BUFFER target, pointer specifies an offset of into the array in the\n/// data store of that buffer. The initial value is 0.\r\n/// This parameter's element count is computed from size, type, and stride.\r\n///\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Define an array of generic vertex attribute data.\r\n/// </summary>\r\n/// <param name=\"index\">\r\n/// Specifies the index of the generic vertex attribute to be modified.\r\n/// </param>\r\n/// <param name=\"size\">\r\n/// Specifies the number of components per generic vertex attribute. Must be 1, 2, 3, 4. The initial\n/// value is 4.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the data type of each component in the array. The symbolic constants GL_BYTE,\n/// GL_UNSIGNED_BYTE, GL_SHORT, GL_UNSIGNED_SHORT, GL_INT, and GL_UNSIGNED_INT are accepted by both\n/// functions. Additionally GL_HALF_FLOAT, GL_FLOAT, GL_FIXED, GL_INT_2_10_10_10_REV, and\n/// GL_UNSIGNED_INT_2_10_10_10_REV are accepted by glVertexAttribPointer. The initial value is GL_FLOAT.\r\n/// </param>\r\n/// <param name=\"normalized\">\r\n/// For glVertexAttribPointer, specifies whether fixed-point data values should be normalized (GL_TRUE)\n/// or converted directly as fixed-point values (GL_FALSE) when they are accessed. This parameter is\n/// ignored if type is GL_FIXED.\r\n/// </param>\r\n/// <param name=\"stride\">\r\n/// Specifies the byte offset between consecutive generic vertex attributes. If stride is 0, the\n/// generic vertex attributes are understood to be tightly packed in the array. The initial value is 0.\r\n/// </param>\r\n/// <param name=\"pointer\">\r\n/// Specifies a pointer to the first generic vertex attribute in the array. If a non-zero buffer is\n/// currently bound to the GL_ARRAY_BUFFER target, pointer specifies an offset of into the array in the\n/// data store of that buffer. The initial value is 0.\r\n/// This parameter's element count is computed from size, type und stride.\r\n///\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -18872,7 +18872,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Draw multiple instances of a set of elements.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP,\n/// GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN and GL_TRIANGLES are accepted.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// Specifies the number of elements to be rendered.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or\n/// GL_UNSIGNED_INT.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER\n/// to start reading indices from. If no buffer is bound, specifies a pointer to the location where the\n/// indices are stored.\r\n/// This parameter's element count is computed from count and type.\r\n///\r\n/// </param>\r\n/// <param name=\"instancecount\">\r\n/// To be added.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Draw multiple instances of a set of elements.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP,\n/// GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN and GL_TRIANGLES are accepted.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// Specifies the number of elements to be rendered.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or\n/// GL_UNSIGNED_INT.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER\n/// to start reading indices from. If no buffer is bound, specifies a pointer to the location where the\n/// indices are stored.\r\n/// This parameter's element count is computed from count und type.\r\n///\r\n/// </param>\r\n/// <param name=\"instancecount\">\r\n/// To be added.\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -18982,7 +18982,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Render primitives from array data.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP,\n/// GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN and GL_TRIANGLES are accepted.\r\n/// </param>\r\n/// <param name=\"start\">\r\n/// Specifies the minimum array index contained in indices.\r\n/// </param>\r\n/// <param name=\"end\">\r\n/// Specifies the maximum array index contained in indices.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// Specifies the number of elements to be rendered.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or\n/// GL_UNSIGNED_INT.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER\n/// to start reading indices from. If no buffer is bound, specifies a pointer to the location where the\n/// indices are stored.\r\n/// This parameter's element count is computed from count and type.\r\n///\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Render primitives from array data.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP,\n/// GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN and GL_TRIANGLES are accepted.\r\n/// </param>\r\n/// <param name=\"start\">\r\n/// Specifies the minimum array index contained in indices.\r\n/// </param>\r\n/// <param name=\"end\">\r\n/// Specifies the maximum array index contained in indices.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// Specifies the number of elements to be rendered.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or\n/// GL_UNSIGNED_INT.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER\n/// to start reading indices from. If no buffer is bound, specifies a pointer to the location where the\n/// indices are stored.\r\n/// This parameter's element count is computed from count und type.\r\n///\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -19517,7 +19517,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Query information about an active uniform block.\r\n/// </summary>\r\n/// <param name=\"program\">\r\n/// Specifies the name of a program containing the uniform block.\r\n/// </param>\r\n/// <param name=\"uniformBlockIndex\">\r\n/// Specifies the index of the uniform block within program.\r\n/// </param>\r\n/// <param name=\"pname\">\r\n/// Specifies the name of the parameter to query.\r\n/// </param>\r\n/// <param name=\"@params\">\r\n/// To be added.\r\n/// This parameter's element count is computed from program, uniformBlockIndex, and pname.\r\n///\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Query information about an active uniform block.\r\n/// </summary>\r\n/// <param name=\"program\">\r\n/// Specifies the name of a program containing the uniform block.\r\n/// </param>\r\n/// <param name=\"uniformBlockIndex\">\r\n/// Specifies the index of the uniform block within program.\r\n/// </param>\r\n/// <param name=\"pname\">\r\n/// Specifies the name of the parameter to query.\r\n/// </param>\r\n/// <param name=\"@params\">\r\n/// To be added.\r\n/// This parameter's element count is computed from program, uniformBlockIndex und pname.\r\n///\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -19714,7 +19714,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Returns information about several active uniform variables for the specified program object.\r\n/// </summary>\r\n/// <param name=\"program\">\r\n/// Specifies the program object to be queried.\r\n/// </param>\r\n/// <param name=\"uniformCount\">\r\n/// Specifies both the number of elements in the array of indices uniformIndices and the number of\n/// parameters written to params upon successful return.\r\n/// </param>\r\n/// <param name=\"uniformIndices\">\r\n/// Specifies the address of an array of uniformCount integers containing the indices of uniforms within\n/// program whose parameter pname should be queried.\r\n/// This parameter's element count is taken from uniformCount.\r\n///\r\n/// </param>\r\n/// <param name=\"pname\">\r\n/// Specifies the property of each uniform in uniformIndices that should be written into the\n/// corresponding element of params.\r\n/// </param>\r\n/// <param name=\"@params\">\r\n/// To be added.\r\n/// This parameter's element count is computed from uniformCount and pname.\r\n///\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Returns information about several active uniform variables for the specified program object.\r\n/// </summary>\r\n/// <param name=\"program\">\r\n/// Specifies the program object to be queried.\r\n/// </param>\r\n/// <param name=\"uniformCount\">\r\n/// Specifies both the number of elements in the array of indices uniformIndices and the number of\n/// parameters written to params upon successful return.\r\n/// </param>\r\n/// <param name=\"uniformIndices\">\r\n/// Specifies the address of an array of uniformCount integers containing the indices of uniforms within\n/// program whose parameter pname should be queried.\r\n/// This parameter's element count is taken from uniformCount.\r\n///\r\n/// </param>\r\n/// <param name=\"pname\">\r\n/// Specifies the property of each uniform in uniformIndices that should be written into the\n/// corresponding element of params.\r\n/// </param>\r\n/// <param name=\"@params\">\r\n/// To be added.\r\n/// This parameter's element count is computed from uniformCount und pname.\r\n///\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -20869,14 +20869,16 @@
                   "Count": {
                     "_count": 0,
                     "ValueReference": null,
-                    "ComputedFromNames": []
+                    "ComputedFromNames": [
+                      ""
+                    ]
                   },
                   "Flow": 1
                 }
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Retrieve the index of a named uniform block.\r\n/// </summary>\r\n/// <param name=\"program\">\r\n/// Specifies the name of a program containing the uniform block.\r\n/// </param>\r\n/// <param name=\"uniformBlockName\">\r\n/// Specifies the address an array of characters containing the name of the uniform block whose index\n/// to retrieve.\r\n/// This parameter contains 0 elements.\r\n///\r\n/// </param>\r\n/// <returns>See summary.</returns>\r\n",
+              "Doc": "/// <summary>\r\n/// Retrieve the index of a named uniform block.\r\n/// </summary>\r\n/// <param name=\"program\">\r\n/// Specifies the name of a program containing the uniform block.\r\n/// </param>\r\n/// <param name=\"uniformBlockName\">\r\n/// Specifies the address an array of characters containing the name of the uniform block whose index\n/// to retrieve.\r\n/// This parameter's element count is computed from .\r\n///\r\n/// </param>\r\n/// <returns>See summary.</returns>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -21031,7 +21033,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Returns the value of a uniform variable.\r\n/// </summary>\r\n/// <param name=\"program\">\r\n/// Specifies the program object to be queried.\r\n/// </param>\r\n/// <param name=\"location\">\r\n/// Specifies the location of the uniform variable to be queried.\r\n/// </param>\r\n/// <param name=\"@params\">\r\n/// To be added.\r\n/// This parameter's element count is computed from program and location.\r\n///\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Returns the value of a uniform variable.\r\n/// </summary>\r\n/// <param name=\"program\">\r\n/// Specifies the program object to be queried.\r\n/// </param>\r\n/// <param name=\"location\">\r\n/// Specifies the location of the uniform variable to be queried.\r\n/// </param>\r\n/// <param name=\"@params\">\r\n/// To be added.\r\n/// This parameter's element count is computed from program und location.\r\n///\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -22310,7 +22312,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Specify a three-dimensional texture image.\r\n/// </summary>\r\n/// <param name=\"target\">\r\n/// Specifies the target texture. Must be one of GL_TEXTURE_3D or GL_TEXTURE_2D_ARRAY.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// Specifies the level-of-detail number. Level 0 is the base image level. Level n is the n th mipmap\n/// reduction image.\r\n/// </param>\r\n/// <param name=\"internalformat\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// Specifies the width of the texture image. All implementations support 3D texture images that are at\n/// least 256 texels wide.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// Specifies the height of the texture image. All implementations support 3D texture images that are\n/// at least 256 texels high.\r\n/// </param>\r\n/// <param name=\"depth\">\r\n/// Specifies the depth of the texture image, or the number of layers in a texture array. All\n/// implementations support 3D texture images that are at least 256 texels deep, and texture arrays that\n/// are at least 256 layers deep.\r\n/// </param>\r\n/// <param name=\"border\">\r\n/// This value must be 0.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// Specifies the format of the pixel data. The following symbolic values are accepted: GL_RED,\n/// GL_RED_INTEGER, GL_RG, GL_RG_INTEGER, GL_RGB, GL_RGB_INTEGER, GL_RGBA, GL_RGBA_INTEGER,\n/// GL_DEPTH_COMPONENT, GL_DEPTH_STENCIL, GL_LUMINANCE_ALPHA, GL_LUMINANCE, and GL_ALPHA,\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the data type of the pixel data. The following symbolic values are accepted:\n/// GL_UNSIGNED_BYTE, GL_BYTE, GL_UNSIGNED_SHORT, GL_SHORT, GL_UNSIGNED_INT, GL_INT, GL_HALF_FLOAT,\n/// GL_FLOAT, GL_UNSIGNED_SHORT_5_6_5, GL_UNSIGNED_SHORT_4_4_4_4, GL_UNSIGNED_SHORT_5_5_5_1,\n/// GL_UNSIGNED_INT_2_10_10_10_REV, GL_UNSIGNED_INT_10F_11F_11F_REV, GL_UNSIGNED_INT_5_9_9_9_REV,\n/// GL_UNSIGNED_INT_24_8, and GL_FLOAT_32_UNSIGNED_INT_24_8_REV.\r\n/// </param>\r\n/// <param name=\"pixels\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format, type, width, height, and depth.\r\n///\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Specify a three-dimensional texture image.\r\n/// </summary>\r\n/// <param name=\"target\">\r\n/// Specifies the target texture. Must be one of GL_TEXTURE_3D or GL_TEXTURE_2D_ARRAY.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// Specifies the level-of-detail number. Level 0 is the base image level. Level n is the n th mipmap\n/// reduction image.\r\n/// </param>\r\n/// <param name=\"internalformat\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// Specifies the width of the texture image. All implementations support 3D texture images that are at\n/// least 256 texels wide.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// Specifies the height of the texture image. All implementations support 3D texture images that are\n/// at least 256 texels high.\r\n/// </param>\r\n/// <param name=\"depth\">\r\n/// Specifies the depth of the texture image, or the number of layers in a texture array. All\n/// implementations support 3D texture images that are at least 256 texels deep, and texture arrays that\n/// are at least 256 layers deep.\r\n/// </param>\r\n/// <param name=\"border\">\r\n/// This value must be 0.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// Specifies the format of the pixel data. The following symbolic values are accepted: GL_RED,\n/// GL_RED_INTEGER, GL_RG, GL_RG_INTEGER, GL_RGB, GL_RGB_INTEGER, GL_RGBA, GL_RGBA_INTEGER,\n/// GL_DEPTH_COMPONENT, GL_DEPTH_STENCIL, GL_LUMINANCE_ALPHA, GL_LUMINANCE, and GL_ALPHA,\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the data type of the pixel data. The following symbolic values are accepted:\n/// GL_UNSIGNED_BYTE, GL_BYTE, GL_UNSIGNED_SHORT, GL_SHORT, GL_UNSIGNED_INT, GL_INT, GL_HALF_FLOAT,\n/// GL_FLOAT, GL_UNSIGNED_SHORT_5_6_5, GL_UNSIGNED_SHORT_4_4_4_4, GL_UNSIGNED_SHORT_5_5_5_1,\n/// GL_UNSIGNED_INT_2_10_10_10_REV, GL_UNSIGNED_INT_10F_11F_11F_REV, GL_UNSIGNED_INT_5_9_9_9_REV,\n/// GL_UNSIGNED_INT_24_8, and GL_FLOAT_32_UNSIGNED_INT_24_8_REV.\r\n/// </param>\r\n/// <param name=\"pixels\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format, type, width, height und depth.\r\n///\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -22685,7 +22687,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Specify a three-dimensional texture subimage.\r\n/// </summary>\r\n/// <param name=\"target\">\r\n/// Specifies the target texture. Must be GL_TEXTURE_3D or GL_TEXTURE_2D_ARRAY.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap\n/// reduction image.\r\n/// </param>\r\n/// <param name=\"xoffset\">\r\n/// Specifies a texel offset in the x direction within the texture array.\r\n/// </param>\r\n/// <param name=\"yoffset\">\r\n/// Specifies a texel offset in the y direction within the texture array.\r\n/// </param>\r\n/// <param name=\"zoffset\">\r\n/// Specifies a texel offset in the z direction within the texture array.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// Specifies the width of the texture subimage.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// Specifies the height of the texture subimage.\r\n/// </param>\r\n/// <param name=\"depth\">\r\n/// Specifies the depth of the texture subimage.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// Specifies the format of the pixel data. The following symbolic values are accepted: GL_RED,\n/// GL_RED_INTEGER, GL_RG, GL_RG_INTEGER, GL_RGB, GL_RGB_INTEGER, GL_RGBA, GL_RGBA_INTEGER,\n/// GL_DEPTH_COMPONENT, GL_DEPTH_STENCIL, GL_LUMINANCE_ALPHA, GL_LUMINANCE, and GL_ALPHA.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the data type of the pixel data. The following symbolic values are accepted:\n/// GL_UNSIGNED_BYTE, GL_BYTE, GL_UNSIGNED_SHORT, GL_SHORT, GL_UNSIGNED_INT, GL_INT, GL_HALF_FLOAT,\n/// GL_FLOAT, GL_UNSIGNED_SHORT_5_6_5, GL_UNSIGNED_SHORT_4_4_4_4, GL_UNSIGNED_SHORT_5_5_5_1,\n/// GL_UNSIGNED_INT_2_10_10_10_REV, GL_UNSIGNED_INT_10F_11F_11F_REV, GL_UNSIGNED_INT_5_9_9_9_REV,\n/// GL_UNSIGNED_INT_24_8, and GL_FLOAT_32_UNSIGNED_INT_24_8_REV.\r\n/// </param>\r\n/// <param name=\"pixels\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format, type, width, height, and depth.\r\n///\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Specify a three-dimensional texture subimage.\r\n/// </summary>\r\n/// <param name=\"target\">\r\n/// Specifies the target texture. Must be GL_TEXTURE_3D or GL_TEXTURE_2D_ARRAY.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// Specifies the level-of-detail number. Level 0 is the base image level. Level n is the nth mipmap\n/// reduction image.\r\n/// </param>\r\n/// <param name=\"xoffset\">\r\n/// Specifies a texel offset in the x direction within the texture array.\r\n/// </param>\r\n/// <param name=\"yoffset\">\r\n/// Specifies a texel offset in the y direction within the texture array.\r\n/// </param>\r\n/// <param name=\"zoffset\">\r\n/// Specifies a texel offset in the z direction within the texture array.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// Specifies the width of the texture subimage.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// Specifies the height of the texture subimage.\r\n/// </param>\r\n/// <param name=\"depth\">\r\n/// Specifies the depth of the texture subimage.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// Specifies the format of the pixel data. The following symbolic values are accepted: GL_RED,\n/// GL_RED_INTEGER, GL_RG, GL_RG_INTEGER, GL_RGB, GL_RGB_INTEGER, GL_RGBA, GL_RGBA_INTEGER,\n/// GL_DEPTH_COMPONENT, GL_DEPTH_STENCIL, GL_LUMINANCE_ALPHA, GL_LUMINANCE, and GL_ALPHA.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the data type of the pixel data. The following symbolic values are accepted:\n/// GL_UNSIGNED_BYTE, GL_BYTE, GL_UNSIGNED_SHORT, GL_SHORT, GL_UNSIGNED_INT, GL_INT, GL_HALF_FLOAT,\n/// GL_FLOAT, GL_UNSIGNED_SHORT_5_6_5, GL_UNSIGNED_SHORT_4_4_4_4, GL_UNSIGNED_SHORT_5_5_5_1,\n/// GL_UNSIGNED_INT_2_10_10_10_REV, GL_UNSIGNED_INT_10F_11F_11F_REV, GL_UNSIGNED_INT_5_9_9_9_REV,\n/// GL_UNSIGNED_INT_24_8, and GL_FLOAT_32_UNSIGNED_INT_24_8_REV.\r\n/// </param>\r\n/// <param name=\"pixels\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format, type, width, height und depth.\r\n///\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -24288,7 +24290,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"index\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"size\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"stride\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pointer\">\r\n/// To be added.\r\n/// This parameter's element count is computed from size, type, and stride.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"index\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"size\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"stride\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pointer\">\r\n/// To be added.\r\n/// This parameter's element count is computed from size, type und stride.\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -30273,7 +30275,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"source\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"id\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"severity\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"buf\">\r\n/// To be added.\r\n/// This parameter's element count is computed from buf and length.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"source\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"id\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"severity\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"buf\">\r\n/// To be added.\r\n/// This parameter's element count is computed from buf und length.\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -30416,7 +30418,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count and type.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count und type.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -30526,7 +30528,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count and type.\r\n/// </param>\r\n/// <param name=\"instancecount\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count und type.\r\n/// </param>\r\n/// <param name=\"instancecount\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -30650,7 +30652,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"start\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"end\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count and type.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"start\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"end\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count und type.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -31831,7 +31833,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"identifier\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"name\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"label\">\r\n/// To be added.\r\n/// This parameter's element count is computed from label and length.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"identifier\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"name\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"label\">\r\n/// To be added.\r\n/// This parameter's element count is computed from label und length.\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -31899,7 +31901,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"ptr\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"label\">\r\n/// To be added.\r\n/// This parameter's element count is computed from label and length.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"ptr\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"label\">\r\n/// To be added.\r\n/// This parameter's element count is computed from label und length.\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -32177,7 +32179,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"source\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"id\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"message\">\r\n/// To be added.\r\n/// This parameter's element count is computed from message and length.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"source\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"id\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"length\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"message\">\r\n/// To be added.\r\n/// This parameter's element count is computed from message und length.\r\n/// </param>\r\n",
               "ExtensionName": "Core"
             },
             {
@@ -43447,7 +43449,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"texture\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"data\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format and type.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"texture\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"data\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format und type.\r\n/// </param>\r\n",
               "ExtensionName": "EXT"
             },
             {
@@ -43627,7 +43629,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"texture\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"xoffset\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"yoffset\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"zoffset\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"depth\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"data\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format and type.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"texture\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"xoffset\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"yoffset\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"zoffset\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"depth\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"data\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format und type.\r\n/// </param>\r\n",
               "ExtensionName": "EXT"
             }
           ],
@@ -45111,7 +45113,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Draw multiple instances of a set of elements.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP,\n/// GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN and GL_TRIANGLES are accepted.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// Specifies the number of elements to be rendered.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or\n/// GL_UNSIGNED_INT.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER\n/// to start reading indices from. If no buffer is bound, specifies a pointer to the location where the\n/// indices are stored.\r\n/// This parameter's element count is computed from count and type.\r\n///\r\n/// </param>\r\n/// <param name=\"primcount\">\r\n/// Specifies the number of instances of the specified range of indices to be rendered.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Draw multiple instances of a set of elements.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP,\n/// GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN and GL_TRIANGLES are accepted.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// Specifies the number of elements to be rendered.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or\n/// GL_UNSIGNED_INT.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER\n/// to start reading indices from. If no buffer is bound, specifies a pointer to the location where the\n/// indices are stored.\r\n/// This parameter's element count is computed from count und type.\r\n///\r\n/// </param>\r\n/// <param name=\"primcount\">\r\n/// Specifies the number of instances of the specified range of indices to be rendered.\r\n/// </param>\r\n",
               "ExtensionName": "EXT"
             }
           ],
@@ -45288,7 +45290,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Draw multiple instances of a set of elements.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP,\n/// GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN and GL_TRIANGLES are accepted.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// Specifies the number of elements to be rendered.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or\n/// GL_UNSIGNED_INT.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER\n/// to start reading indices from. If no buffer is bound, specifies a pointer to the location where the\n/// indices are stored.\r\n/// This parameter's element count is computed from count and type.\r\n///\r\n/// </param>\r\n/// <param name=\"primcount\">\r\n/// Specifies the number of instances of the specified range of indices to be rendered.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Draw multiple instances of a set of elements.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP,\n/// GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN and GL_TRIANGLES are accepted.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// Specifies the number of elements to be rendered.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or\n/// GL_UNSIGNED_INT.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER\n/// to start reading indices from. If no buffer is bound, specifies a pointer to the location where the\n/// indices are stored.\r\n/// This parameter's element count is computed from count und type.\r\n///\r\n/// </param>\r\n/// <param name=\"primcount\">\r\n/// Specifies the number of instances of the specified range of indices to be rendered.\r\n/// </param>\r\n",
               "ExtensionName": "EXT"
             },
             {
@@ -45677,7 +45679,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count and type.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count und type.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
               "ExtensionName": "EXT"
             },
             {
@@ -45787,7 +45789,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count and type.\r\n/// </param>\r\n/// <param name=\"instancecount\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count und type.\r\n/// </param>\r\n/// <param name=\"instancecount\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
               "ExtensionName": "EXT"
             },
             {
@@ -45911,7 +45913,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"start\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"end\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count and type.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"start\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"end\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count und type.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
               "ExtensionName": "EXT"
             },
             {
@@ -48436,7 +48438,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indirect\">\r\n/// To be added.\r\n/// This parameter's element count is computed from drawcount and stride.\r\n/// </param>\r\n/// <param name=\"drawcount\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"stride\">\r\n/// To be added.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indirect\">\r\n/// To be added.\r\n/// This parameter's element count is computed from drawcount und stride.\r\n/// </param>\r\n/// <param name=\"drawcount\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"stride\">\r\n/// To be added.\r\n/// </param>\r\n",
               "ExtensionName": "EXT"
             },
             {
@@ -48532,7 +48534,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indirect\">\r\n/// To be added.\r\n/// This parameter's element count is computed from drawcount and stride.\r\n/// </param>\r\n/// <param name=\"drawcount\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"stride\">\r\n/// To be added.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indirect\">\r\n/// To be added.\r\n/// This parameter's element count is computed from drawcount und stride.\r\n/// </param>\r\n/// <param name=\"drawcount\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"stride\">\r\n/// To be added.\r\n/// </param>\r\n",
               "ExtensionName": "EXT"
             }
           ],
@@ -56455,7 +56457,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"numPaths\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathNameType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"paths\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths, pathNameType, and paths.\r\n/// </param>\r\n/// <param name=\"pathBase\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coverMode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformValues\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths and transformType.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"numPaths\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathNameType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"paths\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths, pathNameType und paths.\r\n/// </param>\r\n/// <param name=\"pathBase\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coverMode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformValues\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths und transformType.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -56634,7 +56636,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"numPaths\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathNameType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"paths\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths, pathNameType, and paths.\r\n/// </param>\r\n/// <param name=\"pathBase\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coverMode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformValues\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths and transformType.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"numPaths\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathNameType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"paths\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths, pathNameType und paths.\r\n/// </param>\r\n/// <param name=\"pathBase\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coverMode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformValues\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths und transformType.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -57212,7 +57214,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"metricQueryMask\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"firstPathName\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numPaths\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"stride\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"metrics\">\r\n/// To be added.\r\n/// This parameter's element count is computed from metricQueryMask, numPaths, and stride.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"metricQueryMask\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"firstPathName\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numPaths\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"stride\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"metrics\">\r\n/// To be added.\r\n/// This parameter's element count is computed from metricQueryMask, numPaths und stride.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -57345,7 +57347,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"metricQueryMask\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numPaths\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathNameType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"paths\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths, pathNameType, and paths.\r\n/// </param>\r\n/// <param name=\"pathBase\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"stride\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"metrics\">\r\n/// To be added.\r\n/// This parameter's element count is computed from metricQueryMask, numPaths, and stride.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"metricQueryMask\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numPaths\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathNameType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"paths\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths, pathNameType und paths.\r\n/// </param>\r\n/// <param name=\"pathBase\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"stride\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"metrics\">\r\n/// To be added.\r\n/// This parameter's element count is computed from metricQueryMask, numPaths und stride.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -57635,7 +57637,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"pathListMode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numPaths\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathNameType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"paths\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths, pathNameType, and paths.\r\n/// </param>\r\n/// <param name=\"pathBase\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"advanceScale\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"kerningScale\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"returnedSpacing\">\r\n/// To be added.\r\n/// This parameter's element count is computed from pathListMode and numPaths.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"pathListMode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numPaths\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathNameType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"paths\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths, pathNameType und paths.\r\n/// </param>\r\n/// <param name=\"pathBase\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"advanceScale\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"kerningScale\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"returnedSpacing\">\r\n/// To be added.\r\n/// This parameter's element count is computed from pathListMode und numPaths.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -59727,7 +59729,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"color\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"genMode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"colorFormat\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coeffs\">\r\n/// To be added.\r\n/// This parameter's element count is computed from genMode and colorFormat.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"color\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"genMode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"colorFormat\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coeffs\">\r\n/// To be added.\r\n/// This parameter's element count is computed from genMode und colorFormat.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -59841,7 +59843,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"path\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numCommands\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"commands\">\r\n/// To be added.\r\n/// This parameter's element count is taken from numCommands.\r\n/// </param>\r\n/// <param name=\"numCoords\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coordType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coords\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numCoords and coordType.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"path\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numCommands\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"commands\">\r\n/// To be added.\r\n/// This parameter's element count is taken from numCommands.\r\n/// </param>\r\n/// <param name=\"numCoords\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coordType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coords\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numCoords und coordType.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -59923,7 +59925,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"path\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numCoords\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coordType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coords\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numCoords and coordType.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"path\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numCoords\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coordType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coords\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numCoords und coordType.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -60440,7 +60442,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"firstPathName\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"fontTarget\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"fontName\">\r\n/// To be added.\r\n/// This parameter's element count is computed from fontTarget and fontName.\r\n/// </param>\r\n/// <param name=\"fontStyle\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"firstGlyph\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numGlyphs\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"handleMissingGlyphs\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathParameterTemplate\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"emScale\">\r\n/// To be added.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"firstPathName\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"fontTarget\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"fontName\">\r\n/// To be added.\r\n/// This parameter's element count is computed from fontTarget und fontName.\r\n/// </param>\r\n/// <param name=\"fontStyle\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"firstGlyph\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numGlyphs\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"handleMissingGlyphs\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathParameterTemplate\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"emScale\">\r\n/// To be added.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -60614,7 +60616,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"firstPathName\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"fontTarget\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"fontName\">\r\n/// To be added.\r\n/// This parameter's element count is computed from fontTarget and fontName.\r\n/// </param>\r\n/// <param name=\"fontStyle\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numGlyphs\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"charcodes\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numGlyphs, type, and charcodes.\r\n/// </param>\r\n/// <param name=\"handleMissingGlyphs\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathParameterTemplate\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"emScale\">\r\n/// To be added.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"firstPathName\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"fontTarget\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"fontName\">\r\n/// To be added.\r\n/// This parameter's element count is computed from fontTarget und fontName.\r\n/// </param>\r\n/// <param name=\"fontStyle\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numGlyphs\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"charcodes\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numGlyphs, type und charcodes.\r\n/// </param>\r\n/// <param name=\"handleMissingGlyphs\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathParameterTemplate\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"emScale\">\r\n/// To be added.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -61344,7 +61346,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"path\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"commandStart\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"commandsToDelete\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numCommands\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"commands\">\r\n/// To be added.\r\n/// This parameter's element count is taken from numCommands.\r\n/// </param>\r\n/// <param name=\"numCoords\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coordType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coords\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numCoords and coordType.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"path\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"commandStart\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"commandsToDelete\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numCommands\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"commands\">\r\n/// To be added.\r\n/// This parameter's element count is taken from numCommands.\r\n/// </param>\r\n/// <param name=\"numCoords\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coordType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coords\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numCoords und coordType.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -61440,7 +61442,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"path\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coordStart\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numCoords\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coordType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coords\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numCoords and coordType.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"path\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coordStart\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"numCoords\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coordType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coords\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numCoords und coordType.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -61522,7 +61524,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"texCoordSet\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"genMode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"components\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coeffs\">\r\n/// To be added.\r\n/// This parameter's element count is computed from genMode and components.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"texCoordSet\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"genMode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"components\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"coeffs\">\r\n/// To be added.\r\n/// This parameter's element count is computed from genMode und components.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -61904,7 +61906,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"numPaths\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathNameType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"paths\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths, pathNameType, and paths.\r\n/// </param>\r\n/// <param name=\"pathBase\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"fillMode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"mask\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformValues\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths and transformType.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"numPaths\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathNameType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"paths\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths, pathNameType und paths.\r\n/// </param>\r\n/// <param name=\"pathBase\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"fillMode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"mask\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformValues\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths und transformType.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -62111,7 +62113,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"numPaths\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathNameType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"paths\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths, pathNameType, and paths.\r\n/// </param>\r\n/// <param name=\"pathBase\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"reference\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"mask\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformValues\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths and transformType.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"numPaths\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pathNameType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"paths\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths, pathNameType und paths.\r\n/// </param>\r\n/// <param name=\"pathBase\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"reference\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"mask\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformType\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"transformValues\">\r\n/// To be added.\r\n/// This parameter's element count is computed from numPaths und transformType.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -64280,7 +64282,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Draw multiple instances of a set of elements.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP,\n/// GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN and GL_TRIANGLES are accepted.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// Specifies the number of elements to be rendered.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or\n/// GL_UNSIGNED_INT.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER\n/// to start reading indices from. If no buffer is bound, specifies a pointer to the location where the\n/// indices are stored.\r\n/// This parameter's element count is computed from count and type.\r\n///\r\n/// </param>\r\n/// <param name=\"primcount\">\r\n/// Specifies the number of instances of the specified range of indices to be rendered.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Draw multiple instances of a set of elements.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP,\n/// GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN and GL_TRIANGLES are accepted.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// Specifies the number of elements to be rendered.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or\n/// GL_UNSIGNED_INT.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER\n/// to start reading indices from. If no buffer is bound, specifies a pointer to the location where the\n/// indices are stored.\r\n/// This parameter's element count is computed from count und type.\r\n///\r\n/// </param>\r\n/// <param name=\"primcount\">\r\n/// Specifies the number of instances of the specified range of indices to be rendered.\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             }
           ],
@@ -65693,7 +65695,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Returns the value of a uniform variable.\r\n/// </summary>\r\n/// <param name=\"program\">\r\n/// Specifies the program object to be queried.\r\n/// </param>\r\n/// <param name=\"location\">\r\n/// Specifies the location of the uniform variable to be queried.\r\n/// </param>\r\n/// <param name=\"@params\">\r\n/// To be added.\r\n/// This parameter's element count is computed from program and location.\r\n///\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Returns the value of a uniform variable.\r\n/// </summary>\r\n/// <param name=\"program\">\r\n/// Specifies the program object to be queried.\r\n/// </param>\r\n/// <param name=\"location\">\r\n/// Specifies the location of the uniform variable to be queried.\r\n/// </param>\r\n/// <param name=\"@params\">\r\n/// To be added.\r\n/// This parameter's element count is computed from program und location.\r\n///\r\n/// </param>\r\n",
               "ExtensionName": "NV"
             },
             {
@@ -73171,7 +73173,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"target\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"internalformat\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"depth\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"border\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pixels\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format, type, width, height, and depth.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"target\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"internalformat\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"depth\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"border\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pixels\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format, type, width, height und depth.\r\n/// </param>\r\n",
               "ExtensionName": "OES"
             },
             {
@@ -73354,7 +73356,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"target\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"xoffset\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"yoffset\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"zoffset\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"depth\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pixels\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format, type, width, height, and depth.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"target\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"level\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"xoffset\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"yoffset\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"zoffset\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"width\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"height\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"depth\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"format\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"pixels\">\r\n/// To be added.\r\n/// This parameter's element count is computed from format, type, width, height und depth.\r\n/// </param>\r\n",
               "ExtensionName": "OES"
             }
           ],
@@ -74441,7 +74443,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count and type.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count und type.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
               "ExtensionName": "OES"
             },
             {
@@ -74551,7 +74553,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count and type.\r\n/// </param>\r\n/// <param name=\"instancecount\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count und type.\r\n/// </param>\r\n/// <param name=\"instancecount\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
               "ExtensionName": "OES"
             },
             {
@@ -74675,7 +74677,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"start\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"end\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count and type.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// To be added.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"start\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"end\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// To be added.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// To be added.\r\n/// This parameter's element count is computed from count und type.\r\n/// </param>\r\n/// <param name=\"basevertex\">\r\n/// To be added.\r\n/// </param>\r\n",
               "ExtensionName": "OES"
             },
             {
@@ -79424,7 +79426,7 @@
               ],
               "GenericTypeParameters": [],
               "Attributes": [],
-              "Doc": "/// <summary>\r\n/// Draw multiple instances of a set of elements.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP,\n/// GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN and GL_TRIANGLES are accepted.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// Specifies the number of elements to be rendered.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or\n/// GL_UNSIGNED_INT.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER\n/// to start reading indices from. If no buffer is bound, specifies a pointer to the location where the\n/// indices are stored.\r\n/// This parameter's element count is computed from count and type.\r\n///\r\n/// </param>\r\n/// <param name=\"primcount\">\r\n/// Specifies the number of instances of the specified range of indices to be rendered.\r\n/// </param>\r\n",
+              "Doc": "/// <summary>\r\n/// Draw multiple instances of a set of elements.\r\n/// </summary>\r\n/// <param name=\"mode\">\r\n/// Specifies what kind of primitives to render. Symbolic constants GL_POINTS, GL_LINE_STRIP,\n/// GL_LINE_LOOP, GL_LINES, GL_TRIANGLE_STRIP, GL_TRIANGLE_FAN and GL_TRIANGLES are accepted.\r\n/// </param>\r\n/// <param name=\"count\">\r\n/// Specifies the number of elements to be rendered.\r\n/// </param>\r\n/// <param name=\"type\">\r\n/// Specifies the type of the values in indices. Must be one of GL_UNSIGNED_BYTE, GL_UNSIGNED_SHORT, or\n/// GL_UNSIGNED_INT.\r\n/// </param>\r\n/// <param name=\"indices\">\r\n/// Specifies a byte offset (cast to a pointer type) into the buffer bound to GL_ELEMENT_ARRAY_BUFFER\n/// to start reading indices from. If no buffer is bound, specifies a pointer to the location where the\n/// indices are stored.\r\n/// This parameter's element count is computed from count und type.\r\n///\r\n/// </param>\r\n/// <param name=\"primcount\">\r\n/// Specifies the number of instances of the specified range of indices to be rendered.\r\n/// </param>\r\n",
               "ExtensionName": "ANGLE"
             },
             {
@@ -81994,7 +81996,7 @@
   "OutputFolder": "OpenGL",
   "Name": "GLES",
   "ClassName": "GL",
-  "Version": null,
+  "Version": "",
   "FunctionPrefix": "gl",
   "SymbolLoaderName": "Silk.NET.Core.Loader.EGLSymbolLoader.Loader",
   "Names": {
