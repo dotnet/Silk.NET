@@ -9,9 +9,9 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Humanizer;
 using JetBrains.Annotations;
-using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.GLXmlConvert;
 
-namespace Silk.NET.BuildTools.GLXmlConvert.Construction
+namespace Silk.NET.BuildTools.Common
 {
     /// <summary>
     /// Translates an identifier (a type name, a constant name, etc) into a .NET-style identifier.
