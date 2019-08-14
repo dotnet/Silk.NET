@@ -3,7 +3,10 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-#nullable disable
+using System;
+using System.Collections.Generic;
+using JetBrains.Annotations;
+using Silk.NET.BuildTools.Common;
 
 namespace Silk.NET.BuildTools.GLXmlConvert.Baking
 {
@@ -17,13 +20,33 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
         /// </summary>
         public ProfileBakeryInformationBuilder()
         {
-            Result = new ProfileBakeryInformation();
+            _implements = new List<string>();
         }
+        
+        private string? _namespace;
+        private string? _extensionsNamespace;
+        private string? _name;
+        private string? _outputFolder;
+        private NameContainer? _nameContainer;
+        private string? _functionPrefix;
+        private string? _className;
+        private string? _symbolLoader;
+        private List<string> _implements;
 
         /// <summary>
         /// Gets the resulting <see cref="ProfileBakeryInformation" />.
         /// </summary>
-        public ProfileBakeryInformation Result { get; }
+        public ProfileBakeryInformation Result
+            => new ProfileBakeryInformation(
+                _namespace ?? throw new ArgumentNullException("Namespace"),
+                _extensionsNamespace ?? throw new ArgumentNullException("ExtensionsNamespace"),
+                _name ?? throw new ArgumentNullException("Name"),
+                _outputFolder ?? throw new ArgumentNullException("Output Folder"),
+                _nameContainer ?? throw new ArgumentNullException("Name Container"),
+                _functionPrefix ?? throw new ArgumentNullException("Function Prefix"),
+                _className ?? throw new ArgumentNullException("Class Name"),
+                _symbolLoader ?? throw new ArgumentNullException("Symbol Loader"),
+                _implements);
 
         /// <summary>
         /// Adds the given implemented profiles to the <see cref="ProfileBakeryInformation" />.
@@ -32,7 +55,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
         /// <returns>This instance (for chaining purposes).</returns>
         public ProfileBakeryInformationBuilder Implements(params string[] implements)
         {
-            Result.Implements.AddRange(implements);
+            _implements.AddRange(implements);
             return this;
         }
 
@@ -40,12 +63,12 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
         /// Sets the profile's namespaces.
         /// </summary>
         /// <param name="ns">The root namespace.</param>
-        /// <param name="extensionNs">The extension root namespace.</param>
+        /// <param name="extensionsNs">The extensions root namespace.</param>
         /// <returns>This instance (for chaining purposes).</returns>
-        public ProfileBakeryInformationBuilder WithNamespaces(string ns, string extensionNs)
+        public ProfileBakeryInformationBuilder WithNamespaces(string ns, string extensionsNs)
         {
-            Result.Namespace = ns;
-            Result.ExtensionsNamespace = extensionNs;
+            _namespace = ns;
+            _extensionsNamespace = extensionsNs;
             return this;
         }
 
@@ -56,7 +79,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
         /// <returns>This instance (for chaining purposes).</returns>
         public ProfileBakeryInformationBuilder WithName(string name)
         {
-            Result.Name = name;
+            _name = name;
             return this;
         }
 
@@ -67,7 +90,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
         /// <returns>This instance (for chaining purposes).</returns>
         public ProfileBakeryInformationBuilder WithPrefix(string prefix)
         {
-            Result.FunctionPrefix = prefix;
+            _functionPrefix = prefix;
             return this;
         }
 
@@ -91,12 +114,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
             string ios
         )
         {
-            Result.NameContainer.Linux = linux;
-            Result.NameContainer.Android = android;
-            Result.NameContainer.MacOS = osx;
-            Result.NameContainer.Windows = windows;
-            Result.NameContainer.IOS = ios;
-            Result.NameContainer.ClassName = classname;
+            _nameContainer = new NameContainer(linux, windows, osx, android, ios, classname);
             return this;
         }
 
@@ -107,7 +125,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
         /// <returns>This instance (for chaining purposes).</returns>
         public ProfileBakeryInformationBuilder WithOutputFolder(string folder)
         {
-            Result.OutputFolder = folder;
+            _outputFolder = folder;
             return this;
         }
 
@@ -118,13 +136,13 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
         /// <returns>This instance (for chaining purposes).</returns>
         public ProfileBakeryInformationBuilder WithClassName(string className)
         {
-            Result.ClassName = className;
+            _className = className;
             return this;
         }
 
         public ProfileBakeryInformationBuilder WithSymbolLoader(string loader)
         {
-            Result.SymbolLoader = loader;
+            _symbolLoader = loader;
             return this;
         }
     }

@@ -180,11 +180,14 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
         /// <param name="folder">The folder to search and destroy APIs in.</param>
         public static void DeleteRawAPIs(string folder)
         {
-            foreach (var file in Directory.GetFiles(folder))
+            if (folder != null)
             {
-                if (file != null && (Path.GetFileName(file).StartsWith("api-") && file.EndsWith(".json")))
+                foreach (var file in Directory.GetFiles(folder))
                 {
-                    File.Delete(file);
+                    if (file != null && (Path.GetFileName(file).StartsWith("api-") && file.EndsWith(".json")))
+                    {
+                        File.Delete(file);
+                    }
                 }
             }
         }

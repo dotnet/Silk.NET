@@ -6,8 +6,6 @@
 using System.Collections.Generic;
 using Silk.NET.BuildTools.Common;
 
-#nullable disable
-
 namespace Silk.NET.BuildTools.GLXmlConvert.Baking
 {
     /// <summary>
@@ -18,7 +16,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
         /// <summary>
         /// Gets or sets a list of the APIs that should be baked into this profile.
         /// </summary>
-        public List<string> Implements { get; set; } = new List<string>();
+        public List<string> Implements { get; set; }
 
         /// <summary>
         /// Gets or sets the namespace in which the Core functions and enums should be placed.
@@ -43,7 +41,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
         /// <summary>
         /// Gets or sets the name container for this profile.
         /// </summary>
-        public NameContainer NameContainer { get; set; } // = new NameContainer();
+        public NameContainer NameContainer { get; set; }
 
         /// <summary>
         /// Gets or sets the function prefix for this profile.
@@ -59,6 +57,21 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Baking
         /// Gets or sets the symbol loader for this profile.
         /// </summary>
         public string SymbolLoader { get; set; }
+
+        public ProfileBakeryInformation(string ns, string extensionsNamespace, string name, string outputFolder, NameContainer nameContainer, string functionPrefix, string className, string symbolLoader, List<string>? implements = null)
+        {
+            Implements = implements ?? new List<string>();
+            Namespace = ns;
+            ExtensionsNamespace = extensionsNamespace;
+            Name = name;
+            OutputFolder = outputFolder;
+            NameContainer = nameContainer;
+            FunctionPrefix = functionPrefix;
+            ClassName = className;
+            SymbolLoader = symbolLoader;
+        }
+
+
         // ReSharper disable InconsistentNaming
 
         /// <summary>
