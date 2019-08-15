@@ -26,11 +26,8 @@ namespace Silk.NET.OpenGL
         private List<string> _extensions;
         public override bool IsExtensionPresent(string extension)
         {
-            unsafe
-            {
-                _extensions ??= Enumerable.Range(0, GetInteger(GLEnum.NumExtensions))
-                    .Select(x => Marshal.PtrToStringAnsi((IntPtr) GetString(GLEnum.Extensions, (uint) x))).ToList();
-            }
+            _extensions ??= Enumerable.Range(0, GetInteger(GLEnum.NumExtensions))
+                .Select(x => GetString(GLEnum.Extensions, (uint) x)).ToList();
 
             return _extensions.Contains(extension);
         }

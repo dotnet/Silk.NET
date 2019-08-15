@@ -1,7 +1,7 @@
 [
     {
         "Task": "glxml",
-        "Args": ["-p", "gl", "-o", "../binder_specifications", "-i", "../gl.xml", "-f", "-t", "../binder_typemaps/gl.json", "../binder_typemaps/csharp.json", "-x"]
+        "Args": ["-p", "gl", "-o", "../binder_specifications", "-i", "../gl.xml", "-f", "-t", "../binder_typemaps/gl.json", "../binder_typemaps/csharp.json", "../binder_typemaps/aftermap.json", "-x"]
     },
     {
         "Task": "bake",

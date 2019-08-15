@@ -26,7 +26,10 @@ namespace Silk.NET.BuildTools.Common
             {
                 if (map.ContainsKey(function.ReturnType.ToString()))
                 {
-                    function.ReturnType = ParsingHelpers.ParseTypeSignature(map[function.ReturnType.ToString()]);
+                    function.ReturnType = ParsingHelpers.ParseTypeSignature
+                    (
+                        map[function.ReturnType.ToString()], function.ReturnType.OriginalName
+                    );
                 }
                 else if (map.ContainsKey(function.ReturnType.Name))
                 {
@@ -37,7 +40,10 @@ namespace Silk.NET.BuildTools.Common
                 {
                     if (map.ContainsKey(parameter.Type.ToString()))
                     {
-                        parameter.Type = ParsingHelpers.ParseTypeSignature(map[parameter.Type.ToString()]);
+                        parameter.Type = ParsingHelpers.ParseTypeSignature
+                        (
+                            map[parameter.Type.ToString()], parameter.Type.OriginalName
+                        );
                     }
                     else if (map.ContainsKey(parameter.Type.Name))
                     {

@@ -90,9 +90,10 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
         /// Parses a type signature from the given string.
         /// </summary>
         /// <param name="type">The type string.</param>
+        /// <param name="original">The original type name.</param>
         /// <returns>A parsed type.</returns>
         [NotNull]
-        public static Type ParseTypeSignature([NotNull] string type)
+        public static Type ParseTypeSignature([NotNull] string type, string original = null)
         {
             if (type.Contains('*') && (type.Contains('[') || type.Contains(']')))
             {
@@ -152,7 +153,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
             return new Type
             {
                 Name = typeName,
-                OriginalName = typeName,
+                OriginalName = original ?? typeName,
                 IndirectionLevels = pointerLevel,
                 ArrayDimensions = arrayLevel
             };
