@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <IncludeBuildOutput>false</IncludeBuildOutput> <!-- Metapackage -->
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
+      <ProjectReference Include="..\..\OpenAL\Silk.NET.OpenAL\Silk.NET.OpenAL.csproj" />
+      <ProjectReference Include="..\..\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
+      <ProjectReference Include="..\..\Windowing\Silk.NET.GLFW\Silk.NET.GLFW.csproj" />
+      <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+      <ProjectReference Include="..\Silk.NET.Core\Silk.NET.Core.csproj" />
+    </ItemGroup>
+
+    <Import Project="..\..\..\build\props\common.props" />
+
+</Project>
