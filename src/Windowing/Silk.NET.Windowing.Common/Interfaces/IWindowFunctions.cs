@@ -24,16 +24,6 @@ namespace Silk.NET.Windowing.Common
         void Close();
 
         /// <summary>
-        /// Process all pending window events.
-        /// </summary>
-        void ProcessEvents();
-
-        /// <summary>
-        /// Swap between rendering buffers.
-        /// </summary>
-        void SwapBuffers();
-
-        /// <summary>
         /// Converts this point to client coordinates.
         /// </summary>
         /// <param name="point">The point to transform.</param>
