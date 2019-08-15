@@ -22,18 +22,19 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             sb.AppendLine("// SpanOverloader");
             var parameters = function.Parameters.ToList();
             var fun = new FunctionSignatureBuilder(function);
-            if (function.ReturnType.IndirectionLevels == 1 && function.ReturnType.Name != "void")
-            {
-                fun.WithReturnType
-                (
-                    new Type
-                    {
-                        Name = "Span", OriginalName = "Span",
-                        GenericTypes = new List<Type> {new Type {Name = function.ReturnType.Name}}
-                    }
-                );
-                returnTypeChanged = true;
-            }
+            // TODO we need a length for span returns, so I've disabled them for now
+            //if (function.ReturnType.IndirectionLevels == 1 && function.ReturnType.Name != "void")
+            //{
+            //    fun.WithReturnType
+            //    (
+            //        new Type
+            //        {
+            //            Name = "Span", OriginalName = "Span",
+            //            GenericTypes = new List<Type> {new Type {Name = function.ReturnType.Name}}
+            //        }
+            //    );
+            //    returnTypeChanged = true;
+            //}
 
             var ind = string.Empty;
             for (var i = 0; i < function.Parameters.Count; i++)
