@@ -1,0 +1,24 @@
+{
+  "runtimes": {
+    "linux-x64": {
+      "Ultz.Native.GLFW": {
+        "Ultz.Native.GLFW.Linux.x64": "3.3.0"
+      }
+    },
+    "osx-x64": {
+      "Ultz.Native.GLFW": {
+        "Ultz.Native.GLFW.OSX.x64": "3.3.0"
+      }
+    },
+    "win-x64": {
+      "Ultz.Native.GLFW": {
+        "Ultz.Native.GLFW.Windows.x64": "3.3.0"
+      }
+    },
+    "win-x86": {
+      "Ultz.Native.GLFW": {
+        "Ultz.Native.GLFW.Windows.x86": "3.3.0"
+      }
+    }
+  }
+}
