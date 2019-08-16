@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
+  <metadata minClientVersion="2.12">
+    <id>Ultz.Native.GLFW.OSX.x64</id>
+    <version>3.3.0</version>
+    <authors>Ultz</authors>
+    <owners>Ultz</owners>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <license type="expression">Zlib</license>
+    <projectUrl>https://github.com/ultz/nativepackages</projectUrl>
+    <description>Multi-platform native library for GLFW.</description>
+    <repository type="git" url="https://github.com/glfw/glfw" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="runtimes\osx-x64\native\libglfw.3.3.dylib" target="runtimes\osx-x64\native\libglfw.3.3.dylib" />
+  </files>
+</package>
