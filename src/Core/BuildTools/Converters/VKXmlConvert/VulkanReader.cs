@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
@@ -33,42 +34,47 @@ namespace Silk.NET.BuildTools.VKXmlConvert
         {
             foreach (var xe in element.Elements("member"))
             {
-                string name = xe.Element("name")?.Value ?? throw new NullReferenceException("name is null");
-                bool isOptional = bool.Parse(xe.Attribute("optional")?.Value ?? "false");
-                string typeName = xe.Element("type")?.Value ?? throw new NullReferenceException("type is null");
-                int pointerLevel = xe.Value.Contains($"{typeName}*") ? 1 : 0; // TODO: Make this better.
+                var name = xe.Element("name")?.Value ?? throw new NullReferenceException("name is null");
+                var isOptional = bool.Parse(xe.Attribute("optional")?.Value ?? "false");
+                var typeName = xe.Element("type")?.Value ?? throw new NullReferenceException("type is null");
+                var pointerLevel = xe.Value.Contains($"{typeName}*") ? 1 : 0; // TODO: Make this better.
                 if (xe.Value.Contains($"{typeName}* const*"))
                 {
                     pointerLevel += 1;
                 }
 
-                var type = new Type() {IndirectionLevels = pointerLevel, Name = typeName};
+                var type = new Type {IndirectionLevels = pointerLevel, Name = typeName};
 
-                bool foundConstantElementCount = false;
-                int elementCount = 1;
-                string elementCountSymbolic = null;
-                for (int i = 2; i < 10; i++)
+                Count count = null;
+                for (var i = 2; i < 10; i++)
                 {
                     if (xe.Value.Contains($"{name}[{i}]"))
                     {
-                        elementCount = i;
-                        foundConstantElementCount = true;
+                        count = new Count(i);
                         break;
                     }
                 }
 
-                if (!foundConstantElementCount)
+                if (count is null)
                 {
-                    Match m = Regex.Match(xe.Value, @"\[(.*)\]");
+                    var m = Regex.Match(xe.Value, @"\[(.*)\]");
                     if (m.Captures.Count > 0)
                     {
-                        elementCountSymbolic = m.Groups[1].Value;
+                        count = new Count(m.Groups[1].Value, false);
                     }
                 }
 
-                string value = xe.Attribute("values")?.Value;
+                var value = xe.Attribute("values")?.Value;
 
-                return new MemberSpec(name, type, isOptional, elementCount, elementCountSymbolic, string.Empty, value);
+                yield return new Field
+                {
+                    Count = count,
+                    Doc = "/// <summary>To be added.</summary>",
+                    Name = name,
+                    NativeName = name,
+                    NativeType = typeName,
+                    Type = type
+                };
             }
         }
     }

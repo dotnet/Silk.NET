@@ -54,12 +54,25 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Initializes a new instance of the <see cref="Count" /> class.
         /// </summary>
-        /// <param name="valueReference">The parameter the count is taken from.</param>
-        public Count([CanBeNull] string valueReference)
+        /// <param name="value">The parameter the count is taken from.</param>
+        /// <param name="isValueReference">Whether the value given is a reference to a parameter or a constant.</param>
+        public Count([CanBeNull] string value, bool isValueReference = true)
         {
-            ValueReference = valueReference;
-            ComputedFromNames = new List<string>();
+            if (isValueReference)
+            {
+                ValueReference = value;
+                ComputedFromNames = new List<string>();
+            }
+            else
+            {
+                ConstantName = value;
+            }
         }
+
+        /// <summary>
+        /// Gets or sets the name of the constant which determines this count's value.
+        /// </summary>
+        public string ConstantName { get; set; }
 
         /// <summary>
         /// Gets the static count of the parameter.
@@ -123,6 +136,12 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         [JsonIgnore]
         public bool IsComputed => ComputedFromNames.Any();
+
+        /// <summary>
+        /// Gets a value indicating whether the count is retrieved from a constant.
+        /// </summary>
+        [JsonIgnore]
+        public bool IsConstant => !(ConstantName is null);
 
         /// <summary>
         /// Gets a value indicating whether the count is a reference to the value of another parameter.
