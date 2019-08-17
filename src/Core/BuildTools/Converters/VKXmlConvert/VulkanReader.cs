@@ -25,8 +25,10 @@ namespace Silk.NET.BuildTools.VKXmlConvert
                 var @struct = new Struct();
                 @struct.NativeName = xml.Attribute("name")?.Value ?? throw new DataException("No name attribute");
                 @struct.Name = NativeIdentifierTranslator.TranslateIdentifierName(@struct.NativeName);
-                
-                yield return null; //todo
+                @struct.Fields = ReadFields(xml).ToList();
+                // todo: deprecation detection -> @struct.Attributes
+
+                yield return @struct;
             }
         }
 
