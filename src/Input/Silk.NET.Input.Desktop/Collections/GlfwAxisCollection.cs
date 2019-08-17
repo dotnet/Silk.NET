@@ -6,7 +6,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using Silk.NET.Input.Common;
 
 namespace Silk.NET.Input.Desktop.Collections

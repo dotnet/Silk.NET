@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Silk.NET.Input;
 using Silk.NET.Input.Common;
-using Silk.NET.Input.Desktop;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
-using Silk.NET.Windowing.Desktop;
 
 namespace InputTest
 {

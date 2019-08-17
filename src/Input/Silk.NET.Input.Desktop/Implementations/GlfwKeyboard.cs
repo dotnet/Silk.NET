@@ -5,7 +5,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
 

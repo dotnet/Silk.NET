@@ -69,22 +69,19 @@ namespace Silk.NET.Windowing.Desktop
         /// <param name="options">The options to use for this window.</param>
         public GlfwWindow(WindowOptions options)
         {
-            unsafe
-            {
-                // Title and Size must be set before the window is created.
-                _title = options.Title;
-                _size = options.Size;
+            // Title and Size must be set before the window is created.
+            _title = options.Title;
+            _size = options.Size;
 
-                _windowBorder = WindowBorder;
+            _windowBorder = WindowBorder;
 
-                FramesPerSecond = options.FramesPerSecond;
-                UpdatesPerSecond = options.UpdatesPerSecond;
+            FramesPerSecond = options.FramesPerSecond;
+            UpdatesPerSecond = options.UpdatesPerSecond;
 
-                RunningSlowTolerance = options.RunningSlowTolerance;
-                UseSingleThreadedWindow = options.UseSingleThreadedWindow;
+            RunningSlowTolerance = options.RunningSlowTolerance;
+            UseSingleThreadedWindow = options.UseSingleThreadedWindow;
 
-                initialOptions = options;
-            }
+            initialOptions = options;
         }
 
         /// <inheritdoc />
@@ -512,7 +509,7 @@ namespace Silk.NET.Windowing.Desktop
                 else
                 {
                     // Raise UpdateFrame, but don't await it yet.
-                    var task = Task.Run((Action)RaiseUpdateFrame); // cast to action, ambiguous call
+                    var task = Task.Run(RaiseUpdateFrame); // cast to action, ambiguous call
 
                     // Loop while we're still updating - the Update thread might be calling the main thread
                     while (!task.IsCompleted)
