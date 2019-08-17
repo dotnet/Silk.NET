@@ -10,21 +10,29 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
+using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
 namespace Silk.NET.BuildTools.VKXmlConvert
 {
     public class VulkanReader
     {
+        public const string EnumPrefix = "Vk"; // TODO make a command line option for enum prefix
+        public const string StructPrefix = "Vk"; // TODO make a command line option for struct prefix
+        public const string FunctionPrefix = "vk"; // TODO make a command line option for enum prefix
         public IEnumerable<Struct> ReadStructs(XDocument document)
         {
             foreach (var xml in document.Elements("types").Elements("type").Where(x => x.Attribute("category")?.Value == "struct"))
             {
                 var @struct = new Struct();
                 @struct.NativeName = xml.Attribute("name")?.Value ?? throw new DataException("No name attribute");
-                @struct.Name = NativeIdentifierTranslator.TranslateIdentifierName(@struct.NativeName);
+                @struct.Name = NativeIdentifierTranslator.TranslateIdentifierName
+                (
+                    @struct.NativeName.Remove(0, StructPrefix.Length)
+                );
                 @struct.Fields = ReadFields(xml).ToList();
                 // todo: deprecation detection -> @struct.Attributes
 
@@ -78,6 +86,38 @@ namespace Silk.NET.BuildTools.VKXmlConvert
                     Type = type
                 };
             }
+        }
+
+        public IEnumerable<Enum> ReadEnums(XDocument document)
+        {
+            foreach (var xml in document.Elements("enums").Elements("enum"))
+            {
+                var @enum = new Enum();
+                @enum.NativeName = xml.Attribute("name")?.Value ?? throw new DataException("No name attribute");
+                @enum.Name = NativeIdentifierTranslator.TranslateIdentifierName
+                (
+                    @enum.NativeName.Remove(0, EnumPrefix.Length)
+                );
+                @enum.Tokens = ReadTokens(xml).ToList();
+                // todo: deprecation detection -> @enum.Attributes
+
+                yield return @enum;
+            }
+        }
+
+        private IEnumerable<Token> ReadTokens(XElement xml)
+        {
+            yield break;
+        }
+
+        public IEnumerable<Function> ReadFunctions(XDocument document, IEnumerable<Enum> enums)
+        {
+            yield break; // todo
+        }
+
+        public IEnumerable<Project> ReadProjects(XDocument document, IEnumerable<Enum> enums, IEnumerable<Struct> structs, IEnumerable<Function> functions)
+        {
+            yield break; // todo
         }
     }
 }
