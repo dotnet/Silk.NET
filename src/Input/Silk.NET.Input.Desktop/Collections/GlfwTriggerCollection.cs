@@ -2,8 +2,6 @@ using Silk.NET.Input.Common;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Text;
 
 namespace Silk.NET.Input.Desktop.Collections
 {

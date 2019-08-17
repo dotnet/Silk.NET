@@ -4,8 +4,6 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using Silk.NET.Core.Platform;
 using Silk.NET.Input.Common;
 using Silk.NET.Input.Desktop;

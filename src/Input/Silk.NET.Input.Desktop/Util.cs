@@ -5,7 +5,6 @@
 
 using System;
 using System.Linq;
-using System.Threading;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
 using Ultz.Dispatcher.Unsafe;

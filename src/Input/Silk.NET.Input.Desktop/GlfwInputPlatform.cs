@@ -1,5 +1,4 @@
-﻿using System;
-using Silk.NET.Input.Common;
+﻿using Silk.NET.Input.Common;
 using Silk.NET.Windowing.Common;
 using Silk.NET.Windowing.Desktop;
 
