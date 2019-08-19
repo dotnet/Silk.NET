@@ -15,7 +15,7 @@ Silk.NET works on any .NET Standard 2.0 compliant platform. This includes Xamari
 We currently have 3 maintainers:
 - [Dylan P.](https://github.com/Perksey) from [Ultz](https://github.com/Ultz)
 - [Aaron P.](https://github.com/AzyIsCool) from [Ultz](https://github.com/Ultz)
-- [Frederik J.](frederikja163) from the open-source community
+- [Frederik A.](https://github.com/frederikja163) from the open-source community
 
 As well as 2 community members who we consult with to influence Silk.NET's design:
 - [devvoid](https://github.com/devvoid), a Silk.NET contributor who basically wrote half the library
