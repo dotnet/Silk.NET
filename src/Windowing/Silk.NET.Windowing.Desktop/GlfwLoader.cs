@@ -12,7 +12,7 @@ using Silk.NET.GLFW;
 
 namespace Silk.NET.Windowing.Desktop
 {
-    public class GlfwLoader : ISymbolLoader
+    public class GlfwLoader : IGLSymbolLoader
     {
         private ISymbolLoader _underlyingLoader = PlatformLoaderBase.PlatformLoader;
 
