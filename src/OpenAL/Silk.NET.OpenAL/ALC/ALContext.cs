@@ -78,7 +78,7 @@ namespace Silk.NET.OpenAL
         /// Gets an instance of the API.
         /// </summary>
         /// <returns>The instance.</returns>
-        public static ALContext GetAPI()
+        public static ALContext GetApi()
         {
             return LibraryLoader.Load<ALContext>(new OpenALLibraryNameContainer());
         }

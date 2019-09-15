@@ -54,6 +54,32 @@ namespace Silk.NET.BuildTools.Common
         }
 
         /// <summary>
+        /// Replaces the type names of parameters and return types in the given functions using the given typemap.
+        /// </summary>
+        /// <param name="map">The typemap/dictionary to use.</param>
+        /// <param name="functions">The functions to map.</param>
+        public static void Map(Dictionary<string, string> map, IEnumerable<Struct> structs)
+        {
+            foreach (var @struct in structs)
+            {
+                foreach (var field in @struct.Fields)
+                {
+                    if (map.ContainsKey(field.Type.ToString()))
+                    {
+                        field.Type = ParsingHelpers.ParseTypeSignature
+                        (
+                            map[field.Type.ToString()], field.Type.OriginalName
+                        );
+                    }
+                    else if (map.ContainsKey(field.Type.Name))
+                    {
+                        field.Type.Name = map[field.Type.Name];
+                    }
+                }
+            }
+        }
+
+        /// <summary>
         /// Replaces the type names of GLenum parameters with their associated enums.
         /// </summary>
         /// <param name="profile">The profile to map.</param>

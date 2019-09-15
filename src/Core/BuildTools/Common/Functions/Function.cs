@@ -32,6 +32,9 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         public string NativeName { get; set; }
 
+        public string ProfileName { get; set; }
+        public Version ProfileVersion { get; set; }
+
         /// <summary>
         /// Gets or sets the parameters of the function.
         /// </summary>
@@ -45,7 +48,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         [NotNull]
         [ItemNotNull]
         [JsonIgnore]
-        public string[] Categories { get; set; }
+        public List<string> Categories { get; set; }
 
         /// <summary>
         /// Gets or sets the generic type parameters of the function.

@@ -13,6 +13,7 @@ using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
+using Attribute = Silk.NET.BuildTools.Common.Attribute;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
@@ -29,9 +30,9 @@ namespace Silk.NET.BuildTools.VKXmlConvert
             {
                 var @struct = new Struct();
                 @struct.NativeName = xml.Attribute("name")?.Value ?? throw new DataException("No name attribute");
-                @struct.Name = NativeIdentifierTranslator.TranslateIdentifierName
+                @struct.Name = Naming.Translate
                 (
-                    @struct.NativeName.Remove(0, StructPrefix.Length)
+                    @struct.NativeName.Remove(0, StructPrefix.Length), FunctionPrefix
                 );
                 @struct.Fields = ReadFields(xml).ToList();
                 // todo: deprecation detection -> @struct.Attributes
@@ -90,14 +91,24 @@ namespace Silk.NET.BuildTools.VKXmlConvert
 
         public IEnumerable<Enum> ReadEnums(XDocument document)
         {
-            foreach (var xml in document.Elements("enums").Elements("enum"))
+            foreach (var xml in document.Elements("enums"))
             {
                 var @enum = new Enum();
-                @enum.NativeName = xml.Attribute("name")?.Value ?? throw new DataException("No name attribute");
-                @enum.Name = NativeIdentifierTranslator.TranslateIdentifierName
-                (
-                    @enum.NativeName.Remove(0, EnumPrefix.Length)
-                );
+                var enumType = xml.Attribute("type")?.Value;
+                if (enumType == "bitmask" || enumType == "enum")
+                {
+                    @enum.NativeName = xml.Attribute("name")?.Value ?? throw new DataException("No name attribute");
+                    @enum.Name = Naming.Translate
+                    (
+                        @enum.NativeName.Remove(0, EnumPrefix.Length), FunctionPrefix
+                    );
+                }
+                else
+                {
+                    @enum.NativeName = string.Empty;
+                    @enum.Name = FunctionPrefix.ToUpper() + "Constants";
+                }
+
                 @enum.Tokens = ReadTokens(xml).ToList();
                 // todo: deprecation detection -> @enum.Attributes
 
@@ -105,9 +116,50 @@ namespace Silk.NET.BuildTools.VKXmlConvert
             }
         }
 
-        private IEnumerable<Token> ReadTokens(XElement xml)
+        private IEnumerable<Token> ReadTokens(XElement @enum)
         {
-            yield break;
+            foreach (var xml in @enum.Elements("enum"))
+            {
+                var bitpos = xml.Attribute("bitpos");
+                var value = xml.Attribute("value");
+                var comment = xml.Attribute("comment");
+                var doc = comment != null
+                    ? "///<summary>" + comment + "</summary>"
+                    : "///<summary>To be added.</summary>";
+                var name = xml.Attribute("name");
+                if (name == null)
+                {
+                    throw new DataException("No name.");
+                }
+
+                var val = 0;
+                if (bitpos != null)
+                {
+                    if (int.TryParse(bitpos.Value, out var pos))
+                    {
+                        val = 1 << pos;
+                    }
+                }
+
+                if (value != null)
+                {
+                    if (int.TryParse(value.Value, out var intVal))
+                    {
+                        val = intVal;
+                    }
+                }
+
+                yield return new Token
+                {
+                    Attributes = bitpos != null
+                        ? new List<Attribute> {new Attribute {Name = "System.Flags"}}
+                        : new List<Attribute>(),
+                    Doc = doc,
+                    Name = Naming.Translate(name.Value, FunctionPrefix),
+                    NativeName = name.Value,
+                    Value = val.ToString()
+                };
+            }
         }
 
         public IEnumerable<Function> ReadFunctions(XDocument document, IEnumerable<Enum> enums)

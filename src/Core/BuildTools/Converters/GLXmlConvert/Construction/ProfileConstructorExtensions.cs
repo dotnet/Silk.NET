@@ -44,10 +44,11 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
 
             var result = new Enum
             {
-                Name = NativeIdentifierTranslator.TranslateIdentifierName
+                Name = Naming.Translate
                 (
                     elementName.Value.CheckMemberName(GLXmlConverter.CliOptions.Prefix)
-                    ?? throw new InvalidOperationException("No name attribute.")
+                    ?? throw new InvalidOperationException("No name attribute."),
+                    GLXmlConverter.CliOptions.Prefix
                 ),
                 NativeName = elementName.Value,
                 ExtensionName = elementExtension.Value
@@ -68,7 +69,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                 (
                     new Token
                     {
-                        Name = NativeIdentifierTranslator.TranslateIdentifierName(childName.Value)
+                        Name = Naming.Translate(childName.Value, GLXmlConverter.CliOptions.Prefix)
                             .CheckMemberName(GLXmlConverter.CliOptions.Prefix),
                         NativeName = childName.Value,
                         Value = FormatToken(childValue.Value),
@@ -99,7 +100,8 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
             var functionName = element.GetRequiredAttribute("name").Value;
             var functionCategories = element.GetRequiredAttribute("category")
                 .Value
-                .Split(new[] {'|'}, StringSplitOptions.RemoveEmptyEntries);
+                .Split(new[] {'|'}, StringSplitOptions.RemoveEmptyEntries)
+                .ToList();
             var functionExtensions = element.GetRequiredAttribute("extension").Value;
             
             var functionDeprecationVersion = ParsingHelpers.ParseVersion(element, "deprecated");
@@ -370,7 +372,7 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
                                 rawCategory,
                                 new Interface
                                 {
-                                    Name = "I" + NativeIdentifierTranslator.TranslateIdentifierName(rawCategory)
+                                    Name = "I" + Naming.Translate(rawCategory, GLXmlConverter.CliOptions.Prefix)
                                         .CheckMemberName(GLXmlConverter.CliOptions.Prefix)
                                 }
                             );

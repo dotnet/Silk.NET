@@ -158,17 +158,6 @@ namespace Silk.NET.BuildTools.GLXmlConvert.Construction
         }
 
         /// <summary>
-        /// Gets the root element of the signature file.
-        /// </summary>
-        /// <param name="signatures">The signature document.</param>
-        /// <returns>The root element.</returns>
-        [NotNull]
-        public static XElement GetSignatureRoot([NotNull] XDocument signatures)
-        {
-            return signatures.GetRequiredElement("signatures");
-        }
-
-        /// <summary>
         /// Parses a <see cref="Count" /> from a raw string.
         /// </summary>
         /// <param name="countData">The raw count string.</param>

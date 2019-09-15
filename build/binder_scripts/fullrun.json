@@ -5,7 +5,7 @@
     },
     {
         "Task": "bake",
-        "Args": ["-d", "../docs.gl", "-b", "../binder_bakery_info/GL-All.json", "-f", "../binder_specifications", "-p"]
+        "Args": ["-d", "../docs.gl", "-b", "../binder_bakery_info/GL-All.json", "-f", "../binder_specifications", "-p", "-k"]
     },
     {
         "Task": "bind",

@@ -19,7 +19,7 @@ namespace Silk.NET.Windowing.Desktop
             get
             {
                 try {
-                    Glfw.GetAPI(); // activate the class so we can determine if we can activate the class
+                    Glfw.GetApi(); // activate the class so we can determine if we can activate the class
                 }
                 catch {
                     return false;
