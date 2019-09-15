@@ -3,10 +3,13 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using JetBrains.Annotations;
 using Silk.NET.BuildTools.Common.Functions;
-using Silk.NET.BuildTools.GLXmlConvert.Construction;
+using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
 namespace Silk.NET.BuildTools.Common
 {
@@ -26,7 +29,7 @@ namespace Silk.NET.BuildTools.Common
             {
                 if (map.ContainsKey(function.ReturnType.ToString()))
                 {
-                    function.ReturnType = ParsingHelpers.ParseTypeSignature
+                    function.ReturnType = ParseTypeSignature
                     (
                         map[function.ReturnType.ToString()], function.ReturnType.OriginalName
                     );
@@ -40,7 +43,7 @@ namespace Silk.NET.BuildTools.Common
                 {
                     if (map.ContainsKey(parameter.Type.ToString()))
                     {
-                        parameter.Type = ParsingHelpers.ParseTypeSignature
+                        parameter.Type = ParseTypeSignature
                         (
                             map[parameter.Type.ToString()], parameter.Type.OriginalName
                         );
@@ -66,7 +69,7 @@ namespace Silk.NET.BuildTools.Common
                 {
                     if (map.ContainsKey(field.Type.ToString()))
                     {
-                        field.Type = ParsingHelpers.ParseTypeSignature
+                        field.Type = ParseTypeSignature
                         (
                             map[field.Type.ToString()], field.Type.OriginalName
                         );
@@ -106,6 +109,72 @@ namespace Silk.NET.BuildTools.Common
                     }
                 }
             }
+        }
+        
+        private static Type ParseTypeSignature([NotNull] string type, string original = null)
+        {
+            if (type.Contains('*') && (type.Contains('[') || type.Contains(']')))
+            {
+                throw new InvalidDataException("A type cannot be both a pointer and an array at the same time.");
+            }
+
+            const string constValueSpecifier = "const ";
+            const string constPointerSpecifier = " const";
+            const string structSpecifier = "struct ";
+
+            // We'll ignore struct and const specifiers for the moment
+            var isConstValue = type.StartsWith(constValueSpecifier);
+            if (isConstValue)
+            {
+                type = type.Remove(0, constValueSpecifier.Length);
+            }
+
+            var isConstPointer = type.EndsWith(constPointerSpecifier);
+            if (isConstPointer)
+            {
+                var specifierIndex = type.LastIndexOf(constPointerSpecifier, StringComparison.Ordinal);
+                type = type.Remove(specifierIndex);
+            }
+
+            var isStruct = type.StartsWith(structSpecifier);
+            if (isStruct)
+            {
+                type = type.Remove(0, structSpecifier.Length);
+            }
+
+            var typeName = new string(type.ToCharArray().Where(c => !char.IsWhiteSpace(c)).ToArray());
+
+            var pointerLevel = 0;
+            var isPointer = type.EndsWith("*");
+            if (isPointer)
+            {
+                var firstPointerLevelIndex = typeName.IndexOf('*');
+                var lastPointerLevelIndex = typeName.LastIndexOf('*');
+
+                pointerLevel = Math.Abs(lastPointerLevelIndex - firstPointerLevelIndex) + 1;
+
+                typeName = typeName.Remove(firstPointerLevelIndex);
+            }
+
+            var arrayLevel = 0;
+            var isArray = typeName.EndsWith("]");
+            if (isArray)
+            {
+                var firstArrayIndex = typeName.IndexOf('[');
+                var lastArrayIndex = typeName.IndexOf(']');
+
+                arrayLevel = Math.Abs(firstArrayIndex - lastArrayIndex);
+
+                typeName = typeName.Remove(firstArrayIndex);
+            }
+
+            return new Type
+            {
+                Name = typeName,
+                OriginalName = original ?? typeName,
+                IndirectionLevels = pointerLevel,
+                ArrayDimensions = arrayLevel
+            };
         }
     }
 }

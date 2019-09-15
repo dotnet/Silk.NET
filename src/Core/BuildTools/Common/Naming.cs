@@ -9,7 +9,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Humanizer;
 using JetBrains.Annotations;
-using Silk.NET.BuildTools.GLXmlConvert;
 
 namespace Silk.NET.BuildTools.Common
 {

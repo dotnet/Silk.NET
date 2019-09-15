@@ -6,7 +6,6 @@
 using System;
 using System.Text;
 using Silk.NET.BuildTools.Common.Functions;
-using Silk.NET.BuildTools.GLXmlConvert;
 
 namespace Silk.NET.BuildTools.Common.Trimmers
 {
@@ -27,11 +26,11 @@ namespace Silk.NET.BuildTools.Common.Trimmers
         }
 
         /// <inheritdoc />
-        public Function Trim(Function trimmable)
+        public Function Trim(Function trimmable, string prefix)
         {
             var extensionNameIndex = trimmable.NativeName.LastIndexOf
                 (trimmable.ExtensionName, StringComparison.OrdinalIgnoreCase);
-            trimmable.Name = trimmable.NativeName.Remove(extensionNameIndex).CheckMemberName(GLXmlConverter.CliOptions.Prefix);
+            trimmable.Name = trimmable.NativeName.Remove(extensionNameIndex).CheckMemberName(prefix);
             return trimmable;
         }
 
@@ -59,7 +58,7 @@ namespace Silk.NET.BuildTools.Common.Trimmers
         }
 
         /// <inheritdoc />
-        public string Trim(string trimmable)
+        public string Trim(string trimmable, string prefix)
         {
             var sb = new StringBuilder();
 

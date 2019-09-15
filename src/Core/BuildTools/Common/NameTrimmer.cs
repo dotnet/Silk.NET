@@ -29,7 +29,7 @@ namespace Silk.NET.BuildTools.Common
         /// <returns>The name variations, ordered by length, starting with the longest.</returns>
         [NotNull]
         [ItemNotNull]
-        public static IEnumerable<string> GetNameVariations(string functionEntrypoint)
+        public static IEnumerable<string> GetNameVariations(string functionEntrypoint, string prefix)
         {
             var extensionTrimmer =new ExtensionNameTrimmer();
             var dataTypeTrimmer = new DataTypeNameTrimmer();
@@ -41,13 +41,13 @@ namespace Silk.NET.BuildTools.Common
 
             if (extensionTrimmer.IsRelevant(currentVariation))
             {
-                currentVariation = extensionTrimmer.Trim(currentVariation);
+                currentVariation = extensionTrimmer.Trim(currentVariation, prefix);
                 variations.Add(currentVariation);
             }
 
             if (dataTypeTrimmer.IsRelevant(currentVariation))
             {
-                variations.Add(dataTypeTrimmer.Trim(currentVariation));
+                variations.Add(dataTypeTrimmer.Trim(currentVariation, prefix));
             }
 
             return variations.Distinct().OrderByDescending(v => v.Length);
@@ -58,9 +58,9 @@ namespace Silk.NET.BuildTools.Common
         /// </summary>
         /// <param name="functionName">The string to trim.</param>
         /// <returns>A trimmed string.</returns>
-        public static string Trim(string functionName)
+        public static string Trim(string functionName, string prefix)
         {
-            return GetNameVariations(functionName).Last();
+            return GetNameVariations(functionName, prefix).Last();
         }
     }
 }

@@ -36,7 +36,7 @@ namespace Silk.NET.BuildTools.Baking
         /// <param name="doc">The documentation to write.</param>
         public static void Write(Profile profile, ProfileDocumentation doc)
         {
-            profile.Projects.ForEach(x => Write(x.Value, doc));
+            profile.Projects.ForEach(x => Write(x.Value, doc, profile.FunctionPrefix));
         }
 
         /// <summary>
@@ -44,9 +44,9 @@ namespace Silk.NET.BuildTools.Baking
         /// </summary>
         /// <param name="project">The project to write to.</param>
         /// <param name="doc">The documentation to write.</param>
-        public static void Write(Project project, ProfileDocumentation doc)
+        public static void Write(Project project, ProfileDocumentation doc, string prefix)
         {
-            project.Interfaces.ForEach(x => Write(x.Value, doc));
+            project.Interfaces.ForEach(x => Write(x.Value, doc, prefix));
         }
 
         /// <summary>
@@ -54,15 +54,15 @@ namespace Silk.NET.BuildTools.Baking
         /// </summary>
         /// <param name="interface">The interface to write to.</param>
         /// <param name="doc">The documentation to write.</param>
-        public static void Write(Interface @interface, ProfileDocumentation doc)
+        public static void Write(Interface @interface, ProfileDocumentation doc, string prefix)
         {
             foreach (var function in @interface.Functions)
             {
-                if (NameTrimmer.GetNameVariations(function.NativeName).Any(doc.Functions.ContainsKey))
+                if (NameTrimmer.GetNameVariations(function.NativeName, prefix).Any(doc.Functions.ContainsKey))
                 {
                     doc.Functions
                     [
-                        NameTrimmer.GetNameVariations(function.NativeName).First(doc.Functions.ContainsKey)
+                        NameTrimmer.GetNameVariations(function.NativeName, prefix).First(doc.Functions.ContainsKey)
                     ]
                     .Write(function);
                 }

@@ -17,7 +17,6 @@ using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
-using Silk.NET.BuildTools.GLXmlConvert.XML;
 using Attribute = Silk.NET.BuildTools.Common.Attribute;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
@@ -93,7 +92,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 Doc = string.Empty,
                                 ExtensionName = api.Name == "feature" ? "Core" : TrimName(api.Attribute("name")?.Value, opts),
                                 GenericTypeParameters = new List<GenericTypeParameter>(),
-                                Name = NameTrimmer.Trim(Naming.Translate(TrimName(xf.Attribute("name")?.Value, opts), opts.Prefix)),
+                                Name = NameTrimmer.Trim(Naming.Translate(TrimName(xf.Attribute("name")?.Value, opts), opts.Prefix), opts.Prefix),
                                 NativeName = function,
                                 Parameters = ParseParameters(xf),
                                 ProfileName = name,
@@ -131,7 +130,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         [NotNull]
         public static Type ParseTypeSignature([NotNull] XElement typeElement)
         {
-            var typeString = typeElement.GetRequiredAttribute("type").Value;
+            var typeString = typeElement.Attribute("type")?.Value ?? throw new DataException("Couldn't find type.");
 
             return ParseTypeSignature(typeString);
         }
@@ -373,7 +372,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             // A parameter is technically a type signature (think of it as Parameter : ITypeSignature)
             var paramType = ParseTypeSignature(paramElement);
 
-            var paramFlowStr = paramElement.GetRequiredAttribute("flow").Value;
+            var paramFlowStr = paramElement.Attribute("flow").Value ?? throw new DataException("Missing flow attribute.");
 
             if (!System.Enum.TryParse<FlowDirection>(paramFlowStr, true, out var paramFlow))
             {
