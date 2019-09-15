@@ -29,9 +29,10 @@ namespace Silk.NET.BuildTools.Common.Enums
         /// </summary>
         public string NativeName { get; set; } = string.Empty;
 
-        
+        [JsonIgnore]
         public string ProfileName { get; set; }
 
+        [JsonIgnore]
         public Version ProfileVersion { get; set; }
 
         /// <summary>
