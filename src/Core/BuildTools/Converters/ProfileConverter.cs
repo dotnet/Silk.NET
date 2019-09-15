@@ -22,11 +22,11 @@ namespace Silk.NET.BuildTools.Converters
         {
             var obj = reader.Load(input);
             Console.WriteLine("Reading enums...");
-            var enums = reader.ReadEnums(obj, opts).ToArray();
+            var enums = reader.ReadEnums(obj, opts).OrderBy(x => x.Name).ToArray();
             Console.WriteLine("Reading functions...");
-            var functions = reader.ReadFunctions(obj, opts).ToArray();
+            var functions = reader.ReadFunctions(obj, opts).OrderBy(x => x.Name).ToArray();
             Console.WriteLine("Reading structs...");
-            var structs = reader.ReadStructs(obj, opts).ToArray();
+            var structs = reader.ReadStructs(obj, opts).OrderBy(x => x.Name).ToArray();
             Console.WriteLine("Creating profiles...");
             var profiles = enums.Select(x => (x.ProfileName, x.ProfileVersion))
                 .Concat(functions.Select(x => (x.ProfileName, x.ProfileVersion)))
