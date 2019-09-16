@@ -92,7 +92,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 Doc = string.Empty,
                                 ExtensionName = api.Name == "feature" ? "Core" : TrimName(api.Attribute("name")?.Value, opts),
                                 GenericTypeParameters = new List<GenericTypeParameter>(),
-                                Name = NameTrimmer.Trim(Naming.Translate(TrimName(xf.Attribute("name")?.Value, opts), opts.Prefix), opts.Prefix),
+                                Name = Naming.Translate(NameTrimmer.Trim(TrimName(xf.Attribute("name")?.Value, opts), opts.Prefix), opts.Prefix),
                                 NativeName = function,
                                 Parameters = ParseParameters(xf),
                                 ProfileName = name,
