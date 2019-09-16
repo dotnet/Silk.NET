@@ -154,7 +154,7 @@ namespace Silk.NET.BuildTools.Bind
 
                 sw.WriteLine
                 (
-                    "        [NativeSymbol(\"" + profile.FunctionPrefix + function.NativeName + "\")]"
+                    "        [NativeSymbol(\"" + function.NativeName + "\")]"
                 );
                 using (var sr = new StringReader(function.ToString()))
                 {

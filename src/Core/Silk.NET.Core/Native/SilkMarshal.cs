@@ -16,18 +16,13 @@ namespace Silk.NET.Core.Native
             var res = stackalloc char*[strings.Count];
             for (var i = 0; i < strings.Count; i++)
             {
-                res[i] = (char*)Marshal.StringToHGlobalAnsi(strings[i]);
+                fixed (char* str = strings[i])
+                {
+                    res[i] = str;
+                }
             }
 
             return res;
-        }
-
-        public static unsafe void FreePointer(char** ptr, int count)
-        {
-            for (var i = 0; i < count; i++)
-            {
-                Marshal.FreeHGlobal((IntPtr) ptr[i]);
-            }
         }
 
         public static unsafe IReadOnlyList<string> ToStringArray(char** strings, int count)
