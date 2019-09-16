@@ -7,7 +7,7 @@
     </PropertyGroup>
     
     <ItemGroup>
-      <PackageReference Include="Ultz.Dispatcher" Version="1.1.0" />
+      <PackageReference Include="Ultz.Dispatcher" Version="3.0.0-pre2" />
       <PackageReference Include="Ultz.Native.GLFW" Version="3.3.0" />
     </ItemGroup>
 
