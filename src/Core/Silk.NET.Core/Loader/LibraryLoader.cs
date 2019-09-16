@@ -28,11 +28,12 @@ namespace Silk.NET.Core.Loader
             return _builders[typeof(T1)].ActivateClass<T1>(nameContainer.GetLibraryName());
         }
 
-        public static T1 Load<T1, T2>(T2 baseApi) where T1 : NativeExtension<T2> where T2 : NativeAPI
+        public static T1 Load<T1, T2>(T2 baseApi, SearchPathContainer paths = null)
+            where T1 : NativeExtension<T2> where T2 : NativeAPI
         {
             CreateBuilder<T2>();
             return baseApi.IsExtensionPresent(GetExtensionAttribute(typeof(T1)).Name)
-                ? _builders[typeof(T2)].ActivateClass<T1>(baseApi.SearchPaths.GetLibraryName())
+                ? _builders[typeof(T2)].ActivateClass<T1>((paths ?? baseApi.SearchPaths).GetLibraryName())
                 : null;
         }
 

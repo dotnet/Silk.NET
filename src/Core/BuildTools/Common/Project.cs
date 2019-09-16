@@ -50,11 +50,6 @@ namespace Silk.NET.BuildTools.Common
         public List<Struct> Structs { get; set; } = new List<Struct>();
 
         /// <summary>
-        /// Gets or sets a list of code blocks to be inserted into a mixed-mode class. This does not include functions.
-        /// </summary>
-        public List<string> MixedModeBlocks { get; set; } = new List<string>();
-
-        /// <summary>
         /// Gets the full project name of this project, given the profile's root namespace.
         /// </summary>
         /// <param name="profile">The profile to use for the root namespace.</param>

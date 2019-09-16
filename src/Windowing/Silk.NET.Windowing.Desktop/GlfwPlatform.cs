@@ -3,7 +3,6 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
 
@@ -20,7 +19,7 @@ namespace Silk.NET.Windowing.Desktop
             get
             {
                 try {
-                    Glfw.GetAPI(); // activate the class so we can determine if we can activate the class
+                    Glfw.GetApi(); // activate the class so we can determine if we can activate the class
                 }
                 catch {
                     return false;

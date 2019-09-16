@@ -25,7 +25,7 @@ namespace Silk.NET.GLFW
                     ThreadDispatcher = new Dispatcher();
                 }
 
-                var glfw = Glfw.GetAPI();
+                var glfw = Glfw.GetApi();
 
                 ThreadDispatcher.Invoke(() =>
                 {
@@ -60,7 +60,7 @@ namespace Silk.NET.GLFW
             GLFW.Value.Terminate();
             GLFW = new Lazy<Glfw>(() =>
             {
-                var glfw = Glfw.GetAPI();
+                var glfw = Glfw.GetApi();
 
                 ThreadDispatcher.Invoke(() =>
                 {

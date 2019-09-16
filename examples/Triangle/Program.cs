@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using Silk.NET.Core.Native;
 using Silk.NET.Input;
 using Silk.NET.Input.Common;
 using Silk.NET.OpenGL;
@@ -58,8 +59,10 @@ namespace Triangle
             _gl ??= GL.GetApi();
             var vertShader = _gl.CreateShader(GLEnum.VertexShader);
             var fragShader = _gl.CreateShader(GLEnum.FragmentShader);
-            _gl.ShaderSource(vertShader, VertexShader);
-            _gl.ShaderSource(fragShader, FragmentShader);
+            var vertLen = VertexShader.Length;
+            _gl.ShaderSource(vertShader, 1, SilkMarshal.ToPointer(new []{VertexShader}), &vertLen);
+            var fragLen = FragmentShader.Length;
+            _gl.ShaderSource(fragShader, 1, SilkMarshal.ToPointer(new []{FragmentShader}), &fragLen);
             _gl.CompileShader(vertShader);
             _gl.CompileShader(fragShader);
             _shader = _gl.CreateProgram();
@@ -80,7 +83,8 @@ namespace Triangle
 
             _vertexArrayObject = _gl.GenVertexArray();
             _gl.BindVertexArray(_vertexArrayObject);
-            _gl.VertexAttribPointer(0, 3, GLEnum.Float, false, 3 * sizeof(float), 0);
+            var attrib = 0;
+            _gl.VertexAttribPointer(0, 3, GLEnum.Float, false, 3 * sizeof(float), &attrib);
             _gl.EnableVertexAttribArray(0);
             _gl.BindBuffer(GLEnum.ArrayBuffer, _vertexBufferObject);
             Console.WriteLine("done load");

@@ -4,6 +4,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using AdvancedDLSupport.Loaders;
+using Silk.NET.Core.Loader;
 using Silk.NET.Core.Platform;
 using Silk.NET.Windowing.Common;
 using Silk.NET.Windowing.Desktop;
@@ -42,6 +44,7 @@ namespace Silk.NET.Windowing
             var glfwPlatform = new GlfwPlatform();
             if (glfwPlatform.IsApplicable) {
                 SilkManager.Register<IWindowPlatform>(glfwPlatform);
+                SilkManager.Register<IGLSymbolLoader>(new GlfwLoader());
                 return;
             }
 

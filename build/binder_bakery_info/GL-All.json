@@ -36,7 +36,7 @@
     },
     "FunctionPrefix": "gl",
     "ClassName": "GL",
-    "SymbolLoader": "Silk.NET.Core.Loader.GLSymbolLoader.Loader"
+    "SymbolLoader": "Silk.NET.Core.Platform.SilkManager.Get<IGLSymbolLoader>()"
   },
   {
     "Name": "OpenGL (Compatibility Profile)",
@@ -75,7 +75,7 @@
     },
     "FunctionPrefix": "gl",
     "ClassName": "GL",
-    "SymbolLoader": "Silk.NET.Core.Loader.GLSymbolLoader.Loader"
+    "SymbolLoader": "Silk.NET.Core.Platform.SilkManager.Get<IGLSymbolLoader>()"
   },
   {
     "Name": "GLES",
@@ -99,6 +99,6 @@
     },
     "FunctionPrefix": "gl",
     "ClassName": "GL",
-    "SymbolLoader": "Silk.NET.Core.Loader.EGLSymbolLoader.Loader"
+    "SymbolLoader": "Silk.NET.Core.Platform.SilkManager.Get<IGLSymbolLoader>()"
   }
 ]

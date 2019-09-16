@@ -423,7 +423,7 @@ namespace Silk.NET.GLFW
         /// Gets an instance of the API.
         /// </summary>
         /// <returns>The instance.</returns>
-        public static Glfw GetAPI()
+        public static Glfw GetApi()
         {
             return LibraryLoader.Load<Glfw>(new GlfwLibraryNameContainer());
         }

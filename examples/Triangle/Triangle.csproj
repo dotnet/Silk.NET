@@ -14,4 +14,8 @@
       <ProjectReference Include="..\..\src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Ultz.Dispatcher" Version="3.0.0-pre2" />
+    </ItemGroup>
+
 </Project>

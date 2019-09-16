@@ -16,7 +16,7 @@ namespace Silk.NET.GLFW
         public override string Linux => "libglfw.so.3.3";
 
         /// <inheritdoc />
-        public override string MacOS => "libglfw.dylib";
+        public override string MacOS => "libglfw.3.3.dylib";
 
         /// <inheritdoc />
         public override string Android => Linux;
@@ -25,9 +25,9 @@ namespace Silk.NET.GLFW
         public override string IOS => MacOS;
 
         /// <inheritdoc />
-        public override string Windows64 => "glfw3-x64.dll";
+        public override string Windows64 => "glfw3.dll";
 
         /// <inheritdoc />
-        public override string Windows86 => "glfw3-x86.dll";
+        public override string Windows86 => "glfw3.dll";
     }
 }

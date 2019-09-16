@@ -159,10 +159,10 @@ namespace Silk.NET.BuildTools.Common.Builders
             {
                 Name = _newName,
                 NativeName = _newNativeEntrypoint,
-                Categories = _newCategory?.ToArray() ?? new string[0],
+                Categories = _newCategory?.ToList(),
                 ExtensionName = _newExtension,
                 ReturnType = _newReturnType,
-                Parameters = _newParameters?.ToList() ?? new List<Parameter>(),
+                Parameters = _newParameters?.ToList(),
                 GenericTypeParameters = _newGenericTypeParameters?.ToList() ?? new List<GenericTypeParameter>(),
                 Attributes = _newAttributes, Doc = _newDoc
             };

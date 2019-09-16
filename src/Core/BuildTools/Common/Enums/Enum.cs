@@ -3,7 +3,9 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace Silk.NET.BuildTools.Common.Enums
 {
@@ -26,6 +28,12 @@ namespace Silk.NET.BuildTools.Common.Enums
         /// Gets or sets the name of this enum as defined by the Khronos spec.
         /// </summary>
         public string NativeName { get; set; } = string.Empty;
+
+        [JsonIgnore]
+        public string ProfileName { get; set; }
+
+        [JsonIgnore]
+        public Version ProfileVersion { get; set; }
 
         /// <summary>
         /// Gets or sets the extension to which this enum belongs. Generally, this is either Core or the

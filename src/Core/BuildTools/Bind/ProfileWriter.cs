@@ -329,7 +329,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine();
                     sw.WriteLine("namespace " + profile.Namespace + project.Namespace);
                     sw.WriteLine("{");
-                    sw.WriteLine("    partial class " + profile.ClassName);
+                    sw.WriteLine("    public partial class " + profile.ClassName);
                     sw.WriteLine("    {");
                     sw.WriteLine("        public static " + profile.ClassName + " GetApi()");
                     sw.WriteLine("        {");
