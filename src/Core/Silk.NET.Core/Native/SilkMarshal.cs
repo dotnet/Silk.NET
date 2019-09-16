@@ -22,6 +22,14 @@ namespace Silk.NET.Core.Native
             return res;
         }
 
+        public static unsafe void FreePointer(char** ptr, int count)
+        {
+            for (var i = 0; i < count; i++)
+            {
+                Marshal.FreeHGlobal((IntPtr) ptr[i]);
+            }
+        }
+
         public static unsafe IReadOnlyList<string> ToStringArray(char** strings, int count)
         {
             var array = new string[count];
