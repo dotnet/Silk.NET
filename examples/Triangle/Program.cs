@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using Silk.NET.Core.Native;
 using Silk.NET.Input;
 using Silk.NET.Input.Common;
@@ -24,6 +25,8 @@ namespace Triangle
         private static GL _gl;
         private static IInputContext _input;
         private static IWindow _window;
+        private static DebugProc _onDebug;
+        private static GCHandle _onDebugHandle;
 
         private const string VertexShader = "#version 330\n\n" +
 
@@ -57,6 +60,11 @@ namespace Triangle
         private static unsafe void Load()
         {
             _gl ??= GL.GetApi();
+            _onDebug = OnDebug;
+            _onDebugHandle = GCHandle.Alloc(_onDebug);
+            _gl.DebugMessageCallback(_onDebug, (void*)0);
+            _gl.Enable(GLEnum.DebugOutput);
+            _gl.Enable(GLEnum.DebugOutputSynchronous);
             var vertShader = _gl.CreateShader(GLEnum.VertexShader);
             var fragShader = _gl.CreateShader(GLEnum.FragmentShader);
             var vertLen = VertexShader.Length;
@@ -88,6 +96,14 @@ namespace Triangle
             _gl.EnableVertexAttribArray(0);
             _gl.BindBuffer(GLEnum.ArrayBuffer, _vertexBufferObject);
             Console.WriteLine("done load");
+        }
+
+        private static void OnDebug(GLEnum source, GLEnum type, int id, GLEnum severity, int length, IntPtr message, IntPtr userparam)
+        {
+            Console.WriteLine
+            (
+                $"|{severity.ToString().Substring(13)}| {type.ToString().Substring(9)}/{id}: {Marshal.PtrToStringAnsi(message)}"
+            );
         }
 
 
