@@ -68,11 +68,14 @@ namespace Triangle
             var vertShader = _gl.CreateShader(GLEnum.VertexShader);
             var fragShader = _gl.CreateShader(GLEnum.FragmentShader);
             var vertLen = VertexShader.Length;
-            _gl.ShaderSource(vertShader, 1, SilkMarshal.ToPointer(new []{VertexShader}), &vertLen);
+            _gl.ShaderSource(vertShader, 1, new []{VertexShader}, &vertLen);
             var fragLen = FragmentShader.Length;
-            _gl.ShaderSource(fragShader, 1, SilkMarshal.ToPointer(new []{FragmentShader}), &fragLen);
+            _gl.ShaderSource(fragShader, 1, new []{FragmentShader}, &fragLen);
+
             _gl.CompileShader(vertShader);
+            //LogShaderErrors(vertShader);
             _gl.CompileShader(fragShader);
+            //LogShaderErrors(fragShader);
             _shader = _gl.CreateProgram();
             _gl.AttachShader(_shader, vertShader);
             _gl.AttachShader(_shader, fragShader);
