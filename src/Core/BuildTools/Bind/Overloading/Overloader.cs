@@ -62,10 +62,6 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             foreach (var overloader in Pipeline)
             {
                 overloads.AddRange(overloader.CreateOverloads(function));
-                if (overloads.Count > 0)
-                {
-                    break;
-                }
             }
 
             do
