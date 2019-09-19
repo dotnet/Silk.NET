@@ -27,7 +27,7 @@ namespace Silk.NET.BuildTools.Common
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("[" + Name + "(");
+            sb.Append($"[{Name}(");
             for (var index = 0; index < Arguments.Count; index++)
             {
                 var argument = Arguments[index];

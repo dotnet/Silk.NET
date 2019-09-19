@@ -38,8 +38,8 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 }
 
                 sb.AppendLine("// StaticCountOverloader");
-                sb.Append("var " + param.Name + " = stackalloc " + param.Type.Name);
-                sb.AppendLine("[" + param.Count.StaticCount + "];");
+                sb.Append($"var {param.Name} = stackalloc {param.Type.Name}");
+                sb.AppendLine($"[{param.Count.StaticCount}];");
                 for (var j = 0; j < param.Count.StaticCount; j++)
                 {
                     if (j == 0)
@@ -59,7 +59,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                             .Build());
                     }
 
-                    sb.AppendLine(param.Name + "[" + j + "] = " + param.Name + j + ";");
+                    sb.AppendLine($"{param.Name}[{j}] = {param.Name}{j};");
                 }
             }
 
@@ -68,7 +68,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 sb.Append("return ");
             }
 
-            sb.Append(function.Name + "(");
+            sb.Append($"{function.Name}(");
             sb.Append(string.Join(", ", function.Parameters.Select(x => Format(x.Name))));
             sb.Append(");");
             sb.AppendLine();
@@ -84,7 +84,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             {
                 if (Utilities.CSharpKeywords.Contains(n))
                 {
-                    return "@" + n;
+                    return $"@{n}";
                 }
 
                 return n;

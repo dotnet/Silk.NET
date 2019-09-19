@@ -108,8 +108,7 @@ namespace Silk.NET.BuildTools.Converters
                             Path.Combine
                             (
                                 opts.OutputFolder,
-                                "api-" + profile.Name +
-                                (!string.IsNullOrEmpty(profile.Version) ? "-" + profile.Version : null) + ".json"
+                                $"api-{profile.Name}{(!string.IsNullOrEmpty(profile.Version) ? $"-{profile.Version}" : null)}.json"
                             )
                         );
                     outStream.Write

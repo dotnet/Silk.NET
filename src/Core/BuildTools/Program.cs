@@ -62,7 +62,7 @@ namespace Silk.NET.BuildTools
                 for (var index = 0; index < tasks.Length; index++)
                 {
                     var task = tasks[index];
-                    Console.WriteLine("Starting task \"" + task.Task + "\" (" + index + ")...");
+                    Console.WriteLine($"Starting task \"{task.Task}\" ({index})...");
                     Switch(new[] {task.Task}.Concat(task.Args).ToArray());
                     Console.WriteLine("Task completed successfully.");
                     Console.WriteLine();

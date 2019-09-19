@@ -50,7 +50,7 @@ namespace Silk.NET.BuildTools.Baking
         public static void Bake(ProfileBakeryInformation information, string folder, bool pretty, string docs)
         {
             // get APIs implemented
-            var impl = information.Implements.Select(x => File.ReadAllText(Path.Combine(folder, "api-" + x + ".json")))
+            var impl = information.Implements.Select(x => File.ReadAllText(Path.Combine(folder, $"api-{x}.json")))
                 .Select(JsonConvert.DeserializeObject<Profile>)
                 .ToList();
 
@@ -97,11 +97,11 @@ namespace Silk.NET.BuildTools.Baking
             // save this to disk
             File.WriteAllText
             (
-                Path.Combine(folder, information.Name + ".json"),
+                Path.Combine(folder, $"{information.Name}.json"),
                 JsonConvert.SerializeObject(profile, pretty ? Formatting.Indented : Formatting.None)
             );
 
-            Console.WriteLine("Created profile \"" + information.Name + "\".");
+            Console.WriteLine($"Created profile \"{information.Name}\".");
         }
 
         private static void MergeAll(Profile profile) // this method could also be called Stir ;)
@@ -174,9 +174,9 @@ namespace Silk.NET.BuildTools.Baking
                             if (existingToken.Value != token.Value)
                             {
                                 Debug.WriteLine("Warning: Two tokens with the same name but different values.");
-                                Debug.WriteLine("    " + existingToken.Name + " = " + existingToken.Value);
-                                Debug.WriteLine("    " + token.Name + " = " + token.Value);
-                                Debug.WriteLine(existingToken.Value + " will be used.");
+                                Debug.WriteLine($"    {existingToken.Name} = {existingToken.Value}");
+                                Debug.WriteLine($"    {token.Name} = {token.Value}");
+                                Debug.WriteLine($"{existingToken.Value} will be used.");
                             }
 
                             continue;

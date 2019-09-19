@@ -30,7 +30,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             yield return Cast(
                 new FunctionSignatureBuilder(function)
                     .WithReturnType(newReturnType)
-                    .WithName(function.Name + "AsPointer")
+                    .WithName($"{function.Name}AsPointer")
                     .Build(),
                 function);
         }
@@ -41,15 +41,20 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         {
             var sb = new StringBuilder();
             sb.AppendLine("// PointerReturnValueOverloader");
-            sb.Append("return (void*) " + oldFunction.Name + "(");
-            sb.Append(string.Join(", ", function.Parameters.Select(x => ConvertName(x.Name))));
+            sb.Append($"return (void*) {oldFunction.Name}(");
+            sb.Append(string.Join(", ", function.Parameters.Select(x => GetPrefix(x.Type) + ConvertName(x.Name))));
             sb.AppendLine(");");
             return new Overload(function, sb, true);
         }
 
+        private static string GetPrefix(Type type)
+        {
+            return type.IsOut ? "out " : string.Empty;
+        }
+
         private static string ConvertName(string argName)
         {
-            return Utilities.CSharpKeywords.Contains(argName) ? "@" + argName : argName;
+            return Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
         }
     }
 }

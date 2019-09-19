@@ -101,7 +101,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             var sb = new StringBuilder();
 
             sb.AppendLine("// ArrayParameterOverloader");
-            sb.AppendLine(function.Name + "(1, &" + newArrayParameter.Name + ");");
+            sb.AppendLine($"{function.Name}(1, &{newArrayParameter.Name});");
 
             yield return new Overload(new FunctionSignatureBuilder(function)
                 .WithName(newName)

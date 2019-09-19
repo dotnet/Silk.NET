@@ -93,12 +93,12 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 .WithReturnType(newReturnType);
 
             var sb = new StringBuilder();
-            var strParams = newParameters.Select(x => Utilities.CSharpKeywords.Contains(x.Name) ? "@" + x.Name : x.Name)
+            var strParams = newParameters.Select(x => Utilities.CSharpKeywords.Contains(x.Name) ? $"@{x.Name}" : x.Name)
                 .Concat(new[] { "&ret" });
 
             sb.AppendLine("// ReturnTypeOverloader");
-            sb.AppendLine(newReturnType + " ret = default;");
-            sb.Append(function.Name + "(");
+            sb.AppendLine($"{newReturnType} ret = default;");
+            sb.Append($"{function.Name}(");
             sb.Append(string.Join(", ", strParams));
             sb.AppendLine(");");
             sb.AppendLine("return ret;");
@@ -124,8 +124,9 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
             var n = newParameters.Last().Name;
 
-            sb.Insert(0, "const " + (sizeParameterType.Name == "uint" ? "uint " : "int ") +
-                         (Utilities.CSharpKeywords.Contains(n) ? "@" : "") + n + " = 1;\n");
+            sb.Insert(0,
+                $"const {(sizeParameterType.Name == "uint" ? "uint " : "int ")}{(Utilities.CSharpKeywords.Contains(n) ? "@" : "")}{n} = 1;\n"
+            );
             newParameters = SkipLastExtension.SkipLast(newParameters, 1).ToList();
             yield return new Overload
             (

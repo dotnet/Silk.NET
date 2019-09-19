@@ -90,7 +90,7 @@ namespace Silk.NET.BuildTools.Common.Builders
         {
             return new Parameter
             {
-                Name = Utilities.CSharpKeywords.Contains(_newName) ? "@" + _newName : _newName,
+                Name = Utilities.CSharpKeywords.Contains(_newName) ? $"@{_newName}" : _newName,
                 Count = _newCount,
                 Flow = _newFlow,
                 Type = _newType

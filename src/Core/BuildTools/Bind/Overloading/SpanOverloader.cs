@@ -40,10 +40,10 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             for (var i = 0; i < function.Parameters.Count; i++)
             {
                 var param = function.Parameters[i];
-                if (param.Type.IndirectionLevels == 1 && param.Type.Name != "void")
+                if (param.Type.IndirectionLevels == 1 && param.Type.Name != "void" && !param.Type.IsOut)
                 {
                     parameterChanged = true;
-                    parameters[i] = new ParameterSignatureBuilder(param).WithName(param.Name + "Span")
+                    parameters[i] = new ParameterSignatureBuilder(param).WithName($"{param.Name}Span")
                         .WithType
                         (
                             new Type
@@ -56,8 +56,8 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                             }
                         )
                         .Build();
-                    sb.AppendLine(ind + $"fixed ({param.Type} {param.Name} = {param.Name}Span)");
-                    sb.AppendLine(ind + "{");
+                    sb.AppendLine($"{ind}fixed ({param.Type} {param.Name} = {param.Name}Span)");
+                    sb.AppendLine($"{ind}{{");
                     ind += "    ";
                 }
                 else
@@ -68,43 +68,48 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
             if (returnTypeChanged)
             {
-                sb.Append(ind + $"return (Span<{function.ReturnType.Name}>) ");
+                sb.Append($"{ind}return (Span<{function.ReturnType.Name}>) ");
             }
             else if (function.ReturnType.ToString() != "void")
             {
-                sb.Append(ind + "return ");
+                sb.Append($"{ind}return ");
             }
             else
             {
                 sb.Append(ind);
             }
 
-            sb.Append(function.Name + "(");
-            sb.Append(string.Join(", ", function.Parameters.Select(x => Format(x.Name))));
+            sb.Append($"{function.Name}(");
+            sb.Append(string.Join(", ", function.Parameters.Select(x => GetPrefix(x.Type) + Format(x.Name))));
             sb.AppendLine(");");
             
             while (!string.IsNullOrEmpty(ind))
             {
                 ind = ind.Remove(ind.Length - 4, 4);
-                sb.AppendLine(ind + "}");
+                sb.AppendLine($"{ind}}}");
             }
 
             fun.WithParameters(parameters);
 
             if (returnTypeChanged && !parameterChanged)
             {
-                yield return new Overload(fun.WithName(function.Name + "AsSpan").Build(), sb, true);
+                yield return new Overload(fun.WithName($"{function.Name}AsSpan").Build(), sb, true);
             }
             else if (parameterChanged)
             {
                 yield return new Overload(fun.Build(), sb, true);
             }
 
+            string GetPrefix(Type t)
+            {
+                return t.IsOut ? "out " : string.Empty;
+            }
+
             string Format(string n)
             {
                 if (Utilities.CSharpKeywords.Contains(n))
                 {
-                    return "@" + n;
+                    return $"@{n}";
                 }
 
                 return n;

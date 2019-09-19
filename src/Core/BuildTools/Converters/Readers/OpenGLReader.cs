@@ -83,7 +83,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                             Name = "System.Obsolete",
                                             Arguments = new List<string>
                                             {
-                                                "\"Deprecated in version " + apiVersion?.ToString(2) + "\""
+                                                $"\"Deprecated in version {apiVersion?.ToString(2)}\""
                                             }
                                         }
                                     }
@@ -392,7 +392,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             return new Parameter
             {
-                Name = Utilities.CSharpKeywords.Contains(paramName) ? "@" + paramName : paramName,
+                Name = Utilities.CSharpKeywords.Contains(paramName) ? $"@{paramName}" : paramName,
                 Flow = paramFlow,
                 Type = paramType,
                 Count = countSignature
@@ -406,7 +406,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
         public string TrimName(string name, ProfileConverterOptions opts)
         {
-            if (name.StartsWith(opts.Prefix.ToUpper() + "_"))
+            if (name.StartsWith($"{opts.Prefix.ToUpper()}_"))
             {
                 return name.Remove(0, opts.Prefix.Length + 1);
             }
@@ -544,7 +544,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                         new Attribute
                                         {
                                             Arguments = new List<string>
-                                                {"\"Deprecated in version " + apiVersion?.ToString(2) + "\""},
+                                                {$"\"Deprecated in version {apiVersion?.ToString(2)}\""},
                                             Name = "System.Obsolete"
                                         }
                                     }

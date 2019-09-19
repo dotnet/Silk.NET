@@ -55,8 +55,8 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                     var ptrName = (param.Name + "Ptr").Replace("@", "");
 
                     parameters.Add(ptrName);
-                    sb.AppendLine(ind + $"fixed ({param.Type} {ptrName} = &{param.Name})");
-                    sb.AppendLine(ind + "{");
+                    sb.AppendLine($"{ind}fixed ({param.Type} {ptrName} = &{param.Name})");
+                    sb.AppendLine($"{ind}{{");
                     
                     ind += "    ";
                     newParameters[i] = newParameter.Build();
@@ -74,12 +74,12 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 sb.Append("return ");
             }
 
-            sb.AppendLine(function.Name + "(" + string.Join(", ", parameters) + ");");
+            sb.AppendLine($"{function.Name}({string.Join(", ", parameters)});");
 
             while (!string.IsNullOrEmpty(ind))
             {
                 ind = ind.Remove(ind.Length - 4, 4);
-                sb.AppendLine(ind + "}");
+                sb.AppendLine($"{ind}}}");
             }
             
             yield return new Overload(sig.WithParameters(newParameters).Build(), sb, true);

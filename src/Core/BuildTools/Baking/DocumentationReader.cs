@@ -55,7 +55,7 @@ namespace Silk.NET.BuildTools.Baking
             if (RedirectRegex.IsMatch(file))
             {
                 var m = RedirectRegex.Match(file);
-                var redirected = Path.Combine(Path.GetDirectoryName(xhtmlFile), m.Groups["redirect"].Value + ".xhtml");
+                var redirected = Path.Combine(Path.GetDirectoryName(xhtmlFile), $"{m.Groups["redirect"].Value}.xhtml");
                 return new KeyValuePair<string, FunctionDocumentation>
                 (
                     Path.GetFileNameWithoutExtension(xhtmlFile),
@@ -110,20 +110,8 @@ namespace Silk.NET.BuildTools.Baking
             }
             
             div.RemoveChild(div.ChildNodes.FirstOrDefault(x => x.Name == "h2"));
-            var description = StyleGuideCompliance
-                                  (
-                                      FixWhitespace
-                                      (
-                                          MegaTrim
-                                          (
-                                              div.InnerText.Substring
-                                                      (div.InnerText.IndexOf("—", StringComparison.Ordinal) + 2)
-                                                  .Transform(To.SentenceCase)
-                                                  .Trim()
-                                          )
-                                      )
-                                  )
-                                  .TrimEnd('.') + ".";
+            var description =
+                $"{StyleGuideCompliance(FixWhitespace(MegaTrim(div.InnerText.Substring(div.InnerText.IndexOf("—", StringComparison.Ordinal) + 2).Transform(To.SentenceCase).Trim()))).TrimEnd('.')}.";
 
             return new KeyValuePair<string, FunctionDocumentation>
             (

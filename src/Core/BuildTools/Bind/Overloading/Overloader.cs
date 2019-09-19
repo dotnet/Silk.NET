@@ -21,6 +21,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             new StaticCountOverloader(),
             new IntPtrOverloader(),
             new SpanOverloader(),
+            new StringOverloader(),
             new FlowPointerOverloader(),
         };
 
