@@ -28,15 +28,9 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         public static IEnumerable<Overload> GetOverloads(Project project)
         {
             var ret = new List<Overload>();
-            foreach
-            (
-                var overload in project.Interfaces.Values
-                    .SelectMany(GetOverloads, (@interface, overload) => new {@interface, overload})
-                    .Where(t => ret.Any(x => x.Signature.Equals(t.overload.Signature)))
-                    .Select(t => t.overload)
-            )
+            foreach (var @interface in project.Interfaces.Values)
             {
-                ret.Add(overload);
+                ret.AddRange(GetOverloads(@interface));
             }
 
             return ret;
@@ -45,16 +39,18 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         public static IEnumerable<Overload> GetOverloads(Interface @interface)
         {
             var ret = new List<Overload>();
-            foreach
-            (
-                var overload in @interface.Functions
-                    .SelectMany(GetOverloads, (function, overload) => new {function, overload})
-                    .Where(t => !@interface.Functions.Any(x => x.Equals(t.overload.Signature)))
-                    .Where(t => !ret.Any(x => x.Signature.Equals(t.overload.Signature)))
-                    .Select(t => t.overload)
-            )
+            foreach (var function in @interface.Functions)
             {
-                ret.Add(overload);
+                foreach (var overload in GetOverloads(function))
+                {
+                    if (!@interface.Functions.Any(x => x.Equals(overload.Signature)))
+                    {
+                        if (!ret.Any(x => x.Signature.Equals(overload.Signature)))
+                        {
+                            ret.Add(overload);
+                        }
+                    }
+                }
             }
 
             return ret;
