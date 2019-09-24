@@ -1,5 +1,6 @@
 # Silk.NET
 [![NuGet Version](https://img.shields.io/nuget/v/Silk.NET.OpenGL)](https://nuget.org/packages?q=Silk.NET) [![Preview Feed](https://img.shields.io/badge/nuget-experimental%20feed-yellow)](https://dev.azure.com/UltzLimited/Silk.NET/_packaging?_a=feed&feed=Experimental) [![Build Status](https://dev.azure.com/UltzLimited/Silk.NET/_apis/build/status/Ultz.Silk.NET?branchName=master)](https://dev.azure.com/UltzLimited/Silk.NET/_build/latest?definitionId=2&branchName=master)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FUltz%2FSilk.NET.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FUltz%2FSilk.NET?ref=badge_shield)
 
 Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL and OpenAL. Use Silk.NET to add cross-platform 3D graphics, audio, compute and haptics to your C# application.
 
@@ -50,3 +51,6 @@ Come chat with us on [Discord](https://discord.gg/DTHHXRt)!
 
 # License
 Silk.NET is distributed under the very permissive MIT/X11 license. Note that some third party libraries such as AdvancedDLSupport are compatible with the MIT license under one or more custom agreements, but have [additional conditions](https://github.com/Ultz/Silk.NET/blob/master/THIRD_PARTIES.md).
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FUltz%2FSilk.NET.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FUltz%2FSilk.NET?ref=badge_large)
