@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Native;
 using Silk.NET.Input;
@@ -28,20 +30,20 @@ namespace Triangle
         private static DebugProc _onDebug;
         private static GCHandle _onDebugHandle;
 
-        private const string VertexShader = "#version 330\n\n" +
+        private const string FragmentShader = "#version 410 core\n\n" +
 
                                              "out vec4 outputColor;\n\n" +
 
                                              "void main()\n" +
                                              "{\n" +
-                                             "    outputColor = vec4(1.0, 1.0, 0.0, 1.0);\n" +
+                                             "    outputColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n" +
                                              "}\n";
 
-        private const string FragmentShader = "#version 330 core\n\n" +
+        private const string VertexShader = "#version 410 core\n\n" +
 
                                                "layout(location = 0) in vec3 aPosition;\n\n" +
 
-                                               "void main(void)\n" +
+                                               "void main()\n" +
                                                "{\n" +
                                                "    gl_Position = vec4(aPosition, 1.0);\n" +
                                                "}\n";
@@ -68,18 +70,28 @@ namespace Triangle
             var vertShader = _gl.CreateShader(GLEnum.VertexShader);
             var fragShader = _gl.CreateShader(GLEnum.FragmentShader);
             var vertLen = VertexShader.Length;
-            _gl.ShaderSource(vertShader, 1, new []{VertexShader}, &vertLen);
+            var vertArr = new[] {VertexShader}.Select
+            (
+                Marshal.StringToHGlobalAnsi
+            ).ToArray();
+            fixed (IntPtr* ss = vertArr)
+            _gl.ShaderSource(vertShader, 1, (char**)ss, &vertLen);
             var fragLen = FragmentShader.Length;
-            _gl.ShaderSource(fragShader, 1, new []{FragmentShader}, &fragLen);
-
+            var fragArr = new[] {FragmentShader}.Select
+            (
+                Marshal.StringToHGlobalAnsi
+            ).ToArray();
+            fixed (IntPtr* ss = fragArr)
+            _gl.ShaderSource(fragShader, 1, (char**)ss, &fragLen);
             _gl.CompileShader(vertShader);
-            //LogShaderErrors(vertShader);
+            CheckShaderErrors(vertShader);
             _gl.CompileShader(fragShader);
-            //LogShaderErrors(fragShader);
+            CheckShaderErrors(fragShader);
             _shader = _gl.CreateProgram();
             _gl.AttachShader(_shader, vertShader);
             _gl.AttachShader(_shader, fragShader);
             _gl.LinkProgram(_shader);
+            CheckProgramErrors(_shader);
             _gl.DetachShader(_shader, vertShader);
             _gl.DetachShader(_shader, fragShader);
             _gl.DeleteShader(fragShader);
@@ -109,6 +121,48 @@ namespace Triangle
             );
         }
 
+        private static void CheckShaderErrors(uint shader)
+        {
+            _gl.GetShader(shader, GLEnum.CompileStatus, out var status);
+            if (status != 1)
+            {
+                _gl.DebugMessageInsert
+                (
+                    GLEnum.DebugSourceApplication, GLEnum.DebugTypeError, 900110, GLEnum.DebugSeverityHigh,
+                    19u + (uint) shader.ToString().Length, $"{shader} failed to compile."
+                );
+                var str = new string(' ', 1024);
+                _gl.GetShaderInfoLog(shader, 1024u, out uint length, str);
+                str = str.Substring(0, (int)length);
+                _gl.DebugMessageInsert
+                (
+                    GLEnum.DebugSourceApplication, GLEnum.DebugTypeError, 900111, GLEnum.DebugSeverityHigh,
+                    length, str
+                );
+            }
+        }
+
+        private static void CheckProgramErrors(uint program)
+        {
+            _gl.GetProgram(program, GLEnum.LinkStatus, out var status);
+            if (status != 1)
+            {
+                _gl.GetProgram(program, GLEnum.InfoLogLength, out var len2);
+                _gl.DebugMessageInsert
+                (
+                    GLEnum.DebugSourceApplication, GLEnum.DebugTypeError, 900112, GLEnum.DebugSeverityHigh,
+                    19u + (uint) program.ToString().Length, $"{program} failed to compile. " + len2
+                );
+                var str = new string(' ', 1024);
+                _gl.GetProgramInfoLog(program, 1024, out var length, str);
+                str = str.Substring(0, (int)length);
+                _gl.DebugMessageInsert
+                (
+                    GLEnum.DebugSourceApplication, GLEnum.DebugTypeError, 900113, GLEnum.DebugSeverityHigh,
+                    length, str
+                );
+            }
+        }
 
         private static void RenderFrame(double delta)
         {

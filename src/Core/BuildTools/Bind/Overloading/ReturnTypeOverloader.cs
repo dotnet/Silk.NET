@@ -12,6 +12,7 @@ using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
+using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
 namespace Silk.NET.BuildTools.Bind.Overloading
 {
@@ -93,8 +94,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 .WithReturnType(newReturnType);
 
             var sb = new StringBuilder();
-            var strParams = newParameters.Select(x => Utilities.CSharpKeywords.Contains(x.Name) ? $"@{x.Name}" : x.Name)
-                .Concat(new[] { "&ret" });
+            var strParams = newParameters.Select(Convert).Concat(new[] { "&ret" });
 
             sb.AppendLine("// ReturnTypeOverloader");
             sb.AppendLine($"{newReturnType} ret = default;");
@@ -134,6 +134,12 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                     .WithParameters(newParameters)
                     .Build(), sb, true
             );
+
+            string Convert(Parameter x)
+            {
+                var pre = x.Type.IsOut ? "out " : string.Empty;
+                return pre + (Utilities.CSharpKeywords.Contains(x.Name) ? $"@{x.Name}" : x.Name);
+            }
 }
     }
 }

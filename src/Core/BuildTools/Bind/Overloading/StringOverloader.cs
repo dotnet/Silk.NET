@@ -32,16 +32,16 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                     (
                         new Type
                         {
-                            GenericTypes = new List<Type> {new Type {Name = "string"}},
-                            Name = "System.Collections.Generic.IReadOnlyList"
+                            Name = "string",
+                            ArrayDimensions = 1
                         }
                     )
                     .Build();
-                    o.AppendLine($"{ind}var {param.Name}_o = stackalloc char*[{ConvertName(param.Name)}.Count];");
+                    o.AppendLine($"{ind}var {param.Name}_o = stackalloc char*[{ConvertName(param.Name)}.Length];");
                     o.AppendLine
                     (
                         $"{ind}for (var {param.Name}_i = 0;" +
-                        $"{param.Name}_i < {ConvertName(param.Name)}.Count; {param.Name}_i++)"
+                        $"{param.Name}_i < {ConvertName(param.Name)}.Length; {param.Name}_i++)"
                     );
                     o.AppendLine($"{ind}{{");
                     o.AppendLine($"{ind}    fixed (char* str = {ConvertName(param.Name)}[{param.Name}_i])");
@@ -58,7 +58,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                     o.AppendLine($"{ind}fixed (char* {param.Name}_s = {ConvertName(param.Name)})");
                     o.AppendLine($"{ind}{{");
                     ind += "    ";
-                    pInv.Add($"{param.Name}_s");
+                    pInv.Add($"({param.Type}) {param.Name}_s");
                     parameters[i] = new ParameterSignatureBuilder(param).WithType(new Type(){Name = "string"}).Build();
                     c = true;
                 }

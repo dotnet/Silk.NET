@@ -10,6 +10,7 @@ using System.Text;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
+using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
 namespace Silk.NET.BuildTools.Bind.Overloading
 {
@@ -17,72 +18,77 @@ namespace Silk.NET.BuildTools.Bind.Overloading
     {
         public IEnumerable<Overload> CreateOverloads(Function function)
         {
-            if (!function.Parameters.Any(x => x.Type.IsPointer && !x.Type.IsVoidPointer()))
+            var index = function.Parameters.FindIndex
+            (
+                x => x.Type.IsPointer && !x.Type.IsVoidPointer() &&
+                     !(x.Type.IsIn || x.Type.IsOut || x.Type.IsByRef)
+            );
+
+            if (index == -1)
             {
                 yield break;
             }
-
+            
             var sb = new StringBuilder();
-            var parameters = new List<string>();
-            var ind = string.Empty;
             var sig = new FunctionSignatureBuilder(function);
-            var newParameters = new Parameter[function.Parameters.Count];
+            var parameters = function.Parameters.ToArray();
             sb.AppendLine("// FlowPointerOverloader");
 
-            for (var i = 0; i < function.Parameters.Count; i++)
+            var type = new TypeSignatureBuilder(parameters[index].Type);
+
+            type = parameters[index].Flow switch
             {
-                var param = function.Parameters[i];
-                if (param.Type.IsPointer && !param.Type.IsVoidPointer())
-                {
-                    var newParameterType = new TypeSignatureBuilder(param.Type)
-                        .WithIndirectionLevel(param.Type.IndirectionLevels - 1);
-                    switch (param.Flow)
-                    {
-                        case FlowDirection.Undefined:
-                            newParameterType = newParameterType.WithByRef(true);
-                            break;
-                        case FlowDirection.In:
-                            newParameterType = newParameterType.WithIsIn(true);
-                            break;
-                        case FlowDirection.Out:
-                            newParameterType = newParameterType.WithIsOut(true);
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
+                FlowDirection.In => type.WithIsIn(true),
+                FlowDirection.Out => type.WithIsOut(true),
+                FlowDirection.Undefined => type.WithByRef(true),
+                _ => type
+            };
 
-                    var newParameter = new ParameterSignatureBuilder(param).WithType(newParameterType.Build());
-                    var ptrName = (param.Name + "Ptr").Replace("@", "");
+            type.WithIndirectionLevel(parameters[index].Type.IndirectionLevels - 1);
 
-                    parameters.Add(ptrName);
-                    sb.AppendLine($"{ind}fixed ({param.Type} {ptrName} = &{param.Name})");
-                    sb.AppendLine($"{ind}{{");
-                    
-                    ind += "    ";
-                    newParameters[i] = newParameter.Build();
-                }
-                else
-                {
-                    parameters.Add((Utilities.CSharpKeywords.Contains(param.Name) ? "@" : string.Empty) + param.Name);
-                    newParameters[i] = param;
-                }
-            }
+            sb.AppendLine
+            (
+                $"fixed ({parameters[index].Type} {ConvertName(parameters[index].Name)} = &{parameters[index].Name}F)"
+            );
+            sb.AppendLine("{");
+            sb.Append(function.ReturnType.ToString() != "void" ? "    return " : "    ");
+            sb.Append(function.Name);
+            sb.Append("(");
+            sb.Append(string.Join(", ", function.Parameters.Select(x => GetPrefix(x.Type) + ConvertName(x.Name))));
+            sb.AppendLine(");");
+            sb.AppendLine("}");
 
-            sb.Append(ind);
-            if (function.ReturnType.ToString() != "void")
-            {
-                sb.Append("return ");
-            }
+            yield return new Overload
+            (
+                sig.WithParameters
+                (
+                    function.Parameters.Select
+                    (
+                        (x, i) => i == index
+                            ? new ParameterSignatureBuilder(parameters[index]).WithType(type.Build())
+                              .WithName
+                              (
+                                  $"{parameters[index].Name}F"
+                              )
+                              .Build()
+                            : x
+                    )
+                    .ToList()
+                )
+                .Build(),
+                sb,
+                true
+            );
+        }
 
-            sb.AppendLine($"{function.Name}({string.Join(", ", parameters)});");
+        private string GetPrefix(Type argType)
+        {
+            return argType.IsOut ? "out " : string.Empty;
+        }
 
-            while (!string.IsNullOrEmpty(ind))
-            {
-                ind = ind.Remove(ind.Length - 4, 4);
-                sb.AppendLine($"{ind}}}");
-            }
-            
-            yield return new Overload(sig.WithParameters(newParameters).Build(), sb, true);
+        private static string ConvertName(string argName)
+        {
+            return Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
         }
     }
 }

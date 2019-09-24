@@ -14,14 +14,15 @@ namespace Silk.NET.BuildTools.Bind.Overloading
     {
         public static readonly IFunctionOverloader[] Pipeline =
         {
+            new ReturnTypeOverloader(),
             new ArrayParameterOverloader(),
             new PointerParameterOverloader(),
-            new ReturnTypeOverloader(),
+            new StringOverloader(),
+            new StringReturnOverloader(),
             new PointerReturnValueOverloader(),
             new StaticCountOverloader(),
             new IntPtrOverloader(),
             new SpanOverloader(),
-            new StringOverloader(),
             new FlowPointerOverloader(),
         };
 
@@ -30,7 +31,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             var ret = new List<Overload>();
             foreach (var @interface in project.Interfaces.Values)
             {
-                ret.AddRange(GetOverloads(@interface));
+                ret.AddRange(GetOverloads(@interface).Where(x => !ret.Any(y => y.Signature.Equals(x.Signature))));
             }
 
             return ret;

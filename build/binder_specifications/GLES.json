@@ -7256,9 +7256,9 @@
                 {
                   "Name": "name",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -10326,9 +10326,9 @@
                 {
                   "Name": "name",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -10471,9 +10471,9 @@
                 {
                   "Name": "name",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -10616,9 +10616,9 @@
                 {
                   "Name": "name",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -11122,9 +11122,9 @@
                 {
                   "Name": "infoLog",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -11356,9 +11356,9 @@
                 {
                   "Name": "infoLog",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -11536,9 +11536,9 @@
                 {
                   "Name": "source",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -11562,9 +11562,9 @@
             {
               "Name": "GetString",
               "ReturnType": {
-                "IndirectionLevels": 0,
+                "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
-                "Name": "string",
+                "Name": "byte",
                 "OriginalName": "GLubyte",
                 "GenericTypes": [],
                 "IsByRef": false,
@@ -11916,9 +11916,9 @@
                 {
                   "Name": "name",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -19104,9 +19104,9 @@
                 {
                   "Name": "uniformBlockName",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -19409,9 +19409,9 @@
                 {
                   "Name": "name",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -20136,9 +20136,9 @@
             {
               "Name": "GetString",
               "ReturnType": {
-                "IndirectionLevels": 0,
+                "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
-                "Name": "string",
+                "Name": "byte",
                 "OriginalName": "GLubyte",
                 "GenericTypes": [],
                 "IsByRef": false,
@@ -20410,9 +20410,9 @@
                 {
                   "Name": "name",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -20538,9 +20538,9 @@
                 {
                   "Name": "uniformBlockName",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -25406,9 +25406,9 @@
                 {
                   "Name": "infoLog",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -25631,9 +25631,9 @@
                 {
                   "Name": "name",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -25703,9 +25703,9 @@
                 {
                   "Name": "name",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -25825,9 +25825,9 @@
                 {
                   "Name": "name",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -30529,9 +30529,9 @@
                 {
                   "Name": "buf",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -31236,9 +31236,9 @@
                 {
                   "Name": "messageLog",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -31600,9 +31600,9 @@
                 {
                   "Name": "label",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -31690,9 +31690,9 @@
                 {
                   "Name": "label",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -32210,9 +32210,9 @@
                 {
                   "Name": "label",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -32283,9 +32283,9 @@
                 {
                   "Name": "label",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -32580,9 +32580,9 @@
                 {
                   "Name": "message",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -33999,9 +33999,9 @@
                 {
                   "Name": "counterString",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -34164,9 +34164,9 @@
                 {
                   "Name": "groupString",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -34972,9 +34972,9 @@
                 {
                   "Name": "source",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -39605,9 +39605,9 @@
                 {
                   "Name": "infoLog",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -43842,9 +43842,9 @@
                 {
                   "Name": "name",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -43929,9 +43929,9 @@
                 {
                   "Name": "name",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -43979,9 +43979,9 @@
                 {
                   "Name": "name",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -44044,9 +44044,9 @@
                 {
                   "Name": "name",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -45170,9 +45170,9 @@
                 {
                   "Name": "data",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "byte",
                     "OriginalName": "GLubyte",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -45242,9 +45242,9 @@
                 {
                   "Name": "data",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "byte",
                     "OriginalName": "GLubyte",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -47550,9 +47550,9 @@
                 {
                   "Name": "data",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "byte",
                     "OriginalName": "GLubyte",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -47622,9 +47622,9 @@
                 {
                   "Name": "data",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "byte",
                     "OriginalName": "GLubyte",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -50604,9 +50604,9 @@
                 {
                   "Name": "label",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -50689,9 +50689,9 @@
                 {
                   "Name": "label",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -51786,9 +51786,9 @@
                 {
                   "Name": "marker",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -51855,9 +51855,9 @@
                 {
                   "Name": "marker",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -55354,9 +55354,9 @@
                 {
                   "Name": "counterName",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -55384,9 +55384,9 @@
                 {
                   "Name": "counterDesc",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -55589,9 +55589,9 @@
                 {
                   "Name": "queryName",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -55669,9 +55669,9 @@
                 {
                   "Name": "queryName",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -56742,9 +56742,9 @@
                 {
                   "Name": "buf",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -56907,9 +56907,9 @@
                 {
                   "Name": "messageLog",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -57007,9 +57007,9 @@
                 {
                   "Name": "label",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -57097,9 +57097,9 @@
                 {
                   "Name": "label",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -57232,9 +57232,9 @@
                 {
                   "Name": "label",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -57297,9 +57297,9 @@
                 {
                   "Name": "label",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -57396,9 +57396,9 @@
                 {
                   "Name": "message",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -61693,9 +61693,9 @@
                 {
                   "Name": "commands",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "byte",
                     "OriginalName": "GLubyte",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -64508,9 +64508,9 @@
                 {
                   "Name": "commands",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "byte",
                     "OriginalName": "GLubyte",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -66083,9 +66083,9 @@
                 {
                   "Name": "commands",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "byte",
                     "OriginalName": "GLubyte",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -69483,9 +69483,9 @@
                 {
                   "Name": "name",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -82173,9 +82173,9 @@
                 {
                   "Name": "driverControlString",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -83151,9 +83151,9 @@
                 {
                   "Name": "source",
                   "Type": {
-                    "IndirectionLevels": 0,
+                    "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "string",
+                    "Name": "char",
                     "OriginalName": "GLchar",
                     "GenericTypes": [],
                     "IsByRef": false,

@@ -69,7 +69,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             }
 
             sb.Append($"{function.Name}(");
-            sb.Append(string.Join(", ", function.Parameters.Select(x => Format(x.Name))));
+            sb.Append(string.Join(", ", function.Parameters.Select(x => GetOut(x.Type) + Format(x.Name))));
             sb.Append(");");
             sb.AppendLine();
             
@@ -79,6 +79,11 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 sb,
                 true
             );
+
+            string GetOut(Type t)
+            {
+                return t.IsOut ? "out " : string.Empty;
+            }
 
             string Format(string n)
             {
