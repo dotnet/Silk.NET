@@ -20,7 +20,6 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             var o = new StringBuilder();
             var parameters = new List<Parameter>(function.Parameters);
             var pInv = new List<string>();
-            var ind = "";
             var c = false;
             o.AppendLine("// StringOverloader");
             for (var i = 0; i < function.Parameters.Count; i++)
@@ -37,27 +36,14 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                         }
                     )
                     .Build();
-                    o.AppendLine($"{ind}var {param.Name}_o = stackalloc char*[{ConvertName(param.Name)}.Length];");
                     o.AppendLine
-                    (
-                        $"{ind}for (var {param.Name}_i = 0;" +
-                        $"{param.Name}_i < {ConvertName(param.Name)}.Length; {param.Name}_i++)"
-                    );
-                    o.AppendLine($"{ind}{{");
-                    o.AppendLine($"{ind}    fixed (char* str = {ConvertName(param.Name)}[{param.Name}_i])");
-                    o.AppendLine($"{ind}    {{");
-                    o.AppendLine($"{ind}        {param.Name}_o[{param.Name}_i] = str;");
-                    o.AppendLine($"{ind}    }}");
-                    o.AppendLine($"{ind}}}");
-                    o.AppendLine();
-                    pInv.Add($"{param.Name}_o");
+                        ($"var {param.Name}_o = SilkMarshal.MarshalStringArrayToPtr({ConvertName(param.Name)});");
+                    pInv.Add($"(char**) {param.Name}_o");
                     c = true;
                 }
                 else if ((param.Type.ToString() == "char*" || param.Type.ToString() == "byte*") && !param.Type.IsOut)
                 {
-                    o.AppendLine($"{ind}fixed (char* {param.Name}_s = {ConvertName(param.Name)})");
-                    o.AppendLine($"{ind}{{");
-                    ind += "    ";
+                    o.AppendLine($"var {param.Name}_s = SilkMarshal.MarshalStringToPtr({ConvertName(param.Name)});");
                     pInv.Add($"({param.Type}) {param.Name}_s");
                     parameters[i] = new ParameterSignatureBuilder(param).WithType(new Type(){Name = "string"}).Build();
                     c = true;
@@ -69,18 +55,29 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 }
             }
 
-            o.Append(ind);
             if (function.ReturnType.ToString() != "void")
             {
-                o.Append("return ");
+                o.Append("var silkReturn = ");
             }
 
             o.AppendLine($"{function.Name}({string.Join(", ", pInv)});");
 
-            while (!string.IsNullOrEmpty(ind))
+            for (var i = 0; i < pInv.Count; i++)
             {
-                ind = ind.Remove(ind.Length - 4, 4);
-                o.AppendLine($"{ind}}}");
+                var parameter = pInv[i];
+                if (parameter.EndsWith("_s"))
+                {
+                    o.AppendLine($"SilkMarshal.FreeStringPtr((IntPtr) {parameter});");
+                }
+                else if (parameter.EndsWith("_o"))
+                {
+                    o.AppendLine($"SilkMarshal.FreeStringArrayPtr((IntPtr) {parameter}, {ConvertName(parameters[i].Name)}.Length);");
+                }
+            }
+
+            if (function.ReturnType.ToString() != "void")
+            {
+                o.Append("return silkReturn;");
             }
 
             if (c)
