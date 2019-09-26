@@ -226,7 +226,7 @@ namespace Silk.NET.BuildTools.Common.Functions
             }
 
             return string.Equals(Name, other.Name) &&
-                   Parameters.Select(x => x.Type).SequenceEqual(other.Parameters.Select(x => x.Type)) &&
+                   Parameters.Select(x => x.Type.ToString()).SequenceEqual(other.Parameters.Select(x => x.Type.ToString())) &&
                    GenericTypeParameters.SequenceEqual(other.GenericTypeParameters);
         }
 

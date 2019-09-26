@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using Silk.NET.BuildTools.Common;
@@ -20,7 +21,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         {
             for (var index = 0; index < function.Parameters.Count; index++)
             {
-                if (!(function.Parameters[index].Type.IsPointer && !function.Parameters[index].Type.IsVoidPointer()))
+                if (!function.Parameters[index].Type.IsPointer || function.Parameters[index].Type.IsVoidPointer())
                 {
                     continue;
                 }
@@ -54,7 +55,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 sb.AppendLine(");");
                 sb.AppendLine("}");
 
-                yield return new Overload
+                var ret= new Overload
                 (
                     sig.WithParameters
                         (
@@ -75,6 +76,9 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                     sb,
                     true
                 );
+                
+                
+                yield return ret;
             }
         }
 

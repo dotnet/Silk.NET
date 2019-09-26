@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Functions;
@@ -18,7 +19,6 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             new ArrayParameterOverloader(),
             new PointerParameterOverloader(),
             new StringOverloader(),
-            new StringReturnOverloader(),
             new PointerReturnValueOverloader(),
             new StaticCountOverloader(),
             new IntPtrOverloader(),
@@ -59,29 +59,19 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
         private static IEnumerable<Overload> GetOverloads(Function function)
         {
-            var overloads = new List<Overload>();
-            var cachedLength = 0;
             foreach (var overloader in Pipeline)
             {
-                overloads.AddRange(overloader.CreateOverloads(function));
-            }
-
-            do
-            {
-                cachedLength = overloads.Count;
-                foreach (var overloader in Pipeline)
+                foreach (var overload in overloader.CreateOverloads(function))
                 {
-                    IEnumerable<Overload> add = new Overload[0];
-                    foreach (var overload in overloads)
+                    yield return overload;
+                    foreach (var anotherOverload in GetOverloads(overload.Signature))
                     {
-                        add = overloader.CreateOverloads(overload.Signature);
+                        //Debug.WriteLine("B:" + overload.Signature);
+                        //Debug.WriteLine("A:" + anotherOverload.Signature + " (" + overloader.GetType().Name + ")");
+                        yield return anotherOverload;
                     }
-
-                    overloads.AddRange(add);
                 }
-            } while (overloads.Count > cachedLength);
-
-            return overloads;
+            }
         }
     }
 }

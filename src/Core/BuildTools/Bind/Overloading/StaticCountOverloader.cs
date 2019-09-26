@@ -18,6 +18,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         {
             return (x.Count?.IsStatic ?? false) &&
                    x.Type.IndirectionLevels == 1 &&
+                   x.Count.StaticCount != 0 &&
                    !x.Type.IsVoidPointer();
         }
         public IEnumerable<Overload> CreateOverloads(Function function)
