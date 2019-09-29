@@ -13,17 +13,24 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 {
     public static class Overloader
     {
-        public static readonly IFunctionOverloader[] Pipeline =
+        public static readonly IFunctionOverloader[][] Pipeline =
         {
-            new ReturnTypeOverloader(),
-            new ArrayParameterOverloader(),
-            new PointerParameterOverloader(),
-            new StringOverloader(),
-            new PointerReturnValueOverloader(),
-            new StaticCountOverloader(),
-            new IntPtrOverloader(),
-            new SpanOverloader(),
-            new FlowPointerOverloader(),
+            new IFunctionOverloader[]
+            {
+                new StringOverloader(),
+                new StringReturnOverloader(),
+                new FlowPointerOverloader(),
+            },
+            new IFunctionOverloader[]
+            {
+                new PointerParameterOverloader(),
+                new PointerReturnValueOverloader(),
+                new StaticCountOverloader(),
+                new IntPtrOverloader(),
+                new SpanOverloader(),
+                new ArrayParameterOverloader(),
+                new ReturnTypeOverloader(),
+            },
         };
 
         public static IEnumerable<Overload> GetOverloads(Project project)
@@ -59,19 +66,32 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
         private static IEnumerable<Overload> GetOverloads(Function function)
         {
-            foreach (var overloader in Pipeline)
+            var ret = new List<Overload>();
+            var add = new List<Overload>();
+            foreach (var stage in Pipeline)
             {
-                foreach (var overload in overloader.CreateOverloads(function))
+                foreach (var overloader in stage)
                 {
-                    yield return overload;
-                    foreach (var anotherOverload in GetOverloads(overload.Signature))
+                    if (ret.Count != 0)
                     {
-                        //Debug.WriteLine("B:" + overload.Signature);
-                        //Debug.WriteLine("A:" + anotherOverload.Signature + " (" + overloader.GetType().Name + ")");
-                        yield return anotherOverload;
+                        foreach (var overload in ret)
+                        {
+                            add.AddRange(overloader.CreateOverloads(overload.Signature));
+                        }
+                        ret.AddRange(add);
+                        add.Clear();
                     }
+                    
+                    ret.AddRange(overloader.CreateOverloads(function));
                 }
             }
+
+            return ret;
+        }
+
+        private static IEnumerable<Overload> GetOverloads(Function function, IEnumerable<IFunctionOverloader> stage)
+        {
+            return stage.SelectMany(overloader => overloader.CreateOverloads(function));
         }
     }
 }

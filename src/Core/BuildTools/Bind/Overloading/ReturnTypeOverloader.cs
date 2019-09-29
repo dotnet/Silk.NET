@@ -12,7 +12,6 @@ using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
-using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
 namespace Silk.NET.BuildTools.Bind.Overloading
 {

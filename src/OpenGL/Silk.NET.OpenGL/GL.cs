@@ -30,8 +30,7 @@ namespace Silk.NET.OpenGL
 
             return _extensions.Contains(extension);
         }
-        
-        
+
         public void ClearColor(Color color)
         {
             ClearColor(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
@@ -111,7 +110,7 @@ namespace Silk.NET.OpenGL
             ProgramUniform4(program, location, quaternion.X, quaternion.Y, quaternion.Z, quaternion.W);
         }
 
-        public string GetActiveAttrib(uint program, uint index, out uint size, out GLEnum type)
+        public string GetActiveAttrib(uint program, uint index, out int size, out GLEnum type)
         {
             uint length;
             GetProgram(program, GLEnum.ActiveAttributeMaxLength, out var lengthTmp);
@@ -120,17 +119,18 @@ namespace Silk.NET.OpenGL
 
             GetActiveAttrib(program, index, (uint) (length == 0 ? 1 : length * 2), out length, out size, out type, str);
 
-            return str;
+            return str.Substring(0, (int) length);
         }
 
-        public string GetActiveUniform(int program, int uniformIndex, out int size, out ActiveUniformType type)
+        public string GetActiveUniform(uint program, uint uniformIndex, out int size, out GLEnum type)
         {
-            int length;
-            GetProgram(program, OpenGL4.GetProgramParameterName.ActiveUniformMaxLength, out length);
+            uint length;
+            GetProgram(program, GLEnum.ActiveUniformMaxLength, out var lengthTmp);
+            length = (uint) lengthTmp;
 
-            string str;
-            GetActiveUniform(program, uniformIndex, length == 0 ? 1 : length, out length, out size, out type, out str);
-            return str;
+            var str = new string((char)0, (int) length);
+            GetActiveUniform(program, uniformIndex, length == 0 ? 1 : length, out length, out size, out type, str);
+            return str.Substring(0, (int) length);
         }
 
         public void ShaderSource(Int32 shader, System.String @string)
@@ -142,99 +142,99 @@ namespace Silk.NET.OpenGL
             }
         }
 
-        public string GetShaderInfoLog(Int32 shader)
+        public string GetShaderInfoLog(UInt32 shader)
         {
             string info;
             GetShaderInfoLog(shader, out info);
             return info;
         }
 
-        public void GetShaderInfoLog(Int32 shader, out string info)
+        public void GetShaderInfoLog(UInt32 shader, out string info)
         {
             unsafe
             {
-                int length;
-                GetShader(shader, ShaderParameter.InfoLogLength, out length);
+                uint length;
+                GetShader(shader, GLEnum.InfoLogLength, out var lengthTmp);
+                length = (uint)lengthTmp;
                 if (length == 0)
                 {
-                    info = String.Empty;
+                    info = string.Empty;
                     return;
                 }
-                GetShaderInfoLog((UInt32)shader, length * 2, &length, out info);
+                info = new string((char)0, (int)length);
+                GetShaderInfoLog(shader, length * 2, out length, info);
+                info = info.Substring(0, (int) length);
             }
         }
 
-        public string GetProgramInfoLog(Int32 program)
+        public string GetProgramInfoLog(UInt32 program)
         {
             string info;
             GetProgramInfoLog(program, out info);
             return info;
         }
 
-        public void GetProgramInfoLog(Int32 program, out string info)
+        public void GetProgramInfoLog(UInt32 program, out string info)
         {
             unsafe
             {
-                int length;
-                GetProgram(program, GLEnum.InfoLogLength, out length); if (length == 0)
+                uint length;
+                GetProgram(program, GLEnum.InfoLogLength, out var lengthTmp);
+                length = (uint) lengthTmp;
+                if (length == 0)
                 {
-                    info = String.Empty;
+                    info = string.Empty;
                     return;
                 }
-                GetProgramInfoLog((UInt32)program, length * 2, &length, out info);
+                info = new string((char)0, (int)length);
+                GetProgramInfoLog(program, length * 2, out length, info);
             }
         }
 
         [CLSCompliant(false)]
-        public void VertexAttrib2(Int32 index, ref Vector2 v)
+        public void VertexAttrib2(UInt32 index, ref Vector2 v)
         {
             VertexAttrib2(index, v.X, v.Y);
         }
 
         [CLSCompliant(false)]
-        public void VertexAttrib3(Int32 index, ref Vector3 v)
+        public void VertexAttrib3(UInt32 index, ref Vector3 v)
         {
             VertexAttrib3(index, v.X, v.Y, v.Z);
         }
 
         [CLSCompliant(false)]
-        public void VertexAttrib4(Int32 index, ref Vector4 v)
+        public void VertexAttrib4(UInt32 index, ref Vector4 v)
         {
             VertexAttrib4(index, v.X, v.Y, v.Z, v.W);
         }
 
-        public void VertexAttrib2(Int32 index, Vector2 v)
+        public void VertexAttrib2(UInt32 index, Vector2 v)
         {
             VertexAttrib2(index, v.X, v.Y);
         }
 
-        public void VertexAttrib3(Int32 index, Vector3 v)
+        public void VertexAttrib3(UInt32 index, Vector3 v)
         {
             VertexAttrib3(index, v.X, v.Y, v.Z);
         }
 
-        public void VertexAttrib4(Int32 index, Vector4 v)
+        public void VertexAttrib4(UInt32 index, Vector4 v)
         {
             VertexAttrib4(index, v.X, v.Y, v.Z, v.W);
         }
 
-        public void VertexAttribPointer(int index, int size, VertexAttribPointerType type, bool normalized, int stride, int offset)
+        public unsafe void VertexAttribPointer(uint index, int size, GLEnum type, bool normalized, uint stride, int offset)
         {
-            VertexAttribPointer(index, size, type, normalized, stride, (IntPtr)offset);
+            VertexAttribPointer(index, size, type, normalized, stride, (void*)offset);
         }
 
-        [CLSCompliant(false)]
-        public void VertexAttribPointer(uint index, int size, VertexAttribPointerType type, bool normalized, int stride, int offset)
+        public unsafe void DrawElements(GLEnum mode, uint count, GLEnum type, int offset)
         {
-            VertexAttribPointer(index, size, type, normalized, stride, (IntPtr)offset);
+            DrawElements((GLEnum)mode, count, type, (void*)(offset));
         }
 
-        public void DrawElements(BeginMode mode, int count, DrawElementsType type, int offset)
-        {
-            DrawElements((PrimitiveType)mode, count, type, new IntPtr(offset));
-        }
-
-        public void GetFloat(GetPName pname, out Vector2 vector)
+        public void GetFloat(GLEnum pname, out Vector2 vector)
         {
             unsafe
             {
@@ -245,7 +245,7 @@ namespace Silk.NET.OpenGL
             }
         }
 
-        public void GetFloat(GetPName pname, out Vector3 vector)
+        public void GetFloat(GLEnum pname, out Vector3 vector)
         {
             unsafe
             {
@@ -256,7 +256,7 @@ namespace Silk.NET.OpenGL
             }
         }
 
-        public void GetFloat(GetPName pname, out Vector4 vector)
+        public void GetFloat(GLEnum pname, out Vector4 vector)
         {
             unsafe
             {
@@ -267,11 +267,11 @@ namespace Silk.NET.OpenGL
             }
         }
 
-        public void GetFloat(GetPName pname, out Matrix4 matrix)
+        public void GetFloat(GLEnum pname, out Matrix4x4 matrix)
         {
             unsafe
             {
-                fixed (Matrix4* ptr = &matrix)
+                fixed (Matrix4x4* ptr = &matrix)
                 {
                     GetFloat(pname, (float*)ptr);
                 }
@@ -280,27 +280,17 @@ namespace Silk.NET.OpenGL
 
         public void Viewport(Size size)
         {
-            Viewport(0, 0, size.Width, size.Height);
+            Viewport(0, 0, (uint)size.Width, (uint)size.Height);
         }
 
         public void Viewport(Point location, Size size)
         {
-            Viewport(location.X, location.Y, size.Width, size.Height);
+            Viewport(location.X, location.Y, (uint) size.Width, (uint) size.Height);
         }
 
         public void Viewport(Rectangle rectangle)
         {
-            Viewport(rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
-        }
-#if MINIMAL
-        public void Viewport(OpenTK.Point location, OpenTK.Size size)
-        {
-            Viewport(location.X, location.Y, size.Width, size.Height);
-        }
-
-        public void Viewport(OpenTK.Rectangle rectangle)
-        {
-            Viewport(rectangle.X, rectangle.Y, rectangle.Width, rectangle.Height);
+            Viewport(rectangle.X, rectangle.Y, (uint) rectangle.Width, (uint) rectangle.Height);
         }
     }
 }

@@ -3,10 +3,8 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Threading.Tasks;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
 
