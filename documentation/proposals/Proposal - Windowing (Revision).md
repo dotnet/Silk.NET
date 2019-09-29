@@ -29,65 +29,66 @@ public void Run()
 # Proposed API
 
 ## IWindowFunctions additions
-```diff
+```cs
 public interface IWindowFunctions
 {
-+    /// <summary>
-+    /// Polls the underlying backend for window events, and executes them. This does not include Render or Update.
-+    /// </summary>
-+    public void DoEvents();
-
-+    /// <summary>
-+    /// Calls the Render event. If a multi-threaded window is used, the Render event will run on the
-+    /// render thread managed by the implementation.
-+    /// </summary>
-+    public void DoRender();
-+    // IMPLEMENTATION DETAIL: Delta-time should be managed by the implementation
-+    // IMPLEMENTATION DETAIL: Invoke calls should be handled in this call.
-+    // IMPLEMENTATION DETAIL: SwapBuffers should be called here if ShouldSwapAutomatically is true.
-
-+    /// <summary>
-+    /// Calls the Update event. If a multi-threaded window is used, the Update event could run on any thread.
-+    /// </summary>
-+    public void DoUpdate();
-+    // IMPLEMENTATION DETAIL: Delta-time should be managed by the implementation
-
-+    /// <summary>
-+    /// Makes the OpenGL context current on a given thread.
-+    /// </summary>
-+    public void MakeCurrent();
-+    // IMPLEMENTATION DETAIL: The window must automatically ensure that the context is current
-+    // on the render thread if multi-threaded windows are used, so that the user doesn't have
-+    // to worry about setting the context current within the Render event.
-
-+    /// <summary>
-+    /// Calls the Update event. If a multi-threaded window is used, the Update event could run on any thread.
-+    /// </summary>
-+    public void SwapBuffers();
+     /// <summary>
+     /// Polls the underlying backend for window events, and executes them. This does not include Render or Update.
+     /// </summary>
+     public void DoEvents();
 
      /// <summary>
-+    /// Runs the default game loop. Must be called by the program entry thread.
+     /// Calls the Render event. If a multi-threaded window is used, the Render event will run on the
+     /// render thread managed by the implementation.
+     /// </summary>
+     public void DoRender();
+     // IMPLEMENTATION DETAIL: Delta-time should be managed by the implementation
+     // IMPLEMENTATION DETAIL: Invoke calls should be handled in this call.
+     // IMPLEMENTATION DETAIL: SwapBuffers should be called here if ShouldSwapAutomatically is true.
+
+     /// <summary>
+     /// Calls the Update event. If a multi-threaded window is used, the Update event could run on any thread.
+     /// </summary>
+     public void DoUpdate();
+     // IMPLEMENTATION DETAIL: Delta-time should be managed by the implementation
+
+     /// <summary>
+     /// Makes the OpenGL context current on a given thread.
+     /// </summary>
+     public void MakeCurrent();
+     // IMPLEMENTATION DETAIL: The window must automatically ensure that the context is current
+     // on the render thread if multi-threaded windows are used, so that the user doesn't have
+     // to worry about setting the context current within the Render event.
+
+     /// <summary>
+     /// Calls the Update event. If a multi-threaded window is used, the Update event could run on any thread.
+     /// </summary>
+     public void SwapBuffers();
+
+     /// <summary>
+     /// Runs the default game loop. Must be called by the program entry thread.
      /// </summary>
      public void Run();
 
-+    /// <summary>
-+    /// Creates the window on the underlying platform.
-+    /// </summary>
-+    public void Show();
+     /// <summary>
+     /// Creates the window on the underlying platform.
+     /// </summary>
+     public void Show();
 }
 ```
 
 ## IWindowProperties additions
-```diff
+```cs
 public interface IWindowProperties
 {
-+   /// <summary>
-+   /// Whether this window has been requested to close by the underlying platform.
-+   /// </summary>
-+   bool IsClosing { get; } // GLFW: maps to glfwShouldWindowClose
+    /// <summary>
+    /// Whether this window has been requested to close by the underlying platform.
+    /// </summary>
+    bool IsClosing { get; } // GLFW: maps to glfwShouldWindowClose
 
-+   /// <summary>
-+   /// Whether SwapBuffers should automatically be called in the DoRender call.
-+   /// </summary>
-+   bool ShouldSwapAutomatically { get; } // Default: true
+    /// <summary>
+    /// Whether SwapBuffers should automatically be called in the DoRender call.
+    /// </summary>
+    bool ShouldSwapAutomatically { get; } // Default: true
 }
+```
