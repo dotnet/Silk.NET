@@ -24,6 +24,7 @@ public void Run()
         DoRender();
     }
 }
+```
 
 # Proposed API
 
