@@ -421,8 +421,7 @@ namespace Silk.NET.OpenAL
                 _deviceName = "None";
                 throw new AudioDeviceException
                 (
-                    $"Audio device '{(string.IsNullOrEmpty(device) ? "default" : device)}' does not exist or" +
-                    "is tied up by another application."
+                    $"Audio device '{(string.IsNullOrEmpty(device) ? "default" : device)}' does not exist oris tied up by another application."
                 );
             }
 

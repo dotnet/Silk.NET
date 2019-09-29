@@ -33,14 +33,14 @@ namespace Silk.NET.BuildTools.Baking
         {
             var sb = new StringBuilder();
             sb.AppendLine("/// <summary>");
-            sb.AppendLine("/// " + Summary.Replace("\n", "\n/// "));
+            sb.AppendLine($"/// {Summary.Replace("\n", "\n/// ")}");
             sb.AppendLine("/// </summary>");
             foreach (var parameter in function.Parameters)
             {
-                sb.AppendLine("/// <param name=\"" + parameter.Name + "\">");
+                sb.AppendLine($"/// <param name=\"{parameter.Name}\">");
                 if (Parameters.ContainsKey(parameter.Name))
                 {
-                    sb.AppendLine("/// " + Parameters[parameter.Name].Summary.Replace("\n", "\n/// "));
+                    sb.AppendLine($"/// {Parameters[parameter.Name].Summary.Replace("\n", "\n/// ")}");
                 }
                 else
                 {

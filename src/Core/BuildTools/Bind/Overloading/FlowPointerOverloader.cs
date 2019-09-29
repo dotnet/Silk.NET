@@ -36,20 +36,13 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 {
                     var newParameterType = new TypeSignatureBuilder(param.Type)
                         .WithIndirectionLevel(param.Type.IndirectionLevels - 1);
-                    switch (param.Flow)
+                    newParameterType = param.Flow switch
                     {
-                        case FlowDirection.Undefined:
-                            newParameterType = newParameterType.WithByRef(true);
-                            break;
-                        case FlowDirection.In:
-                            newParameterType = newParameterType.WithIsIn(true);
-                            break;
-                        case FlowDirection.Out:
-                            newParameterType = newParameterType.WithIsOut(true);
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
+                        FlowDirection.Undefined => newParameterType.WithByRef(true),
+                        FlowDirection.In => newParameterType.WithIsIn(true),
+                        FlowDirection.Out => newParameterType.WithIsOut(true),
+                        _ => throw new ArgumentOutOfRangeException()
+                    };
 
                     var newParameter = new ParameterSignatureBuilder(param).WithType(newParameterType.Build());
                     var ptrName = (param.Name + "Ptr").Replace("@", "");
@@ -63,7 +56,13 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 }
                 else
                 {
-                    parameters.Add((Utilities.CSharpKeywords.Contains(param.Name) ? "@" : string.Empty) + param.Name);
+                    parameters.Add
+                    (
+                        (param.Type.IsOut ? "out " : string.Empty) + (Utilities.CSharpKeywords.Contains
+                            (param.Name)
+                            ? "@"
+                            : string.Empty) + param.Name
+                    );
                     newParameters[i] = param;
                 }
             }

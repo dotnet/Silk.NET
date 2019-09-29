@@ -74,7 +74,7 @@ namespace Silk.NET.BuildTools.Baking
                     sb.AppendLine("/// </summary>");
                     foreach (var parameter in function.Parameters)
                     {
-                        sb.AppendLine("/// <param name=\"" + parameter.Name + "\">");
+                        sb.AppendLine($"/// <param name=\"{parameter.Name}\">");
                         sb.AppendLine("/// To be added.");
                         if (!(parameter.Count is null))
                         {

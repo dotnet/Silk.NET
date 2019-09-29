@@ -93,12 +93,11 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 .WithReturnType(newReturnType);
 
             var sb = new StringBuilder();
-            var strParams = newParameters.Select(x => Utilities.CSharpKeywords.Contains(x.Name) ? "@" + x.Name : x.Name)
-                .Concat(new[] { "&ret" });
+            var strParams = newParameters.Select(Convert).Concat(new[] { "&ret" });
 
             sb.AppendLine("// ReturnTypeOverloader");
-            sb.AppendLine(newReturnType + " ret = default;");
-            sb.Append(function.Name + "(");
+            sb.AppendLine($"{newReturnType} ret = default;");
+            sb.Append($"{function.Name}(");
             sb.Append(string.Join(", ", strParams));
             sb.AppendLine(");");
             sb.AppendLine("return ret;");
@@ -124,8 +123,9 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
             var n = newParameters.Last().Name;
 
-            sb.Insert(0, "const " + (sizeParameterType.Name == "uint" ? "uint " : "int ") +
-                         (Utilities.CSharpKeywords.Contains(n) ? "@" : "") + n + " = 1;\n");
+            sb.Insert(0,
+                $"const {(sizeParameterType.Name == "uint" ? "uint " : "int ")}{(Utilities.CSharpKeywords.Contains(n) ? "@" : "")}{n} = 1;\n"
+            );
             newParameters = SkipLastExtension.SkipLast(newParameters, 1).ToList();
             yield return new Overload
             (
@@ -133,6 +133,12 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                     .WithParameters(newParameters)
                     .Build(), sb, true
             );
+
+            string Convert(Parameter x)
+            {
+                var pre = x.Type.IsOut ? "out " : string.Empty;
+                return pre + (Utilities.CSharpKeywords.Contains(x.Name) ? $"@{x.Name}" : x.Name);
+            }
 }
     }
 }

@@ -30,10 +30,10 @@ namespace Silk.NET.BuildTools.Converters.Constructors
             var gl = profile.ClassName.ToUpper().CheckMemberName(opts.Prefix);
             mergedEnums.Add
             (
-                gl + "Enum",
+                $"{gl}Enum",
                 new Enum
                 {
-                    Name = gl + "Enum", ExtensionName = "Core", Attributes = new List<Attribute>(),
+                    Name = $"{gl}Enum", ExtensionName = "Core", Attributes = new List<Attribute>(),
                     Tokens = new List<Token>(), NativeName = "GLenum",
                 }
             );
@@ -48,7 +48,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                 
                 if (@enum.ExtensionName == "Core")
                 {
-                    mergedEnums[gl + "Enum"].Tokens.AddRange(@enum.Tokens);
+                    mergedEnums[$"{gl}Enum"].Tokens.AddRange(@enum.Tokens);
                 }
                 else
                 {
@@ -78,7 +78,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             CategoryName = @enum.ExtensionName, ExtensionName = @enum.ExtensionName, IsRoot = false,
                             Namespace = @enum.ExtensionName == "Core"
                                 ? string.Empty
-                                : "." + @enum.ExtensionName.CheckMemberName(opts.Prefix)
+                                : $".{@enum.ExtensionName.CheckMemberName(opts.Prefix)}"
                         }
                     );
                 }
@@ -127,7 +127,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             new Project
                             {
                                 CategoryName = category, ExtensionName = category, IsRoot = false,
-                                Namespace = "." + category.CheckMemberName(opts.Prefix)
+                                Namespace = $".{category.CheckMemberName(opts.Prefix)}"
                             }
                         );
                     }
@@ -145,8 +145,8 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                                 rawCategory,
                                 new Interface
                                 {
-                                    Name = "I" + Naming.Translate(TrimName(rawCategory, opts), opts.Prefix)
-                                        .CheckMemberName(opts.Prefix)
+                                    Name =
+                                        $"I{Naming.Translate(TrimName(rawCategory, opts), opts.Prefix).CheckMemberName(opts.Prefix)}"
                                 }
                             );
                     }
@@ -161,7 +161,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
 
         public string TrimName(string name, ProfileConverterOptions opts)
         {
-            if (name.StartsWith(opts.Prefix.ToUpper() + "_"))
+            if (name.StartsWith($"{opts.Prefix.ToUpper()}_"))
             {
                 return name.Remove(0, opts.Prefix.Length + 1);
             }

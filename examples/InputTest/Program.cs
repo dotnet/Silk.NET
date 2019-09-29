@@ -50,42 +50,42 @@ namespace InputTest
 
         private static void GamepadOnTriggerMoved(IGamepad g, Trigger t)
         {
-            Console.WriteLine("G" + g.Index + "> " + t.Index + " trigger moved: " + t.Position);
+            Console.WriteLine($"G{g.Index}> {t.Index} trigger moved: {t.Position}");
         }
 
         private static void GamepadOnThumbstickMoved(IGamepad g, Thumbstick t)
         {
-            Console.WriteLine("G" + g.Index + "> " + t.Index + " thumbstick moved: (" + t.X + ", " + t.Y + ")");
+            Console.WriteLine($"G{g.Index}> {t.Index} thumbstick moved: ({t.X}, {t.Y})");
         }
 
         private static void JoystickOnHatMoved(IJoystick arg1, Hat arg2)
         {
-            Console.WriteLine("J" + arg1.Index + "> " + arg2.Index + " hat moved: " + arg2.Position);
+            Console.WriteLine($"J{arg1.Index}> {arg2.Index} hat moved: {arg2.Position}");
         }
 
         private static void JoystickOnAxisMoved(IJoystick arg1, Axis arg2)
         {
-            Console.WriteLine("J" + arg1.Index + "> " + arg2.Index + " axis moved: " + arg2.Position);
+            Console.WriteLine($"J{arg1.Index}> {arg2.Index} axis moved: {arg2.Position}");
         }
 
         private static void JoystickOnButtonUp(IJoystick arg1, Button arg2)
         {
-            Console.WriteLine("J" + arg1.Index + "> " + arg2.Name + " down.");
+            Console.WriteLine($"J{arg1.Index}> {arg2.Name} down.");
         }
 
         private static void JoystickOnButtonDown(IJoystick arg1, Button arg2)
         {
-            Console.WriteLine("J" + arg1.Index + "> " + arg2.Name + " down.");
+            Console.WriteLine($"J{arg1.Index}> {arg2.Name} down.");
         }
 
         private static void InputGamepadOnButtonDown(IGamepad arg1, Button arg2)
         {
-            Console.WriteLine("G" + arg1.Index + "> " + arg2.Name + " down. " + (int)arg2.Name);
+            Console.WriteLine($"G{arg1.Index}> {arg2.Name} down. {(int) arg2.Name}");
         }
 
         private static void InputGamepadOnButtonUp(IGamepad arg1, Button arg2)
         {
-            Console.WriteLine("G" + arg1.Index + "> " + arg2.Name + " up.");
+            Console.WriteLine($"G{arg1.Index}> {arg2.Name} up.");
         }
 
         public static void DoConnect(IInputDevice device, bool isConnected)
@@ -95,7 +95,7 @@ namespace InputTest
                 : $"Device {device.Name} disconnected");
             if (device is IGamepad gamepad && device.IsConnected)
             {
-                Console.WriteLine("Discovered controller " + gamepad.Index + " (Connected: " + isConnected + ")");
+                Console.WriteLine($"Discovered controller {gamepad.Index} (Connected: {isConnected})");
                 if (isConnected)
                 {
                     gamepad.ButtonDown += InputGamepadOnButtonDown;
@@ -114,12 +114,12 @@ namespace InputTest
                 Console.Write("    Buttons: ");
                 const string s = "\n             ";
                 Console.WriteLine(string.Join(s, gamepad.Buttons.Select(x => x.Name + (x.Pressed ? "(1)" : "(0)"))));
-                Console.WriteLine("    " + gamepad.Thumbsticks.Count + " thumbsticks found.");
-                Console.WriteLine("    " + gamepad.Triggers.Count + " triggers found.");
+                Console.WriteLine($"    {gamepad.Thumbsticks.Count} thumbsticks found.");
+                Console.WriteLine($"    {gamepad.Triggers.Count} triggers found.");
             }
             else if (device is IJoystick joystick)
             {
-                Console.WriteLine("Discovered joystick " + joystick.Index + " (Connected: " + isConnected + ")");
+                Console.WriteLine($"Discovered joystick {joystick.Index} (Connected: {isConnected})");
                 if (isConnected)
                 {
                     joystick.ButtonDown += JoystickOnButtonDown;
@@ -141,7 +141,7 @@ namespace InputTest
             }
             else if (device is IKeyboard keyboard)
             {
-                Console.WriteLine("Discovered keyboard " + keyboard.Index + " (Connected: " + isConnected + ")");
+                Console.WriteLine($"Discovered keyboard {keyboard.Index} (Connected: {isConnected})");
                 if (isConnected)
                 {
                     keyboard.KeyDown += KeyboardOnKeyDown;
@@ -158,7 +158,7 @@ namespace InputTest
             }
             else if (device is IMouse mouse)
             {
-                Console.WriteLine("Discovered mouse " + mouse.Index + " (Connected: " + isConnected + ")");
+                Console.WriteLine($"Discovered mouse {mouse.Index} (Connected: {isConnected})");
                 if (isConnected)
                 {
                     mouse.MouseUp += MouseOnMouseUp;
@@ -174,33 +174,33 @@ namespace InputTest
 
                 Console.Write("    Buttons: ");
                 Console.WriteLine(string.Join(", ", mouse.SupportedButtons.Select(x => x)));
-                Console.WriteLine("    " + mouse.ScrollWheels.Count + " scroll wheels.");
+                Console.WriteLine($"    {mouse.ScrollWheels.Count} scroll wheels.");
             }
         }
 
         private static void MouseOnScroll(IMouse arg1, ScrollWheel arg2)
         {
-            Console.WriteLine("K" + arg1.Index + "> Scrolled: (" + arg2.X + ", " + arg2.Y + ")");
+            Console.WriteLine($"K{arg1.Index}> Scrolled: ({arg2.X}, {arg2.Y})");
         }
 
         private static void MouseOnMouseDown(IMouse arg1, MouseButton arg2)
         {
-            Console.WriteLine("M" + arg1.Index + "> " + arg2 + " down.");
+            Console.WriteLine($"M{arg1.Index}> {arg2} down.");
         }
 
         private static void MouseOnMouseUp(IMouse arg1, MouseButton arg2)
         {
-            Console.WriteLine("M" + arg1.Index + "> " + arg2 + " up.");
+            Console.WriteLine($"M{arg1.Index}> {arg2} up.");
         }
 
         private static void KeyboardOnKeyUp(IKeyboard arg1, Key arg2)
         {
-            Console.WriteLine("K" + arg1.Index + "> " + arg2 + " up.");
+            Console.WriteLine($"K{arg1.Index}> {arg2} up.");
         }
 
         private static void KeyboardOnKeyDown(IKeyboard arg1, Key arg2)
         {
-            Console.WriteLine("K" + arg1.Index + "> " + arg2 + " down.");
+            Console.WriteLine($"K{arg1.Index}> {arg2} down.");
         }
     }
 }

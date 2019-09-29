@@ -22,30 +22,31 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 sb.Append("return ");
             }
 
-            sb.Append(function.Name + "(");
+            sb.Append($"{function.Name}(");
             var ret = false;
             for (var i = 0; i < function.Parameters.Count; i++)
             {
                 var parameter = function.Parameters[i];
-                if (parameter.Type.IsIntPtr())
+                if (parameter.Type.IsIntPtr() && !(parameter.Type.IsOut))
                 {
                     @params[i] = new ParameterSignatureBuilder(parameter)
                         .WithType(new TypeSignatureBuilder(parameter.Type).WithName("int").Build())
                         .Build();
-                    sb.Append("new IntPtr(" + parameter.Name + ")");
+                    sb.Append($"new IntPtr({parameter.Name})");
                     ret = true;
                 }
-                else if (parameter.Type.IsUIntPtr())
+                else if (parameter.Type.IsUIntPtr() && !(parameter.Type.IsOut))
                 {
                     @params[i] = new ParameterSignatureBuilder(parameter)
                         .WithType(new TypeSignatureBuilder(parameter.Type).WithName("uint").Build())
                         .Build();
-                    sb.Append("new UIntPtr(" + parameter.Name + ")");
+                    sb.Append($"new UIntPtr({parameter.Name})");
                     ret = true;
                 }
                 else
                 {
-                    sb.Append(parameter.Name);
+                    var prefix = parameter.Type.IsOut ? "out " : string.Empty;
+                    sb.Append($"{prefix}{parameter.Name}");
                 }
 
                 if (i != function.Parameters.Count - 1)

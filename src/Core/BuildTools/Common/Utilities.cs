@@ -115,14 +115,14 @@ namespace Silk.NET.BuildTools.Common
             {
                 var cl = chunk.ToList();
                 cl[0] = chunk.Substring(0, 1).ToUpper()[0];
-                ret += new string(cl.ToArray()) + ".";
+                ret += $"{new string(cl.ToArray())}.";
             }
 
             var firstDot = ret.IndexOf('.');
             var firstHalf = ret.Substring(0, firstDot);
             var secondHalf = ret.Substring(firstDot).Replace(".", string.Empty);
 
-            return firstHalf + "." + secondHalf;
+            return $"{firstHalf}.{secondHalf}";
         }
 
         /// <summary>

@@ -17,7 +17,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         /// <inheritdoc/>
         public IEnumerable<Overload> CreateOverloads(Function function)
         {
-            if (!function.Parameters.Any(p => p.Type.IsIntPtr()))
+            if (!function.Parameters.Any(p => p.Type.IsIntPtr() && !p.Type.IsOut))
             {
                 yield break;
             }
@@ -33,7 +33,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             for (var i = 0; i < baseParameters.Count; ++i)
             {
                 var parameter = baseParameters[i];
-                if (!parameter.Type.IsIntPtr())
+                if (!parameter.Type.IsIntPtr() || parameter.Type.IsOut)
                 {
                     continue;
                 }
@@ -130,18 +130,19 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 sb.Append("return ");
             }
 
-            sb.Append(function.Name + "(");
+            sb.Append($"{function.Name}(");
             var list = new List<string>();
             foreach (var param in old.Parameters)
             {
-                var nm = Utilities.CSharpKeywords.Contains(param.Name) ? "@" + param.Name : param.Name;
-                if (param.Type.IsIntPtr())
+                var nm = Utilities.CSharpKeywords.Contains(param.Name) ? $"@{param.Name}" : param.Name;
+                if (param.Type.IsIntPtr() && !param.Type.IsOut)
                 {
-                    list.Add("(IntPtr) " + nm);
+                    list.Add($"(IntPtr) {nm}");
                 }
                 else
                 {
-                    list.Add(nm);
+                    var prefix = param.Type.IsOut ? "out " : string.Empty;
+                    list.Add(prefix + nm);
                 }
             }
 
@@ -158,17 +159,18 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             sb.AppendLine("// PointerParameterOverloader");
             foreach (var param in function.Parameters)
             {
-                var nm = Utilities.CSharpKeywords.Contains(param.Name) ? "@" + param.Name : param.Name;
+                var nm = Utilities.CSharpKeywords.Contains(param.Name) ? $"@{param.Name}" : param.Name;
                 if (function.GenericTypeParameters.Any(x => x.Name == param.Type.Name))
                 {
-                    sb.AppendLine(ind + "fixed (" + param.Type.Name + "* " + param.Name + "Ptr = " + nm + ")");
-                    sb.AppendLine(ind + "{");
+                    sb.AppendLine($"{ind}fixed ({param.Type.Name}* {param.Name}Ptr = {nm})");
+                    sb.AppendLine($"{ind}{{");
                     ind += "    ";
-                    parameters.Add(param.Name + "Ptr");
+                    parameters.Add($"{param.Name}Ptr");
                 }
                 else
                 {
-                    parameters.Add(nm);
+                    var prefix = param.Type.IsOut ? "out " : string.Empty;
+                    parameters.Add(prefix + nm);
                 }
             }
 
@@ -178,12 +180,12 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 sb.Append("return ");
             }
 
-            sb.AppendLine(function.Name + "(" + string.Join(", ", parameters) + ");");
+            sb.AppendLine($"{function.Name}({string.Join(", ", parameters)});");
 
             while (!string.IsNullOrEmpty(ind))
             {
                 ind = ind.Remove(ind.Length - 4, 4);
-                sb.AppendLine(ind + "}");
+                sb.AppendLine($"{ind}}}");
             }
 
             return new Overload(function, sb, true);

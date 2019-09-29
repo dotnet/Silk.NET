@@ -4,48 +4,58 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Core.Native
 {
     public static class SilkMarshal
     {
-        public static unsafe char** ToPointer(IReadOnlyList<string> strings)
+        public static IntPtr MarshalStringToPtr(string str) => Marshal.StringToHGlobalAnsi(str);
+
+        public static void FreeStringPtr(IntPtr ptr) => Marshal.FreeHGlobal(ptr);
+
+        public static IntPtr MarshalStringArrayToPtr(string[] array)
         {
-            var res = stackalloc char*[strings.Count];
-            for (var i = 0; i < strings.Count; i++)
+            var ptr = IntPtr.Zero;
+            if (array != null && array.Length != 0)
             {
-                fixed (char* str = strings[i])
+                ptr = Marshal.AllocHGlobal(array.Length * IntPtr.Size);
+                if (ptr == IntPtr.Zero)
                 {
-                    res[i] = str;
+                    throw new OutOfMemoryException();
+                }
+
+                var i = 0;
+                try
+                {
+                    for (i = 0; i < array.Length; i++)
+                    {
+                        var str = MarshalStringToPtr(array[i]);
+                        Marshal.WriteIntPtr(ptr, i * IntPtr.Size, str);
+                    }
+                }
+                catch (OutOfMemoryException)
+                {
+                    for (i -= 1; i >= 0; --i)
+                    {
+                        Marshal.FreeHGlobal(Marshal.ReadIntPtr(ptr, i * IntPtr.Size));
+                    }
+
+                    Marshal.FreeHGlobal(ptr);
+
+                    throw;
                 }
             }
-
-            return res;
+            return ptr;
         }
 
-        public static unsafe IReadOnlyList<string> ToStringArray(char** strings, int count)
+        public static void FreeStringArrayPtr(IntPtr ptr, int length)
         {
-            var array = new string[count];
-
-            if (count == 0)
+            for (var i = 0; i < length; i++)
             {
-                return new string[0]; // empty
+                Marshal.FreeHGlobal(Marshal.ReadIntPtr(ptr, i * IntPtr.Size));
             }
-
-            if (strings == (char**)0)
-            {
-                return null; // nullptr
-            }
-
-            for (var i = 0; i < count; i += IntPtr.Size)
-            {
-                var p = Marshal.ReadIntPtr((IntPtr) strings, i);
-                array[i] = Marshal.PtrToStringAnsi(p);
-            }
-
-            return array;
+            Marshal.FreeHGlobal(ptr);
         }
     }
 }

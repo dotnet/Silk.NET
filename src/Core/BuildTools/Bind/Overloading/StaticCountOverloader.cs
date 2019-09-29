@@ -18,6 +18,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         {
             return (x.Count?.IsStatic ?? false) &&
                    x.Type.IndirectionLevels == 1 &&
+                   x.Count.StaticCount != 0 &&
                    !x.Type.IsVoidPointer();
         }
         public IEnumerable<Overload> CreateOverloads(Function function)
@@ -38,8 +39,8 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 }
 
                 sb.AppendLine("// StaticCountOverloader");
-                sb.Append("var " + param.Name + " = stackalloc " + param.Type.Name);
-                sb.AppendLine("[" + param.Count.StaticCount + "];");
+                sb.Append($"var {param.Name} = stackalloc {param.Type.Name}");
+                sb.AppendLine($"[{param.Count.StaticCount}];");
                 for (var j = 0; j < param.Count.StaticCount; j++)
                 {
                     if (j == 0)
@@ -59,7 +60,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                             .Build());
                     }
 
-                    sb.AppendLine(param.Name + "[" + j + "] = " + param.Name + j + ";");
+                    sb.AppendLine($"{param.Name}[{j}] = {param.Name}{j};");
                 }
             }
 
@@ -68,8 +69,8 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 sb.Append("return ");
             }
 
-            sb.Append(function.Name + "(");
-            sb.Append(string.Join(", ", function.Parameters.Select(x => Format(x.Name))));
+            sb.Append($"{function.Name}(");
+            sb.Append(string.Join(", ", function.Parameters.Select(x => GetOut(x.Type) + Format(x.Name))));
             sb.Append(");");
             sb.AppendLine();
             
@@ -80,11 +81,16 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 true
             );
 
+            string GetOut(Type t)
+            {
+                return t.IsOut ? "out " : string.Empty;
+            }
+
             string Format(string n)
             {
                 if (Utilities.CSharpKeywords.Contains(n))
                 {
-                    return "@" + n;
+                    return $"@{n}";
                 }
 
                 return n;

@@ -4,23 +4,33 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Functions;
 
 namespace Silk.NET.BuildTools.Bind.Overloading
 {
     public static class Overloader
     {
-        public static readonly IFunctionOverloader[] Pipeline = 
+        public static readonly IFunctionOverloader[][] Pipeline =
         {
-            new ArrayParameterOverloader(),
-            new PointerParameterOverloader(),
-            new ReturnTypeOverloader(),
-            new PointerReturnValueOverloader(),
-            new StaticCountOverloader(),
-            new FlowPointerOverloader(),
-            new IntPtrOverloader(),
-            new SpanOverloader()
+            new IFunctionOverloader[]
+            {
+                new StringOverloader(),
+                new StringReturnOverloader(),
+                new FlowPointerOverloader(),
+            },
+            new IFunctionOverloader[]
+            {
+                new PointerParameterOverloader(),
+                new PointerReturnValueOverloader(),
+                new StaticCountOverloader(),
+                new IntPtrOverloader(),
+                new SpanOverloader(),
+                new ArrayParameterOverloader(),
+                new ReturnTypeOverloader(),
+            },
         };
 
         public static IEnumerable<Overload> GetOverloads(Project project)
@@ -28,22 +38,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             var ret = new List<Overload>();
             foreach (var @interface in project.Interfaces.Values)
             {
-                foreach (var function in @interface.Functions)
-                {
-                    foreach (var overloader in Pipeline)
-                    {
-                        foreach (var overload in overloader.CreateOverloads(function))
-                        {
-                            if (!@interface.Functions.Any(x => x.Equals(overload.Signature)))
-                            {
-                                if (!ret.Any(x => x.Signature.Equals(overload.Signature)))
-                                {
-                                    ret.Add(overload);
-                                }
-                            }
-                        }
-                    }
-                }
+                ret.AddRange(GetOverloads(@interface).Where(x => !ret.Any(y => y.Signature.Equals(x.Signature))));
             }
 
             return ret;
@@ -54,22 +49,49 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             var ret = new List<Overload>();
             foreach (var function in @interface.Functions)
             {
-                foreach (var overloader in Pipeline)
+                foreach (var overload in GetOverloads(function))
                 {
-                    foreach (var overload in overloader.CreateOverloads(function))
+                    if (!@interface.Functions.Any(x => x.Equals(overload.Signature)))
                     {
-                        if (!@interface.Functions.Any(x => x.Equals(overload.Signature)))
+                        if (!ret.Any(x => x.Signature.Equals(overload.Signature)))
                         {
-                            if (!ret.Any(x => x.Signature.Equals(overload.Signature)))
-                            {
-                                ret.Add(overload);
-                            }
+                            ret.Add(overload);
                         }
                     }
                 }
             }
 
             return ret;
+        }
+
+        private static IEnumerable<Overload> GetOverloads(Function function)
+        {
+            var ret = new List<Overload>();
+            var add = new List<Overload>();
+            foreach (var stage in Pipeline)
+            {
+                foreach (var overloader in stage)
+                {
+                    if (ret.Count != 0)
+                    {
+                        foreach (var overload in ret)
+                        {
+                            add.AddRange(overloader.CreateOverloads(overload.Signature));
+                        }
+                        ret.AddRange(add);
+                        add.Clear();
+                    }
+                    
+                    ret.AddRange(overloader.CreateOverloads(function));
+                }
+            }
+
+            return ret;
+        }
+
+        private static IEnumerable<Overload> GetOverloads(Function function, IEnumerable<IFunctionOverloader> stage)
+        {
+            return stage.SelectMany(overloader => overloader.CreateOverloads(function));
         }
     }
 }
