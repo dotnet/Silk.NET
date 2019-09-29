@@ -16,7 +16,7 @@ Currently, there's a major flaw in the windowing API in that the user doesn't ha
 ```cs
 public void Run()
 {
-    Show();
+    Create();
     while (!IsClosing)
     {
         DoEvents();
@@ -73,7 +73,7 @@ public interface IWindowFunctions
      /// <summary>
      /// Creates the window on the underlying platform.
      /// </summary>
-     void Show();
+     void Create();
 }
 ```
 
