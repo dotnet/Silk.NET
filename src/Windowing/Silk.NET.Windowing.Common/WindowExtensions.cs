@@ -21,14 +21,14 @@ namespace Silk.NET.Windowing.Common
 
         public static void Run(this IWindow window)
         {
-            window.Create();
+            window.Open();
             while (!window.IsClosing)
             {
                 window.DoEvents();
                 window.DoUpdate();
                 window.DoRender();
             }
-            window.Unload();
+            window.Reset();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// Creates the window on the underlying platform.
         /// </summary>
-        void Create();
+        void Open();
 
         /// <summary>
         /// Calls the Render event. On a multi-threaded window, this will run on an internally managed thread.
@@ -36,7 +36,7 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// Unloads the window on the underlying platform.
         /// </summary>
-        void Unload();
+        void Reset();
 
         /// <summary>
         /// Swaps the front and back buffers.

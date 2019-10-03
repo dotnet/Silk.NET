@@ -396,7 +396,7 @@ namespace Silk.NET.Windowing.Desktop
             }
         }
 
-        public unsafe void Create()
+        public unsafe void Open()
         {
             // Set window border.
             switch (_initialOptions.WindowBorder)
@@ -480,6 +480,8 @@ namespace Silk.NET.Windowing.Desktop
 
             _renderStopwatch = new Stopwatch();
             _updateStopwatch = new Stopwatch();
+            _renderStopwatch.Start();
+            _updateStopwatch.Start();
         }
 
         public void DoRender()
@@ -492,12 +494,12 @@ namespace Silk.NET.Windowing.Desktop
         {
             if (UseSingleThreadedWindow)
             {
-                RaiseUpdateFrame(true);
+                RaiseUpdateFrame();
             }
             else
             {
                 // Raise UpdateFrame, but don't await it yet.
-                var task = Task.Run(() => RaiseUpdateFrame()); // cast to action, ambiguous call
+                var task = Task.Run(RaiseUpdateFrame); // cast to action, ambiguous call
 
                 // Loop while we're still updating - the Update thread might be calling the main thread
                 while (!task.IsCompleted)
@@ -516,8 +518,10 @@ namespace Silk.NET.Windowing.Desktop
             _glfw.PollEvents();
         }
 
-        public unsafe void Unload()
+        public unsafe void Reset()
         {
+            _updateStopwatch.Stop();
+            _renderStopwatch.Stop();
             _glfw.DestroyWindow(_windowPtr);
             _windowPtr = (WindowHandle*) 0;
         }
@@ -575,7 +579,7 @@ namespace Silk.NET.Windowing.Desktop
         /// <summary>
         /// Run an OnUpdate event.
         /// </summary>
-        private void RaiseUpdateFrame(bool doInvoke = false)
+        private void RaiseUpdateFrame()
         {
             // If using a capped framerate without vsync, we have to do some synchronization-related things
             // before rendering.

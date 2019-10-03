@@ -64,7 +64,7 @@ namespace Triangle
             _gl ??= GL.GetApi();
             _onDebug = OnDebug;
             _onDebugHandle = GCHandle.Alloc(_onDebug);
-            _gl.DebugMessageCallback(_onDebug, (void*)0);
+            //_gl.DebugMessageCallback(_onDebug, (void*)0);
             _gl.Enable(GLEnum.DebugOutput);
             _gl.Enable(GLEnum.DebugOutputSynchronous);
             var vertShader = _gl.CreateShader(GLEnum.VertexShader);

@@ -19,7 +19,7 @@ namespace Silk.NET.Windowing.Common
         public bool UseSingleThreadedWindow { get; set; }
 
         /// <inheritdoc />
-        public bool ShouldSwapAutomatically { get; }
+        public bool ShouldSwapAutomatically { get; set; }
 
         /// <inheritdoc />
         public Point Position { get; set; }
