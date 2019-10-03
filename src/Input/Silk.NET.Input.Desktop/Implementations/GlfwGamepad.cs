@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Silk.NET.Input.Common;
 using Silk.NET.Input.Desktop.Collections;
-using Ultz.Dispatcher.Unsafe;
 
 namespace Silk.NET.Input.Desktop
 {
@@ -22,9 +21,9 @@ namespace Silk.NET.Input.Desktop
             Index = i;
         }
 
-        public string Name => Util.Do(() => Util.Glfw.GetGamepadName(Index));
+        public string Name => Util.Glfw.GetGamepadName(Index);
         public int Index { get; }
-        public bool IsConnected => Util.Do(() => Util.Glfw.JoystickIsGamepad(Index) && Util.Glfw.JoystickIsGamepad(Index));
+        public bool IsConnected => Util.Glfw.JoystickIsGamepad(Index) && Util.Glfw.JoystickIsGamepad(Index);
         public IReadOnlyList<Button> Buttons => IsConnected ? GetButtons(Index) : null;
         public IReadOnlyList<Thumbstick> Thumbsticks => IsConnected ? GetThumbsticks(Index) : null;
         public IReadOnlyList<Trigger> Triggers => IsConnected ? GetTriggers(Index) : null;
@@ -89,7 +88,7 @@ namespace Silk.NET.Input.Desktop
         private unsafe IReadOnlyList<Button> GetButtons(int i)
         {
             var count = 0;
-            var bytes = Util.Do(() => (UnsafeDispatch<byte>)Util.Glfw.GetJoystickButtons(i, out count));
+            var bytes = Util.Glfw.GetJoystickButtons(i, out count);
             if (count != _cachedButtons.Count)
             {
                 _cachedButtons = new List<Button>();
@@ -100,7 +99,7 @@ namespace Silk.NET.Input.Desktop
         private unsafe IReadOnlyList<Thumbstick> GetThumbsticks(int i)
         {
             var count = 0;
-            var floats = Util.Do(() => (UnsafeDispatch<float>)Util.Glfw.GetJoystickAxes(i, out count));
+            var floats = Util.Glfw.GetJoystickAxes(i, out count);
             if (count != _cachedThumbsticks.Count)
             {
                 _cachedThumbsticks = new List<Thumbstick>();
@@ -114,7 +113,7 @@ namespace Silk.NET.Input.Desktop
         private unsafe IReadOnlyList<Trigger> GetTriggers(int i)
         {
             var count = 0;
-            var floats = Util.Do(() => (UnsafeDispatch<float>)Util.Glfw.GetJoystickAxes(i, out count));
+            var floats = Util.Glfw.GetJoystickAxes(i, out count);
             if (count != _cachedTriggers.Count)
             {
                 _cachedTriggers = new List<Trigger>();

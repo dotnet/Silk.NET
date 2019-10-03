@@ -20,7 +20,7 @@ namespace Silk.NET.Input.Desktop
         static InputHandler()
         {
             Contexts = new List<GlfwInputContext>();
-            Util.Do(() => Util.Glfw.SetJoystickCallback(JoystickCallback));
+           Util.Glfw.SetJoystickCallback(JoystickCallback);
         }
 
         public static unsafe void RegisterContext(GlfwInputContext ctx)
@@ -34,9 +34,9 @@ namespace Silk.NET.Input.Desktop
 
             // register callbacks
             var handle = (WindowHandle*) ctx._window.Handle;
-            Util.Do(() => Util.Glfw.SetKeyCallback(handle, KeyCallback));
-            Util.Do(() => Util.Glfw.SetMouseButtonCallback(handle, MouseCallback));
-            Util.Do(() => Util.Glfw.SetScrollCallback(handle, ScrollCallback));
+            Util.Glfw.SetKeyCallback(handle, KeyCallback);
+            Util.Glfw.SetMouseButtonCallback(handle, MouseCallback);
+            Util.Glfw.SetScrollCallback(handle, ScrollCallback);
             ctx._window.Update += ctx.WindowUpdate;
         }
 

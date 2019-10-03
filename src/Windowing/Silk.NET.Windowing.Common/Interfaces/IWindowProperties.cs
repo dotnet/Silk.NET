@@ -24,6 +24,11 @@ namespace Silk.NET.Windowing.Common
         bool UseSingleThreadedWindow { get; }
 
         /// <summary>
+        /// If true, SwapBuffers will be called automatically at the end of each Render event.
+        /// </summary>
+        bool ShouldSwapAutomatically { get; }
+
+        /// <summary>
         /// The position of the window. If set to -1, use the backend default.
         /// </summary>
         /// <remarks>

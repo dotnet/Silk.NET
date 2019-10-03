@@ -16,26 +16,6 @@ namespace Silk.NET.Input.Desktop
     {
         private static string[] _glfwKeys = Enum.GetNames(typeof(Keys));
         private static string[] _glfwButtons = Enum.GetNames(typeof(GLFW.MouseButton));
-        public static object Do(Delegate @delegate)
-        {
-            return GlfwProvider.ThreadDispatcher.Invoke(@delegate);
-        }
-        
-        public static void Do(Action @delegate)
-        {
-            GlfwProvider.ThreadDispatcher.Invoke(@delegate);
-        }
-
-        public static T Do<T>(Func<T> @delegate)
-        {
-            return GlfwProvider.ThreadDispatcher.Invoke(@delegate);
-        }
-
-        public static unsafe T* Do<T>(Func<UnsafeDispatch<T>> @delegate)
-            where T:unmanaged
-        {
-            return GlfwProvider.ThreadDispatcher.Invoke(@delegate);
-        }
 
         public static Glfw Glfw => GlfwProvider.GLFW.Value;
         public static Key[] SupportedKeys { get; } // this is expensive, but only runs once.
