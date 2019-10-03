@@ -27,11 +27,6 @@ namespace Silk.NET.Input.Desktop
             return Util.Glfw.GetKey((WindowHandle*)_gic._window.Handle, Util.SilkKeyToGlfwKey(key)) == 1;
         }
 
-        public unsafe bool IsKeyPressed(uint scancode)
-        {
-            return Util.Glfw.GetKey((WindowHandle*)_gic._window.Handle, (Keys)scancode) == 1;
-        }
-
         public event Action<IKeyboard, Key> KeyDown;
         public event Action<IKeyboard, Key> KeyUp;
 

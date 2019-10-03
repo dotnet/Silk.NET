@@ -16,8 +16,8 @@ namespace Silk.NET.Input.Common
     public enum MouseButton
     {
         Left,
-        Middle,
         Right,
+        Middle,
         Button4,
         Button5,
         Button6,
