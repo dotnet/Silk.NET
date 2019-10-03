@@ -34,12 +34,13 @@ namespace Triangle
             _window.Render += RenderFrame;
             _window.Update += UpdateFrame;
             _window.Resize += Resize;
+            _window.Closing += End;
             _window.Run();
-            End();
         }
 
         private static unsafe void Load()
         {
+            _gl = GL.GetApi();
             _gl.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
             _vertexBufferObject = _gl.GenBuffer();
             _gl.BindBuffer(GLEnum.ArrayBuffer, _vertexBufferObject);
@@ -47,8 +48,6 @@ namespace Triangle
             {
                 _gl.BufferData(GLEnum.ArrayBuffer, (uint)_vertices.Length * sizeof(float), vertices, GLEnum.StaticDraw);
             }
-            
-            // shader.vert and shader.frag contain the actual shader code.
 
             _shader = new Shader("Triangle.shader.vert", "Triangle.shader.frag", _gl, typeof(Program));
             _shader.Use();
@@ -82,12 +81,17 @@ namespace Triangle
 
         private static void Resize(Size size)
         {
-            _gl.Viewport(0, 0, (uint) size.Width, (uint) size.Height);
-            Console.WriteLine("done resize");
+            _gl.Viewport(size);
         }
         
         private static void End()
         {
+            _gl.BindBuffer(GLEnum.ArrayBuffer, 0);
+            _gl.BindVertexArray(0);
+            _gl.UseProgram(0);
+            _gl.DeleteBuffer(_vertexBufferObject);
+            _gl.DeleteVertexArray(_vertexArrayObject);
+            _gl.DeleteProgram(_shader.Handle);
         }
     }
 }

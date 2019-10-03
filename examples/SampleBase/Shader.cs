@@ -17,7 +17,7 @@ namespace SampleBase
         public Shader(string vertPath, string fragPath, GL gl, Type type)
         {
             _gl = gl;
-            var shaderSource = LoadSource(LoadEmbeddedResource(vertPath, type));
+            var shaderSource = LoadEmbeddedResource(vertPath, type);
 
             var vertexShader = _gl.CreateShader(GLEnum.VertexShader);
 
@@ -25,7 +25,7 @@ namespace SampleBase
 
             CompileShader(vertexShader);
 
-            shaderSource = LoadSource(LoadEmbeddedResource(fragPath, type));
+            shaderSource = LoadEmbeddedResource(fragPath, type);
             var fragmentShader = _gl.CreateShader(GLEnum.FragmentShader);
             _gl.ShaderSource(fragmentShader, shaderSource);
             CompileShader(fragmentShader);
@@ -97,15 +97,6 @@ namespace SampleBase
         public int GetAttribLocation(string attribName)
         {
             return _gl.GetAttribLocation(Handle, attribName);
-        }
-
-
-        private static string LoadSource(string path)
-        {
-            using (var sr = new StreamReader(path, Encoding.UTF8))
-            {
-                return sr.ReadToEnd();
-            }
         }
 
         public void SetInt(string name, int data)
