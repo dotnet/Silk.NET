@@ -29,6 +29,11 @@ namespace Silk.NET.Input.Common
         IReadOnlyList<Trigger> Triggers { get; }
         
         /// <summary>
+        /// A list of all available motors.
+        /// </summary>
+        IReadOnlyList<IMotor> VibrationMotors { get; }
+        
+        /// <summary>
         /// The deadzone for this gamepad.
         /// </summary>
         Deadzone Deadzone { get; set; }

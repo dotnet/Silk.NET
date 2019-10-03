@@ -27,6 +27,8 @@ namespace Silk.NET.Input.Desktop
         public IReadOnlyList<Button> Buttons => IsConnected ? GetButtons(Index) : null;
         public IReadOnlyList<Thumbstick> Thumbsticks => IsConnected ? GetThumbsticks(Index) : null;
         public IReadOnlyList<Trigger> Triggers => IsConnected ? GetTriggers(Index) : null;
+        // TODO GLFW doesn't support haptics. When they add support for vibration, add it here.
+        public IReadOnlyList<IMotor> VibrationMotors { get; } = new IMotor[0];
         public Deadzone Deadzone { get; set; }
         public event Action<IGamepad, Button> ButtonDown;
         public event Action<IGamepad, Button> ButtonUp;
