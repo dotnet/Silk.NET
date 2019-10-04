@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using Silk.NET.GLFW;
@@ -20,7 +21,7 @@ namespace Silk.NET.Input.Desktop
         static InputHandler()
         {
             Contexts = new List<GlfwInputContext>();
-            Util.Do(() => Util.Glfw.SetJoystickCallback(JoystickCallback));
+           Util.Glfw.SetJoystickCallback(JoystickCallback);
         }
 
         public static unsafe void RegisterContext(GlfwInputContext ctx)
@@ -34,10 +35,29 @@ namespace Silk.NET.Input.Desktop
 
             // register callbacks
             var handle = (WindowHandle*) ctx._window.Handle;
-            Util.Do(() => Util.Glfw.SetKeyCallback(handle, KeyCallback));
-            Util.Do(() => Util.Glfw.SetMouseButtonCallback(handle, MouseCallback));
-            Util.Do(() => Util.Glfw.SetScrollCallback(handle, ScrollCallback));
+            Util.Glfw.SetKeyCallback(handle, KeyCallback);
+            Util.Glfw.SetMouseButtonCallback(handle, MouseCallback);
+            Util.Glfw.SetScrollCallback(handle, ScrollCallback);
+            Util.Glfw.SetCursorPosCallback(handle, CursorCallback);
             ctx._window.Update += ctx.WindowUpdate;
+        }
+
+        private static unsafe void CursorCallback(WindowHandle* window, double x, double y)
+        {
+            // run on a separate thread to prevent deadlocks on single-threaded windows
+            Task.Run
+            (
+                () =>
+                {
+                    // multiple contexts for one window should be allowed, but frowned upon
+                    var allContexts = Contexts.Where(z => z._window.Handle == (IntPtr) window);
+
+                    foreach (var context in allContexts)
+                    {
+                        ((GlfwMouse) context._mouse).RaiseMouseMove(new PointF((float) x, (float) y));
+                    }
+                }
+            );
         }
 
         private static unsafe void ScrollCallback(WindowHandle* window, double offsetx, double offsety)

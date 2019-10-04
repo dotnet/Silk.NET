@@ -18,35 +18,19 @@ namespace Silk.NET.GLFW
         /// </summary>
         static GlfwProvider()
         {
-            ThreadDispatcher = new Dispatcher();
-            GLFW = new Lazy<Glfw>(() =>
-            {
-                if (ThreadDispatcher == null) {
-                    ThreadDispatcher = new Dispatcher();
-                }
-
-                var glfw = Glfw.GetApi();
-
-                ThreadDispatcher.Invoke(() =>
+            GLFW = new Lazy<Glfw>
+            (
+                () =>
                 {
+
+                    var glfw = Glfw.GetApi();
                     glfw.Init();
                     glfw.SetErrorCallback(Glfw.ErrorCallback);
-                });
 
-                return glfw;
-            });
+                    return glfw;
+                }
+            );
         }
-        
-        /// <summary>
-        /// Gets a dispatcher to the main GLFW thread.
-        /// </summary>
-        /// <remarks>
-        /// <para>
-        /// Because many GLFW functions require they be run on the main thread, this is used as a workaround.
-        /// </para>
-        /// </remarks>
-        public static Dispatcher ThreadDispatcher { get; internal set; }
-
         /// <summary>
         /// Gets a GLFW interface implementation lazily.
         /// </summary>
@@ -58,18 +42,17 @@ namespace Silk.NET.GLFW
         public static void Unload()
         {
             GLFW.Value.Terminate();
-            GLFW = new Lazy<Glfw>(() =>
-            {
-                var glfw = Glfw.GetApi();
-
-                ThreadDispatcher.Invoke(() =>
+            GLFW = new Lazy<Glfw>
+            (
+                () =>
                 {
+                    var glfw = Glfw.GetApi();
                     glfw.Init();
                     glfw.SetErrorCallback(Glfw.ErrorCallback);
-                });
 
-                return glfw;
-            });
+                    return glfw;
+                }
+            );
         }
     }
 }

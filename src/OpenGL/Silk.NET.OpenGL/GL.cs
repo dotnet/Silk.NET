@@ -133,7 +133,7 @@ namespace Silk.NET.OpenGL
             return str.Substring(0, (int) length);
         }
 
-        public void ShaderSource(Int32 shader, System.String @string)
+        public void ShaderSource(uint shader, System.String @string)
         {
             unsafe
             {

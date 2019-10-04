@@ -19,6 +19,9 @@ namespace Silk.NET.Windowing.Common
         public bool UseSingleThreadedWindow { get; set; }
 
         /// <inheritdoc />
+        public bool ShouldSwapAutomatically { get; set; }
+
+        /// <inheritdoc />
         public Point Position { get; set; }
 
         /// <inheritdoc />
@@ -54,7 +57,7 @@ namespace Silk.NET.Windowing.Common
         public WindowOptions(bool isVisible, bool useSingleThreadedWindow, Point position, Size size,
             double framesPerSecond,
             double updatesPerSecond, GraphicsAPI api, string title, WindowState windowState, WindowBorder windowBorder,
-            VSyncMode vSync, int isRunningSlowlyThreshold)
+            VSyncMode vSync, int isRunningSlowlyThreshold, bool shouldSwapAutomatically)
         {
             IsVisible = isVisible;
             UseSingleThreadedWindow = useSingleThreadedWindow;
@@ -68,13 +71,14 @@ namespace Silk.NET.Windowing.Common
             WindowBorder = windowBorder;
             VSync = vSync;
             RunningSlowTolerance = isRunningSlowlyThreshold;
+            ShouldSwapAutomatically = shouldSwapAutomatically;
         }
 
         /// <summary>
-        /// Convinience wrapper around creating a new WindowProperties with the default values.
+        /// Convenience wrapper around creating a new WindowProperties with the default values.
         /// </summary>
         public static WindowOptions Default { get; } = new WindowOptions(true, true, new Point(50, 50),
             new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
-            "Silk.NET Window", WindowState.Normal, WindowBorder.Resizable, VSyncMode.On, 5);
+            "Silk.NET Window", WindowState.Normal, WindowBorder.Resizable, VSyncMode.On, 5, true);
     }
 }

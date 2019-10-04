@@ -16,6 +16,11 @@ namespace Silk.NET.Windowing.Common
         /// A handle to the underlying window.
         /// </summary>
         IntPtr Handle { get; }
+        
+        /// <summary>
+        /// Determines whether the underlying platform has requested the window to close.
+        /// </summary>
+        bool IsClosing { get; }
 
         /// <summary>
         /// If true, the window has failed to reach the target framerate for multiple consecutive frames, as defined

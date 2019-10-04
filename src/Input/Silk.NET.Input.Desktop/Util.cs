@@ -16,26 +16,6 @@ namespace Silk.NET.Input.Desktop
     {
         private static string[] _glfwKeys = Enum.GetNames(typeof(Keys));
         private static string[] _glfwButtons = Enum.GetNames(typeof(GLFW.MouseButton));
-        public static object Do(Delegate @delegate)
-        {
-            return GlfwProvider.ThreadDispatcher.Invoke(@delegate);
-        }
-        
-        public static void Do(Action @delegate)
-        {
-            GlfwProvider.ThreadDispatcher.Invoke(@delegate);
-        }
-
-        public static T Do<T>(Func<T> @delegate)
-        {
-            return GlfwProvider.ThreadDispatcher.Invoke(@delegate);
-        }
-
-        public static unsafe T* Do<T>(Func<UnsafeDispatch<T>> @delegate)
-            where T:unmanaged
-        {
-            return GlfwProvider.ThreadDispatcher.Invoke(@delegate);
-        }
 
         public static Glfw Glfw => GlfwProvider.GLFW.Value;
         public static Key[] SupportedKeys { get; } // this is expensive, but only runs once.
@@ -59,6 +39,10 @@ namespace Silk.NET.Input.Desktop
             {
                 return k;
             }
+            if (Enum.IsDefined(typeof(ButtonName), i))
+            {
+                return (ButtonName)i;
+            }
             throw new ArgumentOutOfRangeException(nameof(s), $"Button name mismatch (couldn't find a ButtonName value for {s})");
         }
 
@@ -68,6 +52,10 @@ namespace Silk.NET.Input.Desktop
             {
                 return gk;
             }
+            if (Enum.IsDefined(typeof(Keys), k))
+            {
+                return (Keys)k;
+            }
             throw new ArgumentOutOfRangeException(nameof(k));
         }
 
@@ -76,6 +64,10 @@ namespace Silk.NET.Input.Desktop
             if (Enum.TryParse<Key>(k.ToString(), out var sk))
             {
                 return sk;
+            }
+            if (Enum.IsDefined(typeof(Key), k))
+            {
+                return (Key)k;
             }
             throw new ArgumentOutOfRangeException(nameof(k));
         }
@@ -94,6 +86,10 @@ namespace Silk.NET.Input.Desktop
             if (Enum.TryParse<MouseButton>(k.ToString(), out var sk))
             {
                 return sk;
+            }
+            if (Enum.IsDefined(typeof(MouseButton), k))
+            {
+                return (MouseButton)k;
             }
             throw new ArgumentOutOfRangeException(nameof(k));
         }

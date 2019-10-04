@@ -14,9 +14,39 @@ namespace Silk.NET.Windowing.Common
     public interface IWindowFunctions
     {
         /// <summary>
-        /// Start this window's update/render loop.
+        /// Creates the window on the underlying platform.
         /// </summary>
-        void Run();
+        void Open();
+
+        /// <summary>
+        /// Calls the Render event. On a multi-threaded window, this will run on an internally managed thread.
+        /// </summary>
+        void DoRender();
+
+        /// <summary>
+        /// Calls the Update event. On a multi-threaded window, this can run on any thread.
+        /// </summary>
+        void DoUpdate();
+
+        /// <summary>
+        /// Polls the underlying platform for events.
+        /// </summary>
+        void DoEvents();
+
+        /// <summary>
+        /// Unloads the window on the underlying platform.
+        /// </summary>
+        void Reset();
+
+        /// <summary>
+        /// Swaps the front and back buffers.
+        /// </summary>
+        void SwapBuffers();
+
+        /// <summary>
+        /// Makes the OpenGL context current on the current thread.
+        /// </summary>
+        void MakeCurrent();
 
         /// <summary>
         /// Close this window.

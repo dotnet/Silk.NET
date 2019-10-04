@@ -18,5 +18,17 @@ namespace Silk.NET.Windowing.Common
         {
             window.Invoke(t);
         }
+
+        public static void Run(this IWindow window)
+        {
+            window.Open();
+            while (!window.IsClosing)
+            {
+                window.DoEvents();
+                window.DoUpdate();
+                window.DoRender();
+            }
+            window.Reset();
+        }
     }
 }

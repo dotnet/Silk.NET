@@ -22,9 +22,9 @@ namespace Silk.NET.Input.Desktop
             Index = i;
         }
 
-        public string Name => Util.Do(() => Util.Glfw.GetJoystickName(Index));
+        public string Name => Util.Glfw.GetJoystickName(Index);
         public int Index { get; }
-        public bool IsConnected => Util.Do(() => Util.Glfw.JoystickPresent(Index) && !Util.Glfw.JoystickIsGamepad(Index));
+        public bool IsConnected => Util.Glfw.JoystickPresent(Index) && !Util.Glfw.JoystickIsGamepad(Index);
         public IReadOnlyList<Axis> Axes => GetAxes(Index);
         public IReadOnlyList<Button> Buttons => GetButtons(Index);
         public IReadOnlyList<Hat> Hats => GetHats(Index);
@@ -73,21 +73,21 @@ namespace Silk.NET.Input.Desktop
         private static unsafe IReadOnlyList<Axis> GetAxes(int i)
         {
             var count = 0;
-            var floats = Util.Do(() => (UnsafeDispatch<float>)Util.Glfw.GetJoystickAxes(i, out count));
+            var floats = Util.Glfw.GetJoystickAxes(i, out count);
             return new GlfwAxisCollection(floats, count);
         }
 
         private static unsafe IReadOnlyList<Button> GetButtons(int i)
         {
             var count = 0;
-            var bytes = Util.Do(() => (UnsafeDispatch<byte>)Util.Glfw.GetJoystickButtons(i, out count));
+            var bytes = Util.Glfw.GetJoystickButtons(i, out count);
             return new GlfwButtonCollection(bytes, count);
         }
 
         private static unsafe IReadOnlyList<Hat> GetHats(int i)
         {
             var count = 0;
-            var hats = Util.Do(() => (UnsafeDispatch<JoystickHats>)Util.Glfw.GetJoystickHats(i, out count));
+            var hats = Util.Glfw.GetJoystickHats(i, out count);
             return new GlfwHatCollection((Position2D*)hats, count);
         }
     }

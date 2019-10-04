@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace Silk.NET.Input.Common
 {
@@ -24,6 +25,11 @@ namespace Silk.NET.Input.Common
         IReadOnlyList<ScrollWheel> ScrollWheels { get; }
         
         /// <summary>
+        /// The position of the cursor.
+        /// </summary>
+        PointF Position { get; set; }
+        
+        /// <summary>
         /// Checks if a specific button is currently pressed.
         /// </summary>
         /// <param name="btn">The button to check.</param>
@@ -40,6 +46,12 @@ namespace Silk.NET.Input.Common
         /// </summary>
         event Action<IMouse, MouseButton> MouseUp;
         
+        
+        /// <summary>
+        /// Called when the mouse is moved.
+        /// </summary>
+        event Action<IMouse, PointF> MouseMove;
+
         /// <summary>
         /// Called when the mouse wheel scrolls.
         /// </summary>
