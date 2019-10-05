@@ -15,6 +15,7 @@ namespace Silk.NET.BuildTools.Common
     {
         public string Name { get; set; }
         public string NativeName { get; set; }
+        public string ExtensionName { get; set; }
         [JsonIgnore] public string ProfileName { get; set; }
         [JsonIgnore] public Version ProfileVersion { get; set; }
         public List<Field> Fields { get; set; } = new List<Field>();

@@ -17,6 +17,7 @@ using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Common.Structs;
 using Attribute = Silk.NET.BuildTools.Common.Attribute;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
@@ -25,7 +26,6 @@ namespace Silk.NET.BuildTools.Converters.Readers
 {
     public class VulkanReader : IReader
     {
-        private static readonly string[] Apis = "gl|glcore|gles1|gles2|glsc2".Split('|');
         public object Load(Stream stream)
         {
             return XDocument.Load(stream);
@@ -33,7 +33,96 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
         public IEnumerable<Struct> ReadStructs(object obj, ProfileConverterOptions opts)
         {
-            return Enumerable.Empty<Struct>();
+            var doc = obj as XDocument;
+            var allStructs = doc.Element("registry")
+                .Elements("types")
+                .Elements("type")
+                .Where(x => x.Attribute("category")?.Value == "struct")
+                .ToDictionary
+                (
+                    x => x.Attribute("name")?.Value, x => x.Elements("member")
+                        .Select
+                        (
+                            y => new Field
+                            {
+                                Count = ParseCountSignature
+                                    (y.Attribute("len")?.Value, out _, out _, out _, out _, out _),
+                                Name = Naming.Translate
+                                (
+                                    NameTrimmer.Trim(TrimName(y.Element("name")?.Value, opts), opts.Prefix),
+                                    opts.Prefix
+                                ),
+                                NativeName = y.Attribute("name")?.Value,
+                                NativeType = y.Element("type")?.Value,
+                                Type = ParseTypeSignature(y.Element("type")?.Value),
+                                Doc = y.Attribute("comment")?.Value
+                            }
+                        ).ToList()
+                );
+            var apis = doc.Element("registry")
+                .Elements("feature")
+                .Concat(doc.Element("registry").Elements("extensions").Elements("extension"));
+            foreach (var api in apis)
+            {
+                foreach (var requirement in api.Elements("require"))
+                {
+                    var apiName = requirement.Attribute("api")?.Value ??
+                                  api.Attribute("api")?.Value ??
+                                  api.Attribute("supported")?.Value ??
+                                  "vulkan";
+                    var apiVersion = api.Attribute("number") != null
+                        ? Version.Parse(api.Attribute("number").Value)
+                        : null;
+                    foreach (var name in apiName.Split('|'))
+                    {
+                        foreach (var @struct in requirement.Elements("type")
+                            .Attributes("name")
+                            .Select(x => x.Value))
+                        {
+                            if (allStructs.ContainsKey(@struct))
+                            {
+                                yield return new Struct
+                                {
+                                    Attributes = new List<Attribute>(), // TODO vulkan deprecation
+                                    Fields = allStructs[@struct],
+                                    Functions = new List<Function>(),
+                                    Name = Naming.Translate
+                                    (
+                                        NameTrimmer.Trim(TrimName(@struct, opts), opts.Prefix),
+                                        opts.Prefix
+                                    ),
+                                    NativeName = @struct,
+                                    ProfileName = name,
+                                    ProfileVersion = apiVersion,
+                                    ExtensionName = api.Name == "feature" ? "Core" : TrimName(api.Attribute("name")?.Value, opts)
+                                };
+                            }
+                        }
+                    }
+                }
+            }
+
+            foreach (var handle in doc.Element("registry")
+                .Elements("types")
+                .Elements("type")
+                .Where(x => x.Attribute("category")?.Value == "handle")
+                .Select(x => x.Element("name")?.Value))
+            {
+                yield return new Struct
+                {
+                    Attributes = new List<Attribute>(),
+                    Fields = new List<Field>(), // opaque handle
+                    Functions = new List<Function>(),
+                    Name = Naming.Translate
+                    (
+                        NameTrimmer.Trim(TrimName(handle, opts), opts.Prefix),
+                        opts.Prefix
+                    ),
+                    NativeName = handle,
+                    ProfileName = "vulkan",
+                    ProfileVersion = new Version(1, 0),
+                };
+            }
         }
         
         ////////////////////////////////////////////////////////////////////////////////////////
@@ -48,12 +137,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 .Select(x => TranslateCommand(x, opts))
                 .ToDictionary(x => x.Attribute("name")?.Value, x => x);
             var apis = doc.Element("registry").Elements("feature").Concat(doc.Element("registry").Elements("extensions").Elements("extension"));
-            var removals = doc.Element("registry").Elements("feature")
-                .Elements("remove")
-                .Elements("command")
-                .Attributes("name")
-                .Select(x => x.Value)
-                .ToList();
+            //var removals = doc.Element("registry").Elements("feature")
+            //    .Elements("remove")
+            //    .Elements("command")
+            //    .Attributes("name")
+            //    .Select(x => x.Value)
+            //    .ToList();
             foreach (var api in apis)
             {
                 foreach (var requirement in api.Elements("require"))
@@ -61,8 +150,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     var apiName = requirement.Attribute("api")?.Value ??
                                   api.Attribute("api")?.Value ??
                                   api.Attribute("supported")?.Value ??
-                                  "gl";
-                    var apiVersion = api.Attribute("number") != null
+                                  "vulkan";
+                    var apiVersion = api.Attribute("number") != null && api.Name == "feature"
                         ? Version.Parse(api.Attribute("number").Value)
                         : null;
                     foreach (var name in apiName.Split('|'))
@@ -75,7 +164,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
                             var ret = new Function
                             {
-                                Attributes = removals.Contains(function)
+                                Attributes = /*removals.Contains(function)
                                     ? new List<Attribute>
                                     {
                                         new Attribute
@@ -87,7 +176,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                             }
                                         }
                                     }
-                                    : new List<Attribute>(),
+                                    :*/ new List<Attribute>(),
                                 Categories = new List<string>{TrimName(api.Attribute("name")?.Value, opts)},
                                 Doc = string.Empty,
                                 ExtensionName = api.Name == "feature" ? "Core" : TrimName(api.Attribute("name")?.Value, opts),
@@ -101,24 +190,6 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             };
 
                             yield return ret;
-
-                            if (api.Name == "feature" && name == "gl" && ret.Attributes.Count == 0)
-                            {
-                                yield return new Function
-                                {
-                                    Attributes = new List<Attribute>(),
-                                    Categories = ret.Categories,
-                                    Doc = ret.Doc,
-                                    ExtensionName = ret.ExtensionName,
-                                    GenericTypeParameters = new List<GenericTypeParameter>(),
-                                    Name = ret.Name,
-                                    NativeName = ret.NativeName,
-                                    Parameters = ret.Parameters,
-                                    ProfileName = "glcore",
-                                    ProfileVersion = apiVersion,
-                                    ReturnType = ret.ReturnType
-                                };
-                            }
 
                             allFunctions.Remove(function);
                         }
@@ -274,7 +345,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             static bool IsMath(ReadOnlySpan<char> span)
             {
-                for (int i = 0; i < span.Length; i++)
+                for (var i = 0; i < span.Length; i++)
                 {
                     if (span[i] != '+'
                         && span[i] != '-'
@@ -294,7 +365,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             // check for count with expression.
             if (char.IsLetter(countDataSpan[0]))
             {
-                int i = 1;
+                var i = 1;
                 while (char.IsLetterOrDigit(countDataSpan[i]))
                 {
                     i++;
@@ -313,8 +384,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     return new Count(valueReferenceName);
                 }
             }
-            
-            throw new InvalidDataException("No valid count could be parsed from the input.");
+
+            return null;
         }
         
         private static List<Parameter> ParseParameters([NotNull] XElement functionElement)
@@ -401,7 +472,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
         private string FunctionName(XElement e, ProfileConverterOptions opts)
         {
-            return TrimName(e.Element("proto")?.Element("name")?.Value, opts);
+            return TrimName(e.Element("proto")?.Element("name")?.Value ?? throw new ArgumentException("Element didn't have name within proto, or a proto element couldn't be found.", nameof(e)), opts);
         }
 
         public string TrimName(string name, ProfileConverterOptions opts)
@@ -411,7 +482,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 return name.Remove(0, opts.Prefix.Length + 1);
             }
 
-            return name.StartsWith(opts.Prefix) ? name.Remove(0, opts.Prefix.Length) : name;
+            return name.ToLower().StartsWith(opts.Prefix.ToLower()) ? name.Remove(0, opts.Prefix.Length) : name;
         } 
 
         private static string FunctionParameterType(XElement e)
@@ -441,6 +512,19 @@ namespace Silk.NET.BuildTools.Converters.Readers
         
         private XElement TranslateCommand(XElement command, ProfileConverterOptions opts)
         {
+            if (command.Attribute("alias") != null)
+            {
+                var e = TranslateCommand
+                (
+                    command.Document.Element("registry")
+                        .Elements("commands")
+                        .Elements("command")
+                        .FirstOrDefault(x => x.Element("proto")?.Element("name")?.Value == command.Attribute("alias")?.Value),
+                    opts
+                );
+                e.SetAttributeValue("name", TrimName(command.Attribute("name")?.Value, opts));
+                return e;
+            }
             var function = new XElement("function");
 
             var cmdName = FunctionName(command, opts);
@@ -506,91 +590,59 @@ namespace Silk.NET.BuildTools.Converters.Readers
         public IEnumerable<Enum> ReadEnums(object obj, ProfileConverterOptions opts)
         {
             var doc = obj as XDocument;
-            var allEnums = doc.Element("registry").Elements("enums")
-                .Elements("enum")
-                .DistinctBy(x => x.Attribute("name")?.Value)
-                .ToDictionary
+            return doc?.Elements("enums")
+                .Where(enumx => enumx.Attribute("type")?.Value == "enum" || enumx.Attribute("type")?.Value == "bitmask")
+                .Select
                 (
-                    x => x.Attribute("name")?.Value,
-                    x => FormatToken(x.Attribute("value")?.Value)
-                );
-            var apis = doc.Element("registry").Elements("feature").Concat(doc.Element("registry").Elements("extensions").Elements("extension"));
-            var removals = doc.Element("registry").Elements("feature")
-                .Elements("remove")
-                .Elements("enum")
-                .Attributes("name")
-                .Select(x => x.Value)
-                .ToList();
-            foreach (var api in apis)
-            {
-                foreach (var requirement in api.Elements("require"))
-                {
-                    var apiName = requirement.Attribute("api")?.Value ??
-                                  api.Attribute("api")?.Value ??
-                                  api.Attribute("supported")?.Value ??
-                                  "gl";
-                    var apiVersion = api.Attribute("number") != null
-                        ? Version.Parse(api.Attribute("number").Value)
-                        : null;
-                    var tokens = requirement.Elements("enum")
-                        .Attributes("name")
-                        .Select
-                        (
-                            token => new Token
-                            {
-                                Attributes = removals.Contains(token.Value)
-                                    ? new List<Attribute>
-                                    {
-                                        new Attribute
-                                        {
-                                            Arguments = new List<string>
-                                                {$"\"Deprecated in version {apiVersion?.ToString(2)}\""},
-                                            Name = "System.Obsolete"
-                                        }
-                                    }
-                                    : new List<Attribute>(),
-                                Doc = string.Empty,
-                                Name = Naming.Translate(TrimName(token.Value, opts), opts.Prefix),
-                                NativeName = token.Value,
-                                Value = allEnums[token.Value]
-                            }
-                        )
-                        .ToList(); 
-                    foreach (var name in apiName.Split('|'))
+                    enumx =>
                     {
-                        var ret = new Enum
+                        var typeAttr = enumx.Attribute("type");
+                        var name = enumx.Attribute("name")?.Value;
+                        var values = enumx.Elements("enum")
+                            .Select
+                            (
+                                valuesx =>
+                                {
+                                    var tokenName = valuesx.Attribute("name")?.Value;
+
+                                    string value;
+                                    var valueStr = valuesx.Attribute("value")?.Value;
+                                    if (valueStr != null)
+                                    {
+                                        value = FormatToken(valueStr);
+                                    }
+                                    else
+                                    {
+                                        var bitposStr = valuesx.Attribute("bitpos")?.Value;
+                                        value = FormatToken((1 << int.Parse(bitposStr)).ToString());
+                                    }
+
+                                    return new Token
+                                    {
+                                        Attributes = new List<Attribute>(),
+                                        Name = Naming.Translate
+                                            (NameTrimmer.Trim(TrimName(tokenName, opts), opts.Prefix), opts.Prefix),
+                                        NativeName = tokenName,
+                                        Value = FormatToken(value)
+                                    };
+                                }
+                            )
+                            .ToList();
+
+                        return new Enum
                         {
-                            Attributes = new List<Attribute>(),
-                            ExtensionName = api.Name == "feature"
-                                ? "Core"
-                                : TrimName(api.Attribute("name")?.Value, opts),
-                            Name = Naming.Translate(TrimName(api.Attribute("name")?.Value, opts), opts.Prefix),
-                            NativeName = api.Attribute("name")?.Value,
-                            ProfileName = name,
-                            ProfileVersion = apiVersion,
-                            Tokens = tokens
+                            Name = Naming.Translate(NameTrimmer.Trim(TrimName(name, opts), opts.Prefix), opts.Prefix),
+                            NativeName = name,
+                            Attributes = new List<Attribute>(), // TODO: when the vk spec adds deprecation, add it here
+                            ExtensionName = "Core", // can't determine this without faults.
+                            ProfileName = "vulkan",
+                            ProfileVersion = new Version(1, 0),
+                            Tokens = values
                         };
-
-                        yield return ret;
-
-                        if (api.Name == "feature" && name == "gl")
-                        {
-                            yield return new Enum
-                            {
-                                Attributes = ret.Attributes,
-                                ExtensionName = ret.ExtensionName,
-                                Name = ret.Name,
-                                NativeName = ret.NativeName,
-                                ProfileName = "glcore",
-                                ProfileVersion = apiVersion,
-                                Tokens = tokens.Where(x => x.Attributes.Count == 0).ToList()
-                            };
-                        }
                     }
-                }
-            }
+                );
         }
-        
+
         private static string FormatToken(string token)
         {
             if (token == null)

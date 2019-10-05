@@ -77,13 +77,15 @@ namespace Silk.NET.BuildTools.Converters
 
             var reader = opts.Reader.ToLower() switch
             {
-                "gl" => new OpenGLReader(),
+                "gl" => (IReader) new OpenGLReader(),
+                "vk" => (IReader) new VulkanReader(),
                 _ => throw new ArgumentException("Couldn't find a reader with that name")
             };
 
             var constructor = opts.Constructor.ToLower() switch
             {
-                "gl" => new OpenGLConstructor(),
+                "gl" => (IConstructor) new OpenGLConstructor(),
+                "vk" => (IConstructor) new VulkanConstructor(),
                 _ => throw new ArgumentException("Couldn't find a constructor with that name")
             };
 
