@@ -20,6 +20,6 @@ namespace Silk.NET.BuildTools.Common
         [JsonIgnore] public Version ProfileVersion { get; set; }
         public List<Field> Fields { get; set; } = new List<Field>();
         public List<Attribute> Attributes { get; set; } = new List<Attribute>();
-        public List<Function> Functions { get; set; } = new List<Function>();
+        public List<ImplementedFunction> Functions { get; set; } = new List<ImplementedFunction>();
     }
 }

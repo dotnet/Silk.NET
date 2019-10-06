@@ -15,7 +15,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 {
     public class StringOverloader : IFunctionOverloader
     {
-        public IEnumerable<Overload> CreateOverloads(Function function)
+        public IEnumerable<ImplementedFunction> CreateOverloads(Function function)
         {
             for (var i = 0; i < function.Parameters.Count; i++)
             {
@@ -56,7 +56,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                         o.Append("return silkReturn;");
                     }
 
-                    yield return new Overload
+                    yield return new ImplementedFunction
                         (new FunctionSignatureBuilder(function).WithParameters(parameters).Build(), o, true);
                 }
                 else if ((param.Type.ToString() == "char*" || param.Type.ToString() == "byte*") && !param.Type.IsOut)
@@ -86,7 +86,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                         o.Append("return silkReturn;");
                     }
 
-                    yield return new Overload
+                    yield return new ImplementedFunction
                         (new FunctionSignatureBuilder(function).WithParameters(parameters).Build(), o, true);
                 }
             }

@@ -49,7 +49,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                     (y.Attribute("len")?.Value, out _, out _, out _, out _, out _),
                                 Name = Naming.Translate
                                 (
-                                    NameTrimmer.Trim(TrimName(y.Element("name")?.Value, opts), opts.Prefix),
+                                    y.Element("name")?.Value,
                                     opts.Prefix
                                 ),
                                 NativeName = y.Attribute("name")?.Value,
@@ -57,7 +57,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 Type = ParseTypeSignature(y.Element("type")?.Value),
                                 Doc = y.Attribute("comment")?.Value
                             }
-                        ).ToList()
+                        )
+                        .ToList()
                 );
             var apis = doc.Element("registry")
                 .Elements("feature")
@@ -70,7 +71,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                   api.Attribute("api")?.Value ??
                                   api.Attribute("supported")?.Value ??
                                   "vulkan";
-                    var apiVersion = api.Attribute("number") != null
+                    var apiVersion = api.Attribute("number") != null && api.Name == "feature"
                         ? Version.Parse(api.Attribute("number").Value)
                         : null;
                     foreach (var name in apiName.Split('|'))
@@ -85,16 +86,18 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 {
                                     Attributes = new List<Attribute>(), // TODO vulkan deprecation
                                     Fields = allStructs[@struct],
-                                    Functions = new List<Function>(),
-                                    Name = Naming.Translate
+                                    Functions = new List<ImplementedFunction>(),
+                                    Name = Naming.TranslateLite
                                     (
-                                        NameTrimmer.Trim(TrimName(@struct, opts), opts.Prefix),
+                                        NameTrimmer.Trim(TrimName(@struct, opts), opts.Prefix, false),
                                         opts.Prefix
                                     ),
                                     NativeName = @struct,
                                     ProfileName = name,
                                     ProfileVersion = apiVersion,
-                                    ExtensionName = api.Name == "feature" ? "Core" : TrimName(api.Attribute("name")?.Value, opts)
+                                    ExtensionName = api.Name == "feature"
+                                        ? "Core"
+                                        : TrimName(api.Attribute("name")?.Value, opts)
                                 };
                             }
                         }
@@ -106,25 +109,33 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 .Elements("types")
                 .Elements("type")
                 .Where(x => x.Attribute("category")?.Value == "handle")
-                .Select(x => x.Element("name")?.Value))
+                .Select(x => x.Element("name")?.Value ?? x.Attribute("name")?.Value))
             {
                 yield return new Struct
                 {
                     Attributes = new List<Attribute>(),
-                    Fields = new List<Field>(), // opaque handle
-                    Functions = new List<Function>(),
-                    Name = Naming.Translate
+                    Fields = new List<Field>
+                    {
+                        new Field
+                        {
+                            Name = "Handle", NativeName = "Handle", NativeType = "IntPtr",
+                            Type = new Type {Name = "IntPtr", OriginalName = "IntPtr"}
+                        }
+                    },
+                    Functions = new List<ImplementedFunction>(),
+                    Name = Naming.TranslateLite
                     (
-                        NameTrimmer.Trim(TrimName(handle, opts), opts.Prefix),
+                        NameTrimmer.Trim(TrimName(handle, opts), opts.Prefix, false),
                         opts.Prefix
                     ),
                     NativeName = handle,
                     ProfileName = "vulkan",
                     ProfileVersion = new Version(1, 0),
+                    ExtensionName = "Core"
                 };
             }
         }
-        
+
         ////////////////////////////////////////////////////////////////////////////////////////
         // Function Parsing
         ////////////////////////////////////////////////////////////////////////////////////////
@@ -590,7 +601,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         public IEnumerable<Enum> ReadEnums(object obj, ProfileConverterOptions opts)
         {
             var doc = obj as XDocument;
-            return doc?.Elements("enums")
+            var ret = doc?.Element("registry").Elements("enums")
                 .Where(enumx => enumx.Attribute("type")?.Value == "enum" || enumx.Attribute("type")?.Value == "bitmask")
                 .Select
                 (
@@ -605,17 +616,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 {
                                     var tokenName = valuesx.Attribute("name")?.Value;
 
-                                    string value;
-                                    var valueStr = valuesx.Attribute("value")?.Value;
-                                    if (valueStr != null)
-                                    {
-                                        value = FormatToken(valueStr);
-                                    }
-                                    else
-                                    {
-                                        var bitposStr = valuesx.Attribute("bitpos")?.Value;
-                                        value = FormatToken((1 << int.Parse(bitposStr)).ToString());
-                                    }
+                                    var value = GetToken(valuesx);
 
                                     return new Token
                                     {
@@ -623,7 +624,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                         Name = Naming.Translate
                                             (NameTrimmer.Trim(TrimName(tokenName, opts), opts.Prefix), opts.Prefix),
                                         NativeName = tokenName,
-                                        Value = FormatToken(value)
+                                        Value = value
                                     };
                                 }
                             )
@@ -640,7 +641,36 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             Tokens = values
                         };
                     }
+                ).ToList();
+            Debug.WriteLine(ret.Count);
+            return ret;
+        }
+
+        private static string GetToken(XElement valuesx)
+        {
+            string value;
+            var valueStr = valuesx.Attribute("value")?.Value;
+            if (valueStr != null)
+            {
+                value = FormatToken(valueStr);
+            }
+            else if (valuesx.Attribute("alias") != null)
+            {
+                value = GetToken
+                (
+                    valuesx.Document.Element("registry")
+                        .Elements("enums")
+                        .Elements("enum")
+                        .FirstOrDefault(x => x.Attribute("name")?.Value == valuesx.Attribute("alias")?.Value)
                 );
+            }
+            else
+            {
+                var bitposStr = valuesx.Attribute("bitpos")?.Value;
+                value = FormatToken((1 << int.Parse(bitposStr)).ToString());
+            }
+
+            return value;
         }
 
         private static string FormatToken(string token)

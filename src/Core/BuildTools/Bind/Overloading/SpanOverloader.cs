@@ -14,7 +14,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 {
     public class SpanOverloader : IFunctionOverloader
     {
-        public IEnumerable<Overload> CreateOverloads(Function function)
+        public IEnumerable<ImplementedFunction> CreateOverloads(Function function)
         {
             var returnTypeChanged = false;
             var parameterChanged = false;
@@ -93,11 +93,11 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
             if (returnTypeChanged && !parameterChanged)
             {
-                yield return new Overload(fun.WithName($"{function.Name}AsSpan").Build(), sb, true);
+                yield return new ImplementedFunction(fun.WithName($"{function.Name}AsSpan").Build(), sb, true);
             }
             else if (parameterChanged)
             {
-                yield return new Overload(fun.Build(), sb, true);
+                yield return new ImplementedFunction(fun.Build(), sb, true);
             }
 
             string GetPrefix(Type t)

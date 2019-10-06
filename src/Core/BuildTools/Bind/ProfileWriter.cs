@@ -282,16 +282,13 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                     }
 
-                    sw.WriteLine($"        public {overload.Signature.ToString(overload.Unsafe).TrimEnd(';')}");
+                    sw.WriteLine($"        public {overload.Signature.ToString(overload.IsUnsafe).TrimEnd(';')}");
                     sw.WriteLine("        {");
-                    using (var sr = new StringReader(overload.CodeBlock))
+                    foreach (var line in overload.Body)
                     {
-                        string line;
-                        while ((line = sr.ReadLine()) != null)
-                        {
-                            sw.WriteLine($"            {line}");
-                        }
+                        sw.WriteLine($"            {line}");
                     }
+
                     sw.WriteLine("        }");
                     sw.WriteLine();
                 }
@@ -405,16 +402,13 @@ namespace Silk.NET.BuildTools.Bind
                             sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                         }
 
-                        sw.WriteLine($"        public {overload.Signature.ToString(overload.Unsafe).TrimEnd(';')}");
+                        sw.WriteLine($"        public {overload.Signature.ToString(overload.IsUnsafe).TrimEnd(';')}");
                         sw.WriteLine("        {");
-                        using (var sr = new StringReader(overload.CodeBlock))
+                        foreach (var line in overload.Body)
                         {
-                            string line;
-                            while ((line = sr.ReadLine()) != null)
-                            {
-                                sw.WriteLine($"            {line}");
-                            }
+                            sw.WriteLine($"            {line}");
                         }
+
                         sw.WriteLine("        }");
                         sw.WriteLine();
                     }
@@ -468,7 +462,7 @@ namespace Silk.NET.BuildTools.Bind
 
             project.Structs.ForEach(x => x.WriteStruct
             (
-                    Path.Combine(folder, InterfacesSubfolder, $"{x.Name}.gen.cs"), profile, project)
+                    Path.Combine(folder, StructsSubfolder, $"{x.Name}.gen.cs"), profile, project)
             );
 
             project.Enums.ForEach

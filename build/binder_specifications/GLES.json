@@ -45455,7 +45455,7 @@
               "ExtensionName": "EXT_memory_object"
             },
             {
-              "Name": "TexStorageMem2",
+              "Name": "TexStorageMem2D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -45720,7 +45720,7 @@
               "ExtensionName": "EXT_memory_object"
             },
             {
-              "Name": "TexStorageMem3",
+              "Name": "TexStorageMem3D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -46015,7 +46015,7 @@
               "ExtensionName": "EXT_memory_object"
             },
             {
-              "Name": "TextureStorageMem2",
+              "Name": "TextureStorageMem2D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -46280,7 +46280,7 @@
               "ExtensionName": "EXT_memory_object"
             },
             {
-              "Name": "TextureStorageMem3",
+              "Name": "TextureStorageMem3D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -53005,7 +53005,7 @@
           "Name": "IExtTextureStorage",
           "Functions": [
             {
-              "Name": "TexStorage1",
+              "Name": "TexStorage1D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -53085,7 +53085,7 @@
               "ExtensionName": "EXT_texture_storage"
             },
             {
-              "Name": "TexStorage2",
+              "Name": "TexStorage2D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -53180,7 +53180,7 @@
               "ExtensionName": "EXT_texture_storage"
             },
             {
-              "Name": "TexStorage3",
+              "Name": "TexStorage3D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -53290,7 +53290,7 @@
               "ExtensionName": "EXT_texture_storage"
             },
             {
-              "Name": "TextureStorage1",
+              "Name": "TextureStorage1D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -53385,7 +53385,7 @@
               "ExtensionName": "EXT_texture_storage"
             },
             {
-              "Name": "TextureStorage2",
+              "Name": "TextureStorage2D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -53495,7 +53495,7 @@
               "ExtensionName": "EXT_texture_storage"
             },
             {
-              "Name": "TextureStorage3",
+              "Name": "TextureStorage3D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -55038,7 +55038,7 @@
           "Name": "IIntelFramebufferCmaa",
           "Functions": [
             {
-              "Name": "ApplyFramebufferAttachment",
+              "Name": "ApplyFramebufferAttachmentCmaa",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -76838,7 +76838,7 @@
           "Name": "IOesTexture3D",
           "Functions": [
             {
-              "Name": "CompressedTexImage3",
+              "Name": "CompressedTexImage3D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -76998,7 +76998,7 @@
               "ExtensionName": "OES_texture_3D"
             },
             {
-              "Name": "CompressedTexSubImage3",
+              "Name": "CompressedTexSubImage3D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -77188,7 +77188,7 @@
               "ExtensionName": "OES_texture_3D"
             },
             {
-              "Name": "CopyTexSubImage3",
+              "Name": "CopyTexSubImage3D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -77343,7 +77343,7 @@
               "ExtensionName": "OES_texture_3D"
             },
             {
-              "Name": "FramebufferTexture3",
+              "Name": "FramebufferTexture3D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -77453,7 +77453,7 @@
               "ExtensionName": "OES_texture_3D"
             },
             {
-              "Name": "TexImage3",
+              "Name": "TexImage3D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -77634,7 +77634,7 @@
               "ExtensionName": "OES_texture_3D"
             },
             {
-              "Name": "TexSubImage3",
+              "Name": "TexSubImage3D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -79430,7 +79430,7 @@
               "ExtensionName": "OES_EGL_image"
             },
             {
-              "Name": "EglimageTargetTexture2",
+              "Name": "EglimageTargetTexture2D",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,

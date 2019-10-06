@@ -78,8 +78,10 @@ namespace Silk.NET.BuildTools.Baking
             var coreProjects = impl.Select(x => x.Projects["Core"]).ToList();
             var coreFunc = coreProjects.SelectMany(x => x.Interfaces);
             var coreEnums = coreProjects.SelectMany(x => x.Enums);
+            var coreStructs = coreProjects.SelectMany(x => x.Structs);
             profile.Projects["Core"].Interfaces = profile.Projects["Core"].Interfaces.Concat(coreFunc).ToDictionary();
             profile.Projects["Core"].Enums.AddRange(coreEnums);
+            profile.Projects["Core"].Structs.AddRange(coreStructs);
             profile.Projects = profile.Projects.Concat(extProjects).ToDictionary();
             profile.FunctionPrefix = information.FunctionPrefix;
             profile.Names = information.NameContainer;
@@ -110,6 +112,7 @@ namespace Silk.NET.BuildTools.Baking
             {
                 var enums = new Dictionary<string, Common.Enums.Enum>();
                 var interfaces = new Dictionary<string, Interface>();
+                var structs = new Dictionary<string, Struct>();
                 foreach (var enumeration in project.Enums)
                 {
                     if (enums.ContainsKey(enumeration.Name))
@@ -142,8 +145,27 @@ namespace Silk.NET.BuildTools.Baking
                     }
                 }
 
+                foreach (var @struct in project.Structs)
+                {
+                    if (structs.ContainsKey(@struct.Name))
+                    {
+                        if (structs[@struct.Name].NativeName != @struct.NativeName)
+                        {
+                            Console.WriteLine
+                            (
+                                $"Warning: Discarding duplicate struct \"{@struct.Name}\" (Original was \"{@struct.NativeName}\", {structs[@struct.Name].NativeName} currently present)"
+                            );
+                        }
+                    }
+                    else
+                    {
+                        structs.Add(@struct.Name, @struct);
+                    }
+                }
+
                 project.Enums = enums.Values.ToList();
                 project.Interfaces = interfaces;
+                project.Structs = structs.Values.ToList();
             }
         }
 
