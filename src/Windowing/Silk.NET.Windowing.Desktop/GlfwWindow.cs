@@ -126,16 +126,7 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
-        public IntPtr Handle
-        {
-            get
-            {
-                unsafe
-                {
-                    return _running ? (IntPtr) _windowPtr : IntPtr.Zero;
-                }
-            }
-        }
+        public unsafe IntPtr Handle => (IntPtr) _windowPtr;
 
         /// <inheritdoc />
         public bool UseSingleThreadedWindow { get; }
