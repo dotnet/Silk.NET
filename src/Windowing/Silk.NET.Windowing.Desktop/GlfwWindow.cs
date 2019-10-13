@@ -307,28 +307,21 @@ namespace Silk.NET.Windowing.Desktop
             {
                 if (_running)
                 {
-                    this.Invoke
-                    (
-                        () =>
-                        {
-                            switch (value)
-                            {
-                                case VSyncMode.Off:
-                                    _glfw.SwapInterval(0);
-                                    break;
+                    switch (value)
+                    {
+                        case VSyncMode.Off:
+                            _glfw.SwapInterval(0);
+                            break;
 
-                                case VSyncMode.On:
-                                    _glfw.SwapInterval(1);
-                                    break;
+                        case VSyncMode.On:
+                            _glfw.SwapInterval(1);
+                            break;
 
-                                default:
-                                    _glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
-                                    break;
-                            }
-
-                            _vSync = value;
-                        }
-                    );
+                        default:
+                            _glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
+                            break;
+                    }
+                    _vSync = value;
                 }
 
                 _initialOptions.VSync = value;
