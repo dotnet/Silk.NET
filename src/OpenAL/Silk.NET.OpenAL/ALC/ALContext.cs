@@ -28,6 +28,8 @@ namespace Silk.NET.OpenAL
             : base(path, options)
         {
         }
+        
+        public SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
 
         /// <inheritdoc />
         public abstract unsafe Context* CreateContext(Device* device, int* attributeList);
