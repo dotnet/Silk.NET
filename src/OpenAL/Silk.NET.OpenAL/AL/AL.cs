@@ -89,7 +89,7 @@ namespace Silk.NET.OpenAL
         public abstract AudioError GetError();
 
         /// <inheritdoc />
-        public SearchPathContainer NameContainer { get; } = new OpenALLibraryNameContainer();
+        public override SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
 
         /// <inheritdoc />
         public abstract IntPtr GetProcAddress(string name);

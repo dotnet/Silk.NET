@@ -17,7 +17,7 @@ namespace Silk.NET.OpenAL.Interfaces
         /// <summary>
         /// Gets the library name container for this extension.
         /// </summary>
-        SearchPathContainer NameContainer { get; }
+        SearchPathContainer SearchPaths { get; }
 
         /// <summary>
         /// Determines whether or not the named extension is available.

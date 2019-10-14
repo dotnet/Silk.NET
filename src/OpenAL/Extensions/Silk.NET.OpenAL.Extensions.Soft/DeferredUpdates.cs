@@ -30,7 +30,7 @@ namespace Silk.NET.OpenAL.Extensions.Soft
         /// <inheritdoc />
         public abstract void ProcessUpdates();
 
-        public abstract SearchPathContainer NameContainer { get; }
+        public abstract SearchPathContainer SearchPaths { get; }
         public abstract bool IsExtensionPresent(string name);
         public abstract IntPtr GetProcAddress(string name);
         public abstract int GetEnumValue(string name);
