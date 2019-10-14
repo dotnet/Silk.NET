@@ -49,7 +49,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <inheritdoc />
         public abstract int GetBufferMode(uint buffer, IntPtr reserved);
 
-        public SearchPathContainer NameContainer { get; }
+        public SearchPathContainer SearchPaths { get; }
 
         public abstract bool IsExtensionPresent(string name);
 
