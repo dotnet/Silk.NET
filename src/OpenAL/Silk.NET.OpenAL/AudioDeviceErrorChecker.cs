@@ -47,6 +47,7 @@ namespace Silk.NET.OpenAL
         public void Dispose()
         {
             unsafe {
+                return;
                 var err = ErrorAPI.GetError(_device);
 
                 if (err == ContextError.NoError) {

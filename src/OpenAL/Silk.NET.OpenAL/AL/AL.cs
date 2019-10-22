@@ -27,6 +27,27 @@ namespace Silk.NET.OpenAL
             : base(path, options)
         {
         }
+        
+        /// <inheritdoc />
+        public override bool IsExtensionPresent(string name)
+        {
+            throw new NotSupportedException("Not Implemented");
+        }
+
+        /// <inheritdoc />
+        public override SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
+
+        /// <inheritdoc />
+        public IntPtr GetProcAddress(string name)
+        {
+            throw new NotSupportedException("Not Implemented");
+        }
+
+        /// <inheritdoc />
+        public int GetEnumValue(string name)
+        {
+            throw new NotSupportedException("Not Implemented");
+        }
 
         /// <inheritdoc />
         public abstract unsafe void GenBuffers(int count, uint* buffers);
@@ -87,15 +108,6 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         public abstract AudioError GetError();
-
-        /// <inheritdoc />
-        public override SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
-
-        /// <inheritdoc />
-        public abstract IntPtr GetProcAddress(string name);
-
-        /// <inheritdoc />
-        public abstract int GetEnumValue(string name);
 
         /// <inheritdoc />
         public abstract void SetListenerProperty(ListenerFloat param, float value);

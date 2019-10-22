@@ -15,11 +15,6 @@ namespace Silk.NET.OpenAL.Interfaces
     public interface IALExtension
     {
         /// <summary>
-        /// Gets the library name container for this extension.
-        /// </summary>
-        SearchPathContainer SearchPaths { get; }
-
-        /// <summary>
         /// Determines whether or not the named extension is available.
         /// </summary>
         /// <param name="name">The name of the extension.</param>

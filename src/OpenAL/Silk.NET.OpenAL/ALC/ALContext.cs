@@ -31,6 +31,11 @@ namespace Silk.NET.OpenAL
         
         public override SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
 
+        public override bool IsExtensionPresent(string name)
+        {
+            throw new NotImplementedException("Not implemented");
+        }
+
         /// <inheritdoc />
         public abstract unsafe Context* CreateContext(Device* device, int* attributeList);
 
