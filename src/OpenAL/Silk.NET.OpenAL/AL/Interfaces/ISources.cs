@@ -88,6 +88,15 @@ namespace Silk.NET.OpenAL.Interfaces
         /// <param name="value">The value to set the property to.</param>
         [NativeSymbol("Sourcei")]
         void SetSourceProperty(uint source, SourceInteger param, int value);
+        
+        /// <summary>
+        /// Sets the value of a named property on the given source.
+        /// </summary>
+        /// <param name="source">The source.</param>
+        /// <param name="param">The named property.</param>
+        /// <param name="value">The value to set the property to.</param>
+        [NativeSymbol("Sourcei")]
+        void SetSourceProperty(uint source, SourceBoolean param, int value);
 
         /// <summary>
         /// Sets the value of a named property on the given source.

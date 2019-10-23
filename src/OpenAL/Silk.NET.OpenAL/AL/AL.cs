@@ -175,6 +175,9 @@ namespace Silk.NET.OpenAL
         public abstract unsafe void SetSourceProperty(uint source, SourceVector3 param, float* value);
 
         /// <inheritdoc />
+        public abstract void SetSourceProperty(uint source, SourceBoolean param, int value);
+        
+        /// <inheritdoc />
         public abstract void SetSourceProperty(uint source, SourceInteger param, int value);
 
         /// <inheritdoc />
