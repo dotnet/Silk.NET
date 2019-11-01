@@ -17,7 +17,7 @@ namespace Silk.NET.BuildTools.Common
         public ImplementedFunction(Function function, StringBuilder sb, bool b = true)
         {
             Signature = function;
-            Body = sb.ToString().Split(',');
+            Body = sb.ToString().Split('\n');
             IsUnsafe = b;
         }
 

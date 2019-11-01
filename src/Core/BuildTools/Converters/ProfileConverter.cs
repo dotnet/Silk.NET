@@ -33,23 +33,22 @@ namespace Silk.NET.BuildTools.Converters
                 .Concat(structs.Select(x => (x.ProfileName, x.ProfileVersion)))
                 .Distinct()
                 .Select(x => CreateBlankProfile(x.ProfileName, x.ProfileVersion, opts));
-            Console.WriteLine("Mapping functions...");
-            foreach (var typeMap in opts.TypeMaps)
-            {
-                TypeMapper.Map(typeMap, functions);
-            }
-
-            Console.WriteLine("Mapping structs...");
-            foreach (var typeMap in opts.TypeMaps)
-            {
-                TypeMapper.Map(typeMap, structs);
-            }
 
             foreach (var profile in profiles)
             {
                 ctor.WriteEnums(profile, enums, opts);
                 ctor.WriteFunctions(profile, functions, opts);
                 ctor.WriteStructs(profile, structs, opts);
+                foreach (var typeMap in profile.TypeMaps)
+                {
+                    TypeMapper.Map(typeMap, functions);
+                }
+
+                foreach (var typeMap in profile.TypeMaps)
+                {
+                    TypeMapper.Map(typeMap, structs);
+                }
+
                 Console.WriteLine($"Created profile \"{profile.Name}\" version {profile.Version}");
 
                 yield return profile;

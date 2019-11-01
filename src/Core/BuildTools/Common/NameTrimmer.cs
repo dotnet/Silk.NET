@@ -42,7 +42,7 @@ namespace Silk.NET.BuildTools.Common
 
             if (extensionTrimmer.IsRelevant(currentVariation) && trimExtensionName)
             {
-                currentVariation = extensionTrimmer.Trim(currentVariation, prefix);
+                currentVariation = extensionTrimmer.Trim(currentVariation, prefix).TrimEnd('_');
                 variations.Add(currentVariation);
             }
 

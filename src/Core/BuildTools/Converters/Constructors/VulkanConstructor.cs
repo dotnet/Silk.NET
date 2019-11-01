@@ -40,6 +40,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
             }
 
             profile.Projects["Core"].Enums.AddRange(enums);
+            profile.TypeMaps.Add(enums.ToDictionary(x => x.NativeName, x => x.Name));
         }
 
         /// <summary>
@@ -159,6 +160,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
 
         public void WriteStructs(Profile profile, IEnumerable<Struct> structs, ProfileConverterOptions opts)
         {
+            var map = new Dictionary<string, string>();
             foreach (var @struct in structs)
             {
                 if (@struct.ProfileName != profile.Name || @struct.ProfileVersion?.ToString(2) != profile.Version)
@@ -196,9 +198,15 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     );
                 }
 
-                // add the function to the interface
+                // add the struct
                 profile.Projects[@struct.ExtensionName == "Core" ? "Core" : category].Structs.Add(@struct);
+                
+                // add the struct to the type map
+                map[@struct.NativeName] = @struct.Name;
             }
+            
+            // register the type map
+            profile.TypeMaps.Add(map);
         }
     }
 }

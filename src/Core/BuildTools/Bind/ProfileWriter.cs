@@ -86,6 +86,12 @@ namespace Silk.NET.BuildTools.Bind
             var sw = new StreamWriter(file);
             sw.WriteLine(LicenseText.Value);
             sw.WriteLine();
+            sw.WriteLine("using System;");
+            sw.WriteLine("using System.Runtime.InteropServices;");
+            sw.WriteLine("using System.Text;");
+            sw.WriteLine("using Silk.NET.Core.Native;");
+            sw.WriteLine("using AdvancedDLSupport;");
+            sw.WriteLine();
             var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
             sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
@@ -94,7 +100,7 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine($"    {attr}");
             }
 
-            sw.WriteLine($"    public struct {@struct.Name}");
+            sw.WriteLine($"    public unsafe struct {@struct.Name}");
             sw.WriteLine("    {");
             foreach (var structField in @struct.Fields)
             {
@@ -132,7 +138,7 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine($"    {attr}");
             }
 
-            sw.WriteLine($"    public interface {@interface.Name}");
+            sw.WriteLine($"    public unsafe interface {@interface.Name}");
             sw.Write("    {");
             foreach (var function in @interface.Functions)
             {
@@ -247,7 +253,7 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine();
                 sw.WriteLine($"namespace {profile.Namespace}{project.Namespace}");
                 sw.WriteLine("{");
-                sw.WriteLine($"    public abstract partial class {profile.ClassName} : NativeAPI, I{profile.ClassName}");
+                sw.WriteLine($"    public abstract unsafe partial class {profile.ClassName} : NativeAPI, I{profile.ClassName}");
                 sw.WriteLine("    {");
                 var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).RemoveDuplicates();
                 foreach (var function in allFunctions)
@@ -368,7 +374,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine();
                     sw.WriteLine($"namespace {profile.ExtensionsNamespace}{project.Namespace}");
                     sw.WriteLine("{");
-                    sw.WriteLine($"    public abstract partial class {name} : NativeExtension<{profile.ClassName}>, I{name}");
+                    sw.WriteLine($"    public abstract unsafe partial class {name} : NativeExtension<{profile.ClassName}>, I{name}");
                     sw.WriteLine("    {");
                     foreach (var function in i.Functions)
                     {

@@ -14,6 +14,7 @@
             - Fixed a bug where some shaders didn't compile correctly
             - Fixed a bug where some programs didn't link correctly
             - Removed all built-in thread management, the user will have to take care of this themselves.
+            - Removed AdvancedDLSupport in favour of our own library (SuperInvoke)
             - Synchronised the enum of all available keys with that of GLFW
         </PackageReleaseNotes>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
