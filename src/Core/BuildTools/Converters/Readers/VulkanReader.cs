@@ -54,12 +54,13 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 ),
                                 NativeName = y.Attribute("name")?.Value,
                                 NativeType = y.Element("type")?.Value,
-                                Type = ParseTypeSignature(y.Element("type")?.Value),
+                                Type = ParseTypeSignature(FunctionParameterType(y)),
                                 Doc = y.Attribute("comment")?.Value
                             }
                         )
                         .ToList()
                 );
+            var usedStructs = new List<string>();
             var apis = doc.Element("registry")
                 .Elements("feature")
                 .Concat(doc.Element("registry").Elements("extensions").Elements("extension"));
@@ -99,10 +100,31 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                         ? "Core"
                                         : TrimName(api.Attribute("name")?.Value, opts)
                                 };
+                                usedStructs.Add(@struct);
                             }
                         }
                     }
                 }
+            }
+            
+            foreach (var (@struct, fields) in allStructs.Where(x => !usedStructs.Contains(x.Key)))
+            {
+                // no struct should go to waste
+                yield return new Struct
+                {
+                    Attributes = new List<Attribute>(), // TODO vulkan deprecation
+                    Fields = fields,
+                    Functions = new List<ImplementedFunction>(),
+                    Name = Naming.TranslateLite
+                    (
+                        NameTrimmer.Trim(TrimName(@struct, opts), opts.Prefix, false),
+                        opts.Prefix
+                    ),
+                    NativeName = @struct,
+                    ProfileName = "vulkan",
+                    ProfileVersion = new Version(1, 0),
+                    ExtensionName = "Core"
+                };
             }
 
             foreach (var handle in doc.Element("registry")
@@ -512,11 +534,18 @@ namespace Silk.NET.BuildTools.Converters.Readers
             //   -> <param name="length" type="GLsizei" count="1" />
             var proto = e.Value;
             var name = e.Element("name");
+            var comment = e.Element("comment");
+            var ret = proto;
+            if (comment != null)
+            {
+                ret = proto.Remove(proto.LastIndexOf(comment.Value, StringComparison.Ordinal)).Trim();
+            }
+            
             if (name == null) {
                 throw new InvalidOperationException("Name is null");
             }
 
-            var ret = proto.Remove(proto.LastIndexOf(name.Value, StringComparison.Ordinal)).Trim();
+            ret = ret.Remove(ret.LastIndexOf(name.Value, StringComparison.Ordinal)).Trim();
 
             return ret;
         }
