@@ -52,11 +52,6 @@ namespace Vk.Generator
             return new CommandDefinition(name, returnType, parameters, successCodes, errorCodes, false);
         }
 
-        public string GetParametersSignature(TypeNameMappings tnm)
-        {
-            return string.Join(", ", Parameters.Select(pd => pd.GetMappedAndNormalizedString(tnm)));
-        }
-
         public string GetParametersSignature()
         {
             return string.Join(", ", Parameters.Select(pd => pd.ToString()));

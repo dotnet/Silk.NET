@@ -17,11 +17,6 @@ namespace Vk.Generator
             ArrayDimensions = arrayDimensions;
         }
 
-        public TypeSpec MapTypeSpec(TypeNameMappings tnm)
-        {
-            return new TypeSpec(tnm.GetMappedName(Name), PointerIndirection, ArrayDimensions);
-        }
-
         public override string ToString()
         {
             return GetFullTypeName();

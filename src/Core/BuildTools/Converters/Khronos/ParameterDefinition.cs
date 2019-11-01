@@ -40,11 +40,6 @@ namespace Vk.Generator
             return new ParameterDefinition(name, type, ParameterModifier.None, isOptional);
         }
 
-        public string GetMappedAndNormalizedString(TypeNameMappings tnm)
-        {
-            return $"{GetModifierString()}{Type.MapTypeSpec(tnm)} {Util.NormalizeFieldName(Name)}";
-        }
-
         public string GetModifierString()
         {
             if (Modifier == ParameterModifier.Ref)

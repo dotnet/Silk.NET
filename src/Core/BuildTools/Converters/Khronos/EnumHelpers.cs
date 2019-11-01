@@ -57,47 +57,6 @@ namespace Vk.Generator
             "amd",
         };
 
-        public static void WriteEnum(CsCodeWriter cw, EnumDefinition enumDef, TypeNameMappings tnm)
-        {
-            if (enumDef.Type == EnumType.Bitmask)
-            {
-                cw.WriteLine("[Flags]");
-            }
-            string mappedName = tnm.GetMappedName(enumDef.Name);
-            string enumNamePrefix = GetEnumNamePrefix(mappedName);
-            using (cw.PushBlock("public enum " + mappedName))
-            {
-                if (enumDef.Type == EnumType.Bitmask && !enumDef.Values.Any(ev => GetPrettyEnumName(ev.Name, enumNamePrefix) == "None"))
-                {
-                    cw.WriteLine($"None = 0,");
-                }
-                foreach (var value in enumDef.Values)
-                {
-                    if (!string.IsNullOrEmpty(value.Comment))
-                    {
-                        cw.WriteLine($"///<summary>{value.Comment}</summary>");
-                    }
-
-                    string prettyName = GetPrettyEnumName(value.Name, enumNamePrefix);
-                    cw.WriteLine($"{prettyName} = {value.ValueOrBitPosition},");
-                }
-            }
-
-            using (cw.PushBlock("public static partial class RawConstants"))
-            {
-                foreach (var value in enumDef.Values)
-                {
-                    if (!string.IsNullOrEmpty(value.Comment))
-                    {
-                        cw.WriteLine($"///<summary>{value.Comment}</summary>");
-                    }
-
-                    string prettyName = GetPrettyEnumName(value.Name, enumNamePrefix);
-                    cw.WriteLine($"public const {mappedName} {value.Name} = {mappedName}.{prettyName};");
-                }
-            }
-        }
-
         public static string GetEnumNamePrefix(string typeName)
         {
             if (s_knownEnumPrefixes.TryGetValue(typeName, out string knownValue))
