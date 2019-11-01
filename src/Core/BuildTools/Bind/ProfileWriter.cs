@@ -10,7 +10,10 @@ using System.Linq;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Bind.Overloading;
 using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Common.Structs;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
+using Type = System.Type;
 
 namespace Silk.NET.BuildTools.Bind
 {
@@ -104,7 +107,70 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("    {");
             foreach (var structField in @struct.Fields)
             {
-                sw.WriteLine($"        public {structField.Type} {structField.Name} {{ get; set; }}");
+                if (!(structField.Count is null))
+                {
+                    if (!Field._fixedCapableTypes.Contains(structField.Type.Name))
+                    {
+                        var count = structField.Count.IsConstant
+                            ? int.Parse
+                            (
+                                project.Enums.SelectMany(x => x.Tokens)
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?
+                                    .Value
+                            )
+                            : structField.Count.IsStatic
+                                ? structField.Count.StaticCount
+                                : 1;
+                        for (var i = 0; i < count; i++)
+                        {
+                            sw.WriteLine($"{structField.Doc}");
+                            foreach (var attr in structField.Attributes)
+                            {
+                                sw.WriteLine($"    {attr}");
+                            }
+                            sw.WriteLine
+                            (
+                                $"public {structField.Type} {structField.Name}_{i} {{ get; set; }}"
+                            );
+                        }
+                    }
+                    else
+                    {
+                        if (!string.IsNullOrEmpty(structField.Doc))
+                        {
+                            sw.WriteLine($"{structField.Doc}");
+                        }
+
+                        var count = structField.Count.IsConstant
+                            ? int.Parse
+                            (
+                                project.Enums.SelectMany(x => x.Tokens)
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?
+                                    .Value
+                            )
+                            : structField.Count.IsStatic
+                                ? structField.Count.StaticCount
+                                : 1;
+                        
+                        foreach (var attr in structField.Attributes)
+                        {
+                            sw.WriteLine($"    {attr}");
+                        }
+                        sw.WriteLine
+                        (
+                            $"public fixed {structField.Type} {structField.Name}[{count}] {{ get; set; }}"
+                        );
+                    }
+                }
+                else
+                {
+                    sw.WriteLine(structField.Doc);
+                    foreach (var attr in structField.Attributes)
+                    {
+                        sw.WriteLine($"    {attr}");
+                    }
+                    sw.WriteLine($"public {structField.Type} {structField.Name} {{ get; set; }}");
+                }
             }
 
             sw.WriteLine("    }");

@@ -1,51 +1,46 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System;
+using System.Collections.Generic;
 using System.Xml.Linq;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
 {
-    public class ExtensionDefinition
+    public class FeatureDefinition
     {
         public string Name { get; }
-        public int Number { get; }
-        public string Type { get; }
+        public Version Number { get; }
+        public string Api { get; }
         public ExtensionConstant[] Constants { get; }
         public EnumExtensionValue[] EnumExtensions { get; }
         public string[] CommandNames { get; }
         public string[] TypeNames { get; }
-        public string[] Supported { get; }
 
-        public ExtensionDefinition(
+        public FeatureDefinition(
             string name,
-            int number,
-            string type,
+            Version number,
+            string api,
             ExtensionConstant[] constants,
             EnumExtensionValue[] enumExtensions,
             string[] commandNames,
-            string[] typeNames,
-            string[] supported)
+            string[] typeNames)
         {
             Name = name;
             Number = number;
-            Type = type;
+            Api = api;
             Constants = constants;
             EnumExtensions = enumExtensions;
             CommandNames = commandNames;
-            TypeNames = typeNames;
-            Supported = supported;
         }
 
-        public static ExtensionDefinition CreateFromXml(XElement xe)
+        public static FeatureDefinition CreateFromXml(XElement xe)
         {
             string name = xe.GetNameAttribute();
             string numberString = xe.Attribute("number").Value;
-            int number = int.Parse(numberString);
-            string type = xe.GetTypeAttributeOrNull();
+            Version number = Version.Parse(numberString);
+            string api = xe.Attribute("api")?.Value;
             List<ExtensionConstant> extensionConstants = new List<ExtensionConstant>();
             List<EnumExtensionValue> enumExtensions = new List<EnumExtensionValue>();
             List<string> commandNames = new List<string>();
             List<string> typeNames = new List<string>();
-            string[] supported = xe.Attribute("supported").Value.Split('|');
 
             foreach (var require in xe.Elements("require"))
             {
@@ -53,6 +48,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 {
                     string enumName = enumXE.GetNameAttribute();
                     string extends = enumXE.Attribute("extends")?.Value;
+                    var extNumber = int.Parse(enumXE.Attribute("extnumber")?.Value);
                     if (extends != null)
                     {
                         string valueString;
@@ -66,7 +62,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                                 direction = -1;
                             }
 
-                            int value = direction * (1000000000 + (number - 1) * 1000 + offset);
+                            int value = direction * (1000000000 + (extNumber - 1) * 1000 + offset);
                             valueString = value.ToString();
                         }
                         else
@@ -97,42 +93,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 {
                     commandNames.Add(commandXE.GetNameAttribute());
                 }
-
                 foreach (var typeXE in require.Elements("type"))
                 {
-                    typeNames.Add(typeXE.GetNameAttribute());
+                    commandNames.Add(typeXE.GetNameAttribute());
                 }
             }
-            return new ExtensionDefinition(name, number, type, extensionConstants.ToArray(), enumExtensions.ToArray(), commandNames.ToArray(), typeNames.ToArray(), supported);
+            return new FeatureDefinition(name, number, api, extensionConstants.ToArray(), enumExtensions.ToArray(), commandNames.ToArray(), typeNames.ToArray());
         }
-    }
-
-    public class ExtensionConstant
-    {
-        public string Name { get; }
-        public string Value { get; }
-        public ExtensionConstant(string name, string value)
-        {
-            Name = name;
-            Value = value;
-        }
-    }
-
-    [DebuggerDisplay("{DebuggerDisplayString}")]
-    public class EnumExtensionValue
-    {
-        public string ExtendedType { get; }
-        public string Name { get; }
-        public string Value { get; }
-
-        public EnumExtensionValue(string extendedType, string name, string value)
-        {
-            ExtendedType = extendedType;
-            Name = name;
-            Value = value;
-        }
-
-        private string DebuggerDisplayString =>
-            $"Ext: {ExtendedType}, {Name} = {Value}";
     }
 }

@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Xml.Linq;
 
-namespace Vk.Generator
+namespace Silk.NET.BuildTools.Converters.Khronos
 {
     public class EnumDefinition
     {
@@ -57,13 +57,13 @@ namespace Vk.Generator
     public class EnumValue
     {
         public string Name { get; }
-        public int ValueOrBitPosition { get; }
+        public int Value { get; }
         public string Comment { get; }
 
         public EnumValue(string name, int value, string comment)
         {
             Name = name;
-            ValueOrBitPosition = value;
+            Value = value;
             Comment = comment;
         }
 

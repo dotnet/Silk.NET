@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Xml.Linq;
 
-namespace Vk.Generator
+namespace Silk.NET.BuildTools.Converters.Khronos
 {
     public class StructureDefinition
     {

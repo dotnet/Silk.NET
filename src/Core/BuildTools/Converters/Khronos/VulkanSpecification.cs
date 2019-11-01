@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace Vk.Generator
+namespace Silk.NET.BuildTools.Converters.Khronos
 {
     public class VulkanSpecification
     {
@@ -18,6 +17,7 @@ namespace Vk.Generator
         public string[] BitmaskTypes { get; }
         public Dictionary<string, string> BaseTypes { get; }
         public ExtensionDefinition[] Extensions { get; }
+        public FeatureDefinition[] Features { get; }
 
         public VulkanSpecification(
             CommandDefinition[] commands,
@@ -29,7 +29,8 @@ namespace Vk.Generator
             HandleDefinition[] handles,
             string[] bitmaskTypes,
             Dictionary<string, string> baseTypes,
-            ExtensionDefinition[] extensions)
+            ExtensionDefinition[] extensions,
+            FeatureDefinition[] features)
         {
             Commands = commands;
             Constants = constants;
@@ -41,6 +42,7 @@ namespace Vk.Generator
             BitmaskTypes = bitmaskTypes;
             BaseTypes = baseTypes;
             Extensions = extensions;
+            Features = features;
             AddExtensionEnums(Enums, Extensions);
         }
 
@@ -85,7 +87,11 @@ namespace Vk.Generator
                     typex => typex.Element("type").Value);
 
             ExtensionDefinition[] extensions = registry.Element("extensions").Elements("extension")
-                .Select(xe => ExtensionDefinition.CreateFromXml(xe)).ToArray();
+                .Select(ExtensionDefinition.CreateFromXml).ToArray();
+
+            FeatureDefinition[] features = registry.Elements("feature")
+                .Select(FeatureDefinition.CreateFromXml)
+                .ToArray();
 
             return new VulkanSpecification(
                 commandDefinitions, 
@@ -97,7 +103,8 @@ namespace Vk.Generator
                 handles, 
                 bitmaskTypes, 
                 baseTypes, 
-                extensions);
+                extensions,
+                features);
         }
 
         private void AddExtensionEnums(EnumDefinition[] enums, ExtensionDefinition[] extensions)

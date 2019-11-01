@@ -1,7 +1,7 @@
-﻿using System;
+﻿using System.Globalization;
 using System.Xml.Linq;
 
-namespace Vk.Generator
+namespace Silk.NET.BuildTools.Converters.Khronos
 {
     public class ParameterDefinition
     {
@@ -9,13 +9,19 @@ namespace Vk.Generator
         public TypeSpec Type { get;  }
         public ParameterModifier Modifier { get; }
         public bool IsOptional { get; }
+        public int ElementCount { get; }
+        public string ElementCountSymbolic { get; }
+        public bool IsNullTerminted { get; }
 
-        public ParameterDefinition(string name, TypeSpec type, ParameterModifier modifier, bool isOptional)
+        public ParameterDefinition(string name, TypeSpec type, ParameterModifier modifier, bool isOptional, int count, string symbolicCount)
         {
             Name = name;
             Type = type;
             Modifier = modifier;
             IsOptional = isOptional;
+            ElementCount = count;
+            ElementCountSymbolic = symbolicCount == "null-terminated" ? null : symbolicCount;
+            IsNullTerminted = symbolicCount.Contains("null-terminated");
         }
 
         public static ParameterDefinition CreateFromXml(XElement xe)
@@ -25,6 +31,7 @@ namespace Vk.Generator
             bool isOptional = optionalAttr != null && optionalAttr.Value == "true";
             string typeName = xe.Element("type").Value;
             int pointerLevel = 0;
+            string countString = xe.Attribute("len")?.Value;
             if (xe.Value.Contains($"{typeName}**") || xe.Value.Contains($"{typeName}* const*"))
             {
                 pointerLevel = 2;
@@ -34,10 +41,19 @@ namespace Vk.Generator
                 pointerLevel = 1;
             }
 
+            string symbolic = null;
+            int count = 0;
+            if (!(countString is null))
+            {
+                if (!int.TryParse(countString, out count))
+                {
+                    symbolic = countString;
+                }
+            }
 
             TypeSpec type = new TypeSpec(typeName, pointerLevel);
 
-            return new ParameterDefinition(name, type, ParameterModifier.None, isOptional);
+            return new ParameterDefinition(name, type, ParameterModifier.None, isOptional, count, symbolic);
         }
 
         public string GetModifierString()
@@ -64,8 +80,8 @@ namespace Vk.Generator
 
     public enum ParameterModifier
     {
-        None,
-        Ref,
-        Out
+        None = 1,
+        Ref = 0,
+        Out = 2
     }
 }

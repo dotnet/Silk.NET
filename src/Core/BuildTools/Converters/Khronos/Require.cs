@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Xml.Linq;
 
-namespace Vk.Generator
+namespace Silk.NET.BuildTools.Converters.Khronos
 {
     public static class Require
     {

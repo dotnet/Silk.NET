@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Vk.Generator
+﻿namespace Silk.NET.BuildTools.Converters.Khronos
 {
     public class TypeSpec
     {

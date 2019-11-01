@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 
-namespace Vk.Generator
+namespace Silk.NET.BuildTools.Converters.Khronos
 {
     public static class XElementExtensions
     {
@@ -31,9 +27,7 @@ namespace Vk.Generator
         public static bool GetOptionalAttributeOrFalse(this XElement xe)
         {
             var attr = xe.Attribute("optional");
-            return attr != null
-                ? attr.Value == "true"
-                : false;
+            return attr != null && attr.Value == "true";
         }
 
         public static bool HasCategoryAttribute(this XElement xe, string value)

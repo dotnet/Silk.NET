@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Xml.Linq;
 
-namespace Vk.Generator
+namespace Silk.NET.BuildTools.Converters.Khronos
 {
     public class CommandDefinition
     {
@@ -11,9 +11,8 @@ namespace Vk.Generator
         public ParameterDefinition[] Parameters { get; }
         public string[] SuccessCodes { get; }
         public string[] ErrorCodes { get; }
-        public bool IsVariant { get; }
 
-        public CommandDefinition(string name, TypeSpec returnType, ParameterDefinition[] parameters, string[] successCodes, string[] errorCodes, bool isVariant)
+        public CommandDefinition(string name, TypeSpec returnType, ParameterDefinition[] parameters, string[] successCodes, string[] errorCodes)
         {
             Require.NotNull(parameters);
             Require.NotNull(successCodes);
@@ -24,7 +23,6 @@ namespace Vk.Generator
             Parameters = parameters;
             SuccessCodes = successCodes;
             ErrorCodes = errorCodes;
-            IsVariant = isVariant;
         }
 
         public static CommandDefinition CreateFromXml(XElement xe)
@@ -49,7 +47,7 @@ namespace Vk.Generator
             ParameterDefinition[] parameters = xe.Elements("param")
                 .Select(paramXml => ParameterDefinition.CreateFromXml(paramXml)).ToArray();
 
-            return new CommandDefinition(name, returnType, parameters, successCodes, errorCodes, false);
+            return new CommandDefinition(name, returnType, parameters, successCodes, errorCodes);
         }
 
         public string GetParametersSignature()

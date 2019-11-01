@@ -6,7 +6,7 @@
             - Added Vulkan
             - Added OpenCL
             - Added mouse movement
-            - Added gamepad rumble
+            - Added gamepad rumble (though it hasn't been implemented in GLFW yet)
             - Added macOS support
             - Added more overloads, as well as fixed the existing ones.
             - Added DoRender, DoUpdate, DoEvents, Open, Reset, and IsClosing members for custom game loops
@@ -14,7 +14,6 @@
             - Fixed a bug where some shaders didn't compile correctly
             - Fixed a bug where some programs didn't link correctly
             - Removed all built-in thread management, the user will have to take care of this themselves.
-            - Removed AdvancedDLSupport in favour of our own library (SuperInvoke)
             - Synchronised the enum of all available keys with that of GLFW
         </PackageReleaseNotes>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
