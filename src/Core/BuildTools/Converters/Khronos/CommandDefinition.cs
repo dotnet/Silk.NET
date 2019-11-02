@@ -29,6 +29,19 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         {
             Require.Equal("command", xe.Name);
 
+            if (!(xe.Attribute("alias") is null))
+            {
+                var ret = CreateFromXml
+                (
+                    xe.Document.Element("registry")
+                        .Elements("commands")
+                        .Elements("command")
+                        .FirstOrDefault(x => x.Element("proto")?.Element("name")?.Value == xe.Attribute("alias").Value)
+                );
+                
+                return new CommandDefinition(ret.Name, ret.ReturnType, ret.Parameters, ret.SuccessCodes, ret.ErrorCodes);
+            }
+
             var proto = xe.Element("proto");
             string name = proto.Element("name").Value;
             string returnTypeName = proto.Element("type").Value;

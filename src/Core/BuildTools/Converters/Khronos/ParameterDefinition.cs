@@ -21,7 +21,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             IsOptional = isOptional;
             ElementCount = count;
             ElementCountSymbolic = symbolicCount == "null-terminated" ? null : symbolicCount;
-            IsNullTerminted = symbolicCount.Contains("null-terminated");
+            IsNullTerminted = symbolicCount?.Contains("null-terminated") ?? false;
         }
 
         public static ParameterDefinition CreateFromXml(XElement xe)

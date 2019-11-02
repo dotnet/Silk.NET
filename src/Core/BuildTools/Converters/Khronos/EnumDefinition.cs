@@ -37,7 +37,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             }
 
             string name = xe.Attribute("name").Value;
-            EnumValue[] values = xe.Elements("enum").Select(valuesx => EnumValue.CreateFromXml(valuesx, type == EnumType.Bitmask)).ToArray();
+            EnumValue[] values = xe.Elements("enum").Select(valuesx => EnumValue.CreateFromXml(valuesx)).ToArray();
             return new EnumDefinition(name, type, values);
         }
 
@@ -67,9 +67,24 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Comment = comment;
         }
 
-        public static EnumValue CreateFromXml(XElement xe, bool isBitmask)
+        public static EnumValue CreateFromXml(XElement xe)
         {
             Require.NotNull(xe);
+
+            if (!(xe.Attribute("alias") is null))
+            {
+                var ret = CreateFromXml
+                (xe.Document.Element("registry")
+                    .Elements("enums")
+                    .Where
+                    (
+                        enumx => enumx.GetTypeAttributeOrNull() == "enum" || enumx.GetTypeAttributeOrNull() == "bitmask"
+                    )
+                    .Elements("enum")
+                    .FirstOrDefault(x => x.Attribute("name")?.Value == xe.Attribute("alias").Value));
+                
+                return new EnumValue(xe.Attribute("name").Value, ret.Value, ret.Comment);
+            }
 
             string name = xe.Attribute("name").Value;
 

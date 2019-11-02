@@ -1,4 +1,6 @@
-﻿using System.Xml.Linq;
+﻿using System;
+using System.Linq;
+using System.Xml.Linq;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
 {
@@ -36,6 +38,16 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         public static ConstantDefinition CreateFromXml(XElement xe)
         {
             Require.NotNull(xe);
+
+            if (!(xe.Attribute("alias") is null))
+            {
+                var ret = CreateFromXml(xe.Document.Element("registry").Elements("enums")
+                    .Where(enumx => enumx.Attribute("name").Value == "API Constants")
+                    .SelectMany(enumx => enumx.Elements("enum"))
+                    .FirstOrDefault(x => x.Attribute("name").Value == xe.Attribute("alias").Value));
+                
+                return new ConstantDefinition(xe.Attribute("name")?.Value, ret.Value, ret.Comment);
+            }
 
             string name = xe.GetNameAttribute();
             string value = xe.Attribute("value").Value;

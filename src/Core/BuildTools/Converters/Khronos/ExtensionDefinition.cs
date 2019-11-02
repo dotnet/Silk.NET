@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Xml.Linq;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
@@ -51,47 +52,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             {
                 foreach (var enumXE in require.Elements("enum"))
                 {
-                    string enumName = enumXE.GetNameAttribute();
-                    string extends = enumXE.Attribute("extends")?.Value;
-                    if (extends != null)
-                    {
-                        string valueString;
-                        string offsetString = enumXE.Attribute("offset")?.Value;
-                        if (offsetString != null)
-                        {
-                            int offset = int.Parse(offsetString);
-                            int direction = 1;
-                            if (enumXE.Attribute("dir")?.Value == "-")
-                            {
-                                direction = -1;
-                            }
-
-                            int value = direction * (1000000000 + (number - 1) * 1000 + offset);
-                            valueString = value.ToString();
-                        }
-                        else
-                        {
-                            string bitPosString = enumXE.Attribute("bitpos")?.Value;
-                            if (bitPosString != null)
-                            {
-                                int shift = int.Parse(bitPosString);
-                                valueString = (1 << shift).ToString();
-                            }
-                            else
-                            {
-                                valueString = enumXE.Attribute("value").Value;
-                            }
-                        }
-                        enumExtensions.Add(new EnumExtensionValue(extends, enumName, valueString));
-                    }
-                    else
-                    {
-                        var valueAttribute = enumXE.Attribute("value");
-                        if (valueAttribute == null)
-                            continue;
-
-                        extensionConstants.Add(new ExtensionConstant(name, valueAttribute.Value));
-                    }
+                    ParseEnumRequirement(enumXE, number, enumExtensions, name, extensionConstants);
                 }
                 foreach (var commandXE in require.Elements("command"))
                 {
@@ -104,6 +65,67 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 }
             }
             return new ExtensionDefinition(name, number, type, extensionConstants.ToArray(), enumExtensions.ToArray(), commandNames.ToArray(), typeNames.ToArray(), supported);
+        }
+
+        private static void ParseEnumRequirement(XElement enumXE, int number, List<EnumExtensionValue> enumExtensions, string name, List<ExtensionConstant> extensionConstants)
+        {
+            string enumName = enumXE.GetNameAttribute();
+
+            if (!(enumXE.Attribute("alias") is null))
+            {
+                var dummyValues = new List<EnumExtensionValue>();
+                var dummyConstants = new List<ExtensionConstant>();
+                ParseEnumRequirement
+                (
+                    enumXE.Parent.Elements("enum").FirstOrDefault(x => x.GetNameAttribute() == enumName), number,
+                    dummyValues, name, dummyConstants
+                );
+                foreach (var dummyValue in dummyValues)
+                {
+                    // TODO dylan is actively working on this rn ;)
+                }
+            }
+
+            string extends = enumXE.Attribute("extends")?.Value;
+            if (extends != null)
+            {
+                string valueString;
+                string offsetString = enumXE.Attribute("offset")?.Value;
+                if (offsetString != null)
+                {
+                    int offset = int.Parse(offsetString);
+                    int direction = 1;
+                    if (enumXE.Attribute("dir")?.Value == "-")
+                    {
+                        direction = -1;
+                    }
+
+                    int value = direction * (1000000000 + (number - 1) * 1000 + offset);
+                    valueString = value.ToString();
+                }
+                else
+                {
+                    string bitPosString = enumXE.Attribute("bitpos")?.Value;
+                    if (bitPosString != null)
+                    {
+                        int shift = int.Parse(bitPosString);
+                        valueString = (1 << shift).ToString();
+                    }
+                    else
+                    {
+                        valueString = enumXE.Attribute("value").Value;
+                    }
+                }
+                enumExtensions.Add(new EnumExtensionValue(extends, enumName, valueString));
+            }
+            else
+            {
+                var valueAttribute = enumXE.Attribute("value");
+                if (valueAttribute == null)
+                    return;
+
+                extensionConstants.Add(new ExtensionConstant(name, valueAttribute.Value));
+            }
         }
     }
 

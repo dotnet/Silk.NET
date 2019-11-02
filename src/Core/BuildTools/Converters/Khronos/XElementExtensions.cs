@@ -14,6 +14,11 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             return xe.Element("name").Value;
         }
 
+        public static string GetNameElementOrNull(this XElement xe)
+        {
+            return xe.Element("name")?.Value;
+        }
+
         public static string GetTypeElement(this XElement xe)
         {
             return xe.Element("type").Value;

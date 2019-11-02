@@ -14,7 +14,6 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         public StructureDefinition[] Structures { get; }
         public StructureDefinition[] Unions{ get; }
         public HandleDefinition[] Handles { get; }
-        public string[] BitmaskTypes { get; }
         public Dictionary<string, string> BaseTypes { get; }
         public ExtensionDefinition[] Extensions { get; }
         public FeatureDefinition[] Features { get; }
@@ -27,7 +26,6 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             StructureDefinition[] structures,
             StructureDefinition[] unions,
             HandleDefinition[] handles,
-            string[] bitmaskTypes,
             Dictionary<string, string> baseTypes,
             ExtensionDefinition[] extensions,
             FeatureDefinition[] features)
@@ -39,7 +37,6 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Structures = structures;
             Unions = unions;
             Handles = handles;
-            BitmaskTypes = bitmaskTypes;
             BaseTypes = baseTypes;
             Extensions = extensions;
             Features = features;
@@ -78,9 +75,6 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             HandleDefinition[] handles = types.Elements("type").Where(typex => typex.HasCategoryAttribute("handle"))
                 .Select(typex => HandleDefinition.CreateFromXml(typex)).ToArray();
 
-            string[] bitmaskTypes = types.Elements("type").Where(typex => typex.HasCategoryAttribute("bitmask"))
-                .Select(typex => typex.GetNameElement()).ToArray();
-
             Dictionary<string, string> baseTypes = types.Elements("type").Where(typex => typex.HasCategoryAttribute("basetype"))
                 .ToDictionary(
                     typex => typex.GetNameElement(),
@@ -100,8 +94,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 enumDefinitions, 
                 structures,
                 unions, 
-                handles, 
-                bitmaskTypes, 
+                handles,
                 baseTypes, 
                 extensions,
                 features);
