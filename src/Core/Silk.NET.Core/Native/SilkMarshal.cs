@@ -12,7 +12,13 @@ namespace Silk.NET.Core.Native
     {
         public static IntPtr MarshalStringToPtr(string str) => Marshal.StringToHGlobalAnsi(str);
 
+        public static string MarshalPtrToString(IntPtr str) => Marshal.PtrToStringAnsi(str);
+
         public static void FreeStringPtr(IntPtr ptr) => Marshal.FreeHGlobal(ptr);
+
+        public static IntPtr NewStringPtr(int length) => Marshal.AllocHGlobal(length);
+
+        public static IntPtr NewStringPtr(uint length) => Marshal.AllocHGlobal((int) length);
 
         public static IntPtr MarshalStringArrayToPtr(string[] array)
         {

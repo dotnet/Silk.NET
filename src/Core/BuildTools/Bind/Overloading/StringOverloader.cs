@@ -25,14 +25,14 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                     var parameters = function.Parameters.ToArray();
                     var o = new StringBuilder();
                     parameters[i] = new ParameterSignatureBuilder(param).WithType
-                    (
-                        new Type
-                        {
-                            Name = "string",
-                            ArrayDimensions = 1
-                        }
-                    )
-                    .Build();
+                        (
+                            new Type
+                            {
+                                Name = "string",
+                                ArrayDimensions = 1
+                            }
+                        )
+                        .Build();
                     o.AppendLine
                         ($"var {param.Name}_o = SilkMarshal.MarshalStringArrayToPtr({ConvertName(param.Name)});");
                     if (function.ReturnType.ToString() != "void")
@@ -59,12 +59,16 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                     yield return new ImplementedFunction
                         (new FunctionSignatureBuilder(function).WithParameters(parameters).Build(), o, true);
                 }
-                else if ((param.Type.ToString() == "char*" || param.Type.ToString() == "byte*") && !param.Type.IsOut)
+                else if ((param.Type.ToString() == "char*" || param.Type.ToString() == "byte*") &&
+                         function.Parameters.Any
+                             (x => x.Name == param.Count?.ValueReference) && param.Flow == FlowDirection.Out)
                 {
                     var parameters = function.Parameters.ToArray();
                     var o = new StringBuilder();
-                    o.AppendLine($"var {param.Name}_s = SilkMarshal.MarshalStringToPtr({ConvertName(param.Name)});");
-                    parameters[i] = new ParameterSignatureBuilder(param).WithType(new Type(){Name = "string"}).Build();
+                    o.AppendLine($"var {param.Name}_s = SilkMarshal.NewStringPtr({param.Count.ValueReference});");
+                    parameters[i] = new ParameterSignatureBuilder(param).WithType
+                            (new Type {Name = "string", IsOut = true})
+                        .Build();
                     if (function.ReturnType.ToString() != "void")
                     {
                         o.Append("var silkReturn = ");
@@ -80,6 +84,38 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                         )
                     );
                     o.AppendLine(");");
+                    o.AppendLine($"{ConvertName(param.Name)} = SilkMarshal.MarshalPtrToString({param.Name}_s);");
+                    o.AppendLine($"SilkMarshal.FreeStringPtr({param.Name}_s);");
+                    if (function.ReturnType.ToString() != "void")
+                    {
+                        o.Append("return silkReturn;");
+                    }
+
+                    yield return new ImplementedFunction
+                        (new FunctionSignatureBuilder(function).WithParameters(parameters).Build(), o, true);
+                }
+                else if ((param.Type.ToString() == "char*" || param.Type.ToString() == "byte*") && !param.Type.IsOut)
+                {
+                    var parameters = function.Parameters.ToArray();
+                    var o = new StringBuilder();
+                    o.AppendLine($"var {param.Name}_s = SilkMarshal.MarshalStringToPtr({ConvertName(param.Name)});");
+                    parameters[i] = new ParameterSignatureBuilder(param).WithType(new Type{Name = "string"}).Build();
+                    if (function.ReturnType.ToString() != "void")
+                    {
+                        o.Append("var silkReturn = ");
+                    }
+
+                    o.Append(function.Name);
+                    o.Append("(");
+                    o.Append
+                    (
+                        string.Join
+                        (
+                            ", ", function.Parameters.Select((x, j) => j == i ? $"({param.Type}){param.Name}_s" : Convert(x))
+                        )
+                    );
+                    o.AppendLine(");");
+                    o.AppendLine($"{ConvertName(param.Name)} = SilkMarshal.MarshalPtrToString({param.Name}_s);");
                     o.AppendLine($"SilkMarshal.FreeStringPtr({param.Name}_s);");
                     if (function.ReturnType.ToString() != "void")
                     {

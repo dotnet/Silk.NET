@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using Silk.NET.Input;
@@ -165,18 +166,25 @@ namespace InputTest
                     mouse.MouseUp += MouseOnMouseUp;
                     mouse.MouseDown += MouseOnMouseDown;
                     mouse.Scroll += MouseOnScroll;
+                    mouse.MouseMove += MouseOnMouseMove;
                 }
                 else
                 {
                     mouse.MouseUp -= MouseOnMouseUp;
                     mouse.MouseDown -= MouseOnMouseDown;
                     mouse.Scroll -= MouseOnScroll;
+                    mouse.MouseMove -= MouseOnMouseMove;
                 }
 
                 Console.Write("    Buttons: ");
                 Console.WriteLine(string.Join(", ", mouse.SupportedButtons.Select(x => x)));
                 Console.WriteLine($"    {mouse.ScrollWheels.Count} scroll wheels.");
             }
+        }
+
+        private static void MouseOnMouseMove(IMouse arg1, PointF arg2)
+        {
+            Console.WriteLine($"M{arg1.Index}> Moved: {arg2}");
         }
 
         private static void MouseOnScroll(IMouse arg1, ScrollWheel arg2)

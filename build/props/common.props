@@ -4,7 +4,6 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReleaseNotes>
             - Added Vulkan
-            - Added OpenCL
             - Added mouse movement
             - Added gamepad rumble (though it hasn't been implemented in GLFW yet)
             - Added macOS support
