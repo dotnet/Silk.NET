@@ -2256,14 +2256,14 @@
             {
               "Name": "DebugReportObjectTypeSamplerYcbcrConversionExt",
               "NativeName": "VK_DEBUG_REPORT_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION_EXT",
-              "Value": "1000011000",
+              "Value": "1000156000",
               "Doc": "/// <summary></summary>",
               "Attributes": []
             },
             {
               "Name": "DebugReportObjectTypeDescriptorUpdateTemplateExt",
               "NativeName": "VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_EXT",
-              "Value": "1000011000",
+              "Value": "1000085000",
               "Doc": "/// <summary></summary>",
               "Attributes": []
             },
@@ -9542,42 +9542,42 @@
             {
               "Name": "StructureTypeDeviceGroupPresentCapabilitiesKhr",
               "NativeName": "VK_STRUCTURE_TYPE_DEVICE_GROUP_PRESENT_CAPABILITIES_KHR",
-              "Value": "1000001007",
+              "Value": "1000060007",
               "Doc": "/// <summary></summary>",
               "Attributes": []
             },
             {
               "Name": "StructureTypeImageSwapchainCreateInfoKhr",
               "NativeName": "VK_STRUCTURE_TYPE_IMAGE_SWAPCHAIN_CREATE_INFO_KHR",
-              "Value": "1000001008",
+              "Value": "1000060008",
               "Doc": "/// <summary></summary>",
               "Attributes": []
             },
             {
               "Name": "StructureTypeBindImageMemorySwapchainInfoKhr",
               "NativeName": "VK_STRUCTURE_TYPE_BIND_IMAGE_MEMORY_SWAPCHAIN_INFO_KHR",
-              "Value": "1000001009",
+              "Value": "1000060009",
               "Doc": "/// <summary></summary>",
               "Attributes": []
             },
             {
               "Name": "StructureTypeAcquireNextImageInfoKhr",
               "NativeName": "VK_STRUCTURE_TYPE_ACQUIRE_NEXT_IMAGE_INFO_KHR",
-              "Value": "1000001010",
+              "Value": "1000060010",
               "Doc": "/// <summary></summary>",
               "Attributes": []
             },
             {
               "Name": "StructureTypeDeviceGroupPresentInfoKhr",
               "NativeName": "VK_STRUCTURE_TYPE_DEVICE_GROUP_PRESENT_INFO_KHR",
-              "Value": "1000001011",
+              "Value": "1000060011",
               "Doc": "/// <summary></summary>",
               "Attributes": []
             },
             {
               "Name": "StructureTypeDeviceGroupSwapchainCreateInfoKhr",
               "NativeName": "VK_STRUCTURE_TYPE_DEVICE_GROUP_SWAPCHAIN_CREATE_INFO_KHR",
-              "Value": "1000001012",
+              "Value": "1000060012",
               "Doc": "/// <summary></summary>",
               "Attributes": []
             },
