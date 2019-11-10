@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using Silk.NET.BuildTools.Common;
@@ -356,7 +357,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 x => new Token
                                 {
                                     Doc = $"/// <summary>{x.Comment}</summary>",
-                                    Name = Naming.Translate(TrimName(x.Name, opts), opts.Prefix), Value = x.Value.ToString(),
+                                    Name = TryTrim
+                                    (
+                                        Naming.Translate(TrimName(x.Name, opts), opts.Prefix),
+                                        Naming.TranslateLite(TrimName(e.Name, opts), opts.Prefix)
+                                    ),
+                                    Value = x.Value.ToString(),
                                     NativeName = x.Name
                                 }
                             )
@@ -377,6 +383,18 @@ namespace Silk.NET.BuildTools.Converters.Readers
             );
 
             return ret;
+        }
+
+        private static char[] digits = "1234567890".ToCharArray();
+        private static string TryTrim(string token, string @enum)
+        {
+            var trimmed = token.StartsWith(@enum) ? token.Substring(@enum.Length) : token;
+            if (digits.Contains(trimmed[0]))
+            {
+                return token;
+            }
+
+            return trimmed;
         }
     }
 }

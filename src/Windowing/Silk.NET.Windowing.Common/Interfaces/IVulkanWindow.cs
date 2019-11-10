@@ -7,8 +7,9 @@ using Silk.NET.GLFW;
 
 namespace Silk.NET.Windowing.Common
 {
-    public interface IVulkanWindow
+    public interface IVulkanWindow : IWindow
     {
-        VkHandle CreateSurface<T>(VkHandle instance, ref T allocator) where T:unmanaged;
+        unsafe VkHandle CreateSurface<T>(VkHandle instance, T* allocator) where T:unmanaged;
+        unsafe char** GetRequiredExtensions(out uint count);
     }
 }

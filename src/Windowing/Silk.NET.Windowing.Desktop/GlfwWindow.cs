@@ -735,16 +735,22 @@ namespace Silk.NET.Windowing.Desktop
             _glfw.SetDropCallback(_windowPtr, _onFileDrop);
         }
 
-        public unsafe VkHandle CreateSurface<T>(VkHandle instance, ref T allocator)
-            where T:unmanaged
+        public unsafe VkHandle CreateSurface<T>(VkHandle instance, T* allocator)
+            where T : unmanaged
         {
             var surface = stackalloc VkHandle[1];
-            fixed (T* t = &allocator)
+            var ec = 0;
+            if ((ec = _glfw.CreateWindowSurface(instance, _windowPtr, allocator, surface)) != 0)
             {
-                Glfw.GetApi().CreateWindowSurface(instance, _windowPtr, t, surface);
+                throw new GlfwException("Failed to create surface, error code " + ec);
             }
 
             return surface[0];
+        }
+
+        public unsafe char** GetRequiredExtensions(out uint count)
+        {
+            return (char**) _glfw.GetRequiredInstanceExtensions(out count);
         }
     }
 }
