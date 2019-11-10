@@ -5,16 +5,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
-using System.Dynamic;
-using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Xml.Linq;
-using JetBrains.Annotations;
-using Microsoft.CodeAnalysis.CSharp;
-using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
@@ -37,50 +29,21 @@ namespace Silk.NET.BuildTools.Converters.Readers
         {
             var spec = (VulkanSpecification) obj;
             var structs = ConvertStructs(spec, opts);
-            foreach (var feature in spec.Features)
+            foreach (var feature in spec.Features.Select(x => x.Api).RemoveDuplicates())
             {
-                foreach (var type in feature.TypeNames)
+                foreach (var (_, s) in structs)
                 {
-                    if (structs.ContainsKey(type))
+                    yield return new Struct
                     {
-                        var s = structs[type];
-                        yield return new Struct
-                        {
-                            Attributes = s.Attributes,
-                            ExtensionName = "Core",
-                            Fields = s.Fields,
-                            Functions = s.Functions,
-                            Name = s.Name,
-                            NativeName = s.NativeName,
-                            ProfileName = feature.Api,
-                            ProfileVersion = feature.Number
-                        };
-                    }
-                }
-            }
-
-            foreach (var extension in spec.Extensions)
-            {
-                foreach (var type in extension.TypeNames)
-                {
-                    if (structs.ContainsKey(type))
-                    {
-                        var s = structs[type];
-                        foreach (var api in extension.Supported)
-                        {
-                            yield return new Struct
-                            {
-                                Attributes = s.Attributes,
-                                ExtensionName = extension.Name,
-                                Fields = s.Fields,
-                                Functions = s.Functions,
-                                Name = s.Name,
-                                NativeName = s.NativeName,
-                                ProfileName = api,
-                                ProfileVersion = null
-                            };
-                        }
-                    }
+                        Attributes = s.Attributes,
+                        ExtensionName = "Core",
+                        Fields = s.Fields,
+                        Functions = s.Functions,
+                        Name = s.Name,
+                        NativeName = s.NativeName,
+                        ProfileName = feature,
+                        ProfileVersion = null
+                    };
                 }
             }
         }
@@ -101,8 +64,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             {
                                 Count = string.IsNullOrEmpty(x.ElementCountSymbolic)
                                     ? x.ElementCount != 1 ? new Count(x.ElementCount) : null
-                                    : new Count(x.ElementCountSymbolic),
-                                Name = Naming.Translate(x.Name, prefix),
+                                    : new Count(x.ElementCountSymbolic, false),
+                                Name = Naming.Translate(TrimName(x.Name, opts), prefix),
                                 Doc = $"/// <summary>{x.Comment}</summary>",
                                 NativeName = x.Name,
                                 NativeType = x.Type.ToString(),
@@ -110,7 +73,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             }
                         )
                         .ToList(),
-                        Name = Naming.TranslateLite(s.Name, prefix),
+                        Name = Naming.TranslateLite(TrimName(s.Name, opts), prefix),
                         NativeName = s.Name
                     }
                 );
@@ -124,7 +87,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     {
                         Fields = new List<Field>
                             {new Field {Name = "Handle", Type = new Type {Name = h.Dispatchable ? "IntPtr" : "ulong"}}},
-                        Name = Naming.TranslateLite(h.Name, prefix),
+                        Name = Naming.TranslateLite(TrimName(h.Name, opts), prefix),
                         NativeName = h.Name
                     }
                 );
@@ -136,7 +99,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 {
                     Attributes = new List<Attribute>{new Attribute{Name = "StructLayout", Arguments = new List<string>{"LayoutKind.Explicit"}}},
                     Fields = GetFields(u, opts).ToList(),
-                    Name = Naming.TranslateLite(u.Name, prefix),
+                    Name = Naming.TranslateLite(TrimName(u.Name, opts), prefix),
                     NativeName = u.Name
                 });
             }
@@ -243,7 +206,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         yield return new Function
                         {
                             ExtensionName = "Core",
-                            Categories = new List<string> {feature.Name},
+                            Categories = new List<string> {TrimName(feature.Name, opts)},
                             Name = function.Name,
                             NativeName = function.NativeName,
                             Parameters = function.Parameters,
@@ -266,8 +229,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             var function = functions[name];
                             yield return new Function
                             {
-                                ExtensionName = "Core",
-                                Categories = new List<string> {extension.Name},
+                                ExtensionName = TrimName(extension.Name, opts),
+                                Categories = new List<string> {TrimName(extension.Name, opts)},
                                 Name = function.Name,
                                 NativeName = function.NativeName,
                                 Parameters = function.Parameters,
@@ -290,7 +253,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 (
                     function.Name, new Function
                     {
-                        Name = Naming.Translate(function.Name, opts.Prefix),
+                        Name = Naming.Translate(NameTrimmer.Trim(TrimName(function.Name, opts), opts.Prefix), opts.Prefix),
                         Parameters = function.Parameters.Select
                             (
                                 x => new Parameter
@@ -298,7 +261,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                     Count = x.IsNullTerminted ? null :
                                         x.ElementCountSymbolic != null ? new Count(x.ElementCountSymbolic.Split(',')) :
                                         new Count(x.ElementCount),
-                                    Flow = (FlowDirection) x.Modifier, Name = x.Name, Type = ConvertType(x.Type)
+                                    Flow = ConvertFlow(x.Modifier), Name = x.Name, Type = ConvertType(x.Type)
                                 }
                             )
                             .ToList(),
@@ -314,53 +277,69 @@ namespace Silk.NET.BuildTools.Converters.Readers
         public IEnumerable<Enum> ReadEnums(object obj, ProfileConverterOptions opts)
         {
             var spec = (VulkanSpecification) obj;
+            opts.TypeMaps.Insert(0, spec.BaseTypes);
             var enums = ConvertEnums(spec, opts);
-            foreach (var feature in spec.Features)
+            var tm = new Dictionary<string, string>();
+            foreach (var feature in spec.Features.Select(x => x.Api).RemoveDuplicates())
             {
-                foreach (var type in feature.TypeNames)
+                foreach (var (_, e) in enums)
                 {
-                    if (enums.ContainsKey(type))
+                    tm.Add(e.NativeName, e.Name.Replace("FlagBits", "Flags"));
+                    yield return new Enum
                     {
-                        var e = enums[type];
-                        yield return new Enum
-                        {
-                            Attributes = e.Attributes,
-                            ExtensionName = "Core",
-                            Name = e.Name,
-                            NativeName = e.NativeName,
-                            ProfileName = feature.Api,
-                            ProfileVersion = feature.Number,
-                            Tokens = e.Tokens
-                        };
-                    }
+                        Attributes = e.Attributes,
+                        ExtensionName = "Core",
+                        Name = e.Name.Replace("FlagBits", "Flags"),
+                        NativeName = e.NativeName.Replace("FlagBits", "Flags"),
+                        ProfileName = feature,
+                        ProfileVersion = null,
+                        Tokens = e.Tokens
+                    };
                 }
             }
-            
-            foreach (var extension in spec.Extensions)
-            {
-                foreach (var type in extension.TypeNames)
-                {
-                    if (enums.ContainsKey(type))
-                    {
-                        var e = enums[type];
-                        foreach (var api in extension.Supported)
-                        {
-                            yield return new Enum
-                            {
-                                Attributes = e.Attributes,
-                                ExtensionName = extension.Name,
-                                Name = e.Name,
-                                NativeName = e.NativeName,
-                                ProfileName = api,
-                                ProfileVersion = null,
-                                Tokens = e.Tokens
-                            };
-                        }
-                    }
-                }
-            }
+            opts.TypeMaps.Insert(0, tm);
         }
 
+        public IEnumerable<Constant> ReadConstants(object obj, ProfileConverterOptions opts)
+        {
+            var spec = (VulkanSpecification) obj;
+            return spec.Constants.Select
+            (
+                x => new Constant
+                {
+                    Name = Naming.Translate(TrimName(x.Name, opts), opts.Prefix), NativeName = x.Name, Value = x.Value,
+                    Type = x.Type switch
+                    {
+                        ConstantType.Float32 => new Type {Name = "float"},
+                        ConstantType.UInt32 => new Type {Name = "uint"},
+                        ConstantType.UInt64 => new Type {Name = "ulong"},
+                        _ => new Type{Name = "ulong"}
+                    }
+                }
+            );
+        }
+
+        public string TrimName(string name, ProfileConverterOptions opts)
+        {
+            if (name.StartsWith($"{opts.Prefix.ToUpper()}_"))
+            {
+                return name.Remove(0, opts.Prefix.Length + 1);
+            }
+
+            return name.ToLower().StartsWith(opts.Prefix.ToLower()) ? name.Remove(0, opts.Prefix.Length) : name;
+        }
+
+        private FlowDirection ConvertFlow(ParameterModifier mod)
+        {
+            return mod switch
+            {
+                ParameterModifier.None => FlowDirection.Undefined,
+                ParameterModifier.Ref => FlowDirection.Ref,
+                ParameterModifier.Out => FlowDirection.Out,
+                _ => FlowDirection.In
+            };
+        }
+        
         private Dictionary<string, Enum> ConvertEnums(VulkanSpecification spec, ProfileConverterOptions opts)
         {
             var ret = new Dictionary<string, Enum>();
@@ -371,13 +350,13 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     e.Name,
                     new Enum
                     {
-                        Name = Naming.TranslateLite(e.Name, opts.Prefix), NativeName = e.Name,
+                        Name = Naming.TranslateLite(TrimName(e.Name, opts), opts.Prefix), NativeName = e.Name,
                         Tokens = e.Values.Select
                             (
                                 x => new Token
                                 {
                                     Doc = $"/// <summary>{x.Comment}</summary>",
-                                    Name = Naming.Translate(x.Name, opts.Prefix), Value = x.Value.ToString(),
+                                    Name = Naming.Translate(TrimName(x.Name, opts), opts.Prefix), Value = x.Value.ToString(),
                                     NativeName = x.Name
                                 }
                             )
@@ -388,6 +367,14 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     }
                 );
             }
+
+            opts.TypeMaps.Insert
+            (
+                0,
+                spec.Typedefs.Where
+                        (typedef => typedef.Type == "VkFlags" && !ret.ContainsKey(typedef.Requires ?? "__SilkNetNull"))
+                    .ToDictionary(typedef => typedef.Name, typedef => typedef.Type)
+            );
 
             return ret;
         }

@@ -13,7 +13,7 @@
     },
     {
         "Task": "bake",
-        "Args": ["-b", "../binder_bakery_info/Vulkan.json", "-f", "../binder_specifications", "-p", "-k"]
+        "Args": ["-b", "../binder_bakery_info/Vulkan.json", "-f", "../binder_specifications", "-p"]
     },
     {
         "Task": "bind",

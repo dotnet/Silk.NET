@@ -18,7 +18,7 @@
       "ClassName": "VulkanLibraryNameContainer"
     },
     "FunctionPrefix": "vk",
-    "ClassName": "Vulkan",
-    "SymbolLoader": "this"
+    "ClassName": "Vk",
+    "SymbolLoader": "new VkLoader(AdvancedDLSupport.Loaders.PlatformLoaderBase.PlatformLoader)"
   }
 ]

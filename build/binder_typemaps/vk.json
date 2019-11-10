@@ -1,2 +1,10 @@
 {
+    "PFN_vkInternalAllocationNotification": "FuncPtr<InternalAllocationNotification>",
+    "PFN_vkInternalFreeNotification": "FuncPtr<InternalFreeNotification>",
+    "PFN_vkReallocationFunction": "FuncPtr<ReallocationFunction>",
+    "PFN_vkAllocationFunction": "FuncPtr<AllocationFunction>",
+    "PFN_vkFreeFunction": "FuncPtr<FreeFunction>",
+    "PFN_vkVoidFunction": "FuncPtr<VoidFunction>",
+    "PFN_vkDebugReportCallbackEXT": "FuncPtr<DebugReportCallbackFunctionEXT>",
+    "PFN_vkDebugUtilsMessengerCallbackEXT": "FuncPtr<DebugUtilsMessengerCallbackFunctionEXT>"
 }

@@ -56,6 +56,27 @@ namespace Silk.NET.BuildTools.Common
             }
         }
 
+        public static Type MapOne(List<Dictionary<string, string>> maps, Type og)
+        {
+            var type = og;
+            foreach (var map in maps)
+            {
+                if (map.ContainsKey(type.ToString()))
+                {
+                    type = ParseTypeSignature
+                    (
+                        map[type.ToString()], type.OriginalName
+                    );
+                }
+                else if (map.ContainsKey(type.Name))
+                {
+                    type.Name = map[type.Name];
+                }
+            }
+
+            return type;
+        }
+
         /// <summary>
         /// Replaces the type names of parameters and return types in the given functions using the given typemap.
         /// </summary>

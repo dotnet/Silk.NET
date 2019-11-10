@@ -3644,7 +3644,7 @@ namespace Silk.NET.GLFW
         /// <returns>
         /// <c>VK_SUCCESS</c> if successful, or a Vulkan error code if an error occurred.
         /// </returns>
-        unsafe int CreateWindowSurface(VkHandle instance, WindowHandle* window, void* allocator, VkHandle surface);
+        unsafe int CreateWindowSurface(VkHandle instance, WindowHandle* window, void* allocator, VkHandle* surface);
 
         /// <summary>
         /// <para>

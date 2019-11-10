@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -175,6 +176,27 @@ namespace Silk.NET.BuildTools.Common
             foreach (var item in enumerable)
             {
                 if (!ret.Any(x => x.Equals(item)))
+                {
+                    ret.Add(item);
+                }
+            }
+
+            return ret;
+        }
+
+        /// <summary>
+        /// An extension method which returns the given enumerable without duplicate elements.
+        /// </summary>
+        /// <param name="enumerable">The enumerable to process.</param>
+        /// <typeparam name="T">The type contained within this enumerable.</typeparam>
+        /// <returns>An enumerable with no duplicates.</returns>
+        public static IEnumerable<T> RemoveDuplicates<T>(this IEnumerable<T> enumerable, Func<T, T, bool> isDuplicate)
+        {
+            // note: this is required because ApiProfile.GetCategories() returns duplicates.
+            var ret = new List<T>();
+            foreach (var item in enumerable)
+            {
+                if (!ret.Any(x => isDuplicate(x, item)))
                 {
                     ret.Add(item);
                 }

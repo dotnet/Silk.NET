@@ -27,6 +27,8 @@ namespace Silk.NET.BuildTools.Converters
             var functions = reader.ReadFunctions(obj, opts).OrderBy(x => x.Name).ToArray();
             Console.WriteLine("Reading structs...");
             var structs = reader.ReadStructs(obj, opts).OrderBy(x => x.Name).ToArray();
+            Console.WriteLine("Reading constants...");
+            var constants = reader.ReadConstants(obj, opts).OrderBy(x => x.Name).ToArray();
             Console.WriteLine("Creating profiles...");
             var profiles = enums.Select(x => (x.ProfileName, x.ProfileVersion))
                 .Concat(functions.Select(x => (x.ProfileName, x.ProfileVersion)))
@@ -39,6 +41,7 @@ namespace Silk.NET.BuildTools.Converters
                 ctor.WriteEnums(profile, enums, opts);
                 ctor.WriteFunctions(profile, functions, opts);
                 ctor.WriteStructs(profile, structs, opts);
+                ctor.WriteConstants(profile, constants, opts);
                 foreach (var typeMap in profile.TypeMaps)
                 {
                     TypeMapper.Map(typeMap, functions);
@@ -47,6 +50,11 @@ namespace Silk.NET.BuildTools.Converters
                 foreach (var typeMap in profile.TypeMaps)
                 {
                     TypeMapper.Map(typeMap, structs);
+                }
+
+                foreach (var constant in profile.Constants)
+                {
+                    constant.Type = TypeMapper.MapOne(profile.TypeMaps, constant.Type);
                 }
 
                 Console.WriteLine($"Created profile \"{profile.Name}\" version {profile.Version}");

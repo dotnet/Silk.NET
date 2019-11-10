@@ -85,6 +85,7 @@ namespace Silk.NET.BuildTools.Baking
             profile.Projects = profile.Projects.Concat(extProjects).ToDictionary();
             profile.FunctionPrefix = information.FunctionPrefix;
             profile.Names = information.NameContainer;
+            profile.Constants = impl.SelectMany(x => x.Constants).ToList();
 
             MergeAll(profile); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
             CheckForDuplicates(profile);
@@ -167,6 +168,26 @@ namespace Silk.NET.BuildTools.Baking
                 project.Interfaces = interfaces;
                 project.Structs = structs.Values.ToList();
             }
+
+            var constants = new Dictionary<string, Constant>();
+            foreach (var constant in profile.Constants)
+            {
+                if (constants.ContainsKey(constant.Name))
+                {
+                    if (constants[constant.Name].NativeName != constant.NativeName || constants[constant.Name].Value != constant.Value)
+                    {
+                        Console.WriteLine($"Warning: Discarding duplicate constant {constant.Name}.");
+                        Console.WriteLine($"    Original: {constants[constant.Name].NativeName} = {constants[constant.Name].Value}");
+                        Console.WriteLine($"    Duplicate: {constant.NativeName} = {constant.Value}");
+                    }
+                }
+                else
+                {
+                    constants.Add(constant.Name, constant);
+                }
+            }
+
+            profile.Constants = constants.Values.ToList();
         }
 
         private static void CheckForDuplicates(Profile profile)

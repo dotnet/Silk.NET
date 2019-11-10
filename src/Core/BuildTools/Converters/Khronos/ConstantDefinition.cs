@@ -14,7 +14,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         public ConstantDefinition(string name, string value, string comment)
         {
             Name = name;
-            Value = value;
+            Value = value.Replace("ULL", "ul").Replace("LL", "l");
             Type = ParseType(value);
             Comment = comment;
         }
@@ -41,11 +41,15 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
             if (!(xe.Attribute("alias") is null))
             {
-                var ret = CreateFromXml(xe.Document.Element("registry").Elements("enums")
-                    .Where(enumx => enumx.Attribute("name").Value == "API Constants")
-                    .SelectMany(enumx => enumx.Elements("enum"))
-                    .FirstOrDefault(x => x.Attribute("name").Value == xe.Attribute("alias").Value));
-                
+                var ret = CreateFromXml
+                (
+                    xe.Document.Element("registry")
+                        .Elements("enums")
+                        .Where(enumx => enumx.Attribute("name").Value == "API Constants")
+                        .SelectMany(enumx => enumx.Elements("enum"))
+                        .FirstOrDefault(x => x.Attribute("name").Value == xe.Attribute("alias").Value)
+                );
+
                 return new ConstantDefinition(xe.Attribute("name")?.Value, ret.Value, ret.Comment);
             }
 
@@ -55,12 +59,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
             return new ConstantDefinition(name, value, comment);
         }
+    }
 
-        public enum ConstantType
-        {
-            UInt32,
-            UInt64,
-            Float32,
-        }
+    public enum ConstantType
+    {
+        UInt32,
+        UInt64,
+        Float32,
     }
 }

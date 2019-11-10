@@ -17,7 +17,7 @@ namespace Silk.NET.BuildTools.Common.Structs
             "byte", "short", "int", "long", "char", "sbyte", "ushort", "uint", "ulong", "float", "double"
         };
 
-        public List<Attribute> Attributes { get; set; }
+        public List<Attribute> Attributes { get; set; } = new List<Attribute>();
         public string Doc { get; set; }
         public Type Type { get; set; }
         public Count Count { get; set; }

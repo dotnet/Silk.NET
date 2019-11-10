@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Xml.Linq;
@@ -67,9 +68,13 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             return new ExtensionDefinition(name, number, type, extensionConstants.ToArray(), enumExtensions.ToArray(), commandNames.ToArray(), typeNames.ToArray(), supported);
         }
 
-        private static void ParseEnumRequirement(XElement enumXE, int number, List<EnumExtensionValue> enumExtensions, string name, List<ExtensionConstant> extensionConstants)
+        private static void ParseEnumRequirement(XElement enumXE, int ognumber, List<EnumExtensionValue> enumExtensions, string name, List<ExtensionConstant> extensionConstants)
         {
             string enumName = enumXE.GetNameAttribute();
+
+            var number = enumXE.Attribute("extnumber") is null
+                ? ognumber
+                : int.Parse(enumXE.Attribute("extnumber").Value);
 
             if (!(enumXE.Attribute("alias") is null))
             {
@@ -77,13 +82,27 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 var dummyConstants = new List<ExtensionConstant>();
                 ParseEnumRequirement
                 (
-                    enumXE.Parent.Elements("enum").FirstOrDefault(x => x.GetNameAttribute() == enumName), number,
+                    enumXE.Document.Element("registry")
+                        .Elements("extensions")
+                        .Elements("extension")
+                        .Concat(enumXE.Document.Element("registry").Elements("feature"))
+                        .Elements("require")
+                        .Elements("enum")
+                        .Concat(enumXE.Document.Element("registry").Elements("enums").Elements("enum"))
+                        .FirstOrDefault(x => x.GetNameAttribute() == enumXE.Attribute("alias").Value), number,
                     dummyValues, name, dummyConstants
                 );
                 foreach (var dummyValue in dummyValues)
                 {
-                    // TODO dylan is actively working on this rn ;)
+                    enumExtensions.Add(new EnumExtensionValue(dummyValue.ExtendedType, enumName, dummyValue.Value));
                 }
+
+                foreach (var dummyConstant in dummyConstants)
+                {
+                    extensionConstants.Add(new ExtensionConstant(enumName, dummyConstant.Value));
+                }
+                
+                return;
             }
 
             string extends = enumXE.Attribute("extends")?.Value;

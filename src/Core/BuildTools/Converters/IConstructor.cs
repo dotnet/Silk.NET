@@ -15,5 +15,6 @@ namespace Silk.NET.BuildTools.Converters
         void WriteFunctions(Profile profile, IEnumerable<Function> functions, ProfileConverterOptions opts);
         void WriteEnums(Profile profile, IEnumerable<Enum> enums, ProfileConverterOptions opts);
         void WriteStructs(Profile profile, IEnumerable<Struct> structs, ProfileConverterOptions opts);
+        void WriteConstants(Profile profile, IEnumerable<Constant> constants, ProfileConverterOptions opts);
     }
 }

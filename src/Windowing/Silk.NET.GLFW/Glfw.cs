@@ -414,7 +414,7 @@ namespace Silk.NET.GLFW
 
         /// <inheritdoc />
         public abstract unsafe int CreateWindowSurface(VkHandle instance, WindowHandle* window, void* allocator,
-            VkHandle surface);
+            VkHandle* surface);
 
         /// <inheritdoc />
         public abstract IntPtr GetProcAddress(string name);

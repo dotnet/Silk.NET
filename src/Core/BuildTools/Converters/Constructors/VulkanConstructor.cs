@@ -40,7 +40,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
             }
 
             profile.Projects["Core"].Enums.AddRange(enums);
-            profile.TypeMaps.Add(enums.ToDictionary(x => x.NativeName, x => x.Name));
+            profile.TypeMaps.Add(enums.RemoveDuplicates((x, y) => x.NativeName == y.NativeName).ToDictionary(x => x.NativeName, x => x.Name));
         }
 
         /// <summary>
@@ -207,6 +207,11 @@ namespace Silk.NET.BuildTools.Converters.Constructors
             
             // register the type map
             profile.TypeMaps.Add(map);
+        }
+
+        public void WriteConstants(Profile profile, IEnumerable<Constant> constants, ProfileConverterOptions opts)
+        {
+            profile.Constants.AddRange(constants.Where(x => profile.Constants.All(y => y.Name != x.Name)));
         }
     }
 }

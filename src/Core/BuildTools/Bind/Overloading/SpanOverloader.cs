@@ -40,7 +40,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             for (var i = 0; i < function.Parameters.Count; i++)
             {
                 var param = function.Parameters[i];
-                if (param.Type.IndirectionLevels == 1 && param.Type.Name != "void" && !param.Type.IsOut)
+                if (param.Type.IndirectionLevels == 1 && param.Type.Name != "void" && !param.Type.IsOut && !param.Type.IsIn && !param.Type.IsByRef)
                 {
                     parameterChanged = true;
                     parameters[i] = new ParameterSignatureBuilder(param).WithName($"{param.Name}Span")
@@ -102,7 +102,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
             string GetPrefix(Type t)
             {
-                return t.IsOut ? "out " : string.Empty;
+                return t.IsOut ? "out " : t.IsByRef ? "ref " : string.Empty;
             }
 
             string Format(string n)

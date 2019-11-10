@@ -12,14 +12,16 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         public int ElementCount { get; }
         public string ElementCountSymbolic { get; }
         public bool IsNullTerminted { get; }
+        public bool IsConst { get; }
 
-        public ParameterDefinition(string name, TypeSpec type, ParameterModifier modifier, bool isOptional, int count, string symbolicCount)
+        public ParameterDefinition(string name, TypeSpec type, ParameterModifier modifier, bool isOptional, int count, string symbolicCount, bool isConst)
         {
             Name = name;
             Type = type;
             Modifier = modifier;
             IsOptional = isOptional;
             ElementCount = count;
+            IsConst = isConst;
             ElementCountSymbolic = symbolicCount == "null-terminated" ? null : symbolicCount;
             IsNullTerminted = symbolicCount?.Contains("null-terminated") ?? false;
         }
@@ -30,6 +32,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             var optionalAttr = xe.Attribute("optional");
             bool isOptional = optionalAttr != null && optionalAttr.Value == "true";
             string typeName = xe.Element("type").Value;
+            bool isConst = xe.Value.Contains("const");
             int pointerLevel = 0;
             string countString = xe.Attribute("len")?.Value;
             if (xe.Value.Contains($"{typeName}**") || xe.Value.Contains($"{typeName}* const*"))
@@ -53,35 +56,19 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
             TypeSpec type = new TypeSpec(typeName, pointerLevel);
 
-            return new ParameterDefinition(name, type, ParameterModifier.None, isOptional, count, symbolic);
-        }
-
-        public string GetModifierString()
-        {
-            if (Modifier == ParameterModifier.Ref)
-            {
-                return "ref ";
-            }
-            else if (Modifier == ParameterModifier.Out)
-            {
-                return "out ";
-            }
-            else
-            {
-                return string.Empty;
-            }
-        }
-
-        public override string ToString()
-        {
-            return $"{GetModifierString()}{Type} {Name}";
+            return new ParameterDefinition
+            (
+                name, type, ParameterModifier.None, isOptional,
+                count, symbolic, isConst
+            );
         }
     }
 
     public enum ParameterModifier
     {
-        None = 1,
-        Ref = 0,
-        Out = 2
+        None = 0,
+        Ref = 1,
+        Out = 2,
+        In = 3,
     }
 }

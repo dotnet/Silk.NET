@@ -53,6 +53,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine(LicenseText.Value);
             sw.WriteLine();
             var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
+            sw.WriteLine("using System;");
+            sw.WriteLine();
             sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
             foreach (var attr in @enum.Attributes)
@@ -114,7 +116,7 @@ namespace Silk.NET.BuildTools.Bind
                         var count = structField.Count.IsConstant
                             ? int.Parse
                             (
-                                project.Enums.SelectMany(x => x.Tokens)
+                                profile.Constants
                                     .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?
                                     .Value
                             )
@@ -130,7 +132,7 @@ namespace Silk.NET.BuildTools.Bind
                             }
                             sw.WriteLine
                             (
-                                $"public {structField.Type} {structField.Name}_{i} {{ get; set; }}"
+                                $"public {structField.Type} {structField.Name}_{i};"
                             );
                         }
                     }
@@ -144,7 +146,7 @@ namespace Silk.NET.BuildTools.Bind
                         var count = structField.Count.IsConstant
                             ? int.Parse
                             (
-                                project.Enums.SelectMany(x => x.Tokens)
+                                profile.Constants
                                     .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?
                                     .Value
                             )
@@ -158,7 +160,7 @@ namespace Silk.NET.BuildTools.Bind
                         }
                         sw.WriteLine
                         (
-                            $"public fixed {structField.Type} {structField.Name}[{count}] {{ get; set; }}"
+                            $"public fixed {structField.Type} {structField.Name}[{count}];"
                         );
                     }
                 }
@@ -169,7 +171,7 @@ namespace Silk.NET.BuildTools.Bind
                     {
                         sw.WriteLine($"    {attr}");
                     }
-                    sw.WriteLine($"public {structField.Type} {structField.Name} {{ get; set; }}");
+                    sw.WriteLine($"public {structField.Type} {structField.Name};");
                 }
             }
 
@@ -321,6 +323,13 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine("{");
                 sw.WriteLine($"    public abstract unsafe partial class {profile.ClassName} : NativeAPI, I{profile.ClassName}");
                 sw.WriteLine("    {");
+                foreach (var constant in profile.Constants)
+                {
+                    sw.WriteLine($"        public const {constant.Type} {constant.Name} = {constant.Value};");
+                }
+                
+                sw.WriteLine();
+                
                 var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).RemoveDuplicates();
                 foreach (var function in allFunctions)
                 {

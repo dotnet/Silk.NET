@@ -17,7 +17,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
     {
         public IEnumerable<ImplementedFunction> CreateOverloads(Function function)
         {
-            if (!function.Parameters.Any(x => x.Type.IsPointer && !x.Type.IsVoidPointer()))
+            if (!function.Parameters.Any(x => x.Type.IsPointer && !x.Type.IsVoidPointer() && x.Flow != FlowDirection.Undefined))
             {
                 yield break;
             }
@@ -38,7 +38,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                         .WithIndirectionLevel(param.Type.IndirectionLevels - 1);
                     newParameterType = param.Flow switch
                     {
-                        FlowDirection.Undefined => newParameterType.WithByRef(true),
+                        FlowDirection.Ref => newParameterType.WithByRef(true),
                         FlowDirection.In => newParameterType.WithIsIn(true),
                         FlowDirection.Out => newParameterType.WithIsOut(true),
                         _ => throw new ArgumentOutOfRangeException()

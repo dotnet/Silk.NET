@@ -68,7 +68,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the formatted XML documentation for this function.
         /// </summary>
-        public string Doc { get; set; }
+        public string Doc { get; set; } = "/// <summary>To be added.</summary>";
 
         /// <summary>
         /// Gets or sets the name (vendor) of the given extension.
@@ -190,25 +190,10 @@ namespace Silk.NET.BuildTools.Common.Functions
                 sb.Append("] ");
             }
 
-            if (parameter.Type.IsOut)
-            {
-                sb.Append("out ");
-            }
-
-            if (parameter.Type.IsIn)
-            {
-                sb.Append("in ");
-            }
-
-            if (parameter.Type.IsByRef)
-            {
-                sb.Append("ref ");
-            }
-
             sb.Append(parameter.Type);
 
             sb.Append(" ");
-            sb.Append(parameter.Name);
+            sb.Append(Utilities.CSharpKeywords.Contains(parameter.Name) ? $"@{parameter.Name}" : parameter.Name);
 
             return sb.ToString();
         }

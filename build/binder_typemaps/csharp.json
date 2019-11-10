@@ -78,7 +78,8 @@
   "GLeglImageOES": "IntPtr",
   "GLeglClientBufferEXT": "IntPtr",
   "GLVULKANPROCNV": "IntPtr",
-  "uint8_t": "byte" ,
+  "uint8_t": "byte",
+  "uint16_t": "ushort",
   "uint32_t": "uint" ,
   "uint64_t": "ulong" ,
   "size_t": "UIntPtr" ,
@@ -97,5 +98,12 @@
   "xcb_window_t": "IntPtr" ,
   "xcb_visualid_t": "IntPtr",
   "_cl_context": "IntPtr",
-  "_cl_event": "IntPtr"
+  "_cl_event": "IntPtr",
+  "HMONITOR": "IntPtr",
+  "CAMetalLayer": "IntPtr",
+  "AHardwareBuffer": "IntPtr",
+  "zx_handle_t": "IntPtr",
+  "GgpFrameToken": "IntPtr",
+  "GgpStreamDescriptor": "IntPtr",
+  "VkFlags": "uint"
 }

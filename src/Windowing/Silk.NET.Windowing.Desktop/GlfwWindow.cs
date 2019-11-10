@@ -19,7 +19,7 @@ namespace Silk.NET.Windowing.Desktop
     /// <summary>
     /// A Silk.NET window, using GLFW as a backend.
     /// </summary>
-    public class GlfwWindow : IWindow
+    public class GlfwWindow : IWindow, IVulkanWindow
     {
         // The number of frames that the window has been running slowly for.
         private int _isRunningSlowlyTries;
@@ -733,6 +733,18 @@ namespace Silk.NET.Windowing.Desktop
             _glfw.SetWindowIconifyCallback(_windowPtr, _onMinimized);
             _glfw.SetWindowMaximizeCallback(_windowPtr, _onMaximized);
             _glfw.SetDropCallback(_windowPtr, _onFileDrop);
+        }
+
+        public unsafe VkHandle CreateSurface<T>(VkHandle instance, ref T allocator)
+            where T:unmanaged
+        {
+            var surface = stackalloc VkHandle[1];
+            fixed (T* t = &allocator)
+            {
+                Glfw.GetApi().CreateWindowSurface(instance, _windowPtr, t, surface);
+            }
+
+            return surface[0];
         }
     }
 }

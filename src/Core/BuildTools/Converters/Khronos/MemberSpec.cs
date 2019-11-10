@@ -28,11 +28,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         {
             Require.NotNull(xe);
 
+            var xeValue = xe.Element("comment") is null ? xe.Value : xe.Value.Replace(xe.Element("comment").Value, "");
             string name = xe.GetNameElement();
             bool isOptional = xe.GetOptionalAttributeOrFalse();
             string typeName = xe.Element("type").Value;
-            int pointerLevel = xe.Value.Contains($"{typeName}*") ? 1 : 0; // TODO: Make this better.
-            if (xe.Value.Contains($"{typeName}* const*"))
+            int pointerLevel = xeValue.Contains($"{typeName}*") ? 1 : 0; // TODO: Make this better.
+            if (xeValue.Contains($"{typeName}* const*"))
             {
                 pointerLevel += 1;
             }
@@ -44,7 +45,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             string elementCountSymbolic = null;
             for (int i = 2; i < 10; i++)
             {
-                if (xe.Value.Contains($"{name}[{i}]"))
+                if (xeValue.Contains($"{name}[{i}]"))
                 {
                     elementCount = i;
                     foundConstantElementCount = true;
@@ -54,7 +55,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
             if (!foundConstantElementCount)
             {
-                Match m = Regex.Match(xe.Value, @"\[(.*)\]");
+                Match m = Regex.Match(xeValue, @"\[(.*)\]");
                 if (m.Captures.Count > 0)
                 {
                     elementCountSymbolic = m.Groups[1].Value;

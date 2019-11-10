@@ -17,5 +17,6 @@ namespace Silk.NET.BuildTools.Converters
         IEnumerable<Struct> ReadStructs(object obj, ProfileConverterOptions opts);
         IEnumerable<Function> ReadFunctions(object obj, ProfileConverterOptions opts);
         IEnumerable<Enum> ReadEnums(object obj, ProfileConverterOptions opts);
+        IEnumerable<Constant> ReadConstants(object obj, ProfileConverterOptions opts);
     }
 }
