@@ -11,6 +11,7 @@ using Silk.NET.Core.Native;
 using Silk.NET.GLFW;
 using Silk.NET.Vulkan;
 using Silk.NET.Vulkan.Extensions.EXT;
+using Silk.NET.Vulkan.Extensions.KHR;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
 using Image = Silk.NET.Vulkan.Image;
@@ -63,8 +64,11 @@ namespace VulkanTriangle
         private UIntPtr _currentFrame;
 
         private Vk _vk;
+        private KhrSurface _vkSurface;
+        private KhrSwapchain _vkSwapchain;
         private ExtDebugUtils _debugUtils;
         private string[] _validationLayers = {"VK_LAYER_KHRONOS_validation"};
+        private string[] _deviceExtensions = {"VK_KHR_SWAPCHAIN_EXTENSION_NAME"};
 
         private void InitWindow()
         {
@@ -110,6 +114,15 @@ namespace VulkanTriangle
             }
             
             _vk = Vk.GetApi();
+            if (!_vk.TryGetExtension(out _vkSurface))
+            {
+                throw new NotSupportedException("KHR_surface extension not found.");
+            }
+            
+            if (!_vk.TryGetExtension(out _vkSwapchain))
+            {
+                throw new NotSupportedException("KHR_swapchain extension not found.");
+            }
 
             var appInfo = new ApplicationInfo()
             {
@@ -235,15 +248,188 @@ namespace VulkanTriangle
 
         private bool IsDeviceSuitable(PhysicalDevice device)
         {
+            QueueFamilyIndices indices = FindQueueFamilies(device);
+
+            bool extensionsSupported = CheckDeviceExtensionSupport(device);
+
+            bool swapChainAdequate = false;
+            if (extensionsSupported) {
+                SwapChainSupportDetails swapChainSupport = QuerySwapChainSupport(device);
+                swapChainAdequate = swapChainSupport.Formats.Length != 0 && swapChainSupport.PresentModes.Length != 0;
+            }
+
+            return indices.IsComplete() && extensionsSupported && swapChainAdequate;
+        }
+
+        private SwapChainSupportDetails QuerySwapChainSupport(PhysicalDevice device)
+        {
             throw new NotImplementedException();
         }
+
+        private unsafe bool CheckDeviceExtensionSupport(PhysicalDevice device)
+        {
+            uint extensionCount;
+            _vk.EnumerateDeviceExtensionProperties(device, (char*)null, &extensionCount, null);
+
+            var availableExtensions = stackalloc ExtensionProperties[(int) extensionCount];
+            _vk.EnumerateDeviceExtensionProperties(device, (char*) null, &extensionCount, availableExtensions);
+
+            var requiredExtensions = new List<string>();
+            requiredExtensions.AddRange(_deviceExtensions);
+            
+            for (var i = 0u; i < extensionCount; i++)
+            {
+                requiredExtensions.Remove(Marshal.PtrToStringAnsi((IntPtr) availableExtensions[i].ExtensionName));
+            }
+
+            return requiredExtensions.Count == 0;
+        }
+
+        private unsafe QueueFamilyIndices FindQueueFamilies(PhysicalDevice device)
+        {
+            var indices = new QueueFamilyIndices();
+
+            uint queryFamilyCount = 0;
+            _vk.GetPhysicalDeviceQueueFamilyProperties(device, &queryFamilyCount, null);
+
+            var queueFamilies = stackalloc QueueFamilyProperties[(int) queryFamilyCount];
+
+            for (var i = 0u; i < queryFamilyCount; i++)
+            {
+                var queueFamily = queueFamilies[i];
+                // note: HasFlag is slow on .NET Core 2.1 and below.
+                // if you're targeting these versions, use ((queueFamily.QueueFlags & QueueFlags.QueueGraphicsBit) != 0)
+                if (queueFamily.QueueFlags.HasFlag(QueueFlags.QueueGraphicsBit))
+                {
+                    indices.GraphicsFamily = i;
+                }
+
+                _vkSurface.GetPhysicalDeviceSurfaceSupport(device, i, _surface, out var presentSupport);
+
+                if (presentSupport == Vk.True)
+                {
+                    indices.PresentFamily = i;
+                }
+
+                if (indices.IsComplete())
+                {
+                    break;
+                }
+            }
+
+            return indices;
+        }
+
+        public struct QueueFamilyIndices {
+            public uint? GraphicsFamily { get; set; }
+            public uint? PresentFamily { get; set; }
+
+            public bool IsComplete()
+            {
+                return GraphicsFamily.HasValue && PresentFamily.HasValue;
+            }
+        };
+
+        public struct SwapChainSupportDetails {
+            public SurfaceCapabilitiesKHR Capabilities { get; set; }
+            public SurfaceFormatKHR[] Formats { get; set; }
+            public PresentModeKHR[] PresentModes { get; set; }
+        };
 
         private void CreateLogicalDevice()
         {
             throw new NotImplementedException();
         }
 
-        private void CreateSwapChain()
+        private unsafe void CreateSwapChain()
+        {
+            SwapChainSupportDetails swapChainSupport = QuerySwapChainSupport(_physicalDevice);
+
+            SurfaceFormatKHR surfaceFormat = ChooseSwapSurfaceFormat(swapChainSupport.Formats);
+            PresentModeKHR presentMode = ChooseSwapPresentMode(swapChainSupport.PresentModes);
+            Extent2D extent = ChooseSwapExtent(swapChainSupport.Capabilities);
+
+            uint imageCount = swapChainSupport.Capabilities.MinImageCount + 1;
+            if (swapChainSupport.Capabilities.MaxImageCount > 0 &&
+                imageCount > swapChainSupport.Capabilities.MaxImageCount)
+            {
+                imageCount = swapChainSupport.Capabilities.MaxImageCount;
+            }
+
+            var createInfo = new SwapchainCreateInfoKHR
+            {
+                SType = StructureType.SwapchainCreateInfoKhr,
+                Surface = _surface,
+                MinImageCount = imageCount,
+                ImageFormat = surfaceFormat.Format,
+                ImageColorSpace = surfaceFormat.ColorSpace,
+                ImageExtent = extent,
+                ImageArrayLayers = 1,
+                ImageUsage = ImageUsageFlags.ImageUsageColorAttachmentBit,
+            };
+
+            QueueFamilyIndices indices = FindQueueFamilies(_physicalDevice);
+            uint[] queueFamilyIndices = {indices.GraphicsFamily.Value, indices.PresentFamily.Value};
+
+            fixed (uint* qfiPtr = queueFamilyIndices)
+            {
+                if (indices.GraphicsFamily != indices.PresentFamily)
+                {
+                    createInfo.ImageSharingMode = SharingMode.Concurrent;
+                    createInfo.QueueFamilyIndexCount = 2;
+                    createInfo.PQueueFamilyIndices = qfiPtr;
+                }
+                else
+                {
+                    createInfo.ImageSharingMode = SharingMode.Exclusive;
+                }
+
+                createInfo.PreTransform = swapChainSupport.Capabilities.CurrentTransform;
+                createInfo.CompositeAlpha = CompositeAlphaFlagsKHR.CompositeAlphaOpaqueBitKhr;
+                createInfo.PresentMode = presentMode;
+                createInfo.Clipped = Vk.True;
+
+                createInfo.OldSwapchain = default;
+
+                fixed (SwapchainKHR* swapchain = &_swapchain)
+                {
+                    if (_vkSwapchain.CreateSwapchain(_device, &createInfo, null, swapchain) != Result.Success)
+                    {
+                        throw new Exception("failed to create swap chain!");
+                    }
+                }
+            }
+
+            _vkSwapchain.GetSwapchainImages(_device, _swapchain, &imageCount, null);
+            _swapchainImages = new Image[imageCount];
+            fixed (Image* swapchainImage = _swapchainImages)
+            {
+                _vkSwapchain.GetSwapchainImages(_device, _swapchain, &imageCount, swapchainImage);
+            }
+
+            _swapchainImageFormat = surfaceFormat.Format;
+            _swapchainExtent = extent;
+        }
+
+        private Extent2D ChooseSwapExtent(SurfaceCapabilitiesKHR capabilities)
+        {
+            throw new NotImplementedException();
+        }
+
+        private PresentModeKHR ChooseSwapPresentMode(PresentModeKHR[] presentModes)
+        {
+            foreach (var availablePresentMode in presentModes)
+            {
+                if (availablePresentMode == PresentModeKHR.PresentModeMailboxKhr)
+                {
+                    return availablePresentMode;
+                }
+            }
+
+            return PresentModeKHR.PresentModeFifoKhr;
+        }
+
+        private SurfaceFormatKHR ChooseSwapSurfaceFormat(SurfaceFormatKHR[] formats)
         {
             throw new NotImplementedException();
         }

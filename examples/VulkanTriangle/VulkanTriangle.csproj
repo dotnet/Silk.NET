@@ -8,9 +8,14 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.EXT\Silk.NET.Vulkan.Extensions.EXT.csproj" />
+      <ProjectReference Include="..\..\src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.KHR\Silk.NET.Vulkan.Extensions.KHR.csproj" />
       <ProjectReference Include="..\..\src\Vulkan\Silk.NET.Vulkan\Silk.NET.Vulkan.csproj" />
       <ProjectReference Include="..\..\src\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
       <ProjectReference Include="..\..\src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="original.cpp" />
     </ItemGroup>
 
 </Project>
