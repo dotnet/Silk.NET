@@ -206,12 +206,13 @@ namespace VulkanTriangle
 
         private unsafe void CreateInstance()
         {
+            _vk = Vk.GetApi();
+            
             if (EnableValidationLayers && !CheckValidationLayerSupport())
             {
                 throw new NotSupportedException("Validation layers requested, but not available!");
             }
-
-            _vk = Vk.GetApi();
+            
             if (!_vk.TryGetExtension(out _vkSurface))
             {
                 throw new NotSupportedException("KHR_surface extension not found.");
@@ -840,20 +841,19 @@ namespace VulkanTriangle
                 BlendEnable = Vk.False
             };
 
-            var blendConstants = stackalloc float[4];
-            blendConstants[0] = 0.0f;
-            blendConstants[1] = 0.0f;
-            blendConstants[2] = 0.0f;
-            blendConstants[3] = 0.0f;
             var colorBlending = new PipelineColorBlendStateCreateInfo
             {
                 SType = StructureType.PipelineColorBlendStateCreateInfo,
                 LogicOpEnable = Vk.False,
                 LogicOp = LogicOp.Copy,
                 AttachmentCount = 1,
-                PAttachments = &colorBlendAttachment,
-                BlendConstants = blendConstants
+                PAttachments = &colorBlendAttachment
             };
+            
+            colorBlending.BlendConstants[0] = 0.0f;
+            colorBlending.BlendConstants[1] = 0.0f;
+            colorBlending.BlendConstants[2] = 0.0f;
+            colorBlending.BlendConstants[3] = 0.0f;
 
             var pipelineLayoutInfo = new PipelineLayoutCreateInfo
             {

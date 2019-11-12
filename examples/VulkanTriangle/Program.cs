@@ -7,6 +7,8 @@ namespace VulkanTriangle
     {
         static void Main(string[] args)
         {
+            var app = new HelloTriangleApplication();
+            app.Run();
         }
 
         internal static byte[] LoadEmbeddedResourceBytes(string path)
