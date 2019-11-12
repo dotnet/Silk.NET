@@ -6,6 +6,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Native;
 using Silk.NET.GLFW;
@@ -99,6 +100,7 @@ namespace VulkanTriangle
 
         private void MainLoop()
         {
+            throw new NotImplementedException();
         }
 
         private void Cleanup()
@@ -261,9 +263,35 @@ namespace VulkanTriangle
             return indices.IsComplete() && extensionsSupported && swapChainAdequate;
         }
 
-        private SwapChainSupportDetails QuerySwapChainSupport(PhysicalDevice device)
+        private unsafe SwapChainSupportDetails QuerySwapChainSupport(PhysicalDevice device)
         {
-            throw new NotImplementedException();
+            var details = new SwapChainSupportDetails();
+            _vkSurface.GetPhysicalDeviceSurfaceCapabilities(device, _surface, out var surfaceCapabilities);
+            details.Capabilities = surfaceCapabilities;
+            
+            var formatCount = 0u;
+            _vkSurface.GetPhysicalDeviceSurfaceFormats(device, _surface, &formatCount, null);
+
+            if (formatCount != 0)
+            {
+                details.Formats = new SurfaceFormatKHR[formatCount];
+                var formats = stackalloc SurfaceFormatKHR[(int) formatCount];
+                _vkSurface.GetPhysicalDeviceSurfaceFormats(device, _surface, &formatCount, formats);
+
+                for (var i = 0; i < formatCount; i++)
+                {
+                    details.Formats[i] = formats[i];
+                }
+            }
+
+            var presentModeCount = 0u;
+            _vkSurface.GetPhysicalDeviceSurfacePresentModes(device, _surface, &presentModeCount, null);
+
+            if (presentModeCount != 0)
+            {
+                details.PresentModes = new PresentModeKHR[presentModeCount];
+                // TODO.....
+            }
         }
 
         private unsafe bool CheckDeviceExtensionSupport(PhysicalDevice device)
@@ -336,9 +364,61 @@ namespace VulkanTriangle
             public PresentModeKHR[] PresentModes { get; set; }
         };
 
-        private void CreateLogicalDevice()
+        private unsafe void CreateLogicalDevice()
         {
-            throw new NotImplementedException();
+            var indices = FindQueueFamilies(_physicalDevice);
+            var uniqueQueueFamilies = new[] {indices.GraphicsFamily.Value, indices.PresentFamily.Value};
+            var queueCreateInfos = stackalloc DeviceQueueCreateInfo[uniqueQueueFamilies.Length];
+
+            var queuePriority = 1f;
+            for (int i = 0; i < uniqueQueueFamilies.Length; i++)
+            {
+                var queueCreateInfo = new DeviceQueueCreateInfo
+                {
+                    SType = StructureType.DeviceQueueCreateInfo,
+                    QueueFamilyIndex = uniqueQueueFamilies[i],
+                    QueueCount = 1,
+                    PQueuePriorities = &queuePriority
+                };
+                queueCreateInfos[i] = queueCreateInfo;
+            }
+
+            var deviceFeatures = new PhysicalDeviceFeatures();
+
+            var createInfo = new DeviceCreateInfo();
+            createInfo.SType = StructureType.DeviceCreateInfo;
+            createInfo.QueueCreateInfoCount = (uint) uniqueQueueFamilies.Length;
+            createInfo.PQueueCreateInfos = queueCreateInfos;
+            createInfo.PEnabledFeatures = &deviceFeatures;
+            createInfo.EnabledExtensionCount = (uint) _deviceExtensions.Length;
+
+            var enabledExtensionNames = SilkMarshal.MarshalStringArrayToPtr(_deviceExtensions);
+            createInfo.PpEnabledExtensionNames = (char**) enabledExtensionNames;
+
+            if (EnableValidationLayers)
+            {
+                createInfo.EnabledLayerCount = (uint) _validationLayers.Length;
+                createInfo.PpEnabledLayerNames = (char**) SilkMarshal.MarshalStringArrayToPtr(_validationLayers);
+            }
+            else
+            {
+                createInfo.EnabledLayerCount = 0;
+            }
+
+            if (_vk.CreateDevice(_physicalDevice, &createInfo, null, &_device))
+            {
+                throw new Exception("Failed to create logical device.");
+            }
+
+            fixed (Queue* graphicsQueue = &_graphicsQueue)
+            {
+                _vk.GetDeviceQueue(_device, indices.GraphicsFamily.Value, 0, graphicsQueue);
+            }
+
+            fixed (Queue* presentQueue = &_presentQueue)
+            {
+                _vk.GetDeviceQueue(_device, indices.PresentFamily.Value, 0, presentQueue);
+            }
         }
 
         private unsafe void CreateSwapChain()
@@ -413,7 +493,25 @@ namespace VulkanTriangle
 
         private Extent2D ChooseSwapExtent(SurfaceCapabilitiesKHR capabilities)
         {
-            throw new NotImplementedException();
+            if (capabilities.CurrentExtent.Width != uint.MaxValue)
+            {
+                return capabilities.CurrentExtent;
+            }
+
+            var actualExtent = new Extent2D
+                {Height = (uint) _window.Size.Height, Width = (uint) _window.Size.Width};
+            actualExtent.Width = new[]
+            {
+                capabilities.MinImageExtent.Width,
+                new uint[] {capabilities.MaxImageExtent.Width, actualExtent.Width}.Min()
+            }.Max();
+            actualExtent.Height = new[]
+            {
+                capabilities.MinImageExtent.Height,
+                new uint[] {capabilities.MaxImageExtent.Height, actualExtent.Height}.Min()
+            }.Max();
+
+            return actualExtent;
         }
 
         private PresentModeKHR ChooseSwapPresentMode(PresentModeKHR[] presentModes)
