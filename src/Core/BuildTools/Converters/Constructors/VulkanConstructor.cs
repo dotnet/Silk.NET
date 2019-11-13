@@ -60,6 +60,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                 foreach (var rawCategory in function.Categories)
                 {
                     var category = FormatCategory(rawCategory);
+                    var preCategory = $"{opts.Prefix.ToUpper()}_{rawCategory}";
                     // check that the root project exists
                     if (!profile.Projects.ContainsKey("Core"))
                     {
@@ -82,7 +83,8 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             category,
                             new Project
                             {
-                                CategoryName = category, ExtensionName = category, IsRoot = false,
+                                CategoryName = category, ExtensionName = $"{opts.Prefix.ToUpper()}_{category}",
+                                IsRoot = false,
                                 Namespace = $".{category.CheckMemberName(opts.Prefix)}"
                             }
                         );
@@ -92,13 +94,13 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     if
                     (
                         !profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
-                            .Interfaces.ContainsKey(rawCategory)
+                            .Interfaces.ContainsKey(preCategory)
                     )
                     {
                         profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
                             .Interfaces.Add
                             (
-                                rawCategory,
+                                preCategory,
                                 new Interface
                                 {
                                     Name =
@@ -109,7 +111,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
 
                     // add the function to the interface
                     profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
-                        .Interfaces[rawCategory]
+                        .Interfaces[preCategory]
                         .Functions.Add(function);
                 }
             }
@@ -192,7 +194,8 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                         category,
                         new Project
                         {
-                            CategoryName = category, ExtensionName = category, IsRoot = false,
+                            CategoryName = category, ExtensionName = $"{opts.Prefix.ToUpper()}_{category}",
+                            IsRoot = false,
                             Namespace = $".{category.CheckMemberName(opts.Prefix)}"
                         }
                     );

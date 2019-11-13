@@ -12443,7 +12443,7 @@
         }
       ],
       "Interfaces": {
-        "IVersion10": {
+        "VK_VERSION_1_0": {
           "Name": "IVersion10",
           "Functions": [
             {
@@ -22358,7 +22358,7 @@
                   "Type": {
                     "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "char",
+                    "Name": "byte",
                     "Group": null,
                     "OriginalName": "char",
                     "GenericTypes": [],
@@ -22530,7 +22530,7 @@
                   "Type": {
                     "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "char",
+                    "Name": "byte",
                     "Group": null,
                     "OriginalName": "char",
                     "GenericTypes": [],
@@ -23340,7 +23340,7 @@
                   "Type": {
                     "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "char",
+                    "Name": "byte",
                     "Group": null,
                     "OriginalName": "char",
                     "GenericTypes": [],
@@ -23930,7 +23930,7 @@
                   "Type": {
                     "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "char",
+                    "Name": "byte",
                     "Group": null,
                     "OriginalName": "char",
                     "GenericTypes": [],
@@ -26415,7 +26415,7 @@
           ],
           "Attributes": []
         },
-        "IVersion11": {
+        "VK_VERSION_1_1": {
           "Name": "IVersion11",
           "Functions": [
             {
@@ -29981,7 +29981,7 @@
               "Type": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -30019,7 +30019,7 @@
               "Type": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -35426,7 +35426,7 @@
               "Type": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -35554,7 +35554,7 @@
               "Type": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -35894,7 +35894,7 @@
               "Type": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -36003,7 +36003,7 @@
               "Type": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -36041,7 +36041,7 @@
               "Type": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -36429,7 +36429,7 @@
               "Type": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -38426,7 +38426,7 @@
               "Type": {
                 "IndirectionLevels": 2,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -38464,7 +38464,7 @@
               "Type": {
                 "IndirectionLevels": 2,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -41171,7 +41171,7 @@
               "Type": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -42659,7 +42659,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -49874,7 +49874,7 @@
               "Type": {
                 "IndirectionLevels": 2,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -49912,7 +49912,7 @@
               "Type": {
                 "IndirectionLevels": 2,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -50025,7 +50025,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -50087,7 +50087,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -53170,7 +53170,7 @@
               "Type": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -55946,7 +55946,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -55970,7 +55970,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -63205,7 +63205,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -68905,7 +68905,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -68929,7 +68929,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -69076,7 +69076,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -69100,7 +69100,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -69190,7 +69190,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -69214,7 +69214,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -70890,7 +70890,7 @@
               "Type": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
-                "Name": "char",
+                "Name": "byte",
                 "Group": null,
                 "OriginalName": "char",
                 "GenericTypes": [],
@@ -82679,13 +82679,13 @@
       "Delegates": []
     },
     "EXT": {
-      "ExtensionName": "EXT",
+      "ExtensionName": "VK_EXT",
       "CategoryName": "EXT",
       "Namespace": ".EXT",
       "IsRoot": false,
       "Enums": [],
       "Interfaces": {
-        "IExtFullScreenExclusive": {
+        "VK_EXT_full_screen_exclusive": {
           "Name": "IExtFullScreenExclusive",
           "Functions": [
             {
@@ -83008,7 +83008,7 @@
           ],
           "Attributes": []
         },
-        "IExtAcquireXlibDisplay": {
+        "VK_EXT_acquire_xlib_display": {
           "Name": "IExtAcquireXlibDisplay",
           "Functions": [
             {
@@ -83203,7 +83203,7 @@
           ],
           "Attributes": []
         },
-        "IExtConditionalRendering": {
+        "VK_EXT_conditional_rendering": {
           "Name": "IExtConditionalRendering",
           "Functions": [
             {
@@ -83314,7 +83314,7 @@
           ],
           "Attributes": []
         },
-        "IExtDebugUtils": {
+        "VK_EXT_debug_utils": {
           "Name": "IExtDebugUtils",
           "Functions": [
             {
@@ -84076,7 +84076,7 @@
           ],
           "Attributes": []
         },
-        "IExtTransformFeedback": {
+        "VK_EXT_transform_feedback": {
           "Name": "IExtTransformFeedback",
           "Functions": [
             {
@@ -84894,7 +84894,7 @@
           ],
           "Attributes": []
         },
-        "IExtDebugMarker": {
+        "VK_EXT_debug_marker": {
           "Name": "IExtDebugMarker",
           "Functions": [
             {
@@ -85194,7 +85194,7 @@
           ],
           "Attributes": []
         },
-        "IExtDiscardRectangles": {
+        "VK_EXT_discard_rectangles": {
           "Name": "IExtDiscardRectangles",
           "Functions": [
             {
@@ -85307,7 +85307,7 @@
           ],
           "Attributes": []
         },
-        "IExtLineRasterization": {
+        "VK_EXT_line_rasterization": {
           "Name": "IExtLineRasterization",
           "Functions": [
             {
@@ -85397,7 +85397,7 @@
           ],
           "Attributes": []
         },
-        "IExtSampleLocations": {
+        "VK_EXT_sample_locations": {
           "Name": "IExtSampleLocations",
           "Functions": [
             {
@@ -85550,7 +85550,7 @@
           ],
           "Attributes": []
         },
-        "IExtDebugReport": {
+        "VK_EXT_debug_report": {
           "Name": "IExtDebugReport",
           "Functions": [
             {
@@ -85804,7 +85804,7 @@
                   "Type": {
                     "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "char",
+                    "Name": "byte",
                     "Group": null,
                     "OriginalName": "char",
                     "GenericTypes": [],
@@ -85825,7 +85825,7 @@
                   "Type": {
                     "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "char",
+                    "Name": "byte",
                     "Group": null,
                     "OriginalName": "char",
                     "GenericTypes": [],
@@ -85934,7 +85934,7 @@
           ],
           "Attributes": []
         },
-        "IExtHeadlessSurface": {
+        "VK_EXT_headless_surface": {
           "Name": "IExtHeadlessSurface",
           "Functions": [
             {
@@ -86045,7 +86045,7 @@
           ],
           "Attributes": []
         },
-        "IExtMetalSurface": {
+        "VK_EXT_metal_surface": {
           "Name": "IExtMetalSurface",
           "Functions": [
             {
@@ -86156,7 +86156,7 @@
           ],
           "Attributes": []
         },
-        "IExtValidationCache": {
+        "VK_EXT_validation_cache": {
           "Name": "IExtValidationCache",
           "Functions": [
             {
@@ -86565,7 +86565,7 @@
           ],
           "Attributes": []
         },
-        "IExtDisplayControl": {
+        "VK_EXT_display_control": {
           "Name": "IExtDisplayControl",
           "Functions": [
             {
@@ -86991,7 +86991,7 @@
           ],
           "Attributes": []
         },
-        "IExtBufferDeviceAddress": {
+        "VK_EXT_buffer_device_address": {
           "Name": "IExtBufferDeviceAddress",
           "Functions": [
             {
@@ -87060,7 +87060,7 @@
           ],
           "Attributes": []
         },
-        "IExtCalibratedTimestamps": {
+        "VK_EXT_calibrated_timestamps": {
           "Name": "IExtCalibratedTimestamps",
           "Functions": [
             {
@@ -87282,7 +87282,7 @@
           ],
           "Attributes": []
         },
-        "IExtImageDrmFormatModifier": {
+        "VK_EXT_image_drm_format_modifier": {
           "Name": "IExtImageDrmFormatModifier",
           "Functions": [
             {
@@ -87372,7 +87372,7 @@
           ],
           "Attributes": []
         },
-        "IExtExternalMemoryHost": {
+        "VK_EXT_external_memory_host": {
           "Name": "IExtExternalMemoryHost",
           "Functions": [
             {
@@ -87483,7 +87483,7 @@
           ],
           "Attributes": []
         },
-        "IExtDisplaySurfaceCounter": {
+        "VK_EXT_display_surface_counter": {
           "Name": "IExtDisplaySurfaceCounter",
           "Functions": [
             {
@@ -87573,7 +87573,7 @@
           ],
           "Attributes": []
         },
-        "IExtDirectModeDisplay": {
+        "VK_EXT_direct_mode_display": {
           "Name": "IExtDirectModeDisplay",
           "Functions": [
             {
@@ -87642,7 +87642,7 @@
           ],
           "Attributes": []
         },
-        "IExtHostQueryReset": {
+        "VK_EXT_host_query_reset": {
           "Name": "IExtHostQueryReset",
           "Functions": [
             {
@@ -87753,7 +87753,7 @@
           ],
           "Attributes": []
         },
-        "IExtHdrMetadata": {
+        "VK_EXT_hdr_metadata": {
           "Name": "IExtHdrMetadata",
           "Functions": [
             {
@@ -87873,13 +87873,13 @@
       "Delegates": []
     },
     "KHR": {
-      "ExtensionName": "KHR",
+      "ExtensionName": "VK_KHR",
       "CategoryName": "KHR",
       "Namespace": ".KHR",
       "IsRoot": false,
       "Enums": [],
       "Interfaces": {
-        "IKhrSwapchain": {
+        "VK_KHR_swapchain": {
           "Name": "IKhrSwapchain",
           "Functions": [
             {
@@ -88729,7 +88729,7 @@
           ],
           "Attributes": []
         },
-        "IKhrDeviceGroup": {
+        "VK_KHR_device_group": {
           "Name": "IKhrDeviceGroup",
           "Functions": [
             {
@@ -89430,7 +89430,7 @@
           ],
           "Attributes": []
         },
-        "IKhrBindMemory2": {
+        "VK_KHR_bind_memory2": {
           "Name": "IKhrBindMemory2",
           "Functions": [
             {
@@ -89608,7 +89608,7 @@
           ],
           "Attributes": []
         },
-        "IKhrCreateRenderpass2": {
+        "VK_KHR_create_renderpass2": {
           "Name": "IKhrCreateRenderpass2",
           "Functions": [
             {
@@ -89950,7 +89950,7 @@
           ],
           "Attributes": []
         },
-        "IKhrDrawIndirectCount": {
+        "VK_KHR_draw_indirect_count": {
           "Name": "IKhrDrawIndirectCount",
           "Functions": [
             {
@@ -90292,7 +90292,7 @@
           ],
           "Attributes": []
         },
-        "IKhrPushDescriptor": {
+        "VK_KHR_push_descriptor": {
           "Name": "IKhrPushDescriptor",
           "Functions": [
             {
@@ -90573,7 +90573,7 @@
           ],
           "Attributes": []
         },
-        "IKhrDescriptorUpdateTemplate": {
+        "VK_KHR_descriptor_update_template": {
           "Name": "IKhrDescriptorUpdateTemplate",
           "Functions": [
             {
@@ -90999,7 +90999,7 @@
           ],
           "Attributes": []
         },
-        "IKhrAndroidSurface": {
+        "VK_KHR_android_surface": {
           "Name": "IKhrAndroidSurface",
           "Functions": [
             {
@@ -91110,7 +91110,7 @@
           ],
           "Attributes": []
         },
-        "IKhrDisplay": {
+        "VK_KHR_display": {
           "Name": "IKhrDisplay",
           "Functions": [
             {
@@ -91838,7 +91838,7 @@
           ],
           "Attributes": []
         },
-        "IKhrSamplerYcbcrConversion": {
+        "VK_KHR_sampler_ycbcr_conversion": {
           "Name": "IKhrSamplerYcbcrConversion",
           "Functions": [
             {
@@ -92033,7 +92033,7 @@
           ],
           "Attributes": []
         },
-        "IKhrDisplaySwapchain": {
+        "VK_KHR_display_swapchain": {
           "Name": "IKhrDisplaySwapchain",
           "Functions": [
             {
@@ -92169,7 +92169,7 @@
           ],
           "Attributes": []
         },
-        "IKhrWaylandSurface": {
+        "VK_KHR_wayland_surface": {
           "Name": "IKhrWaylandSurface",
           "Functions": [
             {
@@ -92364,7 +92364,7 @@
           ],
           "Attributes": []
         },
-        "IKhrWin32Surface": {
+        "VK_KHR_win32_surface": {
           "Name": "IKhrWin32Surface",
           "Functions": [
             {
@@ -92538,7 +92538,7 @@
           ],
           "Attributes": []
         },
-        "IKhrXcbSurface": {
+        "VK_KHR_xcb_surface": {
           "Name": "IKhrXcbSurface",
           "Functions": [
             {
@@ -92754,7 +92754,7 @@
           ],
           "Attributes": []
         },
-        "IKhrXlibSurface": {
+        "VK_KHR_xlib_surface": {
           "Name": "IKhrXlibSurface",
           "Functions": [
             {
@@ -92970,7 +92970,7 @@
           ],
           "Attributes": []
         },
-        "IKhrSurface": {
+        "VK_KHR_surface": {
           "Name": "IKhrSurface",
           "Functions": [
             {
@@ -93463,7 +93463,7 @@
           ],
           "Attributes": []
         },
-        "IKhrDeviceGroupCreation": {
+        "VK_KHR_device_group_creation": {
           "Name": "IKhrDeviceGroupCreation",
           "Functions": [
             {
@@ -93555,7 +93555,7 @@
           ],
           "Attributes": []
         },
-        "IKhrGetMemoryRequirements2": {
+        "VK_KHR_get_memory_requirements2": {
           "Name": "IKhrGetMemoryRequirements2",
           "Functions": [
             {
@@ -93836,7 +93836,7 @@
           ],
           "Attributes": []
         },
-        "IKhrMaintenance3": {
+        "VK_KHR_maintenance3": {
           "Name": "IKhrMaintenance3",
           "Functions": [
             {
@@ -93926,7 +93926,7 @@
           ],
           "Attributes": []
         },
-        "IKhrGetDisplayProperties2": {
+        "VK_KHR_get_display_properties2": {
           "Name": "IKhrGetDisplayProperties2",
           "Functions": [
             {
@@ -94295,7 +94295,7 @@
           ],
           "Attributes": []
         },
-        "IKhrExternalFenceFd": {
+        "VK_KHR_external_fence_fd": {
           "Name": "IKhrExternalFenceFd",
           "Functions": [
             {
@@ -94448,7 +94448,7 @@
           ],
           "Attributes": []
         },
-        "IKhrExternalFenceWin32": {
+        "VK_KHR_external_fence_win32": {
           "Name": "IKhrExternalFenceWin32",
           "Functions": [
             {
@@ -94601,7 +94601,7 @@
           ],
           "Attributes": []
         },
-        "IKhrExternalMemoryFd": {
+        "VK_KHR_external_memory_fd": {
           "Name": "IKhrExternalMemoryFd",
           "Functions": [
             {
@@ -94796,7 +94796,7 @@
           ],
           "Attributes": []
         },
-        "IKhrExternalMemoryWin32": {
+        "VK_KHR_external_memory_win32": {
           "Name": "IKhrExternalMemoryWin32",
           "Functions": [
             {
@@ -94991,7 +94991,7 @@
           ],
           "Attributes": []
         },
-        "IKhrExternalMemoryCapabilities": {
+        "VK_KHR_external_memory_capabilities": {
           "Name": "IKhrExternalMemoryCapabilities",
           "Functions": [
             {
@@ -95081,7 +95081,7 @@
           ],
           "Attributes": []
         },
-        "IKhrExternalFenceCapabilities": {
+        "VK_KHR_external_fence_capabilities": {
           "Name": "IKhrExternalFenceCapabilities",
           "Functions": [
             {
@@ -95171,7 +95171,7 @@
           ],
           "Attributes": []
         },
-        "IKhrExternalSemaphoreCapabilities": {
+        "VK_KHR_external_semaphore_capabilities": {
           "Name": "IKhrExternalSemaphoreCapabilities",
           "Functions": [
             {
@@ -95261,7 +95261,7 @@
           ],
           "Attributes": []
         },
-        "IKhrGetPhysicalDeviceProperties2": {
+        "VK_KHR_get_physical_device_properties2": {
           "Name": "IKhrGetPhysicalDeviceProperties2",
           "Functions": [
             {
@@ -95817,7 +95817,7 @@
           ],
           "Attributes": []
         },
-        "IKhrGetSurfaceCapabilities2": {
+        "VK_KHR_get_surface_capabilities2": {
           "Name": "IKhrGetSurfaceCapabilities2",
           "Functions": [
             {
@@ -96014,7 +96014,7 @@
           ],
           "Attributes": []
         },
-        "IKhrPipelineExecutableProperties": {
+        "VK_KHR_pipeline_executable_properties": {
           "Name": "IKhrPipelineExecutableProperties",
           "Functions": [
             {
@@ -96341,7 +96341,7 @@
           ],
           "Attributes": []
         },
-        "IKhrExternalSemaphoreFd": {
+        "VK_KHR_external_semaphore_fd": {
           "Name": "IKhrExternalSemaphoreFd",
           "Functions": [
             {
@@ -96494,7 +96494,7 @@
           ],
           "Attributes": []
         },
-        "IKhrExternalSemaphoreWin32": {
+        "VK_KHR_external_semaphore_win32": {
           "Name": "IKhrExternalSemaphoreWin32",
           "Functions": [
             {
@@ -96647,7 +96647,7 @@
           ],
           "Attributes": []
         },
-        "IKhrSharedPresentableImage": {
+        "VK_KHR_shared_presentable_image": {
           "Name": "IKhrSharedPresentableImage",
           "Functions": [
             {
@@ -96716,7 +96716,7 @@
           ],
           "Attributes": []
         },
-        "IKhrMaintenance1": {
+        "VK_KHR_maintenance1": {
           "Name": "IKhrMaintenance1",
           "Functions": [
             {
@@ -96811,13 +96811,13 @@
       "Delegates": []
     },
     "INTEL": {
-      "ExtensionName": "INTEL",
+      "ExtensionName": "VK_INTEL",
       "CategoryName": "INTEL",
       "Namespace": ".INTEL",
       "IsRoot": false,
       "Enums": [],
       "Interfaces": {
-        "IIntelPerformanceQuery": {
+        "VK_INTEL_performance_query": {
           "Name": "IIntelPerformanceQuery",
           "Functions": [
             {
@@ -97416,13 +97416,13 @@
       "Delegates": []
     },
     "NV": {
-      "ExtensionName": "NV",
+      "ExtensionName": "VK_NV",
       "CategoryName": "NV",
       "Namespace": ".NV",
       "IsRoot": false,
       "Enums": [],
       "Interfaces": {
-        "INVRayTracing": {
+        "VK_NV_ray_tracing": {
           "Name": "INVRayTracing",
           "Functions": [
             {
@@ -99078,7 +99078,7 @@
           ],
           "Attributes": []
         },
-        "INVShadingRateImage": {
+        "VK_NV_shading_rate_image": {
           "Name": "INVShadingRateImage",
           "Functions": [
             {
@@ -99382,7 +99382,7 @@
           ],
           "Attributes": []
         },
-        "INVMeshShader": {
+        "VK_NV_mesh_shader": {
           "Name": "INVMeshShader",
           "Functions": [
             {
@@ -99766,7 +99766,7 @@
           ],
           "Attributes": []
         },
-        "INVDeviceDiagnosticCheckpoints": {
+        "VK_NV_device_diagnostic_checkpoints": {
           "Name": "INVDeviceDiagnosticCheckpoints",
           "Functions": [
             {
@@ -99921,7 +99921,7 @@
           ],
           "Attributes": []
         },
-        "INVScissorExclusive": {
+        "VK_NV_scissor_exclusive": {
           "Name": "INVScissorExclusive",
           "Functions": [
             {
@@ -100034,7 +100034,7 @@
           ],
           "Attributes": []
         },
-        "INVClipSpaceWScaling": {
+        "VK_NV_clip_space_w_scaling": {
           "Name": "INVClipSpaceWScaling",
           "Functions": [
             {
@@ -100147,7 +100147,7 @@
           ],
           "Attributes": []
         },
-        "INVExternalMemoryWin32": {
+        "VK_NV_external_memory_win32": {
           "Name": "INVExternalMemoryWin32",
           "Functions": [
             {
@@ -100258,7 +100258,7 @@
           ],
           "Attributes": []
         },
-        "INVCooperativeMatrix": {
+        "VK_NV_cooperative_matrix": {
           "Name": "INVCooperativeMatrix",
           "Functions": [
             {
@@ -100350,7 +100350,7 @@
           ],
           "Attributes": []
         },
-        "INVExternalMemoryCapabilities": {
+        "VK_NV_external_memory_capabilities": {
           "Name": "INVExternalMemoryCapabilities",
           "Functions": [
             {
@@ -100545,7 +100545,7 @@
           ],
           "Attributes": []
         },
-        "INVCoverageReductionMode": {
+        "VK_NV_coverage_reduction_mode": {
           "Name": "INVCoverageReductionMode",
           "Functions": [
             {
@@ -100642,13 +100642,13 @@
       "Delegates": []
     },
     "AMD": {
-      "ExtensionName": "AMD",
+      "ExtensionName": "VK_AMD",
       "CategoryName": "AMD",
       "Namespace": ".AMD",
       "IsRoot": false,
       "Enums": [],
       "Interfaces": {
-        "IAmdDrawIndirectCount": {
+        "VK_AMD_draw_indirect_count": {
           "Name": "IAmdDrawIndirectCount",
           "Functions": [
             {
@@ -100990,7 +100990,7 @@
           ],
           "Attributes": []
         },
-        "IAmdBufferMarker": {
+        "VK_AMD_buffer_marker": {
           "Name": "IAmdBufferMarker",
           "Functions": [
             {
@@ -101122,7 +101122,7 @@
           ],
           "Attributes": []
         },
-        "IAmdShaderInfo": {
+        "VK_AMD_shader_info": {
           "Name": "IAmdShaderInfo",
           "Functions": [
             {
@@ -101277,7 +101277,7 @@
           ],
           "Attributes": []
         },
-        "IAmdDisplayNativeHdr": {
+        "VK_AMD_display_native_hdr": {
           "Name": "IAmdDisplayNativeHdr",
           "Functions": [
             {
@@ -101372,13 +101372,13 @@
       "Delegates": []
     },
     "NVX": {
-      "ExtensionName": "NVX",
+      "ExtensionName": "VK_NVX",
       "CategoryName": "NVX",
       "Namespace": ".NVX",
       "IsRoot": false,
       "Enums": [],
       "Interfaces": {
-        "INvxDeviceGeneratedCommands": {
+        "VK_NVX_device_generated_commands": {
           "Name": "INvxDeviceGeneratedCommands",
           "Functions": [
             {
@@ -102232,7 +102232,7 @@
           ],
           "Attributes": []
         },
-        "INvxImageViewHandle": {
+        "VK_NVX_image_view_handle": {
           "Name": "INvxImageViewHandle",
           "Functions": [
             {
@@ -102306,13 +102306,13 @@
       "Delegates": []
     },
     "FUCHSIA": {
-      "ExtensionName": "FUCHSIA",
+      "ExtensionName": "VK_FUCHSIA",
       "CategoryName": "FUCHSIA",
       "Namespace": ".FUCHSIA",
       "IsRoot": false,
       "Enums": [],
       "Interfaces": {
-        "IFuchsiaImagepipeSurface": {
+        "VK_FUCHSIA_imagepipe_surface": {
           "Name": "IFuchsiaImagepipeSurface",
           "Functions": [
             {
@@ -102428,13 +102428,13 @@
       "Delegates": []
     },
     "MVK": {
-      "ExtensionName": "MVK",
+      "ExtensionName": "VK_MVK",
       "CategoryName": "MVK",
       "Namespace": ".MVK",
       "IsRoot": false,
       "Enums": [],
       "Interfaces": {
-        "IMvkIosSurface": {
+        "VK_MVK_ios_surface": {
           "Name": "IMvkIosSurface",
           "Functions": [
             {
@@ -102545,7 +102545,7 @@
           ],
           "Attributes": []
         },
-        "IMvkMacosSurface": {
+        "VK_MVK_macos_surface": {
           "Name": "IMvkMacosSurface",
           "Functions": [
             {
@@ -102661,13 +102661,13 @@
       "Delegates": []
     },
     "GGP": {
-      "ExtensionName": "GGP",
+      "ExtensionName": "VK_GGP",
       "CategoryName": "GGP",
       "Namespace": ".GGP",
       "IsRoot": false,
       "Enums": [],
       "Interfaces": {
-        "IGgpStreamDescriptorSurface": {
+        "VK_GGP_stream_descriptor_surface": {
           "Name": "IGgpStreamDescriptorSurface",
           "Functions": [
             {
@@ -102783,13 +102783,13 @@
       "Delegates": []
     },
     "NN": {
-      "ExtensionName": "NN",
+      "ExtensionName": "VK_NN",
       "CategoryName": "NN",
       "Namespace": ".NN",
       "IsRoot": false,
       "Enums": [],
       "Interfaces": {
-        "INNViSurface": {
+        "VK_NN_vi_surface": {
           "Name": "INNViSurface",
           "Functions": [
             {
@@ -102905,13 +102905,13 @@
       "Delegates": []
     },
     "ANDROID": {
-      "ExtensionName": "ANDROID",
+      "ExtensionName": "VK_ANDROID",
       "CategoryName": "ANDROID",
       "Namespace": ".ANDROID",
       "IsRoot": false,
       "Enums": [],
       "Interfaces": {
-        "IAndroidExternalMemoryAndroidHardwareBuffer": {
+        "VK_ANDROID_external_memory_android_hardware_buffer": {
           "Name": "IAndroidExternalMemoryAndroidHardwareBuffer",
           "Functions": [
             {
@@ -103090,13 +103090,13 @@
       "Delegates": []
     },
     "GOOGLE": {
-      "ExtensionName": "GOOGLE",
+      "ExtensionName": "VK_GOOGLE",
       "CategoryName": "GOOGLE",
       "Namespace": ".GOOGLE",
       "IsRoot": false,
       "Enums": [],
       "Interfaces": {
-        "IGoogleDisplayTiming": {
+        "VK_GOOGLE_display_timing": {
           "Name": "IGoogleDisplayTiming",
           "Functions": [
             {

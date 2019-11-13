@@ -7121,7 +7121,7 @@
         }
       ],
       "Interfaces": {
-        "IESVersion20": {
+        "ES_VERSION_2_0": {
           "Name": "IESVersion20",
           "Functions": [
             {
@@ -16863,7 +16863,7 @@
           ],
           "Attributes": []
         },
-        "IESVersion30": {
+        "ES_VERSION_3_0": {
           "Name": "IESVersion30",
           "Functions": [
             {
@@ -25214,7 +25214,7 @@
           ],
           "Attributes": []
         },
-        "IESVersion31": {
+        "ES_VERSION_3_1": {
           "Name": "IESVersion31",
           "Functions": [
             {
@@ -30962,7 +30962,7 @@
           ],
           "Attributes": []
         },
-        "IESVersion32": {
+        "ES_VERSION_3_2": {
           "Name": "IESVersion32",
           "Functions": [
             {
@@ -34979,7 +34979,7 @@
         }
       ],
       "Interfaces": {
-        "IAmdPerformanceMonitor": {
+        "AMD_performance_monitor": {
           "Name": "IAmdPerformanceMonitor",
           "Functions": [
             {
@@ -36084,7 +36084,7 @@
         }
       ],
       "Interfaces": {
-        "IAngleFramebufferBlit": {
+        "ANGLE_framebuffer_blit": {
           "Name": "IAngleFramebufferBlit",
           "Functions": [
             {
@@ -36271,7 +36271,7 @@
           ],
           "Attributes": []
         },
-        "IAngleInstancedArrays": {
+        "ANGLE_instanced_arrays": {
           "Name": "IAngleInstancedArrays",
           "Functions": [
             {
@@ -36524,7 +36524,7 @@
           ],
           "Attributes": []
         },
-        "IAngleTranslatedShaderSource": {
+        "ANGLE_translated_shader_source": {
           "Name": "IAngleTranslatedShaderSource",
           "Functions": [
             {
@@ -36620,7 +36620,7 @@
           ],
           "Attributes": []
         },
-        "IAngleFramebufferMultisample": {
+        "ANGLE_framebuffer_multisample": {
           "Name": "IAngleFramebufferMultisample",
           "Functions": [
             {
@@ -37048,7 +37048,7 @@
         }
       ],
       "Interfaces": {
-        "IAppleSync": {
+        "APPLE_sync": {
           "Name": "IAppleSync",
           "Functions": [
             {
@@ -37478,7 +37478,7 @@
           ],
           "Attributes": []
         },
-        "IAppleCopyTextureLevels": {
+        "APPLE_copy_texture_levels": {
           "Name": "IAppleCopyTextureLevels",
           "Functions": [
             {
@@ -37569,7 +37569,7 @@
           ],
           "Attributes": []
         },
-        "IAppleFramebufferMultisample": {
+        "APPLE_framebuffer_multisample": {
           "Name": "IAppleFramebufferMultisample",
           "Functions": [
             {
@@ -40757,7 +40757,7 @@
         }
       ],
       "Interfaces": {
-        "IExtWin32KeyedMutex": {
+        "EXT_win32_keyed_mutex": {
           "Name": "IExtWin32KeyedMutex",
           "Functions": [
             {
@@ -40885,7 +40885,7 @@
           ],
           "Attributes": []
         },
-        "IExtSeparateShaderObjects": {
+        "EXT_separate_shader_objects": {
           "Name": "IExtSeparateShaderObjects",
           "Functions": [
             {
@@ -44697,7 +44697,7 @@
           ],
           "Attributes": []
         },
-        "IExtDisjointTimerQuery": {
+        "EXT_disjoint_timer_query": {
           "Name": "IExtDisjointTimerQuery",
           "Functions": [
             {
@@ -45358,7 +45358,7 @@
           ],
           "Attributes": []
         },
-        "IExtOcclusionQueryBoolean": {
+        "EXT_occlusion_query_boolean": {
           "Name": "IExtOcclusionQueryBoolean",
           "Functions": [
             {
@@ -45745,7 +45745,7 @@
           ],
           "Attributes": []
         },
-        "IExtBlendFuncExtended": {
+        "EXT_blend_func_extended": {
           "Name": "IExtBlendFuncExtended",
           "Functions": [
             {
@@ -46041,7 +46041,7 @@
           ],
           "Attributes": []
         },
-        "IExtDrawBuffersIndexed": {
+        "EXT_draw_buffers_indexed": {
           "Name": "IExtDrawBuffersIndexed",
           "Functions": [
             {
@@ -46599,7 +46599,7 @@
           ],
           "Attributes": []
         },
-        "IExtBufferStorage": {
+        "EXT_buffer_storage": {
           "Name": "IExtBufferStorage",
           "Functions": [
             {
@@ -46695,7 +46695,7 @@
           ],
           "Attributes": []
         },
-        "IExtExternalBuffer": {
+        "EXT_external_buffer": {
           "Name": "IExtExternalBuffer",
           "Functions": [
             {
@@ -46903,7 +46903,7 @@
           ],
           "Attributes": []
         },
-        "IExtMemoryObject": {
+        "EXT_memory_object": {
           "Name": "IExtMemoryObject",
           "Functions": [
             {
@@ -48693,7 +48693,7 @@
           ],
           "Attributes": []
         },
-        "IExtShaderPixelLocalStorage2": {
+        "EXT_shader_pixel_local_storage2": {
           "Name": "IExtShaderPixelLocalStorage2",
           "Functions": [
             {
@@ -48863,7 +48863,7 @@
           ],
           "Attributes": []
         },
-        "IExtClearTexture": {
+        "EXT_clear_texture": {
           "Name": "IExtClearTexture",
           "Functions": [
             {
@@ -49183,7 +49183,7 @@
           ],
           "Attributes": []
         },
-        "IExtClipControl": {
+        "EXT_clip_control": {
           "Name": "IExtClipControl",
           "Functions": [
             {
@@ -49242,7 +49242,7 @@
           ],
           "Attributes": []
         },
-        "IExtCopyImage": {
+        "EXT_copy_image": {
           "Name": "IExtCopyImage",
           "Functions": [
             {
@@ -49509,7 +49509,7 @@
           ],
           "Attributes": []
         },
-        "IExtSemaphore": {
+        "EXT_semaphore": {
           "Name": "IExtSemaphore",
           "Functions": [
             {
@@ -50218,7 +50218,7 @@
           ],
           "Attributes": []
         },
-        "IExtDiscardFramebuffer": {
+        "EXT_discard_framebuffer": {
           "Name": "IExtDiscardFramebuffer",
           "Functions": [
             {
@@ -50298,7 +50298,7 @@
           ],
           "Attributes": []
         },
-        "IExtDrawInstanced": {
+        "EXT_draw_instanced": {
           "Name": "IExtDrawInstanced",
           "Functions": [
             {
@@ -50498,7 +50498,7 @@
           ],
           "Attributes": []
         },
-        "IExtInstancedArrays": {
+        "EXT_instanced_arrays": {
           "Name": "IExtInstancedArrays",
           "Functions": [
             {
@@ -50751,7 +50751,7 @@
           ],
           "Attributes": []
         },
-        "IExtBaseInstance": {
+        "EXT_base_instance": {
           "Name": "IExtBaseInstance",
           "Functions": [
             {
@@ -51118,7 +51118,7 @@
           ],
           "Attributes": []
         },
-        "IExtDrawBuffers": {
+        "EXT_draw_buffers": {
           "Name": "IExtDrawBuffers",
           "Functions": [
             {
@@ -51182,7 +51182,7 @@
           ],
           "Attributes": []
         },
-        "IExtMultiviewDrawBuffers": {
+        "EXT_multiview_draw_buffers": {
           "Name": "IExtMultiviewDrawBuffers",
           "Functions": [
             {
@@ -51389,7 +51389,7 @@
           ],
           "Attributes": []
         },
-        "IExtDrawElementsBaseVertex": {
+        "EXT_draw_elements_base_vertex": {
           "Name": "IExtDrawElementsBaseVertex",
           "Functions": [
             {
@@ -51908,7 +51908,7 @@
           ],
           "Attributes": []
         },
-        "IExtDrawTransformFeedback": {
+        "EXT_draw_transform_feedback": {
           "Name": "IExtDrawTransformFeedback",
           "Functions": [
             {
@@ -52036,7 +52036,7 @@
           ],
           "Attributes": []
         },
-        "IExtMapBufferRange": {
+        "EXT_map_buffer_range": {
           "Name": "IExtMapBufferRange",
           "Functions": [
             {
@@ -52196,7 +52196,7 @@
           ],
           "Attributes": []
         },
-        "IExtGeometryShader": {
+        "EXT_geometry_shader": {
           "Name": "IExtGeometryShader",
           "Functions": [
             {
@@ -52287,7 +52287,7 @@
           ],
           "Attributes": []
         },
-        "IExtMultisampledRenderToTexture": {
+        "EXT_multisampled_render_to_texture": {
           "Name": "IExtMultisampledRenderToTexture",
           "Functions": [
             {
@@ -52511,7 +52511,7 @@
           ],
           "Attributes": []
         },
-        "IExtRobustness": {
+        "EXT_robustness": {
           "Name": "IExtRobustness",
           "Functions": [
             {
@@ -52871,7 +52871,7 @@
           ],
           "Attributes": []
         },
-        "IExtDebugLabel": {
+        "EXT_debug_label": {
           "Name": "IExtDebugLabel",
           "Functions": [
             {
@@ -53073,7 +53073,7 @@
           ],
           "Attributes": []
         },
-        "IExtTextureBorderClamp": {
+        "EXT_texture_border_clamp": {
           "Name": "IExtTextureBorderClamp",
           "Functions": [
             {
@@ -53687,7 +53687,7 @@
           ],
           "Attributes": []
         },
-        "IExtMemoryObjectFd": {
+        "EXT_memory_object_fd": {
           "Name": "IExtMemoryObjectFd",
           "Functions": [
             {
@@ -53778,7 +53778,7 @@
           ],
           "Attributes": []
         },
-        "IExtMemoryObjectWin32": {
+        "EXT_memory_object_win32": {
           "Name": "IExtMemoryObjectWin32",
           "Functions": [
             {
@@ -53954,7 +53954,7 @@
           ],
           "Attributes": []
         },
-        "IExtSemaphoreFd": {
+        "EXT_semaphore_fd": {
           "Name": "IExtSemaphoreFd",
           "Functions": [
             {
@@ -54029,7 +54029,7 @@
           ],
           "Attributes": []
         },
-        "IExtSemaphoreWin32": {
+        "EXT_semaphore_win32": {
           "Name": "IExtSemaphoreWin32",
           "Functions": [
             {
@@ -54173,7 +54173,7 @@
           ],
           "Attributes": []
         },
-        "IExtDebugMarker": {
+        "EXT_debug_marker": {
           "Name": "IExtDebugMarker",
           "Functions": [
             {
@@ -54305,7 +54305,7 @@
           ],
           "Attributes": []
         },
-        "IExtMultiDrawArrays": {
+        "EXT_multi_draw_arrays": {
           "Name": "IExtMultiDrawArrays",
           "Functions": [
             {
@@ -54525,7 +54525,7 @@
           ],
           "Attributes": []
         },
-        "IExtMultiDrawIndirect": {
+        "EXT_multi_draw_indirect": {
           "Name": "IExtMultiDrawIndirect",
           "Functions": [
             {
@@ -54733,7 +54733,7 @@
           ],
           "Attributes": []
         },
-        "IExtTessellationShader": {
+        "EXT_tessellation_shader": {
           "Name": "IExtTessellationShader",
           "Functions": [
             {
@@ -54792,7 +54792,7 @@
           ],
           "Attributes": []
         },
-        "IExtPolygonOffsetClamp": {
+        "EXT_polygon_offset_clamp": {
           "Name": "IExtPolygonOffsetClamp",
           "Functions": [
             {
@@ -54867,7 +54867,7 @@
           ],
           "Attributes": []
         },
-        "IExtPrimitiveBoundingBox": {
+        "EXT_primitive_bounding_box": {
           "Name": "IExtPrimitiveBoundingBox",
           "Functions": [
             {
@@ -55022,7 +55022,7 @@
           ],
           "Attributes": []
         },
-        "IExtRasterMultisample": {
+        "EXT_raster_multisample": {
           "Name": "IExtRasterMultisample",
           "Functions": [
             {
@@ -55081,7 +55081,7 @@
           ],
           "Attributes": []
         },
-        "IExtTextureFilterMinmax": {
+        "EXT_texture_filter_minmax": {
           "Name": "IExtTextureFilterMinmax",
           "Functions": [
             {
@@ -55140,7 +55140,7 @@
           ],
           "Attributes": []
         },
-        "IExtTextureBuffer": {
+        "EXT_texture_buffer": {
           "Name": "IExtTextureBuffer",
           "Functions": [
             {
@@ -55316,7 +55316,7 @@
           ],
           "Attributes": []
         },
-        "IExtSparseTexture": {
+        "EXT_sparse_texture": {
           "Name": "IExtSparseTexture",
           "Functions": [
             {
@@ -55487,7 +55487,7 @@
           ],
           "Attributes": []
         },
-        "IExtTextureStorage": {
+        "EXT_texture_storage": {
           "Name": "IExtTextureStorage",
           "Functions": [
             {
@@ -56147,7 +56147,7 @@
           ],
           "Attributes": []
         },
-        "IExtTextureView": {
+        "EXT_texture_view": {
           "Name": "IExtTextureView",
           "Functions": [
             {
@@ -56302,7 +56302,7 @@
           ],
           "Attributes": []
         },
-        "IExtWindowRectangles": {
+        "EXT_window_rectangles": {
           "Name": "IExtWindowRectangles",
           "Functions": [
             {
@@ -56577,7 +56577,7 @@
         }
       ],
       "Interfaces": {
-        "IImgFramebufferDownsample": {
+        "IMG_framebuffer_downsample": {
           "Name": "IImgFramebufferDownsample",
           "Functions": [
             {
@@ -56849,7 +56849,7 @@
           ],
           "Attributes": []
         },
-        "IImgMultisampledRenderToTexture": {
+        "IMG_multisampled_render_to_texture": {
           "Name": "IImgMultisampledRenderToTexture",
           "Functions": [
             {
@@ -57073,7 +57073,7 @@
           ],
           "Attributes": []
         },
-        "IImgBindlessTexture": {
+        "IMG_bindless_texture": {
           "Name": "IImgBindlessTexture",
           "Functions": [
             {
@@ -57622,7 +57622,7 @@
         }
       ],
       "Interfaces": {
-        "IIntelFramebufferCmaa": {
+        "INTEL_framebuffer_CMAA": {
           "Name": "IIntelFramebufferCmaa",
           "Functions": [
             {
@@ -57648,7 +57648,7 @@
           ],
           "Attributes": []
         },
-        "IIntelPerformanceQuery": {
+        "INTEL_performance_query": {
           "Name": "IIntelPerformanceQuery",
           "Functions": [
             {
@@ -59105,7 +59105,7 @@
         }
       ],
       "Interfaces": {
-        "IKhrBlendEquationAdvanced": {
+        "KHR_blend_equation_advanced": {
           "Name": "IKhrBlendEquationAdvanced",
           "Functions": [
             {
@@ -59131,7 +59131,7 @@
           ],
           "Attributes": []
         },
-        "IKhrDebug": {
+        "KHR_debug": {
           "Name": "IKhrDebug",
           "Functions": [
             {
@@ -60116,7 +60116,7 @@
           ],
           "Attributes": []
         },
-        "IKhrRobustness": {
+        "KHR_robustness": {
           "Name": "IKhrRobustness",
           "Functions": [
             {
@@ -60551,7 +60551,7 @@
           ],
           "Attributes": []
         },
-        "IKhrParallelShaderCompile": {
+        "KHR_parallel_shader_compile": {
           "Name": "IKhrParallelShaderCompile",
           "Functions": [
             {
@@ -63384,7 +63384,7 @@
         }
       ],
       "Interfaces": {
-        "INVConditionalRender": {
+        "NV_conditional_render": {
           "Name": "INVConditionalRender",
           "Functions": [
             {
@@ -63463,7 +63463,7 @@
           ],
           "Attributes": []
         },
-        "INVBlendEquationAdvanced": {
+        "NV_blend_equation_advanced": {
           "Name": "INVBlendEquationAdvanced",
           "Functions": [
             {
@@ -63542,7 +63542,7 @@
           ],
           "Attributes": []
         },
-        "INVFramebufferBlit": {
+        "NV_framebuffer_blit": {
           "Name": "INVFramebufferBlit",
           "Functions": [
             {
@@ -63729,7 +63729,7 @@
           ],
           "Attributes": []
         },
-        "INVConservativeRasterPreSnapTriangles": {
+        "NV_conservative_raster_pre_snap_triangles": {
           "Name": "INVConservativeRasterPreSnapTriangles",
           "Functions": [
             {
@@ -63788,7 +63788,7 @@
           ],
           "Attributes": []
         },
-        "INVCopyBuffer": {
+        "NV_copy_buffer": {
           "Name": "INVCopyBuffer",
           "Functions": [
             {
@@ -63895,7 +63895,7 @@
           ],
           "Attributes": []
         },
-        "INVPathRendering": {
+        "NV_path_rendering": {
           "Name": "INVPathRendering",
           "Functions": [
             {
@@ -70752,7 +70752,7 @@
           ],
           "Attributes": []
         },
-        "INVCoverageSample": {
+        "NV_coverage_sample": {
           "Name": "INVCoverageSample",
           "Functions": [
             {
@@ -70832,7 +70832,7 @@
           ],
           "Attributes": []
         },
-        "INVFramebufferMixedSamples": {
+        "NV_framebuffer_mixed_samples": {
           "Name": "INVFramebufferMixedSamples",
           "Functions": [
             {
@@ -71039,7 +71039,7 @@
           ],
           "Attributes": []
         },
-        "INVFence": {
+        "NV_fence": {
           "Name": "INVFence",
           "Functions": [
             {
@@ -71401,7 +71401,7 @@
           ],
           "Attributes": []
         },
-        "INVViewportArray": {
+        "NV_viewport_array": {
           "Name": "INVViewportArray",
           "Functions": [
             {
@@ -72250,7 +72250,7 @@
           ],
           "Attributes": []
         },
-        "INVDrawInstanced": {
+        "NV_draw_instanced": {
           "Name": "INVDrawInstanced",
           "Functions": [
             {
@@ -72450,7 +72450,7 @@
           ],
           "Attributes": []
         },
-        "INVDrawBuffers": {
+        "NV_draw_buffers": {
           "Name": "INVDrawBuffers",
           "Functions": [
             {
@@ -72514,7 +72514,7 @@
           ],
           "Attributes": []
         },
-        "INVDrawVulkanImage": {
+        "NV_draw_vulkan_image": {
           "Name": "INVDrawVulkanImage",
           "Functions": [
             {
@@ -72872,7 +72872,7 @@
           ],
           "Attributes": []
         },
-        "INVFragmentCoverageToColor": {
+        "NV_fragment_coverage_to_color": {
           "Name": "INVFragmentCoverageToColor",
           "Functions": [
             {
@@ -72915,7 +72915,7 @@
           ],
           "Attributes": []
         },
-        "INVSampleLocations": {
+        "NV_sample_locations": {
           "Name": "INVSampleLocations",
           "Functions": [
             {
@@ -73111,7 +73111,7 @@
           ],
           "Attributes": []
         },
-        "INVBindlessTexture": {
+        "NV_bindless_texture": {
           "Name": "INVBindlessTexture",
           "Functions": [
             {
@@ -73832,7 +73832,7 @@
           ],
           "Attributes": []
         },
-        "INVInternalformatSampleQuery": {
+        "NV_internalformat_sample_query": {
           "Name": "INVInternalformatSampleQuery",
           "Functions": [
             {
@@ -73960,7 +73960,7 @@
           ],
           "Attributes": []
         },
-        "INVGpuShader5": {
+        "NV_gpu_shader5": {
           "Name": "INVGpuShader5",
           "Functions": [
             {
@@ -76715,7 +76715,7 @@
           ],
           "Attributes": []
         },
-        "INVPolygonMode": {
+        "NV_polygon_mode": {
           "Name": "INVPolygonMode",
           "Functions": [
             {
@@ -76774,7 +76774,7 @@
           ],
           "Attributes": []
         },
-        "INVReadBuffer": {
+        "NV_read_buffer": {
           "Name": "INVReadBuffer",
           "Functions": [
             {
@@ -76817,7 +76817,7 @@
           ],
           "Attributes": []
         },
-        "INVFramebufferMultisample": {
+        "NV_framebuffer_multisample": {
           "Name": "INVFramebufferMultisample",
           "Functions": [
             {
@@ -76924,7 +76924,7 @@
           ],
           "Attributes": []
         },
-        "INVConservativeRaster": {
+        "NV_conservative_raster": {
           "Name": "INVConservativeRaster",
           "Functions": [
             {
@@ -76983,7 +76983,7 @@
           ],
           "Attributes": []
         },
-        "INVNonSquareMatrices": {
+        "NV_non_square_matrices": {
           "Name": "INVNonSquareMatrices",
           "Functions": [
             {
@@ -77529,7 +77529,7 @@
           ],
           "Attributes": []
         },
-        "INVInstancedArrays": {
+        "NV_instanced_arrays": {
           "Name": "INVInstancedArrays",
           "Functions": [
             {
@@ -77588,7 +77588,7 @@
           ],
           "Attributes": []
         },
-        "INVClipSpaceWScaling": {
+        "NV_clip_space_w_scaling": {
           "Name": "INVClipSpaceWScaling",
           "Functions": [
             {
@@ -77663,7 +77663,7 @@
           ],
           "Attributes": []
         },
-        "INVViewportSwizzle": {
+        "NV_viewport_swizzle": {
           "Name": "INVViewportSwizzle",
           "Functions": [
             {
@@ -79638,7 +79638,7 @@
         }
       ],
       "Interfaces": {
-        "IOesVertexArrayObject": {
+        "OES_vertex_array_object": {
           "Name": "IOesVertexArrayObject",
           "Functions": [
             {
@@ -79834,7 +79834,7 @@
           ],
           "Attributes": []
         },
-        "IOesDrawBuffersIndexed": {
+        "OES_draw_buffers_indexed": {
           "Name": "IOesDrawBuffersIndexed",
           "Functions": [
             {
@@ -80392,7 +80392,7 @@
           ],
           "Attributes": []
         },
-        "IOesTexture3D": {
+        "OES_texture_3D": {
           "Name": "IOesTexture3D",
           "Functions": [
             {
@@ -81452,7 +81452,7 @@
           ],
           "Attributes": []
         },
-        "IOesCopyImage": {
+        "OES_copy_image": {
           "Name": "IOesCopyImage",
           "Functions": [
             {
@@ -81719,7 +81719,7 @@
           ],
           "Attributes": []
         },
-        "IOesViewportArray": {
+        "OES_viewport_array": {
           "Name": "IOesViewportArray",
           "Functions": [
             {
@@ -82568,7 +82568,7 @@
           ],
           "Attributes": []
         },
-        "IOesDrawElementsBaseVertex": {
+        "OES_draw_elements_base_vertex": {
           "Name": "IOesDrawElementsBaseVertex",
           "Functions": [
             {
@@ -83087,7 +83087,7 @@
           ],
           "Attributes": []
         },
-        "IOesEglImage": {
+        "OES_EGL_image": {
           "Name": "IOesEglImage",
           "Functions": [
             {
@@ -83199,7 +83199,7 @@
           ],
           "Attributes": []
         },
-        "IOesGeometryShader": {
+        "OES_geometry_shader": {
           "Name": "IOesGeometryShader",
           "Functions": [
             {
@@ -83290,7 +83290,7 @@
           ],
           "Attributes": []
         },
-        "IOesMapbuffer": {
+        "OES_mapbuffer": {
           "Name": "IOesMapbuffer",
           "Functions": [
             {
@@ -83455,7 +83455,7 @@
           ],
           "Attributes": []
         },
-        "IOesGetProgramBinary": {
+        "OES_get_program_binary": {
           "Name": "IOesGetProgramBinary",
           "Functions": [
             {
@@ -83667,7 +83667,7 @@
           ],
           "Attributes": []
         },
-        "IOesTextureBorderClamp": {
+        "OES_texture_border_clamp": {
           "Name": "IOesTextureBorderClamp",
           "Functions": [
             {
@@ -84281,7 +84281,7 @@
           ],
           "Attributes": []
         },
-        "IOesSampleShading": {
+        "OES_sample_shading": {
           "Name": "IOesSampleShading",
           "Functions": [
             {
@@ -84324,7 +84324,7 @@
           ],
           "Attributes": []
         },
-        "IOesTessellationShader": {
+        "OES_tessellation_shader": {
           "Name": "IOesTessellationShader",
           "Functions": [
             {
@@ -84383,7 +84383,7 @@
           ],
           "Attributes": []
         },
-        "IOesPrimitiveBoundingBox": {
+        "OES_primitive_bounding_box": {
           "Name": "IOesPrimitiveBoundingBox",
           "Functions": [
             {
@@ -84538,7 +84538,7 @@
           ],
           "Attributes": []
         },
-        "IOesTextureBuffer": {
+        "OES_texture_buffer": {
           "Name": "IOesTextureBuffer",
           "Functions": [
             {
@@ -84714,7 +84714,7 @@
           ],
           "Attributes": []
         },
-        "IOesTextureStorageMultisample2dArray": {
+        "OES_texture_storage_multisample_2d_array": {
           "Name": "IOesTextureStorageMultisample2dArray",
           "Functions": [
             {
@@ -84853,7 +84853,7 @@
           ],
           "Attributes": []
         },
-        "IOesTextureView": {
+        "OES_texture_view": {
           "Name": "IOesTextureView",
           "Functions": [
             {
@@ -85056,7 +85056,7 @@
         }
       ],
       "Interfaces": {
-        "IOvrMultiviewMultisampledRenderToTexture": {
+        "OVR_multiview_multisampled_render_to_texture": {
           "Name": "IOvrMultiviewMultisampledRenderToTexture",
           "Functions": [
             {
@@ -85195,7 +85195,7 @@
           ],
           "Attributes": []
         },
-        "IOvrMultiview": {
+        "OVR_multiview": {
           "Name": "IOvrMultiview",
           "Functions": [
             {
@@ -85758,7 +85758,7 @@
         }
       ],
       "Interfaces": {
-        "IQComAlphaTest": {
+        "QCOM_alpha_test": {
           "Name": "IQComAlphaTest",
           "Functions": [
             {
@@ -85817,7 +85817,7 @@
           ],
           "Attributes": []
         },
-        "IQComDriverControl": {
+        "QCOM_driver_control": {
           "Name": "IQComDriverControl",
           "Functions": [
             {
@@ -86061,7 +86061,7 @@
           ],
           "Attributes": []
         },
-        "IQComTiledRendering": {
+        "QCOM_tiled_rendering": {
           "Name": "IQComTiledRendering",
           "Functions": [
             {
@@ -86205,7 +86205,7 @@
           ],
           "Attributes": []
         },
-        "IQComExtendedGet": {
+        "QCOM_extended_get": {
           "Name": "IQComExtendedGet",
           "Functions": [
             {
@@ -86937,7 +86937,7 @@
           ],
           "Attributes": []
         },
-        "IQComExtendedGet2": {
+        "QCOM_extended_get2": {
           "Name": "IQComExtendedGet2",
           "Functions": [
             {
@@ -87223,7 +87223,7 @@
           ],
           "Attributes": []
         },
-        "IQComShaderFramebufferFetchNoncoherent": {
+        "QCOM_shader_framebuffer_fetch_noncoherent": {
           "Name": "IQComShaderFramebufferFetchNoncoherent",
           "Functions": [
             {
@@ -87249,7 +87249,7 @@
           ],
           "Attributes": []
         },
-        "IQComFramebufferFoveated": {
+        "QCOM_framebuffer_foveated": {
           "Name": "IQComFramebufferFoveated",
           "Functions": [
             {
@@ -87510,7 +87510,7 @@
           ],
           "Attributes": []
         },
-        "IQComTextureFoveated": {
+        "QCOM_texture_foveated": {
           "Name": "IQComTextureFoveated",
           "Functions": [
             {

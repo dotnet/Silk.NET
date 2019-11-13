@@ -18,6 +18,11 @@ namespace Silk.NET.Windowing.Common
         IntPtr Handle { get; }
         
         /// <summary>
+        /// Determines whether Vulkan functions are supported on this window.
+        /// </summary>
+        bool IsVulkanSupported { get; }
+        
+        /// <summary>
         /// Determines whether the underlying platform has requested the window to close.
         /// </summary>
         bool IsClosing { get; }

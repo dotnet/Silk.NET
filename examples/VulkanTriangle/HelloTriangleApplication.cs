@@ -5,20 +5,23 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Native;
+using Silk.NET.GLFW;
 using Silk.NET.Vulkan;
 using Silk.NET.Vulkan.Extensions.EXT;
 using Silk.NET.Vulkan.Extensions.KHR;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
+using Image = Silk.NET.Vulkan.Image;
 
 namespace VulkanTriangle
 {
     public class HelloTriangleApplication
     {
-        public const bool EnableValidationLayers = true;
+        public const bool EnableValidationLayers = false;
         public const int MaxFramesInFlight = 2;
 
         public void Run()
@@ -72,7 +75,7 @@ namespace VulkanTriangle
         {
             var opts = WindowOptions.DefaultVulkan;
             _window = Window.Create(opts) as IVulkanWindow;
-            if (_window is null)
+            if (_window is null || _window.IsVulkanSupported)
             {
                 throw new NotSupportedException("Windowing platform doesn't support Vulkan.");
             }
@@ -212,23 +215,13 @@ namespace VulkanTriangle
             {
                 throw new NotSupportedException("Validation layers requested, but not available!");
             }
-            
-            if (!_vk.TryGetExtension(out _vkSurface))
-            {
-                throw new NotSupportedException("KHR_surface extension not found.");
-            }
-
-            if (!_vk.TryGetExtension(out _vkSwapchain))
-            {
-                throw new NotSupportedException("KHR_swapchain extension not found.");
-            }
 
             var appInfo = new ApplicationInfo
             {
                 SType = StructureType.ApplicationInfo,
-                PApplicationName = (char*) Marshal.StringToHGlobalAnsi("Hello Triangle"),
+                PApplicationName = (byte*) Marshal.StringToHGlobalAnsi("Hello Triangle"),
                 ApplicationVersion = MakeVersion(1, 0, 0),
-                PEngineName = (char*) Marshal.StringToHGlobalAnsi("No Engine"),
+                PEngineName = (byte*) Marshal.StringToHGlobalAnsi("No Engine"),
                 EngineVersion = MakeVersion(1, 0, 0),
                 ApiVersion = MakeVersion(1, 1, 0)
             };
@@ -241,12 +234,12 @@ namespace VulkanTriangle
 
             var extensions = _window.GetRequiredExtensions(out var extCount);
             createInfo.EnabledExtensionCount = extCount;
-            createInfo.PpEnabledExtensionNames = extensions;
+            createInfo.PpEnabledExtensionNames = (byte**) extensions;
 
             if (EnableValidationLayers)
             {
                 createInfo.EnabledLayerCount = (uint) _validationLayers.Length;
-                createInfo.PpEnabledLayerNames = (char**) SilkMarshal.MarshalStringArrayToPtr(_validationLayers);
+                createInfo.PpEnabledLayerNames = (byte**) SilkMarshal.MarshalStringArrayToPtr(_validationLayers);
             }
             else
             {
@@ -263,6 +256,17 @@ namespace VulkanTriangle
             }
 
             _vk.CurrentInstance = _instance;
+            
+            if (!_vk.TryGetExtension(out _vkSurface))
+            {
+                throw new NotSupportedException("KHR_surface extension not found.");
+            }
+
+            if (!_vk.TryGetExtension(out _vkSwapchain))
+            {
+                throw new NotSupportedException("KHR_swapchain extension not found.");
+            }
+            
             Marshal.FreeHGlobal((IntPtr) appInfo.PApplicationName);
             Marshal.FreeHGlobal((IntPtr) appInfo.PEngineName);
             SilkMarshal.FreeStringArrayPtr((IntPtr) createInfo.PpEnabledLayerNames, _validationLayers.Length);
@@ -404,10 +408,10 @@ namespace VulkanTriangle
         private unsafe bool CheckDeviceExtensionSupport(PhysicalDevice device)
         {
             uint extensionCount;
-            _vk.EnumerateDeviceExtensionProperties(device, (char*) null, &extensionCount, null);
+            _vk.EnumerateDeviceExtensionProperties(device, (byte*) null, &extensionCount, null);
 
             var availableExtensions = stackalloc ExtensionProperties[(int) extensionCount];
-            _vk.EnumerateDeviceExtensionProperties(device, (char*) null, &extensionCount, availableExtensions);
+            _vk.EnumerateDeviceExtensionProperties(device, (byte*) null, &extensionCount, availableExtensions);
 
             var requiredExtensions = new List<string>();
             requiredExtensions.AddRange(_deviceExtensions);
@@ -502,12 +506,12 @@ namespace VulkanTriangle
             createInfo.EnabledExtensionCount = (uint) _deviceExtensions.Length;
 
             var enabledExtensionNames = SilkMarshal.MarshalStringArrayToPtr(_deviceExtensions);
-            createInfo.PpEnabledExtensionNames = (char**) enabledExtensionNames;
+            createInfo.PpEnabledExtensionNames = (byte**) enabledExtensionNames;
 
             if (EnableValidationLayers)
             {
                 createInfo.EnabledLayerCount = (uint) _validationLayers.Length;
-                createInfo.PpEnabledLayerNames = (char**) SilkMarshal.MarshalStringArrayToPtr(_validationLayers);
+                createInfo.PpEnabledLayerNames = (byte**) SilkMarshal.MarshalStringArrayToPtr(_validationLayers);
             }
             else
             {
@@ -763,7 +767,7 @@ namespace VulkanTriangle
                 SType = StructureType.PipelineShaderStageCreateInfo,
                 Stage = ShaderStageFlags.ShaderStageVertexBit,
                 Module = vertShaderModule,
-                PName = (char*) SilkMarshal.MarshalStringToPtr("main")
+                PName = (byte*) SilkMarshal.MarshalStringToPtr("main")
             };
 
             var fragShaderStageInfo = new PipelineShaderStageCreateInfo
@@ -771,7 +775,7 @@ namespace VulkanTriangle
                 SType = StructureType.PipelineShaderStageCreateInfo,
                 Stage = ShaderStageFlags.ShaderStageFragmentBit,
                 Module = fragShaderModule,
-                PName = (char*) SilkMarshal.MarshalStringToPtr("main")
+                PName = (byte*) SilkMarshal.MarshalStringToPtr("main")
             };
 
             var shaderStages = stackalloc PipelineShaderStageCreateInfo[2];

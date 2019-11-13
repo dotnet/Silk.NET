@@ -6,5 +6,6 @@
     "PFN_vkFreeFunction": "FuncPtr<FreeFunction>",
     "PFN_vkVoidFunction": "FuncPtr<VoidFunction>",
     "PFN_vkDebugReportCallbackEXT": "FuncPtr<DebugReportCallbackFunctionEXT>",
-    "PFN_vkDebugUtilsMessengerCallbackEXT": "FuncPtr<DebugUtilsMessengerCallbackFunctionEXT>"
+    "PFN_vkDebugUtilsMessengerCallbackEXT": "FuncPtr<DebugUtilsMessengerCallbackFunctionEXT>",
+    "char": "byte",
 }

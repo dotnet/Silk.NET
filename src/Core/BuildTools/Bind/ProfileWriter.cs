@@ -436,7 +436,7 @@ namespace Silk.NET.BuildTools.Bind
             {
                 foreach (var (key, i) in project.Interfaces)
                 {
-                    var name = key.Substring(1);
+                    var name = i.Name.Substring(1);
                     var sw = new StreamWriter(Path.Combine(folder, $"{name}.gen.cs"));
                     sw.Write(LicenseText.Value);
                     sw.WriteLine("using System;");
@@ -445,10 +445,12 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine($"using {profile.Projects["Core"].GetNamespace(profile)};");
                     sw.WriteLine("using Silk.NET.Core.Loader;");
                     sw.WriteLine("using Silk.NET.Core.Native;");
+                    sw.WriteLine("using Silk.NET.Core.Attributes;");
                     sw.WriteLine("using AdvancedDLSupport;");
                     sw.WriteLine();
                     sw.WriteLine($"namespace {profile.ExtensionsNamespace}{project.Namespace}");
                     sw.WriteLine("{");
+                    sw.WriteLine($"    [Extension(\"{key}\")]");
                     sw.WriteLine($"    public abstract unsafe partial class {name} : NativeExtension<{profile.ClassName}>, I{name}");
                     sw.WriteLine("    {");
                     foreach (var function in i.Functions)

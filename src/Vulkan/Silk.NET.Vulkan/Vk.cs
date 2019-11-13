@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using AdvancedDLSupport.AOT;
 using AdvancedDLSupport.Loaders;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
@@ -41,7 +42,7 @@ namespace Silk.NET.Vulkan
             while (result == Result.Incomplete)
             {
                 var instanceExtPropertiesCount = 128u;
-                result = EnumerateInstanceExtensionProperties((char*) 0, &instanceExtPropertiesCount, props);
+                result = EnumerateInstanceExtensionProperties((byte*) 0, &instanceExtPropertiesCount, props);
                 if (result == Result.Success || result == Result.Incomplete)
                 {
                     for (var i = 0; i < instanceExtPropertiesCount; i++)

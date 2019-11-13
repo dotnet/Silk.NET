@@ -735,6 +735,8 @@ namespace Silk.NET.Windowing.Desktop
             _glfw.SetDropCallback(_windowPtr, _onFileDrop);
         }
 
+        public bool IsVulkanSupported => _glfw.VulkanSupported();
+
         public unsafe VkHandle CreateSurface<T>(VkHandle instance, T* allocator)
             where T : unmanaged
         {

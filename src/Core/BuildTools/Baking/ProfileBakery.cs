@@ -126,23 +126,23 @@ namespace Silk.NET.BuildTools.Baking
                     }
                 }
 
-                foreach (var @interface in project.Interfaces.Values)
+                foreach (var (key, @interface) in project.Interfaces)
                 {
-                    if (interfaces.ContainsKey(@interface.Name))
+                    if (interfaces.ContainsKey(key))
                     {
                         foreach (var function in @interface.Functions)
                         {
-                            if (interfaces[@interface.Name].Functions.Any(x => x.Equals(function)))
+                            if (interfaces[key].Functions.Any(x => x.Equals(function)))
                             {
                                 continue;
                             }
 
-                            interfaces[@interface.Name].Functions.Add(function);
+                            interfaces[key].Functions.Add(function);
                         }
                     }
                     else
                     {
-                        interfaces.Add(@interface.Name, @interface);
+                        interfaces.Add(key, @interface);
                     }
                 }
 
