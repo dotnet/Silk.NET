@@ -204,7 +204,7 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
-        public GraphicsAPI API { get; }
+        public GraphicsAPI API => _initialOptions.API;
 
         /// <inheritdoc />
         public string Title
@@ -382,6 +382,11 @@ namespace Silk.NET.Windowing.Desktop
 
         public unsafe void Open()
         {
+            if (_windowPtr != default)
+            {
+                return;
+            }
+            
             // Set window border.
             switch (_initialOptions.WindowBorder)
             {
@@ -400,7 +405,7 @@ namespace Silk.NET.Windowing.Desktop
                     _glfw.WindowHint(WindowHintBool.Resizable, false);
                     break;
             }
-
+            
             // Set window API.
             switch (_initialOptions.API.API)
             {
@@ -444,16 +449,22 @@ namespace Silk.NET.Windowing.Desktop
             _invokeQueue = new ConcurrentQueue<Task>();
             _mainThread = Thread.CurrentThread.ManagedThreadId;
 
-            _glfw.MakeContextCurrent(_windowPtr);
+            if (API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES)
+            {
+                _glfw.MakeContextCurrent(_windowPtr);
+                VSync = _initialOptions.VSync;
+            }
+
             WindowState = _initialOptions.WindowState;
             Position = _initialOptions.Position;
-            VSync = _initialOptions.VSync;
-            if (_glfw.GetCurrentContext() != _windowPtr)
+
+            InitializeCallbacks();
+
+            if ((API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES) &&
+                _glfw.GetCurrentContext() != _windowPtr)
             {
                 _glfw.MakeContextCurrent(_windowPtr);
             }
-
-            InitializeCallbacks();
 
             // Run OnLoad.
             Load?.Invoke();

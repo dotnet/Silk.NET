@@ -1,11 +1,11 @@
 {
-    "PFN_vkInternalAllocationNotification": "FuncPtr<InternalAllocationNotification>",
-    "PFN_vkInternalFreeNotification": "FuncPtr<InternalFreeNotification>",
-    "PFN_vkReallocationFunction": "FuncPtr<ReallocationFunction>",
-    "PFN_vkAllocationFunction": "FuncPtr<AllocationFunction>",
-    "PFN_vkFreeFunction": "FuncPtr<FreeFunction>",
-    "PFN_vkVoidFunction": "FuncPtr<VoidFunction>",
-    "PFN_vkDebugReportCallbackEXT": "FuncPtr<DebugReportCallbackFunctionEXT>",
-    "PFN_vkDebugUtilsMessengerCallbackEXT": "FuncPtr<DebugUtilsMessengerCallbackFunctionEXT>",
-    "char": "byte",
+    "PFN_vkInternalAllocationNotification": "FuncPtr",
+    "PFN_vkInternalFreeNotification": "FuncPtr",
+    "PFN_vkReallocationFunction": "FuncPtr",
+    "PFN_vkAllocationFunction": "FuncPtr",
+    "PFN_vkFreeFunction": "FuncPtr",
+    "PFN_vkVoidFunction": "FuncPtr",
+    "PFN_vkDebugReportCallbackEXT": "FuncPtr",
+    "PFN_vkDebugUtilsMessengerCallbackEXT": "FuncPtr",
+    "char": "byte"
 }

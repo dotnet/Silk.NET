@@ -50,8 +50,13 @@ namespace Silk.NET.Windowing
 
             // TODO: Mobile
 
-            if (!SilkManager.IsRegistered<IWindowPlatform>()) {
-                throw new NotSupportedException("Couldn't find a suitable windowing platform. Generally, this means that your GLFW library is missing.");
+            if (!SilkManager.IsRegistered<IWindowPlatform>())
+            {
+                throw new NotSupportedException
+                (
+                    "Couldn't find a suitable windowing platform. You probably forgot to copy a glfw3 library into " +
+                    "your bin/Debug or bin/Release folder (this won't be a problem in Preview 4)"
+                );
             }
         }
     }

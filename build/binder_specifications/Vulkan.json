@@ -23304,7 +23304,7 @@
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "FuncPtr<VoidFunction>",
+                "Name": "FuncPtr",
                 "Group": null,
                 "OriginalName": "PFN_vkVoidFunction",
                 "GenericTypes": [],
@@ -23894,7 +23894,7 @@
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "FuncPtr<VoidFunction>",
+                "Name": "FuncPtr",
                 "Group": null,
                 "OriginalName": "PFN_vkVoidFunction",
                 "GenericTypes": [],
@@ -29404,7 +29404,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "FuncPtr<AllocationFunction>",
+                "Name": "FuncPtr",
                 "Group": null,
                 "OriginalName": "PFN_vkAllocationFunction",
                 "GenericTypes": [],
@@ -29423,7 +29423,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "FuncPtr<ReallocationFunction>",
+                "Name": "FuncPtr",
                 "Group": null,
                 "OriginalName": "PFN_vkReallocationFunction",
                 "GenericTypes": [],
@@ -29442,7 +29442,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "FuncPtr<FreeFunction>",
+                "Name": "FuncPtr",
                 "Group": null,
                 "OriginalName": "PFN_vkFreeFunction",
                 "GenericTypes": [],
@@ -29461,7 +29461,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "FuncPtr<InternalAllocationNotification>",
+                "Name": "FuncPtr",
                 "Group": null,
                 "OriginalName": "PFN_vkInternalAllocationNotification",
                 "GenericTypes": [],
@@ -29480,7 +29480,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "FuncPtr<InternalFreeNotification>",
+                "Name": "FuncPtr",
                 "Group": null,
                 "OriginalName": "PFN_vkInternalFreeNotification",
                 "GenericTypes": [],
@@ -35781,7 +35781,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "FuncPtr<DebugReportCallbackFunctionEXT>",
+                "Name": "FuncPtr",
                 "Group": null,
                 "OriginalName": "PFN_vkDebugReportCallbackEXT",
                 "GenericTypes": [],
@@ -36278,7 +36278,7 @@
               "Type": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
-                "Name": "FuncPtr<DebugUtilsMessengerCallbackFunctionEXT>",
+                "Name": "FuncPtr",
                 "Group": null,
                 "OriginalName": "PFN_vkDebugUtilsMessengerCallbackEXT",
                 "GenericTypes": [],

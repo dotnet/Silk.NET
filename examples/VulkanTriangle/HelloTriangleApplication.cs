@@ -22,7 +22,7 @@ namespace VulkanTriangle
     public class HelloTriangleApplication
     {
         public const bool EnableValidationLayers = false;
-        public const int MaxFramesInFlight = 2;
+        public const int MaxFramesInFlight = 8;
 
         public void Run()
         {
@@ -69,16 +69,18 @@ namespace VulkanTriangle
         private KhrSwapchain _vkSwapchain;
         private ExtDebugUtils _debugUtils;
         private string[] _validationLayers = {"VK_LAYER_KHRONOS_validation"};
-        private string[] _deviceExtensions = {"VK_KHR_SWAPCHAIN_EXTENSION_NAME"};
+        private string[] _deviceExtensions = {"VK_KHR_swapchain"};
 
         private void InitWindow()
         {
             var opts = WindowOptions.DefaultVulkan;
             _window = Window.Create(opts) as IVulkanWindow;
-            if (_window is null || _window.IsVulkanSupported)
+            if (_window is null || !_window.IsVulkanSupported)
             {
                 throw new NotSupportedException("Windowing platform doesn't support Vulkan.");
             }
+            
+            _window.Open();
         }
 
         private void InitVulkan()
@@ -107,9 +109,8 @@ namespace VulkanTriangle
 
         private unsafe void DrawFrame(double obj)
         {
-            Fence fence = default;
+            var fence = _inFlightFences[_currentFrame];
             _vk.WaitForFences(_device, 1, fence, Vk.True, ulong.MaxValue);
-            _inFlightFences[_currentFrame] = fence;
 
             uint imageIndex;
             _vkSwapchain.AcquireNextImage
@@ -210,7 +211,7 @@ namespace VulkanTriangle
         private unsafe void CreateInstance()
         {
             _vk = Vk.GetApi();
-            
+
             if (EnableValidationLayers && !CheckValidationLayerSupport())
             {
                 throw new NotSupportedException("Validation layers requested, but not available!");
@@ -269,7 +270,11 @@ namespace VulkanTriangle
             
             Marshal.FreeHGlobal((IntPtr) appInfo.PApplicationName);
             Marshal.FreeHGlobal((IntPtr) appInfo.PEngineName);
-            SilkMarshal.FreeStringArrayPtr((IntPtr) createInfo.PpEnabledLayerNames, _validationLayers.Length);
+            
+            if (EnableValidationLayers)
+            {
+                SilkMarshal.FreeStringArrayPtr((IntPtr) createInfo.PpEnabledLayerNames, _validationLayers.Length);
+            }
         }
 
         private unsafe void SetupDebugMessenger()
@@ -299,7 +304,7 @@ namespace VulkanTriangle
             createInfo.MessageType = DebugUtilsMessageTypeFlagsEXT.DebugUtilsMessageTypeGeneralBitExt |
                                      DebugUtilsMessageTypeFlagsEXT.DebugUtilsMessageTypePerformanceBitExt |
                                      DebugUtilsMessageTypeFlagsEXT.DebugUtilsMessageTypeValidationBitExt;
-            createInfo.PfnUserCallback = new FuncPtr<DebugUtilsMessengerCallbackFunctionEXT>(DebugCallback);
+            createInfo.PfnUserCallback = FuncPtr.Of<DebugUtilsMessengerCallbackFunctionEXT>(DebugCallback);
         }
 
         private unsafe uint DebugCallback
@@ -348,6 +353,8 @@ namespace VulkanTriangle
                     return;
                 }
             }
+            
+            throw new Exception("No suitable device.");
         }
 
         private bool IsDeviceSuitable(PhysicalDevice device)
@@ -433,6 +440,7 @@ namespace VulkanTriangle
 
             var queueFamilies = stackalloc QueueFamilyProperties[(int) queryFamilyCount];
 
+            _vk.GetPhysicalDeviceQueueFamilyProperties(device, &queryFamilyCount, queueFamilies);
             for (var i = 0u; i < queryFamilyCount; i++)
             {
                 var queueFamily = queueFamilies[i];
@@ -756,8 +764,8 @@ namespace VulkanTriangle
 
         private unsafe void CreateGraphicsPipeline()
         {
-            var vertShaderCode = Program.LoadEmbeddedResourceBytes("shaders/vert.spv");
-            var fragShaderCode = Program.LoadEmbeddedResourceBytes("shaders/frag.spv");
+            var vertShaderCode = Program.LoadEmbeddedResourceBytes("VulkanTriangle.shader.vert.spv");
+            var fragShaderCode = Program.LoadEmbeddedResourceBytes("VulkanTriangle.shader.frag.spv");
 
             var vertShaderModule = CreateShaderModule(vertShaderCode);
             var fragShaderModule = CreateShaderModule(fragShaderCode);

@@ -79,6 +79,7 @@ namespace Silk.NET.BuildTools.Bind
             sw.Flush();
             sw.Dispose();
         }
+
         /// <summary>
         /// Writes this struct to a file.
         /// </summary>
@@ -117,7 +118,8 @@ namespace Silk.NET.BuildTools.Bind
                             ? int.Parse
                             (
                                 profile.Constants
-                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)
+                                    ?
                                     .Value
                             )
                             : structField.Count.IsStatic
@@ -130,6 +132,7 @@ namespace Silk.NET.BuildTools.Bind
                             {
                                 sw.WriteLine($"    {attr}");
                             }
+
                             sw.WriteLine
                             (
                                 $"public {structField.Type} {structField.Name}_{i};"
@@ -147,17 +150,19 @@ namespace Silk.NET.BuildTools.Bind
                             ? int.Parse
                             (
                                 profile.Constants
-                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)
+                                    ?
                                     .Value
                             )
                             : structField.Count.IsStatic
                                 ? structField.Count.StaticCount
                                 : 1;
-                        
+
                         foreach (var attr in structField.Attributes)
                         {
                             sw.WriteLine($"    {attr}");
                         }
+
                         sw.WriteLine
                         (
                             $"public fixed {structField.Type} {structField.Name}[{count}];"
@@ -171,6 +176,7 @@ namespace Silk.NET.BuildTools.Bind
                     {
                         sw.WriteLine($"    {attr}");
                     }
+
                     sw.WriteLine($"public {structField.Type} {structField.Name};");
                 }
             }
@@ -266,7 +272,7 @@ namespace Silk.NET.BuildTools.Bind
             sw.Flush();
             sw.Close();
         }
-        
+
         public static void WriteNameContainer(this Project project, Profile profile, string file)
         {
             using (var sw = new StreamWriter(file))
@@ -321,15 +327,16 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine();
                 sw.WriteLine($"namespace {profile.Namespace}{project.Namespace}");
                 sw.WriteLine("{");
-                sw.WriteLine($"    public abstract unsafe partial class {profile.ClassName} : NativeAPI, I{profile.ClassName}");
+                sw.WriteLine
+                    ($"    public abstract unsafe partial class {profile.ClassName} : NativeAPI, I{profile.ClassName}");
                 sw.WriteLine("    {");
                 foreach (var constant in profile.Constants)
                 {
                     sw.WriteLine($"        public const {constant.Type} {constant.Name} = {constant.Value};");
                 }
-                
+
                 sw.WriteLine();
-                
+
                 var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).RemoveDuplicates();
                 foreach (var function in allFunctions)
                 {
@@ -344,6 +351,7 @@ namespace Silk.NET.BuildTools.Bind
                             flPrefix = string.Empty;
                         }
                     }
+
                     sw.WriteLine();
                 }
 
@@ -374,9 +382,11 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine();
                 }
 
+                sw.WriteLine("        private SearchPathContainer _searchPaths;");
                 sw.WriteLine
                 (
-                    $"        public override SearchPathContainer SearchPaths {{ get; }} = new {profile.Names.ClassName}();"
+                    $"        public override SearchPathContainer SearchPaths => _searchPaths ??= " +
+                    $"new {profile.Names.ClassName}();"
                 );
                 sw.WriteLine();
                 sw.WriteLine($"        public {profile.ClassName}(string path, ImplementationOptions opts)");
@@ -388,9 +398,11 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine();
                     sw.WriteLine($"        static {profile.ClassName}()");
                     sw.WriteLine("        {");
-                    sw.WriteLine($"            LibraryLoader.CreateBuilder<{profile.ClassName}>({profile.SymbolLoaderName});");
+                    sw.WriteLine
+                        ($"            LibraryLoader.CreateBuilder<{profile.ClassName}>({profile.SymbolLoaderName});");
                     sw.WriteLine("        }");
                 }
+
                 sw.WriteLine("    }");
                 sw.WriteLine("}");
                 sw.WriteLine();
@@ -409,7 +421,10 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("    {");
                     sw.WriteLine($"        public static {profile.ClassName} GetApi()");
                     sw.WriteLine("        {");
-                    sw.WriteLine($"             return LibraryLoader<{profile.ClassName}>.Load(new {profile.Names.ClassName}());");
+                    sw.WriteLine
+                    (
+                        $"             return LibraryLoader<{profile.ClassName}>.Load(new {profile.Names.ClassName}());"
+                    );
                     sw.WriteLine("        }");
                     sw.WriteLine();
                     sw.WriteLine("        public bool TryGetExtension<T>(out T ext)");
@@ -429,7 +444,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.Flush();
                     sw.Dispose();
                 }
-                
+
                 project.WriteNameContainer(profile, Path.Combine(folder, $"{profile.Names.ClassName}.cs"));
             }
             else
@@ -451,7 +466,10 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine($"namespace {profile.ExtensionsNamespace}{project.Namespace}");
                     sw.WriteLine("{");
                     sw.WriteLine($"    [Extension(\"{key}\")]");
-                    sw.WriteLine($"    public abstract unsafe partial class {name} : NativeExtension<{profile.ClassName}>, I{name}");
+                    sw.WriteLine
+                    (
+                        $"    public abstract unsafe partial class {name} : NativeExtension<{profile.ClassName}>, I{name}"
+                    );
                     sw.WriteLine("    {");
                     foreach (var function in i.Functions)
                     {
@@ -466,6 +484,7 @@ namespace Silk.NET.BuildTools.Bind
                                 flPrefix = string.Empty;
                             }
                         }
+
                         sw.WriteLine();
                     }
 
@@ -538,14 +557,20 @@ namespace Silk.NET.BuildTools.Bind
 
             project.WriteProjectFile(folder, profile);
 
-            project.Interfaces.ForEach(x => x.Value.WriteInterface
+            project.Interfaces.ForEach
             (
-                Path.Combine(folder, InterfacesSubfolder, $"{x.Value.Name}.gen.cs"), profile, project)
+                x => x.Value.WriteInterface
+                (
+                    Path.Combine(folder, InterfacesSubfolder, $"{x.Value.Name}.gen.cs"), profile, project
+                )
             );
 
-            project.Structs.ForEach(x => x.WriteStruct
+            project.Structs.ForEach
             (
-                    Path.Combine(folder, StructsSubfolder, $"{x.Name}.gen.cs"), profile, project)
+                x => x.WriteStruct
+                (
+                    Path.Combine(folder, StructsSubfolder, $"{x.Name}.gen.cs"), profile, project
+                )
             );
 
             project.Enums.ForEach

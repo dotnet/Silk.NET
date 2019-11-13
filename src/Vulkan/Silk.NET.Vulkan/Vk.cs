@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using AdvancedDLSupport.AOT;
 using AdvancedDLSupport.Loaders;
@@ -29,9 +30,10 @@ namespace Silk.NET.Vulkan
             return ext != null;
         }
 
+        private List<string> _extensions;
         public override bool IsExtensionPresent(string extension)
         {
-            return GetExtensions().Contains(extension);
+            return (_extensions ??= GetExtensions()).Contains(extension);
         }
 
         private unsafe List<string> GetExtensions()
@@ -52,7 +54,34 @@ namespace Silk.NET.Vulkan
                 }
             }
 
-            return l;
+            if (CurrentInstance.HasValue)
+            {
+                var physicalDeviceCount = 0u;
+                EnumeratePhysicalDevices(CurrentInstance.Value, &physicalDeviceCount, null);
+                var physicalDevices = stackalloc PhysicalDevice[(int) physicalDeviceCount];
+                EnumeratePhysicalDevices(CurrentInstance.Value, &physicalDeviceCount, physicalDevices);
+
+                for (var i = 0; i < physicalDeviceCount; i++)
+                {
+                    var device = physicalDevices[i];
+                    result = Result.Incomplete;
+                    while (result == Result.Incomplete)
+                    {
+                        var deviceExtPropertiesCount = 128u;
+                        result = EnumerateDeviceExtensionProperties
+                            (device, (byte*) 0, &deviceExtPropertiesCount, props);
+                        if (result == Result.Success || result == Result.Incomplete)
+                        {
+                            for (var j = 0; j < deviceExtPropertiesCount; j++)
+                            {
+                                l.Add(Marshal.PtrToStringAnsi((IntPtr) props[j].ExtensionName));
+                            }
+                        }
+                    }
+                }
+            }
+
+            return l.Distinct().ToList();
         }
     }
 }

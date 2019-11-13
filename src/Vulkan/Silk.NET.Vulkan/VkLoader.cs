@@ -29,13 +29,21 @@ namespace Silk.NET.Vulkan
 
         public IntPtr LoadSymbol(IntPtr library, string symbolName)
         {
-            var sym = BaseLoader.LoadSymbol(library, symbolName);
-            if (sym != IntPtr.Zero)
+            IntPtr sym;
+            try
             {
-                return sym;
+                sym = BaseLoader.LoadSymbol(library, symbolName);
+                if (sym != IntPtr.Zero)
+                {
+                    return sym;
+                }
+            }
+            catch
+            {
+                // do nothing, just move on.
             }
 
-            sym = Vulkan.GetInstanceProcAddr(new Instance {Handle = IntPtr.Zero}, symbolName).Value;
+            sym = Vulkan.GetInstanceProcAddr(default, symbolName).Value;
             if (sym != IntPtr.Zero)
             {
                 return sym;

@@ -47,7 +47,8 @@ namespace Silk.NET.Core.Loader
             where T1 : NativeExtension<T2> where T2 : NativeAPI
         {
             var builder = new NativeLibraryBuilder(Options).WithSymbolLoader(x => loader ?? x);
-            return baseApi.IsExtensionPresent(GetExtensionAttribute(typeof(T1)).Name)
+            var extAttr = GetExtensionAttribute(typeof(T1));
+            return baseApi.IsExtensionPresent(extAttr.Name)
                 ? builder.ActivateClass<T1>((paths ?? baseApi.SearchPaths).GetLibraryName())
                 : null;
         }
