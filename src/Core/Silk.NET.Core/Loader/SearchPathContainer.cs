@@ -47,18 +47,23 @@ namespace Silk.NET.Core.Loader
         public virtual string GetLibraryName()
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) {
-                return RuntimeInformation.IsOSPlatform(OSPlatform.Create("ANDROID")) ? Android : Linux;
+                return Resolve(RuntimeInformation.IsOSPlatform(OSPlatform.Create("ANDROID")) ? Android : Linux);
             }
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
-                return Environment.Is64BitProcess ? Windows64 : Windows86;
+                return Resolve(Environment.Is64BitProcess ? Windows64 : Windows86);
             }
 
             if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX)) {
-                return RuntimeInformation.IsOSPlatform(OSPlatform.Create("IOS")) ? IOS : MacOS;
+                return Resolve(RuntimeInformation.IsOSPlatform(OSPlatform.Create("IOS")) ? IOS : MacOS);
             }
 
             throw new NotSupportedException("Invalid/unsupported operating system.");
+        }
+
+        private static string Resolve(string input)
+        {
+            return SilkPathResolver.Resolve(input);
         }
     }
 }

@@ -15,10 +15,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="original.cpp" />
-    </ItemGroup>
-
-    <ItemGroup>
       <None Remove="shader.frag.spv" />
       <EmbeddedResource Include="shader.frag.spv" />
       <None Remove="shader.vert.spv" />
