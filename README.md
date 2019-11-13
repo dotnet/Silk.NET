@@ -17,10 +17,6 @@ We currently have 3 maintainers:
 - [Aaron P.](https://github.com/AzyIsCool) from [Ultz](https://github.com/Ultz)
 - [Frederik A.](https://github.com/frederikja163) from the open-source community
 
-As well as 2 community members who we consult with to influence Silk.NET's design:
-- [devvoid](https://github.com/devvoid), a Silk.NET contributor who basically wrote half the library
-- [BlackCentipede](https://github.com/BlackCentipede), a low-level genius/madman
-
 # Building from source
 
 - Make sure you have the .NET Core SDK installed
