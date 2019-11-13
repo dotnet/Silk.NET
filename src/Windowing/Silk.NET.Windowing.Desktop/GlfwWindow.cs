@@ -19,7 +19,7 @@ namespace Silk.NET.Windowing.Desktop
     /// <summary>
     /// A Silk.NET window, using GLFW as a backend.
     /// </summary>
-    public class GlfwWindow : IWindow
+    public class GlfwWindow : IWindow, IVulkanWindow
     {
         // The number of frames that the window has been running slowly for.
         private int _isRunningSlowlyTries;
@@ -126,16 +126,7 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
-        public IntPtr Handle
-        {
-            get
-            {
-                unsafe
-                {
-                    return _running ? (IntPtr) _windowPtr : IntPtr.Zero;
-                }
-            }
-        }
+        public unsafe IntPtr Handle => (IntPtr) _windowPtr;
 
         /// <inheritdoc />
         public bool UseSingleThreadedWindow { get; }
@@ -213,7 +204,7 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
-        public GraphicsAPI API { get; }
+        public GraphicsAPI API => _initialOptions.API;
 
         /// <inheritdoc />
         public string Title
@@ -316,28 +307,21 @@ namespace Silk.NET.Windowing.Desktop
             {
                 if (_running)
                 {
-                    this.Invoke
-                    (
-                        () =>
-                        {
-                            switch (value)
-                            {
-                                case VSyncMode.Off:
-                                    _glfw.SwapInterval(0);
-                                    break;
+                    switch (value)
+                    {
+                        case VSyncMode.Off:
+                            _glfw.SwapInterval(0);
+                            break;
 
-                                case VSyncMode.On:
-                                    _glfw.SwapInterval(1);
-                                    break;
+                        case VSyncMode.On:
+                            _glfw.SwapInterval(1);
+                            break;
 
-                                default:
-                                    _glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
-                                    break;
-                            }
-
-                            _vSync = value;
-                        }
-                    );
+                        default:
+                            _glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
+                            break;
+                    }
+                    _vSync = value;
                 }
 
                 _initialOptions.VSync = value;
@@ -398,6 +382,11 @@ namespace Silk.NET.Windowing.Desktop
 
         public unsafe void Open()
         {
+            if (_windowPtr != default)
+            {
+                return;
+            }
+            
             // Set window border.
             switch (_initialOptions.WindowBorder)
             {
@@ -416,7 +405,7 @@ namespace Silk.NET.Windowing.Desktop
                     _glfw.WindowHint(WindowHintBool.Resizable, false);
                     break;
             }
-
+            
             // Set window API.
             switch (_initialOptions.API.API)
             {
@@ -460,16 +449,22 @@ namespace Silk.NET.Windowing.Desktop
             _invokeQueue = new ConcurrentQueue<Task>();
             _mainThread = Thread.CurrentThread.ManagedThreadId;
 
-            _glfw.MakeContextCurrent(_windowPtr);
+            if (API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES)
+            {
+                _glfw.MakeContextCurrent(_windowPtr);
+                VSync = _initialOptions.VSync;
+            }
+
             WindowState = _initialOptions.WindowState;
             Position = _initialOptions.Position;
-            VSync = _initialOptions.VSync;
-            if (_glfw.GetCurrentContext() != _windowPtr)
+
+            InitializeCallbacks();
+
+            if ((API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES) &&
+                _glfw.GetCurrentContext() != _windowPtr)
             {
                 _glfw.MakeContextCurrent(_windowPtr);
             }
-
-            InitializeCallbacks();
 
             // Run OnLoad.
             Load?.Invoke();
@@ -749,6 +744,26 @@ namespace Silk.NET.Windowing.Desktop
             _glfw.SetWindowIconifyCallback(_windowPtr, _onMinimized);
             _glfw.SetWindowMaximizeCallback(_windowPtr, _onMaximized);
             _glfw.SetDropCallback(_windowPtr, _onFileDrop);
+        }
+
+        public bool IsVulkanSupported => _glfw.VulkanSupported();
+
+        public unsafe VkHandle CreateSurface<T>(VkHandle instance, T* allocator)
+            where T : unmanaged
+        {
+            var surface = stackalloc VkHandle[1];
+            var ec = 0;
+            if ((ec = _glfw.CreateWindowSurface(instance, _windowPtr, allocator, surface)) != 0)
+            {
+                throw new GlfwException("Failed to create surface, error code " + ec);
+            }
+
+            return surface[0];
+        }
+
+        public unsafe char** GetRequiredExtensions(out uint count)
+        {
+            return (char**) _glfw.GetRequiredInstanceExtensions(out count);
         }
     }
 }

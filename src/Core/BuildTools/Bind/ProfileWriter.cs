@@ -10,7 +10,10 @@ using System.Linq;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Bind.Overloading;
 using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Common.Structs;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
+using Type = System.Type;
 
 namespace Silk.NET.BuildTools.Bind
 {
@@ -50,6 +53,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine(LicenseText.Value);
             sw.WriteLine();
             var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
+            sw.WriteLine("using System;");
+            sw.WriteLine();
             sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
             foreach (var attr in @enum.Attributes)
@@ -74,6 +79,7 @@ namespace Silk.NET.BuildTools.Bind
             sw.Flush();
             sw.Dispose();
         }
+
         /// <summary>
         /// Writes this struct to a file.
         /// </summary>
@@ -86,6 +92,12 @@ namespace Silk.NET.BuildTools.Bind
             var sw = new StreamWriter(file);
             sw.WriteLine(LicenseText.Value);
             sw.WriteLine();
+            sw.WriteLine("using System;");
+            sw.WriteLine("using System.Runtime.InteropServices;");
+            sw.WriteLine("using System.Text;");
+            sw.WriteLine("using Silk.NET.Core.Native;");
+            sw.WriteLine("using AdvancedDLSupport;");
+            sw.WriteLine();
             var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
             sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
@@ -94,11 +106,79 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine($"    {attr}");
             }
 
-            sw.WriteLine($"    public struct {@struct.Name}");
+            sw.WriteLine($"    public unsafe struct {@struct.Name}");
             sw.WriteLine("    {");
             foreach (var structField in @struct.Fields)
             {
-                sw.WriteLine($"        public {structField.Type} {structField.Name} {{ get; set; }}");
+                if (!(structField.Count is null))
+                {
+                    if (!Field._fixedCapableTypes.Contains(structField.Type.Name))
+                    {
+                        var count = structField.Count.IsConstant
+                            ? int.Parse
+                            (
+                                profile.Constants
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)
+                                    ?
+                                    .Value
+                            )
+                            : structField.Count.IsStatic
+                                ? structField.Count.StaticCount
+                                : 1;
+                        for (var i = 0; i < count; i++)
+                        {
+                            sw.WriteLine($"{structField.Doc}");
+                            foreach (var attr in structField.Attributes)
+                            {
+                                sw.WriteLine($"    {attr}");
+                            }
+
+                            sw.WriteLine
+                            (
+                                $"public {structField.Type} {structField.Name}_{i};"
+                            );
+                        }
+                    }
+                    else
+                    {
+                        if (!string.IsNullOrEmpty(structField.Doc))
+                        {
+                            sw.WriteLine($"{structField.Doc}");
+                        }
+
+                        var count = structField.Count.IsConstant
+                            ? int.Parse
+                            (
+                                profile.Constants
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)
+                                    ?
+                                    .Value
+                            )
+                            : structField.Count.IsStatic
+                                ? structField.Count.StaticCount
+                                : 1;
+
+                        foreach (var attr in structField.Attributes)
+                        {
+                            sw.WriteLine($"    {attr}");
+                        }
+
+                        sw.WriteLine
+                        (
+                            $"public fixed {structField.Type} {structField.Name}[{count}];"
+                        );
+                    }
+                }
+                else
+                {
+                    sw.WriteLine(structField.Doc);
+                    foreach (var attr in structField.Attributes)
+                    {
+                        sw.WriteLine($"    {attr}");
+                    }
+
+                    sw.WriteLine($"public {structField.Type} {structField.Name};");
+                }
             }
 
             sw.WriteLine("    }");
@@ -132,7 +212,7 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine($"    {attr}");
             }
 
-            sw.WriteLine($"    public interface {@interface.Name}");
+            sw.WriteLine($"    public unsafe interface {@interface.Name}");
             sw.Write("    {");
             foreach (var function in @interface.Functions)
             {
@@ -192,7 +272,7 @@ namespace Silk.NET.BuildTools.Bind
             sw.Flush();
             sw.Close();
         }
-        
+
         public static void WriteNameContainer(this Project project, Profile profile, string file)
         {
             using (var sw = new StreamWriter(file))
@@ -247,8 +327,16 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine();
                 sw.WriteLine($"namespace {profile.Namespace}{project.Namespace}");
                 sw.WriteLine("{");
-                sw.WriteLine($"    public abstract partial class {profile.ClassName} : NativeAPI, I{profile.ClassName}");
+                sw.WriteLine
+                    ($"    public abstract unsafe partial class {profile.ClassName} : NativeAPI, I{profile.ClassName}");
                 sw.WriteLine("    {");
+                foreach (var constant in profile.Constants)
+                {
+                    sw.WriteLine($"        public const {constant.Type} {constant.Name} = {constant.Value};");
+                }
+
+                sw.WriteLine();
+
                 var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).RemoveDuplicates();
                 foreach (var function in allFunctions)
                 {
@@ -263,6 +351,7 @@ namespace Silk.NET.BuildTools.Bind
                             flPrefix = string.Empty;
                         }
                     }
+
                     sw.WriteLine();
                 }
 
@@ -282,23 +371,22 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                     }
 
-                    sw.WriteLine($"        public {overload.Signature.ToString(overload.Unsafe).TrimEnd(';')}");
+                    sw.WriteLine($"        public {overload.Signature.ToString(overload.IsUnsafe).TrimEnd(';')}");
                     sw.WriteLine("        {");
-                    using (var sr = new StringReader(overload.CodeBlock))
+                    foreach (var line in overload.Body)
                     {
-                        string line;
-                        while ((line = sr.ReadLine()) != null)
-                        {
-                            sw.WriteLine($"            {line}");
-                        }
+                        sw.WriteLine($"            {line}");
                     }
+
                     sw.WriteLine("        }");
                     sw.WriteLine();
                 }
 
+                sw.WriteLine("        private SearchPathContainer _searchPaths;");
                 sw.WriteLine
                 (
-                    $"        public override SearchPathContainer SearchPaths {{ get; }} = new {profile.Names.ClassName}();"
+                    $"        public override SearchPathContainer SearchPaths => _searchPaths ??= " +
+                    $"new {profile.Names.ClassName}();"
                 );
                 sw.WriteLine();
                 sw.WriteLine($"        public {profile.ClassName}(string path, ImplementationOptions opts)");
@@ -310,9 +398,11 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine();
                     sw.WriteLine($"        static {profile.ClassName}()");
                     sw.WriteLine("        {");
-                    sw.WriteLine($"            LibraryLoader.CreateBuilder<{profile.ClassName}>({profile.SymbolLoaderName});");
+                    sw.WriteLine
+                        ($"            LibraryLoader.CreateBuilder<{profile.ClassName}>({profile.SymbolLoaderName});");
                     sw.WriteLine("        }");
                 }
+
                 sw.WriteLine("    }");
                 sw.WriteLine("}");
                 sw.WriteLine();
@@ -331,7 +421,10 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("    {");
                     sw.WriteLine($"        public static {profile.ClassName} GetApi()");
                     sw.WriteLine("        {");
-                    sw.WriteLine($"             return LibraryLoader<{profile.ClassName}>.Load(new {profile.Names.ClassName}());");
+                    sw.WriteLine
+                    (
+                        $"             return LibraryLoader<{profile.ClassName}>.Load(new {profile.Names.ClassName}());"
+                    );
                     sw.WriteLine("        }");
                     sw.WriteLine();
                     sw.WriteLine("        public bool TryGetExtension<T>(out T ext)");
@@ -351,14 +444,14 @@ namespace Silk.NET.BuildTools.Bind
                     sw.Flush();
                     sw.Dispose();
                 }
-                
+
                 project.WriteNameContainer(profile, Path.Combine(folder, $"{profile.Names.ClassName}.cs"));
             }
             else
             {
                 foreach (var (key, i) in project.Interfaces)
                 {
-                    var name = key.Substring(1);
+                    var name = i.Name.Substring(1);
                     var sw = new StreamWriter(Path.Combine(folder, $"{name}.gen.cs"));
                     sw.Write(LicenseText.Value);
                     sw.WriteLine("using System;");
@@ -367,11 +460,16 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine($"using {profile.Projects["Core"].GetNamespace(profile)};");
                     sw.WriteLine("using Silk.NET.Core.Loader;");
                     sw.WriteLine("using Silk.NET.Core.Native;");
+                    sw.WriteLine("using Silk.NET.Core.Attributes;");
                     sw.WriteLine("using AdvancedDLSupport;");
                     sw.WriteLine();
                     sw.WriteLine($"namespace {profile.ExtensionsNamespace}{project.Namespace}");
                     sw.WriteLine("{");
-                    sw.WriteLine($"    public abstract partial class {name} : NativeExtension<{profile.ClassName}>, I{name}");
+                    sw.WriteLine($"    [Extension(\"{key}\")]");
+                    sw.WriteLine
+                    (
+                        $"    public abstract unsafe partial class {name} : NativeExtension<{profile.ClassName}>, I{name}"
+                    );
                     sw.WriteLine("    {");
                     foreach (var function in i.Functions)
                     {
@@ -386,6 +484,7 @@ namespace Silk.NET.BuildTools.Bind
                                 flPrefix = string.Empty;
                             }
                         }
+
                         sw.WriteLine();
                     }
 
@@ -405,16 +504,13 @@ namespace Silk.NET.BuildTools.Bind
                             sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                         }
 
-                        sw.WriteLine($"        public {overload.Signature.ToString(overload.Unsafe).TrimEnd(';')}");
+                        sw.WriteLine($"        public {overload.Signature.ToString(overload.IsUnsafe).TrimEnd(';')}");
                         sw.WriteLine("        {");
-                        using (var sr = new StringReader(overload.CodeBlock))
+                        foreach (var line in overload.Body)
                         {
-                            string line;
-                            while ((line = sr.ReadLine()) != null)
-                            {
-                                sw.WriteLine($"            {line}");
-                            }
+                            sw.WriteLine($"            {line}");
                         }
+
                         sw.WriteLine("        }");
                         sw.WriteLine();
                     }
@@ -461,14 +557,20 @@ namespace Silk.NET.BuildTools.Bind
 
             project.WriteProjectFile(folder, profile);
 
-            project.Interfaces.ForEach(x => x.Value.WriteInterface
+            project.Interfaces.ForEach
             (
-                Path.Combine(folder, InterfacesSubfolder, $"{x.Value.Name}.gen.cs"), profile, project)
+                x => x.Value.WriteInterface
+                (
+                    Path.Combine(folder, InterfacesSubfolder, $"{x.Value.Name}.gen.cs"), profile, project
+                )
             );
 
-            project.Structs.ForEach(x => x.WriteStruct
+            project.Structs.ForEach
             (
-                    Path.Combine(folder, InterfacesSubfolder, $"{x.Name}.gen.cs"), profile, project)
+                x => x.WriteStruct
+                (
+                    Path.Combine(folder, StructsSubfolder, $"{x.Name}.gen.cs"), profile, project
+                )
             );
 
             project.Enums.ForEach

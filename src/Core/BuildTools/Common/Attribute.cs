@@ -21,7 +21,7 @@ namespace Silk.NET.BuildTools.Common
         /// <summary>
         /// Gets or sets arguments to be added to this <see cref="Attribute" />'s constructors.
         /// </summary>
-        public List<string> Arguments { get; set; }
+        public List<string> Arguments { get; set; } = new List<string>();
 
         /// <inheritdoc />
         public override string ToString()

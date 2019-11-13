@@ -29,9 +29,10 @@ namespace Silk.NET.BuildTools.Common
         /// <returns>The name variations, ordered by length, starting with the longest.</returns>
         [NotNull]
         [ItemNotNull]
-        public static IEnumerable<string> GetNameVariations(string functionEntrypoint, string prefix)
+        public static IEnumerable<string> GetNameVariations
+            (string functionEntrypoint, string prefix, bool trimExtensionName = true, bool trimDataType = true)
         {
-            var extensionTrimmer =new ExtensionNameTrimmer();
+            var extensionTrimmer = new ExtensionNameTrimmer();
             var dataTypeTrimmer = new DataTypeNameTrimmer();
 
             var variations = new List<string>();
@@ -39,13 +40,13 @@ namespace Silk.NET.BuildTools.Common
 
             variations.Add(currentVariation);
 
-            if (extensionTrimmer.IsRelevant(currentVariation))
+            if (extensionTrimmer.IsRelevant(currentVariation) && trimExtensionName)
             {
-                currentVariation = extensionTrimmer.Trim(currentVariation, prefix);
+                currentVariation = extensionTrimmer.Trim(currentVariation, prefix).TrimEnd('_');
                 variations.Add(currentVariation);
             }
 
-            if (dataTypeTrimmer.IsRelevant(currentVariation))
+            if (dataTypeTrimmer.IsRelevant(currentVariation) && trimDataType)
             {
                 variations.Add(dataTypeTrimmer.Trim(currentVariation, prefix));
             }
@@ -58,9 +59,10 @@ namespace Silk.NET.BuildTools.Common
         /// </summary>
         /// <param name="functionName">The string to trim.</param>
         /// <returns>A trimmed string.</returns>
-        public static string Trim(string functionName, string prefix)
+        public static string Trim
+            (string functionName, string prefix, bool trimExtensionName = true, bool trimDataType = true)
         {
-            return GetNameVariations(functionName, prefix).Last();
+            return GetNameVariations(functionName, prefix, trimExtensionName, trimDataType).Last();
         }
     }
 }

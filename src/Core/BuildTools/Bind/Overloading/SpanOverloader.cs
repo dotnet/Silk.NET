@@ -14,7 +14,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 {
     public class SpanOverloader : IFunctionOverloader
     {
-        public IEnumerable<Overload> CreateOverloads(Function function)
+        public IEnumerable<ImplementedFunction> CreateOverloads(Function function)
         {
             var returnTypeChanged = false;
             var parameterChanged = false;
@@ -40,7 +40,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             for (var i = 0; i < function.Parameters.Count; i++)
             {
                 var param = function.Parameters[i];
-                if (param.Type.IndirectionLevels == 1 && param.Type.Name != "void" && !param.Type.IsOut)
+                if (param.Type.IndirectionLevels == 1 && param.Type.Name != "void" && !param.Type.IsOut && !param.Type.IsIn && !param.Type.IsByRef)
                 {
                     parameterChanged = true;
                     parameters[i] = new ParameterSignatureBuilder(param).WithName($"{param.Name}Span")
@@ -93,16 +93,16 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
             if (returnTypeChanged && !parameterChanged)
             {
-                yield return new Overload(fun.WithName($"{function.Name}AsSpan").Build(), sb, true);
+                yield return new ImplementedFunction(fun.WithName($"{function.Name}AsSpan").Build(), sb, true);
             }
             else if (parameterChanged)
             {
-                yield return new Overload(fun.Build(), sb, true);
+                yield return new ImplementedFunction(fun.Build(), sb, true);
             }
 
             string GetPrefix(Type t)
             {
-                return t.IsOut ? "out " : string.Empty;
+                return t.IsOut ? "out " : t.IsByRef ? "ref " : string.Empty;
             }
 
             string Format(string n)

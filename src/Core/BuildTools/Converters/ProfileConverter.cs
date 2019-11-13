@@ -27,29 +27,36 @@ namespace Silk.NET.BuildTools.Converters
             var functions = reader.ReadFunctions(obj, opts).OrderBy(x => x.Name).ToArray();
             Console.WriteLine("Reading structs...");
             var structs = reader.ReadStructs(obj, opts).OrderBy(x => x.Name).ToArray();
+            Console.WriteLine("Reading constants...");
+            var constants = reader.ReadConstants(obj, opts).OrderBy(x => x.Name).ToArray();
             Console.WriteLine("Creating profiles...");
             var profiles = enums.Select(x => (x.ProfileName, x.ProfileVersion))
                 .Concat(functions.Select(x => (x.ProfileName, x.ProfileVersion)))
                 .Concat(structs.Select(x => (x.ProfileName, x.ProfileVersion)))
                 .Distinct()
                 .Select(x => CreateBlankProfile(x.ProfileName, x.ProfileVersion, opts));
-            Console.WriteLine("Mapping functions...");
-            foreach (var typeMap in opts.TypeMaps)
-            {
-                TypeMapper.Map(typeMap, functions);
-            }
-
-            Console.WriteLine("Mapping structs...");
-            foreach (var typeMap in opts.TypeMaps)
-            {
-                TypeMapper.Map(typeMap, structs);
-            }
 
             foreach (var profile in profiles)
             {
                 ctor.WriteEnums(profile, enums, opts);
                 ctor.WriteFunctions(profile, functions, opts);
                 ctor.WriteStructs(profile, structs, opts);
+                ctor.WriteConstants(profile, constants, opts);
+                foreach (var typeMap in profile.TypeMaps)
+                {
+                    TypeMapper.Map(typeMap, functions);
+                }
+
+                foreach (var typeMap in profile.TypeMaps)
+                {
+                    TypeMapper.Map(typeMap, structs);
+                }
+
+                foreach (var constant in profile.Constants)
+                {
+                    constant.Type = TypeMapper.MapOne(profile.TypeMaps, constant.Type);
+                }
+
                 Console.WriteLine($"Created profile \"{profile.Name}\" version {profile.Version}");
 
                 yield return profile;
@@ -77,13 +84,15 @@ namespace Silk.NET.BuildTools.Converters
 
             var reader = opts.Reader.ToLower() switch
             {
-                "gl" => new OpenGLReader(),
+                "gl" => (IReader) new OpenGLReader(),
+                "vk" => (IReader) new VulkanReader(),
                 _ => throw new ArgumentException("Couldn't find a reader with that name")
             };
 
             var constructor = opts.Constructor.ToLower() switch
             {
-                "gl" => new OpenGLConstructor(),
+                "gl" => (IConstructor) new OpenGLConstructor(),
+                "vk" => (IConstructor) new VulkanConstructor(),
                 _ => throw new ArgumentException("Couldn't find a constructor with that name")
             };
 

@@ -21,7 +21,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                    x.Count.StaticCount != 0 &&
                    !x.Type.IsVoidPointer();
         }
-        public IEnumerable<Overload> CreateOverloads(Function function)
+        public IEnumerable<ImplementedFunction> CreateOverloads(Function function)
         {
             if (!function.Parameters.Any(IsApplicable))
             {
@@ -74,7 +74,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             sb.Append(");");
             sb.AppendLine();
             
-            yield return new Overload
+            yield return new ImplementedFunction
             (
                 new FunctionSignatureBuilder(function).WithParameters(newParameters).Build(),
                 sb,

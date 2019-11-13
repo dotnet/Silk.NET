@@ -8,7 +8,15 @@
         "Args": ["-d", "../docs.gl", "-b", "../binder_bakery_info/GL-All.json", "-f", "../binder_specifications", "-p"]
     },
     {
+        "Task": "convert",
+        "Args": ["-p", "vk", "-o", "../binder_specifications", "-i", "../vk.xml", "-f", "-t", "../binder_typemaps/vk.json", "../binder_typemaps/csharp.json", "../binder_typemaps/aftermap.json", "-x", "-r", "vk", "-c", "vk"]
+    },
+    {
+        "Task": "bake",
+        "Args": ["-b", "../binder_bakery_info/Vulkan.json", "-f", "../binder_specifications", "-p"]
+    },
+    {
         "Task": "bind",
-        "Args": ["-i", "../binder_specifications/OpenGL.json", "../binder_specifications/GLES.json", "../binder_specifications/OpenGL (Compatibility Profile).json", "-o", "../../src", "-l", "../LICENSE_HEADER.txt", "-p", "../props/bindings.props"]
+        "Args": ["-i", "../binder_specifications/Vulkan.json", "../binder_specifications/OpenGL.json", "../binder_specifications/OpenGL (Compatibility Profile).json", "../binder_specifications/GLES.json", "-o", "../../src", "-l", "../LICENSE_HEADER.txt", "-p", "../props/bindings.props"]
     }
 ]

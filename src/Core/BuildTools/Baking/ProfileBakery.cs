@@ -78,11 +78,14 @@ namespace Silk.NET.BuildTools.Baking
             var coreProjects = impl.Select(x => x.Projects["Core"]).ToList();
             var coreFunc = coreProjects.SelectMany(x => x.Interfaces);
             var coreEnums = coreProjects.SelectMany(x => x.Enums);
+            var coreStructs = coreProjects.SelectMany(x => x.Structs);
             profile.Projects["Core"].Interfaces = profile.Projects["Core"].Interfaces.Concat(coreFunc).ToDictionary();
             profile.Projects["Core"].Enums.AddRange(coreEnums);
+            profile.Projects["Core"].Structs.AddRange(coreStructs);
             profile.Projects = profile.Projects.Concat(extProjects).ToDictionary();
             profile.FunctionPrefix = information.FunctionPrefix;
             profile.Names = information.NameContainer;
+            profile.Constants = impl.SelectMany(x => x.Constants).ToList();
 
             MergeAll(profile); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
             CheckForDuplicates(profile);
@@ -110,6 +113,7 @@ namespace Silk.NET.BuildTools.Baking
             {
                 var enums = new Dictionary<string, Common.Enums.Enum>();
                 var interfaces = new Dictionary<string, Interface>();
+                var structs = new Dictionary<string, Struct>();
                 foreach (var enumeration in project.Enums)
                 {
                     if (enums.ContainsKey(enumeration.Name))
@@ -122,29 +126,68 @@ namespace Silk.NET.BuildTools.Baking
                     }
                 }
 
-                foreach (var @interface in project.Interfaces.Values)
+                foreach (var (key, @interface) in project.Interfaces)
                 {
-                    if (interfaces.ContainsKey(@interface.Name))
+                    if (interfaces.ContainsKey(key))
                     {
                         foreach (var function in @interface.Functions)
                         {
-                            if (interfaces[@interface.Name].Functions.Any(x => x.Equals(function)))
+                            if (interfaces[key].Functions.Any(x => x.Equals(function)))
                             {
                                 continue;
                             }
 
-                            interfaces[@interface.Name].Functions.Add(function);
+                            interfaces[key].Functions.Add(function);
                         }
                     }
                     else
                     {
-                        interfaces.Add(@interface.Name, @interface);
+                        interfaces.Add(key, @interface);
+                    }
+                }
+
+                foreach (var @struct in project.Structs)
+                {
+                    if (structs.ContainsKey(@struct.Name))
+                    {
+                        if (structs[@struct.Name].NativeName != @struct.NativeName)
+                        {
+                            Console.WriteLine
+                            (
+                                $"Warning: Discarding duplicate struct \"{@struct.Name}\" (Original was \"{@struct.NativeName}\", {structs[@struct.Name].NativeName} currently present)"
+                            );
+                        }
+                    }
+                    else
+                    {
+                        structs.Add(@struct.Name, @struct);
                     }
                 }
 
                 project.Enums = enums.Values.ToList();
                 project.Interfaces = interfaces;
+                project.Structs = structs.Values.ToList();
             }
+
+            var constants = new Dictionary<string, Constant>();
+            foreach (var constant in profile.Constants)
+            {
+                if (constants.ContainsKey(constant.Name))
+                {
+                    if (constants[constant.Name].NativeName != constant.NativeName || constants[constant.Name].Value != constant.Value)
+                    {
+                        Console.WriteLine($"Warning: Discarding duplicate constant {constant.Name}.");
+                        Console.WriteLine($"    Original: {constants[constant.Name].NativeName} = {constants[constant.Name].Value}");
+                        Console.WriteLine($"    Duplicate: {constant.NativeName} = {constant.Value}");
+                    }
+                }
+                else
+                {
+                    constants.Add(constant.Name, constant);
+                }
+            }
+
+            profile.Constants = constants.Values.ToList();
         }
 
         private static void CheckForDuplicates(Profile profile)

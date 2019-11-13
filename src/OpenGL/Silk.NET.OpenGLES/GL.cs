@@ -5,6 +5,7 @@ using System.Linq;
 using System.Numerics;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.OpenGLES;
 
 namespace Silk.NET.OpenGLES
 {
@@ -115,9 +116,8 @@ namespace Silk.NET.OpenGLES
             uint length;
             GetProgram(program, GLEnum.ActiveAttributeMaxLength, out var lengthTmp);
             length = (uint) lengthTmp;
-            var str = new string((char)0, (int) (length == 0 ? 1 : length * 2));
 
-            GetActiveAttrib(program, index, (uint) (length == 0 ? 1 : length * 2), out length, out size, out type, str);
+            GetActiveAttrib(program, index, (uint) (length == 0 ? 1 : length * 2), out length, out size, out type, out string str);
 
             return str.Substring(0, (int) length);
         }
@@ -127,13 +127,11 @@ namespace Silk.NET.OpenGLES
             uint length;
             GetProgram(program, GLEnum.ActiveUniformMaxLength, out var lengthTmp);
             length = (uint) lengthTmp;
-
-            var str = new string((char)0, (int) length);
-            GetActiveUniform(program, uniformIndex, length == 0 ? 1 : length, out length, out size, out type, str);
+            GetActiveUniform(program, uniformIndex, length == 0 ? 1 : length, out length, out size, out type, out string str);
             return str.Substring(0, (int) length);
         }
 
-        public void ShaderSource(Int32 shader, System.String @string)
+        public void ShaderSource(uint shader, System.String @string)
         {
             unsafe
             {
@@ -144,51 +142,30 @@ namespace Silk.NET.OpenGLES
 
         public string GetShaderInfoLog(UInt32 shader)
         {
-            string info;
-            GetShaderInfoLog(shader, out info);
+            GetShaderInfoLog(shader, out var info);
             return info;
         }
 
         public void GetShaderInfoLog(UInt32 shader, out string info)
         {
-            unsafe
-            {
-                uint length;
-                GetShader(shader, GLEnum.InfoLogLength, out var lengthTmp);
-                length = (uint)lengthTmp;
-                if (length == 0)
-                {
-                    info = string.Empty;
-                    return;
-                }
-                info = new string((char)0, (int)length);
-                GetShaderInfoLog(shader, length * 2, out length, info);
-                info = info.Substring(0, (int) length);
-            }
+            GetShader(shader, GLEnum.InfoLogLength, out var length2);
+            var length = (uint) length2;
+            GetShaderInfoLog(shader, length * 2, out length, out info);
+            info = info.Substring(0, (int) length);
         }
 
         public string GetProgramInfoLog(UInt32 program)
         {
-            string info;
-            GetProgramInfoLog(program, out info);
+            GetProgramInfoLog(program, out var info);
             return info;
         }
 
         public void GetProgramInfoLog(UInt32 program, out string info)
         {
-            unsafe
-            {
-                uint length;
-                GetProgram(program, GLEnum.InfoLogLength, out var lengthTmp);
-                length = (uint) lengthTmp;
-                if (length == 0)
-                {
-                    info = string.Empty;
-                    return;
-                }
-                info = new string((char)0, (int)length);
-                GetProgramInfoLog(program, length * 2, out length, info);
-            }
+            GetProgram(program, GLEnum.InfoLogLength, out var length2);
+            var length = (uint) length2;
+            GetProgramInfoLog(program, length * 2, out length, out info);
+            info = info.Substring(0, (int) length);
         }
 
         [CLSCompliant(false)]
@@ -294,4 +271,3 @@ namespace Silk.NET.OpenGLES
         }
     }
 }
-

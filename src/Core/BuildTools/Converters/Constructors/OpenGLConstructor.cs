@@ -206,5 +206,10 @@ namespace Silk.NET.BuildTools.Converters.Constructors
         {
             // do nothing
         }
+
+        public void WriteConstants(Profile profile, IEnumerable<Constant> constants, ProfileConverterOptions opts)
+        {
+            // do nothing
+        }
     }
 }

@@ -15,9 +15,9 @@ namespace Silk.NET.BuildTools.Bind.Overloading
     public class PointerParameterOverloader : IFunctionOverloader
     {
         /// <inheritdoc/>
-        public IEnumerable<Overload> CreateOverloads(Function function)
+        public IEnumerable<ImplementedFunction> CreateOverloads(Function function)
         {
-            if (!function.Parameters.Any(p => p.Type.IsIntPtr() && !p.Type.IsOut))
+            if (!function.Parameters.Any(p => p.Type.IsIntPtr()))
             {
                 yield break;
             }
@@ -121,7 +121,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             );
         }
 
-        private static Overload ToPointer(Function function, Function old)
+        private static ImplementedFunction ToPointer(Function function, Function old)
         {
             var sb = new StringBuilder();
             sb.AppendLine("// PointerParameterOverloader");
@@ -135,23 +135,23 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             foreach (var param in old.Parameters)
             {
                 var nm = Utilities.CSharpKeywords.Contains(param.Name) ? $"@{param.Name}" : param.Name;
-                if (param.Type.IsIntPtr() && !param.Type.IsOut)
+                if (param.Type.IsIntPtr())
                 {
                     list.Add($"(IntPtr) {nm}");
                 }
                 else
                 {
-                    var prefix = param.Type.IsOut ? "out " : string.Empty;
+                    var prefix = param.Type.IsOut ? "out " : param.Type.IsByRef ? "ref " : string.Empty;
                     list.Add(prefix + nm);
                 }
             }
 
             sb.Append(string.Join(", ", list));
             sb.AppendLine(");");
-            return new Overload(function, sb, true);
+            return new ImplementedFunction(function, sb, true);
         }
 
-        private static Overload Fixed(Function function)
+        private static ImplementedFunction Fixed(Function function)
         {
             var sb = new StringBuilder();
             var parameters = new List<string>();
@@ -165,11 +165,11 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                     sb.AppendLine($"{ind}fixed ({param.Type.Name}* {param.Name}Ptr = {nm})");
                     sb.AppendLine($"{ind}{{");
                     ind += "    ";
-                    parameters.Add($"{param.Name}Ptr");
+                    parameters.Add($"(IntPtr) {param.Name}Ptr");
                 }
                 else
                 {
-                    var prefix = param.Type.IsOut ? "out " : string.Empty;
+                    var prefix = param.Type.IsOut ? "out " : param.Type.IsByRef ? "ref " : string.Empty;
                     parameters.Add(prefix + nm);
                 }
             }
@@ -188,7 +188,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 sb.AppendLine($"{ind}}}");
             }
 
-            return new Overload(function, sb, true);
+            return new ImplementedFunction(function, sb, true);
 }
     }
 }

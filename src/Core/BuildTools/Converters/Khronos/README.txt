@@ -1,0 +1,1 @@
+Adapted from https://github.com/mellinoe/vk under the MIT license.

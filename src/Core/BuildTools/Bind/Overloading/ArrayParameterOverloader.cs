@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using Humanizer;
 using MoreLinq.Extensions;
+using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
 
@@ -74,7 +75,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         }
 
         /// <inheritdoc/>
-        public IEnumerable<Overload> CreateOverloads(Function function)
+        public IEnumerable<ImplementedFunction> CreateOverloads(Function function)
         {
             if (!IsApplicable(function))
             {
@@ -103,7 +104,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             sb.AppendLine("// ArrayParameterOverloader");
             sb.AppendLine($"{function.Name}(1, &{newArrayParameter.Name});");
 
-            yield return new Overload(new FunctionSignatureBuilder(function)
+            yield return new ImplementedFunction(new FunctionSignatureBuilder(function)
                 .WithName(newName)
                 .WithParameters(newParameters)
                 .Build(), sb, true);

@@ -1,0 +1,24 @@
+[
+  {
+    "Name": "Vulkan",
+    "Implements": [
+      "vulkan",
+      "vulkan-1.0",
+      "vulkan-1.1"
+    ],
+    "Namespace": "Silk.NET.Vulkan",
+    "ExtensionsNamespace": "Silk.NET.Vulkan.Extensions",
+    "OutputFolder": "Vulkan",
+    "NameContainer": {
+      "Linux": "libvulkan.so.1",
+      "Windows": "vulkan-1.dll",
+      "MacOS": "libMoltenVK.dylib",
+      "Android": "libvulkan.so.1",
+      "IOS": "__Internal",
+      "ClassName": "VulkanLibraryNameContainer"
+    },
+    "FunctionPrefix": "vk",
+    "ClassName": "Vk",
+    "SymbolLoader": "new VkLoader(AdvancedDLSupport.Loaders.PlatformLoaderBase.PlatformLoader)"
+  }
+]

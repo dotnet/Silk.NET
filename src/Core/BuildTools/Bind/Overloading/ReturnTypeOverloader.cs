@@ -72,7 +72,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         }
 
         /// <inheritdoc/>
-        public IEnumerable<Overload> CreateOverloads(Function function)
+        public IEnumerable<ImplementedFunction> CreateOverloads(Function function)
         {
             if (!IsApplicable(function))
             {
@@ -104,7 +104,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
             if (!newParameters.Any())
             {
-                yield return new Overload(functionBuilder
+                yield return new ImplementedFunction(functionBuilder
                     .WithParameters(newParameters)
                     .Build(), sb, true);
 
@@ -114,7 +114,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             var sizeParameterType = newParameters.Last().Type;
             if ((sizeParameterType.Name != "int" && sizeParameterType.Name != "uint") || sizeParameterType.IsPointer)
             {
-                yield return new Overload(functionBuilder
+                yield return new ImplementedFunction(functionBuilder
                     .WithParameters(newParameters)
                     .Build(), sb, true);
 
@@ -127,7 +127,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 $"const {(sizeParameterType.Name == "uint" ? "uint " : "int ")}{(Utilities.CSharpKeywords.Contains(n) ? "@" : "")}{n} = 1;\n"
             );
             newParameters = SkipLastExtension.SkipLast(newParameters, 1).ToList();
-            yield return new Overload
+            yield return new ImplementedFunction
             (
                 functionBuilder
                     .WithParameters(newParameters)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using Silk.NET.Input;
@@ -17,35 +18,36 @@ namespace InputTest
             opts.FramesPerSecond = 60;
             opts.UpdatesPerSecond = 60;
             var window = Window.Create(opts);
-            Task.Run(() => window.Run());
-            var input = window.GetInput();
-            input.ConnectionChanged += DoConnect;
-            Console.WriteLine("Now, go press buttons in the window and you'll see the feedback here.");
-            foreach (var gamepad in input.Gamepads)
+            window.Load += () =>
             {
-                if (!gamepad.IsConnected) continue;
-                DoConnect(gamepad, gamepad.IsConnected);
-            }
-            
-            foreach (var joystick in input.Joysticks)
-            {
-                if (!joystick.IsConnected) continue;
-                DoConnect(joystick, joystick.IsConnected);
-            }
+                var input = window.GetInput();
+                input.ConnectionChanged += DoConnect;
+                Console.WriteLine("Now, go press buttons in the window and you'll see the feedback here.");
+                foreach (var gamepad in input.Gamepads)
+                {
+                    if (!gamepad.IsConnected) continue;
+                    DoConnect(gamepad, gamepad.IsConnected);
+                }
 
-            foreach (var keyboard in input.Keyboards)
-            {
-                if (!keyboard.IsConnected) continue;
-                DoConnect(keyboard, keyboard.IsConnected);
-            }
+                foreach (var joystick in input.Joysticks)
+                {
+                    if (!joystick.IsConnected) continue;
+                    DoConnect(joystick, joystick.IsConnected);
+                }
 
-            foreach (var mouse in input.Mice)
-            {
-                if (!mouse.IsConnected) continue;
-                DoConnect(mouse, mouse.IsConnected);
-            }
+                foreach (var keyboard in input.Keyboards)
+                {
+                    if (!keyboard.IsConnected) continue;
+                    DoConnect(keyboard, keyboard.IsConnected);
+                }
 
-            Console.ReadLine();
+                foreach (var mouse in input.Mice)
+                {
+                    if (!mouse.IsConnected) continue;
+                    DoConnect(mouse, mouse.IsConnected);
+                }
+            };
+            window.Run();
         }
 
         private static void GamepadOnTriggerMoved(IGamepad g, Trigger t)
@@ -164,18 +166,25 @@ namespace InputTest
                     mouse.MouseUp += MouseOnMouseUp;
                     mouse.MouseDown += MouseOnMouseDown;
                     mouse.Scroll += MouseOnScroll;
+                    mouse.MouseMove += MouseOnMouseMove;
                 }
                 else
                 {
                     mouse.MouseUp -= MouseOnMouseUp;
                     mouse.MouseDown -= MouseOnMouseDown;
                     mouse.Scroll -= MouseOnScroll;
+                    mouse.MouseMove -= MouseOnMouseMove;
                 }
 
                 Console.Write("    Buttons: ");
                 Console.WriteLine(string.Join(", ", mouse.SupportedButtons.Select(x => x)));
                 Console.WriteLine($"    {mouse.ScrollWheels.Count} scroll wheels.");
             }
+        }
+
+        private static void MouseOnMouseMove(IMouse arg1, PointF arg2)
+        {
+            Console.WriteLine($"M{arg1.Index}> Moved: {arg2}");
         }
 
         private static void MouseOnScroll(IMouse arg1, ScrollWheel arg2)

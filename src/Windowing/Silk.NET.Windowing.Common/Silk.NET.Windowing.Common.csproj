@@ -2,7 +2,12 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
+    </ItemGroup>
 
     <Import Project="..\..\..\build\props\common.props" />
 

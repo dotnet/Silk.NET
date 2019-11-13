@@ -2,14 +2,15 @@
     <PropertyGroup>
         <PackageIconUrl>https://static.ultz.co.uk/img/SilkDotNet.png</PackageIconUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <LangVersion>8.0</LangVersion>
         <PackageReleaseNotes>
             - Added Vulkan
-            - Added OpenCL
             - Added mouse movement
-            - Added gamepad rumble
+            - Added gamepad rumble (though it hasn't been implemented in GLFW yet)
             - Added macOS support
             - Added more overloads, as well as fixed the existing ones.
             - Added DoRender, DoUpdate, DoEvents, Open, Reset, and IsClosing members for custom game loops
+            - Fixed extension loading
             - Fixed a bug where strings weren't marshalled properly
             - Fixed a bug where some shaders didn't compile correctly
             - Fixed a bug where some programs didn't link correctly
@@ -21,6 +22,6 @@
         <RepositoryUrl>https://github.com/Ultz/Silk.NET</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
         <Version>1.0.0-preview3$(VersionSuffix)</Version>
-        <Description>Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL and OpenAL.</Description>
+        <Description>Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenAL, and Vulkan.</Description>
     </PropertyGroup>
 </Project>

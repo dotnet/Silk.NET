@@ -411,7 +411,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 return name.Remove(0, opts.Prefix.Length + 1);
             }
 
-            return name.StartsWith(opts.Prefix) ? name.Remove(0, opts.Prefix.Length) : name;
+            return name.ToLower().StartsWith(opts.Prefix.ToLower()) ? name.Remove(0, opts.Prefix.Length) : name;
         } 
 
         private static string FunctionParameterType(XElement e)
@@ -590,7 +590,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 }
             }
         }
-        
+
+        public IEnumerable<Constant> ReadConstants(object obj, ProfileConverterOptions opts)
+        {
+            return new Constant[0];
+        }
+
         private static string FormatToken(string token)
         {
             if (token == null)

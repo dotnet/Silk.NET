@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Numerics;
 using System.Text;
@@ -74,7 +75,8 @@ namespace SampleBase
             _gl.GetShader(shader, GLEnum.CompileStatus, out var code);
             if (code != (int) GLEnum.True)
             {
-                throw new Exception($"Error occurred whilst compiling Shader({shader})");
+                throw new Exception
+                    ($"Error occurred whilst compiling Shader({shader}): \n" + _gl.GetShaderInfoLog(shader));
             }
         }
 
@@ -85,7 +87,7 @@ namespace SampleBase
             _gl.GetProgram(program, GLEnum.LinkStatus, out var code);
             if (code != (int) GLEnum.True)
             {
-                throw new Exception($"Error occurred whilst linking Program({program})");
+                throw new Exception($"Error occurred whilst linking Program({program}): " + _gl.GetProgramInfoLog(program));
             }
         }
 

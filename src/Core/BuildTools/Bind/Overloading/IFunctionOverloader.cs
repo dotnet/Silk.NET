@@ -5,6 +5,7 @@
 
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Functions;
 
 namespace Silk.NET.BuildTools.Bind.Overloading
@@ -20,6 +21,6 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         /// <param name="function">The base function.</param>
         /// <returns>A set of code blocks.</returns>
         [NotNull]
-        IEnumerable<Overload> CreateOverloads([NotNull] Function function);
+        IEnumerable<ImplementedFunction> CreateOverloads([NotNull] Function function);
     }
 }

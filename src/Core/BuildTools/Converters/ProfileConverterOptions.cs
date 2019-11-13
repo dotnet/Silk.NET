@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace Silk.NET.BuildTools.Converters
 {
-    public struct ProfileConverterOptions
+    public class ProfileConverterOptions
     {
         public string Prefix { get; set; }
         public List<Dictionary<string, string>> TypeMaps { get; set; }
