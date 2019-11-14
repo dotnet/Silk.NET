@@ -19,7 +19,7 @@ namespace Silk.NET.OpenAL
     {
         static AL()
         {
-            LibraryLoader.CreateBuilder<AL>(ALLoader.Instance);
+            LibraryLoader.CreateBuilder<AL>(new ALLoader(false));
         }
         
         /// <inheritdoc cref="NativeLibraryBase" />
@@ -27,27 +27,18 @@ namespace Silk.NET.OpenAL
             : base(path, options)
         {
         }
-        
+
         /// <inheritdoc />
-        public override bool IsExtensionPresent(string name)
-        {
-            throw new NotSupportedException("Not Implemented");
-        }
+        public abstract override bool IsExtensionPresent(string name);
 
         /// <inheritdoc />
         public override SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
 
         /// <inheritdoc />
-        public IntPtr GetProcAddress(string name)
-        {
-            throw new NotSupportedException("Not Implemented");
-        }
+        public abstract IntPtr GetProcAddress(string name);
 
         /// <inheritdoc />
-        public int GetEnumValue(string name)
-        {
-            throw new NotSupportedException("Not Implemented");
-        }
+        public abstract int GetEnumValue(string name);
 
         /// <inheritdoc />
         public abstract unsafe void GenBuffers(int count, uint* buffers);
