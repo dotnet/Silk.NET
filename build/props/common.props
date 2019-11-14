@@ -10,10 +10,12 @@
             - Added macOS support
             - Added more overloads, as well as fixed the existing ones.
             - Added DoRender, DoUpdate, DoEvents, Open, Reset, and IsClosing members for custom game loops
+            - Added KeyChar for receiving text input (modifiers applied)
             - Fixed extension loading
             - Fixed a bug where strings weren't marshalled properly
             - Fixed a bug where some shaders didn't compile correctly
             - Fixed a bug where some programs didn't link correctly
+            - Fixed various OpenAL bugs
             - Removed all built-in thread management, the user will have to take care of this themselves.
             - Synchronised the enum of all available keys with that of GLFW
         </PackageReleaseNotes>
