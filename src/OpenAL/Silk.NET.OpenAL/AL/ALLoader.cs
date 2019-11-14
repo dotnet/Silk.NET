@@ -35,7 +35,7 @@ namespace Silk.NET.OpenAL
 
         public unsafe IntPtr LoadSymbol(IntPtr library, string symbolName)
         {
-            IntPtr sym;
+            var sym = IntPtr.Zero;
             try
             {
                 sym = PlatformLoaderBase.PlatformLoader.LoadSymbol(library, symbolName);
