@@ -34,5 +34,10 @@ namespace Silk.NET.Input.Common
         /// Called when a key is released.
         /// </summary>
         event Action<IKeyboard, Key, int> KeyUp;
+        
+        /// <summary>
+        /// Called when a character is received.
+        /// </summary>
+        event Action<IKeyboard, char> KeyChar;
     }
 }

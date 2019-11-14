@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
@@ -39,7 +40,19 @@ namespace Silk.NET.Input.Desktop
             Util.Glfw.SetMouseButtonCallback(handle, MouseCallback);
             Util.Glfw.SetScrollCallback(handle, ScrollCallback);
             Util.Glfw.SetCursorPosCallback(handle, CursorCallback);
+            Util.Glfw.SetCharCallback(handle, CharCallback);
             ctx._window.Update += ctx.WindowUpdate;
+        }
+
+        private static unsafe void CharCallback(WindowHandle* window, uint codepoint)
+        {
+            // multiple contexts for one window should be allowed, but frowned upon
+            var allContexts = Contexts.Where(z => z._window.Handle == (IntPtr) window);
+
+            foreach (var context in allContexts)
+            {
+                ((GlfwKeyboard) context._keyboard).RaiseCharEvent(Convert.ToChar(codepoint));
+            }
         }
 
         private static unsafe void CursorCallback(WindowHandle* window, double x, double y)

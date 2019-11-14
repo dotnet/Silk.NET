@@ -148,11 +148,13 @@ namespace InputTest
                 {
                     keyboard.KeyDown += KeyboardOnKeyDown;
                     keyboard.KeyUp += KeyboardOnKeyUp;
+                    keyboard.KeyChar += KeyboardOnKeyChar;
                 }
                 else
                 {
                     keyboard.KeyDown -= KeyboardOnKeyDown;
                     keyboard.KeyUp -= KeyboardOnKeyUp;
+                    keyboard.KeyChar -= KeyboardOnKeyChar;
                 }
 
                 Console.Write("    Buttons: ");
@@ -180,6 +182,11 @@ namespace InputTest
                 Console.WriteLine(string.Join(", ", mouse.SupportedButtons.Select(x => x)));
                 Console.WriteLine($"    {mouse.ScrollWheels.Count} scroll wheels.");
             }
+        }
+
+        private static void KeyboardOnKeyChar(IKeyboard arg1, char arg2)
+        {
+            Console.WriteLine($"K{arg1.Index}> {arg2} received.");
         }
 
         private static void MouseOnMouseMove(IMouse arg1, PointF arg2)
