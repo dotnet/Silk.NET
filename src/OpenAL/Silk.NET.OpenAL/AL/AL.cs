@@ -19,7 +19,7 @@ namespace Silk.NET.OpenAL
     {
         static AL()
         {
-            LibraryLoader.CreateBuilder<AL>(new ALLoader(false));
+            LibraryLoader.CreateBuilder<AL>(new ALLoader(null));
         }
         
         /// <inheritdoc cref="NativeLibraryBase" />

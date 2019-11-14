@@ -17,18 +17,13 @@ namespace Silk.NET.OpenAL
     /// </summary>
     public abstract class ALContext : NativeAPI, IALC
     {
-        static ALContext()
-        {
-            LibraryLoader.CreateBuilder<ALContext>(new ALLoader(true));
-        }
-
-
         /// <inheritdoc cref="NativeLibraryBase" />
         protected ALContext(string path, ImplementationOptions options)
             : base(path, options)
         {
+            LibraryLoader.CreateBuilder<ALContext>(new ALLoader(this));
         }
-        
+
         public override SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
 
         public abstract override bool IsExtensionPresent(string name);

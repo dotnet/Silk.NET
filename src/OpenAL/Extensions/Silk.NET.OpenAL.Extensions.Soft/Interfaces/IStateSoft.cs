@@ -14,7 +14,7 @@ namespace Silk.NET.OpenAL.Extensions.Soft
     /// Defines the public interface for the state-related functions of OpenAL 1.1 (OpenAL Soft).
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    public interface IStateSoft : IExtensions
+    public interface IStateSoft
     {
         /// <summary>
         /// Gets a named value from the state. This overload covers additional valid values added by OpenAL

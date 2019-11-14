@@ -12,7 +12,7 @@ namespace Silk.NET.OpenAL
 {
     public class ALLoader : ISymbolLoader
     {
-        public ALLoader(bool alc)
+        public ALLoader(ALContext alc)
         {
             _alc = alc;
         }
@@ -21,7 +21,7 @@ namespace Silk.NET.OpenAL
         public interface IInternalAL
         {
             [NativeSymbol("alcGetProcAddress")]
-            IntPtr GetContextProcAddress(string proc);
+            unsafe IntPtr GetProcAddress(Device* device, string proc);
             [NativeSymbol("alGetProcAddress")]
             IntPtr GetProcAddress(string proc);
         }
@@ -31,9 +31,9 @@ namespace Silk.NET.OpenAL
             new OpenALLibraryNameContainer().GetLibraryName()
         );
 
-        private bool _alc;
+        private ALContext _alc;
 
-        public IntPtr LoadSymbol(IntPtr library, string symbolName)
+        public unsafe IntPtr LoadSymbol(IntPtr library, string symbolName)
         {
             IntPtr sym;
             try
@@ -50,7 +50,7 @@ namespace Silk.NET.OpenAL
                 return sym;
             }
 
-            if (!_alc)
+            if (_alc is null)
             {
                 sym = _al.GetProcAddress(symbolName);
 
@@ -61,8 +61,7 @@ namespace Silk.NET.OpenAL
             }
             else
             {
-
-                sym = _al.GetContextProcAddress(symbolName);
+                sym = _al.GetProcAddress(_alc.GetContextsDevice(_alc.GetCurrentContext()), symbolName);
 
                 if (sym != IntPtr.Zero)
                 {
