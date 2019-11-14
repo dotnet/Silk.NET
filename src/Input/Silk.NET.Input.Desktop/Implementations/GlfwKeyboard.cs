@@ -27,17 +27,17 @@ namespace Silk.NET.Input.Desktop
             return Util.Glfw.GetKey((WindowHandle*)_gic._window.Handle, Util.SilkKeyToGlfwKey(key)) == 1;
         }
 
-        public event Action<IKeyboard, Key> KeyDown;
-        public event Action<IKeyboard, Key> KeyUp;
+        public event Action<IKeyboard, Key, int> KeyDown;
+        public event Action<IKeyboard, Key, int> KeyUp;
 
         internal void RaisePressEvent(Keys key, int scancode, KeyModifiers mods)
         {
-            KeyDown?.Invoke(this, Util.GlfwKeyToSilkKey(key));
+            KeyDown?.Invoke(this, Util.GlfwKeyToSilkKey(key), scancode);
         }
 
         internal void RaiseReleaseEvent(Keys key, int scancode, KeyModifiers mods)
         {
-            KeyUp?.Invoke(this, Util.GlfwKeyToSilkKey(key));
+            KeyUp?.Invoke(this, Util.GlfwKeyToSilkKey(key), scancode);
         }
     }
 }
