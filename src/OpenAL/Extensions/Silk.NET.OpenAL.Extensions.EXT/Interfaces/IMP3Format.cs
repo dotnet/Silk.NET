@@ -11,7 +11,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// Defines the public interface for buffer-related functions of the multi-channel buffers extension.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    internal interface IMP3Format
+    public interface IMP3Format
     {
         /// <summary>
         /// Fills a buffer with audio data.

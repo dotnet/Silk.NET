@@ -11,7 +11,7 @@ namespace Silk.NET.OpenAL.Interfaces
     /// Defines the public interface for the error-related context functions of OpenAL 1.1.
     /// </summary>
     [NativeSymbols(Prefix = "alc")]
-    internal interface IContextErrors
+    public interface IContextErrors
     {
         /// <summary>
         /// Retrieves the error state of the current context on the given device, and clears it.

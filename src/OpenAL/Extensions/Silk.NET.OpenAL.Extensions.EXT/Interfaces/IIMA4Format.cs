@@ -11,7 +11,7 @@ namespace Silk.NET.OpenAL.Native.Extensions.EXT
     /// Defines the public interface for buffer-related functions of the multi-channel buffers extension.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    internal interface IIMA4Format
+    public interface IIMA4Format
     {
         /// <summary>
         /// Fills a buffer with audio data.

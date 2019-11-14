@@ -11,7 +11,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// Defines the public interface for buffer-related functions of the multi-channel buffers extension.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    internal interface IMultiChannelBuffers
+    public interface IMultiChannelBuffers
     {
         /// <summary>
         /// Fills a buffer with audio data.

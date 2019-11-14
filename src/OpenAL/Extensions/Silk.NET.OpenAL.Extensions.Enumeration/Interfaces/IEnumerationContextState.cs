@@ -12,7 +12,7 @@ namespace Silk.NET.OpenAL.Extensions.Enumeration
     /// Defines the public API of the context-related functions of the Enumeration extension.
     /// </summary>
     [NativeSymbols(Prefix = "alc")]
-    internal interface IEnumerationContextState
+    public interface IEnumerationContextState
     {
         /// <summary>
         /// Gets a named property on the context.

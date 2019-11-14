@@ -12,7 +12,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// Defines the public API of the effect slot-related functions of the Effects Extension.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    internal interface IEFXEffectSlots
+    public interface IEFXEffectSlots
     {
         /// <summary>
         /// Creates one or more auxiliary effect slots.

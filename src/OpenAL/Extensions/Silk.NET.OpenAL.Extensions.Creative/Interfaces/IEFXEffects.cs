@@ -13,7 +13,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// Defines the public API of the effect-related functions of the Effects Extension.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    internal interface IEFXEffects
+    public interface IEFXEffects
     {
         /// <summary>
         /// Creates one or more effect objects.

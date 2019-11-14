@@ -13,7 +13,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// Defines the public API of the context-related functions in the Effects Extension.
     /// </summary>
     [NativeSymbols(Prefix = "alc")]
-    internal interface IEFXContext
+    public interface IEFXContext
     {
         /// <summary>
         /// Gets a vector of integer properties from the context.

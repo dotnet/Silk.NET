@@ -12,7 +12,7 @@ namespace Silk.NET.OpenAL.Interfaces
     /// Defines the public interface for the state-related functions of OpenAL 1.1.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    internal interface IState
+    public interface IState
     {
         /// <summary>
         /// Enables a capability in the state.

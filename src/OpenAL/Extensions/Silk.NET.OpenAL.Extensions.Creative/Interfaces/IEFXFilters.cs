@@ -12,7 +12,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// Defines the public API of the filter-related functions of the Effects Extension.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    internal interface IEFXFilters
+    public interface IEFXFilters
     {
         /// <summary>
         /// Creates one or more filter objects.

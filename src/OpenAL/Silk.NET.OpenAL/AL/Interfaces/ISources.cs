@@ -13,7 +13,7 @@ namespace Silk.NET.OpenAL.Interfaces
     /// Defines the public interface for the source-related functions of OpenAL 1.1.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    internal interface ISources
+    public interface ISources
     {
         /// <summary>
         /// Creates one or more source objects.

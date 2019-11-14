@@ -12,7 +12,7 @@ namespace Silk.NET.OpenAL.Interfaces
     /// Defines the public interface for the state-related context functions of OpenAL 1.1.
     /// </summary>
     [NativeSymbols(Prefix = "alc")]
-    internal interface IContextState
+    public interface IContextState
     {
         /// <summary>
         /// Gets a named value from the state.
