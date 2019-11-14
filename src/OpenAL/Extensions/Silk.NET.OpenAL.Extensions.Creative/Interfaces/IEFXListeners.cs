@@ -12,7 +12,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// Defines the public API of the listener-related functions of the Effects Extension.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    internal interface IEFXListeners
+    public interface IEFXListeners
     {
         /// <summary>
         /// Sets the value of a named property on the given listener.

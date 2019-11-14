@@ -13,7 +13,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// Defines the public API of the source-related functions of the Effects Extension.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    internal interface IEFXSources
+    public interface IEFXSources
     {
         /// <summary>
         /// Sets the value of a named property on the given source.

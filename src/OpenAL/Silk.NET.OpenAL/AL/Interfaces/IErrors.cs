@@ -11,7 +11,7 @@ namespace Silk.NET.OpenAL.Interfaces
     /// Defines the public interface for the error-related functions of OpenAL 1.1.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    internal interface IErrors
+    public interface IErrors
     {
         /// <summary>
         /// Gets the current error state, then clears it.

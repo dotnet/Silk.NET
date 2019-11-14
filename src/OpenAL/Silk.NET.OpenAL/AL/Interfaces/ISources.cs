@@ -13,7 +13,7 @@ namespace Silk.NET.OpenAL.Interfaces
     /// Defines the public interface for the source-related functions of OpenAL 1.1.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    internal interface ISources
+    public interface ISources
     {
         /// <summary>
         /// Creates one or more source objects.
@@ -88,6 +88,15 @@ namespace Silk.NET.OpenAL.Interfaces
         /// <param name="value">The value to set the property to.</param>
         [NativeSymbol("Sourcei")]
         void SetSourceProperty(uint source, SourceInteger param, int value);
+        
+        /// <summary>
+        /// Sets the value of a named property on the given source.
+        /// </summary>
+        /// <param name="source">The source.</param>
+        /// <param name="param">The named property.</param>
+        /// <param name="value">The value to set the property to.</param>
+        [NativeSymbol("Sourcei")]
+        void SetSourceProperty(uint source, SourceBoolean param, int value);
 
         /// <summary>
         /// Sets the value of a named property on the given source.

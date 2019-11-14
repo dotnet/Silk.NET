@@ -13,7 +13,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// Defines the public interface of the X-RAM extension.
     /// </summary>
     [NativeSymbols(Prefix = "EAX")]
-    internal interface IXRam : IExtensions
+    public interface IXRam
     {
         /// <summary>
         /// Gets a named value from the state. This overload covers additional valid values added by the X-RAM

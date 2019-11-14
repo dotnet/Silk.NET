@@ -425,8 +425,6 @@ namespace Silk.NET.OpenAL
                 );
             }
 
-            CheckErrors();
-
             fixed (int* ptr = attributes.ToArray()) {
                 _contextHandle = ContextAPI.CreateContextHandle(Device, ptr);
             }
@@ -439,35 +437,13 @@ namespace Silk.NET.OpenAL
                 );
             }
 
-            CheckErrors();
-
             MakeCurrent();
-
-            CheckErrors();
 
             _deviceName = ContextAPI.GetContextProperty(Device, GetContextString.DeviceSpecifier);
 
             lock (AudioContextLock) {
                 AvailableContexts.Add(_contextHandle, this);
                 _contextExists = true;
-            }
-        }
-
-        /// <summary>
-        /// Checks for ALC error conditions.
-        /// </summary>
-        /// <exception cref="OutOfMemoryException">Raised when an out of memory error is detected.</exception>
-        /// <exception cref="AudioValueException">Raised when an invalid value is detected.</exception>
-        /// <exception cref="AudioDeviceException">Raised when an invalid device is detected.</exception>
-        /// <exception cref="AudioContextException">Raised when an invalid context is detected.</exception>
-        public void CheckErrors()
-        {
-            if (_disposed) {
-                throw new ObjectDisposedException(GetType().FullName);
-            }
-
-            unsafe {
-                new AudioDeviceErrorChecker(Device).Dispose();
             }
         }
 

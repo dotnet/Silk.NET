@@ -12,7 +12,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// Defines the public API of the context-related functions of the EnumerateAll extension.
     /// </summary>
     [NativeSymbols(Prefix = "alc")]
-    internal interface IEnumerateAllContextState
+    public interface IEnumerateAllContextState
     {
         /// <summary>
         /// Gets a named property on the context.

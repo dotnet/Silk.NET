@@ -10,6 +10,7 @@ using AdvancedDLSupport;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.OpenAL.Interfaces;
 
 
 // ReSharper disable VirtualMemberCallInConstructor
@@ -19,7 +20,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// Exposes the X-RAM extension by Creative Labs.
     /// </summary>
     [Extension("EAX-RAM")]
-    public abstract class XRam : NativeExtension<AL>, IXRam
+    public abstract class XRam : NativeExtension<AL>, IXRam, IExtensions
     {
         private readonly int _bufferStorageModeAccessible;
         private readonly int _bufferStorageModeAutomatic;
@@ -48,14 +49,6 @@ namespace Silk.NET.OpenAL.Extensions.Creative
 
         /// <inheritdoc />
         public abstract int GetBufferMode(uint buffer, IntPtr reserved);
-
-        public SearchPathContainer SearchPaths { get; }
-
-        public abstract bool IsExtensionPresent(string name);
-
-        public abstract IntPtr GetProcAddress(string name);
-
-        public abstract int GetEnumValue(string name);
 
         /// <inheritdoc cref="GetInteger(int)" />
         public int GetInteger(XRamGetInteger param)
@@ -200,5 +193,9 @@ namespace Silk.NET.OpenAL.Extensions.Creative
 
             throw new InvalidEnumArgumentException(nameof(value), value, typeof(BufferStorageMode));
         }
+
+        public abstract bool IsExtensionPresent(string name);
+        public abstract IntPtr GetProcAddress(string name);
+        public abstract int GetEnumValue(string name);
     }
 }

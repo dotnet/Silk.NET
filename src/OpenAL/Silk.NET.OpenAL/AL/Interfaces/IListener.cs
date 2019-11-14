@@ -13,7 +13,7 @@ namespace Silk.NET.OpenAL.Interfaces
     /// Defines the public interface for the listener-related functions of OpenAL 1.1.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    internal interface IListener
+    public interface IListener
     {
         /// <summary>
         /// Sets the value of a named property on the given listener.

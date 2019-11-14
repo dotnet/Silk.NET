@@ -12,7 +12,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT.Enumeration
     /// Defines the public API of the context-related functions of the Capture extension.
     /// </summary>
     [NativeSymbols(Prefix = "alc")]
-    internal interface ICaptureEnumerationContextState
+    public interface ICaptureEnumerationContextState
     {
         /// <summary>
         /// Gets a named property on the context.

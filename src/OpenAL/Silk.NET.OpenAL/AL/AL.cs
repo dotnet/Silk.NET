@@ -19,7 +19,7 @@ namespace Silk.NET.OpenAL
     {
         static AL()
         {
-            LibraryLoader.CreateBuilder<AL>(ALLoader.Instance);
+            LibraryLoader.CreateBuilder<AL>(new ALLoader(null));
         }
         
         /// <inheritdoc cref="NativeLibraryBase" />
@@ -27,6 +27,18 @@ namespace Silk.NET.OpenAL
             : base(path, options)
         {
         }
+
+        /// <inheritdoc />
+        public abstract override bool IsExtensionPresent(string name);
+
+        /// <inheritdoc />
+        public override SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
+
+        /// <inheritdoc />
+        public abstract IntPtr GetProcAddress(string name);
+
+        /// <inheritdoc />
+        public abstract int GetEnumValue(string name);
 
         /// <inheritdoc />
         public abstract unsafe void GenBuffers(int count, uint* buffers);
@@ -87,15 +99,6 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         public abstract AudioError GetError();
-
-        /// <inheritdoc />
-        public override SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
-
-        /// <inheritdoc />
-        public abstract IntPtr GetProcAddress(string name);
-
-        /// <inheritdoc />
-        public abstract int GetEnumValue(string name);
 
         /// <inheritdoc />
         public abstract void SetListenerProperty(ListenerFloat param, float value);
@@ -162,6 +165,9 @@ namespace Silk.NET.OpenAL
         /// <inheritdoc />
         public abstract unsafe void SetSourceProperty(uint source, SourceVector3 param, float* value);
 
+        /// <inheritdoc />
+        public abstract void SetSourceProperty(uint source, SourceBoolean param, int value);
+        
         /// <inheritdoc />
         public abstract void SetSourceProperty(uint source, SourceInteger param, int value);
 

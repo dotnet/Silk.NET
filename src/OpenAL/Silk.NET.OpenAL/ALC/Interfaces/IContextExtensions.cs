@@ -12,7 +12,7 @@ namespace Silk.NET.OpenAL.Interfaces
     /// used to constrain extension implementation classes.
     /// </summary>
     [NativeSymbols(Prefix = "alc")]
-    internal interface IContextExtensions
+    public interface IContextExtensions
     {
         /// <summary>
         /// Determines whether or not the named extension is available.

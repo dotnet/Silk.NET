@@ -28,11 +28,11 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// Called when a key is pressed.
         /// </summary>
-        event Action<IKeyboard, Key> KeyDown;
+        event Action<IKeyboard, Key, int> KeyDown;
         
         /// <summary>
         /// Called when a key is released.
         /// </summary>
-        event Action<IKeyboard, Key> KeyUp;
+        event Action<IKeyboard, Key, int> KeyUp;
     }
 }

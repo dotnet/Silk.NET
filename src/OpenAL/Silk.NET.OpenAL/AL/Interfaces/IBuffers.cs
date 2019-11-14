@@ -13,7 +13,7 @@ namespace Silk.NET.OpenAL.Interfaces
     /// Defines the public interface for the buffer-related functions of OpenAL 1.1.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    internal interface IBuffers
+    public interface IBuffers
     {
         /// <summary>
         /// Creates one or more buffer objects.

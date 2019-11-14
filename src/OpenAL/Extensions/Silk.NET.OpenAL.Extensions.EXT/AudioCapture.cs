@@ -72,9 +72,6 @@ namespace Silk.NET.OpenAL.Extensions.EXT
                 );
             }
 
-            // handle is not null, check for some Alc Error
-            CheckErrors();
-
             SampleFormat = actualSampleFormat;
             SampleFrequency = frequency;
         }
@@ -130,20 +127,6 @@ namespace Silk.NET.OpenAL.Extensions.EXT
             }
 
             _isDisposed = true;
-        }
-
-        /// <summary>
-        /// Checks for ALC error conditions.
-        /// </summary>
-        /// <exception cref="OutOfMemoryException">Raised when an out of memory error is detected.</exception>
-        /// <exception cref="AudioValueException">Raised when an invalid value is detected.</exception>
-        /// <exception cref="AudioDeviceException">Raised when an invalid device is detected.</exception>
-        /// <exception cref="AudioContextException">Raised when an invalid context is detected.</exception>
-        public void CheckErrors()
-        {
-            unsafe {
-                new AudioDeviceErrorChecker(_handle).Dispose();
-            }
         }
 
         /// <summary>

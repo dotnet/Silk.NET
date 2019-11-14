@@ -13,7 +13,7 @@ namespace Silk.NET.OpenAL.Extensions.Soft
     /// Defines the public API of state-related functions in the Deferred Updates extension.
     /// </summary>
     [NativeSymbols(Prefix = "al")]
-    public interface IDeferredUpdatesState : IExtensions
+    public interface IDeferredUpdatesState
     {
         /// <summary>
         /// Gets a named value from the state. This overload covers additional valid values added by the Deferred
