@@ -6,37 +6,71 @@
 using System;
 using AdvancedDLSupport;
 using AdvancedDLSupport.Loaders;
+using Silk.NET.Core.Loader;
 
 namespace Silk.NET.OpenAL
 {
-    public class ALLoader : IPlatformLoader
+    public class ALLoader : ISymbolLoader
     {
-        [NativeSymbols(Prefix = "al")]
+        public ALLoader(bool alc)
+        {
+            _alc = alc;
+        }
+        
+        [NativeSymbols]
         public interface IInternalAL
         {
+            [NativeSymbol("alcGetProcAddress")]
+            IntPtr GetContextProcAddress(string proc);
+            [NativeSymbol("alGetProcAddress")]
             IntPtr GetProcAddress(string proc);
         }
 
-        private static IInternalAL _al = NativeLibraryBuilder.Default.ActivateInterface<IInternalAL>
+        private static IInternalAL _al = new NativeLibraryBuilder(LibraryLoader.Options).ActivateInterface<IInternalAL>
         (
             new OpenALLibraryNameContainer().GetLibraryName()
         );
-        
-        public static ALLoader Instance { get; } = new ALLoader();
-        
+
+        private bool _alc;
+
         public IntPtr LoadSymbol(IntPtr library, string symbolName)
         {
-            return _al.GetProcAddress(symbolName);
-        }
+            IntPtr sym;
+            try
+            {
+                sym = PlatformLoaderBase.PlatformLoader.LoadSymbol(library, symbolName);
+            }
+            catch
+            {
+                // do nothing
+            }
 
-        public IntPtr LoadLibrary(string path)
-        {
-            return IntPtr.Zero;
-        }
+            if (sym != IntPtr.Zero)
+            {
+                return sym;
+            }
 
-        public bool CloseLibrary(IntPtr library)
-        {
-            return true;
+            if (!_alc)
+            {
+                sym = _al.GetProcAddress(symbolName);
+
+                if (sym != IntPtr.Zero)
+                {
+                    return sym;
+                }
+            }
+            else
+            {
+
+                sym = _al.GetContextProcAddress(symbolName);
+
+                if (sym != IntPtr.Zero)
+                {
+                    return sym;
+                }
+            }
+
+            throw new EntryPointNotFoundException();
         }
     }
 }
