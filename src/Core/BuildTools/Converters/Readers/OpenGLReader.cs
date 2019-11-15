@@ -17,6 +17,7 @@ using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Converters.Khronos;
 using Attribute = Silk.NET.BuildTools.Common.Attribute;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
@@ -131,8 +132,16 @@ namespace Silk.NET.BuildTools.Converters.Readers
         public static Type ParseTypeSignature([NotNull] XElement typeElement)
         {
             var typeString = typeElement.Attribute("type")?.Value ?? throw new DataException("Couldn't find type.");
+            var group = typeElement.Attribute("group")?.Value;
 
-            return ParseTypeSignature(typeString);
+            var ret = ParseTypeSignature(typeString);
+
+            if (!(group is null))
+            {
+                ret.OriginalGroup = group;
+            }
+
+            return ret;
         }
         
         [NotNull]
@@ -449,7 +458,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var returns = new XElement
             (
                 "returns",
-                new XAttribute
+                command.Element("proto").Attribute("group") is null ? new object[]{new XAttribute
                 (
                     "type",
                     FunctionParameterType(command.Element("proto"))
@@ -457,7 +466,15 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         .Replace("struct", string.Empty)
                         .Replace("String *", "String")
                         .Trim()
-                )
+                )} : new object[]{new XAttribute
+                (
+                    "type",
+                    FunctionParameterType(command.Element("proto"))
+                        .Replace("const", string.Empty)
+                        .Replace("struct", string.Empty)
+                        .Replace("String *", "String")
+                        .Trim()
+                ), new XAttribute("group", command.Element("proto").Attribute("group").Value)}
             );
 
             foreach (var parameter in command.Elements("param"))
@@ -489,6 +506,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 if (count != null)
                 {
                     p.Add(count);
+                }
+
+                if (!(parameter.Attribute("group") is null))
+                {
+                    p.Add(new XAttribute("group", parameter.Attribute("group").Value));
                 }
 
                 function.Add(p);
@@ -586,6 +608,64 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 Tokens = tokens.Where(x => x.Attributes.Count == 0).ToList()
                             };
                         }
+                    }
+                }
+            }
+
+            foreach (var group in doc.Element("registry").Element("groups").Elements("group"))
+            {
+                var tokens = group.Elements("enum")
+                    .Select(x => x.GetNameAttribute())
+                    .Select
+                    (
+                        token => new Token
+                        {
+                            Attributes = removals.Contains(token)
+                                ? new List<Attribute>
+                                {
+                                    new Attribute
+                                    {
+                                        Name = "System.Obsolete"
+                                    }
+                                }
+                                : new List<Attribute>(),
+                            Doc = string.Empty,
+                            Name = Naming.Translate(TrimName(token, opts), opts.Prefix),
+                            NativeName = token,
+                            Value = allEnums[token]
+                        }
+                    )
+                    .ToList();
+                foreach (var (apiName, apiVersion) in doc.Element("registry")
+                    .Elements("feature")
+                    .Select(x => (x.Attribute("api").Value, x.Attribute("number").Value))
+                    .Distinct())
+                {
+                    var ret = new Enum
+                    {
+                        Name = group.GetNameAttribute(),
+                        NativeName = group.GetNameAttribute(),
+                        Attributes = new List<Attribute>(),
+                        ExtensionName = "Core (Grouped)",
+                        ProfileName = apiName,
+                        ProfileVersion = Version.Parse(apiVersion),
+                        Tokens = tokens
+                    };
+
+                    yield return ret;
+
+                    if (apiName == "gl")
+                    {
+                        yield return new Enum
+                        {
+                            Name = ret.Name,
+                            NativeName = ret.NativeName,
+                            Attributes = new List<Attribute>(),
+                            ExtensionName = "Core (Grouped)",
+                            ProfileName = "glcore",
+                            ProfileVersion = Version.Parse(apiVersion),
+                            Tokens = tokens.Where(x => x.Attributes.Count == 0).ToList()
+                        };
                     }
                 }
             }

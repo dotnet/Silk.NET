@@ -1000,7 +1000,7 @@ typedef unsigned int GLhandleARB;
             <enum name="GL_NORMAL_ARRAY_COUNT_EXT"/>
             <enum name="GL_NORMAL_ARRAY_STRIDE"/>
             <enum name="GL_NORMAL_ARRAY_TYPE"/>
-            <enum name="GL_NUM_DEVICE_UUIDS"/>
+            <enum name="GL_NUM_DEVICE_UUIDS_EXT"/> <!-- TODO: commit back -->
             <enum name="GL_PACK_ALIGNMENT"/>
             <enum name="GL_PACK_CMYK_HINT_EXT"/>
             <enum name="GL_PACK_IMAGE_DEPTH_SGIS"/>

@@ -51,6 +51,9 @@ namespace Silk.NET.BuildTools.Common.Functions
         [ItemNotNull]
         [JsonIgnore]
         public List<string> Categories { get; set; }
+        
+        [JsonIgnore]
+        public bool IsVariant { get; set; }
 
         /// <summary>
         /// Gets or sets the generic type parameters of the function.

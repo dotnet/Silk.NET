@@ -27,7 +27,7 @@ namespace Silk.NET.OpenGLES
         public override bool IsExtensionPresent(string extension)
         {
             _extensions ??= Enumerable.Range(0, GetInteger(GLEnum.NumExtensions))
-                .Select(x => GetStringManaged(GLEnum.Extensions, (uint) x)).ToList();
+                .Select(x => GetStringS(GLEnum.Extensions, (uint) x)).ToList();
 
             return _extensions.Contains(extension);
         }
