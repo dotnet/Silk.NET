@@ -5817,6 +5817,34 @@
               "Value": "1000218000",
               "Doc": "/// <summary></summary>",
               "Attributes": []
+            },
+            {
+              "Name": "DepthAttachmentOptimalKhr",
+              "NativeName": "VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_OPTIMAL_KHR",
+              "Value": "1000241000",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            },
+            {
+              "Name": "DepthReadOnlyOptimalKhr",
+              "NativeName": "VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_OPTIMAL_KHR",
+              "Value": "1000241001",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            },
+            {
+              "Name": "StencilAttachmentOptimalKhr",
+              "NativeName": "VK_IMAGE_LAYOUT_STENCIL_ATTACHMENT_OPTIMAL_KHR",
+              "Value": "1000241002",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            },
+            {
+              "Name": "StencilReadOnlyOptimalKhr",
+              "NativeName": "VK_IMAGE_LAYOUT_STENCIL_READ_ONLY_OPTIMAL_KHR",
+              "Value": "1000241003",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
             }
           ],
           "Name": "ImageLayout",
@@ -7288,6 +7316,13 @@
               "Value": "2",
               "Doc": "/// <summary></summary>",
               "Attributes": []
+            },
+            {
+              "Name": "PipelineShaderStageCreateReserved3BitKhr",
+              "NativeName": "VK_PIPELINE_SHADER_STAGE_CREATE_RESERVED_3_BIT_KHR",
+              "Value": "8",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
             }
           ],
           "Name": "PipelineShaderStageCreateFlags",
@@ -8673,6 +8708,18 @@
           "Attributes": []
         },
         {
+          "Tokens": [],
+          "Name": "SemaphoreCreateFlags",
+          "NativeName": "VkSemaphoreCreateFlags",
+          "ExtensionName": "Core",
+          "Attributes": [
+            {
+              "Name": "Flags",
+              "Arguments": []
+            }
+          ]
+        },
+        {
           "Tokens": [
             {
               "Name": "SemaphoreImportTemporaryBit",
@@ -8684,6 +8731,48 @@
           ],
           "Name": "SemaphoreImportFlags",
           "NativeName": "VkSemaphoreImportFlags",
+          "ExtensionName": "Core",
+          "Attributes": [
+            {
+              "Name": "Flags",
+              "Arguments": []
+            }
+          ]
+        },
+        {
+          "Tokens": [
+            {
+              "Name": "SemaphoreTypeBinaryKhr",
+              "NativeName": "VK_SEMAPHORE_TYPE_BINARY_KHR",
+              "Value": "0",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            },
+            {
+              "Name": "SemaphoreTypeTimelineKhr",
+              "NativeName": "VK_SEMAPHORE_TYPE_TIMELINE_KHR",
+              "Value": "1",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            }
+          ],
+          "Name": "SemaphoreTypeKHR",
+          "NativeName": "VkSemaphoreTypeKHR",
+          "ExtensionName": "Core",
+          "Attributes": []
+        },
+        {
+          "Tokens": [
+            {
+              "Name": "SemaphoreWaitAnyBitKhr",
+              "NativeName": "VK_SEMAPHORE_WAIT_ANY_BIT_KHR",
+              "Value": "1",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            }
+          ],
+          "Name": "SemaphoreWaitFlagsKHR",
+          "NativeName": "VkSemaphoreWaitFlagsKHR",
           "ExtensionName": "Core",
           "Attributes": [
             {
@@ -11234,6 +11323,13 @@
               "Attributes": []
             },
             {
+              "Name": "PhysicalDeviceShaderClockFeaturesKhr",
+              "NativeName": "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CLOCK_FEATURES_KHR",
+              "Value": "1000181000",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            },
+            {
               "Name": "PipelineCompilerControlCreateInfoAmd",
               "NativeName": "VK_STRUCTURE_TYPE_PIPELINE_COMPILER_CONTROL_CREATE_INFO_AMD",
               "Value": "1000183000",
@@ -11384,6 +11480,48 @@
               "Name": "QueueFamilyCheckpointPropertiesNV",
               "NativeName": "VK_STRUCTURE_TYPE_QUEUE_FAMILY_CHECKPOINT_PROPERTIES_NV",
               "Value": "1000206001",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            },
+            {
+              "Name": "PhysicalDeviceTimelineSemaphoreFeaturesKhr",
+              "NativeName": "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TIMELINE_SEMAPHORE_FEATURES_KHR",
+              "Value": "1000207000",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            },
+            {
+              "Name": "PhysicalDeviceTimelineSemaphorePropertiesKhr",
+              "NativeName": "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TIMELINE_SEMAPHORE_PROPERTIES_KHR",
+              "Value": "1000207001",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            },
+            {
+              "Name": "SemaphoreTypeCreateInfoKhr",
+              "NativeName": "VK_STRUCTURE_TYPE_SEMAPHORE_TYPE_CREATE_INFO_KHR",
+              "Value": "1000207002",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            },
+            {
+              "Name": "TimelineSemaphoreSubmitInfoKhr",
+              "NativeName": "VK_STRUCTURE_TYPE_TIMELINE_SEMAPHORE_SUBMIT_INFO_KHR",
+              "Value": "1000207003",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            },
+            {
+              "Name": "SemaphoreWaitInfoKhr",
+              "NativeName": "VK_STRUCTURE_TYPE_SEMAPHORE_WAIT_INFO_KHR",
+              "Value": "1000207004",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            },
+            {
+              "Name": "SemaphoreSignalInfoKhr",
+              "NativeName": "VK_STRUCTURE_TYPE_SEMAPHORE_SIGNAL_INFO_KHR",
+              "Value": "1000207005",
               "Doc": "/// <summary></summary>",
               "Attributes": []
             },
@@ -11573,6 +11711,27 @@
               "Name": "PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV",
               "NativeName": "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEDICATED_ALLOCATION_IMAGE_ALIASING_FEATURES_NV",
               "Value": "1000240000",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            },
+            {
+              "Name": "PhysicalDeviceSeparateDepthStencilLayoutsFeaturesKhr",
+              "NativeName": "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SEPARATE_DEPTH_STENCIL_LAYOUTS_FEATURES_KHR",
+              "Value": "1000241000",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            },
+            {
+              "Name": "AttachmentReferenceStencilLayoutKhr",
+              "NativeName": "VK_STRUCTURE_TYPE_ATTACHMENT_REFERENCE_STENCIL_LAYOUT_KHR",
+              "Value": "1000241001",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
+            },
+            {
+              "Name": "AttachmentDescriptionStencilLayoutKhr",
+              "NativeName": "VK_STRUCTURE_TYPE_ATTACHMENT_DESCRIPTION_STENCIL_LAYOUT_KHR",
+              "Value": "1000241002",
               "Doc": "/// <summary></summary>",
               "Attributes": []
             },
@@ -31327,6 +31486,95 @@
           "Functions": []
         },
         {
+          "Name": "AttachmentDescriptionStencilLayoutKHR",
+          "NativeName": "VkAttachmentDescriptionStencilLayoutKHR",
+          "ExtensionName": "Core",
+          "Fields": [
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "StructureType",
+                "Group": null,
+                "OriginalName": "VkStructureType",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "SType",
+              "NativeName": "sType",
+              "NativeType": "VkStructureType"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 1,
+                "ArrayDimensions": 0,
+                "Name": "void",
+                "Group": null,
+                "OriginalName": "void",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "PNext",
+              "NativeName": "pNext",
+              "NativeType": "void*"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "ImageLayout",
+                "Group": null,
+                "OriginalName": "VkImageLayout",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "StencilInitialLayout",
+              "NativeName": "stencilInitialLayout",
+              "NativeType": "VkImageLayout"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "ImageLayout",
+                "Group": null,
+                "OriginalName": "VkImageLayout",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "StencilFinalLayout",
+              "NativeName": "stencilFinalLayout",
+              "NativeType": "VkImageLayout"
+            }
+          ],
+          "Attributes": [],
+          "Functions": []
+        },
+        {
           "Name": "AttachmentReference",
           "NativeName": "VkAttachmentReference",
           "ExtensionName": "Core",
@@ -31479,6 +31727,75 @@
               "Name": "AspectMask",
               "NativeName": "aspectMask",
               "NativeType": "VkImageAspectFlags"
+            }
+          ],
+          "Attributes": [],
+          "Functions": []
+        },
+        {
+          "Name": "AttachmentReferenceStencilLayoutKHR",
+          "NativeName": "VkAttachmentReferenceStencilLayoutKHR",
+          "ExtensionName": "Core",
+          "Fields": [
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "StructureType",
+                "Group": null,
+                "OriginalName": "VkStructureType",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "SType",
+              "NativeName": "sType",
+              "NativeType": "VkStructureType"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 1,
+                "ArrayDimensions": 0,
+                "Name": "void",
+                "Group": null,
+                "OriginalName": "void",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "PNext",
+              "NativeName": "pNext",
+              "NativeType": "void*"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "ImageLayout",
+                "Group": null,
+                "OriginalName": "VkImageLayout",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "StencilLayout",
+              "NativeName": "stencilLayout",
+              "NativeType": "VkImageLayout"
             }
           ],
           "Attributes": [],
@@ -66637,6 +66954,75 @@
           "Functions": []
         },
         {
+          "Name": "PhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR",
+          "NativeName": "VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR",
+          "ExtensionName": "Core",
+          "Fields": [
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "StructureType",
+                "Group": null,
+                "OriginalName": "VkStructureType",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "SType",
+              "NativeName": "sType",
+              "NativeType": "VkStructureType"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 1,
+                "ArrayDimensions": 0,
+                "Name": "void",
+                "Group": null,
+                "OriginalName": "void",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "PNext",
+              "NativeName": "pNext",
+              "NativeType": "void*"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "uint",
+                "Group": null,
+                "OriginalName": "VkBool32",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "SeparateDepthStencilLayouts",
+              "NativeName": "separateDepthStencilLayouts",
+              "NativeType": "VkBool32"
+            }
+          ],
+          "Attributes": [],
+          "Functions": []
+        },
+        {
           "Name": "PhysicalDeviceShaderAtomicInt64FeaturesKHR",
           "NativeName": "VkPhysicalDeviceShaderAtomicInt64FeaturesKHR",
           "ExtensionName": "Core",
@@ -66719,6 +67105,95 @@
               "Count": null,
               "Name": "ShaderSharedInt64Atomics",
               "NativeName": "shaderSharedInt64Atomics",
+              "NativeType": "VkBool32"
+            }
+          ],
+          "Attributes": [],
+          "Functions": []
+        },
+        {
+          "Name": "PhysicalDeviceShaderClockFeaturesKHR",
+          "NativeName": "VkPhysicalDeviceShaderClockFeaturesKHR",
+          "ExtensionName": "Core",
+          "Fields": [
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "StructureType",
+                "Group": null,
+                "OriginalName": "VkStructureType",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "SType",
+              "NativeName": "sType",
+              "NativeType": "VkStructureType"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 1,
+                "ArrayDimensions": 0,
+                "Name": "void",
+                "Group": null,
+                "OriginalName": "void",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "PNext",
+              "NativeName": "pNext",
+              "NativeType": "void*"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "uint",
+                "Group": null,
+                "OriginalName": "VkBool32",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "ShaderSubgroupClock",
+              "NativeName": "shaderSubgroupClock",
+              "NativeType": "VkBool32"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "uint",
+                "Group": null,
+                "OriginalName": "VkBool32",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "ShaderDeviceClock",
+              "NativeName": "shaderDeviceClock",
               "NativeType": "VkBool32"
             }
           ],
@@ -68885,6 +69360,144 @@
               "Name": "TextureCompressionAstcHdr",
               "NativeName": "textureCompressionASTC_HDR",
               "NativeType": "VkBool32"
+            }
+          ],
+          "Attributes": [],
+          "Functions": []
+        },
+        {
+          "Name": "PhysicalDeviceTimelineSemaphoreFeaturesKHR",
+          "NativeName": "VkPhysicalDeviceTimelineSemaphoreFeaturesKHR",
+          "ExtensionName": "Core",
+          "Fields": [
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "StructureType",
+                "Group": null,
+                "OriginalName": "VkStructureType",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "SType",
+              "NativeName": "sType",
+              "NativeType": "VkStructureType"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 1,
+                "ArrayDimensions": 0,
+                "Name": "void",
+                "Group": null,
+                "OriginalName": "void",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "PNext",
+              "NativeName": "pNext",
+              "NativeType": "void*"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "uint",
+                "Group": null,
+                "OriginalName": "VkBool32",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "TimelineSemaphore",
+              "NativeName": "timelineSemaphore",
+              "NativeType": "VkBool32"
+            }
+          ],
+          "Attributes": [],
+          "Functions": []
+        },
+        {
+          "Name": "PhysicalDeviceTimelineSemaphorePropertiesKHR",
+          "NativeName": "VkPhysicalDeviceTimelineSemaphorePropertiesKHR",
+          "ExtensionName": "Core",
+          "Fields": [
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "StructureType",
+                "Group": null,
+                "OriginalName": "VkStructureType",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "SType",
+              "NativeName": "sType",
+              "NativeType": "VkStructureType"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 1,
+                "ArrayDimensions": 0,
+                "Name": "void",
+                "Group": null,
+                "OriginalName": "void",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "PNext",
+              "NativeName": "pNext",
+              "NativeType": "void*"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "ulong",
+                "Group": null,
+                "OriginalName": "uint64_t",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "MaxTimelineSemaphoreValueDifference",
+              "NativeName": "maxTimelineSemaphoreValueDifference",
+              "NativeType": "uint64_t"
             }
           ],
           "Attributes": [],
@@ -79005,6 +79618,313 @@
           "Functions": []
         },
         {
+          "Name": "SemaphoreSignalInfoKHR",
+          "NativeName": "VkSemaphoreSignalInfoKHR",
+          "ExtensionName": "Core",
+          "Fields": [
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "StructureType",
+                "Group": null,
+                "OriginalName": "VkStructureType",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "SType",
+              "NativeName": "sType",
+              "NativeType": "VkStructureType"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 1,
+                "ArrayDimensions": 0,
+                "Name": "void",
+                "Group": null,
+                "OriginalName": "void",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "PNext",
+              "NativeName": "pNext",
+              "NativeType": "void*"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "Semaphore",
+                "Group": null,
+                "OriginalName": "VkSemaphore",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "Semaphore",
+              "NativeName": "semaphore",
+              "NativeType": "VkSemaphore"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "ulong",
+                "Group": null,
+                "OriginalName": "uint64_t",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "Value",
+              "NativeName": "value",
+              "NativeType": "uint64_t"
+            }
+          ],
+          "Attributes": [],
+          "Functions": []
+        },
+        {
+          "Name": "SemaphoreTypeCreateInfoKHR",
+          "NativeName": "VkSemaphoreTypeCreateInfoKHR",
+          "ExtensionName": "Core",
+          "Fields": [
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "StructureType",
+                "Group": null,
+                "OriginalName": "VkStructureType",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "SType",
+              "NativeName": "sType",
+              "NativeType": "VkStructureType"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 1,
+                "ArrayDimensions": 0,
+                "Name": "void",
+                "Group": null,
+                "OriginalName": "void",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "PNext",
+              "NativeName": "pNext",
+              "NativeType": "void*"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "SemaphoreTypeKHR",
+                "Group": null,
+                "OriginalName": "VkSemaphoreTypeKHR",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "SemaphoreType",
+              "NativeName": "semaphoreType",
+              "NativeType": "VkSemaphoreTypeKHR"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "ulong",
+                "Group": null,
+                "OriginalName": "uint64_t",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "InitialValue",
+              "NativeName": "initialValue",
+              "NativeType": "uint64_t"
+            }
+          ],
+          "Attributes": [],
+          "Functions": []
+        },
+        {
+          "Name": "SemaphoreWaitInfoKHR",
+          "NativeName": "VkSemaphoreWaitInfoKHR",
+          "ExtensionName": "Core",
+          "Fields": [
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "StructureType",
+                "Group": null,
+                "OriginalName": "VkStructureType",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "SType",
+              "NativeName": "sType",
+              "NativeType": "VkStructureType"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 1,
+                "ArrayDimensions": 0,
+                "Name": "void",
+                "Group": null,
+                "OriginalName": "void",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "PNext",
+              "NativeName": "pNext",
+              "NativeType": "void*"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "SemaphoreWaitFlagsKHR",
+                "Group": null,
+                "OriginalName": "VkSemaphoreWaitFlagsKHR",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "Flags",
+              "NativeName": "flags",
+              "NativeType": "VkSemaphoreWaitFlagsKHR"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "uint",
+                "Group": null,
+                "OriginalName": "uint32_t",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "SemaphoreCount",
+              "NativeName": "semaphoreCount",
+              "NativeType": "uint32_t"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 1,
+                "ArrayDimensions": 0,
+                "Name": "Semaphore",
+                "Group": null,
+                "OriginalName": "VkSemaphore",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "PSemaphores",
+              "NativeName": "pSemaphores",
+              "NativeType": "VkSemaphore*"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 1,
+                "ArrayDimensions": 0,
+                "Name": "ulong",
+                "Group": null,
+                "OriginalName": "uint64_t",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "PValues",
+              "NativeName": "pValues",
+              "NativeType": "uint64_t*"
+            }
+          ],
+          "Attributes": [],
+          "Functions": []
+        },
+        {
           "Name": "ShaderModule",
           "NativeName": "VkShaderModule",
           "ExtensionName": "Core",
@@ -83814,6 +84734,135 @@
               "Name": "SupportsTextureGatherLodbiasAmd",
               "NativeName": "supportsTextureGatherLODBiasAMD",
               "NativeType": "VkBool32"
+            }
+          ],
+          "Attributes": [],
+          "Functions": []
+        },
+        {
+          "Name": "TimelineSemaphoreSubmitInfoKHR",
+          "NativeName": "VkTimelineSemaphoreSubmitInfoKHR",
+          "ExtensionName": "Core",
+          "Fields": [
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "StructureType",
+                "Group": null,
+                "OriginalName": "VkStructureType",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "SType",
+              "NativeName": "sType",
+              "NativeType": "VkStructureType"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 1,
+                "ArrayDimensions": 0,
+                "Name": "void",
+                "Group": null,
+                "OriginalName": "void",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "PNext",
+              "NativeName": "pNext",
+              "NativeType": "void*"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "uint",
+                "Group": null,
+                "OriginalName": "uint32_t",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "WaitSemaphoreValueCount",
+              "NativeName": "waitSemaphoreValueCount",
+              "NativeType": "uint32_t"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 1,
+                "ArrayDimensions": 0,
+                "Name": "ulong",
+                "Group": null,
+                "OriginalName": "uint64_t",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "PWaitSemaphoreValues",
+              "NativeName": "pWaitSemaphoreValues",
+              "NativeType": "uint64_t*"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "uint",
+                "Group": null,
+                "OriginalName": "uint32_t",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "SignalSemaphoreValueCount",
+              "NativeName": "signalSemaphoreValueCount",
+              "NativeType": "uint32_t"
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 1,
+                "ArrayDimensions": 0,
+                "Name": "ulong",
+                "Group": null,
+                "OriginalName": "uint64_t",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "PSignalSemaphoreValues",
+              "NativeName": "pSignalSemaphoreValues",
+              "NativeType": "uint64_t*"
             }
           ],
           "Attributes": [],
@@ -100281,6 +101330,254 @@
               "Attributes": [],
               "Doc": "/// <summary>To be added.</summary>",
               "ExtensionName": "KHR_pipeline_executable_properties"
+            }
+          ],
+          "Attributes": []
+        },
+        "VK_KHR_timeline_semaphore": {
+          "Name": "IKhrTimelineSemaphore",
+          "Functions": [
+            {
+              "Name": "GetSemaphoreCounterValue",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "Result",
+                "Group": null,
+                "OriginalName": "VkResult",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "vkGetSemaphoreCounterValueKHR",
+              "Parameters": [
+                {
+                  "Name": "device",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Device",
+                    "Group": null,
+                    "OriginalName": "VkDevice",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": {
+                    "_count": 0,
+                    "ConstantName": null,
+                    "ValueReference": null,
+                    "ComputedFromNames": []
+                  },
+                  "Flow": 0
+                },
+                {
+                  "Name": "semaphore",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Semaphore",
+                    "Group": null,
+                    "OriginalName": "VkSemaphore",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": {
+                    "_count": 0,
+                    "ConstantName": null,
+                    "ValueReference": null,
+                    "ComputedFromNames": []
+                  },
+                  "Flow": 0
+                },
+                {
+                  "Name": "pValue",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "ulong",
+                    "Group": null,
+                    "OriginalName": "uint64_t",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": {
+                    "_count": 0,
+                    "ConstantName": null,
+                    "ValueReference": null,
+                    "ComputedFromNames": []
+                  },
+                  "Flow": 2
+                }
+              ],
+              "GenericTypeParameters": [],
+              "Attributes": [],
+              "Doc": "/// <summary>To be added.</summary>",
+              "ExtensionName": "KHR_timeline_semaphore"
+            },
+            {
+              "Name": "SignalSemaphore",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "Result",
+                "Group": null,
+                "OriginalName": "VkResult",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "vkSignalSemaphoreKHR",
+              "Parameters": [
+                {
+                  "Name": "device",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Device",
+                    "Group": null,
+                    "OriginalName": "VkDevice",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": {
+                    "_count": 0,
+                    "ConstantName": null,
+                    "ValueReference": null,
+                    "ComputedFromNames": []
+                  },
+                  "Flow": 0
+                },
+                {
+                  "Name": "pSignalInfo",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "SemaphoreSignalInfoKHR",
+                    "Group": null,
+                    "OriginalName": "VkSemaphoreSignalInfoKHR",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": {
+                    "_count": 0,
+                    "ConstantName": null,
+                    "ValueReference": null,
+                    "ComputedFromNames": []
+                  },
+                  "Flow": 1
+                }
+              ],
+              "GenericTypeParameters": [],
+              "Attributes": [],
+              "Doc": "/// <summary>To be added.</summary>",
+              "ExtensionName": "KHR_timeline_semaphore"
+            },
+            {
+              "Name": "WaitSemaphores",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "Result",
+                "Group": null,
+                "OriginalName": "VkResult",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "vkWaitSemaphoresKHR",
+              "Parameters": [
+                {
+                  "Name": "device",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Device",
+                    "Group": null,
+                    "OriginalName": "VkDevice",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": {
+                    "_count": 0,
+                    "ConstantName": null,
+                    "ValueReference": null,
+                    "ComputedFromNames": []
+                  },
+                  "Flow": 0
+                },
+                {
+                  "Name": "pWaitInfo",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "SemaphoreWaitInfoKHR",
+                    "Group": null,
+                    "OriginalName": "VkSemaphoreWaitInfoKHR",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": {
+                    "_count": 0,
+                    "ConstantName": null,
+                    "ValueReference": null,
+                    "ComputedFromNames": []
+                  },
+                  "Flow": 1
+                },
+                {
+                  "Name": "timeout",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "ulong",
+                    "Group": null,
+                    "OriginalName": "uint64_t",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": {
+                    "_count": 0,
+                    "ConstantName": null,
+                    "ValueReference": null,
+                    "ComputedFromNames": []
+                  },
+                  "Flow": 0
+                }
+              ],
+              "GenericTypeParameters": [],
+              "Attributes": [],
+              "Doc": "/// <summary>To be added.</summary>",
+              "ExtensionName": "KHR_timeline_semaphore"
             }
           ],
           "Attributes": []
