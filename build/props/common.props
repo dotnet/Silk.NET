@@ -11,6 +11,7 @@
             - Added more overloads, as well as fixed the existing ones.
             - Added DoRender, DoUpdate, DoEvents, Open, Reset, and IsClosing members for custom game loops
             - Added KeyChar for receiving text input (modifiers applied)
+            - Added strongly-typed enum groupings for OpenGL and OpenGLES
             - Fixed extension loading
             - Fixed a bug where strings weren't marshalled properly
             - Fixed a bug where some shaders didn't compile correctly
