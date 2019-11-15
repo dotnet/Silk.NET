@@ -9,7 +9,7 @@
     },
     {
         "Task": "convert",
-        "Args": ["-p", "vk", "-o", "../binder_specifications", "-i", "../vk.xml", "-f", "-t", "../binder_typemaps/vk.json", "../binder_typemaps/csharp.json", "../binder_typemaps/aftermap.json", "-x", "-r", "vk", "-c", "vk"]
+        "Args": ["-p", "vk", "-o", "../binder_specifications", "-i", "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/master/xml/vk.xml", "-f", "-t", "../binder_typemaps/vk.json", "../binder_typemaps/csharp.json", "../binder_typemaps/aftermap.json", "-x", "-r", "vk", "-c", "vk"]
     },
     {
         "Task": "bake",

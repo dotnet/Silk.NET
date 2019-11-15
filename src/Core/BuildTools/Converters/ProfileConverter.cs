@@ -44,7 +44,11 @@ namespace Silk.NET.BuildTools.Converters
                 ctor.WriteConstants(profile, constants, opts);
                 foreach (var typeMap in profile.TypeMaps)
                 {
-                    TypeMapper.Map(typeMap, functions);
+                    TypeMapper.Map
+                    (
+                        typeMap,
+                        profile.Projects.Values.SelectMany(x => x.Interfaces.Values).SelectMany(x => x.Functions)
+                    );
                 }
 
                 foreach (var typeMap in profile.TypeMaps)

@@ -52,6 +52,13 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets or sets the original name of this type, before mapping.
         /// </summary>
         public string OriginalName { get; set; }
+        
+        /// <summary>
+        /// Gets or sets the original group of this type.
+        /// Not included in JSON, as it is only used by the OpenGL Constructor.
+        /// </summary>
+        //TODO[JsonIgnore]
+        public string OriginalGroup { get; set; }
 
         /// <summary>
         /// Gets or sets the generic types arguments for this type.

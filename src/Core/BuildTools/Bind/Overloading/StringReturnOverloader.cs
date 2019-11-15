@@ -22,7 +22,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 sb.Append($"return Marshal.PtrToStringAnsi((IntPtr) {function.Name}(");
                 sb.Append(string.Join(", ", function.Parameters.Select(Convert)));
                 sb.AppendLine("));");
-                var sig = new FunctionSignatureBuilder(function).WithReturnType(new Type {Name = "string"}).WithName(function.Name + "Managed").Build();
+                var sig = new FunctionSignatureBuilder(function).WithReturnType(new Type {Name = "string"}).WithName(function.Name + "S").Build();
                 yield return new ImplementedFunction(sig, sb, true);
             }
         }

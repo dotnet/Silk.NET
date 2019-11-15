@@ -603,7 +603,6 @@ namespace Silk.NET.BuildTools.Bind
                 return;
             }
 
-            Debug.WriteLine($"{folder}/{project.GetProjectName(prof)}.csproj");
             var csproj = new StreamWriter(Path.Combine(folder, $"{project.GetProjectName(prof)}.csproj"));
             csproj.WriteLine("<Project Sdk=\"Microsoft.NET.Sdk\">");
             csproj.WriteLine();
