@@ -75,7 +75,7 @@ namespace Silk.NET.Input.Desktop
 
         public void RaiseConnectionChange(int joystick, ConnectedState state)
         {
-            ConnectionChanged?.Invoke(Joysticks[joystick], state == ConnectedState.Connected);
+            ConnectionChanged?.Invoke(Util.Glfw.JoystickIsGamepad(joystick) ? (IInputDevice) Gamepads[joystick] : Joysticks[joystick], state == ConnectedState.Connected);
         }
     }
 }

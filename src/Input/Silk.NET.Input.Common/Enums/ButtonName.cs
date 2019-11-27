@@ -14,16 +14,16 @@ namespace Silk.NET.Input.Common
         B,
         X,
         Y,
-        Back,
-        Home,
-        DPadUp,
-        DPadDown,
-        DPadLeft,
-        DPadRight,
         LeftBumper,
-        LeftStick,
         RightBumper,
+        Back,
+        Start,
+        Home,
+        LeftStick,
         RightStick,
-        Start
+        DPadUp,
+        DPadRight,
+        DPadDown,
+        DPadLeft
     }
 }
