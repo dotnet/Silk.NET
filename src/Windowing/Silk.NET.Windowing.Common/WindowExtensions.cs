@@ -13,7 +13,7 @@ namespace Silk.NET.Windowing.Common
     public static class WindowExtensions
     {
         /// <summary>
-        /// Executes a Func delegate on the given window.
+        /// Executes a Func&lt;T&gt; delegate on the given window.
         /// </summary>
         /// <param name="window">The window to invoke on.</param>
         /// <param name="t">The function to invoke.</param>
