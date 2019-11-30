@@ -13,29 +13,31 @@ namespace Silk.NET.Windowing.Common
     public static class WindowExtensions
     {
         /// <summary>
-        /// Invoke this Func on the window.
+        /// Executes a Func delegate on the given window.
         /// </summary>
         /// <param name="window">The window to invoke on.</param>
         /// <param name="t">The function to invoke.</param>
         /// <typeparam name="T">Type of the function.</typeparam>
-        /// <returns></returns>
+        /// <remarks>This function is not applicable on single-threaded windows</remarks>
+        /// <returns>The return value of the given delegate.</returns>
         public static T Invoke<T>(this IWindow window, Func<T> t)
         {
             return (T) window.Invoke(t);
         }
 
         /// <summary>
-        /// Invoke this <see cref="Action"/> on the window.
+        /// Executes an <see cref="Action"/> on the given window.
         /// </summary>
         /// <param name="window">The window to invoke on.</param>
         /// <param name="t">The action to invoke.</param>
+        /// <remarks>This function is not applicable on single-threaded windows</remarks>
         public static void Invoke(this IWindow window, Action t)
         {
             window.Invoke(t);
         }
 
         /// <summary>
-        /// Start an event loop on this window.
+        /// Start the default event loop on this window.
         /// </summary>
         /// <param name="window">The window to begin the loop on.</param>
         public static void Run(this IWindow window)

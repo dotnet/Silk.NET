@@ -86,9 +86,7 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public int RunningSlowTolerance { get; set; }
 
-        /// <summary>
-        /// Whether or not this window is queued to close.
-        /// </summary>
+        /// <inheritdoc />
         public unsafe bool IsClosing => _glfw.WindowShouldClose(_windowPtr);
 
         /// <inheritdoc />
@@ -395,12 +393,7 @@ namespace Silk.NET.Windowing.Desktop
             }
         }
 
-        /// <summary>
-        /// Open the window.
-        /// </summary>
-        /// <remarks>
-        /// This should be used if you want to setup your own loop; otherwise, you should use <see cref="WindowExtensions.Run"/> instead
-        /// </remarks>
+        /// <inheritdoc />
         public unsafe void Open()
         {
             if (_windowPtr != default)
@@ -772,23 +765,10 @@ namespace Silk.NET.Windowing.Desktop
             _glfw.SetDropCallback(_windowPtr, _onFileDrop);
         }
 
-        /// <summary>
-        /// Checks whether or not Vulkan is supported for this window.
-        /// </summary>
-        /// <remarks>
-        /// This doesn't guarantee that context or surface creation will succeed; consult the GLFW documentation for
-        /// more details.
-        /// </remarks>
+        /// <inheritdoc />
         public bool IsVulkanSupported => _glfw.VulkanSupported();
-
-        /// <summary>
-        /// Create a Vulkan surface.
-        /// </summary>
-        /// <param name="instance">The Vulkan instance to create a surface for.</param>
-        /// <param name="allocator">A custom Vulkan allocator. Can be omitted by passing null.</param>
-        /// <typeparam name="T">Allocator type</typeparam>
-        /// <returns>A handle to the Vulkan surface created</returns>
-        /// <exception cref="GlfwException">Thrown if GLFW fails to create a Vulkan surface</exception>
+        
+        /// <inheritdoc />
         public unsafe VkHandle CreateSurface<T>(VkHandle instance, T* allocator)
             where T : unmanaged
         {
@@ -801,12 +781,8 @@ namespace Silk.NET.Windowing.Desktop
 
             return surface[0];
         }
-
-        /// <summary>
-        /// Get the extensions required for Vulkan to work on this platform.
-        /// </summary>
-        /// <param name="count">The number of extensions in the returned array</param>
-        /// <returns>An array of strings, containing names for all required extensions</returns>
+        
+        /// <inheritdoc />
         public unsafe char** GetRequiredExtensions(out uint count)
         {
             return (char**) _glfw.GetRequiredInstanceExtensions(out count);
