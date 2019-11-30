@@ -9,10 +9,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
-      <ProjectReference Include="..\..\src\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
-      <ProjectReference Include="..\..\src\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
-      <ProjectReference Include="..\..\src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+      <ProjectReference Include="..\..\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
+      <ProjectReference Include="..\..\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
+      <ProjectReference Include="..\..\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
+      <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
       <ProjectReference Include="..\SampleBase\SampleBase.csproj" />
     </ItemGroup>
 
