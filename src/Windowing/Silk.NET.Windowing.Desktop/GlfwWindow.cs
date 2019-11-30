@@ -12,14 +12,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
-using Ultz.Dispatcher;
 
 namespace Silk.NET.Windowing.Desktop
 {
     /// <summary>
     /// A Silk.NET window, using GLFW as a backend.
     /// </summary>
-    public class GlfwWindow : IWindow, IVulkanWindow
+    public class GlfwWindow : IVulkanWindow
     {
         // The number of frames that the window has been running slowly for.
         private int _isRunningSlowlyTries;
@@ -33,7 +32,7 @@ namespace Silk.NET.Windowing.Desktop
         private WindowState _windowState;
 
         // Glfw stuff
-        private Glfw _glfw = GlfwProvider.GLFW.Value;
+        private readonly Glfw _glfw = GlfwProvider.GLFW.Value;
         private unsafe WindowHandle* _windowPtr;
 
         // Callbacks
@@ -63,7 +62,7 @@ namespace Silk.NET.Windowing.Desktop
         private bool _running;
 
         /// <summary>
-        /// Create and open a new GlfwWindow.
+        /// Create a new GlfwWindow.
         /// </summary>
         /// <param name="options">The options to use for this window.</param>
         public GlfwWindow(WindowOptions options)
@@ -87,6 +86,9 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public int RunningSlowTolerance { get; set; }
 
+        /// <summary>
+        /// Whether or not this window is queued to close.
+        /// </summary>
         public unsafe bool IsClosing => _glfw.WindowShouldClose(_windowPtr);
 
         /// <inheritdoc />
@@ -131,6 +133,12 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public bool UseSingleThreadedWindow { get; }
 
+        /// <summary>
+        /// Whether or not this window should swap buffers automatically.
+        /// </summary>
+        /// <remarks>
+        /// If this is false, you'll have to call <see cref="GlfwWindow.SwapBuffers"/> manually.
+        /// </remarks>
         public bool ShouldSwapAutomatically { get; }
 
         /// <inheritdoc />
@@ -380,6 +388,12 @@ namespace Silk.NET.Windowing.Desktop
             }
         }
 
+        /// <summary>
+        /// Open the window.
+        /// </summary>
+        /// <remarks>
+        /// This should be used if you want to setup your own loop; otherwise, you should use <see cref="WindowExtensions.Run"/> instead
+        /// </remarks>
         public unsafe void Open()
         {
             if (_windowPtr != default)
@@ -420,6 +434,8 @@ namespace Silk.NET.Windowing.Desktop
                     _glfw.WindowHint(WindowHintClientApi.ClientApi, ClientApi.OpenGLES);
                     break;
             }
+            
+            _glfw.WindowHint(WindowHintBool.Visible, _initialOptions.IsVisible);
 
             // Set API version.
             _glfw.WindowHint(WindowHintInt.ContextVersionMajor, _initialOptions.API.Version.MajorVersion);
@@ -746,13 +762,28 @@ namespace Silk.NET.Windowing.Desktop
             _glfw.SetDropCallback(_windowPtr, _onFileDrop);
         }
 
+        /// <summary>
+        /// Checks whether or not Vulkan is supported for this window.
+        /// </summary>
+        /// <remarks>
+        /// This doesn't guarantee that context or surface creation will succeed; consult the GLFW documentation for
+        /// more details.
+        /// </remarks>
         public bool IsVulkanSupported => _glfw.VulkanSupported();
 
+        /// <summary>
+        /// Create a Vulkan surface.
+        /// </summary>
+        /// <param name="instance">The Vulkan instance to create a surface for.</param>
+        /// <param name="allocator">A custom Vulkan allocator. Can be omitted by passing null.</param>
+        /// <typeparam name="T">Allocator type</typeparam>
+        /// <returns>A handle to the Vulkan surface created</returns>
+        /// <exception cref="GlfwException">Thrown if GLFW fails to create a Vulkan surface</exception>
         public unsafe VkHandle CreateSurface<T>(VkHandle instance, T* allocator)
             where T : unmanaged
         {
             var surface = stackalloc VkHandle[1];
-            var ec = 0;
+            int ec;
             if ((ec = _glfw.CreateWindowSurface(instance, _windowPtr, allocator, surface)) != 0)
             {
                 throw new GlfwException("Failed to create surface, error code " + ec);
@@ -761,6 +792,11 @@ namespace Silk.NET.Windowing.Desktop
             return surface[0];
         }
 
+        /// <summary>
+        /// Get the extensions required for Vulkan to work on this platform.
+        /// </summary>
+        /// <param name="count">The number of extensions in the returned array</param>
+        /// <returns>An array of strings, containing names for all required extensions</returns>
         public unsafe char** GetRequiredExtensions(out uint count)
         {
             return (char**) _glfw.GetRequiredInstanceExtensions(out count);
