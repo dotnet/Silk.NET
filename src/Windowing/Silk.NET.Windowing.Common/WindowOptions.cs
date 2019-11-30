@@ -82,7 +82,7 @@ namespace Silk.NET.Windowing.Common
             "Silk.NET Window", WindowState.Normal, WindowBorder.Resizable, VSyncMode.On, 5, true);
 
         /// <summary>
-        /// Convenience wrapper around creating a new WindowProperties with the default values.
+        /// Convenience wrapper around creating a new WindowProperties with sensible values, intended for use with Vulkan.
         /// </summary>
         public static WindowOptions DefaultVulkan { get; } = new WindowOptions(true, true, new Point(50, 50),
             new Size(1280, 720), 0.0, 0.0, GraphicsAPI.DefaultVulkan,
