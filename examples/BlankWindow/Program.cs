@@ -21,7 +21,6 @@ namespace BlankWindow
 
             options.UseSingleThreadedWindow = true;
             //options.ShouldSwapAutomatically = false;
-            options.IsVisible = false;
 
             options.UpdatesPerSecond = 60.0;
             options.FramesPerSecond = 60.0;
@@ -46,9 +45,6 @@ namespace BlankWindow
             Console.WriteLine($"Entry thread is {Thread.CurrentThread.ManagedThreadId}");
 
             window.Run();
-            
-            Thread.Sleep(5000);
-            window.IsVisible = true;
         }
 
         public static void FileDrop(string[] args)

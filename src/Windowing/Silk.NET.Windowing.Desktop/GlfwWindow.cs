@@ -362,15 +362,22 @@ namespace Silk.NET.Windowing.Desktop
             return task.Result;
         }
 
-        private bool _contextMoved = false;
+        private bool _contextMoved;
 
+        /// <inheritdoc />
         public unsafe void MakeCurrent()
         {
             _contextMoved = true;
             _glfw.MakeContextCurrent(_windowPtr);
         }
-
-        public void MakeCurrentInternal()
+        
+        /// <summary>
+        /// Make context current on this thread if it was moved to another one.
+        /// </summary>
+        /// <remarks>
+        /// Awaiting rewrite.
+        /// </remarks>
+        private void MakeCurrentInternal()
         {
             if (_contextMoved)
             {
@@ -495,12 +502,14 @@ namespace Silk.NET.Windowing.Desktop
             _updateStopwatch.Start();
         }
 
+        /// <inheritdoc />
         public void DoRender()
         {
             MakeCurrentInternal();
             RaiseRenderFrame();
         }
 
+        /// <inheritdoc />
         public void DoUpdate()
         {
             if (UseSingleThreadedWindow)
@@ -529,6 +538,7 @@ namespace Silk.NET.Windowing.Desktop
             _glfw.PollEvents();
         }
 
+        /// <inheritdoc />
         public unsafe void Reset()
         {
             _updateStopwatch.Stop();
