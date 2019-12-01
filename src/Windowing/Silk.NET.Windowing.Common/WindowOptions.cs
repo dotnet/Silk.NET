@@ -52,7 +52,7 @@ namespace Silk.NET.Windowing.Common
         public int RunningSlowTolerance { get; set; }
 
         /// <summary>
-        /// Creates a new WindowOptions struct, with sensible defaults.
+        /// Creates a new WindowOptions struct.
         /// </summary>
         public WindowOptions(bool isVisible, bool useSingleThreadedWindow, Point position, Size size,
             double framesPerSecond,
@@ -75,14 +75,14 @@ namespace Silk.NET.Windowing.Common
         }
 
         /// <summary>
-        /// Convenience wrapper around creating a new WindowProperties with the default values.
+        /// Convenience wrapper around creating a new WindowProperties with sensible defaults.
         /// </summary>
         public static WindowOptions Default { get; } = new WindowOptions(true, true, new Point(50, 50),
             new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
             "Silk.NET Window", WindowState.Normal, WindowBorder.Resizable, VSyncMode.On, 5, true);
 
         /// <summary>
-        /// Convenience wrapper around creating a new WindowProperties with the default values.
+        /// Convenience wrapper around creating a new WindowProperties with sensible values, intended for use with Vulkan.
         /// </summary>
         public static WindowOptions DefaultVulkan { get; } = new WindowOptions(true, true, new Point(50, 50),
             new Size(1280, 720), 0.0, 0.0, GraphicsAPI.DefaultVulkan,

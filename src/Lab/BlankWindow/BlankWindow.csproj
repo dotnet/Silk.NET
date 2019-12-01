@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp3</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+    </ItemGroup>
+
+    <Import Project="..\..\..\build\props\common.props" />
+
+</Project>
