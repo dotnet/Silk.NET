@@ -224,7 +224,7 @@ EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenGL", "OpenGL", "{DB90DF23-B5EA-43BF-9201-E9335FB1CEE8}"
 ProjectSection(SolutionItems) = preProject
-	examples\C#\OpenGL\Directory.Build.props = examples\C#\OpenGL\Directory.Build.props
+	examples\F#\OpenGL\Directory.Build.props = examples\F#\OpenGL\Directory.Build.props
 EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 1.1 - Hello Window", "examples\C#\OpenGL\Tutorial 1.1 - Hello Window\Tutorial 1.1 - Hello Window.csproj", "{13056B96-6B67-47E8-AFA5-3940C2D7F341}"
