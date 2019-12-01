@@ -1,0 +1,6 @@
+<Project>
+    <PropertyGroup>
+        <RootNamespace>Tutorial</RootNamespace>
+        <AssemblyName>Tutorial</AssemblyName>
+    </PropertyGroup>
+</Project>
