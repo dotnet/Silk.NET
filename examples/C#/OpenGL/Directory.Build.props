@@ -2,5 +2,6 @@
     <PropertyGroup>
         <RootNamespace>Tutorial</RootNamespace>
         <AssemblyName>Tutorial</AssemblyName>
+        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     </PropertyGroup>
 </Project>
