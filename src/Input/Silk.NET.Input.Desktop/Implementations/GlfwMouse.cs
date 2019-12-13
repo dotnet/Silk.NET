@@ -13,23 +13,41 @@ using MouseButton = Silk.NET.Input.Common.MouseButton;
 
 namespace Silk.NET.Input.Desktop
 {
-    public class GlfwMouse : IMouse
+    /// <summary>
+    /// A GLFW-based mouse.
+    /// </summary>
+    internal class GlfwMouse : IMouse
     {
         private readonly GlfwInputContext _inputContext;
-        private List<MouseButton> _down = new List<MouseButton>();
+        private readonly List<MouseButton> _down = new List<MouseButton>();
         internal ScrollWheel _wheel;
-        public GlfwMouse(GlfwInputContext inputContext)
+        
+        /// <summary>
+        /// Creates a new GlfwMouse.
+        /// </summary>
+        /// <param name="inputContext">The context to create the mouse for.</param>
+        internal GlfwMouse(GlfwInputContext inputContext)
         {
             _inputContext = inputContext;
             ScrollWheels = new GlfwWheelCollection(this);
         }
 
+        /// <inheritdoc />
         public string Name { get; } = "Silk.NET Mouse (GLFW)";
+        
+        /// <inheritdoc />
         public int Index { get; } = 0;
+        
+        /// <inheritdoc />
         public bool IsConnected { get; } = true;
+        
+        /// <inheritdoc />
         public IReadOnlyList<MouseButton> SupportedButtons { get; } = Util.SupportedButtons;
+        
+        /// <inheritdoc />
         public IReadOnlyList<ScrollWheel> ScrollWheels { get; }
 
+        /// <inheritdoc />
         public unsafe PointF Position
         {
             get
@@ -40,14 +58,22 @@ namespace Silk.NET.Input.Desktop
             set => Util.Glfw.SetCursorPos((WindowHandle*) _inputContext._window.Handle, value.X, value.Y);
         }
 
+        /// <inheritdoc />
         public bool IsButtonPressed(MouseButton btn)
         {
             return _down.Contains(btn);
         }
 
+        /// <inheritdoc />
         public event Action<IMouse, MouseButton> MouseDown;
+        
+        /// <inheritdoc />
         public event Action<IMouse, MouseButton> MouseUp;
+        
+        /// <inheritdoc />
         public event Action<IMouse, PointF> MouseMove;
+        
+        /// <inheritdoc />
         public event Action<IMouse, ScrollWheel> Scroll;
 
         internal void RaiseMouseDown(MouseButton btn)

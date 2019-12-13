@@ -10,28 +10,53 @@ using Silk.NET.Input.Desktop.Collections;
 
 namespace Silk.NET.Input.Desktop
 {
-    public class GlfwJoystick : IJoystick
+    /// <summary>
+    /// A GLFW-based joystick.
+    /// </summary>
+    internal class GlfwJoystick : IJoystick
     {
-        private List<Axis> _cachedAxes = new List<Axis>();
-        private List<Button> _cachedButtons = new List<Button>();
-        private List<Hat> _cachedHats = new List<Hat>();
-        public GlfwJoystick(int i)
+        private readonly List<Axis> _cachedAxes = new List<Axis>();
+        private readonly List<Button> _cachedButtons = new List<Button>();
+        private readonly List<Hat> _cachedHats = new List<Hat>();
+        
+        internal GlfwJoystick(int i)
         {
             Index = i;
         }
 
+        /// <inheritdoc />
         public string Name => Util.Glfw.GetJoystickName(Index);
+        
+        /// <inheritdoc />
         public int Index { get; }
+        
+        /// <inheritdoc />
         public bool IsConnected => Util.Glfw.JoystickPresent(Index) && !Util.Glfw.JoystickIsGamepad(Index);
+        
+        /// <inheritdoc />
         public IReadOnlyList<Axis> Axes => GetAxes(Index);
+        
+        /// <inheritdoc />
         public IReadOnlyList<Button> Buttons => GetButtons(Index);
+        
+        /// <inheritdoc />
         public IReadOnlyList<Hat> Hats => GetHats(Index);
+        
+        /// <inheritdoc />
         public Deadzone Deadzone { get; set; }
+        
+        /// <inheritdoc />
         public event Action<IJoystick, Button> ButtonDown;
+        
+        /// <inheritdoc />
         public event Action<IJoystick, Button> ButtonUp;
+        
+        /// <inheritdoc />
         public event Action<IJoystick, Axis> AxisMoved;
+        
+        /// <inheritdoc />
         public event Action<IJoystick, Hat> HatMoved;
-
+        
         public void Update()
         {
             if (Util.Glfw.JoystickIsGamepad(Index))
@@ -70,22 +95,19 @@ namespace Silk.NET.Input.Desktop
 
         private static unsafe IReadOnlyList<Axis> GetAxes(int i)
         {
-            var count = 0;
-            var floats = Util.Glfw.GetJoystickAxes(i, out count);
+            var floats = Util.Glfw.GetJoystickAxes(i, out var count);
             return new GlfwAxisCollection(floats, count);
         }
 
         private static unsafe IReadOnlyList<Button> GetButtons(int i)
         {
-            var count = 0;
-            var bytes = Util.Glfw.GetJoystickButtons(i, out count);
+            var bytes = Util.Glfw.GetJoystickButtons(i, out var count);
             return new GlfwButtonCollection(bytes, count);
         }
 
         private static unsafe IReadOnlyList<Hat> GetHats(int i)
         {
-            var count = 0;
-            var hats = Util.Glfw.GetJoystickHats(i, out count);
+            var hats = Util.Glfw.GetJoystickHats(i, out var count);
             return new GlfwHatCollection((Position2D*)hats, count);
         }
     }

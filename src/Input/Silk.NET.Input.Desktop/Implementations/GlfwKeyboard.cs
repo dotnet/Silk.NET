@@ -10,25 +10,43 @@ using Silk.NET.Input.Common;
 
 namespace Silk.NET.Input.Desktop
 {
-    public class GlfwKeyboard : IKeyboard
+    /// <summary>
+    /// A GLFW-based keyboard.
+    /// </summary>
+    internal class GlfwKeyboard : IKeyboard
     {
-        private GlfwInputContext _gic;
+        private readonly GlfwInputContext _gic;
 
-        public GlfwKeyboard(GlfwInputContext gic)
+        internal GlfwKeyboard(GlfwInputContext gic)
         {
             _gic = gic;
         }
-        public string Name { get; } = $"Silk.NET Keyboard (GLFW)";
+        
+        /// <inheritdoc />
+        public string Name { get; } = "Silk.NET Keyboard (GLFW)";
+        
+        /// <inheritdoc />
         public int Index { get; } = 0;
+        
+        /// <inheritdoc />
         public bool IsConnected { get; } = true;
+        
+        /// <inheritdoc />
         public IReadOnlyList<Key> SupportedKeys { get; } = Util.SupportedKeys;
+        
+        /// <inheritdoc />
         public unsafe bool IsKeyPressed(Key key)
         {
             return Util.Glfw.GetKey((WindowHandle*)_gic._window.Handle, Util.SilkKeyToGlfwKey(key)) == 1;
         }
 
+        /// <inheritdoc />
         public event Action<IKeyboard, Key, int> KeyDown;
+        
+        /// <inheritdoc />
         public event Action<IKeyboard, Key, int> KeyUp;
+        
+        /// <inheritdoc />
         public event Action<IKeyboard, char> KeyChar;
 
         internal void RaisePressEvent(Keys key, int scancode, KeyModifiers mods)
@@ -41,7 +59,7 @@ namespace Silk.NET.Input.Desktop
             KeyUp?.Invoke(this, Util.GlfwKeyToSilkKey(key), scancode);
         }
 
-        public void RaiseCharEvent(char c)
+        internal void RaiseCharEvent(char c)
         {
             KeyChar?.Invoke(this, c);
         }

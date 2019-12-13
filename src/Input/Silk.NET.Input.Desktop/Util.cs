@@ -13,8 +13,8 @@ namespace Silk.NET.Input.Desktop
 {
     internal static class Util
     {
-        private static string[] _glfwKeys = Enum.GetNames(typeof(Keys));
-        private static string[] _glfwButtons = Enum.GetNames(typeof(GLFW.MouseButton));
+        private static readonly string[] _glfwKeys = Enum.GetNames(typeof(Keys));
+        private static readonly string[] _glfwButtons = Enum.GetNames(typeof(GLFW.MouseButton));
 
         public static Glfw Glfw => GlfwProvider.GLFW.Value;
         public static Key[] SupportedKeys { get; } // this is expensive, but only runs once.

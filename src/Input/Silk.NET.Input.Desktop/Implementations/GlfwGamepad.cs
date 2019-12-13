@@ -11,30 +11,60 @@ using Silk.NET.Input.Desktop.Collections;
 
 namespace Silk.NET.Input.Desktop
 {
-    public class GlfwGamepad : IGamepad
+    /// <summary>
+    /// A GLFW-based gamepad.
+    /// </summary>
+    internal class GlfwGamepad : IGamepad
     {
         private List<Button> _cachedButtons = new List<Button>();
         private List<Thumbstick> _cachedThumbsticks = new List<Thumbstick>();
         private List<Trigger> _cachedTriggers = new List<Trigger>();
-        public GlfwGamepad(int i)
+        
+        internal GlfwGamepad(int i)
         {
             Index = i;
         }
 
+        /// <inheritdoc />
         public string Name => Util.Glfw.GetGamepadName(Index);
+        
+        /// <inheritdoc />
         public int Index { get; }
+        
+        /// <inheritdoc />
         public bool IsConnected => Util.Glfw.JoystickIsGamepad(Index) && Util.Glfw.JoystickIsGamepad(Index);
+        
+        /// <inheritdoc />
         public IReadOnlyList<Button> Buttons => IsConnected ? GetButtons(Index) : null;
+        
+        /// <inheritdoc />
         public IReadOnlyList<Thumbstick> Thumbsticks => IsConnected ? GetThumbsticks(Index) : null;
+        
+        /// <inheritdoc />
         public IReadOnlyList<Trigger> Triggers => IsConnected ? GetTriggers(Index) : null;
+        
         // TODO GLFW doesn't support haptics. When they add support for vibration, add it here.
+        /// <inheritdoc />
         public IReadOnlyList<IMotor> VibrationMotors { get; } = new IMotor[0];
+        
+        /// <inheritdoc />
         public Deadzone Deadzone { get; set; }
+        
+        /// <inheritdoc />
         public event Action<IGamepad, Button> ButtonDown;
+        
+        /// <inheritdoc />
         public event Action<IGamepad, Button> ButtonUp;
+        
+        /// <inheritdoc />
         public event Action<IGamepad, Thumbstick> ThumbstickMoved;
+        
+        /// <inheritdoc />
         public event Action<IGamepad, Trigger> TriggerMoved;
 
+        /// <summary>
+        /// Update the status of this gamepad.
+        /// </summary>
         public void Update()
         {
             if (!Util.Glfw.JoystickIsGamepad(Index))
@@ -89,8 +119,7 @@ namespace Silk.NET.Input.Desktop
         }
         private unsafe IReadOnlyList<Button> GetButtons(int i)
         {
-            var count = 0;
-            var bytes = Util.Glfw.GetJoystickButtons(i, out count);
+            var bytes = Util.Glfw.GetJoystickButtons(i, out var count);
             if (count != _cachedButtons.Count)
             {
                 _cachedButtons = new List<Button>();
@@ -100,8 +129,7 @@ namespace Silk.NET.Input.Desktop
         }
         private unsafe IReadOnlyList<Thumbstick> GetThumbsticks(int i)
         {
-            var count = 0;
-            var floats = Util.Glfw.GetJoystickAxes(i, out count);
+            var floats = Util.Glfw.GetJoystickAxes(i, out var count);
             if (count != _cachedThumbsticks.Count)
             {
                 _cachedThumbsticks = new List<Thumbstick>();
@@ -114,14 +142,13 @@ namespace Silk.NET.Input.Desktop
         }
         private unsafe IReadOnlyList<Trigger> GetTriggers(int i)
         {
-            var count = 0;
-            var floats = Util.Glfw.GetJoystickAxes(i, out count);
+            var floats = Util.Glfw.GetJoystickAxes(i, out var count);
             if (count != _cachedTriggers.Count)
             {
                 _cachedTriggers = new List<Trigger>();
                 _cachedTriggers.AddRange(Enumerable.Range(0, count).Select(_ => (Trigger)default));
             }
-            fixed(float* triggers = new float[] { floats[4], floats[5] })
+            fixed(float* triggers = new[] { floats[4], floats[5] })
             {
                 return new GlfwTriggerCollection(triggers, count);
             }

@@ -10,11 +10,11 @@ using Silk.NET.Input.Common;
 
 namespace Silk.NET.Input.Desktop.Collections
 {
-    public class GlfwWheelCollection : IReadOnlyList<ScrollWheel>
+    internal class GlfwWheelCollection : IReadOnlyList<ScrollWheel>
     {
-        private GlfwMouse _mouse;
+        private readonly GlfwMouse _mouse;
 
-        public GlfwWheelCollection(GlfwMouse mouse)
+        internal GlfwWheelCollection(GlfwMouse mouse)
         {
             _mouse = mouse;
         }
@@ -37,7 +37,7 @@ namespace Silk.NET.Input.Desktop.Collections
 
         private struct Enumerator : IEnumerator<ScrollWheel>
         {
-            private GlfwWheelCollection _col;
+            private readonly GlfwWheelCollection _col;
             private bool _done;
 
             public Enumerator(GlfwWheelCollection col)
