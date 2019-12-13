@@ -29,11 +29,12 @@ namespace Silk.NET.Input.Desktop
         /// Create a new input context from the given window.
         /// </summary>
         /// <param name="window">The window to create a context for.</param>
-        public GlfwInputContext(GlfwWindow window)
+        internal GlfwInputContext(GlfwWindow window)
         {
             Handle = window.Handle;
             _window = window;
             InputHandler.RegisterContext(this);
+            _window.Update += WindowUpdate;
             
             // initialize auto-properties
             Gamepads = new GlfwGamepadCollection(this);
@@ -70,6 +71,7 @@ namespace Silk.NET.Input.Desktop
         public void Dispose()
         {
             InputHandler.UnregisterContext(this);
+            _window.Update -= WindowUpdate;
         }
 
         ~GlfwInputContext()
@@ -81,11 +83,7 @@ namespace Silk.NET.Input.Desktop
         /// Update all joysticks and gamepads in this input context.
         /// </summary>
         /// <param name="delta">Time in seconds since the last update.</param>
-        /// <remarks>
-        /// This should not be called manually. Rather, it should be attached to the Update event on GlfwWindow,
-        /// and allowed to run on its own. GlfwInputContext does this automatically.
-        /// </remarks>
-        public void WindowUpdate(double delta)
+        private void WindowUpdate(double delta)
         {
             foreach (var t in _joysticks)
             {

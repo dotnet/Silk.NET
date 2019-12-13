@@ -39,7 +39,6 @@ namespace Silk.NET.Input.Desktop
             Util.Glfw.SetScrollCallback(handle, ScrollCallback);
             Util.Glfw.SetCursorPosCallback(handle, CursorCallback);
             Util.Glfw.SetCharCallback(handle, CharCallback);
-            ctx._window.Update += ctx.WindowUpdate;
         }
 
         private static unsafe void CharCallback(WindowHandle* window, uint codepoint)
@@ -122,7 +121,6 @@ namespace Silk.NET.Input.Desktop
         public static void UnregisterContext(GlfwInputContext ctx)
         {
             Contexts.Remove(ctx);
-            ctx._window.Update -= ctx.WindowUpdate;
         }
     }
 }
