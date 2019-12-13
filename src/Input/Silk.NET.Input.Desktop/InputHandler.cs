@@ -7,8 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
 using MouseButton = Silk.NET.GLFW.MouseButton;
@@ -51,7 +49,7 @@ namespace Silk.NET.Input.Desktop
 
             foreach (var context in allContexts)
             {
-                ((GlfwKeyboard) context._keyboard).RaiseCharEvent(Convert.ToChar(codepoint));
+                (context._keyboard).RaiseCharEvent(Convert.ToChar(codepoint));
             }
         }
 
@@ -62,7 +60,7 @@ namespace Silk.NET.Input.Desktop
 
             foreach (var context in allContexts)
             {
-                ((GlfwMouse) context._mouse).RaiseMouseMove(new PointF((float) x, (float) y));
+                (context._mouse).RaiseMouseMove(new PointF((float) x, (float) y));
             }
         }
 
@@ -73,7 +71,7 @@ namespace Silk.NET.Input.Desktop
 
             foreach (var context in allContexts)
             {
-                ((GlfwMouse) context._mouse).RaiseScroll(new ScrollWheel((float) offsetx, (float) offsety));
+                context._mouse.RaiseScroll(new ScrollWheel((float) offsetx, (float) offsety));
             }
         }
 
@@ -90,13 +88,14 @@ namespace Silk.NET.Input.Desktop
 
             foreach (var context in allContexts)
             {
-                if (action == InputAction.Press)
+                switch (action)
                 {
-                    ((GlfwMouse) context._mouse).RaiseMouseDown(Util.GlfwButtonToSilkButton(button));
-                }
-                else if (action == InputAction.Release)
-                {
-                    ((GlfwMouse) context._mouse).RaiseMouseUp(Util.GlfwButtonToSilkButton(button));
+                    case InputAction.Press:
+                        context._mouse.RaiseMouseDown(Util.GlfwButtonToSilkButton(button));
+                        break;
+                    case InputAction.Release:
+                        context._mouse.RaiseMouseUp(Util.GlfwButtonToSilkButton(button));
+                        break;
                 }
             }
         }
@@ -111,11 +110,11 @@ namespace Silk.NET.Input.Desktop
             {
                 if (action == InputAction.Press)
                 {
-                    ((GlfwKeyboard) context._keyboard).RaisePressEvent(key, scancode, mods);
+                    context._keyboard.RaisePressEvent(key, scancode, mods);
                 }
                 else if (action == InputAction.Release)
                 {
-                    ((GlfwKeyboard) context._keyboard).RaiseReleaseEvent(key, scancode, mods);
+                    context._keyboard.RaiseReleaseEvent(key, scancode, mods);
                 }
             }
         }

@@ -5,10 +5,8 @@
 
 using System;
 using System.Collections.Generic;
-using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
 using Silk.NET.Input.Desktop.Collections;
-using Ultz.Dispatcher.Unsafe;
 
 namespace Silk.NET.Input.Desktop
 {

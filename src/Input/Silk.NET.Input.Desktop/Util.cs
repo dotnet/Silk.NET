@@ -7,7 +7,6 @@ using System;
 using System.Linq;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
-using Ultz.Dispatcher.Unsafe;
 using MouseButton = Silk.NET.Input.Common.MouseButton;
 
 namespace Silk.NET.Input.Desktop

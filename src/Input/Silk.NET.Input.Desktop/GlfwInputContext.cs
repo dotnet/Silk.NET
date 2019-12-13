@@ -14,14 +14,21 @@ using Silk.NET.Windowing.Desktop;
 
 namespace Silk.NET.Input.Desktop
 {
+    /// <summary>
+    /// A GLFW-based input context.
+    /// </summary>
     public class GlfwInputContext : IInputContext
     {
-        internal List<GlfwGamepad> _gamepads;
-        internal List<GlfwJoystick> _joysticks;
-        internal GlfwKeyboard _keyboard;
-        internal GlfwMouse _mouse;
-        internal GlfwWindow _window;
+        internal readonly List<GlfwGamepad> _gamepads;
+        internal readonly List<GlfwJoystick> _joysticks;
+        internal readonly GlfwKeyboard _keyboard;
+        internal readonly GlfwMouse _mouse;
+        internal readonly GlfwWindow _window;
 
+        /// <summary>
+        /// Create a new input context from the given window.
+        /// </summary>
+        /// <param name="window">The window to create a context for.</param>
         public GlfwInputContext(GlfwWindow window)
         {
             Handle = window.Handle;
@@ -41,13 +48,25 @@ namespace Silk.NET.Input.Desktop
             _mouse = new GlfwMouse(this);
         }
 
+        /// <inheritdoc />
         public IntPtr Handle { get; }
+        
+        /// <inheritdoc />
         public IReadOnlyList<IGamepad> Gamepads { get; }
+        
+        /// <inheritdoc />
         public IReadOnlyList<IJoystick> Joysticks { get; }
+        
+        /// <inheritdoc />
         public IReadOnlyList<IKeyboard> Keyboards { get; }
+        
+        /// <inheritdoc />
         public IReadOnlyList<IMouse> Mice { get; }
+        
+        /// <inheritdoc />
         public IReadOnlyList<IInputDevice> OtherDevices { get; } = Array.Empty<IInputDevice>(); // not supported in GLFW
 
+        /// <inheritdoc />
         public void Dispose()
         {
             InputHandler.UnregisterContext(this);
@@ -58,21 +77,35 @@ namespace Silk.NET.Input.Desktop
             Dispose();
         }
 
-        public void WindowUpdate(double obj)
+        /// <summary>
+        /// Update all joysticks and gamepads in this input context.
+        /// </summary>
+        /// <param name="delta">Time in seconds since the last update.</param>
+        /// <remarks>
+        /// This should not be called manually. Rather, it should be attached to the Update event on GlfwWindow,
+        /// and allowed to run on its own. GlfwInputContext does this automatically.
+        /// </remarks>
+        public void WindowUpdate(double delta)
         {
-            for (int i = 0; i < _joysticks.Count; i++)
+            foreach (var t in _joysticks)
             {
-                _joysticks[i].Update();
+                t.Update();
             }
-            for (int i = 0; i < _gamepads.Count; i++)
+
+            foreach (var t in _gamepads)
             {
-                _gamepads[i].Update();
+                t.Update();
             }
         }
         
         /// <inheritdoc />
         public event Action<IInputDevice, bool> ConnectionChanged;
 
+        /// <summary>
+        /// Raise a ConnectionChanged event for the given joystick/state.
+        /// </summary>
+        /// <param name="joystick">The joystick to raise the event for.</param>
+        /// <param name="state">The state of the joystick to raise the event for.</param>
         public void RaiseConnectionChange(int joystick, ConnectedState state)
         {
             ConnectionChanged?.Invoke(Util.Glfw.JoystickIsGamepad(joystick) ? (IInputDevice) Gamepads[joystick] : Joysticks[joystick], state == ConnectedState.Connected);
