@@ -10,33 +10,42 @@ using Silk.NET.Input.Common;
 
 namespace Silk.NET.Input.Desktop.Collections
 {
-    public class GlfwMouseCollection : IReadOnlyList<IMouse>
+    /// <summary>
+    /// A collection of GLFW-based mice.
+    /// </summary>
+    internal class GlfwMouseCollection : IReadOnlyList<IMouse>
     {
         private readonly GlfwInputContext _ctx;
 
-        public GlfwMouseCollection(GlfwInputContext ctx)
+        internal GlfwMouseCollection(GlfwInputContext ctx)
         {
             _ctx = ctx;
         }
+        
+        /// <inheritdoc />
         public IEnumerator<IMouse> GetEnumerator()
         {
             return new Enumerator(this);
         }
 
+        /// <inheritdoc />
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
         }
 
+        /// <inheritdoc />
         public int Count { get; } = 1;
 
+        /// <inheritdoc />
         public IMouse this[int index] => index == 0 ? _ctx._mouse : throw new ArgumentOutOfRangeException();
         
+        /// <inheritdoc />
         public struct Enumerator : IEnumerator<IMouse>
         {
             private readonly GlfwMouseCollection _col;
             private bool _done;
-
+            
             public Enumerator(GlfwMouseCollection col)
             {
                 _col = col;
@@ -44,6 +53,7 @@ namespace Silk.NET.Input.Desktop.Collections
                 Current = null;
             }
             
+            /// <inheritdoc />
             public bool MoveNext()
             {
                 Current = _done ? null : _col._ctx._mouse;
@@ -52,16 +62,19 @@ namespace Silk.NET.Input.Desktop.Collections
                 return ret;
             }
 
+            /// <inheritdoc />
             public void Reset()
             {
                 _done = false;
                 Current = null;
             }
 
+            /// <inheritdoc />
             public IMouse Current { get; set; }
 
             object IEnumerator.Current => Current;
 
+            /// <inheritdoc />
             public void Dispose()
             {
             }

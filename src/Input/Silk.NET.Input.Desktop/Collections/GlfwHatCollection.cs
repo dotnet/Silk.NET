@@ -5,23 +5,28 @@ using System.Collections.Generic;
 
 namespace Silk.NET.Input.Desktop.Collections
 {
-    public unsafe class GlfwHatCollection : IReadOnlyList<Hat>
+    /// <summary>
+    /// A collection of GLFW-based hats.
+    /// </summary>
+    internal unsafe class GlfwHatCollection : IReadOnlyList<Hat>
     {
-        public Position2D* _positions;
-        public int _count;
+        private readonly Position2D* _positions;
 
-        public GlfwHatCollection(Position2D* positions, int count)
+        internal GlfwHatCollection(Position2D* positions, int count)
         {
             _positions = positions;
-            _count = count;
+            Count = count;
         }
 
-        public Hat this[int index] => index < _count
+        /// <inheritdoc />
+        public Hat this[int index] => index < Count
             ? new Hat(index, _positions[index])
             : throw new ArgumentOutOfRangeException();
 
-        public int Count => _count;
+        /// <inheritdoc />
+        public int Count { get; }
 
+        /// <inheritdoc />
         public IEnumerator<Hat> GetEnumerator()
         {
             return new Enumerator(this);
@@ -34,7 +39,7 @@ namespace Silk.NET.Input.Desktop.Collections
 
         private struct Enumerator : IEnumerator<Hat>
         {
-            private GlfwHatCollection _col;
+            private readonly GlfwHatCollection _col;
             private int _current;
 
             public Enumerator(GlfwHatCollection col)
@@ -44,9 +49,10 @@ namespace Silk.NET.Input.Desktop.Collections
                 Current = default;
             }
 
+            /// <inheritdoc />
             public bool MoveNext()
             {
-                if (_current == _col._count)
+                if (_current == _col.Count)
                 {
                     Current = default;
                     return false;
@@ -57,16 +63,20 @@ namespace Silk.NET.Input.Desktop.Collections
                 return true;
             }
 
+            /// <inheritdoc />
             public void Reset()
             {
                 Current = default;
                 _current = 0;
             }
 
-            public Hat Current { get; set; }
+            /// <inheritdoc />
+            public Hat Current { get; private set; }
 
+            /// <inheritdoc />
             object IEnumerator.Current => Current;
 
+            /// <inheritdoc />
             public void Dispose()
             {
             }

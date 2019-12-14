@@ -5,28 +5,34 @@ using System.Collections.Generic;
 
 namespace Silk.NET.Input.Desktop.Collections
 {
-    public unsafe class GlfwButtonCollection : IReadOnlyList<Button>
+    /// <summary>
+    /// A collection of GLFW-based buttons.
+    /// </summary>
+    internal unsafe class GlfwButtonCollection : IReadOnlyList<Button>
     {
-        private byte* _bytes;
-        private int _count;
+        private readonly byte* _bytes;
 
-        public GlfwButtonCollection(byte* bytes, int count)
+        internal GlfwButtonCollection(byte* bytes, int count)
         {
             _bytes = bytes;
-            _count = count;
+            Count = count;
         }
 
-        public int Count => _count;
+        /// <inheritdoc />
+        public int Count { get; }
 
-        public Button this[int index] => index < _count
+        /// <inheritdoc />
+        public Button this[int index] => index < Count
             ? new Button (Util.IntToSilkButton(index), index, _bytes[index] != 0)
             : throw new ArgumentOutOfRangeException();
 
+        /// <inheritdoc />
         public IEnumerator<Button> GetEnumerator()
         {
             return new Enumerator(this);
         }
 
+        /// <inheritdoc />
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
@@ -34,7 +40,7 @@ namespace Silk.NET.Input.Desktop.Collections
 
         private struct Enumerator : IEnumerator<Button>
         {
-            private GlfwButtonCollection _col;
+            private readonly GlfwButtonCollection _col;
             private int _current;
 
             public Enumerator(GlfwButtonCollection col)
@@ -44,9 +50,10 @@ namespace Silk.NET.Input.Desktop.Collections
                 Current = default;
             }
 
+            /// <inheritdoc />
             public bool MoveNext()
             {
-                if (_current == _col._count)
+                if (_current == _col.Count)
                 {
                     Current = default;
                     return false;
@@ -57,16 +64,20 @@ namespace Silk.NET.Input.Desktop.Collections
                 return true;
             }
 
+            /// <inheritdoc />
             public void Reset()
             {
                 Current = default;
                 _current = 0;
             }
 
-            public Button Current { get; set; }
+            /// <inheritdoc />
+            public Button Current { get; private set; }
 
+            /// <inheritdoc />
             object IEnumerator.Current => Current;
 
+            /// <inheritdoc />
             public void Dispose()
             {
             }

@@ -5,23 +5,28 @@ using System.Collections.Generic;
 
 namespace Silk.NET.Input.Desktop.Collections
 {
-    public unsafe class GlfwTriggerCollection : IReadOnlyList<Trigger>
+    /// <summary>
+    /// A collection of GLFW-based gamepad triggers.
+    /// </summary>
+    internal unsafe class GlfwTriggerCollection : IReadOnlyList<Trigger>
     {
-        private float* _floats;
-        private int _count;
+        private readonly float* _floats;
 
-        public GlfwTriggerCollection(float* floats, int count)
+        internal GlfwTriggerCollection(float* floats, int count)
         {
-            _count = count;
+            Count = count;
             _floats = floats;
         }
 
+        /// <inheritdoc />
         public Trigger this[int index] => index < Count
             ? new Trigger(index, _floats[index])
             : throw new ArgumentOutOfRangeException();
 
-        public int Count => _count;
+        /// <inheritdoc />
+        public int Count { get; }
 
+        /// <inheritdoc />
         public IEnumerator<Trigger> GetEnumerator()
         {
             return new Enumerator(this);
@@ -34,7 +39,7 @@ namespace Silk.NET.Input.Desktop.Collections
 
         private struct Enumerator : IEnumerator<Trigger>
         {
-            private GlfwTriggerCollection _col;
+            private readonly GlfwTriggerCollection _col;
             private int _current;
 
             public Enumerator(GlfwTriggerCollection col)
@@ -46,7 +51,7 @@ namespace Silk.NET.Input.Desktop.Collections
 
             public bool MoveNext()
             {
-                if (_current == _col._count)
+                if (_current == _col.Count)
                 {
                     Current = default;
                     return false;
@@ -63,7 +68,7 @@ namespace Silk.NET.Input.Desktop.Collections
                 _current = 0;
             }
 
-            public Trigger Current { get; set; }
+            public Trigger Current { get; private set; }
 
             object IEnumerator.Current => Current;
 

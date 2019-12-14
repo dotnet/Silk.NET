@@ -5,24 +5,29 @@ using System.Collections.Generic;
 
 namespace Silk.NET.Input.Desktop.Collections
 {
-    public unsafe class GlfwThumbstickCollection : IReadOnlyList<Thumbstick>
+    /// <summary>
+    /// A collection of GLFW-based thumbsticks.
+    /// </summary>
+    internal unsafe class GlfwThumbstickCollection : IReadOnlyList<Thumbstick>
     {
-        private float* _x, _y;
-        private int _count;
+        private readonly float* _x, _y;
 
-        public GlfwThumbstickCollection(float* x, float* y, int count)
+        internal GlfwThumbstickCollection(float* x, float* y, int count)
         {
             _x = x;
             _y = y;
-            _count = count;
+            Count = count;
         }
 
-        public int Count => _count;
+        /// <inheritdoc />
+        public int Count { get; }
 
-        public Thumbstick this[int index] => index < _count
+        /// <inheritdoc />
+        public Thumbstick this[int index] => index < Count
             ? new Thumbstick(index, _x[index], _y[index])
             : throw new ArgumentOutOfRangeException();
 
+        /// <inheritdoc />
         public IEnumerator<Thumbstick> GetEnumerator()
         {
             return new Enumerator(this);
@@ -35,7 +40,7 @@ namespace Silk.NET.Input.Desktop.Collections
 
         private struct Enumerator : IEnumerator<Thumbstick>
         {
-            private GlfwThumbstickCollection _col;
+            private readonly GlfwThumbstickCollection _col;
             private int _current;
 
             public Enumerator(GlfwThumbstickCollection col)
@@ -47,7 +52,7 @@ namespace Silk.NET.Input.Desktop.Collections
 
             public bool MoveNext()
             {
-                if (_current == _col._count)
+                if (_current == _col.Count)
                 {
                     Current = default;
                     return false;
@@ -64,7 +69,7 @@ namespace Silk.NET.Input.Desktop.Collections
                 _current = 0;
             }
 
-            public Thumbstick Current { get; set; }
+            public Thumbstick Current { get; private set; }
 
             object IEnumerator.Current => Current;
 

@@ -10,29 +10,38 @@ using Silk.NET.Input.Common;
 
 namespace Silk.NET.Input.Desktop.Collections
 {
-    public class GlfwKeyboardCollection : IReadOnlyList<IKeyboard>
+    /// <summary>
+    /// A collection of GLFW-based keyboards.
+    /// </summary>
+    internal class GlfwKeyboardCollection : IReadOnlyList<IKeyboard>
     {
         private readonly GlfwInputContext _ctx;
 
-        public GlfwKeyboardCollection(GlfwInputContext ctx)
+        internal GlfwKeyboardCollection(GlfwInputContext ctx)
         {
             _ctx = ctx;
         }
+        
+        /// <inheritdoc />
         public IEnumerator<IKeyboard> GetEnumerator()
         {
             return new Enumerator(this);
         }
 
+        /// <inheritdoc />
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
         }
 
+        /// <inheritdoc />
         public int Count { get; } = 1;
 
+        /// <inheritdoc />
         public IKeyboard this[int index] => index == 0 ? _ctx._keyboard : throw new ArgumentOutOfRangeException();
         
-        public struct Enumerator : IEnumerator<IKeyboard>
+        /// <inheritdoc />
+        private struct Enumerator : IEnumerator<IKeyboard>
         {
             private readonly GlfwKeyboardCollection _col;
             private bool _done;
@@ -44,6 +53,7 @@ namespace Silk.NET.Input.Desktop.Collections
                 Current = null;
             }
             
+            /// <inheritdoc />
             public bool MoveNext()
             {
                 Current = _done ? null : _col._ctx._keyboard;
@@ -52,16 +62,20 @@ namespace Silk.NET.Input.Desktop.Collections
                 return ret;
             }
 
+            /// <inheritdoc />
             public void Reset()
             {
                 _done = false;
                 Current = null;
             }
 
-            public IKeyboard Current { get; set; }
+            /// <inheritdoc />
+            public IKeyboard Current { get; private set; }
 
+            /// <inheritdoc />
             object IEnumerator.Current => Current;
 
+            /// <inheritdoc />
             public void Dispose()
             {
             }

@@ -11,12 +11,21 @@ using Silk.NET.Windowing.Common;
 
 namespace Silk.NET.Input
 {
+    /// <summary>
+    /// Extensions related to input contexts and windows.
+    /// </summary>
     public static class InputWindowExtensions
     {
         static InputWindowExtensions()
         {
             SilkManager.Register<IInputPlatform>(new GlfwInputPlatform());
         }
+        
+        /// <summary>
+        /// Get an input context for the given window.
+        /// </summary>
+        /// <param name="window">The window to create an input context for.</param>
+        /// <returns>An input context for the provided window.</returns>
         public static IInputContext GetInput(this IWindow window)
         {
             return SilkManager.GetOrDefault<IInputPlatform>()?.GetInput(window)

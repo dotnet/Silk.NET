@@ -17,7 +17,7 @@ namespace Silk.NET.Input.Desktop
     /// <summary>
     /// A GLFW-based input context.
     /// </summary>
-    public class GlfwInputContext : IInputContext
+    internal class GlfwInputContext : IInputContext
     {
         internal readonly List<GlfwGamepad> _gamepads;
         internal readonly List<GlfwJoystick> _joysticks;

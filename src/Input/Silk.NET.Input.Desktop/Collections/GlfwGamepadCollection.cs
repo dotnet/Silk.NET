@@ -9,30 +9,43 @@ using Silk.NET.Input.Common;
 
 namespace Silk.NET.Input.Desktop.Collections
 {
-    public class GlfwGamepadCollection : IReadOnlyList<IGamepad>
+    /// <summary>
+    /// A collection of GLFW-based gamepads.
+    /// </summary>
+    internal class GlfwGamepadCollection : IReadOnlyList<IGamepad>
     {
-        private GlfwInputContext _ctx;
+        private readonly GlfwInputContext _ctx;
 
-        public GlfwGamepadCollection(GlfwInputContext ctx)
+        internal GlfwGamepadCollection(GlfwInputContext ctx)
         {
             _ctx = ctx;
         }
         
+        /// <inheritdoc />
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
         }
+        
+        /// <inheritdoc />
         IEnumerator<IGamepad> IEnumerable<IGamepad>.GetEnumerator()
         {
             return GetEnumerator();
         }
+        
+        /// <summary>
+        /// Returns an enumerator that iterates through the collection.
+        /// </summary>
+        /// <returns>An enumerator that loops over this collection.</returns>
         public IEnumerator<IGamepad> GetEnumerator()
         {
             return _ctx._gamepads.GetEnumerator();
         }
 
+        /// <inheritdoc />
         public int Count => 16;
 
+        /// <inheritdoc />
         public IGamepad this[int i] => _ctx._gamepads[i];
     }
 }

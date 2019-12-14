@@ -17,7 +17,7 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// The buttons this mouse has available.
         /// </summary>
-        IReadOnlyList<MouseButton> SupportedButtons { get; }
+        IEnumerable<MouseButton> SupportedButtons { get; }
         
         /// <summary>
         /// The scroll wheels this mouse has available.

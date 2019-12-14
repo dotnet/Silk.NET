@@ -19,17 +19,21 @@ namespace Silk.NET.Input.Desktop.Collections
             _mouse = mouse;
         }
 
+        /// <inheritdoc />
         public ScrollWheel this[int index] => index != 0
             ? _mouse._wheel
             : throw new ArgumentOutOfRangeException();
 
+        /// <inheritdoc />
         public int Count { get; } = 1;
 
+        /// <inheritdoc />
         public IEnumerator<ScrollWheel> GetEnumerator()
         {
             return new Enumerator(this);
         }
 
+        /// <inheritdoc />
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
@@ -47,6 +51,7 @@ namespace Silk.NET.Input.Desktop.Collections
                 Current = default;
             }
 
+            /// <inheritdoc />
             public bool MoveNext()
             {
                 if (!_done)
@@ -60,16 +65,20 @@ namespace Silk.NET.Input.Desktop.Collections
                 return false;
             }
 
+            /// <inheritdoc />
             public void Reset()
             {
                 Current = default;
                 _done = false;
             }
 
+            /// <inheritdoc />
             public ScrollWheel Current { get; private set; }
 
+            /// <inheritdoc />
             object IEnumerator.Current => Current;
 
+            /// <inheritdoc />
             public void Dispose()
             {
             }

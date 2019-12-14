@@ -42,7 +42,7 @@ namespace Silk.NET.Input.Desktop
         public bool IsConnected { get; } = true;
         
         /// <inheritdoc />
-        public IReadOnlyList<MouseButton> SupportedButtons { get; } = Util.SupportedButtons;
+        public IEnumerable<MouseButton> SupportedButtons { get; } = Util.SupportedButtons;
         
         /// <inheritdoc />
         public IReadOnlyList<ScrollWheel> ScrollWheels { get; }

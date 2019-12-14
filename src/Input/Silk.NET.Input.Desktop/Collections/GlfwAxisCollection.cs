@@ -10,35 +10,42 @@ using Silk.NET.Input.Common;
 
 namespace Silk.NET.Input.Desktop.Collections
 {
-    public unsafe class GlfwAxisCollection : IReadOnlyList<Axis>
+    /// <summary>
+    /// A collection of GLFW-based axes.
+    /// </summary>
+    internal unsafe class GlfwAxisCollection : IReadOnlyList<Axis>
     {
-        private float* _floats;
-        private int _count;
+        private readonly float* _floats;
 
-        public GlfwAxisCollection(float* floats, int count)
+        internal GlfwAxisCollection(float* floats, int count)
         {
             _floats = floats;
-            _count = count;
+            Count = count;
         }
+        
+        /// <inheritdoc />
         public IEnumerator<Axis> GetEnumerator()
         {
             return new Enumerator(this);
         }
 
+        /// <inheritdoc />
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
         }
 
-        public int Count => _count;
+        /// <inheritdoc />
+        public int Count { get; }
 
-        public Axis this[int index] => index < _count
+        /// <inheritdoc />
+        public Axis this[int index] => index < Count
             ? new Axis(index, _floats[index])
             : throw new ArgumentOutOfRangeException();
         
         private struct Enumerator : IEnumerator<Axis>
         {
-            private GlfwAxisCollection _col;
+            private readonly GlfwAxisCollection _col;
             private int _current;
 
             public Enumerator(GlfwAxisCollection col)
@@ -48,9 +55,10 @@ namespace Silk.NET.Input.Desktop.Collections
                 Current = default;
             }
             
+            /// <inheritdoc />
             public bool MoveNext()
             {
-                if (_current == _col._count)
+                if (_current == _col.Count)
                 {
                     Current = default;
                     return false;
@@ -61,16 +69,20 @@ namespace Silk.NET.Input.Desktop.Collections
                 return true;
             }
 
+            /// <inheritdoc />
             public void Reset()
             {
                 Current = default;
                 _current = 0;
             }
 
-            public Axis Current { get; set; }
+            /// <inheritdoc />
+            public Axis Current { get; private set; }
 
+            /// <inheritdoc />
             object IEnumerator.Current => Current;
 
+            /// <inheritdoc />
             public void Dispose()
             {
             }
