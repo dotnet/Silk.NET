@@ -30,6 +30,11 @@ namespace Silk.NET.Input.Common
         PointF Position { get; set; }
         
         /// <summary>
+        /// The cursor to use.
+        /// </summary>
+        ICursor Cursor { get; set; }
+        
+        /// <summary>
         /// Checks if a specific button is currently pressed.
         /// </summary>
         /// <param name="btn">The button to check.</param>

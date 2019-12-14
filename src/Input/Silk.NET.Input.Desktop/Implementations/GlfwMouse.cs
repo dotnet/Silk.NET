@@ -21,6 +21,7 @@ namespace Silk.NET.Input.Desktop
         private readonly GlfwInputContext _inputContext;
         private readonly List<MouseButton> _down = new List<MouseButton>();
         internal ScrollWheel _wheel;
+        internal GlfwCursor _cursor;
         
         /// <summary>
         /// Creates a new GlfwMouse.
@@ -57,6 +58,21 @@ namespace Silk.NET.Input.Desktop
             }
             set => Util.Glfw.SetCursorPos((WindowHandle*) _inputContext._window.Handle, value.X, value.Y);
         }
+
+        /// <inheritdoc />
+        public ICursor Cursor {
+            get => _cursor;
+            set
+            {
+                if (value is GlfwCursor cursor)
+                {
+                    _cursor = cursor;
+                }
+                else
+                {
+                    throw new Exception("Wrong cursor type.");
+                }
+            } }
 
         /// <inheritdoc />
         public bool IsButtonPressed(MouseButton btn)
