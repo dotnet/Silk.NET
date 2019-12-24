@@ -2,10 +2,12 @@
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using Silk.NET.GLFW;
 using Silk.NET.Input;
 using Silk.NET.Input.Common;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
+using MouseButton = Silk.NET.Input.Common.MouseButton;
 
 namespace InputTest
 {
@@ -90,7 +92,7 @@ namespace InputTest
             Console.WriteLine($"G{arg1.Index}> {arg2.Name} up.");
         }
 
-        public static void DoConnect(IInputDevice device, bool isConnected)
+        public static unsafe void DoConnect(IInputDevice device, bool isConnected)
         {
             Console.WriteLine(isConnected
                 ? $"Device {device.Name} connected"
@@ -104,6 +106,9 @@ namespace InputTest
                     gamepad.ButtonUp += InputGamepadOnButtonUp;
                     gamepad.ThumbstickMoved += GamepadOnThumbstickMoved;
                     gamepad.TriggerMoved += GamepadOnTriggerMoved;
+                    Console.WriteLine("GUID: " + GlfwProvider.GLFW.Value.GetJoystickGUID(gamepad.Index));
+                    GlfwProvider.GLFW.Value.GetJoystickButtons(gamepad.Index, out var count);
+                    Console.WriteLine("Button Count: " + count + " Expected Button Count: " +Enum.GetValues(typeof(GamepadButton)).Length);
                 }
                 else
                 {
