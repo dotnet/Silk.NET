@@ -26,6 +26,7 @@ namespace Silk.NET.Input.Desktop
         public int Index { get; }
         public bool IsConnected => Util.Glfw.JoystickPresent(Index) && !Util.Glfw.JoystickIsGamepad(Index);
         public IReadOnlyList<Axis> Axes => GetAxes(Index);
+        // TODO: when documenting, indicate that this might not map 1:1 with ButtonName - only GlfwGamepad does
         public IReadOnlyList<Button> Buttons => GetButtons(Index);
         public IReadOnlyList<Hat> Hats => GetHats(Index);
         public Deadzone Deadzone { get; set; }
@@ -36,7 +37,7 @@ namespace Silk.NET.Input.Desktop
 
         public void Update()
         {
-            if (Util.Glfw.JoystickIsGamepad(Index))
+            if (!IsConnected)
             {
                 return;
             }
