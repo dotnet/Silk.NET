@@ -11,7 +11,7 @@ namespace Silk.NET.Input.Desktop
             return window is GlfwWindow;
         }
 
-        public IInputContext GetInput(IWindow window)
+        public IInputContext CreateInput(IWindow window)
         {
             // the cast isn't needed, but is used to make sure that what we've got is actually a GlfwWindow
             return new GlfwInputContext((GlfwWindow)window);

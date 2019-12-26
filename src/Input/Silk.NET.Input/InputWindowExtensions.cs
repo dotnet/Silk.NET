@@ -19,7 +19,7 @@ namespace Silk.NET.Input
         }
         public static IInputContext GetInput(this IWindow window)
         {
-            return SilkManager.GetOrDefault<IInputPlatform>()?.GetInput(window)
+            return SilkManager.GetOrDefault<IInputPlatform>()?.CreateInput(window)
                 ?? throw new NotSupportedException("Couldn't find a suitable input platform for this window.");
         }
     }
