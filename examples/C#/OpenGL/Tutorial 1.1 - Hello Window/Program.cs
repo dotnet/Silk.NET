@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Tutorial
 {
@@ -6,6 +6,7 @@ namespace Tutorial
     {
         static void Main(string[] args)
         {
+            //Hello world test.
             Console.WriteLine("Hello World!");
         }
     }
