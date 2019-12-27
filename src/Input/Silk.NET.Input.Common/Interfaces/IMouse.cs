@@ -17,7 +17,8 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// The buttons this mouse has available.
         /// </summary>
-        IEnumerable<MouseButton> SupportedButtons { get; }
+        // ReSharper disable once ReturnTypeCanBeEnumerable.Global
+        IReadOnlyList<MouseButton> SupportedButtons { get; }
         
         /// <summary>
         /// The scroll wheels this mouse has available.
