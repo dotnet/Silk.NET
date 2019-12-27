@@ -21,7 +21,6 @@ namespace Silk.NET.Input.Desktop
         }
         public bool MoveNext()
         {
-            _i++;
             if (_i >= _list.Count)
             {
                 Current = default;
@@ -29,6 +28,7 @@ namespace Silk.NET.Input.Desktop
             }
 
             Current = _list[_i];
+            _i++;
             return true;
         }
 

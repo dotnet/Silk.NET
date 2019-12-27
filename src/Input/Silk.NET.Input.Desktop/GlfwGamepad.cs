@@ -24,6 +24,8 @@ namespace Silk.NET.Input.Desktop
 
         public GlfwGamepad(int i)
         {
+            var hasState = GlfwProvider.GLFW.Value.GetGamepadState(i, out var state);
+            
             Index = i;
             _buttons = (Button*) Marshal.AllocHGlobal(GamepadButtonCount * sizeof(Button));
             _thumbsticks = (Thumbstick*) Marshal.AllocHGlobal(GamepadThumbstickCount * sizeof(Thumbstick));
@@ -31,9 +33,26 @@ namespace Silk.NET.Input.Desktop
             Buttons = new GlfwReadOnlyList<Button>(_buttons, GamepadButtonCount);
             Thumbsticks = new GlfwReadOnlyList<Thumbstick>(_thumbsticks, GamepadThumbstickCount);
             Triggers = new GlfwReadOnlyList<Trigger>(_triggers, GamepadTriggerCount);
+
+            _connected = hasState;
+            
+            for (int j = 0; j < GamepadButtonCount; j++)
+            {
+                _buttons[j] = new Button((ButtonName) j, j, hasState && state.Buttons[j] == (int) InputAction.Press);
+            }
+
+            for (int j = 0; j < GamepadThumbstickCount; j++)
+            {
+                _thumbsticks[j] = new Thumbstick(j, 0, 0);
+            }
+
+            for (int j = 0; j < GamepadTriggerCount; j++)
+            {
+                _triggers[j] = new Trigger(j, 0);
+            }
         }
 
-        public string Name => GlfwProvider.GLFW.Value.GetGamepadName(Index);
+        public string Name => GlfwProvider.GLFW.Value.GetGamepadName(Index) ?? "Silk.NET Gamepad (via GLFW)";
         public int Index { get; }
         public bool IsConnected => GlfwProvider.GLFW.Value.JoystickIsGamepad(Index);
         public IReadOnlyList<Button> Buttons { get; }
@@ -53,15 +72,17 @@ namespace Silk.NET.Input.Desktop
                 // Detect when this gamepad disconnects
                 if (_connected)
                 {
-                    OnConnectionChanged(this, false);
+                    OnConnectionChanged?.Invoke(this, false);
                     _connected = false;
                 }
+
+                return;
             }
 
             // Detect when this gamepad connects
             if (!_connected)
             {
-                OnConnectionChanged(this, true);
+                OnConnectionChanged?.Invoke(this, true);
                 _connected = true;
             }
 

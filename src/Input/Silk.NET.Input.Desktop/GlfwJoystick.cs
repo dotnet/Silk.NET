@@ -27,9 +27,11 @@ namespace Silk.NET.Input.Desktop
             Axes = new GlfwReadOnlyList<Axis>(_axes, 0);
             Buttons = new GlfwReadOnlyList<Button>(_buttons, 0);
             Hats = new GlfwReadOnlyList<Hat>(_hats, 0);
+
+            _connected = IsConnected;
         }
 
-        public string Name => GlfwProvider.GLFW.Value.GetJoystickName(Index);
+        public string Name => GlfwProvider.GLFW.Value.GetJoystickName(Index) ?? "Silk.NET Joystick (via GLFW)";
         public int Index { get; }
 
         public bool IsConnected => GlfwProvider.GLFW.Value.JoystickPresent(Index) &&
@@ -52,11 +54,6 @@ namespace Silk.NET.Input.Desktop
                 }
                 
                 return;
-            }
-
-            if (!_connected)
-            {
-                OnConnectionChanged?.Invoke(this, _connected = true);
             }
 
             var btn = GlfwProvider.GLFW.Value.GetJoystickButtons(Index, out var btnCount);
@@ -94,6 +91,11 @@ namespace Silk.NET.Input.Desktop
                         _ => Position2D.Centered
                     }
                 );
+            }
+
+            if (!_connected)
+            {
+                OnConnectionChanged?.Invoke(this, _connected = true);
             }
         }
 

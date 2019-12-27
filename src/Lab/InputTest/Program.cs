@@ -94,14 +94,16 @@ namespace InputTest
 
         public static unsafe void DoConnect(IInputDevice device, bool isConnected)
         {
+            Console.WriteLine("bong");
             Console.WriteLine(isConnected
-                ? $"Device {device.Name} connected"
-                : $"Device {device.Name} disconnected");
-            if (device is IGamepad gamepad && device.IsConnected)
+                ? $"{device.GetType().Name} {device.Name} connected"
+                : $"{device.GetType().Name} {device.Name} disconnected");
+            if (device is IGamepad gamepad)
             {
                 Console.WriteLine($"Discovered controller {gamepad.Index} (Connected: {isConnected})");
                 if (isConnected)
                 {
+                    gamepad.Deadzone = new Deadzone(0.2f, DeadzoneMethod.AdaptiveGradient);
                     gamepad.ButtonDown += InputGamepadOnButtonDown;
                     gamepad.ButtonUp += InputGamepadOnButtonUp;
                     gamepad.ThumbstickMoved += GamepadOnThumbstickMoved;
@@ -120,7 +122,7 @@ namespace InputTest
 
                 Console.Write("    Buttons: ");
                 const string s = "\n             ";
-                Console.WriteLine(string.Join(s, gamepad.Buttons.Select(x => x.Name + (x.Pressed ? "(1)" : "(0)"))));
+                Console.WriteLine(string.Join(s, gamepad.Buttons.Select(x => x.Index + "/" + x.Name + (x.Pressed ? "(1)" : "(0)"))));
                 Console.WriteLine($"    {gamepad.Thumbsticks.Count} thumbsticks found.");
                 Console.WriteLine($"    {gamepad.Triggers.Count} triggers found.");
             }
