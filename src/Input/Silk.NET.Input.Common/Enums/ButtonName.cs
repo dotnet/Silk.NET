@@ -10,7 +10,8 @@ namespace Silk.NET.Input.Common
     /// </summary>
     public enum ButtonName
     {
-        A,
+        Unknown = -1,
+        A = 0,
         B,
         X,
         Y,

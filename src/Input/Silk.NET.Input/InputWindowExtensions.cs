@@ -15,11 +15,11 @@ namespace Silk.NET.Input
     {
         static InputWindowExtensions()
         {
-            SilkManager.Register<IInputPlatform>(new GlfwInputPlatform());
+            SilkManager.Register<IInputPlatform>(GlfwInputPlatform.Instance);
         }
         public static IInputContext GetInput(this IWindow window)
         {
-            return SilkManager.GetOrDefault<IInputPlatform>()?.GetInput(window)
+            return SilkManager.GetOrDefault<IInputPlatform>()?.CreateInput(window)
                 ?? throw new NotSupportedException("Couldn't find a suitable input platform for this window.");
         }
     }

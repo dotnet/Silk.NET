@@ -5,40 +5,86 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
-using Silk.NET.Input.Desktop.Collections;
 using Silk.NET.Windowing.Desktop;
-
 
 namespace Silk.NET.Input.Desktop
 {
-    public class GlfwInputContext : IInputContext
+    internal class GlfwInputContext : IInputContext
     {
-        internal List<GlfwGamepad> _gamepads;
-        internal List<GlfwJoystick> _joysticks;
-        internal GlfwKeyboard _keyboard;
-        internal GlfwMouse _mouse;
-        internal GlfwWindow _window;
+        private readonly GlfwGamepad[] _gamepads = new GlfwGamepad[16];
+        private readonly GlfwJoystick[] _joysticks = new GlfwJoystick[16];
+        private readonly GlfwKeyboard[] _keyboards = new GlfwKeyboard[1];
+        private readonly GlfwMouse[] _mice = new GlfwMouse[1];
+        private readonly IGlfwSubscriber[] _subscribers = new IGlfwSubscriber[2];
+        private Action<double> _update;
+        private GlfwWindow _window;
 
-        public GlfwInputContext(GlfwWindow window)
+        public unsafe GlfwInputContext(GlfwWindow window)
         {
-            Handle = window.Handle;
-            _window = window;
-            InputHandler.RegisterContext(this);
-            
-            // initialize auto-properties
-            Gamepads = new GlfwGamepadCollection(this);
-            Joysticks = new GlfwJoystickCollection(this);
-            Keyboards = new GlfwKeyboardCollection(this);
-            Mice = new GlfwMouseCollection(this);
+            void OnConnectionChanged(IInputDevice a, bool b) => ConnectionChanged?.Invoke(a, b);
 
-            // initialize joysticks
-            _joysticks = new List<GlfwJoystick>(Enumerable.Range(0, 16).Select(i => new GlfwJoystick(i)));
-            _gamepads = new List<GlfwGamepad>(Enumerable.Range(0, 16).Select(i => new GlfwGamepad(i)));
-            _keyboard = new GlfwKeyboard(this);
-            _mouse = new GlfwMouse(this);
+            if (window is null)
+            {
+                throw new ArgumentNullException
+                    (nameof(window), "Attempted to create input context for null or non-GLFW window.");
+            }
+
+            Handle = window.Handle;
+            for (var i = 0; i < _gamepads.Length; i++)
+            {
+                _gamepads[i] = new GlfwGamepad(i) {OnConnectionChanged = OnConnectionChanged};
+            }
+
+            for (var i = 0; i < _joysticks.Length; i++)
+            {
+                _joysticks[i] = new GlfwJoystick(i){OnConnectionChanged = OnConnectionChanged};
+            }
+
+            _subscribers[0] = _keyboards[0] = new GlfwKeyboard();
+            _subscribers[1] = _mice[0] = new GlfwMouse();
+
+            Gamepads = new IsConnectedWrapper<GlfwGamepad>(_gamepads);
+            Joysticks = new IsConnectedWrapper<GlfwJoystick>(_joysticks);
+            Keyboards = _keyboards;
+            Mice = _mice;
+
+            GlfwInputPlatform.RegisterWindow((WindowHandle*) Handle, _subscribers);
+            window.Update += _update = _ =>
+            {
+                foreach (var updatable in _gamepads)
+                {
+                    updatable.Update();
+                }
+                
+                foreach (var updatable in _joysticks)
+                {
+                    updatable.Update();
+                }
+            };
+
+            _window = window;
+        }
+
+        public unsafe void Dispose()
+        {
+            _window.Update -= _update;
+            GlfwInputPlatform.UnregisterWindow((WindowHandle*) Handle, _subscribers);
+            foreach (var gamepad in _gamepads)
+            {
+                gamepad.Dispose();
+            }
+
+            foreach (var joystick in _joysticks)
+            {
+                joystick.Dispose();
+            }
+
+            foreach (var mouse in _mice)
+            {
+                mouse.Dispose();
+            }
         }
 
         public IntPtr Handle { get; }
@@ -46,36 +92,7 @@ namespace Silk.NET.Input.Desktop
         public IReadOnlyList<IJoystick> Joysticks { get; }
         public IReadOnlyList<IKeyboard> Keyboards { get; }
         public IReadOnlyList<IMouse> Mice { get; }
-        public IReadOnlyList<IInputDevice> OtherDevices { get; } = Array.Empty<IInputDevice>(); // not supported in GLFW
-
-        public void Dispose()
-        {
-            InputHandler.UnregisterContext(this);
-        }
-
-        ~GlfwInputContext()
-        {
-            Dispose();
-        }
-
-        public void WindowUpdate(double obj)
-        {
-            for (int i = 0; i < _joysticks.Count; i++)
-            {
-                _joysticks[i].Update();
-            }
-            for (int i = 0; i < _gamepads.Count; i++)
-            {
-                _gamepads[i].Update();
-            }
-        }
-        
-        /// <inheritdoc />
+        public IReadOnlyList<IInputDevice> OtherDevices { get; } = new IInputDevice[0];
         public event Action<IInputDevice, bool> ConnectionChanged;
-
-        public void RaiseConnectionChange(int joystick, ConnectedState state)
-        {
-            ConnectionChanged?.Invoke(Util.Glfw.JoystickIsGamepad(joystick) ? (IInputDevice) Gamepads[joystick] : Joysticks[joystick], state == ConnectedState.Connected);
-        }
     }
 }

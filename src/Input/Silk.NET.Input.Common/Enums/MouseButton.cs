@@ -15,7 +15,8 @@ namespace Silk.NET.Input.Common
     /// </remarks>
     public enum MouseButton
     {
-        Left,
+        Unknown = -1,
+        Left = 0,
         Right,
         Middle,
         Button4,
