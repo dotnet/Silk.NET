@@ -11,9 +11,14 @@ namespace Silk.NET.Input.Common
     public enum ButtonName
     {
         /// <summary>
+        /// Indicates that the input backend was unable to determine a button name for the button in question, or it does not support it.
+        /// </summary>
+        Unknown = -1,
+
+        /// <summary>
         /// The A button.
         /// </summary>
-        A,
+        A = 0,
         
         /// <summary>
         /// The B button.

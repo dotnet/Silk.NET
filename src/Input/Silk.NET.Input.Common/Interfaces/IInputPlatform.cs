@@ -31,6 +31,6 @@ namespace Silk.NET.Input.Common
         /// </summary>
         /// <param name="window">The window to get a context for.</param>
         /// <returns>The context.</returns>
-        IInputContext GetInput(IWindow window);
+        IInputContext CreateInput(IWindow window);
     }
 }

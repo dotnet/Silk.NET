@@ -16,9 +16,14 @@ namespace Silk.NET.Input.Common
     public enum MouseButton
     {
         /// <summary>
+        /// Indicates the input backend was unable to determine a button name for the button in question, or it does not support it.
+        /// </summary>
+        Unknown = -1,
+
+        /// <summary>
         /// The left mouse button.
         /// </summary>
-        Left,
+        Left = 0,
         
         /// <summary>
         /// The right mouse button.
