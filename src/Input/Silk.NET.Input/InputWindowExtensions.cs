@@ -15,7 +15,7 @@ namespace Silk.NET.Input
     {
         static InputWindowExtensions()
         {
-            SilkManager.Register<IInputPlatform>(new GlfwInputPlatform());
+            SilkManager.Register<IInputPlatform>(GlfwInputPlatform.Instance);
         }
         public static IInputContext GetInput(this IWindow window)
         {
