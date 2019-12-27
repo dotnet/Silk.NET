@@ -12,13 +12,19 @@ using Silk.NET.Windowing.Desktop;
 
 namespace Silk.NET.Input.Desktop
 {
+    /// <inheritdoc />
     public class GlfwInputPlatform : IInputPlatform
     {
         private GlfwInputPlatform(){}
         private static Dictionary<IntPtr, GlfwEvents> _subs = new Dictionary<IntPtr, GlfwEvents>();
+        /// <inheritdoc />
         public bool IsApplicable(IWindow window) => window is GlfwWindow;
 
+        /// <inheritdoc />
         public IInputContext CreateInput(IWindow window) => new GlfwInputContext(window as GlfwWindow);
+        /// <summary>
+        /// Gets the cached instance of the GLFW input platform.
+        /// </summary>
         public static GlfwInputPlatform Instance { get; } = new GlfwInputPlatform();
         
         internal static unsafe void RegisterWindow(WindowHandle* handle, IEnumerable<IGlfwSubscriber> subscribers)
