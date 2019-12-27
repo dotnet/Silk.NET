@@ -3,19 +3,19 @@ A proposal for the division of core windowing APIs into a new, stripped-down int
 
 # Contributors
 - Dylan P, Ultz Limited
+- Void, Silk.NET Contributors
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed with API Review Board (ARB)
+- [x] Discussed with API Review Board (ARB)
 - [ ] Approved
 - [ ] Implemented
 
 # Design Decisions
-- An Explanation of any notable design decisions you went with (i.e. why you designed the API like this)
-This section is optional
+This proposal aims to iron out an API division between views and windows, the former containing only the core windowing APIs and the latter containing the rest. This is in an effort to ensure that we lay out a set of APIs that will ALWAYS be available on every platform we support, and there isn't a way we can do that in the current state of the windowing API.
 
 # Proposed API
-- Here you do some code blocks, this is the heart and soul of the proposal. DON'T DO ANY IMPLEMENTATIONS! Just declarations.
+
 ## IViewEvents
 ```cs
 internal interface IViewEvents
@@ -135,11 +135,13 @@ internal interface IViewEvents
 
 ## IWindowPlatform
 ```diff
++    bool IsViewOnly { get; }
 +    IView GetView(ViewOptions opts);
 ```
 
 ## Window
 ```diff
++    public bool IsViewOnly { get; }
 +    public static IView GetView(ViewOptions opts);
 ```
 
