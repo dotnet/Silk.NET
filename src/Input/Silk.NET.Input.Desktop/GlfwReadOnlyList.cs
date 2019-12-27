@@ -7,7 +7,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Silk.NET.Input.Desktop.Utilities
+namespace Silk.NET.Input.Desktop
 {
     internal unsafe struct GlfwReadOnlyList<T> : IReadOnlyList<T>
         where T:unmanaged

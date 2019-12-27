@@ -6,7 +6,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Silk.NET.Input.Desktop.Utilities
+namespace Silk.NET.Input.Desktop
 {
     internal struct IsConnectedWrapper<T> : IReadOnlyList<T>
         where T:IGlfwDevice
@@ -14,7 +14,7 @@ namespace Silk.NET.Input.Desktop.Utilities
         private readonly IReadOnlyList<T> _list;
 
         public IsConnectedWrapper(IReadOnlyList<T> list) => _list = list;
-        public IEnumerator<T> GetEnumerator() => new ReadOnlyListEnumerator<T>(_list);
+        public IEnumerator<T> GetEnumerator() => new IsConnectedEnumerator<T>(new ReadOnlyListEnumerator<T>(_list));
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 

@@ -6,14 +6,14 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Silk.NET.Input.Desktop.Utilities
+namespace Silk.NET.Input.Desktop
 {
     internal struct IsConnectedEnumerator<T> : IEnumerator<T>
         where T:IGlfwDevice
     {
         private ReadOnlyListEnumerator<T> _base;
 
-        public IsConnectedEnumerator(ref ReadOnlyListEnumerator<T> @base)
+        public IsConnectedEnumerator(in ReadOnlyListEnumerator<T> @base)
         {
             _base = @base;
             Current = default;

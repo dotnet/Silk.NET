@@ -6,7 +6,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Silk.NET.Input.Desktop.Utilities
+namespace Silk.NET.Input.Desktop
 {
     internal struct ReadOnlyListEnumerator<T> : IEnumerator<T>
     {

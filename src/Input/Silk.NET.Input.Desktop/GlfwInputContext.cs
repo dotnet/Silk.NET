@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
-using Silk.NET.Input.Desktop.Utilities;
 using Silk.NET.Windowing.Desktop;
 
 namespace Silk.NET.Input.Desktop
@@ -19,8 +18,13 @@ namespace Silk.NET.Input.Desktop
         private readonly GlfwKeyboard[] _keyboards = new GlfwKeyboard[1];
         private readonly GlfwMouse[] _mice = new GlfwMouse[1];
         private readonly IGlfwSubscriber[] _subscribers = new IGlfwSubscriber[2];
+        private Action<double> _update;
+        private GlfwWindow _window;
+
         public unsafe GlfwInputContext(GlfwWindow window)
         {
+            void OnConnectionChanged(IInputDevice a, bool b) => ConnectionChanged?.Invoke(a, b);
+
             if (window is null)
             {
                 throw new ArgumentNullException
@@ -30,28 +34,57 @@ namespace Silk.NET.Input.Desktop
             Handle = window.Handle;
             for (var i = 0; i < _gamepads.Length; i++)
             {
-                _gamepads[i] = new GlfwGamepad(i);
+                _gamepads[i] = new GlfwGamepad(i) {OnConnectionChanged = OnConnectionChanged};
             }
-            
+
             for (var i = 0; i < _joysticks.Length; i++)
             {
-                _joysticks[i] = new GlfwJoystick(i);
+                _joysticks[i] = new GlfwJoystick(i){OnConnectionChanged = OnConnectionChanged};
             }
-            
+
             _subscribers[0] = _keyboards[0] = new GlfwKeyboard();
             _subscribers[1] = _mice[0] = new GlfwMouse();
-            
+
             Gamepads = new IsConnectedWrapper<GlfwGamepad>(_gamepads);
             Joysticks = new IsConnectedWrapper<GlfwJoystick>(_joysticks);
             Keyboards = _keyboards;
             Mice = _mice;
-            
+
             GlfwInputPlatform.RegisterWindow((WindowHandle*) Handle, _subscribers);
+            window.Update += _update = _ =>
+            {
+                foreach (var updatable in _gamepads)
+                {
+                    updatable.Update();
+                }
+                
+                foreach (var updatable in _joysticks)
+                {
+                    updatable.Update();
+                }
+            };
+
+            _window = window;
         }
 
         public unsafe void Dispose()
         {
+            _window.Update -= _update;
             GlfwInputPlatform.UnregisterWindow((WindowHandle*) Handle, _subscribers);
+            foreach (var gamepad in _gamepads)
+            {
+                gamepad.Dispose();
+            }
+
+            foreach (var joystick in _joysticks)
+            {
+                joystick.Dispose();
+            }
+
+            foreach (var mouse in _mice)
+            {
+                mouse.Dispose();
+            }
         }
 
         public IntPtr Handle { get; }

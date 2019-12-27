@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
-using Silk.NET.Input.Desktop.Utilities;
 using Silk.NET.Windowing.Common;
 using Silk.NET.Windowing.Desktop;
 
@@ -21,19 +20,6 @@ namespace Silk.NET.Input.Desktop
 
         public IInputContext CreateInput(IWindow window) => new GlfwInputContext(window as GlfwWindow);
         public static GlfwInputPlatform Instance { get; } = new GlfwInputPlatform();
-
-        static GlfwInputPlatform()
-        {
-            GlfwProvider.GLFW.Value.SetJoystickCallback(
-                (j, s) =>
-                {
-                    foreach (var x in _subs.Values)
-                    {
-                        x.InvokeJoystick(j, s);
-                    }
-                }
-            );
-        }
         
         internal static unsafe void RegisterWindow(WindowHandle* handle, IEnumerable<IGlfwSubscriber> subscribers)
         {
