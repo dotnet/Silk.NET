@@ -1,15 +1,17 @@
 using Silk.NET.Input;
 using Silk.NET.Input.Common;
 using Silk.NET.OpenGL;
+using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
 using Silk.NET.Windowing.Desktop;
 using System;
+using System.Drawing;
 
 namespace Tutorial
 {
     class Program
     {
-        private static GlfwWindow window;
+        private static IWindow window;
         private static GL Gl;
 
         private static uint Vbo;
@@ -55,11 +57,10 @@ namespace Tutorial
 
         private static void Main(string[] args)
         {
-            GlfwWindow window = new GlfwWindow(new WindowOptions()
-            {
-                Size = new System.Drawing.Size(800, 600),
-                Title = "LearnOpenGL with Silk.NET"
-            });
+            var options = WindowOptions.Default;
+            options.Size = new Size(800, 600);
+            options.Title = "LearnOpenGL with Silk.NET";
+            window = Window.Create(options);
 
             window.Load += OnLoad;
             window.Render += OnRender;
