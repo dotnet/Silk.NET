@@ -50,7 +50,7 @@ namespace Tutorial
 
         private static readonly uint[] Indices =
         {
-            0, 1, 2,
+            0, 1, 3,
             1, 2, 3
         };
 
@@ -64,6 +64,7 @@ namespace Tutorial
 
             window.Load += OnLoad;
             window.Render += OnRender;
+            window.Closing += OnClose;
 
             window.Run();
         }
@@ -94,10 +95,10 @@ namespace Tutorial
 
             //Initializing a element buffer that holds the index data.
             Gl.CreateBuffers(1, out Ebo); //Creating the buffer.
-            Gl.BindBuffer(BufferTargetARB.ArrayBuffer, Ebo); //Binding the buffer.
+            Gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, Ebo); //Binding the buffer.
             fixed (void* i = &Indices[0])
             {
-                Gl.BufferData(BufferTargetARB.ArrayBuffer, (uint)(Indices.Length * sizeof(uint)), i, BufferUsageARB.StaticDraw); //Setting buffer data.
+                Gl.BufferData(BufferTargetARB.ElementArrayBuffer, (uint)(Indices.Length * sizeof(uint)), i, BufferUsageARB.StaticDraw); //Setting buffer data.
             }
 
             //Creating a vertex shader.
@@ -148,13 +149,22 @@ namespace Tutorial
 
         private static void OnRender(double obj)
         {
+            //Clear the color channel.
             Gl.Clear((uint)ClearBufferMask.ColorBufferBit);
 
+            //Bind the geometry and shader.
             Gl.BindVertexArray(Vao);
             Gl.UseProgram(Shader);
+            //Draw the geometry.
             Gl.DrawElements(GLEnum.Triangles, (uint)Indices.Length, GLEnum.UnsignedInt, 0);
+        }
 
-            window.SwapBuffers();
+        private static void OnClose()
+        {
+            Gl.DeleteBuffer(Vbo);
+            Gl.DeleteBuffer(Ebo);
+            Gl.DeleteVertexArray(Vao);
+            Gl.DeleteProgram(Shader);
         }
 
         private static void KeyDown(IKeyboard arg1, Key arg2, int arg3)
