@@ -8,8 +8,8 @@ More importantly, this proposal introduces monitor APIs (an example of a window 
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed with API Review Board (ARB)
-- [ ] Approved
+- [x] Discussed with API Review Board (ARB)
+- [x] Approved
 - [ ] Implemented
 
 # Design Decisions
