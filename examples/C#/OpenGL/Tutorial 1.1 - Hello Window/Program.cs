@@ -16,13 +16,18 @@ namespace Tutorial
             var options = WindowOptions.Default;
             options.Size = new Size(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
+
             window = Window.Create(options);
+
             //Assign events.
             window.Load += OnLoad;
+            window.Update += OnUpdate;
+            window.Render += OnRender;
 
             //Run the window.
             window.Run();
         }
+
 
         private static void OnLoad()
         {
@@ -32,6 +37,16 @@ namespace Tutorial
             {
                 input.Keyboards[0].KeyDown += KeyDown;
             }
+        }
+
+        private static void OnRender(double obj)
+        {
+            //Here all rendering should be done.
+        }
+
+        private static void OnUpdate(double obj)
+        {
+            //Here all updates to the program should be done.
         }
 
         private static void KeyDown(IKeyboard arg1, Key arg2, int arg3)

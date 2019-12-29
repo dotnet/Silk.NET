@@ -19,8 +19,9 @@ namespace Tutorial
         private static uint Vao;
         private static uint Shader;
 
+        //Vertex shaders are run on each vertex.
         private static readonly string VertexShaderSource = @"
-        #version 330 core
+        #version 330 core //Using version GLSL version 3.3
         layout (location = 0) in vec4 aPos;
         
         void main()
@@ -29,6 +30,7 @@ namespace Tutorial
         }
         ";
 
+        //Fragment shaders are run on each fragment/pixel of the geometry.
         private static readonly string FragmentShaderSource = @"
         #version 330 core
         out vec4 FragColor;
@@ -39,6 +41,7 @@ namespace Tutorial
         }
         ";
 
+        //Vertex data, uploaded to the VBO.
         private static readonly float[] Vertices =
         {
             //X    Y      Z
@@ -48,6 +51,7 @@ namespace Tutorial
             -0.5f,  0.5f, 0.5f
         };
 
+        //Index data, uploaded to the EBO.
         private static readonly uint[] Indices =
         {
             0, 1, 3,
@@ -64,10 +68,12 @@ namespace Tutorial
 
             window.Load += OnLoad;
             window.Render += OnRender;
+            window.Update += OnUpdate;
             window.Closing += OnClose;
 
             window.Run();
         }
+
 
         private unsafe static void OnLoad()
         {
@@ -83,7 +89,6 @@ namespace Tutorial
             //Creating a vertex array.
             Gl.CreateVertexArrays(1, out Vao);
             Gl.BindVertexArray(Vao);
-
 
             //Initializing a vertex buffer that holds the vertex data.
             Gl.CreateBuffers(1, out Vbo); //Creating the buffer.
@@ -155,8 +160,14 @@ namespace Tutorial
             //Bind the geometry and shader.
             Gl.BindVertexArray(Vao);
             Gl.UseProgram(Shader);
+
             //Draw the geometry.
             Gl.DrawElements(GLEnum.Triangles, (uint)Indices.Length, GLEnum.UnsignedInt, 0);
+        }
+
+        private static void OnUpdate(double obj)
+        {
+
         }
 
         private static void OnClose()
