@@ -8,7 +8,7 @@ A proposal for the division of core windowing APIs into a new, stripped-down int
 # Current Status
 - [x] Proposed
 - [x] Discussed with API Review Board (ARB)
-- [ ] Approved
+- [x] Approved
 - [ ] Implemented
 
 # Design Decisions
