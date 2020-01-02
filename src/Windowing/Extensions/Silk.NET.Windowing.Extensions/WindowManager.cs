@@ -37,7 +37,7 @@ namespace Silk.NET.Windowing.Extensions
         /// Whether the removal was successful or not. One reason why this might return false is that the given window
         /// isn't being managed by this manager.
         /// </returns>
-        public bool RemoveWindow(IWindow window) { lock (_syncRoot) { Windows.Remove(window); } }
+        public bool RemoveWindow(IWindow window) { lock (_syncRoot) { return Windows.Remove(window); } }
 
         /// <summary>
         /// Creates a window and adds it to this manager.
