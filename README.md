@@ -17,6 +17,12 @@ We currently have 3 maintainers:
 - [Aaron P.](https://github.com/AzyIsCool) from [Ultz](https://github.com/Ultz)
 - [Frederik A.](https://github.com/frederikja163) from the open-source community
 
+As well as 2 community members who we consult with to influence Silk.NET's design:
+- [Maximiliano L.](https://github.com/maxilevi) - developer of [Project Hedra](https://projecthedra.com/) using Silk.NET
+- [Void](https://github.com/devvoid) - a contributor who basically wrote half the library
+
+Silk.NET is governed by the Silk Working Group, made up of all 5 of the above members. Only 2 seats are occupied by members of Ultz, demonstrating and emphasising our commitment to open-source software.
+
 # Building from source
 
 - Make sure you have the .NET Core SDK installed
