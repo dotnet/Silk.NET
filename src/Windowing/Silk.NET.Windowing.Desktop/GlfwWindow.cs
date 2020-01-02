@@ -468,7 +468,6 @@ namespace Silk.NET.Windowing.Desktop
             if (API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES)
             {
                 _glfw.MakeContextCurrent(_windowPtr);
-                VSync = _initialOptions.VSync;
             }
 
             WindowState = _initialOptions.WindowState;
@@ -488,6 +487,8 @@ namespace Silk.NET.Windowing.Desktop
             // Initialize some variables
             _isRunningSlowlyTries = 0;
             _running = true;
+            
+            VSync = _initialOptions.VSync;
 
             _renderStopwatch = new Stopwatch();
             _updateStopwatch = new Stopwatch();
