@@ -10,6 +10,8 @@ namespace Silk.NET.Windowing.Extensions
     /// </summary>
     public class WindowManager : IDisposable
     {
+        private object _syncRoot = new object();
+    
         /// <summary>
         /// The windows managed by this instance.
         /// </summary>
@@ -25,7 +27,7 @@ namespace Silk.NET.Windowing.Extensions
         /// Adds a window to this manager.
         /// </summary>
         /// <param name="window">The window to add.</param>
-        public void AddWindow(IWindow window) => Windows.Add(window);
+        public void AddWindow(IWindow window) { lock (_syncRoot) { Windows.Add(window); } }
 
         /// <summary>
         /// Removes the given window from this manager.
@@ -35,7 +37,7 @@ namespace Silk.NET.Windowing.Extensions
         /// Whether the removal was successful or not. One reason why this might return false is that the given window
         /// isn't being managed by this manager.
         /// </returns>
-        public bool RemoveWindow(IWindow window) => Windows.Remove(window);
+        public bool RemoveWindow(IWindow window) { lock (_syncRoot) { Windows.Remove(window); } }
 
         /// <summary>
         /// Creates a window and adds it to this manager.
@@ -57,26 +59,38 @@ namespace Silk.NET.Windowing.Extensions
             IsRunning = true;
             if (open)
             {
-                foreach (var window in Windows)
+                lock (_syncRoot)
                 {
-                    window.Open();
+                    foreach (var window in Windows)
+                    {
+                        window.Open();
+                    }
                 }
             }
 
+            var removals = new List<IWindow>();
             while (IsRunning)
             {
-                foreach (var window in Windows)
+                lock (_syncRoot)
                 {
-                    if (window.IsClosing)
+                    foreach (var window in Windows)
+                    {
+                        if (window.IsClosing)
+                        {
+                            removals.Add(window);
+                        }
+
+                        window.MakeCurrent();
+                        window.DoEvents();
+                        window.DoUpdate();
+                        window.DoRender();
+                    }
+                    
+                    foreach (var window in removals)
                     {
                         Windows.Remove(window);
                         window.Reset();
                     }
-
-                    window.MakeCurrent();
-                    window.DoEvents();
-                    window.DoUpdate();
-                    window.DoRender();
                 }
             }
 
@@ -104,9 +118,12 @@ namespace Silk.NET.Windowing.Extensions
         /// </summary>
         public void CloseAll()
         {
-            foreach (var window in Windows)
+            lock (_syncRoot)
             {
-                window.Close();
+                foreach (var window in Windows)
+                {
+                    window.Close();
+                }
             }
         }
 
