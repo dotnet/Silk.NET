@@ -81,7 +81,7 @@ namespace Silk.NET.Windowing
         /// <exception cref="NotSupportedException">
         /// Thrown if no applicable <see cref="IWindowPlatform" /> was found.
         /// </exception>
-        public static void Init()
+        internal static void Init()
         {
             var glfwPlatform = GlfwPlatform.Instance;
             if (glfwPlatform.IsApplicable) {

@@ -26,6 +26,9 @@ namespace Silk.NET.Windowing.Common
             WindowBorder = WindowBorder.Resizable;
             VSync = opts.VSync;
             RunningSlowTolerance = opts.RunningSlowTolerance;
+            IsVisible = true;
+            UseSingleThreadedWindow = true;
+            ShouldSwapAutomatically = true;
         }
         
         /// <inheritdoc />

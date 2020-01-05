@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -12,16 +13,19 @@ using System.Threading;
 using System.Threading.Tasks;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
+using Monitor = Silk.NET.GLFW.Monitor;
 
 namespace Silk.NET.Windowing.Desktop
 {
     /// <summary>
     /// A Silk.NET window, using GLFW as a backend.
     /// </summary>
-    public class GlfwWindow : IVulkanWindow
+    internal class GlfwWindow : IVulkanWindow
     {
         // The number of frames that the window has been running slowly for.
         private int _isRunningSlowlyTries;
+
+        private bool _contextMoved;
 
         // Cache variables
         private Point _position;
@@ -60,12 +64,13 @@ namespace Silk.NET.Windowing.Desktop
 
         private WindowOptions _initialOptions;
         private bool _running;
+        private IMonitor _initialMonitor;
 
         /// <summary>
         /// Create a new GlfwWindow.
         /// </summary>
         /// <param name="options">The options to use for this window.</param>
-        public GlfwWindow(WindowOptions options)
+        public unsafe GlfwWindow(WindowOptions options, GlfwWindow parent, GlfwMonitor monitor)
         {
             // Title and Size must be set before the window is created.
             _title = options.Title;
@@ -81,7 +86,9 @@ namespace Silk.NET.Windowing.Desktop
             ShouldSwapAutomatically = options.ShouldSwapAutomatically;
             
             _initialOptions = options;
-            
+            _initialMonitor = monitor;
+            Parent = (IWindowHost)parent ?? _initialMonitor;
+
             GlfwProvider.GLFW.Value.GetVersion(out var major, out var minor, out _);
             if (new Version(major, minor) < new Version(3, 3))
             {
@@ -366,8 +373,6 @@ namespace Silk.NET.Windowing.Desktop
             return task.Result;
         }
 
-        private bool _contextMoved;
-
         /// <inheritdoc />
         public unsafe void MakeCurrent()
         {
@@ -466,7 +471,10 @@ namespace Silk.NET.Windowing.Desktop
             );
 
             // Create window
-            _windowPtr = _glfw.CreateWindow(_size.Width, _size.Height, _title, null, null);
+            _windowPtr = _glfw.CreateWindow
+            (
+                _size.Width, _size.Height, _title, _initialMonitor is GlfwMonitor x ? x.Handle : null, null
+            );
 
             _invokeQueue = new ConcurrentQueue<Task>();
             _mainThread = Thread.CurrentThread.ManagedThreadId;
@@ -803,6 +811,40 @@ namespace Silk.NET.Windowing.Desktop
         {
             // GLFW doesn't support child windows yet, so just create a window as normal.
             return GlfwPlatform.Instance.CreateWindow(opts);
+        }
+
+        public IWindowHost Parent { get; }
+
+        public unsafe IMonitor Monitor
+        {
+            get
+            {
+                if (!_running)
+                {
+                    return _initialMonitor;
+                }
+                
+                Monitor* target;
+                return new GlfwMonitor
+                (
+                    target = _glfw.GetWindowMonitor(_windowPtr),
+                    IndexOf(_glfw.GetMonitors(out var count), target, count)
+                );
+            }
+        }
+
+        private unsafe int IndexOf<T>(T** array, T* target, int count)
+            where T:unmanaged
+        {
+            for (var i = 0; i < count; i++)
+            {
+                if (array[i] == target)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
         }
     }
 }

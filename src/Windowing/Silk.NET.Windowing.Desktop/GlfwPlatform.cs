@@ -3,8 +3,12 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
+
+[assembly: InternalsVisibleTo("Silk.NET.Input.Desktop")]
 
 namespace Silk.NET.Windowing.Desktop
 {
@@ -42,9 +46,15 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
-        public IWindow CreateWindow(WindowOptions options) => new GlfwWindow(options);
+        public IWindow CreateWindow(WindowOptions options) => new GlfwWindow(options, null, null);
 
         /// <inheritdoc />
         public IView GetView(ViewOptions? opts = null) => CreateWindow(new WindowOptions(opts ?? ViewOptions.Default));
+
+        /// <inheritdoc />
+        public IEnumerable<IMonitor> GetMonitors() => new GlfwMonitorEnumerable();
+
+        /// <inheritdoc />
+        public unsafe IMonitor GetMainMonitor() => new GlfwMonitor(GlfwProvider.GLFW.Value.GetPrimaryMonitor(), 0);
     }
 }

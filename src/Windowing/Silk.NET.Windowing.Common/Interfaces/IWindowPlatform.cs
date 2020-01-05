@@ -3,6 +3,8 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System.Collections.Generic;
+
 namespace Silk.NET.Windowing.Common
 {
     /// <summary>
@@ -27,5 +29,15 @@ namespace Silk.NET.Windowing.Common
         /// <param name="opts"></param>
         /// <returns></returns>
         IView GetView(ViewOptions? opts = null);
+        /// <summary>
+        /// Gets all monitors present on this window platform.
+        /// </summary>
+        /// <returns>All monitors present on this window platform</returns>
+        IEnumerable<IMonitor> GetMonitors();
+        /// <summary>
+        /// Gets the main monitor.
+        /// </summary>
+        /// <returns>The main monitor.</returns>
+        IMonitor GetMainMonitor();
     }
 }
