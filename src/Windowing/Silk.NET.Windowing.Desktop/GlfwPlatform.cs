@@ -13,6 +13,15 @@ namespace Silk.NET.Windowing.Desktop
     /// </summary>
     public class GlfwPlatform : IWindowPlatform
     {
+        private GlfwPlatform()
+        {
+        }
+        
+        /// <summary>
+        /// Gets this instance of the windowing platform.
+        /// </summary>
+        public static GlfwPlatform Instance { get; } = new GlfwPlatform();
+        
         /// <inheritdoc />
         public bool IsViewOnly { get; } = false;
 
@@ -33,9 +42,9 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
-        public IWindow GetWindow(WindowOptions options) => new GlfwWindow(options);
+        public IWindow CreateWindow(WindowOptions options) => new GlfwWindow(options);
 
         /// <inheritdoc />
-        public IView GetView(ViewOptions? opts = null) => GetWindow(new WindowOptions(opts ?? ViewOptions.Default));
+        public IView GetView(ViewOptions? opts = null) => CreateWindow(new WindowOptions(opts ?? ViewOptions.Default));
     }
 }

@@ -56,7 +56,7 @@ namespace Silk.NET.Windowing
 
             // We should have a platform now, as Silk.Init would've thrown otherwise.
             // ReSharper disable once PossibleNullReferenceException
-            return SilkManager.Get<IWindowPlatform>().GetWindow(options);
+            return SilkManager.Get<IWindowPlatform>().CreateWindow(options);
         }
         
         /// <summary>
@@ -83,7 +83,7 @@ namespace Silk.NET.Windowing
         /// </exception>
         public static void Init()
         {
-            var glfwPlatform = new GlfwPlatform();
+            var glfwPlatform = GlfwPlatform.Instance;
             if (glfwPlatform.IsApplicable) {
                 SilkManager.Register<IWindowPlatform>(glfwPlatform);
                 SilkManager.Register<IGLSymbolLoader>(new GlfwLoader());

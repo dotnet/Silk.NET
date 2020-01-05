@@ -10,7 +10,9 @@ namespace Silk.NET.Windowing.Common
     /// <summary>
     /// An interface representing a window.
     /// </summary>
-    public interface IWindow : IWindowProperties, IWindowEvents, IView
+    public interface IWindow : IWindowProperties, IWindowEvents, IWindowHost, IView
     {
+        // TODO maybe we could do a IsSubwindow => Parent is IWindow
+        IWindowHost Parent { get; }
     }
 }

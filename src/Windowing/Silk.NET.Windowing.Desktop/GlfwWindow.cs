@@ -793,5 +793,16 @@ namespace Silk.NET.Windowing.Desktop
         {
             return (char**) _glfw.GetRequiredInstanceExtensions(out count);
         }
+
+        /// <summary>
+        /// Creates a subwindow with the given options.
+        /// </summary>
+        /// <param name="opts">The window options to use.</param>
+        /// <returns>A subwindow.</returns>
+        public IWindow CreateWindow(WindowOptions opts)
+        {
+            // GLFW doesn't support child windows yet, so just create a window as normal.
+            return GlfwPlatform.Instance.CreateWindow(opts);
+        }
     }
 }
