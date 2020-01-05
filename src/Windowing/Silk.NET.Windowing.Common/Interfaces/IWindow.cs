@@ -4,13 +4,14 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Drawing;
 
 namespace Silk.NET.Windowing.Common
 {
     /// <summary>
     /// An interface representing a window.
     /// </summary>
-    public interface IWindow : IWindowProperties, IWindowEvents, IWindowHost, IView
+    public interface IWindow : IWindowProperties, IWindowHost, IView
     {
         // TODO maybe we could do a IsSubwindow => Parent is IWindow
         /// <summary>
@@ -20,9 +21,25 @@ namespace Silk.NET.Windowing.Common
         /// This may be a <see cref="IWindow"/> or a <see cref="IMonitor"/>.
         /// </remarks>
         IWindowHost Parent { get; }
+
         /// <summary>
         /// Gets the monitor on which this window is active.
         /// </summary>
         IMonitor Monitor { get; }
+
+        /// <summary>
+        /// Raised when the window is moved.
+        /// </summary>
+        event Action<Point> Move;
+
+        /// <summary>
+        /// Raised when the window state is changed.
+        /// </summary>
+        event Action<WindowState> StateChanged;
+
+        /// <summary>
+        /// Raised when the user drops files onto the window.
+        /// </summary>
+        event Action<string[]> FileDrop;
     }
 }
