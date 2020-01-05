@@ -22,8 +22,8 @@ namespace Silk.NET.Windowing.Common
             UpdatesPerSecond = opts.UpdatesPerSecond;
             API = opts.API;
             Title = "Silk.NET Window";
-            WindowState = WindowState.Normal;
-            WindowBorder = WindowBorder.Resizable;
+            WindowState = WindowState.Fullscreen;
+            WindowBorder = WindowBorder.Hidden;
             VSync = opts.VSync;
             RunningSlowTolerance = opts.RunningSlowTolerance;
             IsVisible = true;
