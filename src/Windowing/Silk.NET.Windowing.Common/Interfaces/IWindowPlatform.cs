@@ -10,6 +10,8 @@ namespace Silk.NET.Windowing.Common
     /// </summary>
     public interface IWindowPlatform
     {
+        bool IsViewOnly { get; }
+        
         /// <summary>
         /// Gets a value indicating whether this <see cref="IWindowPlatform"/> should be used, based on the
         /// current runtime/environment.
@@ -22,5 +24,15 @@ namespace Silk.NET.Windowing.Common
         /// <param name="options">The initial settings this window should open with.</param>
         /// <returns>An implementation of <see cref="IWindow"/></returns>
         IWindow GetWindow(WindowOptions options);
+
+        /// <summary>
+        /// Gets or creates a window view.
+        /// On desktop platforms, this mimics GetWindow unless you pass null to the opts parameter. In which case,
+        /// this will return the last created window.
+        /// On mobile platforms, this will create a view for the given platform if one doesn't exist, or 
+        /// </summary>
+        /// <param name="opts"></param>
+        /// <returns></returns>
+        IView GetView(ViewOptions? opts = null);
     }
 }

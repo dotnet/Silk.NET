@@ -17,7 +17,7 @@ namespace Silk.NET.Input
         {
             SilkManager.Register<IInputPlatform>(GlfwInputPlatform.Instance);
         }
-        public static IInputContext GetInput(this IWindow window)
+        public static IInputContext CreateInput(this IWindow window)
         {
             return SilkManager.GetOrDefault<IInputPlatform>()?.CreateInput(window)
                 ?? throw new NotSupportedException("Couldn't find a suitable input platform for this window.");

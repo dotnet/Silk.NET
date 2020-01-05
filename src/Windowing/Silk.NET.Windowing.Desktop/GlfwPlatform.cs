@@ -14,6 +14,9 @@ namespace Silk.NET.Windowing.Desktop
     public class GlfwPlatform : IWindowPlatform
     {
         /// <inheritdoc />
+        public bool IsViewOnly { get; } = false;
+
+        /// <inheritdoc />
         public bool IsApplicable
         {
             get
@@ -30,9 +33,9 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
-        public IWindow GetWindow(WindowOptions options)
-        {
-            return new GlfwWindow(options);
-        }
+        public IWindow GetWindow(WindowOptions options) => new GlfwWindow(options);
+
+        /// <inheritdoc />
+        public IView GetView(ViewOptions? opts = null) => GetWindow(new WindowOptions(opts ?? ViewOptions.Default));
     }
 }

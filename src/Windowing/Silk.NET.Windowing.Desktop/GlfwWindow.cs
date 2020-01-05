@@ -81,6 +81,12 @@ namespace Silk.NET.Windowing.Desktop
             ShouldSwapAutomatically = options.ShouldSwapAutomatically;
             
             _initialOptions = options;
+            
+            GlfwProvider.GLFW.Value.GetVersion(out var major, out var minor, out _);
+            if (new Version(major, minor) < new Version(3, 3))
+            {
+                throw new NotSupportedException("GLFW 3.3 or later is required for Silk.NET.Windowing.Desktop.");
+            }
         }
 
         /// <inheritdoc />
@@ -394,7 +400,7 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
-        public unsafe void Open()
+        public unsafe void Initialize()
         {
             if (_windowPtr != default)
             {

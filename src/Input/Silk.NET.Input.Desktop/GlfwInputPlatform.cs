@@ -18,10 +18,10 @@ namespace Silk.NET.Input.Desktop
         private GlfwInputPlatform(){}
         private static Dictionary<IntPtr, GlfwEvents> _subs = new Dictionary<IntPtr, GlfwEvents>();
         /// <inheritdoc />
-        public bool IsApplicable(IWindow window) => window is GlfwWindow;
+        public bool IsApplicable(IView window) => window is GlfwWindow;
 
         /// <inheritdoc />
-        public IInputContext CreateInput(IWindow window) => new GlfwInputContext(window as GlfwWindow);
+        public IInputContext CreateInput(IView window) => new GlfwInputContext(window as GlfwWindow);
         /// <summary>
         /// Gets the cached instance of the GLFW input platform.
         /// </summary>

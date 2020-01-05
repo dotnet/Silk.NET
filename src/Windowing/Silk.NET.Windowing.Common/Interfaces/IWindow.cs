@@ -10,28 +10,7 @@ namespace Silk.NET.Windowing.Common
     /// <summary>
     /// An interface representing a window.
     /// </summary>
-    public interface IWindow : IWindowProperties, IWindowFunctions, IWindowEvents
+    public interface IWindow : IWindowProperties, IWindowEvents, IView
     {
-        /// <summary>
-        /// A handle to the underlying window.
-        /// </summary>
-        IntPtr Handle { get; }
-        
-        /// <summary>
-        /// Determines whether Vulkan functions are supported on this window.
-        /// </summary>
-        bool IsVulkanSupported { get; }
-        
-        /// <summary>
-        /// Determines whether the underlying platform has requested the window to close.
-        /// </summary>
-        bool IsClosing { get; }
-
-        /// <summary>
-        /// If true, the window has failed to reach the target framerate for multiple consecutive frames, as defined
-        /// in <see cref="IWindowProperties.RunningSlowTolerance"/>. You can use this to do things such as lowering
-        /// visual fidelity to increase framerates on lower-end machines.
-        /// </summary>
-        bool IsRunningSlowly { get; }
     }
 }

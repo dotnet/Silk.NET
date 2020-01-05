@@ -63,7 +63,7 @@ namespace Silk.NET.Windowing.Extensions
                 {
                     foreach (var window in Windows)
                     {
-                        window.Open();
+                        window.Initialize();
                     }
                 }
             }

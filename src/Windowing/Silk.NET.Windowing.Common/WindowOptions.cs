@@ -12,6 +12,22 @@ namespace Silk.NET.Windowing.Common
     /// </summary>
     public struct WindowOptions : IWindowProperties
     {
+        /// <summary>
+        /// Creates an instance of WindowOptions from an existing ViewOptions struct.
+        /// </summary>
+        /// <param name="opts">The view options to copy where applicable.</param>
+        public WindowOptions(ViewOptions opts)
+        {
+            FramesPerSecond = opts.FramesPerSecond;
+            UpdatesPerSecond = opts.UpdatesPerSecond;
+            API = opts.API;
+            Title = "Silk.NET Window";
+            WindowState = WindowState.Normal;
+            WindowBorder = WindowBorder.Resizable;
+            VSync = opts.VSync;
+            RunningSlowTolerance = opts.RunningSlowTolerance;
+        }
+        
         /// <inheritdoc />
         public bool IsVisible { get; set; }
 
@@ -24,7 +40,7 @@ namespace Silk.NET.Windowing.Common
         /// <inheritdoc />
         public Point Position { get; set; }
 
-        /// <inheritdoc />
+        /// <inheritdoc cref="IWindowProperties" />
         public Size Size { get; set; }
 
         /// <inheritdoc />
