@@ -59,6 +59,6 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// The video mode.
         /// </summary>
-        VideoMode VideoMode { get; set; }
+        VideoMode VideoMode { get; }
     }
 }

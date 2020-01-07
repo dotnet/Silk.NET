@@ -57,6 +57,6 @@ namespace Silk.NET.Windowing.Common
         /// 
         /// Use <see cref="FramebufferBits.DontCare"/> if you don't care.
         /// </summary>
-        public int DepthBufferBits { get; set; }
+        public int DepthBufferBits { get; }
     }
 }

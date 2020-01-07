@@ -173,15 +173,10 @@ namespace Silk.NET.Windowing.Desktop
                     );
                 }
             }
-            set => throw new InvalidOperationException("Video mode can not be set for a created window.");
         }
 
         /// <inheritdoc />
-        public int DepthBufferBits
-        {
-            get => _initialOptions.DepthBufferBits; // may be wrong, but only the OpenGL context could tell
-            set => throw new InvalidOperationException("Depth buffer bits can not be set for a created window.");
-        }
+        public int DepthBufferBits => _initialOptions.DepthBufferBits; // may be wrong, but only the OpenGL context could tell
 
         /// <inheritdoc />
         public Point Position
