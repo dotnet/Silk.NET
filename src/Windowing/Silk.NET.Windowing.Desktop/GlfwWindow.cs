@@ -285,6 +285,15 @@ namespace Silk.NET.Windowing.Desktop
                 {
                     unsafe
                     {
+                        if (value != WindowState.Fullscreen)
+                        {
+                            _glfw.SetWindowMonitor
+                            (
+                                _windowPtr, null, _position.X, _position.Y,
+                                _size.Width, _size.Height, 0
+                            );
+                        }
+
                         switch (value)
                         {
                             case WindowState.Normal:
@@ -299,10 +308,14 @@ namespace Silk.NET.Windowing.Desktop
                             case WindowState.Fullscreen:
                                 var monitor = _glfw.GetPrimaryMonitor();
                                 var mode = _glfw.GetVideoMode(monitor);
+                                var videoMode = _initialOptions.VideoMode;
+                                var resolution = videoMode.Resolution;
                                 _glfw.SetWindowMonitor
                                 (
-                                    _windowPtr, monitor, 0, 0, mode->Width, mode->Height,
-                                    mode->RefreshRate
+                                    _windowPtr, monitor, 0, 0,
+                                    resolution.Width == VideoMode.DONT_CARE ? mode->Width : resolution.Width,
+                                    resolution.Height == VideoMode.DONT_CARE ? mode->Height : resolution.Height,
+                                    videoMode.RefreshRate == VideoMode.DONT_CARE ? mode->RefreshRate : videoMode.RefreshRate
                                 );
                                 break;
                         }
