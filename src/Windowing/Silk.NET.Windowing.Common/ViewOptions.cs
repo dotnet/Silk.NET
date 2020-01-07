@@ -29,6 +29,8 @@ namespace Silk.NET.Windowing.Common
         public VSyncMode VSync { get; set; }
         /// <inheritdoc />
         public int RunningSlowTolerance { get; set; }
+        /// <inheritdoc />
+        public VideoMode VideoMode { get; set; }
 
         /// <summary>
         /// Creates a new WindowOptions struct.
@@ -41,7 +43,8 @@ namespace Silk.NET.Windowing.Common
             GraphicsAPI api,
             VSyncMode vSync,
             int isRunningSlowlyThreshold,
-            bool shouldSwapAutomatically
+            bool shouldSwapAutomatically,
+            VideoMode videoMode
         )
         {
             UseSingleThreadedWindow = useSingleThreadedWindow;
@@ -51,6 +54,7 @@ namespace Silk.NET.Windowing.Common
             VSync = vSync;
             RunningSlowTolerance = isRunningSlowlyThreshold;
             ShouldSwapAutomatically = shouldSwapAutomatically;
+            VideoMode = videoMode;
         }
 
         /// <summary>
@@ -58,7 +62,7 @@ namespace Silk.NET.Windowing.Common
         /// </summary>
         public static ViewOptions Default { get; } = new ViewOptions
         (
-            true, 0.0, 0.0, GraphicsAPI.Default, VSyncMode.On, 5, true
+            true, 0.0, 0.0, GraphicsAPI.Default, VSyncMode.On, 5, true, VideoMode.Default
         );
 
         /// <summary>
@@ -66,7 +70,7 @@ namespace Silk.NET.Windowing.Common
         /// </summary>
         public static ViewOptions DefaultVulkan { get; } = new ViewOptions
         (
-            true, 0.0, 0.0, GraphicsAPI.DefaultVulkan, VSyncMode.On, 5, true
+            true, 0.0, 0.0, GraphicsAPI.DefaultVulkan, VSyncMode.On, 5, true, VideoMode.Default
         );
     }
 }

@@ -51,5 +51,12 @@ namespace Silk.NET.Windowing.Common
         /// The window border.
         /// </summary>
         WindowBorder WindowBorder { get; set; }
+
+        /// <summary>
+        /// Depth buffer bits of the window's framebuffer.
+        /// 
+        /// Use <see cref="FramebufferBits.DontCare"/> if you don't care.
+        /// </summary>
+        public int DepthBufferBits { get; set; }
     }
 }

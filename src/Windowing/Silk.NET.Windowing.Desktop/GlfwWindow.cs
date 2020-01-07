@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
 using Monitor = Silk.NET.GLFW.Monitor;
+using VideoMode = Silk.NET.Windowing.Common.VideoMode;
 
 namespace Silk.NET.Windowing.Desktop
 {
@@ -151,6 +152,36 @@ namespace Silk.NET.Windowing.Desktop
         /// If this is false, you'll have to call <see cref="GlfwWindow.SwapBuffers"/> manually.
         /// </remarks>
         public bool ShouldSwapAutomatically { get; }
+
+        /// <inheritdoc />
+        public unsafe VideoMode VideoMode
+        {
+            get
+            {
+                var monitor = _glfw.GetWindowMonitor(_windowPtr);
+
+                if (monitor == null)
+                {
+                    return _initialOptions.VideoMode;
+                }
+                else
+                {
+                    var videoMode = _glfw.GetVideoMode(monitor);
+                    return new VideoMode(
+                        new Size(videoMode->Width, videoMode->Height),
+                        videoMode->RefreshRate
+                    );
+                }
+            }
+            set => throw new InvalidOperationException("Video mode can not be set for a created window.");
+        }
+
+        /// <inheritdoc />
+        public int DepthBufferBits
+        {
+            get => _initialOptions.DepthBufferBits; // may be wrong, but only the OpenGL context could tell
+            set => throw new InvalidOperationException("Depth buffer bits can not be set for a created window.");
+        }
 
         /// <inheritdoc />
         public Point Position
@@ -469,6 +500,10 @@ namespace Silk.NET.Windowing.Desktop
                 WindowHintOpenGlProfile.OpenGlProfile,
                 _initialOptions.API.Profile == ContextProfile.Core ? OpenGlProfile.Core : OpenGlProfile.Compat
             );
+
+            // Set video mode
+            _glfw.WindowHint(WindowHintInt.RefreshRate, _initialOptions.VideoMode.RefreshRate);
+            _glfw.WindowHint(WindowHintInt.DepthBits, _initialOptions.DepthBufferBits);
 
             // Create window
             _windowPtr = _glfw.CreateWindow

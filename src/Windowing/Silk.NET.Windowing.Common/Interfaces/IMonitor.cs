@@ -12,6 +12,6 @@ namespace Silk.NET.Windowing.Common
         string Name { get; }
         int Index { get; }
         Rectangle Bounds { get; }
-        int RefreshRate { get; }
+        VideoMode VideoMode { get; }
     }
 }

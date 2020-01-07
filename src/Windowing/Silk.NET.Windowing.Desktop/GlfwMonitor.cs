@@ -7,6 +7,7 @@ using System;
 using System.Drawing;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
+using VideoMode = Silk.NET.Windowing.Common.VideoMode;
 
 namespace Silk.NET.Windowing.Desktop
 {
@@ -37,6 +38,16 @@ namespace Silk.NET.Windowing.Desktop
             }
         }
 
-        public int RefreshRate => GlfwProvider.GLFW.Value.GetVideoMode(Handle)->RefreshRate;
+        public VideoMode VideoMode
+        {
+            get
+            {
+                var videoMode = GlfwProvider.GLFW.Value.GetVideoMode(Handle);
+                return new VideoMode(
+                    new Size(videoMode->Width, videoMode->Height),
+                    videoMode->RefreshRate
+                );
+            }
+        }
     }
 }
