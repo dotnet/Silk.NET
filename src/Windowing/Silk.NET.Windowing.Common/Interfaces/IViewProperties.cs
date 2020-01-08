@@ -55,5 +55,15 @@ namespace Silk.NET.Windowing.Common
         /// is set to true.
         /// </summary>
         int RunningSlowTolerance { get; set; }
+
+        /// <summary>
+        /// The video mode.
+        /// </summary>
+        VideoMode VideoMode { get; }
+
+        /// <summary>
+        /// Preferred depth buffer bits of the window's framebuffer.
+        /// </summary>
+        int? PreferredDepthBufferBits { get; }
     }
 }

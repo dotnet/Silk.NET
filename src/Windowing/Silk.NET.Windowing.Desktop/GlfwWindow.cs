@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
 using Monitor = Silk.NET.GLFW.Monitor;
+using VideoMode = Silk.NET.Windowing.Common.VideoMode;
 
 namespace Silk.NET.Windowing.Desktop
 {
@@ -34,6 +35,8 @@ namespace Silk.NET.Windowing.Desktop
         private VSyncMode _vSync;
         private WindowBorder _windowBorder;
         private WindowState _windowState;
+        private Point _nonFullscreenPosition;
+        private Size _nonFullscreenSize;
 
         // Glfw stuff
         private readonly Glfw _glfw = GlfwProvider.GLFW.Value;
@@ -153,6 +156,21 @@ namespace Silk.NET.Windowing.Desktop
         public bool ShouldSwapAutomatically { get; }
 
         /// <inheritdoc />
+        public unsafe VideoMode VideoMode
+        {
+            get
+            {
+                var monitor = Monitor;
+                return monitor != null
+                    ? monitor.VideoMode
+                    : _initialOptions.VideoMode;
+            }
+        }
+
+        /// <inheritdoc />
+        public int? PreferredDepthBufferBits => _initialOptions.PreferredDepthBufferBits;
+
+        /// <inheritdoc />
         public Point Position
         {
             get => _position;
@@ -167,6 +185,7 @@ namespace Silk.NET.Windowing.Desktop
                 }
 
                 _position = value;
+                _nonFullscreenPosition = value;
                 _initialOptions.Position = value;
             }
         }
@@ -186,6 +205,7 @@ namespace Silk.NET.Windowing.Desktop
                 }
 
                 _initialOptions.Size = value;
+                _nonFullscreenSize = value;
                 _size = value;
             }
         }
@@ -254,6 +274,25 @@ namespace Silk.NET.Windowing.Desktop
                 {
                     unsafe
                     {
+                        if (_windowState == WindowState.Normal)
+                        {
+                            _nonFullscreenPosition = _position;
+                            _nonFullscreenSize = _size;
+                        }
+                        else if (_windowState == WindowState.Fullscreen &&
+                                 value != WindowState.Fullscreen)
+                        {
+                            _glfw.SetWindowMonitor
+                            (
+                                _windowPtr, null,
+                                _nonFullscreenPosition.X,
+                                _nonFullscreenPosition.Y,
+                                _nonFullscreenSize.Width,
+                                _nonFullscreenSize.Height,
+                                0
+                            );
+                        }
+
                         switch (value)
                         {
                             case WindowState.Normal:
@@ -268,10 +307,14 @@ namespace Silk.NET.Windowing.Desktop
                             case WindowState.Fullscreen:
                                 var monitor = _glfw.GetPrimaryMonitor();
                                 var mode = _glfw.GetVideoMode(monitor);
+                                var videoMode = _initialOptions.VideoMode;
+                                var resolution = videoMode.Resolution;
                                 _glfw.SetWindowMonitor
                                 (
-                                    _windowPtr, monitor, 0, 0, mode->Width, mode->Height,
-                                    mode->RefreshRate
+                                    _windowPtr, monitor, 0, 0,
+                                    resolution.HasValue ? resolution.Value.Width : mode->Width,
+                                    resolution.HasValue ? resolution.Value.Height : mode->Height,
+                                    videoMode.RefreshRate ?? mode->RefreshRate
                                 );
                                 break;
                         }
@@ -469,6 +512,10 @@ namespace Silk.NET.Windowing.Desktop
                 WindowHintOpenGlProfile.OpenGlProfile,
                 _initialOptions.API.Profile == ContextProfile.Core ? OpenGlProfile.Core : OpenGlProfile.Compat
             );
+
+            // Set video mode (-1 = don't care)
+            _glfw.WindowHint(WindowHintInt.RefreshRate, _initialOptions.VideoMode.RefreshRate ?? -1);
+            _glfw.WindowHint(WindowHintInt.DepthBits, _initialOptions.PreferredDepthBufferBits ?? -1);
 
             // Create window
             _windowPtr = _glfw.CreateWindow
@@ -823,12 +870,14 @@ namespace Silk.NET.Windowing.Desktop
                 {
                     return _initialMonitor;
                 }
-                
-                Monitor* target;
-                return new GlfwMonitor
+
+                var monitor = _glfw.GetWindowMonitor(_windowPtr);
+                if (monitor == null)
+                    monitor = _glfw.GetPrimaryMonitor();
+                return monitor == null ? null : new GlfwMonitor
                 (
-                    target = _glfw.GetWindowMonitor(_windowPtr),
-                    IndexOf(_glfw.GetMonitors(out var count), target, count)
+                    monitor,
+                    IndexOf(_glfw.GetMonitors(out var count), monitor, count)
                 );
             }
         }
