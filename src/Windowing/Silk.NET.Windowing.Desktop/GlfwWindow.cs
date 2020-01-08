@@ -870,12 +870,14 @@ namespace Silk.NET.Windowing.Desktop
                 {
                     return _initialMonitor;
                 }
-                
-                Monitor* target;
-                return new GlfwMonitor
+
+                var monitor = _glfw.GetWindowMonitor(_windowPtr);
+                if (monitor == null)
+                    monitor = _glfw.GetPrimaryMonitor();
+                return monitor == null ? null : new GlfwMonitor
                 (
-                    target = _glfw.GetWindowMonitor(_windowPtr),
-                    IndexOf(_glfw.GetMonitors(out var count), target, count)
+                    monitor,
+                    IndexOf(_glfw.GetMonitors(out var count), monitor, count)
                 );
             }
         }
