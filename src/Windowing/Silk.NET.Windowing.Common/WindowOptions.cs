@@ -30,7 +30,7 @@ namespace Silk.NET.Windowing.Common
             UseSingleThreadedWindow = true;
             ShouldSwapAutomatically = true;
             VideoMode = opts.VideoMode;
-            DepthBufferBits = (int)FramebufferBits.DontCare;
+            PreferredDepthBufferBits = null;
         }
         
         /// <inheritdoc />
@@ -46,7 +46,7 @@ namespace Silk.NET.Windowing.Common
         public VideoMode VideoMode { get; set; }
 
         /// <inheritdoc />
-        public int DepthBufferBits { get; set; }
+        public int? PreferredDepthBufferBits { get; set; }
 
         /// <inheritdoc />
         public Point Position { get; set; }
@@ -85,7 +85,7 @@ namespace Silk.NET.Windowing.Common
             double framesPerSecond, double updatesPerSecond, GraphicsAPI api, string title,
             WindowState windowState, WindowBorder windowBorder, VSyncMode vSync,
             int isRunningSlowlyThreshold, bool shouldSwapAutomatically, VideoMode videoMode,
-            int depthBufferBits = (int)FramebufferBits.DontCare)
+            int? preferredDepthBufferBits = null)
         {
             IsVisible = isVisible;
             UseSingleThreadedWindow = useSingleThreadedWindow;
@@ -101,7 +101,7 @@ namespace Silk.NET.Windowing.Common
             RunningSlowTolerance = isRunningSlowlyThreshold;
             ShouldSwapAutomatically = shouldSwapAutomatically;
             VideoMode = videoMode;
-            DepthBufferBits = depthBufferBits;
+            PreferredDepthBufferBits = preferredDepthBufferBits;
         }
 
         /// <summary>

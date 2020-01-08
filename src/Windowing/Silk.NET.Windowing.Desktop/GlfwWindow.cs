@@ -176,7 +176,7 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
-        public int DepthBufferBits => _initialOptions.DepthBufferBits; // may be wrong, but only the OpenGL context could tell
+        public int? PreferredDepthBufferBits => _initialOptions.PreferredDepthBufferBits;
 
         /// <inheritdoc />
         public Point Position
@@ -308,9 +308,9 @@ namespace Silk.NET.Windowing.Desktop
                                 _glfw.SetWindowMonitor
                                 (
                                     _windowPtr, monitor, 0, 0,
-                                    resolution.Width == VideoMode.DONT_CARE ? mode->Width : resolution.Width,
-                                    resolution.Height == VideoMode.DONT_CARE ? mode->Height : resolution.Height,
-                                    videoMode.RefreshRate == VideoMode.DONT_CARE ? mode->RefreshRate : videoMode.RefreshRate
+                                    resolution.HasValue ? resolution.Value.Width : mode->Width,
+                                    resolution.HasValue ? resolution.Value.Height : mode->Height,
+                                    videoMode.RefreshRate ?? mode->RefreshRate
                                 );
                                 break;
                         }
@@ -509,9 +509,9 @@ namespace Silk.NET.Windowing.Desktop
                 _initialOptions.API.Profile == ContextProfile.Core ? OpenGlProfile.Core : OpenGlProfile.Compat
             );
 
-            // Set video mode
-            _glfw.WindowHint(WindowHintInt.RefreshRate, _initialOptions.VideoMode.RefreshRate);
-            _glfw.WindowHint(WindowHintInt.DepthBits, _initialOptions.DepthBufferBits);
+            // Set video mode (-1 = don't care)
+            _glfw.WindowHint(WindowHintInt.RefreshRate, _initialOptions.VideoMode.RefreshRate ?? -1);
+            _glfw.WindowHint(WindowHintInt.DepthBits, _initialOptions.PreferredDepthBufferBits ?? -1);
 
             // Create window
             _windowPtr = _glfw.CreateWindow
