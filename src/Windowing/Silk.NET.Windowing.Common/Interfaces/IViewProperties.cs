@@ -60,5 +60,10 @@ namespace Silk.NET.Windowing.Common
         /// The video mode.
         /// </summary>
         VideoMode VideoMode { get; }
+
+        /// <summary>
+        /// Preferred depth buffer bits of the window's framebuffer.
+        /// </summary>
+        int? PreferredDepthBufferBits { get; }
     }
 }

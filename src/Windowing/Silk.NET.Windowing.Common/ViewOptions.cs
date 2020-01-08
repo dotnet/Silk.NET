@@ -31,6 +31,8 @@ namespace Silk.NET.Windowing.Common
         public int RunningSlowTolerance { get; set; }
         /// <inheritdoc />
         public VideoMode VideoMode { get; set; }
+        /// <inheritdoc />
+        public int? PreferredDepthBufferBits { get; set; }
 
         /// <summary>
         /// Creates a new WindowOptions struct.
@@ -44,7 +46,8 @@ namespace Silk.NET.Windowing.Common
             VSyncMode vSync,
             int isRunningSlowlyThreshold,
             bool shouldSwapAutomatically,
-            VideoMode videoMode
+            VideoMode videoMode,
+            int? preferredDepthBufferBits = null
         )
         {
             UseSingleThreadedWindow = useSingleThreadedWindow;
@@ -55,6 +58,7 @@ namespace Silk.NET.Windowing.Common
             RunningSlowTolerance = isRunningSlowlyThreshold;
             ShouldSwapAutomatically = shouldSwapAutomatically;
             VideoMode = videoMode;
+            PreferredDepthBufferBits = preferredDepthBufferBits;
         }
 
         /// <summary>

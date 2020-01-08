@@ -35,6 +35,8 @@ namespace Silk.NET.Windowing.Desktop
         private VSyncMode _vSync;
         private WindowBorder _windowBorder;
         private WindowState _windowState;
+        private Point _nonFullscreenPosition;
+        private Size _nonFullscreenSize;
 
         // Glfw stuff
         private readonly Glfw _glfw = GlfwProvider.GLFW.Value;
@@ -158,20 +160,10 @@ namespace Silk.NET.Windowing.Desktop
         {
             get
             {
-                var monitor = _glfw.GetWindowMonitor(_windowPtr);
-
-                if (monitor == null)
-                {
-                    return _initialOptions.VideoMode;
-                }
-                else
-                {
-                    var videoMode = _glfw.GetVideoMode(monitor);
-                    return new VideoMode(
-                        new Size(videoMode->Width, videoMode->Height),
-                        videoMode->RefreshRate
-                    );
-                }
+                var monitor = Monitor;
+                return monitor != null
+                    ? monitor.VideoMode
+                    : _initialOptions.VideoMode;
             }
         }
 
@@ -193,6 +185,7 @@ namespace Silk.NET.Windowing.Desktop
                 }
 
                 _position = value;
+                _nonFullscreenPosition = value;
                 _initialOptions.Position = value;
             }
         }
@@ -212,6 +205,7 @@ namespace Silk.NET.Windowing.Desktop
                 }
 
                 _initialOptions.Size = value;
+                _nonFullscreenSize = value;
                 _size = value;
             }
         }
@@ -280,12 +274,22 @@ namespace Silk.NET.Windowing.Desktop
                 {
                     unsafe
                     {
-                        if (value != WindowState.Fullscreen)
+                        if (_windowState == WindowState.Normal)
+                        {
+                            _nonFullscreenPosition = _position;
+                            _nonFullscreenSize = _size;
+                        }
+                        else if (_windowState == WindowState.Fullscreen &&
+                                 value != WindowState.Fullscreen)
                         {
                             _glfw.SetWindowMonitor
                             (
-                                _windowPtr, null, _position.X, _position.Y,
-                                _size.Width, _size.Height, 0
+                                _windowPtr, null,
+                                _nonFullscreenPosition.X,
+                                _nonFullscreenPosition.Y,
+                                _nonFullscreenSize.Width,
+                                _nonFullscreenSize.Height,
+                                0
                             );
                         }
 
