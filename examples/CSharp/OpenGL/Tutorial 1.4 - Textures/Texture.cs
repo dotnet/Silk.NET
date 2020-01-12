@@ -18,10 +18,10 @@ namespace Tutorial
             {
                 for (int x = 0; x < img.Width; x++)
                 {
-                    data[x + y * img.Width + 0] = img[x, y].R;
-                    data[x + y * img.Width + 1] = img[x, y].G;
-                    data[x + y * img.Width + 2] = img[x, y].B;
-                    data[x + y * img.Width + 3] = img[x, y].A;
+                    data[(x + y * img.Width) * 4 + 0] = img[x, y].R;
+                    data[(x + y * img.Width) * 4 + 1] = img[x, y].G;
+                    data[(x + y * img.Width) * 4 + 2] = img[x, y].B;
+                    data[(x + y * img.Width) * 4 + 3] = img[x, y].A;
                 }
             }
             Load(gl, data, (uint)img.Width, (uint)img.Height);
@@ -37,15 +37,15 @@ namespace Tutorial
 
             _handle = _gl.GenTexture();
             Bind();
-            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (float)GLEnum.Repeat);
-            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (float)GLEnum.Repeat);
-            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (float)GLEnum.Linear);
-            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (float)GLEnum.Linear);
 
             fixed (void* d = data)
             {
-                _gl.TexImage2D(TextureTarget.Texture2D, 0, (int)GLEnum.Rgba, width, height, 0, PixelFormat.Rgba, PixelType.Byte, d);
+                _gl.TexImage2D(TextureTarget.Texture2D, 0, (int)GLEnum.Rgba, width, height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, d);
             }
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int)GLEnum.ClampToEdge);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int)GLEnum.ClampToEdge);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMinFilter, (int)GLEnum.Linear);
+            _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureMagFilter, (int)GLEnum.Linear);
             _gl.GenerateMipmap(TextureTarget.Texture2D);
         }
 
