@@ -16,6 +16,7 @@ namespace Tutorial
         private static BufferObject<float> Vbo;
         private static BufferObject<uint> Ebo;
         private static VertexArrayObject<float, uint> Vao;
+        //Create a texture object.
         private static Texture Texture;
         private static Shader Shader;
 
@@ -69,6 +70,7 @@ namespace Tutorial
 
             Shader = new Shader(Gl, "shader.vert", "shader.frag");
 
+            //Loading a texture.
             Texture = new Texture(Gl, "silk.png");
         }
 
@@ -77,8 +79,9 @@ namespace Tutorial
             Gl.Clear((uint)ClearBufferMask.ColorBufferBit);
 
             Vao.Bind();
-            Texture.Bind();
             Shader.Use();
+            //Bind a texture and and set the uTexture0 to use texture0.
+            Texture.Bind(TextureUnit.Texture0);
             Shader.SetUniform("uTexture0", 0);
 
             Gl.DrawElements(GLEnum.Triangles, (uint)Indices.Length, GLEnum.UnsignedInt, 0);
@@ -90,6 +93,7 @@ namespace Tutorial
             Ebo.Dispose();
             Vao.Dispose();
             Shader.Dispose();
+            //Remember to dispose the texture.
             Texture.Dispose();
         }
 
