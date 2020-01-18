@@ -22,16 +22,36 @@ namespace Tutorial
         private static readonly float[] Vertices =
         {
             //X    Y      Z     U   V
-             0.5f,  0.5f, 0.0f, 1f, 1f,
-             0.5f, -0.5f, 0.0f, 1f, 0f,
-            -0.5f, -0.5f, 0.0f, 0f, 0f,
-            -0.5f,  0.5f, 0.5f, 0f, 1f
+             0.5f,  0.5f,  0.5f, 1f, 1f,
+             0.5f,  0.5f, -0.5f, 1f, 1f,
+             0.5f, -0.5f,  0.5f, 1f, 1f,
+             0.5f, -0.5f, -0.0f, 1f, 0f,
+            -0.5f,  0.5f,  0.5f, 1f, 1f,
+            -0.5f,  0.5f, -0.5f, 1f, 1f,
+            -0.5f, -0.5f,  0.5f, 1f, 1f,
+            -0.5f, -0.5f, -0.0f, 1f, 0f,
         };
 
         private static readonly uint[] Indices =
         {
-            0, 1, 3,
-            1, 2, 3
+            //Right face
+            0, 1, 2,
+            1, 2, 3,
+            //Left face
+            4, 5, 6,
+            5, 6, 7,
+            //Top face
+            0, 1, 4,
+            1, 4, 5,
+            //Bottom face
+            2, 3, 6,
+            3, 6, 7,
+            //Front face
+            0, 2, 4,
+            2, 4, 6,
+            //Back face
+            1, 3, 5,
+            3, 5, 7
         };
 
 
@@ -59,6 +79,7 @@ namespace Tutorial
             }
 
             Gl = GL.GetApi();
+            Gl.Enable(EnableCap.DepthTest);
             
             Ebo = new BufferObject<uint>(Gl, Indices, GLEnum.ElementArrayBuffer);
             Vbo = new BufferObject<float>(Gl, Vertices, GLEnum.ArrayBuffer);
@@ -74,7 +95,7 @@ namespace Tutorial
 
         private static void OnRender(double obj)
         {
-            Gl.Clear((uint)ClearBufferMask.ColorBufferBit);
+            Gl.Clear((uint)ClearBufferMask.ColorBufferBit | (uint)ClearBufferMask.DepthBufferBit);
 
             Vao.Bind();
             Texture.Bind();
