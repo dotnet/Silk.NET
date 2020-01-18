@@ -20,7 +20,7 @@ namespace Tutorial
         private static Texture Texture;
         private static Shader Shader;
         //Creating matrix transformations
-        private static Matrix4x4[] Matrices = new Matrix4x4[3];
+        private static Matrix4x4[] Matrices = new Matrix4x4[4];
 
         private static readonly float[] Vertices =
         {
@@ -74,12 +74,14 @@ namespace Tutorial
 
             Texture = new Texture(Gl, "silk.png");
 
-            //Scaling.
-            Matrices[0] *= Matrix4x4.CreateScale(0.5f);
             //Translation.
-            Matrices[1] *= Matrix4x4.CreateTranslation(0.5f, 0.5f, 0.5f);
+            Matrices[0] = Matrix4x4.Identity * Matrix4x4.CreateTranslation(0.5f, 0.5f, 0f);
             //Rotation.
-            Matrices[2] *= Matrix4x4.CreateRotationZ(1);
+            Matrices[1] = Matrix4x4.Identity * Matrix4x4.CreateRotationZ(1);
+            //Scaling.
+            Matrices[2] = Matrix4x4.Identity * Matrix4x4.CreateScale(0.5f);
+            //Mixed transformation.
+            Matrices[3] = Matrix4x4.Identity * Matrix4x4.CreateScale(0.5f) * Matrix4x4.CreateRotationZ(2) * Matrix4x4.CreateTranslation(-0.5f, 0.5f, 0f);
         }
 
         private static void OnRender(double obj)
@@ -93,7 +95,9 @@ namespace Tutorial
 
             for (int i = 0; i < Matrices.Length; i++)
             {
+                //Using the transformations.
                 Shader.SetUniform("uModel", Matrices[i]);
+
                 Gl.DrawElements(GLEnum.Triangles, (uint)Indices.Length, GLEnum.UnsignedInt, 0);
             }
         }
