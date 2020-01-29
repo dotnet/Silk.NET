@@ -25,7 +25,7 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// Gets the monitor on which this window is active.
         /// </summary>
-        IMonitor Monitor { get; }
+        IMonitor Monitor { get; set; }
 
         /// <summary>
         /// Raised when the window is moved.

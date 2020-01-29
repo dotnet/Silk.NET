@@ -21,10 +21,16 @@ namespace Silk.NET.Windowing.Desktop
             Index = index;
         }
 
-        public IWindow CreateWindow(WindowOptions opts) => opts.WindowState == WindowState.Fullscreen
-            ? new GlfwWindow(opts, null, this)
-            : throw new PlatformNotSupportedException
-                ("On the GLFW backend, windows must be fullscreen in order to be created on a specific monitor.");
+        public IWindow CreateWindow(WindowOptions opts)
+        {
+            if (opts.WindowState == WindowState.Fullscreen)
+            {
+                return new GlfwWindow(opts, null, this);
+            }
+            
+            opts.Position = new Point(opts.Position.X + Bounds.X, opts.Position.Y + Bounds.Y);
+            return new GlfwWindow(opts, null, null);
+        }
 
         public string Name => GlfwProvider.GLFW.Value.GetMonitorName(Handle);
         public int Index { get; }

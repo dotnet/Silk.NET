@@ -8,6 +8,7 @@ using System.Collections.Concurrent;
 using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
@@ -523,6 +524,10 @@ namespace Silk.NET.Windowing.Desktop
                 _size.Width, _size.Height, _title, _initialMonitor is GlfwMonitor x ? x.Handle : null, null
             );
 
+            // Initialize some variables
+            _isRunningSlowlyTries = 0;
+            _running = true;
+
             _invokeQueue = new ConcurrentQueue<Task>();
             _mainThread = Thread.CurrentThread.ManagedThreadId;
 
@@ -545,10 +550,6 @@ namespace Silk.NET.Windowing.Desktop
 
             // Run OnLoad.
             Load?.Invoke();
-
-            // Initialize some variables
-            _isRunningSlowlyTries = 0;
-            _running = true;
 
             _renderStopwatch = new Stopwatch();
             _updateStopwatch = new Stopwatch();
@@ -873,12 +874,59 @@ namespace Silk.NET.Windowing.Desktop
 
                 var monitor = _glfw.GetWindowMonitor(_windowPtr);
                 if (monitor == null)
-                    monitor = _glfw.GetPrimaryMonitor();
+                {
+                    if (_windowState != WindowState.Fullscreen)
+                    {
+                        // Determine which monitor this window is on. [6 marks]
+                        var monitors = new GlfwMonitorEnumerable();
+                        foreach (var m in monitors)
+                        {
+                            if (m.Bounds.Contains(Position))
+                            {
+                                return m;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        monitor = _glfw.GetPrimaryMonitor();
+                    }
+                }
+
                 return monitor == null ? null : new GlfwMonitor
                 (
                     monitor,
                     IndexOf(_glfw.GetMonitors(out var count), monitor, count)
                 );
+            }
+            set
+            {
+                if (!_running)
+                {
+                    throw new InvalidOperationException("Window is not running.");
+                }
+
+                if (_windowState == WindowState.Fullscreen)
+                {
+                    var h = ((GlfwMonitor) value).Handle;
+                    var vidMode = value.VideoMode;
+                    var resolution = vidMode.Resolution;
+                    if (!resolution.HasValue)
+                    {
+                        throw new InvalidOperationException("Monitor resolution not found.");
+                    }
+
+                    if (!vidMode.RefreshRate.HasValue)
+                    {
+                        throw new InvalidOperationException("Monitor refresh rate not found.");
+                    }
+
+                    _glfw.SetWindowMonitor(_windowPtr, h, 0, 0, resolution.Value.Width, resolution.Value.Height, vidMode.RefreshRate.Value);
+                }
+                else
+                {
+                    Position = value.Bounds.Location;
+                }
             }
         }
 

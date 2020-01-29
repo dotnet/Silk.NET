@@ -36,7 +36,7 @@ namespace Silk.NET.Windowing.Desktop
 
             public bool MoveNext()
             {
-                if (_index < _count)
+                if (_index >= _count)
                 {
                     Current = null;
                     return false;
