@@ -878,26 +878,12 @@ namespace Silk.NET.Windowing.Desktop
                     if (_windowState != WindowState.Fullscreen)
                     {
                         var monitors = new GlfwMonitorEnumerable();
-                        var distance = double.MaxValue;
-                        var potentialMonitor = _glfw.GetPrimaryMonitor();
                         // Determine which monitor this window is on. [6 marks]
                         foreach (var m in monitors)
                         {
                             var pos = Position;
                             var size = Size;
-                            var mBounds = m.Bounds;
-                            var mCentre = new Point(mBounds.X + mBounds.Width / 2, mBounds.Y + mBounds.Height / 2);
-                            var wCentre = new Point(pos.X + size.Width / 2, pos.Y + size.Height / 2);
-                            var newDist = Math.Sqrt
-                                              ((wCentre.X - mCentre.X) * (wCentre.X - mCentre.X)) +
-                                          (wCentre.Y - mCentre.Y) * (wCentre.Y - mCentre.Y);
-                            if (distance > newDist)
-                            {
-                                distance = newDist;
-                                potentialMonitor = ((GlfwMonitor)m).Handle;
-                            }
-                            
-                            if (mBounds.Contains(wCentre))
+                            if (m.Bounds.Contains(new Point(pos.X + size.Width / 2, pos.Y + size.Height / 2)))
                             {
                                 return m;
                             }
