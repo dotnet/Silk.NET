@@ -887,10 +887,8 @@ namespace Silk.NET.Windowing.Desktop
                             }
                         }
                     }
-                    else
-                    {
-                        monitor = _glfw.GetPrimaryMonitor();
-                    }
+                        
+                    monitor = _glfw.GetPrimaryMonitor();
                 }
 
                 return monitor == null ? null : new GlfwMonitor
@@ -904,6 +902,11 @@ namespace Silk.NET.Windowing.Desktop
                 if (!_running)
                 {
                     throw new InvalidOperationException("Window is not running.");
+                }
+
+                if (value is null)
+                {
+                    throw new ArgumentNullException();
                 }
 
                 if (_windowState == WindowState.Fullscreen)
