@@ -877,11 +877,13 @@ namespace Silk.NET.Windowing.Desktop
                 {
                     if (_windowState != WindowState.Fullscreen)
                     {
-                        // Determine which monitor this window is on. [6 marks]
                         var monitors = new GlfwMonitorEnumerable();
+                        // Determine which monitor this window is on. [6 marks]
                         foreach (var m in monitors)
                         {
-                            if (m.Bounds.Contains(Position))
+                            var pos = Position;
+                            var size = Size;
+                            if (m.Bounds.Contains(new Point(pos.X + size.Width / 2, pos.Y + size.Height / 2)))
                             {
                                 return m;
                             }
