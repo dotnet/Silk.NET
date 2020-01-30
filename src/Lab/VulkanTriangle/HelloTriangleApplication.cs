@@ -80,7 +80,7 @@ namespace VulkanTriangle
                 throw new NotSupportedException("Windowing platform doesn't support Vulkan.");
             }
             
-            _window.Open();
+            _window.Initialize();
         }
 
         private void InitVulkan()

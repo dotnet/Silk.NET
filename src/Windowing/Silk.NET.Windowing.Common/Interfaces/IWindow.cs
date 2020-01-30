@@ -4,34 +4,42 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Drawing;
 
 namespace Silk.NET.Windowing.Common
 {
     /// <summary>
     /// An interface representing a window.
     /// </summary>
-    public interface IWindow : IWindowProperties, IWindowFunctions, IWindowEvents
+    public interface IWindow : IWindowProperties, IWindowHost, IView
     {
+        // TODO maybe we could do a IsSubwindow => Parent is IWindow
         /// <summary>
-        /// A handle to the underlying window.
+        /// Gets the window host on which this window is active.
         /// </summary>
-        IntPtr Handle { get; }
-        
-        /// <summary>
-        /// Determines whether Vulkan functions are supported on this window.
-        /// </summary>
-        bool IsVulkanSupported { get; }
-        
-        /// <summary>
-        /// Determines whether the underlying platform has requested the window to close.
-        /// </summary>
-        bool IsClosing { get; }
+        /// <remarks>
+        /// This may be a <see cref="IWindow"/> or a <see cref="IMonitor"/>.
+        /// </remarks>
+        IWindowHost Parent { get; }
 
         /// <summary>
-        /// If true, the window has failed to reach the target framerate for multiple consecutive frames, as defined
-        /// in <see cref="IWindowProperties.RunningSlowTolerance"/>. You can use this to do things such as lowering
-        /// visual fidelity to increase framerates on lower-end machines.
+        /// Gets the monitor on which this window is active.
         /// </summary>
-        bool IsRunningSlowly { get; }
+        IMonitor Monitor { get; set; }
+
+        /// <summary>
+        /// Raised when the window is moved.
+        /// </summary>
+        event Action<Point> Move;
+
+        /// <summary>
+        /// Raised when the window state is changed.
+        /// </summary>
+        event Action<WindowState> StateChanged;
+
+        /// <summary>
+        /// Raised when the user drops files onto the window.
+        /// </summary>
+        event Action<string[]> FileDrop;
     }
 }

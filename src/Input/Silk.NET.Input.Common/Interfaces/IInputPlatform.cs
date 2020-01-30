@@ -15,7 +15,7 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// If this platform is applicable to this window.
         /// </summary>
-        /// <param name="window">The window to check.</param>
+        /// <param name="view">The window to check.</param>
         /// <returns>Whether or not this platform is applicable.</returns>
         /// <remarks>
         /// Generally, each Input package will also have a matching Windowing package,
@@ -24,13 +24,13 @@ namespace Silk.NET.Input.Common
         /// package the Input package references. For example, GlfwInputPlatform will only
         /// be applicable for a GlfwWindow.
         /// </remarks>
-        bool IsApplicable(IWindow window);
+        bool IsApplicable(IView view);
         
         /// <summary>
-        /// Get an input context for this window.
+        /// Get an input context for this view.
         /// </summary>
-        /// <param name="window">The window to get a context for.</param>
+        /// <param name="view">The view to get a context for.</param>
         /// <returns>The context.</returns>
-        IInputContext CreateInput(IWindow window);
+        IInputContext CreateInput(IView view);
     }
 }

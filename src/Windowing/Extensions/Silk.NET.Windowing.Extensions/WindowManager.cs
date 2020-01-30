@@ -43,12 +43,12 @@ namespace Silk.NET.Windowing.Extensions
         /// Creates a window and adds it to this manager.
         /// </summary>
         /// <param name="opts">The options to initialize the new window with.</param>
-        /// <param name="platform">
-        /// The windowing platform to use. If null, the current windowing platform will be
+        /// <param name="host">
+        /// The window host to use. If null, the current windowing platform will be
         /// fetched using the <see cref="SilkManager"/>.
         /// </param>
-        public void CreateWindow(WindowOptions opts, IWindowPlatform platform = null)
-            => AddWindow((platform ?? SilkManager.Get<IWindowPlatform>()).GetWindow(opts));
+        public void CreateWindow(WindowOptions opts, IWindowHost host = null)
+            => AddWindow((host ?? SilkManager.Get<IWindowPlatform>()).CreateWindow(opts));
 
         /// <summary>
         /// Executes a render loop encompassing all windows within this manager.
@@ -63,7 +63,7 @@ namespace Silk.NET.Windowing.Extensions
                 {
                     foreach (var window in Windows)
                     {
-                        window.Open();
+                        window.Initialize();
                     }
                 }
             }
