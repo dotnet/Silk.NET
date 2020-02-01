@@ -58,17 +58,12 @@ namespace Silk.NET.Input.Desktop
 
                     _cursorType = value;
 
-                    switch (_cursorType)
+                    _cursor = _cursorType switch
                     {
-                        case CursorType.Standard:
-                            _cursor = GetStandardCursor();
-                            break;
-                        case CursorType.Custom:
-                            _cursor = CreateCustomCursor();                       
-                            break;
-                        default:
-                            throw new InvalidOperationException("Glfw does not support the given cursor type.");
-                    }
+                        CursorType.Standard => GetStandardCursor(),
+                        CursorType.Custom => CreateCustomCursor(),
+                        _ => throw new InvalidOperationException("Glfw does not support the given cursor type.")
+                    };
 
                     GlfwProvider.GLFW.Value.SetCursor(_handle, _cursor);
                 }
