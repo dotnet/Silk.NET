@@ -601,7 +601,7 @@ namespace Silk.NET.Windowing.Desktop
             // If using a capped framerate without vsync, we have to do some synchronization-related things.
             // before rendering.
             if (UpdatesPerSecond >= double.Epsilon
-                && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive && IsRunningSlowly))
+                && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive))
             {
                 // Calculate the amount of remaining time till next update.
                 var remainingTime = _updatePeriod - _updateStopwatch.Elapsed.TotalSeconds;
@@ -618,7 +618,7 @@ namespace Silk.NET.Windowing.Desktop
                     _updatedWithinPeriod = true; // Remember we weren't too late.
                     _isRunningSlowlyTries = 0;
 
-                    if (remainingTime > 0.0)
+                    if (remainingTime > 0.0 && VSync != VSyncMode.Adaptive)
                         return; // Not the time for update yet.
                 }
             }
@@ -640,7 +640,7 @@ namespace Silk.NET.Windowing.Desktop
         {
             // Identical to RaiseUpdateFrame.
             if (FramesPerSecond >= double.Epsilon
-                && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive && IsRunningSlowly))
+                && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive))
             {
                 // Calculate the amount of remaining time till next rendering..
                 var remainingTime = _renderPeriod - _renderStopwatch.Elapsed.TotalSeconds;
@@ -660,7 +660,7 @@ namespace Silk.NET.Windowing.Desktop
                         _renderedWithinPeriod = true; // Remember we weren't too late.
                         _isRunningSlowlyTries = 0;
 
-                        if (remainingTime > 0.0)
+                        if (remainingTime > 0.0 && VSync != VSyncMode.Adaptive)
                             return; // Not the time for update yet.
                     }
                 }
