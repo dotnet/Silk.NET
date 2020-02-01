@@ -57,6 +57,8 @@ namespace Silk.NET.Windowing.Desktop
         // Update and render period. Represents the time in seconds that each frame should take.
         private double _updatePeriod;
         private double _renderPeriod;
+        private bool _updatedWithinPeriod;
+        private bool _renderedWithinPeriod;
 
         private WindowOptions _initialOptions;
         private bool _running;
@@ -596,24 +598,28 @@ namespace Silk.NET.Windowing.Desktop
         /// </summary>
         private void RaiseUpdateFrame()
         {
-            // If using a capped framerate without vsync, we have to do some synchronization-related things
+            // If using a capped framerate without vsync, we have to do some synchronization-related things.
             // before rendering.
-            if (UpdatesPerSecond > double.Epsilon
+            if (UpdatesPerSecond >= double.Epsilon
                 && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive && IsRunningSlowly))
             {
-                // Calculate the amount of time to sleep.
-                var sleepTime = _updatePeriod - _updateStopwatch.Elapsed.TotalSeconds;
+                // Calculate the amount of remaining time till next update.
+                var remainingTime = _updatePeriod - _updateStopwatch.Elapsed.TotalSeconds;
 
-                // If the result is negative, that means the frame is running slowly. Mark as such and don't sleep.
-                if (sleepTime < 0.0)
+                // If the result is negative, and no call was within period that means the frame is running slowly.
+                if (remainingTime < 0.0)
                 {
-                    _isRunningSlowlyTries += 1;
+                    if (!_updatedWithinPeriod)
+                        ++_isRunningSlowlyTries;
                 }
-                // Else, sleep for that amount of time.
+                // Else return if the remaining time is > 0.
                 else
                 {
+                    _updatedWithinPeriod = true; // Remember we weren't too late.
                     _isRunningSlowlyTries = 0;
-                    Thread.Sleep((int) (1000 * sleepTime));
+
+                    if (remainingTime > 0.0)
+                        return; // Not the time for update yet.
                 }
             }
 
@@ -621,7 +627,9 @@ namespace Silk.NET.Windowing.Desktop
             var delta = _updateStopwatch.Elapsed.TotalSeconds;
             Update?.Invoke(delta);
 
+            // Reset
             _updateStopwatch.Restart();
+            _updatedWithinPeriod = false;
         }
 
         /// <summary>
@@ -630,15 +638,33 @@ namespace Silk.NET.Windowing.Desktop
         private void RaiseRenderFrame()
         {
             // Identical to RaiseUpdateFrame.
-            if (FramesPerSecond > double.Epsilon
+            if (FramesPerSecond >= double.Epsilon
                 && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive && IsRunningSlowly))
             {
-                var sleepTime = _renderPeriod - _renderStopwatch.Elapsed.TotalSeconds;
+                // Calculate the amount of remaining time till next rendering..
+                var remainingTime = _renderPeriod - _renderStopwatch.Elapsed.TotalSeconds;
 
-                if (sleepTime > 0.0)
+                // If no update frame rate is given we have to check for slow running here.
+                if (UpdatesPerSecond < double.Epsilon)
                 {
-                    Thread.Sleep((int) (1000 * sleepTime));
+                    // If the result is negative, and no call was within period that means the frame is running slowly.
+                    if (remainingTime < 0.0)
+                    {
+                        if (!_renderedWithinPeriod)
+                            ++_isRunningSlowlyTries;
+                    }
+                    // Else return if the remaining time is > 0.
+                    else
+                    {
+                        _renderedWithinPeriod = true; // Remember we weren't too late.
+                        _isRunningSlowlyTries = 0;
+
+                        if (remainingTime > 0.0)
+                            return; // Not the time for update yet.
+                    }
                 }
+                else if (remainingTime > 0.0)
+                    return; // Not the time for rendering yet.
             }
 
             var delta = _renderStopwatch.Elapsed.TotalSeconds;
@@ -650,7 +676,9 @@ namespace Silk.NET.Windowing.Desktop
                 SwapBuffers();
             }
 
+            //Reset
             _renderStopwatch.Restart();
+            _renderedWithinPeriod = false;
 
             // This has to be called on the thread with the graphics context
             if (VSync == VSyncMode.Adaptive)
