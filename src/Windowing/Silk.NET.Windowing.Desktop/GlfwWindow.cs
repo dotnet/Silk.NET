@@ -625,11 +625,12 @@ namespace Silk.NET.Windowing.Desktop
 
             // Calculate delta and run frame.
             var delta = _updateStopwatch.Elapsed.TotalSeconds;
-            Update?.Invoke(delta);
 
             // Reset
             _updateStopwatch.Restart();
             _updatedWithinPeriod = false;
+
+            Update?.Invoke(delta);            
         }
 
         /// <summary>
@@ -668,13 +669,6 @@ namespace Silk.NET.Windowing.Desktop
             }
 
             var delta = _renderStopwatch.Elapsed.TotalSeconds;
-            
-            Render?.Invoke(delta);
-
-            if (ShouldSwapAutomatically)
-            {
-                SwapBuffers();
-            }
 
             //Reset
             _renderStopwatch.Restart();
@@ -684,6 +678,13 @@ namespace Silk.NET.Windowing.Desktop
             if (VSync == VSyncMode.Adaptive)
             {
                 _glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
+            }
+
+            Render?.Invoke(delta);
+
+            if (ShouldSwapAutomatically)
+            {
+                SwapBuffers();
             }
         }
 
