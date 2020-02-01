@@ -33,7 +33,7 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// The cursor to use.
         /// </summary>
-        ICursor Cursor { get; set; }
+        ICursor Cursor { get; }
         
         /// <summary>
         /// Checks if a specific button is currently pressed.
