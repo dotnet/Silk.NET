@@ -42,15 +42,12 @@ namespace Silk.NET.Input.Common
         /// <see cref="DeadzoneMethod"/></exception>
         public float Apply(float raw)
         {
-            switch (Method)
+            return Method switch
             {
-                case DeadzoneMethod.Traditional:
-                    return Math.Abs(raw) < Value ? 0 : raw;
-                case DeadzoneMethod.AdaptiveGradient:
-                    return (1 - Value) * raw + Value * Math.Sign(raw);
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
+                DeadzoneMethod.Traditional => (Math.Abs(raw) < Value ? 0 : raw),
+                DeadzoneMethod.AdaptiveGradient => ((1 - Value) * raw + Value * Math.Sign(raw)),
+                _ => throw new ArgumentOutOfRangeException()
+            };
         }
     }
 }

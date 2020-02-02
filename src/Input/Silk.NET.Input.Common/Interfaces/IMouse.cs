@@ -17,6 +17,7 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// The buttons this mouse has available.
         /// </summary>
+        // ReSharper disable once ReturnTypeCanBeEnumerable.Global
         IReadOnlyList<MouseButton> SupportedButtons { get; }
         
         /// <summary>
@@ -28,6 +29,11 @@ namespace Silk.NET.Input.Common
         /// The position of the cursor.
         /// </summary>
         PointF Position { get; set; }
+        
+        /// <summary>
+        /// The cursor to use.
+        /// </summary>
+        ICursor Cursor { get; }
         
         /// <summary>
         /// Checks if a specific button is currently pressed.

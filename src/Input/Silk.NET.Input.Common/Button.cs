@@ -25,6 +25,12 @@ namespace Silk.NET.Input.Common
         /// </summary>
         public bool Pressed { get; }
 
+        /// <summary>
+        /// Creates a new instance of the Button struct.
+        /// </summary>
+        /// <param name="name">The name of this button.</param>
+        /// <param name="index">The index of this button.</param>
+        /// <param name="pressed">Whether or not this button is currently pressed.</param>
         public Button(ButtonName name, int index, bool pressed)
         {
             Name = name;
