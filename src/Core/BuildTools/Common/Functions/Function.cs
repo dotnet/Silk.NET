@@ -183,7 +183,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                     break;
             }
 
-            attributes.AddRange(Attributes.Select(x => x.Name + "(" + string.Join(", ", x.Arguments) + ")"));
+            attributes.AddRange(parameter.Attributes.Select(x => x.Name + "(" + string.Join(", ", x.Arguments) + ")"));
 
             if (attributes.Count != 0)
             {
