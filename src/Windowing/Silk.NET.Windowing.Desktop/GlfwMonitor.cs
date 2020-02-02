@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System.Collections.Generic;
 using System.Drawing;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
@@ -65,6 +66,20 @@ namespace Silk.NET.Windowing.Desktop
                 _gamma = value;
                 GlfwProvider.GLFW.Value.SetGamma(Handle, value);
             }
+        }
+
+        public VideoMode[] GetAllVideoModes()
+        {
+            var rawVideoModes = GlfwProvider.GLFW.Value.GetVideoModes(Handle, out var count);
+
+            List<VideoMode> videoModes = new List<VideoMode>();
+
+            for (var i = 0; i < count; i++)
+            {
+                videoModes.Add(new VideoMode(new Size(rawVideoModes[i].Width, rawVideoModes[i].Height), rawVideoModes[i].RefreshRate));
+            }
+
+            return videoModes.ToArray();
         }
     }
 }
