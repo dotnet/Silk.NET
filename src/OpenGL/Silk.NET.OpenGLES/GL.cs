@@ -27,7 +27,7 @@ namespace Silk.NET.OpenGLES
             _extensions ??= Enumerable.Range(0, GetInteger(GLEnum.NumExtensions))
                 .Select(x => GetStringS(GLEnum.Extensions, (uint) x)).ToList();
 
-            return _extensions.Contains(extension);
+            return _extensions.Contains("GL_" + extension);
         }
 
         public void ClearColor(Color color)
