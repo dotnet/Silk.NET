@@ -233,8 +233,10 @@ namespace Silk.NET.Input.Desktop
             if (Pixels.Length % BytesPerCursorPixel != 0)
                 throw new ArgumentOutOfRangeException($"Pixel data must provide a multiple of {BytesPerCursorPixel} bytes.");
 
+            // the user might setup the values step-by-step, so use the
+            // default cursor as long as the custom cursor state is not valid
             if (Width * Height * BytesPerCursorPixel != Pixels.Length)
-                return null; // TODO: how to handle this (the user might setup the values step-by-step)
+                return null;
 
             fixed (byte* ptr = Pixels)
             {
