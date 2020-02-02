@@ -4,41 +4,45 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using AdvancedDLSupport;
-using AdvancedDLSupport.Loaders;
-using Silk.NET.Core.Loader;
-
+using Ultz.SuperInvoke;
+using Ultz.SuperInvoke.Loader;
 namespace Silk.NET.OpenAL
 {
-    public class ALLoader : ISymbolLoader
+    public class ALLoader : LibraryLoader
     {
         public ALLoader(ALContext alc)
         {
             _alc = alc;
         }
         
-        [NativeSymbols]
-        public interface IInternalAL
+        private abstract class InternalAL : NativeApiContainer
         {
-            [NativeSymbol("alcGetProcAddress")]
-            unsafe IntPtr GetProcAddress(Device* device, string proc);
-            [NativeSymbol("alGetProcAddress")]
-            IntPtr GetProcAddress(string proc);
+            [NativeApi(EntryPoint = "alcGetProcAddress")]
+            public abstract unsafe IntPtr GetProcAddress(Device* device, string proc);
+            [NativeApi(EntryPoint = "alGetProcAddress")]
+            public abstract IntPtr GetProcAddress(string proc);
+
+            public InternalAL(ref NativeApiContext ctx) : base(ref ctx)
+            {
+            }
         }
 
-        private static IInternalAL _al = new NativeLibraryBuilder(LibraryLoader.Options).ActivateInterface<IInternalAL>
+        private static InternalAL _al = LibraryActivator.CreateInstance<InternalAL>
         (
             new OpenALLibraryNameContainer().GetLibraryName()
         );
 
         private ALContext _alc;
+        protected LibraryLoader UnderlyingLoader { get; } = GetPlatformDefaultLoader();
+        protected override IntPtr CoreLoadNativeLibrary(string name) => UnderlyingLoader.LoadNativeLibrary(name);
+        protected override void CoreFreeNativeLibrary(IntPtr handle) => UnderlyingLoader.FreeNativeLibrary(handle);
 
-        public unsafe IntPtr LoadSymbol(IntPtr library, string symbolName)
+        protected override unsafe IntPtr CoreLoadFunctionPointer(IntPtr library, string symbolName)
         {
             var sym = IntPtr.Zero;
             try
             {
-                sym = PlatformLoaderBase.PlatformLoader.LoadSymbol(library, symbolName);
+                sym = UnderlyingLoader.LoadFunctionPointer(library, symbolName);
             }
             catch
             {

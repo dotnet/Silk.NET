@@ -19,6 +19,6 @@
     },
     "FunctionPrefix": "vk",
     "ClassName": "Vk",
-    "SymbolLoader": "new VkLoader(AdvancedDLSupport.Loaders.PlatformLoaderBase.PlatformLoader)"
+    "SymbolLoader": "new VkLoader(Ultz.SuperInvoke.Loader.LibraryLoader.GetPlatformDefaultLoader())"
   }
 ]

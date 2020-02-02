@@ -4,21 +4,21 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Numerics;
-using AdvancedDLSupport;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Native;
-
+using Ultz.SuperInvoke;
 namespace Silk.NET.OpenAL.Extensions.Creative
 {
     /// <summary>
     /// Exposes the functions of the Effects Extension.
     /// </summary>
     [Extension("AL_EXT_EFX")]
-    public abstract class EffectExtension : NativeExtension<AL>, IEFX
+    [NativeApi(Prefix = "al")]
+    public abstract class EffectExtension : NativeExtension<AL>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected EffectExtension(string path, ImplementationOptions options)
-            : base(path, options)
+        protected EffectExtension(ref NativeApiContext ctx)
+            : base(ref ctx)
         {
         }
 

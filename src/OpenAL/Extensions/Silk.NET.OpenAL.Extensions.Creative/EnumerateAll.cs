@@ -6,20 +6,20 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using AdvancedDLSupport;
 using Silk.NET.Core.Attributes;
-
+using Ultz.SuperInvoke;
 namespace Silk.NET.OpenAL.Extensions.Creative
 {
     /// <summary>
     /// Exposes the API in the EnumerateAll extension.
     /// </summary>
     [Extension("ALC_ENUMERATE_ALL_EXT")]
-    public abstract class EnumerateAll : ContextExtensionBase, IEnumerateAllContextState
+    [NativeApi(Prefix = "alc")]
+    public abstract class EnumerateAll : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected EnumerateAll(string path, ImplementationOptions options)
-            : base(path, options)
+        protected EnumerateAll(ref NativeApiContext ctx)
+            : base(ref ctx)
         {
         }
 

@@ -5,8 +5,6 @@
 
 using Silk.NET.Core.Loader;
 using Ultz.SuperInvoke;
-using Ultz.SuperInvoke.Native;
-
 namespace Silk.NET.Core.Native
 {
     /// <inheritdoc />

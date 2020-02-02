@@ -4,22 +4,21 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using AdvancedDLSupport;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.OpenAL.Extensions;
-using Silk.NET.OpenAL.Interfaces;
-
+using Ultz.SuperInvoke;
 namespace Silk.NET.OpenAL
 {
     /// <summary>
     /// Provides access to the OpenAL 1.1 context API.
     /// </summary>
-    public abstract class ALContext : NativeAPI, IALC
+    [NativeApi(Prefix = "alc")]
+    public abstract class ALContext : NativeAPI
     {
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected ALContext(string path, ImplementationOptions options)
-            : base(path, options)
+        protected ALContext(ref NativeApiContext ctx)
+            : base(ref ctx)
         {
             LibraryLoader.CreateBuilder<ALContext>(new ALLoader(this));
         }

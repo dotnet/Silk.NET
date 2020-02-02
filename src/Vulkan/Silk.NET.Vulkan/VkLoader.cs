@@ -4,35 +4,37 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using AdvancedDLSupport.Loaders;
+using Ultz.SuperInvoke.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    public class VkLoader : ISymbolLoader
+    public class VkLoader : LibraryLoader
     {
         public bool IsExtensionLoader { get; }
         public Vk Vulkan { get; internal set; }
-        public ISymbolLoader BaseLoader { get; }
-        public VkLoader(Vk vk, ISymbolLoader baseLoader)
+        public LibraryLoader BaseLoader { get; }
+        public VkLoader(Vk vk, LibraryLoader baseLoader)
         {
             IsExtensionLoader = true;
             BaseLoader = baseLoader;
             Vulkan = vk;
         }
 
-        public VkLoader(ISymbolLoader defaultLoader)
+        public VkLoader(LibraryLoader defaultLoader)
         {
             IsExtensionLoader = false;
             BaseLoader = defaultLoader;
             Vulkan = null;
         }
 
-        public IntPtr LoadSymbol(IntPtr library, string symbolName)
+        protected override IntPtr CoreLoadNativeLibrary(string name) => BaseLoader.LoadNativeLibrary(name);
+        protected override void CoreFreeNativeLibrary(IntPtr handle) => BaseLoader.FreeNativeLibrary(handle);
+        protected override IntPtr CoreLoadFunctionPointer(IntPtr library, string symbolName)
         {
             IntPtr sym;
             try
             {
-                sym = BaseLoader.LoadSymbol(library, symbolName);
+                sym = BaseLoader.LoadFunctionPointer(library, symbolName);
                 if (sym != IntPtr.Zero)
                 {
                     return sym;

@@ -6,13 +6,9 @@
 using System;
 using System.Buffers;
 using System.ComponentModel;
-using AdvancedDLSupport;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Silk.NET.OpenAL.Interfaces;
-
-
+using Ultz.SuperInvoke;
 // ReSharper disable VirtualMemberCallInConstructor
 namespace Silk.NET.OpenAL.Extensions.Creative
 {
@@ -20,7 +16,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// Exposes the X-RAM extension by Creative Labs.
     /// </summary>
     [Extension("EAX-RAM")]
-    public abstract class XRam : NativeExtension<AL>, IXRam, IExtensions
+    [NativeApi(Prefix = "EAX")]
+    public abstract class XRam : NativeExtension<AL>
     {
         private readonly int _bufferStorageModeAccessible;
         private readonly int _bufferStorageModeAutomatic;
@@ -30,8 +27,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         private readonly int _ramSize;
 
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected XRam(string path, ImplementationOptions options)
-            : base(path, options)
+        protected XRam(ref NativeApiContext ctx)
+            : base(ref ctx)
         {
             _bufferStorageModeAutomatic = GetEnumValue("AL_STORAGE_AUTOMATIC");
             _bufferStorageModeHardware = GetEnumValue("AL_STORAGE_HARDWARE");

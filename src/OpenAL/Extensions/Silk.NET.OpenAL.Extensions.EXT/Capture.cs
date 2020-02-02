@@ -4,21 +4,21 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using AdvancedDLSupport;
 using Silk.NET.Core.Attributes;
 using Silk.NET.OpenAL.Attributes;
-
+using Ultz.SuperInvoke;
 namespace Silk.NET.OpenAL.Extensions.EXT
 {
     /// <summary>
     /// Exposes the API in the Capture extension.
     /// </summary>
     [Extension("ALC_EXT_CAPTURE")]
-    public abstract class Capture : ContextExtensionBase, ICaptureContext, ICaptureContextState
+    [NativeApi(Prefix = "alc")]
+    public abstract class Capture : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected Capture(string path, ImplementationOptions options)
-            : base(path, options)
+        protected Capture(ref NativeApiContext ctx)
+            : base(ref ctx)
         {
         }
 

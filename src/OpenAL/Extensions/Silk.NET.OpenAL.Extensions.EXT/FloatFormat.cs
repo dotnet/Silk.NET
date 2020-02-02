@@ -3,20 +3,20 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using AdvancedDLSupport;
 using Silk.NET.Core.Attributes;
-
+using Ultz.SuperInvoke;
 namespace Silk.NET.OpenAL.Extensions.EXT
 {
     /// <summary>
     /// Exposes the multi-channel buffers extension by Creative Labs.
     /// </summary>
     [Extension("AL_EXT_float")]
-    public abstract class FloatFormat : FormatExtensionBase<FloatBufferFormat>, IFloatFormat
+    [NativeApi(Prefix = "al")]
+    public abstract class FloatFormat : FormatExtensionBase<FloatBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected FloatFormat(string path, ImplementationOptions options)
-            : base(path, options)
+        protected FloatFormat(ref NativeApiContext ctx)
+            : base(ref ctx)
         {
         }
     }

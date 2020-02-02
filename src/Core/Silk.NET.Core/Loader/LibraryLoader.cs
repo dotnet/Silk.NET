@@ -9,11 +9,16 @@ using System.Reflection;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Native;
 using Ultz.SuperInvoke;
-
 namespace Silk.NET.Core.Loader
 {
     public static class LibraryLoader
     {
+        private static Dictionary<Type, Ultz.SuperInvoke.Loader.LibraryLoader> _loaders =
+            new Dictionary<Type, Ultz.SuperInvoke.Loader.LibraryLoader>();
+
+        public static void CreateBuilder<T>
+            (Ultz.SuperInvoke.Loader.LibraryLoader loader) where T : NativeApiContainer => _loaders[typeof(T)] = loader;
+        
         public static T1 Load<T1>
             (SearchPathContainer nameContainer) where T1 : NativeAPI => LibraryActivator.CreateInstance<T1>
             (nameContainer.GetLibraryName());

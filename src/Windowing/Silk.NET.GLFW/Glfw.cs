@@ -7,7 +7,6 @@ using System;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Ultz.SuperInvoke;
-using Ultz.SuperInvoke.Native;
 
 namespace Silk.NET.GLFW
 {
@@ -15,6 +14,7 @@ namespace Silk.NET.GLFW
     /// Provides access to the GLFW API.
     /// </summary>
     //public abstract class Glfw : NativeAPI, IGlfw
+    [NativeApi(Prefix = "glfw")]
     public abstract class Glfw : NativeAPI
     {
         /// <summary>

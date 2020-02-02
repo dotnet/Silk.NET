@@ -3,21 +3,19 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System;
-using AdvancedDLSupport;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-
+using Ultz.SuperInvoke;
 namespace Silk.NET.OpenAL.Extensions.Soft
 {
     /// <summary>
     /// Exposes the public API of the OpenAL Soft Deferred Updates extension.
     /// </summary>
-    public abstract class DeferredUpdates : NativeExtension<AL>, IDeferredUpdatesState
+    [NativeApi(Prefix = "al")]
+    public abstract class DeferredUpdates : NativeExtension<AL>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected DeferredUpdates(string path, ImplementationOptions options)
-            : base(path, options)
+        protected DeferredUpdates(ref NativeApiContext ctx)
+            : base(ref ctx)
         {
         }
 

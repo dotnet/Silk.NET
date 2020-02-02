@@ -4,8 +4,6 @@
 // of the MIT license. See the LICENSE file for details.
 
 using Ultz.SuperInvoke;
-using Ultz.SuperInvoke.Native;
-
 namespace Silk.NET.Core.Native
 {
     public abstract class NativeExtension<T> : NativeApiContainer where T : NativeAPI
