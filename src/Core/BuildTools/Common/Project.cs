@@ -40,6 +40,12 @@ namespace Silk.NET.BuildTools.Common
         public List<Enum> Enums { get; set; } = new List<Enum>();
 
         /// <summary>
+        /// Gets or sets a dictionary where the category names are the keys, and <see cref="Interface" />s
+        /// are the values.
+        /// </summary>
+        public Dictionary<string, Interface> Interfaces { get; set; } = new Dictionary<string, Interface>();
+
+        /// <summary>
         /// Gets or sets this project's list of structs.
         /// </summary>
         public List<Struct> Structs { get; set; } = new List<Struct>();

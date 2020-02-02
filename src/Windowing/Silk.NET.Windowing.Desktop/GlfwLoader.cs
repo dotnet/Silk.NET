@@ -7,6 +7,7 @@ using System;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.GLFW;
+using Ultz.SuperInvoke.Loader;
 
 namespace Silk.NET.Windowing.Desktop
 {
