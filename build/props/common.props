@@ -13,6 +13,6 @@
         <Description>Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenAL, and Vulkan.</Description>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Ultz.SuperInvoke" Version="1.0.0-preview20200202.3" /> <!-- TODO remove this! -->
+        <PackageReference Include="Ultz.SuperInvoke" Version="1.0.0-preview20200202.4" /> <!-- TODO remove this! -->
     </ItemGroup>
 </Project>
