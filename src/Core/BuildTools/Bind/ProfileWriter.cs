@@ -28,11 +28,6 @@ namespace Silk.NET.BuildTools.Bind
         public const string EnumsSubfolder = "Enums";
 
         /// <summary>
-        /// The name of the subfolder containing <see cref="Interface" />s.
-        /// </summary>
-        public const string InterfacesSubfolder = "Interfaces";
-
-        /// <summary>
         /// The name of the subfolder containing <see cref="Struct" />s.
         /// </summary>
         public const string StructsSubfolder = "Structs";
@@ -96,7 +91,7 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("using System.Runtime.InteropServices;");
             sw.WriteLine("using System.Text;");
             sw.WriteLine("using Silk.NET.Core.Native;");
-            sw.WriteLine("using AdvancedDLSupport;");
+            sw.WriteLine("using Ultz.SuperInvoke;");
             sw.WriteLine();
             var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
             sw.WriteLine($"namespace {ns}{project.Namespace}");
@@ -187,92 +182,6 @@ namespace Silk.NET.BuildTools.Bind
             sw.Dispose();
         }
 
-        /// <summary>
-        /// Writes this interface to a file.
-        /// </summary>
-        /// <param name="interface">The interface.</param>
-        /// <param name="file">The file to write to.</param>
-        /// <param name="profile">The subsystem containing this interface.</param>
-        /// <param name="project">The project containing this interface.</param>
-        public static void WriteInterface(this Interface @interface, string file, Profile profile, Project project)
-        {
-            var sw = new StreamWriter(file);
-            sw.WriteLine(LicenseText.Value);
-            sw.WriteLine("using System;");
-            sw.WriteLine("using System.Runtime.InteropServices;");
-            sw.WriteLine("using System.Text;");
-            sw.WriteLine("using Silk.NET.Core.Native;");
-            sw.WriteLine("using AdvancedDLSupport;");
-            sw.WriteLine();
-            var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
-            sw.WriteLine($"namespace {ns}{project.Namespace}");
-            sw.WriteLine("{");
-            foreach (var attr in @interface.Attributes)
-            {
-                sw.WriteLine($"    {attr}");
-            }
-
-            sw.WriteLine($"    public unsafe interface {@interface.Name}");
-            sw.Write("    {");
-            foreach (var function in @interface.Functions)
-            {
-                sw.WriteLine();
-                using (var sr = new StringReader(function.Doc))
-                {
-                    string line;
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        sw.WriteLine($"        {line}");
-                    }
-                }
-
-                foreach (var attr in function.Attributes)
-                {
-                    sw.WriteLine($"        {attr}");
-                }
-
-                sw.WriteLine
-                (
-                    $"        [NativeSymbol(\"{function.NativeName}\")]"
-                );
-                using (var sr = new StringReader(function.ToString()))
-                {
-                    string line;
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        sw.WriteLine($"        {line}");
-                    }
-                }
-            }
-
-            sw.WriteLine("    }");
-            sw.WriteLine("}");
-            sw.Flush();
-            sw.Dispose();
-        }
-
-        public static void WriteMetaInterface(this Project project, Profile profile, string file)
-        {
-            var sw = new StreamWriter(file);
-            sw.WriteLine(LicenseText.Value);
-            sw.WriteLine($"namespace {profile.Namespace}{project.Namespace}");
-            sw.WriteLine("{");
-            var names = project.Interfaces.Select(x => x.Value.Name).ToArray();
-            sw.Write($"    public interface I{profile.ClassName} : {names[0]}");
-            for (var i = 1; i < names.Length; i++)
-            {
-                sw.WriteLine(",");
-                sw.Write($"        {names[i]}");
-            }
-
-            sw.WriteLine();
-            sw.WriteLine("    {");
-            sw.WriteLine("    }");
-            sw.WriteLine("}");
-            sw.Flush();
-            sw.Close();
-        }
-
         public static void WriteNameContainer(this Project project, Profile profile, string file)
         {
             using (var sw = new StreamWriter(file))
@@ -323,12 +232,12 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine("using System.Text;");
                 sw.WriteLine("using Silk.NET.Core.Native;");
                 sw.WriteLine("using Silk.NET.Core.Loader;");
-                sw.WriteLine("using AdvancedDLSupport;");
+                sw.WriteLine("using Ultz.SuperInvoke;");
                 sw.WriteLine();
                 sw.WriteLine($"namespace {profile.Namespace}{project.Namespace}");
                 sw.WriteLine("{");
                 sw.WriteLine
-                    ($"    public abstract unsafe partial class {profile.ClassName} : NativeAPI, I{profile.ClassName}");
+                    ($"    public abstract unsafe partial class {profile.ClassName} : NativeAPI");
                 sw.WriteLine("    {");
                 foreach (var constant in profile.Constants)
                 {
@@ -340,7 +249,8 @@ namespace Silk.NET.BuildTools.Bind
                 var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).RemoveDuplicates();
                 foreach (var function in allFunctions)
                 {
-                    sw.WriteLine("        /// <inheritdoc />");
+                    sw.WriteLine("        /// <inheritdoc />"); // TODO docs
+                    sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
                     using (var sr = new StringReader(function.ToString()))
                     {
                         string line;
@@ -389,8 +299,8 @@ namespace Silk.NET.BuildTools.Bind
                     $"new {profile.Names.ClassName}();"
                 );
                 sw.WriteLine();
-                sw.WriteLine($"        public {profile.ClassName}(string path, ImplementationOptions opts)");
-                sw.WriteLine("            : base(path, opts)");
+                sw.WriteLine($"        public {profile.ClassName}(ref NativeApiContext ctx)");
+                sw.WriteLine("            : base(ref ctx)");
                 sw.WriteLine("        {");
                 sw.WriteLine("        }");
                 if (profile.SymbolLoaderName != null)
@@ -461,19 +371,20 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("using Silk.NET.Core.Loader;");
                     sw.WriteLine("using Silk.NET.Core.Native;");
                     sw.WriteLine("using Silk.NET.Core.Attributes;");
-                    sw.WriteLine("using AdvancedDLSupport;");
+                    sw.WriteLine("using Ultz.SuperInvoke;");
                     sw.WriteLine();
                     sw.WriteLine($"namespace {profile.ExtensionsNamespace}{project.Namespace}");
                     sw.WriteLine("{");
                     sw.WriteLine($"    [Extension(\"{key}\")]");
                     sw.WriteLine
                     (
-                        $"    public abstract unsafe partial class {name} : NativeExtension<{profile.ClassName}>, I{name}"
+                        $"    public abstract unsafe partial class {name} : NativeExtension<{profile.ClassName}>"
                     );
                     sw.WriteLine("    {");
                     foreach (var function in i.Functions)
                     {
-                        sw.WriteLine("        /// <inheritdoc />");
+                        sw.WriteLine("        /// <inheritdoc />"); // TODO docs
+                        sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
                         using (var sr = new StringReader(function.ToString()))
                         {
                             string line;
@@ -515,8 +426,8 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine();
                     }
 
-                    sw.WriteLine($"        public {name}(string path, ImplementationOptions opts)");
-                    sw.WriteLine("            : base(path, opts)");
+                    sw.WriteLine($"        public {name}(ref NativeApiContext ctx)");
+                    sw.WriteLine("            : base(ref ctx)");
                     sw.WriteLine("        {");
                     sw.WriteLine("        }");
                     sw.WriteLine("    }");
@@ -545,25 +456,12 @@ namespace Silk.NET.BuildTools.Bind
                 Directory.CreateDirectory(Path.Combine(folder, EnumsSubfolder));
             }
 
-            if (!Directory.Exists(Path.Combine(folder, InterfacesSubfolder)))
-            {
-                Directory.CreateDirectory(Path.Combine(folder, InterfacesSubfolder));
-            }
-
             if (!Directory.Exists(Path.Combine(folder, StructsSubfolder)))
             {
                 Directory.CreateDirectory(Path.Combine(folder, StructsSubfolder));
             }
 
             project.WriteProjectFile(folder, profile);
-
-            project.Interfaces.ForEach
-            (
-                x => x.Value.WriteInterface
-                (
-                    Path.Combine(folder, InterfacesSubfolder, $"{x.Value.Name}.gen.cs"), profile, project
-                )
-            );
 
             project.Structs.ForEach
             (
@@ -577,15 +475,6 @@ namespace Silk.NET.BuildTools.Bind
             (
                 x => x.WriteEnum(Path.Combine(folder, EnumsSubfolder, $"{x.Name}.gen.cs"), profile, project)
             );
-
-            if (project.IsRoot)
-            {
-                project.WriteMetaInterface
-                (
-                    profile,
-                    Path.Combine(folder, InterfacesSubfolder, $"I{profile.FunctionPrefix.ToUpper()}.gen.cs")
-                );
-            }
 
             project.WriteMixedModeClasses(profile, folder);
         }
