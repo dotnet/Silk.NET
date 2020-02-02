@@ -26,10 +26,10 @@ namespace Silk.NET.Input
         /// </summary>
         /// <param name="window">The window to create an input context for.</param>
         /// <returns>An input context for the provided window.</returns>
-        public static IInputContext GetInput(this IWindow window)
+        public static IInputContext CreateInput(this IView view)
         {
-            return SilkManager.GetOrDefault<IInputPlatform>()?.CreateInput(window)
-                ?? throw new NotSupportedException("Couldn't find a suitable input platform for this window.");
+            return SilkManager.GetOrDefault<IInputPlatform>()?.CreateInput(view)
+                ?? throw new NotSupportedException("Couldn't find a suitable input platform for this view.");
         }
     }
 }

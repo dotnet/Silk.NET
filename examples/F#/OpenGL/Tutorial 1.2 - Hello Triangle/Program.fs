@@ -45,57 +45,71 @@ let main _ =
     options.Size <- Size(800, 600)
     options.Title <- "LearnOpenGL with Silk.NET"
     let mutable window = Window.Create(options)
-    let mutable gl = null
-    let mutable vao = 0u
-    let mutable shaderProgram = 0u
 
-    // Our Key Down handler
+    let mutable gl = null
+    let mutable vbo = 0u
+    let mutable ebo = 0u
+    let mutable vao = 0u
+    let mutable shader = 0u
+
+    // Vertices in Counter-clockwise order
+    // Uploaded to the VBO.
+    let Vertices = [|
+        // X   Y       Z
+         0.5f;  0.5f;  0.0f
+         0.5f;  -0.5f; 0.0f
+         -0.5f; -0.5f; 0.0f
+         -0.5f; 0.5f;  0.5f
+    |]
+
+    let Indices = [|
+        0; 1; 3
+        1; 2; 3
+    |]
+
+
+    // Our Keyboard handler
     let onKeyDown = Action<IKeyboard, Key, int>(fun _ key _ ->
         match key with
         | Key.Escape -> window.Close()
         | _ -> ()
     )
+    
 
     // Here we initialize OpenGL with our scene
     window.add_Load (fun () -> 
-        // Wait for Window to load before we can get a handle to OpenGL
-        gl <- GL.GetApi()
-
         // Add a key down handler on any keyboard we find
         let input = window.GetInput()
         input.Keyboards
         |> Seq.iter (fun keyboard -> keyboard.add_KeyDown onKeyDown)
 
+        // Wait for Window to load before we can get a handle to OpenGL
+        gl <- GL.GetApi()
 
         // Build and compile our shader program
         let vertexShader = createShader gl GLEnum.VertexShader VertexShaderSource
         let fragmentShader = createShader gl GLEnum.FragmentShader FragmentShaderSource
-        shaderProgram <- gl.CreateProgram()
-        gl.AttachShader(shaderProgram, vertexShader)
-        gl.AttachShader(shaderProgram, fragmentShader)
-        gl.LinkProgram(shaderProgram)
+        shader <- gl.CreateProgram()
+        gl.AttachShader(shader, vertexShader)
+        gl.AttachShader(shader, fragmentShader)
+        gl.LinkProgram(shader)
         
         // We're done with the shaders so they can be removed
-        gl.DetachShader(shaderProgram, fragmentShader)
-        gl.DetachShader(shaderProgram, vertexShader)
+        gl.DetachShader(shader, fragmentShader)
+        gl.DetachShader(shader, vertexShader)
         gl.DeleteShader(vertexShader)
         gl.DeleteShader(fragmentShader)
 
         // Complete our shader program by linking it
-        if gl.GetProgram(shaderProgram, GLEnum.LinkStatus) <> 1 then
-            let info = gl.GetProgramInfoLog(shaderProgram)
+        if gl.GetProgram(shader, GLEnum.LinkStatus) <> 1 then
+            let info = gl.GetProgramInfoLog(shader)
             failwith (sprintf "Error linking program %A" info)
 
-        // Vertices in Counter-clockwise order
-        let vertices = [|
-            -0.5f; -0.5f; 0.0f // left  
-            0.5f; -0.5f; 0.0f // right 
-            0.0f;  0.5f; 0.0f  // top    
-        |]
 
         // VAO stores our vertex state
         vao <- gl.GenVertexArray()
-        let vbo = gl.GenBuffer()
+        vbo <- gl.GenBuffer()
+        ebo <- gl.GenBuffer()
 
         gl.BindVertexArray(vao)
         gl.BindBuffer(GLEnum.ArrayBuffer, vbo)
@@ -103,13 +117,21 @@ let main _ =
         // gl.BufferData requires the data to be passed as a void pointer.
         // We get a pointer to the vertex array and convert it to
         // a void pointer.
-        use verticesPtr = fixed vertices
+        use verticesPtr = fixed Vertices
         let voidPtr = verticesPtr |> NativePtr.toVoidPtr
-        let size = uint32 (vertices.Length * sizeof<float32>)
+        let size = uint32 (Vertices.Length * sizeof<float32>)
         gl.BufferData(GLEnum.ArrayBuffer, size, voidPtr, GLEnum.StaticDraw)
 
         // Set how the vertex data will be used
         gl.VertexAttribPointer(aPosLocation, 3, GLEnum.Float, false, 3u * uint32 sizeof<float32>, 0)
+
+        // Setup Element Buffer
+        gl.BindBuffer(GLEnum.ElementArrayBuffer, ebo)
+        use elementPtr = fixed Indices
+        let voidPtr = elementPtr |> NativePtr.toVoidPtr
+        let size = uint32 (Indices.Length * sizeof<float32>)
+        gl.BufferData(GLEnum.ElementArrayBuffer, size, voidPtr, GLEnum.StaticDraw)
+
 
         // All attribute arrays must be enabled before first use
         gl.EnableVertexAttribArray(aPosLocation)
@@ -127,15 +149,23 @@ let main _ =
         // We want to use the shader program we setup on load
         // along with the vao that holds info about the vertices and
         // how they'll be used
-        gl.UseProgram(shaderProgram)
+        gl.UseProgram(shader)
         gl.BindVertexArray(vao)
 
-        // Finally, our draw call renders 3u vertices starting at index 0
-        gl.DrawArrays(GLEnum.Triangles, 0, 3u)
+        // Finally, our draw call renders 6 indices
+        gl.DrawElements(GLEnum.Triangles, uint32 Indices.Length, GLEnum.UnsignedInt, 0)
     )
 
     // We'll need to tell OpenGL to resize if the user resizes the window
     window.add_Resize (fun (size: Size) -> gl.Viewport(size))
+
+    // Free up memmory when we're done
+    window.add_Closing (fun () -> 
+        gl.DeleteBuffer(vbo)
+        gl.DeleteBuffer(ebo)
+        gl.DeleteVertexArray(vao)
+        gl.DeleteProgram(shader)
+    )
 
     window.Run()
 

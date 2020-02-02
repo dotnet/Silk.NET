@@ -3683,5 +3683,28 @@ namespace Silk.NET.GLFW
         /// <param name="name">The ASCII encoded name of the function.</param>
         /// <returns>The address of the function, or IntPtr.Zero if an error occurred.</returns>
         IntPtr GetProcAddress(string name);
+
+        
+        /// <summary>Retrieves the work area of the monitor.</summary>
+        /// <remarks>
+        /// <para>
+        /// This function returns the position, in screen coordinates, of the upper-left
+        /// corner of the work area of the specified monitor along with the work area
+        /// size in screen coordinates. The work area is defined as the area of the
+        /// monitor not occluded by the operating system task bar where present. If no
+        /// task bar exists then the work area is the monitor resolution in screen
+        /// coordinates.
+        /// </para>
+        /// <para>
+        /// Any or all of the position and size arguments may be <code>null</code>.  If an error
+        /// occurs, all non-<code>null</code> position and size arguments will be set to zero.
+        /// </para>
+        /// </remarks>
+        /// <param name="monitor">The monitor to query.</param>
+        /// <param name="xpos">Where to store the monitor x-coordinate, or <code>null</code>.</param>
+        /// <param name="ypos">Where to store the monitor y-coordinate, or <code>null</code>.</param>
+        /// <param name="width">Where to store the monitor width, or <code>null</code>.</param>
+        /// <param name="height">Where to store the monitor height, or <code>null</code>.</param>
+        unsafe void GetMonitorWorkarea(Monitor* monitor, out int x, out int y, out int width, out int height);
     }
 }

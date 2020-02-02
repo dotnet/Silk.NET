@@ -18,6 +18,23 @@ namespace Silk.NET.Windowing
     public static class Window
     {
         /// <summary>
+        /// Gets whether this platform only supports window views. If false, this means that you may use desktop
+        /// functionality with your applications.
+        /// </summary>
+        public static bool IsViewOnly
+        {
+            get
+            {
+                if (!SilkManager.IsRegistered<IWindowPlatform>())
+                {
+                    Init();
+                }
+
+                return SilkManager.Get<IWindowPlatform>().IsViewOnly;
+            }
+        }
+        
+        /// <summary>
         /// Create a window on the current platform.
         /// </summary>
         /// <param name="options">The window to use.</param>
@@ -28,9 +45,34 @@ namespace Silk.NET.Windowing
                 Init();
             }
 
+            if (IsViewOnly)
+            {
+                throw new NotSupportedException
+                (
+                    "The currently bound window platform only supports views," +
+                    "instead of windows. Use the view APIs instead."
+                );
+            }
+
             // We should have a platform now, as Silk.Init would've thrown otherwise.
             // ReSharper disable once PossibleNullReferenceException
-            return SilkManager.Get<IWindowPlatform>().GetWindow(options);
+            return SilkManager.Get<IWindowPlatform>().CreateWindow(options);
+        }
+        
+        /// <summary>
+        /// Create a view on the current platform.
+        /// </summary>
+        /// <param name="options">The window to use.</param>
+        /// <returns>A Silk.NET window using the current platform.</returns>
+        public static IView GetView(ViewOptions? options = null)
+        {
+            if (!SilkManager.IsRegistered<IWindowPlatform>()) {
+                Init();
+            }
+
+            // We should have a platform now, as Silk.Init would've thrown otherwise.
+            // ReSharper disable once PossibleNullReferenceException
+            return SilkManager.Get<IWindowPlatform>().GetView(options);
         }
 
         /// <summary>
@@ -39,9 +81,9 @@ namespace Silk.NET.Windowing
         /// <exception cref="NotSupportedException">
         /// Thrown if no applicable <see cref="IWindowPlatform" /> was found.
         /// </exception>
-        public static void Init()
+        internal static void Init()
         {
-            var glfwPlatform = new GlfwPlatform();
+            var glfwPlatform = GlfwPlatform.Instance;
             if (glfwPlatform.IsApplicable) {
                 SilkManager.Register<IWindowPlatform>(glfwPlatform);
                 SilkManager.Register<IGLSymbolLoader>(new GlfwLoader());

@@ -13,43 +13,43 @@ namespace Silk.NET.Windowing.Common
     public static class WindowExtensions
     {
         /// <summary>
-        /// Executes a Func&lt;T&gt; delegate on the given window.
+        /// Executes a Func&lt;T&gt; delegate on the given view.
         /// </summary>
-        /// <param name="window">The window to invoke on.</param>
+        /// <param name="view">The view to invoke on.</param>
         /// <param name="t">The function to invoke.</param>
         /// <typeparam name="T">Type of the function.</typeparam>
         /// <remarks>This function is not applicable on single-threaded windows</remarks>
         /// <returns>The return value of the given delegate.</returns>
-        public static T Invoke<T>(this IWindow window, Func<T> t)
+        public static T Invoke<T>(this IView view, Func<T> t)
         {
-            return (T) window.Invoke(t);
+            return (T) view.Invoke(t);
         }
 
         /// <summary>
-        /// Executes an <see cref="Action"/> on the given window.
+        /// Executes an <see cref="Action"/> on the given view.
         /// </summary>
-        /// <param name="window">The window to invoke on.</param>
+        /// <param name="view">The view to invoke on.</param>
         /// <param name="t">The action to invoke.</param>
         /// <remarks>This function is not applicable on single-threaded windows</remarks>
-        public static void Invoke(this IWindow window, Action t)
+        public static void Invoke(this IView view, Action t)
         {
-            window.Invoke(t);
+            view.Invoke(t);
         }
 
         /// <summary>
-        /// Start the default event loop on this window.
+        /// Start the default event loop on this view.
         /// </summary>
-        /// <param name="window">The window to begin the loop on.</param>
-        public static void Run(this IWindow window)
+        /// <param name="view">The view to begin the loop on.</param>
+        public static void Run(this IView view)
         {
-            window.Open();
-            while (!window.IsClosing)
+            view.Initialize();
+            while (!view.IsClosing)
             {
-                window.DoEvents();
-                window.DoUpdate();
-                window.DoRender();
+                view.DoEvents();
+                view.DoUpdate();
+                view.DoRender();
             }
-            window.Reset();
+            view.Reset();
         }
     }
 }

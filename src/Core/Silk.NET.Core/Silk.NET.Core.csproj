@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
@@ -8,8 +8,6 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
-        <PackageReference Include="Microsoft.DotNet.PlatformAbstractions" Version="3.0.0" />
-        <PackageReference Include="microsoft.extensions.dependencymodel" Version="3.0.0" />
         <PackageReference Include="System.Memory" Version="4.5.3" />
         <PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
         <PackageReference Include="System.Reflection.Emit.ILGeneration" Version="4.3.0" />

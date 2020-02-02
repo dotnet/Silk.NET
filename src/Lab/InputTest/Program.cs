@@ -22,7 +22,7 @@ namespace InputTest
             var window = Window.Create(opts);
             window.Load += () =>
             {
-                var input = window.GetInput();
+                var input = window.CreateInput();
                 input.ConnectionChanged += DoConnect;
                 Console.WriteLine("Now, go press buttons in the window and you'll see the feedback here.");
                 foreach (var gamepad in input.Gamepads)
