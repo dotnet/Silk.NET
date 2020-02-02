@@ -41,8 +41,8 @@ namespace Silk.NET.Input.Common
         /// Creates a new instance of the Thumbstick struct.
         /// </summary>
         /// <param name="index">The index of the stick.</param>
-        /// <param name="position">The position of the stick.</param>
-        /// <param name="direction">The direction of the stick.</param>
+        /// <param name="x">The position of the stick.</param>
+        /// <param name="y">The direction of the stick.</param>
         public Thumbstick(int index, float x, float y)
         {
             Index = index;
