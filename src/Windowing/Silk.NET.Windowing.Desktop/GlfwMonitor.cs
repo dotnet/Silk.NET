@@ -68,18 +68,18 @@ namespace Silk.NET.Windowing.Desktop
             }
         }
 
-        public VideoMode[] GetAllVideoModes()
+        public IEnumerable<VideoMode> GetAllVideoModes()
         {
             var rawVideoModes = GlfwProvider.GLFW.Value.GetVideoModes(Handle, out var count);
 
-            List<VideoMode> videoModes = new List<VideoMode>();
+            var videoModes = new List<VideoMode>();
 
             for (var i = 0; i < count; i++)
             {
                 videoModes.Add(new VideoMode(new Size(rawVideoModes[i].Width, rawVideoModes[i].Height), rawVideoModes[i].RefreshRate));
             }
 
-            return videoModes.ToArray();
+            return videoModes;
         }
     }
 }

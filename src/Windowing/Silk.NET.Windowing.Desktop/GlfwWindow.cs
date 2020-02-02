@@ -159,14 +159,7 @@ namespace Silk.NET.Windowing.Desktop
         public bool ShouldSwapAutomatically { get; }
 
         /// <inheritdoc />
-        public VideoMode VideoMode
-        {
-            get
-            {
-                var monitor = Monitor;
-                return monitor?.VideoMode ?? _initialOptions.VideoMode;
-            }
-        }
+        public VideoMode VideoMode => Monitor?.VideoMode ?? _initialOptions.VideoMode;
 
         /// <inheritdoc />
         public int? PreferredDepthBufferBits => _initialOptions.PreferredDepthBufferBits;

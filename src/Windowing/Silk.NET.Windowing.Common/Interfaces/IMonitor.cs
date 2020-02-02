@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace Silk.NET.Windowing.Common
@@ -41,6 +42,6 @@ namespace Silk.NET.Windowing.Common
         /// Get all video modes that this monitor supports.
         /// </summary>
         /// <returns>An array of all video modes.</returns>
-        VideoMode[] GetAllVideoModes();
+        IEnumerable<VideoMode> GetAllVideoModes();
     }
 }
