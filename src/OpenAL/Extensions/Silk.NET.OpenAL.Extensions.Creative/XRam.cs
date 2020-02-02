@@ -6,13 +6,9 @@
 using System;
 using System.Buffers;
 using System.ComponentModel;
-using AdvancedDLSupport;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Silk.NET.OpenAL.Interfaces;
-
-
+using Ultz.SuperInvoke;
 // ReSharper disable VirtualMemberCallInConstructor
 namespace Silk.NET.OpenAL.Extensions.Creative
 {
@@ -20,7 +16,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// Exposes the X-RAM extension by Creative Labs.
     /// </summary>
     [Extension("EAX-RAM")]
-    public abstract class XRam : NativeExtension<AL>, IXRam, IExtensions
+    [NativeApi(Prefix = "EAX")]
+    public abstract class XRam : NativeExtension<AL>
     {
         private readonly int _bufferStorageModeAccessible;
         private readonly int _bufferStorageModeAutomatic;
@@ -30,8 +27,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         private readonly int _ramSize;
 
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected XRam(string path, ImplementationOptions options)
-            : base(path, options)
+        protected XRam(ref NativeApiContext ctx)
+            : base(ref ctx)
         {
             _bufferStorageModeAutomatic = GetEnumValue("AL_STORAGE_AUTOMATIC");
             _bufferStorageModeHardware = GetEnumValue("AL_STORAGE_HARDWARE");
@@ -45,7 +42,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public abstract int GetInteger(int param);
 
         /// <inheritdoc />
-        public abstract bool SetBufferMode(int count, in uint[] buffers, int mode);
+        public abstract bool SetBufferMode(int count, ReadOnlySpan<uint> buffers, int mode);
 
         /// <inheritdoc />
         public abstract int GetBufferMode(uint buffer, IntPtr reserved);
@@ -66,9 +63,9 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// true if all buffers were successfully set to the requested storage mode; otherwise, false.
         /// </returns>
         /// <seealso cref="GetBufferMode(uint)" />
-        public bool SetBufferMode(int count, in uint[] buffers, BufferStorageMode mode)
+        public bool SetBufferMode(int count, ReadOnlySpan<uint> buffers, BufferStorageMode mode)
         {
-            return SetBufferMode(count, in buffers, GetValueForEnum(mode));
+            return SetBufferMode(count, buffers, GetValueForEnum(mode));
         }
 
         /// <summary>
@@ -87,7 +84,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
             buffers[0] = buffer;
 
             try {
-                return SetBufferMode(1, in buffers, mode);
+                return SetBufferMode(1, buffers, mode);
             }
             finally {
                 pool.Return(buffers, true);
@@ -105,7 +102,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// <seealso cref="GetBufferMode(uint)" />
         public bool SetBufferMode(BufferStorageMode mode, params uint[] buffers)
         {
-            return SetBufferMode(buffers.Length, in buffers, mode);
+            return SetBufferMode(buffers.Length, buffers, mode);
         }
 
         /// <inheritdoc cref="GetBufferMode(uint, IntPtr)" />

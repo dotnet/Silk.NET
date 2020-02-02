@@ -4,23 +4,20 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Runtime.InteropServices;
-using AdvancedDLSupport;
-using AdvancedDLSupport.Loaders;
 using Silk.NET.Core.Loader;
+using Silk.NET.Core.Native;
 using Silk.NET.GLFW;
+using Ultz.SuperInvoke.Loader;
 
 namespace Silk.NET.Windowing.Desktop
 {
-    public class GlfwLoader : IGLSymbolLoader
+    public class GlfwLoader : GLSymbolLoader
     {
-        private ISymbolLoader _underlyingLoader = PlatformLoaderBase.PlatformLoader;
-
-        public IntPtr LoadSymbol(IntPtr library, string symbolName)
+        protected override IntPtr CoreLoadFunctionPointer(IntPtr library, string symbolName)
         {
             try
             {
-                return _underlyingLoader.LoadSymbol(library, symbolName);
+                return UnderlyingLoader.LoadFunctionPointer(library, symbolName);
             }
             catch (SymbolLoadingException)
             {

@@ -5,26 +5,25 @@
 
 using System;
 using System.Numerics;
-using AdvancedDLSupport;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Silk.NET.OpenAL.Interfaces;
-
+using Ultz.SuperInvoke;
 namespace Silk.NET.OpenAL
 {
     /// <summary>
     /// Provides access to the OpenAL 1.1 API.
     /// </summary>
-    public abstract class AL : NativeAPI, IAL
+    [NativeApi(Prefix = "al")]
+    public abstract class AL : NativeAPI
     {
         static AL()
         {
-            LibraryLoader.CreateBuilder<AL>(new ALLoader(null));
+            LibraryLoader.CreateBuilder<ALContext>(new ALLoader(null));
         }
         
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected AL(string path, ImplementationOptions options)
-            : base(path, options)
+        protected AL(ref NativeApiContext ctx)
+            : base(ref ctx)
         {
         }
 

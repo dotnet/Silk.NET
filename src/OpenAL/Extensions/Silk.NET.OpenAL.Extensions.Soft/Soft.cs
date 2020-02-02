@@ -4,20 +4,19 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using AdvancedDLSupport;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-
+using Ultz.SuperInvoke;
 namespace Silk.NET.OpenAL.Extensions.Soft
 {
     /// <summary>
     /// Exposes the public API of functions added by OpenAL Soft.
     /// </summary>
-    public abstract class Soft : NativeExtension<AL>, IStateSoft
+    [NativeApi(Prefix = "al")]
+    public abstract class Soft : NativeExtension<AL>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected Soft(string path, ImplementationOptions options)
-            : base(path, options)
+        protected Soft(ref NativeApiContext ctx)
+            : base(ref ctx)
         {
         }
 

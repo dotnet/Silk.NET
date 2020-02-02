@@ -5,15 +5,14 @@ using System.Linq;
 using System.Numerics;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Platform;
 
 namespace Silk.NET.OpenGL
 {
     public partial class GL
     {
-        public static GL GetApi()
-        {
-             return LibraryLoader<GL>.Load(new GLCoreLibraryNameContainer());
-        }
+        public static GL GetApi() => LibraryLoader<GL>.Load
+            (new GLCoreLibraryNameContainer(), SilkManager.Get<GLSymbolLoader>());
 
         public bool TryGetExtension<T>(out T ext)
             where T:NativeExtension<GL>
@@ -28,7 +27,7 @@ namespace Silk.NET.OpenGL
             _extensions ??= Enumerable.Range(0, GetInteger(GLEnum.NumExtensions))
                 .Select(x => GetStringS(GLEnum.Extensions, (uint) x)).ToList();
 
-            return _extensions.Contains(extension);
+            return _extensions.Contains("GL_" + extension);
         }
 
         public void ClearColor(Color color)

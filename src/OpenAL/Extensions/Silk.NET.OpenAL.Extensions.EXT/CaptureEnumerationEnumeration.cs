@@ -6,21 +6,21 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using AdvancedDLSupport;
 using Silk.NET.Core.Attributes;
 using Silk.NET.OpenAL.Extensions.EXT.Enumeration;
-
+using Ultz.SuperInvoke;
 namespace Silk.NET.OpenAL.Extensions.EXT
 {
     /// <summary>
     /// Exposes the API in the CaptureEnumerationEnumeration extension.
     /// </summary>
     [Extension("ALC_ENUMERATION_EXT")]
-    public abstract class CaptureEnumerationEnumeration : ContextExtensionBase, ICaptureEnumerationContextState
+    [NativeApi(Prefix = "alc")]
+    public abstract class CaptureEnumerationEnumeration : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected CaptureEnumerationEnumeration(string path, ImplementationOptions options)
-            : base(path, options)
+        protected CaptureEnumerationEnumeration(ref NativeApiContext ctx)
+            : base(ref ctx)
         {
         }
 

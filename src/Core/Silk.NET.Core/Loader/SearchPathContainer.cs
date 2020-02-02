@@ -4,7 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Ultz.SuperInvoke.Loader;
 
 namespace Silk.NET.Core.Loader
 {

@@ -3,7 +3,6 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using AdvancedDLSupport.Loaders;
 using Silk.NET.Core.Native;
 
 namespace Silk.NET.Core.Loader
@@ -16,7 +15,7 @@ namespace Silk.NET.Core.Loader
             return LibraryLoader.Load<T>(paths);
         }
         
-        public static T Load(SearchPathContainer paths, ISymbolLoader loader)
+        public static T Load(SearchPathContainer paths, Ultz.SuperInvoke.Loader.LibraryLoader loader)
         {
             return LibraryLoader.Load<T>(paths, loader);
         }
@@ -33,7 +32,7 @@ namespace Silk.NET.Core.Loader
             return LibraryLoader.Load<TExt, T>(baseApi, paths);
         }
 
-        public static TExt Load<TExt>(T baseApi, SearchPathContainer paths, ISymbolLoader symbolLoader)
+        public static TExt Load<TExt>(T baseApi, SearchPathContainer paths, Ultz.SuperInvoke.Loader.LibraryLoader symbolLoader)
             where TExt : NativeExtension<T>
         {
             return LibraryLoader.Load<TExt, T>(baseApi, paths, symbolLoader);

@@ -4,8 +4,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using AdvancedDLSupport;
 using Silk.NET.Core.Native;
+using Ultz.SuperInvoke;
 
 namespace Silk.NET.OpenAL.Extensions
 {
@@ -17,8 +17,8 @@ namespace Silk.NET.OpenAL.Extensions
         where TExtendedBufferFormat : struct, Enum
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected FormatExtensionBase(string path, ImplementationOptions options)
-            : base(path, options)
+        protected FormatExtensionBase(ref NativeApiContext ctx)
+            : base(ref ctx)
         {
         }
 

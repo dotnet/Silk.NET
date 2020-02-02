@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
@@ -9,15 +9,13 @@
     <ItemGroup>
         <PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
         <PackageReference Include="System.Memory" Version="4.5.3" />
-        <PackageReference Include="System.Reflection.Emit" Version="4.3.0" />
-        <PackageReference Include="System.Reflection.Emit.ILGeneration" Version="4.3.0" />
+        <PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
+        <PackageReference Include="System.Reflection.Emit.ILGeneration" Version="4.7.0" />
         <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.6.0" />
         <PackageReference Include="System.ValueTuple" Version="4.4.0" />
         <PackageReference Include="JetBrains.Annotations" Version="11.1.0" PrivateAssets="all" />
         <PackageReference Include="Humanizer.Core" Version="2.5.16" PrivateAssets="Compile;Build;Analyzers;ContentFiles" />
-        <PackageReference Include="AdvancedDLSupport" Version="3.1.0" />
-        <PackageReference Include="StrictEmit" Version="2.4.2" PrivateAssets="Compile;Build;Analyzers;ContentFiles" />
-      <PackageReference Include="System.Numerics.Vectors" Version="4.6.0-preview5.19224.8" />
+        <PackageReference Include="System.Numerics.Vectors" Version="4.6.0-preview5.19224.8" />
     </ItemGroup>
 
     <Import Project="..\..\..\build\props\common.props" />

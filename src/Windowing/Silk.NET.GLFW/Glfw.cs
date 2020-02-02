@@ -4,16 +4,18 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using AdvancedDLSupport;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Ultz.SuperInvoke;
 
 namespace Silk.NET.GLFW
 {
     /// <summary>
     /// Provides access to the GLFW API.
     /// </summary>
-    public abstract class Glfw : NativeAPI, IGlfw
+    //public abstract class Glfw : NativeAPI, IGlfw
+    [NativeApi(Prefix = "glfw")]
+    public abstract class Glfw : NativeAPI
     {
         /// <summary>
         /// Gets an integer equal to GLFW_DONT_CARE. This can be used for several window hints to use the platform default.
@@ -21,8 +23,8 @@ namespace Silk.NET.GLFW
         public const int DontCare = -1;
 
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected Glfw(string path, ImplementationOptions options)
-            : base(path, options)
+        protected Glfw(ref NativeApiContext ctx)
+            : base(ref ctx)
         {
         }
 
