@@ -155,7 +155,7 @@ namespace Silk.NET.Input.Desktop
         }
 
         /// <inheritdoc />
-        public bool IsCursorModeSupported(CursorMode mode)
+        public bool IsSupported(CursorMode mode)
         {
             return mode switch
             {
@@ -168,7 +168,7 @@ namespace Silk.NET.Input.Desktop
         }
 
         /// <inheritdoc />
-        public bool IsStandardCursorSupported(StandardCursor standardCursor)
+        public bool IsSupported(StandardCursor standardCursor)
         {
             return standardCursor switch
             {

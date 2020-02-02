@@ -10,7 +10,7 @@ namespace Silk.NET.Input.Common
     /// </summary>
     /// <remarks>
     /// Not every backend supports every standard cursor. Check availability with
-    /// <see cref="ICursor.IsStandardCursorSupported"/> before changing to a standard cursor.
+    /// <see cref="ICursor.IsSupported(StandardCursor)"/> before changing to a standard cursor.
     /// </remarks>
     public enum StandardCursor
     {

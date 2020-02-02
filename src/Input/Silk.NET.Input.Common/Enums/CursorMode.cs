@@ -10,7 +10,7 @@ namespace Silk.NET.Input.Common
     /// </summary>
     /// <remarks>
     /// Not every backend supports every cursor mode. Check availability with
-    /// <see cref="ICursor.IsCursorModeSupported"/> before changing the cursor mode.
+    /// <see cref="ICursor.IsSupported(CursorMode)"/> before changing the cursor mode.
     /// </remarks>
     public enum CursorMode
     {

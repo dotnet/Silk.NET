@@ -69,13 +69,13 @@ namespace Silk.NET.Input.Common
         /// </summary>
         /// <param name="mode">The mode to check for.</param>
         /// <returns>Whether or not this mode is supported.</returns>
-        bool IsCursorModeSupported(CursorMode mode);
+        bool IsSupported(CursorMode mode);
 
         /// <summary>
         /// Checks whether or not a specific <see cref="StandardCursor"/> is supported.
         /// </summary>
         /// <param name="standardCursor">The standard cursor to check for.</param>
         /// <returns>Whether or not this standard cursor is supported.</returns>
-        bool IsStandardCursorSupported(StandardCursor standardCursor);
+        bool IsSupported(StandardCursor standardCursor);
     }
 }
