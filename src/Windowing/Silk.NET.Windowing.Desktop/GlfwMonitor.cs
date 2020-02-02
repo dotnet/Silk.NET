@@ -3,7 +3,6 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System;
 using System.Drawing;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
@@ -13,6 +12,8 @@ namespace Silk.NET.Windowing.Desktop
 {
     internal unsafe class GlfwMonitor : IMonitor
     {
+        private float _gamma = 1.0f;
+        
         public Monitor* Handle { get; }
 
         public GlfwMonitor(Monitor* monitor, int index)
@@ -53,6 +54,16 @@ namespace Silk.NET.Windowing.Desktop
                     new Size(videoMode->Width, videoMode->Height),
                     videoMode->RefreshRate
                 );
+            }
+        }
+
+        public float Gamma
+        {
+            get => _gamma;
+            set
+            {
+                _gamma = value;
+                GlfwProvider.GLFW.Value.SetGamma(Handle, value);
             }
         }
     }
