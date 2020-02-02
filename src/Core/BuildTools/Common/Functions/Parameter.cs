@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Collections.Generic;
 
 namespace Silk.NET.BuildTools.Common.Functions
 {
@@ -31,6 +32,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets or sets the flow of the pointer.
         /// </summary>
         public FlowDirection Flow { get; set; }
+
+        /// <summary>
+        /// Gets or sets a list of attributes for this parameter.
+        /// </summary>
+        public List<Attribute> Attributes { get; set; } = new List<Attribute>();
 
         public bool Equals(Parameter other)
         {

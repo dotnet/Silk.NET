@@ -404,7 +404,18 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 Name = Utilities.CSharpKeywords.Contains(paramName) ? $"@{paramName}" : paramName,
                 Flow = paramFlow,
                 Type = paramType,
-                Count = countSignature
+                Count = countSignature,
+                Attributes = paramType.Name.StartsWith
+                    ("GLDEBUGPROC")
+                    ? new List<Attribute>
+                    {
+                        new Attribute
+                        {
+                            Arguments = new List<string> {"Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"},
+                            Name = "Ultz.SuperInvoke.InteropServices.PinObjectAttribute"
+                        }
+                    }
+                    : new List<Attribute>()
             };
         }
 

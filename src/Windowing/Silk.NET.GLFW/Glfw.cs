@@ -7,6 +7,7 @@ using System;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Ultz.SuperInvoke;
+using Ultz.SuperInvoke.InteropServices;
 
 namespace Silk.NET.GLFW
 {
@@ -291,26 +292,27 @@ namespace Silk.NET.GLFW
 
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.CharCallback SetCharCallback(WindowHandle* window,
-            GlfwCallbacks.CharCallback callback);
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.CharCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.CharModsCallback SetCharModsCallback(WindowHandle* window,
-            GlfwCallbacks.CharModsCallback callback);
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.CharModsCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.CursorEnterCallback SetCursorEnterCallback(WindowHandle* window,
-            GlfwCallbacks.CursorEnterCallback callback);
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.CursorEnterCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.CursorPosCallback SetCursorPosCallback(WindowHandle* window,
-            GlfwCallbacks.CursorPosCallback callback);
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.CursorPosCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.DropCallback SetDropCallback(WindowHandle* window,
-            GlfwCallbacks.DropCallback callback);
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.DropCallback callback);
 
         /// <inheritdoc />
-        public abstract GlfwCallbacks.ErrorCallback SetErrorCallback(GlfwCallbacks.ErrorCallback callback);
+        public abstract GlfwCallbacks.ErrorCallback SetErrorCallback
+            ([PinObject(PinMode.UntilNextCall)] GlfwCallbacks.ErrorCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe void SetInputMode(WindowHandle* window, CursorStateAttribute mode,
@@ -320,41 +322,43 @@ namespace Silk.NET.GLFW
         public abstract unsafe void SetInputMode(WindowHandle* window, StickyAttributes mode, bool value);
 
         /// <inheritdoc />
-        public abstract GlfwCallbacks.JoystickCallback SetJoystickCallback(GlfwCallbacks.JoystickCallback callback);
+        public abstract GlfwCallbacks.JoystickCallback SetJoystickCallback
+            ([PinObject(PinMode.UntilNextCall)] GlfwCallbacks.JoystickCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.KeyCallback SetKeyCallback(WindowHandle* window,
-            GlfwCallbacks.KeyCallback callback);
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.KeyCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.ScrollCallback SetScrollCallback(WindowHandle* window,
-            GlfwCallbacks.ScrollCallback callback);
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.ScrollCallback callback);
 
         /// <inheritdoc />
-        public abstract GlfwCallbacks.MonitorCallback SetMonitorCallback(GlfwCallbacks.MonitorCallback callback);
+        public abstract GlfwCallbacks.MonitorCallback SetMonitorCallback
+            ([PinObject(PinMode.UntilNextCall)] GlfwCallbacks.MonitorCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.MouseButtonCallback SetMouseButtonCallback(WindowHandle* window,
-            GlfwCallbacks.MouseButtonCallback callback);
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.MouseButtonCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.WindowCloseCallback SetWindowCloseCallback(WindowHandle* window,
-            GlfwCallbacks.WindowCloseCallback callback);
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowCloseCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.WindowFocusCallback SetWindowFocusCallback(WindowHandle* window,
-            GlfwCallbacks.WindowFocusCallback callback);
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowFocusCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe void SetWindowIcon(WindowHandle* window, int count, Image* images);
 
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.WindowIconifyCallback SetWindowIconifyCallback(WindowHandle* window,
-            GlfwCallbacks.WindowIconifyCallback callback);
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowIconifyCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.WindowMaximizeCallback SetWindowMaximizeCallback(WindowHandle* window,
-            GlfwCallbacks.WindowMaximizeCallback callback);
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowMaximizeCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe void SetWindowTitle(WindowHandle* window, string title);
@@ -367,7 +371,7 @@ namespace Silk.NET.GLFW
 
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.WindowSizeCallback SetWindowSizeCallback(WindowHandle* window,
-            GlfwCallbacks.WindowSizeCallback callback);
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowSizeCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe void SetWindowShouldClose(WindowHandle* window, bool value);
@@ -381,11 +385,11 @@ namespace Silk.NET.GLFW
 
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.WindowPosCallback SetWindowPosCallback(WindowHandle* window,
-            GlfwCallbacks.WindowPosCallback callback);
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowPosCallback callback);
 
         /// <inheritdoc />
         public abstract unsafe GlfwCallbacks.WindowRefreshCallback SetWindowRefreshCallback(WindowHandle* window,
-            GlfwCallbacks.WindowRefreshCallback callback);
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.WindowRefreshCallback callback);
 
         /// <inheritdoc />
         public abstract void SwapInterval(int interval);
