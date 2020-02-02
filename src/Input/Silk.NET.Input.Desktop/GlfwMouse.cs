@@ -47,6 +47,8 @@ namespace Silk.NET.Input.Desktop
             set => GlfwProvider.GLFW.Value.SetCursorPos(_handle, value.X, value.Y);
         }
 
+        public ICursor Cursor { get; private set; }
+
         public unsafe bool IsButtonPressed(MouseButton btn)
         {
             var index = GetButton(btn);
@@ -83,6 +85,7 @@ namespace Silk.NET.Input.Desktop
                     InputAction.Repeat => null,
                     _ => null
                 })?.Invoke(this, GetButton(btn));
+            Cursor = new GlfwCursor(_handle);
         }
 
         public void Unsubscribe(GlfwEvents events)
