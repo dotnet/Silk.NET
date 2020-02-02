@@ -2,10 +2,12 @@
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
+using Silk.NET.GLFW;
 using Silk.NET.Input;
 using Silk.NET.Input.Common;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
+using MouseButton = Silk.NET.Input.Common.MouseButton;
 
 namespace InputTest
 {
@@ -20,7 +22,7 @@ namespace InputTest
             var window = Window.Create(opts);
             window.Load += () =>
             {
-                var input = window.GetInput();
+                var input = window.CreateInput();
                 input.ConnectionChanged += DoConnect;
                 Console.WriteLine("Now, go press buttons in the window and you'll see the feedback here.");
                 foreach (var gamepad in input.Gamepads)
@@ -90,20 +92,25 @@ namespace InputTest
             Console.WriteLine($"G{arg1.Index}> {arg2.Name} up.");
         }
 
-        public static void DoConnect(IInputDevice device, bool isConnected)
+        public static unsafe void DoConnect(IInputDevice device, bool isConnected)
         {
+            Console.WriteLine("bong");
             Console.WriteLine(isConnected
-                ? $"Device {device.Name} connected"
-                : $"Device {device.Name} disconnected");
-            if (device is IGamepad gamepad && device.IsConnected)
+                ? $"{device.GetType().Name} {device.Name} connected"
+                : $"{device.GetType().Name} {device.Name} disconnected");
+            if (device is IGamepad gamepad)
             {
                 Console.WriteLine($"Discovered controller {gamepad.Index} (Connected: {isConnected})");
                 if (isConnected)
                 {
+                    gamepad.Deadzone = new Deadzone(0.2f, DeadzoneMethod.AdaptiveGradient);
                     gamepad.ButtonDown += InputGamepadOnButtonDown;
                     gamepad.ButtonUp += InputGamepadOnButtonUp;
                     gamepad.ThumbstickMoved += GamepadOnThumbstickMoved;
                     gamepad.TriggerMoved += GamepadOnTriggerMoved;
+                    Console.WriteLine("GUID: " + GlfwProvider.GLFW.Value.GetJoystickGUID(gamepad.Index));
+                    GlfwProvider.GLFW.Value.GetJoystickButtons(gamepad.Index, out var count);
+                    Console.WriteLine("Button Count: " + count + " Expected Button Count: " +Enum.GetValues(typeof(GamepadButton)).Length);
                 }
                 else
                 {
@@ -115,7 +122,7 @@ namespace InputTest
 
                 Console.Write("    Buttons: ");
                 const string s = "\n             ";
-                Console.WriteLine(string.Join(s, gamepad.Buttons.Select(x => x.Name + (x.Pressed ? "(1)" : "(0)"))));
+                Console.WriteLine(string.Join(s, gamepad.Buttons.Select(x => x.Index + "/" + x.Name + (x.Pressed ? "(1)" : "(0)"))));
                 Console.WriteLine($"    {gamepad.Thumbsticks.Count} thumbsticks found.");
                 Console.WriteLine($"    {gamepad.Triggers.Count} triggers found.");
             }

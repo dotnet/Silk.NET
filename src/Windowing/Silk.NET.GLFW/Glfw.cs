@@ -419,6 +419,9 @@ namespace Silk.NET.GLFW
         /// <inheritdoc />
         public abstract IntPtr GetProcAddress(string name);
 
+        /// <inheritdoc />
+        public abstract unsafe void GetMonitorWorkarea(Monitor* monitor, out int x, out int y, out int width, out int height);
+
         /// <summary>
         /// Gets an instance of the API.
         /// </summary>

@@ -11,16 +11,25 @@ using Silk.NET.Windowing.Common;
 
 namespace Silk.NET.Input
 {
+    /// <summary>
+    /// Extensions related to input contexts and windows.
+    /// </summary>
     public static class InputWindowExtensions
     {
         static InputWindowExtensions()
         {
-            SilkManager.Register<IInputPlatform>(new GlfwInputPlatform());
+            SilkManager.Register<IInputPlatform>(GlfwInputPlatform.Instance);
         }
-        public static IInputContext GetInput(this IWindow window)
+        
+        /// <summary>
+        /// Get an input context for the given window.
+        /// </summary>
+        /// <param name="window">The window to create an input context for.</param>
+        /// <returns>An input context for the provided window.</returns>
+        public static IInputContext CreateInput(this IView view)
         {
-            return SilkManager.GetOrDefault<IInputPlatform>()?.GetInput(window)
-                ?? throw new NotSupportedException("Couldn't find a suitable input platform for this window.");
+            return SilkManager.GetOrDefault<IInputPlatform>()?.CreateInput(view)
+                ?? throw new NotSupportedException("Couldn't find a suitable input platform for this view.");
         }
     }
 }

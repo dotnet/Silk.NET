@@ -5,23 +5,29 @@
 
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
+using Monitor = Silk.NET.GLFW.Monitor;
+using VideoMode = Silk.NET.Windowing.Common.VideoMode;
 
 namespace Silk.NET.Windowing.Desktop
 {
     /// <summary>
     /// A Silk.NET window, using GLFW as a backend.
     /// </summary>
-    public class GlfwWindow : IVulkanWindow
+    internal class GlfwWindow : IVulkanWindow
     {
         // The number of frames that the window has been running slowly for.
         private int _isRunningSlowlyTries;
+
+        private bool _contextMoved;
 
         // Cache variables
         private Point _position;
@@ -30,6 +36,8 @@ namespace Silk.NET.Windowing.Desktop
         private VSyncMode _vSync;
         private WindowBorder _windowBorder;
         private WindowState _windowState;
+        private Point _nonFullscreenPosition;
+        private Size _nonFullscreenSize;
 
         // Glfw stuff
         private readonly Glfw _glfw = GlfwProvider.GLFW.Value;
@@ -62,12 +70,13 @@ namespace Silk.NET.Windowing.Desktop
 
         private WindowOptions _initialOptions;
         private bool _running;
+        private IMonitor _initialMonitor;
 
         /// <summary>
         /// Create a new GlfwWindow.
         /// </summary>
         /// <param name="options">The options to use for this window.</param>
-        public GlfwWindow(WindowOptions options)
+        public unsafe GlfwWindow(WindowOptions options, GlfwWindow parent, GlfwMonitor monitor)
         {
             // Title and Size must be set before the window is created.
             _title = options.Title;
@@ -83,6 +92,14 @@ namespace Silk.NET.Windowing.Desktop
             ShouldSwapAutomatically = options.ShouldSwapAutomatically;
             
             _initialOptions = options;
+            _initialMonitor = monitor;
+            Parent = (IWindowHost)parent ?? _initialMonitor;
+
+            GlfwProvider.GLFW.Value.GetVersion(out var major, out var minor, out _);
+            if (new Version(major, minor) < new Version(3, 3))
+            {
+                throw new NotSupportedException("GLFW 3.3 or later is required for Silk.NET.Windowing.Desktop.");
+            }
         }
 
         /// <inheritdoc />
@@ -142,6 +159,21 @@ namespace Silk.NET.Windowing.Desktop
         public bool ShouldSwapAutomatically { get; }
 
         /// <inheritdoc />
+        public unsafe VideoMode VideoMode
+        {
+            get
+            {
+                var monitor = Monitor;
+                return monitor != null
+                    ? monitor.VideoMode
+                    : _initialOptions.VideoMode;
+            }
+        }
+
+        /// <inheritdoc />
+        public int? PreferredDepthBufferBits => _initialOptions.PreferredDepthBufferBits;
+
+        /// <inheritdoc />
         public Point Position
         {
             get => _position;
@@ -156,6 +188,7 @@ namespace Silk.NET.Windowing.Desktop
                 }
 
                 _position = value;
+                _nonFullscreenPosition = value;
                 _initialOptions.Position = value;
             }
         }
@@ -175,6 +208,7 @@ namespace Silk.NET.Windowing.Desktop
                 }
 
                 _initialOptions.Size = value;
+                _nonFullscreenSize = value;
                 _size = value;
             }
         }
@@ -243,6 +277,25 @@ namespace Silk.NET.Windowing.Desktop
                 {
                     unsafe
                     {
+                        if (_windowState == WindowState.Normal)
+                        {
+                            _nonFullscreenPosition = _position;
+                            _nonFullscreenSize = _size;
+                        }
+                        else if (_windowState == WindowState.Fullscreen &&
+                                 value != WindowState.Fullscreen)
+                        {
+                            _glfw.SetWindowMonitor
+                            (
+                                _windowPtr, null,
+                                _nonFullscreenPosition.X,
+                                _nonFullscreenPosition.Y,
+                                _nonFullscreenSize.Width,
+                                _nonFullscreenSize.Height,
+                                0
+                            );
+                        }
+
                         switch (value)
                         {
                             case WindowState.Normal:
@@ -257,10 +310,14 @@ namespace Silk.NET.Windowing.Desktop
                             case WindowState.Fullscreen:
                                 var monitor = _glfw.GetPrimaryMonitor();
                                 var mode = _glfw.GetVideoMode(monitor);
+                                var videoMode = _initialOptions.VideoMode;
+                                var resolution = videoMode.Resolution;
                                 _glfw.SetWindowMonitor
                                 (
-                                    _windowPtr, monitor, 0, 0, mode->Width, mode->Height,
-                                    mode->RefreshRate
+                                    _windowPtr, monitor, 0, 0,
+                                    resolution.HasValue ? resolution.Value.Width : mode->Width,
+                                    resolution.HasValue ? resolution.Value.Height : mode->Height,
+                                    videoMode.RefreshRate ?? mode->RefreshRate
                                 );
                                 break;
                         }
@@ -362,8 +419,6 @@ namespace Silk.NET.Windowing.Desktop
             return task.Result;
         }
 
-        private bool _contextMoved;
-
         /// <inheritdoc />
         public unsafe void MakeCurrent()
         {
@@ -396,7 +451,7 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
-        public unsafe void Open()
+        public unsafe void Initialize()
         {
             if (_windowPtr != default)
             {
@@ -461,8 +516,19 @@ namespace Silk.NET.Windowing.Desktop
                 _initialOptions.API.Profile == ContextProfile.Core ? OpenGlProfile.Core : OpenGlProfile.Compat
             );
 
+            // Set video mode (-1 = don't care)
+            _glfw.WindowHint(WindowHintInt.RefreshRate, _initialOptions.VideoMode.RefreshRate ?? -1);
+            _glfw.WindowHint(WindowHintInt.DepthBits, _initialOptions.PreferredDepthBufferBits ?? -1);
+
             // Create window
-            _windowPtr = _glfw.CreateWindow(_size.Width, _size.Height, _title, null, null);
+            _windowPtr = _glfw.CreateWindow
+            (
+                _size.Width, _size.Height, _title, _initialMonitor is GlfwMonitor x ? x.Handle : null, null
+            );
+
+            // Initialize some variables
+            _isRunningSlowlyTries = 0;
+            _running = true;
 
             _invokeQueue = new ConcurrentQueue<Task>();
             _mainThread = Thread.CurrentThread.ManagedThreadId;
@@ -485,12 +551,6 @@ namespace Silk.NET.Windowing.Desktop
 
             // Run OnLoad.
             Load?.Invoke();
-
-            // Initialize some variables
-            _isRunningSlowlyTries = 0;
-            _running = true;
-            
-            VSync = _initialOptions.VSync;
 
             _renderStopwatch = new Stopwatch();
             _updateStopwatch = new Stopwatch();
@@ -816,6 +876,105 @@ namespace Silk.NET.Windowing.Desktop
         public unsafe char** GetRequiredExtensions(out uint count)
         {
             return (char**) _glfw.GetRequiredInstanceExtensions(out count);
+        }
+
+        /// <summary>
+        /// Creates a subwindow with the given options.
+        /// </summary>
+        /// <param name="opts">The window options to use.</param>
+        /// <returns>A subwindow.</returns>
+        public IWindow CreateWindow(WindowOptions opts)
+        {
+            // GLFW doesn't support child windows yet, so just create a window as normal.
+            return GlfwPlatform.Instance.CreateWindow(opts);
+        }
+
+        public IWindowHost Parent { get; }
+
+        public unsafe IMonitor Monitor
+        {
+            get
+            {
+                if (!_running)
+                {
+                    return _initialMonitor;
+                }
+
+                var monitor = _glfw.GetWindowMonitor(_windowPtr);
+                if (monitor == null)
+                {
+                    if (_windowState != WindowState.Fullscreen)
+                    {
+                        var monitors = new GlfwMonitorEnumerable();
+                        // Determine which monitor this window is on. [6 marks]
+                        foreach (var m in monitors)
+                        {
+                            var pos = Position;
+                            var size = Size;
+                            if (m.Bounds.Contains(new Point(pos.X + size.Width / 2, pos.Y + size.Height / 2)))
+                            {
+                                return m;
+                            }
+                        }
+                    }
+                        
+                    monitor = _glfw.GetPrimaryMonitor();
+                }
+
+                return monitor == null ? null : new GlfwMonitor
+                (
+                    monitor,
+                    IndexOf(_glfw.GetMonitors(out var count), monitor, count)
+                );
+            }
+            set
+            {
+                if (!_running)
+                {
+                    throw new InvalidOperationException("Window is not running.");
+                }
+
+                if (value is null)
+                {
+                    throw new ArgumentNullException();
+                }
+
+                if (_windowState == WindowState.Fullscreen)
+                {
+                    var h = ((GlfwMonitor) value).Handle;
+                    var vidMode = value.VideoMode;
+                    var resolution = vidMode.Resolution;
+                    if (!resolution.HasValue)
+                    {
+                        throw new InvalidOperationException("Monitor resolution not found.");
+                    }
+
+                    if (!vidMode.RefreshRate.HasValue)
+                    {
+                        throw new InvalidOperationException("Monitor refresh rate not found.");
+                    }
+
+                    _glfw.SetWindowMonitor(_windowPtr, h, 0, 0, resolution.Value.Width, resolution.Value.Height, vidMode.RefreshRate.Value);
+                }
+                else
+                {
+                    Position = value.Bounds.Location;
+                }
+            }
+        }
+
+        private unsafe int IndexOf<T>(T** array, T* target, int count)
+            where T:unmanaged
+        {
+            for (var i = 0; i < count; i++)
+            {
+                if (array[i] == target)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
         }
     }
 }
