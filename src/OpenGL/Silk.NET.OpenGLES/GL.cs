@@ -5,16 +5,14 @@ using System.Linq;
 using System.Numerics;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Silk.NET.OpenGLES;
+using Silk.NET.Core.Platform;
 
 namespace Silk.NET.OpenGLES
 {
     public partial class GL
     {
-        public static GL GetApi()
-        {
-             return LibraryLoader<GL>.Load(new OpenGLESLibraryNameContainer());
-        }
+        public static GL GetApi() => LibraryLoader<GL>.Load
+            (new OpenGLESLibraryNameContainer(), SilkManager.Get<GLSymbolLoader>());
 
         public bool TryGetExtension<T>(out T ext)
             where T:NativeExtension<GL>
