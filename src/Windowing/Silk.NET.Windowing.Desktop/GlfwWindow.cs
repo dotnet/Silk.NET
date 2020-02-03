@@ -159,16 +159,7 @@ namespace Silk.NET.Windowing.Desktop
         public bool ShouldSwapAutomatically { get; }
 
         /// <inheritdoc />
-        public unsafe VideoMode VideoMode
-        {
-            get
-            {
-                var monitor = Monitor;
-                return monitor != null
-                    ? monitor.VideoMode
-                    : _initialOptions.VideoMode;
-            }
-        }
+        public VideoMode VideoMode => Monitor?.VideoMode ?? _initialOptions.VideoMode;
 
         /// <inheritdoc />
         public int? PreferredDepthBufferBits => _initialOptions.PreferredDepthBufferBits;
@@ -193,7 +184,7 @@ namespace Silk.NET.Windowing.Desktop
             }
         }
 
-        /// <inheritdoc />
+        /// <inheritdoc cref="Size" />
         public Size Size
         {
             get => _size;
@@ -315,8 +306,8 @@ namespace Silk.NET.Windowing.Desktop
                                 _glfw.SetWindowMonitor
                                 (
                                     _windowPtr, monitor, 0, 0,
-                                    resolution.HasValue ? resolution.Value.Width : mode->Width,
-                                    resolution.HasValue ? resolution.Value.Height : mode->Height,
+                                    resolution?.Width ?? mode->Width,
+                                    resolution?.Height ?? mode->Height,
                                     videoMode.RefreshRate ?? mode->RefreshRate
                                 );
                                 break;
