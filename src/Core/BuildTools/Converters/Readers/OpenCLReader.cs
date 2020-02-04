@@ -26,7 +26,95 @@ namespace Silk.NET.BuildTools.Converters.Readers
 {
     public class OpenCLReader : IReader
     {
-        private static readonly string[] Apis = "gl|glcore|gles1|gles2|glsc2".Split('|');
+        private static readonly string[] Apis = "opencl".Split('|');
+
+        private static readonly Dictionary<string, object> Constants = new Dictionary<string, object>
+        {
+            // Constants
+            {"CL_CHAR_BIT", 8},
+            {"CL_SCHAR_MAX", 127},
+            {"CL_SCHAR_MIN", -127 - 1},
+            {"CL_CHAR_MAX", 127},
+            {"CL_CHAR_MIN", -127 - 1},
+            {"CL_UCHAR_MAX", 255},
+            {"CL_SHRT_MAX", 32767},
+            {"CL_SHRT_MIN", -32767 - 1},
+            {"CL_USHRT_MAX", 65535},
+            {"CL_INT_MAX", 2147483647},
+            {"CL_INT_MIN", -2147483647 - 1},
+            {"CL_UINT_MAX", 0xffffffffU},
+            {"CL_LONG_MAX", (long) 0x7FFFFFFFFFFFFFFFL},
+            {"CL_LONG_MIN", (long) -0x7FFFFFFFFFFFFFFFL - 1L},
+            {"CL_ULONG_MAX", (ulong) 0xFFFFFFFFFFFFFFFFUL},
+            {"CL_FLT_DIG", 6},
+            {"CL_FLT_MANT_DIG", 24},
+            {"CL_FLT_MAX_10_EXP", +38},
+            {"CL_FLT_MAX_EXP", +128},
+            {"CL_FLT_MIN_10_EXP", -37},
+            {"CL_FLT_MIN_EXP", -125},
+            {"CL_FLT_RADIX", 2},
+            {"CL_FLT_MAX", 340282346638528859811704183484516925440.0f},
+            {"CL_FLT_MIN", 1.175494350822287507969e-38f},
+            {"CL_FLT_EPSILON", 1.1920928955078125e-7f},
+            {"CL_HALF_DIG", 3},
+            {"CL_HALF_MANT_DIG", 11},
+            {"CL_HALF_MAX_10_EXP", +4},
+            {"CL_HALF_MAX_EXP", +16},
+            {"CL_HALF_MIN_10_EXP", -4},
+            {"CL_HALF_MIN_EXP", -13},
+            {"CL_HALF_RADIX", 2},
+            {"CL_HALF_MAX", 65504.0f},
+            {"CL_HALF_MIN", 6.103515625e-05f},
+            {"CL_HALF_EPSILON", 9.765625e-04f},
+            {"CL_DBL_DIG", 15},
+            {"CL_DBL_MANT_DIG", 53},
+            {"CL_DBL_MAX_10_EXP", +308},
+            {"CL_DBL_MAX_EXP", +1024},
+            {"CL_DBL_MIN_10_EXP", -307},
+            {"CL_DBL_MIN_EXP", -1021},
+            {"CL_DBL_RADIX", 2},
+            {"CL_DBL_MAX", 1.7976931348623158e+308},
+            {"CL_DBL_MIN", 2.225073858507201383090e-308},
+            {"CL_DBL_EPSILON", 2.220446049250313080847e-16},
+            {"CL_M_E", 2.7182818284590452354},
+            {"CL_M_LOG2E", 1.4426950408889634074},
+            {"CL_M_LOG10E", 0.43429448190325182765},
+            {"CL_M_LN2", 0.69314718055994530942},
+            {"CL_M_LN10", 2.30258509299404568402},
+            {"CL_M_PI", 3.14159265358979323846},
+            {"CL_M_PI_2", 1.57079632679489661923},
+            {"CL_M_PI_4", 0.78539816339744830962},
+            {"CL_M_1_PI", 0.31830988618379067154},
+            {"CL_M_2_PI", 0.63661977236758134308},
+            {"CL_M_2_SQRTPI", 1.12837916709551257390},
+            {"CL_M_SQRT2", 1.41421356237309504880},
+            {"CL_M_SQRT1_2", 0.70710678118654752440},
+            {"CL_M_E_F", 2.718281828f},
+            {"CL_M_LOG2E_F", 1.442695041f},
+            {"CL_M_LOG10E_F", 0.434294482f},
+            {"CL_M_LN2_F", 0.693147181f},
+            {"CL_M_LN10_F", 2.302585093f},
+            {"CL_M_PI_F", 3.141592654f},
+            {"CL_M_PI_2_F", 1.570796327f},
+            {"CL_M_PI_4_F", 0.785398163f},
+            {"CL_M_1_PI_F", 0.318309886f},
+            {"CL_M_2_PI_F", 0.636619772f},
+            {"CL_M_2_SQRTPI_F", 1.128379167f},
+            {"CL_M_SQRT2_F", 1.414213562f},
+            {"CL_M_SQRT1_2_F", 0.707106781f},
+            {"CL_NAN", float.NaN},
+            {"CL_HUGE_VALF", (float) 1e50},
+            {"CL_HUGE_VAL", double.PositiveInfinity},
+            {"CL_MAXFLOAT", float.MaxValue},
+            {"CL_INFINITY", float.PositiveInfinity},
+            
+            // MiscNumbers
+            {"CL_PROPERTIES_LIST_END_EXT", 0},
+            {"CL_PARTITION_BY_COUNTS_LIST_END_EXT", 0},
+            {"CL_DEVICE_PARTITION_BY_COUNTS_LIST_END", 0x0},
+            {"CL_PARTITION_BY_NAMES_LIST_END_EXT", 0 - 1},
+            {"CL_PARTITION_BY_NAMES_LIST_END_INTEL", -1},
+        };
         public object Load(Stream stream)
         {
             return XDocument.Load(stream);
@@ -62,7 +150,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     var apiName = requirement.Attribute("api")?.Value ??
                                   api.Attribute("api")?.Value ??
                                   api.Attribute("supported")?.Value ??
-                                  "gl";
+                                  "opencl";
                     var apiVersion = api.Attribute("number") != null
                         ? Version.Parse(api.Attribute("number").Value)
                         : null;
@@ -102,24 +190,6 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             };
 
                             yield return ret;
-
-                            if (api.Name == "feature" && name == "gl" && ret.Attributes.Count == 0)
-                            {
-                                yield return new Function
-                                {
-                                    Attributes = new List<Attribute>(),
-                                    Categories = ret.Categories,
-                                    Doc = ret.Doc,
-                                    ExtensionName = ret.ExtensionName,
-                                    GenericTypeParameters = new List<GenericTypeParameter>(),
-                                    Name = ret.Name,
-                                    NativeName = ret.NativeName,
-                                    Parameters = ret.Parameters,
-                                    ProfileName = "glcore",
-                                    ProfileVersion = apiVersion,
-                                    ReturnType = ret.ReturnType
-                                };
-                            }
 
                             allFunctions.Remove(function);
                         }
@@ -406,7 +476,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 Type = paramType,
                 Count = countSignature,
                 Attributes = paramType.Name.StartsWith
-                    ("GLDEBUGPROC")
+                    ("CL_CALLBACK")
                     ? new List<Attribute>
                     {
                         new Attribute
@@ -432,29 +502,32 @@ namespace Silk.NET.BuildTools.Converters.Readers
             }
 
             return name.ToLower().StartsWith(opts.Prefix.ToLower()) ? name.Remove(0, opts.Prefix.Length) : name;
-        } 
+        }
 
+        private static Random _random = new Random();
         private static string FunctionParameterType(XElement e)
         {
             // Parse the C-like <proto> element. Possible instances:
             // Return types:
-            // - <proto>void <name>glGetSharpenTexFuncSGIS</name></proto>
+            // - <proto>void <name>clGetSharpenTexFuncSGIS</name></proto>
             //   -> <returns>void</returns>
-            // - <proto group="String">const <ptype>GLubyte</ptype> *<name>glGetString</name></proto>
+            // - <proto group="String">const <ptype>clubyte</ptype> *<name>clGetString</name></proto>
             //   -> <returns>String</returns>
             // Note: group attribute takes precedence if it exists. This matches the old .spec file format.
             // Parameter types:
-            // - <param><ptype>GLenum</ptype> <name>shadertype</name></param>
-            //   -> <param name="shadertype" type="GLenum" />
-            // - <param len="1"><ptype>GLsizei</ptype> *<name>length</name></param>
-            //   -> <param name="length" type="GLsizei" count="1" />
+            // - <param><ptype>clenum</ptype> <name>shadertype</name></param>
+            //   -> <param name="shadertype" type="clenum" />
+            // - <param len="1"><ptype>clsizei</ptype> *<name>length</name></param>
+            //   -> <param name="length" type="clsizei" count="1" />
             var proto = e.Value;
             var name = e.Element("name");
             if (name == null) {
-                throw new InvalidOperationException("Name is null");
+                Debug.WriteLine($"Warning: Parameter name is null. Element: {e}.");
             }
 
-            var ret = proto.Remove(proto.LastIndexOf(name.Value, StringComparison.Ordinal)).Trim();
+            var ret = name is null
+                ? proto
+                : proto.Remove(proto.LastIndexOf(name.Value, StringComparison.Ordinal)).Trim();
 
             return ret;
         }
@@ -493,7 +566,15 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 var param = FunctionParameterType(parameter);
 
                 var p = new XElement("param");
-                var pname = new XAttribute("name", parameter.Element("name")?.Value ?? throw new NullReferenceException());
+                string randomName = null;
+                if (parameter.Element("name") is null)
+                {
+                    Debug.WriteLine($"Warning: Parameter name is null. Element: {parameter}.");
+                    randomName = "unnamedParameter" + GetRandomName();
+                    Debug.WriteLine($"Giving it random name {randomName}");
+                }
+                
+                var pname = new XAttribute("name", parameter.Element("name")?.Value ?? randomName);
                 var type = new XAttribute
                 (
                     "type",
@@ -530,6 +611,13 @@ namespace Silk.NET.BuildTools.Converters.Readers
             function.Add(name);
             function.Add(returns);
             return function;
+
+            string GetRandomName()
+            {
+                var bytes = new byte[4];
+                _random.NextBytes(bytes);
+                return BitConverter.ToString(bytes).Replace("-", null);
+            }
         }
         
         ////////////////////////////////////////////////////////////////////////////////////////
@@ -539,9 +627,15 @@ namespace Silk.NET.BuildTools.Converters.Readers
         public IEnumerable<Enum> ReadEnums(object obj, ProfileConverterOptions opts)
         {
             var doc = obj as XDocument;
-            var allEnums = doc.Element("registry").Elements("enums")
+            var allEnums = doc.Element("registry")
+                .Elements("enums")
                 .Elements("enum")
                 .DistinctBy(x => x.Attribute("name")?.Value)
+                .Where
+                (
+                    x => x.Parent?.Attribute("name")?.Value != "Constants" &&
+                         x.Parent?.Attribute("name")?.Value != "MiscNumbers"
+                )
                 .ToDictionary
                 (
                     x => x.Attribute("name")?.Value,
@@ -561,12 +655,13 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     var apiName = requirement.Attribute("api")?.Value ??
                                   api.Attribute("api")?.Value ??
                                   api.Attribute("supported")?.Value ??
-                                  "gl";
+                                  "opencl";
                     var apiVersion = api.Attribute("number") != null
                         ? Version.Parse(api.Attribute("number").Value)
                         : null;
                     var tokens = requirement.Elements("enum")
                         .Attributes("name")
+                        .Where(x => !Constants.ContainsKey(x.Value) && allEnums.ContainsKey(x.Value))
                         .Select
                         (
                             token => new Token
@@ -585,10 +680,13 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 Doc = string.Empty,
                                 Name = Naming.Translate(TrimName(token.Value, opts), opts.Prefix),
                                 NativeName = token.Value,
-                                Value = allEnums[token.Value]
+                                Value = allEnums.ContainsKey
+                                    (token.Value)
+                                    ? allEnums[token.Value]
+                                    : FormatToken(Constants[token.Value].ToString())
                             }
                         )
-                        .ToList(); 
+                        .ToList();
                     foreach (var name in apiName.Split('|'))
                     {
                         var ret = new Enum
@@ -605,78 +703,6 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         };
 
                         yield return ret;
-
-                        if (api.Name == "feature" && name == "gl")
-                        {
-                            yield return new Enum
-                            {
-                                Attributes = ret.Attributes,
-                                ExtensionName = ret.ExtensionName,
-                                Name = ret.Name,
-                                NativeName = ret.NativeName,
-                                ProfileName = "glcore",
-                                ProfileVersion = apiVersion,
-                                Tokens = tokens.Where(x => x.Attributes.Count == 0).ToList()
-                            };
-                        }
-                    }
-                }
-            }
-
-            foreach (var group in doc.Element("registry").Element("groups").Elements("group"))
-            {
-                var tokens = group.Elements("enum")
-                    .Select(x => x.GetNameAttribute())
-                    .Select
-                    (
-                        token => new Token
-                        {
-                            Attributes = removals.Contains(token)
-                                ? new List<Attribute>
-                                {
-                                    new Attribute
-                                    {
-                                        Name = "System.Obsolete"
-                                    }
-                                }
-                                : new List<Attribute>(),
-                            Doc = string.Empty,
-                            Name = Naming.Translate(TrimName(token, opts), opts.Prefix),
-                            NativeName = token,
-                            Value = allEnums[token]
-                        }
-                    )
-                    .ToList();
-                foreach (var (apiName, apiVersion) in doc.Element("registry")
-                    .Elements("feature")
-                    .Select(x => (x.Attribute("api").Value, x.Attribute("number").Value))
-                    .Distinct())
-                {
-                    var ret = new Enum
-                    {
-                        Name = group.GetNameAttribute(),
-                        NativeName = group.GetNameAttribute(),
-                        Attributes = new List<Attribute>(),
-                        ExtensionName = "Core (Grouped)",
-                        ProfileName = apiName,
-                        ProfileVersion = Version.Parse(apiVersion),
-                        Tokens = tokens
-                    };
-
-                    yield return ret;
-
-                    if (apiName == "gl")
-                    {
-                        yield return new Enum
-                        {
-                            Name = ret.Name,
-                            NativeName = ret.NativeName,
-                            Attributes = new List<Attribute>(),
-                            ExtensionName = "Core (Grouped)",
-                            ProfileName = "glcore",
-                            ProfileVersion = Version.Parse(apiVersion),
-                            Tokens = tokens.Where(x => x.Attributes.Count == 0).ToList()
-                        };
                     }
                 }
             }
@@ -684,8 +710,25 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
         public IEnumerable<Constant> ReadConstants(object obj, ProfileConverterOptions opts)
         {
-            return new Constant[0];
+            return Constants.Select
+            (
+                x => new Constant
+                {
+                    Name = Naming.Translate(TrimName(x.Key, opts), opts.Prefix), NativeName = x.Key,
+                    Type = GetType(x.Value), Value = x.Value.ToString()
+                }
+            );
         }
+
+        private Type GetType(object o) => o switch
+        {
+            double _ => new Type {Name = "double"},
+            float _ => new Type {Name = "float"},
+            int _ => new Type {Name = "int"},
+            long _ => new Type {Name = "long"},
+            ulong _ => new Type {Name = "ulong"},
+            _ => new Type {Name = "int"}
+        };
 
         private static string FormatToken(string token)
         {
@@ -693,6 +736,23 @@ namespace Silk.NET.BuildTools.Converters.Readers
             {
                 return null;
             }
+            
+            if (token == "CL_TRUE") return 1.ToString();
+            if (token == "CL_FALSE") return 0.ToString();
+            if (token == "(0x1 << 24)") return (0x1 << 24).ToString();
+            if (token == "(0x2 << 24)") return (0x2 << 24).ToString();
+            if (token == "(0x3 << 24)") return (0x3 << 24).ToString();
+            if (token == "(0x55 << 24)") return (0x55 << 24).ToString();
+            if (token == "(0xAA << 24)") return (0xAA << 24).ToString();
+            if (token == "(0xFF << 24)") return (0xFF << 24).ToString();
+            if (token == "(0x1 << 24)") return (0x1 << 24).ToString();
+            if (token == "(0x2 << 24)") return (0x2 << 24).ToString();
+            if (token == "(0x1 << 26)") return (0x1 << 26).ToString();
+            if (token == "(0x2 << 26)") return (0x2 << 26).ToString();
+            if (token == "(0x1 << 28)") return (0x1 << 28).ToString();
+            if (token == "(0x2 << 28)") return (0x2 << 28).ToString();
+            if (token == "(0x1 << 30)") return (0x1 << 30).ToString();
+            if (token == "(0x2 << 30)") return (0x2 << 30).ToString();
 
             var tokenHex = token.StartsWith("0x") ? token.Substring(2) : token;
 
@@ -700,7 +760,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
             {
                 if (!long.TryParse(tokenHex, out value))
                 {
-                    throw new InvalidDataException("Token value was not in a valid format.");
+                    if (!ulong.TryParse(tokenHex, out var uValue))
+                    {
+                        throw new InvalidDataException("Token value was not in a valid format.");
+                    }
+
+                    value = unchecked((long) uValue);
                 }
             }
 
