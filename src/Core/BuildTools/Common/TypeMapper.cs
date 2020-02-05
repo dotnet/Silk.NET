@@ -117,13 +117,13 @@ namespace Silk.NET.BuildTools.Common
                     {
                         foreach (var parameter in function.Parameters)
                         {
-                            if (parameter.Type.OriginalName == "GLenum")
+                            if (parameter.Type.OriginalName == "GLenum" || parameter.Type.Name == "CLenum")
                             {
                                 parameter.Type.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
                             }
                         }
 
-                        if (function.ReturnType.OriginalName == "GLenum")
+                        if (function.ReturnType.OriginalName == "GLenum" || function.ReturnType.Name == "CLenum")
                         {
                             function.ReturnType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
                         }

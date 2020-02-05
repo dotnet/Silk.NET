@@ -1,0 +1,28 @@
+[
+  {
+    "Name": "OpenCL",
+    "Implements": [
+        "opencl",
+        "opencl-1.0",
+        "opencl-1.1",
+        "opencl-1.2",
+        "opencl-2.0",
+        "opencl-2.1",
+        "opencl-2.2",
+    ],
+    "Namespace": "Silk.NET.OpenCL",
+    "ExtensionsNamespace": "Silk.NET.OpenCL.Extensions",
+    "OutputFolder": "OpenCL",
+    "NameContainer": {
+      "Linux": "libOpenCL.so",
+      "Windows": "opencl.dll",
+      "MacOS": "/System/Library/Frameworks/OpenCL.framework/OpenCL",
+      "Android": "libOpenCL.so",
+      "IOS": "/System/Library/Frameworks/OpenCL.framework/OpenCL",
+      "ClassName": "OpenCLLibraryNameContainer"
+    },
+    "FunctionPrefix": "cl",
+    "ClassName": "CL",
+    "SymbolLoader": "Ultz.SuperInvoke.Loader.LibraryLoader.GetPlatformDefaultLoader()"
+  }
+]
