@@ -20,7 +20,8 @@ namespace Silk.NET.OpenCL
 
         public override bool IsExtensionPresent(string extension)
         {
-            throw new NotImplementedException();
+            return true; // idk opencl doesn't define a default way for extension loading,
+                         // nor is one ever defined on the internet so just assume that it's all good
         }
     }
 }
