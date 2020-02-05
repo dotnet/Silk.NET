@@ -496,7 +496,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
         public string TrimName(string name, ProfileConverterOptions opts)
         {
-            if (name.StartsWith($"{opts.Prefix.ToUpper()}_"))
+            if (name.ToUpper().StartsWith($"{opts.Prefix.ToUpper()}_"))
             {
                 return name.Remove(0, opts.Prefix.Length + 1);
             }
@@ -639,7 +639,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 .ToDictionary
                 (
                     x => x.Attribute("name")?.Value,
-                    x => FormatToken(x.Attribute("value")?.Value)
+                    x => FormatToken
+                    (
+                        x.Attribute("value")?.Value ?? (x.Attribute("bitpos") is null
+                            ? null
+                            : (1 << int.Parse(x.Attribute("bitpos").Value)).ToString())
+                    )
                 );
             var apis = doc.Element("registry").Elements("feature").Concat(doc.Element("registry").Elements("extensions").Elements("extension"));
             var removals = doc.Element("registry").Elements("feature")

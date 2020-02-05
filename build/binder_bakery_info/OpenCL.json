@@ -1,6 +1,6 @@
 [
   {
-    "Name": "OpenGL (Compatibility Profile)",
+    "Name": "OpenCL",
     "Implements": [
         "opencl",
         "opencl-1.0",
