@@ -17,6 +17,7 @@ using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Common.Structs;
 using Silk.NET.BuildTools.Converters.Khronos;
 using Attribute = Silk.NET.BuildTools.Common.Attribute;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
@@ -28,92 +29,92 @@ namespace Silk.NET.BuildTools.Converters.Readers
     {
         private static readonly string[] Apis = "opencl".Split('|');
 
-        private static readonly Dictionary<string, object> Constants = new Dictionary<string, object>
+        private static readonly Dictionary<string, string> Constants = new Dictionary<string, string>
         {
             // Constants
-            {"CL_CHAR_BIT", 8},
-            {"CL_SCHAR_MAX", 127},
-            {"CL_SCHAR_MIN", -127 - 1},
-            {"CL_CHAR_MAX", 127},
-            {"CL_CHAR_MIN", -127 - 1},
-            {"CL_UCHAR_MAX", 255},
-            {"CL_SHRT_MAX", 32767},
-            {"CL_SHRT_MIN", -32767 - 1},
-            {"CL_USHRT_MAX", 65535},
-            {"CL_INT_MAX", 2147483647},
-            {"CL_INT_MIN", -2147483647 - 1},
-            {"CL_UINT_MAX", 0xffffffffU},
-            {"CL_LONG_MAX", (long) 0x7FFFFFFFFFFFFFFFL},
-            {"CL_LONG_MIN", (long) -0x7FFFFFFFFFFFFFFFL - 1L},
-            {"CL_ULONG_MAX", (ulong) 0xFFFFFFFFFFFFFFFFUL},
-            {"CL_FLT_DIG", 6},
-            {"CL_FLT_MANT_DIG", 24},
-            {"CL_FLT_MAX_10_EXP", +38},
-            {"CL_FLT_MAX_EXP", +128},
-            {"CL_FLT_MIN_10_EXP", -37},
-            {"CL_FLT_MIN_EXP", -125},
-            {"CL_FLT_RADIX", 2},
-            {"CL_FLT_MAX", 340282346638528859811704183484516925440.0f},
-            {"CL_FLT_MIN", 1.175494350822287507969e-38f},
-            {"CL_FLT_EPSILON", 1.1920928955078125e-7f},
-            {"CL_HALF_DIG", 3},
-            {"CL_HALF_MANT_DIG", 11},
-            {"CL_HALF_MAX_10_EXP", +4},
-            {"CL_HALF_MAX_EXP", +16},
-            {"CL_HALF_MIN_10_EXP", -4},
-            {"CL_HALF_MIN_EXP", -13},
-            {"CL_HALF_RADIX", 2},
-            {"CL_HALF_MAX", 65504.0f},
-            {"CL_HALF_MIN", 6.103515625e-05f},
-            {"CL_HALF_EPSILON", 9.765625e-04f},
-            {"CL_DBL_DIG", 15},
-            {"CL_DBL_MANT_DIG", 53},
-            {"CL_DBL_MAX_10_EXP", +308},
-            {"CL_DBL_MAX_EXP", +1024},
-            {"CL_DBL_MIN_10_EXP", -307},
-            {"CL_DBL_MIN_EXP", -1021},
-            {"CL_DBL_RADIX", 2},
-            {"CL_DBL_MAX", 1.7976931348623158e+308},
-            {"CL_DBL_MIN", 2.225073858507201383090e-308},
-            {"CL_DBL_EPSILON", 2.220446049250313080847e-16},
-            {"CL_M_E", 2.7182818284590452354},
-            {"CL_M_LOG2E", 1.4426950408889634074},
-            {"CL_M_LOG10E", 0.43429448190325182765},
-            {"CL_M_LN2", 0.69314718055994530942},
-            {"CL_M_LN10", 2.30258509299404568402},
-            {"CL_M_PI", 3.14159265358979323846},
-            {"CL_M_PI_2", 1.57079632679489661923},
-            {"CL_M_PI_4", 0.78539816339744830962},
-            {"CL_M_1_PI", 0.31830988618379067154},
-            {"CL_M_2_PI", 0.63661977236758134308},
-            {"CL_M_2_SQRTPI", 1.12837916709551257390},
-            {"CL_M_SQRT2", 1.41421356237309504880},
-            {"CL_M_SQRT1_2", 0.70710678118654752440},
-            {"CL_M_E_F", 2.718281828f},
-            {"CL_M_LOG2E_F", 1.442695041f},
-            {"CL_M_LOG10E_F", 0.434294482f},
-            {"CL_M_LN2_F", 0.693147181f},
-            {"CL_M_LN10_F", 2.302585093f},
-            {"CL_M_PI_F", 3.141592654f},
-            {"CL_M_PI_2_F", 1.570796327f},
-            {"CL_M_PI_4_F", 0.785398163f},
-            {"CL_M_1_PI_F", 0.318309886f},
-            {"CL_M_2_PI_F", 0.636619772f},
-            {"CL_M_2_SQRTPI_F", 1.128379167f},
-            {"CL_M_SQRT2_F", 1.414213562f},
-            {"CL_M_SQRT1_2_F", 0.707106781f},
-            {"CL_NAN", float.NaN},
-            {"CL_HUGE_VALF", (float) 1e50},
-            {"CL_HUGE_VAL", double.PositiveInfinity},
-            {"CL_MAXFLOAT", float.MaxValue},
-            {"CL_INFINITY", float.PositiveInfinity},
+            {"int_CL_CHAR_BIT", "8"},
+            {"int_CL_SCHAR_MAX", "127"},
+            {"int_CL_SCHAR_MIN", "-127 - 1"},
+            {"int_CL_CHAR_MAX", "127"},
+            {"int_CL_CHAR_MIN", "-127 - 1"},
+            {"int_CL_UCHAR_MAX", "255"},
+            {"short_CL_SHRT_MAX", "32767"},
+            {"short_CL_SHRT_MIN", "-32767 - 1"},
+            {"ushort_CL_USHRT_MAX", "65535"},
+            {"int_CL_INT_MAX", "2147483647"},
+            {"int_CL_INT_MIN", "-2147483647 - 1"},
+            {"uint_CL_UINT_MAX", "0xffffffffU"},
+            {"long_CL_LONG_MAX", "0x7FFFFFFFFFFFFFFFL"},
+            {"long_CL_LONG_MIN", "-0x7FFFFFFFFFFFFFFFL - 1L"},
+            {"ulong_CL_ULONG_MAX", "0xFFFFFFFFFFFFFFFFUL"},
+            {"float_CL_FLT_DIG", "6"},
+            {"float_CL_FLT_MANT_DIG", "24"},
+            {"float_CL_FLT_MAX_10_EXP", "+38"},
+            {"float_CL_FLT_MAX_EXP", "+128"},
+            {"float_CL_FLT_MIN_10_EXP", "-37"},
+            {"float_CL_FLT_MIN_EXP", "-125"},
+            {"float_CL_FLT_RADIX", "2"},
+            {"float_CL_FLT_MAX", "340282346638528859811704183484516925440.0f"},
+            {"float_CL_FLT_MIN", "1.175494350822287507969e-38f"},
+            {"float_CL_FLT_EPSILON", "1.1920928955078125e-7f"},
+            {"short_CL_HALF_DIG", "3"},
+            {"short_CL_HALF_MANT_DIG", "11"},
+            {"short_CL_HALF_MAX_10_EXP", "+4"},
+            {"short_CL_HALF_MAX_EXP", "+16"},
+            {"short_CL_HALF_MIN_10_EXP", "-4"},
+            {"short_CL_HALF_MIN_EXP", "-13"},
+            {"short_CL_HALF_RADIX", "2"},
+            {"short_CL_HALF_MAX", "unchecked((short)65504.0f)"},
+            {"short_CL_HALF_MIN", "unchecked((short)6.103515625e-05f)"},
+            {"short_CL_HALF_EPSILON", "unchecked((short)9.765625e-04f)"},
+            {"double_CL_DBL_DIG", "15"},
+            {"double_CL_DBL_MANT_DIG", "53"},
+            {"double_CL_DBL_MAX_10_EXP", "+308"},
+            {"double_CL_DBL_MAX_EXP", "+1024"},
+            {"double_CL_DBL_MIN_10_EXP", "-307"},
+            {"double_CL_DBL_MIN_EXP", "-1021"},
+            {"double_CL_DBL_RADIX", "2"},
+            {"double_CL_DBL_MAX", "1.7976931348623158e+308"},
+            {"double_CL_DBL_MIN", "2.225073858507201383090e-308"},
+            {"double_CL_DBL_EPSILON", "2.220446049250313080847e-16"},
+            {"double_CL_M_E", "2.7182818284590452354"},
+            {"double_CL_M_LOG2E", "1.4426950408889634074"},
+            {"double_CL_M_LOG10E", "0.43429448190325182765"},
+            {"double_CL_M_LN2", "0.69314718055994530942"},
+            {"double_CL_M_LN10", "2.30258509299404568402"},
+            {"double_CL_M_PI", "3.14159265358979323846"},
+            {"double_CL_M_PI_2", "1.57079632679489661923"},
+            {"double_CL_M_PI_4", "0.78539816339744830962"},
+            {"double_CL_M_1_PI", "0.31830988618379067154"},
+            {"double_CL_M_2_PI", "0.63661977236758134308"},
+            {"double_CL_M_2_SQRTPI", "1.12837916709551257390"},
+            {"double_CL_M_SQRT2", "1.41421356237309504880"},
+            {"double_CL_M_SQRT1_2", "0.70710678118654752440"},
+            {"float_CL_M_E_F", "2.718281828f"},
+            {"float_CL_M_LOG2E_F", "1.442695041f"},
+            {"float_CL_M_LOG10E_F", "0.434294482f"},
+            {"float_CL_M_LN2_F", "0.693147181f"},
+            {"float_CL_M_LN10_F", "2.302585093f"},
+            {"float_CL_M_PI_F", "3.141592654f"},
+            {"float_CL_M_PI_2_F", "1.570796327f"},
+            {"float_CL_M_PI_4_F", "0.785398163f"},
+            {"float_CL_M_1_PI_F", "0.318309886f"},
+            {"float_CL_M_2_PI_F", "0.636619772f"},
+            {"float_CL_M_2_SQRTPI_F", "1.128379167f"},
+            {"float_CL_M_SQRT2_F", "1.414213562f"},
+            {"float_CL_M_SQRT1_2_F", "0.707106781f"},
+            {"float_CL_NAN", "float.NaN"},
+            {"float_CL_HUGE_VALF", "(float) 1e50"},
+            {"double_CL_HUGE_VAL", "double.PositiveInfinity"},
+            {"float_CL_MAXFLOAT", "float.MaxValue"},
+            {"float_CL_INFINITY", "float.PositiveInfinity"},
             
             // MiscNumbers
-            {"CL_PROPERTIES_LIST_END_EXT", 0},
-            {"CL_PARTITION_BY_COUNTS_LIST_END_EXT", 0},
-            {"CL_DEVICE_PARTITION_BY_COUNTS_LIST_END", 0x0},
-            {"CL_PARTITION_BY_NAMES_LIST_END_EXT", 0 - 1},
-            {"CL_PARTITION_BY_NAMES_LIST_END_INTEL", -1},
+            {"int_CL_PROPERTIES_LIST_END_EXT", "0"},
+            {"int_CL_PARTITION_BY_COUNTS_LIST_END_EXT", "0"},
+            {"int_CL_DEVICE_PARTITION_BY_COUNTS_LIST_END", "0x0"},
+            {"int_CL_PARTITION_BY_NAMES_LIST_END_EXT", "0 - 1"},
+            {"int_CL_PARTITION_BY_NAMES_LIST_END_INTEL", "-1"},
         };
         public object Load(Stream stream)
         {
@@ -122,8 +123,78 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
         public IEnumerable<Struct> ReadStructs(object obj, ProfileConverterOptions opts)
         {
-            return Enumerable.Empty<Struct>();
+            var xd = (XDocument) obj;
+            var rawStructs = xd.Element("registry")?.Element("types")?.Elements("type")
+                .Where(typex => typex.HasCategoryAttribute("struct"))
+                .Select(typex => StructureDefinition.CreateFromXml(typex))
+                .ToArray();
+            var structs = ConvertStructs(rawStructs, opts);
+            foreach (var feature in xd.Element("registry").Elements("feature").Attributes("api").Select(x => x.Value).RemoveDuplicates())
+            {
+                foreach (var (_, s) in structs)
+                {
+                    yield return new Struct
+                    {
+                        Attributes = s.Attributes,
+                        ExtensionName = "Core",
+                        Fields = s.Fields,
+                        Functions = s.Functions,
+                        Name = s.Name,
+                        NativeName = s.NativeName,
+                        ProfileName = feature,
+                        ProfileVersion = null
+                    };
+                }
+            }
+            
+            opts.TypeMaps.Add(structs.ToDictionary(x => x.Key, x => x.Value.Name));
         }
+
+        private Dictionary<string, Struct> ConvertStructs(StructureDefinition[] spec, ProfileConverterOptions opts)
+        {
+            var prefix = opts.Prefix;
+            var ret = new Dictionary<string, Struct>();
+            foreach (var s in spec)
+            {
+                ret.Add
+                (
+                    s.Name, new Struct
+                    {
+                        Fields = s.Members.Select
+                        (
+                            x => new Field
+                            {
+                                Count = string.IsNullOrEmpty(x.ElementCountSymbolic)
+                                    ? x.ElementCount != 1 ? new Count(x.ElementCount) : null
+                                    : new Count(x.ElementCountSymbolic, false),
+                                Name = Naming.Translate(TrimName(x.Name, opts), prefix),
+                                Doc = $"/// <summary>{x.Comment}</summary>",
+                                NativeName = x.Name,
+                                NativeType = x.Type.ToString(),
+                                Type = ConvertType(x.Type)
+                            }
+                        )
+                        .ToList(),
+                        Name = Naming.TranslateLite(TrimName(s.Name, opts), prefix),
+                        NativeName = s.Name
+                    }
+                );
+            }
+
+            return ret;
+        }
+
+        private Type ConvertType(TypeSpec type)
+        {
+            return new Type
+            {
+                ArrayDimensions = type.ArrayDimensions,
+                IndirectionLevels = type.PointerIndirection,
+                Name = type.Name,
+                OriginalName = type.Name
+            };
+        }
+
         
         ////////////////////////////////////////////////////////////////////////////////////////
         // Function Parsing
@@ -177,9 +248,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                         }
                                     }
                                     : new List<Attribute>(),
-                                Categories = new List<string>{TrimName(api.Attribute("name")?.Value, opts)},
+                                Categories = new List<string>{ExtensionName(api.Attribute("name")?.Value, opts)},
                                 Doc = string.Empty,
-                                ExtensionName = api.Name == "feature" ? "Core" : TrimName(api.Attribute("name")?.Value, opts),
+                                ExtensionName = api.Name == "feature" ? "Core" : ExtensionName(api.Attribute("name")?.Value, opts),
                                 GenericTypeParameters = new List<GenericTypeParameter>(),
                                 Name = Naming.Translate(NameTrimmer.Trim(TrimName(xf.Attribute("name")?.Value, opts), opts.Prefix), opts.Prefix),
                                 NativeName = function,
@@ -418,6 +489,70 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     out _
                 );
 
+                switch (parameter.Name)
+                {
+                    case "pfn_free_func":
+                    {
+                        resultParameters.Add
+                        (
+                            new Parameter
+                            {
+                                Name = "pfn_free_func",
+                                Attributes = new List<Attribute>
+                                {
+                                    new Attribute
+                                    {
+                                        Name = "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                                        Arguments = new List<string>
+                                            {"Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"}
+                                    }
+                                },
+                                Count = null,
+                                Flow = FlowDirection.In,
+                                Type = new Type {Name = "FreeCallback", OriginalName = "CL_CALLBACK"}
+                            }
+                        );
+                        continue;
+                    }
+                    case "pfn_notify":
+                    {
+                        resultParameters.Add
+                        (
+                            new Parameter
+                            {
+                                Name = "pfn_notify",
+                                Attributes = new List<Attribute>
+                                {
+                                    new Attribute
+                                    {
+                                        Name = "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                                        Arguments = new List<string>
+                                            {"Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"}
+                                    }
+                                },
+                                Count = null,
+                                Flow = FlowDirection.In,
+                                Type = new Type {Name = "NotifyCallback", OriginalName = "CL_CALLBACK"}
+                            }
+                        );
+                        continue;
+                    }
+                    case "user_func":
+                    {
+                        resultParameters.Add
+                        (
+                            new Parameter
+                            {
+                                Name = "user_func",
+                                Count = null,
+                                Flow = FlowDirection.In,
+                                Type = new Type {Name = "FuncPtr", OriginalName = "CL_CALLBACK"}
+                            }
+                        );
+                        continue;
+                    }
+                }
+
                 if (hasComputedCount)
                 {
                     parametersWithComputedCounts.Add((parameter, computedCountParameterNames));
@@ -428,6 +563,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     parametersWithValueReferenceCounts.Add((parameter, valueReferenceName));
 
                     // TODO: Pass on the mathematical expression
+                }
+
+                if (parameter.Type.ToString() == "void")
+                {
+                    // uh-oh, bad parameter alert. Add a pointer to hopefully make it better.
+                    parameter.Type.IndirectionLevels++;
                 }
 
                 resultParameters.Add(parameter);
@@ -573,7 +714,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     randomName = "unnamedParameter" + GetRandomName();
                     Debug.WriteLine($"Giving it random name {randomName}");
                 }
-                
+
                 var pname = new XAttribute("name", parameter.Element("name")?.Value ?? randomName);
                 var type = new XAttribute
                 (
@@ -699,7 +840,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             Attributes = new List<Attribute>(),
                             ExtensionName = api.Name == "feature"
                                 ? "Core"
-                                : TrimName(api.Attribute("name")?.Value, opts),
+                                : ExtensionName(api.Attribute("name")?.Value, opts),
                             Name = Naming.Translate(TrimName(api.Attribute("name")?.Value, opts), opts.Prefix),
                             NativeName = api.Attribute("name")?.Value,
                             ProfileName = name,
@@ -713,27 +854,36 @@ namespace Silk.NET.BuildTools.Converters.Readers
             }
         }
 
+        private string ExtensionName(string ext, ProfileConverterOptions opts)
+        {
+            if (ext == "cl_device_partition_property_ext") // spec inconsistency
+                return "EXT_device_partition_property";
+            if (ext == "ck_khr_mipmap_image")
+                return "KHR_mipmap_image";
+            var trimmedExt = TrimName(ext, opts);
+            var splitTrimmed = trimmedExt.Split('_');
+            return splitTrimmed[0].ToUpper() + "_" + string.Join
+                       ("_", new ArraySegment<string>(splitTrimmed, 1, splitTrimmed.Length - 1));
+        }
+
         public IEnumerable<Constant> ReadConstants(object obj, ProfileConverterOptions opts)
         {
             return Constants.Select
             (
                 x => new Constant
                 {
-                    Name = Naming.Translate(TrimName(x.Key, opts), opts.Prefix), NativeName = x.Key,
-                    Type = GetType(x.Value), Value = x.Value.ToString()
+                    Name = Naming.Translate(TrimName(GetName(x.Key, out var type), opts), opts.Prefix), NativeName = x.Key,
+                    Type = new Type{Name = type}, Value = x.Value.ToString()
                 }
             );
         }
 
-        private Type GetType(object o) => o switch
+        private static string GetName(string xKey, out string type)
         {
-            double _ => new Type {Name = "double"},
-            float _ => new Type {Name = "float"},
-            int _ => new Type {Name = "int"},
-            long _ => new Type {Name = "long"},
-            ulong _ => new Type {Name = "ulong"},
-            _ => new Type {Name = "int"}
-        };
+            var split = xKey.Split('_');
+            type = split[0];
+            return string.Join("_", new ArraySegment<string>(split, 1, split.Length - 1));
+        }
 
         private static string FormatToken(string token)
         {

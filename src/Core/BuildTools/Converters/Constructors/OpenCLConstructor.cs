@@ -253,42 +253,14 @@ namespace Silk.NET.BuildTools.Converters.Constructors
             return rawCategory.Split('_').FirstOrDefault();
         }
         
-        private static string FormatToken(string token)
-        {
-            if (token == null)
-            {
-                return null;
-            }
-
-            var tokenHex = token.StartsWith("0x") ? token.Substring(2) : token;
-
-            if (!long.TryParse(tokenHex, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var value))
-            {
-                if (!long.TryParse(tokenHex, out value))
-                {
-                    throw new InvalidDataException("Token value was not in a valid format.");
-                }
-            }
-
-            var valueString = $"0x{value:X}";
-            var needsCasting = value > int.MaxValue || value < 0;
-            if (needsCasting)
-            {
-                Debug.WriteLine($"Warning: casting overflowing enum value {token} from 64-bit to 32-bit.");
-                valueString = $"unchecked((int){valueString})";
-            }
-
-            return valueString;
-        }
-
         public void WriteStructs(Profile profile, IEnumerable<Struct> structs, ProfileConverterOptions opts)
         {
-            // do nothing
+            profile.Projects["Core"].Structs.AddRange(structs);
         }
 
         public void WriteConstants(Profile profile, IEnumerable<Constant> constants, ProfileConverterOptions opts)
         {
-            // do nothing
+            profile.Constants.AddRange(constants);
         }
     }
 }
