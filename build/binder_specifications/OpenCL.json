@@ -9604,7 +9604,7 @@
               "NativeName": "clUnloadCompiler",
               "Parameters": [
                 {
-                  "Name": "unnamedParameterCE1123D6",
+                  "Name": "unnamedParameterACBD2E29",
                   "Type": {
                     "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
@@ -27354,7 +27354,7 @@
   "SymbolLoaderName": "Ultz.SuperInvoke.Loader.LibraryLoader.GetPlatformDefaultLoader()",
   "Names": {
     "Linux": "libOpenCL.so",
-    "Windows": "opencl32.dll",
+    "Windows": "opencl.dll",
     "MacOS": "/System/Library/Frameworks/OpenCL.framework/OpenCL",
     "Android": "libOpenCL.so",
     "IOS": "/System/Library/Frameworks/OpenCL.framework/OpenCL",

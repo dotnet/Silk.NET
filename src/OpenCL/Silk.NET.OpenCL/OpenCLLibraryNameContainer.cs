@@ -25,9 +25,9 @@ namespace Silk.NET.OpenCL
         public override string IOS => "/System/Library/Frameworks/OpenCL.framework/OpenCL";
 
         /// <inheritdoc />
-        public override string Windows64 => "opencl32.dll";
+        public override string Windows64 => "opencl.dll";
 
         /// <inheritdoc />
-        public override string Windows86 => "opencl32.dll";
+        public override string Windows86 => "opencl.dll";
     }
 }

@@ -15,7 +15,7 @@
     "OutputFolder": "OpenCL",
     "NameContainer": {
       "Linux": "libOpenCL.so",
-      "Windows": "opencl32.dll",
+      "Windows": "opencl.dll",
       "MacOS": "/System/Library/Frameworks/OpenCL.framework/OpenCL",
       "Android": "libOpenCL.so",
       "IOS": "/System/Library/Frameworks/OpenCL.framework/OpenCL",
