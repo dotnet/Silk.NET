@@ -539,18 +539,15 @@ namespace Silk.NET.BuildTools.Converters.Readers
         public IEnumerable<Enum> ReadEnums(object obj, ProfileConverterOptions opts)
         {
             var doc = obj as XDocument;
-            var allEnums = doc.Element("registry")
-                .Elements("enums")
+            var allEnums = doc.Element("registry").Elements("enums")
                 .Elements("enum")
                 .DistinctBy(x => x.Attribute("name")?.Value)
                 .ToDictionary
                 (
                     x => x.Attribute("name")?.Value,
-                    x => (FormatToken(x.Attribute("value")?.Value), x.Attribute("group")?.Value.Split(','))
+                    x => FormatToken(x.Attribute("value")?.Value)
                 );
-            var apis = doc.Element("registry")
-                .Elements("feature")
-                .Concat(doc.Element("registry").Elements("extensions").Elements("extension"));
+            var apis = doc.Element("registry").Elements("feature").Concat(doc.Element("registry").Elements("extensions").Elements("extension"));
             var removals = doc.Element("registry").Elements("feature")
                 .Elements("remove")
                 .Elements("enum")
@@ -588,7 +585,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 Doc = string.Empty,
                                 Name = Naming.Translate(TrimName(token.Value, opts), opts.Prefix),
                                 NativeName = token.Value,
-                                Value = allEnums[token.Value].Item1
+                                Value = allEnums[token.Value]
                             }
                         )
                         .ToList(); 
@@ -609,38 +606,6 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
                         yield return ret;
 
-                        var groups = new Dictionary<string, List<Token>>();
-                        foreach (var token in ret.Tokens)
-                        {
-                            if (!(token.GroupName is null))
-                            {
-                                foreach (var group in token.GroupName)
-                                {
-                                    if (groups.ContainsKey(group))
-                                    {
-                                        groups[group].Add(token);
-                                    }
-                                    else
-                                    {
-                                        groups[group] = new List<Token> {token};
-                                    }
-                                }
-                            }
-                        }
-
-                        foreach (var (group, groupTokens) in groups)
-                        {
-                            yield return new Enum
-                            {
-                                ExtensionName = "Core (Grouped)",
-                                Name = group,
-                                NativeName = group,
-                                ProfileName = name,
-                                ProfileVersion = apiVersion,
-                                Tokens = groupTokens
-                            };
-                        }
-
                         if (api.Name == "feature" && name == "gl")
                         {
                             yield return new Enum
@@ -653,20 +618,65 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 ProfileVersion = apiVersion,
                                 Tokens = tokens.Where(x => x.Attributes.Count == 0).ToList()
                             };
-
-                            foreach (var (group, groupTokens) in groups)
-                            {
-                                yield return new Enum
-                                {
-                                    ExtensionName = "Core (Grouped)",
-                                    Name = group,
-                                    NativeName = group,
-                                    ProfileName = "glcore",
-                                    ProfileVersion = apiVersion,
-                                    Tokens = groupTokens.Where(x => x.Attributes.Count == 0).ToList(),
-                                };
-                            }
                         }
+                    }
+                }
+            }
+
+            foreach (var group in doc.Element("registry").Element("groups").Elements("group"))
+            {
+                var tokens = group.Elements("enum")
+                    .Select(x => x.GetNameAttribute())
+                    .Select
+                    (
+                        token => new Token
+                        {
+                            Attributes = removals.Contains(token)
+                                ? new List<Attribute>
+                                {
+                                    new Attribute
+                                    {
+                                        Name = "System.Obsolete"
+                                    }
+                                }
+                                : new List<Attribute>(),
+                            Doc = string.Empty,
+                            Name = Naming.Translate(TrimName(token, opts), opts.Prefix),
+                            NativeName = token,
+                            Value = allEnums[token]
+                        }
+                    )
+                    .ToList();
+                foreach (var (apiName, apiVersion) in doc.Element("registry")
+                    .Elements("feature")
+                    .Select(x => (x.Attribute("api").Value, x.Attribute("number").Value))
+                    .Distinct())
+                {
+                    var ret = new Enum
+                    {
+                        Name = group.GetNameAttribute(),
+                        NativeName = group.GetNameAttribute(),
+                        Attributes = new List<Attribute>(),
+                        ExtensionName = "Core (Grouped)",
+                        ProfileName = apiName,
+                        ProfileVersion = Version.Parse(apiVersion),
+                        Tokens = tokens
+                    };
+
+                    yield return ret;
+
+                    if (apiName == "gl")
+                    {
+                        yield return new Enum
+                        {
+                            Name = ret.Name,
+                            NativeName = ret.NativeName,
+                            Attributes = new List<Attribute>(),
+                            ExtensionName = "Core (Grouped)",
+                            ProfileName = "glcore",
+                            ProfileVersion = Version.Parse(apiVersion),
+                            Tokens = tokens.Where(x => x.Attributes.Count == 0).ToList()
+                        };
                     }
                 }
             }
