@@ -19,7 +19,11 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Require.NotNull(xe);
 
             string name = xe.GetNameAttribute();
-            MemberSpec[] members = xe.Elements("member").Select(memberx => MemberSpec.CreateFromXml(memberx)).ToArray();
+            MemberSpec[] members = xe.Elements
+                    ("member")
+                .Where(x => !(x.Element("name") is null))
+                .Select(memberx => MemberSpec.CreateFromXml(memberx))
+                .ToArray();
             return new StructureDefinition(name, members);
         }
 
