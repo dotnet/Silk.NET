@@ -22,7 +22,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Backing field for <see cref="Count" />.
         /// </summary>
-        [JsonProperty] private int _count;
+        [JsonProperty("StaticCount")] private int _count;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Count" /> class.
@@ -154,6 +154,12 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         [JsonIgnore]
         public bool IsStatic => !(IsComputed || IsReference);
+
+        /// <summary>
+        /// Gets a value indicating whether this count represents a count which is likely more than one.
+        /// </summary>
+        [JsonIgnore]
+        public bool IsMultiple => IsComputed || (IsStatic && _count > 1) || IsReference;
 
         /// <inheritdoc />
         public override string ToString()

@@ -107,6 +107,21 @@ namespace Silk.NET.BuildTools.Common.Functions
         }
 
         /// <summary>
+        /// Returns a value indicating whether this signature represents a void pointer.
+        /// </summary>
+        /// <returns>A value indicating whether this signature represents a void pointer.</returns>
+        public bool IsSingleVoidPointer()
+        {
+            return ToString() == "void*";
+            //return Name.Equals
+            //       (
+            //           typeof(void).Name.ToLowerInvariant(),
+            //           StringComparison.OrdinalIgnoreCase
+            //       )
+            //       && IsPointer;
+        }
+
+        /// <summary>
         /// Returns a value indicating whether this signature represents an IntPtr.
         /// </summary>
         /// <returns>A value indicating whether this signature represents an IntPtr.</returns>

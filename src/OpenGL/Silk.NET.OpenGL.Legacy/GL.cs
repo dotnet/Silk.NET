@@ -199,15 +199,15 @@ namespace Silk.NET.OpenGL.Legacy
             VertexAttrib4(index, v.X, v.Y, v.Z, v.W);
         }
 
-        public unsafe void VertexAttribPointer(uint index, int size, GLEnum type, bool normalized, uint stride, int offset)
-        {
-            VertexAttribPointer(index, size, type, normalized, stride, (void*)offset);
-        }
+        //public unsafe void VertexAttribPointer(uint index, int size, GLEnum type, bool normalized, uint stride, int offset)
+        //{
+        //    VertexAttribPointer(index, size, type, normalized, stride, (void*)offset);
+        //}
 
-        public unsafe void DrawElements(GLEnum mode, uint count, GLEnum type, int offset)
-        {
-            DrawElements((GLEnum)mode, count, type, (void*)(offset));
-        }
+        //public unsafe void DrawElements(GLEnum mode, uint count, GLEnum type, int offset)
+        //{
+        //    DrawElements((GLEnum)mode, count, type, (void*)(offset));
+        //}
 
         public void GetFloat(GLEnum pname, out Vector2 vector)
         {

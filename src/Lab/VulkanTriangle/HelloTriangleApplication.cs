@@ -334,7 +334,7 @@ namespace VulkanTriangle
         private unsafe void PickPhysicalDevice()
         {
             var deviceCount = 0u;
-            _vk.EnumeratePhysicalDevices(_instance, &deviceCount, null);
+            _vk.EnumeratePhysicalDevices(_instance, &deviceCount, (PhysicalDevice*)null);
 
             if (deviceCount == 0)
             {
@@ -380,7 +380,7 @@ namespace VulkanTriangle
             details.Capabilities = surfaceCapabilities;
 
             var formatCount = 0u;
-            _vkSurface.GetPhysicalDeviceSurfaceFormats(device, _surface, &formatCount, null);
+            _vkSurface.GetPhysicalDeviceSurfaceFormats(device, _surface, &formatCount, (SurfaceFormatKHR*)null);
 
             if (formatCount != 0)
             {
@@ -395,7 +395,7 @@ namespace VulkanTriangle
             }
 
             var presentModeCount = 0u;
-            _vkSurface.GetPhysicalDeviceSurfacePresentModes(device, _surface, &presentModeCount, null);
+            _vkSurface.GetPhysicalDeviceSurfacePresentModes(device, _surface, &presentModeCount, (PresentModeKHR*)null);
 
             if (presentModeCount != 0)
             {
@@ -415,7 +415,7 @@ namespace VulkanTriangle
         private unsafe bool CheckDeviceExtensionSupport(PhysicalDevice device)
         {
             uint extensionCount;
-            _vk.EnumerateDeviceExtensionProperties(device, (byte*) null, &extensionCount, null);
+            _vk.EnumerateDeviceExtensionProperties(device, (byte*) null, &extensionCount, (ExtensionProperties*)null);
 
             var availableExtensions = stackalloc ExtensionProperties[(int) extensionCount];
             _vk.EnumerateDeviceExtensionProperties(device, (byte*) null, &extensionCount, availableExtensions);
@@ -436,7 +436,7 @@ namespace VulkanTriangle
             var indices = new QueueFamilyIndices();
 
             uint queryFamilyCount = 0;
-            _vk.GetPhysicalDeviceQueueFamilyProperties(device, &queryFamilyCount, null);
+            _vk.GetPhysicalDeviceQueueFamilyProperties(device, &queryFamilyCount, (QueueFamilyProperties*)null);
 
             var queueFamilies = stackalloc QueueFamilyProperties[(int) queryFamilyCount];
 
@@ -606,7 +606,7 @@ namespace VulkanTriangle
                 }
             }
 
-            _vkSwapchain.GetSwapchainImages(_device, _swapchain, &imageCount, null);
+            _vkSwapchain.GetSwapchainImages(_device, _swapchain, &imageCount, (Image*)null);
             _swapchainImages = new Image[imageCount];
             fixed (Image* swapchainImage = _swapchainImages)
             {
