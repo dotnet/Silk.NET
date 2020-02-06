@@ -569,7 +569,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         .Attributes("name")
                         .Select
                         (
-                            token => (new Token
+                            token => new Token
                             {
                                 Attributes = removals.Contains(token.Value)
                                     ? new List<Attribute>
@@ -586,9 +586,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 Name = Naming.Translate(TrimName(token.Value, opts), opts.Prefix),
                                 NativeName = token.Value,
                                 Value = allEnums[token.Value]
-                            }, token.Parent.Attribute("group")?.Value.Split(','))
+                            }
                         )
-                        .ToDictionary(); 
+                        .ToList(); 
                     foreach (var name in apiName.Split('|'))
                     {
                         var ret = new Enum
@@ -601,40 +601,10 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             NativeName = api.Attribute("name")?.Value,
                             ProfileName = name,
                             ProfileVersion = apiVersion,
-                            Tokens = tokens.Keys.ToList()
+                            Tokens = tokens
                         };
 
-                        var groups = new Dictionary<string, List<Token>>();
-                        foreach (var (token, groupArrays) in tokens)
-                        {
-                            foreach (var group in groupArrays)
-                            {
-                                if (groups.ContainsKey(group))
-                                {
-                                    groups[group].Add(token);
-                                }
-                                else
-                                {
-                                    groups[group] = new List<Token>{token};
-                                }
-                            }
-                        }
-
                         yield return ret;
-
-                        foreach (var (groupName, groupTokens) in groups)
-                        {
-                            yield return new Enum
-                            {
-                                ExtensionName = ret.ExtensionName,
-                                Name = groupName,
-                                NativeName = groupName,
-                                ProfileName = name,
-                                ProfileVersion = apiVersion,
-                                Tokens = groupTokens,
-                                Attributes = new List<Attribute>()
-                            };
-                        }
 
                         if (api.Name == "feature" && name == "gl")
                         {
@@ -646,22 +616,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 NativeName = ret.NativeName,
                                 ProfileName = "glcore",
                                 ProfileVersion = apiVersion,
-                                Tokens = ret.Tokens.Where(x => x.Attributes.Count == 0).ToList()
+                                Tokens = tokens.Where(x => x.Attributes.Count == 0).ToList()
                             };
-
-                            foreach (var (groupName, groupTokens) in groups)
-                            {
-                                yield return new Enum
-                                {
-                                    ExtensionName = ret.ExtensionName,
-                                    Name = groupName,
-                                    NativeName = groupName,
-                                    ProfileName = "glcore",
-                                    ProfileVersion = apiVersion,
-                                    Tokens = groupTokens.Where(x => x.Attributes.Count == 0).ToList(),
-                                    Attributes = new List<Attribute>()
-                                };
-                            }
                         }
                     }
                 }
