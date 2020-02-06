@@ -588,8 +588,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 Doc = string.Empty,
                                 Name = Naming.Translate(TrimName(token.Value, opts), opts.Prefix),
                                 NativeName = token.Value,
-                                Value = allEnums[token.Value].Item1,
-                                GroupName = allEnums[token.Value].Item2
+                                Value = allEnums[token.Value].Item1
                             }
                         )
                         .ToList(); 
