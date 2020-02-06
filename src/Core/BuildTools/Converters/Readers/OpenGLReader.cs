@@ -626,6 +626,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var groups = new Dictionary<string, List<Token>>();
             foreach (var @enum in allEnums)
             {
+                if (@enum.Value.Item2 is null)
+                {
+                    continue;
+                }
+
                 foreach (var group in @enum.Value.Item2)
                 {
                     if (groups.ContainsKey(group))
