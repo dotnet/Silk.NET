@@ -545,7 +545,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 .ToDictionary
                 (
                     x => x.Attribute("name")?.Value,
-                    x => FormatToken(x.Attribute("value")?.Value)
+                    x => (FormatToken(x.Attribute("value")?.Value), x.Attribute("group")?.Value.Split(','))
                 );
             var apis = doc.Element("registry").Elements("feature").Concat(doc.Element("registry").Elements("extensions").Elements("extension"));
             var removals = doc.Element("registry").Elements("feature")
@@ -585,7 +585,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 Doc = string.Empty,
                                 Name = Naming.Translate(TrimName(token.Value, opts), opts.Prefix),
                                 NativeName = token.Value,
-                                Value = allEnums[token.Value]
+                                Value = allEnums[token.Value].Item1
                             }
                         )
                         .ToList(); 
@@ -623,15 +623,21 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 }
             }
 
-            foreach (var group in doc.Element("registry").Element("groups").Elements("group"))
+            var groups = new Dictionary<string, List<Token>>();
+            foreach (var @enum in allEnums)
             {
-                var tokens = group.Elements("enum")
-                    .Select(x => x.GetNameAttribute())
-                    .Select
-                    (
-                        token => new Token
+                if (@enum.Value.Item2 is null)
+                {
+                    continue;
+                }
+
+                foreach (var group in @enum.Value.Item2)
+                {
+                    if (groups.ContainsKey(group))
+                    {
+                        groups[group].Add(new Token
                         {
-                            Attributes = removals.Contains(token)
+                            Attributes = removals.Contains(@enum.Key)
                                 ? new List<Attribute>
                                 {
                                     new Attribute
@@ -641,12 +647,41 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 }
                                 : new List<Attribute>(),
                             Doc = string.Empty,
-                            Name = Naming.Translate(TrimName(token, opts), opts.Prefix),
-                            NativeName = token,
-                            Value = allEnums[token]
-                        }
-                    )
-                    .ToList();
+                            Name = Naming.Translate(TrimName(@enum.Key, opts), opts.Prefix),
+                            NativeName = @enum.Key,
+                            Value = @enum.Value.Item1
+                        });
+                    }
+                    else
+                    {
+                        groups.Add
+                        (
+                            group, new List<Token>
+                            {
+                                new Token
+                                {
+                                    Attributes = removals.Contains(@enum.Key)
+                                        ? new List<Attribute>
+                                        {
+                                            new Attribute
+                                            {
+                                                Name = "System.Obsolete"
+                                            }
+                                        }
+                                        : new List<Attribute>(),
+                                    Doc = string.Empty,
+                                    Name = Naming.Translate(TrimName(@enum.Key, opts), opts.Prefix),
+                                    NativeName = @enum.Key,
+                                    Value = @enum.Value.Item1
+                                }
+                            }
+                        );
+                    }
+                }
+            }
+
+            foreach (var group in groups)
+            {
                 foreach (var (apiName, apiVersion) in doc.Element("registry")
                     .Elements("feature")
                     .Select(x => (x.Attribute("api").Value, x.Attribute("number").Value))
@@ -654,13 +689,13 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 {
                     var ret = new Enum
                     {
-                        Name = group.GetNameAttribute(),
-                        NativeName = group.GetNameAttribute(),
+                        Name = group.Key,
+                        NativeName = group.Key,
                         Attributes = new List<Attribute>(),
                         ExtensionName = "Core (Grouped)",
                         ProfileName = apiName,
                         ProfileVersion = Version.Parse(apiVersion),
-                        Tokens = tokens
+                        Tokens = group.Value
                     };
 
                     yield return ret;
@@ -675,7 +710,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             ExtensionName = "Core (Grouped)",
                             ProfileName = "glcore",
                             ProfileVersion = Version.Parse(apiVersion),
-                            Tokens = tokens.Where(x => x.Attributes.Count == 0).ToList()
+                            Tokens = group.Value.Where(x => x.Attributes.Count == 0).ToList()
                         };
                     }
                 }
