@@ -37,10 +37,11 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             //}
 
             var ind = string.Empty;
+            var gen = 0;
             for (var i = 0; i < function.Parameters.Count; i++)
             {
                 var param = function.Parameters[i];
-                if (param.Type.IndirectionLevels == 1 && param.Type.Name != "void" && !param.Type.IsOut && !param.Type.IsIn && !param.Type.IsByRef)
+                if (param.Type.IndirectionLevels == 1 && (param.Count?.IsMultiple ?? false) && !param.Type.IsOut && !param.Type.IsIn && !param.Type.IsByRef)
                 {
                     parameterChanged = true;
                     parameters[i] = new ParameterSignatureBuilder(param).WithName($"{param.Name}Span")
@@ -51,7 +52,9 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                                 Name = "Span", OriginalName = "Span",
                                 GenericTypes = new List<Type>
                                 {
-                                    new Type {Name = param.Type.Name, OriginalName = param.Type.OriginalName}
+                                    param.Type.IsVoidPointer()
+                                        ? new Type {Name = $"TSpanType{gen++}", OriginalName = param.Type.OriginalName}
+                                        : new Type {Name = param.Type.Name, OriginalName = param.Type.OriginalName}
                                 }
                             }
                         )
@@ -90,6 +93,13 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             }
 
             fun.WithParameters(parameters);
+            fun.WithGenericTypeParameters
+            (
+                Enumerable.Range(0, gen)
+                    .Select(x => new GenericTypeParameter($"TSpanType{x}", new List<string> {"unmanaged"}))
+                    .Concat(function.GenericTypeParameters)
+                    .ToArray()
+            );
 
             if (returnTypeChanged && !parameterChanged)
             {

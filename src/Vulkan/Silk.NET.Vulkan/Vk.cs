@@ -56,7 +56,7 @@ namespace Silk.NET.Vulkan
             if (CurrentInstance.HasValue)
             {
                 var physicalDeviceCount = 0u;
-                EnumeratePhysicalDevices(CurrentInstance.Value, &physicalDeviceCount, null);
+                EnumeratePhysicalDevices(CurrentInstance.Value, &physicalDeviceCount, (PhysicalDevice*)null);
                 var physicalDevices = stackalloc PhysicalDevice[(int) physicalDeviceCount];
                 EnumeratePhysicalDevices(CurrentInstance.Value, &physicalDeviceCount, physicalDevices);
 
