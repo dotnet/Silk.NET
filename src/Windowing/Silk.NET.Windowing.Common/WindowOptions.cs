@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Drawing;
+using System.Reflection;
 
 namespace Silk.NET.Windowing.Common
 {
@@ -18,21 +19,23 @@ namespace Silk.NET.Windowing.Common
         /// <param name="opts">The view options to copy where applicable.</param>
         public WindowOptions(ViewOptions opts)
         {
+            IsVisible = true;
+            UseSingleThreadedWindow = opts.UseSingleThreadedWindow;
+            Position = new Point(50, 50);
+            Size = new Size(1280, 720);
             FramesPerSecond = opts.FramesPerSecond;
             UpdatesPerSecond = opts.UpdatesPerSecond;
             API = opts.API;
-            Title = "Silk.NET Window";
-            WindowState = WindowState.Fullscreen;
-            WindowBorder = WindowBorder.Hidden;
+            Title = Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window";
+            WindowState = WindowState.Normal;
+            WindowBorder = WindowBorder.Resizable;
             VSync = opts.VSync;
             RunningSlowTolerance = opts.RunningSlowTolerance;
-            IsVisible = true;
-            UseSingleThreadedWindow = true;
-            ShouldSwapAutomatically = true;
+            ShouldSwapAutomatically = opts.ShouldSwapAutomatically;
             VideoMode = opts.VideoMode;
-            PreferredDepthBufferBits = null;
+            PreferredDepthBufferBits = opts.PreferredDepthBufferBits;
         }
-        
+
         /// <inheritdoc />
         public bool IsVisible { get; set; }
 
@@ -74,18 +77,31 @@ namespace Silk.NET.Windowing.Common
 
         /// <inheritdoc />
         public VSyncMode VSync { get; set; }
-        
+
         /// <inheritdoc />
         public int RunningSlowTolerance { get; set; }
 
         /// <summary>
         /// Creates a new WindowOptions struct.
         /// </summary>
-        public WindowOptions(bool isVisible, bool useSingleThreadedWindow, Point position, Size size,
-            double framesPerSecond, double updatesPerSecond, GraphicsAPI api, string title,
-            WindowState windowState, WindowBorder windowBorder, VSyncMode vSync,
-            int isRunningSlowlyThreshold, bool shouldSwapAutomatically, VideoMode videoMode,
-            int? preferredDepthBufferBits = null)
+        public WindowOptions
+        (
+            bool isVisible,
+            bool useSingleThreadedWindow,
+            Point position,
+            Size size,
+            double framesPerSecond,
+            double updatesPerSecond,
+            GraphicsAPI api,
+            string title,
+            WindowState windowState,
+            WindowBorder windowBorder,
+            VSyncMode vSync,
+            int isRunningSlowlyThreshold,
+            bool shouldSwapAutomatically,
+            VideoMode videoMode,
+            int? preferredDepthBufferBits = null
+        )
         {
             IsVisible = isVisible;
             UseSingleThreadedWindow = useSingleThreadedWindow;
@@ -107,15 +123,25 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// Convenience wrapper around creating a new WindowProperties with sensible defaults.
         /// </summary>
-        public static WindowOptions Default { get; } = new WindowOptions(true, true, new Point(50, 50),
+        public static WindowOptions Default { get; } = new WindowOptions
+        (
+            true, true, new Point(50, 50),
             new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
-            "Silk.NET Window", WindowState.Normal, WindowBorder.Resizable, VSyncMode.On, 5, true, VideoMode.Default);
+            Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window", WindowState.Normal,
+            WindowBorder.Resizable, VSyncMode.On, 5,
+            true, VideoMode.Default
+        );
 
         /// <summary>
         /// Convenience wrapper around creating a new WindowProperties with sensible values, intended for use with Vulkan.
         /// </summary>
-        public static WindowOptions DefaultVulkan { get; } = new WindowOptions(true, true, new Point(50, 50),
+        public static WindowOptions DefaultVulkan { get; } = new WindowOptions
+        (
+            true, true, new Point(50, 50),
             new Size(1280, 720), 0.0, 0.0, GraphicsAPI.DefaultVulkan,
-            "Silk.NET Window", WindowState.Normal, WindowBorder.Resizable, VSyncMode.Off, 5, false, VideoMode.Default);
+            Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window", WindowState.Normal,
+            WindowBorder.Resizable, VSyncMode.Off,
+            5, false, VideoMode.Default
+        );
     }
 }

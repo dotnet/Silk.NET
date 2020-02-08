@@ -1,4 +1,6 @@
-﻿using System;
+﻿#define MINIMAL
+
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -19,17 +21,26 @@ namespace Triangle
         {
             -0.5f, -0.5f, 0.0f, // Bottom-left vertex
             0.5f, -0.5f, 0.0f, // Bottom-right vertex
-            0.0f,  0.5f, 0.0f  // Top vertex
+            0.0f, 0.5f, 0.0f // Top vertex
         };
+
         private static uint _vertexBufferObject;
         private static uint _vertexArrayObject;
         private static GL _gl;
+#if MINIMAL
+        private static IView _window;
+#else
         private static IWindow _window;
+#endif
         private static Shader _shader;
 
         public static void Main(string[] args)
         {
+#if MINIMAL
+            _window = Window.GetView(ViewOptions.Default);
+#else
             _window = Window.Create(WindowOptions.Default);
+#endif
             _window.Load += Load;
             _window.Render += RenderFrame;
             _window.Update += UpdateFrame;
@@ -46,7 +57,8 @@ namespace Triangle
             _gl.BindBuffer(GLEnum.ArrayBuffer, _vertexBufferObject);
             fixed (float* vertices = _vertices)
             {
-                _gl.BufferData(GLEnum.ArrayBuffer, (uint)_vertices.Length * sizeof(float), vertices, GLEnum.StaticDraw);
+                _gl.BufferData
+                    (GLEnum.ArrayBuffer, (uint) _vertices.Length * sizeof(float), vertices, GLEnum.StaticDraw);
             }
 
             _shader = new Shader("Triangle.shader.vert", "Triangle.shader.frag", _gl, typeof(Program));
@@ -58,7 +70,8 @@ namespace Triangle
             _gl.BindBuffer(GLEnum.ArrayBuffer, _vertexBufferObject);
         }
 
-        private static void OnDebug(GLEnum source, GLEnum type, int id, GLEnum severity, int length, IntPtr message, IntPtr userparam)
+        private static void OnDebug
+            (GLEnum source, GLEnum type, int id, GLEnum severity, int length, IntPtr message, IntPtr userparam)
         {
             Console.WriteLine
             (
@@ -83,7 +96,7 @@ namespace Triangle
         {
             _gl.Viewport(size);
         }
-        
+
         private static void End()
         {
             _gl.BindBuffer(GLEnum.ArrayBuffer, 0);
