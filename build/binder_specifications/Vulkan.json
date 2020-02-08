@@ -13045,6 +13045,13 @@
               "Value": "65539",
               "Doc": "/// <summary>Kazan Software Renderer</summary>",
               "Attributes": []
+            },
+            {
+              "Name": "VendorIDCodeplay",
+              "NativeName": "VK_VENDOR_ID_CODEPLAY",
+              "Value": "65540",
+              "Doc": "/// <summary>Codeplay Software Ltd. vendor ID</summary>",
+              "Attributes": []
             }
           ],
           "Name": "VendorId",

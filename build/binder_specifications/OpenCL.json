@@ -9604,7 +9604,7 @@
               "NativeName": "clUnloadCompiler",
               "Parameters": [
                 {
-                  "Name": "unnamedParameter5AA499A0",
+                  "Name": "unnamedParameterDBED70CD",
                   "Type": {
                     "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
@@ -24260,6 +24260,20 @@
               "Name": "CommandMemadviseIntel",
               "NativeName": "CL_COMMAND_MEMADVISE_INTEL",
               "Value": "0x4207",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "MigrateMemObjectHostIntel",
+              "NativeName": "CL_MIGRATE_MEM_OBJECT_HOST_INTEL",
+              "Value": "0x1",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "MigrateMemObjectContentUndefinedIntel",
+              "NativeName": "CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED_INTEL",
+              "Value": "0x2",
               "Doc": "",
               "Attributes": []
             },
