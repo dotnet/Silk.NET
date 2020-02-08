@@ -65,7 +65,7 @@ namespace Triangle
             _shader.Use();
             _vertexArrayObject = _gl.GenVertexArray();
             _gl.BindVertexArray(_vertexArrayObject);
-            _gl.VertexAttribPointer(0, 3, GLEnum.Float, false, 3 * sizeof(float), 0);
+            _gl.VertexAttribPointer(0, 3, GLEnum.Float, false, 3 * sizeof(float), null);
             _gl.EnableVertexAttribArray(0);
             _gl.BindBuffer(GLEnum.ArrayBuffer, _vertexBufferObject);
         }
