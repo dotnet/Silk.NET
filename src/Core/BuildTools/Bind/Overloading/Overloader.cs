@@ -20,6 +20,7 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 new StringOverloader(),
                 new StringReturnOverloader(),
                 new FlowPointerOverloader(),
+                new SpanOverloader(),
             },
             new IFunctionOverloader[]
             {
@@ -27,7 +28,6 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 new PointerReturnValueOverloader(),
                 new StaticCountOverloader(),
                 new IntPtrOverloader(),
-                new SpanOverloader(),
                 new ArrayParameterOverloader(),
                 new ReturnTypeOverloader(),
             },

@@ -6,6 +6,10 @@ namespace CLMultiplication
 {
     internal class Program
     {
+        private static int Factorial(int n)
+        {
+            return n <= 1 ? 1 : n * Factorial(n - 1);
+        }
         private static unsafe void Main(string[] args)
         {
             string[] kernelCode =
@@ -14,12 +18,6 @@ namespace CLMultiplication
                 "   A[get_global_id(0)] = c * A[get_global_id(0)];",
                 "}"
             };
-
-
-            int Factorial(int n)
-            {
-                return n <= 1 ? 1 : n * Factorial(n - 1);
-            }
 
             // OpenCL related declarations
             int err;
