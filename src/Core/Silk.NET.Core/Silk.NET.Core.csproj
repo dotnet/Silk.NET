@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
@@ -16,6 +16,7 @@
         <PackageReference Include="JetBrains.Annotations" Version="11.1.0" PrivateAssets="all" />
         <PackageReference Include="Humanizer.Core" Version="2.5.16" PrivateAssets="Compile;Build;Analyzers;ContentFiles" />
         <PackageReference Include="System.Numerics.Vectors" Version="4.6.0-preview5.19224.8" />
+        <PackageReference Include="Ultz.SuperInvoke" Version="1.0.0" />
     </ItemGroup>
 
     <Import Project="..\..\..\build\props\common.props" />
