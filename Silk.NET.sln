@@ -242,10 +242,14 @@ EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Tutorial 1.2 - Hello quad", "examples\FSharp\OpenGL\Tutorial 1.2 - Hello quad\Tutorial 1.2 - Hello quad.fsproj", "{7BAB0B50-AF2B-4F65-AC6E-C5F952C81665}"
 EndProject
 <<<<<<< HEAD
+<<<<<<< HEAD
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial 1.4 - Textures", "examples\CSharp\OpenGL\Tutorial 1.4 - Textures\Tutorial 1.4 - Textures.csproj", "{B4E96437-3464-4BF9-976C-ADA09916CE0D}"
 =======
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial 1.5 - Transformations", "examples\CSharp\OpenGL\Tutorial 1.5 - Transformations\Tutorial 1.5 - Transformations.csproj", "{1DF2F3F5-0763-408D-A26F-50AB9447D978}"
 >>>>>>> tutorials-cs-1.5
+=======
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tutorial 2.1 - Camera", "examples\CSharp\OpenGL\Tutorial 2.1 - Camera\Tutorial 2.1 - Camera.csproj", "{CD60F47A-AF05-47C7-BF80-6C1394E5B8F0}"
+>>>>>>> tutorials-cs-2.1
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1422,6 +1426,7 @@ Global
 		{7BAB0B50-AF2B-4F65-AC6E-C5F952C81665}.Release|x86.ActiveCfg = Release|Any CPU
 		{7BAB0B50-AF2B-4F65-AC6E-C5F952C81665}.Release|x86.Build.0 = Release|Any CPU
 <<<<<<< HEAD
+<<<<<<< HEAD
 		{B4E96437-3464-4BF9-976C-ADA09916CE0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B4E96437-3464-4BF9-976C-ADA09916CE0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4E96437-3464-4BF9-976C-ADA09916CE0D}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -1448,6 +1453,20 @@ Global
 		{1DF2F3F5-0763-408D-A26F-50AB9447D978}.Release|x86.ActiveCfg = Release|Any CPU
 		{1DF2F3F5-0763-408D-A26F-50AB9447D978}.Release|x86.Build.0 = Release|Any CPU
 >>>>>>> tutorials-cs-1.5
+=======
+		{CD60F47A-AF05-47C7-BF80-6C1394E5B8F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD60F47A-AF05-47C7-BF80-6C1394E5B8F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD60F47A-AF05-47C7-BF80-6C1394E5B8F0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{CD60F47A-AF05-47C7-BF80-6C1394E5B8F0}.Debug|x64.Build.0 = Debug|Any CPU
+		{CD60F47A-AF05-47C7-BF80-6C1394E5B8F0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CD60F47A-AF05-47C7-BF80-6C1394E5B8F0}.Debug|x86.Build.0 = Debug|Any CPU
+		{CD60F47A-AF05-47C7-BF80-6C1394E5B8F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD60F47A-AF05-47C7-BF80-6C1394E5B8F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD60F47A-AF05-47C7-BF80-6C1394E5B8F0}.Release|x64.ActiveCfg = Release|Any CPU
+		{CD60F47A-AF05-47C7-BF80-6C1394E5B8F0}.Release|x64.Build.0 = Release|Any CPU
+		{CD60F47A-AF05-47C7-BF80-6C1394E5B8F0}.Release|x86.ActiveCfg = Release|Any CPU
+		{CD60F47A-AF05-47C7-BF80-6C1394E5B8F0}.Release|x86.Build.0 = Release|Any CPU
+>>>>>>> tutorials-cs-2.1
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1557,10 +1576,14 @@ Global
 		{08A71FB9-D40B-44C5-8D62-212530566280} = {4FF95A03-14E7-4982-9BAF-A007ED1EDF46}
 		{7BAB0B50-AF2B-4F65-AC6E-C5F952C81665} = {4FF95A03-14E7-4982-9BAF-A007ED1EDF46}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		{B4E96437-3464-4BF9-976C-ADA09916CE0D} = {3427E7AB-4ADC-4DEE-A1D5-71CE7DA0CAC1}
 =======
 		{1DF2F3F5-0763-408D-A26F-50AB9447D978} = {3427E7AB-4ADC-4DEE-A1D5-71CE7DA0CAC1}
 >>>>>>> tutorials-cs-1.5
+=======
+		{CD60F47A-AF05-47C7-BF80-6C1394E5B8F0} = {3427E7AB-4ADC-4DEE-A1D5-71CE7DA0CAC1}
+>>>>>>> tutorials-cs-2.1
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A8E73A98-30BA-4585-AF7E-F3315A359235}
