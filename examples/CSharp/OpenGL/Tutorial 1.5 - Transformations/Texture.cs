@@ -24,7 +24,7 @@ namespace Tutorial
             img.Dispose();
         }
 
-        public unsafe Texture(GL gl, byte[] data, uint width, uint height)
+        public unsafe Texture(GL gl, Span<byte> data, uint width, uint height)
         {
             fixed (void* d = &data[0])
             {

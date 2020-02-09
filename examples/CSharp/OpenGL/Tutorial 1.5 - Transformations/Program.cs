@@ -19,8 +19,8 @@ namespace Tutorial
         private static VertexArrayObject<float, uint> Vao;
         private static Texture Texture;
         private static Shader Shader;
-        //Creating matrix transformations
-        private static Matrix4x4[] Matrices = new Matrix4x4[4];
+        //Creating transforms for the transformations
+        private static Transform[] Transforms = new Transform[4];
 
         private static readonly float[] Vertices =
         {
@@ -74,14 +74,21 @@ namespace Tutorial
 
             Texture = new Texture(Gl, "silk.png");
 
+            //Unlike in the transformation, because of our abstraction order dosent matter here.
             //Translation.
-            Matrices[0] = Matrix4x4.Identity * Matrix4x4.CreateTranslation(0.5f, 0.5f, 0f);
+            Transforms[0] = new Transform();
+            Transforms[0].Position = new Vector3(0.5f, 0.5f, 0f);
             //Rotation.
-            Matrices[1] = Matrix4x4.Identity * Matrix4x4.CreateRotationZ(1);
+            Transforms[1] = new Transform();
+            Transforms[1].Rotation = Quaternion.CreateFromAxisAngle(Vector3.UnitZ, 1f);
             //Scaling.
-            Matrices[2] = Matrix4x4.Identity * Matrix4x4.CreateScale(0.5f);
+            Transforms[2] = new Transform();
+            Transforms[2].Scale = 0.5f;
             //Mixed transformation.
-            Matrices[3] = Matrix4x4.Identity * Matrix4x4.CreateScale(0.5f) * Matrix4x4.CreateRotationZ(2) * Matrix4x4.CreateTranslation(-0.5f, 0.5f, 0f);
+            Transforms[3] = new Transform();
+            Transforms[3].Position = new Vector3(-0.5f, 0.5f, 0f);
+            Transforms[3].Rotation = Quaternion.CreateFromAxisAngle(Vector3.UnitZ, 1f);
+            Transforms[3].Scale = 0.5f;
         }
 
         private static void OnRender(double obj)
@@ -93,10 +100,10 @@ namespace Tutorial
             Shader.Use();
             Shader.SetUniform("uTexture0", 0);
 
-            for (int i = 0; i < Matrices.Length; i++)
+            for (int i = 0; i < Transforms.Length; i++)
             {
                 //Using the transformations.
-                Shader.SetUniform("uModel", Matrices[i]);
+                Shader.SetUniform("uModel", Transforms[i]);
 
                 Gl.DrawElements(GLEnum.Triangles, (uint)Indices.Length, GLEnum.UnsignedInt, 0);
             }

@@ -12,14 +12,14 @@ namespace Tutorial
         private GLEnum _bufferType;
         private GL _gl;
 
-        public unsafe BufferObject(GL gl, TDataType[] data, GLEnum bufferType)
+        public unsafe BufferObject(GL gl, Span<TDataType> data, GLEnum bufferType)
         {
             _gl = gl;
             _bufferType = bufferType;
 
             _handle = _gl.GenBuffer();
             Bind();
-            fixed (void* d = data)
+            fixed(void* d = data)
             {
                 _gl.BufferData(bufferType, (UIntPtr)(data.Length * sizeof(TDataType)), d, GLEnum.StaticDraw);
             }

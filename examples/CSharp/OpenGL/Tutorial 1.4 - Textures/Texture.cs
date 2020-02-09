@@ -27,7 +27,7 @@ namespace Tutorial
             img.Dispose();
         }
 
-        public unsafe Texture(GL gl, byte[] data, uint width, uint height)
+        public unsafe Texture(GL gl, Span<byte> data, uint width, uint height)
         {
             //We want the ability to create a texture using data generated from code aswell.
             fixed (void* d = &data[0])

@@ -45,7 +45,7 @@ namespace Tutorial
             _gl.Uniform1(location, value);
         }
 
-        public unsafe void SetUniform(string name, Matrix4x4 value)
+        public unsafe void SetUniform(string name, Transform value)
         {
             int location = _gl.GetUniformLocation(_handle, name);
             if (location == -1)
@@ -53,7 +53,8 @@ namespace Tutorial
                 throw new Exception($"{name} uniform not found on shader.");
             }
             Use();
-            _gl.UniformMatrix4(location, 1, false, (float*)&value);
+            Matrix4x4 mat4 = value.GetMatrix();
+            _gl.UniformMatrix4(location, 1, false, (float*)&mat4);
         }
 
         public void SetUniform(string name, float value)
