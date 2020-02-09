@@ -43,7 +43,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
                 var currentPos = result;
                 while (true) {
                     var currentString = Marshal.PtrToStringAnsi(new IntPtr(currentPos));
-                    if (!string.IsNullOrEmpty(currentString)) {
+                    if (string.IsNullOrEmpty(currentString)) {
                         break;
                     }
 
