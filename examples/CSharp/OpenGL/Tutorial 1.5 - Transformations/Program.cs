@@ -103,7 +103,7 @@ namespace Tutorial
             for (int i = 0; i < Transforms.Length; i++)
             {
                 //Using the transformations.
-                Shader.SetUniform("uModel", Transforms[i]);
+                Shader.SetUniform("uModel", Transforms[i].ViewMatrix);
 
                 Gl.DrawElements(GLEnum.Triangles, (uint)Indices.Length, GLEnum.UnsignedInt, 0);
             }

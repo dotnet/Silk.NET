@@ -32,7 +32,7 @@ namespace Tutorial
         private static void OnLoad()
         {
             //Set-up input context.
-            IInputContext input = window.GetInput();
+            IInputContext input = window.CreateInput();
             for (int i = 0; i < input.Keyboards.Count; i++)
             {
                 input.Keyboards[i].KeyDown += KeyDown;

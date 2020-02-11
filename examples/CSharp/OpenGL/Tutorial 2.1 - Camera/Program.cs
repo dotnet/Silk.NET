@@ -16,6 +16,7 @@ namespace Tutorial
         private static BufferObject<float> Vbo;
         private static BufferObject<uint> Ebo;
         private static VertexArrayObject<float, uint> Vao;
+        private static Camera Camera;
         private static Texture Texture;
         private static Shader Shader;
 
@@ -70,7 +71,7 @@ namespace Tutorial
         }
 
 
-        private unsafe static void OnLoad()
+        private static void OnLoad()
         {
             IInputContext input = window.GetInput();
             for (int i = 0; i < input.Keyboards.Count; i++)
@@ -84,6 +85,7 @@ namespace Tutorial
             Ebo = new BufferObject<uint>(Gl, Indices, GLEnum.ElementArrayBuffer);
             Vbo = new BufferObject<float>(Gl, Vertices, GLEnum.ArrayBuffer);
             Vao = new VertexArrayObject<float, uint>(Gl, Vbo, Ebo);
+            Camera = new Camera(new Transform(), new PerspectiveLens(window.Size));
 
             Vao.VertexAttributePointer(0, 3, GLEnum.Float, 5, 0);
             Vao.VertexAttributePointer(1, 2, GLEnum.Float, 5, 3);
