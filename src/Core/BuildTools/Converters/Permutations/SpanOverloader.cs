@@ -13,8 +13,8 @@ namespace Silk.NET.BuildTools.Converters.Permutations
     public class SpanOverloader : IParameterOverloader
     {
         public bool IsApplicable
-            (ParameterOverloadContext parameter) =>
-            parameter.Parameter.Type.IndirectionLevels == 1 && parameter.Parameter.Count.IsMultiple;
+            (Parameter parameter) =>
+            parameter.Type.IndirectionLevels == 1 && parameter.Count.IsMultiple;
 
         public bool IsApplicable(Type type) => false;
 

@@ -10,7 +10,7 @@ namespace Silk.NET.BuildTools.Converters.Permutations
 {
     public interface IParameterOverloader
     {
-        bool IsApplicable(ParameterOverloadContext parameter);
+        bool IsApplicable(Parameter parameter);
         bool IsApplicable(Type type);
         IEnumerable<Parameter> GetParameterPermutations(ParameterOverloadContext parameter);
         IEnumerable<Type> GetReturnTypePermutations(Type type);

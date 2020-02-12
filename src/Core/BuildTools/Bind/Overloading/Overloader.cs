@@ -17,16 +17,6 @@ namespace Silk.NET.BuildTools.Bind.Overloading
         {
             new IFunctionOverloader[]
             {
-                new StringOverloader(),
-                new StringReturnOverloader(),
-                new FlowPointerOverloader(),
-                new SpanOverloader(),
-            },
-            new IFunctionOverloader[]
-            {
-                new PointerParameterOverloader(),
-                new PointerReturnValueOverloader(),
-                new StaticCountOverloader(),
                 new IntPtrOverloader(),
                 new ArrayParameterOverloader(),
                 new ReturnTypeOverloader(),

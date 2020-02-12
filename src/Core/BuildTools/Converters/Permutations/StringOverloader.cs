@@ -13,8 +13,8 @@ namespace Silk.NET.BuildTools.Converters.Permutations
     public class StringOverloader : IParameterOverloader
     {
         public bool IsApplicable
-            (ParameterOverloadContext parameter) => parameter.Parameter.Type.ToString() == "char*" ||
-                                                    parameter.Parameter.Type.ToString() == "byte*";
+            (Parameter parameter) => parameter.Type.ToString() == "char*" ||
+                                     parameter.Type.ToString() == "byte*";
 
         public bool IsApplicable(Type type) => type.ToString() == "char*" || type.ToString() == "byte*";
 
