@@ -4,6 +4,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.IO;
+using System.Reflection;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Platform;
 using Silk.NET.Windowing.Common;
@@ -93,10 +95,12 @@ namespace Silk.NET.Windowing
 
             if (!SilkManager.IsRegistered<IWindowPlatform>())
             {
+                var entAsm = Assembly.GetEntryAssembly()?.Location;
+                entAsm = entAsm is null ? "the entry assembly" : Path.GetFileName(entAsm);
                 throw new NotSupportedException
                 (
-                    "Couldn't find a suitable windowing platform. You probably forgot to copy a glfw3 library into " +
-                    "your bin/Debug or bin/Release folder (this won't be a problem in Preview 4)"
+                    "Couldn't find a suitable windowing platform. \n"+
+                    $"GLFW: Copy a GLFW 3.3 binary into the same directory as {entAsm}\n"
                 );
             }
         }
