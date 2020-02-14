@@ -9,11 +9,29 @@ using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
 
-namespace Silk.NET.BuildTools.Bind.Overloading
+namespace Silk.NET.BuildTools.Overloading
 {
     public class IntPtrOverloader : IFunctionOverloader
     {
-        public IEnumerable<ImplementedFunction> CreateOverloads(Function function)
+        public bool TryCreateVariant(Parameter parameter, out Parameter variant, Project core)
+        {
+            variant = null;
+            return false;
+        }
+
+        public bool TryCreateVariant(Type returnType, out Type variant, Project core)
+        {
+            variant = null;
+            return false;
+        }
+
+        public bool TryCreateVariant(Function function, out Function variant, Project core)
+        {
+            variant = null;
+            return false;
+        }
+
+        public bool TryCreateOverload(Function function, out ImplementedFunction overload, Project core)
         {
             var @params = new List<Parameter>(function.Parameters);
             var sb = new StringBuilder();
@@ -63,8 +81,12 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
             if (ret)
             {
-                yield return new ImplementedFunction(new FunctionSignatureBuilder(function).WithParameters(@params).Build(), sb);
+                overload = new ImplementedFunction(new FunctionSignatureBuilder(function).WithParameters(@params).Build(), sb);
+                return true;
             }
+
+            overload = null;
+            return false;
         }
     }
 }
