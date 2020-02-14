@@ -4,16 +4,13 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
-using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
 using Silk.NET.BuildTools.Overloading;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
-using Type = System.Type;
 
 namespace Silk.NET.BuildTools.Bind
 {

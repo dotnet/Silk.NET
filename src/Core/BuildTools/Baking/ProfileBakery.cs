@@ -14,6 +14,7 @@ using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Overloading;
+using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
 namespace Silk.NET.BuildTools.Baking
 {
@@ -125,7 +126,7 @@ namespace Silk.NET.BuildTools.Baking
         {
             foreach (var project in profile.Projects.Values)
             {
-                var enums = new Dictionary<string, Common.Enums.Enum>();
+                var enums = new Dictionary<string, Enum>();
                 var interfaces = new Dictionary<string, Interface>();
                 var structs = new Dictionary<string, Struct>();
                 foreach (var enumeration in project.Enums)
