@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Overloading;
 
 namespace Silk.NET.BuildTools.Baking
 {
@@ -88,6 +89,7 @@ namespace Silk.NET.BuildTools.Baking
             profile.Constants = impl.SelectMany(x => x.Constants).ToList();
 
             MergeAll(profile); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
+            Vary(profile);
             CheckForDuplicates(profile);
             TypeMapper.MapEnums(profile); // we need to map the enums to make sure they are correct for their extension.
 
@@ -105,6 +107,18 @@ namespace Silk.NET.BuildTools.Baking
             );
 
             Console.WriteLine($"Created profile \"{information.Name}\".");
+        }
+
+        private static void Vary(Profile profile)
+        {
+            foreach (var project in profile.Projects.Values)
+            {
+                foreach (var @interface in project.Interfaces.Values)
+                {
+                    @interface.Functions.AddRange
+                        (Overloader.GetWithVariants(@interface.Functions, profile.Projects["Core"]));
+                }
+            }
         }
 
         private static void MergeAll(Profile profile) // this method could also be called Stir ;)

@@ -14,7 +14,7 @@ namespace Silk.NET.BuildTools.Overloading
 {
     public class Overloader
     {
-        public static IFunctionOverloader[] Pipeline { get; set; } =
+        public static IFunctionOverloader[] Pipeline { get; } =
         {
             // Early Overloaders in order of priority
             new StringOverloader(),
@@ -23,14 +23,15 @@ namespace Silk.NET.BuildTools.Overloading
             // Prompt Overloaders
             new SpanAndRefOverloader(),
             new StaticCountOverloader(),
-            
+
             // Late Overloaders
             new IntPtrOverloader(),
             new ArrayParameterOverloader(),
             new ReturnTypeOverloader(),
+            new StringArrayOverloader(),
         };
         
-        public static Function GetEarlyVariant(Function function, Project core)
+        public static bool TryGetEarlyVariant(Function function, out Function finalVariant, Project core)
         {
             var parameters = new List<Parameter>();
             var returnType = function.ReturnType;
@@ -60,11 +61,33 @@ namespace Silk.NET.BuildTools.Overloading
                 }
             }
 
-            return new FunctionSignatureBuilder(function)
-                .WithParameters(parameters)
-                .WithReturnType(returnType)
-                .WithName(returnTypeVaried && !parametersVaried ? function.Name + "S" : function.Name)
-                .Build();
+            if (returnTypeVaried || parametersVaried)
+            {
+                finalVariant = new FunctionSignatureBuilder(function)
+                    .WithParameters(parameters)
+                    .WithReturnType(returnType)
+                    .WithName(returnTypeVaried && !parametersVaried ? function.Name + "S" : function.Name)
+                    .Build();
+                return true;
+            }
+
+            finalVariant = null;
+            return false;
+        }
+
+        public static IEnumerable<Function> GetWithVariants(IEnumerable<Function> functions, Project core)
+        {
+            foreach (var function in functions)
+            {
+                yield return function;
+                foreach (var overloader in Pipeline)
+                {
+                    if (overloader.TryCreateVariant(function, out var variant, core))
+                    {
+                        yield return variant;
+                    }
+                }
+            }
         }
 
         public static IEnumerable<ImplementedFunction> GetOverloads(Project project, Project core)

@@ -12,6 +12,7 @@ using System.Linq;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Overloading;
 using Attribute = Silk.NET.BuildTools.Common.Attribute;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
@@ -113,6 +114,13 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
                         .Interfaces[preCategory]
                         .Functions.Add(function);
+
+                    if (Overloader.TryGetEarlyVariant(function, out var variant, profile.Projects["Core"]))
+                    {
+                        profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
+                            .Interfaces[rawCategory]
+                            .Functions.Add(variant);
+                    }
                 }
             }
         }
