@@ -12,8 +12,9 @@ using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
+using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
-namespace Silk.NET.BuildTools.Bind.Overloading
+namespace Silk.NET.BuildTools.Overloading
 {
     public class ArrayParameterOverloader : IFunctionOverloader
     {
@@ -74,12 +75,31 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             return true;
         }
 
+        public bool TryCreateVariant(Parameter parameter, out Parameter variant, Project core)
+        {
+            variant = null;
+            return false;
+        }
+
+        public bool TryCreateVariant(Type returnType, out Type variant, Project core)
+        {
+            variant = null;
+            return false;
+        }
+
+        public bool TryCreateVariant(Function function, out Function variant, Project core)
+        {
+            variant = null;
+            return false;
+        }
+
         /// <inheritdoc/>
-        public IEnumerable<ImplementedFunction> CreateOverloads(Function function)
+        public bool TryCreateOverload(Function function, out ImplementedFunction overload, Project core)
         {
             if (!IsApplicable(function))
             {
-                yield break;
+                overload = null;
+                return false;
             }
 
             var arrayParameter = function.Parameters.Last();
@@ -104,10 +124,11 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             sb.AppendLine("// ArrayParameterOverloader");
             sb.AppendLine($"{function.Name}(1, &{newArrayParameter.Name});");
 
-            yield return new ImplementedFunction(new FunctionSignatureBuilder(function)
+            overload = new ImplementedFunction(new FunctionSignatureBuilder(function)
                 .WithName(newName)
                 .WithParameters(newParameters)
                 .Build(), sb, true);
-}
+            return true;
+        }
     }
 }
