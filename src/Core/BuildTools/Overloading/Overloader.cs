@@ -22,6 +22,7 @@ namespace Silk.NET.BuildTools.Overloading
             
             // Prompt Overloaders
             new SpanAndRefOverloader(),
+            new StaticCountOverloader(),
             
             // Late Overloaders
             new IntPtrOverloader(),
