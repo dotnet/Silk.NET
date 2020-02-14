@@ -4,18 +4,29 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
+using System.Linq;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Overloading.Prompt;
 
 namespace Silk.NET.BuildTools.Overloading
 {
     public class Overloader
     {
-        public static IFunctionOverloader[] EarlyOverloaders { get; } =
+        public static IFunctionOverloader[] Pipeline { get; set; } =
         {
-            new GroupOverloader(), // in order of priority
-            new StringOverloader()
+            // Early Overloaders in order of priority
+            new StringOverloader(),
+            new GroupOverloader(),
+            
+            // Prompt Overloaders
+            new SpanAndRefOverloader(),
+            
+            // Late Overloaders
+            new IntPtrOverloader(),
+            new ArrayParameterOverloader(),
+            new ReturnTypeOverloader(),
         };
         
         public static Function GetEarlyVariant(Function function, Project core)
@@ -27,7 +38,7 @@ namespace Silk.NET.BuildTools.Overloading
             var returnTypeVaried = false;
             for (var i = 0; i < parameters.Count; i++)
             {
-                foreach (var earlyOverloader in EarlyOverloaders)
+                foreach (var earlyOverloader in Pipeline)
                 {
                     if (earlyOverloader.TryCreateVariant(parameters[i], out var variant, core))
                     {
@@ -38,7 +49,7 @@ namespace Silk.NET.BuildTools.Overloading
                 }
             }
             
-            foreach (var earlyOverloader in EarlyOverloaders)
+            foreach (var earlyOverloader in Pipeline)
             {
                 if (earlyOverloader.TryCreateVariant(returnType, out var variant, core))
                 {
@@ -53,6 +64,48 @@ namespace Silk.NET.BuildTools.Overloading
                 .WithReturnType(returnType)
                 .WithName(returnTypeVaried && !parametersVaried ? function.Name + "S" : function.Name)
                 .Build();
+        }
+
+        public static IEnumerable<ImplementedFunction> GetOverloads(Project project, Project core)
+        {
+            var ret = new List<ImplementedFunction>();
+            foreach (var @interface in project.Interfaces.Values)
+            {
+                ret.AddRange(GetOverloads(@interface, core).Where(x => !ret.Any(y => y.Signature.Equals(x.Signature))));
+            }
+
+            return ret;
+        }
+
+        public static IEnumerable<ImplementedFunction> GetOverloads(Interface @interface, Project core)
+        {
+            var ret = new List<ImplementedFunction>();
+            foreach (var function in @interface.Functions)
+            {
+                foreach (var overload in GetOverloads(function, core))
+                {
+                    if (!@interface.Functions.Any(x => x.Equals(overload.Signature)))
+                    {
+                        if (!ret.Any(x => x.Signature.Equals(overload.Signature)))
+                        {
+                            ret.Add(overload);
+                        }
+                    }
+                }
+            }
+
+            return ret;
+        }
+
+        private static IEnumerable<ImplementedFunction> GetOverloads(Function function, Project core)
+        {
+            foreach (var overloader in Pipeline)
+            {
+                if (overloader.TryCreateOverload(function, out var overload, core))
+                {
+                    yield return overload;
+                }
+            }
         }
     }
 }
