@@ -12,8 +12,9 @@ using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
+using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
-namespace Silk.NET.BuildTools.Bind.Overloading
+namespace Silk.NET.BuildTools.Overloading
 {
     public class ReturnTypeOverloader : IFunctionOverloader
     {
@@ -71,12 +72,31 @@ namespace Silk.NET.BuildTools.Bind.Overloading
             return true;
         }
 
-        /// <inheritdoc/>
-        public IEnumerable<ImplementedFunction> CreateOverloads(Function function)
-        {
+         public bool TryCreateVariant(Parameter parameter, out Parameter variant, Project core)
+         {
+             variant = null;
+             return false;
+         }
+
+         public bool TryCreateVariant(Type returnType, out Type variant, Project core)
+         {
+             variant = null;
+             return false;
+         }
+
+         public bool TryCreateVariant(Function function, out Function variant, Project core)
+         {
+             variant = null;
+             return false;
+         }
+
+         /// <inheritdoc/>
+         public bool TryCreateOverload(Function function, out ImplementedFunction overload, Project core)
+         {
             if (!IsApplicable(function))
             {
-                yield break;
+                overload = null;
+                return false;
             }
 
             var lastParameterType = function.Parameters.Last().Type;
@@ -104,21 +124,21 @@ namespace Silk.NET.BuildTools.Bind.Overloading
 
             if (!newParameters.Any())
             {
-                yield return new ImplementedFunction(functionBuilder
+                overload = new ImplementedFunction(functionBuilder
                     .WithParameters(newParameters)
                     .Build(), sb, true);
 
-                yield break;
+                return true;
             }
 
             var sizeParameterType = newParameters.Last().Type;
             if ((sizeParameterType.Name != "int" && sizeParameterType.Name != "uint") || sizeParameterType.IsPointer)
             {
-                yield return new ImplementedFunction(functionBuilder
+                overload = new ImplementedFunction(functionBuilder
                     .WithParameters(newParameters)
                     .Build(), sb, true);
 
-                yield break;
+                return true;
             }
 
             var n = newParameters.Last().Name;
@@ -127,12 +147,13 @@ namespace Silk.NET.BuildTools.Bind.Overloading
                 $"const {(sizeParameterType.Name == "uint" ? "uint " : "int ")}{(Utilities.CSharpKeywords.Contains(n) ? "@" : "")}{n} = 1;\n"
             );
             newParameters = SkipLastExtension.SkipLast(newParameters, 1).ToList();
-            yield return new ImplementedFunction
+            overload = new ImplementedFunction
             (
                 functionBuilder
                     .WithParameters(newParameters)
                     .Build(), sb, true
             );
+            return true;
 
             string Convert(Parameter x)
             {
