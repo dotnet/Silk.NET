@@ -8,10 +8,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using MoreLinq.Extensions;
-using Silk.NET.BuildTools.Bind.Overloading;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
+using Silk.NET.BuildTools.Overloading;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 using Type = System.Type;
 
@@ -265,7 +265,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine();
                 }
 
-                foreach (var overload in Overloader.GetOverloads(project))
+                foreach (var overload in Overloader.GetOverloads(project, profile.Projects["Core"]))
                 {
                     using (var sr = new StringReader(overload.Signature.Doc))
                     {
@@ -399,7 +399,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine();
                     }
 
-                    foreach (var overload in Overloader.GetOverloads(i))
+                    foreach (var overload in Overloader.GetOverloads(i, profile.Projects["Core"]))
                     {
                         using (var sr = new StringReader(overload.Signature.Doc))
                         {
