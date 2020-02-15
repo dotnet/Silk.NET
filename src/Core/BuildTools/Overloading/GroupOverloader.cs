@@ -15,7 +15,8 @@ namespace Silk.NET.BuildTools.Overloading
         public bool TryCreateVariant(Parameter parameter, out Parameter variant, Project core)
         {
             if (parameter.Type.OriginalGroup is null || core.Enums.All
-                    (x => x.Name != parameter.Type.OriginalGroup))
+                    (x => x.Name != parameter.Type.OriginalGroup) || parameter.Type.OriginalName != "GLenum" ||
+                parameter.Type.OriginalName != "CLenum")
             {
                 variant = null;
                 return false;
@@ -39,7 +40,8 @@ namespace Silk.NET.BuildTools.Overloading
         public bool TryCreateVariant(Type returnType, out Type variant, Project core)
         {
             if (returnType.OriginalGroup is null || core.Enums.All
-                    (x => x.Name != returnType.OriginalGroup))
+                    (x => x.Name != returnType.OriginalGroup) || returnType.OriginalName != "GLenum" ||
+                returnType.OriginalName != "CLenum")
             {
                 variant = null;
                 return false;

@@ -127,7 +127,7 @@ namespace Silk.NET.BuildTools.Overloading
             overload = new ImplementedFunction(new FunctionSignatureBuilder(function)
                 .WithName(newName)
                 .WithParameters(newParameters)
-                .Build(), sb, true);
+                .Build(), sb, function, true);
             return true;
         }
     }

@@ -59,6 +59,11 @@ namespace Silk.NET.BuildTools.Overloading
                 return false;
             }
 
+            if (function.Parameters.Any(x => x.Type.IsOut || x.Type.IsByRef || x.Type.IsIn))
+            {
+                return false;
+            }
+
             // the last parameter does not have a specific count set
             if (!(lastParameter.Count is null) && lastParameter.Count.IsStatic)
             {
@@ -125,7 +130,7 @@ namespace Silk.NET.BuildTools.Overloading
             {
                 overload = new ImplementedFunction(functionBuilder
                     .WithParameters(newParameters)
-                    .Build(), sb, true);
+                    .Build(), sb, function, true);
 
                 return true;
             }
@@ -135,7 +140,7 @@ namespace Silk.NET.BuildTools.Overloading
             {
                 overload = new ImplementedFunction(functionBuilder
                     .WithParameters(newParameters)
-                    .Build(), sb, true);
+                    .Build(), sb, function, true);
 
                 return true;
             }
@@ -150,7 +155,7 @@ namespace Silk.NET.BuildTools.Overloading
             (
                 functionBuilder
                     .WithParameters(newParameters)
-                    .Build(), sb, true
+                    .Build(), sb, function, true
             );
             return true;
 

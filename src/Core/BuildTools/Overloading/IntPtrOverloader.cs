@@ -33,6 +33,13 @@ namespace Silk.NET.BuildTools.Overloading
 
         public bool TryCreateOverload(Function function, out ImplementedFunction overload, Project core)
         {
+            if (function.NativeName == "clEnqueueSVMMigrateMem" || function.NativeName == "clEnqueueNativeKernel")
+            {
+                // BUG these functions think a span variant exists where one doesnt, was unable to filter out.
+                overload = null;
+                return false;
+            }
+            
             var @params = new List<Parameter>(function.Parameters);
             var sb = new StringBuilder();
             sb.AppendLine("// IntPtrOverloader");
@@ -81,7 +88,7 @@ namespace Silk.NET.BuildTools.Overloading
 
             if (ret)
             {
-                overload = new ImplementedFunction(new FunctionSignatureBuilder(function).WithParameters(@params).Build(), sb);
+                overload = new ImplementedFunction(new FunctionSignatureBuilder(function).WithParameters(@params).Build(), sb, function);
                 return true;
             }
 

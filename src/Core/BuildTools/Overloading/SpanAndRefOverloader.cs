@@ -29,10 +29,21 @@ namespace Silk.NET.BuildTools.Overloading.Prompt
             var varied = false;
             var parameters = new List<Parameter>();
             parameters.AddRange(function.Parameters);
+            var genericParams = new List<GenericTypeParameter>();
             for (var i = 0; i < parameters.Count; i++)
             {
                 var param = parameters[i];
-                if (param.Type.IndirectionLevels == 1 && param.Count.IsMultiple)
+                var typeName = param.Type.Name == "void" ? $"T{genericParams.Count}" : param.Type.Name;
+                if (param.Type.Name == "void")
+                {
+                    genericParams.Add
+                    (
+                        new GenericTypeParameter
+                            {Name = $"T{genericParams.Count}", Constraints = new List<string> {"unmanaged"}}
+                    );
+                }
+
+                if (param.Type.IndirectionLevels == 1 && (param.Count?.IsMultiple ?? true))
                 {
                     varied = true;
                     parameters[i] = new ParameterSignatureBuilder(param).WithType
@@ -40,7 +51,7 @@ namespace Silk.NET.BuildTools.Overloading.Prompt
                         new Type
                         {
                             GenericTypes = new List<Type>
-                                {new TypeSignatureBuilder(param.Type).WithIndirectionLevel(0).Build()},
+                                {new TypeSignatureBuilder(param.Type).WithName(typeName).WithIndirectionLevel(0).Build()},
                             Name = "Span"
                         }
                     )
@@ -48,14 +59,16 @@ namespace Silk.NET.BuildTools.Overloading.Prompt
                     continue;
                 }
 
-                if (param.Type.IsPointer && !param.Count.IsMultiple)
+                if (param.Type.IsPointer && !(param.Count?.IsMultiple ?? true))
                 {
                     varied = true;
                     parameters[i] = new ParameterSignatureBuilder(param).WithType
                     (
                         new TypeSignatureBuilder(param.Type)
                             .WithIndirectionLevel(param.Type.IndirectionLevels - 1)
-                            .WithByRef(true)
+                            .WithName(typeName)
+                            .WithByRef(param.Flow != FlowDirection.Out)
+                            .WithIsOut(param.Flow == FlowDirection.Out)
                             .Build()
                     )
                     .Build();
@@ -64,7 +77,10 @@ namespace Silk.NET.BuildTools.Overloading.Prompt
 
             if (varied)
             {
-                variant = new FunctionSignatureBuilder(function).WithParameters(parameters).Build();
+                variant = new FunctionSignatureBuilder(function).WithParameters
+                        (parameters)
+                    .WithGenericTypeParameters(genericParams)
+                    .Build();
                 return true;
             }
 

@@ -5,6 +5,8 @@
 
 using System;
 using System.Collections.Generic;
+using JetBrains.Annotations;
+using Newtonsoft.Json;
 
 namespace Silk.NET.BuildTools.Common.Functions
 {
@@ -26,6 +28,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets size information for this parameter.
         /// </summary>
+        [CanBeNull]
         public Count Count { get; set; }
 
         /// <summary>
@@ -37,6 +40,9 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets or sets a list of attributes for this parameter.
         /// </summary>
         public List<Attribute> Attributes { get; set; } = new List<Attribute>();
+        
+        [JsonIgnore]
+        public Function Origin { get; set; }
 
         public bool Equals(Parameter other)
         {

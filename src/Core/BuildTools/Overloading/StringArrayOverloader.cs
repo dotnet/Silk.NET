@@ -88,7 +88,7 @@ namespace Silk.NET.BuildTools.Overloading
             if (varied)
             {
                 overload = new ImplementedFunction
-                    (new FunctionSignatureBuilder(function).WithParameters(pl).Build(), sb);
+                    (new FunctionSignatureBuilder(function).WithParameters(pl).Build(), sb, function);
                 return true;
             }
 

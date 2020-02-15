@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
@@ -22,7 +23,6 @@ namespace Silk.NET.BuildTools.Overloading
             
             // Prompt Overloaders
             new SpanAndRefOverloader(),
-            new StaticCountOverloader(),
 
             // Late Overloaders
             new IntPtrOverloader(),
@@ -42,12 +42,15 @@ namespace Silk.NET.BuildTools.Overloading
             {
                 foreach (var earlyOverloader in Pipeline)
                 {
+                    parameters[i].Origin = function;
                     if (earlyOverloader.TryCreateVariant(parameters[i], out var variant, core))
                     {
                         parametersVaried = true;
                         parameters[i] = variant;
                         break;
                     }
+
+                    parameters[i].Origin = null;
                 }
             }
             
@@ -68,6 +71,7 @@ namespace Silk.NET.BuildTools.Overloading
                     .WithReturnType(returnType)
                     .WithName(returnTypeVaried && !parametersVaried ? function.Name + "S" : function.Name)
                     .Build();
+                
                 return true;
             }
 
@@ -77,25 +81,17 @@ namespace Silk.NET.BuildTools.Overloading
 
         public static IEnumerable<Function> GetWithVariants(IEnumerable<Function> functions, Project core)
         {
+            var ret = new List<Function>();
             foreach (var function in functions)
             {
-                yield return function;
+                ret.Add(function);
                 foreach (var overloader in Pipeline)
                 {
                     if (overloader.TryCreateVariant(function, out var variant, core))
                     {
-                        yield return variant;
+                        ret.Add(variant);
                     }
                 }
-            }
-        }
-
-        public static IEnumerable<ImplementedFunction> GetOverloads(Project project, Project core)
-        {
-            var ret = new List<ImplementedFunction>();
-            foreach (var @interface in project.Interfaces.Values)
-            {
-                ret.AddRange(GetOverloads(@interface, core).Where(x => !ret.Any(y => y.Signature.Equals(x.Signature))));
             }
 
             return ret;
@@ -117,6 +113,49 @@ namespace Silk.NET.BuildTools.Overloading
                     }
                 }
             }
+
+            return ret;
+        }
+
+        public static IEnumerable<ImplementedFunction> GetOverloads(IEnumerable<Function> functions, Project core)
+        {
+            var ret = new List<ImplementedFunction>();
+            var removals = new List<Function>();
+            var originalFunctions = functions as Function[] ?? functions.ToArray();
+            foreach (var function in originalFunctions)
+            {
+                foreach (var overload in GetOverloads(function, core))
+                {
+                    if (!originalFunctions.Any(x => x.Equals(overload.Signature)))
+                    {
+                        if (!ret.Any(x => x.Signature.Equals(overload.Signature)))
+                        {
+                            ret.Add(overload);
+                        }
+                        else
+                        {
+                            removals.Add(overload.Signature);
+                        }
+                    }
+                    else
+                    {
+                        removals.Add(overload.Signature);
+                    }
+                }
+            }
+
+            var removed = 0;
+            for (var i = 0; i < ret.Count; i++)
+            {
+                var overload = ret[i - removed];
+                if (removals.Any(x => x.Equals(overload.Base)))
+                {
+                    ret.Remove(overload);
+                    removed++;
+                }
+            }
+
+            Debug.WriteLine($"Removed {removed} duplicate overloads.");
 
             return ret;
         }

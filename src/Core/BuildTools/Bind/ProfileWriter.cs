@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
 using Silk.NET.BuildTools.Overloading;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
@@ -243,7 +244,7 @@ namespace Silk.NET.BuildTools.Bind
 
                 sw.WriteLine();
 
-                var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).RemoveDuplicates();
+                var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).RemoveDuplicates().ToArray();
                 foreach (var function in allFunctions)
                 {
                     sw.WriteLine("        /// <inheritdoc />"); // TODO docs
@@ -262,7 +263,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine();
                 }
 
-                foreach (var overload in Overloader.GetOverloads(project, profile.Projects["Core"]))
+                foreach (var overload in Overloader.GetOverloads(allFunctions, profile.Projects["Core"]))
                 {
                     using (var sr = new StringReader(overload.Signature.Doc))
                     {
