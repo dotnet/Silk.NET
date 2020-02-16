@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -1988,6 +1988,29 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// <para>
         /// This function returns the value of an input option for the specified window.
+        /// The mode must be <see cref="CursorStateAttribute.Cursor" /> or <see cref="CursorStateAttribute.RawMouseMotion" />.
+        /// </para>
+        /// </summary>
+        /// <param name="window">The window to query.</param>
+        /// <param name="mode">
+        /// <see cref="CursorStateAttribute.Cursor" />.
+        /// </param>
+        /// <returns>Either the CursorModeValue or bool dependant on <paramref name="mode" />.</returns>
+        /// <remarks>
+        /// <para>
+        /// This function must only be called from the main thread.
+        /// </para>
+        /// <para>
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
+        /// </para>
+        /// </remarks>
+        /// <seealso cref="SetInputMode(WindowHandle*, CursorStateAttribute, CursorModeValue)" />
+        /// <seealso cref="SetInputMode(WindowHandle*, CursorStateAttribute, bool)" />
+        public abstract unsafe int GetInputMode(WindowHandle* window, CursorStateAttribute mode);
+
+        /// <summary>
+        /// <para>
+        /// This function returns the value of an input option for the specified window.
         /// The mode must be <see cref="StickyAttributes.StickyKeys" /> or <see cref="StickyAttributes.StickyMouseButtons" />.
         /// </para>
         /// </summary>
@@ -2005,28 +2028,6 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="SetInputMode(WindowHandle*, StickyAttributes, bool)" />
-        public abstract unsafe CursorModeValue GetInputMode(WindowHandle* window, CursorStateAttribute mode);
-
-        /// <summary>
-        /// <para>
-        /// This function returns the value of an input option for the specified window.
-        /// The mode must be <see cref="CursorStateAttribute.Cursor" />.
-        /// </para>
-        /// </summary>
-        /// <param name="window">The window to query.</param>
-        /// <param name="mode">
-        /// <see cref="CursorStateAttribute.Cursor" />.
-        /// </param>
-        /// <returns>TODO: return value is either InputModeValue or bool dependant on <paramref name="mode" />.</returns>
-        /// <remarks>
-        /// <para>
-        /// This function must only be called from the main thread.
-        /// </para>
-        /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.InvalidEnum" />.
-        /// </para>
-        /// </remarks>
-        /// <seealso cref="SetInputMode(WindowHandle*,CursorStateAttribute, CursorModeValue)" />
         public abstract unsafe bool GetInputMode(WindowHandle* window, StickyAttributes mode);
 
         /// <summary>
@@ -2737,6 +2738,31 @@ namespace Silk.NET.GLFW
             WindowHandle* window,
             CursorStateAttribute mode,
             CursorModeValue value
+        );
+
+        /// <summary>
+        /// <para>
+        /// This function sets an input mode option for the specified window.
+        /// The mode must be <see cref="CursorStateAttribute.RawMouseMotion" />.
+        /// </para>
+        /// </summary>
+        /// <param name="window">The window whose input mode to set.</param>
+        /// <param name="mode"><see cref="CursorStateAttribute.RawMouseMotion" />.</param>
+        /// <param name="value">The new value of the specified input mode.</param>
+        /// <remarks>
+        /// <para>
+        /// This function must only be called from the main thread.
+        /// </para>
+        /// <para>
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and
+        /// <see cref="ErrorCode.PlatformError" />.
+        /// </para>
+        /// </remarks>
+        public abstract unsafe void SetInputMode
+        (
+            WindowHandle* window,
+            CursorStateAttribute mode,
+            bool value
         );
 
         /// <summary>
