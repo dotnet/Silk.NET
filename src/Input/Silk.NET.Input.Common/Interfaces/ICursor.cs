@@ -24,6 +24,14 @@ namespace Silk.NET.Input.Common
         StandardCursor StandardCursor { get; set; }
 
         /// <summary>
+        /// Mode of the cursor.
+        /// </summary>
+        /// <remarks>
+        /// See <see cref="CursorMode"/> for details.
+        /// </remarks>
+        CursorMode CursorMode { get; set; }
+
+        /// <summary>
         /// Hotspot on the X axis.
         /// </summary>
         /// <remarks>
