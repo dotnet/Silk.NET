@@ -4932,7 +4932,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "EGLSetBlobFuncANDROID",
+                    "Name": "SetBlobFuncAndroid",
                     "Group": null,
                     "OriginalName": "EGLSetBlobFuncANDROID",
                     "GenericTypes": [],
@@ -4949,7 +4949,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "EGLGetBlobFuncANDROID",
+                    "Name": "GetBlobFuncAndroid",
                     "Group": null,
                     "OriginalName": "EGLGetBlobFuncANDROID",
                     "GenericTypes": [],
@@ -8641,7 +8641,7 @@
                   "Type": {
                     "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "EGLClientPixmapHI",
+                    "Name": "IntPtr",
                     "Group": null,
                     "OriginalName": "EGLClientPixmapHI",
                     "GenericTypes": [],
@@ -11675,7 +11675,7 @@
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
-                    "Name": "EGLDEBUGPROCKHR",
+                    "Name": "DebugProcKhr",
                     "Group": null,
                     "OriginalName": "EGLDEBUGPROCKHR",
                     "GenericTypes": [],
@@ -15925,7 +15925,7 @@
               "ReturnType": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
-                "Name": "wl_buffer",
+                "Name": "void*",
                 "Group": null,
                 "OriginalName": "wl_buffer",
                 "GenericTypes": [],

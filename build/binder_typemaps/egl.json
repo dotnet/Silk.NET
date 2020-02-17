@@ -13,6 +13,7 @@
     "EGLObjectKHR":  "IntPtr",
     "EGLOutputLayerEXT": "IntPtr",
     "EGLOutputPortEXT":  "IntPtr",
+    "EGLClientPixmapHI": "IntPtr",
     "EGLStreamKHR": "IntPtr",
     "EGLSurface":  "IntPtr",
     "EGLSync": "IntPtr",
@@ -31,5 +32,8 @@
     "__eglMustCastToProperFunctionPointerType": "FuncPtr",
     "EGLNativeDisplayType": "IntPtr",
     "EGLNativePixmapType": "IntPtr",
-    "EGLNativeWindowType": "IntPtr"
+    "EGLNativeWindowType": "IntPtr",
+    "EGLGetBlobFuncANDROID": "GetBlobFuncAndroid",
+    "EGLSetBlobFuncANDROID": "SetBlobFuncAndroid",
+    "EGLDEBUGPROCKHR": "DebugProcKhr"
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 
@@ -19,8 +20,7 @@ namespace Silk.NET.EGL
         }
 
         public override bool IsExtensionPresent(string extension)
-        {
-        }
+            => ((IList) QueryStringS(IntPtr.Zero, (int) EGLEnum.Extensions).Split(' ')).Contains("EGL_" + extension);
     }
 }
 

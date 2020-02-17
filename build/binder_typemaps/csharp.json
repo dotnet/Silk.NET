@@ -131,4 +131,5 @@
     "khronos_stime_nanoseconds_t": "long",
     "khronos_uint64_t": "ulong",
     "wl_resource": "void*",
+    "wl_buffer": "void*",
 }
