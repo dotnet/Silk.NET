@@ -25,17 +25,5 @@ namespace Silk.NET.Core.Loader
         {
             return LibraryLoader.Load<TExt, T>(baseApi);
         }
-
-        public static TExt Load<TExt>(T baseApi, SearchPathContainer paths)
-            where TExt : NativeExtension<T>
-        {
-            return LibraryLoader.Load<TExt, T>(baseApi, paths);
-        }
-
-        public static TExt Load<TExt>(T baseApi, SearchPathContainer paths, Ultz.SuperInvoke.Loader.LibraryLoader symbolLoader)
-            where TExt : NativeExtension<T>
-        {
-            return LibraryLoader.Load<TExt, T>(baseApi, paths, symbolLoader);
-        }
     }
 }

@@ -10,19 +10,10 @@ namespace Silk.NET.Vulkan
 {
     public class VkLoader : LibraryLoader
     {
-        public bool IsExtensionLoader { get; }
         public Vk Vulkan { get; internal set; }
         public LibraryLoader BaseLoader { get; }
-        public VkLoader(Vk vk, LibraryLoader baseLoader)
-        {
-            IsExtensionLoader = true;
-            BaseLoader = baseLoader;
-            Vulkan = vk;
-        }
-
         public VkLoader(LibraryLoader defaultLoader)
         {
-            IsExtensionLoader = false;
             BaseLoader = defaultLoader;
             Vulkan = null;
         }
