@@ -12441,6 +12441,13 @@
               "Value": "1000281001",
               "Doc": "/// <summary></summary>",
               "Attributes": []
+            },
+            {
+              "Name": "ReservedQCom",
+              "NativeName": "VK_STRUCTURE_TYPE_RESERVED_QCOM",
+              "Value": "1000309000",
+              "Doc": "/// <summary></summary>",
+              "Attributes": []
             }
           ],
           "Name": "StructureType",
@@ -93613,7 +93620,7 @@
           "Name": "IExtBufferDeviceAddress",
           "Functions": [
             {
-              "Name": "GetBufferDeviceAddres",
+              "Name": "GetBufferDeviceAddress",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -100847,7 +100854,7 @@
           "Name": "IKhrBufferDeviceAddress",
           "Functions": [
             {
-              "Name": "GetBufferDeviceAddres",
+              "Name": "GetBufferDeviceAddress",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -100912,7 +100919,7 @@
               "ExtensionName": "KHR_buffer_device_address"
             },
             {
-              "Name": "GetBufferOpaqueCaptureAddres",
+              "Name": "GetBufferOpaqueCaptureAddress",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,
@@ -100977,7 +100984,7 @@
               "ExtensionName": "KHR_buffer_device_address"
             },
             {
-              "Name": "GetDeviceMemoryOpaqueCaptureAddres",
+              "Name": "GetDeviceMemoryOpaqueCaptureAddress",
               "ReturnType": {
                 "IndirectionLevels": 0,
                 "ArrayDimensions": 0,

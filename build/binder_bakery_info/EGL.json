@@ -1,0 +1,28 @@
+[
+  {
+    "Name": "EGL",
+    "Implements": [
+      "egl",
+      "egl-1.0",
+      "egl-1.1",
+      "egl-1.2",
+      "egl-1.3",
+      "egl-1.4",
+      "egl-1.5"
+    ],
+    "Namespace": "Silk.NET.EGL",
+    "ExtensionsNamespace": "Silk.NET.EGL.Extensions",
+    "OutputFolder": "Windowing/EGL",
+    "NameContainer": {
+      "Linux": "libEGL.so.1",
+      "Windows": "libEGL.dll",
+      "MacOS": "/System/Library/Frameworks/EGL.framework/EGL",
+      "Android": "libEGL.so.1",
+      "IOS": "/System/Library/Frameworks/EGL.framework/EGL",
+      "ClassName": "EGLLibraryNameContainer"
+    },
+    "FunctionPrefix": "egl",
+    "ClassName": "EGL",
+    "SymbolLoader": "Ultz.SuperInvoke.Loader.LibraryLoader.GetPlatformDefaultLoader()"
+  }
+]
