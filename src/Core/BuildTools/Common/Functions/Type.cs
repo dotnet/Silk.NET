@@ -72,9 +72,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         
         /// <summary>
         /// Gets or sets the original group of this type.
-        /// Not included in JSON, as it is only used by the OpenGL Constructor.
         /// </summary>
-        [JsonIgnore]
         public string OriginalGroup { get; set; }
 
         /// <summary>

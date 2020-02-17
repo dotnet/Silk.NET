@@ -1,1 +1,0 @@
-Intended to be a port of the "In Practice" section of LearnOpenGL, using Silk.NET.OpenGL and Silk.NET.OpenAL.
