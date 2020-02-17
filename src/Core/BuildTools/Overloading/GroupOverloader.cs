@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System.Diagnostics;
 using System.Linq;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
@@ -14,9 +15,8 @@ namespace Silk.NET.BuildTools.Overloading
     {
         public bool TryCreateVariant(Parameter parameter, out Parameter variant, Project core)
         {
-            if (parameter.Type.OriginalGroup is null || core.Enums.All
-                    (x => x.Name != parameter.Type.OriginalGroup) || parameter.Type.OriginalName != "GLenum" ||
-                parameter.Type.OriginalName != "CLenum")
+            if (parameter.Type.OriginalGroup is null || core.Enums.All(x => x.Name != parameter.Type.OriginalGroup) || (parameter.Type.OriginalName != "GLenum" &&
+                parameter.Type.OriginalName != "CLenum"))
             {
                 variant = null;
                 return false;

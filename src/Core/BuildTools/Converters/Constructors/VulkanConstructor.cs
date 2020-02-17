@@ -111,13 +111,6 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
                         .Interfaces[preCategory]
                         .Functions.Add(function);
-
-                    if (Overloader.TryGetEarlyVariant(function, out var variant, profile.Projects["Core"]))
-                    {
-                        profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
-                            .Interfaces[preCategory]
-                            .Functions.Add(variant);
-                    }
                 }
             }
         }

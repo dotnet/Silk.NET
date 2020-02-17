@@ -170,5 +170,19 @@ namespace Silk.NET.BuildTools.Overloading
                 }
             }
         }
+
+        public static IEnumerable<Function> GetEarlyVariants(IEnumerable<Function> functions, Project core)
+        {
+            var ret = new List<Function>();
+            foreach (var function in functions)
+            {
+                if (TryGetEarlyVariant(function, out var variant, core))
+                {
+                    ret.Add(variant);
+                }
+            }
+
+            return ret;
+        }
     }
 }
