@@ -117,7 +117,7 @@ namespace Silk.NET.BuildTools.Common
                     {
                         foreach (var parameter in function.Parameters)
                         {
-                            if (parameter.Type.OriginalName == "GLenum" || parameter.Type.Name == "CLenum")
+                            if (parameter.Type.OriginalName == "GLenum" || parameter.Type.Name == "CLenum" || parameter.Type.Name == "EGLenum")
                             {
                                 parameter.Type.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
                             }
@@ -131,7 +131,7 @@ namespace Silk.NET.BuildTools.Common
                             }
                         }
 
-                        if (function.ReturnType.OriginalName == "GLenum" || function.ReturnType.Name == "CLenum")
+                        if (function.ReturnType.OriginalName == "GLenum" || function.ReturnType.Name == "CLenum" || function.ReturnType.Name == "EGLenum")
                         {
                             function.ReturnType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
                         }

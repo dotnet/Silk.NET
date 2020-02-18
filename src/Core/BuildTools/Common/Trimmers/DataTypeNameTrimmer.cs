@@ -36,7 +36,7 @@ namespace Silk.NET.BuildTools.Common.Trimmers
             "(sh|ib|[tdrey]s|[eE]n[vd]|bled" +
             "|Attrib|Access|Boolean|Coord|Depth|Feedbacks|Finish|Flag" +
             "|Groups|IDs|Indexed|Instanced|Pixels|Queries|Status|Tess|Through" +
-            "|Uniforms|Varyings|Weight|Width|Bias|Id|Fixed|Pass)$",
+            "|Uniforms|Varyings|Weight|Width|Bias|Id|Fixed|Pass|Address|Configs|Thread)$",
             RegexOptions.Compiled
         );
 

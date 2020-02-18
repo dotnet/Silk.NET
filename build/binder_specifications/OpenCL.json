@@ -2949,6 +2949,104 @@
               "Attributes": []
             },
             {
+              "Name": "DeviceAtomicOrderRelaxed",
+              "NativeName": "CL_DEVICE_ATOMIC_ORDER_RELAXED",
+              "Value": "0x1",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceAtomicOrderAcqRel",
+              "NativeName": "CL_DEVICE_ATOMIC_ORDER_ACQ_REL",
+              "Value": "0x2",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceAtomicOrderSeqCst",
+              "NativeName": "CL_DEVICE_ATOMIC_ORDER_SEQ_CST",
+              "Value": "0x4",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceAtomicScopeWorkItem",
+              "NativeName": "CL_DEVICE_ATOMIC_SCOPE_WORK_ITEM",
+              "Value": "0x8",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceAtomicScopeWorkGroup",
+              "NativeName": "CL_DEVICE_ATOMIC_SCOPE_WORK_GROUP",
+              "Value": "0x16",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceAtomicScopeDevice",
+              "NativeName": "CL_DEVICE_ATOMIC_SCOPE_DEVICE",
+              "Value": "0x32",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceAtomicScopeAllSvmDevices",
+              "NativeName": "CL_DEVICE_ATOMIC_SCOPE_ALL_SVM_DEVICES",
+              "Value": "0x64",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceAtomicMemoryCapabilities",
+              "NativeName": "CL_DEVICE_ATOMIC_MEMORY_CAPABILITIES",
+              "Value": "0x1063",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceAtomicFenceCapabilities",
+              "NativeName": "CL_DEVICE_ATOMIC_FENCE_CAPABILITIES",
+              "Value": "0x1064",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceNonUniformWorkGroupSupport",
+              "NativeName": "CL_DEVICE_NON_UNIFORM_WORK_GROUP_SUPPORT",
+              "Value": "0x1065",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceProgramScopeGlobalCtorDtorSupport",
+              "NativeName": "CL_DEVICE_PROGRAM_SCOPE_GLOBAL_CTOR_DTOR_SUPPORT",
+              "Value": "0x1066",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceMaxWriteImage3DArgs",
+              "NativeName": "CL_DEVICE_MAX_WRITE_IMAGE3D_ARGS",
+              "Value": "0x1067",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceWorkGroupCollectiveFunctionsSupport",
+              "NativeName": "CL_DEVICE_WORK_GROUP_COLLECTIVE_FUNCTIONS_SUPPORT",
+              "Value": "0x1068",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceGenericAddressSpaceSupport",
+              "NativeName": "CL_DEVICE_GENERIC_ADDRESS_SPACE_SUPPORT",
+              "Value": "0x1069",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
               "Name": "InvalidSpecID",
               "NativeName": "CL_INVALID_SPEC_ID",
               "Value": "unchecked((int)0xFFFFFFFFFFFFFFB9)",
@@ -14374,7 +14472,7 @@
               "ExtensionName": "Core"
             },
             {
-              "Name": "GetExtensionFunctionAddres",
+              "Name": "GetExtensionFunctionAddress",
               "ReturnType": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
@@ -14414,7 +14512,7 @@
               "ExtensionName": "Core"
             },
             {
-              "Name": "GetExtensionFunctionAddres",
+              "Name": "GetExtensionFunctionAddress",
               "ReturnType": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
@@ -18729,7 +18827,7 @@
               "ExtensionName": "Core"
             },
             {
-              "Name": "GetExtensionFunctionAddres",
+              "Name": "GetExtensionFunctionAddress",
               "ReturnType": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,

@@ -13,6 +13,7 @@ using System.Linq;
 using System.Xml.Linq;
 using JetBrains.Annotations;
 using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
@@ -726,6 +727,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
             if (token == null)
             {
                 return null;
+            }
+
+            if (token.StartsWith("EGL_CAST("))
+            {
+                // ReSharper disable once TailRecursiveCall
+                return FormatToken(token.Remove(0, 8).TrimStart('(').TrimEnd(')').Split(',')[1]);
             }
 
             var tokenHex = token.StartsWith("0x") ? token.Substring(2) : token;

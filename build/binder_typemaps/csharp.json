@@ -125,5 +125,11 @@
     "ID3D11Texture2D*":  "IntPtr",
     "ID3D11Texture3D*": "IntPtr",
     "IDirect3DSurface9*":  "IntPtr",
-    "VASurfaceID*": "IntPtr"
+    "VASurfaceID*": "IntPtr",
+    "EGLint": "int",
+    "khronos_utime_nanoseconds_t": "ulong",
+    "khronos_stime_nanoseconds_t": "long",
+    "khronos_uint64_t": "ulong",
+    "wl_resource": "IntPtr",
+    "wl_buffer": "IntPtr",
 }
