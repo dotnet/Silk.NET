@@ -54,8 +54,7 @@ namespace Triangle
             _gl = GL.GetApi();
             _gl.Enable(GLEnum.DebugOutput);
             _gl.Enable(GLEnum.DebugOutputSynchronous);
-            _gl.DebugMessageCallback
-                ((a, b, c, d, e, f, g) => Console.WriteLine($"{a} {b} {c} {d} {e} {Marshal.PtrToStringAnsi(f)}"), null);
+            _gl.DebugMessageCallback(OnDebug, null);
             _gl.ClearColor(0.2f, 0.3f, 0.3f, 1.0f);
             _vertexBufferObject = _gl.GenBuffer();
             _gl.BindBuffer(GLEnum.ArrayBuffer, _vertexBufferObject);
