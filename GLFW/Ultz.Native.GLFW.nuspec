@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
   <metadata minClientVersion="2.12">
     <id>Ultz.Native.GLFW</id>
-    <version>3.3.0</version>
+    <version>3.3.2</version>
     <authors>Ultz</authors>
     <owners>Ultz</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
@@ -15,6 +15,9 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="runtime.json" target="runtime.json" />
+    <file src="runtimes\linux-x64\native\libglfw.so.3" target="runtimes\linux-x64\native\libglfw.so.3" />
+    <file src="runtimes\osx-x64\native\libglfw.3.dylib" target="runtimes\osx-x64\native\libglfw.3.dylib" />
+    <file src="runtimes\win-x64\native\glfw3.dll" target="runtimes\win-x64\native\glfw3.dll" />
+    <file src="runtimes\win-x86\native\glfw3.dll" target="runtimes\win-x86\native\glfw3.dll" />
   </files>
 </package>
