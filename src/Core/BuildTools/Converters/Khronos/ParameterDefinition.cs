@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
 {

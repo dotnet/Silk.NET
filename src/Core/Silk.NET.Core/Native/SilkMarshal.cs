@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Core.Native
@@ -20,12 +21,12 @@ namespace Silk.NET.Core.Native
 
         public static IntPtr NewStringPtr(uint length) => Marshal.AllocHGlobal((int) length);
 
-        public static IntPtr MarshalStringArrayToPtr(string[] array)
+        public static IntPtr MarshalStringArrayToPtr(IReadOnlyList<string> array)
         {
             var ptr = IntPtr.Zero;
-            if (array != null && array.Length != 0)
+            if (array != null && array.Count != 0)
             {
-                ptr = Marshal.AllocHGlobal(array.Length * IntPtr.Size);
+                ptr = Marshal.AllocHGlobal(array.Count * IntPtr.Size);
                 if (ptr == IntPtr.Zero)
                 {
                     throw new OutOfMemoryException();
@@ -34,7 +35,7 @@ namespace Silk.NET.Core.Native
                 var i = 0;
                 try
                 {
-                    for (i = 0; i < array.Length; i++)
+                    for (i = 0; i < array.Count; i++)
                     {
                         var str = MarshalStringToPtr(array[i]);
                         Marshal.WriteIntPtr(ptr, i * IntPtr.Size, str);
@@ -53,6 +54,21 @@ namespace Silk.NET.Core.Native
                 }
             }
             return ptr;
+        }
+
+        public static string[] MarshalPtrToStringArray(IntPtr ptr, int length)
+        {
+            var ret = new string[length];
+            CopyPtrToStringArray(ptr, ret);
+            return ret;
+        }
+
+        public static void CopyPtrToStringArray(IntPtr ptr, string[] arr)
+        {
+            for (var i = 0; i < arr.Length; i++)
+            {
+                arr[i] = Marshal.PtrToStringAnsi(Marshal.ReadIntPtr(ptr, i * IntPtr.Size));
+            }
         }
 
         public static void FreeStringArrayPtr(IntPtr ptr, int length)

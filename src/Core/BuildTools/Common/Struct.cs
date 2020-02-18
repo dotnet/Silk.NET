@@ -6,7 +6,6 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
 
 namespace Silk.NET.BuildTools.Common

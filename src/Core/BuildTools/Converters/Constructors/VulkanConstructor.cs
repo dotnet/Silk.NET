@@ -3,7 +3,6 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -12,8 +11,7 @@ using System.Linq;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
-using Attribute = Silk.NET.BuildTools.Common.Attribute;
-using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
+using Silk.NET.BuildTools.Overloading;
 
 namespace Silk.NET.BuildTools.Converters.Constructors
 {

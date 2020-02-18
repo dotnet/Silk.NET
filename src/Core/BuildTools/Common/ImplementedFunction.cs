@@ -15,7 +15,7 @@ namespace Silk.NET.BuildTools.Common
         public ImplementedFunction()
         {
         }
-        public ImplementedFunction(Function function, StringBuilder sb, bool b = true)
+        public ImplementedFunction(Function function, StringBuilder sb, Function @base, bool b = true)
         {
             Signature = function;
             using var sr = new StringReader(sb.ToString());
@@ -28,9 +28,11 @@ namespace Silk.NET.BuildTools.Common
 
             Body = lines.ToArray();
             IsUnsafe = b;
+            Base = @base;
         }
 
         public Function Signature { get; set; }
+        public Function Base { get; set; }
         public string[] Body { get; set; }
         public bool IsUnsafe { get; set; }
     }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 using JetBrains.Annotations;
@@ -14,7 +13,14 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         public string[] SuccessCodes { get; }
         public string[] ErrorCodes { get; }
 
-        public CommandDefinition(string name, TypeSpec returnType, ParameterDefinition[] parameters, string[] successCodes, string[] errorCodes)
+        public CommandDefinition
+        (
+            string name,
+            TypeSpec returnType,
+            ParameterDefinition[] parameters,
+            string[] successCodes,
+            string[] errorCodes
+        )
         {
             Require.NotNull(parameters);
             Require.NotNull(successCodes);
@@ -40,8 +46,9 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                         .Elements("command")
                         .FirstOrDefault(x => x.Element("proto")?.Element("name")?.Value == xe.Attribute("alias").Value)
                 );
-                
-                return new CommandDefinition(xe.GetNameAttribute(), ret.ReturnType, ret.Parameters, ret.SuccessCodes, ret.ErrorCodes);
+
+                return new CommandDefinition
+                    (xe.GetNameAttribute(), ret.ReturnType, ret.Parameters, ret.SuccessCodes, ret.ErrorCodes);
             }
 
             var proto = xe.Element("proto");
@@ -60,7 +67,8 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 : Array.Empty<string>();
 
             ParameterDefinition[] parameters = xe.Elements("param")
-                .Select(paramXml => ParameterDefinition.CreateFromXml(paramXml)).ToArray();
+                .Select(paramXml => ParameterDefinition.CreateFromXml(paramXml))
+                .ToArray();
 
             return new CommandDefinition(name, returnType, Vary(parameters, name), successCodes, errorCodes);
         }
@@ -73,23 +81,24 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 var param = p[i];
                 if (param.Type.PointerIndirection > 0 && param.Type.Name != "void")
                 {
-                    if ((name.StartsWith("vkCreate") || name.StartsWith("vkAllocate") || name.StartsWith("vkGet")) &&
-                        i == p.Length - 1)
+                    if (param.IsConst)
+                    {
+                        p[i] = new ParameterDefinition
+                        (
+                            param.Name, new TypeSpec(param.Type.Name, param.Type.PointerIndirection),
+                            ParameterModifier.In, param.IsOptional, param.ElementCount, param.ElementCountSymbolic,
+                            param.IsConst
+                        );
+                    }
+                    else if ((name.StartsWith("vkCreate") || name.StartsWith("vkAllocate") || name.StartsWith
+                                 ("vkGet")) &&
+                             i == p.Length - 1)
                     {
                         // DO NOT CHANGE THE TYPE HERE, it will be done by the FlowPointerOverloader.
                         p[i] = new ParameterDefinition
                         (
                             param.Name, new TypeSpec(param.Type.Name, param.Type.PointerIndirection),
                             ParameterModifier.Out, param.IsOptional, param.ElementCount, param.ElementCountSymbolic,
-                            param.IsConst
-                        );
-                    }
-                    else if (param.IsConst)
-                    {
-                        p[i] = new ParameterDefinition
-                        (
-                            param.Name, new TypeSpec(param.Type.Name, param.Type.PointerIndirection),
-                            ParameterModifier.In, param.IsOptional, param.ElementCount, param.ElementCountSymbolic,
                             param.IsConst
                         );
                     }

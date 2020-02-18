@@ -121,11 +121,27 @@ namespace Silk.NET.BuildTools.Common
                             {
                                 parameter.Type.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
                             }
+
+                            foreach (var genericType in parameter.Type.GenericTypes)
+                            {
+                                if (genericType.OriginalName == "GLenum" || genericType.Name == "CLenum")
+                                {
+                                    genericType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
+                                }
+                            }
                         }
 
                         if (function.ReturnType.OriginalName == "GLenum" || function.ReturnType.Name == "CLenum")
                         {
                             function.ReturnType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
+                        }
+
+                        foreach (var genericType in function.ReturnType.GenericTypes)
+                        {
+                            if (genericType.OriginalName == "GLenum" || genericType.Name == "CLenum")
+                            {
+                                genericType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
+                            }
                         }
                     }
                 }

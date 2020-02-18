@@ -4,16 +4,14 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using MoreLinq.Extensions;
-using Silk.NET.BuildTools.Bind.Overloading;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
+using Silk.NET.BuildTools.Overloading;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
-using Type = System.Type;
 
 namespace Silk.NET.BuildTools.Bind
 {
@@ -246,7 +244,7 @@ namespace Silk.NET.BuildTools.Bind
 
                 sw.WriteLine();
 
-                var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).RemoveDuplicates();
+                var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).RemoveDuplicates().ToArray();
                 foreach (var function in allFunctions)
                 {
                     sw.WriteLine("        /// <inheritdoc />"); // TODO docs
@@ -265,7 +263,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine();
                 }
 
-                foreach (var overload in Overloader.GetOverloads(project))
+                foreach (var overload in Overloader.GetOverloads(allFunctions, profile.Projects["Core"]))
                 {
                     using (var sr = new StringReader(overload.Signature.Doc))
                     {
@@ -399,7 +397,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine();
                     }
 
-                    foreach (var overload in Overloader.GetOverloads(i))
+                    foreach (var overload in Overloader.GetOverloads(i, profile.Projects["Core"]))
                     {
                         using (var sr = new StringReader(overload.Signature.Doc))
                         {

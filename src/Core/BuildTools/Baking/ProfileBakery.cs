@@ -13,6 +13,8 @@ using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Overloading;
+using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
 namespace Silk.NET.BuildTools.Baking
 {
@@ -88,6 +90,7 @@ namespace Silk.NET.BuildTools.Baking
             profile.Constants = impl.SelectMany(x => x.Constants).ToList();
 
             MergeAll(profile); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
+            Vary(profile);
             CheckForDuplicates(profile);
             TypeMapper.MapEnums(profile); // we need to map the enums to make sure they are correct for their extension.
 
@@ -107,11 +110,26 @@ namespace Silk.NET.BuildTools.Baking
             Console.WriteLine($"Created profile \"{information.Name}\".");
         }
 
+        private static void Vary(Profile profile)
+        {
+            foreach (var project in profile.Projects.Values)
+            {
+                foreach (var @interface in project.Interfaces.Values)
+                {
+                    @interface.Functions.AddRange
+                        (Overloader.GetEarlyVariants(@interface.Functions, profile.Projects["Core"]));
+                    @interface.Functions = Overloader.GetWithVariants
+                            (@interface.Functions, profile.Projects["Core"])
+                        .ToList();
+                }
+            }
+        }
+
         private static void MergeAll(Profile profile) // this method could also be called Stir ;)
         {
             foreach (var project in profile.Projects.Values)
             {
-                var enums = new Dictionary<string, Common.Enums.Enum>();
+                var enums = new Dictionary<string, Enum>();
                 var interfaces = new Dictionary<string, Interface>();
                 var structs = new Dictionary<string, Struct>();
                 foreach (var enumeration in project.Enums)

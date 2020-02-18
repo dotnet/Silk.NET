@@ -3,19 +3,12 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
-using System.IO;
 using System.Linq;
 using Silk.NET.BuildTools.Common;
-using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
-using Attribute = Silk.NET.BuildTools.Common.Attribute;
-using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
-using Type = Silk.NET.BuildTools.Common.Functions.Type;
+using Silk.NET.BuildTools.Overloading;
 
 namespace Silk.NET.BuildTools.Converters.Constructors
 {
@@ -179,63 +172,8 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
                         .Interfaces[rawCategory]
                         .Functions.Add(function);
-
-                    if (TryCreateEnumVariant(function, out var variant, profile.Projects["Core"]))
-                    {
-                        profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
-                            .Interfaces[rawCategory]
-                            .Functions.Add(variant);
-                    }
                 }
             }
-        }
-
-        private bool TryCreateEnumVariant(Function function, out Function variant, Project core)
-        {
-            var varied = false;
-            var newParameters = new List<Parameter>();
-            var paramsMod = false;
-            Type newReturnType = function.ReturnType;
-            foreach (var functionParameter in function.Parameters)
-            {
-                if (functionParameter.Type.OriginalGroup is null || core.Enums.All
-                        (x => x.Name != functionParameter.Type.OriginalGroup))
-                {
-                    newParameters.Add(functionParameter);
-                    continue;
-                }
-
-                paramsMod = true;
-                varied = true;
-                var t =
-                    new TypeSignatureBuilder(functionParameter.Type).WithName
-                            (functionParameter.Type.OriginalGroup)
-                        .Build();
-                t.OriginalName = t.Name; // stop GLenum mapping
-                newParameters.Add
-                (
-                    new ParameterSignatureBuilder(functionParameter).WithType
-                    (
-                        t
-                    ).Build()
-                );
-            }
-
-            if (!(function.ReturnType.OriginalGroup is null || core.Enums.All
-                    (x => x.Name != function.ReturnType.OriginalGroup)))
-            {
-                varied = true;
-                newReturnType = new TypeSignatureBuilder(function.ReturnType).WithName
-                        (function.ReturnType.OriginalGroup)
-                    .Build();
-                newReturnType.OriginalName = newReturnType.Name;
-            }
-
-            variant = new FunctionSignatureBuilder(function).WithParameters(newParameters)
-                .WithName(paramsMod ? function.Name : function.Name + "G")
-                .WithReturnType(newReturnType)
-                .Build();
-            return varied;
         }
 
         public string TrimName(string name, ProfileConverterOptions opts)
