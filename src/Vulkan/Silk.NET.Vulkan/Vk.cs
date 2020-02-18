@@ -24,8 +24,7 @@ namespace Silk.NET.Vulkan
         public bool TryGetExtension<T>(out T ext)
             where T:NativeExtension<Vk>
         {
-            ext = LibraryLoader<Vk>.Load<T>
-                (this, SearchPaths, _extLoader ??= new VkLoader(this, LibraryLoader.GetPlatformDefaultLoader()));
+            ext = LibraryLoader<Vk>.Load<T>(this);
             return ext != null;
         }
 

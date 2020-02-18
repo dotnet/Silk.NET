@@ -16,6 +16,7 @@ namespace Silk.NET.Core.Loader
         private static Dictionary<Type, Ultz.SuperInvoke.Loader.LibraryLoader> _loaders =
             new Dictionary<Type, Ultz.SuperInvoke.Loader.LibraryLoader>();
 
+        [Obsolete("This method is no longer used and is pending removal (likely in 1.X or 2.0)")]
         public static void CreateBuilder<T>
             (Ultz.SuperInvoke.Loader.LibraryLoader loader) where T : NativeApiContainer => _loaders[typeof(T)] = loader;
         
@@ -27,21 +28,14 @@ namespace Silk.NET.Core.Loader
             (SearchPathContainer nameContainer, Ultz.SuperInvoke.Loader.LibraryLoader loader) where T1 : NativeAPI =>
             LibraryActivator.CreateInstance<T1>(nameContainer.GetLibraryName(), loader);
 
-        public static T1 Load<T1, T2>(T2 baseApi, SearchPathContainer paths = null)
+        public static T1 Load<T1, T2>(T2 baseApi)
             where T1 : NativeExtension<T2> where T2 : NativeAPI
         {
             return baseApi.IsExtensionPresent(GetExtensionAttribute(typeof(T1)).Name)
-                ? LibraryActivator.CreateInstance<T1>((paths ?? baseApi.SearchPaths).GetLibraryName())
+                ? LibraryActivator.CreateInstance<T1>(baseApi.Library)
                 : null;
         }
 
-        public static T1 Load<T1, T2>
-            (T2 baseApi, SearchPathContainer paths, Ultz.SuperInvoke.Loader.LibraryLoader loader)
-            where T1 : NativeExtension<T2> where T2 : NativeAPI => baseApi.IsExtensionPresent
-            (GetExtensionAttribute(typeof(T1)).Name)
-            ? LibraryActivator.CreateInstance<T1>((paths ?? baseApi.SearchPaths).GetLibraryName(), loader)
-            : null;
-        
         private static ExtensionAttribute GetExtensionAttribute(MemberInfo type)
         {
             return type.GetCustomAttribute<ExtensionAttribute>();
