@@ -13,7 +13,7 @@
         <PackageReference Include="System.Reflection.Emit.ILGeneration" Version="4.7.0" />
         <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.0" />
         <PackageReference Include="System.Numerics.Vectors" Version="4.6.0-preview5.19224.8" />
-        <PackageReference Include="Ultz.SuperInvoke" Version="1.0.0" />
+        <PackageReference Include="Ultz.SuperInvoke" Version="1.0.3" />
     </ItemGroup>
 
     <Import Project="..\..\..\build\props\common.props" />
