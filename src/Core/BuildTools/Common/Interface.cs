@@ -9,7 +9,8 @@ using Silk.NET.BuildTools.Common.Functions;
 namespace Silk.NET.BuildTools.Common
 {
     /// <summary>
-    /// Represents an AdvancedDLSupport interface.
+    /// Represents an interface containing native functions. As of Preview 4, all
+    /// interfaces are merged into the appropriate mixed-mode classes at bind time. 
     /// </summary>
     public class Interface
     {
