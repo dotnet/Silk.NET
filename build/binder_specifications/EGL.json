@@ -25932,7 +25932,7 @@
                   "Type": {
                     "IndirectionLevels": 1,
                     "ArrayDimensions": 0,
-                    "Name": "void*",
+                    "Name": "IntPtr",
                     "Group": null,
                     "OriginalName": "wl_resource",
                     "OriginalGroup": null,
@@ -26034,7 +26034,7 @@
                       {
                         "IndirectionLevels": 0,
                         "ArrayDimensions": 0,
-                        "Name": "void*",
+                        "Name": "IntPtr",
                         "Group": null,
                         "OriginalName": "wl_resource",
                         "OriginalGroup": null,
@@ -26247,7 +26247,7 @@
               "ReturnType": {
                 "IndirectionLevels": 1,
                 "ArrayDimensions": 0,
-                "Name": "void*",
+                "Name": "IntPtr",
                 "Group": null,
                 "OriginalName": "wl_buffer",
                 "OriginalGroup": null,

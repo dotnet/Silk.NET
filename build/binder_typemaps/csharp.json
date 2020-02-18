@@ -130,6 +130,6 @@
     "khronos_utime_nanoseconds_t": "ulong",
     "khronos_stime_nanoseconds_t": "long",
     "khronos_uint64_t": "ulong",
-    "wl_resource": "void*",
-    "wl_buffer": "void*",
+    "wl_resource": "IntPtr",
+    "wl_buffer": "IntPtr",
 }
