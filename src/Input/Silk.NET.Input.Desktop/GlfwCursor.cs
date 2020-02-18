@@ -85,6 +85,20 @@ namespace Silk.NET.Input.Desktop
         }
 
         /// <inheritdoc />
+        public unsafe CursorMode CursorMode
+        {
+            get => GetCursorMode(
+                (CursorModeValue)GlfwProvider.GLFW.Value.GetInputMode(_handle, CursorStateAttribute.Cursor),
+                GlfwProvider.GLFW.Value.GetInputMode(_handle, CursorStateAttribute.RawMouseMotion) != 0
+            );
+            set
+            {
+                GlfwProvider.GLFW.Value.SetInputMode(_handle, CursorStateAttribute.Cursor, GetCursorMode(value, out bool raw));
+                GlfwProvider.GLFW.Value.SetInputMode(_handle, CursorStateAttribute.RawMouseMotion, raw);
+            }
+        }
+
+        /// <inheritdoc />
         public int HotspotX
         {
             get => _hotspotX;
@@ -268,5 +282,26 @@ namespace Silk.NET.Input.Desktop
                 GlfwProvider.GLFW.Value.SetCursor(_handle, _cursor);
             }
         }
+
+        private static CursorModeValue GetCursorMode(CursorMode cursorMode, out bool raw)
+        {
+            raw = cursorMode == CursorMode.Raw;
+            return cursorMode switch
+            {
+                CursorMode.Normal => CursorModeValue.CursorNormal,
+                CursorMode.Hidden => CursorModeValue.CursorHidden,
+                CursorMode.Disabled => CursorModeValue.CursorDisabled,
+                CursorMode.Raw => CursorModeValue.CursorDisabled,
+                _ => throw new ArgumentException("Invalid cursor mode", nameof(cursorMode))
+            };
+        }
+
+        private static CursorMode GetCursorMode(CursorModeValue cursorMode, bool raw) => cursorMode switch
+        {
+            CursorModeValue.CursorNormal => CursorMode.Normal,
+            CursorModeValue.CursorHidden => CursorMode.Hidden,
+            CursorModeValue.CursorDisabled => raw ? CursorMode.Raw : CursorMode.Disabled,
+            _ => throw new ArgumentException("Invalid cursor mode", nameof(cursorMode))
+        };
     }
 }
