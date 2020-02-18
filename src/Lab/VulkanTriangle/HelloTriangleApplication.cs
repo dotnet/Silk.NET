@@ -110,7 +110,7 @@ namespace VulkanTriangle
         private unsafe void DrawFrame(double obj)
         {
             var fence = _inFlightFences[_currentFrame];
-            _vk.WaitForFences(_device, 1, fence, Vk.True, ulong.MaxValue);
+            _vk.WaitForFences(_device, 1, ref fence, Vk.True, ulong.MaxValue);
 
             uint imageIndex;
             _vkSwapchain.AcquireNextImage
@@ -118,7 +118,7 @@ namespace VulkanTriangle
 
             if (_imagesInFlight[imageIndex].Handle != 0)
             {
-                _vk.WaitForFences(_device, 1, _imagesInFlight[imageIndex], Vk.True, ulong.MaxValue);
+                _vk.WaitForFences(_device, 1, ref _imagesInFlight[imageIndex], Vk.True, ulong.MaxValue);
             }
 
             _imagesInFlight[imageIndex] = _inFlightFences[_currentFrame];

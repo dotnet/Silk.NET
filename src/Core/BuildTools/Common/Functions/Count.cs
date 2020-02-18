@@ -159,7 +159,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets a value indicating whether this count represents a count which is likely more than one.
         /// </summary>
         [JsonIgnore]
-        public bool IsMultiple => IsComputed || (IsStatic && _count > 1) || IsReference;
+        public bool IsMultiple => IsStatic && _count > 1 || IsReference;
 
         /// <inheritdoc />
         public override string ToString()

@@ -28,15 +28,32 @@ namespace Silk.NET.BuildTools.Common.Functions
         [JsonIgnore]
         public bool IsArray => ArrayDimensions != 0;
 
+        [JsonProperty("IndirectionLevels")]
+        private int _indirectionLevels;
+        
         /// <summary>
         /// Gets or sets the amount of indirection levels (asterisks as represented in C#).
         /// </summary>
-        public int IndirectionLevels { get; set; }
+        [JsonIgnore]
+        public int IndirectionLevels
+        {
+            get => _indirectionLevels;
+            set
+            {
+                if (value < 0)
+                {
+                    Debug.WriteLine($"Negative indirection levels assigned at:\n{Environment.StackTrace}");
+                }
+
+                _indirectionLevels = value;
+            }
+            
+        }
 
         /// <summary>
         /// Gets or sets the dimensions of the array (i.e. the amount of [] as represented in C#).
         /// </summary>
-        public int ArrayDimensions { get; set; }
+        public int ArrayDimensions { get; set; } = 0;
 
         /// <summary>
         /// Gets or sets the name of this type.
@@ -55,9 +72,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         
         /// <summary>
         /// Gets or sets the original group of this type.
-        /// Not included in JSON, as it is only used by the OpenGL Constructor.
         /// </summary>
-        [JsonIgnore]
         public string OriginalGroup { get; set; }
 
         /// <summary>

@@ -12,14 +12,14 @@ Silk.NET works on any .NET Standard 2.0 compliant platform. This includes Xamari
 - **Game-ready**: Making games or game engines with Silk.NET is a breeze as you already have everything a game needs - Graphics, Audio, Input, and Windowing; all in one product!
 
 # The team
-We currently have 3 maintainers:
+We currently have 2 maintainers:
 - [Dylan P.](https://github.com/Perksey) from [Ultz](https://github.com/Ultz)
-- [Aaron P.](https://github.com/AzyIsCool) from [Ultz](https://github.com/Ultz)
-- [Frederik A.](https://github.com/frederikja163) from the open-source community
+- [Void](https://github.com/devvoid) from the open-source community
 
-As well as 2 community members who we consult with to influence Silk.NET's design:
+As well as 3 community members who we consult with to influence Silk.NET's design:
 - [Maximiliano L.](https://github.com/maxilevi) - developer of [Project Hedra](https://projecthedra.com/) using Silk.NET
-- [Void](https://github.com/devvoid) - a contributor who basically wrote half the library
+- [Aaron P.](https://github.com/AzyIsCool) - Chief Technology Officer at [Ultz](https://github.com/Ultz)
+- [Frederik A.](https://github.com/frederikja163) - imparting knowledge on those using Silk.NET.
 
 Silk.NET is governed by the Silk Working Group, made up of all 5 of the above members. Only 2 seats are occupied by members of Ultz, demonstrating and emphasising our commitment to open-source software.
 

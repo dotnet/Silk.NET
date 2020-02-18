@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Xml.Linq;
 
@@ -95,7 +96,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 if (valueStr.StartsWith("0x"))
                 {
                     valueStr = valueStr.Substring(2);
-                    value = int.Parse(valueStr, System.Globalization.NumberStyles.HexNumber);
+                    value = int.Parse(valueStr, NumberStyles.HexNumber);
                 }
                 else
                 {

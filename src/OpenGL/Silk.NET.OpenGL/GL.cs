@@ -25,7 +25,7 @@ namespace Silk.NET.OpenGL
         public override bool IsExtensionPresent(string extension)
         {
             _extensions ??= Enumerable.Range(0, GetInteger(GLEnum.NumExtensions))
-                .Select(x => GetStringS(GLEnum.Extensions, (uint) x)).ToList();
+                .Select(x => GetString(StringName.Extensions, (uint) x)).ToList();
 
             return _extensions.Contains("GL_" + extension);
         }
@@ -109,7 +109,7 @@ namespace Silk.NET.OpenGL
             ProgramUniform4(program, location, quaternion.X, quaternion.Y, quaternion.Z, quaternion.W);
         }
 
-        public string GetActiveAttrib(uint program, uint index, out int size, out GLEnum type)
+        public string GetActiveAttrib(uint program, uint index, out int size, out AttributeType type)
         {
             uint length;
             GetProgram(program, GLEnum.ActiveAttributeMaxLength, out var lengthTmp);
@@ -120,7 +120,7 @@ namespace Silk.NET.OpenGL
             return str.Substring(0, (int) length);
         }
 
-        public string GetActiveUniform(uint program, uint uniformIndex, out int size, out GLEnum type)
+        public string GetActiveUniform(uint program, uint uniformIndex, out int size, out UniformType type)
         {
             uint length;
             GetProgram(program, GLEnum.ActiveUniformMaxLength, out var lengthTmp);
@@ -129,22 +129,22 @@ namespace Silk.NET.OpenGL
             return str.Substring(0, (int) length);
         }
 
-        public void ShaderSource(uint shader, System.String @string)
+        public void ShaderSource(uint shader, string @string)
         {
             unsafe
             {
                 int length = @string.Length;
-                ShaderSource((UInt32)shader, 1, new string[] { @string }, &length);
+                ShaderSource((uint)shader, 1, new string[] { @string }, &length);
             }
         }
 
-        public string GetShaderInfoLog(UInt32 shader)
+        public string GetShaderInfoLog(uint shader)
         {
             GetShaderInfoLog(shader, out var info);
             return info;
         }
 
-        public void GetShaderInfoLog(UInt32 shader, out string info)
+        public void GetShaderInfoLog(uint shader, out string info)
         {
             GetShader(shader, GLEnum.InfoLogLength, out var length2);
             var length = (uint) length2;
@@ -152,13 +152,13 @@ namespace Silk.NET.OpenGL
             info = info.Substring(0, (int) length);
         }
 
-        public string GetProgramInfoLog(UInt32 program)
+        public string GetProgramInfoLog(uint program)
         {
             GetProgramInfoLog(program, out var info);
             return info;
         }
 
-        public void GetProgramInfoLog(UInt32 program, out string info)
+        public void GetProgramInfoLog(uint program, out string info)
         {
             GetProgram(program, GLEnum.InfoLogLength, out var length2);
             var length = (uint) length2;
@@ -167,34 +167,34 @@ namespace Silk.NET.OpenGL
         }
 
         [CLSCompliant(false)]
-        public void VertexAttrib2(UInt32 index, ref Vector2 v)
+        public void VertexAttrib2(uint index, ref Vector2 v)
         {
             VertexAttrib2(index, v.X, v.Y);
         }
 
         [CLSCompliant(false)]
-        public void VertexAttrib3(UInt32 index, ref Vector3 v)
+        public void VertexAttrib3(uint index, ref Vector3 v)
         {
             VertexAttrib3(index, v.X, v.Y, v.Z);
         }
 
         [CLSCompliant(false)]
-        public void VertexAttrib4(UInt32 index, ref Vector4 v)
+        public void VertexAttrib4(uint index, ref Vector4 v)
         {
             VertexAttrib4(index, v.X, v.Y, v.Z, v.W);
         }
 
-        public void VertexAttrib2(UInt32 index, Vector2 v)
+        public void VertexAttrib2(uint index, Vector2 v)
         {
             VertexAttrib2(index, v.X, v.Y);
         }
 
-        public void VertexAttrib3(UInt32 index, Vector3 v)
+        public void VertexAttrib3(uint index, Vector3 v)
         {
             VertexAttrib3(index, v.X, v.Y, v.Z);
         }
 
-        public void VertexAttrib4(UInt32 index, Vector4 v)
+        public void VertexAttrib4(uint index, Vector4 v)
         {
             VertexAttrib4(index, v.X, v.Y, v.Z, v.W);
         }

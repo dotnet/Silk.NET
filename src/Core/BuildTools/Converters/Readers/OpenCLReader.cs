@@ -672,7 +672,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             return ret;
         }
-        
+
+        private int unnamedParameters = 0;
         private XElement TranslateCommand(XElement command, ProfileConverterOptions opts)
         {
             var function = new XElement("function");
@@ -711,8 +712,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 if (parameter.Element("name") is null)
                 {
                     Debug.WriteLine($"Warning: Parameter name is null. Element: {parameter}.");
-                    randomName = "unnamedParameter" + GetRandomName();
-                    Debug.WriteLine($"Giving it random name {randomName}");
+                    randomName = "unnamedParameter" + unnamedParameters++;
+                    Debug.WriteLine($"Giving it name {randomName}");
                 }
 
                 var pname = new XAttribute("name", parameter.Element("name")?.Value ?? randomName);
@@ -752,13 +753,6 @@ namespace Silk.NET.BuildTools.Converters.Readers
             function.Add(name);
             function.Add(returns);
             return function;
-
-            string GetRandomName()
-            {
-                var bytes = new byte[4];
-                _random.NextBytes(bytes);
-                return BitConverter.ToString(bytes).Replace("-", null);
-            }
         }
         
         ////////////////////////////////////////////////////////////////////////////////////////

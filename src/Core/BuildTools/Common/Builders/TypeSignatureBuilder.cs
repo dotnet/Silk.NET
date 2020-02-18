@@ -3,6 +3,8 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System.Collections.Generic;
+using System.Linq;
 using JetBrains.Annotations;
 using Silk.NET.BuildTools.Common.Functions;
 
@@ -27,6 +29,8 @@ namespace Silk.NET.BuildTools.Common.Builders
 
         [NotNull] private string _newName;
 
+        private List<Type> _newGenericTypes;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TypeSignatureBuilder" /> class.
         /// </summary>
@@ -40,6 +44,7 @@ namespace Silk.NET.BuildTools.Common.Builders
             _newIsIn = typeSignature.IsIn;
             _newIsOut = typeSignature.IsOut;
             _newOriginalName = typeSignature.OriginalName;
+            _newGenericTypes = typeSignature.GenericTypes;
         }
 
         /// <summary>
@@ -124,6 +129,18 @@ namespace Silk.NET.BuildTools.Common.Builders
         public TypeSignatureBuilder WithIsIn(bool b)
         {
             _newIsIn = b;
+            return this;
+        }
+
+        public TypeSignatureBuilder WithGenericTypes(List<Type> parameters)
+        {
+            _newGenericTypes = parameters;
+            return this;
+        }
+
+        public TypeSignatureBuilder WithGenericTypes(params Type[] parameters)
+        {
+            _newGenericTypes = parameters.ToList();
             return this;
         }
     }
