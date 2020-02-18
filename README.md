@@ -51,4 +51,4 @@ Nothing here yet, but don't worry - we're working on it.
 Come chat with us on [Discord](https://discord.gg/DTHHXRt)!
 
 # License
-Silk.NET is distributed under the very permissive MIT/X11 license. Note that some third party libraries such as AdvancedDLSupport are compatible with the MIT license under one or more custom agreements, but have [additional conditions](https://github.com/Ultz/Silk.NET/blob/master/THIRD_PARTIES.md).
+Silk.NET is distributed under the very permissive MIT/X11 license and all dependencies are distributed under MIT-compatible licenses.
