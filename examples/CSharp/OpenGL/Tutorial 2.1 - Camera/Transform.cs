@@ -14,6 +14,6 @@ namespace Tutorial
 
         public Quaternion Rotation { get; set; } = Quaternion.Identity;
         
-        public Matrix4x4 ModelMatrix => Matrix4x4.Identity * Matrix4x4.CreateFromQuaternion(Rotation) * Matrix4x4.CreateScale(Scale) * Matrix4x4.CreateTranslation(Position);
+        public Matrix4x4 Matrix => Matrix4x4.Identity * Matrix4x4.CreateFromQuaternion(Rotation) * Matrix4x4.CreateScale(Scale) * Matrix4x4.CreateTranslation(Position);
     }
 }

@@ -5,55 +5,70 @@ using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
 using System;
 using System.Drawing;
+using System.Numerics;
 
 namespace Tutorial
 {
     class Program
     {
-        private static IWindow window;
-        private static GL Gl;
+        private static IWindow _window;
+        private static GL _gl;
 
-        private static BufferObject<float> Vbo;
-        private static BufferObject<uint> Ebo;
-        private static VertexArrayObject<float, uint> Vao;
-        private static Camera Camera;
-        private static Texture Texture;
-        private static Shader Shader;
+        private static BufferObject<float> _vbo;
+        private static BufferObject<uint> _ebo;
+        private static VertexArrayObject<float, uint> _vao;
+        private static Camera _camera;
+        private static Texture _texture;
+        private static Shader _shader;
 
         private static readonly float[] Vertices =
         {
             //X    Y      Z     U   V
-             0.5f,  0.5f,  0.5f, 1f, 1f,
-             0.5f,  0.5f, -0.5f, 1f, 1f,
-             0.5f, -0.5f,  0.5f, 1f, 1f,
-             0.5f, -0.5f, -0.0f, 1f, 0f,
-            -0.5f,  0.5f,  0.5f, 1f, 1f,
-            -0.5f,  0.5f, -0.5f, 1f, 1f,
-            -0.5f, -0.5f,  0.5f, 1f, 1f,
-            -0.5f, -0.5f, -0.0f, 1f, 0f,
+            0.5f,  0.5f, 0.0f, 1f, 1f,
+            0.5f, -0.5f, 0.0f, 1f, 0f,
+            -0.5f, -0.5f, 0.0f, 0f, 0f,
+            -0.5f,  0.5f, 0.5f, 0f, 1f
         };
 
         private static readonly uint[] Indices =
         {
-            //Right face
-            0, 1, 2,
-            1, 2, 3,
-            //Left face
-            4, 5, 6,
-            5, 6, 7,
-            //Top face
-            0, 1, 4,
-            1, 4, 5,
-            //Bottom face
-            2, 3, 6,
-            3, 6, 7,
-            //Front face
-            0, 2, 4,
-            2, 4, 6,
-            //Back face
-            1, 3, 5,
-            3, 5, 7
+            0, 1, 3,
+            1, 2, 3
         };
+        // private static readonly float[] Vertices =
+        // {
+        //     //X    Y      Z     U   V
+        //      0.5f,  0.5f,  0.5f, 1f, 1f,
+        //      0.5f,  0.5f, -0.5f, 1f, 1f,
+        //      0.5f, -0.5f,  0.5f, 1f, 1f,
+        //      0.5f, -0.5f, -0.0f, 1f, 0f,
+        //     -0.5f,  0.5f,  0.5f, 1f, 1f,
+        //     -0.5f,  0.5f, -0.5f, 1f, 1f,
+        //     -0.5f, -0.5f,  0.5f, 1f, 1f,
+        //     -0.5f, -0.5f, -0.0f, 1f, 0f,
+        // };
+        //
+        // private static readonly uint[] Indices =
+        // {
+        //     //Right face
+        //     0, 1, 2,
+        //     1, 2, 3,
+        //     //Left face
+        //     4, 5, 6,
+        //     5, 6, 7,
+        //     //Top face
+        //     0, 1, 4,
+        //     1, 4, 5,
+        //     //Bottom face
+        //     2, 3, 6,
+        //     3, 6, 7,
+        //     //Front face
+        //     0, 2, 4,
+        //     2, 4, 6,
+        //     //Back face
+        //     1, 3, 5,
+        //     3, 5, 7
+        // };
 
 
         private static void Main(string[] args)
@@ -61,66 +76,83 @@ namespace Tutorial
             var options = WindowOptions.Default;
             options.Size = new Size(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
-            window = Window.Create(options);
+            _window = Window.Create(options);
 
-            window.Load += OnLoad;
-            window.Render += OnRender;
-            window.Closing += OnClose;
+            _window.Load += OnLoad;
+            _window.Render += OnRender;
+            _window.Closing += OnClose;
 
-            window.Run();
+            _window.Run();
         }
 
 
         private static void OnLoad()
         {
-            IInputContext input = window.GetInput();
+            IInputContext input = _window.GetInput();
             for (int i = 0; i < input.Keyboards.Count; i++)
             {
                 input.Keyboards[i].KeyDown += KeyDown;
             }
 
-            Gl = GL.GetApi();
-            Gl.Enable(EnableCap.DepthTest);
-            
-            Ebo = new BufferObject<uint>(Gl, Indices, GLEnum.ElementArrayBuffer);
-            Vbo = new BufferObject<float>(Gl, Vertices, GLEnum.ArrayBuffer);
-            Vao = new VertexArrayObject<float, uint>(Gl, Vbo, Ebo);
-            Camera = new Camera(new Transform(), new PerspectiveLens(window.Size));
+            _gl = GL.GetApi();
+            _gl.Enable(EnableCap.DepthTest);
 
-            Vao.VertexAttributePointer(0, 3, GLEnum.Float, 5, 0);
-            Vao.VertexAttributePointer(1, 2, GLEnum.Float, 5, 3);
+            _ebo = new BufferObject<uint>(_gl, Indices, GLEnum.ElementArrayBuffer);
+            _vbo = new BufferObject<float>(_gl, Vertices, GLEnum.ArrayBuffer);
+            _vao = new VertexArrayObject<float, uint>(_gl, _vbo, _ebo);
+            _camera = new Camera(Vector3.Zero, (float)_window.Size.Width / _window.Size.Height);
 
-            Shader = new Shader(Gl, "shader.vert", "shader.frag");
+            _vao.VertexAttributePointer(0, 3, GLEnum.Float, 5, 0);
+            _vao.VertexAttributePointer(1, 2, GLEnum.Float, 5, 3);
 
-            Texture = new Texture(Gl, "silk.png");
+            _shader = new Shader(_gl, "shader.vert", "shader.frag");
+
+            _texture = new Texture(_gl, "silk.png");
         }
 
         private static void OnRender(double obj)
         {
-            Gl.Clear((uint)ClearBufferMask.ColorBufferBit | (uint)ClearBufferMask.DepthBufferBit);
+            _gl.Clear((uint)ClearBufferMask.ColorBufferBit | (uint)ClearBufferMask.DepthBufferBit);
 
-            Vao.Bind();
-            Texture.Bind();
-            Shader.Use();
-            Shader.SetUniform("uTexture0", 0);
+            _vao.Bind();
+            _texture.Bind();
+            _shader.Use();
+            _shader.SetUniform("uTexture0", 0);
+            //_shader.SetUniform("uModel", Matrix4x4.Identity);
+            _shader.SetUniform("uView", _camera.GetViewMatrix());
+            _shader.SetUniform("uPerspective", _camera.GetProjectionMatrix());
 
-            Gl.DrawElements(GLEnum.Triangles, (uint)Indices.Length, GLEnum.UnsignedInt, 0);
+            _gl.DrawElements(GLEnum.Triangles, (uint)Indices.Length, GLEnum.UnsignedInt, 0);
         }
 
         private static void OnClose()
         {
-            Vbo.Dispose();
-            Ebo.Dispose();
-            Vao.Dispose();
-            Shader.Dispose();
-            Texture.Dispose();
+            _vbo.Dispose();
+            _ebo.Dispose();
+            _vao.Dispose();
+            _shader.Dispose();
+            _texture.Dispose();
         }
 
         private static void KeyDown(IKeyboard arg1, Key arg2, int arg3)
         {
-            if (arg2 == Key.Escape)
+            switch (arg2)
             {
-                window.Close();
+                case Key.Escape:
+                    _window.Close();
+                    break;
+                case Key.W:
+                    _camera.Position += Vector3.UnitZ;
+                    break;
+                case Key.S:
+                    _camera.Position -= Vector3.UnitZ;
+                    break;
+                case Key.A:
+                    _camera.Position += Vector3.UnitX;
+                    break;
+                case Key.D:
+                    _camera.Position -= Vector3.UnitX;
+                    break;
             }
         }
     }
