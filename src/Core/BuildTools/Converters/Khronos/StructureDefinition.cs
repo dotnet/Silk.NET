@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Xml.Linq;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
@@ -17,6 +18,20 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         public static StructureDefinition CreateFromXml(XElement xe)
         {
             Require.NotNull(xe);
+
+            if (!(xe.Attribute("alias") is null))
+            {
+                var ret = CreateFromXml
+                (
+                    xe.Document.Element("registry")
+                        .Elements("types")
+                        .Elements("type")
+                        .Where(typex => typex.HasCategoryAttribute("struct"))
+                        .FirstOrDefault(x => x.GetNameAttribute() == xe.Attribute("alias").Value) ?? throw new Exception("wat")
+                );
+                
+                return new StructureDefinition(xe.GetNameAttribute(), ret.Members);
+            }
 
             string name = xe.GetNameAttribute();
             MemberSpec[] members = xe.Elements

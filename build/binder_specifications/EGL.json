@@ -7879,6 +7879,20 @@
         {
           "Tokens": [
             {
+              "Name": "ColorComponentTypeUnsignedIntegerArm",
+              "NativeName": "EGL_COLOR_COMPONENT_TYPE_UNSIGNED_INTEGER_ARM",
+              "Value": "0x3287",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "ColorComponentTypeIntegerArm",
+              "NativeName": "EGL_COLOR_COMPONENT_TYPE_INTEGER_ARM",
+              "Value": "0x3288",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
               "Name": "SyncPriorCommandsImplicitExternalArm",
               "NativeName": "EGL_SYNC_PRIOR_COMMANDS_IMPLICIT_EXTERNAL_ARM",
               "Value": "0x328A",
@@ -13730,7 +13744,7 @@
                     "IsIn": false
                   },
                   "Count": null,
-                  "Flow": 2,
+                  "Flow": 1,
                   "Attributes": []
                 },
                 {
@@ -13837,7 +13851,7 @@
                     "IsIn": false
                   },
                   "Count": null,
-                  "Flow": 2,
+                  "Flow": 1,
                   "Attributes": []
                 },
                 {
@@ -20698,7 +20712,7 @@
                     "IsIn": false
                   },
                   "Count": null,
-                  "Flow": 2,
+                  "Flow": 1,
                   "Attributes": []
                 },
                 {
@@ -20805,7 +20819,7 @@
                     "IsIn": false
                   },
                   "Count": null,
-                  "Flow": 2,
+                  "Flow": 1,
                   "Attributes": []
                 },
                 {
