@@ -28,7 +28,7 @@ namespace Silk.NET.Windowing.Extensions
         /// Gets the window with a context current on this thread.
         /// </summary>
         /// <returns>The window with a context current on this thread.</returns>
-        public IWindow GetCurrent() => Windows.FirstOrDefault(x => x.IsCurrent);
+        public IWindow GetCurrent() => Windows.FirstOrDefault(x => x.IsCurrentContext);
 
         /// <summary>
         /// Adds a window to this manager.
