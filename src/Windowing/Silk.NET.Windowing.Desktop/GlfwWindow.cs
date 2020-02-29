@@ -412,7 +412,7 @@ namespace Silk.NET.Windowing.Desktop
 
         public unsafe void ClearContext()
         {
-            if (IsCurrent)
+            if (IsCurrentContext)
             {
                 _glfw.MakeContextCurrent(null);
             }
@@ -429,7 +429,7 @@ namespace Silk.NET.Windowing.Desktop
         /// </summary>
         private void MakeCurrentInternal()
         {
-            if (!IsCurrent)
+            if (!IsCurrentContext)
             {
                 MakeCurrent();
             }
