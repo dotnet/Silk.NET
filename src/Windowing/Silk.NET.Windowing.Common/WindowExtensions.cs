@@ -49,6 +49,7 @@ namespace Silk.NET.Windowing.Common
                 view.DoUpdate();
                 view.DoRender();
             }
+            view.DoEvents();
             view.Reset();
         }
     }
