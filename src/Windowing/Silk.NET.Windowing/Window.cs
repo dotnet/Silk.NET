@@ -115,7 +115,7 @@ namespace Silk.NET.Windowing
                 Init();
             }
             
-            SilkManager.Get<IWindowPlatform>().ClearCurrent();
+            SilkManager.Get<IWindowPlatform>().ClearContexts();
         }
     }
 }
