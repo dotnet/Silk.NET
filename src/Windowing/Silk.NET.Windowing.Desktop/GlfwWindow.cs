@@ -145,7 +145,7 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public unsafe IntPtr Handle => (IntPtr) _windowPtr;
 
-        public unsafe bool IsCurrent => _glfw.GetCurrentContext() == _windowPtr;
+        public unsafe bool IsCurrentContext => _glfw.GetCurrentContext() == _windowPtr;
 
         /// <inheritdoc />
         public bool UseSingleThreadedWindow { get; }
@@ -410,7 +410,7 @@ namespace Silk.NET.Windowing.Desktop
             return task.Result;
         }
 
-        public unsafe void ClearCurrent()
+        public unsafe void ClearContext()
         {
             if (IsCurrent)
             {
