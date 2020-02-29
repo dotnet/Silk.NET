@@ -21,7 +21,7 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// Determines whether the context is current on this thread.
         /// </summary>
-        bool IsCurrent { get; }
+        bool IsCurrentContext { get; }
         
         /// <summary>
         /// Determines whether Vulkan functions are supported on this window.
@@ -140,9 +140,9 @@ namespace Silk.NET.Windowing.Common
         object Invoke(Delegate d, params object[] args);
 
         /// <summary>
-        /// If this thread's current context is current on this thread, it is cleared from the thread.
-        /// To make all contexts no longer current, use <see cref="IWindowPlatform.ClearCurrent"/>
+        /// If this window's context is current on this thread, it is cleared from the thread (i.e. made non-current).
+        /// To make all contexts non-current, use <see cref="IWindowPlatform.ClearCurrent"/>.
         /// </summary>
-        void ClearCurrent();
+        void ClearContext();
     }
 }
