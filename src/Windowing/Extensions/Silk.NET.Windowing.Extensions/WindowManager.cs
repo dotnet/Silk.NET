@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Silk.NET.Core.Platform;
 using Silk.NET.Windowing.Common;
 
@@ -22,6 +23,12 @@ namespace Silk.NET.Windowing.Extensions
         /// Gets or sets a value indicating whether this manager's render loop is active.
         /// </summary>
         public bool IsRunning { get; set; }
+
+        /// <summary>
+        /// Gets the window with a context current on this thread.
+        /// </summary>
+        /// <returns>The window with a context current on this thread.</returns>
+        public IWindow GetCurrent() => Windows.FirstOrDefault(x => x.IsCurrentContext);
 
         /// <summary>
         /// Adds a window to this manager.

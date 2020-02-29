@@ -19,6 +19,11 @@ namespace Silk.NET.Windowing.Common
         IntPtr Handle { get; }
         
         /// <summary>
+        /// Determines whether the context is current on this thread.
+        /// </summary>
+        bool IsCurrentContext { get; }
+        
+        /// <summary>
         /// Determines whether Vulkan functions are supported on this window.
         /// </summary>
         bool IsVulkanSupported { get; }
@@ -133,5 +138,11 @@ namespace Silk.NET.Windowing.Common
         /// <param name="args">The delegate's arguments.</param>
         /// <returns>An object returned from the delegate.</returns>
         object Invoke(Delegate d, params object[] args);
+
+        /// <summary>
+        /// If this window's context is current on this thread, it is cleared from the thread (i.e. made non-current).
+        /// To make all contexts non-current, use <see cref="IWindowPlatform.ClearCurrent"/>.
+        /// </summary>
+        void ClearContext();
     }
 }

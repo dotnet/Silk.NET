@@ -29,6 +29,12 @@ namespace Silk.NET.Windowing.Common
         /// <param name="opts"></param>
         /// <returns></returns>
         IView GetView(ViewOptions? opts = null);
+
+        /// <summary>
+        /// Clears all current contexts on this thread.
+        /// </summary>
+        void ClearContexts();
+
         /// <summary>
         /// Gets all monitors present on this window platform.
         /// </summary>

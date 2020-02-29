@@ -27,8 +27,6 @@ namespace Silk.NET.Windowing.Desktop
         // The number of frames that the window has been running slowly for.
         private int _isRunningSlowlyTries;
 
-        private bool _contextMoved;
-
         // Cache variables
         private Point _position;
         private Size _size;
@@ -146,6 +144,8 @@ namespace Silk.NET.Windowing.Desktop
 
         /// <inheritdoc />
         public unsafe IntPtr Handle => (IntPtr) _windowPtr;
+
+        public unsafe bool IsCurrentContext => _glfw.GetCurrentContext() == _windowPtr;
 
         /// <inheritdoc />
         public bool UseSingleThreadedWindow { get; }
@@ -410,25 +410,28 @@ namespace Silk.NET.Windowing.Desktop
             return task.Result;
         }
 
+        public unsafe void ClearContext()
+        {
+            if (IsCurrentContext)
+            {
+                _glfw.MakeContextCurrent(null);
+            }
+        }
+
         /// <inheritdoc />
         public unsafe void MakeCurrent()
         {
-            _contextMoved = true;
             _glfw.MakeContextCurrent(_windowPtr);
         }
         
         /// <summary>
         /// Make context current on this thread if it was moved to another one.
         /// </summary>
-        /// <remarks>
-        /// Awaiting rewrite.
-        /// </remarks>
         private void MakeCurrentInternal()
         {
-            if (_contextMoved)
+            if (!IsCurrentContext)
             {
                 MakeCurrent();
-                _contextMoved = false;
             }
         }
 

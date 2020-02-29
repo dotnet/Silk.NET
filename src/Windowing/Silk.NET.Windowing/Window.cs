@@ -104,5 +104,18 @@ namespace Silk.NET.Windowing
                 );
             }
         }
+
+        /// <summary>
+        /// Clears all current contexts for this backend on the current thread.
+        /// </summary>
+        public static void ClearCurrentContexts()
+        {
+            if (!SilkManager.IsRegistered<IWindowPlatform>())
+            {
+                Init();
+            }
+            
+            SilkManager.Get<IWindowPlatform>().ClearContexts();
+        }
     }
 }
