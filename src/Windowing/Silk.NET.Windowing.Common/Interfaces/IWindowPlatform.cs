@@ -33,7 +33,7 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// Clears all current contexts on this thread.
         /// </summary>
-        void ClearCurrent();
+        void ClearContexts();
 
         /// <summary>
         /// Gets all monitors present on this window platform.
