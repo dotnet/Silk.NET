@@ -51,7 +51,7 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public IView GetView(ViewOptions? opts = null) => CreateWindow(new WindowOptions(opts ?? ViewOptions.Default));
 
-        public unsafe void ClearCurrent() => GlfwProvider.GLFW.Value.MakeContextCurrent(null);
+        public unsafe void ClearContexts() => GlfwProvider.GLFW.Value.MakeContextCurrent(null);
 
         /// <inheritdoc />
         public IEnumerable<IMonitor> GetMonitors() => new GlfwMonitorEnumerable();
