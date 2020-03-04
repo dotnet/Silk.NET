@@ -52,6 +52,15 @@ namespace Silk.NET.Input.Common
         /// </summary>
         event Action<IMouse, MouseButton> MouseUp;
         
+        /// <summary>
+        /// Called when a single click is performed.
+        /// </summary>
+        event Action<IMouse, MouseButton> Click;
+
+        /// <summary>
+        /// Called when a double click is performed.
+        /// </summary>
+        event Action<IMouse, MouseButton> DoubleClick;
         
         /// <summary>
         /// Called when the mouse is moved.

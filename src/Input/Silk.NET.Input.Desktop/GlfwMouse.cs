@@ -63,6 +63,8 @@ namespace Silk.NET.Input.Desktop
 
         public event Action<IMouse, MouseButton> MouseDown;
         public event Action<IMouse, MouseButton> MouseUp;
+        public event Action<IMouse, MouseButton> Click;
+        public event Action<IMouse, MouseButton> DoubleClick;
         public event Action<IMouse, PointF> MouseMove;
         public event Action<IMouse, ScrollWheel> Scroll;
 
