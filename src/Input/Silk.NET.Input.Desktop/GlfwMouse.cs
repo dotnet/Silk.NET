@@ -25,6 +25,10 @@ namespace Silk.NET.Input.Desktop
         private GlfwCallbacks.ScrollCallback _scroll;
         private GlfwCallbacks.CursorPosCallback _cursorPos;
         private GlfwCallbacks.MouseButtonCallback _mouseButton;
+        private bool _firstClick = false;
+        private MouseButton? _firstClickButton = null;
+        private PointF _firstClickPosition = PointF.Empty;
+        private DateTime? _doubleClickStartTime = null;
 
         public unsafe GlfwMouse()
         {
@@ -48,10 +52,12 @@ namespace Silk.NET.Input.Desktop
         }
 
         public ICursor Cursor { get; private set; }
+        public int DoubleClickTime { get; set; } = 500;
+        public int DoubleClickRange { get; set; } = 4;
 
-        public unsafe bool IsButtonPressed(MouseButton btn)
+        public unsafe bool IsButtonPressed(MouseButton button)
         {
-            var index = GetButton(btn);
+            var index = GetButton(button);
 
             if (index == -1)
             {
@@ -82,7 +88,7 @@ namespace Silk.NET.Input.Desktop
             events.MouseButton += _mouseButton = (_, btn, action, mods) =>
                 (action switch
                 {
-                    InputAction.Press => MouseDown,
+                    InputAction.Press => HandleMouseDown,
                     InputAction.Release => MouseUp,
                     InputAction.Repeat => null,
                     _ => null
@@ -97,6 +103,80 @@ namespace Silk.NET.Input.Desktop
             events.MouseButton -= _mouseButton;
         }
 
+        private void HandleMouseDown(IMouse mouse, MouseButton button)
+        {
+            MouseDown?.Invoke(mouse, button);
+
+            if (_firstClick || (_firstClickButton != null && _firstClickButton != button))
+            {
+                // This is the first click with the given mouse button.
+                _doubleClickStartTime = null;
+
+                if (!_firstClick)
+                {
+                    // Only the mouse buttons differ so treat last click as a single click.
+                    Click?.Invoke(mouse, _firstClickButton.Value);
+                }
+
+                ProcessFirstClick(button);
+            }
+            else
+            {
+                // This is the second click with the same mouse button.
+                if (_doubleClickStartTime != null &&
+                    (DateTime.Now - _doubleClickStartTime.Value).TotalMilliseconds <= DoubleClickTime)
+                {
+                    // Within the maximum double click time.
+                    _doubleClickStartTime = null;
+
+                    var position = Position;
+                    if (Math.Abs(position.X - _firstClickPosition.X) < DoubleClickRange &&
+                        Math.Abs(position.Y - _firstClickPosition.Y) < DoubleClickRange)
+                    {
+                        // Second click was in time and in range -> double click.
+                        _firstClick = true;
+                        DoubleClick?.Invoke(mouse, button);
+                    }
+                    else
+                    {
+                        // Second click was in time but outside range -> single click.
+                        // The second click is another "first click".
+                        Click?.Invoke(mouse, button);
+                        ProcessFirstClick(button);
+                    }
+                }
+                else
+                {
+                    // TODO: If Update() is called after this, the _doubleClickStartTime will be
+                    //       reset to null which is not correct.
+
+                    // The double click time elapsed. Update() will handle the first click.
+                    // Now process the second click as another "first click".
+                    ProcessFirstClick(button);
+                }
+            }
+        }
+
+        private void ProcessFirstClick(MouseButton button)
+        {
+            _firstClick = false;
+            _firstClickButton = button;
+            _firstClickPosition = Position;
+            _doubleClickStartTime = DateTime.Now;
+        }
+
+        public void Update()
+        {
+            if (_doubleClickStartTime != null &&
+                (DateTime.Now - _doubleClickStartTime.Value).TotalMilliseconds > DoubleClickTime)
+            {
+                // No second click in maximum double click time.
+                _doubleClickStartTime = null;
+                _firstClick = true;
+                Click?.Invoke(this, _firstClickButton.Value);
+            }
+        }
+        
         private static int GetButton(MouseButton btn) => btn switch
         {
             MouseButton.Left => (int) GLFW.MouseButton.Left,

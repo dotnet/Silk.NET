@@ -35,6 +35,17 @@ namespace Silk.NET.Input.Common
         /// </summary>
         ICursor Cursor { get; }
         
+        /// The maximum time in milliseconds between two
+        /// consecutive clicks to count as a double click.
+        /// </summary>
+        int DoubleClickTime { get; set; }
+
+        /// <summary>
+        /// The maximum distance in pixels between two
+        /// consecutive clicks to count as a double click.
+        /// </summary>
+        int DoubleClickRange { get; set; }
+        
         /// <summary>
         /// Checks if a specific button is currently pressed.
         /// </summary>
