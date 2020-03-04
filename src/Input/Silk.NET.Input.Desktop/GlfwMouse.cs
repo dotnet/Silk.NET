@@ -25,7 +25,7 @@ namespace Silk.NET.Input.Desktop
         private GlfwCallbacks.ScrollCallback _scroll;
         private GlfwCallbacks.CursorPosCallback _cursorPos;
         private GlfwCallbacks.MouseButtonCallback _mouseButton;
-        private bool _firstClick = false;
+        private bool _firstClick = true;
         private MouseButton? _firstClickButton = null;
         private PointF _firstClickPosition = PointF.Empty;
         private DateTime? _doubleClickStartTime = null;
