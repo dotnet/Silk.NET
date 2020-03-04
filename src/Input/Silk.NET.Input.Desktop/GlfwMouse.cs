@@ -147,10 +147,14 @@ namespace Silk.NET.Input.Desktop
                 }
                 else
                 {
-                    // TODO: If Update() is called after this, the _doubleClickStartTime will be
-                    //       reset to null which is not correct.
+                    // The double click time elapsed.
 
-                    // The double click time elapsed. Update() will handle the first click.
+                    // If Update() would have detected the time elapse before,
+                    // it would have set _firstClick back to true and we won't be here.
+                    // Therefore Update() has not detected time elapse here and we have
+                    // to handle it.
+                    HandleDoubleClickTimeElapse();
+
                     // Now process the second click as another "first click".
                     ProcessFirstClick(button);
                 }
@@ -165,18 +169,23 @@ namespace Silk.NET.Input.Desktop
             _doubleClickStartTime = DateTime.Now;
         }
 
+        private void HandleDoubleClickTimeElapse()
+        {
+            _doubleClickStartTime = null;
+            _firstClick = true;
+            Click?.Invoke(this, _firstClickButton.Value);
+        }
+
         public void Update()
         {
             if (_doubleClickStartTime != null &&
                 (DateTime.Now - _doubleClickStartTime.Value).TotalMilliseconds > DoubleClickTime)
             {
                 // No second click in maximum double click time.
-                _doubleClickStartTime = null;
-                _firstClick = true;
-                Click?.Invoke(this, _firstClickButton.Value);
+                HandleDoubleClickTimeElapse();
             }
         }
-        
+
         private static int GetButton(MouseButton btn) => btn switch
         {
             MouseButton.Left => (int) GLFW.MouseButton.Left,
