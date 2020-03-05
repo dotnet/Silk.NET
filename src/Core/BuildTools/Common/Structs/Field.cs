@@ -24,6 +24,7 @@ namespace Silk.NET.BuildTools.Common.Structs
         public string Name { get; set; }
         public string NativeName { get; set; }
         public string NativeType { get; set; }
+        public string DefaultAssignment { get; set; }
         public string ToString(Project project)
         {
             var sb = new StringBuilder();

@@ -101,6 +101,26 @@ namespace Silk.NET.BuildTools.Bind
 
             sw.WriteLine($"    public unsafe struct {@struct.Name}");
             sw.WriteLine("    {");
+            sw.WriteLine($"        public {@struct.Name}");
+            sw.WriteLine($"        (");
+            for (var i = 0; i < @struct.Fields.Count; i++)
+            {
+                var field = @struct.Fields[i];
+                var comma = i < @struct.Fields.Count - 1 ? "," : null;
+                var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
+                sw.WriteLine($"            {field.Type} {argName} = {field.DefaultAssignment ?? "default"}{comma}");
+            }
+            
+            sw.WriteLine("        )");
+            sw.WriteLine("        {");
+            foreach (var field in @struct.Fields)
+            {
+                var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
+                sw.WriteLine($"           {field.Name} = {argName};");
+            }
+            sw.WriteLine("        }");
+            sw.WriteLine();
+
             foreach (var structField in @struct.Fields)
             {
                 if (!(structField.Count is null))
@@ -120,15 +140,15 @@ namespace Silk.NET.BuildTools.Bind
                                 : 1;
                         for (var i = 0; i < count; i++)
                         {
-                            sw.WriteLine($"{structField.Doc}");
+                            sw.WriteLine($"        {structField.Doc}");
                             foreach (var attr in structField.Attributes)
                             {
-                                sw.WriteLine($"    {attr}");
+                                sw.WriteLine($"        {attr}");
                             }
 
                             sw.WriteLine
                             (
-                                $"public {structField.Type} {structField.Name}_{i};"
+                                $"        public {structField.Type} {structField.Name}_{i};"
                             );
                         }
                     }
@@ -136,7 +156,7 @@ namespace Silk.NET.BuildTools.Bind
                     {
                         if (!string.IsNullOrEmpty(structField.Doc))
                         {
-                            sw.WriteLine($"{structField.Doc}");
+                            sw.WriteLine($"        {structField.Doc}");
                         }
 
                         var count = structField.Count.IsConstant
@@ -153,12 +173,12 @@ namespace Silk.NET.BuildTools.Bind
 
                         foreach (var attr in structField.Attributes)
                         {
-                            sw.WriteLine($"    {attr}");
+                            sw.WriteLine($"        {attr}");
                         }
 
                         sw.WriteLine
                         (
-                            $"public fixed {structField.Type} {structField.Name}[{count}];"
+                            $"       public fixed {structField.Type} {structField.Name}[{count}];"
                         );
                     }
                 }
@@ -167,10 +187,10 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine(structField.Doc);
                     foreach (var attr in structField.Attributes)
                     {
-                        sw.WriteLine($"    {attr}");
+                        sw.WriteLine($"        {attr}");
                     }
 
-                    sw.WriteLine($"public {structField.Type} {structField.Name};");
+                    sw.WriteLine($"        public {structField.Type} {structField.Name};");
                 }
             }
 

@@ -3019,8 +3019,8 @@
               "Attributes": []
             },
             {
-              "Name": "DeviceProgramScopeGlobalCtorDtorSupport",
-              "NativeName": "CL_DEVICE_PROGRAM_SCOPE_GLOBAL_CTOR_DTOR_SUPPORT",
+              "Name": "DeviceOpenclCVersions",
+              "NativeName": "CL_DEVICE_OPENCL_C_VERSIONS",
               "Value": "0x1066",
               "Doc": "",
               "Attributes": []
@@ -3043,6 +3043,34 @@
               "Name": "DeviceGenericAddressSpaceSupport",
               "NativeName": "CL_DEVICE_GENERIC_ADDRESS_SPACE_SUPPORT",
               "Value": "0x1069",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceOpenclCFeatures",
+              "NativeName": "CL_DEVICE_OPENCL_C_FEATURES",
+              "Value": "0x106F",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceDeviceEnqueueSupport",
+              "NativeName": "CL_DEVICE_DEVICE_ENQUEUE_SUPPORT",
+              "Value": "0x1070",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DevicePipeSupport",
+              "NativeName": "CL_DEVICE_PIPE_SUPPORT",
+              "Value": "0x1071",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "CommandSvmMigrateMem",
+              "NativeName": "CL_COMMAND_SVM_MIGRATE_MEM",
+              "Value": "0x120E",
               "Doc": "",
               "Attributes": []
             },
@@ -31946,7 +31974,8 @@
               "Count": null,
               "Name": "Origin",
               "NativeName": "origin",
-              "NativeType": "size_t"
+              "NativeType": "size_t",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -31966,7 +31995,8 @@
               "Count": null,
               "Name": "Size",
               "NativeName": "size",
-              "NativeType": "size_t"
+              "NativeType": "size_t",
+              "DefaultAssignment": null
             }
           ],
           "Attributes": [],
@@ -31995,7 +32025,8 @@
               "Count": null,
               "Name": "Resource",
               "NativeName": "resource",
-              "NativeType": "IDirect3DSurface9*"
+              "NativeType": "IDirect3DSurface9*",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32015,7 +32046,8 @@
               "Count": null,
               "Name": "SharedHandle",
               "NativeName": "shared_handle",
-              "NativeType": "HANDLE"
+              "NativeType": "HANDLE",
+              "DefaultAssignment": null
             }
           ],
           "Attributes": [],
@@ -32044,7 +32076,8 @@
               "Count": null,
               "Name": "ImageType",
               "NativeName": "image_type",
-              "NativeType": "cl_mem_object_type"
+              "NativeType": "cl_mem_object_type",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32064,7 +32097,8 @@
               "Count": null,
               "Name": "ImageWidth",
               "NativeName": "image_width",
-              "NativeType": "size_t"
+              "NativeType": "size_t",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32084,7 +32118,8 @@
               "Count": null,
               "Name": "ImageHeight",
               "NativeName": "image_height",
-              "NativeType": "size_t"
+              "NativeType": "size_t",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32104,7 +32139,8 @@
               "Count": null,
               "Name": "ImageDepth",
               "NativeName": "image_depth",
-              "NativeType": "size_t"
+              "NativeType": "size_t",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32124,7 +32160,8 @@
               "Count": null,
               "Name": "ImageArraySize",
               "NativeName": "image_array_size",
-              "NativeType": "size_t"
+              "NativeType": "size_t",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32144,7 +32181,8 @@
               "Count": null,
               "Name": "ImageRowPitch",
               "NativeName": "image_row_pitch",
-              "NativeType": "size_t"
+              "NativeType": "size_t",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32164,7 +32202,8 @@
               "Count": null,
               "Name": "ImageSlicePitch",
               "NativeName": "image_slice_pitch",
-              "NativeType": "size_t"
+              "NativeType": "size_t",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32184,7 +32223,8 @@
               "Count": null,
               "Name": "NumMipLevels",
               "NativeName": "num_mip_levels",
-              "NativeType": "cl_uint"
+              "NativeType": "cl_uint",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32204,7 +32244,8 @@
               "Count": null,
               "Name": "NumSamples",
               "NativeName": "num_samples",
-              "NativeType": "cl_uint"
+              "NativeType": "cl_uint",
+              "DefaultAssignment": null
             }
           ],
           "Attributes": [],
@@ -32233,7 +32274,8 @@
               "Count": null,
               "Name": "ImageChannelOrder",
               "NativeName": "image_channel_order",
-              "NativeType": "cl_channel_order"
+              "NativeType": "cl_channel_order",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32253,7 +32295,8 @@
               "Count": null,
               "Name": "ImageChannelDataType",
               "NativeName": "image_channel_data_type",
-              "NativeType": "cl_channel_type"
+              "NativeType": "cl_channel_type",
+              "DefaultAssignment": null
             }
           ],
           "Attributes": [],
@@ -32282,7 +32325,8 @@
               "Count": null,
               "Name": "ExtHostPtr",
               "NativeName": "ext_host_ptr",
-              "NativeType": "cl_mem_ext_host_ptr"
+              "NativeType": "cl_mem_ext_host_ptr",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32302,7 +32346,8 @@
               "Count": null,
               "Name": "AnbPtr",
               "NativeName": "anb_ptr",
-              "NativeType": "void*"
+              "NativeType": "void*",
+              "DefaultAssignment": null
             }
           ],
           "Attributes": [],
@@ -32331,7 +32376,8 @@
               "Count": null,
               "Name": "AllocationType",
               "NativeName": "allocation_type",
-              "NativeType": "cl_uint"
+              "NativeType": "cl_uint",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32351,7 +32397,8 @@
               "Count": null,
               "Name": "HostCachePolicy",
               "NativeName": "host_cache_policy",
-              "NativeType": "cl_uint"
+              "NativeType": "cl_uint",
+              "DefaultAssignment": null
             }
           ],
           "Attributes": [],
@@ -32380,7 +32427,8 @@
               "Count": null,
               "Name": "ExtHostPtr",
               "NativeName": "ext_host_ptr",
-              "NativeType": "cl_mem_ext_host_ptr"
+              "NativeType": "cl_mem_ext_host_ptr",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32400,7 +32448,8 @@
               "Count": null,
               "Name": "IonFiledesc",
               "NativeName": "ion_filedesc",
-              "NativeType": "int"
+              "NativeType": "int",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32420,7 +32469,8 @@
               "Count": null,
               "Name": "IonHostptr",
               "NativeName": "ion_hostptr",
-              "NativeType": "void*"
+              "NativeType": "void*",
+              "DefaultAssignment": null
             }
           ],
           "Attributes": [],
@@ -32449,7 +32499,8 @@
               "Count": null,
               "Name": "MbBlockType",
               "NativeName": "mb_block_type",
-              "NativeType": "cl_uint"
+              "NativeType": "cl_uint",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32469,7 +32520,8 @@
               "Count": null,
               "Name": "SubpixelMode",
               "NativeName": "subpixel_mode",
-              "NativeType": "cl_uint"
+              "NativeType": "cl_uint",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32489,7 +32541,8 @@
               "Count": null,
               "Name": "SadAdjustMode",
               "NativeName": "sad_adjust_mode",
-              "NativeType": "cl_uint"
+              "NativeType": "cl_uint",
+              "DefaultAssignment": null
             },
             {
               "Attributes": [],
@@ -32509,7 +32562,8 @@
               "Count": null,
               "Name": "SearchPathType",
               "NativeName": "search_path_type",
-              "NativeType": "cl_uint"
+              "NativeType": "cl_uint",
+              "DefaultAssignment": null
             }
           ],
           "Attributes": [],

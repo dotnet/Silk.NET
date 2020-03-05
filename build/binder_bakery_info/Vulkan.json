@@ -4,7 +4,8 @@
     "Implements": [
       "vulkan",
       "vulkan-1.0",
-      "vulkan-1.1"
+      "vulkan-1.1",
+      "vulkan-1.2"
     ],
     "Namespace": "Silk.NET.Vulkan",
     "ExtensionsNamespace": "Silk.NET.Vulkan.Extensions",

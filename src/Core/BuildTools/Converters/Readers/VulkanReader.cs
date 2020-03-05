@@ -69,7 +69,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 Doc = $"/// <summary>{x.Comment}</summary>",
                                 NativeName = x.Name,
                                 NativeType = x.Type.ToString(),
-                                Type = ConvertType(x.Type)
+                                Type = ConvertType(x.Type),
+                                DefaultAssignment = x.Type.Name == "VkStructureType" ? "StructureType." + TryTrim
+                                (
+                                    Naming.Translate(TrimName(s.Name, opts), opts.Prefix),
+                                    Naming.TranslateLite(TrimName("VkStructureType", opts), opts.Prefix)
+                                ) : null
                             }
                         )
                         .ToList(),
