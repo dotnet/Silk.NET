@@ -11,13 +11,44 @@ namespace Silk.NET.Vulkan
     public partial class Vk
     {
         private VkLoader _extLoader;
+        private Dictionary<IntPtr, List<string>> _extensions = new Dictionary<IntPtr, List<string>>();
         public Instance? CurrentInstance { get; set; }
         public Device? CurrentDevice { get; set; }
+        public static Version32 Version10 => new Version32(1, 0, 0);
+        public static Version32 Version11 => new Version32(1, 1, 0);
+        public static Version32 Version12 => new Version32(1, 2, 0);
+        public static Version32 MakeVersion(uint major, uint minor, uint patch = 0) => new Version32(major, minor, patch);
         public static Vk GetApi()
         {
             var sym = new VkLoader(LibraryLoader.GetPlatformDefaultLoader());
             var ret = LibraryLoader<Vk>.Load(new VulkanLibraryNameContainer(), sym);
             sym.Vulkan = ret;
+            return ret;
+        }
+
+        public static Vk GetApi(InstanceCreateInfo info) => GetApi(ref info);
+        public static unsafe Vk GetApi(ref InstanceCreateInfo info)
+        {
+            var sym = new VkLoader(LibraryLoader.GetPlatformDefaultLoader());
+            var ret = LibraryLoader<Vk>.Load(new VulkanLibraryNameContainer(), sym);
+            sym.Vulkan = ret;
+            Instance instance;
+            fixed (InstanceCreateInfo* infoPtr = &info)
+            {
+                ret.CreateInstance(infoPtr, null, &instance);
+            }
+
+            ret.CurrentInstance = instance;
+            return ret;
+        }
+
+        public static Vk GetApi(ref InstanceCreateInfo info, ref AllocationCallbacks callbacks)
+        {
+            var sym = new VkLoader(LibraryLoader.GetPlatformDefaultLoader());
+            var ret = LibraryLoader<Vk>.Load(new VulkanLibraryNameContainer(), sym);
+            sym.Vulkan = ret;
+            ret.CreateInstance(ref info, ref callbacks, out var instance);
+            ret.CurrentInstance = instance;
             return ret;
         }
 
@@ -28,11 +59,15 @@ namespace Silk.NET.Vulkan
             return ext != null;
         }
 
-        private List<string> _extensions;
         public override bool IsExtensionPresent(string extension)
         {
-            return (_extensions ??= GetExtensions()).Contains(extension);
+            return (_extensions.ContainsKey
+                (CurrentDevice?.Handle ?? IntPtr.Zero)
+                ? _extensions[CurrentDevice?.Handle ?? IntPtr.Zero] = GetExtensions()
+                : _extensions[CurrentDevice?.Handle ?? IntPtr.Zero]).Contains(extension);
         }
+
+        public void PurgeExtensionCache() => _extensions.Clear();
 
         private unsafe List<string> GetExtensions()
         {
