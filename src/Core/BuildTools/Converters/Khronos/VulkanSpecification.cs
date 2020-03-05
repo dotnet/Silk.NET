@@ -80,6 +80,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 .ToDictionary(
                     typex => typex.GetNameElement(),
                     typex => typex.Element("type").Value);
+            baseTypes["VkBool32"] = "Bool32";
 
             ExtensionDefinition[] extensions = registry.Element("extensions").Elements("extension")
                 .Select(ExtensionDefinition.CreateFromXml).ToArray();
