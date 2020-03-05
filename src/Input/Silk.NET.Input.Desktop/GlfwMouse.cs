@@ -28,7 +28,7 @@ namespace Silk.NET.Input.Desktop
         private bool _firstClick = true;
         private MouseButton? _firstClickButton = null;
         private PointF _firstClickPosition = PointF.Empty;
-        private DateTime? _doubleClickStartTime = null;
+        private DateTime? _firstClickTime = null;
 
         public unsafe GlfwMouse()
         {
@@ -110,7 +110,7 @@ namespace Silk.NET.Input.Desktop
             if (_firstClick || (_firstClickButton != null && _firstClickButton != button))
             {
                 // This is the first click with the given mouse button.
-                _doubleClickStartTime = null;
+                _firstClickTime = null;
 
                 if (!_firstClick)
                 {
@@ -123,11 +123,11 @@ namespace Silk.NET.Input.Desktop
             else
             {
                 // This is the second click with the same mouse button.
-                if (_doubleClickStartTime != null &&
-                    (DateTime.Now - _doubleClickStartTime.Value).TotalMilliseconds <= DoubleClickTime)
+                if (_firstClickTime != null &&
+                    (DateTime.Now - _firstClickTime.Value).TotalMilliseconds <= DoubleClickTime)
                 {
                     // Within the maximum double click time.
-                    _doubleClickStartTime = null;
+                    _firstClickTime = null;
 
                     var position = Position;
                     if (Math.Abs(position.X - _firstClickPosition.X) < DoubleClickRange &&
@@ -166,20 +166,20 @@ namespace Silk.NET.Input.Desktop
             _firstClick = false;
             _firstClickButton = button;
             _firstClickPosition = Position;
-            _doubleClickStartTime = DateTime.Now;
+            _firstClickTime = DateTime.Now;
         }
 
         private void HandleDoubleClickTimeElapse()
         {
-            _doubleClickStartTime = null;
+            _firstClickTime = null;
             _firstClick = true;
             Click?.Invoke(this, _firstClickButton.Value);
         }
 
         public void Update()
         {
-            if (_doubleClickStartTime != null &&
-                (DateTime.Now - _doubleClickStartTime.Value).TotalMilliseconds > DoubleClickTime)
+            if (_firstClickTime != null &&
+                (DateTime.Now - _firstClickTime.Value).TotalMilliseconds > DoubleClickTime)
             {
                 // No second click in maximum double click time.
                 HandleDoubleClickTimeElapse();
