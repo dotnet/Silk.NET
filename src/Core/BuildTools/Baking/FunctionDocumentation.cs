@@ -18,7 +18,7 @@ namespace Silk.NET.BuildTools.Baking
         /// <summary>
         /// Gets or sets this function's documentation summary.
         /// </summary>
-        public string Summary { get; set; }
+        public string Summary { get; set; } = "To be added.";
 
         /// <summary>
         /// Gets or sets a dictionary where the parameter name is the key, and its documentation is the value.

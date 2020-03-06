@@ -21,9 +21,7 @@ namespace Silk.NET.Core.Native
         }
         
         public UnmanagedLibrary Library { get; }
-
         public abstract SearchPathContainer SearchPaths { get; }
-
         public abstract bool IsExtensionPresent(string name);
     }
 }

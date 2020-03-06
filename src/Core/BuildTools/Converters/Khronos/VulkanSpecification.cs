@@ -41,6 +41,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Extensions = extensions;
             Features = features;
             AddExtensionEnums(Enums, Extensions);
+            AddExtensionEnums(Enums, Features);
         }
 
         public static VulkanSpecification LoadFromXmlStream(Stream specFileStream)
@@ -79,6 +80,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 .ToDictionary(
                     typex => typex.GetNameElement(),
                     typex => typex.Element("type").Value);
+            baseTypes["VkBool32"] = "Bool32";
 
             ExtensionDefinition[] extensions = registry.Element("extensions").Elements("extension")
                 .Select(ExtensionDefinition.CreateFromXml).ToArray();
@@ -109,6 +111,19 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
                 }
 
+                foreach (var enumEx in exDef.EnumExtensions)
+                {
+                    EnumDefinition enumDef = GetEnumDef(enums, enumEx.ExtendedType);
+                    int value = int.Parse(enumEx.Value);
+                    enumDef.Values = enumDef.Values.Append(new EnumValue(enumEx.Name, value, null)).ToArray();
+                }
+            }
+        }
+
+        private void AddExtensionEnums(EnumDefinition[] enums, FeatureDefinition[] extensions)
+        {
+            foreach (FeatureDefinition exDef in extensions)
+            {
                 foreach (var enumEx in exDef.EnumExtensions)
                 {
                     EnumDefinition enumDef = GetEnumDef(enums, enumEx.ExtendedType);

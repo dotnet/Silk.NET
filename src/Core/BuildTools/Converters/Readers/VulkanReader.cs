@@ -59,20 +59,32 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     s.Name, new Struct
                     {
                         Fields = s.Members.Select
-                        (
-                            x => new Field
-                            {
-                                Count = string.IsNullOrEmpty(x.ElementCountSymbolic)
-                                    ? x.ElementCount != 1 ? new Count(x.ElementCount) : null
-                                    : new Count(x.ElementCountSymbolic, false),
-                                Name = Naming.Translate(TrimName(x.Name, opts), prefix),
-                                Doc = $"/// <summary>{x.Comment}</summary>",
-                                NativeName = x.Name,
-                                NativeType = x.Type.ToString(),
-                                Type = ConvertType(x.Type)
-                            }
-                        )
-                        .ToList(),
+                            (
+                                x => new Field
+                                {
+                                    Count = string.IsNullOrEmpty(x.ElementCountSymbolic)
+                                        ? x.ElementCount != 1 ? new Count(x.ElementCount) : null
+                                        : new Count(x.ElementCountSymbolic, false),
+                                    Name = Naming.Translate(TrimName(x.Name, opts), prefix),
+                                    Doc = $"/// <summary>{x.Comment}</summary>",
+                                    NativeName = x.Name,
+                                    NativeType = x.Type.ToString(),
+                                    Type = ConvertType(x.Type),
+                                    DefaultAssignment =
+                                        x.Type.Name == "VkStructureType" && !string.IsNullOrWhiteSpace(x.LegalValues)
+                                            ? "StructureType." + TryTrim
+                                            (
+                                                Naming.Translate
+                                                (
+                                                    TrimName(x.LegalValues.Split(',').FirstOrDefault(), opts),
+                                                    opts.Prefix
+                                                ),
+                                                Naming.TranslateLite(TrimName("VkStructureType", opts), opts.Prefix)
+                                            )
+                                            : null
+                                }
+                            )
+                            .ToList(),
                         Name = Naming.TranslateLite(TrimName(s.Name, opts), prefix),
                         NativeName = s.Name
                     }
@@ -297,6 +309,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     };
                 }
             }
+            
             opts.TypeMaps.Insert(0, tm);
         }
 

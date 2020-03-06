@@ -101,6 +101,65 @@ namespace Silk.NET.BuildTools.Bind
 
             sw.WriteLine($"    public unsafe struct {@struct.Name}");
             sw.WriteLine("    {");
+            sw.WriteLine($"        public {@struct.Name}");
+            sw.WriteLine($"        (");
+            var first = true;
+            for (var i = 0; i < @struct.Fields.Count; i++)
+            {
+                var field = @struct.Fields[i];
+                if (!(field.Count is null)) continue; // I've chosen not to initialize multi-count fields from ctors.
+                var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
+                argName = Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
+                if (!first)
+                {
+                    sw.WriteLine(",");
+                }
+                else
+                {
+                    first = false;
+                }
+
+                sw.Write($"            {field.Type} {argName} = {field.DefaultAssignment ?? "default"}");
+            }
+            
+            sw.WriteLine();
+            sw.WriteLine("        )");
+            sw.WriteLine("        {");
+            foreach (var field in @struct.Fields)
+            {
+                if (!(field.Count is null))
+                {
+                    if (!Field._fixedCapableTypes.Contains(field.Type.Name))
+                    {
+                        var count = field.Count.IsConstant
+                            ? int.Parse
+                            (
+                                profile.Constants
+                                    .FirstOrDefault(x => x.NativeName == field.Count.ConstantName)
+                                    ?
+                                    .Value
+                            )
+                            : field.Count.IsStatic
+                                ? field.Count.StaticCount
+                                : 1;
+                        for (var i = 0; i < count; i++)
+                        {
+                            sw.WriteLine
+                            (
+                                $"           {field.Name}_{i} = default;"
+                            );
+                        }
+                    }
+                        
+                    continue;
+                }
+                var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
+                argName = Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
+                sw.WriteLine($"           {field.Name} = {argName};");
+            }
+            sw.WriteLine("        }");
+            sw.WriteLine();
+
             foreach (var structField in @struct.Fields)
             {
                 if (!(structField.Count is null))
@@ -120,15 +179,15 @@ namespace Silk.NET.BuildTools.Bind
                                 : 1;
                         for (var i = 0; i < count; i++)
                         {
-                            sw.WriteLine($"{structField.Doc}");
+                            sw.WriteLine($"        {structField.Doc}");
                             foreach (var attr in structField.Attributes)
                             {
-                                sw.WriteLine($"    {attr}");
+                                sw.WriteLine($"        {attr}");
                             }
 
                             sw.WriteLine
                             (
-                                $"public {structField.Type} {structField.Name}_{i};"
+                                $"        public {structField.Type} {structField.Name}_{i};"
                             );
                         }
                     }
@@ -136,7 +195,7 @@ namespace Silk.NET.BuildTools.Bind
                     {
                         if (!string.IsNullOrEmpty(structField.Doc))
                         {
-                            sw.WriteLine($"{structField.Doc}");
+                            sw.WriteLine($"        {structField.Doc}");
                         }
 
                         var count = structField.Count.IsConstant
@@ -153,12 +212,12 @@ namespace Silk.NET.BuildTools.Bind
 
                         foreach (var attr in structField.Attributes)
                         {
-                            sw.WriteLine($"    {attr}");
+                            sw.WriteLine($"        {attr}");
                         }
 
                         sw.WriteLine
                         (
-                            $"public fixed {structField.Type} {structField.Name}[{count}];"
+                            $"       public fixed {structField.Type} {structField.Name}[{count}];"
                         );
                     }
                 }
@@ -167,10 +226,10 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine(structField.Doc);
                     foreach (var attr in structField.Attributes)
                     {
-                        sw.WriteLine($"    {attr}");
+                        sw.WriteLine($"        {attr}");
                     }
 
-                    sw.WriteLine($"public {structField.Type} {structField.Name};");
+                    sw.WriteLine($"        public {structField.Type} {structField.Name};");
                 }
             }
 

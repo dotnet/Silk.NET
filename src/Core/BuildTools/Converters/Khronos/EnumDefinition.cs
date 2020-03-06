@@ -79,7 +79,8 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                     .Elements("enums")
                     .Where
                     (
-                        enumx => enumx.GetTypeAttributeOrNull() == "enum" || enumx.GetTypeAttributeOrNull() == "bitmask"
+                        enumx => enumx.GetTypeAttributeOrNull() == "enum" ||
+                                 enumx.GetTypeAttributeOrNull() == "bitmask"
                     )
                     .Elements("enum")
                     .FirstOrDefault(x => x.Attribute("name")?.Value == xe.Attribute("alias").Value));

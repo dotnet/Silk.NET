@@ -13,6 +13,6 @@ namespace Silk.NET.BuildTools.Baking
         /// <summary>
         /// Gets or sets this parameter's documentation summary.
         /// </summary>
-        public string Summary { get; set; }
+        public string Summary { get; set; } = "To be added.";
     }
 }
