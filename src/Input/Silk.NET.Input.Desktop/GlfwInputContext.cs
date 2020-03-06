@@ -53,6 +53,11 @@ namespace Silk.NET.Input.Desktop
             GlfwInputPlatform.RegisterWindow((WindowHandle*) Handle, _subscribers);
             window.Update += _update = _ =>
             {
+                foreach (var updatable in _mice)
+                {
+                    updatable.Update();
+                }
+
                 foreach (var updatable in _gamepads)
                 {
                     updatable.Update();

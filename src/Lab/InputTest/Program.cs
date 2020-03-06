@@ -174,6 +174,8 @@ namespace InputTest
                 {
                     mouse.MouseUp += MouseOnMouseUp;
                     mouse.MouseDown += MouseOnMouseDown;
+                    mouse.Click += MouseOnClick;
+                    mouse.DoubleClick += MouseOnDoubleClick;
                     mouse.Scroll += MouseOnScroll;
                     mouse.MouseMove += MouseOnMouseMove;
                 }
@@ -181,6 +183,8 @@ namespace InputTest
                 {
                     mouse.MouseUp -= MouseOnMouseUp;
                     mouse.MouseDown -= MouseOnMouseDown;
+                    mouse.Click -= MouseOnClick;
+                    mouse.DoubleClick -= MouseOnDoubleClick;
                     mouse.Scroll -= MouseOnScroll;
                     mouse.MouseMove -= MouseOnMouseMove;
                 }
@@ -214,6 +218,16 @@ namespace InputTest
         private static void MouseOnMouseUp(IMouse arg1, MouseButton arg2)
         {
             Console.WriteLine($"M{arg1.Index}> {arg2} up.");
+        }
+
+        private static void MouseOnClick(IMouse arg1, MouseButton arg2)
+        {
+            Console.WriteLine($"M{arg1.Index}> {arg2} single click.");
+        }
+
+        private static void MouseOnDoubleClick(IMouse arg1, MouseButton arg2)
+        {
+            Console.WriteLine($"M{arg1.Index}> {arg2} double click.");
         }
 
         private static void KeyboardOnKeyUp(IKeyboard arg1, Key arg2, int _)
