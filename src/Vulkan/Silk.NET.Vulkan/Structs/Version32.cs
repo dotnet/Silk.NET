@@ -39,7 +39,7 @@ namespace Silk.NET.Vulkan
         /// <summary>
         /// Gets the patch component of this version structure.
         /// </summary>
-        public uint Patch => (Value >> 22) & 0xfff;
+        public uint Patch => Value & 0xfff;
         /// <summary>
         /// Creates a 32-bit version structure from the given 32-bit unsigned integer.
         /// </summary>
