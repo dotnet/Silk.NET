@@ -26,10 +26,11 @@ namespace Silk.NET.BuildTools.Overloading
                 return false;
             }
 
-            // function's name starts with Get, Gen, or New
+            // function's name starts with Get, Gen, New, or Create
             var hasCorrectPrefix = function.Name.StartsWith("Get") ||
                                    function.Name.StartsWith("Gen") ||
-                                   function.Name.StartsWith("New");
+                                   function.Name.StartsWith("New") ||
+                                   function.Name.StartsWith("Create");
             if (!hasCorrectPrefix)
             {
                 return false;
