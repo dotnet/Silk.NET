@@ -5,6 +5,7 @@
 
 using System;
 using System.Drawing;
+using Silk.NET.Windowing.Common.Structs;
 
 namespace Silk.NET.Windowing.Common
 {
@@ -41,5 +42,11 @@ namespace Silk.NET.Windowing.Common
         /// Raised when the user drops files onto the window.
         /// </summary>
         event Action<string[]> FileDrop;
+
+        /// <summary>
+        /// Sets the window icons.
+        /// </summary>
+        /// <param name="icons">Either a collection of window icons, or null to set to the default icon.</param>
+        void SetWindowIcon(Span<WindowIcon> icons);
     }
 }
