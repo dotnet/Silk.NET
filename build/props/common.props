@@ -4,25 +4,19 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <LangVersion>8.0</LangVersion>
         <PackageReleaseNotes>
-            Silk.NET 1.0 Preview 5
-            
-            - Added cursor modes
-            - Added EGL bindings (no windowing backend yet)
-            - Rewrite the overload system, hopefully resulting in overloads that make sense. 
-            - Miscellaenous Silk.NET.Core improvements 
-            - Updated to SuperInvoke 1.0.3, encompassing a lot of bug fixes.
-            - Updated to GLFW 3.3.2, encompassing a lot of bug fixes.
-            - Fix an infinite loop in OpenAL's GetStringList methods 
-            - Other bug fixes
-            
-            As a result of the new overload system, some work may be required to migrate to Preivew 5 from an earlier 
-            preview.
+            This is the first full release of Silk.NET. Changes since Preview 5:
+
+            - Add window icons
+            - Add more in-depth OpenGL context-management methods.
+            - Add click events
+            - Add OpenGL direct state access overloads
+            - Add Vulkan boolean &amp; version helpers
         </PackageReleaseNotes>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/Ultz/Silk.NET</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <Version>1.0.0-preview5$(VersionSuffix)</Version>
+        <Version>1.0.0$(VersionSuffix)</Version>
         <Description>
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, and Vulkan.
         </Description>
