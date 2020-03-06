@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using Silk.NET.Windowing.Common.Structs;
 
 namespace Silk.NET.Windowing.Common
 {
@@ -49,8 +50,23 @@ namespace Silk.NET.Windowing.Common
                 view.DoUpdate();
                 view.DoRender();
             }
+
             view.DoEvents();
             view.Reset();
         }
+
+        /// <summary>
+        /// Sets the window icon to default on the given window.
+        /// </summary>
+        /// <param name="window">The window.</param>
+        public static void SetDefaultIcon(this IWindow window) => window.SetWindowIcon(null);
+
+        /// <summary>
+        /// Sets a single window icon on the given window.
+        /// </summary>
+        /// <param name="window">The window.</param>
+        /// <param name="icon">The icon to set.</param>
+        public static void SetWindowIcon(this IWindow window, ref WindowIcon icon) => window.SetWindowIcon
+            (new[] {icon});
     }
 }

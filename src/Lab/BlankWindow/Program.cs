@@ -8,6 +8,10 @@ using System.Drawing;
 using System.Threading;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
+using Silk.NET.Windowing.Common.Structs;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Advanced;
+using SixLabors.ImageSharp.PixelFormats;
 
 namespace BlankWindow
 {
@@ -69,8 +73,21 @@ namespace BlankWindow
             Console.WriteLine(state);
         }
 
-        public static void Load()
+        public static unsafe void Load()
         {
+            using var image = Image.Load<Rgba32>("favicon.png");
+            var byteArray = new byte[image.Width * 4 * image.Height];
+            Span<byte> span;
+            byte[] arr;
+            var ogspan = image.GetPixelSpan();
+            fixed (Rgba32* pixels = ogspan)
+            {
+                span = new Span<byte>((void*) pixels, ogspan.Length);
+                arr = span.ToArray();
+            }
+
+            var icon = new WindowIcon(image.Width, image.Height, arr);
+            window.SetWindowIcon(ref icon);
             Console.WriteLine("Finished loading");
         }
 

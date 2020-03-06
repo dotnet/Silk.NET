@@ -14,6 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
+using Silk.NET.Windowing.Common.Structs;
 using Monitor = Silk.NET.GLFW.Monitor;
 using VideoMode = Silk.NET.Windowing.Common.VideoMode;
 
@@ -637,6 +638,46 @@ namespace Silk.NET.Windowing.Desktop
 
         /// <inheritdoc />
         public event Action<string[]> FileDrop;
+
+        /// <inheritdoc />
+        public unsafe void SetWindowIcon(Span<WindowIcon> icons)
+        {
+            if (!_running)
+            {
+                throw new InvalidOperationException("Window should be initialized.");
+            }
+
+            if (icons == null)
+            {
+                _glfw.SetWindowIcon(_windowPtr, 0, null);
+            }
+            else
+            {
+                var images = stackalloc Image[icons.Length];
+                var hglobals = stackalloc byte*[icons.Length];
+                for (var i = 0; i < icons.Length; i++)
+                {
+                    var icon = icons[i];
+                    images[i] = new Image
+                    {
+                        Width = icon.Width, Height = icon.Height,
+                        Pixels = hglobals[i] = (byte*) Marshal.AllocHGlobal(icon.Pixels.Length)
+                    };
+
+                    for (var j = 0; j < icon.Pixels.Length; j++)
+                    {
+                        hglobals[i][j] = icon.Pixels[j];
+                    }
+                }
+
+                _glfw.SetWindowIcon(_windowPtr, icons.Length, images);
+
+                for (var i = 0; i < icons.Length; i++)
+                {
+                    Marshal.FreeHGlobal((IntPtr) hglobals[i]);
+                }
+            }
+        }
 
         /// <inheritdoc />
         public event Action Load;
