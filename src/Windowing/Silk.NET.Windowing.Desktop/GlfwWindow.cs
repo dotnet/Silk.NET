@@ -642,6 +642,11 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public unsafe void SetWindowIcon(Span<WindowIcon> icons)
         {
+            if (!_running)
+            {
+                throw new InvalidOperationException("Window should be initialized.");
+            }
+
             if (icons == null)
             {
                 _glfw.SetWindowIcon(_windowPtr, 0, null);
