@@ -46,6 +46,8 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 
 Nothing here yet, but don't worry - we're working on it.
 
+Several examples can be found both in the `examples` folder and the `src/Lab` folder.
+
 # Join the conversation
 
 Come chat with us on [Discord](https://discord.gg/DTHHXRt)!
