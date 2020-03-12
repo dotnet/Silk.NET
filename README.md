@@ -46,6 +46,10 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 
 Nothing here yet, but don't worry - we're working on it.
 
+Several examples can be found in the `examples` folder.
+
+You can find the Lab in the `src/Lab` folder. While many of these projects demonstrate functionality of Silk, these are intended more as experiments and tests for the library itself, and often demonstrate bad programming practices. Use with caution!
+
 # Join the conversation
 
 Come chat with us on [Discord](https://discord.gg/DTHHXRt)!
