@@ -1,8 +1,0 @@
-<Project>
-    <PropertyGroup>
-        <RootNamespace>Tutorial</RootNamespace>
-        <AssemblyName>Tutorial</AssemblyName>
-        <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-        <PackageId>Tutorial</PackageId>
-    </PropertyGroup>
-</Project>
