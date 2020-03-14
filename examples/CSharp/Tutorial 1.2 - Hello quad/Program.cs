@@ -77,7 +77,7 @@ namespace Tutorial
 
         private unsafe static void OnLoad()
         {
-            IInputContext input = window.GetInput();
+            IInputContext input = window.CreateInput();
             for (int i = 0; i < input.Keyboards.Count; i++)
             {
                 input.Keyboards[i].KeyDown += KeyDown;
@@ -87,11 +87,11 @@ namespace Tutorial
             Gl = GL.GetApi();
 
             //Creating a vertex array.
-            Gl.CreateVertexArrays(1, out Vao);
+            Vao = Gl.CreateVertexArray();
             Gl.BindVertexArray(Vao);
 
             //Initializing a vertex buffer that holds the vertex data.
-            Gl.CreateBuffers(1, out Vbo); //Creating the buffer.
+            Vbo = Gl.CreateBuffer(); //Creating the buffer.
             Gl.BindBuffer(BufferTargetARB.ArrayBuffer, Vbo); //Binding the buffer.
             fixed (void* v = &Vertices[0])
             {
@@ -99,7 +99,7 @@ namespace Tutorial
             }
 
             //Initializing a element buffer that holds the index data.
-            Gl.CreateBuffers(1, out Ebo); //Creating the buffer.
+            Ebo = Gl.CreateBuffer(); //Creating the buffer.
             Gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, Ebo); //Binding the buffer.
             fixed (void* i = &Indices[0])
             {
@@ -152,7 +152,7 @@ namespace Tutorial
             Gl.EnableVertexAttribArray(0);
         }
 
-        private static void OnRender(double obj)
+        private static unsafe void OnRender(double obj) //Method needs to be unsafe due to draw elements.
         {
             //Clear the color channel.
             Gl.Clear((uint)ClearBufferMask.ColorBufferBit);
@@ -162,7 +162,7 @@ namespace Tutorial
             Gl.UseProgram(Shader);
 
             //Draw the geometry.
-            Gl.DrawElements(GLEnum.Triangles, (uint)Indices.Length, GLEnum.UnsignedInt, 0);
+            Gl.DrawElements(PrimitiveType.Triangles, (uint)Indices.Length, DrawElementsType.UnsignedInt, null);
         }
 
         private static void OnUpdate(double obj)
@@ -172,6 +172,7 @@ namespace Tutorial
 
         private static void OnClose()
         {
+            //Remember to delete the buffers.
             Gl.DeleteBuffer(Vbo);
             Gl.DeleteBuffer(Ebo);
             Gl.DeleteVertexArray(Vao);
