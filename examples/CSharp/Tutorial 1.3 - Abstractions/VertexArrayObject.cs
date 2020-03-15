@@ -22,10 +22,14 @@ namespace Tutorial
             ebo.Bind();
         }
 
-        public unsafe void VertexAttributePointer(uint index, int count, GLEnum type, uint vertexSize, int offSet)
+        public unsafe void VertexAttributePointer(uint index, int count, VertexAttribPointerType type, uint vertexSize, int offSet)
         {
-            _gl.VertexAttribPointer(index, count, type, false, vertexSize * (uint)sizeof(TVertexType), offSet * sizeof(TVertexType));
-            _gl.EnableVertexAttribArray(index);
+            int o = offSet * sizeof(TVertexType);
+            void* d = &o;
+            {
+                _gl.EnableVertexAttribArray(index);
+                _gl.VertexAttribPointer(index, count, type, false, vertexSize * (uint)sizeof(TVertexType), d);
+            }
         }
 
         public void Bind()

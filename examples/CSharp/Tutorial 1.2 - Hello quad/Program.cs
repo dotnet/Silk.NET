@@ -75,7 +75,7 @@ namespace Tutorial
         }
 
 
-        private unsafe static void OnLoad()
+        private static unsafe void OnLoad()
         {
             IInputContext input = window.CreateInput();
             for (int i = 0; i < input.Keyboards.Count; i++)
@@ -87,11 +87,11 @@ namespace Tutorial
             Gl = GL.GetApi();
 
             //Creating a vertex array.
-            Vao = Gl.CreateVertexArray();
+            Vao = Gl.GenVertexArray();
             Gl.BindVertexArray(Vao);
 
             //Initializing a vertex buffer that holds the vertex data.
-            Vbo = Gl.CreateBuffer(); //Creating the buffer.
+            Vbo = Gl.GenBuffer(); //Creating the buffer.
             Gl.BindBuffer(BufferTargetARB.ArrayBuffer, Vbo); //Binding the buffer.
             fixed (void* v = &Vertices[0])
             {
@@ -99,7 +99,7 @@ namespace Tutorial
             }
 
             //Initializing a element buffer that holds the index data.
-            Ebo = Gl.CreateBuffer(); //Creating the buffer.
+            Ebo = Gl.GenBuffer(); //Creating the buffer.
             Gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, Ebo); //Binding the buffer.
             fixed (void* i = &Indices[0])
             {

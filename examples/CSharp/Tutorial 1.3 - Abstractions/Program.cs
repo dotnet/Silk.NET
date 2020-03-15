@@ -21,10 +21,10 @@ namespace Tutorial
         private static readonly float[] Vertices =
         {
             //X    Y      Z     R  G  B  A
-             0.5f,  0.5f, 0.0f, 1, 0, 0, 0,
-             0.5f, -0.5f, 0.0f, 0, 0, 0, 0,
-            -0.5f, -0.5f, 0.0f, 0, 0, 1, 0,
-            -0.5f,  0.5f, 0.5f, 0, 0, 0, 0
+             0.5f,  0.5f, 0.0f, 1, 0, 0, 1,
+             0.5f, -0.5f, 0.0f, 0, 0, 0, 1,
+            -0.5f, -0.5f, 0.0f, 0, 0, 1, 1,
+            -0.5f,  0.5f, 0.5f, 0, 0, 0, 1
         };
 
         private static readonly uint[] Indices =
@@ -49,9 +49,9 @@ namespace Tutorial
         }
 
 
-        private unsafe static void OnLoad()
+        private static void OnLoad()
         {
-            IInputContext input = window.GetInput();
+            IInputContext input = window.CreateInput();
             for (int i = 0; i < input.Keyboards.Count; i++)
             {
                 input.Keyboards[i].KeyDown += KeyDown;
@@ -59,17 +59,18 @@ namespace Tutorial
 
             Gl = GL.GetApi();
             
-            Ebo = new BufferObject<uint>(Gl, Indices, GLEnum.ElementArrayBuffer);
-            Vbo = new BufferObject<float>(Gl, Vertices, GLEnum.ArrayBuffer);
+            //Instantiating our new abstractions
+            Ebo = new BufferObject<uint>(Gl, Indices, BufferTargetARB.ElementArrayBuffer);
+            Vbo = new BufferObject<float>(Gl, Vertices, BufferTargetARB.ArrayBuffer);
             Vao = new VertexArrayObject<float, uint>(Gl, Vbo, Ebo);
 
-            Vao.VertexAttributePointer(0, 3, GLEnum.Float, 7, 0);
-            Vao.VertexAttributePointer(1, 4, GLEnum.Float, 7, 3);
+            Vao.VertexAttributePointer(0, 3, VertexAttribPointerType.Float, 7, 0);
+            Vao.VertexAttributePointer(1, 4, VertexAttribPointerType.Float, 7, 3);
 
             Shader = new Shader(Gl, "shader.vert", "shader.frag");
         }
 
-        private static void OnRender(double obj)
+        private static unsafe void OnRender(double obj)
         {
             Gl.Clear((uint)ClearBufferMask.ColorBufferBit);
 
@@ -78,7 +79,7 @@ namespace Tutorial
             //Setting a uniform.
             Shader.SetUniform("uBlue", (float)Math.Sin(DateTime.Now.Millisecond / 1000f * Math.PI));
 
-            Gl.DrawElements(GLEnum.Triangles, (uint)Indices.Length, GLEnum.UnsignedInt, 0);
+            Gl.DrawElements(PrimitiveType.Triangles, (uint)Indices.Length, DrawElementsType.UnsignedInt, null);
         }
 
         private static void OnClose()
