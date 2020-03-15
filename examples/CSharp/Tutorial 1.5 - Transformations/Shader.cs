@@ -27,6 +27,8 @@ namespace Tutorial
             }
             _gl.DetachShader(_handle, vertex);
             _gl.DetachShader(_handle, fragment);
+            _gl.DeleteShader(vertex);
+            _gl.DeleteShader(fragment);
         }
 
         public void Use()

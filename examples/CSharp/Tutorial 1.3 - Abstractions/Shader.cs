@@ -8,6 +8,8 @@ namespace Tutorial
 {
     public class Shader : IDisposable
     {
+        //Our handle and the GL instance this class will use, these are private because they have no reason to be public.
+        //Most of the time you would want to abstract items to make things like this invisible.
         private uint _handle;
         private GL _gl;
 
@@ -24,17 +26,22 @@ namespace Tutorial
             _gl.AttachShader(_handle, vertex);
             _gl.AttachShader(_handle, fragment);
             _gl.LinkProgram(_handle);
+            //Check for linking errors.
             string infoLog = _gl.GetProgramInfoLog(_handle);
             if (!string.IsNullOrWhiteSpace(infoLog))
             {
                 throw new Exception($"Program failed to link with error: {infoLog}");
             }
+            //Detach and delete the shaders
             _gl.DetachShader(_handle, vertex);
             _gl.DetachShader(_handle, fragment);
+            _gl.DeleteShader(vertex);
+            _gl.DeleteShader(fragment);
         }
 
         public void Use()
         {
+            //Using the program
             _gl.UseProgram(_handle);
         }
 
@@ -64,11 +71,18 @@ namespace Tutorial
 
         public void Dispose()
         {
+            //Remember to delete the program when we are done.
             _gl.DeleteProgram(_handle);
         }
 
         private uint LoadShader(ShaderType type, string path)
         {
+            //To load a single shader we need to load
+            //1) Load the shader from a file.
+            //2) Create the handle.
+            //3) Upload the source to opengl.
+            //4) Compile the shader.
+            //5) Check for errors.
             string src = File.ReadAllText(path);
             uint handle = _gl.CreateShader(type);
             _gl.ShaderSource(handle, src);

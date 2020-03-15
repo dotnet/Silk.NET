@@ -144,6 +144,8 @@ namespace Tutorial
             }
 
             //Delete the no longer useful individual shaders;
+            Gl.DetachShader(Shader, vertexShader);
+            Gl.DetachShader(Shader, fragmentShader);
             Gl.DeleteShader(vertexShader);
             Gl.DeleteShader(fragmentShader);
 

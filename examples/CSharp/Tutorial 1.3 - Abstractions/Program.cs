@@ -64,6 +64,7 @@ namespace Tutorial
             Vbo = new BufferObject<float>(Gl, Vertices, BufferTargetARB.ArrayBuffer);
             Vao = new VertexArrayObject<float, uint>(Gl, Vbo, Ebo);
 
+            //Telling the VAO object how to lay out the attribute pointers
             Vao.VertexAttributePointer(0, 3, VertexAttribPointerType.Float, 7, 0);
             Vao.VertexAttributePointer(1, 4, VertexAttribPointerType.Float, 7, 3);
 
@@ -74,6 +75,7 @@ namespace Tutorial
         {
             Gl.Clear((uint)ClearBufferMask.ColorBufferBit);
 
+            //Binding and using our VAO and shader.
             Vao.Bind();
             Shader.Use();
             //Setting a uniform.

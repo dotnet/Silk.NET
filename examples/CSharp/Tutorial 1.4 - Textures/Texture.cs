@@ -46,7 +46,7 @@ namespace Tutorial
             Bind();
 
             //Setting the data of a texture.
-            _gl.TexImage2D(TextureTarget.Texture2D, 0, (int)GLEnum.Rgba, width, height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, data);
+            _gl.TexImage2D(TextureTarget.Texture2D, 0, (int)InternalFormat.Rgba, width, height, 0, PixelFormat.Rgba, PixelType.UnsignedByte, data);
             //Setting some texture perameters so the texture behaves as expected.
             _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapS, (int)GLEnum.Repeat);
             _gl.TexParameter(TextureTarget.Texture2D, TextureParameterName.TextureWrapT, (int)GLEnum.Repeat);
