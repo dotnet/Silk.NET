@@ -53,9 +53,9 @@ namespace Tutorial
         }
 
 
-        private unsafe static void OnLoad()
+        private static void OnLoad()
         {
-            IInputContext input = window.GetInput();
+            IInputContext input = window.CreateInput();
             for (int i = 0; i < input.Keyboards.Count; i++)
             {
                 input.Keyboards[i].KeyDown += KeyDown;
@@ -63,12 +63,12 @@ namespace Tutorial
 
             Gl = GL.GetApi();
             
-            Ebo = new BufferObject<uint>(Gl, Indices, GLEnum.ElementArrayBuffer);
-            Vbo = new BufferObject<float>(Gl, Vertices, GLEnum.ArrayBuffer);
+            Ebo = new BufferObject<uint>(Gl, Indices, BufferTargetARB.ElementArrayBuffer);
+            Vbo = new BufferObject<float>(Gl, Vertices, BufferTargetARB.ArrayBuffer);
             Vao = new VertexArrayObject<float, uint>(Gl, Vbo, Ebo);
 
-            Vao.VertexAttributePointer(0, 3, GLEnum.Float, 5, 0);
-            Vao.VertexAttributePointer(1, 2, GLEnum.Float, 5, 3);
+            Vao.VertexAttributePointer(0, 3, VertexAttribPointerType.Float, 5, 0);
+            Vao.VertexAttributePointer(1, 2, VertexAttribPointerType.Float, 5, 3);
 
             Shader = new Shader(Gl, "shader.vert", "shader.frag");
 
@@ -91,7 +91,7 @@ namespace Tutorial
             Transforms[3].Scale = 0.5f;
         }
 
-        private static void OnRender(double obj)
+        private static unsafe void OnRender(double obj)
         {
             Gl.Clear((uint)ClearBufferMask.ColorBufferBit);
 
@@ -105,7 +105,7 @@ namespace Tutorial
                 //Using the transformations.
                 Shader.SetUniform("uModel", Transforms[i].ViewMatrix);
 
-                Gl.DrawElements(GLEnum.Triangles, (uint)Indices.Length, GLEnum.UnsignedInt, 0);
+                Gl.DrawElements(PrimitiveType.Triangles, (uint)Indices.Length, DrawElementsType.UnsignedInt, null);
             }
         }
 

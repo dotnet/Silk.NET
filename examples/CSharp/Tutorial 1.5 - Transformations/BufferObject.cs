@@ -7,10 +7,10 @@ namespace Tutorial
         where TDataType : unmanaged
     {
         private uint _handle;
-        private GLEnum _bufferType;
+        private BufferTargetARB _bufferType;
         private GL _gl;
 
-        public unsafe BufferObject(GL gl, Span<TDataType> data, GLEnum bufferType)
+        public unsafe BufferObject(GL gl, Span<TDataType> data, BufferTargetARB bufferType)
         {
             _gl = gl;
             _bufferType = bufferType;
@@ -19,7 +19,7 @@ namespace Tutorial
             Bind();
             fixed (void* d = data)
             {
-                _gl.BufferData(bufferType, (UIntPtr)(data.Length * sizeof(TDataType)), d, GLEnum.StaticDraw);
+                _gl.BufferData(bufferType, (UIntPtr)(data.Length * sizeof(TDataType)), d, BufferUsageARB.StaticDraw);
             }
         }
 

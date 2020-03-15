@@ -24,12 +24,8 @@ namespace Tutorial
 
         public unsafe void VertexAttributePointer(uint index, int count, VertexAttribPointerType type, uint vertexSize, int offSet)
         {
-            int o = offSet * sizeof(TVertexType);
-            void* d = &o;
-            {
-                _gl.EnableVertexAttribArray(index);
-                _gl.VertexAttribPointer(index, count, type, false, vertexSize * (uint)sizeof(TVertexType), d);
-            }
+            _gl.EnableVertexAttribArray(index);
+            _gl.VertexAttribPointer(index, count, type, false, vertexSize * (uint)sizeof(TVertexType), (void*)(offSet * sizeof(TVertexType)));
         }
 
         public void Bind()
