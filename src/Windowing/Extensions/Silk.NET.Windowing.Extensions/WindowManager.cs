@@ -87,7 +87,11 @@ namespace Silk.NET.Windowing.Extensions
                             removals.Add(window);
                         }
 
-                        window.MakeCurrent();
+                        if (window.API.API == ContextAPI.OpenGL || window.API.API == ContextAPI.OpenGLES)
+                        {
+                            window.MakeCurrent();
+                        }
+
                         window.DoEvents();
                         window.DoUpdate();
                         window.DoRender();

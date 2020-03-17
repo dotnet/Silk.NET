@@ -20,6 +20,9 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Type = type;
             Values = values;
         }
+        
+        public EnumDefinition Clone() => new EnumDefinition(Name, Type, Values);
+        public EnumDefinition Clone(string newName) => new EnumDefinition(newName, Type, Values);
 
         public static EnumDefinition CreateFromXml(XElement xe)
         {

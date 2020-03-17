@@ -101,64 +101,70 @@ namespace Silk.NET.BuildTools.Bind
 
             sw.WriteLine($"    public unsafe struct {@struct.Name}");
             sw.WriteLine("    {");
-            sw.WriteLine($"        public {@struct.Name}");
-            sw.WriteLine($"        (");
-            var first = true;
-            for (var i = 0; i < @struct.Fields.Count; i++)
+            if (@struct.Fields.Any(x => x.Count is null))
             {
-                var field = @struct.Fields[i];
-                if (!(field.Count is null)) continue; // I've chosen not to initialize multi-count fields from ctors.
-                var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
-                argName = Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
-                if (!first)
+                sw.WriteLine($"        public {@struct.Name}");
+                sw.WriteLine($"        (");
+                var first = true;
+                for (var i = 0; i < @struct.Fields.Count; i++)
                 {
-                    sw.WriteLine(",");
-                }
-                else
-                {
-                    first = false;
+                    var field = @struct.Fields[i];
+                    if (!(field.Count is null))
+                        continue; // I've chosen not to initialize multi-count fields from ctors.
+                    var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
+                    argName = Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
+                    if (!first)
+                    {
+                        sw.WriteLine(",");
+                    }
+                    else
+                    {
+                        first = false;
+                    }
+
+                    sw.Write($"            {field.Type} {argName} = {field.DefaultAssignment ?? "default"}");
                 }
 
-                sw.Write($"            {field.Type} {argName} = {field.DefaultAssignment ?? "default"}");
-            }
-            
-            sw.WriteLine();
-            sw.WriteLine("        )");
-            sw.WriteLine("        {");
-            foreach (var field in @struct.Fields)
-            {
-                if (!(field.Count is null))
+                sw.WriteLine();
+                sw.WriteLine("        )");
+                sw.WriteLine("        {");
+                foreach (var field in @struct.Fields)
                 {
-                    if (!Field._fixedCapableTypes.Contains(field.Type.Name))
+                    if (!(field.Count is null))
                     {
-                        var count = field.Count.IsConstant
-                            ? int.Parse
-                            (
-                                profile.Constants
-                                    .FirstOrDefault(x => x.NativeName == field.Count.ConstantName)
-                                    ?
-                                    .Value
-                            )
-                            : field.Count.IsStatic
-                                ? field.Count.StaticCount
-                                : 1;
-                        for (var i = 0; i < count; i++)
+                        if (!Field._fixedCapableTypes.Contains(field.Type.Name))
                         {
-                            sw.WriteLine
-                            (
-                                $"           {field.Name}_{i} = default;"
-                            );
+                            var count = field.Count.IsConstant
+                                ? int.Parse
+                                (
+                                    profile.Constants
+                                        .FirstOrDefault(x => x.NativeName == field.Count.ConstantName)
+                                        ?
+                                        .Value
+                                )
+                                : field.Count.IsStatic
+                                    ? field.Count.StaticCount
+                                    : 1;
+                            for (var i = 0; i < count; i++)
+                            {
+                                sw.WriteLine
+                                (
+                                    $"           {field.Name}_{i} = default;"
+                                );
+                            }
                         }
+
+                        continue;
                     }
-                        
-                    continue;
+
+                    var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
+                    argName = Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
+                    sw.WriteLine($"           {field.Name} = {argName};");
                 }
-                var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
-                argName = Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
-                sw.WriteLine($"           {field.Name} = {argName};");
+
+                sw.WriteLine("        }");
+                sw.WriteLine();
             }
-            sw.WriteLine("        }");
-            sw.WriteLine();
 
             foreach (var structField in @struct.Fields)
             {

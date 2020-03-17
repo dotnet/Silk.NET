@@ -221,10 +221,10 @@ namespace VulkanTriangle
             {
                 SType = StructureType.ApplicationInfo,
                 PApplicationName = (byte*) Marshal.StringToHGlobalAnsi("Hello Triangle"),
-                ApplicationVersion = MakeVersion(1, 0, 0),
+                ApplicationVersion = new Version32(1, 0, 0),
                 PEngineName = (byte*) Marshal.StringToHGlobalAnsi("No Engine"),
-                EngineVersion = MakeVersion(1, 0, 0),
-                ApiVersion = MakeVersion(1, 1, 0)
+                EngineVersion = new Version32(1, 0, 0),
+                ApiVersion = Vk.Version11
             };
 
             var createInfo = new InstanceCreateInfo
@@ -1064,11 +1064,6 @@ namespace VulkanTriangle
                 _renderFinishedSemaphores[i] = renderFinSema;
                 _inFlightFences[i] = inFlightFence;
             }
-        }
-
-        private uint MakeVersion(uint major, uint minor, uint patch)
-        {
-            return (major << 22) | (minor << 12) | patch;
         }
 
         private unsafe bool CheckValidationLayerSupport()

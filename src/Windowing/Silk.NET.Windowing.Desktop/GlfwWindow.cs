@@ -430,7 +430,7 @@ namespace Silk.NET.Windowing.Desktop
         /// </summary>
         private void MakeCurrentInternal()
         {
-            if (!IsCurrentContext)
+            if ((API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES) && !IsCurrentContext)
             {
                 MakeCurrent();
             }

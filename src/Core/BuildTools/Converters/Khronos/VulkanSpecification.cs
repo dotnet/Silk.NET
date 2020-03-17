@@ -61,9 +61,21 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             TypedefDefinition[] typedefDefinitions = types.Elements("type").Where(xe => xe.Value.Contains("typedef") && xe.HasCategoryAttribute("bitmask"))
                 .Select(xe2 => TypedefDefinition.CreateFromXml(xe2)).ToArray();
 
-            EnumDefinition[] enumDefinitions = registry.Elements("enums")
+            var enumDefinitionsNoAliases = registry.Elements("enums")
                 .Where(enumx => enumx.GetTypeAttributeOrNull() == "enum" || enumx.GetTypeAttributeOrNull() == "bitmask")
-                .Select(enumx => EnumDefinition.CreateFromXml(enumx)).ToArray();
+                .Select(enumx => EnumDefinition.CreateFromXml(enumx))
+                .ToArray();
+
+            EnumDefinition[] enumDefinitions = registry.Elements("types")
+                .Elements("type")
+                .Where(xe => xe.HasCategoryAttribute("enum") && !(xe.Attribute("alias") is null))
+                .Select
+                (
+                    x => enumDefinitionsNoAliases.First(y => y.Name == x.Attribute("alias")?.Value)
+                        .Clone(x.GetNameAttribute())
+                )
+                .Concat(enumDefinitionsNoAliases)
+                .ToArray();
 
             StructureDefinition[] structures = types.Elements("type").Where(typex => typex.HasCategoryAttribute("struct"))
                 .Select(typex => StructureDefinition.CreateFromXml(typex)).ToArray();

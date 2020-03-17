@@ -61,7 +61,7 @@ namespace Silk.NET.Vulkan
 
         public override bool IsExtensionPresent(string extension)
         {
-            return (_extensions.ContainsKey
+            return (!_extensions.ContainsKey
                 (CurrentDevice?.Handle ?? IntPtr.Zero)
                 ? _extensions[CurrentDevice?.Handle ?? IntPtr.Zero] = GetExtensions()
                 : _extensions[CurrentDevice?.Handle ?? IntPtr.Zero]).Contains(extension);
