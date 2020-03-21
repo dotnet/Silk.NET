@@ -7,5 +7,6 @@ out vec2 fUv;
 void main()
 {
     gl_Position = vec4(vPos, 1.0);
+    //Setting the uv coordinates on the vertices will mean they get correctly divided out amongst the fragments.
     fUv = vUv;
 }

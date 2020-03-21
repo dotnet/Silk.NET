@@ -4,6 +4,7 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using System.Runtime.InteropServices;
 using SixLabors.ImageSharp.Advanced;
+using SixLabors.ImageSharp.Processing;
 
 namespace Tutorial
 {
@@ -16,6 +17,9 @@ namespace Tutorial
         {
             //Loading an image using imagesharp.
             Image<Rgba32> img = (Image<Rgba32>)Image.Load(path);
+            //We need to flip our image as image sharps coordinates has origin (0, 0) in the top-left corner,
+            //where as openGL has origin in the bottom-left corner.
+            img.Mutate(x => x.Flip(FlipMode.Vertical));
 
             fixed (void* data = &MemoryMarshal.GetReference(img.GetPixelSpan()))
             {

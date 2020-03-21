@@ -13,6 +13,7 @@ namespace Tutorial
         private static IWindow window;
         private static GL Gl;
 
+        //Our new abstracted objects, here we specify what the types are.
         private static BufferObject<float> Vbo;
         private static BufferObject<uint> Ebo;
         private static VertexArrayObject<float, uint> Vao;

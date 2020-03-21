@@ -4,6 +4,7 @@ using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using System.Runtime.InteropServices;
 using SixLabors.ImageSharp.Advanced;
+using SixLabors.ImageSharp.Processing;
 
 namespace Tutorial
 {
@@ -15,6 +16,7 @@ namespace Tutorial
         public unsafe Texture(GL gl, string path)
         {
             Image<Rgba32> img = (Image<Rgba32>)Image.Load(path);
+            img.Mutate(x => x.Flip(FlipMode.Vertical));
 
             fixed (void* data = &MemoryMarshal.GetReference(img.GetPixelSpan()))
             {
