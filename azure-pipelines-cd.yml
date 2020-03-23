@@ -1,0 +1,37 @@
+trigger:
+- 'refs/tags/v*'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+jobs:
+- job: Release
+  condition: startsWith(variables['build.sourceBranch'], 'refs/tags/v')
+  pool:
+    vmImage: 'windows-latest'
+
+  variables:
+    buildConfiguration: 'Release'
+    dotnetCoreVersion: '3.1.100'
+
+  steps:
+  - task: UseDotNet@2
+    displayName: 'Install .NET Core 3.1'
+    inputs:
+      version: $(dotnetCoreVersion)
+  - script: dotnet run --configuration $(buildConfiguration) --project src/Core/BuildTools/BuildTools.csproj build/binder_scripts/build.json
+    displayName: 'Bind'
+  - script: dotnet pack --configuration $(buildConfiguration)
+    displayName: 'Build/Pack'
+  - publish: build/output_packages
+    artifact: NuGet Packages
+  - task: NuGetAuthenticate@0
+    inputs:
+      nuGetServiceConnections: 'NuGet Public'
+  - task: NuGetCommand@2
+    condition: ne(variables['Build.Reason'], 'PullRequest')
+    inputs:
+      command: 'push'
+      packagesToPush: 'build/output_packages/*.nupkg'
+      nuGetFeedType: 'external'
+      allowPackageConflicts: true
