@@ -19,9 +19,9 @@ jobs:
     displayName: 'Install .NET Core 3.1'
     inputs:
       version: $(dotnetCoreVersion)
-  - script: dotnet run --configuration $(buildConfiguration) --version-suffix $(Build.BuildNumber) --project src/Core/BuildTools/BuildTools.csproj build/binder_scripts/build.json
+  - script: dotnet run --configuration $(buildConfiguration) --version-suffix .$(Build.BuildId) --project src/Core/BuildTools/BuildTools.csproj build/binder_scripts/build.json
     displayName: 'Bind'
-  - script: dotnet pack --configuration $(buildConfiguration) --version-suffix $(Build.BuildNumber)
+  - script: dotnet pack --configuration $(buildConfiguration) --version-suffix .$(Build.BuildId)
     displayName: 'Build/Pack'
   - publish: build/output_packages
     artifact: NuGet Packages
