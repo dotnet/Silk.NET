@@ -5,8 +5,8 @@
 
 namespace Silk.NET.Intrinsics
 {
-    public class IntrinsicContext
+    public struct WorkUnit<T> where T:unmanaged
     {
-        
+        public WorkUnitFlags Flags { get; set; }
     }
 }

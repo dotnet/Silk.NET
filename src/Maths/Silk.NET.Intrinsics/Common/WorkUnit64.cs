@@ -3,12 +3,13 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System.Runtime.Intrinsics;
+
 namespace Silk.NET.Intrinsics
 {
-    public enum Size
+    public struct WorkUnit64<T> where T:unmanaged
     {
-        Vector64,
-        Vector128,
-        Vector256,
+        public WorkUnitFlags Flags { get; set; }
+        public Vector64<T> Vector { get; set; }
     }
 }

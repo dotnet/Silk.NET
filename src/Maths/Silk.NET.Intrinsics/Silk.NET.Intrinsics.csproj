@@ -9,4 +9,8 @@
       <PackageReference Include="System.Runtime.Intrinsics.Experimental" Version="5.0.0-preview.1.20120.5" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
+    </ItemGroup>
+
 </Project>
