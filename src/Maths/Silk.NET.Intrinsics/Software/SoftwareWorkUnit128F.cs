@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
 
@@ -39,30 +40,115 @@ namespace Silk.NET.Intrinsics.Software
             throw new System.NotImplementedException();
         }
 
-        public IWorkUnit<float> Clamp(IWorkUnit<float> min, IWorkUnit<float> max)
-        {
-            throw new System.NotImplementedException();
-        }
+        public IWorkUnit<float> Clamp(IWorkUnit<float> min, IWorkUnit<float> max) => new SoftwareWorkUnit128F
+        (
+            Vector128.Create
+            (
+                Math.Clamp
+                (
+                    _vector128.X(), ((SoftwareWorkUnit128F) min)._vector128.X(),
+                    ((SoftwareWorkUnit128F) max)._vector128.X()
+                ),
+                Math.Clamp
+                (
+                    _vector128.X(), ((SoftwareWorkUnit128F) min)._vector128.Y(),
+                    ((SoftwareWorkUnit128F) max)._vector128.Y()
+                ),
+                Math.Clamp
+                (
+                    _vector128.X(), ((SoftwareWorkUnit128F) min)._vector128.Z(),
+                    ((SoftwareWorkUnit128F) max)._vector128.Z()
+                ),
+                Math.Clamp
+                (
+                    _vector128.X(), ((SoftwareWorkUnit128F) min)._vector128.W(),
+                    ((SoftwareWorkUnit128F) max)._vector128.W()
+                )
+            )
+        );
 
         public IWorkUnit<float> ComponentMax(IWorkUnit<float> secondVector)
         {
-            throw new System.NotImplementedException();
+            float lX = _vector128.X(), rX = ((SoftwareWorkUnit128F)secondVector).X();
+            float lY = _vector128.Y(), rY = ((SoftwareWorkUnit128F)secondVector).Y();
+            float lZ = _vector128.Z(), rZ = ((SoftwareWorkUnit128F)secondVector).Z();
+            float lW = _vector128.W(), rW = ((SoftwareWorkUnit128F)secondVector).W();
+
+            if (float.IsNaN(lX)) lX = rX;
+            if (float.IsNaN(lY)) lY = rY;
+            if (float.IsNaN(lZ)) lZ = rZ;
+            if (float.IsNaN(lW)) lW = rW;
+
+            if (float.IsNaN(rX)) rX = lX;
+            if (float.IsNaN(rY)) rY = lY;
+            if (float.IsNaN(rZ)) rZ = lZ;
+            if (float.IsNaN(rW)) rW = lW;
+
+            return new SoftwareWorkUnit128F(Vector128.Create(
+                MathF.Max(lX, rX),
+                MathF.Max(lY, rY),
+                MathF.Max(lZ, rZ),
+                MathF.Max(lW, rW)
+            ));
         }
 
         public IWorkUnit<float> ComponentMin(IWorkUnit<float> secondVector)
         {
-            throw new System.NotImplementedException();
+            float lX = _vector128.X(), rX = ((SoftwareWorkUnit128F)secondVector).X();
+            float lY = _vector128.Y(), rY = ((SoftwareWorkUnit128F)secondVector).Y();
+            float lZ = _vector128.Z(), rZ = ((SoftwareWorkUnit128F)secondVector).Z();
+            float lW = _vector128.W(), rW = ((SoftwareWorkUnit128F)secondVector).W();
+
+            if (float.IsNaN(lX)) lX = rX;
+            if (float.IsNaN(lY)) lY = rY;
+            if (float.IsNaN(lZ)) lZ = rZ;
+            if (float.IsNaN(lW)) lW = rW;
+
+            if (float.IsNaN(rX)) rX = lX;
+            if (float.IsNaN(rY)) rY = lY;
+            if (float.IsNaN(rZ)) rZ = lZ;
+            if (float.IsNaN(rW)) rW = lW;
+
+            return new SoftwareWorkUnit128F(Vector128.Create(
+                MathF.Min(lX, rX),
+                MathF.Min(lY, rY),
+                MathF.Min(lZ, rZ),
+                MathF.Min(lW, rW)
+            ));
         }
 
-        public IWorkUnit<float> Divide(IWorkUnit<float> secondVector)
-        {
-            throw new System.NotImplementedException();
-        }
+        public IWorkUnit<float> Divide(IWorkUnit<float> secondVector) =>
+            new SoftwareWorkUnit128F
+            (
+                Vector128.Create
+                (
+                    _vector128.X() / ((SoftwareWorkUnit128F) secondVector).X(),
+                    _vector128.Y() / ((SoftwareWorkUnit128F) secondVector).Y(),
+                    _vector128.Z() / ((SoftwareWorkUnit128F) secondVector).Z(),
+                    _vector128.W() / ((SoftwareWorkUnit128F) secondVector).W()
+                )
+            );
 
-        public IWorkUnit<float> DotProduct(IWorkUnit<float> secondVector)
-        {
-            throw new System.NotImplementedException();
-        }
+        public IWorkUnit<float> DotProduct2(IWorkUnit<float> secondVector) => new SoftwareWorkUnit128F(Vector128.Create
+        (
+            _vector128.X() * ((SoftwareWorkUnit128F)secondVector).X()
+            + _vector128.Y() * ((SoftwareWorkUnit128F)secondVector).Y()
+        ));
+
+        public IWorkUnit<float> DotProduct3(IWorkUnit<float> secondVector) => new SoftwareWorkUnit128F(Vector128.Create
+        (
+            _vector128.X() * ((SoftwareWorkUnit128F)secondVector).X()
+            + _vector128.Y() * ((SoftwareWorkUnit128F)secondVector).Y()
+            + _vector128.Z() * ((SoftwareWorkUnit128F)secondVector).Z()
+        ));
+
+        public IWorkUnit<float> DotProduct4(IWorkUnit<float> secondVector) => new SoftwareWorkUnit128F(Vector128.Create
+        (
+            _vector128.X() * ((SoftwareWorkUnit128F)secondVector).X()
+            + _vector128.Y() * ((SoftwareWorkUnit128F)secondVector).Y()
+            + _vector128.Z() * ((SoftwareWorkUnit128F)secondVector).Z()
+            + _vector128.W() * ((SoftwareWorkUnit128F)secondVector).W()
+        ));
 
         public IWorkUnit<float> Equals(IWorkUnit<float> secondVector) => new SoftwareWorkUnit128F
         (
@@ -72,9 +158,20 @@ namespace Silk.NET.Intrinsics.Software
                 : Vector128.Create(0f)
         );
 
-        public IWorkUnit<float> Lerp(IWorkUnit<float> secondVector, IWorkUnit<float> blend)
+        public IWorkUnit<float> Lerp(IWorkUnit<float> secondVector, IWorkUnit<float> blend) => new SoftwareWorkUnit128F
+        (
+            Vector128.Create
+            (
+                LerpHelper(_vector128.X(), ((SoftwareWorkUnit128F)secondVector).X(), blend.Scalar()),
+                LerpHelper(_vector128.Y(), ((SoftwareWorkUnit128F)secondVector).Y(), blend.Scalar()),
+                LerpHelper(_vector128.Z(), ((SoftwareWorkUnit128F)secondVector).Z(), blend.Scalar()),
+                LerpHelper(_vector128.W(), ((SoftwareWorkUnit128F)secondVector).W(), blend.Scalar())
+            )
+        );
+
+        private static float LerpHelper(float left, float right, float weight)
         {
-            throw new System.NotImplementedException();
+            return left + (right - left) * weight;
         }
 
         public IWorkUnit<float> MagnitudeMax(IWorkUnit<float> secondVector)
@@ -87,30 +184,16 @@ namespace Silk.NET.Intrinsics.Software
             throw new System.NotImplementedException();
         }
 
-        public IWorkUnit<float> Multiply(IWorkUnit<float> secondVector)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public IWorkUnit<float> Normalize()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public IWorkUnit<float> Normalize(IWorkUnit<float> secondVector)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public IWorkUnit<float> NormalizeApprox()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public IWorkUnit<float> NormalizeApprox(IWorkUnit<float> secondVector)
-        {
-            throw new System.NotImplementedException();
-        }
+        public IWorkUnit<float> Multiply(IWorkUnit<float> secondVector) => new SoftwareWorkUnit128F
+        (
+            Vector128.Create
+            (
+                _vector128.X() * ((SoftwareWorkUnit128F) secondVector).X(),
+                _vector128.Y() * ((SoftwareWorkUnit128F) secondVector).Y(),
+                _vector128.Z() * ((SoftwareWorkUnit128F) secondVector).Z(),
+                _vector128.W() * ((SoftwareWorkUnit128F) secondVector).W()
+            )
+        );
 
         public IWorkUnit<float> Subtract(IWorkUnit<float> secondVector)
         {
@@ -165,6 +248,11 @@ namespace Silk.NET.Intrinsics.Software
         public IWorkUnit<float> ToAxisAngle(out IWorkUnit<float> angle)
         {
             throw new System.NotImplementedException();
+        }
+
+        public IWorkUnit<float> Sqrt()
+        {
+            throw new NotImplementedException();
         }
 
         public unsafe void StoreScalar(float* ptr)

@@ -24,16 +24,14 @@ namespace Silk.NET.Intrinsics
         IWorkUnit<T> ComponentMax(IWorkUnit<T> secondVector);
         IWorkUnit<T> ComponentMin(IWorkUnit<T> secondVector);
         IWorkUnit<T> Divide(IWorkUnit<T> secondVector);
-        IWorkUnit<T> DotProduct(IWorkUnit<T> secondVector);
+        IWorkUnit<T> DotProduct2(IWorkUnit<T> secondVector);
+        IWorkUnit<T> DotProduct3(IWorkUnit<T> secondVector);
+        IWorkUnit<T> DotProduct4(IWorkUnit<T> secondVector);
         IWorkUnit<T> Equals(IWorkUnit<T> secondVector);
         IWorkUnit<T> Lerp(IWorkUnit<T> secondVector, IWorkUnit<T> blend);
         IWorkUnit<T> MagnitudeMax(IWorkUnit<T> secondVector);
         IWorkUnit<T> MagnitudeMin(IWorkUnit<T> secondVector);
         IWorkUnit<T> Multiply(IWorkUnit<T> secondVector);
-        IWorkUnit<T> Normalize();
-        IWorkUnit<T> Normalize(IWorkUnit<T> secondVector);
-        IWorkUnit<T> NormalizeApprox();
-        IWorkUnit<T> NormalizeApprox(IWorkUnit<T> secondVector);
         IWorkUnit<T> Subtract(IWorkUnit<T> secondVector);
         IWorkUnit<T> Transform(IWorkUnit<T> row0, IWorkUnit<T> row1, IWorkUnit<T> row2);
         IWorkUnit<T> Transform(IWorkUnit<T> quaternion);
@@ -48,6 +46,10 @@ namespace Silk.NET.Intrinsics
         IWorkUnit<T> ToAxisAngle();
         IWorkUnit<T> ToAxisAngle(out IWorkUnit<T> angle);
         
+        // Common math ops
+        IWorkUnit<T> Sqrt();
+        // TODO port all these methods https://opentk.net/api/OpenTK.MathHelper.html
+
         // Storage operators
         unsafe void StoreScalar(T* ptr);
         unsafe void StoreVector2(T* ptr);

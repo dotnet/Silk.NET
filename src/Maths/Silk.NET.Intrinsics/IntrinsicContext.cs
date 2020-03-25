@@ -1,12 +1,11 @@
 ﻿using System;
-using Silk.NET.Intrinsics.Arm;
 using Silk.NET.Intrinsics.Avx;
 using Silk.NET.Intrinsics.Software;
 using Silk.NET.Intrinsics.Sse;
 
 namespace Silk.NET.Intrinsics
 {
-    public static class Intrinsics<T>
+    public static class IntrinsicContext<T>
         where T:unmanaged
     {
         private static IIntrinsicContext<T> _context;
@@ -19,19 +18,15 @@ namespace Silk.NET.Intrinsics
         public static unsafe IWorkUnit<T> LoadVector2(ref T reference) { fixed (T* ptr = &reference){ return Context.LoadVector2(ptr); } }
         public static unsafe IWorkUnit<T> LoadVector3(ref T reference) { fixed (T* ptr = &reference){ return Context.LoadVector3(ptr); } }
         public static unsafe IWorkUnit<T> LoadVector4(ref T reference) { fixed (T* ptr = &reference){ return Context.LoadVector4(ptr); } }
-        public static unsafe IWorkUnit<T> LoadScalar(T value) => LoadScalar(ref value);
-        public static unsafe IWorkUnit<T> LoadVector2(T value) => LoadVector2(ref value);
-        public static unsafe IWorkUnit<T> LoadVector3(T value) => LoadVector3(ref value);
-        public static unsafe IWorkUnit<T> LoadVector4(T value) => LoadVector4(ref value);
+        public static IWorkUnit<T> LoadScalar(T value) => LoadScalar(ref value);
+        public static IWorkUnit<T> LoadVector2(T value) => LoadVector2(ref value);
+        public static IWorkUnit<T> LoadVector3(T value) => LoadVector3(ref value);
+        public static IWorkUnit<T> LoadVector4(T value) => LoadVector4(ref value);
 
         private static IIntrinsicContext<T> GetContext()
         {
             if (typeof(T) == typeof(float))
             {
-                if (ArmIntrinsicContext.Instance.IsSupported)
-                {
-                    return (IIntrinsicContext<T>)(object)ArmIntrinsicContext.Instance;
-                }
                 if (AvxIntrinsicContext.Instance.IsSupported)
                 {
                     return (IIntrinsicContext<T>)(object)AvxIntrinsicContext.Instance;
