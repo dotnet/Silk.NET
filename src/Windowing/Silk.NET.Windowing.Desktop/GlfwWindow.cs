@@ -594,8 +594,44 @@ namespace Silk.NET.Windowing.Desktop
         {
             _updateStopwatch.Stop();
             _renderStopwatch.Stop();
-            _glfw.DestroyWindow(_windowPtr);
+
+            try
+            {
+                _glfw.DestroyWindow(_windowPtr);
+            }
+#pragma warning disable 168
+            // If the window is already destroyed, it throws an exception,
+            // but we want the window destroyed anyways, so just ignore it
+            catch(GlfwException _e)
+#pragma warning restore 168
+            {
+                
+            }
+            
             _windowPtr = (WindowHandle*) 0;
+        }
+
+        private void Dispose(bool disposing)
+        {
+            unsafe
+            {
+                Reset();
+            }
+            if (disposing)
+            {
+                _glfw?.Dispose();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        ~GlfwWindow()
+        {
+            Dispose(false);
         }
 
         /// <inheritdoc />

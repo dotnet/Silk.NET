@@ -11,7 +11,7 @@ namespace Silk.NET.Windowing.Common
     /// <summary>
     /// Represents a window view.
     /// </summary>
-    public interface IView : IViewProperties
+    public interface IView : IViewProperties, IDisposable
     {
         /// <summary>
         /// A handle to the underlying window.
