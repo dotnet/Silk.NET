@@ -1,3 +1,6 @@
+name: 'Continuous Deployment'
+pr: none
+
 trigger:
 - 'refs/tags/v*'
 
