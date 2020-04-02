@@ -69,13 +69,13 @@ namespace Silk.NET.Windowing.Desktop
 
         private WindowOptions _initialOptions;
         private bool _running;
-        private IMonitor _initialMonitor;
+        private readonly IMonitor _initialMonitor;
 
         /// <summary>
         /// Create a new GlfwWindow.
         /// </summary>
         /// <param name="options">The options to use for this window.</param>
-        public unsafe GlfwWindow(WindowOptions options, GlfwWindow parent, GlfwMonitor monitor)
+        public GlfwWindow(WindowOptions options, GlfwWindow parent, GlfwMonitor monitor)
         {
             // Title and Size must be set before the window is created.
             _title = options.Title;
@@ -387,6 +387,18 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
+        public bool TransparentFramebuffer
+        {
+            get
+            {
+                unsafe
+                {
+                    return _glfw.GetWindowAttrib(_windowPtr, WindowAttributeGetter.TransparentFramebuffer);
+                }
+            }
+        }
+
+        /// <inheritdoc />
         public object Invoke(Delegate d)
         {
             return Invoke(d, new object[0]);
@@ -514,6 +526,9 @@ namespace Silk.NET.Windowing.Desktop
             // Set video mode (-1 = don't care)
             _glfw.WindowHint(WindowHintInt.RefreshRate, _initialOptions.VideoMode.RefreshRate ?? -1);
             _glfw.WindowHint(WindowHintInt.DepthBits, _initialOptions.PreferredDepthBufferBits ?? -1);
+            
+            // Set transparent framebuffer
+            _glfw.WindowHint(WindowHintBool.TransparentFramebuffer, _initialOptions.TransparentFramebuffer);
 
             // Create window
             _windowPtr = _glfw.CreateWindow
