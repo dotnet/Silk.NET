@@ -616,6 +616,13 @@ namespace Silk.NET.Windowing.Desktop
             unsafe
             {
                 Reset();
+                _glfw.GcUtility.Unpin(_onClosing);
+                _glfw.GcUtility.Unpin(_onMaximized);
+                _glfw.GcUtility.Unpin(_onMinimized);
+                _glfw.GcUtility.Unpin(_onMove);
+                _glfw.GcUtility.Unpin(_onResize);
+                _glfw.GcUtility.Unpin(_onFileDrop);
+                _glfw.GcUtility.Unpin(_onFocusChanged);
             }
             if (disposing)
             {
