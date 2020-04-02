@@ -67,7 +67,7 @@ public enum HintName
     GlfwIntContextVersionMajor = 139266,
     GlfwIntContextVersionMinor = 139267,
     GlfwIntContextRevision = 139268,
-    GlfwRobustnessContextRobustness = 139269
+    GlfwRobustnessContextRobustness = 139269,
     GlfwStringCocoaFrameName = 143362,
     GlfwStringX11ClassName = 147457,
     GlfwStringX11InstanceName = 147458,
