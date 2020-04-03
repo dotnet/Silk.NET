@@ -609,8 +609,52 @@ namespace Silk.NET.Windowing.Desktop
         {
             _updateStopwatch.Stop();
             _renderStopwatch.Stop();
-            _glfw.DestroyWindow(_windowPtr);
+
+            try
+            {
+                _glfw.DestroyWindow(_windowPtr);
+            }
+#pragma warning disable 168
+            catch(GlfwException e)
+#pragma warning restore 168
+            {
+                // If the window is already destroyed, it throws an exception,
+                // but we want the window destroyed anyways, so just ignore it
+            }
+            
             _windowPtr = (WindowHandle*) 0;
+        }
+        
+        // Disable parameter because 
+        // ReSharper disable once UnusedParameter.Local
+        private void Dispose(bool disposing)
+        {
+            Reset();
+            
+            // All callbacks are initialized at the same time,
+            // so checking each one individually shouldn't be
+            // necessary.
+            if (_onClosing != null)
+            {
+                _glfw.GcUtility.Unpin(_onClosing);
+                _glfw.GcUtility.Unpin(_onMaximized);
+                _glfw.GcUtility.Unpin(_onMinimized);
+                _glfw.GcUtility.Unpin(_onMove);
+                _glfw.GcUtility.Unpin(_onResize);
+                _glfw.GcUtility.Unpin(_onFileDrop);
+                _glfw.GcUtility.Unpin(_onFocusChanged);
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        ~GlfwWindow()
+        {
+            Dispose(false);
         }
 
         /// <inheritdoc />

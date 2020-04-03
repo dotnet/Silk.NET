@@ -34,6 +34,7 @@ namespace Silk.NET.Windowing.Common
             ShouldSwapAutomatically = opts.ShouldSwapAutomatically;
             VideoMode = opts.VideoMode;
             PreferredDepthBufferBits = opts.PreferredDepthBufferBits;
+            TransparentFramebuffer = false;
         }
 
         /// <inheritdoc />
