@@ -630,13 +630,20 @@ namespace Silk.NET.Windowing.Desktop
         private void Dispose(bool disposing)
         {
             Reset();
-            _glfw.GcUtility.Unpin(_onClosing);
-            _glfw.GcUtility.Unpin(_onMaximized);
-            _glfw.GcUtility.Unpin(_onMinimized);
-            _glfw.GcUtility.Unpin(_onMove);
-            _glfw.GcUtility.Unpin(_onResize);
-            _glfw.GcUtility.Unpin(_onFileDrop);
-            _glfw.GcUtility.Unpin(_onFocusChanged);
+            
+            // All callbacks are initialized at the same time,
+            // so checking each one individually shouldn't be
+            // necessary.
+            if (_onClosing != null)
+            {
+                _glfw.GcUtility.Unpin(_onClosing);
+                _glfw.GcUtility.Unpin(_onMaximized);
+                _glfw.GcUtility.Unpin(_onMinimized);
+                _glfw.GcUtility.Unpin(_onMove);
+                _glfw.GcUtility.Unpin(_onResize);
+                _glfw.GcUtility.Unpin(_onFileDrop);
+                _glfw.GcUtility.Unpin(_onFocusChanged);
+            }
         }
 
         public void Dispose()
