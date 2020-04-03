@@ -615,34 +615,28 @@ namespace Silk.NET.Windowing.Desktop
                 _glfw.DestroyWindow(_windowPtr);
             }
 #pragma warning disable 168
-            // If the window is already destroyed, it throws an exception,
-            // but we want the window destroyed anyways, so just ignore it
-            catch(GlfwException _e)
+            catch(GlfwException e)
 #pragma warning restore 168
             {
-                
+                // If the window is already destroyed, it throws an exception,
+                // but we want the window destroyed anyways, so just ignore it
             }
             
             _windowPtr = (WindowHandle*) 0;
         }
-
+        
+        // Disable parameter because 
+        // ReSharper disable once UnusedParameter.Local
         private void Dispose(bool disposing)
         {
-            unsafe
-            {
-                Reset();
-                _glfw.GcUtility.Unpin(_onClosing);
-                _glfw.GcUtility.Unpin(_onMaximized);
-                _glfw.GcUtility.Unpin(_onMinimized);
-                _glfw.GcUtility.Unpin(_onMove);
-                _glfw.GcUtility.Unpin(_onResize);
-                _glfw.GcUtility.Unpin(_onFileDrop);
-                _glfw.GcUtility.Unpin(_onFocusChanged);
-            }
-            if (disposing)
-            {
-                _glfw?.Dispose();
-            }
+            Reset();
+            _glfw.GcUtility.Unpin(_onClosing);
+            _glfw.GcUtility.Unpin(_onMaximized);
+            _glfw.GcUtility.Unpin(_onMinimized);
+            _glfw.GcUtility.Unpin(_onMove);
+            _glfw.GcUtility.Unpin(_onResize);
+            _glfw.GcUtility.Unpin(_onFileDrop);
+            _glfw.GcUtility.Unpin(_onFocusChanged);
         }
 
         public void Dispose()

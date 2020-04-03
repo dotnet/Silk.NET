@@ -18,4 +18,5 @@ of the MIT license. See the LICENSE file for details.&#xD;
 </s:String>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Deadzone/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Thumbstick/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/UserDictionary/Words/=Thumbsticks/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Thumbsticks/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/UserDictionary/Words/=Vulkan/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>
