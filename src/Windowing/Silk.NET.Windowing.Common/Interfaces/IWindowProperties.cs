@@ -51,5 +51,10 @@ namespace Silk.NET.Windowing.Common
         /// The window border.
         /// </summary>
         WindowBorder WindowBorder { get; set; }
+        
+        /// <summary>
+        /// Whether or not the window's framebuffer should be transparent.
+        /// </summary>
+        bool TransparentFramebuffer { get; }
     }
 }
