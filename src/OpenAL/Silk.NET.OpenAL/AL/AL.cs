@@ -194,7 +194,8 @@ namespace Silk.NET.OpenAL
         public abstract void GetSourceProperty(uint source, SourceFloat param, out float value);
 
         /// <inheritdoc />
-        public abstract void GetSourceProperty(uint source, SourceBoolean param, out bool value);
+        public abstract void GetSourceProperty(uint source, SourceBoolean param,
+            [MarshalAs(UnmanagedType.I4)] out bool value);
 
         /// <inheritdoc />
         public abstract void GetSourceProperty(uint source, SourceVector3 param, out float value1, out float value2,
