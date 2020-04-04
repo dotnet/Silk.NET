@@ -48,7 +48,7 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// The 0 key.
         /// </summary>
-        D0 = 48,
+        Number0 = 48,
 
         /// <summary>
         /// The 1 key.

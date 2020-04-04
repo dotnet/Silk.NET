@@ -16,7 +16,7 @@ namespace Silk.NET.GLFW
         Unknown = -1,
 
         /// <summary>
-        /// The spacebar key.
+        /// The spacebar.
         /// </summary>
         Space = 32,
 
@@ -48,7 +48,7 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// The 0 key.
         /// </summary>
-        D0 = 48,
+        Number0 = 48,
 
         /// <summary>
         /// The 1 key.

@@ -23,7 +23,7 @@ namespace Silk.NET.GLFW
         /// </summary>
         public const int DontCare = -1;
 
-        /// <inheritdoc cref="NativeLibraryBase" />
+        /// <inheritdoc />
         protected Glfw(ref NativeApiContext ctx)
             : base(ref ctx)
         {
@@ -36,6 +36,7 @@ namespace Silk.NET.GLFW
         public static GlfwCallbacks.ErrorCallback ErrorCallback { get; } = (errorCode, description) =>
             throw new GlfwException($"{errorCode}: {description}") {ErrorCode = errorCode};
 
+        /// <inheritdoc />
         public override SearchPathContainer SearchPaths { get; } = new GlfwLibraryNameContainer();
 
         /// <summary>
@@ -313,7 +314,9 @@ namespace Silk.NET.GLFW
         /// <param name="monitor">The monitor to query.</param>
         /// <param name="xscale">Where to store the x-axis content scale, or <c>out _</c>.</param>
         /// <param name="yscale">Where to store the y-axis content scale, or <c>out _</c>.</param>
+        // ReSharper disable IdentifierTypo
         public abstract unsafe void GetMonitorContentScale(Monitor* monitor, out float xscale, out float yscale);
+        // ReSharper enable IdentifierTypo
 
         /// <summary>
         /// <para>
@@ -765,7 +768,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </summary>
         /// <param name="window">The window to set the attribute for.</param>
-        /// <param name="attribute">A supported window attribute.</param>
+        /// <param name="attrib">A supported window attribute.</param>
         /// <param name="value"><c>true</c> or <c>false</c>.</param>
         /// <remarks>
         /// <para>
@@ -880,7 +883,7 @@ namespace Silk.NET.GLFW
         /// </item>
         /// <item>
         /// <term>
-        /// <see cref="Keys.Backslash" />
+        /// <see cref="Keys.BackSlash" />
         /// </term>
         /// </item>
         /// <item>
@@ -894,42 +897,42 @@ namespace Silk.NET.GLFW
         /// </term>
         /// </item>
         /// <item>
-        /// <term><see cref="Keys.D0" /> to <see cref="Keys.D9" /></term>
+        /// <term><see cref="Keys.Number0" /> to <see cref="Keys.Number9" /></term>
         /// </item>
         /// <item>
         /// <term><see cref="Keys.A" /> to <see cref="Keys.Z" /></term>
         /// </item>
         /// <item>
-        /// <term><see cref="Keys.KeyPad0" /> to <see cref="Keys.KeyPad9" /></term>
+        /// <term><see cref="Keys.Keypad0" /> to <see cref="Keys.Keypad9" /></term>
         /// </item>
         /// <item>
         /// <term>
-        /// <see cref="Keys.KeyPadDecimal" />
+        /// <see cref="Keys.KeypadDecimal" />
         /// </term>
         /// </item>
         /// <item>
         /// <term>
-        /// <see cref="Keys.KeyPadDivide" />
+        /// <see cref="Keys.KeypadDivide" />
         /// </term>
         /// </item>
         /// <item>
         /// <term>
-        /// <see cref="Keys.KeyPadMultiply" />
+        /// <see cref="Keys.KeypadMultiply" />
         /// </term>
         /// </item>
         /// <item>
         /// <term>
-        /// <see cref="Keys.KeyPadSubtract" />
+        /// <see cref="Keys.KeypadSubtract" />
         /// </term>
         /// </item>
         /// <item>
         /// <term>
-        /// <see cref="Keys.KeyPadAdd" />
+        /// <see cref="Keys.KeypadAdd" />
         /// </term>
         /// </item>
         /// <item>
         /// <term>
-        /// <see cref="Keys.KeyPadEqual" />
+        /// <see cref="Keys.KeypadEqual" />
         /// </term>
         /// </item>
         /// </list>
@@ -1110,7 +1113,9 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
+        // ReSharper disable IdentifierTypo
         public abstract unsafe void SetCursorPos(WindowHandle* window, double xpos, double ypos);
+        // ReSharper restore IdentifierTypo
 
         /// <summary>
         /// <para>
@@ -1145,7 +1150,9 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
+        // ReSharper disable IdentifierTypo
         public abstract unsafe Cursor* CreateCursor(Image* image, int xhot, int yhot);
+        // ReSharper restore IdentifierTypo
 
         /// <summary>
         /// <para>
@@ -3858,11 +3865,11 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <param name="monitor">The monitor to query.</param>
-        /// <param name="xpos">Where to store the monitor x-coordinate, or <code>null</code>.</param>
-        /// <param name="ypos">Where to store the monitor y-coordinate, or <code>null</code>.</param>
+        /// <param name="x">Where to store the monitor x-coordinate, or <code>null</code>.</param>
+        /// <param name="y">Where to store the monitor y-coordinate, or <code>null</code>.</param>
         /// <param name="width">Where to store the monitor width, or <code>null</code>.</param>
         /// <param name="height">Where to store the monitor height, or <code>null</code>.</param>
-        public abstract unsafe void GetMonitorWorkarea
+        public abstract unsafe void GetMonitorWorkArea
             (Monitor* monitor, out int x, out int y, out int width, out int height);
 
         /// <summary>
@@ -3874,6 +3881,7 @@ namespace Silk.NET.GLFW
             return LibraryLoader.Load<Glfw>(new GlfwLibraryNameContainer());
         }
 
+        /// <inheritdoc />
         public override bool IsExtensionPresent(string name)
         {
             throw new NotSupportedException("Extensions are invalid for GLFW");
