@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using CommandLine;
 using CommandLine.Text;
+using MoreLinq;
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Baking;
 using Silk.NET.BuildTools.Bind;
@@ -45,6 +46,9 @@ namespace Silk.NET.BuildTools
                     break;
                 case "bake":
                     ProfileBakery.Bake(GetArgs<BakeryOptions>(args));
+                    break;
+                case "clean":
+                    Directory.GetFiles(args[1], "*.gen.cs", SearchOption.AllDirectories).ForEach(File.Delete);
                     break;
                 default:
                     PipelineFile(args);
