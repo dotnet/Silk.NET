@@ -7,9 +7,18 @@ using Silk.NET.Core.Native;
 
 namespace Silk.NET.Core.Loader
 {
+    /// <summary>
+    /// Loads a native API from a library.
+    /// </summary>
+    /// <typeparam name="T">The NativeAPI to load.</typeparam>
     public static class LibraryLoader<T>
         where T: NativeAPI
     {
+        /// <summary>
+        /// Load the NativeAPI.
+        /// </summary>
+        /// <param name="paths">The search paths to the shared objects for the library.</param>
+        /// <returns></returns>
         public static T Load(SearchPathContainer paths)
         {
             return LibraryLoader.Load<T>(paths);

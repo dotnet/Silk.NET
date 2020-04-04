@@ -8,6 +8,9 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Core.Loader
 {
+    /// <summary>
+    /// Contains the platform-specific search paths and names for a native library.
+    /// </summary>
     public abstract class SearchPathContainer
     {
         /// <summary>
@@ -44,7 +47,7 @@ namespace Silk.NET.Core.Loader
         /// Gets the library name to use on the current platform.
         /// </summary>
         /// <returns>The library name.</returns>
-        public virtual string GetLibraryName()
+        public string GetLibraryName()
         {
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) {
                 return RuntimeInformation.IsOSPlatform(OSPlatform.Create("ANDROID")) ? Android : Linux;
