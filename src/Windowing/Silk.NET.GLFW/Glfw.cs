@@ -3186,47 +3186,23 @@ namespace Silk.NET.GLFW
 
         /// <summary>
         /// <para>
-        /// This function sets the monitor that the window uses for full screen mode or,
-        /// if the monitor is <c>null</c>, makes it windowed mode.
-        /// </para>
-        /// <para>
-        /// When setting a monitor, this function updates the width, height and refresh rate
-        /// of the desired video mode and switches to the video mode closest to it.
-        /// </para>
-        /// <para>
-        /// The window position is ignored when setting a monitor.
-        /// </para>
-        /// <para>
-        /// When the monitor is <c>null</c>, the position, width and height are used to place the window client area.
-        /// The refresh rate is ignored when no monitor is specified.
-        /// </para>
-        /// <para>
-        /// If you only wish to update the resolution of a full screen window or the size of a windowed mode window,
-        /// see <see cref="SetWindowSize" />.
-        /// </para>
-        /// <para>
-        /// When a window transitions from full screen to windowed mode,
-        /// this function restores any previous window settings such as whether it is decorated,
-        /// floating, resizable, has size or aspect ratio limits, etc..
+        /// This function sets the size callback of the specified window, which is called when the window is resized.
+        /// The callback is provided with the size, in screen coordinates, of the content area of the window.
         /// </para>
         /// </summary>
-        /// <param name="window">The window whose monitor, size or video mode to set.</param>
-        /// <param name="monitor">The desired monitor, or <c>null</c> to set windowed mode.</param>
-        /// <param name="x">The desired x-coordinate of the upper-left corner of the client area.</param>
-        /// <param name="y">The desired y-coordinate of the upper-left corner of the client area.</param>
-        /// <param name="width">The desired with, in screen coordinates, of the client area or video mode.</param>
-        /// <param name="height">The desired height, in screen coordinates, of the client area or video mode.</param>
-        /// <param name="refreshRate">The desired refresh rate, in Hz, of the video mode, or <see cref="Glfw.DontCare" />.</param>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="callback">The new callback, or <c>null</c> to remove the currently set callback.</param>
+        /// <returns>
+        /// The previously set callback, or <c>null</c> if no callback was set or the library had not been initialized.
+        /// </returns>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="GetWindowMonitor" />
-        /// <seealso cref="SetWindowSize" />
         public abstract unsafe GlfwCallbacks.WindowSizeCallback SetWindowSizeCallback
         (
             WindowHandle* window,
