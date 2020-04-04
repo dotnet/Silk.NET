@@ -1,0 +1,89 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+using System;
+using System.Runtime.InteropServices;
+using System.Text;
+using Silk.NET.OpenGLES;
+using Silk.NET.Core.Loader;
+using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
+using Ultz.SuperInvoke;
+
+namespace Silk.NET.OpenGLES.Extensions.QCOM
+{
+    [Extension("QCOM_extended_get")]
+    public abstract unsafe partial class QComExtendedGet : NativeExtension<GL>
+    {
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtGetBufferPointervQCOM")]
+        public abstract unsafe void ExtGetBufferPointer([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.Out)] void** @params);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtGetBuffersQCOM")]
+        public abstract unsafe void ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] uint* buffers, [Flow(FlowDirection.In)] int maxBuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numBuffers);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtGetBuffersQCOM")]
+        public abstract void ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] Span<uint> buffers, [Flow(FlowDirection.In)] int maxBuffers, [Count(Count = 1), Flow(FlowDirection.Out)] out int numBuffers);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtGetFramebuffersQCOM")]
+        public abstract unsafe void ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] uint* framebuffers, [Flow(FlowDirection.In)] int maxFramebuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numFramebuffers);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtGetFramebuffersQCOM")]
+        public abstract void ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] Span<uint> framebuffers, [Flow(FlowDirection.In)] int maxFramebuffers, [Count(Count = 1), Flow(FlowDirection.Out)] out int numFramebuffers);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtGetRenderbuffersQCOM")]
+        public abstract unsafe void ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] uint* renderbuffers, [Flow(FlowDirection.In)] int maxRenderbuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numRenderbuffers);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtGetRenderbuffersQCOM")]
+        public abstract void ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] Span<uint> renderbuffers, [Flow(FlowDirection.In)] int maxRenderbuffers, [Count(Count = 1), Flow(FlowDirection.Out)] out int numRenderbuffers);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtGetTexLevelParameterivQCOM")]
+        public abstract unsafe void ExtGetTexLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] QCOM face, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] QCOM pname, [Flow(FlowDirection.Out)] int* @params);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtGetTexLevelParameterivQCOM")]
+        public abstract void ExtGetTexLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] QCOM face, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] QCOM pname, [Flow(FlowDirection.Out)] Span<int> @params);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM")]
+        public abstract unsafe void ExtGetTexSubImage([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] QCOM type, [Flow(FlowDirection.Out)] void* texels);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM")]
+        public abstract void ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] QCOM type, [Flow(FlowDirection.Out)] Span<T0> texels) where T0 : unmanaged;
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtGetTexturesQCOM")]
+        public abstract unsafe void ExtGetTextures([Flow(FlowDirection.Out)] uint* textures, [Flow(FlowDirection.In)] int maxTextures, [Flow(FlowDirection.Out)] int* numTextures);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtGetTexturesQCOM")]
+        public abstract void ExtGetTextures([Flow(FlowDirection.Out)] Span<uint> textures, [Flow(FlowDirection.In)] int maxTextures, [Flow(FlowDirection.Out)] Span<int> numTextures);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtTexObjectStateOverrideiQCOM")]
+        public abstract void ExtTexObjectStateOverride([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] QCOM pname, [Flow(FlowDirection.In)] int param);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM")]
+        public abstract unsafe void ExtGetTexSubImage([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.Out)] void* texels);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM")]
+        public abstract void ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.Out)] Span<T0> texels) where T0 : unmanaged;
+
+        public QComExtendedGet(ref NativeApiContext ctx)
+            : base(ref ctx)
+        {
+        }
+    }
+}
+
