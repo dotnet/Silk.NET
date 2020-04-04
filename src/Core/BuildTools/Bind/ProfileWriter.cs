@@ -8,7 +8,6 @@ using System.IO;
 using System.Linq;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
-using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
 using Silk.NET.BuildTools.Overloading;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
@@ -30,6 +29,9 @@ namespace Silk.NET.BuildTools.Bind
         /// </summary>
         public const string StructsSubfolder = "Structs";
 
+        /// <summary>
+        /// The license text for the project.
+        /// </summary>
         public static Lazy<string> LicenseText { get; } =
             new Lazy<string>(() => File.ReadAllText(Binder.CliOptions.License));
 
@@ -47,6 +49,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine();
             var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
             sw.WriteLine("using System;");
+            sw.WriteLine();
+            sw.WriteLine("#pragma warning disable 1591");
             sw.WriteLine();
             sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
@@ -90,6 +94,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("using System.Text;");
             sw.WriteLine("using Silk.NET.Core.Native;");
             sw.WriteLine("using Ultz.SuperInvoke;");
+            sw.WriteLine();
+            sw.WriteLine("#pragma warning disable 1591");
             sw.WriteLine();
             var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
             sw.WriteLine($"namespace {ns}{project.Namespace}");
@@ -297,6 +303,8 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine("using Silk.NET.Core.Loader;");
                 sw.WriteLine("using Ultz.SuperInvoke;");
                 sw.WriteLine();
+                sw.WriteLine("#pragma warning disable 1591");
+                sw.WriteLine();
                 sw.WriteLine($"namespace {profile.Namespace}{project.Namespace}");
                 sw.WriteLine("{");
                 sw.WriteLine
@@ -388,6 +396,8 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("using Silk.NET.Core.Loader;");
                     sw.WriteLine("using Silk.NET.Core.Native;");
                     sw.WriteLine();
+                    sw.WriteLine("#pragma warning disable 1591");
+                    sw.WriteLine();
                     sw.WriteLine($"namespace {profile.Namespace}{project.Namespace}");
                     sw.WriteLine("{");
                     sw.WriteLine($"    public partial class {profile.ClassName}");
@@ -435,6 +445,8 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("using Silk.NET.Core.Native;");
                     sw.WriteLine("using Silk.NET.Core.Attributes;");
                     sw.WriteLine("using Ultz.SuperInvoke;");
+                    sw.WriteLine();
+                    sw.WriteLine("#pragma warning disable 1591");
                     sw.WriteLine();
                     sw.WriteLine($"namespace {profile.ExtensionsNamespace}{project.Namespace}");
                     sw.WriteLine("{");
