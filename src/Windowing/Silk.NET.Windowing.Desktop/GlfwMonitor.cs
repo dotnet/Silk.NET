@@ -41,7 +41,7 @@ namespace Silk.NET.Windowing.Desktop
         {
             get
             {
-                GlfwProvider.GLFW.Value.GetMonitorWorkArea(Handle, out var x, out var y, out var w, out var h);
+                GlfwProvider.GLFW.Value.GetMonitorWorkarea(Handle, out var x, out var y, out var w, out var h);
                 return new Rectangle(x, y, w, h);
             }
         }

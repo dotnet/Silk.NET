@@ -3869,7 +3869,7 @@ namespace Silk.NET.GLFW
         /// <param name="y">Where to store the monitor y-coordinate, or <code>null</code>.</param>
         /// <param name="width">Where to store the monitor width, or <code>null</code>.</param>
         /// <param name="height">Where to store the monitor height, or <code>null</code>.</param>
-        public abstract unsafe void GetMonitorWorkArea
+        public abstract unsafe void GetMonitorWorkarea
             (Monitor* monitor, out int x, out int y, out int width, out int height);
 
         /// <summary>
