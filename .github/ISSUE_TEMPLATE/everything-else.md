@@ -1,6 +1,6 @@
 ---
 name: Everything else
-about: Describe this issue template's purpose here.
+about: If you don't think you issue fits in to any of the categories, use this template.
 title: ''
 labels: ''
 assignees: ''
