@@ -110,11 +110,10 @@ namespace Silk.NET.BuildTools.Bind
             if (@struct.Fields.Any(x => x.Count is null))
             {
                 sw.WriteLine($"        public {@struct.Name}");
-                sw.WriteLine($"        (");
+                sw.WriteLine( "        (");
                 var first = true;
-                for (var i = 0; i < @struct.Fields.Count; i++)
+                foreach (var field in @struct.Fields)
                 {
-                    var field = @struct.Fields[i];
                     if (!(field.Count is null))
                         continue; // I've chosen not to initialize multi-count fields from ctors.
                     var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
@@ -251,42 +250,53 @@ namespace Silk.NET.BuildTools.Bind
             sw.Dispose();
         }
 
+        /// <summary>
+        /// Create a class that extends SearchPathContainer.
+        /// </summary>
+        /// <param name="project">The current project.</param>
+        /// <param name="profile">The profile to write the object for.</param>
+        /// <param name="file">The file to write the class to.</param>
         public static void WriteNameContainer(this Project project, Profile profile, string file)
         {
-            using (var sw = new StreamWriter(file))
-            {
-                sw.WriteLine(LicenseText.Value);
-                sw.WriteLine("using Silk.NET.Core.Loader;");
-                sw.WriteLine();
-                sw.WriteLine($"namespace {profile.Namespace}{project.Namespace}");
-                sw.WriteLine("{");
-                sw.WriteLine("    /// <summary>");
-                sw.WriteLine($"    /// Contains the library name of {profile.Name}.");
-                sw.WriteLine("    /// </summary>");
-                sw.WriteLine($"    internal class {profile.Names.ClassName} : SearchPathContainer");
-                sw.WriteLine("    {");
-                sw.WriteLine("        /// <inheritdoc />");
-                sw.WriteLine($"        public override string Linux => \"{profile.Names.Linux}\";");
-                sw.WriteLine();
-                sw.WriteLine("        /// <inheritdoc />");
-                sw.WriteLine($"        public override string MacOS => \"{profile.Names.MacOS}\";");
-                sw.WriteLine();
-                sw.WriteLine("        /// <inheritdoc />");
-                sw.WriteLine($"        public override string Android => \"{profile.Names.Android}\";");
-                sw.WriteLine();
-                sw.WriteLine("        /// <inheritdoc />");
-                sw.WriteLine($"        public override string IOS => \"{profile.Names.IOS}\";");
-                sw.WriteLine();
-                sw.WriteLine("        /// <inheritdoc />");
-                sw.WriteLine($"        public override string Windows64 => \"{profile.Names.Windows}\";");
-                sw.WriteLine();
-                sw.WriteLine("        /// <inheritdoc />");
-                sw.WriteLine($"        public override string Windows86 => \"{profile.Names.Windows}\";");
-                sw.WriteLine("    }");
-                sw.WriteLine("}");
-            }
+            using var sw = new StreamWriter(file);
+            
+            sw.WriteLine(LicenseText.Value);
+            sw.WriteLine("using Silk.NET.Core.Loader;");
+            sw.WriteLine();
+            sw.WriteLine($"namespace {profile.Namespace}{project.Namespace}");
+            sw.WriteLine("{");
+            sw.WriteLine("    /// <summary>");
+            sw.WriteLine($"    /// Contains the library name of {profile.Name}.");
+            sw.WriteLine("    /// </summary>");
+            sw.WriteLine($"    internal class {profile.Names.ClassName} : SearchPathContainer");
+            sw.WriteLine("    {");
+            sw.WriteLine("        /// <inheritdoc />");
+            sw.WriteLine($"        public override string Linux => \"{profile.Names.Linux}\";");
+            sw.WriteLine();
+            sw.WriteLine("        /// <inheritdoc />");
+            sw.WriteLine($"        public override string MacOS => \"{profile.Names.MacOS}\";");
+            sw.WriteLine();
+            sw.WriteLine("        /// <inheritdoc />");
+            sw.WriteLine($"        public override string Android => \"{profile.Names.Android}\";");
+            sw.WriteLine();
+            sw.WriteLine("        /// <inheritdoc />");
+            sw.WriteLine($"        public override string IOS => \"{profile.Names.IOS}\";");
+            sw.WriteLine();
+            sw.WriteLine("        /// <inheritdoc />");
+            sw.WriteLine($"        public override string Windows64 => \"{profile.Names.Windows}\";");
+            sw.WriteLine();
+            sw.WriteLine("        /// <inheritdoc />");
+            sw.WriteLine($"        public override string Windows86 => \"{profile.Names.Windows}\";");
+            sw.WriteLine("    }");
+            sw.WriteLine("}");
         }
 
+        /// <summary>
+        /// Write mixed-mode (partial) classes.
+        /// </summary>
+        /// <param name="project">The current project.</param>
+        /// <param name="profile">The profile to write mixed-mode classes for.</param>
+        /// <param name="folder">The folder to store the generated classes in.</param>
         public static void WriteMixedModeClasses(this Project project, Profile profile, string folder)
         {
             // public abstract class MixedModeClass : IMixedModeClass
@@ -368,7 +378,7 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine("        private SearchPathContainer _searchPaths;");
                 sw.WriteLine
                 (
-                    $"        public override SearchPathContainer SearchPaths => _searchPaths ??= " +
+                     "        public override SearchPathContainer SearchPaths => _searchPaths ??= " +
                     $"new {profile.Names.ClassName}();"
                 );
                 sw.WriteLine();
