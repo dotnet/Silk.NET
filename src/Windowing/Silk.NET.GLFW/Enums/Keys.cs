@@ -49,6 +49,11 @@ namespace Silk.NET.GLFW
         /// The 0 key.
         /// </summary>
         Number0 = 48,
+        
+        /// <summary>
+        /// The 0 key; alias for <see cref="Number0"/>
+        /// </summary>
+        D0 = Number0,
 
         /// <summary>
         /// The 1 key.
