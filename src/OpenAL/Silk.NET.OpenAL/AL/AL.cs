@@ -5,6 +5,7 @@
 
 using System;
 using System.Numerics;
+using System.Runtime.InteropServices;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Ultz.SuperInvoke;
@@ -169,7 +170,7 @@ namespace Silk.NET.OpenAL
         public abstract void SetSourceProperty(uint source, SourceBoolean param, int value);
 
         /// <inheritdoc />
-        public abstract void SetSourceProperty(uint source, SourceBoolean param, bool value);
+        public abstract void SetSourceProperty(uint source, SourceBoolean param, [MarshalAs(UnmanagedType.I4)] bool value);
         
         /// <inheritdoc />
         public abstract void SetSourceProperty(uint source, SourceInteger param, int value);
