@@ -21,8 +21,12 @@ namespace Silk.NET.BuildTools.Baking
     /// <summary>
     /// A collection of methods for baking/fusing APIs together.
     /// </summary>
-    public class ProfileBakery
+    public static class ProfileBakery
     {
+        /// <summary>
+        /// Bake the given options.
+        /// </summary>
+        /// <param name="cliOptions">The options to bake.</param>
         public static void Bake(BakeryOptions cliOptions)
         {
             Console.WriteLine("Baking raw profiles...");
@@ -49,6 +53,7 @@ namespace Silk.NET.BuildTools.Baking
         /// <param name="information">The information of what APIs to bake.</param>
         /// <param name="folder">The output folder.</param>
         /// <param name="pretty">Whether the output JSON should be pretty-printed.</param>
+        /// <param name="docs">The documentation string.</param>
         public static void Bake(ProfileBakeryInformation information, string folder, bool pretty, string docs)
         {
             // get APIs implemented

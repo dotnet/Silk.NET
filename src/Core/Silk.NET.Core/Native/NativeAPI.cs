@@ -3,7 +3,6 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System;
 using Silk.NET.Core.Loader;
 using Ultz.SuperInvoke;
 using Ultz.SuperInvoke.Loader;

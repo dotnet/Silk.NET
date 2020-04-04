@@ -11,7 +11,6 @@ using System.Linq;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
-using Silk.NET.BuildTools.Overloading;
 
 namespace Silk.NET.BuildTools.Converters.Constructors
 {

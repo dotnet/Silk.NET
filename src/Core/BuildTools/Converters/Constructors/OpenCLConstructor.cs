@@ -8,7 +8,6 @@ using System.Linq;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
-using Silk.NET.BuildTools.Overloading;
 
 namespace Silk.NET.BuildTools.Converters.Constructors
 {
@@ -53,32 +52,34 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                 {
                     continue;
                 }
-                
-                if (@enum.ExtensionName == "Core")
+
+                switch (@enum.ExtensionName)
                 {
-                    mergedEnums[$"{gl}Enum"].Tokens.AddRange(@enum.Tokens);
-                }
-                else if (@enum.ExtensionName == "Core (Grouped)")
-                {
-                    @enum.ExtensionName = "Core";
-                    profile.Projects["Core"].Enums.Add(@enum);
-                }
-                else
-                {
-                    var prefix = FormatCategory(@enum.ExtensionName);
-                    if (!mergedEnums.ContainsKey(prefix))
+                    case "Core":
+                        mergedEnums[$"{gl}Enum"].Tokens.AddRange(@enum.Tokens);
+                        break;
+                    case "Core (Grouped)":
+                        @enum.ExtensionName = "Core";
+                        profile.Projects["Core"].Enums.Add(@enum);
+                        break;
+                    default:
                     {
-                        mergedEnums.Add
-                        (
-                            prefix,
-                            new Enum
-                            {
-                                Name = prefix.CheckMemberName(opts.Prefix), ExtensionName = prefix,
-                                NativeName = "GLenum"
-                            }
-                        );
+                        var prefix = FormatCategory(@enum.ExtensionName);
+                        if (!mergedEnums.ContainsKey(prefix))
+                        {
+                            mergedEnums.Add
+                            (
+                                prefix,
+                                new Enum
+                                {
+                                    Name = prefix.CheckMemberName(opts.Prefix), ExtensionName = prefix,
+                                    NativeName = "GLenum"
+                                }
+                            );
+                        }
+                        mergedEnums[prefix].Tokens.AddRange(@enum.Tokens);
+                        break;
                     }
-                    mergedEnums[prefix].Tokens.AddRange(@enum.Tokens);
                 }
             }
             
