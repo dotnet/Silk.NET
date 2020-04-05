@@ -14,10 +14,18 @@ namespace Silk.NET.BuildTools.Common.Functions
     /// </summary>
     public class GenericTypeParameter : IEquatable<GenericTypeParameter>
     {
+        /// <summary>
+        /// Create a new generic type parameter.
+        /// </summary>
         public GenericTypeParameter()
         {
         }
 
+        /// <summary>
+        /// Create a new generic type parameter.
+        /// </summary>
+        /// <param name="genericTypeParameterName">The name of the generic type.</param>
+        /// <param name="constraints">The constraints for this generic type.</param>
         public GenericTypeParameter(string genericTypeParameterName, IEnumerable<string> constraints)
         {
             Name = genericTypeParameterName;
@@ -34,6 +42,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         public List<string> Constraints { get; set; } = new List<string>();
 
+        /// <inheritdoc />
         public bool Equals(GenericTypeParameter other)
         {
             if (ReferenceEquals(null, other))
@@ -49,6 +58,7 @@ namespace Silk.NET.BuildTools.Common.Functions
             return string.Equals(Name, other.Name) && Constraints.SequenceEqual(other.Constraints);
         }
 
+        /// <inheritdoc />
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -64,11 +74,14 @@ namespace Silk.NET.BuildTools.Common.Functions
             return obj is GenericTypeParameter parameter && Equals(parameter);
         }
 
+        /// <inheritdoc />
         public override int GetHashCode()
         {
             unchecked
             {
+                // ReSharper disable NonReadonlyMemberInGetHashCode
                 return ((Name != null ? Name.GetHashCode() : 0) * 397) ^ (Constraints != null ? Constraints.GetHashCode() : 0);
+                // ReSharper restore NonReadonlyMemberInGetHashCode
             }
         }
     }

@@ -5,14 +5,44 @@ using JetBrains.Annotations;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
 {
+    /// <summary>
+    /// Defines a command.
+    /// </summary>
     public class CommandDefinition
     {
+        /// <summary>
+        /// The command type.
+        /// </summary>
         public string Name { get; }
+        
+        /// <summary>
+        /// The return type of the command.
+        /// </summary>
         public TypeSpec ReturnType { get; }
+        
+        /// <summary>
+        /// The parameters of the command.
+        /// </summary>
         public ParameterDefinition[] Parameters { get; }
+        
+        /// <summary>
+        /// Success codes of the command.
+        /// </summary>
         public string[] SuccessCodes { get; }
+        
+        /// <summary>
+        /// Error codes of the command.
+        /// </summary>
         public string[] ErrorCodes { get; }
 
+        /// <summary>
+        /// Create a new command definition.
+        /// </summary>
+        /// <param name="name">The name of the command.</param>
+        /// <param name="returnType">The return type of the command.</param>
+        /// <param name="parameters">The parameters of the command.</param>
+        /// <param name="successCodes">Success codes of the command.</param>
+        /// <param name="errorCodes">Error codes of the command.</param>
         public CommandDefinition
         (
             string name,
@@ -33,6 +63,11 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             ErrorCodes = errorCodes;
         }
 
+        /// <summary>
+        /// Create a command definition from XML.
+        /// </summary>
+        /// <param name="xe">The element to use.</param>
+        /// <returns>The command definition.</returns>
         public static CommandDefinition CreateFromXml(XElement xe)
         {
             Require.Equal("command", xe.Name);
@@ -41,10 +76,10 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             {
                 var ret = CreateFromXml
                 (
-                    xe.Document.Element("registry")
-                        .Elements("commands")
+                    xe.Document?.Element("registry")
+                        ?.Elements("commands")
                         .Elements("command")
-                        .FirstOrDefault(x => x.Element("proto")?.Element("name")?.Value == xe.Attribute("alias").Value)
+                        .FirstOrDefault(x => x.Element("proto")?.Element("name")?.Value == xe.Attribute("alias")?.Value)
                 );
 
                 return new CommandDefinition
@@ -52,22 +87,25 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             }
 
             var proto = xe.Element("proto");
-            string name = proto.Element("name").Value;
-            string returnTypeName = proto.Element("type").Value;
-            TypeSpec returnType = new TypeSpec(returnTypeName);
+            var name = proto?.Element("name")?.Value;
+            var returnTypeName = proto?.Element("type")?.Value;
+            var returnType = new TypeSpec(returnTypeName);
 
+            // ReSharper disable StringLiteralTypo
             var successAttr = xe.Attribute("successcodes");
-            string[] successCodes = successAttr != null
+            var successCodes = successAttr != null
                 ? successAttr.Value.Split(',').ToArray()
                 : Array.Empty<string>();
-
+            
             var errorAttr = xe.Attribute("errorcodes");
-            string[] errorCodes = errorAttr != null
+            var errorCodes = errorAttr != null
                 ? errorAttr.Value.Split(',').ToArray()
                 : Array.Empty<string>();
+            
+            // ReSharper restore StringLiteralTypo
 
-            ParameterDefinition[] parameters = xe.Elements("param")
-                .Select(paramXml => ParameterDefinition.CreateFromXml(paramXml))
+            var parameters = xe.Elements("param")
+                .Select(ParameterDefinition.CreateFromXml)
                 .ToArray();
 
             return new CommandDefinition(name, returnType, Vary(parameters, name), successCodes, errorCodes);
@@ -117,14 +155,19 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             return p;
         }
 
+        /// <summary>
+        /// Get all parameters as a string.
+        /// </summary>
+        /// <returns>All parameters as a string.</returns>
         public string GetParametersSignature()
         {
             return string.Join(", ", Parameters.Select(pd => pd.ToString()));
         }
 
+        /// <inheritdoc />
         public override string ToString()
         {
-            string paramSig = GetParametersSignature();
+            var paramSig = GetParametersSignature();
             return $"{ReturnType} {Name}({paramSig})";
         }
     }
