@@ -121,22 +121,13 @@ namespace Silk.NET.BuildTools.Converters.Readers
             {"int_CL_PARTITION_BY_NAMES_LIST_END_INTEL", "-1"},
         };
         
-        /// <summary>
-        /// Load the OpenCL specification from the stream.
-        /// </summary>
-        /// <param name="stream">The stream to load from.</param>
-        /// <returns></returns>
+        /// <inheritdoc />
         public object Load(Stream stream)
         {
             return XDocument.Load(stream);
         }
-
-        /// <summary>
-        /// Read the structs from the specification.
-        /// </summary>
-        /// <param name="obj">The specification to read from.</param>
-        /// <param name="opts">The options to use while reading.</param>
-        /// <returns>A list of all structs in the specification.</returns>
+        
+        /// <inheritdoc />
         public IEnumerable<Struct> ReadStructs(object obj, ProfileConverterOptions opts)
         {
             var xd = (XDocument) obj;
@@ -174,7 +165,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             opts.TypeMaps.Add(structs.ToDictionary(x => x.Key, x => x.Value.Name));
         }
 
-        private Dictionary<string, Struct> ConvertStructs(IEnumerable<StructureDefinition> spec, ProfileConverterOptions opts)
+        private static Dictionary<string, Struct> ConvertStructs(IEnumerable<StructureDefinition> spec, ProfileConverterOptions opts)
         {
             var prefix = opts.Prefix;
             var ret = new Dictionary<string, Struct>();
@@ -224,32 +215,30 @@ namespace Silk.NET.BuildTools.Converters.Readers
         // Function Parsing
         ////////////////////////////////////////////////////////////////////////////////////////
 
-        /// <summary>
-        /// Read the functions from the specification.
-        /// </summary>
-        /// <param name="obj">The specification to read from.</param>
-        /// <param name="opts">The options to use while reading.</param>
-        /// <returns>A list of all functions in the specification.</returns>
+        /// <inheritdoc />
         public IEnumerable<Function> ReadFunctions(object obj, ProfileConverterOptions opts)
         {
             var doc = obj as XDocument;
             Debug.Assert(doc != null, nameof(doc) + " != null");
             
-            var allFunctions = doc.Element("registry")
-                ?.Elements("commands")
+            var registry = doc.Element("registry");
+            Debug.Assert(registry != null, $"{nameof(registry)} != null");
+            
+            var allFunctions = registry
+                .Elements("commands")
                 .Elements("command")
                 .Select(x => TranslateCommand(x, opts))
                 .ToDictionary(x => x.Attribute("name")?.Value, x => x);
             Debug.Assert(allFunctions != null, nameof(allFunctions) + " != null");
             
-            var apis = doc.Element("registry")?.Elements("feature")
-                .Concat(doc.Element("registry")?
+            var apis = registry.Elements("feature")
+                .Concat(registry
                     .Elements("extensions")
                     .Elements("extension") ?? throw new InvalidDataException());
             
             Debug.Assert(apis != null, nameof(apis) + " != null");
             
-            var removals = doc.Element("registry")?.Elements("feature")
+            var removals = registry.Elements("feature")
                 .Elements("remove")
                 .Elements("command")
                 .Attributes("name")
@@ -685,7 +674,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             };
         }
 
-        private string FunctionName(XContainer e, ProfileConverterOptions opts)
+        private static string FunctionName(XContainer e, ProfileConverterOptions opts)
         {
             return TrimName(e.Element("proto")?.Element("name")?.Value, opts);
         }
@@ -824,19 +813,17 @@ namespace Silk.NET.BuildTools.Converters.Readers
         // Enum Parsing
         ////////////////////////////////////////////////////////////////////////////////////////
 
-        /// <summary>
-        /// Read enums from the given specification.
-        /// </summary>
-        /// <param name="obj">The specification to read from.</param>
-        /// <param name="opts">The options to use while reading.</param>
-        /// <returns></returns>
+        /// <inheritdoc />
         public IEnumerable<Enum> ReadEnums(object obj, ProfileConverterOptions opts)
         {
             var doc = obj as XDocument;
-            Debug.Assert(doc != null, $"{nameof(doc) != null}");
+            Debug.Assert(doc != null, $"{nameof(doc)} != null");
+
+            var registry = doc.Element("registry");
+            Debug.Assert(registry != null, $"{nameof(registry)} != null");
             
-            var allEnums = doc.Element("registry")
-                ?.Elements("enums")
+            var allEnums = registry
+                .Elements("enums")
                 .Elements("enum")
                 .DistinctBy(x => x.Attribute("name")?.Value)
                 .Where
@@ -856,15 +843,15 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 );
             Debug.Assert(allEnums != null, nameof(allEnums) + " != null");
             
-            var apis = doc.Element("registry")?.Elements("feature").Concat
+            var apis = registry.Elements("feature").Concat
             (
-                doc.Element("registry")?.Elements("extensions").Elements("extension")
+                registry.Elements("extensions").Elements("extension")
                 ?? throw new InvalidDataException()
             );
             Debug.Assert(apis != null, nameof(apis) + " != null");
             
-            var removals = doc.Element("registry")
-                ?.Elements("feature")
+            var removals = registry
+                .Elements("feature")
                 .Elements("remove")
                 .Elements("enum")
                 .Attributes("name")
@@ -933,22 +920,22 @@ namespace Silk.NET.BuildTools.Converters.Readers
         
         private static string ExtensionName(string ext, ProfileConverterOptions opts)
         {
-            if (ext == "cl_device_partition_property_ext") // spec inconsistency
-                return "EXT_device_partition_property";
-            if (ext == "ck_khr_mipmap_image")
-                return "KHR_mipmap_image";
+            switch (ext)
+            {
+                // spec inconsistency
+                case "cl_device_partition_property_ext":
+                    return "EXT_device_partition_property";
+                case "ck_khr_mipmap_image":
+                    return "KHR_mipmap_image";
+            }
+
             var trimmedExt = TrimName(ext, opts);
             var splitTrimmed = trimmedExt.Split('_');
             return splitTrimmed[0].ToUpper() + "_" + string.Join
                        ("_", new ArraySegment<string>(splitTrimmed, 1, splitTrimmed.Length - 1));
         }
 
-        /// <summary>
-        /// Read all constants from the provided specification.
-        /// </summary>
-        /// <param name="obj">The specification to read from.</param>
-        /// <param name="opts">The options to use while reading.</param>
-        /// <returns>A list of all constants in the specification.</returns>
+        /// <inheritdoc />
         public IEnumerable<Constant> ReadConstants(object obj, ProfileConverterOptions opts)
         {
             return Constants.Select

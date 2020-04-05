@@ -8,8 +8,10 @@ using Silk.NET.BuildTools.Common.Functions;
 
 namespace Silk.NET.BuildTools.Common.Builders
 {
+    // TODO: This should be renamed to ParameterBuilder since ParameterSignature was renamed to Parameter
+    
     /// <summary>
-    /// Acts as a builder for new instances of <see cref="ParameterSignature" />s, based on existing instances.
+    /// Acts as a builder for new instances of <see cref="Parameter" />s, based on existing instances.
     /// </summary>
     public class ParameterSignatureBuilder
     {

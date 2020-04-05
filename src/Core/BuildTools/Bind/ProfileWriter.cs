@@ -137,7 +137,7 @@ namespace Silk.NET.BuildTools.Bind
                 {
                     if (!(field.Count is null))
                     {
-                        if (!Field._fixedCapableTypes.Contains(field.Type.Name))
+                        if (!Field.FixedCapableTypes.Contains(field.Type.Name))
                         {
                             var count = field.Count.IsConstant
                                 ? int.Parse
@@ -175,7 +175,7 @@ namespace Silk.NET.BuildTools.Bind
             {
                 if (!(structField.Count is null))
                 {
-                    if (!Field._fixedCapableTypes.Contains(structField.Type.Name))
+                    if (!Field.FixedCapableTypes.Contains(structField.Type.Name))
                     {
                         var count = structField.Count.IsConstant
                             ? int.Parse
