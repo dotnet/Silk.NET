@@ -99,5 +99,7 @@
     "cl_mem_info_intel": "cl_uint",
     "cl_unified_shared_memory_type_intel": "cl_uint",
     "cl_mem_migration_flags_intel": "CLenum",
-    "cl_mem_advice_intel": "cl_uint"
+    "cl_mem_advice_intel": "cl_uint",
+    "cl_version": "cl_uint",
+    "cl_mem_properties": "CLenum"
 }

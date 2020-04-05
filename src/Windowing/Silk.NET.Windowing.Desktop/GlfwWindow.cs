@@ -69,13 +69,13 @@ namespace Silk.NET.Windowing.Desktop
 
         private WindowOptions _initialOptions;
         private bool _running;
-        private IMonitor _initialMonitor;
+        private readonly IMonitor _initialMonitor;
 
         /// <summary>
         /// Create a new GlfwWindow.
         /// </summary>
         /// <param name="options">The options to use for this window.</param>
-        public unsafe GlfwWindow(WindowOptions options, GlfwWindow parent, GlfwMonitor monitor)
+        public GlfwWindow(WindowOptions options, GlfwWindow parent, GlfwMonitor monitor)
         {
             // Title and Size must be set before the window is created.
             _title = options.Title;
@@ -387,6 +387,18 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
+        public bool TransparentFramebuffer
+        {
+            get
+            {
+                unsafe
+                {
+                    return _glfw.GetWindowAttrib(_windowPtr, WindowAttributeGetter.TransparentFramebuffer);
+                }
+            }
+        }
+
+        /// <inheritdoc />
         public object Invoke(Delegate d)
         {
             return Invoke(d, new object[0]);
@@ -514,6 +526,9 @@ namespace Silk.NET.Windowing.Desktop
             // Set video mode (-1 = don't care)
             _glfw.WindowHint(WindowHintInt.RefreshRate, _initialOptions.VideoMode.RefreshRate ?? -1);
             _glfw.WindowHint(WindowHintInt.DepthBits, _initialOptions.PreferredDepthBufferBits ?? -1);
+            
+            // Set transparent framebuffer
+            _glfw.WindowHint(WindowHintBool.TransparentFramebuffer, _initialOptions.TransparentFramebuffer);
 
             // Create window
             _windowPtr = _glfw.CreateWindow
@@ -594,8 +609,52 @@ namespace Silk.NET.Windowing.Desktop
         {
             _updateStopwatch.Stop();
             _renderStopwatch.Stop();
-            _glfw.DestroyWindow(_windowPtr);
+
+            try
+            {
+                _glfw.DestroyWindow(_windowPtr);
+            }
+#pragma warning disable 168
+            catch(GlfwException e)
+#pragma warning restore 168
+            {
+                // If the window is already destroyed, it throws an exception,
+                // but we want the window destroyed anyways, so just ignore it
+            }
+            
             _windowPtr = (WindowHandle*) 0;
+        }
+        
+        // Disable parameter because 
+        // ReSharper disable once UnusedParameter.Local
+        private void Dispose(bool disposing)
+        {
+            Reset();
+            
+            // All callbacks are initialized at the same time,
+            // so checking each one individually shouldn't be
+            // necessary.
+            if (_onClosing != null)
+            {
+                _glfw.GcUtility.Unpin(_onClosing);
+                _glfw.GcUtility.Unpin(_onMaximized);
+                _glfw.GcUtility.Unpin(_onMinimized);
+                _glfw.GcUtility.Unpin(_onMove);
+                _glfw.GcUtility.Unpin(_onResize);
+                _glfw.GcUtility.Unpin(_onFileDrop);
+                _glfw.GcUtility.Unpin(_onFocusChanged);
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        ~GlfwWindow()
+        {
+            Dispose(false);
         }
 
         /// <inheritdoc />

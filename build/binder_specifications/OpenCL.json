@@ -2998,6 +2998,20 @@
               "Attributes": []
             },
             {
+              "Name": "PlatformNumericVersion",
+              "NativeName": "CL_PLATFORM_NUMERIC_VERSION",
+              "Value": "0x906",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "PlatformExtensionsWithVersion",
+              "NativeName": "CL_PLATFORM_EXTENSIONS_WITH_VERSION",
+              "Value": "0x907",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
               "Name": "DeviceAtomicMemoryCapabilities",
               "NativeName": "CL_DEVICE_ATOMIC_MEMORY_CAPABILITIES",
               "Value": "0x1063",
@@ -3019,16 +3033,9 @@
               "Attributes": []
             },
             {
-              "Name": "DeviceOpenclCVersions",
-              "NativeName": "CL_DEVICE_OPENCL_C_VERSIONS",
+              "Name": "DeviceOpenclCAllVersions",
+              "NativeName": "CL_DEVICE_OPENCL_C_ALL_VERSIONS",
               "Value": "0x1066",
-              "Doc": "",
-              "Attributes": []
-            },
-            {
-              "Name": "DeviceMaxWriteImage3DArgs",
-              "NativeName": "CL_DEVICE_MAX_WRITE_IMAGE3D_ARGS",
-              "Value": "0x1067",
               "Doc": "",
               "Attributes": []
             },
@@ -3068,9 +3075,93 @@
               "Attributes": []
             },
             {
+              "Name": "DeviceNumericVersion",
+              "NativeName": "CL_DEVICE_NUMERIC_VERSION",
+              "Value": "0x105E",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceExtensionsWithVersion",
+              "NativeName": "CL_DEVICE_EXTENSIONS_WITH_VERSION",
+              "Value": "0x1060",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceIlsWithVersion",
+              "NativeName": "CL_DEVICE_ILS_WITH_VERSION",
+              "Value": "0x1061",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceBuiltInKernelsWithVersion",
+              "NativeName": "CL_DEVICE_BUILT_IN_KERNELS_WITH_VERSION",
+              "Value": "0x1062",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "PipeProperties",
+              "NativeName": "CL_PIPE_PROPERTIES",
+              "Value": "0x1122",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "SamplerProperties",
+              "NativeName": "CL_SAMPLER_PROPERTIES",
+              "Value": "0x1158",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "QueuePropertiesArray",
+              "NativeName": "CL_QUEUE_PROPERTIES_ARRAY",
+              "Value": "0x1098",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "MemProperties",
+              "NativeName": "CL_MEM_PROPERTIES",
+              "Value": "0x110A",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
               "Name": "CommandSvmMigrateMem",
               "NativeName": "CL_COMMAND_SVM_MIGRATE_MEM",
               "Value": "0x120E",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "VersionMajorBits",
+              "NativeName": "CL_VERSION_MAJOR_BITS",
+              "Value": "0x10",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "VersionMinorBits",
+              "NativeName": "CL_VERSION_MINOR_BITS",
+              "Value": "0x10",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "VersionPatchBits",
+              "NativeName": "CL_VERSION_PATCH_BITS",
+              "Value": "0x12",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "NameVersionMaxNameSize",
+              "NativeName": "CL_NAME_VERSION_MAX_NAME_SIZE",
+              "Value": "0x64",
               "Doc": "",
               "Attributes": []
             },
@@ -31549,6 +31640,686 @@
           ],
           "Attributes": []
         },
+        "EXPERIMENTAL_": {
+          "Name": "IExperimental_",
+          "Functions": [
+            {
+              "Name": "CreateBufferWithProperties",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "IntPtr",
+                "Group": null,
+                "OriginalName": "cl_mem",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "clCreateBufferWithProperties",
+              "Parameters": [
+                {
+                  "Name": "context",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "cl_context",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "properties",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "CLEnum",
+                    "Group": null,
+                    "OriginalName": "cl_mem_properties",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "flags",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "CLEnum",
+                    "Group": null,
+                    "OriginalName": "cl_mem_flags",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "size",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "UIntPtr",
+                    "Group": null,
+                    "OriginalName": "size_t",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "host_ptr",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "void",
+                    "Group": null,
+                    "OriginalName": "void",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                },
+                {
+                  "Name": "errcode_ret",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "int",
+                    "Group": null,
+                    "OriginalName": "cl_int",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                }
+              ],
+              "GenericTypeParameters": [],
+              "Attributes": [],
+              "Doc": "",
+              "ExtensionName": "Core"
+            },
+            {
+              "Name": "CreateBufferWithProperties",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "IntPtr",
+                "Group": null,
+                "OriginalName": "cl_mem",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "clCreateBufferWithProperties",
+              "Parameters": [
+                {
+                  "Name": "context",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "cl_context",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "properties",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "CLEnum",
+                        "Group": null,
+                        "OriginalName": "cl_mem_properties",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "flags",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "CLEnum",
+                    "Group": null,
+                    "OriginalName": "cl_mem_flags",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "size",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "UIntPtr",
+                    "Group": null,
+                    "OriginalName": "size_t",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "host_ptr",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "T0",
+                        "Group": null,
+                        "OriginalName": "void",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                },
+                {
+                  "Name": "errcode_ret",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "int",
+                        "Group": null,
+                        "OriginalName": "cl_int",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                }
+              ],
+              "GenericTypeParameters": [
+                {
+                  "Name": "T0",
+                  "Constraints": [
+                    "unmanaged"
+                  ]
+                }
+              ],
+              "Attributes": [],
+              "Doc": "",
+              "ExtensionName": "Core"
+            },
+            {
+              "Name": "CreateImageWithProperties",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "IntPtr",
+                "Group": null,
+                "OriginalName": "cl_mem",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "clCreateImageWithProperties",
+              "Parameters": [
+                {
+                  "Name": "context",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "cl_context",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "properties",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "CLEnum",
+                    "Group": null,
+                    "OriginalName": "cl_mem_properties",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "flags",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "CLEnum",
+                    "Group": null,
+                    "OriginalName": "cl_mem_flags",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "image_format",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "uint",
+                    "Group": null,
+                    "OriginalName": "cl_image_format",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "image_desc",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "ImageDesc",
+                    "Group": null,
+                    "OriginalName": "cl_image_desc",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "host_ptr",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "void",
+                    "Group": null,
+                    "OriginalName": "void",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                },
+                {
+                  "Name": "errcode_ret",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "int",
+                    "Group": null,
+                    "OriginalName": "cl_int",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                }
+              ],
+              "GenericTypeParameters": [],
+              "Attributes": [],
+              "Doc": "",
+              "ExtensionName": "Core"
+            },
+            {
+              "Name": "CreateImageWithProperties",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "IntPtr",
+                "Group": null,
+                "OriginalName": "cl_mem",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "clCreateImageWithProperties",
+              "Parameters": [
+                {
+                  "Name": "context",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "cl_context",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "properties",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "CLEnum",
+                        "Group": null,
+                        "OriginalName": "cl_mem_properties",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "flags",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "CLEnum",
+                    "Group": null,
+                    "OriginalName": "cl_mem_flags",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "image_format",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "uint",
+                        "Group": null,
+                        "OriginalName": "cl_image_format",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "image_desc",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "ImageDesc",
+                        "Group": null,
+                        "OriginalName": "cl_image_desc",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "host_ptr",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "T0",
+                        "Group": null,
+                        "OriginalName": "void",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                },
+                {
+                  "Name": "errcode_ret",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "int",
+                        "Group": null,
+                        "OriginalName": "cl_int",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                }
+              ],
+              "GenericTypeParameters": [
+                {
+                  "Name": "T0",
+                  "Constraints": [
+                    "unmanaged"
+                  ]
+                }
+              ],
+              "Attributes": [],
+              "Doc": "",
+              "ExtensionName": "Core"
+            }
+          ],
+          "Attributes": []
+        },
         "VERSION_2_2": {
           "Name": "IVersion22",
           "Functions": [
@@ -32563,6 +33334,62 @@
               "Name": "SearchPathType",
               "NativeName": "search_path_type",
               "NativeType": "cl_uint",
+              "DefaultAssignment": null
+            }
+          ],
+          "Attributes": [],
+          "Functions": []
+        },
+        {
+          "Name": "NameVersion",
+          "NativeName": "cl_name_version",
+          "ExtensionName": "Core",
+          "Fields": [
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "uint",
+                "Group": null,
+                "OriginalName": "cl_version",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": null,
+              "Name": "Version",
+              "NativeName": "version",
+              "NativeType": "cl_version",
+              "DefaultAssignment": null
+            },
+            {
+              "Attributes": [],
+              "Doc": "/// <summary></summary>",
+              "Type": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "char",
+                "Group": null,
+                "OriginalName": "char",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "Count": {
+                "StaticCount": 0,
+                "ConstantName": "CL_NAME_VERSION_MAX_NAME_SIZE",
+                "ValueReference": null,
+                "ComputedFromNames": null
+              },
+              "Name": "Name",
+              "NativeName": "name",
+              "NativeType": "char",
               "DefaultAssignment": null
             }
           ],
@@ -37848,6 +38675,13 @@
               "Name": "ContextTerminateKhr",
               "NativeName": "CL_CONTEXT_TERMINATE_KHR",
               "Value": "0x2032",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "ContextTerminatedKhr",
+              "NativeName": "CL_CONTEXT_TERMINATED_KHR",
+              "Value": "unchecked((int)0xFFFFFFFFFFFFFB9F)",
               "Doc": "",
               "Attributes": []
             },
@@ -57388,7 +58222,7 @@
         "IsIn": false
       },
       "Name": "CharBit",
-      "NativeName": "int_CL_CHAR_BIT",
+      "NativeName": "CL_CHAR_BIT",
       "Value": "8"
     },
     {
@@ -57405,7 +58239,7 @@
         "IsIn": false
       },
       "Name": "CharMax",
-      "NativeName": "int_CL_CHAR_MAX",
+      "NativeName": "CL_CHAR_MAX",
       "Value": "127"
     },
     {
@@ -57422,7 +58256,7 @@
         "IsIn": false
       },
       "Name": "CharMin",
-      "NativeName": "int_CL_CHAR_MIN",
+      "NativeName": "CL_CHAR_MIN",
       "Value": "-127 - 1"
     },
     {
@@ -57439,7 +58273,7 @@
         "IsIn": false
       },
       "Name": "DblDig",
-      "NativeName": "double_CL_DBL_DIG",
+      "NativeName": "CL_DBL_DIG",
       "Value": "15"
     },
     {
@@ -57456,7 +58290,7 @@
         "IsIn": false
       },
       "Name": "DblEpsilon",
-      "NativeName": "double_CL_DBL_EPSILON",
+      "NativeName": "CL_DBL_EPSILON",
       "Value": "2.220446049250313080847e-16"
     },
     {
@@ -57473,7 +58307,7 @@
         "IsIn": false
       },
       "Name": "DblMantDig",
-      "NativeName": "double_CL_DBL_MANT_DIG",
+      "NativeName": "CL_DBL_MANT_DIG",
       "Value": "53"
     },
     {
@@ -57490,7 +58324,7 @@
         "IsIn": false
       },
       "Name": "DblMax",
-      "NativeName": "double_CL_DBL_MAX",
+      "NativeName": "CL_DBL_MAX",
       "Value": "1.7976931348623158e+308"
     },
     {
@@ -57507,7 +58341,7 @@
         "IsIn": false
       },
       "Name": "DblMax10Exp",
-      "NativeName": "double_CL_DBL_MAX_10_EXP",
+      "NativeName": "CL_DBL_MAX_10_EXP",
       "Value": "+308"
     },
     {
@@ -57524,7 +58358,7 @@
         "IsIn": false
       },
       "Name": "DblMaxExp",
-      "NativeName": "double_CL_DBL_MAX_EXP",
+      "NativeName": "CL_DBL_MAX_EXP",
       "Value": "+1024"
     },
     {
@@ -57541,7 +58375,7 @@
         "IsIn": false
       },
       "Name": "DblMin",
-      "NativeName": "double_CL_DBL_MIN",
+      "NativeName": "CL_DBL_MIN",
       "Value": "2.225073858507201383090e-308"
     },
     {
@@ -57558,7 +58392,7 @@
         "IsIn": false
       },
       "Name": "DblMin10Exp",
-      "NativeName": "double_CL_DBL_MIN_10_EXP",
+      "NativeName": "CL_DBL_MIN_10_EXP",
       "Value": "-307"
     },
     {
@@ -57575,7 +58409,7 @@
         "IsIn": false
       },
       "Name": "DblMinExp",
-      "NativeName": "double_CL_DBL_MIN_EXP",
+      "NativeName": "CL_DBL_MIN_EXP",
       "Value": "-1021"
     },
     {
@@ -57592,7 +58426,7 @@
         "IsIn": false
       },
       "Name": "DblRadix",
-      "NativeName": "double_CL_DBL_RADIX",
+      "NativeName": "CL_DBL_RADIX",
       "Value": "2"
     },
     {
@@ -57609,7 +58443,7 @@
         "IsIn": false
       },
       "Name": "DevicePartitionByCountsListEnd",
-      "NativeName": "int_CL_DEVICE_PARTITION_BY_COUNTS_LIST_END",
+      "NativeName": "CL_DEVICE_PARTITION_BY_COUNTS_LIST_END",
       "Value": "0x0"
     },
     {
@@ -57626,7 +58460,7 @@
         "IsIn": false
       },
       "Name": "FltDig",
-      "NativeName": "float_CL_FLT_DIG",
+      "NativeName": "CL_FLT_DIG",
       "Value": "6"
     },
     {
@@ -57643,7 +58477,7 @@
         "IsIn": false
       },
       "Name": "FltEpsilon",
-      "NativeName": "float_CL_FLT_EPSILON",
+      "NativeName": "CL_FLT_EPSILON",
       "Value": "1.1920928955078125e-7f"
     },
     {
@@ -57660,7 +58494,7 @@
         "IsIn": false
       },
       "Name": "FltMantDig",
-      "NativeName": "float_CL_FLT_MANT_DIG",
+      "NativeName": "CL_FLT_MANT_DIG",
       "Value": "24"
     },
     {
@@ -57677,7 +58511,7 @@
         "IsIn": false
       },
       "Name": "FltMax",
-      "NativeName": "float_CL_FLT_MAX",
+      "NativeName": "CL_FLT_MAX",
       "Value": "340282346638528859811704183484516925440.0f"
     },
     {
@@ -57694,7 +58528,7 @@
         "IsIn": false
       },
       "Name": "FltMax10Exp",
-      "NativeName": "float_CL_FLT_MAX_10_EXP",
+      "NativeName": "CL_FLT_MAX_10_EXP",
       "Value": "+38"
     },
     {
@@ -57711,7 +58545,7 @@
         "IsIn": false
       },
       "Name": "FltMaxExp",
-      "NativeName": "float_CL_FLT_MAX_EXP",
+      "NativeName": "CL_FLT_MAX_EXP",
       "Value": "+128"
     },
     {
@@ -57728,7 +58562,7 @@
         "IsIn": false
       },
       "Name": "FltMin",
-      "NativeName": "float_CL_FLT_MIN",
+      "NativeName": "CL_FLT_MIN",
       "Value": "1.175494350822287507969e-38f"
     },
     {
@@ -57745,7 +58579,7 @@
         "IsIn": false
       },
       "Name": "FltMin10Exp",
-      "NativeName": "float_CL_FLT_MIN_10_EXP",
+      "NativeName": "CL_FLT_MIN_10_EXP",
       "Value": "-37"
     },
     {
@@ -57762,7 +58596,7 @@
         "IsIn": false
       },
       "Name": "FltMinExp",
-      "NativeName": "float_CL_FLT_MIN_EXP",
+      "NativeName": "CL_FLT_MIN_EXP",
       "Value": "-125"
     },
     {
@@ -57779,7 +58613,7 @@
         "IsIn": false
       },
       "Name": "FltRadix",
-      "NativeName": "float_CL_FLT_RADIX",
+      "NativeName": "CL_FLT_RADIX",
       "Value": "2"
     },
     {
@@ -57796,7 +58630,7 @@
         "IsIn": false
       },
       "Name": "HalfDig",
-      "NativeName": "short_CL_HALF_DIG",
+      "NativeName": "CL_HALF_DIG",
       "Value": "3"
     },
     {
@@ -57813,7 +58647,7 @@
         "IsIn": false
       },
       "Name": "HalfEpsilon",
-      "NativeName": "short_CL_HALF_EPSILON",
+      "NativeName": "CL_HALF_EPSILON",
       "Value": "unchecked((short)9.765625e-04f)"
     },
     {
@@ -57830,7 +58664,7 @@
         "IsIn": false
       },
       "Name": "HalfMantDig",
-      "NativeName": "short_CL_HALF_MANT_DIG",
+      "NativeName": "CL_HALF_MANT_DIG",
       "Value": "11"
     },
     {
@@ -57847,7 +58681,7 @@
         "IsIn": false
       },
       "Name": "HalfMax",
-      "NativeName": "short_CL_HALF_MAX",
+      "NativeName": "CL_HALF_MAX",
       "Value": "unchecked((short)65504.0f)"
     },
     {
@@ -57864,7 +58698,7 @@
         "IsIn": false
       },
       "Name": "HalfMax10Exp",
-      "NativeName": "short_CL_HALF_MAX_10_EXP",
+      "NativeName": "CL_HALF_MAX_10_EXP",
       "Value": "+4"
     },
     {
@@ -57881,7 +58715,7 @@
         "IsIn": false
       },
       "Name": "HalfMaxExp",
-      "NativeName": "short_CL_HALF_MAX_EXP",
+      "NativeName": "CL_HALF_MAX_EXP",
       "Value": "+16"
     },
     {
@@ -57898,7 +58732,7 @@
         "IsIn": false
       },
       "Name": "HalfMin",
-      "NativeName": "short_CL_HALF_MIN",
+      "NativeName": "CL_HALF_MIN",
       "Value": "unchecked((short)6.103515625e-05f)"
     },
     {
@@ -57915,7 +58749,7 @@
         "IsIn": false
       },
       "Name": "HalfMin10Exp",
-      "NativeName": "short_CL_HALF_MIN_10_EXP",
+      "NativeName": "CL_HALF_MIN_10_EXP",
       "Value": "-4"
     },
     {
@@ -57932,7 +58766,7 @@
         "IsIn": false
       },
       "Name": "HalfMinExp",
-      "NativeName": "short_CL_HALF_MIN_EXP",
+      "NativeName": "CL_HALF_MIN_EXP",
       "Value": "-13"
     },
     {
@@ -57949,7 +58783,7 @@
         "IsIn": false
       },
       "Name": "HalfRadix",
-      "NativeName": "short_CL_HALF_RADIX",
+      "NativeName": "CL_HALF_RADIX",
       "Value": "2"
     },
     {
@@ -57966,7 +58800,7 @@
         "IsIn": false
       },
       "Name": "HugeVal",
-      "NativeName": "double_CL_HUGE_VAL",
+      "NativeName": "CL_HUGE_VAL",
       "Value": "double.PositiveInfinity"
     },
     {
@@ -57983,7 +58817,7 @@
         "IsIn": false
       },
       "Name": "HugeValf",
-      "NativeName": "float_CL_HUGE_VALF",
+      "NativeName": "CL_HUGE_VALF",
       "Value": "(float) 1e50"
     },
     {
@@ -58000,7 +58834,7 @@
         "IsIn": false
       },
       "Name": "Infinity",
-      "NativeName": "float_CL_INFINITY",
+      "NativeName": "CL_INFINITY",
       "Value": "float.PositiveInfinity"
     },
     {
@@ -58017,7 +58851,7 @@
         "IsIn": false
       },
       "Name": "IntMax",
-      "NativeName": "int_CL_INT_MAX",
+      "NativeName": "CL_INT_MAX",
       "Value": "2147483647"
     },
     {
@@ -58034,7 +58868,7 @@
         "IsIn": false
       },
       "Name": "IntMin",
-      "NativeName": "int_CL_INT_MIN",
+      "NativeName": "CL_INT_MIN",
       "Value": "-2147483647 - 1"
     },
     {
@@ -58051,7 +58885,7 @@
         "IsIn": false
       },
       "Name": "LongMax",
-      "NativeName": "long_CL_LONG_MAX",
+      "NativeName": "CL_LONG_MAX",
       "Value": "0x7FFFFFFFFFFFFFFFL"
     },
     {
@@ -58068,7 +58902,7 @@
         "IsIn": false
       },
       "Name": "LongMin",
-      "NativeName": "long_CL_LONG_MIN",
+      "NativeName": "CL_LONG_MIN",
       "Value": "-0x7FFFFFFFFFFFFFFFL - 1L"
     },
     {
@@ -58085,7 +58919,7 @@
         "IsIn": false
       },
       "Name": "M1PI",
-      "NativeName": "double_CL_M_1_PI",
+      "NativeName": "CL_M_1_PI",
       "Value": "0.31830988618379067154"
     },
     {
@@ -58102,7 +58936,7 @@
         "IsIn": false
       },
       "Name": "M1PIF",
-      "NativeName": "float_CL_M_1_PI_F",
+      "NativeName": "CL_M_1_PI_F",
       "Value": "0.318309886f"
     },
     {
@@ -58119,7 +58953,7 @@
         "IsIn": false
       },
       "Name": "M2PI",
-      "NativeName": "double_CL_M_2_PI",
+      "NativeName": "CL_M_2_PI",
       "Value": "0.63661977236758134308"
     },
     {
@@ -58136,7 +58970,7 @@
         "IsIn": false
       },
       "Name": "M2PIF",
-      "NativeName": "float_CL_M_2_PI_F",
+      "NativeName": "CL_M_2_PI_F",
       "Value": "0.636619772f"
     },
     {
@@ -58153,7 +58987,7 @@
         "IsIn": false
       },
       "Name": "M2Sqrtpi",
-      "NativeName": "double_CL_M_2_SQRTPI",
+      "NativeName": "CL_M_2_SQRTPI",
       "Value": "1.12837916709551257390"
     },
     {
@@ -58170,7 +59004,7 @@
         "IsIn": false
       },
       "Name": "M2SqrtpiF",
-      "NativeName": "float_CL_M_2_SQRTPI_F",
+      "NativeName": "CL_M_2_SQRTPI_F",
       "Value": "1.128379167f"
     },
     {
@@ -58187,7 +59021,7 @@
         "IsIn": false
       },
       "Name": "Maxfloat",
-      "NativeName": "float_CL_MAXFLOAT",
+      "NativeName": "CL_MAXFLOAT",
       "Value": "float.MaxValue"
     },
     {
@@ -58204,7 +59038,7 @@
         "IsIn": false
       },
       "Name": "ME",
-      "NativeName": "double_CL_M_E",
+      "NativeName": "CL_M_E",
       "Value": "2.7182818284590452354"
     },
     {
@@ -58221,7 +59055,7 @@
         "IsIn": false
       },
       "Name": "MEF",
-      "NativeName": "float_CL_M_E_F",
+      "NativeName": "CL_M_E_F",
       "Value": "2.718281828f"
     },
     {
@@ -58238,7 +59072,7 @@
         "IsIn": false
       },
       "Name": "MLN10",
-      "NativeName": "double_CL_M_LN10",
+      "NativeName": "CL_M_LN10",
       "Value": "2.30258509299404568402"
     },
     {
@@ -58255,7 +59089,7 @@
         "IsIn": false
       },
       "Name": "MLN10F",
-      "NativeName": "float_CL_M_LN10_F",
+      "NativeName": "CL_M_LN10_F",
       "Value": "2.302585093f"
     },
     {
@@ -58272,7 +59106,7 @@
         "IsIn": false
       },
       "Name": "MLN2",
-      "NativeName": "double_CL_M_LN2",
+      "NativeName": "CL_M_LN2",
       "Value": "0.69314718055994530942"
     },
     {
@@ -58289,7 +59123,7 @@
         "IsIn": false
       },
       "Name": "MLN2F",
-      "NativeName": "float_CL_M_LN2_F",
+      "NativeName": "CL_M_LN2_F",
       "Value": "0.693147181f"
     },
     {
@@ -58306,7 +59140,7 @@
         "IsIn": false
       },
       "Name": "MLog10E",
-      "NativeName": "double_CL_M_LOG10E",
+      "NativeName": "CL_M_LOG10E",
       "Value": "0.43429448190325182765"
     },
     {
@@ -58323,7 +59157,7 @@
         "IsIn": false
       },
       "Name": "MLog10EF",
-      "NativeName": "float_CL_M_LOG10E_F",
+      "NativeName": "CL_M_LOG10E_F",
       "Value": "0.434294482f"
     },
     {
@@ -58340,7 +59174,7 @@
         "IsIn": false
       },
       "Name": "MLog2E",
-      "NativeName": "double_CL_M_LOG2E",
+      "NativeName": "CL_M_LOG2E",
       "Value": "1.4426950408889634074"
     },
     {
@@ -58357,7 +59191,7 @@
         "IsIn": false
       },
       "Name": "MLog2EF",
-      "NativeName": "float_CL_M_LOG2E_F",
+      "NativeName": "CL_M_LOG2E_F",
       "Value": "1.442695041f"
     },
     {
@@ -58374,7 +59208,7 @@
         "IsIn": false
       },
       "Name": "MPI",
-      "NativeName": "double_CL_M_PI",
+      "NativeName": "CL_M_PI",
       "Value": "3.14159265358979323846"
     },
     {
@@ -58391,7 +59225,7 @@
         "IsIn": false
       },
       "Name": "MPI2",
-      "NativeName": "double_CL_M_PI_2",
+      "NativeName": "CL_M_PI_2",
       "Value": "1.57079632679489661923"
     },
     {
@@ -58408,7 +59242,7 @@
         "IsIn": false
       },
       "Name": "MPI2F",
-      "NativeName": "float_CL_M_PI_2_F",
+      "NativeName": "CL_M_PI_2_F",
       "Value": "1.570796327f"
     },
     {
@@ -58425,7 +59259,7 @@
         "IsIn": false
       },
       "Name": "MPI4",
-      "NativeName": "double_CL_M_PI_4",
+      "NativeName": "CL_M_PI_4",
       "Value": "0.78539816339744830962"
     },
     {
@@ -58442,7 +59276,7 @@
         "IsIn": false
       },
       "Name": "MPI4F",
-      "NativeName": "float_CL_M_PI_4_F",
+      "NativeName": "CL_M_PI_4_F",
       "Value": "0.785398163f"
     },
     {
@@ -58459,7 +59293,7 @@
         "IsIn": false
       },
       "Name": "MPIF",
-      "NativeName": "float_CL_M_PI_F",
+      "NativeName": "CL_M_PI_F",
       "Value": "3.141592654f"
     },
     {
@@ -58476,7 +59310,7 @@
         "IsIn": false
       },
       "Name": "MSqrt12",
-      "NativeName": "double_CL_M_SQRT1_2",
+      "NativeName": "CL_M_SQRT1_2",
       "Value": "0.70710678118654752440"
     },
     {
@@ -58493,7 +59327,7 @@
         "IsIn": false
       },
       "Name": "MSqrt12F",
-      "NativeName": "float_CL_M_SQRT1_2_F",
+      "NativeName": "CL_M_SQRT1_2_F",
       "Value": "0.707106781f"
     },
     {
@@ -58510,7 +59344,7 @@
         "IsIn": false
       },
       "Name": "MSqrt2",
-      "NativeName": "double_CL_M_SQRT2",
+      "NativeName": "CL_M_SQRT2",
       "Value": "1.41421356237309504880"
     },
     {
@@ -58527,8 +59361,25 @@
         "IsIn": false
       },
       "Name": "MSqrt2F",
-      "NativeName": "float_CL_M_SQRT2_F",
+      "NativeName": "CL_M_SQRT2_F",
       "Value": "1.414213562f"
+    },
+    {
+      "Type": {
+        "IndirectionLevels": 0,
+        "ArrayDimensions": 0,
+        "Name": "int",
+        "Group": null,
+        "OriginalName": null,
+        "OriginalGroup": null,
+        "GenericTypes": [],
+        "IsByRef": false,
+        "IsOut": false,
+        "IsIn": false
+      },
+      "Name": "NameVersionMaxNameSize",
+      "NativeName": "CL_NAME_VERSION_MAX_NAME_SIZE",
+      "Value": "64"
     },
     {
       "Type": {
@@ -58544,7 +59395,7 @@
         "IsIn": false
       },
       "Name": "Nan",
-      "NativeName": "float_CL_NAN",
+      "NativeName": "CL_NAN",
       "Value": "float.NaN"
     },
     {
@@ -58561,7 +59412,7 @@
         "IsIn": false
       },
       "Name": "PartitionByCountsListEndExt",
-      "NativeName": "int_CL_PARTITION_BY_COUNTS_LIST_END_EXT",
+      "NativeName": "CL_PARTITION_BY_COUNTS_LIST_END_EXT",
       "Value": "0"
     },
     {
@@ -58578,7 +59429,7 @@
         "IsIn": false
       },
       "Name": "PartitionByNamesListEndExt",
-      "NativeName": "int_CL_PARTITION_BY_NAMES_LIST_END_EXT",
+      "NativeName": "CL_PARTITION_BY_NAMES_LIST_END_EXT",
       "Value": "0 - 1"
     },
     {
@@ -58595,7 +59446,7 @@
         "IsIn": false
       },
       "Name": "PartitionByNamesListEndIntel",
-      "NativeName": "int_CL_PARTITION_BY_NAMES_LIST_END_INTEL",
+      "NativeName": "CL_PARTITION_BY_NAMES_LIST_END_INTEL",
       "Value": "-1"
     },
     {
@@ -58612,7 +59463,7 @@
         "IsIn": false
       },
       "Name": "PropertiesListEndExt",
-      "NativeName": "int_CL_PROPERTIES_LIST_END_EXT",
+      "NativeName": "CL_PROPERTIES_LIST_END_EXT",
       "Value": "0"
     },
     {
@@ -58629,7 +59480,7 @@
         "IsIn": false
       },
       "Name": "ScharMax",
-      "NativeName": "int_CL_SCHAR_MAX",
+      "NativeName": "CL_SCHAR_MAX",
       "Value": "127"
     },
     {
@@ -58646,7 +59497,7 @@
         "IsIn": false
       },
       "Name": "ScharMin",
-      "NativeName": "int_CL_SCHAR_MIN",
+      "NativeName": "CL_SCHAR_MIN",
       "Value": "-127 - 1"
     },
     {
@@ -58663,7 +59514,7 @@
         "IsIn": false
       },
       "Name": "ShrtMax",
-      "NativeName": "short_CL_SHRT_MAX",
+      "NativeName": "CL_SHRT_MAX",
       "Value": "32767"
     },
     {
@@ -58680,7 +59531,7 @@
         "IsIn": false
       },
       "Name": "ShrtMin",
-      "NativeName": "short_CL_SHRT_MIN",
+      "NativeName": "CL_SHRT_MIN",
       "Value": "-32767 - 1"
     },
     {
@@ -58697,7 +59548,7 @@
         "IsIn": false
       },
       "Name": "UcharMax",
-      "NativeName": "int_CL_UCHAR_MAX",
+      "NativeName": "CL_UCHAR_MAX",
       "Value": "255"
     },
     {
@@ -58714,7 +59565,7 @@
         "IsIn": false
       },
       "Name": "UintMax",
-      "NativeName": "uint_CL_UINT_MAX",
+      "NativeName": "CL_UINT_MAX",
       "Value": "0xffffffffU"
     },
     {
@@ -58731,7 +59582,7 @@
         "IsIn": false
       },
       "Name": "UlongMax",
-      "NativeName": "ulong_CL_ULONG_MAX",
+      "NativeName": "CL_ULONG_MAX",
       "Value": "0xFFFFFFFFFFFFFFFFUL"
     },
     {
@@ -58748,8 +59599,59 @@
         "IsIn": false
       },
       "Name": "UshrtMax",
-      "NativeName": "ushort_CL_USHRT_MAX",
+      "NativeName": "CL_USHRT_MAX",
       "Value": "65535"
+    },
+    {
+      "Type": {
+        "IndirectionLevels": 0,
+        "ArrayDimensions": 0,
+        "Name": "int",
+        "Group": null,
+        "OriginalName": null,
+        "OriginalGroup": null,
+        "GenericTypes": [],
+        "IsByRef": false,
+        "IsOut": false,
+        "IsIn": false
+      },
+      "Name": "VersionMajorBits",
+      "NativeName": "CL_VERSION_MAJOR_BITS",
+      "Value": "10"
+    },
+    {
+      "Type": {
+        "IndirectionLevels": 0,
+        "ArrayDimensions": 0,
+        "Name": "int",
+        "Group": null,
+        "OriginalName": null,
+        "OriginalGroup": null,
+        "GenericTypes": [],
+        "IsByRef": false,
+        "IsOut": false,
+        "IsIn": false
+      },
+      "Name": "VersionMinorBits",
+      "NativeName": "CL_VERSION_MINOR_BITS",
+      "Value": "10"
+    },
+    {
+      "Type": {
+        "IndirectionLevels": 0,
+        "ArrayDimensions": 0,
+        "Name": "int",
+        "Group": null,
+        "OriginalName": null,
+        "OriginalGroup": null,
+        "GenericTypes": [],
+        "IsByRef": false,
+        "IsOut": false,
+        "IsIn": false
+      },
+      "Name": "VersionPatchBits",
+      "NativeName": "CL_VERSION_PATCH_BITS",
+      "Value": "12"
     }
   ]
 }
