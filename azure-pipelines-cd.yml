@@ -26,12 +26,7 @@ jobs:
     displayName: 'Bind'
   - script: dotnet pack --configuration $(buildConfiguration)
     displayName: 'Build/Pack'
+  - script: dotnet nuget push -s https://api.nuget.org/v3/index.json -k $(NUGET_API_KEY) -n build/output_packages/Silk.NET*.nupkg
+    displayName: 'Push to NuGet'
   - publish: build/output_packages
     artifact: NuGet Packages
-  - task: DotNetCoreCLI@2
-    displayName: 'Push to NuGet'
-    inputs:
-      command: 'push'
-      packagesToPush: 'build/output_packages/*.nupkg'
-      nuGetFeedType: 'external'
-      publishFeedCredentials: 'NuGet Public'
