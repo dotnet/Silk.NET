@@ -21,6 +21,9 @@ using Attribute = Silk.NET.BuildTools.Common.Attribute;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
+// Lots of string literals that don't follow the normal style here
+// ReSharper disable StringLiteralTypo
+
 namespace Silk.NET.BuildTools.Converters.Readers
 {
     public class OpenGLReader : IReader
@@ -210,7 +213,6 @@ namespace Silk.NET.BuildTools.Converters.Readers
             };
         }
         
-        /// </returns>
         [CanBeNull]
         [ContractAnnotation
         (

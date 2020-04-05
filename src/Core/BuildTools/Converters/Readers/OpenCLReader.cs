@@ -23,12 +23,16 @@ using Attribute = Silk.NET.BuildTools.Common.Attribute;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
+// Lots of string literals that don't follow the normal style here
+// ReSharper disable StringLiteralTypo
+
 namespace Silk.NET.BuildTools.Converters.Readers
 {
+    /// <summary>
+    /// API reader for OpenCL.
+    /// </summary>
     public class OpenCLReader : IReader
     {
-        private static readonly string[] Apis = "opencl".Split('|');
-
         private static readonly Dictionary<string, string> Constants = new Dictionary<string, string>
         {
             // Constants
@@ -116,11 +120,23 @@ namespace Silk.NET.BuildTools.Converters.Readers
             {"int_CL_PARTITION_BY_NAMES_LIST_END_EXT", "0 - 1"},
             {"int_CL_PARTITION_BY_NAMES_LIST_END_INTEL", "-1"},
         };
+        
+        /// <summary>
+        /// Load the OpenCL specification from the stream.
+        /// </summary>
+        /// <param name="stream">The stream to load from.</param>
+        /// <returns></returns>
         public object Load(Stream stream)
         {
             return XDocument.Load(stream);
         }
 
+        /// <summary>
+        /// Read the structs from the specification.
+        /// </summary>
+        /// <param name="obj">The specification to read from.</param>
+        /// <param name="opts">The options to use while reading.</param>
+        /// <returns>A list of all structs in the specification.</returns>
         public IEnumerable<Struct> ReadStructs(object obj, ProfileConverterOptions opts)
         {
             var xd = (XDocument) obj;
@@ -184,7 +200,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             return ret;
         }
 
-        private Type ConvertType(TypeSpec type)
+        private static Type ConvertType(TypeSpec type)
         {
             return new Type
             {
@@ -200,6 +216,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
         // Function Parsing
         ////////////////////////////////////////////////////////////////////////////////////////
 
+        /// <summary>
+        /// Read the functions from the specification.
+        /// </summary>
+        /// <param name="obj">The specification to read from.</param>
+        /// <param name="opts">The options to use while reading.</param>
+        /// <returns>A list of all functions in the specification.</returns>
         public IEnumerable<Function> ReadFunctions(object obj, ProfileConverterOptions opts)
         {
             var doc = obj as XDocument;
@@ -207,13 +229,21 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 .Elements("command")
                 .Select(x => TranslateCommand(x, opts))
                 .ToDictionary(x => x.Attribute("name")?.Value, x => x);
-            var apis = doc.Element("registry").Elements("feature").Concat(doc.Element("registry").Elements("extensions").Elements("extension"));
-            var removals = doc.Element("registry").Elements("feature")
+            
+            var apis = doc.Element("registry")?.Elements("feature")
+                .Concat(doc.Element("registry")?
+                    .Elements("extensions")
+                    .Elements("extension") ?? throw new InvalidDataException());
+            
+            Debug.Assert(apis != null, nameof(apis) + " != null");
+            
+            var removals = doc.Element("registry")?.Elements("feature")
                 .Elements("remove")
                 .Elements("command")
                 .Attributes("name")
                 .Select(x => x.Value)
                 .ToList();
+
             foreach (var api in apis)
             {
                 foreach (var requirement in api.Elements("require"))
@@ -223,7 +253,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                   api.Attribute("supported")?.Value ??
                                   "opencl";
                     var apiVersion = api.Attribute("number") != null
-                        ? Version.Parse(api.Attribute("number").Value)
+                        ? Version.Parse(api.Attribute("number")?.Value ?? throw new InvalidDataException())
                         : null;
                     foreach (var name in apiName.Split('|'))
                     {
@@ -269,6 +299,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
             }
         }
         
+        /// <summary>
+        /// Parse the type signature of the provided element.
+        /// </summary>
+        /// <param name="typeElement">The element to parse.</param>
+        /// <returns>The type signature.</returns>
         [NotNull]
         public static Type ParseTypeSignature([NotNull] XElement typeElement)
         {
@@ -285,6 +320,13 @@ namespace Silk.NET.BuildTools.Converters.Readers
             return ret;
         }
         
+        /// <summary>
+        /// Parse the type signature of the provided string.
+        /// </summary>
+        /// <param name="type">The type to parse.</param>
+        /// <param name="original">The original type string. Can be omitted.</param>
+        /// <returns>The parsed type.</returns>
+        /// <exception cref="InvalidDataException">Thrown if type tries to be both a pointer and array.</exception>
         [NotNull]
         public static Type ParseTypeSignature([NotNull] string type, string original = null)
         {
@@ -352,7 +394,6 @@ namespace Silk.NET.BuildTools.Converters.Readers
             };
         }
         
-        /// </returns>
         [CanBeNull]
         [ContractAnnotation
         (
