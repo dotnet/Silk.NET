@@ -26,7 +26,7 @@ jobs:
     displayName: 'Bind'
   - script: dotnet pack --configuration $(buildConfiguration)
     displayName: 'Build/Pack'
-  - script: dotnet nuget push build/output_packages/Silk.NET.*.nupkg -s https://api.nuget.org/v3/index.json -k $(NUGET_API_KEY) -n true
+  - script: dotnet nuget push **/Silk.NET.*.nupkg -s https://api.nuget.org/v3/index.json -k $(NUGET_API_KEY) -n true --skip-duplicate true
     displayName: 'Push to NuGet'
   - publish: build/output_packages
     artifact: NuGet Packages
