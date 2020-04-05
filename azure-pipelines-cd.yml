@@ -28,13 +28,10 @@ jobs:
     displayName: 'Build/Pack'
   - publish: build/output_packages
     artifact: NuGet Packages
-  - task: NuGetAuthenticate@0
-    inputs:
-      nuGetServiceConnections: 'NuGet Public'
-  - task: NuGetCommand@2
-    condition: ne(variables['Build.Reason'], 'PullRequest')
+  - task: DotNetCoreCLI@2
+    displayName: 'Push to NuGet'
     inputs:
       command: 'push'
       packagesToPush: 'build/output_packages/*.nupkg'
       nuGetFeedType: 'external'
-      allowPackageConflicts: true
+      publishFeedCredentials: 'NuGet Public'
