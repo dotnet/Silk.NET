@@ -33,8 +33,8 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 return new StructureDefinition(xe.GetNameAttribute(), ret.Members);
             }
 
-            string name = xe.GetNameAttribute();
-            MemberSpec[] members = xe.Elements
+            var name = xe.GetNameAttribute();
+            var members = xe.Elements
                     ("member")
                 .Where(x => !(x.Element("name") is null))
                 .Select(memberx => MemberSpec.CreateFromXml(memberx))

@@ -1,45 +1,72 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Xml.Linq;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
 {
+    /// <summary>
+    /// The definition of a handle.
+    /// </summary>
     public class HandleDefinition
     {
+        /// <summary>
+        /// The name of this handle.
+        /// </summary>
         public string Name { get; }
-        public bool Dispatchable { get; }
+        
+        /// <summary>
+        /// Whether or not this handle can be dispatched.
+        /// </summary>
+        public bool CanBeDispatched { get; }
+        
+        /// <summary>
+        /// The parent of this handle.
+        /// </summary>
         public string Parent { get; }
 
-        public HandleDefinition(string name, bool dispatchable, string parent)
+        /// <summary>
+        /// Create a new HandleDefinition.
+        /// </summary>
+        /// <param name="name">The name of this handle.</param>
+        /// <param name="canBeDispatched">Whether or not this handle can be dispatched.</param>
+        /// <param name="parent">The parent of this handle.</param>
+        public HandleDefinition(string name, bool canBeDispatched, string parent)
         {
             Name = name;
-            Dispatchable = dispatchable;
+            CanBeDispatched = canBeDispatched;
             Parent = parent;
         }
 
+        /// <summary>
+        /// Create a new handle definition from XML.
+        /// </summary>
+        /// <param name="xe">The XML to create from.</param>
+        /// <returns>A new HandleDefinition.</returns>
         public static HandleDefinition CreateFromXml(XElement xe)
         {
             Require.NotNull(xe);
 
             if (!(xe.Attribute("alias") is null))
             {
+                Debug.Assert(xe.Document != null, "xe.Document != null");
                 var ret = CreateFromXml
                 (
-                    xe.Document.Element("registry")
+                    xe.Document.Element("registry")?
                         .Elements("types")
                         .Elements("type")
-                        .Where(typex => typex.HasCategoryAttribute("handle"))
-                        .FirstOrDefault(x => x.GetNameElementOrNull() == xe.Attribute("alias").Value) ?? throw new Exception("wat")
+                        .Where(type => type.HasCategoryAttribute("handle"))
+                        .FirstOrDefault(x => x.GetNameElementOrNull() == xe.Attribute("alias")?.Value) ?? throw new Exception("wat")
                 );
                 
-                return new HandleDefinition(xe.GetNameAttribute(), ret.Dispatchable, ret.Parent);
+                return new HandleDefinition(xe.GetNameAttribute(), ret.CanBeDispatched, ret.Parent);
             }
             
-            string name = xe.GetNameElement();
-            bool dispatchable = xe.GetTypeElement() == "VK_DEFINE_HANDLE";
-            string parent = xe.Attribute("parent")?.Value;
+            var name = xe.GetNameElement();
+            var canBeDispatched = xe.GetTypeElement() == "VK_DEFINE_HANDLE";
+            var parent = xe.Attribute("parent")?.Value;
 
-            return new HandleDefinition(name, dispatchable, parent);
+            return new HandleDefinition(name, canBeDispatched, parent);
         }
     }
 }

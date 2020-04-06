@@ -17,9 +17,9 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
         public static TypedefDefinition CreateFromXml(XElement xe)
         {
-            string name = xe.GetNameElement();
-            string requires = xe.Attribute("requires")?.Value;
-            string type = xe.GetTypeElement();
+            var name = xe.GetNameElement();
+            var requires = xe.Attribute("requires")?.Value;
+            var type = xe.GetTypeElement();
             return new TypedefDefinition(name, requires, type);
         }
 

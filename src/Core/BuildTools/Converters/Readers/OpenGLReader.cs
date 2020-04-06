@@ -247,6 +247,20 @@ namespace Silk.NET.BuildTools.Converters.Readers
             };
         }
         
+        /// <summary>
+        /// Deduce a parameter's Count from an XML signature.
+        /// </summary>
+        /// <param name="countData">The count data.</param>
+        /// <param name="hasComputedCount">Have we successfully computed the count?</param>
+        /// <param name="computedCountParameterNames">The names of all computed count parameters.
+        /// If <paramref name="hasComputedCount"/> is false, this is null.</param>
+        /// <param name="hasValueReference">Does this have a value reference?</param>
+        /// <param name="valueReferenceName">The value reference name.
+        /// if <paramref name="hasValueReference"/> is false, this is null.</param>
+        /// <param name="valueReferenceExpression">The value reference expression.
+        /// if <paramref name="hasValueReference"/> is false, this is null.</param>
+        /// <returns>The computed Count.</returns>
+        /// <exception cref="InvalidDataException">Thrown if no valid count could be deduced.</exception>
         [CanBeNull]
         [ContractAnnotation
         (
@@ -338,7 +352,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             // check for count with expression.
             if (char.IsLetter(countDataSpan[0]))
             {
-                int i = 1;
+                var i = 1;
                 while (char.IsLetterOrDigit(countDataSpan[i]))
                 {
                     i++;
@@ -738,8 +752,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             foreach (var group in groups)
             {
-                foreach (var (apiName, apiVersion) in doc.Element("registry")
-                    ?.Elements("feature")
+                foreach (var (apiName, apiVersion) in registry
+                    .Elements("feature")
                     .Select(x => (x.Attribute("api")?.Value, x.Attribute("number")?.Value))
                     .Distinct())
                 {

@@ -103,7 +103,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     h.Name, new Struct
                     {
                         Fields = new List<Field>
-                            {new Field {Name = "Handle", Type = new Type {Name = h.Dispatchable ? "IntPtr" : "ulong"}}},
+                            {new Field {Name = "Handle", Type = new Type {Name = h.CanBeDispatched ? "IntPtr" : "ulong"}}},
                         Name = Naming.TranslateLite(TrimName(h.Name, opts), prefix),
                         NativeName = h.Name
                     }
@@ -276,7 +276,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             (
                                 x => new Parameter
                                 {
-                                    Count = x.IsNullTerminted ? null :
+                                    Count = x.IsNullTerminated ? null :
                                         x.ElementCountSymbolic != null ? new Count(x.ElementCountSymbolic.Split(',')) :
                                         new Count(x.ElementCount),
                                     Flow = ConvertFlow(x.Modifier), Name = x.Name, Type = ConvertType(x.Type)
