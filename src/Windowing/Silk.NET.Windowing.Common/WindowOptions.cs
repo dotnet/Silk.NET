@@ -34,6 +34,7 @@ namespace Silk.NET.Windowing.Common
             ShouldSwapAutomatically = opts.ShouldSwapAutomatically;
             VideoMode = opts.VideoMode;
             PreferredDepthBufferBits = opts.PreferredDepthBufferBits;
+            TransparentFramebuffer = false;
         }
 
         /// <inheritdoc />
@@ -81,6 +82,9 @@ namespace Silk.NET.Windowing.Common
         /// <inheritdoc />
         public int RunningSlowTolerance { get; set; }
 
+        /// <inheritdoc />
+        public bool TransparentFramebuffer { get; set; }
+
         /// <summary>
         /// Creates a new WindowOptions struct.
         /// </summary>
@@ -100,7 +104,8 @@ namespace Silk.NET.Windowing.Common
             int isRunningSlowlyThreshold,
             bool shouldSwapAutomatically,
             VideoMode videoMode,
-            int? preferredDepthBufferBits = null
+            int? preferredDepthBufferBits = null,
+            bool transparentFramebuffer = false
         )
         {
             IsVisible = isVisible;
@@ -118,6 +123,7 @@ namespace Silk.NET.Windowing.Common
             ShouldSwapAutomatically = shouldSwapAutomatically;
             VideoMode = videoMode;
             PreferredDepthBufferBits = preferredDepthBufferBits;
+            TransparentFramebuffer = transparentFramebuffer;
         }
 
         /// <summary>

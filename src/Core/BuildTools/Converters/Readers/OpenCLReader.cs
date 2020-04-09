@@ -115,6 +115,13 @@ namespace Silk.NET.BuildTools.Converters.Readers
             {"int_CL_DEVICE_PARTITION_BY_COUNTS_LIST_END", "0x0"},
             {"int_CL_PARTITION_BY_NAMES_LIST_END_EXT", "0 - 1"},
             {"int_CL_PARTITION_BY_NAMES_LIST_END_INTEL", "-1"},
+            
+            // Versioning
+            {"int_CL_VERSION_MAJOR_BITS", "10"},
+            {"int_CL_VERSION_MINOR_BITS", "10"},
+            {"int_CL_VERSION_PATCH_BITS", "12"},
+            {"int_CL_NAME_VERSION_MAX_NAME_SIZE", "64"},
+            
         };
         public object Load(Stream stream)
         {
@@ -866,8 +873,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
             (
                 x => new Constant
                 {
-                    Name = Naming.Translate(TrimName(GetName(x.Key, out var type), opts), opts.Prefix), NativeName = x.Key,
-                    Type = new Type{Name = type}, Value = x.Value.ToString()
+                    Name = Naming.Translate(TrimName(GetName(x.Key, out var type), opts), opts.Prefix),
+                    NativeName = GetName(x.Key, out _),
+                    Type = new Type {Name = type}, Value = x.Value.ToString()
                 }
             );
         }

@@ -1,0 +1,19 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
+
+using System;
+
+namespace Silk.NET.Vulkan
+{
+    [Flags()]
+    public enum CullModeFlags
+    {
+        CullModeNone = 0,
+        CullModeFrontBit = 1,
+        CullModeBackBit = 2,
+        CullModeFrontAndBack = 3,
+    }
+}

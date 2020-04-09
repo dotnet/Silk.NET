@@ -1,0 +1,85 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+using System;
+using System.Runtime.InteropServices;
+using System.Text;
+using Silk.NET.OpenCL;
+using Silk.NET.Core.Loader;
+using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
+using Ultz.SuperInvoke;
+
+namespace Silk.NET.OpenCL.Extensions.INTEL
+{
+    [Extension("INTEL_accelerator")]
+    public abstract unsafe partial class IntelAccelerator : NativeExtension<CL>
+    {
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "clCreateAcceleratorINTEL")]
+        public abstract unsafe IntPtr CreateAccelerator([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] UIntPtr descriptor_size, [Flow(FlowDirection.In)] void* descriptor, [Flow(FlowDirection.Out)] int* errcode_ret);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "clCreateAcceleratorINTEL")]
+        public abstract IntPtr CreateAccelerator<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] UIntPtr descriptor_size, [Flow(FlowDirection.In)] Span<T0> descriptor, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL")]
+        public abstract unsafe int GetAcceleratorInfo([Flow(FlowDirection.In)] IntPtr accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL")]
+        public abstract int GetAcceleratorInfo<T0>([Flow(FlowDirection.In)] IntPtr accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "clReleaseAcceleratorINTEL")]
+        public abstract int ReleaseAccelerator([Flow(FlowDirection.In)] IntPtr accelerator);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "clRetainAcceleratorINTEL")]
+        public abstract int RetainAccelerator([Flow(FlowDirection.In)] IntPtr accelerator);
+
+        public unsafe IntPtr CreateAccelerator([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] uint descriptor_size, [Flow(FlowDirection.In)] void* descriptor, [Flow(FlowDirection.Out)] int* errcode_ret)
+        {
+            // IntPtrOverloader
+            return CreateAccelerator(new IntPtr(context), accelerator_type, new UIntPtr(descriptor_size), descriptor, errcode_ret);
+        }
+
+        public unsafe IntPtr CreateAccelerator<T0>([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] uint descriptor_size, [Flow(FlowDirection.In)] Span<T0> descriptor, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        {
+            // IntPtrOverloader
+            return CreateAccelerator(new IntPtr(context), accelerator_type, new UIntPtr(descriptor_size), descriptor, errcode_ret);
+        }
+
+        public unsafe int GetAcceleratorInfo([Flow(FlowDirection.In)] int accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] uint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret)
+        {
+            // IntPtrOverloader
+            return GetAcceleratorInfo(new IntPtr(accelerator), param_name, new UIntPtr(param_value_size), param_value, param_value_size_ret);
+        }
+
+        public unsafe int GetAcceleratorInfo<T0>([Flow(FlowDirection.In)] int accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] uint param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged
+        {
+            // IntPtrOverloader
+            return GetAcceleratorInfo(new IntPtr(accelerator), param_name, new UIntPtr(param_value_size), param_value, param_value_size_ret);
+        }
+
+        public unsafe int ReleaseAccelerator([Flow(FlowDirection.In)] int accelerator)
+        {
+            // IntPtrOverloader
+            return ReleaseAccelerator(new IntPtr(accelerator));
+        }
+
+        public unsafe int RetainAccelerator([Flow(FlowDirection.In)] int accelerator)
+        {
+            // IntPtrOverloader
+            return RetainAccelerator(new IntPtr(accelerator));
+        }
+
+        public IntelAccelerator(ref NativeApiContext ctx)
+            : base(ref ctx)
+        {
+        }
+    }
+}
+

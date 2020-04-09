@@ -5,6 +5,7 @@
 
 using System;
 using System.Numerics;
+using System.Runtime.InteropServices;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Ultz.SuperInvoke;
@@ -165,7 +166,11 @@ namespace Silk.NET.OpenAL
         public abstract unsafe void SetSourceProperty(uint source, SourceVector3 param, float* value);
 
         /// <inheritdoc />
+        [Obsolete("Kept in for backwards compatibility. Please use the signature that takes a bool instead of an int.")]
         public abstract void SetSourceProperty(uint source, SourceBoolean param, int value);
+
+        /// <inheritdoc />
+        public abstract void SetSourceProperty(uint source, SourceBoolean param, [MarshalAs(UnmanagedType.I4)] bool value);
         
         /// <inheritdoc />
         public abstract void SetSourceProperty(uint source, SourceInteger param, int value);
@@ -175,9 +180,22 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         public abstract unsafe void SetSourceProperty(uint source, SourceInteger param, int* value);
+        
+        /// <inheritdoc />
+        public abstract void SetSourceProperty(uint source, SourceInteger param, uint value);
+
+        /// <inheritdoc />
+        public abstract void SetSourceProperty(uint source, SourceInteger param, uint value1, uint value2, uint value3);
+
+        /// <inheritdoc />
+        public abstract unsafe void SetSourceProperty(uint source, SourceInteger param, uint* value);
 
         /// <inheritdoc />
         public abstract void GetSourceProperty(uint source, SourceFloat param, out float value);
+
+        /// <inheritdoc />
+        public abstract void GetSourceProperty(uint source, SourceBoolean param,
+            [MarshalAs(UnmanagedType.I4)] out bool value);
 
         /// <inheritdoc />
         public abstract void GetSourceProperty(uint source, SourceVector3 param, out float value1, out float value2,

@@ -94,10 +94,8 @@ namespace Silk.NET.Input.Desktop
                     (_buttons[i].Pressed ? ButtonUp : ButtonDown)?.Invoke
                         (this, _buttons[i] = new Button((ButtonName) i, i, state.Buttons[i] == 1));
                 }
-                else
-                {
-                    _buttons[i] = new Button((ButtonName) i, i, state.Buttons[i] == 1);
-                }
+                
+                _buttons[i] = new Button((ButtonName) i, i, state.Buttons[i] == 1);
             }
 
             // Left Thumbstick

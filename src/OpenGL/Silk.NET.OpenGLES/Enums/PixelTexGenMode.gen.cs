@@ -1,0 +1,23 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
+
+using System;
+
+namespace Silk.NET.OpenGLES
+{
+    public enum PixelTexGenMode
+    {
+        None = 0x0,
+        Rgb = 0x1907,
+        Rgba = 0x1908,
+        Luminance = 0x1909,
+        LuminanceAlpha = 0x190A,
+        PixelTexGenAlphaReplaceSgix = 0x8187,
+        PixelTexGenAlphaNoReplaceSgix = 0x8188,
+        PixelTexGenAlphaLSSgix = 0x8189,
+        PixelTexGenAlphaMSSgix = 0x818A,
+    }
+}
