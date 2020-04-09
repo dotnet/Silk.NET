@@ -19,6 +19,9 @@ really make sense anyway, as API instances would depend on a static state.
 - [ ] Approved
 - [ ] Implemented
 
+# Points to discuss
+- In 2.0 we could completely remove the GL constructors that use SilkManager (after obsoleting them in the next update), so that each GL instance is tied to an OpenGL context. 
+
 # Proposed API
 ```cs
 // Silk.NET.Core
