@@ -5,7 +5,7 @@
 
 namespace Silk.NET.Intrinsics.Software
 {
-    public partial class SseRegister : IRegister<uint>
+    public partial class SoftwareRegister : IRegister<uint>
     {
         public unsafe WorkUnit<uint>* LengthSquared(WorkUnit<uint>* vector)
         {

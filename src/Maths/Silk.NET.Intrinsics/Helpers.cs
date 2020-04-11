@@ -10,7 +10,6 @@ using System.Runtime.Intrinsics.X86;
 using Silk.NET.Intrinsics.Avx;
 using Silk.NET.Intrinsics.Software;
 using Silk.NET.Intrinsics.Sse;
-using SseRegister = Silk.NET.Intrinsics.Software.SseRegister;
 
 namespace Silk.NET.Intrinsics
 {
@@ -25,7 +24,7 @@ namespace Silk.NET.Intrinsics
             MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization; 
         // ReSharper restore InconsistentNaming
 
-        public static unsafe void Double<T>(WorkUnit<T>* @in, out WorkUnit256<double>* @out) where T : unmanaged
+        public static unsafe bool Double<T>(WorkUnit<T>* @in, out WorkUnit256<double>* @out) where T : unmanaged
         {
             @out = null;
             var flags = @in->Flags;
@@ -33,8 +32,10 @@ namespace Silk.NET.Intrinsics
             {
                 @out = (WorkUnit256<double>*) @in;
             }
+
+            return @out != null;
         }
-        public static unsafe void Float<T>(WorkUnit<T>* @in, out WorkUnit128<float>* @out) where T : unmanaged
+        public static unsafe bool Float<T>(WorkUnit<T>* @in, out WorkUnit128<float>* @out) where T : unmanaged
         {
             @out = null;
             var flags = @in->Flags;
@@ -42,9 +43,12 @@ namespace Silk.NET.Intrinsics
             {
                 @out = (WorkUnit128<float>*) @in;
             }
+
+            return @out != null;
         }
 
         public static unsafe bool IsSseAny(WorkUnit128<float>* vec) => (vec->Flags & WorkUnitFlags.RegisterSseAll) != 0;
+        public static unsafe bool IsAvxAny(WorkUnit128<float>* vec) => (vec->Flags & WorkUnitFlags.RegisterAvxAll) != 0;
         public static unsafe bool IsSse(WorkUnit128<float>* vec) => (vec->Flags & WorkUnitFlags.RegisterSse) != WorkUnitFlags.RegisterSse;
         public static unsafe bool IsSseX64(WorkUnit128<float>* vec) => (vec->Flags & WorkUnitFlags.RegisterSseX64) != WorkUnitFlags.RegisterSseX64;
         public static unsafe bool IsSse2(WorkUnit128<float>* vec) => (vec->Flags & WorkUnitFlags.RegisterSse2) != WorkUnitFlags.RegisterSse2;
@@ -52,6 +56,15 @@ namespace Silk.NET.Intrinsics
         public static unsafe bool IsSse3(WorkUnit128<float>* vec) => (vec->Flags & WorkUnitFlags.RegisterSse3) != WorkUnitFlags.RegisterSse3;
         public static unsafe bool IsSse41(WorkUnit128<float>* vec) => (vec->Flags & WorkUnitFlags.RegisterSse41) != WorkUnitFlags.RegisterSse41;
         public static unsafe bool IsSse41X64(WorkUnit128<float>* vec) => (vec->Flags & WorkUnitFlags.RegisterSse41X64) != WorkUnitFlags.RegisterSse41X64;
+        public static unsafe bool IsSseAny(WorkUnit256<double>* vec) => (vec->Flags & WorkUnitFlags.RegisterSseAll) != 0;
+        public static unsafe bool IsAvxAny(WorkUnit256<double>* vec) => (vec->Flags & WorkUnitFlags.RegisterAvxAll) != 0;
+        public static unsafe bool IsSse(WorkUnit256<double>* vec) => (vec->Flags & WorkUnitFlags.RegisterSse) != WorkUnitFlags.RegisterSse;
+        public static unsafe bool IsSseX64(WorkUnit256<double>* vec) => (vec->Flags & WorkUnitFlags.RegisterSseX64) != WorkUnitFlags.RegisterSseX64;
+        public static unsafe bool IsSse2(WorkUnit256<double>* vec) => (vec->Flags & WorkUnitFlags.RegisterSse2) != WorkUnitFlags.RegisterSse2;
+        public static unsafe bool IsSse2X64(WorkUnit256<double>* vec) => (vec->Flags & WorkUnitFlags.RegisterSse2X64) != WorkUnitFlags.RegisterSse2X64;
+        public static unsafe bool IsSse3(WorkUnit256<double>* vec) => (vec->Flags & WorkUnitFlags.RegisterSse3) != WorkUnitFlags.RegisterSse3;
+        public static unsafe bool IsSse41(WorkUnit256<double>* vec) => (vec->Flags & WorkUnitFlags.RegisterSse41) != WorkUnitFlags.RegisterSse41;
+        public static unsafe bool IsSse41X64(WorkUnit256<double>* vec) => (vec->Flags & WorkUnitFlags.RegisterSse41X64) != WorkUnitFlags.RegisterSse41X64;
         public static unsafe bool Float<T>(T* inPtr, out float* outPtr) where T : unmanaged
         {
             if (*inPtr is float)

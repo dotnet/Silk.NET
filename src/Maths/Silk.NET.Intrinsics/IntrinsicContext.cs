@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Runtime.Intrinsics.Arm;
 using System.Runtime.Intrinsics.X86;
 using Silk.NET.Core.Platform;
@@ -37,19 +38,40 @@ namespace Silk.NET.Intrinsics
         {
             if (Float(ptr, out var floatPtr))
             {
-                if ((CurrentContext & WorkUnitFlags.RegisterAvx) != 0)
+                if ((CurrentContext & WorkUnitFlags.RegisterAvxAll) != 0)
                 {
                     return (WorkUnit<T>*) AVX.ToScalar(floatPtr);
                 }
+                if ((CurrentContext & WorkUnitFlags.RegisterSseAll) != 0)
+                {
+                    return (WorkUnit<T>*) SSE.ToScalar(floatPtr);
+                }
+
+                return (WorkUnit<T>*) SoftwareFallbacks.ToScalar(floatPtr);
             }
             
             if (Double(ptr, out var doublePtr))
             {
-                if ((CurrentContext & WorkUnitFlags.RegisterAvx) != 0)
+                if ((CurrentContext & WorkUnitFlags.RegisterAvxAll) != 0)
                 {
                     return (WorkUnit<T>*) AVX.ToScalar(doublePtr);
                 }
+                if ((CurrentContext & WorkUnitFlags.RegisterSseAll) != 0)
+                {
+                    return (WorkUnit<T>*) SSE.ToScalar(doublePtr);
+                }
+
+                return (WorkUnit<T>*) SoftwareFallbacks.ToScalar(doublePtr);
             }
+            
+            // TODO half(?), int, uint, long, ulong, short, ushort
+
+            if (!(CustomRegister is null))
+            {
+                return CustomRegister.ToScalar(ptr);
+            }
+            
+            throw new NotSupportedException();
         }
     }
 }
