@@ -453,6 +453,7 @@ namespace Silk.NET.Windowing.Desktop
         {
             unsafe
             {
+                Closing?.Invoke();
                 _glfw.SetWindowShouldClose(_windowPtr, true);
             }
         }
