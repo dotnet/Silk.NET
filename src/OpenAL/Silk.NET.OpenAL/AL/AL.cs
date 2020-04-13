@@ -53,94 +53,122 @@ namespace Silk.NET.OpenAL
         public abstract unsafe void BufferData(uint buffer, BufferFormat format, void* data, int size, int frequency);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Bufferf")]
         public abstract void SetBufferProperty(uint buffer, BufferFloat param, float value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Buffer3f")]
         public abstract void SetBufferProperty(uint buffer, BufferVector3 param, float value1, float value2,
             float value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Bufferfv")]
         public abstract void SetBufferProperty(uint buffer, BufferVector3 param, in Vector3 value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Bufferfv")]
         public abstract unsafe void SetBufferProperty(uint buffer, BufferVector3 param, float* value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Bufferi")]
         public abstract void SetBufferProperty(uint buffer, BufferInteger param, int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Buffer3i")]
         public abstract void SetBufferProperty(uint buffer, BufferInteger param, int value1, int value2, int value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Bufferiv")]
         public abstract unsafe void SetBufferProperty(uint buffer, BufferInteger param, int* value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetBufferf")]
         public abstract void GetBufferProperty(uint buffer, BufferFloat param, out float value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetBuffer3f")]
         public abstract void GetBufferProperty(uint buffer, BufferVector3 param, out float value1, out float value2,
             out float value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetBufferfv")]
         public abstract void GetBufferProperty(uint buffer, BufferVector3 param, out Vector3 value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetBufferfv")]
         public abstract unsafe void GetBufferProperty(uint buffer, BufferFloat param, float* value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetBufferi")]
         public abstract void GetBufferProperty(uint buffer, GetBufferInteger param, out int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetBuffer3i")]
         public abstract void GetBufferProperty(uint buffer, GetBufferInteger param, out int value1, out int value2,
             out int value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetBufferiv")]
         public abstract unsafe void GetBufferProperty(uint buffer, GetBufferInteger param, int* value);
 
         /// <inheritdoc />
         public abstract AudioError GetError();
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Listenerf")]
         public abstract void SetListenerProperty(ListenerFloat param, float value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Listener3f")]
         public abstract void SetListenerProperty(ListenerVector3 param, float value1, float value2, float value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Listenerfv")]
         public abstract void SetListenerProperty(ListenerVector3 param, in Vector3 value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Listenerfv")]
         public abstract unsafe void SetListenerProperty(ListenerFloatArray param, float* value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Listeneri")]
         public abstract void SetListenerProperty(ListenerInteger param, int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Listener3i")]
         public abstract void SetListenerProperty(ListenerInteger param, int value1, int value2, int value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Listeneriv")]
         public abstract unsafe void SetListenerProperty(ListenerInteger param, int* value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetListenerf")]
         public abstract void GetListenerProperty(ListenerFloat param, out float value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetListener3f")]
         public abstract void GetListenerProperty(ListenerVector3 param, out float value1, out float value2,
             out float value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetListenerfv")]
         public abstract void GetListenerProperty(ListenerVector3 param, out Vector3 value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetListenerfv")]
         public abstract unsafe void GetListenerProperty(ListenerFloatArray param, float* value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetListeneri")]
         public abstract void GetListenerProperty(ListenerInteger param, out int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetListener3i")]
         public abstract void GetListenerProperty(ListenerInteger param, out int value1, out int value2, out int value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetListeneriv")]
         public abstract unsafe void GetListenerProperty(ListenerInteger param, int* value);
 
         /// <inheritdoc />
@@ -153,92 +181,116 @@ namespace Silk.NET.OpenAL
         public abstract bool IsSource(uint source);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Sourcef")]
         public abstract void SetSourceProperty(uint source, SourceFloat param, float value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Source3f")]
         public abstract void SetSourceProperty(uint source, SourceVector3 param, float value1, float value2,
             float value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Sourcefv")]
         public abstract void SetSourceProperty(uint source, SourceVector3 param, in Vector3 value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Sourcefv")]
         public abstract unsafe void SetSourceProperty(uint source, SourceVector3 param, float* value);
 
         /// <inheritdoc />
         [Obsolete("Kept in for backwards compatibility. Please use the signature that takes a bool instead of an int.")]
+        [NativeApi(EntryPoint = "Sourcei")]
         public abstract void SetSourceProperty(uint source, SourceBoolean param, int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Sourcei")]
         public abstract void SetSourceProperty(uint source, SourceBoolean param, [MarshalAs(UnmanagedType.I4)] bool value);
         
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Sourcei")]
         public abstract void SetSourceProperty(uint source, SourceInteger param, int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Source3i")]
         public abstract void SetSourceProperty(uint source, SourceInteger param, int value1, int value2, int value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Sourceiv")]
         public abstract unsafe void SetSourceProperty(uint source, SourceInteger param, int* value);
         
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Sourcei")]
         public abstract void SetSourceProperty(uint source, SourceInteger param, uint value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Source3i")]
         public abstract void SetSourceProperty(uint source, SourceInteger param, uint value1, uint value2, uint value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Sourceiv")]
         public abstract unsafe void SetSourceProperty(uint source, SourceInteger param, uint* value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetSourcef")]
         public abstract void GetSourceProperty(uint source, SourceFloat param, out float value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetSourcei")]
         public abstract void GetSourceProperty(uint source, SourceBoolean param,
             [MarshalAs(UnmanagedType.I4)] out bool value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetSource3f")]
         public abstract void GetSourceProperty(uint source, SourceVector3 param, out float value1, out float value2,
             out float value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetSourcefv")]
         public abstract void GetSourceProperty(uint source, SourceVector3 param, out Vector3 value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetSourcefv")]
         public abstract unsafe void GetSourceProperty(uint source, SourceFloat param, float* value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetSourcei")]
         public abstract void GetSourceProperty(uint source, GetSourceInteger param, out int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetSource3i")]
         public abstract void GetSourceProperty(uint source, GetSourceInteger param, out int value1, out int value2,
             out int value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetSourceiv")]
         public abstract unsafe void GetSourceProperty(uint source, GetSourceInteger param, int* value);
 
         /// <inheritdoc />
         public abstract void SourcePlay(uint source);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "SourcePlayv")]
         public abstract unsafe void SourcePlay(int count, uint* sources);
 
         /// <inheritdoc />
         public abstract void SourcePause(uint source);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "SourcePausev")]
         public abstract unsafe void SourcePause(int count, uint* sources);
 
         /// <inheritdoc />
         public abstract void SourceStop(uint source);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "SourceStopv")]
         public abstract unsafe void SourceStop(int count, uint* sources);
 
         /// <inheritdoc />
         public abstract void SourceRewind(uint source);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "SourceRewindv")]
         public abstract unsafe void SourceRewind(int count, uint* sources);
 
         /// <inheritdoc />
@@ -257,18 +309,23 @@ namespace Silk.NET.OpenAL
         public abstract bool IsEnabled(Capability capability);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetBoolean")]
         public abstract bool GetStateProperty(StateBoolean param);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetDouble")]
         public abstract double GetStateProperty(StateDouble param);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetFloat")]
         public abstract float GetStateProperty(StateFloat param);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetInteger")]
         public abstract int GetStateProperty(StateInteger param);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetString")]
         public abstract string GetStateProperty(StateString param);
 
         /// <inheritdoc />

@@ -39,8 +39,14 @@ namespace Silk.NET.OpenAL.Extensions.EXT
         public abstract unsafe void CaptureSamples(Device* device, void* buffer, int sampleCount);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetIntegerv")]
         public abstract unsafe void GetContextProperty(Device* device, GetCaptureContextInteger param, int count,
             void* data);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetIntegerv")]
+        public abstract unsafe void GetContextProperty(Device* device, GetCaptureContextInteger param, int count,
+            int* data);
 
         /// <inheritdoc cref="CaptureOpenDevice" />
         public unsafe Device* CaptureOpenDevice<TBufferFormat>
