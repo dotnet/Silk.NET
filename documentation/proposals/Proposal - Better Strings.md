@@ -30,7 +30,7 @@ public struct Char8
 {
     private byte _value; // 8-bit character
     public Char8(byte v) => _value = v;
-    public static implicit operator Char8(char c);
+    public static explicit operator Char8(char c);
     public static implicit operator Char8(byte c);
     // and vice versa
     public char ToChar();
