@@ -30,6 +30,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public abstract unsafe void DeleteAuxiliaryEffectSlots(int count, uint* slots);
 
         /// <inheritdoc />
+        [return: MarshalAs(UnmanagedType.I4)]
         public abstract bool IsAuxiliaryEffectSlot(uint slot);
 
         /// <inheritdoc />
@@ -55,6 +56,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public abstract unsafe void DeleteEffects(int count, uint* effects);
 
         /// <inheritdoc />
+        [return: MarshalAs(UnmanagedType.I4)]
         public abstract bool IsEffect(uint effect);
 
         /// <inheritdoc />
@@ -88,6 +90,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public abstract unsafe void DeleteFilters(int count, uint* filters);
 
         /// <inheritdoc />
+        [return: MarshalAs(UnmanagedType.I4)]
         public abstract bool IsFilter(uint filter);
 
         /// <inheritdoc />

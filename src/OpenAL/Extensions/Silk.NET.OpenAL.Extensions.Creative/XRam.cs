@@ -6,6 +6,7 @@
 using System;
 using System.Buffers;
 using System.ComponentModel;
+using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Native;
 using Ultz.SuperInvoke;
@@ -42,6 +43,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public abstract int GetInteger(int param);
 
         /// <inheritdoc />
+        [return: MarshalAs(UnmanagedType.I4)]
         public abstract bool SetBufferMode(int count, ReadOnlySpan<uint> buffers, int mode);
 
         /// <inheritdoc />
@@ -191,6 +193,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
             throw new InvalidEnumArgumentException(nameof(value), value, typeof(BufferStorageMode));
         }
 
+        [return: MarshalAs(UnmanagedType.I4)]
         public abstract bool IsExtensionPresent(string name);
         public abstract IntPtr GetProcAddress(string name);
         public abstract int GetEnumValue(string name);
