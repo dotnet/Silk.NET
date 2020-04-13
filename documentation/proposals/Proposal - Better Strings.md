@@ -60,7 +60,7 @@ public ref struct String8
     public static implicit operator String8(string x); // not recommended for use, as we'll have to assume the encoding is UTF8.
     public static implicit operator String8(Char8* v); // we don't know the length here, so the backing span will just have a length of 1
     public static implicit operator String8(byte* v); // cast to Char8*, pass to the above.
-    public static implicit operator String8(char* v); // cast to byte*, pass to the above. for maintaining back-compat with Silk.NET 1.0.
+    public static explicit operator String8(char* v); // cast to byte*, pass to the above. for maintaining back-compat with Silk.NET 1.0.
     // and vice versa
     public override string ToString();
     public ref readonly Char8 GetPinnableReference();
