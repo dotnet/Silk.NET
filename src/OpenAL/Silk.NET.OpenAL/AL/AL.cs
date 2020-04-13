@@ -53,48 +53,62 @@ namespace Silk.NET.OpenAL
         public abstract unsafe void BufferData(uint buffer, BufferFormat format, void* data, int size, int frequency);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Bufferf")]
         public abstract void SetBufferProperty(uint buffer, BufferFloat param, float value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Buffer3f")]
         public abstract void SetBufferProperty(uint buffer, BufferVector3 param, float value1, float value2,
             float value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Bufferfv")]
         public abstract void SetBufferProperty(uint buffer, BufferVector3 param, in Vector3 value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Bufferfv")]
         public abstract unsafe void SetBufferProperty(uint buffer, BufferVector3 param, float* value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Bufferi")]
         public abstract void SetBufferProperty(uint buffer, BufferInteger param, int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Buffer3i")]
         public abstract void SetBufferProperty(uint buffer, BufferInteger param, int value1, int value2, int value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Bufferiv")]
         public abstract unsafe void SetBufferProperty(uint buffer, BufferInteger param, int* value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetBufferf")]
         public abstract void GetBufferProperty(uint buffer, BufferFloat param, out float value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetBuffer3f")]
         public abstract void GetBufferProperty(uint buffer, BufferVector3 param, out float value1, out float value2,
             out float value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetBufferfv")]
         public abstract void GetBufferProperty(uint buffer, BufferVector3 param, out Vector3 value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetBufferfv")]
         public abstract unsafe void GetBufferProperty(uint buffer, BufferFloat param, float* value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetBufferi")]
         public abstract void GetBufferProperty(uint buffer, GetBufferInteger param, out int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetBuffer3i")]
         public abstract void GetBufferProperty(uint buffer, GetBufferInteger param, out int value1, out int value2,
             out int value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetBufferiv")]
         public abstract unsafe void GetBufferProperty(uint buffer, GetBufferInteger param, int* value);
 
         /// <inheritdoc />

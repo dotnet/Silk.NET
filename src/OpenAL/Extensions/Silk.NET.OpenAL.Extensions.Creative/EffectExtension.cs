@@ -45,7 +45,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public abstract void GetAuxiliaryEffectSlotProperty(uint slot, EffectSlotInteger param, out int value);
 
         /// <inheritdoc />
-        [NativeApi(EntryPoint = "SetAuxiliaryEffectSlotf")]
+        [NativeApi(EntryPoint = "GetAuxiliaryEffectSlotf")]
         public abstract void GetAuxiliaryEffectSlotProperty(uint slot, EffectSlotFloat param, out float value);
 
         /// <inheritdoc />
