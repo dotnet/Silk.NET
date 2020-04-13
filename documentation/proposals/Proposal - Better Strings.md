@@ -57,7 +57,7 @@ public ref struct String8
     private Span<Char8> _value;
     public String8(Span<Char8> v) => _value = v;
     public static implicit operator String8(Span<Char8> v);
-    public static implicit operator String8(string x); // not recommended for use, as we'll have to assume the encoding is UTF8.
+    public static implicit operator String8(string x); // not recommended for use, as we'll have to assume the encoding the user wants is UTF8.
     public static implicit operator String8(Char8* v); // treat the Char8* as null-terminated
     public static implicit operator String8(byte* v); // cast to Char8*, pass to the above.
     public static explicit operator String8(char* v); // cast to byte*, pass to the above. for maintaining back-compat with Silk.NET 1.0.
