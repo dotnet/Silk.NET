@@ -48,7 +48,7 @@ public struct Char16
 public struct Char32
 {
     private uint _value; // 32-bit character
-    public Char32(char v0, char v1) => _value = ((uint)v0 << 16) + (uint)v1;
+    public Char32(char hi, char lo) => _value = unchecked((uint) char.ConvertToUtf32(hi, lo));
     // insert appropriate operators and methods here as seen in Char8
 }
 
