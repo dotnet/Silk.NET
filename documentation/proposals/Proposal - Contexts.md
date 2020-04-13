@@ -43,6 +43,7 @@ public interface IView
      // NOTE: Still need to discuss nullability attributes
 +    IGLContext? Context { get; }
 }
+```
 
 ```diff
 // Silk.NET.OpenGL
