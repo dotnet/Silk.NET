@@ -788,6 +788,7 @@ namespace Silk.NET.Windowing.Desktop
             Update?.Invoke(delta);            
         }
 
+        private int? _lastVs;
         /// <summary>
         /// Run an OnRender event.
         /// </summary>
@@ -830,9 +831,18 @@ namespace Silk.NET.Windowing.Desktop
             _renderedWithinPeriod = false;
 
             // This has to be called on the thread with the graphics context
-            if (VSync == VSyncMode.Adaptive)
+            var vs = VSync switch
             {
-                _glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
+                VSyncMode.Off => 0,
+                VSyncMode.On => 1,
+                VSyncMode.Adaptive => IsRunningSlowly ? 0 : 1,
+                _ => 0
+            };
+
+            if (_lastVs is null || _lastVs.Value != vs)
+            {
+                _lastVs = vs;
+                _glfw.SwapInterval(vs);
             }
 
             Render?.Invoke(delta);

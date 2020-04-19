@@ -37,9 +37,16 @@ namespace Triangle
         public static void Main(string[] args)
         {
 #if MINIMAL
-            _window = Window.GetView(ViewOptions.Default);
+            var opts = ViewOptions.Default;
+            opts.FramesPerSecond = 90;
+            opts.UpdatesPerSecond = 90;
+            opts.VSync = VSyncMode.Off;
+            _window = Window.GetView(opts);
 #else
-            _window = Window.Create(WindowOptions.Default);
+            var opts = WindowOptions.Default;
+            opts.FramesPerSecond = 90;
+            opts.UpdatesPerSecond = 90;
+            _window = Window.Create(opts);
 #endif
             _window.Load += Load;
             _window.Render += RenderFrame;
@@ -71,6 +78,15 @@ namespace Triangle
             _gl.VertexAttribPointer(0, 3, GLEnum.Float, false, 3 * sizeof(float), null);
             _gl.EnableVertexAttribArray(0);
             _gl.BindBuffer(GLEnum.ArrayBuffer, _vertexBufferObject);
+            _window.Update += WindowOnUpdate;
+        }
+
+        private static void WindowOnUpdate(double obj)
+        {
+            if (_window is IWindow w)
+            {
+                w.Title = "FPS " + Math.Ceiling(1d / obj);
+            }
         }
 
         private static void OnDebug
