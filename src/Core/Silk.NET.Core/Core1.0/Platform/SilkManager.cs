@@ -5,12 +5,15 @@
 
 using System;
 using System.Collections.Generic;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Platform
 {
     /// <summary>
     /// Contains properties and methods for resolving platform locals.
     /// </summary>
+    [Obsolete("SilkManager is deprecated and will be removed in 2.0.")]
     public static class SilkManager
     {
         private static readonly Dictionary<Type, object> platformObjects = new Dictionary<Type, object>();
@@ -38,5 +41,9 @@ namespace Silk.NET.Core.Platform
         {
             return platformObjects.ContainsKey(typeof(T));
         }
+
+        // Temp methods for supporting the new context-based loading systems
+        public static GLSymbolLoader Get(IGLContext ctx) => new ContextLoader(ctx);
+        public static Ultz.SuperInvoke.Loader.LibraryLoader Get(INativeContext ctx) => new ContextLoader(ctx);
     }
 }
