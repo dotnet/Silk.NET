@@ -3,326 +3,328 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using Silk.NET.Core.Math;
+
 namespace Silk.NET.Intrinsics.Software
 {
-    public partial struct SoftwareRegister : IRegister<int>
+    public partial struct SoftwareRegister : IRegister<Half>
     {
-        public WorkUnit<int> LengthSquared(WorkUnit<int> vector)
+        public WorkUnit<Half> LengthSquared(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Length(WorkUnit<int> vector)
+        public WorkUnit<Half> Length(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Normalize2(WorkUnit<int> vector)
+        public WorkUnit<Half> Normalize2(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> NormalizeApprox2(WorkUnit<int> vector)
+        public WorkUnit<Half> NormalizeApprox2(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Normalize3(WorkUnit<int> vector)
+        public WorkUnit<Half> Normalize3(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> NormalizeApprox3(WorkUnit<int> vector)
+        public WorkUnit<Half> NormalizeApprox3(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Normalize4(WorkUnit<int> vector)
+        public WorkUnit<Half> Normalize4(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> NormalizeApprox4(WorkUnit<int> vector)
+        public WorkUnit<Half> NormalizeApprox4(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Conjugate(WorkUnit<int> vector)
+        public WorkUnit<Half> Conjugate(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Inverse(WorkUnit<int> vector)
+        public WorkUnit<Half> Inverse(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> DotProduct2(WorkUnit<int> vector)
+        public WorkUnit<Half> DotProduct2(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> DotProduct3(WorkUnit<int> vector)
+        public WorkUnit<Half> DotProduct3(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> DotProduct4(WorkUnit<int> vector)
+        public WorkUnit<Half> DotProduct4(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Add(WorkUnit<int> left, WorkUnit<int> right)
+        public WorkUnit<Half> Add(WorkUnit<Half> left, WorkUnit<Half> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Subtract(WorkUnit<int> left, WorkUnit<int> right)
+        public WorkUnit<Half> Subtract(WorkUnit<Half> left, WorkUnit<Half> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Equal(WorkUnit<int> left, WorkUnit<int> right)
+        public WorkUnit<Half> Equal(WorkUnit<Half> left, WorkUnit<Half> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> NotEqual(WorkUnit<int> left, WorkUnit<int> right)
+        public WorkUnit<Half> NotEqual(WorkUnit<Half> left, WorkUnit<Half> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Negate(WorkUnit<int> vector)
+        public WorkUnit<Half> Negate(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Lerp(WorkUnit<int> left, WorkUnit<int> right, WorkUnit<int> amount)
+        public WorkUnit<Half> Lerp(WorkUnit<Half> left, WorkUnit<Half> right, WorkUnit<Half> amount)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Slerp(WorkUnit<int> left, WorkUnit<int> right, WorkUnit<int> amount)
+        public WorkUnit<Half> Slerp(WorkUnit<Half> left, WorkUnit<Half> right, WorkUnit<Half> amount)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Concatenate(WorkUnit<int> left, WorkUnit<int> right)
+        public WorkUnit<Half> Concatenate(WorkUnit<Half> left, WorkUnit<Half> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Multiply(WorkUnit<int> left, WorkUnit<int> right)
+        public WorkUnit<Half> Multiply(WorkUnit<Half> left, WorkUnit<Half> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Transform2(WorkUnit<int> value, WorkUnit<int> quaternion)
+        public WorkUnit<Half> Transform2(WorkUnit<Half> value, WorkUnit<Half> quaternion)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Transform3(WorkUnit<int> value, WorkUnit<int> quaternion)
+        public WorkUnit<Half> Transform3(WorkUnit<Half> value, WorkUnit<Half> quaternion)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Transform4(WorkUnit<int> value, WorkUnit<int> quaternion)
+        public WorkUnit<Half> Transform4(WorkUnit<Half> value, WorkUnit<Half> quaternion)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Abs(WorkUnit<int> vector)
+        public WorkUnit<Half> Abs(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> HorizontalAdd(WorkUnit<int> left, WorkUnit<int> right)
+        public WorkUnit<Half> HorizontalAdd(WorkUnit<Half> left, WorkUnit<Half> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Shuffle(WorkUnit<int> value, byte control)
+        public WorkUnit<Half> Shuffle(WorkUnit<Half> value, byte control)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> X(WorkUnit<int> vector)
+        public WorkUnit<Half> X(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Y(WorkUnit<int> vector)
+        public WorkUnit<Half> Y(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Z(WorkUnit<int> vector)
+        public WorkUnit<Half> Z(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> W(WorkUnit<int> vector)
+        public WorkUnit<Half> W(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Sin(WorkUnit<int> vector)
+        public WorkUnit<Half> Sin(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> SinApprox(WorkUnit<int> vector)
+        public WorkUnit<Half> SinApprox(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Cos(WorkUnit<int> vector)
+        public WorkUnit<Half> Cos(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> CosApprox(WorkUnit<int> vector)
+        public WorkUnit<Half> CosApprox(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Tan(WorkUnit<int> vector)
+        public WorkUnit<Half> Tan(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> TanApprox(WorkUnit<int> vector)
+        public WorkUnit<Half> TanApprox(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public void SinCos(WorkUnit<int> vector, out WorkUnit<int> sin, out WorkUnit<int> cos)
+        public void SinCos(WorkUnit<Half> vector, out WorkUnit<Half> sin, out WorkUnit<Half> cos)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Shuffle(WorkUnit<int> left, WorkUnit<int> right, byte control)
+        public WorkUnit<Half> Shuffle(WorkUnit<Half> left, WorkUnit<Half> right, byte control)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> MultiplyAddFused(WorkUnit<int> x, WorkUnit<int> y, WorkUnit<int> z)
+        public WorkUnit<Half> MultiplyAddFused(WorkUnit<Half> x, WorkUnit<Half> y, WorkUnit<Half> z)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> MultiplyAddFast(WorkUnit<int> x, WorkUnit<int> y, WorkUnit<int> z)
+        public WorkUnit<Half> MultiplyAddFast(WorkUnit<Half> x, WorkUnit<Half> y, WorkUnit<Half> z)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> NegateMultiplyAddFused(WorkUnit<int> x, WorkUnit<int> y, WorkUnit<int> z)
+        public WorkUnit<Half> NegateMultiplyAddFused(WorkUnit<Half> x, WorkUnit<Half> y, WorkUnit<Half> z)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> NegateMultiplyAddFast(WorkUnit<int> x, WorkUnit<int> y, WorkUnit<int> z)
+        public WorkUnit<Half> NegateMultiplyAddFast(WorkUnit<Half> x, WorkUnit<Half> y, WorkUnit<Half> z)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> MultiplySubtractFused(WorkUnit<int> x, WorkUnit<int> y, WorkUnit<int> z)
+        public WorkUnit<Half> MultiplySubtractFused(WorkUnit<Half> x, WorkUnit<Half> y, WorkUnit<Half> z)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> MultiplySubtractFast(WorkUnit<int> x, WorkUnit<int> y, WorkUnit<int> z)
+        public WorkUnit<Half> MultiplySubtractFast(WorkUnit<Half> x, WorkUnit<Half> y, WorkUnit<Half> z)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> NegateMultiplySubtractFused(WorkUnit<int> x, WorkUnit<int> y, WorkUnit<int> z)
+        public WorkUnit<Half> NegateMultiplySubtractFused(WorkUnit<Half> x, WorkUnit<Half> y, WorkUnit<Half> z)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> NegateMultiplySubtractFast(WorkUnit<int> x, WorkUnit<int> y, WorkUnit<int> z)
+        public WorkUnit<Half> NegateMultiplySubtractFast(WorkUnit<Half> x, WorkUnit<Half> y, WorkUnit<Half> z)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Divide(WorkUnit<int> left, WorkUnit<int> right)
+        public WorkUnit<Half> Divide(WorkUnit<Half> left, WorkUnit<Half> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Sqrt(WorkUnit<int> vector)
+        public WorkUnit<Half> Sqrt(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Max(WorkUnit<int> vector)
+        public WorkUnit<Half> Max(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> Min(WorkUnit<int> vector)
+        public WorkUnit<Half> Min(WorkUnit<Half> vector)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> GreaterThan(WorkUnit<int> left, WorkUnit<int> right)
+        public WorkUnit<Half> GreaterThan(WorkUnit<Half> left, WorkUnit<Half> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> LessThan(WorkUnit<int> left, WorkUnit<int> right)
+        public WorkUnit<Half> LessThan(WorkUnit<Half> left, WorkUnit<Half> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> GreaterThanOrEqualTo(WorkUnit<int> left, WorkUnit<int> right)
+        public WorkUnit<Half> GreaterThanOrEqualTo(WorkUnit<Half> left, WorkUnit<Half> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> LessThanOrEqualTo(WorkUnit<int> left, WorkUnit<int> right)
+        public WorkUnit<Half> LessThanOrEqualTo(WorkUnit<Half> left, WorkUnit<Half> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public unsafe void StoreScalar(WorkUnit<int> vector, int* ptr)
+        public unsafe void StoreScalar(WorkUnit<Half> vector, Half* ptr)
         {
             throw new System.NotImplementedException();
         }
 
-        public unsafe void StoreVector2(WorkUnit<int> vector, int* ptr)
+        public unsafe void StoreVector2(WorkUnit<Half> vector, Half* ptr)
         {
             throw new System.NotImplementedException();
         }
 
-        public unsafe void StoreVector3(WorkUnit<int> vector, int* ptr)
+        public unsafe void StoreVector3(WorkUnit<Half> vector, Half* ptr)
         {
             throw new System.NotImplementedException();
         }
 
-        public unsafe void StoreVector4(WorkUnit<int> vector, int* ptr)
+        public unsafe void StoreVector4(WorkUnit<Half> vector, Half* ptr)
         {
             throw new System.NotImplementedException();
         }
 
-        public unsafe WorkUnit<int> ToScalar(int* ptr)
+        public unsafe WorkUnit<Half> ToScalar(Half* ptr)
         {
             throw new System.NotImplementedException();
         }
 
-        public unsafe WorkUnit<int> ToVector2(int* ptr)
+        public unsafe WorkUnit<Half> ToVector2(Half* ptr)
         {
             throw new System.NotImplementedException();
         }
 
-        public unsafe WorkUnit<int> ToVector3(int* ptr)
+        public unsafe WorkUnit<Half> ToVector3(Half* ptr)
         {
             throw new System.NotImplementedException();
         }
 
-        public unsafe WorkUnit<int> ToVector4(int* ptr)
+        public unsafe WorkUnit<Half> ToVector4(Half* ptr)
         {
             throw new System.NotImplementedException();
         }

@@ -7,9 +7,10 @@ using System.Runtime.Intrinsics;
 
 namespace Silk.NET.Intrinsics
 {
-    public struct WorkUnit64<T> where T:unmanaged
+    internal struct WorkUnit64<T> where T:unmanaged
     {
         public WorkUnitFlags Flags { get; set; }
         public Vector64<T> Vector { get; set; }
+        public unsafe fixed byte Padding[24];
     }
 }

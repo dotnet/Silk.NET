@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics.Arm;
 using System.Runtime.Intrinsics.X86;
 using Silk.NET.Core.Platform;
@@ -34,34 +35,38 @@ namespace Silk.NET.Intrinsics
             return flags;
         }
 
-        public static unsafe WorkUnit<T>* LoadScalar(T* ptr)
+        public static TOut Cast<TIn, TOut>(TIn @in)
+        {
+            return Unsafe.As<TIn, TOut>(ref @in);
+        }
+        public static unsafe WorkUnit<T> LoadScalar(T* ptr)
         {
             if (Float(ptr, out var floatPtr))
             {
                 if ((CurrentContext & WorkUnitFlags.RegisterAvxAll) != 0)
                 {
-                    return (WorkUnit<T>*) AVX.ToScalar(floatPtr);
+                    return Cast<WorkUnit<float>, WorkUnit<T>>(AVX.ToScalar(floatPtr));
                 }
                 if ((CurrentContext & WorkUnitFlags.RegisterSseAll) != 0)
                 {
-                    return (WorkUnit<T>*) SSE.ToScalar(floatPtr);
+                    return Cast<WorkUnit<float>, WorkUnit<T>>(SSE.ToScalar(floatPtr));
                 }
 
-                return (WorkUnit<T>*) SoftwareFallbacks.ToScalar(floatPtr);
+                return Cast<WorkUnit<float>, WorkUnit<T>>(SoftwareFallbacks.ToScalar(floatPtr));
             }
             
             if (Double(ptr, out var doublePtr))
             {
                 if ((CurrentContext & WorkUnitFlags.RegisterAvxAll) != 0)
                 {
-                    return (WorkUnit<T>*) AVX.ToScalar(doublePtr);
+                    return Cast<WorkUnit<double>, WorkUnit<T>>(AVX.ToScalar(doublePtr));
                 }
                 if ((CurrentContext & WorkUnitFlags.RegisterSseAll) != 0)
                 {
-                    return (WorkUnit<T>*) SSE.ToScalar(doublePtr);
+                    return Cast<WorkUnit<double>, WorkUnit<T>>(SSE.ToScalar(doublePtr));
                 }
 
-                return (WorkUnit<T>*) SoftwareFallbacks.ToScalar(doublePtr);
+                return Cast<WorkUnit<double>, WorkUnit<T>>(SoftwareFallbacks.ToScalar(doublePtr));
             }
             
             // TODO half(?), int, uint, long, ulong, short, ushort
