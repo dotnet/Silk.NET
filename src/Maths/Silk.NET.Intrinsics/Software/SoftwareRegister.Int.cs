@@ -57,17 +57,17 @@ namespace Silk.NET.Intrinsics.Software
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> DotProduct2(WorkUnit<int> vector)
+        public WorkUnit<int> DotProduct2(WorkUnit<int> left, WorkUnit<int> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> DotProduct3(WorkUnit<int> vector)
+        public WorkUnit<int> DotProduct3(WorkUnit<int> left, WorkUnit<int> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<int> DotProduct4(WorkUnit<int> vector)
+        public WorkUnit<int> DotProduct4(WorkUnit<int> left, WorkUnit<int> right)
         {
             throw new System.NotImplementedException();
         }

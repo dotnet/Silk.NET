@@ -22,9 +22,16 @@ namespace Silk.NET.Intrinsics.Sse
 
         private static WorkUnitFlags GetFlags()
         {
-            var flags = (WorkUnitFlags) 0;
-            flags |= System.Runtime.Intrinsics.X86.Avx.IsSupported ? WorkUnitFlags.RegisterAvx : 0;
-            flags |= Avx2.IsSupported ? WorkUnitFlags.RegisterAvx2 : 0;
+            var flags = (WorkUnitFlags)0;
+            flags |= System.Runtime.Intrinsics.X86.Sse.IsSupported ? WorkUnitFlags.RegisterSse : 0;
+            flags |= System.Runtime.Intrinsics.X86.Sse.X64.IsSupported ? WorkUnitFlags.RegisterSseX64 : 0;
+            flags |= Sse2.IsSupported ? WorkUnitFlags.RegisterSse2 : 0;
+            flags |= Sse2.X64.IsSupported ? WorkUnitFlags.RegisterSse2X64 : 0;
+            flags |= Sse3.IsSupported ? WorkUnitFlags.RegisterSse3 : 0;
+            flags |= Sse41.IsSupported ? WorkUnitFlags.RegisterSse41 : 0;
+            flags |= Sse41.X64.IsSupported ? WorkUnitFlags.RegisterSse41X64 : 0;
+            flags |= Ssse3.IsSupported ? WorkUnitFlags.RegisterSsse3 : 0;
+            flags |= WorkUnitFlags.RegisterSoftware;
             return flags;
         }
         
