@@ -191,17 +191,89 @@ namespace Silk.NET.Intrinsics.Sse
 
         public WorkUnit<float> DotProduct2(WorkUnit<float> left, WorkUnit<float> right)
         {
-            throw new System.NotImplementedException();
+            var value1 = left.As128();
+            var value2 = right.As128();
+
+            if (Sse41.IsSupported)
+            {
+                value1 = Sse41.DotProduct(value1, value2, 0b_0011_0011);
+            }
+            else
+            {
+                value1 = Sse.Multiply(value1, value2);
+
+                if (Sse3.IsSupported)
+                {
+                    value1 = Sse3.HorizontalAdd(value1, value1);
+                    value1 = Sse3.HorizontalAdd(value1, value1);
+                }
+                else
+                {
+                    float tmp = value1.GetElement(0) + value1.GetElement(1);
+
+                    value1 = Vector128.Create(tmp);
+                }
+            }
+
+            return Convert(value1);
         }
 
         public WorkUnit<float> DotProduct3(WorkUnit<float> left, WorkUnit<float> right)
         {
-            throw new System.NotImplementedException();
+            var value1 = left.As128();
+            var value2 = right.As128();
+
+            if (Sse41.IsSupported)
+            {
+                value1 = Sse41.DotProduct(value1, value2, 0b_0111_1111);
+            }
+            else
+            {
+                value1 = Sse.Multiply(value1, value2);
+
+                if (Sse3.IsSupported)
+                {
+                    value1 = Sse3.HorizontalAdd(value1, value1);
+                    value1 = Sse3.HorizontalAdd(value1, value1);
+                }
+                else
+                {
+                    float tmp = value1.GetElement(0) + value1.GetElement(1) + value1.GetElement(2);
+
+                    value1 = Vector128.Create(tmp);
+                }
+            }
+
+            return Convert(value1);
         }
 
         public WorkUnit<float> DotProduct4(WorkUnit<float> left, WorkUnit<float> right)
         {
-            throw new System.NotImplementedException();
+            var value1 = left.As128();
+            var value2 = right.As128();
+
+            if (Sse41.IsSupported)
+            {
+                value1 = Sse41.DotProduct(value1, value2, 0b_1111_1111);
+            }
+            else
+            {
+                value1 = Sse.Multiply(value1, value2);
+
+                if (Sse3.IsSupported)
+                {
+                    value1 = Sse3.HorizontalAdd(value1, value1);
+                    value1 = Sse3.HorizontalAdd(value1, value1);
+                }
+                else
+                {
+                    float tmp = value1.GetElement(0) + value1.GetElement(1) + value1.GetElement(2) + value1.GetElement(3);
+
+                    value1 = Vector128.Create(tmp);
+                }
+            }
+
+            return Convert(value1);
         }
 
         public WorkUnit<float> Add(WorkUnit<float> left, WorkUnit<float> right)
