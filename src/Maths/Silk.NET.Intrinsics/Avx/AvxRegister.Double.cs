@@ -57,17 +57,17 @@ namespace Silk.NET.Intrinsics.Avx
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<double> DotProduct2(WorkUnit<double> vector)
+        public WorkUnit<double> DotProduct2(WorkUnit<double> left, WorkUnit<double> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<double> DotProduct3(WorkUnit<double> vector)
+        public WorkUnit<double> DotProduct3(WorkUnit<double> left, WorkUnit<double> right)
         {
             throw new System.NotImplementedException();
         }
 
-        public WorkUnit<double> DotProduct4(WorkUnit<double> vector)
+        public WorkUnit<double> DotProduct4(WorkUnit<double> left, WorkUnit<double> right)
         {
             throw new System.NotImplementedException();
         }

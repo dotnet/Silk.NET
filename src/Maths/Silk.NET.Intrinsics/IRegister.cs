@@ -17,9 +17,9 @@ namespace Silk.NET.Intrinsics
         WorkUnit<T> NormalizeApprox4(WorkUnit<T> vector);
         WorkUnit<T> Conjugate(WorkUnit<T> vector);
         WorkUnit<T> Inverse(WorkUnit<T> vector);
-        WorkUnit<T> DotProduct2(WorkUnit<T> vector);
-        WorkUnit<T> DotProduct3(WorkUnit<T> vector);
-        WorkUnit<T> DotProduct4(WorkUnit<T> vector);
+        WorkUnit<T> DotProduct2(WorkUnit<T> left, WorkUnit<T> right);
+        WorkUnit<T> DotProduct3(WorkUnit<T> left, WorkUnit<T> right);
+        WorkUnit<T> DotProduct4(WorkUnit<T> left, WorkUnit<T> right);
         WorkUnit<T> Add(WorkUnit<T> left, WorkUnit<T> right);
         WorkUnit<T> Subtract(WorkUnit<T> left, WorkUnit<T> right);
         WorkUnit<T> Equal(WorkUnit<T> left, WorkUnit<T> right);

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Silk.NET.Maths
+﻿namespace Silk.NET.Maths
 {
     public struct Vector2<T> where T:unmanaged { public T X; public T Y;}
     public struct Vector3<T> where T:unmanaged { public T X; public T Y; public T Z;}
