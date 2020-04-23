@@ -47,5 +47,14 @@ namespace Silk.NET.Intrinsics
             outPtr = default;
             return false;
         }
+
+        public static readonly Vector128<float> AbsConstant;
+        public static readonly Vector128<float> NegateConstant;
+
+        static Helpers()
+        {
+            AbsConstant = Vector128.Create(int.MaxValue).AsSingle();
+            NegateConstant = Vector128.Create(int.MinValue).AsSingle();
+        }
     }
 }

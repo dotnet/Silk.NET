@@ -206,12 +206,22 @@ namespace Silk.NET.Intrinsics.Sse
 
         public WorkUnit<float> Add(WorkUnit<float> left, WorkUnit<float> right)
         {
-            throw new System.NotImplementedException();
+            var tLeft = left.As128();
+            var tRight = right.As128();
+
+            tLeft = Sse.Add(tLeft, tRight);
+
+            return Convert(tLeft);
         }
 
         public WorkUnit<float> Subtract(WorkUnit<float> left, WorkUnit<float> right)
         {
-            throw new System.NotImplementedException();
+            var tLeft = left.As128();
+            var tRight = right.As128();
+
+            tLeft = Sse.Subtract(tLeft, tRight);
+
+            return Convert(tLeft);
         }
 
         public WorkUnit<float> Equal(WorkUnit<float> left, WorkUnit<float> right)
@@ -226,7 +236,9 @@ namespace Silk.NET.Intrinsics.Sse
 
         public WorkUnit<float> Negate(WorkUnit<float> vector)
         {
-            throw new System.NotImplementedException();
+            var value = Sse.Xor(vector.As128(), Helpers.NegateConstant);
+
+            return Convert(value);
         }
 
         public WorkUnit<float> Lerp(WorkUnit<float> left, WorkUnit<float> right, WorkUnit<float> amount)
@@ -266,11 +278,15 @@ namespace Silk.NET.Intrinsics.Sse
 
         public WorkUnit<float> Abs(WorkUnit<float> vector)
         {
-            throw new System.NotImplementedException();
+            var value = Sse.And(vector.As128(), Helpers.AbsConstant);
+
+            return Convert(value);
         }
 
         public WorkUnit<float> HorizontalAdd(WorkUnit<float> left, WorkUnit<float> right)
         {
+
+
             throw new System.NotImplementedException();
         }
 
