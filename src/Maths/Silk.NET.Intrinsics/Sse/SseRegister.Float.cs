@@ -3,23 +3,99 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
+using System.Diagnostics;
+
+using System.Runtime.Intrinsics;
+using System.Runtime.Intrinsics.X86;
+
 namespace Silk.NET.Intrinsics.Sse
 {
+    using Sse = System.Runtime.Intrinsics.X86.Sse;
+
     public partial struct SseRegister : IRegister<float>
     {
         public WorkUnit<float> LengthSquared(WorkUnit<float> vector)
         {
-            throw new System.NotImplementedException();
+            Vector128<float> value = vector.As128();
+
+            value = Sse.Multiply(value, value);
+
+            if (Sse3.IsSupported)
+            {
+                value = Sse3.HorizontalAdd(value, value);
+                value = Sse3.HorizontalAdd(value, value);
+            }
+            else
+            {
+                float tmp = value.GetElement(0) + value.GetElement(1) + value.GetElement(2) + value.GetElement(3);
+                value = Vector128.CreateScalar(tmp);
+            }
+
+            return Convert(value);
         }
 
         public WorkUnit<float> Length(WorkUnit<float> vector)
         {
-            throw new System.NotImplementedException();
+            Vector128<float> value = vector.As128();
+
+            if (Sse41.IsSupported)
+            {
+                value = Sse41.DotProduct(value, value, 0b_1111_0001);
+            }
+            else
+            {
+                value = Sse.Multiply(value, value);
+
+                if (Sse3.IsSupported)
+                {
+                    value = Sse3.HorizontalAdd(value, value);
+                    value = Sse3.HorizontalAdd(value, value);
+                }
+                else
+                {
+                    float tmp = value.GetElement(0) + value.GetElement(1) + value.GetElement(2) + value.GetElement(3);
+
+                    value = Vector128.CreateScalar(tmp);
+                }
+            }
+
+            value = Sse.SqrtScalar(value);
+
+            return Convert(value);
         }
 
         public WorkUnit<float> Normalize2(WorkUnit<float> vector)
         {
-            throw new System.NotImplementedException();
+            var value = vector.As128();
+            var value2 = value;
+
+            if (Sse41.IsSupported)
+            {
+                value = Sse41.DotProduct(value, value, 0b_0011_0011);
+            }
+            else
+            {
+                value = Sse.Multiply(value, value);
+
+                if (Sse3.IsSupported)
+                {
+                    value = Sse3.HorizontalAdd(value, value);
+                    value = Sse3.HorizontalAdd(value, value);
+                }
+                else
+                {
+                    float tmp = value.GetElement(0) + value.GetElement(1);
+
+                    value = Vector128.Create(tmp);
+                }
+            }
+
+            value = Sse.Sqrt(value);
+
+            value = Sse.Divide(value2, value);
+
+            return Convert(value);
         }
 
         public WorkUnit<float> NormalizeApprox2(WorkUnit<float> vector)
@@ -29,7 +105,35 @@ namespace Silk.NET.Intrinsics.Sse
 
         public WorkUnit<float> Normalize3(WorkUnit<float> vector)
         {
-            throw new System.NotImplementedException();
+            var value = vector.As128();
+            var value2 = value;
+
+            if (Sse41.IsSupported)
+            {
+                value = Sse41.DotProduct(value, value, 0b_0111_0111);
+            }
+            else
+            {
+                value = Sse.Multiply(value, value);
+
+                if (Sse3.IsSupported)
+                {
+                    value = Sse3.HorizontalAdd(value, value);
+                    value = Sse3.HorizontalAdd(value, value);
+                }
+                else
+                {
+                    float tmp = value.GetElement(0) + value.GetElement(1) + value.GetElement(2);
+
+                    value = Vector128.Create(tmp);
+                }
+            }
+
+            value = Sse.Sqrt(value);
+
+            value = Sse.Divide(value2, value);
+
+            return Convert(value);
         }
 
         public WorkUnit<float> NormalizeApprox3(WorkUnit<float> vector)
@@ -39,7 +143,35 @@ namespace Silk.NET.Intrinsics.Sse
 
         public WorkUnit<float> Normalize4(WorkUnit<float> vector)
         {
-            throw new System.NotImplementedException();
+            var value = vector.As128();
+            var value2 = value;
+
+            if (Sse41.IsSupported)
+            {
+                value = Sse41.DotProduct(value, value, 0b_1111_1111);
+            }
+            else
+            {
+                value = Sse.Multiply(value, value);
+
+                if (Sse3.IsSupported)
+                {
+                    value = Sse3.HorizontalAdd(value, value);
+                    value = Sse3.HorizontalAdd(value, value);
+                }
+                else
+                {
+                    float tmp = value.GetElement(0) + value.GetElement(1) + value.GetElement(2) + value.GetElement(3);
+
+                    value = Vector128.Create(tmp);
+                }
+            }
+
+            value = Sse.Sqrt(value);
+
+            value = Sse.Divide(value2, value);
+
+            return Convert(value);
         }
 
         public WorkUnit<float> NormalizeApprox4(WorkUnit<float> vector)
