@@ -67,6 +67,7 @@ namespace Silk.NET.Windowing.Desktop
         private bool _updatedWithinPeriod;
         private bool _renderedWithinPeriod;
 
+        // TODO i want to merge all fields into this one OR split this field up as keeping it in sync is annoying
         private WindowOptions _initialOptions;
         private bool _running;
         private readonly IMonitor _initialMonitor;
@@ -82,6 +83,7 @@ namespace Silk.NET.Windowing.Desktop
             _size = options.Size;
 
             _windowBorder = WindowBorder;
+            _vSync = options.VSync;
 
             FramesPerSecond = options.FramesPerSecond;
             UpdatesPerSecond = options.UpdatesPerSecond;
@@ -378,7 +380,6 @@ namespace Silk.NET.Windowing.Desktop
                             _glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
                             break;
                     }
-                    _vSync = value;
                 }
 
                 _initialOptions.VSync = value;
