@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
@@ -48,6 +49,11 @@ namespace InputTest
                     if (!mouse.IsConnected) continue;
                     DoConnect(mouse, mouse.IsConnected);
                 }
+
+                //window.Update += d =>
+                //{
+                //    Debug.WriteLine(input.Mice[0].ScrollWheels[0].X + " " + input.Mice[0].ScrollWheels[0].Y);
+                //};
             };
             window.Run();
         }
