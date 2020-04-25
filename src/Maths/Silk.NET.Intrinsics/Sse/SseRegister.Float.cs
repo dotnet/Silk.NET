@@ -313,9 +313,29 @@ namespace Silk.NET.Intrinsics.Sse
             return Convert(value);
         }
 
+        //TODO: Validate Algorithm
         public WorkUnit<float> Lerp(WorkUnit<float> left, WorkUnit<float> right, WorkUnit<float> amount)
         {
-            throw new System.NotImplementedException();
+            Vector128<float> firstInfluence, secondInfluence;
+
+            secondInfluence = amount.As128();
+
+            if (Avx2.IsSupported)
+            {
+                secondInfluence = Avx2.BroadcastScalarToVector128(secondInfluence);
+            }
+            else
+            {
+                secondInfluence = Sse.Shuffle(secondInfluence, secondInfluence, 0b_00_00_00_00);
+            }
+
+            firstInfluence = Sse.Subtract(Helpers.OneF, secondInfluence);
+
+            firstInfluence = Sse.Multiply(firstInfluence, left.As128());
+
+            secondInfluence = Sse.Multiply(secondInfluence, right.As128());
+
+            return Convert(Sse.Add(firstInfluence, secondInfluence));
         }
 
         public WorkUnit<float> Slerp(WorkUnit<float> left, WorkUnit<float> right, WorkUnit<float> amount)
@@ -433,12 +453,16 @@ namespace Silk.NET.Intrinsics.Sse
 
         public WorkUnit<float> MultiplyAddFused(WorkUnit<float> x, WorkUnit<float> y, WorkUnit<float> z)
         {
-            throw new System.NotImplementedException();
+            Vector128<float> tx = x.As128(), ty = y.As128(), tz = z.As128();
+
+            return Convert(Helpers.MultiplyAdd(tx, ty, tz));
         }
 
-        public WorkUnit<float> MultiplyAddFast(WorkUnit<float> x, WorkUnit<float> y, WorkUnit<float> z)
+        public WorkUnit<float>  MultiplyAddFast(WorkUnit<float> x, WorkUnit<float> y, WorkUnit<float> z)
         {
-            throw new System.NotImplementedException();
+            Vector128<float> tx = x.As128(), ty = y.As128(), tz = z.As128();
+
+            return Convert(Helpers.MultiplyAdd(tx, ty, tz));
         }
 
         public WorkUnit<float> NegateMultiplyAddFused(WorkUnit<float> x, WorkUnit<float> y, WorkUnit<float> z)
