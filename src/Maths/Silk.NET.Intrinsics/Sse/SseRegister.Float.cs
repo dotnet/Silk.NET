@@ -308,7 +308,7 @@ namespace Silk.NET.Intrinsics.Sse
 
         public WorkUnit<float> Negate(WorkUnit<float> vector)
         {
-            var value = Sse.Xor(vector.As128(), Helpers.NegateConstant);
+            var value = Sse.Xor(vector.As128(), Helpers.SignConstant);
 
             return Convert(value);
         }
@@ -389,7 +389,11 @@ namespace Silk.NET.Intrinsics.Sse
 
         public WorkUnit<float> Sin(WorkUnit<float> vector)
         {
-            throw new System.NotImplementedException();
+            var tmp = vector.As128();
+
+            tmp = Helpers.Sin(tmp);
+
+            return Convert(tmp);
         }
 
         public WorkUnit<float> SinApprox(WorkUnit<float> vector)
