@@ -509,42 +509,66 @@ namespace Silk.NET.Intrinsics.Sse
 
         public unsafe void StoreScalar(WorkUnit<float> vector, float* ptr)
         {
-            throw new System.NotImplementedException();
+            Sse.StoreScalar(ptr, vector.As128());
         }
 
         public unsafe void StoreVector2(WorkUnit<float> vector, float* ptr)
         {
-            throw new System.NotImplementedException();
+            Sse.StoreLow(ptr, vector.As128());
         }
 
         public unsafe void StoreVector3(WorkUnit<float> vector, float* ptr)
         {
-            throw new System.NotImplementedException();
+            var value = vector.As128();
+            Sse.StoreLow(ptr, value);
+
+            //ptr[2] = value.GetElement(2);
+
+            value = Sse.Shuffle(value, value, 0b_10_00_00_00);
+
+            Sse.StoreScalar(ptr + 2, value);
         }
 
         public unsafe void StoreVector4(WorkUnit<float> vector, float* ptr)
         {
-            throw new System.NotImplementedException();
+            Sse.Store(ptr, vector.As128());
         }
 
         public unsafe WorkUnit<float> ToScalar(float* ptr)
         {
-            throw new System.NotImplementedException();
+            var tmp = Sse.LoadScalarVector128(ptr);
+            return Convert(tmp);
         }
 
         public unsafe WorkUnit<float> ToVector2(float* ptr)
         {
-            throw new System.NotImplementedException();
+            Vector128<float> reg = default;
+            reg = Sse.LoadLow(reg, ptr);
+            return Convert(reg);
         }
 
         public unsafe WorkUnit<float> ToVector3(float* ptr)
         {
-            throw new System.NotImplementedException();
+            Vector128<float> tmp = default;
+            tmp = Sse.LoadLow(tmp, ptr);
+
+            var tmp2 = Sse.LoadScalarVector128(ptr + 2);
+
+            if (Sse41.IsSupported)
+            {
+                tmp = Sse41.Insert(tmp, tmp2, 0b_00_10_0000);
+            }
+            else
+            {
+                tmp = Sse.Shuffle(tmp, tmp2, 0b_00_01_00_11);
+            }
+
+            return Convert(tmp);
         }
 
         public unsafe WorkUnit<float> ToVector4(float* ptr)
         {
-            throw new System.NotImplementedException();
+            return Convert(Sse.LoadVector128(ptr));
         }
     }
 }
