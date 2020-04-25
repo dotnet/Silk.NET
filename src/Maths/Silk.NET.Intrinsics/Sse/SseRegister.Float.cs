@@ -389,22 +389,38 @@ namespace Silk.NET.Intrinsics.Sse
 
         public WorkUnit<float> X(WorkUnit<float> vector)
         {
-            throw new System.NotImplementedException();
+            var tmp = vector.As128();
+
+            tmp = Sse.Shuffle(tmp, tmp, 0b_00_00_00_00);
+
+            return Convert(tmp);
         }
 
         public WorkUnit<float> Y(WorkUnit<float> vector)
         {
-            throw new System.NotImplementedException();
+            var tmp = vector.As128();
+
+            tmp = Sse.Shuffle(tmp, tmp, 0b_01_01_01_01);
+
+            return Convert(tmp);
         }
 
-        public WorkUnit<float> Z(WorkUnit<float> vector)
+        public unsafe WorkUnit<float> Z(WorkUnit<float> vector)
         {
-            throw new System.NotImplementedException();
+            var tmp = vector.As128();
+
+            tmp = Sse.Shuffle(tmp, tmp, 0b_10_10_10_10);
+
+            return Convert(tmp);
         }
 
         public WorkUnit<float> W(WorkUnit<float> vector)
         {
-            throw new System.NotImplementedException();
+            var tmp = vector.As128();
+
+            tmp = Sse.Shuffle(tmp, tmp, 0b_11_11_11_11);
+
+            return Convert(tmp);
         }
 
         public WorkUnit<float> Sin(WorkUnit<float> vector)
