@@ -94,6 +94,7 @@ namespace Silk.NET.Windowing.Desktop
             _initialOptions = options;
             _initialMonitor = monitor;
             Parent = (IWindowHost)parent ?? _initialMonitor;
+            IsEventDriven = options.IsEventDriven;
 
             GlfwProvider.GLFW.Value.GetVersion(out var major, out var minor, out _);
             if (new Version(major, minor) < new Version(3, 3))
@@ -170,6 +171,9 @@ namespace Silk.NET.Windowing.Desktop
         /// If this is false, you'll have to call <see cref="GlfwWindow.SwapBuffers"/> manually.
         /// </remarks>
         public bool ShouldSwapAutomatically { get; }
+
+        /// <inheritdoc />
+        public bool IsEventDriven { get; set; }
 
         /// <inheritdoc />
         public VideoMode VideoMode => Monitor?.VideoMode ?? _initialOptions.VideoMode;
@@ -626,7 +630,15 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public void DoEvents()
         {
-            _glfw.PollEvents();
+            if (IsEventDriven)
+            {
+                _glfw.WaitEvents();
+            }
+            else
+            {
+                _glfw.PollEvents();
+            }
+
             Glfw.ThrowExceptions();
         }
 

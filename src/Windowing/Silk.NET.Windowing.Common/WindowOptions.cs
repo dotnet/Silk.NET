@@ -47,6 +47,9 @@ namespace Silk.NET.Windowing.Common
         public bool ShouldSwapAutomatically { get; set; }
 
         /// <inheritdoc />
+        public bool IsEventDriven { get; set; }
+
+        /// <inheritdoc />
         public VideoMode VideoMode { get; set; }
 
         /// <inheritdoc />

@@ -21,6 +21,17 @@ namespace Silk.NET.Windowing.Common
         bool ShouldSwapAutomatically { get; }
 
         /// <summary>
+        /// If true, instead of executing the Update and Render events at a fixed interval, they will only be executed
+        /// once there are events waiting to be processed.
+        /// </summary>
+        /// <remarks>
+        /// The <see cref="UpdatesPerSecond"/> and <see cref="FramesPerSecond"/> will still be respected and treated as
+        /// the "maximum" number of frames per second. Typically, the time between events is greater than the frame
+        /// period, however.
+        /// </remarks>
+        bool IsEventDriven { get; set; }
+
+        /// <summary>
         /// The size of the window in pixels.
         /// </summary>
         /// <remarks>

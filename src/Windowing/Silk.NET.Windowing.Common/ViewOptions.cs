@@ -18,6 +18,9 @@ namespace Silk.NET.Windowing.Common
         /// <inheritdoc />
         public bool ShouldSwapAutomatically { get; set; }
         /// <inheritdoc />
+        public bool IsEventDriven { get; set; }
+
+        /// <inheritdoc />
         Size IViewProperties.Size => throw new InvalidOperationException("Can't get the size of a non-existent view.");
         /// <inheritdoc />
         public double FramesPerSecond { get; set; }
