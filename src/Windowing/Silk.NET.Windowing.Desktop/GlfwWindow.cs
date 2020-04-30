@@ -108,6 +108,8 @@ namespace Silk.NET.Windowing.Desktop
             {
                 GLContext = new Context(this);
             }
+            
+            Glfw.ThrowExceptions();
         }
 
         /// <inheritdoc />
@@ -436,6 +438,7 @@ namespace Silk.NET.Windowing.Desktop
             if (IsCurrentContext)
             {
                 _glfw.MakeContextCurrent(null);
+                Glfw.ThrowExceptions();
             }
         }
 
@@ -443,6 +446,7 @@ namespace Silk.NET.Windowing.Desktop
         public unsafe void MakeCurrent()
         {
             _glfw.MakeContextCurrent(_windowPtr);
+            Glfw.ThrowExceptions();
         }
         
         /// <summary>
@@ -463,6 +467,7 @@ namespace Silk.NET.Windowing.Desktop
             {
                 Closing?.Invoke();
                 _glfw.SetWindowShouldClose(_windowPtr, true);
+                Glfw.ThrowExceptions();
             }
         }
 
@@ -575,6 +580,7 @@ namespace Silk.NET.Windowing.Desktop
             _updateStopwatch = new Stopwatch();
             _renderStopwatch.Start();
             _updateStopwatch.Start();
+            Glfw.ThrowExceptions();
         }
 
         /// <inheritdoc />
@@ -611,6 +617,7 @@ namespace Silk.NET.Windowing.Desktop
         public void DoEvents()
         {
             _glfw.PollEvents();
+            Glfw.ThrowExceptions();
         }
 
         /// <inheritdoc />
@@ -622,6 +629,7 @@ namespace Silk.NET.Windowing.Desktop
             try
             {
                 _glfw.DestroyWindow(_windowPtr);
+                Glfw.ThrowExceptions();
             }
 #pragma warning disable 168
             catch(GlfwException e)
@@ -739,6 +747,7 @@ namespace Silk.NET.Windowing.Desktop
                 }
 
                 _glfw.SetWindowIcon(_windowPtr, icons.Length, images);
+                Glfw.ThrowExceptions();
 
                 for (var i = 0; i < icons.Length; i++)
                 {
@@ -851,6 +860,7 @@ namespace Silk.NET.Windowing.Desktop
             {
                 _lastVs = vs;
                 _glfw.SwapInterval(vs);
+                Glfw.ThrowExceptions();
             }
 
             Render?.Invoke(delta);
@@ -966,6 +976,7 @@ namespace Silk.NET.Windowing.Desktop
             _glfw.SetWindowIconifyCallback(_windowPtr, _onMinimized);
             _glfw.SetWindowMaximizeCallback(_windowPtr, _onMaximized);
             _glfw.SetDropCallback(_windowPtr, _onFileDrop);
+            Glfw.ThrowExceptions();
         }
 
         /// <inheritdoc />
@@ -982,6 +993,7 @@ namespace Silk.NET.Windowing.Desktop
                 throw new GlfwException("Failed to create surface, error code " + ec);
             }
 
+            Glfw.ThrowExceptions();
             return surface[0];
         }
         
@@ -1068,6 +1080,7 @@ namespace Silk.NET.Windowing.Desktop
                     }
 
                     _glfw.SetWindowMonitor(_windowPtr, h, 0, 0, resolution.Value.Width, resolution.Value.Height, vidMode.RefreshRate.Value);
+                    Glfw.ThrowExceptions();
                 }
                 else
                 {
