@@ -4,6 +4,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Ultz.SuperInvoke;
@@ -23,6 +25,9 @@ namespace Silk.NET.GLFW
         /// </summary>
         public const int DontCare = -1;
 
+        private static readonly bool _isWindows = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
+        private static readonly List<Exception> _exceptions = new List<Exception>();
+
         /// <inheritdoc />
         protected Glfw(ref NativeApiContext ctx)
             : base(ref ctx)
@@ -34,7 +39,39 @@ namespace Silk.NET.GLFW
         /// </summary>
         /// <seealso cref="SetErrorCallback" />
         public static GlfwCallbacks.ErrorCallback ErrorCallback { get; } = (errorCode, description) =>
-            throw new GlfwException($"{errorCode}: {description}") {ErrorCode = errorCode};
+        {
+            var ex = new GlfwException($"{errorCode}: {description}") {ErrorCode = errorCode};
+            if (_isWindows)
+            {
+                // we can actually be helpful on windows which is cool
+                throw ex;
+            }
+
+            // ffs
+            _exceptions.Add(ex);
+        };
+
+        /// <summary>
+        /// When the default callback is used, this method will throw all errors caught by the default callback.
+        /// </summary>
+        /// <remarks>
+        /// This is due to CoreCLR not being able to catch exceptions after a managed-to-native-to-managed transition.
+        /// For more information, see the following issue: https://github.com/Ultz/Silk.NET/issues/168
+        /// </remarks>
+        public static void ThrowExceptions()
+        {
+            if (!_isWindows || _exceptions.Count == 0) return;
+            if (_exceptions.Count == 1)
+            {
+                throw _exceptions[0];
+            }
+
+            throw new GlfwException
+            (
+                "Multiple errors occured within GLFW since the last ThrowExceptions call.",
+                new AggregateException(_exceptions)
+            );
+        }
 
         /// <inheritdoc />
         public override SearchPathContainer SearchPaths { get; } = new GlfwLibraryNameContainer();

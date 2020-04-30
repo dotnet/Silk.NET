@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -56,7 +57,7 @@ namespace Silk.NET.Windowing.Desktop
         private Stopwatch _updateStopwatch;
 
         // Invoke method variables
-        private ConcurrentQueue<Task> _invokeQueue;
+        private ConcurrentQueue<Invocation> _pendingInvocations;
         private int _mainThread = -1;
 
         // Update and render period. Represents the time in seconds that each frame should take.
@@ -93,6 +94,7 @@ namespace Silk.NET.Windowing.Desktop
             _initialOptions = options;
             _initialMonitor = monitor;
             Parent = (IWindowHost)parent ?? _initialMonitor;
+            IsEventDriven = options.IsEventDriven;
 
             GlfwProvider.GLFW.Value.GetVersion(out var major, out var minor, out _);
             if (new Version(major, minor) < new Version(3, 3))
@@ -108,6 +110,8 @@ namespace Silk.NET.Windowing.Desktop
             {
                 GLContext = new Context(this);
             }
+            
+            Glfw.ThrowExceptions();
         }
 
         /// <inheritdoc />
@@ -167,6 +171,9 @@ namespace Silk.NET.Windowing.Desktop
         /// If this is false, you'll have to call <see cref="GlfwWindow.SwapBuffers"/> manually.
         /// </remarks>
         public bool ShouldSwapAutomatically { get; }
+
+        /// <inheritdoc />
+        public bool IsEventDriven { get; set; }
 
         /// <inheritdoc />
         public VideoMode VideoMode => Monitor?.VideoMode ?? _initialOptions.VideoMode;
@@ -425,10 +432,18 @@ namespace Silk.NET.Windowing.Desktop
                 return d.DynamicInvoke(args);
             }
 
-            var task = new Task<object>(() => d.DynamicInvoke(args));
-            _invokeQueue.Enqueue(task);
-            SpinWait.SpinUntil(() => task.IsCompleted);
-            return task.Result;
+            // TODO make this less allocate-y, delegates are a son of a
+            object ret = null;
+            using var invocation = new Invocation(d, args, SetReturnValue);
+            invocation.Source.WaitOne();
+            return ret;
+                
+            //var task = new Task<object>(() => d.DynamicInvoke(args));
+            //_invokeQueue.Enqueue(task);
+            //SpinWait.SpinUntil(() => task.IsCompleted);
+            //return task.Result;
+
+            void SetReturnValue(object o) => ret = o;
         }
 
         public unsafe void ClearContext()
@@ -436,6 +451,7 @@ namespace Silk.NET.Windowing.Desktop
             if (IsCurrentContext)
             {
                 _glfw.MakeContextCurrent(null);
+                Glfw.ThrowExceptions();
             }
         }
 
@@ -443,6 +459,7 @@ namespace Silk.NET.Windowing.Desktop
         public unsafe void MakeCurrent()
         {
             _glfw.MakeContextCurrent(_windowPtr);
+            Glfw.ThrowExceptions();
         }
         
         /// <summary>
@@ -463,6 +480,7 @@ namespace Silk.NET.Windowing.Desktop
             {
                 Closing?.Invoke();
                 _glfw.SetWindowShouldClose(_windowPtr, true);
+                Glfw.ThrowExceptions();
             }
         }
 
@@ -549,7 +567,7 @@ namespace Silk.NET.Windowing.Desktop
             _isRunningSlowlyTries = 0;
             _running = true;
 
-            _invokeQueue = new ConcurrentQueue<Task>();
+            _pendingInvocations = new ConcurrentQueue<Invocation>();
             _mainThread = Thread.CurrentThread.ManagedThreadId;
 
             if (API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES)
@@ -575,6 +593,7 @@ namespace Silk.NET.Windowing.Desktop
             _updateStopwatch = new Stopwatch();
             _renderStopwatch.Start();
             _updateStopwatch.Start();
+            Glfw.ThrowExceptions();
         }
 
         /// <inheritdoc />
@@ -599,9 +618,10 @@ namespace Silk.NET.Windowing.Desktop
                 // Loop while we're still updating - the Update thread might be calling the main thread
                 while (!task.IsCompleted)
                 {
-                    if (!_invokeQueue.IsEmpty && _invokeQueue.TryDequeue(out var invokeCall))
+                    if (!_pendingInvocations.IsEmpty && _pendingInvocations.TryDequeue(out var invokeCall))
                     {
-                        invokeCall.GetAwaiter().GetResult();
+                        invokeCall.Return(invokeCall.Target.DynamicInvoke(invokeCall.Args));
+                        invokeCall.Source.Set();
                     }
                 }
             }
@@ -610,7 +630,16 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public void DoEvents()
         {
-            _glfw.PollEvents();
+            if (IsEventDriven)
+            {
+                _glfw.WaitEvents();
+            }
+            else
+            {
+                _glfw.PollEvents();
+            }
+
+            Glfw.ThrowExceptions();
         }
 
         /// <inheritdoc />
@@ -622,6 +651,7 @@ namespace Silk.NET.Windowing.Desktop
             try
             {
                 _glfw.DestroyWindow(_windowPtr);
+                Glfw.ThrowExceptions();
             }
 #pragma warning disable 168
             catch(GlfwException e)
@@ -739,6 +769,7 @@ namespace Silk.NET.Windowing.Desktop
                 }
 
                 _glfw.SetWindowIcon(_windowPtr, icons.Length, images);
+                Glfw.ThrowExceptions();
 
                 for (var i = 0; i < icons.Length; i++)
                 {
@@ -851,6 +882,7 @@ namespace Silk.NET.Windowing.Desktop
             {
                 _lastVs = vs;
                 _glfw.SwapInterval(vs);
+                Glfw.ThrowExceptions();
             }
 
             Render?.Invoke(delta);
@@ -966,6 +998,7 @@ namespace Silk.NET.Windowing.Desktop
             _glfw.SetWindowIconifyCallback(_windowPtr, _onMinimized);
             _glfw.SetWindowMaximizeCallback(_windowPtr, _onMaximized);
             _glfw.SetDropCallback(_windowPtr, _onFileDrop);
+            Glfw.ThrowExceptions();
         }
 
         /// <inheritdoc />
@@ -982,6 +1015,7 @@ namespace Silk.NET.Windowing.Desktop
                 throw new GlfwException("Failed to create surface, error code " + ec);
             }
 
+            Glfw.ThrowExceptions();
             return surface[0];
         }
         
@@ -1068,6 +1102,7 @@ namespace Silk.NET.Windowing.Desktop
                     }
 
                     _glfw.SetWindowMonitor(_windowPtr, h, 0, 0, resolution.Value.Width, resolution.Value.Height, vidMode.RefreshRate.Value);
+                    Glfw.ThrowExceptions();
                 }
                 else
                 {
@@ -1148,6 +1183,26 @@ namespace Silk.NET.Windowing.Desktop
 
             public unsafe char** GetRequiredExtensions(out uint count)
                 => (char**) _window._glfw.GetRequiredInstanceExtensions(out count);
+        }
+
+        private readonly struct Invocation : IDisposable
+        {
+            public Invocation(Delegate target, object[] args, Action<object> ret)
+            {
+                Source = new AutoResetEvent(false);
+                Target = target;
+                Args = args;
+                Return = ret;
+            }
+            public AutoResetEvent Source { get; }
+            public Delegate Target { get; }
+            public object[] Args { get; }
+            public Action<object> Return { get; }
+
+            public void Dispose()
+            {
+                Source?.Dispose();
+            }
         }
     }
 }

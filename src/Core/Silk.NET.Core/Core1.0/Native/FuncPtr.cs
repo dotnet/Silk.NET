@@ -11,6 +11,11 @@ namespace Silk.NET.Core.Native
     /// <summary>
     /// A function pointer.
     /// </summary>
+    [Obsolete
+    (
+        "Function pointers are included as part of the language since C# 9." +
+        "As such, this struct is obsolete and will be removed in 2.0"
+    )]
     public struct FuncPtr : IDisposable
     {
         /// <summary>
@@ -68,7 +73,7 @@ namespace Silk.NET.Core.Native
         {
             Value = ptr;
         }
-        
+
         /// <summary>
         /// Create a new FuncPtr instance.
         /// </summary>
@@ -77,7 +82,7 @@ namespace Silk.NET.Core.Native
         {
             var handle = GCHandle.Alloc(@delegate);
             Value = Marshal.GetFunctionPointerForDelegate(@delegate);
-            FuncPtrInternal.Storage.Add(Value, new FuncPtrInternal{Delegate = @delegate, Handle = handle});
+            FuncPtrInternal.Storage.Add(Value, new FuncPtrInternal {Delegate = @delegate, Handle = handle});
         }
 
         /// <summary>
@@ -86,7 +91,7 @@ namespace Silk.NET.Core.Native
         /// <typeparam name="T">The delegate type.</typeparam>
         /// <returns>The resulting delegate.</returns>
         public T Get<T>()
-            where T:Delegate
+            where T : Delegate
         {
             if (FuncPtrInternal.Storage.TryGetValue(Value, out var value))
             {
