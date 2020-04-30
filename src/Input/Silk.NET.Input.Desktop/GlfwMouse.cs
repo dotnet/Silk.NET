@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Text;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
 using MouseButton = Silk.NET.Input.Common.MouseButton;
@@ -26,6 +27,7 @@ namespace Silk.NET.Input.Desktop
         private GlfwCallbacks.CursorPosCallback _cursorPos;
         private GlfwCallbacks.MouseButtonCallback _mouseButton;
         private bool _firstClick = true;
+        private bool _scrollModified = false;
         private MouseButton? _firstClickButton = null;
         private PointF _firstClickPosition = PointF.Empty;
         private DateTime? _firstClickTime = null;
@@ -82,8 +84,17 @@ namespace Silk.NET.Input.Desktop
         public unsafe void Subscribe(GlfwEvents events)
         {
             _handle = events.Handle;
-            events.Scroll += _scroll = (_, x, y) => Scroll?.Invoke
-                (this, _scrollWheel[0] = new ScrollWheel((float) x, (float) y));
+            events.Scroll += _scroll = (_, x, y) =>
+            {
+                var val = new ScrollWheel((float) x, (float) y);
+                if (_scrollWheel[0].X != val.X || _scrollWheel[0].Y != val.Y)
+                {
+                    _scrollModified = true;
+                }
+
+                _scrollWheel[0] = val;
+                Scroll?.Invoke(this, val);
+            };
             events.CursorPos += _cursorPos = (_, x, y) => MouseMove?.Invoke(this, new PointF((float) x, (float) y));
             events.MouseButton += _mouseButton = (_, btn, action, mods) =>
                 (action switch
@@ -176,8 +187,14 @@ namespace Silk.NET.Input.Desktop
             Click?.Invoke(this, _firstClickButton.Value);
         }
 
-        public void Update()
+        public unsafe void Update()
         {
+            if (!_scrollModified)
+            {
+                _scrollWheel[0] = default;
+            }
+
+            _scrollModified = false;
             if (_firstClickTime != null &&
                 (DateTime.Now - _firstClickTime.Value).TotalMilliseconds > DoubleClickTime)
             {

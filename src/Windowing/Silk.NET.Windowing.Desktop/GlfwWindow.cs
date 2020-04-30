@@ -10,6 +10,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
+using Silk.NET.Core.Contexts;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
 using Silk.NET.Windowing.Common.Structs;
@@ -64,6 +65,7 @@ namespace Silk.NET.Windowing.Desktop
         private bool _updatedWithinPeriod;
         private bool _renderedWithinPeriod;
 
+        // TODO i want to merge all fields into this one OR split this field up as keeping it in sync is annoying
         private WindowOptions _initialOptions;
         private bool _running;
         private readonly IMonitor _initialMonitor;
@@ -79,6 +81,7 @@ namespace Silk.NET.Windowing.Desktop
             _size = options.Size;
 
             _windowBorder = WindowBorder;
+            _vSync = options.VSync;
 
             FramesPerSecond = options.FramesPerSecond;
             UpdatesPerSecond = options.UpdatesPerSecond;
@@ -95,6 +98,15 @@ namespace Silk.NET.Windowing.Desktop
             if (new Version(major, minor) < new Version(3, 3))
             {
                 throw new NotSupportedException("GLFW 3.3 or later is required for Silk.NET.Windowing.Desktop.");
+            }
+
+            if (options.API.API == ContextAPI.Vulkan)
+            {
+                VkSurface = new Surface(this);
+            }
+            else if (options.API.API == ContextAPI.OpenGL || options.API.API == ContextAPI.OpenGLES)
+            {
+                GLContext = new Context(this);
             }
         }
 
@@ -375,7 +387,6 @@ namespace Silk.NET.Windowing.Desktop
                             _glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
                             break;
                     }
-                    _vSync = value;
                 }
 
                 _initialOptions.VSync = value;
@@ -450,6 +461,7 @@ namespace Silk.NET.Windowing.Desktop
         {
             unsafe
             {
+                Closing?.Invoke();
                 _glfw.SetWindowShouldClose(_windowPtr, true);
             }
         }
@@ -784,6 +796,7 @@ namespace Silk.NET.Windowing.Desktop
             Update?.Invoke(delta);            
         }
 
+        private int? _lastVs;
         /// <summary>
         /// Run an OnRender event.
         /// </summary>
@@ -826,9 +839,18 @@ namespace Silk.NET.Windowing.Desktop
             _renderedWithinPeriod = false;
 
             // This has to be called on the thread with the graphics context
-            if (VSync == VSyncMode.Adaptive)
+            var vs = VSync switch
             {
-                _glfw.SwapInterval(IsRunningSlowly ? 0 : 1);
+                VSyncMode.Off => 0,
+                VSyncMode.On => 1,
+                VSyncMode.Adaptive => IsRunningSlowly ? 0 : 1,
+                _ => 0
+            };
+
+            if (_lastVs is null || _lastVs.Value != vs)
+            {
+                _lastVs = vs;
+                _glfw.SwapInterval(vs);
             }
 
             Render?.Invoke(delta);
@@ -1066,6 +1088,66 @@ namespace Silk.NET.Windowing.Desktop
             }
 
             return -1;
+        }
+
+#pragma warning disable 8632
+        public IGLContext? GLContext { get; }
+        public IVkSurface? VkSurface { get; }
+#pragma warning restore 8632
+
+        private readonly struct Context : IGLContext
+        {
+            private readonly GlfwWindow _window;
+
+            public Context(GlfwWindow window)
+            {
+                _window = window;
+            }
+            public IntPtr GetProcAddress(string proc) => _window._glfw.GetProcAddress(proc);
+            public IntPtr Handle => _window.Handle;
+            public unsafe bool IsCurrent => _window._glfw.GetCurrentContext() == _window._windowPtr;
+            public void SwapInterval(int interval) => _window._glfw.SwapInterval(interval);
+
+            public unsafe void SwapBuffers() => _window._glfw.SwapBuffers(_window._windowPtr);
+
+            public unsafe void MakeCurrent() => _window._glfw.MakeContextCurrent(_window._windowPtr);
+
+            public unsafe void Clear()
+            {
+                if (IsCurrent)
+                {
+                    _window._glfw.MakeContextCurrent(null);
+                }
+            }
+
+            public void Dispose()
+            {
+            }
+        }
+
+        private readonly struct Surface : IVkSurface
+        {
+            private readonly GlfwWindow _window;
+
+            public Surface(GlfwWindow window)
+            {
+                _window = window;
+            }
+
+            public unsafe VkHandle Create<T>(VkHandle instance, T* allocator) where T : unmanaged
+            {
+                var surface = stackalloc VkHandle[1];
+                int ec;
+                if ((ec = _window._glfw.CreateWindowSurface(instance, _window._windowPtr, allocator, surface)) != 0)
+                {
+                    throw new GlfwException("Failed to create surface, error code " + ec);
+                }
+
+                return surface[0];
+            }
+
+            public unsafe char** GetRequiredExtensions(out uint count)
+                => (char**) _window._glfw.GetRequiredInstanceExtensions(out count);
         }
     }
 }

@@ -67,10 +67,16 @@ namespace Silk.NET.OpenAL
         public abstract unsafe int GetEnumValue(Device* device, string name);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetString")]
         public abstract unsafe string GetContextProperty(Device* device, GetContextString param);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetIntegerv")]
         public abstract unsafe void GetContextProperty(Device* device, GetContextInteger param, int count, IntPtr data);
+
+        /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetIntegerv")]
+        public abstract unsafe void GetContextProperty(Device* device, GetContextInteger param, int count, int* data);
 
         /// <summary>
         /// Gets an instance of the API.

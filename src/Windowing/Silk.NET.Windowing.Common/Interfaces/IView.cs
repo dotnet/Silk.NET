@@ -5,13 +5,14 @@
 
 using System;
 using System.Drawing;
+using Silk.NET.Core.Contexts;
 
 namespace Silk.NET.Windowing.Common
 {
     /// <summary>
     /// Represents a window view.
     /// </summary>
-    public interface IView : IViewProperties, IDisposable
+    public interface IView : IViewProperties, IGLContextSource, IVkSurfaceSource, IDisposable
     {
         /// <summary>
         /// A handle to the underlying window.
@@ -21,11 +22,13 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// Determines whether the context is current on this thread.
         /// </summary>
+        [Obsolete("IsCurrentContext will be removed in 2.0. Use GLContext.IsCurrent instead.")]
         bool IsCurrentContext { get; }
         
         /// <summary>
         /// Determines whether Vulkan functions are supported on this window.
         /// </summary>
+        [Obsolete("IsVulkanSupported will be removed in 2.0. Check whether VkSurface is null instead.")]
         bool IsVulkanSupported { get; }
         
         /// <summary>

@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
@@ -38,10 +39,8 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 pointerLevel += 1;
             }
 
-            var type = new TypeSpec(typeName, pointerLevel);
-
-            var foundConstantElementCount = false;
-            var elementCount = 1;
+            bool foundConstantElementCount = false;
+            int elementCount = 1;
             string elementCountSymbolic = null;
             for (var i = 2; i < 10; i++)
             {
@@ -62,7 +61,18 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 }
             }
 
-            var value = xe.Attribute("values")?.Value;
+            if (foundConstantElementCount && typeName.Contains($"[{elementCount}]"))
+            {
+                typeName = typeName.Replace($"[{elementCount}]", string.Empty);
+            }
+            else if (!(elementCountSymbolic is null) && typeName.Contains($"[{elementCountSymbolic}]"))
+            {
+                typeName = typeName.Replace($"[{elementCountSymbolic}]", string.Empty);
+            }
+
+            TypeSpec type = new TypeSpec(typeName, pointerLevel);
+
+            string value = xe.Attribute("values")?.Value;
 
             return new MemberSpec(name, type, isOptional, elementCount, elementCountSymbolic, string.Empty, value);
         }

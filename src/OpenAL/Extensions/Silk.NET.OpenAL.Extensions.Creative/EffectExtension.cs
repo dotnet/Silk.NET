@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Numerics;
+using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Native;
 using Ultz.SuperInvoke;
@@ -29,18 +30,23 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public abstract unsafe void DeleteAuxiliaryEffectSlots(int count, uint* slots);
 
         /// <inheritdoc />
+        [return: MarshalAs(UnmanagedType.I4)]
         public abstract bool IsAuxiliaryEffectSlot(uint slot);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "AuxiliaryEffectSloti")]
         public abstract void SetAuxiliaryEffectSlotProperty(uint slot, EffectSlotInteger param, int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "AuxiliaryEffectSlotf")]
         public abstract void SetAuxiliaryEffectSlotProperty(uint slot, EffectSlotFloat param, float value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetAuxiliaryEffectSloti")]
         public abstract void GetAuxiliaryEffectSlotProperty(uint slot, EffectSlotInteger param, out int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetAuxiliaryEffectSlotf")]
         public abstract void GetAuxiliaryEffectSlotProperty(uint slot, EffectSlotFloat param, out float value);
 
         /// <inheritdoc />
@@ -50,24 +56,31 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public abstract unsafe void DeleteEffects(int count, uint* effects);
 
         /// <inheritdoc />
+        [return: MarshalAs(UnmanagedType.I4)]
         public abstract bool IsEffect(uint effect);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Effecti")]
         public abstract void SetEffectProperty(uint effect, EffectInteger param, int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Effectf")]
         public abstract void SetEffectProperty(uint effect, EffectFloat param, float value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Effectfv")]
         public abstract void SetEffectProperty(uint effect, EffectVector3 param, in Vector3 value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetEffecti")]
         public abstract void GetEffectProperty(uint effect, EffectInteger param, out int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetEffectf")]
         public abstract void GetEffectProperty(uint effect, EffectFloat param, out float value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetEffectfv")]
         public abstract void GetEffectProperty(uint effect, EffectVector3 param, out Vector3 value);
 
         /// <inheritdoc />
@@ -77,50 +90,66 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public abstract unsafe void DeleteFilters(int count, uint* filters);
 
         /// <inheritdoc />
+        [return: MarshalAs(UnmanagedType.I4)]
         public abstract bool IsFilter(uint filter);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Filteri")]
         public abstract void SetFilterProperty(uint filter, FilterInteger param, int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Filterf")]
         public abstract void SetFilterProperty(uint filter, FilterFloat param, float value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetFilteri")]
         public abstract void GetFilterProperty(uint filter, FilterInteger param, out int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetFilterf")]
         public abstract void GetFilterProperty(uint filter, FilterFloat param, out float value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Sourcei")]
         public abstract void SetSourceProperty(uint source, EFXSourceInteger param, int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Sourcef")]
         public abstract void SetSourceProperty(uint source, EFXSourceFloat param, float value);
 
         /// <inheritdoc />
-        public abstract void SetSourceProperty(uint source, EFXSourceBoolean param, bool value);
+        [NativeApi(EntryPoint = "Sourcei")]
+        public abstract void SetSourceProperty
+            (uint source, EFXSourceBoolean param, [MarshalAs(UnmanagedType.I4)] bool value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Source3i")]
         public abstract void SetSourceProperty(uint source, EFXSourceInteger3 param, int value1, int value2,
             int value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetSourcei")]
         public abstract void GetSourceProperty(uint source, EFXSourceInteger param, out int value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetSourcef")]
         public abstract void GetSourceProperty(uint source, EFXSourceFloat param, out float value);
 
         /// <inheritdoc />
-        public abstract void GetSourceProperty(uint source, EFXSourceBoolean param, out bool value);
+        [NativeApi(EntryPoint = "GetSourcei")]
+        public abstract void GetSourceProperty(uint source, EFXSourceBoolean param, [MarshalAs(UnmanagedType.I4)] out bool value);
 
         /// <inheritdoc />
-        public abstract void SetSourceProperty(uint source, EFXSourceInteger3 param, out int value1, out int value2,
+        [NativeApi(EntryPoint = "GetSource3i")]
+        public abstract void GetSourceProperty(uint source, EFXSourceInteger3 param, out int value1, out int value2,
             out int value3);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "Listenerf")]
         public abstract void SetListenerProperty(uint listener, EFXListenerFloat param, float value);
 
         /// <inheritdoc />
+        [NativeApi(EntryPoint = "GetListenerf")]
         public abstract void GetListenerProperty(uint listener, EFXListenerFloat param, out float value);
 
         /// <summary>
