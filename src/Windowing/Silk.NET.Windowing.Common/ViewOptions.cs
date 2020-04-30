@@ -50,7 +50,8 @@ namespace Silk.NET.Windowing.Common
             int isRunningSlowlyThreshold,
             bool shouldSwapAutomatically,
             VideoMode videoMode,
-            int? preferredDepthBufferBits = null
+            int? preferredDepthBufferBits = null,
+            bool isEventDriven = false
         )
         {
             UseSingleThreadedWindow = useSingleThreadedWindow;
@@ -62,6 +63,7 @@ namespace Silk.NET.Windowing.Common
             ShouldSwapAutomatically = shouldSwapAutomatically;
             VideoMode = videoMode;
             PreferredDepthBufferBits = preferredDepthBufferBits;
+            IsEventDriven = isEventDriven;
         }
 
         /// <summary>

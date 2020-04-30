@@ -35,6 +35,7 @@ namespace Silk.NET.Windowing.Common
             VideoMode = opts.VideoMode;
             PreferredDepthBufferBits = opts.PreferredDepthBufferBits;
             TransparentFramebuffer = false;
+            IsEventDriven = opts.IsEventDriven;
         }
 
         /// <inheritdoc />
@@ -108,7 +109,8 @@ namespace Silk.NET.Windowing.Common
             bool shouldSwapAutomatically,
             VideoMode videoMode,
             int? preferredDepthBufferBits = null,
-            bool transparentFramebuffer = false
+            bool transparentFramebuffer = false,
+            bool isEventDriven = false
         )
         {
             IsVisible = isVisible;
@@ -127,6 +129,7 @@ namespace Silk.NET.Windowing.Common
             VideoMode = videoMode;
             PreferredDepthBufferBits = preferredDepthBufferBits;
             TransparentFramebuffer = transparentFramebuffer;
+            IsEventDriven = isEventDriven;
         }
 
         /// <summary>
