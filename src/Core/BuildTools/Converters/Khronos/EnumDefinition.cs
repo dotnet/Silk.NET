@@ -1,16 +1,37 @@
 ﻿using System;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
 {
+    /// <summary>
+    /// Defines an enum.
+    /// </summary>
     public class EnumDefinition
     {
+        /// <summary>
+        /// The name of the enum.
+        /// </summary>
         public string Name { get; }
+        
+        /// <summary>
+        /// The type of the enum.
+        /// </summary>
         public EnumType Type { get; }
+        
+        /// <summary>
+        /// The values of the enum.
+        /// </summary>
         public EnumValue[] Values { get; set;  }
 
+        /// <summary>
+        /// The enum definition.
+        /// </summary>
+        /// <param name="name">The name of the enum.</param>
+        /// <param name="type">The type of the enum.</param>
+        /// <param name="values">The values of the enum.</param>
         public EnumDefinition(string name, EnumType type, EnumValue[] values)
         {
             Require.NotNullOrEmpty(name);
@@ -21,9 +42,24 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Values = values;
         }
         
+        /// <summary>
+        /// Clone the enum.
+        /// </summary>
+        /// <returns>A clone of the enum.</returns>
         public EnumDefinition Clone() => new EnumDefinition(Name, Type, Values);
+        
+        /// <summary>
+        /// Clone the enum, with a new name.
+        /// </summary>
+        /// <param name="newName">The new name.</param>
+        /// <returns>A clone of the enum.</returns>
         public EnumDefinition Clone(string newName) => new EnumDefinition(newName, Type, Values);
 
+        /// <summary>
+        /// Creates an EnumDefinition from an XML document.
+        /// </summary>
+        /// <param name="xe">The XML element to create from.</param>
+        /// <returns>An EnumDefinition.</returns>
         public static EnumDefinition CreateFromXml(XElement xe)
         {
             Require.NotNull(xe);
@@ -32,7 +68,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             var typeAttr = xe.Attribute("type");
             if (typeAttr != null)
             {
-                string typeString = xe.Attribute("type").Value;
+                var typeString = xe.Attribute("type")?.Value ?? throw new InvalidDataException();
                 type = (EnumType)Enum.Parse(typeof(EnumType), typeString, true);
             }
             else
@@ -40,30 +76,65 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 type = EnumType.Constants;
             }
 
-            string name = xe.Attribute("name").Value;
-            EnumValue[] values = xe.Elements("enum").Select(valuesx => EnumValue.CreateFromXml(valuesx)).ToArray();
+            var name = xe.Attribute("name")?.Value;
+            var values = xe.Elements("enum").Select(EnumValue.CreateFromXml).ToArray();
             return new EnumDefinition(name, type, values);
         }
 
+        /// <inheritdoc />
         public override string ToString()
         {
             return $"Enum: {Name} ({Type})[{Values.Length}]";
         }
     }
 
+    /// <summary>
+    /// The type of the defined enum.
+    /// </summary>
     public enum EnumType
     {
+        /// <summary>
+        /// Enum is a bitmask.
+        /// </summary>
         Bitmask,
+        
+        /// <summary>
+        /// Enum is a regular enum.
+        /// </summary>
         Enum,
+        
+        /// <summary>
+        /// Enum defines a series of constants.
+        /// </summary>
         Constants,
     }
 
+    /// <summary>
+    /// Defines the value of an <see cref="EnumDefinition"/>
+    /// </summary>
     public class EnumValue
     {
+        /// <summary>
+        /// The name of the EnumValue.
+        /// </summary>
         public string Name { get; }
+        
+        /// <summary>
+        /// The value of the EnumValue.
+        /// </summary>
         public int Value { get; }
+        
+        /// <summary>
+        /// The comment of the EnumValue.
+        /// </summary>
         public string Comment { get; }
 
+        /// <summary>
+        /// Create a new EnumValue.
+        /// </summary>
+        /// <param name="name">The name of the value.</param>
+        /// <param name="value">The value of the enum value.</param>
+        /// <param name="comment">The comment of the EnumValue.</param>
         public EnumValue(string name, int value, string comment)
         {
             Name = name;
@@ -71,6 +142,11 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Comment = comment;
         }
 
+        /// <summary>
+        /// Creates an EnumValue from an XML document.
+        /// </summary>
+        /// <param name="xe">The XML element to create from.</param>
+        /// <returns>An EnumValue.</returns>
         public static EnumValue CreateFromXml(XElement xe)
         {
             Require.NotNull(xe);
@@ -78,23 +154,23 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             if (!(xe.Attribute("alias") is null))
             {
                 var ret = CreateFromXml
-                (xe.Document.Element("registry")
-                    .Elements("enums")
+                (xe.Document?.Element("registry")
+                    ?.Elements("enums")
                     .Where
                     (
-                        enumx => enumx.GetTypeAttributeOrNull() == "enum" ||
-                                 enumx.GetTypeAttributeOrNull() == "bitmask"
+                        x => x.GetTypeAttributeOrNull() == "enum" ||
+                                 x.GetTypeAttributeOrNull() == "bitmask"
                     )
                     .Elements("enum")
-                    .FirstOrDefault(x => x.Attribute("name")?.Value == xe.Attribute("alias").Value));
+                    .FirstOrDefault(x => x.Attribute("name")?.Value == xe.Attribute("alias")?.Value));
                 
-                return new EnumValue(xe.Attribute("name").Value, ret.Value, ret.Comment);
+                return new EnumValue(xe.Attribute("name")?.Value, ret.Value, ret.Comment);
             }
 
-            string name = xe.Attribute("name").Value;
+            var name = xe.Attribute("name")?.Value;
 
             int value;
-            string valueStr = xe.Attribute("value")?.Value;
+            var valueStr = xe.Attribute("value")?.Value;
             if (valueStr != null)
             {
                 if (valueStr.StartsWith("0x"))
@@ -109,12 +185,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             }
             else
             {
-                string bitposStr = xe.Attribute("bitpos").Value;
-                value = 1 << int.Parse(bitposStr);
+                var bitposStr = xe.Attribute("bitpos")?.Value;
+                value = 1 << int.Parse(bitposStr ?? throw new InvalidDataException());
             }
 
             var commentAttr = xe.Attribute("comment");
-            string comment = commentAttr != null ? commentAttr.Value : string.Empty;
+            var comment = commentAttr != null ? commentAttr.Value : string.Empty;
             return new EnumValue(name, value, comment);
         }
     }

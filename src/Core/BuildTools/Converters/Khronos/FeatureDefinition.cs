@@ -1,20 +1,67 @@
-﻿using System;
+﻿// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
 {
+    /// <summary>
+    /// Defines a feature.
+    /// </summary>
     public class FeatureDefinition
     {
+        /// <summary>
+        /// Name of the feature.
+        /// </summary>
         public string Name { get; }
+        
+        /// <summary>
+        /// Version number of the feature.
+        /// </summary>
         public Version Number { get; }
+        
+        /// <summary>
+        /// API of the feature.
+        /// </summary>
         public string Api { get; }
+        
+        /// <summary>
+        /// Enum names of the feature.
+        /// </summary>
         public string[] EnumNames { get; }
+        
+        /// <summary>
+        /// Command names of the feature.
+        /// </summary>
         public string[] CommandNames { get; }
+        
+        /// <summary>
+        /// Type names of the feature.
+        /// </summary>
         public string[] TypeNames { get; }
+        
+        /// <summary>
+        /// Enum extensions in the feature.
+        /// </summary>
         public EnumExtensionValue[] EnumExtensions { get; }
 
+        /// <summary>
+        /// Create a new FeatureDefinition.
+        /// </summary>
+        /// <param name="name">The name of the feature.</param>
+        /// <param name="number">The version number.</param>
+        /// <param name="api">The API.</param>
+        /// <param name="enumNames">The enum names.</param>
+        /// <param name="commandNames">The command names.</param>
+        /// <param name="typeNames">The type names.</param>
+        /// <param name="extensionValues">Enum extension values.</param>
         public FeatureDefinition(
             string name,
             Version number,
@@ -22,7 +69,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             string[] enumNames,
             string[] commandNames,
             string[] typeNames,
-            EnumExtensionValue[] extVals)
+            EnumExtensionValue[] extensionValues)
         {
             Name = name;
             Number = number;
@@ -30,34 +77,35 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             EnumNames = enumNames;
             CommandNames = commandNames;
             TypeNames = typeNames;
-            EnumExtensions = extVals;
+            EnumExtensions = extensionValues;
         }
 
+        /// <summary>
+        /// Create a FeatureDefinition from an XML element.
+        /// </summary>
+        /// <param name="xe">The element to create.</param>
+        /// <returns>The created definition.</returns>
         public static FeatureDefinition CreateFromXml(XElement xe)
         {
-            string name = xe.GetNameAttribute();
-            string numberString = xe.Attribute("number").Value;
-            Version number = Version.Parse(numberString);
-            string api = xe.Attribute("api")?.Value;
-            List<string> enumNames = new List<string>();
-            List<string> commandNames = new List<string>();
-            List<string> typeNames = new List<string>();
+            var name = xe.GetNameAttribute();
+            var numberString = xe.Attribute("number")?.Value ?? throw new InvalidDataException();
+            var number = Version.Parse(numberString);
+            var api = xe.Attribute("api")?.Value;
+            var enumNames = new List<string>();
+            var commandNames = new List<string>();
+            var typeNames = new List<string>();
             var enumExtensionValues = new List<EnumExtensionValue>();
 
             foreach (var require in xe.Elements("require"))
             {
-                foreach (var enumXE in require.Elements("enum"))
-                {
-                    enumNames.Add(ParseEnumRequirement(enumXE, 0, enumExtensionValues));
-                }
-                foreach (var commandXE in require.Elements("command"))
-                {
-                    commandNames.Add(commandXE.GetNameAttribute());
-                }
-                foreach (var typeXE in require.Elements("type"))
-                {
-                    commandNames.Add(typeXE.GetNameAttribute());
-                }
+                enumNames.AddRange(require.Elements("enum")
+                    .Select(x => ParseEnumRequirement(x, 0, enumExtensionValues)));
+                
+                commandNames.AddRange(require.Elements("command")
+                    .Select(x => x.GetNameAttribute()));
+
+                commandNames.AddRange(require.Elements("type")
+                    .Select(x => x.GetNameAttribute()));
             }
 
             return new FeatureDefinition
@@ -67,27 +115,31 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             );
         }
 
-        private static string ParseEnumRequirement(XElement enumXE, int ognumber, List<EnumExtensionValue> enumExtensions)
+        private static string ParseEnumRequirement(XElement enumXe, int originalNumber, ICollection<EnumExtensionValue> enumExtensions)
         {
-            string enumName = enumXE.GetNameAttribute();
+            var enumName = enumXe.GetNameAttribute();
+            
+            Debug.Assert(enumXe.Document != null);
 
-            var number = enumXE.Attribute("extnumber") is null
-                ? ognumber
-                : int.Parse(enumXE.Attribute("extnumber").Value);
+            var number = enumXe.Attribute("extnumber") is null
+                ? originalNumber
+                : int.Parse(enumXe.Attribute("extnumber")?.Value ?? throw new InvalidDataException());
 
-            if (!(enumXE.Attribute("alias") is null))
+            if (!(enumXe.Attribute("alias") is null))
             {
                 var dummyValues = new List<EnumExtensionValue>();
                 ParseEnumRequirement
                 (
-                    enumXE.Document.Element("registry")
-                        .Elements("extensions")
+                    enumXe.Document.Element("registry")
+                        ?.Elements("extensions")
                         .Elements("extension")
-                        .Concat(enumXE.Document.Element("registry").Elements("feature"))
+                        .Concat(enumXe.Document.Element("registry")?.Elements("feature")
+                                ?? throw new InvalidDataException())
                         .Elements("require")
                         .Elements("enum")
-                        .Concat(enumXE.Document.Element("registry").Elements("enums").Elements("enum"))
-                        .FirstOrDefault(x => x.GetNameAttribute() == enumXE.Attribute("alias").Value), number,
+                        .Concat(enumXe.Document.Element("registry")?.Elements("enums").Elements("enum")
+                                ?? throw new InvalidDataException())
+                        .FirstOrDefault(x => x.GetNameAttribute() == enumXe.Attribute("alias")?.Value), number,
                     dummyValues
                 );
                 foreach (var dummyValue in dummyValues)
@@ -98,34 +150,34 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 return enumName;
             }
 
-            string extends = enumXE.Attribute("extends")?.Value;
+            var extends = enumXe.Attribute("extends")?.Value;
             if (extends != null)
             {
                 string valueString;
-                string offsetString = enumXE.Attribute("offset")?.Value;
+                var offsetString = enumXe.Attribute("offset")?.Value;
                 if (offsetString != null)
                 {
-                    int offset = int.Parse(offsetString);
-                    int direction = 1;
-                    if (enumXE.Attribute("dir")?.Value == "-")
+                    var offset = int.Parse(offsetString);
+                    var direction = 1;
+                    if (enumXe.Attribute("dir")?.Value == "-")
                     {
                         direction = -1;
                     }
 
-                    int value = direction * (1000000000 + (number - 1) * 1000 + offset);
+                    var value = direction * (1000000000 + (number - 1) * 1000 + offset);
                     valueString = value.ToString();
                 }
                 else
                 {
-                    string bitPosString = enumXE.Attribute("bitpos")?.Value;
+                    var bitPosString = enumXe.Attribute("bitpos")?.Value;
                     if (bitPosString != null)
                     {
-                        int shift = int.Parse(bitPosString);
+                        var shift = int.Parse(bitPosString);
                         valueString = (1 << shift).ToString();
                     }
                     else
                     {
-                        valueString = enumXE.Attribute("value").Value;
+                        valueString = enumXe.Attribute("value")?.Value;
                     }
                 }
                 enumExtensions.Add(new EnumExtensionValue(extends, enumName, valueString));

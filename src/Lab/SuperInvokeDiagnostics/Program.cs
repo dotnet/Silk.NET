@@ -1,6 +1,5 @@
 ﻿using System.Diagnostics;
 using System.IO;
-using System.Reflection.Emit;
 using Silk.NET.OpenGLES;
 using Ultz.SuperInvoke.AOT;
 using Ultz.SuperInvoke.Emit;

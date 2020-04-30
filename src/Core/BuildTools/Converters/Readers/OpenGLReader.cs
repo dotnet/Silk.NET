@@ -13,7 +13,6 @@ using System.Linq;
 using System.Xml.Linq;
 using JetBrains.Annotations;
 using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
@@ -22,16 +21,23 @@ using Attribute = Silk.NET.BuildTools.Common.Attribute;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
+// Lots of string literals that don't follow the normal style here
+// ReSharper disable StringLiteralTypo
+
 namespace Silk.NET.BuildTools.Converters.Readers
 {
+    /// <summary>
+    /// API reader for OpenCL.
+    /// </summary>
     public class OpenGLReader : IReader
     {
-        private static readonly string[] Apis = "gl|glcore|gles1|gles2|glsc2".Split('|');
+        /// <inheritdoc />
         public object Load(Stream stream)
         {
             return XDocument.Load(stream);
         }
 
+        /// <inheritdoc />
         public IEnumerable<Struct> ReadStructs(object obj, ProfileConverterOptions opts)
         {
             return Enumerable.Empty<Struct>();
@@ -41,20 +47,35 @@ namespace Silk.NET.BuildTools.Converters.Readers
         // Function Parsing
         ////////////////////////////////////////////////////////////////////////////////////////
 
+        /// <inheritdoc />
         public IEnumerable<Function> ReadFunctions(object obj, ProfileConverterOptions opts)
         {
             var doc = obj as XDocument;
-            var allFunctions = doc.Element("registry").Elements("commands")
+            Debug.Assert(doc != null, $"{nameof(doc)} != null");
+
+            var registry = doc.Element("registry");
+            Debug.Assert(registry != null, $"{nameof(registry)} != null");
+            
+            var allFunctions = registry.Elements("commands")
                 .Elements("command")
                 .Select(x => TranslateCommand(x, opts))
                 .ToDictionary(x => x.Attribute("name")?.Value, x => x);
-            var apis = doc.Element("registry").Elements("feature").Concat(doc.Element("registry").Elements("extensions").Elements("extension"));
-            var removals = doc.Element("registry").Elements("feature")
+            Debug.Assert(allFunctions != null, $"{nameof(allFunctions) != null}");
+            
+            var apis = registry.Elements("feature")
+                .Concat(registry.Elements("extensions").Elements("extension")
+                        ?? throw new InvalidDataException());
+            Debug.Assert(apis != null, $"{nameof(apis)} != null");
+            
+            var removals = registry
+                .Elements("feature")
                 .Elements("remove")
                 .Elements("command")
                 .Attributes("name")
                 .Select(x => x.Value)
                 .ToList();
+            Debug.Assert(removals != null, $"{nameof(removals) != null}");
+            
             foreach (var api in apis)
             {
                 foreach (var requirement in api.Elements("require"))
@@ -64,7 +85,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                   api.Attribute("supported")?.Value ??
                                   "gl";
                     var apiVersion = api.Attribute("number") != null
-                        ? Version.Parse(api.Attribute("number").Value)
+                        ? Version.Parse(api.Attribute("number")?.Value ?? throw new InvalidDataException())
                         : null;
                     foreach (var name in apiName.Split('|'))
                     {
@@ -93,12 +114,15 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 Doc = string.Empty,
                                 ExtensionName = api.Name == "feature" ? "Core" : TrimName(api.Attribute("name")?.Value, opts),
                                 GenericTypeParameters = new List<GenericTypeParameter>(),
-                                Name = Naming.Translate(NameTrimmer.Trim(TrimName(xf.Attribute("name")?.Value, opts), opts.Prefix), opts.Prefix),
+                                Name = Naming.Translate(NameTrimmer
+                                    .Trim(TrimName(xf.Attribute("name")?.Value, opts),
+                                        opts.Prefix), opts.Prefix),
                                 NativeName = function,
                                 Parameters = ParseParameters(xf),
                                 ProfileName = name,
                                 ProfileVersion = apiVersion,
-                                ReturnType = ParseTypeSignature(xf.Element("returns"))
+                                ReturnType = ParseTypeSignature(xf.Element("returns")
+                                                                ?? throw new InvalidDataException())
                             };
 
                             yield return ret;
@@ -128,6 +152,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
             }
         }
         
+        /// <summary>
+        /// Parse the type signature of the provided element.
+        /// </summary>
+        /// <param name="typeElement">The element to parse.</param>
+        /// <returns>The type signature.</returns>
         [NotNull]
         public static Type ParseTypeSignature([NotNull] XElement typeElement)
         {
@@ -144,6 +173,13 @@ namespace Silk.NET.BuildTools.Converters.Readers
             return ret;
         }
         
+        /// <summary>
+        /// Parse the type signature of the provided string.
+        /// </summary>
+        /// <param name="type">The type to parse.</param>
+        /// <param name="original">The original type string. Can be omitted.</param>
+        /// <returns>The parsed type.</returns>
+        /// <exception cref="InvalidDataException">Thrown if type tries to be both a pointer and array.</exception>
         [NotNull]
         public static Type ParseTypeSignature([NotNull] string type, string original = null)
         {
@@ -211,7 +247,20 @@ namespace Silk.NET.BuildTools.Converters.Readers
             };
         }
         
-        /// </returns>
+        /// <summary>
+        /// Deduce a parameter's Count from an XML signature.
+        /// </summary>
+        /// <param name="countData">The count data.</param>
+        /// <param name="hasComputedCount">Have we successfully computed the count?</param>
+        /// <param name="computedCountParameterNames">The names of all computed count parameters.
+        /// If <paramref name="hasComputedCount"/> is false, this is null.</param>
+        /// <param name="hasValueReference">Does this have a value reference?</param>
+        /// <param name="valueReferenceName">The value reference name.
+        /// if <paramref name="hasValueReference"/> is false, this is null.</param>
+        /// <param name="valueReferenceExpression">The value reference expression.
+        /// if <paramref name="hasValueReference"/> is false, this is null.</param>
+        /// <returns>The computed Count.</returns>
+        /// <exception cref="InvalidDataException">Thrown if no valid count could be deduced.</exception>
         [CanBeNull]
         [ContractAnnotation
         (
@@ -283,15 +332,15 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             static bool IsMath(ReadOnlySpan<char> span)
             {
-                for (int i = 0; i < span.Length; i++)
+                foreach (var t in span)
                 {
-                    if (span[i] != '+'
-                        && span[i] != '-'
-                        && span[i] != '*'
-                        && span[i] != '/'
-                        && span[i] != '^'
-                        && span[i] != ' '
-                        && !char.IsDigit(span[i]))
+                    if (t != '+'
+                        && t != '-'
+                        && t != '*'
+                        && t != '/'
+                        && t != '^'
+                        && t != ' '
+                        && !char.IsDigit(t))
                     {
                         return false;
                     }
@@ -303,7 +352,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             // check for count with expression.
             if (char.IsLetter(countDataSpan[0]))
             {
-                int i = 1;
+                var i = 1;
                 while (char.IsLetterOrDigit(countDataSpan[i]))
                 {
                     i++;
@@ -381,7 +430,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             // A parameter is technically a type signature (think of it as Parameter : ITypeSignature)
             var paramType = ParseTypeSignature(paramElement);
 
-            var paramFlowStr = paramElement.Attribute("flow").Value ?? throw new DataException("Missing flow attribute.");
+            var paramFlowStr = paramElement.Attribute("flow")?.Value ?? throw new DataException("Missing flow attribute.");
 
             if (!System.Enum.TryParse<FlowDirection>(paramFlowStr, true, out var paramFlow))
             {
@@ -419,11 +468,17 @@ namespace Silk.NET.BuildTools.Converters.Readers
             };
         }
 
-        private string FunctionName(XElement e, ProfileConverterOptions opts)
+        private string FunctionName(XContainer e, ProfileConverterOptions opts)
         {
             return TrimName(e.Element("proto")?.Element("name")?.Value, opts);
         }
-
+        
+        /// <summary>
+        /// Trims the prefix off a name.
+        /// </summary>
+        /// <param name="name">The name to trim.</param>
+        /// <param name="opts">The profile options containing the prefix.</param>
+        /// <returns>The name, trimmed.</returns>
         public string TrimName(string name, ProfileConverterOptions opts)
         {
             if (name.StartsWith($"{opts.Prefix.ToUpper()}_"))
@@ -436,6 +491,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
         private static string FunctionParameterType(XElement e)
         {
+            // ReSharper disable CommentTypo
             // Parse the C-like <proto> element. Possible instances:
             // Return types:
             // - <proto>void <name>glGetSharpenTexFuncSGIS</name></proto>
@@ -448,7 +504,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
             //   -> <param name="shadertype" type="GLenum" />
             // - <param len="1"><ptype>GLsizei</ptype> *<name>length</name></param>
             //   -> <param name="length" type="GLsizei" count="1" />
+            // ReSharper restore CommentTypo
             var proto = e.Value;
+            
             var name = e.Element("name");
             if (name == null) {
                 throw new InvalidOperationException("Name is null");
@@ -459,7 +517,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             return ret;
         }
         
-        private XElement TranslateCommand(XElement command, ProfileConverterOptions opts)
+        private XElement TranslateCommand(XContainer command, ProfileConverterOptions opts)
         {
             var function = new XElement("function");
 
@@ -469,7 +527,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var returns = new XElement
             (
                 "returns",
-                command.Element("proto").Attribute("group") is null ? new object[]{new XAttribute
+                command.Element("proto")?.Attribute("group") is null ? new object[]{new XAttribute
                 (
                     "type",
                     FunctionParameterType(command.Element("proto"))
@@ -485,7 +543,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         .Replace("struct", string.Empty)
                         .Replace("String *", "String")
                         .Trim()
-                ), new XAttribute("group", command.Element("proto").Attribute("group").Value)}
+                ), new XAttribute("group", command.Element("proto")?.Attribute("group")?.Value
+                                           ?? throw new InvalidDataException())}
             );
 
             foreach (var parameter in command.Elements("param"))
@@ -493,7 +552,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 var param = FunctionParameterType(parameter);
 
                 var p = new XElement("param");
-                var pname = new XAttribute("name", parameter.Element("name")?.Value ?? throw new NullReferenceException());
+                var paramName = new XAttribute("name", parameter.Element("name")?.Value
+                                                       ?? throw new NullReferenceException());
+                
                 var type = new XAttribute
                 (
                     "type",
@@ -513,7 +574,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     param.Contains("*") && !param.Contains("const") ? "out" : "in"
                 );
 
-                p.Add(pname, type, flow);
+                p.Add(paramName, type, flow);
                 if (count != null)
                 {
                     p.Add(count);
@@ -521,7 +582,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
                 if (!(parameter.Attribute("group") is null))
                 {
-                    p.Add(new XAttribute("group", parameter.Attribute("group").Value));
+                    p.Add(new XAttribute("group", parameter.Attribute("group")?.Value
+                                                  ?? throw new InvalidDataException()));
                 }
 
                 function.Add(p);
@@ -536,10 +598,16 @@ namespace Silk.NET.BuildTools.Converters.Readers
         // Enum Parsing
         ////////////////////////////////////////////////////////////////////////////////////////
 
+        /// <inheritdoc />
         public IEnumerable<Enum> ReadEnums(object obj, ProfileConverterOptions opts)
         {
             var doc = obj as XDocument;
-            var allEnums = doc.Element("registry").Elements("enums")
+            Debug.Assert(doc != null, nameof(doc) + " != null");
+
+            var registry = doc.Element("registry");
+            Debug.Assert(registry != null, nameof(registry) + " != null");
+            
+            var allEnums = registry.Elements("enums")
                 .Elements("enum")
                 .DistinctBy(x => x.Attribute("name")?.Value)
                 .ToDictionary
@@ -547,8 +615,10 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     x => x.Attribute("name")?.Value,
                     x => (FormatToken(x.Attribute("value")?.Value), x.Attribute("group")?.Value.Split(','))
                 );
-            var apis = doc.Element("registry").Elements("feature").Concat(doc.Element("registry").Elements("extensions").Elements("extension"));
-            var removals = doc.Element("registry").Elements("feature")
+            
+            var apis = registry.Elements("feature").Concat(registry.Elements("extensions").Elements("extension"));
+            
+            var removals = registry.Elements("feature")
                 .Elements("remove")
                 .Elements("enum")
                 .Attributes("name")
@@ -563,7 +633,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                   api.Attribute("supported")?.Value ??
                                   "gl";
                     var apiVersion = api.Attribute("number") != null
-                        ? Version.Parse(api.Attribute("number").Value)
+                        ? Version.Parse(api.Attribute("number")?.Value ?? throw new InvalidDataException())
                         : null;
                     var tokens = requirement.Elements("enum")
                         .Attributes("name")
@@ -682,9 +752,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
             foreach (var group in groups)
             {
-                foreach (var (apiName, apiVersion) in doc.Element("registry")
+                foreach (var (apiName, apiVersion) in registry
                     .Elements("feature")
-                    .Select(x => (x.Attribute("api").Value, x.Attribute("number").Value))
+                    .Select(x => (x.Attribute("api")?.Value, x.Attribute("number")?.Value))
                     .Distinct())
                 {
                     var ret = new Enum
@@ -717,6 +787,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             }
         }
 
+        /// <inheritdoc />
         public IEnumerable<Constant> ReadConstants(object obj, ProfileConverterOptions opts)
         {
             return new Constant[0];

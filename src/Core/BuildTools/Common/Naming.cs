@@ -40,21 +40,27 @@ namespace Silk.NET.BuildTools.Common
         public static readonly IReadOnlyDictionary<string, string> ExtensionAndAcronymOverrides =
             new Dictionary<string, string>
             {
+                // ReSharper disable StringLiteralTypo
                 {"CMAAINTEL", "CmaaIntel"},
                 {"QCOM", "QCom"},
                 {"SNORM", "SNorm"}
+                // ReSharper restore StringLiteralTypo
             };
 
         /// <summary>
         /// Translates an identifier name into a C#-style PascalCase name.
         /// </summary>
         /// <param name="name">The name to translate.</param>
+        /// <param name="prefix">The name prefix.</param>
         /// <returns>The translated name.</returns>
         [NotNull]
         public static string Translate([NotNull] string name, string prefix)
         {
             var builder = new StringBuilder(name);
 
+            // ReSharper thinks the calls to Cast<Match> are redundant, but removing them changes the type of match,
+            // and I don't know enough about LINQ to know how to fix it.
+            // ReSharper disable RedundantEnumerableCastCall
             foreach (var match in LongAcronymsRegex.Matches(builder.ToString()).Cast<Match>())
             {
                 if (!ExtensionAndAcronymOverrides.TryGetValue(match.Value, out var replacement))
@@ -65,8 +71,9 @@ namespace Silk.NET.BuildTools.Common
                 builder.Remove(match.Index, match.Length);
                 builder.Insert(match.Index, replacement);
             }
-
+            
             foreach (var match in ShortNonAcronymsRegex.Matches(builder.ToString()).Cast<Match>())
+                
             {
                 builder.Remove(match.Index, match.Length);
                 builder.Insert(match.Index, match.Value.Transform(To.LowerCase, To.TitleCase));
@@ -77,6 +84,7 @@ namespace Silk.NET.BuildTools.Common
                 builder.Remove(match.Index, match.Length);
                 builder.Insert(match.Index, match.Value.Transform(To.LowerCase, To.TitleCase));
             }
+            // ReSharper restore RedundantEnumerableCastCall
 
             if (char.IsDigit(builder[0]))
             {
@@ -87,6 +95,13 @@ namespace Silk.NET.BuildTools.Common
             return newName.CheckMemberName(prefix);
         }
 
+        /// <summary>
+        /// Translates an identifier name into a C#-style PascalCase name. Omits the use of LINQ from <see cref="Translate"/>.
+        /// <seealso cref="Translate"/>
+        /// </summary>
+        /// <param name="name">The name to translate.</param>
+        /// <param name="prefix">The name prefix.</param>
+        /// <returns>The translated name.</returns>
         public static string TranslateLite([NotNull] string name, string prefix)
         {
             var builder = new StringBuilder(name);

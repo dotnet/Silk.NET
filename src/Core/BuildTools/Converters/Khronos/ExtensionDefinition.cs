@@ -1,21 +1,72 @@
-﻿using System.Collections.Generic;
+﻿// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
 {
+    /// <summary>
+    /// A definition of an extension.
+    /// </summary>
     public class ExtensionDefinition
     {
+        /// <summary>
+        /// The name of the extension.
+        /// </summary>
         public string Name { get; }
+        
+        /// <summary>
+        /// The number of the extension.
+        /// </summary>
         public int Number { get; }
+        
+        /// <summary>
+        /// The extension type.
+        /// </summary>
         public string Type { get; }
+        
+        /// <summary>
+        /// The constants in the extension.
+        /// </summary>
         public ExtensionConstant[] Constants { get; }
+        
+        /// <summary>
+        /// The enums in the extension.
+        /// </summary>
         public EnumExtensionValue[] EnumExtensions { get; }
+        
+        /// <summary>
+        /// The command names in the extension.
+        /// </summary>
         public string[] CommandNames { get; }
+        
+        /// <summary>
+        /// The type names in the extension.
+        /// </summary>
         public string[] TypeNames { get; }
+        
+        /// <summary>
+        /// A list of supported strings in the extension.
+        /// </summary>
         public string[] Supported { get; }
 
+        /// <summary>
+        /// Create a new extension definition.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <param name="number">The number.</param>
+        /// <param name="type">The type.</param>
+        /// <param name="constants">The constants.</param>
+        /// <param name="enumExtensions">The enum extensions.</param>
+        /// <param name="commandNames">The command names.</param>
+        /// <param name="typeNames">The type names.</param>
+        /// <param name="supported">A list of supported strings.</param>
         public ExtensionDefinition(
             string name,
             int number,
@@ -36,61 +87,83 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Supported = supported;
         }
 
+        /// <summary>
+        /// Create an ExtensionDefinition from an XML element.
+        /// </summary>
+        /// <param name="xe">The XML element.</param>
+        /// <returns>The extension definition.</returns>
         public static ExtensionDefinition CreateFromXml(XElement xe)
         {
-            string name = xe.GetNameAttribute();
-            string numberString = xe.Attribute("number").Value;
-            int number = int.Parse(numberString);
-            string type = xe.GetTypeAttributeOrNull();
-            List<ExtensionConstant> extensionConstants = new List<ExtensionConstant>();
-            List<EnumExtensionValue> enumExtensions = new List<EnumExtensionValue>();
-            List<string> commandNames = new List<string>();
-            List<string> typeNames = new List<string>();
-            string[] supported = xe.Attribute("supported").Value.Split('|');
+            var name = xe.GetNameAttribute();
+            var numberString = xe.Attribute("number")?.Value ?? throw new InvalidDataException();
+            var number = int.Parse(numberString);
+            var type = xe.GetTypeAttributeOrNull();
+            var extensionConstants = new List<ExtensionConstant>();
+            var enumExtensions = new List<EnumExtensionValue>();
+            var commandNames = new List<string>();
+            var typeNames = new List<string>();
+            var supported = xe.Attribute("supported")?.Value.Split('|');
 
             foreach (var require in xe.Elements("require"))
             {
-                foreach (var enumXE in require.Elements("enum"))
+                foreach (var enumXe in require.Elements("enum"))
                 {
-                    ParseEnumRequirement(enumXE, number, enumExtensions, name, extensionConstants);
-                }
-                foreach (var commandXE in require.Elements("command"))
-                {
-                    commandNames.Add(commandXE.GetNameAttribute());
+                    ParseEnumRequirement(enumXe, number, enumExtensions, name, extensionConstants);
                 }
 
-                foreach (var typeXE in require.Elements("type"))
-                {
-                    typeNames.Add(typeXE.GetNameAttribute());
-                }
+                commandNames.AddRange(require.Elements("command").Select
+                (
+                    commandXe => commandXe.GetNameAttribute())
+                );
+
+                typeNames.AddRange(require.Elements("type").Select
+                (
+                    typeXe => typeXe.GetNameAttribute())
+                );
             }
-            return new ExtensionDefinition(name, number, type, extensionConstants.ToArray(), enumExtensions.ToArray(), commandNames.ToArray(), typeNames.ToArray(), supported);
+            
+            return new ExtensionDefinition
+            (
+                name,
+                number,
+                type,
+                extensionConstants.ToArray(),
+                enumExtensions.ToArray(),
+                commandNames.ToArray(),
+                typeNames.ToArray(),
+                supported
+            );
         }
 
-        private static void ParseEnumRequirement(XElement enumXE, int ognumber, List<EnumExtensionValue> enumExtensions, string name, List<ExtensionConstant> extensionConstants)
+        private static void ParseEnumRequirement(XElement enumXe, int originalNumber, ICollection<EnumExtensionValue> enumExtensions, string name, ICollection<ExtensionConstant> extensionConstants)
         {
-            string enumName = enumXE.GetNameAttribute();
+            Debug.Assert(enumXe.Document != null, "enumXe.Document != null");
+            var registry = enumXe.Document.Element("registry") ?? throw new InvalidDataException();
+            
+            var enumName = enumXe.GetNameAttribute();
 
-            var number = enumXE.Attribute("extnumber") is null
-                ? ognumber
-                : int.Parse(enumXE.Attribute("extnumber").Value);
+            var number = enumXe.Attribute("extnumber") is null
+                ? originalNumber
+                : int.Parse(enumXe.Attribute("extnumber")?.Value ?? throw new InvalidDataException());
 
-            if (!(enumXE.Attribute("alias") is null))
+            if (!(enumXe.Attribute("alias") is null))
             {
                 var dummyValues = new List<EnumExtensionValue>();
                 var dummyConstants = new List<ExtensionConstant>();
+                
                 ParseEnumRequirement
                 (
-                    enumXE.Document.Element("registry")
+                    registry
                         .Elements("extensions")
                         .Elements("extension")
-                        .Concat(enumXE.Document.Element("registry").Elements("feature"))
+                        .Concat(registry.Elements("feature"))
                         .Elements("require")
                         .Elements("enum")
-                        .Concat(enumXE.Document.Element("registry").Elements("enums").Elements("enum"))
-                        .FirstOrDefault(x => x.GetNameAttribute() == enumXE.Attribute("alias").Value), number,
+                        .Concat(registry.Elements("enums").Elements("enum"))
+                        .FirstOrDefault(x => x.GetNameAttribute() == enumXe.Attribute("alias")?.Value), number,
                     dummyValues, name, dummyConstants
                 );
+                
                 foreach (var dummyValue in dummyValues)
                 {
                     enumExtensions.Add(new EnumExtensionValue(dummyValue.ExtendedType, enumName, dummyValue.Value));
@@ -104,41 +177,41 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 return;
             }
 
-            string extends = enumXE.Attribute("extends")?.Value;
+            var extends = enumXe.Attribute("extends")?.Value;
             if (extends != null)
             {
                 string valueString;
-                string offsetString = enumXE.Attribute("offset")?.Value;
+                var offsetString = enumXe.Attribute("offset")?.Value;
                 if (offsetString != null)
                 {
-                    int offset = int.Parse(offsetString);
-                    int direction = 1;
-                    if (enumXE.Attribute("dir")?.Value == "-")
+                    var offset = int.Parse(offsetString);
+                    var direction = 1;
+                    if (enumXe.Attribute("dir")?.Value == "-")
                     {
                         direction = -1;
                     }
 
-                    int value = direction * (1000000000 + (number - 1) * 1000 + offset);
+                    var value = direction * (1000000000 + (number - 1) * 1000 + offset);
                     valueString = value.ToString();
                 }
                 else
                 {
-                    string bitPosString = enumXE.Attribute("bitpos")?.Value;
+                    var bitPosString = enumXe.Attribute("bitpos")?.Value;
                     if (bitPosString != null)
                     {
-                        int shift = int.Parse(bitPosString);
+                        var shift = int.Parse(bitPosString);
                         valueString = (1 << shift).ToString();
                     }
                     else
                     {
-                        valueString = enumXE.Attribute("value").Value;
+                        valueString = enumXe.Attribute("value")?.Value;
                     }
                 }
                 enumExtensions.Add(new EnumExtensionValue(extends, enumName, valueString));
             }
             else
             {
-                var valueAttribute = enumXE.Attribute("value");
+                var valueAttribute = enumXe.Attribute("value");
                 if (valueAttribute == null)
                     return;
 
@@ -147,10 +220,26 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         }
     }
 
+    /// <summary>
+    /// A constant defined in an extension.
+    /// </summary>
     public class ExtensionConstant
     {
+        /// <summary>
+        /// The constant name.
+        /// </summary>
         public string Name { get; }
+        
+        /// <summary>
+        /// The constant value.
+        /// </summary>
         public string Value { get; }
+        
+        /// <summary>
+        /// Create a new ExpressionConstant.
+        /// </summary>
+        /// <param name="name">The constant name.</param>
+        /// <param name="value">The constant value.</param>
         public ExtensionConstant(string name, string value)
         {
             Name = name;
@@ -158,13 +247,33 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         }
     }
 
-    [DebuggerDisplay("{DebuggerDisplayString}")]
+    /// <summary>
+    /// The value of an enum, defined in an extension.
+    /// </summary>
+    [DebuggerDisplay("{" + nameof(DebuggerDisplayString) + "}")]
     public class EnumExtensionValue
     {
+        /// <summary>
+        /// The type of the enum.
+        /// </summary>
         public string ExtendedType { get; }
+        
+        /// <summary>
+        /// The name of the enum value.
+        /// </summary>
         public string Name { get; }
+        
+        /// <summary>
+        /// The enum value.
+        /// </summary>
         public string Value { get; }
 
+        /// <summary>
+        /// Create a new EnumExtensionValue.
+        /// </summary>
+        /// <param name="extendedType">The type of the enum.</param>
+        /// <param name="name">The name of the enum value.</param>
+        /// <param name="value">The enum value.</param>
         public EnumExtensionValue(string extendedType, string name, string value)
         {
             ExtendedType = extendedType;

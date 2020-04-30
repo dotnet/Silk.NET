@@ -4,48 +4,19 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
-using System.IO;
 using System.Linq;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
-using Silk.NET.BuildTools.Overloading;
 
 namespace Silk.NET.BuildTools.Converters.Constructors
 {
+    /// <summary>
+    /// An API constructor for Vulkan.
+    /// </summary>
     public class VulkanConstructor : IConstructor
     {
-        /// <summary>
-        /// Writes a collection of enums to their appropriate projects.
-        /// </summary>
-        /// <param name="profile">The profile to write the projects to.</param>
-        /// <param name="enums">The enums to write.</param>
-        public void WriteEnums(Profile profile, IEnumerable<Enum> enums, ProfileConverterOptions opts)
-        {
-            if (!profile.Projects.ContainsKey("Core"))
-            {
-                profile.Projects.Add
-                (
-                    "Core",
-                    new Project
-                    {
-                        CategoryName = "Core", ExtensionName = "Core", IsRoot = false,
-                        Namespace = string.Empty
-                    }
-                );
-            }
-
-            profile.Projects["Core"].Enums.AddRange(enums);
-            profile.TypeMaps.Add(enums.RemoveDuplicates((x, y) => x.NativeName == y.NativeName).ToDictionary(x => x.NativeName, x => x.Name));
-        }
-
-        /// <summary>
-        /// Writes a collection of functions to their appropriate projects.
-        /// </summary>
-        /// <param name="profile">The profile to write the projects to.</param>
-        /// <param name="functions">The functions to write.</param>
+        /// <inheritdoc />
         public void WriteFunctions(Profile profile, IEnumerable<Function> functions, ProfileConverterOptions opts)
         {
             foreach (var function in functions)
@@ -114,50 +85,28 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                 }
             }
         }
-
-        public string TrimName(string name, ProfileConverterOptions opts)
+        
+        /// <inheritdoc />
+        public void WriteEnums(Profile profile, IEnumerable<Enum> enums, ProfileConverterOptions opts)
         {
-            if (name.StartsWith($"{opts.Prefix.ToUpper()}_"))
+            if (!profile.Projects.ContainsKey("Core"))
             {
-                return name.Remove(0, opts.Prefix.Length + 1);
+                profile.Projects.Add
+                (
+                    "Core",
+                    new Project
+                    {
+                        CategoryName = "Core", ExtensionName = "Core", IsRoot = false,
+                        Namespace = string.Empty
+                    }
+                );
             }
 
-            return name.StartsWith(opts.Prefix) ? name.Remove(0, opts.Prefix.Length) : name;
+            profile.Projects["Core"].Enums.AddRange(enums);
+            profile.TypeMaps.Add(enums.RemoveDuplicates((x, y) => x.NativeName == y.NativeName).ToDictionary(x => x.NativeName, x => x.Name));
         }
-
-        private static string FormatCategory(string rawCategory)
-        {
-            return rawCategory.Split('_').FirstOrDefault();
-        }
-
-        private static string FormatToken(string token)
-        {
-            if (token == null)
-            {
-                return null;
-            }
-
-            var tokenHex = token.StartsWith("0x") ? token.Substring(2) : token;
-
-            if (!long.TryParse(tokenHex, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var value))
-            {
-                if (!long.TryParse(tokenHex, out value))
-                {
-                    throw new InvalidDataException("Token value was not in a valid format.");
-                }
-            }
-
-            var valueString = $"0x{value:X}";
-            var needsCasting = value > int.MaxValue || value < 0;
-            if (needsCasting)
-            {
-                Debug.WriteLine($"Warning: casting overflowing enum value {token} from 64-bit to 32-bit.");
-                valueString = $"unchecked((int){valueString})";
-            }
-
-            return valueString;
-        }
-
+        
+        /// <inheritdoc />
         public void WriteStructs(Profile profile, IEnumerable<Struct> structs, ProfileConverterOptions opts)
         {
             var map = new Dictionary<string, string>();
@@ -210,9 +159,31 @@ namespace Silk.NET.BuildTools.Converters.Constructors
             profile.TypeMaps.Add(map);
         }
 
+        /// <inheritdoc />
         public void WriteConstants(Profile profile, IEnumerable<Constant> constants, ProfileConverterOptions opts)
         {
             profile.Constants.AddRange(constants.Where(x => profile.Constants.All(y => y.Name != x.Name)));
+        }
+
+        /// <summary>
+        /// Trims the API prefix from the function names.
+        /// </summary>
+        /// <param name="name">The name to trim.</param>
+        /// <param name="opts">The converter options.</param>
+        /// <returns>The trimmed name.</returns>
+        public string TrimName(string name, ProfileConverterOptions opts)
+        {
+            if (name.StartsWith($"{opts.Prefix.ToUpper()}_"))
+            {
+                return name.Remove(0, opts.Prefix.Length + 1);
+            }
+
+            return name.StartsWith(opts.Prefix) ? name.Remove(0, opts.Prefix.Length) : name;
+        }
+
+        private static string FormatCategory(string rawCategory)
+        {
+            return rawCategory.Split('_').FirstOrDefault();
         }
     }
 }

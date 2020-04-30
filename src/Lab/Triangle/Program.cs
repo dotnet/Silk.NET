@@ -1,14 +1,9 @@
 ﻿#define MINIMAL
 
 using System;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
 using SampleBase;
-using Silk.NET.Core.Native;
-using Silk.NET.Input;
-using Silk.NET.Input.Common;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;

@@ -15,6 +15,7 @@ namespace Silk.NET.BuildTools.Common
     /// </summary>
     public static class NameTrimmer
     {
+        // ReSharper disable CommentTypo
         /// <summary>
         /// Gets the possible variations on the given entry point. Typically, this boils down to the
         /// following three cases, in order:
@@ -26,7 +27,11 @@ namespace Silk.NET.BuildTools.Common
         /// Care should be taken when creating new overrides that the intended function is targeted.
         /// </summary>
         /// <param name="functionEntrypoint">The entrypoint to create variations of.</param>
+        /// <param name="prefix">The entroypoint prefix. prefix.</param>
+        /// <param name="trimExtensionName">Whether or not the extension name should be trimmed.</param>
+        /// <param name="trimDataType">Whether or not the data type should be trimmed.</param>
         /// <returns>The name variations, ordered by length, starting with the longest.</returns>
+        // ReSharper restore CommentTypo
         [NotNull]
         [ItemNotNull]
         public static IEnumerable<string> GetNameVariations
@@ -58,6 +63,9 @@ namespace Silk.NET.BuildTools.Common
         /// Synchronously trims the given string.
         /// </summary>
         /// <param name="functionName">The string to trim.</param>
+        /// <param name="prefix">The function's prefix.</param>
+        /// <param name="trimExtensionName">Whether or not the extension name should be trimmed.</param>
+        /// <param name="trimDataType">Whether or not the data type should be trimmed.</param>
         /// <returns>A trimmed string.</returns>
         public static string Trim
             (string functionName, string prefix, bool trimExtensionName = true, bool trimDataType = true)

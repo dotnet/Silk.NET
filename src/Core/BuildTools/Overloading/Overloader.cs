@@ -13,9 +13,18 @@ using Silk.NET.BuildTools.Overloading.Prompt;
 
 namespace Silk.NET.BuildTools.Overloading
 {
+    /// <summary>
+    /// Handles function overloading.
+    /// </summary>
     public class Overloader
     {
+        /// <summary>
+        /// The pipeline used when overloading a function.
+        /// </summary>
+        // Making this IEnumerable causes it to not work because of the array syntax.
+        // ReSharper disable ReturnTypeCanBeEnumerable.Global
         public static IFunctionOverloader[] Pipeline { get; } =
+        // ReSharper restore ReturnTypeCanBeEnumerable.Global
         {
             // Early Overloaders in order of priority
             new StringOverloader(),

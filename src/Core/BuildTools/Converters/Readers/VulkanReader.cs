@@ -18,13 +18,18 @@ using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
 namespace Silk.NET.BuildTools.Converters.Readers
 {
+    /// <summary>
+    /// API reader for Vulkan.
+    /// </summary>
     public class VulkanReader : IReader
     {
+        /// <inheritdoc />
         public object Load(Stream stream)
         {
             return VulkanSpecification.LoadFromXmlStream(stream);
         }
 
+        /// <inheritdoc />
         public IEnumerable<Struct> ReadStructs(object obj, ProfileConverterOptions opts)
         {
             var spec = (VulkanSpecification) obj;
@@ -98,7 +103,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     h.Name, new Struct
                     {
                         Fields = new List<Field>
-                            {new Field {Name = "Handle", Type = new Type {Name = h.Dispatchable ? "IntPtr" : "ulong"}}},
+                            {new Field {Name = "Handle", Type = new Type {Name = h.CanBeDispatched ? "IntPtr" : "ulong"}}},
                         Name = Naming.TranslateLite(TrimName(h.Name, opts), prefix),
                         NativeName = h.Name
                     }
@@ -204,6 +209,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             };
         }
 
+        /// <inheritdoc />
         public IEnumerable<Function> ReadFunctions(object obj, ProfileConverterOptions opts)
         {
             var spec = (VulkanSpecification) obj;
@@ -270,7 +276,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             (
                                 x => new Parameter
                                 {
-                                    Count = x.IsNullTerminted ? null :
+                                    Count = x.IsNullTerminated ? null :
                                         x.ElementCountSymbolic != null ? new Count(x.ElementCountSymbolic.Split(',')) :
                                         new Count(x.ElementCount),
                                     Flow = ConvertFlow(x.Modifier), Name = x.Name, Type = ConvertType(x.Type)
@@ -286,6 +292,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             return ret;
         }
 
+        /// <inheritdoc />
         public IEnumerable<Enum> ReadEnums(object obj, ProfileConverterOptions opts)
         {
             var spec = (VulkanSpecification) obj;
@@ -313,6 +320,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             opts.TypeMaps.Insert(0, tm);
         }
 
+        /// <inheritdoc />
         public IEnumerable<Constant> ReadConstants(object obj, ProfileConverterOptions opts)
         {
             var spec = (VulkanSpecification) obj;
@@ -332,6 +340,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
             );
         }
 
+        /// <summary>
+        /// Trims the prefix off a name.
+        /// </summary>
+        /// <param name="name">The name to trim.</param>
+        /// <param name="opts">The profile options containing the prefix.</param>
+        /// <returns>The name, trimmed.</returns>
         public string TrimName(string name, ProfileConverterOptions opts)
         {
             if (name.StartsWith($"{opts.Prefix.ToUpper()}_"))
@@ -342,7 +356,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             return name.ToLower().StartsWith(opts.Prefix.ToLower()) ? name.Remove(0, opts.Prefix.Length) : name;
         }
 
-        private FlowDirection ConvertFlow(ParameterModifier mod)
+        private static FlowDirection ConvertFlow(ParameterModifier mod)
         {
             return mod switch
             {
@@ -397,16 +411,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
             return ret;
         }
 
-        private static char[] digits = "1234567890".ToCharArray();
+        private static readonly char[] Digits = "1234567890".ToCharArray();
         private static string TryTrim(string token, string @enum)
         {
             var trimmed = token.StartsWith(@enum) ? token.Substring(@enum.Length) : token;
-            if (digits.Contains(trimmed[0]))
-            {
-                return token;
-            }
-
-            return trimmed;
+            return Digits.Contains(trimmed[0]) ? token : trimmed;
         }
     }
 }

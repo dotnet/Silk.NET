@@ -3,12 +3,12 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-namespace Silk.NET.Core.Native
+using System;
+
+namespace Silk.NET.Core.Contexts
 {
-    public enum FlowDirection
+    public interface INativeContext
     {
-        Undefined = 0,
-        In = 1,
-        Out = 2
+        IntPtr GetProcAddress(string proc);
     }
 }

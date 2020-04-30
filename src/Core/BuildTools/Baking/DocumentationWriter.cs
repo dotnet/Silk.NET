@@ -44,6 +44,7 @@ namespace Silk.NET.BuildTools.Baking
         /// </summary>
         /// <param name="project">The project to write to.</param>
         /// <param name="doc">The documentation to write.</param>
+        /// <param name="prefix">The function name's prefix.</param>
         public static void Write(Project project, ProfileDocumentation doc, string prefix)
         {
             project.Interfaces.ForEach(x => Write(x.Value, doc, prefix));
@@ -54,6 +55,7 @@ namespace Silk.NET.BuildTools.Baking
         /// </summary>
         /// <param name="interface">The interface to write to.</param>
         /// <param name="doc">The documentation to write.</param>
+        /// <param name="prefix">The function name's prefix.</param>
         public static void Write(Interface @interface, ProfileDocumentation doc, string prefix)
         {
             foreach (var function in @interface.Functions)
@@ -131,24 +133,24 @@ namespace Silk.NET.BuildTools.Baking
                 return GetOnlyNewest(doc);
             }
 
-            if (profile.Name == "GLES")
+            switch (profile.Name)
             {
-                var doc = new Dictionary<int, ProfileDocumentation>
+                case "GLES":
                 {
-                    {1, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "es1"), "gl")},
-                    {2, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "es2"), "gl")},
-                    {3, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "es3"), "gl")}
-                };
-                return GetOnlyNewest(doc);
+                    var doc = new Dictionary<int, ProfileDocumentation>
+                    {
+                        {1, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "es1"), "gl")},
+                        {2, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "es2"), "gl")},
+                        {3, DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "es3"), "gl")}
+                    };
+                    return GetOnlyNewest(doc);
+                }
+                case "GLSC":
+                    return DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "es2"), "gl");
+                default:
+                    // no documentation entry found, return dummy documentation
+                    return new ProfileDocumentation {Functions = new Dictionary<string, FunctionDocumentation>()};
             }
-
-            if (profile.Name == "GLSC")
-            {
-                return DocumentationReader.ReadProfileDocumentation(Path.Combine(docsDotGl, "es2"), "gl");
-            }
-
-            // no documentation entry found, return dummy documentation
-            return new ProfileDocumentation {Functions = new Dictionary<string, FunctionDocumentation>()};
         }
 
         private static ProfileDocumentation GetOnlyNewest(Dictionary<int, ProfileDocumentation> documentations)

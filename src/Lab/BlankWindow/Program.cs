@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
 using Silk.NET.Windowing;
@@ -28,6 +29,7 @@ namespace BlankWindow
 
             options.UpdatesPerSecond = 60.0;
             options.FramesPerSecond = 60.0;
+            // options.VSync = VSyncMode.On;
 
             // options.WindowState = WindowState.Fullscreen;
 
@@ -44,7 +46,7 @@ namespace BlankWindow
             window.Render += Render;
             window.Update += Update;
 
-            window.VSync = VSyncMode.Off;
+            //window.VSync = VSyncMode.Off;
 
             Console.WriteLine($"Entry thread is {Thread.CurrentThread.ManagedThreadId}");
 
@@ -76,13 +78,12 @@ namespace BlankWindow
         public static unsafe void Load()
         {
             using var image = Image.Load<Rgba32>("favicon.png");
-            var byteArray = new byte[image.Width * 4 * image.Height];
             Span<byte> span;
             byte[] arr;
             var ogspan = image.GetPixelSpan();
             fixed (Rgba32* pixels = ogspan)
             {
-                span = new Span<byte>((void*) pixels, ogspan.Length);
+                span = new Span<byte>(pixels, ogspan.Length * 4);
                 arr = span.ToArray();
             }
 
@@ -109,6 +110,7 @@ namespace BlankWindow
         public static void Update(double delta)
         {
             Console.WriteLine($"Update {1 / delta}");
+            //Debug.WriteLine(window.VSync);
         }
     }
 }

@@ -4,14 +4,15 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
-using System.Linq;
 using JetBrains.Annotations;
 using Silk.NET.BuildTools.Common.Functions;
 
 namespace Silk.NET.BuildTools.Common.Builders
 {
+    // TODO: This should be renamed to TypeBuilder since TypeSignature was renamed to Type
+    
     /// <summary>
-    /// Acts as a builder for new instances of <see cref="TypeSignature" />s, based on existing instances.
+    /// Acts as a builder for new instances of <see cref="Type" />s, based on existing instances.
     /// </summary>
     public sealed class TypeSignatureBuilder
     {
@@ -25,11 +26,9 @@ namespace Silk.NET.BuildTools.Common.Builders
 
         private bool _newIsIn;
 
-        private string _newOriginalName;
+        private readonly string _newOriginalName;
 
         [NotNull] private string _newName;
-
-        private List<Type> _newGenericTypes;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TypeSignatureBuilder" /> class.
@@ -44,7 +43,6 @@ namespace Silk.NET.BuildTools.Common.Builders
             _newIsIn = typeSignature.IsIn;
             _newIsOut = typeSignature.IsOut;
             _newOriginalName = typeSignature.OriginalName;
-            _newGenericTypes = typeSignature.GenericTypes;
         }
 
         /// <summary>
@@ -126,22 +124,38 @@ namespace Silk.NET.BuildTools.Common.Builders
             };
         }
 
-        public TypeSignatureBuilder WithIsIn(bool b)
+        /// <summary>
+        /// Sets a new is-in value for the type signature.
+        /// </summary>
+        /// <param name="isIn">The new is-in value.</param>
+        /// <returns>The builder, with the is-in value.</returns>
+        public TypeSignatureBuilder WithIsIn(bool isIn)
         {
-            _newIsIn = b;
+            _newIsIn = isIn;
             return this;
         }
 
+        // TODO: Implement these
+        // ReSharper disable UnusedParameter.Global
+        /// <summary>
+        /// Sets the list of generic types for the type signature.
+        /// </summary>
+        /// <param name="parameters">The new generic types.</param>
+        /// <returns>The builder, with the new generic types.</returns>
         public TypeSignatureBuilder WithGenericTypes(List<Type> parameters)
         {
-            _newGenericTypes = parameters;
             return this;
         }
 
+        /// <summary>
+        /// Sets the list of generic types for the type signature.
+        /// </summary>
+        /// <param name="parameters">The new generic types.</param>
+        /// <returns>The builder, with the new generic types.</returns>
         public TypeSignatureBuilder WithGenericTypes(params Type[] parameters)
         {
-            _newGenericTypes = parameters.ToList();
             return this;
         }
+        // ReSharper restore UnusedParameter.Global
     }
 }
