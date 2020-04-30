@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -56,7 +57,7 @@ namespace Silk.NET.Windowing.Desktop
         private Stopwatch _updateStopwatch;
 
         // Invoke method variables
-        private ConcurrentQueue<Task> _invokeQueue;
+        private ConcurrentQueue<Invocation> _pendingInvocations;
         private int _mainThread = -1;
 
         // Update and render period. Represents the time in seconds that each frame should take.
@@ -427,10 +428,18 @@ namespace Silk.NET.Windowing.Desktop
                 return d.DynamicInvoke(args);
             }
 
-            var task = new Task<object>(() => d.DynamicInvoke(args));
-            _invokeQueue.Enqueue(task);
-            SpinWait.SpinUntil(() => task.IsCompleted);
-            return task.Result;
+            // TODO make this less allocate-y, delegates are a son of a
+            object ret = null;
+            using var invocation = new Invocation(d, args, SetReturnValue);
+            invocation.Source.WaitOne();
+            return ret;
+                
+            //var task = new Task<object>(() => d.DynamicInvoke(args));
+            //_invokeQueue.Enqueue(task);
+            //SpinWait.SpinUntil(() => task.IsCompleted);
+            //return task.Result;
+
+            void SetReturnValue(object o) => ret = o;
         }
 
         public unsafe void ClearContext()
@@ -554,7 +563,7 @@ namespace Silk.NET.Windowing.Desktop
             _isRunningSlowlyTries = 0;
             _running = true;
 
-            _invokeQueue = new ConcurrentQueue<Task>();
+            _pendingInvocations = new ConcurrentQueue<Invocation>();
             _mainThread = Thread.CurrentThread.ManagedThreadId;
 
             if (API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES)
@@ -605,9 +614,10 @@ namespace Silk.NET.Windowing.Desktop
                 // Loop while we're still updating - the Update thread might be calling the main thread
                 while (!task.IsCompleted)
                 {
-                    if (!_invokeQueue.IsEmpty && _invokeQueue.TryDequeue(out var invokeCall))
+                    if (!_pendingInvocations.IsEmpty && _pendingInvocations.TryDequeue(out var invokeCall))
                     {
-                        invokeCall.GetAwaiter().GetResult();
+                        invokeCall.Return(invokeCall.Target.DynamicInvoke(invokeCall.Args));
+                        invokeCall.Source.Set();
                     }
                 }
             }
@@ -1161,6 +1171,26 @@ namespace Silk.NET.Windowing.Desktop
 
             public unsafe char** GetRequiredExtensions(out uint count)
                 => (char**) _window._glfw.GetRequiredInstanceExtensions(out count);
+        }
+
+        private readonly struct Invocation : IDisposable
+        {
+            public Invocation(Delegate target, object[] args, Action<object> ret)
+            {
+                Source = new AutoResetEvent(false);
+                Target = target;
+                Args = args;
+                Return = ret;
+            }
+            public AutoResetEvent Source { get; }
+            public Delegate Target { get; }
+            public object[] Args { get; }
+            public Action<object> Return { get; }
+
+            public void Dispose()
+            {
+                Source?.Dispose();
+            }
         }
     }
 }
