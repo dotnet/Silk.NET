@@ -1,4 +1,3 @@
-using System;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 

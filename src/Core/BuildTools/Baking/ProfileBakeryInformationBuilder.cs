@@ -120,6 +120,11 @@ namespace Silk.NET.BuildTools.Baking
             return this;
         }
 
+        /// <summary>
+        /// Sets the symbol loader.
+        /// </summary>
+        /// <param name="loader">Name of the symbol loader.</param>
+        /// <returns>This instance (for chaining purposes).</returns>
         public ProfileBakeryInformationBuilder WithSymbolLoader(string loader)
         {
             Result.SymbolLoader = loader;

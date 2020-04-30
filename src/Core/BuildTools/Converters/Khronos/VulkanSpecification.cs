@@ -49,16 +49,16 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             var spec = XDocument.Load(specFileStream);
             var registry = spec.Element("registry");
             var commands = registry.Element("commands");
-            CommandDefinition[] commandDefinitions = commands.Elements("command")
+            var commandDefinitions = commands.Elements("command")
                 .Select(commandx => CommandDefinition.CreateFromXml(commandx)).ToArray();
 
-            ConstantDefinition[] constantDefinitions = registry.Elements("enums")
+            var constantDefinitions = registry.Elements("enums")
                 .Where(enumx => enumx.Attribute("name").Value == "API Constants")
                 .SelectMany(enumx => enumx.Elements("enum"))
                 .Select(enumxx => ConstantDefinition.CreateFromXml(enumxx)).ToArray();
 
             var types = registry.Elements("types");
-            TypedefDefinition[] typedefDefinitions = types.Elements("type").Where(xe => xe.Value.Contains("typedef") && xe.HasCategoryAttribute("bitmask"))
+            var typedefDefinitions = types.Elements("type").Where(xe => xe.Value.Contains("typedef") && xe.HasCategoryAttribute("bitmask"))
                 .Select(xe2 => TypedefDefinition.CreateFromXml(xe2)).ToArray();
 
             var enumDefinitionsNoAliases = registry.Elements("enums")
@@ -66,7 +66,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 .Select(enumx => EnumDefinition.CreateFromXml(enumx))
                 .ToArray();
 
-            EnumDefinition[] enumDefinitions = registry.Elements("types")
+            var enumDefinitions = registry.Elements("types")
                 .Elements("type")
                 .Where(xe => xe.HasCategoryAttribute("enum") && !(xe.Attribute("alias") is null))
                 .Select
@@ -77,27 +77,27 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 .Concat(enumDefinitionsNoAliases)
                 .ToArray();
 
-            StructureDefinition[] structures = types.Elements("type").Where(typex => typex.HasCategoryAttribute("struct"))
+            var structures = types.Elements("type").Where(typex => typex.HasCategoryAttribute("struct"))
                 .Select(typex => StructureDefinition.CreateFromXml(typex)).ToArray();
 
-            StructureDefinition[] unions = 
+            var unions = 
                 types.Elements("type")
                 .Where(typex => typex.HasCategoryAttribute("union"))
                 .Select(typex => StructureDefinition.CreateFromXml(typex)).ToArray();
 
-            HandleDefinition[] handles = types.Elements("type").Where(typex => typex.HasCategoryAttribute("handle"))
+            var handles = types.Elements("type").Where(typex => typex.HasCategoryAttribute("handle"))
                 .Select(typex => HandleDefinition.CreateFromXml(typex)).ToArray();
 
-            Dictionary<string, string> baseTypes = types.Elements("type").Where(typex => typex.HasCategoryAttribute("basetype"))
+            var baseTypes = types.Elements("type").Where(typex => typex.HasCategoryAttribute("basetype"))
                 .ToDictionary(
                     typex => typex.GetNameElement(),
                     typex => typex.Element("type").Value);
             baseTypes["VkBool32"] = "Bool32";
 
-            ExtensionDefinition[] extensions = registry.Element("extensions").Elements("extension")
+            var extensions = registry.Element("extensions").Elements("extension")
                 .Select(ExtensionDefinition.CreateFromXml).ToArray();
 
-            FeatureDefinition[] features = registry.Elements("feature")
+            var features = registry.Elements("feature")
                 .Select(FeatureDefinition.CreateFromXml)
                 .ToArray();
 
@@ -116,7 +116,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
         private void AddExtensionEnums(EnumDefinition[] enums, ExtensionDefinition[] extensions)
         {
-            foreach (ExtensionDefinition exDef in extensions)
+            foreach (var exDef in extensions)
             {
                 if (exDef.Name == "VK_KHX_device_group")
                 {
@@ -125,8 +125,8 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
                 foreach (var enumEx in exDef.EnumExtensions)
                 {
-                    EnumDefinition enumDef = GetEnumDef(enums, enumEx.ExtendedType);
-                    int value = int.Parse(enumEx.Value);
+                    var enumDef = GetEnumDef(enums, enumEx.ExtendedType);
+                    var value = int.Parse(enumEx.Value);
                     enumDef.Values = enumDef.Values.Append(new EnumValue(enumEx.Name, value, null)).ToArray();
                 }
             }
@@ -134,12 +134,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
         private void AddExtensionEnums(EnumDefinition[] enums, FeatureDefinition[] extensions)
         {
-            foreach (FeatureDefinition exDef in extensions)
+            foreach (var exDef in extensions)
             {
                 foreach (var enumEx in exDef.EnumExtensions)
                 {
-                    EnumDefinition enumDef = GetEnumDef(enums, enumEx.ExtendedType);
-                    int value = int.Parse(enumEx.Value);
+                    var enumDef = GetEnumDef(enums, enumEx.ExtendedType);
+                    var value = int.Parse(enumEx.Value);
                     enumDef.Values = enumDef.Values.Append(new EnumValue(enumEx.Name, value, null)).ToArray();
                 }
             }

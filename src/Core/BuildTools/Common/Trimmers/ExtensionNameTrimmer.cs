@@ -14,8 +14,11 @@ namespace Silk.NET.BuildTools.Common.Trimmers
     /// </summary>
     public class ExtensionNameTrimmer : ITrimmer<Function>, ITrimmer<string>
     {
-        public static readonly string[] Vendors = new[]
-        {
+        /// <summary>
+        /// A list of all known vendor codes.
+        /// </summary>
+        public static readonly string[] Vendors = {
+            // ReSharper disable StringLiteralTypo
             "IMG",
             "AMD",
             "AMDX",
@@ -98,16 +101,14 @@ namespace Silk.NET.BuildTools.Common.Trimmers
             "OVR",
             "QCOM",
             "VIV",
+            // ReSharper restore StringLiteralTypo
         };
+        
         /// <inheritdoc />
         public bool IsRelevant(Function trimmable)
         {
-            if (trimmable.ExtensionName is null)
-            {
-                return false;
-            }
-
-            return trimmable.Name.ToLower().EndsWith(trimmable.ExtensionName.ToLower());
+            return !(trimmable.ExtensionName is null)
+                   && trimmable.Name.ToLower().EndsWith(trimmable.ExtensionName.ToLower());
         }
 
         /// <inheritdoc />
@@ -122,12 +123,7 @@ namespace Silk.NET.BuildTools.Common.Trimmers
         /// <inheritdoc />
         public bool IsRelevant(string trimmable)
         {
-            if (Vendors.Any(trimmable.EndsWith))
-            {
-                return true;
-            }
-
-            return false;
+            return Vendors.Any(trimmable.EndsWith);
         }
 
         /// <inheritdoc />

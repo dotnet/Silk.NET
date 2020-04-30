@@ -23,7 +23,7 @@ namespace Silk.NET.GLFW
         /// </summary>
         public const int DontCare = -1;
 
-        /// <inheritdoc cref="NativeLibraryBase" />
+        /// <inheritdoc />
         protected Glfw(ref NativeApiContext ctx)
             : base(ref ctx)
         {
@@ -36,6 +36,7 @@ namespace Silk.NET.GLFW
         public static GlfwCallbacks.ErrorCallback ErrorCallback { get; } = (errorCode, description) =>
             throw new GlfwException($"{errorCode}: {description}") {ErrorCode = errorCode};
 
+        /// <inheritdoc />
         public override SearchPathContainer SearchPaths { get; } = new GlfwLibraryNameContainer();
 
         /// <summary>
@@ -313,7 +314,9 @@ namespace Silk.NET.GLFW
         /// <param name="monitor">The monitor to query.</param>
         /// <param name="xscale">Where to store the x-axis content scale, or <c>out _</c>.</param>
         /// <param name="yscale">Where to store the y-axis content scale, or <c>out _</c>.</param>
+        // ReSharper disable IdentifierTypo
         public abstract unsafe void GetMonitorContentScale(Monitor* monitor, out float xscale, out float yscale);
+        // ReSharper enable IdentifierTypo
 
         /// <summary>
         /// <para>
@@ -765,7 +768,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </summary>
         /// <param name="window">The window to set the attribute for.</param>
-        /// <param name="attribute">A supported window attribute.</param>
+        /// <param name="attrib">A supported window attribute.</param>
         /// <param name="value"><c>true</c> or <c>false</c>.</param>
         /// <remarks>
         /// <para>
@@ -880,7 +883,7 @@ namespace Silk.NET.GLFW
         /// </item>
         /// <item>
         /// <term>
-        /// <see cref="Keys.Backslash" />
+        /// <see cref="Keys.BackSlash" />
         /// </term>
         /// </item>
         /// <item>
@@ -894,42 +897,42 @@ namespace Silk.NET.GLFW
         /// </term>
         /// </item>
         /// <item>
-        /// <term><see cref="Keys.D0" /> to <see cref="Keys.D9" /></term>
+        /// <term><see cref="Keys.Number0" /> to <see cref="Keys.Number9" /></term>
         /// </item>
         /// <item>
         /// <term><see cref="Keys.A" /> to <see cref="Keys.Z" /></term>
         /// </item>
         /// <item>
-        /// <term><see cref="Keys.KeyPad0" /> to <see cref="Keys.KeyPad9" /></term>
+        /// <term><see cref="Keys.Keypad0" /> to <see cref="Keys.Keypad9" /></term>
         /// </item>
         /// <item>
         /// <term>
-        /// <see cref="Keys.KeyPadDecimal" />
+        /// <see cref="Keys.KeypadDecimal" />
         /// </term>
         /// </item>
         /// <item>
         /// <term>
-        /// <see cref="Keys.KeyPadDivide" />
+        /// <see cref="Keys.KeypadDivide" />
         /// </term>
         /// </item>
         /// <item>
         /// <term>
-        /// <see cref="Keys.KeyPadMultiply" />
+        /// <see cref="Keys.KeypadMultiply" />
         /// </term>
         /// </item>
         /// <item>
         /// <term>
-        /// <see cref="Keys.KeyPadSubtract" />
+        /// <see cref="Keys.KeypadSubtract" />
         /// </term>
         /// </item>
         /// <item>
         /// <term>
-        /// <see cref="Keys.KeyPadAdd" />
+        /// <see cref="Keys.KeypadAdd" />
         /// </term>
         /// </item>
         /// <item>
         /// <term>
-        /// <see cref="Keys.KeyPadEqual" />
+        /// <see cref="Keys.KeypadEqual" />
         /// </term>
         /// </item>
         /// </list>
@@ -1110,7 +1113,9 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
+        // ReSharper disable IdentifierTypo
         public abstract unsafe void SetCursorPos(WindowHandle* window, double xpos, double ypos);
+        // ReSharper restore IdentifierTypo
 
         /// <summary>
         /// <para>
@@ -1145,7 +1150,9 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
+        // ReSharper disable IdentifierTypo
         public abstract unsafe Cursor* CreateCursor(Image* image, int xhot, int yhot);
+        // ReSharper restore IdentifierTypo
 
         /// <summary>
         /// <para>
@@ -3179,47 +3186,23 @@ namespace Silk.NET.GLFW
 
         /// <summary>
         /// <para>
-        /// This function sets the monitor that the window uses for full screen mode or,
-        /// if the monitor is <c>null</c>, makes it windowed mode.
-        /// </para>
-        /// <para>
-        /// When setting a monitor, this function updates the width, height and refresh rate
-        /// of the desired video mode and switches to the video mode closest to it.
-        /// </para>
-        /// <para>
-        /// The window position is ignored when setting a monitor.
-        /// </para>
-        /// <para>
-        /// When the monitor is <c>null</c>, the position, width and height are used to place the window client area.
-        /// The refresh rate is ignored when no monitor is specified.
-        /// </para>
-        /// <para>
-        /// If you only wish to update the resolution of a full screen window or the size of a windowed mode window,
-        /// see <see cref="SetWindowSize" />.
-        /// </para>
-        /// <para>
-        /// When a window transitions from full screen to windowed mode,
-        /// this function restores any previous window settings such as whether it is decorated,
-        /// floating, resizable, has size or aspect ratio limits, etc..
+        /// This function sets the size callback of the specified window, which is called when the window is resized.
+        /// The callback is provided with the size, in screen coordinates, of the content area of the window.
         /// </para>
         /// </summary>
-        /// <param name="window">The window whose monitor, size or video mode to set.</param>
-        /// <param name="monitor">The desired monitor, or <c>null</c> to set windowed mode.</param>
-        /// <param name="x">The desired x-coordinate of the upper-left corner of the client area.</param>
-        /// <param name="y">The desired y-coordinate of the upper-left corner of the client area.</param>
-        /// <param name="width">The desired with, in screen coordinates, of the client area or video mode.</param>
-        /// <param name="height">The desired height, in screen coordinates, of the client area or video mode.</param>
-        /// <param name="refreshRate">The desired refresh rate, in Hz, of the video mode, or <see cref="Glfw.DontCare" />.</param>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="callback">The new callback, or <c>null</c> to remove the currently set callback.</param>
+        /// <returns>
+        /// The previously set callback, or <c>null</c> if no callback was set or the library had not been initialized.
+        /// </returns>
         /// <remarks>
         /// <para>
         /// This function must only be called from the main thread.
         /// </para>
         /// <para>
-        /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        /// <seealso cref="GetWindowMonitor" />
-        /// <seealso cref="SetWindowSize" />
         public abstract unsafe GlfwCallbacks.WindowSizeCallback SetWindowSizeCallback
         (
             WindowHandle* window,
@@ -3858,8 +3841,8 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <param name="monitor">The monitor to query.</param>
-        /// <param name="xpos">Where to store the monitor x-coordinate, or <code>null</code>.</param>
-        /// <param name="ypos">Where to store the monitor y-coordinate, or <code>null</code>.</param>
+        /// <param name="x">Where to store the monitor x-coordinate, or <code>null</code>.</param>
+        /// <param name="y">Where to store the monitor y-coordinate, or <code>null</code>.</param>
         /// <param name="width">Where to store the monitor width, or <code>null</code>.</param>
         /// <param name="height">Where to store the monitor height, or <code>null</code>.</param>
         public abstract unsafe void GetMonitorWorkarea
@@ -3874,6 +3857,7 @@ namespace Silk.NET.GLFW
             return LibraryLoader.Load<Glfw>(new GlfwLibraryNameContainer());
         }
 
+        /// <inheritdoc />
         public override bool IsExtensionPresent(string name)
         {
             throw new NotSupportedException("Extensions are invalid for GLFW");

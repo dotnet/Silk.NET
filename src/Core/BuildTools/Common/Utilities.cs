@@ -188,6 +188,7 @@ namespace Silk.NET.BuildTools.Common
         /// An extension method which returns the given enumerable without duplicate elements.
         /// </summary>
         /// <param name="enumerable">The enumerable to process.</param>
+        /// <param name="isDuplicate">A function that checks whether or not items are duplicates.</param>
         /// <typeparam name="T">The type contained within this enumerable.</typeparam>
         /// <returns>An enumerable with no duplicates.</returns>
         public static IEnumerable<T> RemoveDuplicates<T>(this IEnumerable<T> enumerable, Func<T, T, bool> isDuplicate)
@@ -226,9 +227,17 @@ namespace Silk.NET.BuildTools.Common
             return builder.ToString();
         }
 
+        /// <summary>
+        /// Checks if member names are valid for C#.
+        /// </summary>
+        /// <param name="name">The name to check.</param>
+        /// <param name="fPrefix">The prefix to append if the name fails the check.</param>
+        /// <returns>The string after being validated.</returns>
         public static string CheckMemberName(this string name, string fPrefix)
         {
+            // ReSharper disable StringLiteralTypo
             if (!"ABCDEFGHIJKLMNOPQRSTUVWXYZ_".ToCharArray().Contains(name[0]))
+            // ReSharper restore StringLiteralTypo
             {
                 return fPrefix.ToUpper() + name;
             }

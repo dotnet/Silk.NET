@@ -5,10 +5,8 @@
 
 using System;
 using System.Collections.Concurrent;
-using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,7 +14,6 @@ using Silk.NET.Core.Contexts;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
 using Silk.NET.Windowing.Common.Structs;
-using Monitor = Silk.NET.GLFW.Monitor;
 using VideoMode = Silk.NET.Windowing.Common.VideoMode;
 
 namespace Silk.NET.Windowing.Desktop

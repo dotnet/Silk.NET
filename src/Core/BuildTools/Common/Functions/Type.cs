@@ -53,7 +53,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the dimensions of the array (i.e. the amount of [] as represented in C#).
         /// </summary>
-        public int ArrayDimensions { get; set; } = 0;
+        public int ArrayDimensions { get; set; }
 
         /// <summary>
         /// Gets or sets the name of this type.
@@ -154,6 +154,7 @@ namespace Silk.NET.BuildTools.Common.Functions
             return ToString() == "UIntPtr" && !IsIn && !IsByRef && !IsOut;
         }
 
+        /// <inheritdoc />
         public bool Equals(Type other)
         {
             if (ReferenceEquals(null, other))
@@ -174,6 +175,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                    IsIn == other.IsIn;
         }
 
+        /// <inheritdoc />
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -189,6 +191,7 @@ namespace Silk.NET.BuildTools.Common.Functions
             return obj is Type type && Equals(type);
         }
 
+        /// <inheritdoc />
         public override int GetHashCode()
         {
             unchecked

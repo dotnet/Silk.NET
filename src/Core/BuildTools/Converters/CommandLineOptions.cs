@@ -8,6 +8,10 @@ using CommandLine;
 
 namespace Silk.NET.BuildTools.Converters
 {
+    /// <summary>
+    /// The command-line options.
+    /// </summary>
+    // ReSharper disable once ClassNeverInstantiated.Global
     public class CommandLineOptions
     {
         /// <summary>
@@ -22,6 +26,9 @@ namespace Silk.NET.BuildTools.Converters
         )]
         public string Prefix { get; set; } = "gl";
         
+        /// <summary>
+        /// The reader/parser to use.
+        /// </summary>
         [Option
         (
             'r',
@@ -31,6 +38,9 @@ namespace Silk.NET.BuildTools.Converters
         )]
         public string Reader { get; set; }
         
+        /// <summary>
+        /// The constructor/sorter to use.
+        /// </summary>
         [Option
         (
             'c',

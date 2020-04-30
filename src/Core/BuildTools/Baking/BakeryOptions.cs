@@ -8,6 +8,10 @@ using CommandLine;
 
 namespace Silk.NET.BuildTools.Baking
 {
+    /// <summary>
+    /// The options to use when baking.
+    /// </summary>
+    // ReSharper disable once ClassNeverInstantiated.Global
     public class BakeryOptions
     {
         /// <summary>
@@ -20,6 +24,9 @@ namespace Silk.NET.BuildTools.Baking
             HelpText = "Indicates that the raw (unbaked) API files shouldn't be deleted.",
             Default = false
         )]
+        // ReSharper thinks this is "Ap Is" instead of "APIs",
+        // so it doesn't recognize the abbreviation in dotsettings.
+        // ReSharper disable once InconsistentNaming
         public bool PreserveRawAPIs { get; set; } = false;
 
         /// <summary>

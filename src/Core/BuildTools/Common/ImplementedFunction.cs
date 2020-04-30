@@ -10,12 +10,19 @@ using Silk.NET.BuildTools.Common.Functions;
 
 namespace Silk.NET.BuildTools.Common
 {
+    /// <summary>
+    /// A <see cref="Function"/> with an implementation.
+    /// </summary>
     public class ImplementedFunction
     {
-        public ImplementedFunction()
-        {
-        }
-        public ImplementedFunction(Function function, StringBuilder sb, Function @base, bool b = true)
+        /// <summary>
+        /// Creates a new ImplementedFunction.
+        /// </summary>
+        /// <param name="function">The function signature.</param>
+        /// <param name="sb">The code for the implemented function.</param>
+        /// <param name="base">The base function.</param>
+        /// <param name="isUnsafe">Whether or not this function should be marked as unsafe.</param>
+        public ImplementedFunction(Function function, StringBuilder sb, Function @base, bool isUnsafe = true)
         {
             Signature = function;
             using var sr = new StringReader(sb.ToString());
@@ -27,13 +34,28 @@ namespace Silk.NET.BuildTools.Common
             }
 
             Body = lines.ToArray();
-            IsUnsafe = b;
+            IsUnsafe = isUnsafe;
             Base = @base;
         }
 
+        /// <summary>
+        /// The function signature.
+        /// </summary>
         public Function Signature { get; set; }
+        
+        /// <summary>
+        /// The base function.
+        /// </summary>
         public Function Base { get; set; }
+        
+        /// <summary>
+        /// The body of the function.
+        /// </summary>
         public string[] Body { get; set; }
+        
+        /// <summary>
+        /// Whether or not this function is unsafe.
+        /// </summary>
         public bool IsUnsafe { get; set; }
     }
 }

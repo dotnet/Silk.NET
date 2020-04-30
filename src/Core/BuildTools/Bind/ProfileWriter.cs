@@ -8,7 +8,6 @@ using System.IO;
 using System.Linq;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
-using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
 using Silk.NET.BuildTools.Overloading;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
@@ -30,6 +29,9 @@ namespace Silk.NET.BuildTools.Bind
         /// </summary>
         public const string StructsSubfolder = "Structs";
 
+        /// <summary>
+        /// The license text for the project.
+        /// </summary>
         public static Lazy<string> LicenseText { get; } =
             new Lazy<string>(() => File.ReadAllText(Binder.CliOptions.License));
 
@@ -47,6 +49,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine();
             var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
             sw.WriteLine("using System;");
+            sw.WriteLine();
+            sw.WriteLine("#pragma warning disable 1591");
             sw.WriteLine();
             sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
@@ -91,6 +95,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("using Silk.NET.Core.Native;");
             sw.WriteLine("using Ultz.SuperInvoke;");
             sw.WriteLine();
+            sw.WriteLine("#pragma warning disable 1591");
+            sw.WriteLine();
             var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
             sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
@@ -104,11 +110,10 @@ namespace Silk.NET.BuildTools.Bind
             if (@struct.Fields.Any(x => x.Count is null))
             {
                 sw.WriteLine($"        public {@struct.Name}");
-                sw.WriteLine($"        (");
+                sw.WriteLine( "        (");
                 var first = true;
-                for (var i = 0; i < @struct.Fields.Count; i++)
+                foreach (var field in @struct.Fields)
                 {
-                    var field = @struct.Fields[i];
                     if (!(field.Count is null))
                         continue; // I've chosen not to initialize multi-count fields from ctors.
                     var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
@@ -132,7 +137,7 @@ namespace Silk.NET.BuildTools.Bind
                 {
                     if (!(field.Count is null))
                     {
-                        if (!Field._fixedCapableTypes.Contains(field.Type.Name))
+                        if (!Field.FixedCapableTypes.Contains(field.Type.Name))
                         {
                             var count = field.Count.IsConstant
                                 ? int.Parse
@@ -170,7 +175,7 @@ namespace Silk.NET.BuildTools.Bind
             {
                 if (!(structField.Count is null))
                 {
-                    if (!Field._fixedCapableTypes.Contains(structField.Type.Name))
+                    if (!Field.FixedCapableTypes.Contains(structField.Type.Name))
                     {
                         var count = structField.Count.IsConstant
                             ? int.Parse
@@ -245,42 +250,53 @@ namespace Silk.NET.BuildTools.Bind
             sw.Dispose();
         }
 
+        /// <summary>
+        /// Create a class that extends SearchPathContainer.
+        /// </summary>
+        /// <param name="project">The current project.</param>
+        /// <param name="profile">The profile to write the object for.</param>
+        /// <param name="file">The file to write the class to.</param>
         public static void WriteNameContainer(this Project project, Profile profile, string file)
         {
-            using (var sw = new StreamWriter(file))
-            {
-                sw.WriteLine(LicenseText.Value);
-                sw.WriteLine("using Silk.NET.Core.Loader;");
-                sw.WriteLine();
-                sw.WriteLine($"namespace {profile.Namespace}{project.Namespace}");
-                sw.WriteLine("{");
-                sw.WriteLine("    /// <summary>");
-                sw.WriteLine($"    /// Contains the library name of {profile.Name}.");
-                sw.WriteLine("    /// </summary>");
-                sw.WriteLine($"    internal class {profile.Names.ClassName} : SearchPathContainer");
-                sw.WriteLine("    {");
-                sw.WriteLine("        /// <inheritdoc />");
-                sw.WriteLine($"        public override string Linux => \"{profile.Names.Linux}\";");
-                sw.WriteLine();
-                sw.WriteLine("        /// <inheritdoc />");
-                sw.WriteLine($"        public override string MacOS => \"{profile.Names.MacOS}\";");
-                sw.WriteLine();
-                sw.WriteLine("        /// <inheritdoc />");
-                sw.WriteLine($"        public override string Android => \"{profile.Names.Android}\";");
-                sw.WriteLine();
-                sw.WriteLine("        /// <inheritdoc />");
-                sw.WriteLine($"        public override string IOS => \"{profile.Names.IOS}\";");
-                sw.WriteLine();
-                sw.WriteLine("        /// <inheritdoc />");
-                sw.WriteLine($"        public override string Windows64 => \"{profile.Names.Windows}\";");
-                sw.WriteLine();
-                sw.WriteLine("        /// <inheritdoc />");
-                sw.WriteLine($"        public override string Windows86 => \"{profile.Names.Windows}\";");
-                sw.WriteLine("    }");
-                sw.WriteLine("}");
-            }
+            using var sw = new StreamWriter(file);
+            
+            sw.WriteLine(LicenseText.Value);
+            sw.WriteLine("using Silk.NET.Core.Loader;");
+            sw.WriteLine();
+            sw.WriteLine($"namespace {profile.Namespace}{project.Namespace}");
+            sw.WriteLine("{");
+            sw.WriteLine("    /// <summary>");
+            sw.WriteLine($"    /// Contains the library name of {profile.Name}.");
+            sw.WriteLine("    /// </summary>");
+            sw.WriteLine($"    internal class {profile.Names.ClassName} : SearchPathContainer");
+            sw.WriteLine("    {");
+            sw.WriteLine("        /// <inheritdoc />");
+            sw.WriteLine($"        public override string Linux => \"{profile.Names.Linux}\";");
+            sw.WriteLine();
+            sw.WriteLine("        /// <inheritdoc />");
+            sw.WriteLine($"        public override string MacOS => \"{profile.Names.MacOS}\";");
+            sw.WriteLine();
+            sw.WriteLine("        /// <inheritdoc />");
+            sw.WriteLine($"        public override string Android => \"{profile.Names.Android}\";");
+            sw.WriteLine();
+            sw.WriteLine("        /// <inheritdoc />");
+            sw.WriteLine($"        public override string IOS => \"{profile.Names.IOS}\";");
+            sw.WriteLine();
+            sw.WriteLine("        /// <inheritdoc />");
+            sw.WriteLine($"        public override string Windows64 => \"{profile.Names.Windows}\";");
+            sw.WriteLine();
+            sw.WriteLine("        /// <inheritdoc />");
+            sw.WriteLine($"        public override string Windows86 => \"{profile.Names.Windows}\";");
+            sw.WriteLine("    }");
+            sw.WriteLine("}");
         }
 
+        /// <summary>
+        /// Write mixed-mode (partial) classes.
+        /// </summary>
+        /// <param name="project">The current project.</param>
+        /// <param name="profile">The profile to write mixed-mode classes for.</param>
+        /// <param name="folder">The folder to store the generated classes in.</param>
         public static void WriteMixedModeClasses(this Project project, Profile profile, string folder)
         {
             // public abstract class MixedModeClass : IMixedModeClass
@@ -297,6 +313,8 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine("using Silk.NET.Core.Loader;");
                 sw.WriteLine("using Ultz.SuperInvoke;");
                 sw.WriteLine();
+                sw.WriteLine("#pragma warning disable 1591");
+                sw.WriteLine();
                 sw.WriteLine($"namespace {profile.Namespace}{project.Namespace}");
                 sw.WriteLine("{");
                 sw.WriteLine
@@ -312,7 +330,9 @@ namespace Silk.NET.BuildTools.Bind
                 var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).RemoveDuplicates().ToArray();
                 foreach (var function in allFunctions)
                 {
-                    sw.WriteLine("        /// <inheritdoc />"); // TODO docs
+                    // TODO: Proper docs
+                    // Disabled because missing XML is ignored.
+                    //sw.WriteLine("        /// <inheritdoc />"); 
                     sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
                     using (var sr = new StringReader(function.ToString()))
                     {
@@ -358,7 +378,7 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine("        private SearchPathContainer _searchPaths;");
                 sw.WriteLine
                 (
-                    $"        public override SearchPathContainer SearchPaths => _searchPaths ??= " +
+                     "        public override SearchPathContainer SearchPaths => _searchPaths ??= " +
                     $"new {profile.Names.ClassName}();"
                 );
                 sw.WriteLine();
@@ -387,6 +407,8 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("using System;");
                     sw.WriteLine("using Silk.NET.Core.Loader;");
                     sw.WriteLine("using Silk.NET.Core.Native;");
+                    sw.WriteLine();
+                    sw.WriteLine("#pragma warning disable 1591");
                     sw.WriteLine();
                     sw.WriteLine($"namespace {profile.Namespace}{project.Namespace}");
                     sw.WriteLine("{");
@@ -436,6 +458,8 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("using Silk.NET.Core.Attributes;");
                     sw.WriteLine("using Ultz.SuperInvoke;");
                     sw.WriteLine();
+                    sw.WriteLine("#pragma warning disable 1591");
+                    sw.WriteLine();
                     sw.WriteLine($"namespace {profile.ExtensionsNamespace}{project.Namespace}");
                     sw.WriteLine("{");
                     sw.WriteLine($"    [Extension(\"{key}\")]");
@@ -446,7 +470,9 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("    {");
                     foreach (var function in i.Functions)
                     {
-                        sw.WriteLine("        /// <inheritdoc />"); // TODO docs
+                        // TODO: Proper docs
+                        // Disabled because missing XML is ignored.
+                        //sw.WriteLine("        /// <inheritdoc />");
                         sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
                         using (var sr = new StringReader(function.ToString()))
                         {

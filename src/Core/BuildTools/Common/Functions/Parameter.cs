@@ -41,9 +41,13 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         public List<Attribute> Attributes { get; set; } = new List<Attribute>();
         
+        /// <summary>
+        /// The function this parameter originates from.
+        /// </summary>
         [JsonIgnore]
         public Function Origin { get; set; }
 
+        /// <inheritdoc />
         public bool Equals(Parameter other)
         {
             if (ReferenceEquals(null, other))
@@ -59,6 +63,7 @@ namespace Silk.NET.BuildTools.Common.Functions
             return Type.Equals(other.Type);
         }
 
+        /// <inheritdoc />
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -74,14 +79,17 @@ namespace Silk.NET.BuildTools.Common.Functions
             return obj is Parameter parameter && Equals(parameter);
         }
 
+        /// <inheritdoc />
         public override int GetHashCode()
         {
             unchecked
             {
+                // ReSharper disable NonReadonlyMemberInGetHashCode
                 var hashCode = (Name != null ? Name.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (Type != null ? Type.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (Count != null ? Count.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (int) Flow;
+                // ReSharper restore NonReadonlyMemberInGetHashCode
                 return hashCode;
             }
         }

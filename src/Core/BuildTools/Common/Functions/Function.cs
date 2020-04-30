@@ -50,7 +50,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         [NotNull]
         [ItemNotNull]
         [JsonIgnore]
-        public List<string> Categories { get; set; }
+        public List<string> Categories { get; set; } = new List<string>();
 
         /// <summary>
         /// Gets or sets the generic type parameters of the function.
@@ -75,11 +75,13 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         public string ExtensionName { get; set; }
 
+        /// <inheritdoc />
         public override string ToString()
         {
             return ToString(null);
         }
 
+        /// <inheritdoc cref="ToString()" />
         public string ToString(bool? @unsafe)
         {
             var sb = new StringBuilder();
@@ -148,7 +150,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         }
 
         [NotNull]
-        private string GetDeclarationString([NotNull] Parameter parameter)
+        private static string GetDeclarationString([NotNull] Parameter parameter)
         {
             var sb = new StringBuilder();
 
@@ -200,6 +202,7 @@ namespace Silk.NET.BuildTools.Common.Functions
             return sb.ToString();
         }
 
+        /// <inheritdoc />
         public bool Equals(Function other)
         {
             if (ReferenceEquals(null, other))
@@ -217,6 +220,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                    GenericTypeParameters.SequenceEqual(other.GenericTypeParameters);
         }
 
+        /// <inheritdoc />
         public override bool Equals(object obj)
         {
             if (ReferenceEquals(null, obj))
@@ -232,10 +236,12 @@ namespace Silk.NET.BuildTools.Common.Functions
             return obj is Function function && Equals(function);
         }
 
+        /// <inheritdoc />
         public override int GetHashCode()
         {
             unchecked
             {
+                // ReSharper disable NonReadonlyMemberInGetHashCode
                 var hashCode = (Name != null ? Name.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (ReturnType != null ? ReturnType.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (NativeName != null ? NativeName.GetHashCode() : 0);
@@ -245,6 +251,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                 hashCode = (hashCode * 397) ^ (Attributes != null ? Attributes.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (Doc != null ? Doc.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (ExtensionName != null ? ExtensionName.GetHashCode() : 0);
+                // ReSharper restore NonReadonlyMemberInGetHashCode
                 return hashCode;
             }
         }

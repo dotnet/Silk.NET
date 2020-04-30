@@ -10,8 +10,10 @@ using Silk.NET.BuildTools.Common.Functions;
 
 namespace Silk.NET.BuildTools.Common.Builders
 {
+    // TODO: This should be renamed to FunctionBuilder since FunctionSignature was renamed to Function
+    
     /// <summary>
-    /// Acts as a builder for new instances of <see cref="FunctionSignature" />s, based on existing instances.
+    /// Acts as a builder for new instances of <see cref="Function" />s, based on existing instances.
     /// </summary>
     public sealed class FunctionSignatureBuilder
     {

@@ -30,10 +30,10 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Require.NotNull(xe);
 
             var xeValue = xe.Element("comment") is null ? xe.Value : xe.Value.Replace(xe.Element("comment").Value, "");
-            string name = xe.GetNameElement();
-            bool isOptional = xe.GetOptionalAttributeOrFalse();
-            string typeName = xe.Element("type").Value;
-            int pointerLevel = xeValue.Contains($"{typeName}*") ? 1 : 0; // TODO: Make this better.
+            var name = xe.GetNameElement();
+            var isOptional = xe.GetOptionalAttributeOrFalse();
+            var typeName = xe.Element("type").Value;
+            var pointerLevel = xeValue.Contains($"{typeName}*") ? 1 : 0; // TODO: Make this better.
             if (xeValue.Contains($"{typeName}* const*"))
             {
                 pointerLevel += 1;
@@ -42,7 +42,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             bool foundConstantElementCount = false;
             int elementCount = 1;
             string elementCountSymbolic = null;
-            for (int i = 2; i < 10; i++)
+            for (var i = 2; i < 10; i++)
             {
                 if (xeValue.Contains($"{name}[{i}]"))
                 {
@@ -54,7 +54,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
             if (!foundConstantElementCount)
             {
-                Match m = Regex.Match(xeValue, @"\[(.*)\]");
+                var m = Regex.Match(xeValue, @"\[(.*)\]");
                 if (m.Captures.Count > 0)
                 {
                     elementCountSymbolic = m.Groups[1].Value;
@@ -79,8 +79,8 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
         public override string ToString()
         {
-            string optionalPart = IsOptional ? "[opt] " : "";
-            string countPart = ElementCount != 1 ? $" [{ElementCount}]" : ElementCountSymbolic != null ? $" [{ElementCountSymbolic}]" : "";
+            var optionalPart = IsOptional ? "[opt] " : "";
+            var countPart = ElementCount != 1 ? $" [{ElementCount}]" : ElementCountSymbolic != null ? $" [{ElementCountSymbolic}]" : "";
             return $"{optionalPart}{Type} {Name}";
         }
     }

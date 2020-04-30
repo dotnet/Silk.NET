@@ -56,7 +56,13 @@ namespace Silk.NET.BuildTools.Common
             }
         }
 
-        public static Type MapOne(List<Dictionary<string, string>> maps, Type og)
+        /// <summary>
+        /// Retrieve a type from a typemap.
+        /// </summary>
+        /// <param name="maps">The map to use.</param>
+        /// <param name="og">The type to map.</param>
+        /// <returns>The mapped type.</returns>
+        public static Type MapOne(IEnumerable<Dictionary<string, string>> maps, Type og)
         {
             var type = og;
             foreach (var map in maps)
@@ -81,7 +87,7 @@ namespace Silk.NET.BuildTools.Common
         /// Replaces the type names of parameters and return types in the given functions using the given typemap.
         /// </summary>
         /// <param name="map">The typemap/dictionary to use.</param>
-        /// <param name="functions">The functions to map.</param>
+        /// <param name="structs">The functions to map.</param>
         public static void Map(Dictionary<string, string> map, IEnumerable<Struct> structs)
         {
             foreach (var @struct in structs)
