@@ -309,20 +309,14 @@ namespace VulkanTriangle
 
         private unsafe uint DebugCallback
         (
-            DebugReportFlagsEXT flags,
-            DebugReportObjectTypeEXT objecttype,
-            ulong o,
-            UIntPtr location,
-            int messagecode,
-            char* playerprefix,
-            char* pmessage,
-            void* puserdata
+            DebugUtilsMessageSeverityFlagsEXT messageSeverity,
+            DebugUtilsMessageTypeFlagsEXT messageTypes,
+            DebugUtilsMessengerCallbackDataEXT* pCallbackData,
+            void* pUserData
         )
         {
-            Console.Write("[" + flags.ToString().Replace("DebugReport", string.Empty) + "] ");
-            Console.Write(Marshal.PtrToStringAnsi((IntPtr) playerprefix) + "/");
-            Console.Write(objecttype.ToString().Replace("DebugReportObjectType", string.Empty)[..^3]);
-            Console.WriteLine(": " + Marshal.PtrToStringAnsi((IntPtr) pmessage));
+            Console.WriteLine
+                ($"{messageSeverity} {messageTypes}" + Marshal.PtrToStringAnsi((IntPtr) pCallbackData->PMessage));
             return Vk.False;
         }
 
