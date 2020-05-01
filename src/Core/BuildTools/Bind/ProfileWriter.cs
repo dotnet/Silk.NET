@@ -468,6 +468,7 @@ namespace Silk.NET.BuildTools.Bind
                         $"    public abstract unsafe partial class {name} : NativeExtension<{profile.ClassName}>"
                     );
                     sw.WriteLine("    {");
+                    sw.WriteLine($"        public const string ExtensionName = \"{key}\";");
                     foreach (var function in i.Functions)
                     {
                         // TODO: Proper docs
