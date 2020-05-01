@@ -25,6 +25,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="value">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glAccum")]
         public abstract void Accum([Flow(FlowDirection.In)] GLEnum op, [Flow(FlowDirection.In)] float value);
 
@@ -37,6 +38,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="@ref">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glAlphaFunc")]
         public abstract void AlphaFunc([Flow(FlowDirection.In)] GLEnum func, [Flow(FlowDirection.In)] float @ref);
 
@@ -46,6 +48,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="mode">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glBegin")]
         public abstract void Begin([Flow(FlowDirection.In)] GLEnum mode);
 
@@ -74,6 +77,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from width and height.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glBitmap")]
         public abstract unsafe void Bitmap([Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] float xorig, [Flow(FlowDirection.In)] float yorig, [Flow(FlowDirection.In)] float xmove, [Flow(FlowDirection.In)] float ymove, [Count(Computed = "width, height"), Flow(FlowDirection.In)] byte* bitmap);
 
@@ -102,6 +106,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from width and height.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glBitmap")]
         public abstract void Bitmap([Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] float xorig, [Flow(FlowDirection.In)] float yorig, [Flow(FlowDirection.In)] float xmove, [Flow(FlowDirection.In)] float ymove, [Count(Computed = "width, height"), Flow(FlowDirection.In)] ref byte bitmap);
 
@@ -123,6 +128,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="list">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glCallList")]
         public abstract void CallList([Flow(FlowDirection.In)] uint list);
 
@@ -139,6 +145,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from n and type.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glCallLists")]
         public abstract unsafe void CallLists([Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "n, type"), Flow(FlowDirection.In)] void* lists);
 
@@ -155,6 +162,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from n and type.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glCallLists")]
         public abstract void CallLists<T0>([Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "n, type"), Flow(FlowDirection.In)] ref T0 lists) where T0 : unmanaged;
 
@@ -182,6 +190,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="alpha">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glClearAccum")]
         public abstract void ClearAccum([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha);
 
@@ -218,6 +227,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="c">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glClearIndex")]
         public abstract void ClearIndex([Flow(FlowDirection.In)] float c);
 
@@ -240,6 +250,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glClipPlane")]
         public abstract unsafe void ClipPlane([Flow(FlowDirection.In)] GLEnum plane, [Count(Count = 4), Flow(FlowDirection.In)] double* equation);
 
@@ -253,6 +264,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glClipPlane")]
         public abstract void ClipPlane([Flow(FlowDirection.In)] GLEnum plane, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> equation);
 
@@ -268,6 +280,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3b")]
         public abstract void Color3([Flow(FlowDirection.In)] sbyte red, [Flow(FlowDirection.In)] sbyte green, [Flow(FlowDirection.In)] sbyte blue);
 
@@ -278,6 +291,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3bv")]
         public abstract unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] sbyte* v);
 
@@ -288,6 +302,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3bv")]
         public abstract void Color3([Count(Count = 3), Flow(FlowDirection.In)] Span<sbyte> v);
 
@@ -303,6 +318,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3d")]
         public abstract void Color3([Flow(FlowDirection.In)] double red, [Flow(FlowDirection.In)] double green, [Flow(FlowDirection.In)] double blue);
 
@@ -313,6 +329,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3dv")]
         public abstract unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
@@ -323,6 +340,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3dv")]
         public abstract void Color3([Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
 
@@ -338,6 +356,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3f")]
         public abstract void Color3([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue);
 
@@ -348,6 +367,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3fv")]
         public abstract unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
@@ -358,6 +378,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3fv")]
         public abstract void Color3([Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
 
@@ -373,6 +394,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3i")]
         public abstract void Color3([Flow(FlowDirection.In)] int red, [Flow(FlowDirection.In)] int green, [Flow(FlowDirection.In)] int blue);
 
@@ -383,6 +405,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3iv")]
         public abstract unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
@@ -393,6 +416,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3iv")]
         public abstract void Color3([Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
 
@@ -408,6 +432,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3s")]
         public abstract void Color3([Flow(FlowDirection.In)] short red, [Flow(FlowDirection.In)] short green, [Flow(FlowDirection.In)] short blue);
 
@@ -418,6 +443,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3sv")]
         public abstract unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
@@ -428,6 +454,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3sv")]
         public abstract void Color3([Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
 
@@ -443,6 +470,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3ub")]
         public abstract void Color3([Flow(FlowDirection.In)] byte red, [Flow(FlowDirection.In)] byte green, [Flow(FlowDirection.In)] byte blue);
 
@@ -453,6 +481,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3ubv")]
         public abstract unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] byte* v);
 
@@ -463,6 +492,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3ubv")]
         public abstract void Color3([Count(Count = 3), Flow(FlowDirection.In)] Span<byte> v);
 
@@ -478,6 +508,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3ui")]
         public abstract void Color3([Flow(FlowDirection.In)] uint red, [Flow(FlowDirection.In)] uint green, [Flow(FlowDirection.In)] uint blue);
 
@@ -488,6 +519,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3uiv")]
         public abstract unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] uint* v);
 
@@ -498,6 +530,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3uiv")]
         public abstract void Color3([Count(Count = 3), Flow(FlowDirection.In)] Span<uint> v);
 
@@ -513,6 +546,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3us")]
         public abstract void Color3([Flow(FlowDirection.In)] ushort red, [Flow(FlowDirection.In)] ushort green, [Flow(FlowDirection.In)] ushort blue);
 
@@ -523,6 +557,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3usv")]
         public abstract unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] ushort* v);
 
@@ -533,6 +568,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3usv")]
         public abstract void Color3([Count(Count = 3), Flow(FlowDirection.In)] Span<ushort> v);
 
@@ -551,6 +587,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="alpha">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4b")]
         public abstract void Color4([Flow(FlowDirection.In)] sbyte red, [Flow(FlowDirection.In)] sbyte green, [Flow(FlowDirection.In)] sbyte blue, [Flow(FlowDirection.In)] sbyte alpha);
 
@@ -561,6 +598,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4bv")]
         public abstract unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] sbyte* v);
 
@@ -571,6 +609,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4bv")]
         public abstract void Color4([Count(Count = 4), Flow(FlowDirection.In)] Span<sbyte> v);
 
@@ -589,6 +628,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="alpha">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4d")]
         public abstract void Color4([Flow(FlowDirection.In)] double red, [Flow(FlowDirection.In)] double green, [Flow(FlowDirection.In)] double blue, [Flow(FlowDirection.In)] double alpha);
 
@@ -599,6 +639,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4dv")]
         public abstract unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
@@ -609,6 +650,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4dv")]
         public abstract void Color4([Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
 
@@ -627,6 +669,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="alpha">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4f")]
         public abstract void Color4([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha);
 
@@ -637,6 +680,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4fv")]
         public abstract unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
@@ -647,6 +691,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4fv")]
         public abstract void Color4([Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
 
@@ -665,6 +710,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="alpha">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4i")]
         public abstract void Color4([Flow(FlowDirection.In)] int red, [Flow(FlowDirection.In)] int green, [Flow(FlowDirection.In)] int blue, [Flow(FlowDirection.In)] int alpha);
 
@@ -675,6 +721,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4iv")]
         public abstract unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
@@ -685,6 +732,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4iv")]
         public abstract void Color4([Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
 
@@ -703,6 +751,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="alpha">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4s")]
         public abstract void Color4([Flow(FlowDirection.In)] short red, [Flow(FlowDirection.In)] short green, [Flow(FlowDirection.In)] short blue, [Flow(FlowDirection.In)] short alpha);
 
@@ -713,6 +762,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4sv")]
         public abstract unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
@@ -723,6 +773,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4sv")]
         public abstract void Color4([Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
 
@@ -741,6 +792,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="alpha">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4ub")]
         public abstract void Color4([Flow(FlowDirection.In)] byte red, [Flow(FlowDirection.In)] byte green, [Flow(FlowDirection.In)] byte blue, [Flow(FlowDirection.In)] byte alpha);
 
@@ -751,6 +803,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4ubv")]
         public abstract unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] byte* v);
 
@@ -761,6 +814,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4ubv")]
         public abstract void Color4([Count(Count = 4), Flow(FlowDirection.In)] Span<byte> v);
 
@@ -779,6 +833,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="alpha">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4ui")]
         public abstract void Color4([Flow(FlowDirection.In)] uint red, [Flow(FlowDirection.In)] uint green, [Flow(FlowDirection.In)] uint blue, [Flow(FlowDirection.In)] uint alpha);
 
@@ -789,6 +844,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4uiv")]
         public abstract unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] uint* v);
 
@@ -799,6 +855,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4uiv")]
         public abstract void Color4([Count(Count = 4), Flow(FlowDirection.In)] Span<uint> v);
 
@@ -817,6 +874,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="alpha">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4us")]
         public abstract void Color4([Flow(FlowDirection.In)] ushort red, [Flow(FlowDirection.In)] ushort green, [Flow(FlowDirection.In)] ushort blue, [Flow(FlowDirection.In)] ushort alpha);
 
@@ -827,6 +885,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4usv")]
         public abstract unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] ushort* v);
 
@@ -837,6 +896,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4usv")]
         public abstract void Color4([Count(Count = 4), Flow(FlowDirection.In)] Span<ushort> v);
 
@@ -867,6 +927,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="mode">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColorMaterial")]
         public abstract void ColorMaterial([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum mode);
 
@@ -888,6 +949,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="type">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glCopyPixels")]
         public abstract void CopyPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum type);
 
@@ -909,6 +971,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="range">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glDeleteLists")]
         public abstract void DeleteLists([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint range);
 
@@ -979,6 +1042,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glDrawPixels")]
         public abstract unsafe void DrawPixels([Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
@@ -1001,6 +1065,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glDrawPixels")]
         public abstract void DrawPixels<T0>([Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
 
@@ -1010,6 +1075,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="flag">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEdgeFlag")]
         public abstract void EdgeFlag([Flow(FlowDirection.In)] bool flag);
 
@@ -1020,6 +1086,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEdgeFlagv")]
         public abstract unsafe void EdgeFlag([Count(Count = 1), Flow(FlowDirection.In)] bool* flag);
 
@@ -1030,6 +1097,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEdgeFlagv")]
         public abstract void EdgeFlag([Count(Count = 1), Flow(FlowDirection.In)] ref bool flag);
 
@@ -1045,12 +1113,14 @@ namespace Silk.NET.OpenGL.Legacy
         /// <summary>
         /// To be added.
         /// </summary>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEnd")]
         public abstract void End();
 
         /// <summary>
         /// To be added.
         /// </summary>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEndList")]
         public abstract void EndList();
 
@@ -1060,6 +1130,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="u">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord1d")]
         public abstract void EvalCoord1([Flow(FlowDirection.In)] double u);
 
@@ -1070,6 +1141,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord1dv")]
         public abstract unsafe void EvalCoord1([Count(Count = 1), Flow(FlowDirection.In)] double* u);
 
@@ -1080,6 +1152,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord1dv")]
         public abstract void EvalCoord1([Count(Count = 1), Flow(FlowDirection.In)] ref double u);
 
@@ -1089,6 +1162,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="u">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord1f")]
         public abstract void EvalCoord1([Flow(FlowDirection.In)] float u);
 
@@ -1099,6 +1173,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord1fv")]
         public abstract unsafe void EvalCoord1([Count(Count = 1), Flow(FlowDirection.In)] float* u);
 
@@ -1109,6 +1184,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord1fv")]
         public abstract void EvalCoord1([Count(Count = 1), Flow(FlowDirection.In)] ref float u);
 
@@ -1121,6 +1197,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="v">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord2d")]
         public abstract void EvalCoord2([Flow(FlowDirection.In)] double u, [Flow(FlowDirection.In)] double v);
 
@@ -1131,6 +1208,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord2dv")]
         public abstract unsafe void EvalCoord2([Count(Count = 2), Flow(FlowDirection.In)] double* u);
 
@@ -1141,6 +1219,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord2dv")]
         public abstract void EvalCoord2([Count(Count = 2), Flow(FlowDirection.In)] Span<double> u);
 
@@ -1153,6 +1232,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="v">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord2f")]
         public abstract void EvalCoord2([Flow(FlowDirection.In)] float u, [Flow(FlowDirection.In)] float v);
 
@@ -1163,6 +1243,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord2fv")]
         public abstract unsafe void EvalCoord2([Count(Count = 2), Flow(FlowDirection.In)] float* u);
 
@@ -1173,6 +1254,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord2fv")]
         public abstract void EvalCoord2([Count(Count = 2), Flow(FlowDirection.In)] Span<float> u);
 
@@ -1188,6 +1270,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="i2">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalMesh1")]
         public abstract void EvalMesh1([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] int i1, [Flow(FlowDirection.In)] int i2);
 
@@ -1209,6 +1292,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="j2">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalMesh2")]
         public abstract void EvalMesh2([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] int i1, [Flow(FlowDirection.In)] int i2, [Flow(FlowDirection.In)] int j1, [Flow(FlowDirection.In)] int j2);
 
@@ -1218,6 +1302,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="i">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalPoint1")]
         public abstract void EvalPoint1([Flow(FlowDirection.In)] int i);
 
@@ -1230,6 +1315,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="j">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalPoint2")]
         public abstract void EvalPoint2([Flow(FlowDirection.In)] int i, [Flow(FlowDirection.In)] int j);
 
@@ -1246,6 +1332,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from size.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFeedbackBuffer")]
         public abstract unsafe void FeedbackBuffer([Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "size"), Flow(FlowDirection.Out)] float* buffer);
 
@@ -1262,6 +1349,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from size.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFeedbackBuffer")]
         public abstract void FeedbackBuffer([Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<float> buffer);
 
@@ -1286,6 +1374,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogf")]
         public abstract void Fog([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
 
@@ -1299,6 +1388,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogfv")]
         public abstract unsafe void Fog([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
@@ -1312,6 +1402,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogfv")]
         public abstract void Fog([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
 
@@ -1324,6 +1415,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogi")]
         public abstract void Fog([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
 
@@ -1337,6 +1429,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogiv")]
         public abstract unsafe void Fog([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
@@ -1350,6 +1443,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogiv")]
         public abstract void Fog([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
 
@@ -1383,6 +1477,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="zFar">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFrustum")]
         public abstract void Frustum([Flow(FlowDirection.In)] double left, [Flow(FlowDirection.In)] double right, [Flow(FlowDirection.In)] double bottom, [Flow(FlowDirection.In)] double top, [Flow(FlowDirection.In)] double zNear, [Flow(FlowDirection.In)] double zFar);
 
@@ -1393,6 +1488,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// </param>
         /// <returns>See summary.</returns>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGenLists")]
         public abstract uint GenLists([Flow(FlowDirection.In)] uint range);
 
@@ -1432,6 +1528,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetClipPlane")]
         public abstract unsafe void GetClipPlane([Flow(FlowDirection.In)] GLEnum plane, [Count(Count = 4), Flow(FlowDirection.Out)] double* equation);
 
@@ -1445,6 +1542,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetClipPlane")]
         public abstract void GetClipPlane([Flow(FlowDirection.In)] GLEnum plane, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> equation);
 
@@ -1546,6 +1644,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightfv")]
         public abstract unsafe void GetLight([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
@@ -1562,6 +1661,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightfv")]
         public abstract void GetLight([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
@@ -1578,6 +1678,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightiv")]
         public abstract unsafe void GetLight([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
@@ -1594,6 +1695,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightiv")]
         public abstract void GetLight([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
@@ -1610,6 +1712,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target and query.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapdv")]
         public abstract unsafe void GetMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] double* v);
 
@@ -1626,6 +1729,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target and query.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapdv")]
         public abstract void GetMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] out double v);
 
@@ -1642,6 +1746,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target and query.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapfv")]
         public abstract unsafe void GetMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] float* v);
 
@@ -1658,6 +1763,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target and query.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapfv")]
         public abstract void GetMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] out float v);
 
@@ -1674,6 +1780,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target and query.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapiv")]
         public abstract unsafe void GetMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] int* v);
 
@@ -1690,6 +1797,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target and query.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapiv")]
         public abstract void GetMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] out int v);
 
@@ -1706,6 +1814,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialfv")]
         public abstract unsafe void GetMaterial([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
@@ -1722,6 +1831,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialfv")]
         public abstract void GetMaterial([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
@@ -1738,6 +1848,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialiv")]
         public abstract unsafe void GetMaterial([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
@@ -1754,6 +1865,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialiv")]
         public abstract void GetMaterial([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
@@ -1767,6 +1879,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from map.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapfv")]
         public abstract unsafe void GetPixelMap([Flow(FlowDirection.In)] GLEnum map, [Count(Computed = "map"), Flow(FlowDirection.Out)] float* values);
 
@@ -1780,6 +1893,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from map.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapfv")]
         public abstract void GetPixelMap([Flow(FlowDirection.In)] GLEnum map, [Count(Computed = "map"), Flow(FlowDirection.Out)] out float values);
 
@@ -1793,6 +1907,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from map.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapuiv")]
         public abstract unsafe void GetPixelMap([Flow(FlowDirection.In)] GLEnum map, [Count(Computed = "map"), Flow(FlowDirection.Out)] uint* values);
 
@@ -1806,6 +1921,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from map.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapuiv")]
         public abstract void GetPixelMap([Flow(FlowDirection.In)] GLEnum map, [Count(Computed = "map"), Flow(FlowDirection.Out)] out uint values);
 
@@ -1819,6 +1935,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from map.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapusv")]
         public abstract unsafe void GetPixelMap([Flow(FlowDirection.In)] GLEnum map, [Count(Computed = "map"), Flow(FlowDirection.Out)] ushort* values);
 
@@ -1832,6 +1949,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from map.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapusv")]
         public abstract void GetPixelMap([Flow(FlowDirection.In)] GLEnum map, [Count(Computed = "map"), Flow(FlowDirection.Out)] out ushort values);
 
@@ -1842,6 +1960,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 0 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPolygonStipple")]
         public abstract unsafe void GetPolygonStipple([Count(Count = 0), Flow(FlowDirection.Out)] byte* mask);
 
@@ -1852,6 +1971,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 0 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPolygonStipple")]
         public abstract void GetPolygonStipple([Count(Count = 0), Flow(FlowDirection.Out)] out byte mask);
 
@@ -1878,6 +1998,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnvfv")]
         public abstract unsafe void GetTexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
@@ -1894,6 +2015,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnvfv")]
         public abstract void GetTexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
@@ -1910,6 +2032,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnviv")]
         public abstract unsafe void GetTexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
@@ -1926,6 +2049,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnviv")]
         public abstract void GetTexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
@@ -1942,6 +2066,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGendv")]
         public abstract unsafe void GetTexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* @params);
 
@@ -1958,6 +2083,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGendv")]
         public abstract void GetTexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out double @params);
 
@@ -1974,6 +2100,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGenfv")]
         public abstract unsafe void GetTexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
@@ -1990,6 +2117,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGenfv")]
         public abstract void GetTexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
@@ -2006,6 +2134,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGeniv")]
         public abstract unsafe void GetTexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
@@ -2022,6 +2151,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGeniv")]
         public abstract void GetTexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
@@ -2227,6 +2357,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="c">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexd")]
         public abstract void Index([Flow(FlowDirection.In)] double c);
 
@@ -2237,6 +2368,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexdv")]
         public abstract unsafe void Index([Count(Count = 1), Flow(FlowDirection.In)] double* c);
 
@@ -2247,6 +2379,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexdv")]
         public abstract void Index([Count(Count = 1), Flow(FlowDirection.In)] ref double c);
 
@@ -2256,6 +2389,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="c">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexf")]
         public abstract void Index([Flow(FlowDirection.In)] float c);
 
@@ -2266,6 +2400,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexfv")]
         public abstract unsafe void Index([Count(Count = 1), Flow(FlowDirection.In)] float* c);
 
@@ -2276,6 +2411,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexfv")]
         public abstract void Index([Count(Count = 1), Flow(FlowDirection.In)] ref float c);
 
@@ -2285,6 +2421,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="c">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexi")]
         public abstract void Index([Flow(FlowDirection.In)] int c);
 
@@ -2295,6 +2432,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexiv")]
         public abstract unsafe void Index([Count(Count = 1), Flow(FlowDirection.In)] int* c);
 
@@ -2305,6 +2443,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexiv")]
         public abstract void Index([Count(Count = 1), Flow(FlowDirection.In)] ref int c);
 
@@ -2314,6 +2453,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="c">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexs")]
         public abstract void Index([Flow(FlowDirection.In)] short c);
 
@@ -2324,6 +2464,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexsv")]
         public abstract unsafe void Index([Count(Count = 1), Flow(FlowDirection.In)] short* c);
 
@@ -2334,6 +2475,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexsv")]
         public abstract void Index([Count(Count = 1), Flow(FlowDirection.In)] ref short c);
 
@@ -2343,12 +2485,14 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="mask">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexMask")]
         public abstract void IndexMask([Flow(FlowDirection.In)] uint mask);
 
         /// <summary>
         /// To be added.
         /// </summary>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glInitNames")]
         public abstract void InitNames();
 
@@ -2369,6 +2513,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// </param>
         /// <returns>See summary.</returns>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIsList")]
         public abstract bool IsList([Flow(FlowDirection.In)] uint list);
 
@@ -2384,6 +2529,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightf")]
         public abstract void Light([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
 
@@ -2400,6 +2546,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightfv")]
         public abstract unsafe void Light([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
@@ -2416,6 +2563,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightfv")]
         public abstract void Light([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
 
@@ -2431,6 +2579,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLighti")]
         public abstract void Light([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
 
@@ -2447,6 +2596,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightiv")]
         public abstract unsafe void Light([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
@@ -2463,6 +2613,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightiv")]
         public abstract void Light([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
 
@@ -2475,6 +2626,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModelf")]
         public abstract void LightModel([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
 
@@ -2488,6 +2640,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModelfv")]
         public abstract unsafe void LightModel([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
@@ -2501,6 +2654,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModelfv")]
         public abstract void LightModel([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
 
@@ -2513,6 +2667,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModeli")]
         public abstract void LightModel([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
 
@@ -2526,6 +2681,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModeliv")]
         public abstract unsafe void LightModel([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
@@ -2539,6 +2695,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModeliv")]
         public abstract void LightModel([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
 
@@ -2551,6 +2708,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="pattern">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLineStipple")]
         public abstract void LineStipple([Flow(FlowDirection.In)] int factor, [Flow(FlowDirection.In)] ushort pattern);
 
@@ -2569,12 +2727,14 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="@base">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glListBase")]
         public abstract void ListBase([Flow(FlowDirection.In)] uint @base);
 
         /// <summary>
         /// To be added.
         /// </summary>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLoadIdentity")]
         public abstract void LoadIdentity();
 
@@ -2585,6 +2745,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLoadMatrixf")]
         public abstract unsafe void LoadMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
 
@@ -2595,6 +2756,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLoadMatrixf")]
         public abstract void LoadMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<float> m);
 
@@ -2605,6 +2767,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLoadMatrixd")]
         public abstract unsafe void LoadMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
 
@@ -2615,6 +2778,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLoadMatrixd")]
         public abstract void LoadMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<double> m);
 
@@ -2624,6 +2788,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="name">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLoadName")]
         public abstract void LoadName([Flow(FlowDirection.In)] uint name);
 
@@ -2658,6 +2823,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, stride, and order.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1d")]
         public abstract unsafe void Map1([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] double* points);
 
@@ -2683,6 +2849,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, stride, and order.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1d")]
         public abstract void Map1([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] ref double points);
 
@@ -2708,6 +2875,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, stride, and order.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1f")]
         public abstract unsafe void Map1([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] float* points);
 
@@ -2733,6 +2901,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, stride, and order.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1f")]
         public abstract void Map1([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] ref float points);
 
@@ -2770,6 +2939,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, ustride, uorder, vstride, and vorder.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2d")]
         public abstract unsafe void Map2([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] double* points);
 
@@ -2807,6 +2977,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, ustride, uorder, vstride, and vorder.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2d")]
         public abstract void Map2([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] ref double points);
 
@@ -2844,6 +3015,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, ustride, uorder, vstride, and vorder.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2f")]
         public abstract unsafe void Map2([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] float* points);
 
@@ -2881,6 +3053,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, ustride, uorder, vstride, and vorder.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2f")]
         public abstract void Map2([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] ref float points);
 
@@ -2896,6 +3069,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="u2">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMapGrid1d")]
         public abstract void MapGrid1([Flow(FlowDirection.In)] int un, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2);
 
@@ -2911,6 +3085,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="u2">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMapGrid1f")]
         public abstract void MapGrid1([Flow(FlowDirection.In)] int un, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2);
 
@@ -2935,6 +3110,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="v2">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMapGrid2d")]
         public abstract void MapGrid2([Flow(FlowDirection.In)] int un, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int vn, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2);
 
@@ -2959,6 +3135,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="v2">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMapGrid2f")]
         public abstract void MapGrid2([Flow(FlowDirection.In)] int un, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int vn, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2);
 
@@ -2974,6 +3151,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialf")]
         public abstract void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
 
@@ -2990,6 +3168,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialfv")]
         public abstract unsafe void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
@@ -3006,6 +3185,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialfv")]
         public abstract void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
 
@@ -3021,6 +3201,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMateriali")]
         public abstract void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
 
@@ -3037,6 +3218,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialiv")]
         public abstract unsafe void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
@@ -3053,6 +3235,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialiv")]
         public abstract void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
 
@@ -3062,6 +3245,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="mode">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMatrixMode")]
         public abstract void MatrixMode([Flow(FlowDirection.In)] GLEnum mode);
 
@@ -3072,6 +3256,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMultMatrixf")]
         public abstract unsafe void MultMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
 
@@ -3082,6 +3267,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMultMatrixf")]
         public abstract void MultMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<float> m);
 
@@ -3092,6 +3278,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMultMatrixd")]
         public abstract unsafe void MultMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
 
@@ -3102,6 +3289,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMultMatrixd")]
         public abstract void MultMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<double> m);
 
@@ -3114,6 +3302,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="mode">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNewList")]
         public abstract void NewList([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] GLEnum mode);
 
@@ -3129,6 +3318,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="nz">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3b")]
         public abstract void Normal3([Flow(FlowDirection.In)] sbyte nx, [Flow(FlowDirection.In)] sbyte ny, [Flow(FlowDirection.In)] sbyte nz);
 
@@ -3139,6 +3329,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3bv")]
         public abstract unsafe void Normal3([Count(Count = 3), Flow(FlowDirection.In)] sbyte* v);
 
@@ -3149,6 +3340,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3bv")]
         public abstract void Normal3([Count(Count = 3), Flow(FlowDirection.In)] Span<sbyte> v);
 
@@ -3164,6 +3356,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="nz">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3d")]
         public abstract void Normal3([Flow(FlowDirection.In)] double nx, [Flow(FlowDirection.In)] double ny, [Flow(FlowDirection.In)] double nz);
 
@@ -3174,6 +3367,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3dv")]
         public abstract unsafe void Normal3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
@@ -3184,6 +3378,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3dv")]
         public abstract void Normal3([Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
 
@@ -3199,6 +3394,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="nz">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3f")]
         public abstract void Normal3([Flow(FlowDirection.In)] float nx, [Flow(FlowDirection.In)] float ny, [Flow(FlowDirection.In)] float nz);
 
@@ -3209,6 +3405,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3fv")]
         public abstract unsafe void Normal3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
@@ -3219,6 +3416,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3fv")]
         public abstract void Normal3([Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
 
@@ -3234,6 +3432,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="nz">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3i")]
         public abstract void Normal3([Flow(FlowDirection.In)] int nx, [Flow(FlowDirection.In)] int ny, [Flow(FlowDirection.In)] int nz);
 
@@ -3244,6 +3443,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3iv")]
         public abstract unsafe void Normal3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
@@ -3254,6 +3454,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3iv")]
         public abstract void Normal3([Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
 
@@ -3269,6 +3470,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="nz">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3s")]
         public abstract void Normal3([Flow(FlowDirection.In)] short nx, [Flow(FlowDirection.In)] short ny, [Flow(FlowDirection.In)] short nz);
 
@@ -3279,6 +3481,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3sv")]
         public abstract unsafe void Normal3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
@@ -3289,6 +3492,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3sv")]
         public abstract void Normal3([Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
 
@@ -3313,6 +3517,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="zFar">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glOrtho")]
         public abstract void Ortho([Flow(FlowDirection.In)] double left, [Flow(FlowDirection.In)] double right, [Flow(FlowDirection.In)] double bottom, [Flow(FlowDirection.In)] double top, [Flow(FlowDirection.In)] double zNear, [Flow(FlowDirection.In)] double zFar);
 
@@ -3322,6 +3527,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="token">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPassThrough")]
         public abstract void PassThrough([Flow(FlowDirection.In)] float token);
 
@@ -3338,6 +3544,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from mapsize.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapfv")]
         public abstract unsafe void PixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] float* values);
 
@@ -3354,6 +3561,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from mapsize.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapfv")]
         public abstract void PixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] Span<float> values);
 
@@ -3370,6 +3578,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from mapsize.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapuiv")]
         public abstract unsafe void PixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] uint* values);
 
@@ -3386,6 +3595,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from mapsize.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapuiv")]
         public abstract void PixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] Span<uint> values);
 
@@ -3402,6 +3612,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from mapsize.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapusv")]
         public abstract unsafe void PixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] ushort* values);
 
@@ -3418,6 +3629,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from mapsize.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapusv")]
         public abstract void PixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] Span<ushort> values);
 
@@ -3454,6 +3666,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelTransferf")]
         public abstract void PixelTransfer([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
 
@@ -3466,6 +3679,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelTransferi")]
         public abstract void PixelTransfer([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
 
@@ -3478,6 +3692,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="yfactor">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelZoom")]
         public abstract void PixelZoom([Flow(FlowDirection.In)] float xfactor, [Flow(FlowDirection.In)] float yfactor);
 
@@ -3509,6 +3724,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 0 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPolygonStipple")]
         public abstract unsafe void PolygonStipple([Count(Count = 0), Flow(FlowDirection.In)] byte* mask);
 
@@ -3519,24 +3735,28 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 0 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPolygonStipple")]
         public abstract void PolygonStipple([Count(Count = 0), Flow(FlowDirection.In)] ref byte mask);
 
         /// <summary>
         /// To be added.
         /// </summary>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPopAttrib")]
         public abstract void PopAttrib();
 
         /// <summary>
         /// To be added.
         /// </summary>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPopMatrix")]
         public abstract void PopMatrix();
 
         /// <summary>
         /// To be added.
         /// </summary>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPopName")]
         public abstract void PopName();
 
@@ -3546,12 +3766,14 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="mask">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPushAttrib")]
         public abstract void PushAttrib([Flow(FlowDirection.In)] uint mask);
 
         /// <summary>
         /// To be added.
         /// </summary>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPushMatrix")]
         public abstract void PushMatrix();
 
@@ -3561,6 +3783,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="name">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPushName")]
         public abstract void PushName([Flow(FlowDirection.In)] uint name);
 
@@ -3573,6 +3796,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2d")]
         public abstract void RasterPos2([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y);
 
@@ -3583,6 +3807,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2dv")]
         public abstract unsafe void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
@@ -3593,6 +3818,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2dv")]
         public abstract void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<double> v);
 
@@ -3605,6 +3831,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2f")]
         public abstract void RasterPos2([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y);
 
@@ -3615,6 +3842,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2fv")]
         public abstract unsafe void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
@@ -3625,6 +3853,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2fv")]
         public abstract void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
 
@@ -3637,6 +3866,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2i")]
         public abstract void RasterPos2([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y);
 
@@ -3647,6 +3877,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2iv")]
         public abstract unsafe void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
@@ -3657,6 +3888,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2iv")]
         public abstract void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<int> v);
 
@@ -3669,6 +3901,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2s")]
         public abstract void RasterPos2([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y);
 
@@ -3679,6 +3912,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2sv")]
         public abstract unsafe void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
@@ -3689,6 +3923,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2sv")]
         public abstract void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<short> v);
 
@@ -3704,6 +3939,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3d")]
         public abstract void RasterPos3([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
 
@@ -3714,6 +3950,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3dv")]
         public abstract unsafe void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
@@ -3724,6 +3961,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3dv")]
         public abstract void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
 
@@ -3739,6 +3977,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3f")]
         public abstract void RasterPos3([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z);
 
@@ -3749,6 +3988,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3fv")]
         public abstract unsafe void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
@@ -3759,6 +3999,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3fv")]
         public abstract void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
 
@@ -3774,6 +4015,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3i")]
         public abstract void RasterPos3([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z);
 
@@ -3784,6 +4026,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3iv")]
         public abstract unsafe void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
@@ -3794,6 +4037,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3iv")]
         public abstract void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
 
@@ -3809,6 +4053,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3s")]
         public abstract void RasterPos3([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z);
 
@@ -3819,6 +4064,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3sv")]
         public abstract unsafe void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
@@ -3829,6 +4075,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3sv")]
         public abstract void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
 
@@ -3847,6 +4094,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="w">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4d")]
         public abstract void RasterPos4([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
 
@@ -3857,6 +4105,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4dv")]
         public abstract unsafe void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
@@ -3867,6 +4116,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4dv")]
         public abstract void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
 
@@ -3885,6 +4135,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="w">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4f")]
         public abstract void RasterPos4([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
 
@@ -3895,6 +4146,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4fv")]
         public abstract unsafe void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
@@ -3905,6 +4157,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4fv")]
         public abstract void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
 
@@ -3923,6 +4176,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="w">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4i")]
         public abstract void RasterPos4([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z, [Flow(FlowDirection.In)] int w);
 
@@ -3933,6 +4187,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4iv")]
         public abstract unsafe void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
@@ -3943,6 +4198,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4iv")]
         public abstract void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
 
@@ -3961,6 +4217,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="w">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4s")]
         public abstract void RasterPos4([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z, [Flow(FlowDirection.In)] short w);
 
@@ -3971,6 +4228,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4sv")]
         public abstract unsafe void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
@@ -3981,6 +4239,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4sv")]
         public abstract void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
 
@@ -4064,6 +4323,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y2">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectd")]
         public abstract void Rect([Flow(FlowDirection.In)] double x1, [Flow(FlowDirection.In)] double y1, [Flow(FlowDirection.In)] double x2, [Flow(FlowDirection.In)] double y2);
 
@@ -4078,6 +4338,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectdv")]
         public abstract unsafe void Rect([Count(Count = 2), Flow(FlowDirection.In)] double* v1, [Count(Count = 2), Flow(FlowDirection.In)] double* v2);
 
@@ -4092,6 +4353,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectdv")]
         public abstract void Rect([Count(Count = 2), Flow(FlowDirection.In)] Span<double> v1, [Count(Count = 2), Flow(FlowDirection.In)] Span<double> v2);
 
@@ -4110,6 +4372,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y2">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectf")]
         public abstract void Rect([Flow(FlowDirection.In)] float x1, [Flow(FlowDirection.In)] float y1, [Flow(FlowDirection.In)] float x2, [Flow(FlowDirection.In)] float y2);
 
@@ -4124,6 +4387,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectfv")]
         public abstract unsafe void Rect([Count(Count = 2), Flow(FlowDirection.In)] float* v1, [Count(Count = 2), Flow(FlowDirection.In)] float* v2);
 
@@ -4138,6 +4402,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectfv")]
         public abstract void Rect([Count(Count = 2), Flow(FlowDirection.In)] Span<float> v1, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v2);
 
@@ -4156,6 +4421,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y2">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRecti")]
         public abstract void Rect([Flow(FlowDirection.In)] int x1, [Flow(FlowDirection.In)] int y1, [Flow(FlowDirection.In)] int x2, [Flow(FlowDirection.In)] int y2);
 
@@ -4170,6 +4436,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectiv")]
         public abstract unsafe void Rect([Count(Count = 2), Flow(FlowDirection.In)] int* v1, [Count(Count = 2), Flow(FlowDirection.In)] int* v2);
 
@@ -4184,6 +4451,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectiv")]
         public abstract void Rect([Count(Count = 2), Flow(FlowDirection.In)] Span<int> v1, [Count(Count = 2), Flow(FlowDirection.In)] Span<int> v2);
 
@@ -4198,6 +4466,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectsv")]
         public abstract unsafe void Rect([Count(Count = 2), Flow(FlowDirection.In)] short* v1, [Count(Count = 2), Flow(FlowDirection.In)] short* v2);
 
@@ -4212,6 +4481,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectsv")]
         public abstract void Rect([Count(Count = 2), Flow(FlowDirection.In)] Span<short> v1, [Count(Count = 2), Flow(FlowDirection.In)] Span<short> v2);
 
@@ -4230,6 +4500,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y2">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRects")]
         public abstract void Rects([Flow(FlowDirection.In)] short x1, [Flow(FlowDirection.In)] short y1, [Flow(FlowDirection.In)] short x2, [Flow(FlowDirection.In)] short y2);
 
@@ -4240,6 +4511,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// </param>
         /// <returns>See summary.</returns>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRenderMode")]
         public abstract int RenderMode([Flow(FlowDirection.In)] GLEnum mode);
 
@@ -4258,6 +4530,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRotated")]
         public abstract void Rotate([Flow(FlowDirection.In)] double angle, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
 
@@ -4276,6 +4549,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRotatef")]
         public abstract void Rotate([Flow(FlowDirection.In)] float angle, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z);
 
@@ -4291,6 +4565,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glScaled")]
         public abstract void Scale([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
 
@@ -4306,6 +4581,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glScalef")]
         public abstract void Scale([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z);
 
@@ -4337,6 +4613,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from size.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glSelectBuffer")]
         public abstract unsafe void SelectBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] uint* buffer);
 
@@ -4350,6 +4627,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from size.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glSelectBuffer")]
         public abstract void SelectBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<uint> buffer);
 
@@ -4359,6 +4637,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="mode">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glShadeModel")]
         public abstract void ShadeModel([Flow(FlowDirection.In)] GLEnum mode);
 
@@ -4407,6 +4686,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="s">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1d")]
         public abstract void TexCoord1([Flow(FlowDirection.In)] double s);
 
@@ -4417,6 +4697,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1dv")]
         public abstract unsafe void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] double* v);
 
@@ -4427,6 +4708,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1dv")]
         public abstract void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] ref double v);
 
@@ -4436,6 +4718,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="s">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1f")]
         public abstract void TexCoord1([Flow(FlowDirection.In)] float s);
 
@@ -4446,6 +4729,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1fv")]
         public abstract unsafe void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] float* v);
 
@@ -4456,6 +4740,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1fv")]
         public abstract void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] ref float v);
 
@@ -4465,6 +4750,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="s">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1i")]
         public abstract void TexCoord1([Flow(FlowDirection.In)] int s);
 
@@ -4475,6 +4761,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1iv")]
         public abstract unsafe void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] int* v);
 
@@ -4485,6 +4772,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1iv")]
         public abstract void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] ref int v);
 
@@ -4494,6 +4782,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="s">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1s")]
         public abstract void TexCoord1([Flow(FlowDirection.In)] short s);
 
@@ -4504,6 +4793,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1sv")]
         public abstract unsafe void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] short* v);
 
@@ -4514,6 +4804,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1sv")]
         public abstract void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] ref short v);
 
@@ -4526,6 +4817,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="t">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2d")]
         public abstract void TexCoord2([Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t);
 
@@ -4536,6 +4828,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2dv")]
         public abstract unsafe void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
@@ -4546,6 +4839,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2dv")]
         public abstract void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] Span<double> v);
 
@@ -4558,6 +4852,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="t">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2f")]
         public abstract void TexCoord2([Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t);
 
@@ -4568,6 +4863,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2fv")]
         public abstract unsafe void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
@@ -4578,6 +4874,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2fv")]
         public abstract void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
 
@@ -4590,6 +4887,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="t">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2i")]
         public abstract void TexCoord2([Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t);
 
@@ -4600,6 +4898,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2iv")]
         public abstract unsafe void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
@@ -4610,6 +4909,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2iv")]
         public abstract void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] Span<int> v);
 
@@ -4622,6 +4922,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="t">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2s")]
         public abstract void TexCoord2([Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t);
 
@@ -4632,6 +4933,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2sv")]
         public abstract unsafe void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
@@ -4642,6 +4944,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2sv")]
         public abstract void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] Span<short> v);
 
@@ -4657,6 +4960,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="r">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3d")]
         public abstract void TexCoord3([Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r);
 
@@ -4667,6 +4971,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3dv")]
         public abstract unsafe void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
@@ -4677,6 +4982,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3dv")]
         public abstract void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
 
@@ -4692,6 +4998,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="r">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3f")]
         public abstract void TexCoord3([Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r);
 
@@ -4702,6 +5009,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3fv")]
         public abstract unsafe void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
@@ -4712,6 +5020,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3fv")]
         public abstract void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
 
@@ -4727,6 +5036,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="r">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3i")]
         public abstract void TexCoord3([Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r);
 
@@ -4737,6 +5047,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3iv")]
         public abstract unsafe void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
@@ -4747,6 +5058,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3iv")]
         public abstract void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
 
@@ -4762,6 +5074,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="r">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3s")]
         public abstract void TexCoord3([Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r);
 
@@ -4772,6 +5085,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3sv")]
         public abstract unsafe void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
@@ -4782,6 +5096,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3sv")]
         public abstract void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
 
@@ -4800,6 +5115,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="q">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4d")]
         public abstract void TexCoord4([Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r, [Flow(FlowDirection.In)] double q);
 
@@ -4810,6 +5126,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4dv")]
         public abstract unsafe void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
@@ -4820,6 +5137,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4dv")]
         public abstract void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
 
@@ -4838,6 +5156,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="q">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4f")]
         public abstract void TexCoord4([Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float q);
 
@@ -4848,6 +5167,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4fv")]
         public abstract unsafe void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
@@ -4858,6 +5178,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4fv")]
         public abstract void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
 
@@ -4876,6 +5197,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="q">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4i")]
         public abstract void TexCoord4([Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r, [Flow(FlowDirection.In)] int q);
 
@@ -4886,6 +5208,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4iv")]
         public abstract unsafe void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
@@ -4896,6 +5219,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4iv")]
         public abstract void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
 
@@ -4914,6 +5238,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="q">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4s")]
         public abstract void TexCoord4([Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r, [Flow(FlowDirection.In)] short q);
 
@@ -4924,6 +5249,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4sv")]
         public abstract unsafe void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
@@ -4934,6 +5260,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4sv")]
         public abstract void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
 
@@ -4949,6 +5276,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnvf")]
         public abstract void TexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
 
@@ -4965,6 +5293,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnvfv")]
         public abstract unsafe void TexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
@@ -4981,6 +5310,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnvfv")]
         public abstract void TexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
 
@@ -4996,6 +5326,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnvi")]
         public abstract void TexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
 
@@ -5012,6 +5343,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnviv")]
         public abstract unsafe void TexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
@@ -5028,6 +5360,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnviv")]
         public abstract void TexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
 
@@ -5044,6 +5377,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGendv")]
         public abstract unsafe void TexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] double* @params);
 
@@ -5060,6 +5394,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGendv")]
         public abstract void TexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref double @params);
 
@@ -5075,6 +5410,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGenf")]
         public abstract void TexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
 
@@ -5091,6 +5427,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGenfv")]
         public abstract unsafe void TexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
@@ -5107,6 +5444,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGenfv")]
         public abstract void TexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
 
@@ -5122,6 +5460,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGeni")]
         public abstract void TexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
 
@@ -5138,6 +5477,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGeniv")]
         public abstract unsafe void TexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
@@ -5154,6 +5494,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGeniv")]
         public abstract void TexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
 
@@ -5169,6 +5510,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGend")]
         public abstract void TexGend([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] double param);
 
@@ -5408,6 +5750,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTranslated")]
         public abstract void Translate([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
 
@@ -5423,6 +5766,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTranslatef")]
         public abstract void Translate([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z);
 
@@ -5435,6 +5779,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2d")]
         public abstract void Vertex2([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y);
 
@@ -5445,6 +5790,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2dv")]
         public abstract unsafe void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
@@ -5455,6 +5801,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2dv")]
         public abstract void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] Span<double> v);
 
@@ -5467,6 +5814,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2f")]
         public abstract void Vertex2([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y);
 
@@ -5477,6 +5825,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2fv")]
         public abstract unsafe void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
@@ -5487,6 +5836,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2fv")]
         public abstract void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
 
@@ -5499,6 +5849,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2i")]
         public abstract void Vertex2([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y);
 
@@ -5509,6 +5860,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2iv")]
         public abstract unsafe void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
@@ -5519,6 +5871,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2iv")]
         public abstract void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] Span<int> v);
 
@@ -5531,6 +5884,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2s")]
         public abstract void Vertex2([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y);
 
@@ -5541,6 +5895,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2sv")]
         public abstract unsafe void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
@@ -5551,6 +5906,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2sv")]
         public abstract void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] Span<short> v);
 
@@ -5566,6 +5922,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3d")]
         public abstract void Vertex3([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
 
@@ -5576,6 +5933,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3dv")]
         public abstract unsafe void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
@@ -5586,6 +5944,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3dv")]
         public abstract void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
 
@@ -5601,6 +5960,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3f")]
         public abstract void Vertex3([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z);
 
@@ -5611,6 +5971,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3fv")]
         public abstract unsafe void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
@@ -5621,6 +5982,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3fv")]
         public abstract void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
 
@@ -5636,6 +5998,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3i")]
         public abstract void Vertex3([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z);
 
@@ -5646,6 +6009,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3iv")]
         public abstract unsafe void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
@@ -5656,6 +6020,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3iv")]
         public abstract void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
 
@@ -5671,6 +6036,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3s")]
         public abstract void Vertex3([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z);
 
@@ -5681,6 +6047,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3sv")]
         public abstract unsafe void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
@@ -5691,6 +6058,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3sv")]
         public abstract void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
 
@@ -5709,6 +6077,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="w">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4d")]
         public abstract void Vertex4([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
 
@@ -5719,6 +6088,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4dv")]
         public abstract unsafe void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
@@ -5729,6 +6099,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4dv")]
         public abstract void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
 
@@ -5747,6 +6118,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="w">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4f")]
         public abstract void Vertex4([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
 
@@ -5757,6 +6129,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4fv")]
         public abstract unsafe void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
@@ -5767,6 +6140,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4fv")]
         public abstract void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
 
@@ -5785,6 +6159,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="w">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4i")]
         public abstract void Vertex4([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z, [Flow(FlowDirection.In)] int w);
 
@@ -5795,6 +6170,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4iv")]
         public abstract unsafe void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
@@ -5805,6 +6181,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4iv")]
         public abstract void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
 
@@ -5823,6 +6200,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="w">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4s")]
         public abstract void Vertex4([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z, [Flow(FlowDirection.In)] short w);
 
@@ -5833,6 +6211,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4sv")]
         public abstract unsafe void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
@@ -5843,6 +6222,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4sv")]
         public abstract void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
 
@@ -5873,6 +6253,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="value">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glAccum")]
         public abstract void Accum([Flow(FlowDirection.In)] AccumOp op, [Flow(FlowDirection.In)] float value);
 
@@ -5885,6 +6266,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="@ref">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glAlphaFunc")]
         public abstract void AlphaFunc([Flow(FlowDirection.In)] AlphaFunction func, [Flow(FlowDirection.In)] float @ref);
 
@@ -5894,6 +6276,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="mode">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glBegin")]
         public abstract void Begin([Flow(FlowDirection.In)] PrimitiveType mode);
 
@@ -5921,6 +6304,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="bitmap">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glBitmap")]
         public abstract void Bitmap([Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] float xorig, [Flow(FlowDirection.In)] float yorig, [Flow(FlowDirection.In)] float xmove, [Flow(FlowDirection.In)] float ymove, [Flow(FlowDirection.In)] string bitmap);
 
@@ -5949,6 +6333,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from n and type.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glCallLists")]
         public abstract unsafe void CallLists([Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.In)] ListNameType type, [Count(Computed = "n, type"), Flow(FlowDirection.In)] void* lists);
 
@@ -5965,6 +6350,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from n and type.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glCallLists")]
         public abstract void CallLists<T0>([Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.In)] ListNameType type, [Count(Computed = "n, type"), Flow(FlowDirection.In)] ref T0 lists) where T0 : unmanaged;
 
@@ -5978,6 +6364,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glClipPlane")]
         public abstract unsafe void ClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.In)] double* equation);
 
@@ -5991,6 +6378,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glClipPlane")]
         public abstract void ClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> equation);
 
@@ -6000,6 +6388,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="v">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3ubv")]
         public abstract void Color3([Flow(FlowDirection.In)] string v);
 
@@ -6009,6 +6398,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="v">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4ubv")]
         public abstract void Color4([Flow(FlowDirection.In)] string v);
 
@@ -6021,6 +6411,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="mode">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColorMaterial")]
         public abstract void ColorMaterial([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] ColorMaterialParameter mode);
 
@@ -6042,6 +6433,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="type">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glCopyPixels")]
         public abstract void CopyPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelCopyType type);
 
@@ -6100,6 +6492,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glDrawPixels")]
         public abstract unsafe void DrawPixels([Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
@@ -6122,6 +6515,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glDrawPixels")]
         public abstract void DrawPixels<T0>([Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
 
@@ -6146,6 +6540,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="i2">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalMesh1")]
         public abstract void EvalMesh1([Flow(FlowDirection.In)] MeshMode1 mode, [Flow(FlowDirection.In)] int i1, [Flow(FlowDirection.In)] int i2);
 
@@ -6167,6 +6562,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="j2">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalMesh2")]
         public abstract void EvalMesh2([Flow(FlowDirection.In)] MeshMode2 mode, [Flow(FlowDirection.In)] int i1, [Flow(FlowDirection.In)] int i2, [Flow(FlowDirection.In)] int j1, [Flow(FlowDirection.In)] int j2);
 
@@ -6183,6 +6579,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from size.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFeedbackBuffer")]
         public abstract unsafe void FeedbackBuffer([Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] FeedbackType type, [Count(Parameter = "size"), Flow(FlowDirection.Out)] float* buffer);
 
@@ -6199,6 +6596,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from size.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFeedbackBuffer")]
         public abstract void FeedbackBuffer([Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] FeedbackType type, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<float> buffer);
 
@@ -6211,6 +6609,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogf")]
         public abstract void Fog([Flow(FlowDirection.In)] FogParameter pname, [Flow(FlowDirection.In)] float param);
 
@@ -6224,6 +6623,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogfv")]
         public abstract unsafe void Fog([Flow(FlowDirection.In)] FogParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
@@ -6237,6 +6637,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogfv")]
         public abstract void Fog([Flow(FlowDirection.In)] FogParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
 
@@ -6249,6 +6650,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogi")]
         public abstract void Fog([Flow(FlowDirection.In)] FogParameter pname, [Flow(FlowDirection.In)] int param);
 
@@ -6262,6 +6664,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogiv")]
         public abstract unsafe void Fog([Flow(FlowDirection.In)] FogParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
@@ -6275,6 +6678,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogiv")]
         public abstract void Fog([Flow(FlowDirection.In)] FogParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
 
@@ -6323,6 +6727,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetClipPlane")]
         public abstract unsafe void GetClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.Out)] double* equation);
 
@@ -6336,6 +6741,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetClipPlane")]
         public abstract void GetClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> equation);
 
@@ -6430,6 +6836,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightfv")]
         public abstract unsafe void GetLight([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
@@ -6446,6 +6853,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightfv")]
         public abstract void GetLight([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
@@ -6462,6 +6870,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightiv")]
         public abstract unsafe void GetLight([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
@@ -6478,6 +6887,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightiv")]
         public abstract void GetLight([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
@@ -6494,6 +6904,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target and query.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapdv")]
         public abstract unsafe void GetMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] GetMapQuery query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] double* v);
 
@@ -6510,6 +6921,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target and query.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapdv")]
         public abstract void GetMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] GetMapQuery query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] out double v);
 
@@ -6526,6 +6938,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target and query.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapfv")]
         public abstract unsafe void GetMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] GetMapQuery query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] float* v);
 
@@ -6542,6 +6955,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target and query.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapfv")]
         public abstract void GetMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] GetMapQuery query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] out float v);
 
@@ -6558,6 +6972,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target and query.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapiv")]
         public abstract unsafe void GetMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] GetMapQuery query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] int* v);
 
@@ -6574,6 +6989,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target and query.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapiv")]
         public abstract void GetMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] GetMapQuery query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] out int v);
 
@@ -6590,6 +7006,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialfv")]
         public abstract unsafe void GetMaterial([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
@@ -6606,6 +7023,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialfv")]
         public abstract void GetMaterial([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
@@ -6622,6 +7040,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialiv")]
         public abstract unsafe void GetMaterial([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
@@ -6638,6 +7057,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialiv")]
         public abstract void GetMaterial([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
@@ -6651,6 +7071,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from map.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapfv")]
         public abstract unsafe void GetPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Computed = "map"), Flow(FlowDirection.Out)] float* values);
 
@@ -6664,6 +7085,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from map.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapfv")]
         public abstract void GetPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Computed = "map"), Flow(FlowDirection.Out)] out float values);
 
@@ -6677,6 +7099,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from map.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapuiv")]
         public abstract unsafe void GetPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Computed = "map"), Flow(FlowDirection.Out)] uint* values);
 
@@ -6690,6 +7113,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from map.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapuiv")]
         public abstract void GetPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Computed = "map"), Flow(FlowDirection.Out)] out uint values);
 
@@ -6703,6 +7127,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from map.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapusv")]
         public abstract unsafe void GetPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Computed = "map"), Flow(FlowDirection.Out)] ushort* values);
 
@@ -6716,6 +7141,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from map.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapusv")]
         public abstract void GetPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Computed = "map"), Flow(FlowDirection.Out)] out ushort values);
 
@@ -6725,6 +7151,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="mask">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPolygonStipple")]
         public abstract void GetPolygonStipple([Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.Constant, 0)] out string mask);
 
@@ -6751,6 +7178,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnvfv")]
         public abstract unsafe void GetTexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
@@ -6767,6 +7195,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnvfv")]
         public abstract void GetTexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
@@ -6783,6 +7212,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnviv")]
         public abstract unsafe void GetTexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
@@ -6799,6 +7229,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnviv")]
         public abstract void GetTexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
@@ -6815,6 +7246,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGendv")]
         public abstract unsafe void GetTexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* @params);
 
@@ -6831,6 +7263,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGendv")]
         public abstract void GetTexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out double @params);
 
@@ -6847,6 +7280,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGenfv")]
         public abstract unsafe void GetTexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
@@ -6863,6 +7297,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGenfv")]
         public abstract void GetTexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
@@ -6879,6 +7314,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGeniv")]
         public abstract unsafe void GetTexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
@@ -6895,6 +7331,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGeniv")]
         public abstract void GetTexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
@@ -7116,6 +7553,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightf")]
         public abstract void Light([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Flow(FlowDirection.In)] float param);
 
@@ -7132,6 +7570,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightfv")]
         public abstract unsafe void Light([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
@@ -7148,6 +7587,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightfv")]
         public abstract void Light([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
 
@@ -7163,6 +7603,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLighti")]
         public abstract void Light([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Flow(FlowDirection.In)] int param);
 
@@ -7179,6 +7620,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightiv")]
         public abstract unsafe void Light([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
@@ -7195,6 +7637,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightiv")]
         public abstract void Light([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
 
@@ -7207,6 +7650,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModelf")]
         public abstract void LightModel([Flow(FlowDirection.In)] LightModelParameter pname, [Flow(FlowDirection.In)] float param);
 
@@ -7220,6 +7664,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModelfv")]
         public abstract unsafe void LightModel([Flow(FlowDirection.In)] LightModelParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
@@ -7233,6 +7678,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModelfv")]
         public abstract void LightModel([Flow(FlowDirection.In)] LightModelParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
 
@@ -7245,6 +7691,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModeli")]
         public abstract void LightModel([Flow(FlowDirection.In)] LightModelParameter pname, [Flow(FlowDirection.In)] int param);
 
@@ -7258,6 +7705,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModeliv")]
         public abstract unsafe void LightModel([Flow(FlowDirection.In)] LightModelParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
@@ -7271,6 +7719,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModeliv")]
         public abstract void LightModel([Flow(FlowDirection.In)] LightModelParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
 
@@ -7305,6 +7754,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, stride, and order.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1d")]
         public abstract unsafe void Map1([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] double* points);
 
@@ -7330,6 +7780,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, stride, and order.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1d")]
         public abstract void Map1([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] ref double points);
 
@@ -7355,6 +7806,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, stride, and order.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1f")]
         public abstract unsafe void Map1([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] float* points);
 
@@ -7380,6 +7832,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, stride, and order.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1f")]
         public abstract void Map1([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] ref float points);
 
@@ -7417,6 +7870,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, ustride, uorder, vstride, and vorder.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2d")]
         public abstract unsafe void Map2([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] double* points);
 
@@ -7454,6 +7908,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, ustride, uorder, vstride, and vorder.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2d")]
         public abstract void Map2([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] ref double points);
 
@@ -7491,6 +7946,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, ustride, uorder, vstride, and vorder.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2f")]
         public abstract unsafe void Map2([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] float* points);
 
@@ -7528,6 +7984,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from target, ustride, uorder, vstride, and vorder.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2f")]
         public abstract void Map2([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] ref float points);
 
@@ -7543,6 +8000,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialf")]
         public abstract void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] float param);
 
@@ -7559,6 +8017,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialfv")]
         public abstract unsafe void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
@@ -7575,6 +8034,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialfv")]
         public abstract void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
 
@@ -7590,6 +8050,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMateriali")]
         public abstract void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] MaterialParameter pname, [Flow(FlowDirection.In)] int param);
 
@@ -7606,6 +8067,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialiv")]
         public abstract unsafe void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
@@ -7622,6 +8084,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialiv")]
         public abstract void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
 
@@ -7631,6 +8094,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="mode">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMatrixMode")]
         public abstract void MatrixMode([Flow(FlowDirection.In)] MatrixMode mode);
 
@@ -7643,6 +8107,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="mode">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNewList")]
         public abstract void NewList([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListMode mode);
 
@@ -7659,6 +8124,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from mapsize.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapfv")]
         public abstract unsafe void PixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] float* values);
 
@@ -7675,6 +8141,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from mapsize.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapfv")]
         public abstract void PixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] Span<float> values);
 
@@ -7691,6 +8158,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from mapsize.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapuiv")]
         public abstract unsafe void PixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] uint* values);
 
@@ -7707,6 +8175,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from mapsize.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapuiv")]
         public abstract void PixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] Span<uint> values);
 
@@ -7723,6 +8192,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from mapsize.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapusv")]
         public abstract unsafe void PixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] ushort* values);
 
@@ -7739,6 +8209,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from mapsize.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapusv")]
         public abstract void PixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] Span<ushort> values);
 
@@ -7775,6 +8246,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelTransferf")]
         public abstract void PixelTransfer([Flow(FlowDirection.In)] PixelTransferParameter pname, [Flow(FlowDirection.In)] float param);
 
@@ -7787,6 +8259,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelTransferi")]
         public abstract void PixelTransfer([Flow(FlowDirection.In)] PixelTransferParameter pname, [Flow(FlowDirection.In)] int param);
 
@@ -7808,6 +8281,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="mask">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPolygonStipple")]
         public abstract void PolygonStipple([Flow(FlowDirection.In)] string mask);
 
@@ -7883,6 +8357,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// </param>
         /// <returns>See summary.</returns>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRenderMode")]
         public abstract int RenderMode([Flow(FlowDirection.In)] RenderingMode mode);
 
@@ -7892,6 +8367,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="mode">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glShadeModel")]
         public abstract void ShadeModel([Flow(FlowDirection.In)] ShadingModel mode);
 
@@ -7937,6 +8413,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnvf")]
         public abstract void TexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Flow(FlowDirection.In)] float param);
 
@@ -7953,6 +8430,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnvfv")]
         public abstract unsafe void TexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
@@ -7969,6 +8447,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnvfv")]
         public abstract void TexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
 
@@ -7984,6 +8463,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnvi")]
         public abstract void TexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Flow(FlowDirection.In)] int param);
 
@@ -8000,6 +8480,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnviv")]
         public abstract unsafe void TexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
@@ -8016,6 +8497,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnviv")]
         public abstract void TexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
 
@@ -8032,6 +8514,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGendv")]
         public abstract unsafe void TexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] double* @params);
 
@@ -8048,6 +8531,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGendv")]
         public abstract void TexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref double @params);
 
@@ -8063,6 +8547,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGenf")]
         public abstract void TexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Flow(FlowDirection.In)] float param);
 
@@ -8079,6 +8564,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGenfv")]
         public abstract unsafe void TexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
@@ -8095,6 +8581,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGenfv")]
         public abstract void TexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
 
@@ -8110,6 +8597,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGeni")]
         public abstract void TexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Flow(FlowDirection.In)] int param);
 
@@ -8126,6 +8614,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGeniv")]
         public abstract unsafe void TexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
@@ -8142,6 +8631,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGeniv")]
         public abstract void TexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
 
@@ -8157,6 +8647,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="param">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGend")]
         public abstract void TexGend([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Flow(FlowDirection.In)] double param);
 
@@ -8399,6 +8890,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// This parameter's element count is taken from n.
         /// </param>
         /// <returns>See summary.</returns>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glAreTexturesResident")]
         public abstract unsafe bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
 
@@ -8417,6 +8909,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// This parameter's element count is taken from n.
         /// </param>
         /// <returns>See summary.</returns>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glAreTexturesResident")]
         public abstract bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences);
 
@@ -8426,6 +8919,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="i">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glArrayElement")]
         public abstract void ArrayElement([Flow(FlowDirection.In)] int i);
 
@@ -8457,6 +8951,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glColorPointer")]
         public abstract unsafe void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -8476,6 +8971,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glColorPointer")]
         public abstract void ColorPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -8622,6 +9118,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="array">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glDisableClientState")]
         public abstract void DisableClientState([Flow(FlowDirection.In)] GLEnum array);
 
@@ -8688,6 +9185,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glEdgeFlagPointer")]
         public abstract unsafe void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Count(Computed = "stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -8701,6 +9199,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glEdgeFlagPointer")]
         public abstract void EdgeFlagPointer<T0>([Flow(FlowDirection.In)] uint stride, [Count(Computed = "stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -8710,6 +9209,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="array">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glEnableClientState")]
         public abstract void EnableClientState([Flow(FlowDirection.In)] GLEnum array);
 
@@ -8749,6 +9249,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glGetPointerv")]
         public abstract unsafe void GetPointer([Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
@@ -8762,6 +9263,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glGetPointerv")]
         public abstract unsafe void GetPointer<T0>([Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
 
@@ -8771,6 +9273,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="c">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glIndexub")]
         public abstract void Index([Flow(FlowDirection.In)] byte c);
 
@@ -8781,6 +9284,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glIndexubv")]
         public abstract unsafe void Index([Count(Count = 1), Flow(FlowDirection.In)] byte* c);
 
@@ -8791,6 +9295,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glIndexubv")]
         public abstract void Index([Count(Count = 1), Flow(FlowDirection.In)] ref byte c);
 
@@ -8807,6 +9312,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from type and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glIndexPointer")]
         public abstract unsafe void IndexPointer([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -8823,6 +9329,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from type and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glIndexPointer")]
         public abstract void IndexPointer<T0>([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -8839,6 +9346,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from format and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glInterleavedArrays")]
         public abstract unsafe void InterleavedArrays([Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "format, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -8855,6 +9363,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from format and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glInterleavedArrays")]
         public abstract void InterleavedArrays<T0>([Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "format, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -8881,6 +9390,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from type and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glNormalPointer")]
         public abstract unsafe void NormalPointer([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -8897,6 +9407,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from type and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glNormalPointer")]
         public abstract void NormalPointer<T0>([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -8915,6 +9426,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <summary>
         /// To be added.
         /// </summary>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glPopClientAttrib")]
         public abstract void PopClientAttrib();
 
@@ -8932,6 +9444,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glPrioritizeTextures")]
         public abstract unsafe void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
 
@@ -8949,6 +9462,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glPrioritizeTextures")]
         public abstract void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> priorities);
 
@@ -8958,6 +9472,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="mask">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glPushClientAttrib")]
         public abstract void PushClientAttrib([Flow(FlowDirection.In)] uint mask);
 
@@ -8977,6 +9492,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glTexCoordPointer")]
         public abstract unsafe void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -8996,6 +9512,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glTexCoordPointer")]
         public abstract void TexCoordPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -9139,6 +9656,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glVertexPointer")]
         public abstract unsafe void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -9158,6 +9676,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glVertexPointer")]
         public abstract void VertexPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -9189,6 +9708,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glColorPointer")]
         public abstract unsafe void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -9208,6 +9728,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glColorPointer")]
         public abstract void ColorPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -9328,6 +9849,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="array">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glDisableClientState")]
         public abstract void DisableClientState([Flow(FlowDirection.In)] EnableCap array);
 
@@ -9390,6 +9912,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="array">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glEnableClientState")]
         public abstract void EnableClientState([Flow(FlowDirection.In)] EnableCap array);
 
@@ -9403,6 +9926,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glGetPointerv")]
         public abstract unsafe void GetPointer([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
@@ -9416,6 +9940,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glGetPointerv")]
         public abstract unsafe void GetPointer<T0>([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
 
@@ -9425,6 +9950,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="c">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glIndexubv")]
         public abstract void Index([Flow(FlowDirection.In)] string c);
 
@@ -9441,6 +9967,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from type and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glIndexPointer")]
         public abstract unsafe void IndexPointer([Flow(FlowDirection.In)] IndexPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -9457,6 +9984,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from type and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glIndexPointer")]
         public abstract void IndexPointer<T0>([Flow(FlowDirection.In)] IndexPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -9473,6 +10001,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from format and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glInterleavedArrays")]
         public abstract unsafe void InterleavedArrays([Flow(FlowDirection.In)] InterleavedArrayFormat format, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "format, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -9489,6 +10018,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from format and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glInterleavedArrays")]
         public abstract void InterleavedArrays<T0>([Flow(FlowDirection.In)] InterleavedArrayFormat format, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "format, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -9505,6 +10035,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from type and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glNormalPointer")]
         public abstract unsafe void NormalPointer([Flow(FlowDirection.In)] NormalPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -9521,6 +10052,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from type and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glNormalPointer")]
         public abstract void NormalPointer<T0>([Flow(FlowDirection.In)] NormalPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -9540,6 +10072,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glTexCoordPointer")]
         public abstract unsafe void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -9559,6 +10092,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glTexCoordPointer")]
         public abstract void TexCoordPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -9702,6 +10236,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glVertexPointer")]
         public abstract unsafe void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -9721,6 +10256,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glVertexPointer")]
         public abstract void VertexPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -10213,6 +10749,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="texture">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glClientActiveTexture")]
         public abstract void ClientActiveTexture([Flow(FlowDirection.In)] GLEnum texture);
 
@@ -10645,6 +11182,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glLoadTransposeMatrixf")]
         public abstract unsafe void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
 
@@ -10655,6 +11193,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glLoadTransposeMatrixf")]
         public abstract void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<float> m);
 
@@ -10665,6 +11204,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glLoadTransposeMatrixd")]
         public abstract unsafe void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
 
@@ -10675,6 +11215,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glLoadTransposeMatrixd")]
         public abstract void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<double> m);
 
@@ -10687,6 +11228,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="s">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1d")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] double s);
 
@@ -10700,6 +11242,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1dv")]
         public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
 
@@ -10713,6 +11256,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1dv")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] ref double v);
 
@@ -10725,6 +11269,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="s">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1f")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] float s);
 
@@ -10738,6 +11283,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1fv")]
         public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
 
@@ -10751,6 +11297,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1fv")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] ref float v);
 
@@ -10763,6 +11310,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="s">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1i")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int s);
 
@@ -10776,6 +11324,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1iv")]
         public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] int* v);
 
@@ -10789,6 +11338,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1iv")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] ref int v);
 
@@ -10801,6 +11351,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="s">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1s")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] short s);
 
@@ -10814,6 +11365,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1sv")]
         public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] short* v);
 
@@ -10827,6 +11379,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1sv")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] ref short v);
 
@@ -10842,6 +11395,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="t">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2d")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t);
 
@@ -10855,6 +11409,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2dv")]
         public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
@@ -10868,6 +11423,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2dv")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] Span<double> v);
 
@@ -10883,6 +11439,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="t">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2f")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t);
 
@@ -10896,6 +11453,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2fv")]
         public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
@@ -10909,6 +11467,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2fv")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
 
@@ -10924,6 +11483,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="t">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2i")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t);
 
@@ -10937,6 +11497,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2iv")]
         public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
@@ -10950,6 +11511,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2iv")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] Span<int> v);
 
@@ -10965,6 +11527,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="t">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2s")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t);
 
@@ -10978,6 +11541,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2sv")]
         public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
@@ -10991,6 +11555,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2sv")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] Span<short> v);
 
@@ -11009,6 +11574,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="r">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3d")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r);
 
@@ -11022,6 +11588,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3dv")]
         public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
@@ -11035,6 +11602,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3dv")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
 
@@ -11053,6 +11621,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="r">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3f")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r);
 
@@ -11066,6 +11635,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3fv")]
         public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
@@ -11079,6 +11649,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3fv")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
 
@@ -11097,6 +11668,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="r">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3i")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r);
 
@@ -11110,6 +11682,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3iv")]
         public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
@@ -11123,6 +11696,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3iv")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
 
@@ -11141,6 +11715,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="r">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3s")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r);
 
@@ -11154,6 +11729,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3sv")]
         public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
@@ -11167,6 +11743,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3sv")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
 
@@ -11188,6 +11765,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="q">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4d")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r, [Flow(FlowDirection.In)] double q);
 
@@ -11201,6 +11779,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4dv")]
         public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
@@ -11214,6 +11793,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4dv")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
 
@@ -11235,6 +11815,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="q">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4f")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float q);
 
@@ -11248,6 +11829,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4fv")]
         public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
@@ -11261,6 +11843,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4fv")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
 
@@ -11282,6 +11865,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="q">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4i")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r, [Flow(FlowDirection.In)] int q);
 
@@ -11295,6 +11879,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4iv")]
         public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
@@ -11308,6 +11893,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4iv")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
 
@@ -11329,6 +11915,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="q">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4s")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r, [Flow(FlowDirection.In)] short q);
 
@@ -11342,6 +11929,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4sv")]
         public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
@@ -11355,6 +11943,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4sv")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
 
@@ -11365,6 +11954,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultTransposeMatrixf")]
         public abstract unsafe void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
 
@@ -11375,6 +11965,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultTransposeMatrixf")]
         public abstract void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<float> m);
 
@@ -11385,6 +11976,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultTransposeMatrixd")]
         public abstract unsafe void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
 
@@ -11395,6 +11987,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 16 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultTransposeMatrixd")]
         public abstract void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<double> m);
 
@@ -11425,6 +12018,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="texture">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glClientActiveTexture")]
         public abstract void ClientActiveTexture([Flow(FlowDirection.In)] TextureUnit texture);
 
@@ -11859,6 +12453,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="s">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1d")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s);
 
@@ -11872,6 +12467,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1dv")]
         public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
 
@@ -11885,6 +12481,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1dv")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref double v);
 
@@ -11897,6 +12494,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="s">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1f")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s);
 
@@ -11910,6 +12508,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1fv")]
         public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
 
@@ -11923,6 +12522,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1fv")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref float v);
 
@@ -11935,6 +12535,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="s">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1i")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s);
 
@@ -11948,6 +12549,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1iv")]
         public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] int* v);
 
@@ -11961,6 +12563,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1iv")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref int v);
 
@@ -11973,6 +12576,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="s">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1s")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s);
 
@@ -11986,6 +12590,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1sv")]
         public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] short* v);
 
@@ -11999,6 +12604,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1sv")]
         public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref short v);
 
@@ -12014,6 +12620,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="t">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2d")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t);
 
@@ -12027,6 +12634,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2dv")]
         public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
@@ -12040,6 +12648,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2dv")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<double> v);
 
@@ -12055,6 +12664,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="t">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2f")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t);
 
@@ -12068,6 +12678,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2fv")]
         public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
@@ -12081,6 +12692,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2fv")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
 
@@ -12096,6 +12708,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="t">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2i")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t);
 
@@ -12109,6 +12722,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2iv")]
         public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
@@ -12122,6 +12736,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2iv")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<int> v);
 
@@ -12137,6 +12752,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="t">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2s")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t);
 
@@ -12150,6 +12766,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2sv")]
         public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
@@ -12163,6 +12780,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2sv")]
         public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<short> v);
 
@@ -12181,6 +12799,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="r">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3d")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r);
 
@@ -12194,6 +12813,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3dv")]
         public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
@@ -12207,6 +12827,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3dv")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
 
@@ -12225,6 +12846,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="r">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3f")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r);
 
@@ -12238,6 +12860,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3fv")]
         public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
@@ -12251,6 +12874,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3fv")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
 
@@ -12269,6 +12893,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="r">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3i")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r);
 
@@ -12282,6 +12907,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3iv")]
         public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
@@ -12295,6 +12921,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3iv")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
 
@@ -12313,6 +12940,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="r">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3s")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r);
 
@@ -12326,6 +12954,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3sv")]
         public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
@@ -12339,6 +12968,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3sv")]
         public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
 
@@ -12360,6 +12990,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="q">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4d")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r, [Flow(FlowDirection.In)] double q);
 
@@ -12373,6 +13004,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4dv")]
         public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
@@ -12386,6 +13018,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4dv")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
 
@@ -12407,6 +13040,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="q">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4f")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float q);
 
@@ -12420,6 +13054,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4fv")]
         public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
@@ -12433,6 +13068,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4fv")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
 
@@ -12454,6 +13090,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="q">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4i")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r, [Flow(FlowDirection.In)] int q);
 
@@ -12467,6 +13104,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4iv")]
         public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
@@ -12480,6 +13118,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4iv")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
 
@@ -12501,6 +13140,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="q">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4s")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r, [Flow(FlowDirection.In)] short q);
 
@@ -12514,6 +13154,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4sv")]
         public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
@@ -12527,6 +13168,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 4 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4sv")]
         public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
 
@@ -12581,6 +13223,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="coord">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoordf")]
         public abstract void FogCoord([Flow(FlowDirection.In)] float coord);
 
@@ -12591,6 +13234,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoordfv")]
         public abstract unsafe void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] float* coord);
 
@@ -12601,6 +13245,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoordfv")]
         public abstract void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] ref float coord);
 
@@ -12610,6 +13255,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="coord">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoordd")]
         public abstract void FogCoord([Flow(FlowDirection.In)] double coord);
 
@@ -12620,6 +13266,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoorddv")]
         public abstract unsafe void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] double* coord);
 
@@ -12630,6 +13277,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoorddv")]
         public abstract void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] ref double coord);
 
@@ -12646,6 +13294,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from type and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoordPointer")]
         public abstract unsafe void FogCoordPointer([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -12662,6 +13311,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from type and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoordPointer")]
         public abstract void FogCoordPointer<T0>([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -12839,6 +13489,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3b")]
         public abstract void SecondaryColor3([Flow(FlowDirection.In)] sbyte red, [Flow(FlowDirection.In)] sbyte green, [Flow(FlowDirection.In)] sbyte blue);
 
@@ -12849,6 +13500,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3bv")]
         public abstract unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] sbyte* v);
 
@@ -12859,6 +13511,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3bv")]
         public abstract void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<sbyte> v);
 
@@ -12874,6 +13527,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3d")]
         public abstract void SecondaryColor3([Flow(FlowDirection.In)] double red, [Flow(FlowDirection.In)] double green, [Flow(FlowDirection.In)] double blue);
 
@@ -12884,6 +13538,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3dv")]
         public abstract unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
@@ -12894,6 +13549,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3dv")]
         public abstract void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
 
@@ -12909,6 +13565,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3f")]
         public abstract void SecondaryColor3([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue);
 
@@ -12919,6 +13576,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3fv")]
         public abstract unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
@@ -12929,6 +13587,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3fv")]
         public abstract void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
 
@@ -12944,6 +13603,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3i")]
         public abstract void SecondaryColor3([Flow(FlowDirection.In)] int red, [Flow(FlowDirection.In)] int green, [Flow(FlowDirection.In)] int blue);
 
@@ -12954,6 +13614,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3iv")]
         public abstract unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
@@ -12964,6 +13625,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3iv")]
         public abstract void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
 
@@ -12979,6 +13641,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3s")]
         public abstract void SecondaryColor3([Flow(FlowDirection.In)] short red, [Flow(FlowDirection.In)] short green, [Flow(FlowDirection.In)] short blue);
 
@@ -12989,6 +13652,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3sv")]
         public abstract unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
@@ -12999,6 +13663,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3sv")]
         public abstract void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
 
@@ -13014,6 +13679,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3ub")]
         public abstract void SecondaryColor3([Flow(FlowDirection.In)] byte red, [Flow(FlowDirection.In)] byte green, [Flow(FlowDirection.In)] byte blue);
 
@@ -13024,6 +13690,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3ubv")]
         public abstract unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] byte* v);
 
@@ -13034,6 +13701,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3ubv")]
         public abstract void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<byte> v);
 
@@ -13049,6 +13717,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3ui")]
         public abstract void SecondaryColor3([Flow(FlowDirection.In)] uint red, [Flow(FlowDirection.In)] uint green, [Flow(FlowDirection.In)] uint blue);
 
@@ -13059,6 +13728,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3uiv")]
         public abstract unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] uint* v);
 
@@ -13069,6 +13739,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3uiv")]
         public abstract void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<uint> v);
 
@@ -13084,6 +13755,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="blue">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3us")]
         public abstract void SecondaryColor3([Flow(FlowDirection.In)] ushort red, [Flow(FlowDirection.In)] ushort green, [Flow(FlowDirection.In)] ushort blue);
 
@@ -13094,6 +13766,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3usv")]
         public abstract unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] ushort* v);
 
@@ -13104,6 +13777,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3usv")]
         public abstract void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<ushort> v);
 
@@ -13123,6 +13797,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColorPointer")]
         public abstract unsafe void SecondaryColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -13142,6 +13817,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColorPointer")]
         public abstract void SecondaryColorPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -13154,6 +13830,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2d")]
         public abstract void WindowPos2([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y);
 
@@ -13164,6 +13841,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2dv")]
         public abstract unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
@@ -13174,6 +13852,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2dv")]
         public abstract void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<double> v);
 
@@ -13186,6 +13865,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2f")]
         public abstract void WindowPos2([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y);
 
@@ -13196,6 +13876,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2fv")]
         public abstract unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
@@ -13206,6 +13887,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2fv")]
         public abstract void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
 
@@ -13218,6 +13900,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2i")]
         public abstract void WindowPos2([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y);
 
@@ -13228,6 +13911,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2iv")]
         public abstract unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
@@ -13238,6 +13922,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2iv")]
         public abstract void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<int> v);
 
@@ -13250,6 +13935,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="y">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2s")]
         public abstract void WindowPos2([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y);
 
@@ -13260,6 +13946,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2sv")]
         public abstract unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
@@ -13270,6 +13957,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 2 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2sv")]
         public abstract void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<short> v);
 
@@ -13285,6 +13973,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3d")]
         public abstract void WindowPos3([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
 
@@ -13295,6 +13984,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3dv")]
         public abstract unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
@@ -13305,6 +13995,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3dv")]
         public abstract void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
 
@@ -13320,6 +14011,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3f")]
         public abstract void WindowPos3([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z);
 
@@ -13330,6 +14022,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3fv")]
         public abstract unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
@@ -13340,6 +14033,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3fv")]
         public abstract void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
 
@@ -13355,6 +14049,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3i")]
         public abstract void WindowPos3([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z);
 
@@ -13365,6 +14060,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3iv")]
         public abstract unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
@@ -13375,6 +14071,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3iv")]
         public abstract void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
 
@@ -13390,6 +14087,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="z">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3s")]
         public abstract void WindowPos3([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z);
 
@@ -13400,6 +14098,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3sv")]
         public abstract unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
@@ -13410,6 +14109,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter contains 3 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3sv")]
         public abstract void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
 
@@ -13453,6 +14153,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from type and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoordPointer")]
         public abstract unsafe void FogCoordPointer([Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -13469,6 +14170,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from type and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoordPointer")]
         public abstract void FogCoordPointer<T0>([Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
@@ -13640,6 +14342,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// <param name="v">
         /// To be added.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3ubv")]
         public abstract void SecondaryColor3([Flow(FlowDirection.In)] string v);
 
@@ -13659,6 +14362,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColorPointer")]
         public abstract unsafe void SecondaryColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
@@ -13678,6 +14382,7 @@ namespace Silk.NET.OpenGL.Legacy
         /// To be added.
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
+        [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColorPointer")]
         public abstract void SecondaryColorPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 

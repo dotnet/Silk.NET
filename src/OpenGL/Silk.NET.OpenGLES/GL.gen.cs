@@ -12864,6 +12864,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeApi(EntryPoint = "glGetPointerv")]
         public abstract unsafe void GetPointer([Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
@@ -12877,6 +12878,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeApi(EntryPoint = "glGetPointerv")]
         public abstract unsafe void GetPointer<T0>([Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
 
@@ -13983,6 +13985,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeApi(EntryPoint = "glGetPointerv")]
         public abstract unsafe void GetPointer([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
@@ -13996,6 +13999,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Obsolete("Deprecated in version 3.2")]
         [NativeApi(EntryPoint = "glGetPointerv")]
         public abstract unsafe void GetPointer<T0>([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
 

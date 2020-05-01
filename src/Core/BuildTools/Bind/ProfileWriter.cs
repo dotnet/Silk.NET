@@ -339,6 +339,11 @@ namespace Silk.NET.BuildTools.Bind
                         }
                     }
 
+                    foreach (var attr in function.Attributes)
+                    {
+                        sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
+                    }
+
                     sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
                     using (var sr = new StringReader(function.ToString()))
                     {
@@ -484,6 +489,11 @@ namespace Silk.NET.BuildTools.Bind
                             {
                                 sw.WriteLine($"        {line}");
                             }
+                        }
+
+                        foreach (var attr in function.Attributes)
+                        {
+                            sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                         }
 
                         sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
