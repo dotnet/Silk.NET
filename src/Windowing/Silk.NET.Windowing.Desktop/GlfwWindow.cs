@@ -90,10 +90,10 @@ namespace Silk.NET.Windowing.Desktop
             RunningSlowTolerance = options.RunningSlowTolerance;
             UseSingleThreadedWindow = options.UseSingleThreadedWindow;
             ShouldSwapAutomatically = options.ShouldSwapAutomatically;
-            
+
             _initialOptions = options;
             _initialMonitor = monitor;
-            Parent = (IWindowHost)parent ?? _initialMonitor;
+            Parent = (IWindowHost) parent ?? _initialMonitor;
             IsEventDriven = options.IsEventDriven;
 
             GlfwProvider.GLFW.Value.GetVersion(out var major, out var minor, out _);
@@ -110,7 +110,7 @@ namespace Silk.NET.Windowing.Desktop
             {
                 GLContext = new Context(this);
             }
-            
+
             Glfw.ThrowExceptions();
         }
 
@@ -437,7 +437,7 @@ namespace Silk.NET.Windowing.Desktop
             using var invocation = new Invocation(d, args, SetReturnValue);
             invocation.Source.WaitOne();
             return ret;
-                
+
             //var task = new Task<object>(() => d.DynamicInvoke(args));
             //_invokeQueue.Enqueue(task);
             //SpinWait.SpinUntil(() => task.IsCompleted);
@@ -461,7 +461,7 @@ namespace Silk.NET.Windowing.Desktop
             _glfw.MakeContextCurrent(_windowPtr);
             Glfw.ThrowExceptions();
         }
-        
+
         /// <summary>
         /// Make context current on this thread if it was moved to another one.
         /// </summary>
@@ -491,7 +491,7 @@ namespace Silk.NET.Windowing.Desktop
             {
                 return;
             }
-            
+
             // Set window border.
             switch (_initialOptions.WindowBorder)
             {
@@ -510,7 +510,7 @@ namespace Silk.NET.Windowing.Desktop
                     _glfw.WindowHint(WindowHintBool.Resizable, false);
                     break;
             }
-            
+
             // Set window API.
             switch (_initialOptions.API.API)
             {
@@ -525,7 +525,7 @@ namespace Silk.NET.Windowing.Desktop
                     _glfw.WindowHint(WindowHintClientApi.ClientApi, ClientApi.OpenGLES);
                     break;
             }
-            
+
             _glfw.WindowHint(WindowHintBool.Visible, _initialOptions.IsVisible);
 
             // Set API version.
@@ -553,7 +553,7 @@ namespace Silk.NET.Windowing.Desktop
             // Set video mode (-1 = don't care)
             _glfw.WindowHint(WindowHintInt.RefreshRate, _initialOptions.VideoMode.RefreshRate ?? -1);
             _glfw.WindowHint(WindowHintInt.DepthBits, _initialOptions.PreferredDepthBufferBits ?? -1);
-            
+
             // Set transparent framebuffer
             _glfw.WindowHint(WindowHintBool.TransparentFramebuffer, _initialOptions.TransparentFramebuffer);
 
@@ -654,22 +654,22 @@ namespace Silk.NET.Windowing.Desktop
                 Glfw.ThrowExceptions();
             }
 #pragma warning disable 168
-            catch(GlfwException e)
+            catch (GlfwException e)
 #pragma warning restore 168
             {
                 // If the window is already destroyed, it throws an exception,
                 // but we want the window destroyed anyways, so just ignore it
             }
-            
+
             _windowPtr = (WindowHandle*) 0;
         }
-        
+
         // Disable parameter because 
         // ReSharper disable once UnusedParameter.Local
         private void Dispose(bool disposing)
         {
             Reset();
-            
+
             // All callbacks are initialized at the same time,
             // so checking each one individually shouldn't be
             // necessary.
@@ -824,10 +824,11 @@ namespace Silk.NET.Windowing.Desktop
             _updateStopwatch.Restart();
             _updatedWithinPeriod = false;
 
-            Update?.Invoke(delta);            
+            Update?.Invoke(delta);
         }
 
         private int? _lastVs;
+
         /// <summary>
         /// Run an OnRender event.
         /// </summary>
@@ -878,7 +879,8 @@ namespace Silk.NET.Windowing.Desktop
                 _ => 0
             };
 
-            if (_lastVs is null || _lastVs.Value != vs)
+            if ((API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES) &&
+                (_lastVs is null || _lastVs.Value != vs))
             {
                 _lastVs = vs;
                 _glfw.SwapInterval(vs);
@@ -1003,7 +1005,7 @@ namespace Silk.NET.Windowing.Desktop
 
         /// <inheritdoc />
         public bool IsVulkanSupported => _glfw.VulkanSupported();
-        
+
         /// <inheritdoc />
         public unsafe VkHandle CreateSurface<T>(VkHandle instance, T* allocator)
             where T : unmanaged
@@ -1018,7 +1020,7 @@ namespace Silk.NET.Windowing.Desktop
             Glfw.ThrowExceptions();
             return surface[0];
         }
-        
+
         /// <inheritdoc />
         public unsafe char** GetRequiredExtensions(out uint count)
         {
@@ -1064,15 +1066,17 @@ namespace Silk.NET.Windowing.Desktop
                             }
                         }
                     }
-                        
+
                     monitor = _glfw.GetPrimaryMonitor();
                 }
 
-                return monitor == null ? null : new GlfwMonitor
-                (
-                    monitor,
-                    IndexOf(_glfw.GetMonitors(out var count), monitor, count)
-                );
+                return monitor == null
+                    ? null
+                    : new GlfwMonitor
+                    (
+                        monitor,
+                        IndexOf(_glfw.GetMonitors(out var count), monitor, count)
+                    );
             }
             set
             {
@@ -1101,7 +1105,10 @@ namespace Silk.NET.Windowing.Desktop
                         throw new InvalidOperationException("Monitor refresh rate not found.");
                     }
 
-                    _glfw.SetWindowMonitor(_windowPtr, h, 0, 0, resolution.Value.Width, resolution.Value.Height, vidMode.RefreshRate.Value);
+                    _glfw.SetWindowMonitor
+                    (
+                        _windowPtr, h, 0, 0, resolution.Value.Width, resolution.Value.Height, vidMode.RefreshRate.Value
+                    );
                     Glfw.ThrowExceptions();
                 }
                 else
@@ -1112,7 +1119,7 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         private unsafe int IndexOf<T>(T** array, T* target, int count)
-            where T:unmanaged
+            where T : unmanaged
         {
             for (var i = 0; i < count; i++)
             {
@@ -1138,6 +1145,7 @@ namespace Silk.NET.Windowing.Desktop
             {
                 _window = window;
             }
+
             public IntPtr GetProcAddress(string proc) => _window._glfw.GetProcAddress(proc);
             public IntPtr Handle => _window.Handle;
             public unsafe bool IsCurrent => _window._glfw.GetCurrentContext() == _window._windowPtr;
@@ -1194,6 +1202,7 @@ namespace Silk.NET.Windowing.Desktop
                 Args = args;
                 Return = ret;
             }
+
             public AutoResetEvent Source { get; }
             public Delegate Target { get; }
             public object[] Args { get; }
