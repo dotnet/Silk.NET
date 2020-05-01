@@ -69,8 +69,8 @@ namespace VulkanTriangle
         private KhrSwapchain _vkSwapchain;
         private ExtDebugUtils _debugUtils;
         private string[] _validationLayers = {"VK_LAYER_KHRONOS_validation"};
-        private string[] _instanceExtensions = {""};
-        private string[] _deviceExtensions = {"VK_KHR_swapchain"};
+        private string[] _instanceExtensions = {ExtDebugUtils.ExtensionName};
+        private string[] _deviceExtensions = {KhrSwapchain.ExtensionName};
 
         private void InitWindow()
         {
@@ -234,9 +234,21 @@ namespace VulkanTriangle
                 PApplicationInfo = &appInfo
             };
 
-            var extensions = _window.GetRequiredExtensions(out var extCount);
+            var extensions = (byte**) _window.GetRequiredExtensions(out var extCount);
+            var newExtensions = stackalloc byte*[(int)(extCount + _instanceExtensions.Length)];
+            for (var i = 0; i < extCount; i++)
+            {
+                newExtensions[i] = extensions[i];
+            }
+            
+            for (var i = 0; i < _instanceExtensions.Length; i++)
+            {
+                newExtensions[extCount + i] = (byte*) SilkMarshal.MarshalStringToPtr(_instanceExtensions[i]);
+            }
+
+            extCount += (uint)_instanceExtensions.Length;
             createInfo.EnabledExtensionCount = extCount;
-            createInfo.PpEnabledExtensionNames = (byte**) extensions;
+            createInfo.PpEnabledExtensionNames = newExtensions;
 
             if (EnableValidationLayers)
             {
