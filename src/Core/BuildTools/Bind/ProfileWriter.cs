@@ -330,9 +330,15 @@ namespace Silk.NET.BuildTools.Bind
                 var allFunctions = project.Interfaces.SelectMany(x => x.Value.Functions).RemoveDuplicates().ToArray();
                 foreach (var function in allFunctions)
                 {
-                    // TODO: Proper docs
-                    // Disabled because missing XML is ignored.
-                    //sw.WriteLine("        /// <inheritdoc />"); 
+                    using (var sr = new StringReader(function.Doc))
+                    {
+                        string line;
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            sw.WriteLine($"        {line}");
+                        }
+                    }
+
                     sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
                     using (var sr = new StringReader(function.ToString()))
                     {
@@ -471,9 +477,15 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine($"        public const string ExtensionName = \"{key}\";");
                     foreach (var function in i.Functions)
                     {
-                        // TODO: Proper docs
-                        // Disabled because missing XML is ignored.
-                        //sw.WriteLine("        /// <inheritdoc />");
+                        using (var sr = new StringReader(function.Doc))
+                        {
+                            string line;
+                            while ((line = sr.ReadLine()) != null)
+                            {
+                                sw.WriteLine($"        {line}");
+                            }
+                        }
+
                         sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
                         using (var sr = new StringReader(function.ToString()))
                         {
