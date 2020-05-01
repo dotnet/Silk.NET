@@ -80,7 +80,11 @@ namespace Silk.NET.Vulkan
                 }
             }
             
-            throw new EntryPointNotFoundException();
+            throw new EntryPointNotFoundException
+            (
+                $"Entry point \"{symbolName}\" not found. Note that instance extensions must be enabled in order to "+
+                "load symbols correctly."
+            );
         }
     }
 }
