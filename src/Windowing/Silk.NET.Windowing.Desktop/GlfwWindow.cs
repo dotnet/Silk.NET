@@ -118,7 +118,11 @@ namespace Silk.NET.Windowing.Desktop
         public int RunningSlowTolerance { get; set; }
 
         /// <inheritdoc />
-        public unsafe bool IsClosing => _glfw.WindowShouldClose(_windowPtr);
+        public unsafe bool IsClosing
+        {
+            get => _glfw.WindowShouldClose(_windowPtr);
+            set => _glfw.SetWindowShouldClose(_windowPtr, value);
+        }
 
         /// <inheritdoc />
         public bool IsRunningSlowly => _isRunningSlowlyTries > RunningSlowTolerance;
@@ -824,6 +828,11 @@ namespace Silk.NET.Windowing.Desktop
             _updateStopwatch.Restart();
             _updatedWithinPeriod = false;
 
+            if (IsClosing)
+            {
+                return;
+            }
+
             Update?.Invoke(delta);
         }
 
@@ -885,6 +894,11 @@ namespace Silk.NET.Windowing.Desktop
                 _lastVs = vs;
                 _glfw.SwapInterval(vs);
                 Glfw.ThrowExceptions();
+            }
+
+            if (IsClosing)
+            {
+                return;
             }
 
             Render?.Invoke(delta);
