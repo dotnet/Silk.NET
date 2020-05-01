@@ -13,10 +13,15 @@ namespace Silk.NET.Core.Platform
     /// <summary>
     /// Contains properties and methods for resolving platform locals.
     /// </summary>
-    [Obsolete("SilkManager is deprecated and will be removed in 2.0.")]
+    [Obsolete
+    (
+        "SilkManager is deprecated and will be removed in 2.0. " +
+        "https://github.com/Ultz/Silk.NET/blob/v1.2.0/documentation/deprecation-notices/SilkManager.md"
+    )]
     public static class SilkManager
     {
         private static readonly Dictionary<Type, object> platformObjects = new Dictionary<Type, object>();
+
         public static void Register<T>(T instance)
         {
             platformObjects[typeof(T)] = instance;
@@ -24,7 +29,7 @@ namespace Silk.NET.Core.Platform
 
         public static T Get<T>()
         {
-            return (T)platformObjects[typeof(T)];
+            return (T) platformObjects[typeof(T)];
         }
 
         public static T GetOrDefault<T>()

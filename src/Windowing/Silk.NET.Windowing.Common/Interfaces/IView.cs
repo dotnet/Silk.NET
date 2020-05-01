@@ -22,13 +22,21 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// Determines whether the context is current on this thread.
         /// </summary>
-        [Obsolete("IsCurrentContext will be removed in 2.0. Use GLContext.IsCurrent instead.")]
+        [Obsolete
+        (
+            "IsCurrentContext will be removed in 2.0. Use GLContext.IsCurrent instead. " +
+            "https://github.com/Ultz/Silk.NET/blob/v1.2.0/documentation/deprecation-notices/VulkanViews.md"
+        )]
         bool IsCurrentContext { get; }
         
         /// <summary>
         /// Determines whether Vulkan functions are supported on this window.
         /// </summary>
-        [Obsolete("IsVulkanSupported will be removed in 2.0. Check whether VkSurface is null instead.")]
+        [Obsolete
+        (
+            "IsVulkanSupported will be removed in 2.0. Check whether VkSurface is null instead. " +
+            "https://github.com/Ultz/Silk.NET/blob/v1.2.0/documentation/deprecation-notices/VulkanViews.md"
+        )]
         bool IsVulkanSupported { get; }
         
         /// <summary>

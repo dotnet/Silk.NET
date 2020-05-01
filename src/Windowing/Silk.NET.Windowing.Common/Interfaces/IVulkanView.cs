@@ -11,7 +11,11 @@ namespace Silk.NET.Windowing.Common
     /// <summary>
     /// An interface representing a Vulkan window
     /// </summary>
-    [Obsolete("IVulkanView is deprecated and will be removed in 2.0, use IView.VkSurface instead.")]
+    [Obsolete
+    (
+        "IVulkanView is deprecated and will be removed in 2.0, use IView.VkSurface instead. " +
+        "https://github.com/Ultz/Silk.NET/blob/v1.2.0/documentation/deprecation-notices/VulkanViews.md"
+    )]
     public interface IVulkanView : IView
     {
         /// <summary>
