@@ -47,8 +47,11 @@ namespace Silk.NET.Windowing.Common
             while (!view.IsClosing)
             {
                 view.DoEvents();
-                view.DoUpdate();
-                view.DoRender();
+                if (!view.IsClosing)
+                {
+                    view.DoUpdate();
+                    view.DoRender();
+                }
             }
 
             view.DoEvents();
