@@ -11,24 +11,59 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
 {
     [Extension("ATI_pn_triangles")]
     public abstract unsafe partial class AtiPnTriangles : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ATI_pn_triangles";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="param">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glPNTrianglesiATI")]
         public abstract void Pntriangles([Flow(FlowDirection.In)] ATI pname, [Flow(FlowDirection.In)] int param);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="param">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glPNTrianglesfATI")]
         public abstract void Pntriangles([Flow(FlowDirection.In)] ATI pname, [Flow(FlowDirection.In)] float param);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="param">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glPNTrianglesiATI")]
         public abstract void Pntriangles([Flow(FlowDirection.In)] PNTrianglesPNameATI pname, [Flow(FlowDirection.In)] int param);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="param">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glPNTrianglesfATI")]
         public abstract void Pntriangles([Flow(FlowDirection.In)] PNTrianglesPNameATI pname, [Flow(FlowDirection.In)] float param);
 

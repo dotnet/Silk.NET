@@ -11,32 +11,29 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.WL
 {
     [Extension("WL_bind_wayland_display")]
     public abstract unsafe partial class WLBindWaylandDisplay : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "WL_bind_wayland_display";
         [NativeApi(EntryPoint = "eglBindWaylandDisplayWL")]
         public abstract unsafe bool BindWaylandDisplayWL([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.Out)] IntPtr* display);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglBindWaylandDisplayWL")]
         public abstract bool BindWaylandDisplayWL([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.Out)] Span<IntPtr> display);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryWaylandBufferWL")]
         public abstract unsafe bool QueryWaylandBufferWL([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.Out)] IntPtr* buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryWaylandBufferWL")]
         public abstract bool QueryWaylandBufferWL([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.Out)] Span<IntPtr> buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglUnbindWaylandDisplayWL")]
         public abstract unsafe bool UnbindWaylandDisplayWL([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.Out)] IntPtr* display);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglUnbindWaylandDisplayWL")]
         public abstract bool UnbindWaylandDisplayWL([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.Out)] Span<IntPtr> display);
 

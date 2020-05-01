@@ -11,12 +11,14 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [Extension("KHR_terminate_context")]
     public abstract unsafe partial class KhrTerminateContext : NativeExtension<CL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "KHR_terminate_context";
         [NativeApi(EntryPoint = "clTerminateContextKHR")]
         public abstract int TerminateContext([Flow(FlowDirection.In)] IntPtr context);
 

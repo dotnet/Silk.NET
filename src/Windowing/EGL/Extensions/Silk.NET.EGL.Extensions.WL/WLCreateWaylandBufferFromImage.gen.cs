@@ -11,12 +11,14 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.WL
 {
     [Extension("WL_create_wayland_buffer_from_image")]
     public abstract unsafe partial class WLCreateWaylandBufferFromImage : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "WL_create_wayland_buffer_from_image";
         [NativeApi(EntryPoint = "eglCreateWaylandBufferFromImageWL")]
         public abstract unsafe IntPtr* CreateWaylandBufferFromImageWL([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr image);
 

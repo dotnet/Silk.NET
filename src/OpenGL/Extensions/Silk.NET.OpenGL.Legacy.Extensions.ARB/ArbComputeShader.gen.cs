@@ -11,16 +11,35 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_compute_shader")]
     public abstract unsafe partial class ArbComputeShader : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ARB_compute_shader";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="num_groups_x">
+        /// To be added.
+        /// </param>
+        /// <param name="num_groups_y">
+        /// To be added.
+        /// </param>
+        /// <param name="num_groups_z">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDispatchCompute")]
         public abstract void DispatchCompute([Flow(FlowDirection.In)] uint num_groups_x, [Flow(FlowDirection.In)] uint num_groups_y, [Flow(FlowDirection.In)] uint num_groups_z);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="indirect">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDispatchComputeIndirect")]
         public abstract void DispatchComputeIndirect([Flow(FlowDirection.In)] IntPtr indirect);
 

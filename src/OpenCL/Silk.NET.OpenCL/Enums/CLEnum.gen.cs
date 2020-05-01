@@ -6,6 +6,8 @@
 
 using System;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenCL
 {
     public enum CLEnum
@@ -430,37 +432,6 @@ namespace Silk.NET.OpenCL
         KernelMaxSubGroupSizeForNdrange = 0x2033,
         KernelSubGroupCountForNdrange = 0x2034,
         KernelLocalSizeForSubGroupCount = 0x11B8,
-        DeviceAtomicOrderRelaxed = 0x1,
-        DeviceAtomicOrderAcqRel = 0x2,
-        DeviceAtomicOrderSeqCst = 0x4,
-        DeviceAtomicScopeWorkItem = 0x8,
-        DeviceAtomicScopeWorkGroup = 0x16,
-        DeviceAtomicScopeDevice = 0x32,
-        DeviceAtomicScopeAllSvmDevices = 0x64,
-        PlatformNumericVersion = 0x906,
-        PlatformExtensionsWithVersion = 0x907,
-        DeviceAtomicMemoryCapabilities = 0x1063,
-        DeviceAtomicFenceCapabilities = 0x1064,
-        DeviceNonUniformWorkGroupSupport = 0x1065,
-        DeviceOpenclCAllVersions = 0x1066,
-        DeviceWorkGroupCollectiveFunctionsSupport = 0x1068,
-        DeviceGenericAddressSpaceSupport = 0x1069,
-        DeviceOpenclCFeatures = 0x106F,
-        DeviceDeviceEnqueueSupport = 0x1070,
-        DevicePipeSupport = 0x1071,
-        DeviceNumericVersion = 0x105E,
-        DeviceExtensionsWithVersion = 0x1060,
-        DeviceIlsWithVersion = 0x1061,
-        DeviceBuiltInKernelsWithVersion = 0x1062,
-        PipeProperties = 0x1122,
-        SamplerProperties = 0x1158,
-        QueuePropertiesArray = 0x1098,
-        MemProperties = 0x110A,
-        CommandSvmMigrateMem = 0x120E,
-        VersionMajorBits = 0x10,
-        VersionMinorBits = 0x10,
-        VersionPatchBits = 0x12,
-        NameVersionMaxNameSize = 0x64,
         InvalidSpecID = unchecked((int)0xFFFFFFFFFFFFFFB9),
         MaxSizeRestrictionExceeded = unchecked((int)0xFFFFFFFFFFFFFFB8),
         ProgramScopeGlobalCtorsPresent = 0x116A,

@@ -11,36 +11,32 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.KHR
 {
     [Extension("KHR_reusable_sync")]
     public abstract unsafe partial class KhrReusableSync : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "KHR_reusable_sync";
         [NativeApi(EntryPoint = "eglClientWaitSyncKHR")]
         public abstract int ClientWaitSync([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] int flags, [Flow(FlowDirection.In)] ulong timeout);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateSyncKHR")]
         public abstract unsafe IntPtr CreateSync([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateSyncKHR")]
         public abstract IntPtr CreateSync([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] Span<int> attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglDestroySyncKHR")]
         public abstract bool DestroySync([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr sync);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetSyncAttribKHR")]
         public abstract unsafe bool GetSyncAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetSyncAttribKHR")]
         public abstract bool GetSyncAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglSignalSyncKHR")]
         public abstract bool SignalSync([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] KHR mode);
 

@@ -6,6 +6,8 @@
 
 using System;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenCL.Extensions.EXT
 {
     public enum EXT

@@ -11,16 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.EXT
 {
     [Extension("EXT_client_sync")]
     public abstract unsafe partial class ExtClientSync : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_client_sync";
         [NativeApi(EntryPoint = "eglClientSignalSyncEXT")]
         public abstract unsafe bool ClientSignalSync([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] IntPtr* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglClientSignalSyncEXT")]
         public abstract bool ClientSignalSync([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] Span<IntPtr> attrib_list);
 

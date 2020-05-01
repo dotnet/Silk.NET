@@ -6,6 +6,8 @@
 
 using System;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Extensions.EXT
 {
     public enum EXT

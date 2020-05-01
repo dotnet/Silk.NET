@@ -11,12 +11,14 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.ANDROID
 {
     [Extension("ANDROID_presentation_time")]
     public abstract unsafe partial class AndroidPresentationTime : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ANDROID_presentation_time";
         [NativeApi(EntryPoint = "eglPresentationTimeANDROID")]
         public abstract bool PresentationTime([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] long time);
 

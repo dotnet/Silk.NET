@@ -11,12 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
     [Extension("QCOM_shader_framebuffer_fetch_noncoherent")]
     public abstract unsafe partial class QComShaderFramebufferFetchNoncoherent : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "QCOM_shader_framebuffer_fetch_noncoherent";
+        /// <summary>
+        /// To be added.
+        /// </summary>
         [NativeApi(EntryPoint = "glFramebufferFetchBarrierQCOM")]
         public abstract void FramebufferFetchBarrier();
 

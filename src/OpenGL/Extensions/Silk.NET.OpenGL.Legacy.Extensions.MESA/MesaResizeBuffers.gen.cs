@@ -11,12 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
 {
     [Extension("MESA_resize_buffers")]
     public abstract unsafe partial class MesaResizeBuffers : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "MESA_resize_buffers";
+        /// <summary>
+        /// To be added.
+        /// </summary>
         [NativeApi(EntryPoint = "glResizeBuffersMESA")]
         public abstract void ResizeBuffers();
 

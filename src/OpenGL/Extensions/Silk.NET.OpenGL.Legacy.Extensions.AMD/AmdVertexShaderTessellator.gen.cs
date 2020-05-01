@@ -11,16 +11,29 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
 {
     [Extension("AMD_vertex_shader_tessellator")]
     public abstract unsafe partial class AmdVertexShaderTessellator : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "AMD_vertex_shader_tessellator";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="factor">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glTessellationFactorAMD")]
         public abstract void TessellationFactor([Flow(FlowDirection.In)] float factor);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glTessellationModeAMD")]
         public abstract void TessellationMode([Flow(FlowDirection.In)] AMD mode);
 

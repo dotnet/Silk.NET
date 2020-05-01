@@ -11,24 +11,27 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.Vulkan.Extensions.KHR
 {
     [Extension("VK_KHR_xlib_surface")]
     public abstract unsafe partial class KhrXlibSurface : NativeExtension<Vk>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "VK_KHR_xlib_surface";
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateXlibSurfaceKHR")]
         public abstract unsafe Result CreateXlibSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] XlibSurfaceCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateXlibSurfaceKHR")]
         public abstract Result CreateXlibSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref XlibSurfaceCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
         public abstract unsafe Bool32 GetPhysicalDeviceXlibPresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] IntPtr visualID);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
         public abstract Bool32 GetPhysicalDeviceXlibPresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] ref IntPtr dpy, [Count(Count = 0)] IntPtr visualID);
 

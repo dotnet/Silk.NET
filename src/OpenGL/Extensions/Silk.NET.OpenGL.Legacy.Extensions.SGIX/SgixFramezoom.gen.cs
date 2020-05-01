@@ -11,12 +11,20 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_framezoom")]
     public abstract unsafe partial class SgixFramezoom : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "SGIX_framezoom";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="factor">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glFrameZoomSGIX")]
         public abstract void FrameZoom([Flow(FlowDirection.In)] int factor);
 

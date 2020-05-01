@@ -11,16 +11,35 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [Extension("OES_EGL_image")]
     public abstract unsafe partial class OesEglImage : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "OES_EGL_image";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="image">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
         public abstract void EglimageTargetRenderbufferStorage([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="image">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetTexture2DOES")]
         public abstract void EglimageTargetTexture2D([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image);
 

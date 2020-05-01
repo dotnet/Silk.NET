@@ -11,20 +11,41 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_conditional_render")]
     public abstract unsafe partial class NVConditionalRender : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_conditional_render";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="id">
+        /// To be added.
+        /// </param>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
         public abstract void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV mode);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
         [NativeApi(EntryPoint = "glEndConditionalRenderNV")]
         public abstract void EndConditionalRender();
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="id">
+        /// To be added.
+        /// </param>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
         public abstract void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ConditionalRenderMode mode);
 

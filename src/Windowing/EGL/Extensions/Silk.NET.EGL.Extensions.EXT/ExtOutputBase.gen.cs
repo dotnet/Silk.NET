@@ -11,64 +11,53 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.EXT
 {
     [Extension("EXT_output_base")]
     public abstract unsafe partial class ExtOutputBase : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_output_base";
         [NativeApi(EntryPoint = "eglGetOutputLayersEXT")]
         public abstract unsafe bool GetOutputLayers([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr* attrib_list, [Flow(FlowDirection.Out)] IntPtr* layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] int* num_layers);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetOutputLayersEXT")]
         public abstract bool GetOutputLayers([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] Span<IntPtr> attrib_list, [Flow(FlowDirection.Out)] Span<IntPtr> layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] Span<int> num_layers);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetOutputPortsEXT")]
         public abstract unsafe bool GetOutputPorts([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr* attrib_list, [Flow(FlowDirection.Out)] IntPtr* ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] int* num_ports);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetOutputPortsEXT")]
         public abstract bool GetOutputPorts([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] Span<IntPtr> attrib_list, [Flow(FlowDirection.Out)] Span<IntPtr> ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] Span<int> num_ports);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglOutputLayerAttribEXT")]
         public abstract bool OutputLayerAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr layer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.In)] IntPtr value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglOutputPortAttribEXT")]
         public abstract bool OutputPortAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr port, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.In)] IntPtr value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryOutputLayerAttribEXT")]
         public abstract unsafe bool QueryOutputLayerAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr layer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] IntPtr* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryOutputLayerAttribEXT")]
         public abstract bool QueryOutputLayerAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr layer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<IntPtr> value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryOutputLayerStringEXT")]
         public abstract unsafe char* QueryOutputLayerString([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr layer, [Flow(FlowDirection.In)] int name);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryOutputPortAttribEXT")]
         public abstract unsafe bool QueryOutputPortAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr port, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] IntPtr* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryOutputPortAttribEXT")]
         public abstract bool QueryOutputPortAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr port, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<IntPtr> value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryOutputPortStringEXT")]
         public abstract unsafe char* QueryOutputPortString([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr port, [Flow(FlowDirection.In)] int name);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryOutputLayerStringEXT")]
         public abstract string QueryOutputLayerStringS([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr layer, [Flow(FlowDirection.In)] int name);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryOutputPortStringEXT")]
         public abstract string QueryOutputPortStringS([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr port, [Flow(FlowDirection.In)] int name);
 

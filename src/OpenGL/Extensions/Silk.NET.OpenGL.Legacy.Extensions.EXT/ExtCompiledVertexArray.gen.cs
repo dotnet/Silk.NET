@@ -11,16 +11,29 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_compiled_vertex_array")]
     public abstract unsafe partial class ExtCompiledVertexArray : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_compiled_vertex_array";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="first">
+        /// To be added.
+        /// </param>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glLockArraysEXT")]
         public abstract void LockArrays([Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
         [NativeApi(EntryPoint = "glUnlockArraysEXT")]
         public abstract void UnlockArrays();
 

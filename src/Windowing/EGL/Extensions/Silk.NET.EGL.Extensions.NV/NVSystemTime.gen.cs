@@ -11,16 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.NV
 {
     [Extension("NV_system_time")]
     public abstract unsafe partial class NVSystemTime : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_system_time";
         [NativeApi(EntryPoint = "eglGetSystemTimeNV")]
         public abstract ulong GetSystemTime();
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetSystemTimeFrequencyNV")]
         public abstract ulong GetSystemTimeFrequency();
 

@@ -11,16 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [Extension("KHR_egl_event")]
     public abstract unsafe partial class KhrEglEvent : NativeExtension<CL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "KHR_egl_event";
         [NativeApi(EntryPoint = "clCreateEventFromEGLSyncKHR")]
         public abstract unsafe IntPtr CreateEventFromEglsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] IntPtr display, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clCreateEventFromEGLSyncKHR")]
         public abstract IntPtr CreateEventFromEglsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] IntPtr display, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 

@@ -11,24 +11,23 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.MESA
 {
     [Extension("MESA_image_dma_buf_export")]
     public abstract unsafe partial class MesaImageDmaBufExport : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "MESA_image_dma_buf_export";
         [NativeApi(EntryPoint = "eglExportDMABUFImageMESA")]
         public abstract unsafe bool ExportDmabufimage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.Out)] int* fds, [Flow(FlowDirection.Out)] int* strides, [Flow(FlowDirection.Out)] int* offsets);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglExportDMABUFImageMESA")]
         public abstract bool ExportDmabufimage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.Out)] Span<int> fds, [Flow(FlowDirection.Out)] Span<int> strides, [Flow(FlowDirection.Out)] Span<int> offsets);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglExportDMABUFImageQueryMESA")]
         public abstract unsafe bool ExportDmabufimageQuery([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.Out)] int* fourcc, [Flow(FlowDirection.Out)] int* num_planes, [Flow(FlowDirection.Out)] ulong* modifiers);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglExportDMABUFImageQueryMESA")]
         public abstract bool ExportDmabufimageQuery([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.Out)] Span<int> fourcc, [Flow(FlowDirection.Out)] Span<int> num_planes, [Flow(FlowDirection.Out)] Span<ulong> modifiers);
 

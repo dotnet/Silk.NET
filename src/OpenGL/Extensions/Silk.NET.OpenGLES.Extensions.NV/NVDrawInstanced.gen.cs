@@ -11,32 +11,135 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_draw_instanced")]
     public abstract unsafe partial class NVDrawInstanced : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_draw_instanced";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
+        /// <param name="first">
+        /// To be added.
+        /// </param>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
+        /// <param name="primcount">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawArraysInstancedNV")]
         public abstract void DrawArraysInstanced([Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint primcount);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
+        /// <param name="type">
+        /// To be added.
+        /// </param>
+        /// <param name="indices">
+        /// To be added.
+        /// This parameter's element count is computed from count and type.
+        /// </param>
+        /// <param name="primcount">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawElementsInstancedNV")]
         public abstract unsafe void DrawElementsInstanced([Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] NV type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint primcount);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
+        /// <param name="type">
+        /// To be added.
+        /// </param>
+        /// <param name="indices">
+        /// To be added.
+        /// This parameter's element count is computed from count and type.
+        /// </param>
+        /// <param name="primcount">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawElementsInstancedNV")]
         public abstract void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] NV type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged;
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
+        /// <param name="first">
+        /// To be added.
+        /// </param>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
+        /// <param name="primcount">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawArraysInstancedNV")]
         public abstract void DrawArraysInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint primcount);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
+        /// <param name="type">
+        /// To be added.
+        /// </param>
+        /// <param name="indices">
+        /// To be added.
+        /// This parameter's element count is computed from count and type.
+        /// </param>
+        /// <param name="primcount">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawElementsInstancedNV")]
         public abstract unsafe void DrawElementsInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] PrimitiveType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint primcount);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
+        /// <param name="type">
+        /// To be added.
+        /// </param>
+        /// <param name="indices">
+        /// To be added.
+        /// This parameter's element count is computed from count and type.
+        /// </param>
+        /// <param name="primcount">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawElementsInstancedNV")]
         public abstract void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] PrimitiveType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged;
 

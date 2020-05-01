@@ -11,12 +11,26 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_polygon_offset_clamp")]
     public abstract unsafe partial class ArbPolygonOffsetClamp : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ARB_polygon_offset_clamp";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="factor">
+        /// To be added.
+        /// </param>
+        /// <param name="units">
+        /// To be added.
+        /// </param>
+        /// <param name="clamp">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glPolygonOffsetClamp")]
         public abstract void PolygonOffsetClamp([Flow(FlowDirection.In)] float factor, [Flow(FlowDirection.In)] float units, [Flow(FlowDirection.In)] float clamp);
 

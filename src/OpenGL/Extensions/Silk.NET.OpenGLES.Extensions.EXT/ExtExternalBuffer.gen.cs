@@ -11,16 +11,53 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_external_buffer")]
     public abstract unsafe partial class ExtExternalBuffer : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_external_buffer";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="clientBuffer">
+        /// To be added.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBufferStorageExternalEXT")]
         public abstract void BufferStorageExternal([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] IntPtr clientBuffer, [Flow(FlowDirection.In)] uint flags);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="clientBuffer">
+        /// To be added.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glNamedBufferStorageExternalEXT")]
         public abstract void NamedBufferStorageExternal([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] IntPtr clientBuffer, [Flow(FlowDirection.In)] uint flags);
 

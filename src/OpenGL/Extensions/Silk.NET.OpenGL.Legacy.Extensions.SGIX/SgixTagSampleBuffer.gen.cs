@@ -11,12 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_tag_sample_buffer")]
     public abstract unsafe partial class SgixTagSampleBuffer : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "SGIX_tag_sample_buffer";
+        /// <summary>
+        /// To be added.
+        /// </summary>
         [NativeApi(EntryPoint = "glTagSampleBufferSGIX")]
         public abstract void TagSampleBuffer();
 

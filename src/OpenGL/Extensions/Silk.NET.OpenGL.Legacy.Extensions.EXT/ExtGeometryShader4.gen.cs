@@ -11,16 +11,41 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_geometry_shader4")]
     public abstract unsafe partial class ExtGeometryShader4 : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_geometry_shader4";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="program">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="value">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glProgramParameteriEXT")]
         public abstract void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int value);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="program">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="value">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glProgramParameteriEXT")]
         public abstract void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramParameterPName pname, [Flow(FlowDirection.In)] int value);
 

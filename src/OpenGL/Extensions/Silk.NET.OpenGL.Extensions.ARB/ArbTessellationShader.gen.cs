@@ -11,32 +11,87 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_tessellation_shader")]
     public abstract unsafe partial class ArbTessellationShader : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ARB_tessellation_shader";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="value">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glPatchParameteri")]
         public abstract void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] int value);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="values">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glPatchParameterfv")]
         public abstract unsafe void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="values">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glPatchParameterfv")]
         public abstract void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float values);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="value">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glPatchParameteri")]
         public abstract void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="values">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glPatchParameterfv")]
         public abstract unsafe void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="values">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glPatchParameterfv")]
         public abstract void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float values);
 

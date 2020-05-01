@@ -11,32 +11,29 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenCL.Extensions.INTEL
 {
     [Extension("INTEL_accelerator")]
     public abstract unsafe partial class IntelAccelerator : NativeExtension<CL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "INTEL_accelerator";
         [NativeApi(EntryPoint = "clCreateAcceleratorINTEL")]
         public abstract unsafe IntPtr CreateAccelerator([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] UIntPtr descriptor_size, [Flow(FlowDirection.In)] void* descriptor, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clCreateAcceleratorINTEL")]
         public abstract IntPtr CreateAccelerator<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] UIntPtr descriptor_size, [Flow(FlowDirection.In)] Span<T0> descriptor, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL")]
         public abstract unsafe int GetAcceleratorInfo([Flow(FlowDirection.In)] IntPtr accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL")]
         public abstract int GetAcceleratorInfo<T0>([Flow(FlowDirection.In)] IntPtr accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clReleaseAcceleratorINTEL")]
         public abstract int ReleaseAccelerator([Flow(FlowDirection.In)] IntPtr accelerator);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clRetainAcceleratorINTEL")]
         public abstract int RetainAccelerator([Flow(FlowDirection.In)] IntPtr accelerator);
 

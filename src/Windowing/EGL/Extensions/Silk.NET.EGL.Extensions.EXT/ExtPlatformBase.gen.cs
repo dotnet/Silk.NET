@@ -11,32 +11,29 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.EXT
 {
     [Extension("EXT_platform_base")]
     public abstract unsafe partial class ExtPlatformBase : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_platform_base";
         [NativeApi(EntryPoint = "eglCreatePlatformPixmapSurfaceEXT")]
         public abstract unsafe IntPtr CreatePlatformPixmapSurface([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.Out)] void* native_pixmap, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreatePlatformPixmapSurfaceEXT")]
         public abstract IntPtr CreatePlatformPixmapSurface<T0>([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.Out)] Span<T0> native_pixmap, [Flow(FlowDirection.In)] Span<int> attrib_list) where T0 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreatePlatformWindowSurfaceEXT")]
         public abstract unsafe IntPtr CreatePlatformWindowSurface([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.Out)] void* native_window, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreatePlatformWindowSurfaceEXT")]
         public abstract IntPtr CreatePlatformWindowSurface<T0>([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.Out)] Span<T0> native_window, [Flow(FlowDirection.In)] Span<int> attrib_list) where T0 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetPlatformDisplayEXT")]
         public abstract unsafe IntPtr GetPlatformDisplay([Flow(FlowDirection.In)] EXT platform, [Flow(FlowDirection.Out)] void* native_display, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetPlatformDisplayEXT")]
         public abstract IntPtr GetPlatformDisplay<T0>([Flow(FlowDirection.In)] EXT platform, [Flow(FlowDirection.Out)] Span<T0> native_display, [Flow(FlowDirection.In)] Span<int> attrib_list) where T0 : unmanaged;
 

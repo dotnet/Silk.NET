@@ -11,96 +11,77 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenCL.Extensions.INTEL
 {
     [Extension("INTEL_unified_shared_memory")]
     public abstract unsafe partial class IntelUnifiedSharedMemory : NativeExtension<CL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "INTEL_unified_shared_memory";
         [NativeApi(EntryPoint = "clDeviceMemAllocINTEL")]
         public abstract unsafe void* DeviceMemAlloc([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] INTEL* properties, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint alignment, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clDeviceMemAllocINTEL")]
         public abstract unsafe void* DeviceMemAlloc([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] Span<INTEL> properties, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint alignment, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clEnqueueMemAdviseINTEL")]
         public abstract unsafe int EnqueueMemAdvise([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint advice, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clEnqueueMemAdviseINTEL")]
         public abstract int EnqueueMemAdvise<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint advice, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clEnqueueMemcpyINTEL")]
         public abstract unsafe int EnqueueMemcpy([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] bool blocking, [Flow(FlowDirection.Out)] void* dst_ptr, [Flow(FlowDirection.In)] void* src_ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clEnqueueMemcpyINTEL")]
         public abstract int EnqueueMemcpy<T0, T1>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] bool blocking, [Flow(FlowDirection.Out)] Span<T0> dst_ptr, [Flow(FlowDirection.In)] Span<T1> src_ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged where T1 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clEnqueueMemFillINTEL")]
         public abstract unsafe int EnqueueMemFill([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.Out)] void* dst_ptr, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] UIntPtr pattern_size, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clEnqueueMemFillINTEL")]
         public abstract int EnqueueMemFill<T0, T1>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.Out)] Span<T0> dst_ptr, [Flow(FlowDirection.In)] Span<T1> pattern, [Flow(FlowDirection.In)] UIntPtr pattern_size, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged where T1 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clEnqueueMemsetINTEL")]
         public abstract unsafe int EnqueueMemset([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.Out)] void* dst_ptr, [Flow(FlowDirection.In)] int value, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clEnqueueMemsetINTEL")]
         public abstract int EnqueueMemset<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.Out)] Span<T0> dst_ptr, [Flow(FlowDirection.In)] int value, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clEnqueueMigrateMemINTEL")]
         public abstract unsafe int EnqueueMigrateMem([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clEnqueueMigrateMemINTEL")]
         public abstract int EnqueueMigrateMem<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clGetMemAllocInfoINTEL")]
         public abstract unsafe int GetMemAllocInfo([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clGetMemAllocInfoINTEL")]
         public abstract int GetMemAllocInfo<T0, T1>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T1> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged where T1 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clHostMemAllocINTEL")]
         public abstract unsafe void* HostMemAlloc([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] INTEL* properties, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint alignment, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clHostMemAllocINTEL")]
         public abstract unsafe void* HostMemAlloc([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] Span<INTEL> properties, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint alignment, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clMemFreeINTEL")]
         public abstract unsafe int MemFree([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.Out)] void* ptr);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clMemFreeINTEL")]
         public abstract int MemFree<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.Out)] Span<T0> ptr) where T0 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clSetKernelArgMemPointerINTEL")]
         public abstract unsafe int SetKernelArgMemPointer([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] void* arg_value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clSetKernelArgMemPointerINTEL")]
         public abstract int SetKernelArgMemPointer<T0>([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] Span<T0> arg_value) where T0 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clSharedMemAllocINTEL")]
         public abstract unsafe void* SharedMemAlloc([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] INTEL* properties, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint alignment, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clSharedMemAllocINTEL")]
         public abstract unsafe void* SharedMemAlloc([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] Span<INTEL> properties, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint alignment, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 

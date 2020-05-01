@@ -11,16 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.NOK
 {
     [Extension("NOK_swap_region")]
     public abstract unsafe partial class NokSwapRegion : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NOK_swap_region";
         [NativeApi(EntryPoint = "eglSwapBuffersRegionNOK")]
         public abstract unsafe bool SwapBuffersRegionNok([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] int numRects, [Flow(FlowDirection.In)] int* rects);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglSwapBuffersRegionNOK")]
         public abstract bool SwapBuffersRegionNok([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] int numRects, [Flow(FlowDirection.In)] Span<int> rects);
 

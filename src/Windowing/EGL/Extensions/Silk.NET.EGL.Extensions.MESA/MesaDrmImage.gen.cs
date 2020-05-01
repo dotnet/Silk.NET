@@ -11,24 +11,23 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.MESA
 {
     [Extension("MESA_drm_image")]
     public abstract unsafe partial class MesaDrmImage : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "MESA_drm_image";
         [NativeApi(EntryPoint = "eglCreateDRMImageMESA")]
         public abstract unsafe IntPtr CreateDrmimage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateDRMImageMESA")]
         public abstract IntPtr CreateDrmimage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] Span<int> attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglExportDRMImageMESA")]
         public abstract unsafe bool ExportDrmimage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.Out)] int* name, [Flow(FlowDirection.Out)] int* handle, [Flow(FlowDirection.Out)] int* stride);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglExportDRMImageMESA")]
         public abstract bool ExportDrmimage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.Out)] Span<int> name, [Flow(FlowDirection.Out)] Span<int> handle, [Flow(FlowDirection.Out)] Span<int> stride);
 

@@ -11,24 +11,65 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_mesh_shader")]
     public abstract unsafe partial class NVMeshShader : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_mesh_shader";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="first">
+        /// To be added.
+        /// </param>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawMeshTasksNV")]
         public abstract void DrawMeshTask([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="indirect">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawMeshTasksIndirectNV")]
         public abstract void DrawMeshTasksIndirect([Flow(FlowDirection.In)] IntPtr indirect);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="indirect">
+        /// To be added.
+        /// </param>
+        /// <param name="drawcount">
+        /// To be added.
+        /// </param>
+        /// <param name="stride">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glMultiDrawMeshTasksIndirectNV")]
         public abstract void MultiDrawMeshTasksIndirect([Flow(FlowDirection.In)] IntPtr indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="indirect">
+        /// To be added.
+        /// </param>
+        /// <param name="drawcount">
+        /// To be added.
+        /// </param>
+        /// <param name="maxdrawcount">
+        /// To be added.
+        /// </param>
+        /// <param name="stride">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glMultiDrawMeshTasksIndirectCountNV")]
         public abstract void MultiDrawMeshTasksIndirectCount([Flow(FlowDirection.In)] IntPtr indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
 

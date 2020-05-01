@@ -6,6 +6,8 @@
 
 using System;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.Vulkan
 {
     [Flags()]
@@ -13,7 +15,7 @@ namespace Silk.NET.Vulkan
     {
         SubpassDescriptionPerViewAttributesBitNvx = 1,
         SubpassDescriptionPerViewPositionXOnlyBitNvx = 2,
-        SubpassDescriptionReserved2BitQCom = 4,
-        SubpassDescriptionReserved3BitQCom = 8,
+        SubpassDescriptionFragmentRegionBitQCom = 4,
+        SubpassDescriptionShaderResolveBitQCom = 8,
     }
 }

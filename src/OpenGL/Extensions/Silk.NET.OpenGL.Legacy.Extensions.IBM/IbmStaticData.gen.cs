@@ -11,12 +11,20 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
 {
     [Extension("IBM_static_data")]
     public abstract unsafe partial class IbmStaticData : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "IBM_static_data";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glFlushStaticDataIBM")]
         public abstract void FlushStaticData([Flow(FlowDirection.In)] IBM target);
 

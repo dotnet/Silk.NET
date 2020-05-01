@@ -11,12 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Extensions.NV
 {
     [Extension("NV_texture_barrier")]
     public abstract unsafe partial class NVTextureBarrier : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_texture_barrier";
+        /// <summary>
+        /// To be added.
+        /// </summary>
         [NativeApi(EntryPoint = "glTextureBarrierNV")]
         public abstract void TextureBarrier();
 

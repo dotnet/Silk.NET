@@ -11,24 +11,83 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [Extension("OES_texture_buffer")]
     public abstract unsafe partial class OesTextureBuffer : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "OES_texture_buffer";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="internalformat">
+        /// To be added.
+        /// </param>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glTexBufferOES")]
         public abstract void TexBuffer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint buffer);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="internalformat">
+        /// To be added.
+        /// </param>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glTexBufferRangeOES")]
         public abstract void TexBufferRange([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="internalformat">
+        /// To be added.
+        /// </param>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glTexBufferOES")]
         public abstract void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="internalformat">
+        /// To be added.
+        /// </param>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glTexBufferRangeOES")]
         public abstract void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
 

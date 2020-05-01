@@ -11,16 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [Extension("KHR_create_command_queue")]
     public abstract unsafe partial class KhrCreateCommandQueue : NativeExtension<CL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "KHR_create_command_queue";
         [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
         public abstract unsafe IntPtr CreateCommandQueueWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] KHR* properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
         public abstract IntPtr CreateCommandQueueWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] Span<KHR> properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 

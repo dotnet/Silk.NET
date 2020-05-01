@@ -10,6 +10,8 @@ using System.Text;
 using Silk.NET.Core.Native;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.Vulkan
 {
     public unsafe struct PipelineDiscardRectangleStateCreateInfoEXT

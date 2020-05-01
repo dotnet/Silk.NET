@@ -11,16 +11,35 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
 {
     [Extension("AMD_stencil_operation_extended")]
     public abstract unsafe partial class AmdStencilOperationExtended : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "AMD_stencil_operation_extended";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="face">
+        /// To be added.
+        /// </param>
+        /// <param name="value">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glStencilOpValueAMD")]
         public abstract void StencilOpValue([Flow(FlowDirection.In)] AMD face, [Flow(FlowDirection.In)] uint value);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="face">
+        /// To be added.
+        /// </param>
+        /// <param name="value">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glStencilOpValueAMD")]
         public abstract void StencilOpValue([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] uint value);
 

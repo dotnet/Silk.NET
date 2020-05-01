@@ -11,16 +11,35 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_index_func")]
     public abstract unsafe partial class ExtIndexFunc : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_index_func";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="func">
+        /// To be added.
+        /// </param>
+        /// <param name="@ref">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glIndexFuncEXT")]
         public abstract void IndexFunc([Flow(FlowDirection.In)] EXT func, [Flow(FlowDirection.In)] float @ref);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="func">
+        /// To be added.
+        /// </param>
+        /// <param name="@ref">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glIndexFuncEXT")]
         public abstract void IndexFunc([Flow(FlowDirection.In)] IndexFunctionEXT func, [Flow(FlowDirection.In)] float @ref);
 

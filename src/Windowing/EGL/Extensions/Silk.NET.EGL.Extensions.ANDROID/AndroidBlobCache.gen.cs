@@ -11,12 +11,14 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.ANDROID
 {
     [Extension("ANDROID_blob_cache")]
     public abstract unsafe partial class AndroidBlobCache : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ANDROID_blob_cache";
         [NativeApi(EntryPoint = "eglSetBlobCacheFuncsANDROID")]
         public abstract void SetBlobCacheFunc([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] SetBlobFuncAndroid set, [Flow(FlowDirection.In)] GetBlobFuncAndroid get);
 

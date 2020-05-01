@@ -11,32 +11,87 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_point_parameters")]
     public abstract unsafe partial class ArbPointParameters : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ARB_point_parameters";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="param">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glPointParameterfARB")]
         public abstract void PointParameter([Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] float param);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glPointParameterfvARB")]
         public abstract unsafe void PointParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glPointParameterfvARB")]
         public abstract void PointParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="param">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glPointParameterfARB")]
         public abstract void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Flow(FlowDirection.In)] float param);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glPointParameterfvARB")]
         public abstract unsafe void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glPointParameterfvARB")]
         public abstract void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
 

@@ -11,40 +11,137 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_draw_buffers_blend")]
     public abstract unsafe partial class ArbDrawBuffersBlend : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ARB_draw_buffers_blend";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buf">
+        /// To be added.
+        /// </param>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendEquationiARB")]
         public abstract void BlendEquation([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB mode);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buf">
+        /// To be added.
+        /// </param>
+        /// <param name="modeRGB">
+        /// To be added.
+        /// </param>
+        /// <param name="modeAlpha">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendEquationSeparateiARB")]
         public abstract void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB modeRGB, [Flow(FlowDirection.In)] ARB modeAlpha);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buf">
+        /// To be added.
+        /// </param>
+        /// <param name="src">
+        /// To be added.
+        /// </param>
+        /// <param name="dst">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendFunciARB")]
         public abstract void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB src, [Flow(FlowDirection.In)] ARB dst);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buf">
+        /// To be added.
+        /// </param>
+        /// <param name="srcRGB">
+        /// To be added.
+        /// </param>
+        /// <param name="dstRGB">
+        /// To be added.
+        /// </param>
+        /// <param name="srcAlpha">
+        /// To be added.
+        /// </param>
+        /// <param name="dstAlpha">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB")]
         public abstract void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] ARB srcRGB, [Flow(FlowDirection.In)] ARB dstRGB, [Flow(FlowDirection.In)] ARB srcAlpha, [Flow(FlowDirection.In)] ARB dstAlpha);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buf">
+        /// To be added.
+        /// </param>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendEquationiARB")]
         public abstract void BlendEquation([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT mode);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buf">
+        /// To be added.
+        /// </param>
+        /// <param name="modeRGB">
+        /// To be added.
+        /// </param>
+        /// <param name="modeAlpha">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendEquationSeparateiARB")]
         public abstract void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buf">
+        /// To be added.
+        /// </param>
+        /// <param name="src">
+        /// To be added.
+        /// </param>
+        /// <param name="dst">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendFunciARB")]
         public abstract void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor src, [Flow(FlowDirection.In)] BlendingFactor dst);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buf">
+        /// To be added.
+        /// </param>
+        /// <param name="srcRGB">
+        /// To be added.
+        /// </param>
+        /// <param name="dstRGB">
+        /// To be added.
+        /// </param>
+        /// <param name="srcAlpha">
+        /// To be added.
+        /// </param>
+        /// <param name="dstAlpha">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendFuncSeparateiARB")]
         public abstract void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 

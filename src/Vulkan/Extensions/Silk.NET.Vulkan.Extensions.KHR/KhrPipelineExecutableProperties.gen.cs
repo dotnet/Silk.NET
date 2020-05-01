@@ -11,32 +11,35 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.Vulkan.Extensions.KHR
 {
     [Extension("VK_KHR_pipeline_executable_properties")]
     public abstract unsafe partial class KhrPipelineExecutableProperties : NativeExtension<Vk>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "VK_KHR_pipeline_executable_properties";
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
         public abstract unsafe Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] uint* pInternalRepresentationCount, [Count(Computed = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] PipelineExecutableInternalRepresentationKHR* pInternalRepresentations);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
         public abstract Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] ref uint pInternalRepresentationCount, [Count(Computed = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] out PipelineExecutableInternalRepresentationKHR pInternalRepresentations);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
         public abstract unsafe Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineInfoKHR* pPipelineInfo, [Count(Count = 0)] uint* pExecutableCount, [Count(Computed = "pExecutableCount"), Flow(FlowDirection.Out)] PipelineExecutablePropertiesKHR* pProperties);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
         public abstract Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref PipelineInfoKHR pPipelineInfo, [Count(Count = 0)] ref uint pExecutableCount, [Count(Computed = "pExecutableCount"), Flow(FlowDirection.Out)] out PipelineExecutablePropertiesKHR pProperties);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
         public abstract unsafe Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] uint* pStatisticCount, [Count(Computed = "pStatisticCount"), Flow(FlowDirection.Out)] PipelineExecutableStatisticKHR* pStatistics);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
         public abstract Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] ref uint pStatisticCount, [Count(Computed = "pStatisticCount"), Flow(FlowDirection.Out)] out PipelineExecutableStatisticKHR pStatistics);
 

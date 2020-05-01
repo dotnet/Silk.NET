@@ -11,16 +11,53 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_copy_buffer")]
     public abstract unsafe partial class NVCopyBuffer : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_copy_buffer";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="readTarget">
+        /// To be added.
+        /// </param>
+        /// <param name="writeTarget">
+        /// To be added.
+        /// </param>
+        /// <param name="readOffset">
+        /// To be added.
+        /// </param>
+        /// <param name="writeOffset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glCopyBufferSubDataNV")]
         public abstract void CopyBufferSubData([Flow(FlowDirection.In)] NV readTarget, [Flow(FlowDirection.In)] NV writeTarget, [Flow(FlowDirection.In)] IntPtr readOffset, [Flow(FlowDirection.In)] IntPtr writeOffset, [Flow(FlowDirection.In)] UIntPtr size);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="readTarget">
+        /// To be added.
+        /// </param>
+        /// <param name="writeTarget">
+        /// To be added.
+        /// </param>
+        /// <param name="readOffset">
+        /// To be added.
+        /// </param>
+        /// <param name="writeOffset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glCopyBufferSubDataNV")]
         public abstract void CopyBufferSubData([Flow(FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(FlowDirection.In)] IntPtr readOffset, [Flow(FlowDirection.In)] IntPtr writeOffset, [Flow(FlowDirection.In)] UIntPtr size);
 

@@ -11,12 +11,14 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.KHR
 {
     [Extension("KHR_wait_sync")]
     public abstract unsafe partial class KhrWaitSync : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "KHR_wait_sync";
         [NativeApi(EntryPoint = "eglWaitSyncKHR")]
         public abstract int WaitSync([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] int flags);
 

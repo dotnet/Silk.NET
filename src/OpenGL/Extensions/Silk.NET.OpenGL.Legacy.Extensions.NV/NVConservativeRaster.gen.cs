@@ -11,12 +11,23 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_conservative_raster")]
     public abstract unsafe partial class NVConservativeRaster : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_conservative_raster";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="xbits">
+        /// To be added.
+        /// </param>
+        /// <param name="ybits">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glSubpixelPrecisionBiasNV")]
         public abstract void SubpixelPrecisionBias([Flow(FlowDirection.In)] uint xbits, [Flow(FlowDirection.In)] uint ybits);
 

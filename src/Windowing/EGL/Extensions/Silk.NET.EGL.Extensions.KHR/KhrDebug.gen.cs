@@ -11,28 +11,26 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.KHR
 {
     [Extension("KHR_debug")]
     public abstract unsafe partial class KhrDebug : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "KHR_debug";
         [NativeApi(EntryPoint = "eglDebugMessageControlKHR")]
         public abstract unsafe int DebugMessageControl([Flow(FlowDirection.In)] DebugProcKhr callback, [Flow(FlowDirection.In)] IntPtr* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglDebugMessageControlKHR")]
         public abstract int DebugMessageControl([Flow(FlowDirection.In)] DebugProcKhr callback, [Flow(FlowDirection.In)] Span<IntPtr> attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglLabelObjectKHR")]
         public abstract int LabelObject([Flow(FlowDirection.In)] IntPtr display, [Flow(FlowDirection.In)] KHR objectType, [Flow(FlowDirection.In)] IntPtr @object, [Flow(FlowDirection.In)] IntPtr label);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryDebugKHR")]
         public abstract unsafe bool QueryDebug([Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] IntPtr* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryDebugKHR")]
         public abstract bool QueryDebug([Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<IntPtr> value);
 

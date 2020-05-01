@@ -11,16 +11,29 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_blend_equation_advanced")]
     public abstract unsafe partial class NVBlendEquationAdvanced : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_blend_equation_advanced";
+        /// <summary>
+        /// To be added.
+        /// </summary>
         [NativeApi(EntryPoint = "glBlendBarrierNV")]
         public abstract void BlendBarrier();
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="value">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendParameteriNV")]
         public abstract void BlendParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int value);
 

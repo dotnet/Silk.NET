@@ -11,16 +11,59 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_framebuffer_multisample_coverage")]
     public abstract unsafe partial class NVFramebufferMultisampleCoverage : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_framebuffer_multisample_coverage";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="coverageSamples">
+        /// To be added.
+        /// </param>
+        /// <param name="colorSamples">
+        /// To be added.
+        /// </param>
+        /// <param name="internalformat">
+        /// To be added.
+        /// </param>
+        /// <param name="width">
+        /// To be added.
+        /// </param>
+        /// <param name="height">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleCoverageNV")]
         public abstract void RenderbufferStorageMultisampleCoverage([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint coverageSamples, [Flow(FlowDirection.In)] uint colorSamples, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="coverageSamples">
+        /// To be added.
+        /// </param>
+        /// <param name="colorSamples">
+        /// To be added.
+        /// </param>
+        /// <param name="internalformat">
+        /// To be added.
+        /// </param>
+        /// <param name="width">
+        /// To be added.
+        /// </param>
+        /// <param name="height">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleCoverageNV")]
         public abstract void RenderbufferStorageMultisampleCoverage([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint coverageSamples, [Flow(FlowDirection.In)] uint colorSamples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 

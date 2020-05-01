@@ -11,16 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.KHR
 {
     [Extension("KHR_swap_buffers_with_damage")]
     public abstract unsafe partial class KhrSwapBuffersWithDamage : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "KHR_swap_buffers_with_damage";
         [NativeApi(EntryPoint = "eglSwapBuffersWithDamageKHR")]
         public abstract unsafe bool SwapBuffersWithDamage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] int* rects, [Flow(FlowDirection.In)] int n_rects);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglSwapBuffersWithDamageKHR")]
         public abstract bool SwapBuffersWithDamage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] Span<int> rects, [Flow(FlowDirection.In)] int n_rects);
 

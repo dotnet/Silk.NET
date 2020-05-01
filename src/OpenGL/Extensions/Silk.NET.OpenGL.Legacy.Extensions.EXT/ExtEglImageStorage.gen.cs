@@ -11,24 +11,71 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_EGL_image_storage")]
     public abstract unsafe partial class ExtEglImageStorage : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_EGL_image_storage";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="image">
+        /// To be added.
+        /// </param>
+        /// <param name="attrib_list">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetTexStorageEXT")]
         public abstract unsafe void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="image">
+        /// To be added.
+        /// </param>
+        /// <param name="attrib_list">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetTexStorageEXT")]
         public abstract void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] Span<int> attrib_list);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="texture">
+        /// To be added.
+        /// </param>
+        /// <param name="image">
+        /// To be added.
+        /// </param>
+        /// <param name="attrib_list">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetTextureStorageEXT")]
         public abstract unsafe void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="texture">
+        /// To be added.
+        /// </param>
+        /// <param name="image">
+        /// To be added.
+        /// </param>
+        /// <param name="attrib_list">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetTextureStorageEXT")]
         public abstract void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] Span<int> attrib_list);
 

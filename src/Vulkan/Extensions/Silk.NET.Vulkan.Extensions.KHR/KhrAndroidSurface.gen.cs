@@ -11,16 +11,19 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.Vulkan.Extensions.KHR
 {
     [Extension("VK_KHR_android_surface")]
     public abstract unsafe partial class KhrAndroidSurface : NativeExtension<Vk>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "VK_KHR_android_surface";
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateAndroidSurfaceKHR")]
         public abstract unsafe Result CreateAndroidSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] AndroidSurfaceCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateAndroidSurfaceKHR")]
         public abstract Result CreateAndroidSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref AndroidSurfaceCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 

@@ -6,11 +6,14 @@
 
 using System;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.Vulkan
 {
     public enum AttachmentStoreOp
     {
         Store = 0,
         DontCare = 1,
+        NoneQCom = 1000301000,
     }
 }

@@ -11,12 +11,23 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_instanced_arrays")]
     public abstract unsafe partial class ArbInstancedArrays : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ARB_instanced_arrays";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="index">
+        /// To be added.
+        /// </param>
+        /// <param name="divisor">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glVertexAttribDivisorARB")]
         public abstract void VertexAttribDivisor([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint divisor);
 

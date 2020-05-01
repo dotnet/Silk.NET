@@ -11,12 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.INTEL
 {
     [Extension("INTEL_framebuffer_CMAA")]
     public abstract unsafe partial class IntelFramebufferCmaa : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "INTEL_framebuffer_CMAA";
+        /// <summary>
+        /// To be added.
+        /// </summary>
         [NativeApi(EntryPoint = "glApplyFramebufferAttachmentCMAAINTEL")]
         public abstract void ApplyFramebufferAttachmentCmaa();
 

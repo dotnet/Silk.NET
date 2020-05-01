@@ -11,40 +11,43 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.Vulkan.Extensions.EXT
 {
     [Extension("VK_EXT_validation_cache")]
     public abstract unsafe partial class ExtValidationCache : NativeExtension<Vk>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "VK_EXT_validation_cache";
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateValidationCacheEXT")]
         public abstract unsafe Result CreateValidationCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ValidationCacheCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ValidationCacheEXT* pValidationCache);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateValidationCacheEXT")]
         public abstract Result CreateValidationCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref ValidationCacheCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out ValidationCacheEXT pValidationCache);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyValidationCacheEXT")]
         public abstract unsafe void DestroyValidationCache([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyValidationCacheEXT")]
         public abstract void DestroyValidationCache([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT")]
         public abstract unsafe Result GetValidationCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] UIntPtr* pDataSize, [Count(Computed = "pDataSize")] void* pData);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT")]
         public abstract Result GetValidationCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] ref UIntPtr pDataSize, [Count(Computed = "pDataSize")] ref T0 pData) where T0 : unmanaged;
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkMergeValidationCachesEXT")]
         public abstract unsafe Result MergeValidationCaches([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Computed = "srcCacheCount"), Flow(FlowDirection.In)] ValidationCacheEXT* pSrcCaches);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkMergeValidationCachesEXT")]
         public abstract Result MergeValidationCaches([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Computed = "srcCacheCount"), Flow(FlowDirection.In)] ref ValidationCacheEXT pSrcCaches);
 

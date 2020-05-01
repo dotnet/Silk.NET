@@ -11,60 +11,180 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_fence")]
     public abstract unsafe partial class NVFence : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_fence";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="fences">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         [NativeApi(EntryPoint = "glDeleteFencesNV")]
         public abstract unsafe void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* fences);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="fences">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         [NativeApi(EntryPoint = "glDeleteFencesNV")]
         public abstract void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> fences);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="fence">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glFinishFenceNV")]
         public abstract void FinishFence([Flow(FlowDirection.In)] uint fence);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="fences">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         [NativeApi(EntryPoint = "glGenFencesNV")]
         public abstract unsafe void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* fences);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="fences">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         [NativeApi(EntryPoint = "glGenFencesNV")]
         public abstract void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> fences);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="fence">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetFenceivNV")]
         public abstract unsafe void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="fence">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetFenceivNV")]
         public abstract void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="fence">
+        /// To be added.
+        /// </param>
+        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsFenceNV")]
         public abstract bool IsFence([Flow(FlowDirection.In)] uint fence);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="fence">
+        /// To be added.
+        /// </param>
+        /// <param name="condition">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glSetFenceNV")]
         public abstract void SetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV condition);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="fence">
+        /// To be added.
+        /// </param>
+        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glTestFenceNV")]
         public abstract bool TestFence([Flow(FlowDirection.In)] uint fence);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="fence">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetFenceivNV")]
         public abstract unsafe void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="fence">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetFenceivNV")]
         public abstract void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="fence">
+        /// To be added.
+        /// </param>
+        /// <param name="condition">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glSetFenceNV")]
         public abstract void SetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceConditionNV condition);
 

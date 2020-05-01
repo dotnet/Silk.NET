@@ -11,24 +11,87 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_buffer_storage")]
     public abstract unsafe partial class ExtBufferStorage : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_buffer_storage";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="data">
+        /// To be added.
+        /// This parameter's element count is taken from size.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBufferStorageEXT")]
         public abstract unsafe void BufferStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="data">
+        /// To be added.
+        /// This parameter's element count is taken from size.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBufferStorageEXT")]
         public abstract void BufferStorage<T0>([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged;
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="data">
+        /// To be added.
+        /// This parameter's element count is taken from size.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBufferStorageEXT")]
         public abstract unsafe void BufferStorage([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="data">
+        /// To be added.
+        /// This parameter's element count is taken from size.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBufferStorageEXT")]
         public abstract void BufferStorage<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged;
 

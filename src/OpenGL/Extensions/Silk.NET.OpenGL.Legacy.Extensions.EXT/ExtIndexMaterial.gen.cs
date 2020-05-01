@@ -11,16 +11,35 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_index_material")]
     public abstract unsafe partial class ExtIndexMaterial : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_index_material";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="face">
+        /// To be added.
+        /// </param>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glIndexMaterialEXT")]
         public abstract void IndexMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] EXT mode);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="face">
+        /// To be added.
+        /// </param>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glIndexMaterialEXT")]
         public abstract void IndexMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] IndexMaterialParameterEXT mode);
 

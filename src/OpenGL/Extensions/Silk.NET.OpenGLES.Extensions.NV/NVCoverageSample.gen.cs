@@ -11,16 +11,29 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_coverage_sample")]
     public abstract unsafe partial class NVCoverageSample : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_coverage_sample";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mask">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glCoverageMaskNV")]
         public abstract void CoverageMask([Flow(FlowDirection.In)] bool mask);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="operation">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glCoverageOperationNV")]
         public abstract void CoverageOperation([Flow(FlowDirection.In)] NV operation);
 

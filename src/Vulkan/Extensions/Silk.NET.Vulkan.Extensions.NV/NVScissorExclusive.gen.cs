@@ -11,16 +11,19 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.Vulkan.Extensions.NV
 {
     [Extension("VK_NV_scissor_exclusive")]
     public abstract unsafe partial class NVScissorExclusive : NativeExtension<Vk>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "VK_NV_scissor_exclusive";
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetExclusiveScissorNV")]
         public abstract unsafe void CmdSetExclusiveScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Computed = "exclusiveScissorCount"), Flow(FlowDirection.In)] Rect2D* pExclusiveScissors);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetExclusiveScissorNV")]
         public abstract void CmdSetExclusiveScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Computed = "exclusiveScissorCount"), Flow(FlowDirection.In)] ref Rect2D pExclusiveScissors);
 

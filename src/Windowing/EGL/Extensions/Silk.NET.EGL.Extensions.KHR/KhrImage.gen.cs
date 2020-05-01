@@ -11,20 +11,20 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.KHR
 {
     [Extension("KHR_image")]
     public abstract unsafe partial class KhrImage : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "KHR_image";
         [NativeApi(EntryPoint = "eglCreateImageKHR")]
         public abstract unsafe IntPtr CreateImage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr ctx, [Flow(FlowDirection.In)] KHR target, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateImageKHR")]
         public abstract IntPtr CreateImage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr ctx, [Flow(FlowDirection.In)] KHR target, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] Span<int> attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglDestroyImageKHR")]
         public abstract bool DestroyImage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr image);
 

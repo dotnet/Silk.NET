@@ -11,20 +11,41 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
     [Extension("SGIS_multisample")]
     public abstract unsafe partial class SgisMultisample : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "SGIS_multisample";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="value">
+        /// To be added.
+        /// </param>
+        /// <param name="invert">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glSampleMaskSGIS")]
         public abstract void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pattern">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glSamplePatternSGIS")]
         public abstract void SamplePattern([Flow(FlowDirection.In)] SGIS pattern);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pattern">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glSamplePatternSGIS")]
         public abstract void SamplePattern([Flow(FlowDirection.In)] SamplePatternSGIS pattern);
 

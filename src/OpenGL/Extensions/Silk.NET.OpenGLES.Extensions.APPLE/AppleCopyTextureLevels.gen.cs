@@ -11,12 +11,29 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGLES.Extensions.APPLE
 {
     [Extension("APPLE_copy_texture_levels")]
     public abstract unsafe partial class AppleCopyTextureLevels : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "APPLE_copy_texture_levels";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="destinationTexture">
+        /// To be added.
+        /// </param>
+        /// <param name="sourceTexture">
+        /// To be added.
+        /// </param>
+        /// <param name="sourceBaseLevel">
+        /// To be added.
+        /// </param>
+        /// <param name="sourceLevelCount">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glCopyTextureLevelsAPPLE")]
         public abstract void CopyTextureLevel([Flow(FlowDirection.In)] uint destinationTexture, [Flow(FlowDirection.In)] uint sourceTexture, [Flow(FlowDirection.In)] int sourceBaseLevel, [Flow(FlowDirection.In)] uint sourceLevelCount);
 

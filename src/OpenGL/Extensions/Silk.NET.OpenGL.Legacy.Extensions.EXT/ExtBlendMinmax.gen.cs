@@ -11,16 +11,29 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_blend_minmax")]
     public abstract unsafe partial class ExtBlendMinmax : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_blend_minmax";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendEquationEXT")]
         public abstract void BlendEquation([Flow(FlowDirection.In)] EXT mode);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendEquationEXT")]
         public abstract void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode);
 

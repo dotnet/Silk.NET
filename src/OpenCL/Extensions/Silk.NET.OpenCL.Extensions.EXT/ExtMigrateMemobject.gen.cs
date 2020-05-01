@@ -11,16 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenCL.Extensions.EXT
 {
     [Extension("EXT_migrate_memobject")]
     public abstract unsafe partial class ExtMigrateMemobject : NativeExtension<CL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_migrate_memobject";
         [NativeApi(EntryPoint = "clEnqueueMigrateMemObjectEXT")]
         public abstract unsafe int EnqueueMigrateMemObject([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] IntPtr* mem_objects, [Flow(FlowDirection.In)] EXT flags, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clEnqueueMigrateMemObjectEXT")]
         public abstract int EnqueueMigrateMemObject([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] Span<IntPtr> mem_objects, [Flow(FlowDirection.In)] EXT flags, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event);
 

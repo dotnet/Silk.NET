@@ -11,24 +11,83 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
 {
     [Extension("ATI_separate_stencil")]
     public abstract unsafe partial class AtiSeparateStencil : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ATI_separate_stencil";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="frontfunc">
+        /// To be added.
+        /// </param>
+        /// <param name="backfunc">
+        /// To be added.
+        /// </param>
+        /// <param name="@ref">
+        /// To be added.
+        /// </param>
+        /// <param name="mask">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glStencilFuncSeparateATI")]
         public abstract void StencilFuncSeparate([Flow(FlowDirection.In)] ATI frontfunc, [Flow(FlowDirection.In)] ATI backfunc, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="face">
+        /// To be added.
+        /// </param>
+        /// <param name="sfail">
+        /// To be added.
+        /// </param>
+        /// <param name="dpfail">
+        /// To be added.
+        /// </param>
+        /// <param name="dppass">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
         public abstract void StencilOpSeparate([Flow(FlowDirection.In)] ATI face, [Flow(FlowDirection.In)] ATI sfail, [Flow(FlowDirection.In)] ATI dpfail, [Flow(FlowDirection.In)] ATI dppass);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="frontfunc">
+        /// To be added.
+        /// </param>
+        /// <param name="backfunc">
+        /// To be added.
+        /// </param>
+        /// <param name="@ref">
+        /// To be added.
+        /// </param>
+        /// <param name="mask">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glStencilFuncSeparateATI")]
         public abstract void StencilFuncSeparate([Flow(FlowDirection.In)] StencilFunction frontfunc, [Flow(FlowDirection.In)] StencilFunction backfunc, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="face">
+        /// To be added.
+        /// </param>
+        /// <param name="sfail">
+        /// To be added.
+        /// </param>
+        /// <param name="dpfail">
+        /// To be added.
+        /// </param>
+        /// <param name="dppass">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glStencilOpSeparateATI")]
         public abstract void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
 

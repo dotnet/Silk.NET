@@ -11,104 +11,356 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Extensions.NV
 {
     [Extension("NV_shader_buffer_load")]
     public abstract unsafe partial class NVShaderBufferLoad : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_shader_buffer_load";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetBufferParameterui64vNV")]
         public abstract unsafe void GetBufferParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] ulong* @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetBufferParameterui64vNV")]
         public abstract void GetBufferParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out ulong @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="value">
+        /// To be added.
+        /// </param>
+        /// <param name="result">
+        /// To be added.
+        /// This parameter's element count is computed from value.
+        /// </param>
         [NativeApi(EntryPoint = "glGetIntegerui64vNV")]
         public abstract unsafe void GetInteger([Flow(FlowDirection.In)] NV value, [Count(Computed = "value"), Flow(FlowDirection.Out)] ulong* result);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="value">
+        /// To be added.
+        /// </param>
+        /// <param name="result">
+        /// To be added.
+        /// This parameter's element count is computed from value.
+        /// </param>
         [NativeApi(EntryPoint = "glGetIntegerui64vNV")]
         public abstract void GetInteger([Flow(FlowDirection.In)] NV value, [Count(Computed = "value"), Flow(FlowDirection.Out)] out ulong result);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV")]
         public abstract unsafe void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] ulong* @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV")]
         public abstract void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out ulong @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="program">
+        /// To be added.
+        /// </param>
+        /// <param name="location">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from program and location.
+        /// </param>
         [NativeApi(EntryPoint = "glGetUniformui64vNV")]
         public abstract unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] ulong* @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="program">
+        /// To be added.
+        /// </param>
+        /// <param name="location">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from program and location.
+        /// </param>
         [NativeApi(EntryPoint = "glGetUniformui64vNV")]
         public abstract void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out ulong @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsBufferResidentNV")]
         public abstract bool IsBufferResident([Flow(FlowDirection.In)] NV target);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
+        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsNamedBufferResidentNV")]
         public abstract bool IsNamedBufferResident([Flow(FlowDirection.In)] uint buffer);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glMakeBufferNonResidentNV")]
         public abstract void MakeBufferNonResident([Flow(FlowDirection.In)] NV target);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="access">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glMakeBufferResidentNV")]
         public abstract void MakeBufferResident([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV access);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glMakeNamedBufferNonResidentNV")]
         public abstract void MakeNamedBufferNonResident([Flow(FlowDirection.In)] uint buffer);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
+        /// <param name="access">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glMakeNamedBufferResidentNV")]
         public abstract void MakeNamedBufferResident([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] NV access);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="program">
+        /// To be added.
+        /// </param>
+        /// <param name="location">
+        /// To be added.
+        /// </param>
+        /// <param name="value">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glProgramUniformui64NV")]
         public abstract void ProgramUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="program">
+        /// To be added.
+        /// </param>
+        /// <param name="location">
+        /// To be added.
+        /// </param>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
+        /// <param name="value">
+        /// To be added.
+        /// This parameter's element count is taken from count.
+        /// </param>
         [NativeApi(EntryPoint = "glProgramUniformui64vNV")]
         public abstract unsafe void ProgramUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* value);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="program">
+        /// To be added.
+        /// </param>
+        /// <param name="location">
+        /// To be added.
+        /// </param>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
+        /// <param name="value">
+        /// To be added.
+        /// This parameter's element count is taken from count.
+        /// </param>
         [NativeApi(EntryPoint = "glProgramUniformui64vNV")]
         public abstract void ProgramUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<ulong> value);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="location">
+        /// To be added.
+        /// </param>
+        /// <param name="value">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glUniformui64NV")]
         public abstract void Uniform([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="location">
+        /// To be added.
+        /// </param>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
+        /// <param name="value">
+        /// To be added.
+        /// This parameter's element count is taken from count.
+        /// </param>
         [NativeApi(EntryPoint = "glUniformui64vNV")]
         public abstract unsafe void Uniform([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* value);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="location">
+        /// To be added.
+        /// </param>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
+        /// <param name="value">
+        /// To be added.
+        /// This parameter's element count is taken from count.
+        /// </param>
         [NativeApi(EntryPoint = "glUniformui64vNV")]
         public abstract void Uniform([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<ulong> value);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetBufferParameterui64vNV")]
         public abstract unsafe void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] ulong* @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetBufferParameterui64vNV")]
         public abstract void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out ulong @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV")]
         public abstract unsafe void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] VertexBufferObjectParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] ulong* @params);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetNamedBufferParameterui64vNV")]
         public abstract void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] VertexBufferObjectParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out ulong @params);
 

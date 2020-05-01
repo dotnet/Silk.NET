@@ -11,20 +11,47 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_imaging")]
     public abstract unsafe partial class ArbImaging : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ARB_imaging";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="red">
+        /// To be added.
+        /// </param>
+        /// <param name="green">
+        /// To be added.
+        /// </param>
+        /// <param name="blue">
+        /// To be added.
+        /// </param>
+        /// <param name="alpha">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendColor")]
         public abstract void BlendColor([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendEquation")]
         public abstract void BlendEquation([Flow(FlowDirection.In)] ARB mode);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendEquation")]
         public abstract void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode);
 

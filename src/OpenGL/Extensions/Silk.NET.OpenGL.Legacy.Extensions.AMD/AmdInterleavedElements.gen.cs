@@ -11,12 +11,26 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
 {
     [Extension("AMD_interleaved_elements")]
     public abstract unsafe partial class AmdInterleavedElements : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "AMD_interleaved_elements";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="index">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="param">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glVertexAttribParameteriAMD")]
         public abstract void VertexAttribParameter([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] int param);
 

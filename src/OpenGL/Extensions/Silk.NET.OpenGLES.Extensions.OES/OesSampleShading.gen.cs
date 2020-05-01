@@ -11,12 +11,20 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [Extension("OES_sample_shading")]
     public abstract unsafe partial class OesSampleShading : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "OES_sample_shading";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="value">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glMinSampleShadingOES")]
         public abstract void MinSampleShading([Flow(FlowDirection.In)] float value);
 

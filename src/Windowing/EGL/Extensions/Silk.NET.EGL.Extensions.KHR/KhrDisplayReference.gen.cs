@@ -11,16 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.KHR
 {
     [Extension("KHR_display_reference")]
     public abstract unsafe partial class KhrDisplayReference : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "KHR_display_reference";
         [NativeApi(EntryPoint = "eglQueryDisplayAttribKHR")]
         public abstract unsafe bool QueryDisplayAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int name, [Flow(FlowDirection.Out)] IntPtr* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryDisplayAttribKHR")]
         public abstract bool QueryDisplayAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int name, [Flow(FlowDirection.Out)] Span<IntPtr> value);
 

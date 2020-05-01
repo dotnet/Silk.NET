@@ -11,20 +11,56 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
     [Extension("APPLE_flush_buffer_range")]
     public abstract unsafe partial class AppleFlushBufferRange : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "APPLE_flush_buffer_range";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="param">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBufferParameteriAPPLE")]
         public abstract void BufferParameter([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] int param);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glFlushMappedBufferRangeAPPLE")]
         public abstract void FlushMappedBufferRange([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glFlushMappedBufferRangeAPPLE")]
         public abstract void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
 

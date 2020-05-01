@@ -11,36 +11,89 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Extensions.EXT
 {
     [Extension("EXT_debug_marker")]
     public abstract unsafe partial class ExtDebugMarker : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_debug_marker";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="length">
+        /// To be added.
+        /// </param>
+        /// <param name="marker">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT")]
         public abstract unsafe void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] char* marker);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="length">
+        /// To be added.
+        /// </param>
+        /// <param name="marker">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT")]
         public abstract void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<char> marker);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
         [NativeApi(EntryPoint = "glPopGroupMarkerEXT")]
         public abstract void PopGroupMarker();
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="length">
+        /// To be added.
+        /// </param>
+        /// <param name="marker">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT")]
         public abstract unsafe void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] char* marker);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="length">
+        /// To be added.
+        /// </param>
+        /// <param name="marker">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT")]
         public abstract void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<char> marker);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="length">
+        /// To be added.
+        /// </param>
+        /// <param name="marker">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT")]
         public abstract void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string marker);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="length">
+        /// To be added.
+        /// </param>
+        /// <param name="marker">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT")]
         public abstract void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string marker);
 

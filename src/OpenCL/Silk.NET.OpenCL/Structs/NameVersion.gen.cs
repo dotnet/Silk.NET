@@ -10,6 +10,8 @@ using System.Text;
 using Silk.NET.Core.Native;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenCL
 {
     public unsafe struct NameVersion

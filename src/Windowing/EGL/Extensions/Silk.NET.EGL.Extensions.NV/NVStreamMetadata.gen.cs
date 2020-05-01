@@ -11,32 +11,29 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.NV
 {
     [Extension("NV_stream_metadata")]
     public abstract unsafe partial class NVStreamMetadata : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_stream_metadata";
         [NativeApi(EntryPoint = "eglQueryDisplayAttribNV")]
         public abstract unsafe bool QueryDisplayAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] IntPtr* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryDisplayAttribNV")]
         public abstract bool QueryDisplayAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<IntPtr> value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryStreamMetadataNV")]
         public abstract unsafe bool QueryStreamMetadata([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] NV name, [Flow(FlowDirection.In)] int n, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.Out)] void* data);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryStreamMetadataNV")]
         public abstract bool QueryStreamMetadata<T0>([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] NV name, [Flow(FlowDirection.In)] int n, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglSetStreamMetadataNV")]
         public abstract unsafe bool SetStreamMetadata([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] int n, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] void* data);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglSetStreamMetadataNV")]
         public abstract bool SetStreamMetadata<T0>([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] int n, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 

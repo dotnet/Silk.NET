@@ -21,7 +21,7 @@ namespace VulkanTriangle
 {
     public class HelloTriangleApplication
     {
-        public const bool EnableValidationLayers = false;
+        public const bool EnableValidationLayers = true;
         public const int MaxFramesInFlight = 8;
 
         public void Run()
@@ -69,6 +69,7 @@ namespace VulkanTriangle
         private KhrSwapchain _vkSwapchain;
         private ExtDebugUtils _debugUtils;
         private string[] _validationLayers = {"VK_LAYER_KHRONOS_validation"};
+        private string[] _instanceExtensions = {""};
         private string[] _deviceExtensions = {"VK_KHR_swapchain"};
 
         private void InitWindow()

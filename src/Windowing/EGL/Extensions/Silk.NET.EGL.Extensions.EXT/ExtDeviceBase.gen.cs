@@ -11,40 +11,35 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.EXT
 {
     [Extension("EXT_device_base")]
     public abstract unsafe partial class ExtDeviceBase : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_device_base";
         [NativeApi(EntryPoint = "eglQueryDeviceAttribEXT")]
         public abstract unsafe bool QueryDeviceAttrib([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] IntPtr* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryDeviceAttribEXT")]
         public abstract bool QueryDeviceAttrib([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<IntPtr> value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryDevicesEXT")]
         public abstract unsafe bool QueryDevices([Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] IntPtr* devices, [Flow(FlowDirection.Out)] int* num_devices);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryDevicesEXT")]
         public abstract bool QueryDevices([Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] Span<IntPtr> devices, [Flow(FlowDirection.Out)] Span<int> num_devices);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryDeviceStringEXT")]
         public abstract unsafe char* QueryDeviceString([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] int name);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryDisplayAttribEXT")]
         public abstract unsafe bool QueryDisplayAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] IntPtr* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryDisplayAttribEXT")]
         public abstract bool QueryDisplayAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<IntPtr> value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryDeviceStringEXT")]
         public abstract string QueryDeviceStringS([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] int name);
 

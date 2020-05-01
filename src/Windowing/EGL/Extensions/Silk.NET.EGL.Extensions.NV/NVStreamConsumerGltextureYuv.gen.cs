@@ -11,16 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.NV
 {
     [Extension("NV_stream_consumer_gltexture_yuv")]
     public abstract unsafe partial class NVStreamConsumerGltextureYuv : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_stream_consumer_gltexture_yuv";
         [NativeApi(EntryPoint = "eglStreamConsumerGLTextureExternalAttribsNV")]
         public abstract unsafe bool StreamConsumerGltextureExternalAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] IntPtr* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglStreamConsumerGLTextureExternalAttribsNV")]
         public abstract bool StreamConsumerGltextureExternalAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] Span<IntPtr> attrib_list);
 

@@ -11,16 +11,43 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_cl_event")]
     public abstract unsafe partial class ArbClEvent : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ARB_cl_event";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="context">
+        /// To be added.
+        /// </param>
+        /// <param name="@event">
+        /// To be added.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
+        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCreateSyncFromCLeventARB")]
         public abstract unsafe IntPtr CreateSyncFromCLevent([Flow(FlowDirection.Out)] IntPtr* context, [Flow(FlowDirection.Out)] IntPtr* @event, [Flow(FlowDirection.In)] uint flags);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="context">
+        /// To be added.
+        /// </param>
+        /// <param name="@event">
+        /// To be added.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
+        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCreateSyncFromCLeventARB")]
         public abstract IntPtr CreateSyncFromCLevent([Flow(FlowDirection.Out)] Span<IntPtr> context, [Flow(FlowDirection.Out)] Span<IntPtr> @event, [Flow(FlowDirection.In)] uint flags);
 

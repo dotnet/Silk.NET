@@ -9,264 +9,202 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Loader;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL
 {
     public abstract unsafe partial class EGL : NativeAPI
     {
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglChooseConfig")]
         public abstract unsafe bool ChooseConfig([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int* attrib_list, [Flow(FlowDirection.Out)] IntPtr* configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] int* num_config);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglChooseConfig")]
         public abstract bool ChooseConfig([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] Span<int> attrib_list, [Flow(FlowDirection.Out)] Span<IntPtr> configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] Span<int> num_config);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCopyBuffers")]
         public abstract bool CopyBuffers([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] IntPtr target);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateContext")]
         public abstract unsafe IntPtr CreateContext([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.In)] IntPtr share_context, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateContext")]
         public abstract IntPtr CreateContext([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.In)] IntPtr share_context, [Flow(FlowDirection.In)] Span<int> attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreatePbufferSurface")]
         public abstract unsafe IntPtr CreatePbufferSurface([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreatePbufferSurface")]
         public abstract IntPtr CreatePbufferSurface([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.In)] Span<int> attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreatePixmapSurface")]
         public abstract unsafe IntPtr CreatePixmapSurface([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.In)] IntPtr pixmap, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreatePixmapSurface")]
         public abstract IntPtr CreatePixmapSurface([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.In)] IntPtr pixmap, [Flow(FlowDirection.In)] Span<int> attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateWindowSurface")]
         public abstract unsafe IntPtr CreateWindowSurface([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.In)] IntPtr win, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateWindowSurface")]
         public abstract IntPtr CreateWindowSurface([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.In)] IntPtr win, [Flow(FlowDirection.In)] Span<int> attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglDestroyContext")]
         public abstract bool DestroyContext([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr ctx);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglDestroySurface")]
         public abstract bool DestroySurface([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetConfigAttrib")]
         public abstract unsafe bool GetConfigAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetConfigAttrib")]
         public abstract bool GetConfigAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetConfigs")]
         public abstract unsafe bool GetConfigs([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.Out)] IntPtr* configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] int* num_config);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetConfigs")]
         public abstract bool GetConfigs([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.Out)] Span<IntPtr> configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] Span<int> num_config);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetCurrentDisplay")]
         public abstract IntPtr GetCurrentDisplay();
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetCurrentSurface")]
         public abstract IntPtr GetCurrentSurface([Flow(FlowDirection.In)] int readdraw);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetDisplay")]
         public abstract IntPtr GetDisplay([Flow(FlowDirection.In)] IntPtr display_id);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetError")]
         public abstract int GetError();
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetProcAddress")]
         public abstract unsafe FuncPtr GetProcAddress([Flow(FlowDirection.In)] char* procname);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetProcAddress")]
         public abstract FuncPtr GetProcAddress([Flow(FlowDirection.In)] Span<char> procname);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglInitialize")]
         public abstract unsafe bool Initialize([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.Out)] int* major, [Flow(FlowDirection.Out)] int* minor);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglInitialize")]
         public abstract bool Initialize([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.Out)] Span<int> major, [Flow(FlowDirection.Out)] Span<int> minor);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglMakeCurrent")]
         public abstract bool MakeCurrent([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr draw, [Flow(FlowDirection.In)] IntPtr read, [Flow(FlowDirection.In)] IntPtr ctx);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryContext")]
         public abstract unsafe bool QueryContext([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr ctx, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryContext")]
         public abstract bool QueryContext([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr ctx, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryString")]
         public abstract unsafe char* QueryString([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int name);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQuerySurface")]
         public abstract unsafe bool QuerySurface([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQuerySurface")]
         public abstract bool QuerySurface([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglSwapBuffers")]
         public abstract bool SwapBuffers([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglTerminate")]
         public abstract bool Terminate([Flow(FlowDirection.In)] IntPtr dpy);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglWaitGL")]
         public abstract bool WaitGL();
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglWaitNative")]
         public abstract bool WaitNative([Flow(FlowDirection.In)] int engine);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetProcAddress")]
         public abstract FuncPtr GetProcAddress([Flow(FlowDirection.In)] string procname);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryString")]
         public abstract string QueryStringS([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int name);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglBindTexImage")]
         public abstract bool BindTexImage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] int buffer);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglReleaseTexImage")]
         public abstract bool ReleaseTexImage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] int buffer);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglSurfaceAttrib")]
         public abstract bool SurfaceAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.In)] int value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglSwapInterval")]
         public abstract bool SwapInterval([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int interval);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglBindAPI")]
         public abstract bool BindApi([Flow(FlowDirection.In)] EGLEnum api);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreatePbufferFromClientBuffer")]
         public abstract unsafe IntPtr CreatePbufferFromClientBuffer([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] EGLEnum buftype, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreatePbufferFromClientBuffer")]
         public abstract IntPtr CreatePbufferFromClientBuffer([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] EGLEnum buftype, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.In)] Span<int> attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryAPI")]
         public abstract EGLEnum QueryApi();
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglReleaseThread")]
         public abstract bool ReleaseThread();
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglWaitClient")]
         public abstract bool WaitClient();
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetCurrentContext")]
         public abstract IntPtr GetCurrentContext();
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglClientWaitSync")]
         public abstract int ClientWaitSync([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] int flags, [Flow(FlowDirection.In)] ulong timeout);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateImage")]
         public abstract unsafe IntPtr CreateImage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr ctx, [Flow(FlowDirection.In)] EGLEnum target, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] IntPtr* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateImage")]
         public abstract IntPtr CreateImage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr ctx, [Flow(FlowDirection.In)] EGLEnum target, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] Span<IntPtr> attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreatePlatformPixmapSurface")]
         public abstract unsafe IntPtr CreatePlatformPixmapSurface([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.Out)] void* native_pixmap, [Flow(FlowDirection.In)] IntPtr* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreatePlatformPixmapSurface")]
         public abstract IntPtr CreatePlatformPixmapSurface<T0>([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.Out)] Span<T0> native_pixmap, [Flow(FlowDirection.In)] Span<IntPtr> attrib_list) where T0 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreatePlatformWindowSurface")]
         public abstract unsafe IntPtr CreatePlatformWindowSurface([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.Out)] void* native_window, [Flow(FlowDirection.In)] IntPtr* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreatePlatformWindowSurface")]
         public abstract IntPtr CreatePlatformWindowSurface<T0>([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr config, [Flow(FlowDirection.Out)] Span<T0> native_window, [Flow(FlowDirection.In)] Span<IntPtr> attrib_list) where T0 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateSync")]
         public abstract unsafe IntPtr CreateSync([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] EGLEnum type, [Flow(FlowDirection.In)] IntPtr* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateSync")]
         public abstract IntPtr CreateSync([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] EGLEnum type, [Flow(FlowDirection.In)] Span<IntPtr> attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglDestroyImage")]
         public abstract bool DestroyImage([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr image);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglDestroySync")]
         public abstract bool DestroySync([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr sync);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetPlatformDisplay")]
         public abstract unsafe IntPtr GetPlatformDisplay([Flow(FlowDirection.In)] EGLEnum platform, [Flow(FlowDirection.Out)] void* native_display, [Flow(FlowDirection.In)] IntPtr* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetPlatformDisplay")]
         public abstract IntPtr GetPlatformDisplay<T0>([Flow(FlowDirection.In)] EGLEnum platform, [Flow(FlowDirection.Out)] Span<T0> native_display, [Flow(FlowDirection.In)] Span<IntPtr> attrib_list) where T0 : unmanaged;
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetSyncAttrib")]
         public abstract unsafe bool GetSyncAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] IntPtr* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetSyncAttrib")]
         public abstract bool GetSyncAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<IntPtr> value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglWaitSync")]
         public abstract bool WaitSync([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] int flags);
 

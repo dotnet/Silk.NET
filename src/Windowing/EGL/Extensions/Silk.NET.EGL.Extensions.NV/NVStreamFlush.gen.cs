@@ -11,12 +11,14 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.NV
 {
     [Extension("NV_stream_flush")]
     public abstract unsafe partial class NVStreamFlush : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_stream_flush";
         [NativeApi(EntryPoint = "eglStreamFlushNV")]
         public abstract bool StreamFlush([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream);
 

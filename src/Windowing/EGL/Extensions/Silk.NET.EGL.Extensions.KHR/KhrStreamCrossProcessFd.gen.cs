@@ -11,16 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.KHR
 {
     [Extension("KHR_stream_cross_process_fd")]
     public abstract unsafe partial class KhrStreamCrossProcessFd : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "KHR_stream_cross_process_fd";
         [NativeApi(EntryPoint = "eglCreateStreamFromFileDescriptorKHR")]
         public abstract IntPtr CreateStreamFromFileDescriptor([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int file_descriptor);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetStreamFileDescriptorKHR")]
         public abstract int GetStreamFileDescriptor([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream);
 

@@ -11,12 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.SUNX
 {
     [Extension("SUNX_constant_data")]
     public abstract unsafe partial class SunxConstantData : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "SUNX_constant_data";
+        /// <summary>
+        /// To be added.
+        /// </summary>
         [NativeApi(EntryPoint = "glFinishTextureSUNX")]
         public abstract void FinishTexture();
 

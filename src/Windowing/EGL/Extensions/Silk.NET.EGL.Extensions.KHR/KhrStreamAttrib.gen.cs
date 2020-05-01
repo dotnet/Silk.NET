@@ -11,44 +11,38 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.KHR
 {
     [Extension("KHR_stream_attrib")]
     public abstract unsafe partial class KhrStreamAttrib : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "KHR_stream_attrib";
         [NativeApi(EntryPoint = "eglCreateStreamAttribKHR")]
         public abstract unsafe IntPtr CreateStreamAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateStreamAttribKHR")]
         public abstract IntPtr CreateStreamAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] Span<IntPtr> attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryStreamAttribKHR")]
         public abstract unsafe bool QueryStreamAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] IntPtr* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryStreamAttribKHR")]
         public abstract bool QueryStreamAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] Span<IntPtr> value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglSetStreamAttribKHR")]
         public abstract bool SetStreamAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.In)] IntPtr value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglStreamConsumerAcquireAttribKHR")]
         public abstract unsafe bool StreamConsumerAcquireAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] IntPtr* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglStreamConsumerAcquireAttribKHR")]
         public abstract bool StreamConsumerAcquireAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] Span<IntPtr> attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglStreamConsumerReleaseAttribKHR")]
         public abstract unsafe bool StreamConsumerReleaseAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] IntPtr* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglStreamConsumerReleaseAttribKHR")]
         public abstract bool StreamConsumerReleaseAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] Span<IntPtr> attrib_list);
 

@@ -11,40 +11,35 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.KHR
 {
     [Extension("KHR_stream")]
     public abstract unsafe partial class KhrStream : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "KHR_stream";
         [NativeApi(EntryPoint = "eglCreateStreamKHR")]
         public abstract unsafe IntPtr CreateStream([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateStreamKHR")]
         public abstract IntPtr CreateStream([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] Span<int> attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglDestroyStreamKHR")]
         public abstract bool DestroyStream([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryStreamKHR")]
         public abstract unsafe bool QueryStream([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] int* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryStreamKHR")]
         public abstract bool QueryStream([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] Span<int> value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryStreamu64KHR")]
         public abstract unsafe bool QueryStreamu64([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] ulong* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryStreamu64KHR")]
         public abstract bool QueryStreamu64([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] Span<ulong> value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglStreamAttribKHR")]
         public abstract bool StreamAttrib([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.In)] int value);
 

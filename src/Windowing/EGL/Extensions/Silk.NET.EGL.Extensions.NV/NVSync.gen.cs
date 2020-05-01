@@ -11,40 +11,35 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.NV
 {
     [Extension("NV_sync")]
     public abstract unsafe partial class NVSync : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_sync";
         [NativeApi(EntryPoint = "eglClientWaitSyncNV")]
         public abstract int ClientWaitSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] int flags, [Flow(FlowDirection.In)] ulong timeout);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateFenceSyncNV")]
         public abstract unsafe IntPtr CreateFenceSync([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] NV condition, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglCreateFenceSyncNV")]
         public abstract IntPtr CreateFenceSync([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] NV condition, [Flow(FlowDirection.In)] Span<int> attrib_list);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglDestroySyncNV")]
         public abstract bool DestroySync([Flow(FlowDirection.In)] IntPtr sync);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglFenceNV")]
         public abstract bool Fence([Flow(FlowDirection.In)] IntPtr sync);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetSyncAttribNV")]
         public abstract unsafe bool GetSyncAttrib([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetSyncAttribNV")]
         public abstract bool GetSyncAttrib([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglSignalSyncNV")]
         public abstract bool SignalSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] NV mode);
 

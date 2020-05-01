@@ -11,16 +11,41 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_semaphore_fd")]
     public abstract unsafe partial class ExtSemaphoreFd : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_semaphore_fd";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="semaphore">
+        /// To be added.
+        /// </param>
+        /// <param name="handleType">
+        /// To be added.
+        /// </param>
+        /// <param name="fd">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glImportSemaphoreFdEXT")]
         public abstract void ImportSemaphoreF([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.In)] int fd);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="semaphore">
+        /// To be added.
+        /// </param>
+        /// <param name="handleType">
+        /// To be added.
+        /// </param>
+        /// <param name="fd">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glImportSemaphoreFdEXT")]
         public abstract void ImportSemaphoreF([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] int fd);
 

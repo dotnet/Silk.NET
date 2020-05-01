@@ -11,24 +11,77 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_transform_feedback_instanced")]
     public abstract unsafe partial class ArbTransformFeedbackInstanced : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ARB_transform_feedback_instanced";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
+        /// <param name="id">
+        /// To be added.
+        /// </param>
+        /// <param name="instancecount">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawTransformFeedbackInstanced")]
         public abstract void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
+        /// <param name="id">
+        /// To be added.
+        /// </param>
+        /// <param name="stream">
+        /// To be added.
+        /// </param>
+        /// <param name="instancecount">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawTransformFeedbackStreamInstanced")]
         public abstract void DrawTransformFeedbackStreamInstanced([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] uint instancecount);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
+        /// <param name="id">
+        /// To be added.
+        /// </param>
+        /// <param name="instancecount">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawTransformFeedbackInstanced")]
         public abstract void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
+        /// <param name="id">
+        /// To be added.
+        /// </param>
+        /// <param name="stream">
+        /// To be added.
+        /// </param>
+        /// <param name="instancecount">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawTransformFeedbackStreamInstanced")]
         public abstract void DrawTransformFeedbackStreamInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] uint instancecount);
 

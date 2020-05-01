@@ -11,12 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Extensions.KHR
 {
     [Extension("KHR_blend_equation_advanced")]
     public abstract unsafe partial class KhrBlendEquationAdvanced : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "KHR_blend_equation_advanced";
+        /// <summary>
+        /// To be added.
+        /// </summary>
         [NativeApi(EntryPoint = "glBlendBarrierKHR")]
         public abstract void BlendBarrier();
 

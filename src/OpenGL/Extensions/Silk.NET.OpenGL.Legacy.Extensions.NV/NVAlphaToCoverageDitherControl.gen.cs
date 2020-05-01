@@ -11,12 +11,20 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_alpha_to_coverage_dither_control")]
     public abstract unsafe partial class NVAlphaToCoverageDitherControl : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_alpha_to_coverage_dither_control";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glAlphaToCoverageDitherControlNV")]
         public abstract void AlphaToCoverageDitherControl([Flow(FlowDirection.In)] NV mode);
 

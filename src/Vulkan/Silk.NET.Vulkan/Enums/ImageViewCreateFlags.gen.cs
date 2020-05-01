@@ -6,11 +6,14 @@
 
 using System;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.Vulkan
 {
     [Flags()]
     public enum ImageViewCreateFlags
     {
         ImageViewCreateFragmentDensityMapDynamicBitExt = 1,
+        ImageViewCreateReserved1BitExt = 2,
     }
 }

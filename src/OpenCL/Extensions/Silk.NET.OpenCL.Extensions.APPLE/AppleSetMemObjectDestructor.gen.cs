@@ -11,16 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenCL.Extensions.APPLE
 {
     [Extension("APPLE_SetMemObjectDestructor")]
     public abstract unsafe partial class AppleSetMemObjectDestructor : NativeExtension<CL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "APPLE_SetMemObjectDestructor";
         [NativeApi(EntryPoint = "clSetMemObjectDestructorAPPLE")]
         public abstract unsafe int SetMemObjectDestructor([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clSetMemObjectDestructorAPPLE")]
         public abstract int SetMemObjectDestructor<T0>([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 

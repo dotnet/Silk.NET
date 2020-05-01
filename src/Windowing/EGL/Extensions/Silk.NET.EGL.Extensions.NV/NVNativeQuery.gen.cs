@@ -11,32 +11,29 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.NV
 {
     [Extension("NV_native_query")]
     public abstract unsafe partial class NVNativeQuery : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "NV_native_query";
         [NativeApi(EntryPoint = "eglQueryNativeDisplayNV")]
         public abstract unsafe bool QueryNativeDisplay([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.Out)] IntPtr* display_id);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryNativeDisplayNV")]
         public abstract bool QueryNativeDisplay([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.Out)] Span<IntPtr> display_id);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryNativePixmapNV")]
         public abstract unsafe bool QueryNativePixmap([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surf, [Flow(FlowDirection.Out)] IntPtr* pixmap);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryNativePixmapNV")]
         public abstract bool QueryNativePixmap([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surf, [Flow(FlowDirection.Out)] Span<IntPtr> pixmap);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryNativeWindowNV")]
         public abstract unsafe bool QueryNativeWindow([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surf, [Flow(FlowDirection.Out)] IntPtr* window);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryNativeWindowNV")]
         public abstract bool QueryNativeWindow([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surf, [Flow(FlowDirection.Out)] Span<IntPtr> window);
 

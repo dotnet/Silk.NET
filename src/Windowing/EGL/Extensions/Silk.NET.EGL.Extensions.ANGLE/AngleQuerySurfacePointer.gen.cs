@@ -11,12 +11,14 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.ANGLE
 {
     [Extension("ANGLE_query_surface_pointer")]
     public abstract unsafe partial class AngleQuerySurfacePointer : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ANGLE_query_surface_pointer";
         [NativeApi(EntryPoint = "eglQuerySurfacePointerANGLE")]
         public abstract unsafe bool QuerySurfacePointer([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] void** value);
 

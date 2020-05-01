@@ -11,16 +11,19 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.Vulkan.Extensions.KHR
 {
     [Extension("VK_KHR_display_swapchain")]
     public abstract unsafe partial class KhrDisplaySwapchain : NativeExtension<Vk>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "VK_KHR_display_swapchain";
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateSharedSwapchainsKHR")]
         public abstract unsafe Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains);
 
-        /// <inheritdoc />
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateSharedSwapchainsKHR")]
         public abstract Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] ref SwapchainCreateInfoKHR pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Computed = "swapchainCount"), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchains);
 

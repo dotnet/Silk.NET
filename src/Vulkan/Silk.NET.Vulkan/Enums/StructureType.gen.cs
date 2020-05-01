@@ -6,6 +6,8 @@
 
 using System;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.Vulkan
 {
     public enum StructureType
@@ -91,6 +93,7 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceTransformFeedbackPropertiesExt = 1000028001,
         PipelineRasterizationStateStreamCreateInfoExt = 1000028002,
         ImageViewHandleInfoNvx = 1000030000,
+        ImageViewAddressPropertiesNvx = 1000030001,
         TextureLodGatherFormatPropertiesAmd = 1000041000,
         StreamDescriptorSurfaceCreateInfoGgp = 1000049000,
         PhysicalDeviceCornerSampledImageFeaturesNV = 1000050000,
@@ -261,7 +264,6 @@ namespace Silk.NET.Vulkan
         AccelerationStructureGeometryInstancesDataKhr = 1000150004,
         AccelerationStructureGeometryTrianglesDataKhr = 1000150005,
         AccelerationStructureGeometryKhr = 1000150006,
-        AccelerationStructureInfoKhr = 1000150007,
         AccelerationStructureMemoryRequirementsInfoKhr = 1000150008,
         AccelerationStructureVersionKhr = 1000150009,
         CopyAccelerationStructureInfoKhr = 1000150010,
@@ -435,6 +437,8 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceTexelBufferAlignmentPropertiesExt = 1000281001,
         CommandBufferInheritanceRenderPassTransformInfoQCom = 1000282000,
         RenderPassTransformBeginInfoQCom = 1000282001,
+        PhysicalDeviceRobustness2FeaturesExt = 1000286000,
+        PhysicalDeviceRobustness2PropertiesExt = 1000286001,
         PipelineLibraryCreateInfoKhr = 1000290000,
         PhysicalDevicePipelineCreationCacheControlFeaturesExt = 1000297000,
         PhysicalDeviceDiagnosticsConfigFeaturesNV = 1000300000,

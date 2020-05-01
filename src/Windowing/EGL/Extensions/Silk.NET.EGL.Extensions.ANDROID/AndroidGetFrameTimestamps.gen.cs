@@ -11,40 +11,35 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.ANDROID
 {
     [Extension("ANDROID_get_frame_timestamps")]
     public abstract unsafe partial class AndroidGetFrameTimestamps : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ANDROID_get_frame_timestamps";
         [NativeApi(EntryPoint = "eglGetCompositorTimingANDROID")]
         public abstract unsafe bool GetCompositorTiming([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] int* names, [Flow(FlowDirection.Out)] long* values);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetCompositorTimingANDROID")]
         public abstract bool GetCompositorTiming([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] Span<int> names, [Flow(FlowDirection.Out)] Span<long> values);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetCompositorTimingSupportedANDROID")]
         public abstract bool GetCompositorTimingSupporte([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] int name);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetFrameTimestampsANDROID")]
         public abstract unsafe bool GetFrameTimestamp([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] ulong frameId, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] int* timestamps, [Flow(FlowDirection.Out)] long* values);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetFrameTimestampsANDROID")]
         public abstract bool GetFrameTimestamp([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] ulong frameId, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] Span<int> timestamps, [Flow(FlowDirection.Out)] Span<long> values);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetFrameTimestampSupportedANDROID")]
         public abstract bool GetFrameTimestampSupporte([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] int timestamp);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetNextFrameIdANDROID")]
         public abstract unsafe bool GetNextFrameId([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.Out)] ulong* frameId);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglGetNextFrameIdANDROID")]
         public abstract bool GetNextFrameId([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.Out)] Span<ulong> frameId);
 

@@ -11,12 +11,14 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.EXT
 {
     [Extension("EXT_stream_consumer_egloutput")]
     public abstract unsafe partial class ExtStreamConsumerEgloutput : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_stream_consumer_egloutput";
         [NativeApi(EntryPoint = "eglStreamConsumerOutputEXT")]
         public abstract bool StreamConsumerOutput([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] IntPtr stream, [Flow(FlowDirection.In)] IntPtr layer);
 

@@ -11,24 +11,23 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.EGL.Extensions.EXT
 {
     [Extension("EXT_image_dma_buf_import_modifiers")]
     public abstract unsafe partial class ExtImageDmaBufImportModifiers : NativeExtension<EGL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_image_dma_buf_import_modifiers";
         [NativeApi(EntryPoint = "eglQueryDmaBufFormatsEXT")]
         public abstract unsafe bool QueryDmaBufFormats([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int max_formats, [Flow(FlowDirection.Out)] int* formats, [Flow(FlowDirection.Out)] int* num_formats);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryDmaBufFormatsEXT")]
         public abstract bool QueryDmaBufFormats([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int max_formats, [Flow(FlowDirection.Out)] Span<int> formats, [Flow(FlowDirection.Out)] Span<int> num_formats);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryDmaBufModifiersEXT")]
         public abstract unsafe bool QueryDmaBufModifiers([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] ulong* modifiers, [Flow(FlowDirection.Out)] bool* external_only, [Flow(FlowDirection.Out)] int* num_modifiers);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "eglQueryDmaBufModifiersEXT")]
         public abstract bool QueryDmaBufModifiers([Flow(FlowDirection.In)] IntPtr dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] Span<ulong> modifiers, [Flow(FlowDirection.Out)] Span<bool> external_only, [Flow(FlowDirection.Out)] Span<int> num_modifiers);
 

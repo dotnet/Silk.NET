@@ -11,16 +11,17 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenCL.Extensions.ARM
 {
     [Extension("ARM_import_memory")]
     public abstract unsafe partial class ArmImportMemory : NativeExtension<CL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "ARM_import_memory";
         [NativeApi(EntryPoint = "clImportMemoryARM")]
         public abstract unsafe IntPtr ImportMemory([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] int* errcode_ret);
 
-        /// <inheritdoc />
         [NativeApi(EntryPoint = "clImportMemoryARM")]
         public abstract IntPtr ImportMemory<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] Span<IntPtr> properties, [Flow(FlowDirection.Out)] Span<T0> memory, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 

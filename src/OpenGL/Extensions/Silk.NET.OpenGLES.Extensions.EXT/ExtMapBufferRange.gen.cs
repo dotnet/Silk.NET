@@ -11,24 +11,79 @@ using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
+#pragma warning disable 1591
+
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_map_buffer_range")]
     public abstract unsafe partial class ExtMapBufferRange : NativeExtension<GL>
     {
-        /// <inheritdoc />
+        public const string ExtensionName = "EXT_map_buffer_range";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="length">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glFlushMappedBufferRangeEXT")]
         public abstract void FlushMappedBufferRange([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="length">
+        /// To be added.
+        /// </param>
+        /// <param name="access">
+        /// To be added.
+        /// </param>
+        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glMapBufferRangeEXT")]
         public abstract unsafe void* MapBufferRange([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="length">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glFlushMappedBufferRangeEXT")]
         public abstract void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length);
 
-        /// <inheritdoc />
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="length">
+        /// To be added.
+        /// </param>
+        /// <param name="access">
+        /// To be added.
+        /// </param>
+        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glMapBufferRangeEXT")]
         public abstract unsafe void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
 
