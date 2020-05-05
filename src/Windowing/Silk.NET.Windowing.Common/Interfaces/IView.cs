@@ -102,6 +102,12 @@ namespace Silk.NET.Windowing.Common
         void DoEvents();
 
         /// <summary>
+        /// When using <see cref="WindowOptions.IsEventDriven"/> = true, wakes the main thread from
+        /// its blocking wait on incoming events.  Can be called from any thread.
+        /// </summary>
+        void ContinueEvents();
+
+        /// <summary>
         /// Unloads the window on the underlying platform.
         /// </summary>
         void Reset();

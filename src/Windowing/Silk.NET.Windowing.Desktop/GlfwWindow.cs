@@ -647,6 +647,12 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
+        public void ContinueEvents()
+        {
+            _glfw.PostEmptyEvent();
+        }
+
+        /// <inheritdoc />
         public unsafe void Reset()
         {
             _updateStopwatch.Stop();
