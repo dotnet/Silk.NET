@@ -52,6 +52,7 @@ namespace Silk.NET.Vulkan
         PerformanceConfigurationIntel = 1000210000,
         DeferredOperationKhr = 1000268000,
         IndirectCommandsLayoutNV = 1000277000,
+        PrivateDataSlotExt = 1000295000,
         SamplerYcbcrConversion = 1000156000,
         DescriptorUpdateTemplate = 1000085000,
     }

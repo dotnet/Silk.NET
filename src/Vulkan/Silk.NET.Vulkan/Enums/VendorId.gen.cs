@@ -16,5 +16,6 @@ namespace Silk.NET.Vulkan
         VendorIDVsi = 65538,
         VendorIDKazan = 65539,
         VendorIDCodeplay = 65540,
+        VendorIDMesa = 65541,
     }
 }

@@ -12,9 +12,9 @@ namespace Silk.NET.OpenCL.Extensions.KHR
 {
     public enum KHR
     {
-        SamplerMipFilterMode = 0x1155,
-        SamplerLodMin = 0x1156,
-        SamplerLodMax = 0x1157,
+        SamplerMipFilterModeKhr = 0x1155,
+        SamplerLodMinKhr = 0x1156,
+        SamplerLodMaxKhr = 0x1157,
         InvalidD3D10DeviceKhr = unchecked((int)0xFFFFFFFFFFFFFC16),
         InvalidD3D10ResourceKhr = unchecked((int)0xFFFFFFFFFFFFFC15),
         D3D10ResourceAlreadyAcquiredKhr = unchecked((int)0xFFFFFFFFFFFFFC14),

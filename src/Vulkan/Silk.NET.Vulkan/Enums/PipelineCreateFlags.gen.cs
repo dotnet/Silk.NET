@@ -25,6 +25,7 @@ namespace Silk.NET.Vulkan
         PipelineCreateRayTracingSkipTrianglesBitKhr = 4096,
         PipelineCreateRayTracingSkipAabbsBitKhr = 8192,
         PipelineCreateDeferCompileBitNV = 32,
+        PipelineCreateReserved19BitKhr = 524288,
         PipelineCreateCaptureStatisticsBitKhr = 64,
         PipelineCreateCaptureInternalRepresentationsBitKhr = 128,
         PipelineCreateIndirectBindableBitNV = 262144,

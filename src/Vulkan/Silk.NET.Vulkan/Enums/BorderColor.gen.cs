@@ -18,5 +18,7 @@ namespace Silk.NET.Vulkan
         IntOpaqueBlack = 3,
         FloatOpaqueWhite = 4,
         IntOpaqueWhite = 5,
+        FloatCustomExt = 1000287003,
+        IntCustomExt = 1000287004,
     }
 }

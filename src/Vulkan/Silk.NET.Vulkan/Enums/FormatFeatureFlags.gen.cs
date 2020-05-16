@@ -44,6 +44,7 @@ namespace Silk.NET.Vulkan
         FormatFeatureCositedChromaSamplesBitKhr = 8388608,
         FormatFeatureSampledImageFilterCubicBitExt = 8192,
         FormatFeatureFragmentDensityMapBitExt = 16777216,
+        FormatFeatureAmdReserved30Bit = 1073741824,
         FormatFeatureTransferSrcBit = 16384,
         FormatFeatureTransferDstBit = 32768,
         FormatFeatureMidpointChromaSamplesBit = 131072,

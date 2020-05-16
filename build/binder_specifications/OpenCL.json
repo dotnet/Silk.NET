@@ -24506,7 +24506,7 @@
                   "Attributes": []
                 },
                 {
-                  "Name": "arg_indx",
+                  "Name": "arg_index",
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
@@ -24636,7 +24636,7 @@
                   "Attributes": []
                 },
                 {
-                  "Name": "arg_indx",
+                  "Name": "arg_index",
                   "Type": {
                     "IndirectionLevels": 0,
                     "ArrayDimensions": 0,
@@ -37110,22 +37110,22 @@
         {
           "Tokens": [
             {
-              "Name": "SamplerMipFilterMode",
-              "NativeName": "CL_SAMPLER_MIP_FILTER_MODE",
+              "Name": "SamplerMipFilterModeKhr",
+              "NativeName": "CL_SAMPLER_MIP_FILTER_MODE_KHR",
               "Value": "0x1155",
               "Doc": "",
               "Attributes": []
             },
             {
-              "Name": "SamplerLodMin",
-              "NativeName": "CL_SAMPLER_LOD_MIN",
+              "Name": "SamplerLodMinKhr",
+              "NativeName": "CL_SAMPLER_LOD_MIN_KHR",
               "Value": "0x1156",
               "Doc": "",
               "Attributes": []
             },
             {
-              "Name": "SamplerLodMax",
-              "NativeName": "CL_SAMPLER_LOD_MAX",
+              "Name": "SamplerLodMaxKhr",
+              "NativeName": "CL_SAMPLER_LOD_MAX_KHR",
               "Value": "0x1157",
               "Doc": "",
               "Attributes": []

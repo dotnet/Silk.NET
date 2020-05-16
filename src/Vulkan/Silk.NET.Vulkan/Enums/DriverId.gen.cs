@@ -24,5 +24,6 @@ namespace Silk.NET.Vulkan
         DriverIDGoogleSwiftshader = 10,
         DriverIDGgpProprietary = 11,
         DriverIDBroadcomProprietary = 12,
+        DriverIDMesaLlvmpipe = 13,
     }
 }
