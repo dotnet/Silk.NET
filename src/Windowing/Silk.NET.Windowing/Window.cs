@@ -10,6 +10,7 @@ using Silk.NET.Core.Loader;
 using Silk.NET.Core.Platform;
 using Silk.NET.Windowing.Common;
 using Silk.NET.Windowing.Desktop;
+using GlfwLoader = Silk.NET.GLFW.GlfwLoader;
 
 namespace Silk.NET.Windowing
 {

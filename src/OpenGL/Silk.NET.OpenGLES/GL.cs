@@ -3,16 +3,35 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Platform;
+using Ultz.SuperInvoke;
 
 namespace Silk.NET.OpenGLES
 {
     public partial class GL
     {
+        [Obsolete
+        (
+            "Parameterless GetApi calls are deprecated and will be removed in a future release. Please create" +
+            "your GL instances using a context"
+        )]
         public static GL GetApi() => LibraryLoader<GL>.Load
             (new OpenGLESLibraryNameContainer(), SilkManager.Get<GLSymbolLoader>());
+
+        public static GL GetApi(IGLContextSource contextSource) => GetApi
+        (
+            contextSource.GLContext ?? throw new InvalidOperationException
+                ("The given IGLContextSource is not configured with a context.")
+        );
+
+        public static GL GetApi(IGLContext ctx) => GetApi((INativeContext) ctx);
+        public static GL GetApi(Func<string, IntPtr> getProcAddress) => GetApi(new LamdaNativeContext(getProcAddress));
+
+        public static GL GetApi(INativeContext ctx) => LibraryActivator.CreateInstance<GL>
+            (new OpenGLESLibraryNameContainer().GetLibraryName(), SilkManager.Get(ctx));
 
         public bool TryGetExtension<T>(out T ext)
             where T:NativeExtension<GL>
@@ -27,7 +46,7 @@ namespace Silk.NET.OpenGLES
             _extensions ??= Enumerable.Range(0, GetInteger(GLEnum.NumExtensions))
                 .Select(x => GetString(StringName.Extensions, (uint) x)).ToList();
 
-            return _extensions.Contains("GL_" + extension);
+            return _extensions.Contains("GL_" + (extension.StartsWith("GL_") ? extension.Substring(3) : extension));
         }
 
         public void ClearColor(Color color)
