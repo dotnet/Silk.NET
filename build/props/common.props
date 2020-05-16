@@ -1,37 +1,24 @@
+<!--suppress CheckTagEmptyBody -->
 <Project>
     <PropertyGroup>
         <PackageIconUrl>https://static.ultz.co.uk/img/SilkDotNet.png</PackageIconUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <LangVersion>8.0</LangVersion>
         <PackageReleaseNotes>
-            Silk.NET May 2020 Update
-
-            - Update to Vulkan 1.2.139
-            - Update to OpenCL 3.0
-            - Add a new context abstraction
-            - Add extensions for using Silk.NET's Windowing API with Veldrid
-            - Add a new way of accessing OpenGL-specific and Vulkan-specific functions
-            - Add a helpful hint as to why your Vulkan functions are throwing EntryPointNotFoundExceptions.
-            - Add ExtensionName constants to all extension classes (useful for Vulkan)
-            - Add an option for waiting for events before proceeding to execute the render loop.
-            - Add a setter to the IsClosing property so you can cancel window closure
-            - Fix the incorrect DebugUtilsMessengerCallbackFunctionEXT signature
-            - Fix a bug where you couldn't catch GlfwExceptions on Linux and macOS
-            - Fix a bug where attempting to call Invoke on a window will result in a deadlock
-            - Fix a bug where VSync was always on regardless of the requested configuration
-            - Fix a bug where eventhough we fixed the previous VSync bug, we still weren't respecting initial vsync settings.
-            - Fix a bug where directly accessing scroll-wheel info would return bogus data
-            - Fix a bug where Render and Update are fired again after close
-            - Deprecated adaptive vsync
-            - Deprecated SilkManager
-            - Deprecated obsolete native methods that we weren't annotating as obsolete before
-            - Miscellaneous fixes and improvements
+            Silk.NET 1.2.1 Patch Update
+            
+            - Updated to the latest OpenCL specification
+            - Updated to Vulkan 1.2.141
+            - Added a ContinueEvents method to force an event-driven game loop to continue
+            - Added support for IGLContext in GL instances (this was slated for 1.2.0, but left out for some reason)
+            - Moved GlfwLoader out of Silk.NET.Windowing.Desktop and into Silk.NET.GLFW
         </PackageReleaseNotes>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/Ultz/Silk.NET</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <Version>1.2.0$(VersionSuffix)</Version>
+        <VersionPrefix>1.2.1</VersionPrefix>
+        <VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
         <Description>
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, GLFW, and Vulkan.
         </Description>

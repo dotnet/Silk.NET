@@ -23,7 +23,7 @@ jobs:
       version: $(dotnetCoreVersion)
   - script: dotnet run --configuration $(buildConfiguration) --project src/Core/BuildTools/BuildTools.csproj -- ./build/binder_scripts/build.json
     displayName: 'Bind'
-  - script: dotnet pack --configuration $(buildConfiguration) --version-suffix $(Build.BuildId)
+  - script: dotnet pack --configuration $(buildConfiguration) --version-suffix build$(Build.BuildId)
     displayName: 'Build/Pack'
   - publish: build/output_packages
     artifact: NuGet Packages
