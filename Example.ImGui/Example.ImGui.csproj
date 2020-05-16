@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp31</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Silk.NET.Input" Version="1.2.1" />
+      <PackageReference Include="Silk.NET.Windowing" Version="1.2.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Ultz.SilkExtensions.ImGui.OpenGL\Ultz.SilkExtensions.ImGui.OpenGL.csproj" />
+    </ItemGroup>
+
+</Project>

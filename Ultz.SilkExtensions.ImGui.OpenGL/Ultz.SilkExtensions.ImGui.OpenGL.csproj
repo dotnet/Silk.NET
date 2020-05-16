@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>8</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="ImGui.NET" Version="1.75.0" />
+      <PackageReference Include="Silk.NET.Input.Common" Version="1.2.1" />
+      <PackageReference Include="Silk.NET.Input.Extensions" Version="1.0.0" />
+      <PackageReference Include="Silk.NET.OpenGL" Version="1.2.1" />
+      <PackageReference Include="Silk.NET.Windowing.Common" Version="1.2.1" />
+    </ItemGroup>
+
+</Project>
