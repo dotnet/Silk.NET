@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ultz.SilkExtensions.ImGui.OpenGL", "Ultz.SilkExtensions.ImGui.OpenGL\Ultz.SilkExtensions.ImGui.OpenGL.csproj", "{4A13C4A0-1589-4C59-BFC4-F151BBFEBAAC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ultz.SilkExtensions.ImGui", "Ultz.SilkExtensions.ImGui\Ultz.SilkExtensions.ImGui.csproj", "{4A13C4A0-1589-4C59-BFC4-F151BBFEBAAC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.ImGui", "Example.ImGui\Example.ImGui.csproj", "{C71A8E70-A65B-48BF-9375-328DCF23520B}"
 EndProject

@@ -11,7 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Ultz.SilkExtensions.ImGui.OpenGL\Ultz.SilkExtensions.ImGui.OpenGL.csproj" />
+      <ProjectReference Include="..\Ultz.SilkExtensions.ImGui\Ultz.SilkExtensions.ImGui.csproj" />
     </ItemGroup>
 
 </Project>

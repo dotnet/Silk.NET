@@ -5,7 +5,7 @@ using Silk.NET.Input.Common;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
-using Ultz.SilkExtensions.ImGui.OpenGL;
+using Ultz.SilkExtensions.ImGui;
 
 namespace Example.ImGui
 {
@@ -63,7 +63,7 @@ namespace Example.ImGui
             {
                 // Dispose our controller first
                 controller?.Dispose();
-                
+
                 // Dispose the input context
                 inputContext?.Dispose();
                 
