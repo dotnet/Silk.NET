@@ -4,6 +4,13 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>8</LangVersion>
+        <Description>
+            Provides the ImGuiController class, which aids in using Silk.NET's OpenGL bindings with ImGui.NET.
+        </Description>
+        <Version>1.0.0</Version>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/Ultz/SilkExtensions</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
