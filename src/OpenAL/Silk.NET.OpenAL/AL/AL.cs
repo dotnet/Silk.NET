@@ -6,6 +6,7 @@
 using System;
 using System.Numerics;
 using System.Runtime.InteropServices;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Ultz.SuperInvoke;
@@ -17,11 +18,6 @@ namespace Silk.NET.OpenAL
     [NativeApi(Prefix = "al")]
     public abstract class AL : NativeAPI
     {
-        static AL()
-        {
-            LibraryLoader.CreateBuilder<ALContext>(new ALLoader(null));
-        }
-        
         /// <inheritdoc cref="NativeLibraryBase" />
         protected AL(ref NativeApiContext ctx)
             : base(ref ctx)
@@ -343,7 +339,8 @@ namespace Silk.NET.OpenAL
         /// <returns>The instance.</returns>
         public static AL GetApi()
         {
-            return LibraryLoader.Load<AL>(new OpenALLibraryNameContainer());
+            return LibraryActivator.CreateInstance<AL>
+                (new OpenALLibraryNameContainer().GetLibraryName(), new ALLoader());
         }
 
         /// <summary>
@@ -354,7 +351,9 @@ namespace Silk.NET.OpenAL
         public TExtension GetExtension<TExtension>()
             where TExtension : NativeExtension<AL>
         {
-            return LibraryLoader.Load<TExtension, AL>(this);
+            return IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(TExtension)).Name)
+                ? LibraryActivator.CreateInstance<TExtension>(Library)
+                : null;
         }
 
         /// <summary>

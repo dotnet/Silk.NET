@@ -26,38 +26,18 @@ namespace Silk.NET.Vulkan
         public static Vk GetApi()
         {
             var sym = new VkLoader(LibraryLoader.GetPlatformDefaultLoader());
-            var ret = LibraryLoader<Vk>.Load(new VulkanLibraryNameContainer(), sym);
+            var ret = LibraryActivator.CreateInstance<Vk>(new VulkanLibraryNameContainer().GetLibraryName(), sym);
             sym.Vulkan = ret;
             ret._extensionLoaders = new VkExtensionLoaderSource(ret);
             return ret;
         }
 
-        [Obsolete
-        (
-            "This method depends on the CurrentInstance property. " +
-            "You should defer usage of these APIs where possible. " +
-            "They will be removed in Silk.NET 2.0."
-        )]
-        public static Vk GetApi(InstanceCreateInfo info) => GetApi(ref info);
         public static Vk GetApi(InstanceCreateInfo info, out Instance instance) => GetApi(ref info, out instance);
-
-        [Obsolete
-        (
-            "This method depends on the CurrentInstance property. " +
-            "You should defer usage of these APIs where possible. " +
-            "They will be removed in Silk.NET 2.0."
-        )]
-        public static unsafe Vk GetApi(ref InstanceCreateInfo info)
-        {
-            var api = GetApi(ref info, out var instance);
-            api.CurrentInstance = instance;
-            return api;
-        }
 
         public static unsafe Vk GetApi(ref InstanceCreateInfo info, out Instance instance)
         {
             var sym = new VkLoader(LibraryLoader.GetPlatformDefaultLoader());
-            var ret = LibraryLoader<Vk>.Load(new VulkanLibraryNameContainer(), sym);
+            var ret = LibraryActivator.CreateInstance<Vk>(new VulkanLibraryNameContainer().GetLibraryName(), sym);
             sym.Vulkan = ret;
             fixed (InstanceCreateInfo* infoPtr = &info)
             {
@@ -70,39 +50,13 @@ namespace Silk.NET.Vulkan
             return ret;
         }
 
-        [Obsolete
-        (
-            "This method depends on the CurrentInstance property. " +
-            "You should defer usage of these APIs where possible. " +
-            "They will be removed in Silk.NET 2.0."
-        )]
-        public static Vk GetApi(ref InstanceCreateInfo info, ref AllocationCallbacks callbacks)
-        {
-            var api = GetApi(ref info, ref callbacks, out var instance);
-            api.CurrentInstance = instance;
-            return api;
-        }
-
         public static Vk GetApi(ref InstanceCreateInfo info, ref AllocationCallbacks callbacks, out Instance instance)
         {
             var sym = new VkLoader(LibraryLoader.GetPlatformDefaultLoader());
-            var ret = LibraryLoader<Vk>.Load(new VulkanLibraryNameContainer(), sym);
+            var ret = LibraryActivator.CreateInstance<Vk>(new VulkanLibraryNameContainer().GetLibraryName(), sym);
             sym.Vulkan = ret;
             ret.CreateInstance(ref info, ref callbacks, out instance);
             return ret;
-        }
-
-        [Obsolete
-        (
-            "This method has been deprecated in favour of the more explicit TryGetInstanceExtension and " +
-            "TryGetDeviceExtension methods. This is because this method currently depends on the CurrentInstance " +
-            "and CurrentDevice property, which are now both obsolete and pending removal along with this method."
-        )]
-        public bool TryGetExtension<T>(out T ext)
-            where T : NativeExtension<Vk>
-        {
-            ext = LibraryLoader<Vk>.Load<T>(this);
-            return ext != null;
         }
 
         /// <summary>

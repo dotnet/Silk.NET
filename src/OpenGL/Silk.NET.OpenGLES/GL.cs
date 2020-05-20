@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Numerics;
 using Silk.NET.Core;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
@@ -28,7 +29,9 @@ namespace Silk.NET.OpenGLES
         public bool TryGetExtension<T>(out T ext)
             where T:NativeExtension<GL>
         {
-             ext = LibraryLoader<GL>.Load<T>(this);
+             ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
+                 ? LibraryActivator.CreateInstance<T>(Library)
+                 : null;
              return ext != null;
         }
 

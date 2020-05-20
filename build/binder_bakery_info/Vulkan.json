@@ -20,6 +20,6 @@
     },
     "FunctionPrefix": "vk",
     "ClassName": "Vk",
-    "SymbolLoader": "new VkLoader(Ultz.SuperInvoke.Loader.LibraryLoader.GetPlatformDefaultLoader())"
+    "SymbolLoader": null
   }
 ]

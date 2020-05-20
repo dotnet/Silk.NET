@@ -10,11 +10,6 @@ namespace Silk.NET.OpenAL
 {
     public class ALLoader : LibraryLoader
     {
-        public ALLoader(ALContext alc)
-        {
-            _alc = alc;
-        }
-        
         private abstract class InternalAL : NativeApiContainer
         {
             [NativeApi(EntryPoint = "alcGetProcAddress")]
@@ -32,7 +27,7 @@ namespace Silk.NET.OpenAL
             new OpenALLibraryNameContainer().GetLibraryName()
         );
 
-        private ALContext _alc;
+        public ALContext Alc { get; internal set; }
         protected LibraryLoader UnderlyingLoader { get; } = GetPlatformDefaultLoader();
         protected override IntPtr CoreLoadNativeLibrary(string name) => UnderlyingLoader.LoadNativeLibrary(name);
         protected override void CoreFreeNativeLibrary(IntPtr handle) => UnderlyingLoader.FreeNativeLibrary(handle);
@@ -54,7 +49,7 @@ namespace Silk.NET.OpenAL
                 return sym;
             }
 
-            if (_alc is null)
+            if (Alc is null)
             {
                 sym = _al.GetProcAddress(symbolName);
 
@@ -65,7 +60,7 @@ namespace Silk.NET.OpenAL
             }
             else
             {
-                sym = _al.GetProcAddress(_alc.GetContextsDevice(_alc.GetCurrentContext()), symbolName);
+                sym = _al.GetProcAddress(Alc.GetContextsDevice(Alc.GetCurrentContext()), symbolName);
 
                 if (sym != IntPtr.Zero)
                 {

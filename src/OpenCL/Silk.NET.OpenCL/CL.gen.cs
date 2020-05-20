@@ -1977,11 +1977,6 @@ namespace Silk.NET.OpenCL
             : base(ref ctx)
         {
         }
-
-        static CL()
-        {
-            LibraryLoader.CreateBuilder<CL>(Ultz.SuperInvoke.Loader.LibraryLoader.GetPlatformDefaultLoader());
-        }
     }
 }
 

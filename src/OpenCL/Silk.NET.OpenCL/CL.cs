@@ -1,5 +1,7 @@
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Ultz.SuperInvoke;
 
 namespace Silk.NET.OpenCL
 {
@@ -7,13 +9,15 @@ namespace Silk.NET.OpenCL
     {
         public static CL GetApi()
         {
-             return LibraryLoader<CL>.Load(new OpenCLLibraryNameContainer());
+             return LibraryActivator.CreateInstance<CL>(new OpenCLLibraryNameContainer().GetLibraryName());
         }
 
         public bool TryGetExtension<T>(out T ext)
             where T:NativeExtension<CL>
         {
-             ext = LibraryLoader<CL>.Load<T>(this);
+            ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
+                ? LibraryActivator.CreateInstance<T>(Library)
+                : null;
              return ext != null;
         }
 

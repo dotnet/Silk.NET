@@ -1391,11 +1391,6 @@ namespace Silk.NET.Vulkan
             : base(ref ctx)
         {
         }
-
-        static Vk()
-        {
-            LibraryLoader.CreateBuilder<Vk>(new VkLoader(Ultz.SuperInvoke.Loader.LibraryLoader.GetPlatformDefaultLoader()));
-        }
     }
 }
 

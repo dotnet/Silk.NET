@@ -20,7 +20,6 @@ namespace Silk.NET.OpenAL
         protected ALContext(ref NativeApiContext ctx)
             : base(ref ctx)
         {
-            LibraryLoader.CreateBuilder<ALContext>(new ALLoader(this));
         }
 
         public override SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
@@ -84,7 +83,11 @@ namespace Silk.NET.OpenAL
         /// <returns>The instance.</returns>
         public static ALContext GetApi()
         {
-            return LibraryLoader.Load<ALContext>(new OpenALLibraryNameContainer());
+            var loader = new ALLoader();
+            var ret = LibraryActivator.CreateInstance<ALContext>
+                (new OpenALLibraryNameContainer().GetLibraryName(), loader);
+            loader.Alc = ret;
+            return ret;
         }
 
         /// <summary>

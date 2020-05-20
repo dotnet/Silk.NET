@@ -57441,7 +57441,7 @@
   "ClassName": "CL",
   "Version": null,
   "FunctionPrefix": "cl",
-  "SymbolLoaderName": "Ultz.SuperInvoke.Loader.LibraryLoader.GetPlatformDefaultLoader()",
+  "SymbolLoaderName": null,
   "Names": {
     "Linux": "libOpenCL.so",
     "Windows": "opencl.dll",

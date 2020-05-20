@@ -23,6 +23,6 @@
     },
     "FunctionPrefix": "cl",
     "ClassName": "CL",
-    "SymbolLoader": "Ultz.SuperInvoke.Loader.LibraryLoader.GetPlatformDefaultLoader()"
+    "SymbolLoader": null
   }
 ]

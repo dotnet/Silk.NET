@@ -271,14 +271,9 @@ namespace VulkanTriangle
 
             _vk.CurrentInstance = _instance;
             
-            if (!_vk.TryGetExtension(out _vkSurface))
+            if (!_vk.TryGetInstanceExtension(_instance, out _vkSurface))
             {
                 throw new NotSupportedException("KHR_surface extension not found.");
-            }
-
-            if (!_vk.TryGetExtension(out _vkSwapchain))
-            {
-                throw new NotSupportedException("KHR_swapchain extension not found.");
             }
             
             Marshal.FreeHGlobal((IntPtr) appInfo.PApplicationName);
@@ -293,7 +288,7 @@ namespace VulkanTriangle
         private unsafe void SetupDebugMessenger()
         {
             if (!EnableValidationLayers) return;
-            if (!_vk.TryGetExtension(out _debugUtils)) return;
+            if (!_vk.TryGetInstanceExtension(_instance, out _debugUtils)) return;
 
             var createInfo = new DebugUtilsMessengerCreateInfoEXT();
             PopulateDebugMessengerCreateInfo(ref createInfo);
@@ -552,6 +547,11 @@ namespace VulkanTriangle
             }
 
             _vk.CurrentDevice = _device;
+
+            if (!_vk.TryGetDeviceExtension(_instance, _device, out _vkSwapchain))
+            {
+                throw new NotSupportedException("KHR_swapchain extension not found.");
+            }
         }
 
         private unsafe void CreateSwapChain()
