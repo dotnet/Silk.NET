@@ -8,10 +8,11 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
+using Silk.NET.Input.Desktop;
 
-namespace Silk.NET.Input.Desktop
+namespace Silk.NET.Input.Glfw
 {
-    internal class GlfwJoystick : IJoystick, IGlfwDevice, IDisposable
+    internal class GlfwJoystick : IJoystick, IDisposable
     {
         private unsafe Axis* _axes;
         private unsafe Button* _buttons;
@@ -24,9 +25,9 @@ namespace Silk.NET.Input.Desktop
             _axes = (Axis*) Marshal.AllocHGlobal(0);
             _buttons = (Button*) Marshal.AllocHGlobal(0);
             _hats = (Hat*) Marshal.AllocHGlobal(0);
-            Axes = new GlfwReadOnlyList<Axis>(_axes, 0);
-            Buttons = new GlfwReadOnlyList<Button>(_buttons, 0);
-            Hats = new GlfwReadOnlyList<Hat>(_hats, 0);
+            Axes = new PtrReadOnlyList<Axis>(_axes, 0);
+            Buttons = new PtrReadOnlyList<Button>(_buttons, 0);
+            Hats = new PtrReadOnlyList<Hat>(_hats, 0);
 
             _connected = IsConnected;
         }
@@ -107,7 +108,7 @@ namespace Silk.NET.Input.Desktop
             }
 
             _axes = (Axis*) Marshal.ReAllocHGlobal((IntPtr) _axes, (IntPtr) count);
-            Axes = new GlfwReadOnlyList<Axis>(_axes, count);
+            Axes = new PtrReadOnlyList<Axis>(_axes, count);
         }
 
         public unsafe void EnsureButtonSize(int count)
@@ -118,7 +119,7 @@ namespace Silk.NET.Input.Desktop
             }
 
             _buttons = (Button*) Marshal.ReAllocHGlobal((IntPtr) _buttons, (IntPtr) count);
-            Buttons = new GlfwReadOnlyList<Button>(_buttons, count);
+            Buttons = new PtrReadOnlyList<Button>(_buttons, count);
         }
 
         public unsafe void EnsureHatSize(int count)
@@ -129,7 +130,7 @@ namespace Silk.NET.Input.Desktop
             }
 
             _hats = (Hat*) Marshal.ReAllocHGlobal((IntPtr) _hats, (IntPtr) count);
-            Hats = new GlfwReadOnlyList<Hat>(_hats, count);
+            Hats = new PtrReadOnlyList<Hat>(_hats, count);
         }
 
         public unsafe void Dispose()

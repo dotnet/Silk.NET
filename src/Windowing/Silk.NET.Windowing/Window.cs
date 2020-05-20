@@ -119,5 +119,7 @@ namespace Silk.NET.Windowing
             
             SilkManager.Get<IWindowPlatform>().ClearContexts();
         }
+
+        public static bool IsUsingGlfw(IView view) => view is GlfwWindow;
     }
 }

@@ -9,12 +9,12 @@ using System.Collections.Generic;
 
 namespace Silk.NET.Input.Desktop
 {
-    internal unsafe struct GlfwReadOnlyList<T> : IReadOnlyList<T>
+    internal unsafe struct PtrReadOnlyList<T> : IReadOnlyList<T>
         where T:unmanaged
     {
         private T* _items;
 
-        public GlfwReadOnlyList(T* items, int count)
+        public PtrReadOnlyList(T* items, int count)
         {
             Count = count;
             _items = items;

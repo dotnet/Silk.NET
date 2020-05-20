@@ -7,9 +7,11 @@ using System;
 using System.Collections.Generic;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
-using Silk.NET.Windowing.Desktop;
+using Silk.NET.Input.Desktop;
+using Silk.NET.Windowing;
+using Silk.NET.Windowing.Common;
 
-namespace Silk.NET.Input.Desktop
+namespace Silk.NET.Input.Glfw
 {
     internal class GlfwInputContext : IInputContext
     {
@@ -19,13 +21,13 @@ namespace Silk.NET.Input.Desktop
         private readonly GlfwMouse[] _mice = new GlfwMouse[1];
         private readonly IGlfwSubscriber[] _subscribers = new IGlfwSubscriber[2];
         private Action<double> _update;
-        private GlfwWindow _window;
+        private IView _window;
 
-        public unsafe GlfwInputContext(GlfwWindow window)
+        public unsafe GlfwInputContext(IView window)
         {
             void OnConnectionChanged(IInputDevice a, bool b) => ConnectionChanged?.Invoke(a, b);
 
-            if (window is null)
+            if (window is null || !Window.IsUsingGlfw(window))
             {
                 throw new ArgumentNullException
                     (nameof(window), "Attempted to create input context for null or non-GLFW window.");

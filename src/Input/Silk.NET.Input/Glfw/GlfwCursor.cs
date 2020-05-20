@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
 
-namespace Silk.NET.Input.Desktop
+namespace Silk.NET.Input.Glfw
 {
     /// <summary>
     /// A GLFW-based mouse cursor.

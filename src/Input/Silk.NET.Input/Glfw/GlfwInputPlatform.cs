@@ -7,21 +7,21 @@ using System;
 using System.Collections.Generic;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
+using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
-using Silk.NET.Windowing.Desktop;
 
-namespace Silk.NET.Input.Desktop
+namespace Silk.NET.Input.Glfw
 {
     /// <inheritdoc />
-    public class GlfwInputPlatform : IInputPlatform
+    internal class GlfwInputPlatform : IInputPlatform
     {
         private GlfwInputPlatform(){}
         private static Dictionary<IntPtr, GlfwEvents> _subs = new Dictionary<IntPtr, GlfwEvents>();
         /// <inheritdoc />
-        public bool IsApplicable(IView window) => window is GlfwWindow;
+        public bool IsApplicable(IView window) => Window.IsUsingGlfw(window);
 
         /// <inheritdoc />
-        public IInputContext CreateInput(IView window) => new GlfwInputContext(window as GlfwWindow);
+        public IInputContext CreateInput(IView window) => new GlfwInputContext(window);
         /// <summary>
         /// Gets the cached instance of the GLFW input platform.
         /// </summary>

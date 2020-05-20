@@ -5,11 +5,12 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using Silk.NET.Input.Common;
 
 namespace Silk.NET.Input.Desktop
 {
     internal struct IsConnectedWrapper<T> : IReadOnlyList<T>
-        where T:IGlfwDevice
+        where T:IInputDevice
     {
         private readonly IReadOnlyList<T> _list;
 
