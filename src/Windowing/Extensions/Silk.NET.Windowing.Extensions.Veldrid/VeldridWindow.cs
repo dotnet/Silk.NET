@@ -108,7 +108,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 SetGlContextAttributes(deviceOptions, preferredBackend, ref opts);
             }
 
-            window = GlfwPlatform.Instance.CreateWindow(opts);
+            window = Window.Create(opts);
             window.Initialize();
             window.WindowState = windowCI.WindowState;
             gd = CreateGraphicsDevice(window, deviceOptions, preferredBackend);
