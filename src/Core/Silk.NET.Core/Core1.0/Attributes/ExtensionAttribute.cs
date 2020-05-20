@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Reflection;
 
 namespace Silk.NET.Core.Attributes
 {
@@ -15,5 +16,10 @@ namespace Silk.NET.Core.Attributes
         }
 
         public string Name { get; }
+
+        public static ExtensionAttribute GetExtensionAttribute(MemberInfo type)
+        {
+            return type.GetCustomAttribute<ExtensionAttribute>();
+        }
     }
 }

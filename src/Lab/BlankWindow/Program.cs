@@ -67,7 +67,8 @@ namespace BlankWindow
 
         public static void Resize(Size size)
         {
-            Console.WriteLine(size);
+            Console.WriteLine(size); 
+            //_rsz = true;
         }
 
         public static void StateChanged(WindowState state)
@@ -75,6 +76,7 @@ namespace BlankWindow
             Console.WriteLine(state);
         }
 
+        //private static bool _rsz = true;
         public static unsafe void Load()
         {
             using var image = Image.Load<Rgba32>("favicon.png");
@@ -109,6 +111,12 @@ namespace BlankWindow
 
         public static void Update(double delta)
         {
+            //if (_rsz)
+            //{
+            //    Console.WriteLine("* " + window.Size);
+            //    _rsz = false;
+            //}
+
             Console.WriteLine($"Update {1 / delta}");
             //Debug.WriteLine(window.VSync);
         }
