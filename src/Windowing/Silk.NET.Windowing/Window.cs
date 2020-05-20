@@ -20,6 +20,15 @@ namespace Silk.NET.Windowing
     /// </summary>
     public static class Window
     {
+        public static IWindowPlatform Platform { get; set; }
+        /// <summary>
+        /// Instructs the windowing system to prefer the SDL backend over the GLFW backend on platforms where GLFW is
+        /// supported.
+        /// </summary>
+        public static bool PreferSdl { get; set; }
+        public static bool IsGlfw => Platform is GlfwPlatform;
+        // TODO IsSdl
+        
         /// <summary>
         /// Gets whether this platform only supports window views. If false, this means that you may use desktop
         /// functionality with your applications.
@@ -28,12 +37,12 @@ namespace Silk.NET.Windowing
         {
             get
             {
-                if (!SilkManager.IsRegistered<IWindowPlatform>())
+                if (Platform is null)
                 {
                     Init();
                 }
 
-                return SilkManager.Get<IWindowPlatform>().IsViewOnly;
+                return Platform.IsViewOnly;
             }
         }
         
@@ -44,7 +53,8 @@ namespace Silk.NET.Windowing
         /// <returns>A Silk.NET window using the current platform.</returns>
         public static IWindow Create(WindowOptions options)
         {
-            if (!SilkManager.IsRegistered<IWindowPlatform>()) {
+            if (Platform is null)
+            {
                 Init();
             }
 
@@ -57,9 +67,8 @@ namespace Silk.NET.Windowing
                 );
             }
 
-            // We should have a platform now, as Silk.Init would've thrown otherwise.
             // ReSharper disable once PossibleNullReferenceException
-            return SilkManager.Get<IWindowPlatform>().CreateWindow(options);
+            return Platform.CreateWindow(options);
         }
         
         /// <summary>
@@ -69,13 +78,14 @@ namespace Silk.NET.Windowing
         /// <returns>A Silk.NET window using the current platform.</returns>
         public static IView GetView(ViewOptions? options = null)
         {
-            if (!SilkManager.IsRegistered<IWindowPlatform>()) {
+            if (Platform is null)
+            {
                 Init();
             }
 
             // We should have a platform now, as Silk.Init would've thrown otherwise.
             // ReSharper disable once PossibleNullReferenceException
-            return SilkManager.Get<IWindowPlatform>().GetView(options);
+            return Platform.GetView(options);
         }
 
         /// <summary>
@@ -84,18 +94,19 @@ namespace Silk.NET.Windowing
         /// <exception cref="NotSupportedException">
         /// Thrown if no applicable <see cref="IWindowPlatform" /> was found.
         /// </exception>
-        internal static void Init()
+        public static void Init()
         {
             var glfwPlatform = GlfwPlatform.Instance;
-            if (glfwPlatform.IsApplicable) {
-                SilkManager.Register<IWindowPlatform>(glfwPlatform);
-                SilkManager.Register<GLSymbolLoader>(new GlfwLoader());
+            if (glfwPlatform.IsApplicable)
+            {
+                Platform = glfwPlatform;
+                SilkManager.Register<GLSymbolLoader>(new GlfwLoader()); // TODO remove this 2.0
                 return;
             }
 
-            // TODO: Mobile
+            // TODO: SDL & Mobile
 
-            if (!SilkManager.IsRegistered<IWindowPlatform>())
+            if (Platform is null)
             {
                 var entAsm = Assembly.GetEntryAssembly()?.Location;
                 entAsm = entAsm is null ? "the entry assembly" : Path.GetFileName(entAsm);
@@ -112,14 +123,16 @@ namespace Silk.NET.Windowing
         /// </summary>
         public static void ClearCurrentContexts()
         {
-            if (!SilkManager.IsRegistered<IWindowPlatform>())
+            if (Platform is null)
             {
                 Init();
             }
             
-            SilkManager.Get<IWindowPlatform>().ClearContexts();
+            Platform.ClearContexts();
         }
 
         public static bool IsUsingGlfw(IView view) => view is GlfwWindow;
+        // TODO allow passing in a GLFW WindowHandle*
+        // TODO allow passing in a SDL window handle
     }
 }

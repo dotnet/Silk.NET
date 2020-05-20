@@ -17,12 +17,12 @@ namespace Silk.NET.Windowing
         /// <returns>All monitors present on this window platform</returns>
         public static IEnumerable<IMonitor> GetMonitors()
         {
-            if (!SilkManager.IsRegistered<IWindowPlatform>())
+            if (Window.Platform is null)
             {
                 Window.Init();
             }
 
-            return SilkManager.Get<IWindowPlatform>().GetMonitors();
+            return Window.Platform.GetMonitors();
         }
 
         /// <summary>
@@ -31,12 +31,12 @@ namespace Silk.NET.Windowing
         /// <returns>The main monitor.</returns>
         public static IMonitor GetMainMonitor()
         {
-            if (!SilkManager.IsRegistered<IWindowPlatform>())
+            if (Window.Platform is null)
             {
                 Window.Init();
             }
 
-            return SilkManager.Get<IWindowPlatform>().GetMainMonitor();
+            return Window.Platform.GetMainMonitor();
         }
     }
 }
