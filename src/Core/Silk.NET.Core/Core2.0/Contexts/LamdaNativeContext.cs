@@ -12,5 +12,9 @@ namespace Silk.NET.Core.Contexts
         private readonly Func<string, IntPtr> _getProcAddress;
         public LamdaNativeContext(Func<string, IntPtr> getProcAddress) => _getProcAddress = getProcAddress;
         public IntPtr GetProcAddress(string proc) => _getProcAddress(proc);
+
+        public void Dispose()
+        {
+        }
     }
 }

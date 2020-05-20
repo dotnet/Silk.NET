@@ -53,7 +53,7 @@ namespace Triangle
 
         private static unsafe void Load()
         {
-            _gl = GL.GetApi();
+            _gl = GL.GetApi(_window);
             _gl.Enable(GLEnum.DebugOutput);
             _gl.Enable(GLEnum.DebugOutputSynchronous);
             _gl.DebugMessageCallback(OnDebug, null);

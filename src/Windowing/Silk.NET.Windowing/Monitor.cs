@@ -4,7 +4,6 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
-using Silk.NET.Core.Platform;
 using Silk.NET.Windowing.Common;
 
 namespace Silk.NET.Windowing

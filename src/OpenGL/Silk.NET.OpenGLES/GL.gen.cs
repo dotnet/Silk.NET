@@ -15747,11 +15747,6 @@ namespace Silk.NET.OpenGLES
             : base(ref ctx)
         {
         }
-
-        static GL()
-        {
-            LibraryLoader.CreateBuilder<GL>(Silk.NET.Core.Platform.SilkManager.Get<GLSymbolLoader>());
-        }
     }
 }
 

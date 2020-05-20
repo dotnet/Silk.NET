@@ -7,7 +7,7 @@ using System;
 
 namespace Silk.NET.Core.Contexts
 {
-    public interface INativeContext
+    public interface INativeContext : IDisposable
     {
         IntPtr GetProcAddress(string proc);
     }

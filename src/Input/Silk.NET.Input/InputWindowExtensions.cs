@@ -5,9 +5,7 @@
 
 using System;
 using System.Linq;
-using Silk.NET.Core.Platform;
 using Silk.NET.Input.Common;
-using Silk.NET.Input.Desktop;
 using Silk.NET.Input.Glfw;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;

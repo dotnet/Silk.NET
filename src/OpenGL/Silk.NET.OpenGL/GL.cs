@@ -3,24 +3,16 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
+using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Silk.NET.Core.Platform;
 using Ultz.SuperInvoke;
 
 namespace Silk.NET.OpenGL
 {
     public partial class GL
     {
-        [Obsolete
-        (
-            "Parameterless GetApi calls are deprecated and will be removed in a future release. Please create" +
-            "your GL instances using a context"
-        )]
-        public static GL GetApi() => LibraryLoader<GL>.Load
-            (new GLCoreLibraryNameContainer(), SilkManager.Get<GLSymbolLoader>());
-
         public static GL GetApi(IGLContextSource contextSource) => GetApi
         (
             contextSource.GLContext ?? throw new InvalidOperationException
@@ -31,7 +23,7 @@ namespace Silk.NET.OpenGL
         public static GL GetApi(Func<string, IntPtr> getProcAddress) => GetApi(new LamdaNativeContext(getProcAddress));
 
         public static GL GetApi(INativeContext ctx) => LibraryActivator.CreateInstance<GL>
-            (new GLCoreLibraryNameContainer().GetLibraryName(), SilkManager.Get(ctx));
+            (new GLCoreLibraryNameContainer().GetLibraryName(), TemporarySuperInvokeClass.GetLoader(ctx));
 
         public bool TryGetExtension<T>(out T ext)
             where T : NativeExtension<GL>

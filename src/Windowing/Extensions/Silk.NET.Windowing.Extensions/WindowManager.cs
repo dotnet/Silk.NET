@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Silk.NET.Core.Platform;
 using Silk.NET.Windowing.Common;
 
 namespace Silk.NET.Windowing.Extensions
@@ -55,7 +54,7 @@ namespace Silk.NET.Windowing.Extensions
         /// fetched using the <see cref="SilkManager"/>.
         /// </param>
         public void CreateWindow(WindowOptions opts, IWindowHost host = null)
-            => AddWindow((host ?? SilkManager.Get<IWindowPlatform>()).CreateWindow(opts));
+            => AddWindow((host ?? Window.Platform).CreateWindow(opts));
 
         /// <summary>
         /// Executes a render loop encompassing all windows within this manager.
