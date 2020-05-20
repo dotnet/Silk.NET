@@ -2,19 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <LangVersion>latest</LangVersion>
+        <IncludeBuildOutput>false</IncludeBuildOutput> <!-- Metapackage -->
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing.Desktop\Silk.NET.Windowing.Desktop.csproj" />
-      <ProjectReference Include="..\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
+        <ProjectReference Include="..\Silk.NET.Input\Silk.NET.Input.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <PackageReference Include="System.Memory" Version="4.5.3" />
-    </ItemGroup>
-    
     <Import Project="..\..\..\build\props\common.props" />
 
 </Project>
