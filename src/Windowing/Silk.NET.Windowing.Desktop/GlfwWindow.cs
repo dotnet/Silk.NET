@@ -655,6 +655,9 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public unsafe void Reset()
         {
+            _updateTimeDeficit = 0;
+            _renderTimeDeficit = 0;
+
             _updateStopwatch.Stop();
             _renderStopwatch.Stop();
 
