@@ -655,6 +655,9 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public unsafe void Reset()
         {
+            _updateTimeDeficit = 0;
+            _renderTimeDeficit = 0;
+
             _updateStopwatch.Stop();
             _renderStopwatch.Stop();
 
@@ -797,6 +800,8 @@ namespace Silk.NET.Windowing.Desktop
         /// <inheritdoc />
         public event Action<double> Render;
 
+        private double _updateTimeDeficit = 0;
+
         /// <summary>
         /// Run an OnUpdate event.
         /// </summary>
@@ -808,7 +813,7 @@ namespace Silk.NET.Windowing.Desktop
                 && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive))
             {
                 // Calculate the amount of remaining time till next update.
-                var remainingTime = _updatePeriod - _updateStopwatch.Elapsed.TotalSeconds;
+                var remainingTime = _updatePeriod - _updateStopwatch.Elapsed.TotalSeconds - _updateTimeDeficit;
 
                 // If the result is negative, and no call was within period that means the frame is running slowly.
                 if (remainingTime < 0.0)
@@ -830,6 +835,9 @@ namespace Silk.NET.Windowing.Desktop
             // Calculate delta and run frame.
             var delta = _updateStopwatch.Elapsed.TotalSeconds;
 
+            // Calculate how much the delta differs from the desired updatePeriod.
+            _updateTimeDeficit += delta - _updatePeriod;
+
             // Reset
             _updateStopwatch.Restart();
             _updatedWithinPeriod = false;
@@ -843,6 +851,7 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         private int? _lastVs;
+        private double _renderTimeDeficit = 0;
 
         /// <summary>
         /// Run an OnRender event.
@@ -854,7 +863,7 @@ namespace Silk.NET.Windowing.Desktop
                 && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive))
             {
                 // Calculate the amount of remaining time till next rendering..
-                var remainingTime = _renderPeriod - _renderStopwatch.Elapsed.TotalSeconds;
+                var remainingTime = _renderPeriod - _renderStopwatch.Elapsed.TotalSeconds - _renderTimeDeficit;
 
                 // If no update frame rate is given we have to check for slow running here.
                 if (UpdatesPerSecond < double.Epsilon)
@@ -880,6 +889,8 @@ namespace Silk.NET.Windowing.Desktop
             }
 
             var delta = _renderStopwatch.Elapsed.TotalSeconds;
+
+            _renderTimeDeficit += delta - _renderPeriod;
 
             //Reset
             _renderStopwatch.Restart();
