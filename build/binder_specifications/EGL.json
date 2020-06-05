@@ -22690,6 +22690,34 @@
               "Attributes": []
             },
             {
+              "Name": "StreamConsumerImageNV",
+              "NativeName": "EGL_STREAM_CONSUMER_IMAGE_NV",
+              "Value": "0x3373",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "StreamImageAddNV",
+              "NativeName": "EGL_STREAM_IMAGE_ADD_NV",
+              "Value": "0x3374",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "StreamImageRemoveNV",
+              "NativeName": "EGL_STREAM_IMAGE_REMOVE_NV",
+              "Value": "0x3375",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "StreamImageAvailableNV",
+              "NativeName": "EGL_STREAM_IMAGE_AVAILABLE_NV",
+              "Value": "0x3376",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
               "Name": "YuvPlane0TextureUnitNV",
               "NativeName": "EGL_YUV_PLANE0_TEXTURE_UNIT_NV",
               "Value": "0x332C",
@@ -25377,6 +25405,807 @@
               "Attributes": [],
               "Doc": "",
               "ExtensionName": "NV_native_query"
+            }
+          ],
+          "Attributes": []
+        },
+        "NV_stream_consumer_eglimage": {
+          "Name": "INVStreamConsumerEglimage",
+          "Functions": [
+            {
+              "Name": "QueryStreamConsumerEvent",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "int",
+                "Group": null,
+                "OriginalName": "EGLint",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "eglQueryStreamConsumerEventNV",
+              "Parameters": [
+                {
+                  "Name": "dpy",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLDisplay",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "stream",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLStreamKHR",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "timeout",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "ulong",
+                    "Group": null,
+                    "OriginalName": "EGLTime",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "@event",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "NV",
+                    "Group": null,
+                    "OriginalName": "EGLenum",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                },
+                {
+                  "Name": "aux",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLAttrib",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                }
+              ],
+              "GenericTypeParameters": [],
+              "Attributes": [],
+              "Doc": "",
+              "ExtensionName": "NV_stream_consumer_eglimage"
+            },
+            {
+              "Name": "QueryStreamConsumerEvent",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "int",
+                "Group": null,
+                "OriginalName": "EGLint",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "eglQueryStreamConsumerEventNV",
+              "Parameters": [
+                {
+                  "Name": "dpy",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLDisplay",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "stream",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLStreamKHR",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "timeout",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "ulong",
+                    "Group": null,
+                    "OriginalName": "EGLTime",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "@event",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "NV",
+                        "Group": null,
+                        "OriginalName": "EGLenum",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                },
+                {
+                  "Name": "aux",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "IntPtr",
+                        "Group": null,
+                        "OriginalName": "EGLAttrib",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                }
+              ],
+              "GenericTypeParameters": [],
+              "Attributes": [],
+              "Doc": "",
+              "ExtensionName": "NV_stream_consumer_eglimage"
+            },
+            {
+              "Name": "StreamAcquireImage",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "bool",
+                "Group": null,
+                "OriginalName": "EGLBoolean",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "eglStreamAcquireImageNV",
+              "Parameters": [
+                {
+                  "Name": "dpy",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLDisplay",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "stream",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLStreamKHR",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "pImage",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLImage",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                },
+                {
+                  "Name": "sync",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLSync",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                }
+              ],
+              "GenericTypeParameters": [],
+              "Attributes": [],
+              "Doc": "",
+              "ExtensionName": "NV_stream_consumer_eglimage"
+            },
+            {
+              "Name": "StreamAcquireImage",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "bool",
+                "Group": null,
+                "OriginalName": "EGLBoolean",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "eglStreamAcquireImageNV",
+              "Parameters": [
+                {
+                  "Name": "dpy",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLDisplay",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "stream",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLStreamKHR",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "pImage",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "IntPtr",
+                        "Group": null,
+                        "OriginalName": "EGLImage",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                },
+                {
+                  "Name": "sync",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLSync",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                }
+              ],
+              "GenericTypeParameters": [],
+              "Attributes": [],
+              "Doc": "",
+              "ExtensionName": "NV_stream_consumer_eglimage"
+            },
+            {
+              "Name": "StreamImageConsumerConnect",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "bool",
+                "Group": null,
+                "OriginalName": "EGLBoolean",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "eglStreamImageConsumerConnectNV",
+              "Parameters": [
+                {
+                  "Name": "dpy",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLDisplay",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "stream",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLStreamKHR",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "num_modifiers",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "int",
+                    "Group": null,
+                    "OriginalName": "EGLint",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "modifiers",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "ulong",
+                    "Group": null,
+                    "OriginalName": "EGLuint64KHR",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                },
+                {
+                  "Name": "attrib_list",
+                  "Type": {
+                    "IndirectionLevels": 1,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLAttrib",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                }
+              ],
+              "GenericTypeParameters": [],
+              "Attributes": [],
+              "Doc": "",
+              "ExtensionName": "NV_stream_consumer_eglimage"
+            },
+            {
+              "Name": "StreamImageConsumerConnect",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "bool",
+                "Group": null,
+                "OriginalName": "EGLBoolean",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "eglStreamImageConsumerConnectNV",
+              "Parameters": [
+                {
+                  "Name": "dpy",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLDisplay",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "stream",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLStreamKHR",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "num_modifiers",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "int",
+                    "Group": null,
+                    "OriginalName": "EGLint",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "modifiers",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "ulong",
+                        "Group": null,
+                        "OriginalName": "EGLuint64KHR",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                },
+                {
+                  "Name": "attrib_list",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "Span",
+                    "Group": null,
+                    "OriginalName": null,
+                    "OriginalGroup": null,
+                    "GenericTypes": [
+                      {
+                        "IndirectionLevels": 0,
+                        "ArrayDimensions": 0,
+                        "Name": "IntPtr",
+                        "Group": null,
+                        "OriginalName": "EGLAttrib",
+                        "OriginalGroup": null,
+                        "GenericTypes": [],
+                        "IsByRef": false,
+                        "IsOut": false,
+                        "IsIn": false
+                      }
+                    ],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 2,
+                  "Attributes": []
+                }
+              ],
+              "GenericTypeParameters": [],
+              "Attributes": [],
+              "Doc": "",
+              "ExtensionName": "NV_stream_consumer_eglimage"
+            },
+            {
+              "Name": "StreamReleaseImage",
+              "ReturnType": {
+                "IndirectionLevels": 0,
+                "ArrayDimensions": 0,
+                "Name": "bool",
+                "Group": null,
+                "OriginalName": "EGLBoolean",
+                "OriginalGroup": null,
+                "GenericTypes": [],
+                "IsByRef": false,
+                "IsOut": false,
+                "IsIn": false
+              },
+              "NativeName": "eglStreamReleaseImageNV",
+              "Parameters": [
+                {
+                  "Name": "dpy",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLDisplay",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "stream",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLStreamKHR",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "image",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLImage",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                },
+                {
+                  "Name": "sync",
+                  "Type": {
+                    "IndirectionLevels": 0,
+                    "ArrayDimensions": 0,
+                    "Name": "IntPtr",
+                    "Group": null,
+                    "OriginalName": "EGLSync",
+                    "OriginalGroup": null,
+                    "GenericTypes": [],
+                    "IsByRef": false,
+                    "IsOut": false,
+                    "IsIn": false
+                  },
+                  "Count": null,
+                  "Flow": 1,
+                  "Attributes": []
+                }
+              ],
+              "GenericTypeParameters": [],
+              "Attributes": [],
+              "Doc": "",
+              "ExtensionName": "NV_stream_consumer_eglimage"
             }
           ],
           "Attributes": []

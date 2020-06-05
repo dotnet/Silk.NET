@@ -130,7 +130,7 @@ namespace Silk.NET.BuildTools.Common
 
                             foreach (var genericType in parameter.Type.GenericTypes)
                             {
-                                if (genericType.OriginalName == "GLenum" || genericType.Name == "CLenum")
+                                if (genericType.OriginalName == "GLenum" || genericType.Name == "CLenum" || genericType.Name == "EGLenum")
                                 {
                                     genericType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
                                 }
@@ -144,7 +144,7 @@ namespace Silk.NET.BuildTools.Common
 
                         foreach (var genericType in function.ReturnType.GenericTypes)
                         {
-                            if (genericType.OriginalName == "GLenum" || genericType.Name == "CLenum")
+                            if (genericType.OriginalName == "GLenum" || genericType.Name == "CLenum" || genericType.Name == "EGLenum")
                             {
                                 genericType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
                             }
