@@ -249,21 +249,27 @@ namespace Silk.NET.Generators.Interop
                 sw.WriteLine();
                 sw.WriteLine($"namespace {kvp.Key.Item1}");
                 sw.WriteLine("{");
-                sw.WriteLine($"    partial class {kvp.Key.Item2}");
+                sw.WriteLine($"    unsafe partial class {kvp.Key.Item2}");
                 sw.WriteLine("    {");
                 sw.WriteLine("         private IntPtr[] _addresses;");
+                var slot = 0;
                 foreach (var function in kvp.Value)
                 {
                     sw.WriteLine($"        private {function.Signature}");
                     sw.WriteLine("        {");
                     foreach (var line in function.Body)
                     {
-                        sw.WriteLine($"            {line}");
+                        sw.WriteLine($"            {line.Replace("$SLOT$", slot++.ToString())}");
                     }
                     
                     sw.WriteLine("        }");
                     sw.WriteLine();
                 }
+                
+                sw.WriteLine("        private void InitializeNative()");
+                sw.WriteLine("        {");
+                sw.WriteLine($"            _addresses = new IntPtr[{slot}]");
+                sw.WriteLine("        }");
                 sw.WriteLine("    }");
                 sw.WriteLine("}");
                 sw.WriteLine();
