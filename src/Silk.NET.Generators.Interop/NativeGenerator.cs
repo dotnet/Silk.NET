@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.Generators.Interop.Marshalling;
 
@@ -49,8 +50,14 @@ namespace Silk.NET.Generators.Interop
                     Marshallers[current].Marshal(new MethodMarshalContext(MarshalNext, sb, outSig));
                 }
             }
-            
-            return new ImplementedFunction(finalOutSig, sb, inSig);
+
+            if (finalOutSig is null)
+            {
+                throw new InvalidOperationException("Couldn't marshal method."); // should be impossible
+            }
+
+            return new ImplementedFunction
+                (new FunctionSignatureBuilder(finalOutSig).WithName("Impl" + finalOutSig.Name).Build(), sb, inSig);
 
             string GetCall(Function sig) => string.Join(", ", sig.Parameters.Select(x => x.Name));
             
