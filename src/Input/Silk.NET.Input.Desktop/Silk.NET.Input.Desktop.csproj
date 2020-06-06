@@ -9,6 +9,4 @@
         <ProjectReference Include="..\Silk.NET.Input\Silk.NET.Input.csproj" />
     </ItemGroup>
 
-    <Import Project="..\..\..\build\props\common.props" />
-
 </Project>

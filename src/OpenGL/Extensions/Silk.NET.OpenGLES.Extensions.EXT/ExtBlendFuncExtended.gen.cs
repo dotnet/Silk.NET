@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_blend_func_extended")]
-    public abstract unsafe partial class ExtBlendFuncExtended : NativeExtension<GL>
+    public unsafe partial class ExtBlendFuncExtended : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_blend_func_extended";
         /// <summary>
@@ -33,7 +33,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// This parameter's element count is computed from name.
         /// </param>
         [NativeApi(EntryPoint = "glBindFragDataLocationEXT")]
-        public abstract unsafe void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Count(Computed = "name"), Flow(FlowDirection.In)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Count(Computed = "name"), Flow(FlowDirection.In)] char* name)
+            => ImplBindFragDataLocation(program, color, name);
 
         /// <summary>
         /// To be added.
@@ -49,7 +51,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// This parameter's element count is computed from name.
         /// </param>
         [NativeApi(EntryPoint = "glBindFragDataLocationEXT")]
-        public abstract void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Count(Computed = "name"), Flow(FlowDirection.In)] ref char name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Count(Computed = "name"), Flow(FlowDirection.In)] ref char name)
+            => ImplBindFragDataLocation(program, color, name);
 
         /// <summary>
         /// To be added.
@@ -67,7 +71,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindFragDataLocationIndexedEXT")]
-        public abstract unsafe void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] char* name)
+            => ImplBindFragDataLocationIndexed(program, colorNumber, index, name);
 
         /// <summary>
         /// To be added.
@@ -85,7 +91,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindFragDataLocationIndexedEXT")]
-        public abstract void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Span<char> name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Span<char> name)
+            => ImplBindFragDataLocationIndexed(program, colorNumber, index, name);
 
         /// <summary>
         /// To be added.
@@ -98,7 +106,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetFragDataIndexEXT")]
-        public abstract unsafe int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] char* name)
+            => ImplGetFragDataIndex(program, name);
 
         /// <summary>
         /// To be added.
@@ -111,7 +121,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetFragDataIndexEXT")]
-        public abstract int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] Span<char> name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] Span<char> name)
+            => ImplGetFragDataIndex(program, name);
 
         /// <summary>
         /// To be added.
@@ -128,7 +140,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
-        public abstract unsafe int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] char* name)
+            => ImplGetProgramResourceLocationIndex(program, programInterface, name);
 
         /// <summary>
         /// To be added.
@@ -145,7 +159,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
-        public abstract int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] ref char name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] ref char name)
+            => ImplGetProgramResourceLocationIndex(program, programInterface, name);
 
         /// <summary>
         /// To be added.
@@ -160,7 +176,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindFragDataLocationEXT")]
-        public abstract void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Flow(FlowDirection.In)] string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Flow(FlowDirection.In)] string name)
+            => ImplBindFragDataLocation(program, color, name);
 
         /// <summary>
         /// To be added.
@@ -178,7 +196,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindFragDataLocationIndexedEXT")]
-        public abstract void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] string name)
+            => ImplBindFragDataLocationIndexed(program, colorNumber, index, name);
 
         /// <summary>
         /// To be added.
@@ -191,7 +211,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetFragDataIndexEXT")]
-        public abstract int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string name)
+            => ImplGetFragDataIndex(program, name);
 
         /// <summary>
         /// To be added.
@@ -207,11 +229,14 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetProgramResourceLocationIndexEXT")]
-        public abstract int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] string name)
+            => ImplGetProgramResourceLocationIndex(program, programInterface, name);
 
-        public ExtBlendFuncExtended(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtBlendFuncExtended(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

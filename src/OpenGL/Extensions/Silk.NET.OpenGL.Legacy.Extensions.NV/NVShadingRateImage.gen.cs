@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_shading_rate_image")]
-    public abstract unsafe partial class NVShadingRateImage : NativeExtension<GL>
+    public unsafe partial class NVShadingRateImage : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_shading_rate_image";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindShadingRateImageNV")]
-        public abstract void BindShadingRateImage([Flow(FlowDirection.In)] uint texture);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindShadingRateImage([Flow(FlowDirection.In)] uint texture)
+            => ImplBindShadingRateImage(texture);
 
         /// <summary>
         /// To be added.
@@ -42,7 +44,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetShadingRateImagePaletteNV")]
-        public abstract unsafe void GetShadingRateImagePalette([Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint entry, [Count(Count = 1), Flow(FlowDirection.Out)] NV* rate);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetShadingRateImagePalette([Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint entry, [Count(Count = 1), Flow(FlowDirection.Out)] NV* rate)
+            => ImplGetShadingRateImagePalette(viewport, entry, rate);
 
         /// <summary>
         /// To be added.
@@ -58,7 +62,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetShadingRateImagePaletteNV")]
-        public abstract void GetShadingRateImagePalette([Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint entry, [Count(Count = 1), Flow(FlowDirection.Out)] out NV rate);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetShadingRateImagePalette([Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint entry, [Count(Count = 1), Flow(FlowDirection.Out)] out NV rate)
+            => ImplGetShadingRateImagePalette(viewport, entry, rate);
 
         /// <summary>
         /// To be added.
@@ -77,7 +83,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetShadingRateSampleLocationivNV")]
-        public abstract unsafe void GetShadingRateSampleLocation([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.Out)] int* location);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetShadingRateSampleLocation([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.Out)] int* location)
+            => ImplGetShadingRateSampleLocation(rate, samples, index, location);
 
         /// <summary>
         /// To be added.
@@ -96,7 +104,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetShadingRateSampleLocationivNV")]
-        public abstract void GetShadingRateSampleLocation([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.Out)] Span<int> location);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetShadingRateSampleLocation([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.Out)] Span<int> location)
+            => ImplGetShadingRateSampleLocation(rate, samples, index, location);
 
         /// <summary>
         /// To be added.
@@ -105,7 +115,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glShadingRateImageBarrierNV")]
-        public abstract void ShadingRateImageBarrier([Flow(FlowDirection.In)] bool synchronize);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ShadingRateImageBarrier([Flow(FlowDirection.In)] bool synchronize)
+            => ImplShadingRateImageBarrier(synchronize);
 
         /// <summary>
         /// To be added.
@@ -124,7 +136,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glShadingRateImagePaletteNV")]
-        public abstract unsafe void ShadingRateImagePalette([Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] NV* rates);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ShadingRateImagePalette([Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] NV* rates)
+            => ImplShadingRateImagePalette(viewport, first, count, rates);
 
         /// <summary>
         /// To be added.
@@ -143,7 +157,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glShadingRateImagePaletteNV")]
-        public abstract void ShadingRateImagePalette([Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<NV> rates);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ShadingRateImagePalette([Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<NV> rates)
+            => ImplShadingRateImagePalette(viewport, first, count, rates);
 
         /// <summary>
         /// To be added.
@@ -152,7 +168,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glShadingRateSampleOrderNV")]
-        public abstract void ShadingRateSampleOrder([Flow(FlowDirection.In)] NV order);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ShadingRateSampleOrder([Flow(FlowDirection.In)] NV order)
+            => ImplShadingRateSampleOrder(order);
 
         /// <summary>
         /// To be added.
@@ -168,7 +186,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from rate and samples.
         /// </param>
         [NativeApi(EntryPoint = "glShadingRateSampleOrderCustomNV")]
-        public abstract unsafe void ShadingRateSampleOrderCustom([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(FlowDirection.In)] int* locations);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ShadingRateSampleOrderCustom([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(FlowDirection.In)] int* locations)
+            => ImplShadingRateSampleOrderCustom(rate, samples, locations);
 
         /// <summary>
         /// To be added.
@@ -184,11 +204,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from rate and samples.
         /// </param>
         [NativeApi(EntryPoint = "glShadingRateSampleOrderCustomNV")]
-        public abstract void ShadingRateSampleOrderCustom([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(FlowDirection.In)] ref int locations);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ShadingRateSampleOrderCustom([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(FlowDirection.In)] ref int locations)
+            => ImplShadingRateSampleOrderCustom(rate, samples, locations);
 
-        public NVShadingRateImage(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVShadingRateImage(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

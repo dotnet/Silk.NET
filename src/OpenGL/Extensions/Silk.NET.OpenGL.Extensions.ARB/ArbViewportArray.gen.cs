@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_viewport_array")]
-    public abstract unsafe partial class ArbViewportArray : NativeExtension<GL>
+    public unsafe partial class ArbViewportArray : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_viewport_array";
         /// <summary>
@@ -33,7 +33,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is computed from count.
         /// </param>
         [NativeApi(EntryPoint = "glDepthRangeArrayv")]
-        public abstract unsafe void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] double* v)
+            => ImplDepthRangeArray(first, count, v);
 
         /// <summary>
         /// To be added.
@@ -49,7 +51,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is computed from count.
         /// </param>
         [NativeApi(EntryPoint = "glDepthRangeArrayv")]
-        public abstract void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref double v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref double v)
+            => ImplDepthRangeArray(first, count, v);
 
         /// <summary>
         /// To be added.
@@ -64,7 +68,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDepthRangeArraydvNV")]
-        public abstract void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<double> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<double> v)
+            => ImplDepthRangeArray(first, count, v);
 
         /// <summary>
         /// To be added.
@@ -79,7 +85,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDepthRangeIndexed")]
-        public abstract void DepthRangeIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double n, [Flow(FlowDirection.In)] double f);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DepthRangeIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double n, [Flow(FlowDirection.In)] double f)
+            => ImplDepthRangeIndexed(index, n, f);
 
         /// <summary>
         /// To be added.
@@ -95,7 +103,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetDoublei_v")]
-        public abstract unsafe void GetDouble([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] double* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetDouble([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] double* data)
+            => ImplGetDouble(target, index, data);
 
         /// <summary>
         /// To be added.
@@ -111,7 +121,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetDoublei_v")]
-        public abstract void GetDouble([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out double data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetDouble([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out double data)
+            => ImplGetDouble(target, index, data);
 
         /// <summary>
         /// To be added.
@@ -127,7 +139,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetFloati_v")]
-        public abstract unsafe void GetFloat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFloat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data)
+            => ImplGetFloat(target, index, data);
 
         /// <summary>
         /// To be added.
@@ -143,7 +157,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetFloati_v")]
-        public abstract void GetFloat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFloat([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data)
+            => ImplGetFloat(target, index, data);
 
         /// <summary>
         /// To be added.
@@ -159,7 +175,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is computed from count.
         /// </param>
         [NativeApi(EntryPoint = "glScissorArrayv")]
-        public abstract unsafe void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* v)
+            => ImplScissorArray(first, count, v);
 
         /// <summary>
         /// To be added.
@@ -175,7 +193,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is computed from count.
         /// </param>
         [NativeApi(EntryPoint = "glScissorArrayv")]
-        public abstract void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref int v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref int v)
+            => ImplScissorArray(first, count, v);
 
         /// <summary>
         /// To be added.
@@ -196,7 +216,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glScissorIndexed")]
-        public abstract void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int left, [Flow(FlowDirection.In)] int bottom, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int left, [Flow(FlowDirection.In)] int bottom, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplScissorIndexed(index, left, bottom, width, height);
 
         /// <summary>
         /// To be added.
@@ -209,7 +231,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glScissorIndexedv")]
-        public abstract unsafe void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v)
+            => ImplScissorIndexed(index, v);
 
         /// <summary>
         /// To be added.
@@ -222,7 +246,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glScissorIndexedv")]
-        public abstract void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v)
+            => ImplScissorIndexed(index, v);
 
         /// <summary>
         /// To be added.
@@ -238,7 +264,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is computed from count.
         /// </param>
         [NativeApi(EntryPoint = "glViewportArrayv")]
-        public abstract unsafe void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] float* v)
+            => ImplViewportArray(first, count, v);
 
         /// <summary>
         /// To be added.
@@ -254,7 +282,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is computed from count.
         /// </param>
         [NativeApi(EntryPoint = "glViewportArrayv")]
-        public abstract void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref float v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref float v)
+            => ImplViewportArray(first, count, v);
 
         /// <summary>
         /// To be added.
@@ -275,7 +305,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glViewportIndexedf")]
-        public abstract void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float w, [Flow(FlowDirection.In)] float h);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float w, [Flow(FlowDirection.In)] float h)
+            => ImplViewportIndexed(index, x, y, w, h);
 
         /// <summary>
         /// To be added.
@@ -288,7 +320,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glViewportIndexedfv")]
-        public abstract unsafe void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v)
+            => ImplViewportIndexed(index, v);
 
         /// <summary>
         /// To be added.
@@ -301,11 +335,14 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glViewportIndexedfv")]
-        public abstract void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v)
+            => ImplViewportIndexed(index, v);
 
-        public ArbViewportArray(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbViewportArray(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

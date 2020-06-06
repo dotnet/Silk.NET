@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_texture_object")]
-    public abstract unsafe partial class ExtTextureObject : NativeExtension<GL>
+    public unsafe partial class ExtTextureObject : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_texture_object";
         /// <summary>
@@ -35,7 +35,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-        public abstract unsafe bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences)
+            => ImplAreTexturesResident(n, textures, residences);
 
         /// <summary>
         /// To be added.
@@ -53,7 +55,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
-        public abstract bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+            => ImplAreTexturesResident(n, textures, residences);
 
         /// <summary>
         /// To be added.
@@ -65,7 +69,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindTextureEXT")]
-        public abstract void BindTexture([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint texture);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindTexture([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint texture)
+            => ImplBindTexture(target, texture);
 
         /// <summary>
         /// To be added.
@@ -78,7 +84,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
-        public abstract unsafe void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures)
+            => ImplDeleteTextures(n, textures);
 
         /// <summary>
         /// To be added.
@@ -91,7 +99,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
-        public abstract void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> textures);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> textures)
+            => ImplDeleteTextures(n, textures);
 
         /// <summary>
         /// To be added.
@@ -104,7 +114,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenTexturesEXT")]
-        public abstract unsafe void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* textures);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* textures)
+            => ImplGenTextures(n, textures);
 
         /// <summary>
         /// To be added.
@@ -117,7 +129,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenTexturesEXT")]
-        public abstract void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
+            => ImplGenTextures(n, textures);
 
         /// <summary>
         /// To be added.
@@ -127,7 +141,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsTextureEXT")]
-        public abstract bool IsTexture([Flow(FlowDirection.In)] uint texture);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsTexture([Flow(FlowDirection.In)] uint texture)
+            => ImplIsTexture(texture);
 
         /// <summary>
         /// To be added.
@@ -144,7 +160,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
-        public abstract unsafe void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities)
+            => ImplPrioritizeTextures(n, textures, priorities);
 
         /// <summary>
         /// To be added.
@@ -161,7 +179,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
-        public abstract void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> priorities);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> priorities)
+            => ImplPrioritizeTextures(n, textures, priorities);
 
         /// <summary>
         /// To be added.
@@ -173,7 +193,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindTextureEXT")]
-        public abstract void BindTexture([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint texture);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindTexture([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint texture)
+            => ImplBindTexture(target, texture);
 
         /// <summary>
         /// To be added.
@@ -185,6 +207,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteTexture([Count(Parameter = "n"), Flow(FlowDirection.In)] uint textures)
         {
             // ArrayParameterOverloader
@@ -201,6 +224,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenTexture()
         {
             const uint n = 1;
@@ -210,9 +234,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             return ret;
         }
 
-        public ExtTextureObject(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtTextureObject(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

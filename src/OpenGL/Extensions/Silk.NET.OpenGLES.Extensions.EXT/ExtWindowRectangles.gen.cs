@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_window_rectangles")]
-    public abstract unsafe partial class ExtWindowRectangles : NativeExtension<GL>
+    public unsafe partial class ExtWindowRectangles : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_window_rectangles";
         /// <summary>
@@ -33,7 +33,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// This parameter's element count is computed from count.
         /// </param>
         [NativeApi(EntryPoint = "glWindowRectanglesEXT")]
-        public abstract unsafe void WindowRectangles([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* box);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void WindowRectangles([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* box)
+            => ImplWindowRectangles(mode, count, box);
 
         /// <summary>
         /// To be added.
@@ -49,11 +51,14 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// This parameter's element count is computed from count.
         /// </param>
         [NativeApi(EntryPoint = "glWindowRectanglesEXT")]
-        public abstract void WindowRectangles([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref int box);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowRectangles([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref int box)
+            => ImplWindowRectangles(mode, count, box);
 
-        public ExtWindowRectangles(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtWindowRectangles(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

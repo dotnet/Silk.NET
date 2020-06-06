@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_sparse_buffer")]
-    public abstract unsafe partial class ArbSparseBuffer : NativeExtension<GL>
+    public unsafe partial class ArbSparseBuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_sparse_buffer";
         /// <summary>
@@ -35,7 +35,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBufferPageCommitmentARB")]
-        public abstract void BufferPageCommitment([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] bool commit);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BufferPageCommitment([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] bool commit)
+            => ImplBufferPageCommitment(target, offset, size, commit);
 
         /// <summary>
         /// To be added.
@@ -53,7 +55,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glNamedBufferPageCommitmentEXT")]
-        public abstract void NamedBufferPageCommitment([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] bool commit);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void NamedBufferPageCommitment([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] bool commit)
+            => ImplNamedBufferPageCommitment(buffer, offset, size, commit);
 
         /// <summary>
         /// To be added.
@@ -70,6 +74,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// <param name="commit">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BufferPageCommitment([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] bool commit)
         {
             // IntPtrOverloader
@@ -91,15 +96,17 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// <param name="commit">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void NamedBufferPageCommitment([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] bool commit)
         {
             // IntPtrOverloader
             NamedBufferPageCommitment(buffer, new IntPtr(offset), new UIntPtr(size), commit);
         }
 
-        public ArbSparseBuffer(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbSparseBuffer(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

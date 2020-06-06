@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_blend_minmax")]
-    public abstract unsafe partial class ExtBlendMinmax : NativeExtension<GL>
+    public unsafe partial class ExtBlendMinmax : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_blend_minmax";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendEquationEXT")]
-        public abstract void BlendEquation([Flow(FlowDirection.In)] EXT mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendEquation([Flow(FlowDirection.In)] EXT mode)
+            => ImplBlendEquation(mode);
 
         /// <summary>
         /// To be added.
@@ -35,11 +37,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendEquationEXT")]
-        public abstract void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode)
+            => ImplBlendEquation(mode);
 
-        public ExtBlendMinmax(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtBlendMinmax(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

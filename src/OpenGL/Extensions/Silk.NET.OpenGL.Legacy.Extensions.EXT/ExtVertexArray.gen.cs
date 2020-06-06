@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_vertex_array")]
-    public abstract unsafe partial class ExtVertexArray : NativeExtension<GL>
+    public unsafe partial class ExtVertexArray : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_vertex_array";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glArrayElementEXT")]
-        public abstract void ArrayElement([Flow(FlowDirection.In)] int i);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ArrayElement([Flow(FlowDirection.In)] int i)
+            => ImplArrayElement(i);
 
         /// <summary>
         /// To be added.
@@ -48,7 +50,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from size, type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glColorPointerEXT")]
-        public abstract unsafe void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer)
+            => ImplColorPointer(size, type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -70,7 +74,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from size, type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glColorPointerEXT")]
-        public abstract void ColorPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ColorPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplColorPointer<T0>(size, type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -85,7 +91,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawArraysEXT")]
-        public abstract void DrawArrays([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawArrays([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count)
+            => ImplDrawArrays(mode, first, count);
 
         /// <summary>
         /// To be added.
@@ -101,7 +109,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from stride and count.
         /// </param>
         [NativeApi(EntryPoint = "glEdgeFlagPointerEXT")]
-        public abstract unsafe void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(FlowDirection.In)] bool* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(FlowDirection.In)] bool* pointer)
+            => ImplEdgeFlagPointer(stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -117,7 +127,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from stride and count.
         /// </param>
         [NativeApi(EntryPoint = "glEdgeFlagPointerEXT")]
-        public abstract void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(FlowDirection.In)] ref bool pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "stride, count"), Flow(FlowDirection.In)] ref bool pointer)
+            => ImplEdgeFlagPointer(stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -130,7 +142,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetPointervEXT")]
-        public abstract unsafe void GetPointer([Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPointer([Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params)
+            => ImplGetPointer(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -143,7 +157,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetPointervEXT")]
-        public abstract unsafe void GetPointer<T0>([Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPointer<T0>([Flow(FlowDirection.In)] EXT pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged
+            => ImplGetPointer<T0>(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -162,7 +178,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glIndexPointerEXT")]
-        public abstract unsafe void IndexPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void IndexPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer)
+            => ImplIndexPointer(type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -181,7 +199,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glIndexPointerEXT")]
-        public abstract void IndexPointer<T0>([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void IndexPointer<T0>([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplIndexPointer<T0>(type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -200,7 +220,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glNormalPointerEXT")]
-        public abstract unsafe void NormalPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void NormalPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer)
+            => ImplNormalPointer(type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -219,7 +241,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glNormalPointerEXT")]
-        public abstract void NormalPointer<T0>([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void NormalPointer<T0>([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplNormalPointer<T0>(type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -241,7 +265,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from size, type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glTexCoordPointerEXT")]
-        public abstract unsafe void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer)
+            => ImplTexCoordPointer(size, type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -263,7 +289,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from size, type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glTexCoordPointerEXT")]
-        public abstract void TexCoordPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexCoordPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplTexCoordPointer<T0>(size, type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -285,7 +313,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from size, type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glVertexPointerEXT")]
-        public abstract unsafe void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer)
+            => ImplVertexPointer(size, type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -307,7 +337,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from size, type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glVertexPointerEXT")]
-        public abstract void VertexPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplVertexPointer<T0>(size, type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -329,7 +361,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from size, type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glColorPointerEXT")]
-        public abstract unsafe void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer)
+            => ImplColorPointer(size, type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -351,7 +385,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from size, type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glColorPointerEXT")]
-        public abstract void ColorPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ColorPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplColorPointer<T0>(size, type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -366,7 +402,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawArraysEXT")]
-        public abstract void DrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count)
+            => ImplDrawArrays(mode, first, count);
 
         /// <summary>
         /// To be added.
@@ -379,7 +417,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetPointervEXT")]
-        public abstract unsafe void GetPointer([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPointer([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params)
+            => ImplGetPointer(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -392,7 +432,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetPointervEXT")]
-        public abstract unsafe void GetPointer<T0>([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPointer<T0>([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged
+            => ImplGetPointer<T0>(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -411,7 +453,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glIndexPointerEXT")]
-        public abstract unsafe void IndexPointer([Flow(FlowDirection.In)] IndexPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void IndexPointer([Flow(FlowDirection.In)] IndexPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer)
+            => ImplIndexPointer(type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -430,7 +474,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glIndexPointerEXT")]
-        public abstract void IndexPointer<T0>([Flow(FlowDirection.In)] IndexPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void IndexPointer<T0>([Flow(FlowDirection.In)] IndexPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplIndexPointer<T0>(type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -449,7 +495,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glNormalPointerEXT")]
-        public abstract unsafe void NormalPointer([Flow(FlowDirection.In)] NormalPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void NormalPointer([Flow(FlowDirection.In)] NormalPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] void* pointer)
+            => ImplNormalPointer(type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -468,7 +516,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glNormalPointerEXT")]
-        public abstract void NormalPointer<T0>([Flow(FlowDirection.In)] NormalPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void NormalPointer<T0>([Flow(FlowDirection.In)] NormalPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplNormalPointer<T0>(type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -490,7 +540,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from size, type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glTexCoordPointerEXT")]
-        public abstract unsafe void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer)
+            => ImplTexCoordPointer(size, type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -512,7 +564,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from size, type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glTexCoordPointerEXT")]
-        public abstract void TexCoordPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexCoordPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplTexCoordPointer<T0>(size, type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -534,7 +588,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from size, type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glVertexPointerEXT")]
-        public abstract unsafe void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] void* pointer)
+            => ImplVertexPointer(size, type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -556,7 +612,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from size, type, stride, and count.
         /// </param>
         [NativeApi(EntryPoint = "glVertexPointerEXT")]
-        public abstract void VertexPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint count, [Count(Computed = "size, type, stride, count"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplVertexPointer<T0>(size, type, stride, count, pointer);
 
         /// <summary>
         /// To be added.
@@ -568,6 +626,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void* GetPointer([Flow(FlowDirection.In)] EXT pname)
         {
             // ReturnTypeOverloader
@@ -586,6 +645,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// This parameter contains 1 elements.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void* GetPointer([Flow(FlowDirection.In)] GetPointervPName pname)
         {
             // ReturnTypeOverloader
@@ -594,9 +654,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             return ret;
         }
 
-        public ExtVertexArray(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtVertexArray(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

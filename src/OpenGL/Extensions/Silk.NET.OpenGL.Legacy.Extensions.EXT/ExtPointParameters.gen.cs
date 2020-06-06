@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_point_parameters")]
-    public abstract unsafe partial class ExtPointParameters : NativeExtension<GL>
+    public unsafe partial class ExtPointParameters : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_point_parameters";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPointParameterfEXT")]
-        public abstract void PointParameter([Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PointParameter([Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] float param)
+            => ImplPointParameter(pname, param);
 
         /// <summary>
         /// To be added.
@@ -42,7 +44,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glPointParameterfvEXT")]
-        public abstract unsafe void PointParameter([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void PointParameter([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params)
+            => ImplPointParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -55,7 +59,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glPointParameterfvEXT")]
-        public abstract void PointParameter([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PointParameter([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params)
+            => ImplPointParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -67,7 +73,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPointParameterfEXT")]
-        public abstract void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Flow(FlowDirection.In)] float param)
+            => ImplPointParameter(pname, param);
 
         /// <summary>
         /// To be added.
@@ -80,7 +88,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glPointParameterfvEXT")]
-        public abstract unsafe void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params)
+            => ImplPointParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -93,11 +103,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glPointParameterfvEXT")]
-        public abstract void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params)
+            => ImplPointParameter(pname, @params);
 
-        public ExtPointParameters(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtPointParameters(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

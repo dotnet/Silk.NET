@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_index_material")]
-    public abstract unsafe partial class ExtIndexMaterial : NativeExtension<GL>
+    public unsafe partial class ExtIndexMaterial : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_index_material";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glIndexMaterialEXT")]
-        public abstract void IndexMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] EXT mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void IndexMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] EXT mode)
+            => ImplIndexMaterial(face, mode);
 
         /// <summary>
         /// To be added.
@@ -41,11 +43,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glIndexMaterialEXT")]
-        public abstract void IndexMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] IndexMaterialParameterEXT mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void IndexMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] IndexMaterialParameterEXT mode)
+            => ImplIndexMaterial(face, mode);
 
-        public ExtIndexMaterial(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtIndexMaterial(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

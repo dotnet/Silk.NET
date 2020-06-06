@@ -4,8 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using Silk.NET.Core.Loader;
 using Ultz.SuperInvoke;
-using Ultz.SuperInvoke.Loader;
+
 namespace Silk.NET.OpenAL
 {
     public class ALLoader : LibraryLoader

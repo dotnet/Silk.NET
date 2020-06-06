@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_vertex_attrib_binding")]
-    public abstract unsafe partial class ArbVertexAttribBinding : NativeExtension<GL>
+    public unsafe partial class ArbVertexAttribBinding : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_vertex_attrib_binding";
         /// <summary>
@@ -35,7 +35,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindVertexBuffer")]
-        public abstract void BindVertexBuffer([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindVertexBuffer([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] uint stride)
+            => ImplBindVertexBuffer(bindingindex, buffer, offset, stride);
 
         /// <summary>
         /// To be added.
@@ -47,7 +49,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribBinding")]
-        public abstract void VertexAttribBinding([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] uint bindingindex);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribBinding([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] uint bindingindex)
+            => ImplVertexAttribBinding(attribindex, bindingindex);
 
         /// <summary>
         /// To be added.
@@ -68,7 +72,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribFormat")]
-        public abstract void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint relativeoffset);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint relativeoffset)
+            => ImplVertexAttribFormat(attribindex, size, type, normalized, relativeoffset);
 
         /// <summary>
         /// To be added.
@@ -86,7 +92,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIFormat")]
-        public abstract void VertexAttribIFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint relativeoffset);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribIFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint relativeoffset)
+            => ImplVertexAttribIFormat(attribindex, size, type, relativeoffset);
 
         /// <summary>
         /// To be added.
@@ -104,7 +112,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribLFormat")]
-        public abstract void VertexAttribLFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint relativeoffset);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribLFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint relativeoffset)
+            => ImplVertexAttribLFormat(attribindex, size, type, relativeoffset);
 
         /// <summary>
         /// To be added.
@@ -116,7 +126,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexBindingDivisor")]
-        public abstract void VertexBindingDivisor([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint divisor);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexBindingDivisor([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint divisor)
+            => ImplVertexBindingDivisor(bindingindex, divisor);
 
         /// <summary>
         /// To be added.
@@ -137,7 +149,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribFormat")]
-        public abstract void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint relativeoffset);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint relativeoffset)
+            => ImplVertexAttribFormat(attribindex, size, type, normalized, relativeoffset);
 
         /// <summary>
         /// To be added.
@@ -155,7 +169,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIFormat")]
-        public abstract void VertexAttribIFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint relativeoffset);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribIFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint relativeoffset)
+            => ImplVertexAttribIFormat(attribindex, size, type, relativeoffset);
 
         /// <summary>
         /// To be added.
@@ -173,7 +189,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribLFormat")]
-        public abstract void VertexAttribLFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribLType type, [Flow(FlowDirection.In)] uint relativeoffset);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribLFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribLType type, [Flow(FlowDirection.In)] uint relativeoffset)
+            => ImplVertexAttribLFormat(attribindex, size, type, relativeoffset);
 
         /// <summary>
         /// To be added.
@@ -190,15 +208,17 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// <param name="stride">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BindVertexBuffer([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint stride)
         {
             // IntPtrOverloader
             BindVertexBuffer(bindingindex, buffer, new IntPtr(offset), stride);
         }
 
-        public ArbVertexAttribBinding(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbVertexAttribBinding(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.NV
 {
     [Extension("NV_conditional_render")]
-    public abstract unsafe partial class NVConditionalRender : NativeExtension<GL>
+    public unsafe partial class NVConditionalRender : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_conditional_render";
         /// <summary>
@@ -29,13 +29,17 @@ namespace Silk.NET.OpenGL.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
-        public abstract void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV mode)
+            => ImplBeginConditionalRender(id, mode);
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glEndConditionalRenderNV")]
-        public abstract void EndConditionalRender();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void EndConditionalRender()
+            => ImplEndConditionalRender();
 
         /// <summary>
         /// To be added.
@@ -47,11 +51,14 @@ namespace Silk.NET.OpenGL.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
-        public abstract void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ConditionalRenderMode mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ConditionalRenderMode mode)
+            => ImplBeginConditionalRender(id, mode);
 
-        public NVConditionalRender(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVConditionalRender(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

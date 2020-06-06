@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_vertex_type_2_10_10_10_rev")]
-    public abstract unsafe partial class ArbVertexType2101010Rev : NativeExtension<GL>
+    public unsafe partial class ArbVertexType2101010Rev : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_vertex_type_2_10_10_10_rev";
         /// <summary>
@@ -35,7 +35,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP1ui")]
-        public abstract void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value)
+            => ImplVertexAttribP1(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -54,7 +56,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP1uiv")]
-        public abstract unsafe void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value)
+            => ImplVertexAttribP1(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -73,7 +77,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP1uiv")]
-        public abstract void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value)
+            => ImplVertexAttribP1(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -91,7 +97,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP2ui")]
-        public abstract void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value)
+            => ImplVertexAttribP2(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -110,7 +118,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP2uiv")]
-        public abstract unsafe void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value)
+            => ImplVertexAttribP2(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -129,7 +139,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP2uiv")]
-        public abstract void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value)
+            => ImplVertexAttribP2(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -147,7 +159,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP3ui")]
-        public abstract void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value)
+            => ImplVertexAttribP3(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -166,7 +180,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP3uiv")]
-        public abstract unsafe void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value)
+            => ImplVertexAttribP3(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -185,7 +201,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP3uiv")]
-        public abstract void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value)
+            => ImplVertexAttribP3(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -203,7 +221,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP4ui")]
-        public abstract void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value)
+            => ImplVertexAttribP4(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -222,7 +242,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP4uiv")]
-        public abstract unsafe void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value)
+            => ImplVertexAttribP4(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -241,7 +263,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP4uiv")]
-        public abstract void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value)
+            => ImplVertexAttribP4(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -259,7 +283,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP1ui")]
-        public abstract void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value)
+            => ImplVertexAttribP1(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -278,7 +304,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP1uiv")]
-        public abstract unsafe void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value)
+            => ImplVertexAttribP1(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -297,7 +325,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP1uiv")]
-        public abstract void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value)
+            => ImplVertexAttribP1(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -315,7 +345,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP2ui")]
-        public abstract void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value)
+            => ImplVertexAttribP2(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -334,7 +366,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP2uiv")]
-        public abstract unsafe void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value)
+            => ImplVertexAttribP2(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -353,7 +387,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP2uiv")]
-        public abstract void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value)
+            => ImplVertexAttribP2(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -371,7 +407,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP3ui")]
-        public abstract void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value)
+            => ImplVertexAttribP3(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -390,7 +428,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP3uiv")]
-        public abstract unsafe void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value)
+            => ImplVertexAttribP3(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -409,7 +449,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP3uiv")]
-        public abstract void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value)
+            => ImplVertexAttribP3(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -427,7 +469,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP4ui")]
-        public abstract void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value)
+            => ImplVertexAttribP4(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -446,7 +490,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP4uiv")]
-        public abstract unsafe void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value)
+            => ImplVertexAttribP4(index, type, normalized, value);
 
         /// <summary>
         /// To be added.
@@ -465,11 +511,14 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribP4uiv")]
-        public abstract void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value)
+            => ImplVertexAttribP4(index, type, normalized, value);
 
-        public ArbVertexType2101010Rev(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbVertexType2101010Rev(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_register_combiners")]
-    public abstract unsafe partial class NVRegisterCombiners : NativeExtension<GL>
+    public unsafe partial class NVRegisterCombiners : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_register_combiners";
         /// <summary>
@@ -41,7 +41,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerInputNV")]
-        public abstract void CombinerInput([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV input, [Flow(FlowDirection.In)] NV mapping, [Flow(FlowDirection.In)] NV componentUsage);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CombinerInput([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV input, [Flow(FlowDirection.In)] NV mapping, [Flow(FlowDirection.In)] NV componentUsage)
+            => ImplCombinerInput(stage, portion, variable, input, mapping, componentUsage);
 
         /// <summary>
         /// To be added.
@@ -77,7 +79,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerOutputNV")]
-        public abstract void CombinerOutput([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV abOutput, [Flow(FlowDirection.In)] NV cdOutput, [Flow(FlowDirection.In)] NV sumOutput, [Flow(FlowDirection.In)] NV scale, [Flow(FlowDirection.In)] NV bias, [Flow(FlowDirection.In)] bool abDotProduct, [Flow(FlowDirection.In)] bool cdDotProduct, [Flow(FlowDirection.In)] bool muxSum);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CombinerOutput([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV abOutput, [Flow(FlowDirection.In)] NV cdOutput, [Flow(FlowDirection.In)] NV sumOutput, [Flow(FlowDirection.In)] NV scale, [Flow(FlowDirection.In)] NV bias, [Flow(FlowDirection.In)] bool abDotProduct, [Flow(FlowDirection.In)] bool cdDotProduct, [Flow(FlowDirection.In)] bool muxSum)
+            => ImplCombinerOutput(stage, portion, abOutput, cdOutput, sumOutput, scale, bias, abDotProduct, cdDotProduct, muxSum);
 
         /// <summary>
         /// To be added.
@@ -90,7 +94,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerParameterfvNV")]
-        public abstract unsafe void CombinerParameter([Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CombinerParameter([Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params)
+            => ImplCombinerParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -103,7 +109,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerParameterfvNV")]
-        public abstract void CombinerParameter([Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CombinerParameter([Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params)
+            => ImplCombinerParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -115,7 +123,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerParameterfNV")]
-        public abstract void CombinerParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CombinerParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] float param)
+            => ImplCombinerParameter(pname, param);
 
         /// <summary>
         /// To be added.
@@ -128,7 +138,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerParameterivNV")]
-        public abstract unsafe void CombinerParameter([Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CombinerParameter([Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplCombinerParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -141,7 +153,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerParameterivNV")]
-        public abstract void CombinerParameter([Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CombinerParameter([Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplCombinerParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -153,7 +167,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerParameteriNV")]
-        public abstract void CombinerParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CombinerParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int param)
+            => ImplCombinerParameter(pname, param);
 
         /// <summary>
         /// To be added.
@@ -171,7 +187,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFinalCombinerInputNV")]
-        public abstract void FinalCombinerInput([Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV input, [Flow(FlowDirection.In)] NV mapping, [Flow(FlowDirection.In)] NV componentUsage);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FinalCombinerInput([Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV input, [Flow(FlowDirection.In)] NV mapping, [Flow(FlowDirection.In)] NV componentUsage)
+            => ImplFinalCombinerInput(variable, input, mapping, componentUsage);
 
         /// <summary>
         /// To be added.
@@ -193,7 +211,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerInputParameterfvNV")]
-        public abstract unsafe void GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetCombinerInputParameter(stage, portion, variable, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -215,7 +235,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerInputParameterfvNV")]
-        public abstract void GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetCombinerInputParameter(stage, portion, variable, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -237,7 +259,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerInputParameterivNV")]
-        public abstract unsafe void GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetCombinerInputParameter(stage, portion, variable, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -259,7 +283,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerInputParameterivNV")]
-        public abstract void GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetCombinerInputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetCombinerInputParameter(stage, portion, variable, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -278,7 +304,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerOutputParameterfvNV")]
-        public abstract unsafe void GetCombinerOutputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetCombinerOutputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetCombinerOutputParameter(stage, portion, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -297,7 +325,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerOutputParameterfvNV")]
-        public abstract void GetCombinerOutputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetCombinerOutputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetCombinerOutputParameter(stage, portion, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -316,7 +346,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerOutputParameterivNV")]
-        public abstract unsafe void GetCombinerOutputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetCombinerOutputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetCombinerOutputParameter(stage, portion, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -335,7 +367,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerOutputParameterivNV")]
-        public abstract void GetCombinerOutputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetCombinerOutputParameter([Flow(FlowDirection.In)] NV stage, [Flow(FlowDirection.In)] NV portion, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetCombinerOutputParameter(stage, portion, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -351,7 +385,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFinalCombinerInputParameterfvNV")]
-        public abstract unsafe void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetFinalCombinerInputParameter(variable, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -367,7 +403,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFinalCombinerInputParameterfvNV")]
-        public abstract void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetFinalCombinerInputParameter(variable, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -383,7 +421,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFinalCombinerInputParameterivNV")]
-        public abstract unsafe void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetFinalCombinerInputParameter(variable, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -399,7 +439,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFinalCombinerInputParameterivNV")]
-        public abstract void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] NV variable, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetFinalCombinerInputParameter(variable, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -423,7 +465,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerInputNV")]
-        public abstract void CombinerInput([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerRegisterNV input, [Flow(FlowDirection.In)] CombinerMappingNV mapping, [Flow(FlowDirection.In)] CombinerComponentUsageNV componentUsage);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CombinerInput([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerRegisterNV input, [Flow(FlowDirection.In)] CombinerMappingNV mapping, [Flow(FlowDirection.In)] CombinerComponentUsageNV componentUsage)
+            => ImplCombinerInput(stage, portion, variable, input, mapping, componentUsage);
 
         /// <summary>
         /// To be added.
@@ -459,7 +503,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerOutputNV")]
-        public abstract void CombinerOutput([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerRegisterNV abOutput, [Flow(FlowDirection.In)] CombinerRegisterNV cdOutput, [Flow(FlowDirection.In)] CombinerRegisterNV sumOutput, [Flow(FlowDirection.In)] CombinerScaleNV scale, [Flow(FlowDirection.In)] CombinerBiasNV bias, [Flow(FlowDirection.In)] bool abDotProduct, [Flow(FlowDirection.In)] bool cdDotProduct, [Flow(FlowDirection.In)] bool muxSum);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CombinerOutput([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerRegisterNV abOutput, [Flow(FlowDirection.In)] CombinerRegisterNV cdOutput, [Flow(FlowDirection.In)] CombinerRegisterNV sumOutput, [Flow(FlowDirection.In)] CombinerScaleNV scale, [Flow(FlowDirection.In)] CombinerBiasNV bias, [Flow(FlowDirection.In)] bool abDotProduct, [Flow(FlowDirection.In)] bool cdDotProduct, [Flow(FlowDirection.In)] bool muxSum)
+            => ImplCombinerOutput(stage, portion, abOutput, cdOutput, sumOutput, scale, bias, abDotProduct, cdDotProduct, muxSum);
 
         /// <summary>
         /// To be added.
@@ -472,7 +518,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerParameterfvNV")]
-        public abstract unsafe void CombinerParameter([Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CombinerParameter([Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params)
+            => ImplCombinerParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -485,7 +533,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerParameterfvNV")]
-        public abstract void CombinerParameter([Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CombinerParameter([Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params)
+            => ImplCombinerParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -497,7 +547,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerParameterfNV")]
-        public abstract void CombinerParameter([Flow(FlowDirection.In)] CombinerParameterNV pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CombinerParameter([Flow(FlowDirection.In)] CombinerParameterNV pname, [Flow(FlowDirection.In)] float param)
+            => ImplCombinerParameter(pname, param);
 
         /// <summary>
         /// To be added.
@@ -510,7 +562,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerParameterivNV")]
-        public abstract unsafe void CombinerParameter([Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CombinerParameter([Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplCombinerParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -523,7 +577,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerParameterivNV")]
-        public abstract void CombinerParameter([Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CombinerParameter([Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplCombinerParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -535,7 +591,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCombinerParameteriNV")]
-        public abstract void CombinerParameter([Flow(FlowDirection.In)] CombinerParameterNV pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CombinerParameter([Flow(FlowDirection.In)] CombinerParameterNV pname, [Flow(FlowDirection.In)] int param)
+            => ImplCombinerParameter(pname, param);
 
         /// <summary>
         /// To be added.
@@ -553,7 +611,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFinalCombinerInputNV")]
-        public abstract void FinalCombinerInput([Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerRegisterNV input, [Flow(FlowDirection.In)] CombinerMappingNV mapping, [Flow(FlowDirection.In)] CombinerComponentUsageNV componentUsage);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FinalCombinerInput([Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerRegisterNV input, [Flow(FlowDirection.In)] CombinerMappingNV mapping, [Flow(FlowDirection.In)] CombinerComponentUsageNV componentUsage)
+            => ImplFinalCombinerInput(variable, input, mapping, componentUsage);
 
         /// <summary>
         /// To be added.
@@ -575,7 +635,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerInputParameterfvNV")]
-        public abstract unsafe void GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetCombinerInputParameter(stage, portion, variable, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -597,7 +659,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerInputParameterfvNV")]
-        public abstract void GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetCombinerInputParameter(stage, portion, variable, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -619,7 +683,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerInputParameterivNV")]
-        public abstract unsafe void GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetCombinerInputParameter(stage, portion, variable, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -641,7 +707,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerInputParameterivNV")]
-        public abstract void GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetCombinerInputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetCombinerInputParameter(stage, portion, variable, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -660,7 +728,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerOutputParameterfvNV")]
-        public abstract unsafe void GetCombinerOutputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetCombinerOutputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetCombinerOutputParameter(stage, portion, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -679,7 +749,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerOutputParameterfvNV")]
-        public abstract void GetCombinerOutputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetCombinerOutputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetCombinerOutputParameter(stage, portion, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -698,7 +770,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerOutputParameterivNV")]
-        public abstract unsafe void GetCombinerOutputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetCombinerOutputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetCombinerOutputParameter(stage, portion, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -717,7 +791,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetCombinerOutputParameterivNV")]
-        public abstract void GetCombinerOutputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetCombinerOutputParameter([Flow(FlowDirection.In)] CombinerStageNV stage, [Flow(FlowDirection.In)] CombinerPortionNV portion, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetCombinerOutputParameter(stage, portion, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -733,7 +809,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFinalCombinerInputParameterfvNV")]
-        public abstract unsafe void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetFinalCombinerInputParameter(variable, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -749,7 +827,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFinalCombinerInputParameterfvNV")]
-        public abstract void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetFinalCombinerInputParameter(variable, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -765,7 +845,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFinalCombinerInputParameterivNV")]
-        public abstract unsafe void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetFinalCombinerInputParameter(variable, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -781,11 +863,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFinalCombinerInputParameterivNV")]
-        public abstract void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFinalCombinerInputParameter([Flow(FlowDirection.In)] CombinerVariableNV variable, [Flow(FlowDirection.In)] CombinerParameterNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetFinalCombinerInputParameter(variable, pname, @params);
 
-        public NVRegisterCombiners(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVRegisterCombiners(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

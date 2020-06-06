@@ -4,7 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using Ultz.SuperInvoke.Loader;
+using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {

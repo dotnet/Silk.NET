@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_draw_range_elements")]
-    public abstract unsafe partial class ExtDrawRangeElements : NativeExtension<GL>
+    public unsafe partial class ExtDrawRangeElements : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_draw_range_elements";
         /// <summary>
@@ -42,7 +42,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from count and type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElementsEXT")]
-        public abstract unsafe void DrawRangeElements([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawRangeElements([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices)
+            => ImplDrawRangeElements(mode, start, end, count, type, indices);
 
         /// <summary>
         /// To be added.
@@ -67,7 +69,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from count and type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElementsEXT")]
-        public abstract void DrawRangeElements<T0>([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawRangeElements<T0>([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged
+            => ImplDrawRangeElements<T0>(mode, start, end, count, type, indices);
 
         /// <summary>
         /// To be added.
@@ -92,7 +96,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from count and type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElementsEXT")]
-        public abstract unsafe void DrawRangeElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawRangeElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices)
+            => ImplDrawRangeElements(mode, start, end, count, type, indices);
 
         /// <summary>
         /// To be added.
@@ -117,11 +123,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from count and type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElementsEXT")]
-        public abstract void DrawRangeElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawRangeElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged
+            => ImplDrawRangeElements<T0>(mode, start, end, count, type, indices);
 
-        public ExtDrawRangeElements(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtDrawRangeElements(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

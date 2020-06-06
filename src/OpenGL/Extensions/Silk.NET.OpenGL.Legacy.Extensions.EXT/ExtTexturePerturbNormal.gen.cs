@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_texture_perturb_normal")]
-    public abstract unsafe partial class ExtTexturePerturbNormal : NativeExtension<GL>
+    public unsafe partial class ExtTexturePerturbNormal : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_texture_perturb_normal";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTextureNormalEXT")]
-        public abstract void TextureNormal([Flow(FlowDirection.In)] EXT mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TextureNormal([Flow(FlowDirection.In)] EXT mode)
+            => ImplTextureNormal(mode);
 
         /// <summary>
         /// To be added.
@@ -35,11 +37,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTextureNormalEXT")]
-        public abstract void TextureNormal([Flow(FlowDirection.In)] TextureNormalModeEXT mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TextureNormal([Flow(FlowDirection.In)] TextureNormalModeEXT mode)
+            => ImplTextureNormal(mode);
 
-        public ExtTexturePerturbNormal(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtTexturePerturbNormal(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

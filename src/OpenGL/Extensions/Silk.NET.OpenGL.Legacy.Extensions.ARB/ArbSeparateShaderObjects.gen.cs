@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_separate_shader_objects")]
-    public abstract unsafe partial class ArbSeparateShaderObjects : NativeExtension<GL>
+    public unsafe partial class ArbSeparateShaderObjects : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_separate_shader_objects";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glActiveShaderProgram")]
-        public abstract void ActiveShaderProgram([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint program);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ActiveShaderProgram([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint program)
+            => ImplActiveShaderProgram(pipeline, program);
 
         /// <summary>
         /// To be added.
@@ -38,7 +40,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindProgramPipeline")]
-        public abstract void BindProgramPipeline([Flow(FlowDirection.In)] uint pipeline);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindProgramPipeline([Flow(FlowDirection.In)] uint pipeline)
+            => ImplBindProgramPipeline(pipeline);
 
         /// <summary>
         /// To be added.
@@ -55,7 +59,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCreateShaderProgramv")]
-        public abstract unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** strings);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** strings)
+            => ImplCreateShaderProgram(type, count, strings);
 
         /// <summary>
         /// To be added.
@@ -68,7 +74,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteProgramPipelines")]
-        public abstract unsafe void DeleteProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* pipelines);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* pipelines)
+            => ImplDeleteProgramPipelines(n, pipelines);
 
         /// <summary>
         /// To be added.
@@ -81,7 +89,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteProgramPipelines")]
-        public abstract void DeleteProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> pipelines);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> pipelines)
+            => ImplDeleteProgramPipelines(n, pipelines);
 
         /// <summary>
         /// To be added.
@@ -94,7 +104,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenProgramPipelines")]
-        public abstract unsafe void GenProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* pipelines);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* pipelines)
+            => ImplGenProgramPipelines(n, pipelines);
 
         /// <summary>
         /// To be added.
@@ -107,7 +119,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenProgramPipelines")]
-        public abstract void GenProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> pipelines);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> pipelines)
+            => ImplGenProgramPipelines(n, pipelines);
 
         /// <summary>
         /// To be added.
@@ -123,7 +137,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineiv")]
-        public abstract unsafe void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetProgramPipeline(pipeline, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -139,7 +155,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineiv")]
-        public abstract void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetProgramPipeline(pipeline, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -159,7 +177,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineInfoLog")]
-        public abstract unsafe void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* infoLog)
+            => ImplGetProgramPipelineInfoLog(pipeline, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -179,7 +199,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineInfoLog")]
-        public abstract void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> infoLog)
+            => ImplGetProgramPipelineInfoLog(pipeline, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -189,7 +211,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsProgramPipeline")]
-        public abstract bool IsProgramPipeline([Flow(FlowDirection.In)] uint pipeline);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsProgramPipeline([Flow(FlowDirection.In)] uint pipeline)
+            => ImplIsProgramPipeline(pipeline);
 
         /// <summary>
         /// To be added.
@@ -204,7 +228,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramParameteri")]
-        public abstract void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] int value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] int value)
+            => ImplProgramParameter(program, pname, value);
 
         /// <summary>
         /// To be added.
@@ -219,7 +245,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1i")]
-        public abstract void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0)
+            => ImplProgramUniform1(program, location, v0);
 
         /// <summary>
         /// To be added.
@@ -238,7 +266,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1iv")]
-        public abstract unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value)
+            => ImplProgramUniform1(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -257,7 +287,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1iv")]
-        public abstract void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value)
+            => ImplProgramUniform1(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -272,7 +304,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1f")]
-        public abstract void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0)
+            => ImplProgramUniform1(program, location, v0);
 
         /// <summary>
         /// To be added.
@@ -291,7 +325,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1fv")]
-        public abstract unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniform1(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -310,7 +346,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1fv")]
-        public abstract void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniform1(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -325,7 +363,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1d")]
-        public abstract void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double v0);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double v0)
+            => ImplProgramUniform1(program, location, v0);
 
         /// <summary>
         /// To be added.
@@ -344,7 +384,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1dv")]
-        public abstract unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value)
+            => ImplProgramUniform1(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -363,7 +405,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1dv")]
-        public abstract void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value)
+            => ImplProgramUniform1(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -378,7 +422,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1ui")]
-        public abstract void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0)
+            => ImplProgramUniform1(program, location, v0);
 
         /// <summary>
         /// To be added.
@@ -397,7 +443,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1uiv")]
-        public abstract unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value)
+            => ImplProgramUniform1(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -416,7 +464,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1uiv")]
-        public abstract void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value)
+            => ImplProgramUniform1(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -434,7 +484,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2i")]
-        public abstract void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1)
+            => ImplProgramUniform2(program, location, v0, v1);
 
         /// <summary>
         /// To be added.
@@ -453,7 +505,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2iv")]
-        public abstract unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value)
+            => ImplProgramUniform2(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -472,7 +526,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2iv")]
-        public abstract void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value)
+            => ImplProgramUniform2(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -490,7 +546,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2f")]
-        public abstract void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1)
+            => ImplProgramUniform2(program, location, v0, v1);
 
         /// <summary>
         /// To be added.
@@ -509,7 +567,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2fv")]
-        public abstract unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniform2(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -528,7 +588,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2fv")]
-        public abstract void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniform2(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -546,7 +608,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2d")]
-        public abstract void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double v0, [Flow(FlowDirection.In)] double v1);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double v0, [Flow(FlowDirection.In)] double v1)
+            => ImplProgramUniform2(program, location, v0, v1);
 
         /// <summary>
         /// To be added.
@@ -565,7 +629,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2dv")]
-        public abstract unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value)
+            => ImplProgramUniform2(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -584,7 +650,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2dv")]
-        public abstract void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value)
+            => ImplProgramUniform2(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -602,7 +670,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2ui")]
-        public abstract void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1)
+            => ImplProgramUniform2(program, location, v0, v1);
 
         /// <summary>
         /// To be added.
@@ -621,7 +691,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2uiv")]
-        public abstract unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value)
+            => ImplProgramUniform2(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -640,7 +712,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2uiv")]
-        public abstract void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value)
+            => ImplProgramUniform2(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -661,7 +735,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3i")]
-        public abstract void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2)
+            => ImplProgramUniform3(program, location, v0, v1, v2);
 
         /// <summary>
         /// To be added.
@@ -680,7 +756,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3iv")]
-        public abstract unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value)
+            => ImplProgramUniform3(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -699,7 +777,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3iv")]
-        public abstract void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value)
+            => ImplProgramUniform3(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -720,7 +800,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3f")]
-        public abstract void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2)
+            => ImplProgramUniform3(program, location, v0, v1, v2);
 
         /// <summary>
         /// To be added.
@@ -739,7 +821,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3fv")]
-        public abstract unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniform3(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -758,7 +842,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3fv")]
-        public abstract void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniform3(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -779,7 +865,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3d")]
-        public abstract void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double v0, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double v0, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2)
+            => ImplProgramUniform3(program, location, v0, v1, v2);
 
         /// <summary>
         /// To be added.
@@ -798,7 +886,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3dv")]
-        public abstract unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value)
+            => ImplProgramUniform3(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -817,7 +907,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3dv")]
-        public abstract void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value)
+            => ImplProgramUniform3(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -838,7 +930,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3ui")]
-        public abstract void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2)
+            => ImplProgramUniform3(program, location, v0, v1, v2);
 
         /// <summary>
         /// To be added.
@@ -857,7 +951,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3uiv")]
-        public abstract unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value)
+            => ImplProgramUniform3(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -876,7 +972,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3uiv")]
-        public abstract void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value)
+            => ImplProgramUniform3(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -900,7 +998,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4i")]
-        public abstract void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2, [Flow(FlowDirection.In)] int v3);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2, [Flow(FlowDirection.In)] int v3)
+            => ImplProgramUniform4(program, location, v0, v1, v2, v3);
 
         /// <summary>
         /// To be added.
@@ -919,7 +1019,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4iv")]
-        public abstract unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value)
+            => ImplProgramUniform4(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -938,7 +1040,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4iv")]
-        public abstract void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value)
+            => ImplProgramUniform4(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -962,7 +1066,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4f")]
-        public abstract void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] float v3);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] float v3)
+            => ImplProgramUniform4(program, location, v0, v1, v2, v3);
 
         /// <summary>
         /// To be added.
@@ -981,7 +1087,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4fv")]
-        public abstract unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniform4(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -1000,7 +1108,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4fv")]
-        public abstract void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniform4(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -1024,7 +1134,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4d")]
-        public abstract void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double v0, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] double v3);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double v0, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] double v3)
+            => ImplProgramUniform4(program, location, v0, v1, v2, v3);
 
         /// <summary>
         /// To be added.
@@ -1043,7 +1155,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4dv")]
-        public abstract unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value)
+            => ImplProgramUniform4(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -1062,7 +1176,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4dv")]
-        public abstract void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value)
+            => ImplProgramUniform4(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -1086,7 +1202,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4ui")]
-        public abstract void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2, [Flow(FlowDirection.In)] uint v3);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2, [Flow(FlowDirection.In)] uint v3)
+            => ImplProgramUniform4(program, location, v0, v1, v2, v3);
 
         /// <summary>
         /// To be added.
@@ -1105,7 +1223,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4uiv")]
-        public abstract unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value)
+            => ImplProgramUniform4(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -1124,7 +1244,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4uiv")]
-        public abstract void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value)
+            => ImplProgramUniform4(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -1146,7 +1268,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2fv")]
-        public abstract unsafe void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1168,7 +1292,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2fv")]
-        public abstract void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1190,7 +1316,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2dv")]
-        public abstract unsafe void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value)
+            => ImplProgramUniformMatrix2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1212,7 +1340,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2dv")]
-        public abstract void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value)
+            => ImplProgramUniformMatrix2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1234,7 +1364,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x3fv")]
-        public abstract unsafe void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix2x3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1256,7 +1388,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x3fv")]
-        public abstract void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix2x3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1278,7 +1412,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x3dv")]
-        public abstract unsafe void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value)
+            => ImplProgramUniformMatrix2x3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1300,7 +1436,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x3dv")]
-        public abstract void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value)
+            => ImplProgramUniformMatrix2x3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1322,7 +1460,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x4fv")]
-        public abstract unsafe void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix2x4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1344,7 +1484,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x4fv")]
-        public abstract void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix2x4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1366,7 +1508,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x4dv")]
-        public abstract unsafe void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value)
+            => ImplProgramUniformMatrix2x4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1388,7 +1532,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x4dv")]
-        public abstract void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value)
+            => ImplProgramUniformMatrix2x4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1410,7 +1556,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3fv")]
-        public abstract unsafe void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1432,7 +1580,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3fv")]
-        public abstract void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1454,7 +1604,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3dv")]
-        public abstract unsafe void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value)
+            => ImplProgramUniformMatrix3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1476,7 +1628,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3dv")]
-        public abstract void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value)
+            => ImplProgramUniformMatrix3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1498,7 +1652,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x2fv")]
-        public abstract unsafe void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix3x2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1520,7 +1676,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x2fv")]
-        public abstract void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix3x2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1542,7 +1700,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x2dv")]
-        public abstract unsafe void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value)
+            => ImplProgramUniformMatrix3x2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1564,7 +1724,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x2dv")]
-        public abstract void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value)
+            => ImplProgramUniformMatrix3x2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1586,7 +1748,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x4fv")]
-        public abstract unsafe void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix3x4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1608,7 +1772,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x4fv")]
-        public abstract void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix3x4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1630,7 +1796,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x4dv")]
-        public abstract unsafe void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value)
+            => ImplProgramUniformMatrix3x4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1652,7 +1820,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x4dv")]
-        public abstract void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value)
+            => ImplProgramUniformMatrix3x4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1674,7 +1844,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4fv")]
-        public abstract unsafe void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1696,7 +1868,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4fv")]
-        public abstract void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1718,7 +1892,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4dv")]
-        public abstract unsafe void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value)
+            => ImplProgramUniformMatrix4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1740,7 +1916,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4dv")]
-        public abstract void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value)
+            => ImplProgramUniformMatrix4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1762,7 +1940,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x2fv")]
-        public abstract unsafe void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix4x2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1784,7 +1964,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x2fv")]
-        public abstract void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix4x2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1806,7 +1988,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x2dv")]
-        public abstract unsafe void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value)
+            => ImplProgramUniformMatrix4x2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1828,7 +2012,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x2dv")]
-        public abstract void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value)
+            => ImplProgramUniformMatrix4x2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1850,7 +2036,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x3fv")]
-        public abstract unsafe void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix4x3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1872,7 +2060,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x3fv")]
-        public abstract void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix4x3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1894,7 +2084,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x3dv")]
-        public abstract unsafe void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value)
+            => ImplProgramUniformMatrix4x3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1916,7 +2108,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x3dv")]
-        public abstract void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value)
+            => ImplProgramUniformMatrix4x3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -1931,7 +2125,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUseProgramStages")]
-        public abstract void UseProgramStages([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint stages, [Flow(FlowDirection.In)] uint program);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UseProgramStages([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint stages, [Flow(FlowDirection.In)] uint program)
+            => ImplUseProgramStages(pipeline, stages, program);
 
         /// <summary>
         /// To be added.
@@ -1940,7 +2136,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glValidateProgramPipeline")]
-        public abstract void ValidateProgramPipeline([Flow(FlowDirection.In)] uint pipeline);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ValidateProgramPipeline([Flow(FlowDirection.In)] uint pipeline)
+            => ImplValidateProgramPipeline(pipeline);
 
         /// <summary>
         /// To be added.
@@ -1957,7 +2155,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCreateShaderProgramv")]
-        public abstract unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** strings);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** strings)
+            => ImplCreateShaderProgram(type, count, strings);
 
         /// <summary>
         /// To be added.
@@ -1973,7 +2173,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineiv")]
-        public abstract unsafe void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] PipelineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] PipelineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetProgramPipeline(pipeline, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1989,7 +2191,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineiv")]
-        public abstract void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] PipelineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] PipelineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetProgramPipeline(pipeline, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -2008,7 +2212,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineInfoLog")]
-        public abstract unsafe void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog)
+            => ImplGetProgramPipelineInfoLog(pipeline, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -2027,7 +2233,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineInfoLog")]
-        public abstract void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog)
+            => ImplGetProgramPipelineInfoLog(pipeline, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -2042,7 +2250,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramParameteri")]
-        public abstract void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramParameterPName pname, [Flow(FlowDirection.In)] int value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramParameterPName pname, [Flow(FlowDirection.In)] int value)
+            => ImplProgramParameter(program, pname, value);
 
         /// <summary>
         /// To be added.
@@ -2058,6 +2268,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         /// <returns>See summary.</returns>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] stringsSa)
         {
             // StringArrayOverloader
@@ -2077,6 +2288,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteProgramPipeline([Count(Parameter = "n"), Flow(FlowDirection.In)] uint pipelines)
         {
             // ArrayParameterOverloader
@@ -2093,6 +2305,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenProgramPipeline()
         {
             const uint n = 1;
@@ -2116,6 +2329,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         /// <returns>See summary.</returns>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] stringsSa)
         {
             // StringArrayOverloader
@@ -2125,9 +2339,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             return ret;
         }
 
-        public ArbSeparateShaderObjects(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbSeparateShaderObjects(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

@@ -6,24 +6,26 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_primitive_restart")]
-    public abstract unsafe partial class NVPrimitiveRestart : NativeExtension<GL>
+    public unsafe partial class NVPrimitiveRestart : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_primitive_restart";
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glPrimitiveRestartNV")]
-        public abstract void PrimitiveRestart();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PrimitiveRestart()
+            => ImplPrimitiveRestart();
 
         /// <summary>
         /// To be added.
@@ -32,11 +34,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPrimitiveRestartIndexNV")]
-        public abstract void PrimitiveRestartIndex([Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PrimitiveRestartIndex([Flow(FlowDirection.In)] uint index)
+            => ImplPrimitiveRestartIndex(index);
 
-        public NVPrimitiveRestart(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVPrimitiveRestart(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

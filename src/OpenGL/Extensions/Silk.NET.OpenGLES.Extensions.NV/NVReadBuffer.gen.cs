@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_read_buffer")]
-    public abstract unsafe partial class NVReadBuffer : NativeExtension<GL>
+    public unsafe partial class NVReadBuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_read_buffer";
         /// <summary>
@@ -26,11 +26,14 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glReadBufferNV")]
-        public abstract void ReadBuffer([Flow(FlowDirection.In)] NV mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReadBuffer([Flow(FlowDirection.In)] NV mode)
+            => ImplReadBuffer(mode);
 
-        public NVReadBuffer(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVReadBuffer(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

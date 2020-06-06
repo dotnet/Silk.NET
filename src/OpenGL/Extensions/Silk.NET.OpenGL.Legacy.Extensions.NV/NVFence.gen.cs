@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_fence")]
-    public abstract unsafe partial class NVFence : NativeExtension<GL>
+    public unsafe partial class NVFence : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_fence";
         /// <summary>
@@ -30,7 +30,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteFencesNV")]
-        public abstract unsafe void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* fences);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* fences)
+            => ImplDeleteFences(n, fences);
 
         /// <summary>
         /// To be added.
@@ -43,7 +45,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteFencesNV")]
-        public abstract void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> fences);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> fences)
+            => ImplDeleteFences(n, fences);
 
         /// <summary>
         /// To be added.
@@ -52,7 +56,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFinishFenceNV")]
-        public abstract void FinishFence([Flow(FlowDirection.In)] uint fence);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FinishFence([Flow(FlowDirection.In)] uint fence)
+            => ImplFinishFence(fence);
 
         /// <summary>
         /// To be added.
@@ -65,7 +71,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenFencesNV")]
-        public abstract unsafe void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* fences);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* fences)
+            => ImplGenFences(n, fences);
 
         /// <summary>
         /// To be added.
@@ -78,7 +86,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenFencesNV")]
-        public abstract void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> fences);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> fences)
+            => ImplGenFences(n, fences);
 
         /// <summary>
         /// To be added.
@@ -94,7 +104,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFenceivNV")]
-        public abstract unsafe void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetFence(fence, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -110,7 +122,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFenceivNV")]
-        public abstract void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetFence(fence, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -120,7 +134,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsFenceNV")]
-        public abstract bool IsFence([Flow(FlowDirection.In)] uint fence);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsFence([Flow(FlowDirection.In)] uint fence)
+            => ImplIsFence(fence);
 
         /// <summary>
         /// To be added.
@@ -132,7 +148,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSetFenceNV")]
-        public abstract void SetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV condition);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] NV condition)
+            => ImplSetFence(fence, condition);
 
         /// <summary>
         /// To be added.
@@ -142,7 +160,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glTestFenceNV")]
-        public abstract bool TestFence([Flow(FlowDirection.In)] uint fence);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool TestFence([Flow(FlowDirection.In)] uint fence)
+            => ImplTestFence(fence);
 
         /// <summary>
         /// To be added.
@@ -158,7 +178,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFenceivNV")]
-        public abstract unsafe void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetFence(fence, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -174,7 +196,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFenceivNV")]
-        public abstract void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetFence(fence, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -186,7 +210,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSetFenceNV")]
-        public abstract void SetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceConditionNV condition);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SetFence([Flow(FlowDirection.In)] uint fence, [Flow(FlowDirection.In)] FenceConditionNV condition)
+            => ImplSetFence(fence, condition);
 
         /// <summary>
         /// To be added.
@@ -198,6 +224,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteFence([Count(Parameter = "n"), Flow(FlowDirection.In)] uint fences)
         {
             // ArrayParameterOverloader
@@ -214,6 +241,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenFence()
         {
             const uint n = 1;
@@ -223,9 +251,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             return ret;
         }
 
-        public NVFence(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVFence(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

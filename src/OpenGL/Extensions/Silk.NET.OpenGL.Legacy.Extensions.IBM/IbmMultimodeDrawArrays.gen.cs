@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
 {
     [Extension("IBM_multimode_draw_arrays")]
-    public abstract unsafe partial class IbmMultimodeDrawArrays : NativeExtension<GL>
+    public unsafe partial class IbmMultimodeDrawArrays : NativeExtension<GL>
     {
         public const string ExtensionName = "IBM_multimode_draw_arrays";
         /// <summary>
@@ -41,7 +41,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-        public abstract unsafe void MultiModeDrawArrays([Count(Computed = "primcount"), Flow(FlowDirection.In)] IBM* mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Computed = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiModeDrawArrays([Count(Computed = "primcount"), Flow(FlowDirection.In)] IBM* mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Computed = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride)
+            => ImplMultiModeDrawArrays(mode, first, count, primcount, modestride);
 
         /// <summary>
         /// To be added.
@@ -65,7 +67,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-        public abstract void MultiModeDrawArrays([Count(Computed = "primcount"), Flow(FlowDirection.In)] ref IBM mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref int first, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiModeDrawArrays([Count(Computed = "primcount"), Flow(FlowDirection.In)] ref IBM mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref int first, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride)
+            => ImplMultiModeDrawArrays(mode, first, count, primcount, modestride);
 
         /// <summary>
         /// To be added.
@@ -92,7 +96,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-        public abstract unsafe void MultiModeDrawElements([Count(Computed = "primcount"), Flow(FlowDirection.In)] IBM* mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Computed = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount"), Flow(FlowDirection.In)] IBM* mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] IBM type, [Count(Computed = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride)
+            => ImplMultiModeDrawElements(mode, count, type, indices, primcount, modestride);
 
         /// <summary>
         /// To be added.
@@ -119,7 +125,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-        public abstract unsafe void MultiModeDrawElements<T0>([Count(Computed = "primcount"), Flow(FlowDirection.In)] ref IBM mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] IBM type, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref T0* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiModeDrawElements<T0>([Count(Computed = "primcount"), Flow(FlowDirection.In)] ref IBM mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] IBM type, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref T0* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride) where T0 : unmanaged
+            => ImplMultiModeDrawElements<T0>(mode, count, type, indices, primcount, modestride);
 
         /// <summary>
         /// To be added.
@@ -143,7 +151,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-        public abstract unsafe void MultiModeDrawArrays([Count(Computed = "primcount"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Computed = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiModeDrawArrays([Count(Computed = "primcount"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Computed = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride)
+            => ImplMultiModeDrawArrays(mode, first, count, primcount, modestride);
 
         /// <summary>
         /// To be added.
@@ -167,7 +177,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiModeDrawArraysIBM")]
-        public abstract void MultiModeDrawArrays([Count(Computed = "primcount"), Flow(FlowDirection.In)] ref PrimitiveType mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref int first, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiModeDrawArrays([Count(Computed = "primcount"), Flow(FlowDirection.In)] ref PrimitiveType mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref int first, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride)
+            => ImplMultiModeDrawArrays(mode, first, count, primcount, modestride);
 
         /// <summary>
         /// To be added.
@@ -194,7 +206,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-        public abstract unsafe void MultiModeDrawElements([Count(Computed = "primcount"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiModeDrawElements([Count(Computed = "primcount"), Flow(FlowDirection.In)] PrimitiveType* mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride)
+            => ImplMultiModeDrawElements(mode, count, type, indices, primcount, modestride);
 
         /// <summary>
         /// To be added.
@@ -221,11 +235,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiModeDrawElementsIBM")]
-        public abstract unsafe void MultiModeDrawElements<T0>([Count(Computed = "primcount"), Flow(FlowDirection.In)] ref PrimitiveType mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref T0* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiModeDrawElements<T0>([Count(Computed = "primcount"), Flow(FlowDirection.In)] ref PrimitiveType mode, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "primcount"), Flow(FlowDirection.In)] ref T0* indices, [Flow(FlowDirection.In)] uint primcount, [Flow(FlowDirection.In)] int modestride) where T0 : unmanaged
+            => ImplMultiModeDrawElements<T0>(mode, count, type, indices, primcount, modestride);
 
-        public IbmMultimodeDrawArrays(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public IbmMultimodeDrawArrays(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

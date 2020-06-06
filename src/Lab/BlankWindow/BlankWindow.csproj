@@ -20,6 +20,4 @@
       </None>
     </ItemGroup>
 
-    <Import Project="..\..\..\build\props\common.props" />
-
 </Project>

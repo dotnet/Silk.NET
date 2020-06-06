@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_transform_feedback_instanced")]
-    public abstract unsafe partial class ArbTransformFeedbackInstanced : NativeExtension<GL>
+    public unsafe partial class ArbTransformFeedbackInstanced : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_transform_feedback_instanced";
         /// <summary>
@@ -32,7 +32,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawTransformFeedbackInstanced")]
-        public abstract void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount)
+            => ImplDrawTransformFeedbackInstanced(mode, id, instancecount);
 
         /// <summary>
         /// To be added.
@@ -50,7 +52,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawTransformFeedbackStreamInstanced")]
-        public abstract void DrawTransformFeedbackStreamInstanced([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] uint instancecount);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawTransformFeedbackStreamInstanced([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] uint instancecount)
+            => ImplDrawTransformFeedbackStreamInstanced(mode, id, stream, instancecount);
 
         /// <summary>
         /// To be added.
@@ -65,7 +69,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawTransformFeedbackInstanced")]
-        public abstract void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount)
+            => ImplDrawTransformFeedbackInstanced(mode, id, instancecount);
 
         /// <summary>
         /// To be added.
@@ -83,11 +89,14 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawTransformFeedbackStreamInstanced")]
-        public abstract void DrawTransformFeedbackStreamInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] uint instancecount);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawTransformFeedbackStreamInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] uint instancecount)
+            => ImplDrawTransformFeedbackStreamInstanced(mode, id, stream, instancecount);
 
-        public ArbTransformFeedbackInstanced(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbTransformFeedbackInstanced(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

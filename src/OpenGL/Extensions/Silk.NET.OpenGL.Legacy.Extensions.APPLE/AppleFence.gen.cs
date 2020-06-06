@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
     [Extension("APPLE_fence")]
-    public abstract unsafe partial class AppleFence : NativeExtension<GL>
+    public unsafe partial class AppleFence : NativeExtension<GL>
     {
         public const string ExtensionName = "APPLE_fence";
         /// <summary>
@@ -30,7 +30,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteFencesAPPLE")]
-        public abstract unsafe void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* fences);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* fences)
+            => ImplDeleteFences(n, fences);
 
         /// <summary>
         /// To be added.
@@ -43,7 +45,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteFencesAPPLE")]
-        public abstract void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> fences);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> fences)
+            => ImplDeleteFences(n, fences);
 
         /// <summary>
         /// To be added.
@@ -52,7 +56,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFinishFenceAPPLE")]
-        public abstract void FinishFence([Flow(FlowDirection.In)] uint fence);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FinishFence([Flow(FlowDirection.In)] uint fence)
+            => ImplFinishFence(fence);
 
         /// <summary>
         /// To be added.
@@ -64,7 +70,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFinishObjectAPPLE")]
-        public abstract void FinishObject([Flow(FlowDirection.In)] APPLE @object, [Flow(FlowDirection.In)] int name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FinishObject([Flow(FlowDirection.In)] APPLE @object, [Flow(FlowDirection.In)] int name)
+            => ImplFinishObject(@object, name);
 
         /// <summary>
         /// To be added.
@@ -77,7 +85,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenFencesAPPLE")]
-        public abstract unsafe void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* fences);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* fences)
+            => ImplGenFences(n, fences);
 
         /// <summary>
         /// To be added.
@@ -90,7 +100,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenFencesAPPLE")]
-        public abstract void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> fences);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> fences)
+            => ImplGenFences(n, fences);
 
         /// <summary>
         /// To be added.
@@ -100,7 +112,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsFenceAPPLE")]
-        public abstract bool IsFence([Flow(FlowDirection.In)] uint fence);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsFence([Flow(FlowDirection.In)] uint fence)
+            => ImplIsFence(fence);
 
         /// <summary>
         /// To be added.
@@ -109,7 +123,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSetFenceAPPLE")]
-        public abstract void SetFence([Flow(FlowDirection.In)] uint fence);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SetFence([Flow(FlowDirection.In)] uint fence)
+            => ImplSetFence(fence);
 
         /// <summary>
         /// To be added.
@@ -119,7 +135,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glTestFenceAPPLE")]
-        public abstract bool TestFence([Flow(FlowDirection.In)] uint fence);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool TestFence([Flow(FlowDirection.In)] uint fence)
+            => ImplTestFence(fence);
 
         /// <summary>
         /// To be added.
@@ -132,7 +150,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glTestObjectAPPLE")]
-        public abstract bool TestObject([Flow(FlowDirection.In)] APPLE @object, [Flow(FlowDirection.In)] uint name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool TestObject([Flow(FlowDirection.In)] APPLE @object, [Flow(FlowDirection.In)] uint name)
+            => ImplTestObject(@object, name);
 
         /// <summary>
         /// To be added.
@@ -144,7 +164,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFinishObjectAPPLE")]
-        public abstract void FinishObject([Flow(FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(FlowDirection.In)] int name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FinishObject([Flow(FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(FlowDirection.In)] int name)
+            => ImplFinishObject(@object, name);
 
         /// <summary>
         /// To be added.
@@ -157,7 +179,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glTestObjectAPPLE")]
-        public abstract bool TestObject([Flow(FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(FlowDirection.In)] uint name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool TestObject([Flow(FlowDirection.In)] ObjectTypeAPPLE @object, [Flow(FlowDirection.In)] uint name)
+            => ImplTestObject(@object, name);
 
         /// <summary>
         /// To be added.
@@ -169,6 +193,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteFence([Count(Parameter = "n"), Flow(FlowDirection.In)] uint fences)
         {
             // ArrayParameterOverloader
@@ -185,6 +210,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenFence()
         {
             const uint n = 1;
@@ -194,9 +220,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
             return ret;
         }
 
-        public AppleFence(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AppleFence(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

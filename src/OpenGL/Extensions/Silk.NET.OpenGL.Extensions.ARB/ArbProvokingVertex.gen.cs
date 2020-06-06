@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_provoking_vertex")]
-    public abstract unsafe partial class ArbProvokingVertex : NativeExtension<GL>
+    public unsafe partial class ArbProvokingVertex : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_provoking_vertex";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProvokingVertex")]
-        public abstract void ProvokingVertex([Flow(FlowDirection.In)] ARB mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProvokingVertex([Flow(FlowDirection.In)] ARB mode)
+            => ImplProvokingVertex(mode);
 
         /// <summary>
         /// To be added.
@@ -35,11 +37,14 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProvokingVertex")]
-        public abstract void ProvokingVertex([Flow(FlowDirection.In)] VertexProvokingMode mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProvokingVertex([Flow(FlowDirection.In)] VertexProvokingMode mode)
+            => ImplProvokingVertex(mode);
 
-        public ArbProvokingVertex(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbProvokingVertex(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

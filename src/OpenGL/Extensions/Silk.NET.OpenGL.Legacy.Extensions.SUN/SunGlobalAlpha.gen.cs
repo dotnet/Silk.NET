@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
 {
     [Extension("SUN_global_alpha")]
-    public abstract unsafe partial class SunGlobalAlpha : NativeExtension<GL>
+    public unsafe partial class SunGlobalAlpha : NativeExtension<GL>
     {
         public const string ExtensionName = "SUN_global_alpha";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactorbSUN")]
-        public abstract void ObalAlphaFactor([Flow(FlowDirection.In)] sbyte factor);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObalAlphaFactor([Flow(FlowDirection.In)] sbyte factor)
+            => ImplObalAlphaFactor(factor);
 
         /// <summary>
         /// To be added.
@@ -35,7 +37,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactoriSUN")]
-        public abstract void ObalAlphaFactor([Flow(FlowDirection.In)] int factor);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObalAlphaFactor([Flow(FlowDirection.In)] int factor)
+            => ImplObalAlphaFactor(factor);
 
         /// <summary>
         /// To be added.
@@ -44,7 +48,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactorfSUN")]
-        public abstract void ObalAlphaFactor([Flow(FlowDirection.In)] float factor);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObalAlphaFactor([Flow(FlowDirection.In)] float factor)
+            => ImplObalAlphaFactor(factor);
 
         /// <summary>
         /// To be added.
@@ -53,7 +59,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactordSUN")]
-        public abstract void ObalAlphaFactor([Flow(FlowDirection.In)] double factor);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObalAlphaFactor([Flow(FlowDirection.In)] double factor)
+            => ImplObalAlphaFactor(factor);
 
         /// <summary>
         /// To be added.
@@ -62,7 +70,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactorubSUN")]
-        public abstract void ObalAlphaFactor([Flow(FlowDirection.In)] byte factor);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObalAlphaFactor([Flow(FlowDirection.In)] byte factor)
+            => ImplObalAlphaFactor(factor);
 
         /// <summary>
         /// To be added.
@@ -71,7 +81,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactorusSUN")]
-        public abstract void ObalAlphaFactor([Flow(FlowDirection.In)] ushort factor);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObalAlphaFactor([Flow(FlowDirection.In)] ushort factor)
+            => ImplObalAlphaFactor(factor);
 
         /// <summary>
         /// To be added.
@@ -80,7 +92,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactoruiSUN")]
-        public abstract void ObalAlphaFactor([Flow(FlowDirection.In)] uint factor);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObalAlphaFactor([Flow(FlowDirection.In)] uint factor)
+            => ImplObalAlphaFactor(factor);
 
         /// <summary>
         /// To be added.
@@ -89,11 +103,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGlobalAlphaFactorsSUN")]
-        public abstract void ObalAlphaFactors([Flow(FlowDirection.In)] short factor);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObalAlphaFactors([Flow(FlowDirection.In)] short factor)
+            => ImplObalAlphaFactors(factor);
 
-        public SunGlobalAlpha(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SunGlobalAlpha(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_draw_transform_feedback")]
-    public abstract unsafe partial class ExtDrawTransformFeedback : NativeExtension<GL>
+    public unsafe partial class ExtDrawTransformFeedback : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_draw_transform_feedback";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT")]
-        public abstract void DrawTransformFeedback([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint id);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawTransformFeedback([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint id)
+            => ImplDrawTransformFeedback(mode, id);
 
         /// <summary>
         /// To be added.
@@ -44,7 +46,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT")]
-        public abstract void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount)
+            => ImplDrawTransformFeedbackInstanced(mode, id, instancecount);
 
         /// <summary>
         /// To be added.
@@ -56,7 +60,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawTransformFeedbackEXT")]
-        public abstract void DrawTransformFeedback([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawTransformFeedback([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id)
+            => ImplDrawTransformFeedback(mode, id);
 
         /// <summary>
         /// To be added.
@@ -71,11 +77,14 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawTransformFeedbackInstancedEXT")]
-        public abstract void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount)
+            => ImplDrawTransformFeedbackInstanced(mode, id, instancecount);
 
-        public ExtDrawTransformFeedback(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtDrawTransformFeedback(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

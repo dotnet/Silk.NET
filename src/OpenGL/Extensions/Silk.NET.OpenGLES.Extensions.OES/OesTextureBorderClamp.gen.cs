@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [Extension("OES_texture_border_clamp")]
-    public abstract unsafe partial class OesTextureBorderClamp : NativeExtension<GL>
+    public unsafe partial class OesTextureBorderClamp : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_texture_border_clamp";
         /// <summary>
@@ -33,7 +33,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIivOES")]
-        public abstract unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -49,7 +51,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIivOES")]
-        public abstract void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -65,7 +69,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIuivOES")]
-        public abstract unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -81,7 +87,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIuivOES")]
-        public abstract void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -97,7 +105,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIivOES")]
-        public abstract unsafe void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -113,7 +123,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIivOES")]
-        public abstract void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -129,7 +141,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIuivOES")]
-        public abstract unsafe void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -145,7 +159,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIuivOES")]
-        public abstract void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -161,7 +177,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIivOES")]
-        public abstract unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -177,7 +195,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIivOES")]
-        public abstract void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -193,7 +213,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIuivOES")]
-        public abstract unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -209,7 +231,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIuivOES")]
-        public abstract void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -225,7 +249,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIivOES")]
-        public abstract unsafe void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -241,7 +267,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIivOES")]
-        public abstract void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -257,7 +285,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIuivOES")]
-        public abstract unsafe void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params)
+            => ImplTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -273,7 +303,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIuivOES")]
-        public abstract void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameterI([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint @params)
+            => ImplTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -289,7 +321,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIivOES")]
-        public abstract unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -305,7 +339,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIivOES")]
-        public abstract void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -321,7 +357,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIuivOES")]
-        public abstract unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -337,7 +375,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIuivOES")]
-        public abstract void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -353,7 +393,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIivOES")]
-        public abstract unsafe void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -369,7 +411,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIivOES")]
-        public abstract void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -385,7 +429,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIuivOES")]
-        public abstract unsafe void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -401,7 +447,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIuivOES")]
-        public abstract void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -417,7 +465,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIivOES")]
-        public abstract unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -433,7 +483,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIivOES")]
-        public abstract void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -449,7 +501,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIuivOES")]
-        public abstract unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -465,7 +519,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIuivOES")]
-        public abstract void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -481,7 +537,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIivOES")]
-        public abstract unsafe void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -497,7 +555,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIivOES")]
-        public abstract void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -513,7 +573,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIuivOES")]
-        public abstract unsafe void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params)
+            => ImplTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -529,11 +591,14 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIuivOES")]
-        public abstract void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint @params)
+            => ImplTexParameterI(target, pname, @params);
 
-        public OesTextureBorderClamp(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public OesTextureBorderClamp(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

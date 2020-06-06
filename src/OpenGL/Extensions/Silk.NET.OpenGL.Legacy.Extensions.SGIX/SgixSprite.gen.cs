@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_sprite")]
-    public abstract unsafe partial class SgixSprite : NativeExtension<GL>
+    public unsafe partial class SgixSprite : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_sprite";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSpriteParameterfSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param)
+            => ImplSpriteParameter(pname, param);
 
         /// <summary>
         /// To be added.
@@ -42,7 +44,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSpriteParameterfvSGIX")]
-        public abstract unsafe void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params)
+            => ImplSpriteParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -55,7 +59,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSpriteParameterfvSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params)
+            => ImplSpriteParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -67,7 +73,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSpriteParameteriSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param)
+            => ImplSpriteParameter(pname, param);
 
         /// <summary>
         /// To be added.
@@ -80,7 +88,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSpriteParameterivSGIX")]
-        public abstract unsafe void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplSpriteParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -93,7 +103,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSpriteParameterivSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SpriteParameter([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplSpriteParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -105,7 +117,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSpriteParameterfSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Flow(FlowDirection.In)] float param)
+            => ImplSpriteParameter(pname, param);
 
         /// <summary>
         /// To be added.
@@ -118,7 +132,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSpriteParameterfvSGIX")]
-        public abstract unsafe void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params)
+            => ImplSpriteParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -131,7 +147,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSpriteParameterfvSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params)
+            => ImplSpriteParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -143,7 +161,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSpriteParameteriSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Flow(FlowDirection.In)] int param)
+            => ImplSpriteParameter(pname, param);
 
         /// <summary>
         /// To be added.
@@ -156,7 +176,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSpriteParameterivSGIX")]
-        public abstract unsafe void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplSpriteParameter(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -169,11 +191,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSpriteParameterivSGIX")]
-        public abstract void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SpriteParameter([Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplSpriteParameter(pname, @params);
 
-        public SgixSprite(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgixSprite(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

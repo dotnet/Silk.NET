@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_gpu_program5")]
-    public abstract unsafe partial class NVGpuProgram5 : NativeExtension<GL>
+    public unsafe partial class NVGpuProgram5 : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_gpu_program5";
         /// <summary>
@@ -33,7 +33,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramSubroutineParameteruivNV")]
-        public abstract unsafe void GetProgramSubroutineParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] uint* param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramSubroutineParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] uint* param)
+            => ImplGetProgramSubroutineParameter(target, index, param);
 
         /// <summary>
         /// To be added.
@@ -49,7 +51,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramSubroutineParameteruivNV")]
-        public abstract void GetProgramSubroutineParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out uint param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramSubroutineParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out uint param)
+            => ImplGetProgramSubroutineParameter(target, index, param);
 
         /// <summary>
         /// To be added.
@@ -65,7 +69,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramSubroutineParametersuivNV")]
-        public abstract unsafe void ProgramSubroutineParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramSubroutineParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* @params)
+            => ImplProgramSubroutineParameters(target, count, @params);
 
         /// <summary>
         /// To be added.
@@ -81,11 +87,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramSubroutineParametersuivNV")]
-        public abstract void ProgramSubroutineParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramSubroutineParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> @params)
+            => ImplProgramSubroutineParameters(target, count, @params);
 
-        public NVGpuProgram5(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVGpuProgram5(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

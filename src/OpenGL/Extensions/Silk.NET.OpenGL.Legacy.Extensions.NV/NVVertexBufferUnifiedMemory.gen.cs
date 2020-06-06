@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_vertex_buffer_unified_memory")]
-    public abstract unsafe partial class NVVertexBufferUnifiedMemory : NativeExtension<GL>
+    public unsafe partial class NVVertexBufferUnifiedMemory : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_vertex_buffer_unified_memory";
         /// <summary>
@@ -35,7 +35,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBufferAddressRangeNV")]
-        public abstract void BufferAddressRange([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ulong address, [Flow(FlowDirection.In)] UIntPtr length);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BufferAddressRange([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ulong address, [Flow(FlowDirection.In)] UIntPtr length)
+            => ImplBufferAddressRange(pname, index, address, length);
 
         /// <summary>
         /// To be added.
@@ -50,7 +52,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glColorFormatNV")]
-        public abstract void ColorFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ColorFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride)
+            => ImplColorFormat(size, type, stride);
 
         /// <summary>
         /// To be added.
@@ -59,7 +63,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEdgeFlagFormatNV")]
-        public abstract void EdgeFlagFormat([Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void EdgeFlagFormat([Flow(FlowDirection.In)] uint stride)
+            => ImplEdgeFlagFormat(stride);
 
         /// <summary>
         /// To be added.
@@ -71,7 +77,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFogCoordFormatNV")]
-        public abstract void FogCoordFormat([Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FogCoordFormat([Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride)
+            => ImplFogCoordFormat(type, stride);
 
         /// <summary>
         /// To be added.
@@ -87,7 +95,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from value.
         /// </param>
         [NativeApi(EntryPoint = "glGetIntegerui64i_vNV")]
-        public abstract unsafe void GetIntegerui64([Flow(FlowDirection.In)] NV value, [Flow(FlowDirection.In)] uint index, [Count(Computed = "value"), Flow(FlowDirection.Out)] ulong* result);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetIntegerui64([Flow(FlowDirection.In)] NV value, [Flow(FlowDirection.In)] uint index, [Count(Computed = "value"), Flow(FlowDirection.Out)] ulong* result)
+            => ImplGetIntegerui64(value, index, result);
 
         /// <summary>
         /// To be added.
@@ -103,7 +113,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from value.
         /// </param>
         [NativeApi(EntryPoint = "glGetIntegerui64i_vNV")]
-        public abstract void GetIntegerui64([Flow(FlowDirection.In)] NV value, [Flow(FlowDirection.In)] uint index, [Count(Computed = "value"), Flow(FlowDirection.Out)] out ulong result);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetIntegerui64([Flow(FlowDirection.In)] NV value, [Flow(FlowDirection.In)] uint index, [Count(Computed = "value"), Flow(FlowDirection.Out)] out ulong result)
+            => ImplGetIntegerui64(value, index, result);
 
         /// <summary>
         /// To be added.
@@ -115,7 +127,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glIndexFormatNV")]
-        public abstract void IndexFormat([Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void IndexFormat([Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride)
+            => ImplIndexFormat(type, stride);
 
         /// <summary>
         /// To be added.
@@ -127,7 +141,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glNormalFormatNV")]
-        public abstract void NormalFormat([Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void NormalFormat([Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride)
+            => ImplNormalFormat(type, stride);
 
         /// <summary>
         /// To be added.
@@ -142,7 +158,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSecondaryColorFormatNV")]
-        public abstract void SecondaryColorFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SecondaryColorFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride)
+            => ImplSecondaryColorFormat(size, type, stride);
 
         /// <summary>
         /// To be added.
@@ -157,7 +175,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexCoordFormatNV")]
-        public abstract void TexCoordFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexCoordFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride)
+            => ImplTexCoordFormat(size, type, stride);
 
         /// <summary>
         /// To be added.
@@ -178,7 +198,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribFormatNV")]
-        public abstract void VertexAttribFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride)
+            => ImplVertexAttribFormat(index, size, type, normalized, stride);
 
         /// <summary>
         /// To be added.
@@ -196,7 +218,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIFormatNV")]
-        public abstract void VertexAttribIFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribIFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride)
+            => ImplVertexAttribIFormat(index, size, type, stride);
 
         /// <summary>
         /// To be added.
@@ -211,7 +235,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexFormatNV")]
-        public abstract void VertexFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride)
+            => ImplVertexFormat(size, type, stride);
 
         /// <summary>
         /// To be added.
@@ -226,7 +252,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSecondaryColorFormatNV")]
-        public abstract void SecondaryColorFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SecondaryColorFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride)
+            => ImplSecondaryColorFormat(size, type, stride);
 
         /// <summary>
         /// To be added.
@@ -247,7 +275,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribFormatNV")]
-        public abstract void VertexAttribFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride)
+            => ImplVertexAttribFormat(index, size, type, normalized, stride);
 
         /// <summary>
         /// To be added.
@@ -265,7 +295,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIFormatNV")]
-        public abstract void VertexAttribIFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribIFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint stride)
+            => ImplVertexAttribIFormat(index, size, type, stride);
 
         /// <summary>
         /// To be added.
@@ -280,7 +312,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexFormatNV")]
-        public abstract void VertexFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride)
+            => ImplVertexFormat(size, type, stride);
 
         /// <summary>
         /// To be added.
@@ -297,15 +331,17 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// <param name="length">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BufferAddressRange([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ulong address, [Flow(FlowDirection.In)] uint length)
         {
             // IntPtrOverloader
             BufferAddressRange(pname, index, address, new UIntPtr(length));
         }
 
-        public NVVertexBufferUnifiedMemory(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVVertexBufferUnifiedMemory(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

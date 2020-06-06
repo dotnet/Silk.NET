@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_debug_marker")]
-    public abstract unsafe partial class ExtDebugMarker : NativeExtension<GL>
+    public unsafe partial class ExtDebugMarker : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_debug_marker";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT")]
-        public abstract unsafe void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] char* marker);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] char* marker)
+            => ImplInsertEventMarker(length, marker);
 
         /// <summary>
         /// To be added.
@@ -41,13 +43,17 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT")]
-        public abstract void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<char> marker);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<char> marker)
+            => ImplInsertEventMarker(length, marker);
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glPopGroupMarkerEXT")]
-        public abstract void PopGroupMarker();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PopGroupMarker()
+            => ImplPopGroupMarker();
 
         /// <summary>
         /// To be added.
@@ -59,7 +65,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT")]
-        public abstract unsafe void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] char* marker);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] char* marker)
+            => ImplPushGroupMarker(length, marker);
 
         /// <summary>
         /// To be added.
@@ -71,7 +79,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT")]
-        public abstract void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<char> marker);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<char> marker)
+            => ImplPushGroupMarker(length, marker);
 
         /// <summary>
         /// To be added.
@@ -83,7 +93,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT")]
-        public abstract void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string marker);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string marker)
+            => ImplInsertEventMarker(length, marker);
 
         /// <summary>
         /// To be added.
@@ -95,11 +107,14 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT")]
-        public abstract void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string marker);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string marker)
+            => ImplPushGroupMarker(length, marker);
 
-        public ExtDebugMarker(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtDebugMarker(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

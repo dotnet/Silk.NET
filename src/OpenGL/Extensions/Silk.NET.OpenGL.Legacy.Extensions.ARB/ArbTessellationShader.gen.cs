@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_tessellation_shader")]
-    public abstract unsafe partial class ArbTessellationShader : NativeExtension<GL>
+    public unsafe partial class ArbTessellationShader : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_tessellation_shader";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPatchParameteri")]
-        public abstract void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] int value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] int value)
+            => ImplPatchParameter(pname, value);
 
         /// <summary>
         /// To be added.
@@ -42,7 +44,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glPatchParameterfv")]
-        public abstract unsafe void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values)
+            => ImplPatchParameter(pname, values);
 
         /// <summary>
         /// To be added.
@@ -55,7 +59,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glPatchParameterfv")]
-        public abstract void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float values);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float values)
+            => ImplPatchParameter(pname, values);
 
         /// <summary>
         /// To be added.
@@ -67,7 +73,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPatchParameteri")]
-        public abstract void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value)
+            => ImplPatchParameter(pname, value);
 
         /// <summary>
         /// To be added.
@@ -80,7 +88,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glPatchParameterfv")]
-        public abstract unsafe void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values)
+            => ImplPatchParameter(pname, values);
 
         /// <summary>
         /// To be added.
@@ -93,11 +103,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glPatchParameterfv")]
-        public abstract void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float values);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float values)
+            => ImplPatchParameter(pname, values);
 
-        public ArbTessellationShader(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbTessellationShader(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_semaphore_fd")]
-    public abstract unsafe partial class ExtSemaphoreFd : NativeExtension<GL>
+    public unsafe partial class ExtSemaphoreFd : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_semaphore_fd";
         /// <summary>
@@ -32,7 +32,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glImportSemaphoreFdEXT")]
-        public abstract void ImportSemaphoreF([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.In)] int fd);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ImportSemaphoreF([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.In)] int fd)
+            => ImplImportSemaphoreF(semaphore, handleType, fd);
 
         /// <summary>
         /// To be added.
@@ -47,11 +49,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glImportSemaphoreFdEXT")]
-        public abstract void ImportSemaphoreF([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] int fd);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ImportSemaphoreF([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] int fd)
+            => ImplImportSemaphoreF(semaphore, handleType, fd);
 
-        public ExtSemaphoreFd(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtSemaphoreFd(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

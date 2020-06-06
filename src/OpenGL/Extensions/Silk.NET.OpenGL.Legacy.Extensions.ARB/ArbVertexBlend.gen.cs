@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_vertex_blend")]
-    public abstract unsafe partial class ArbVertexBlend : NativeExtension<GL>
+    public unsafe partial class ArbVertexBlend : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_vertex_blend";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexBlendARB")]
-        public abstract void VertexBlend([Flow(FlowDirection.In)] int count);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexBlend([Flow(FlowDirection.In)] int count)
+            => ImplVertexBlend(count);
 
         /// <summary>
         /// To be added.
@@ -39,7 +41,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightbvARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] sbyte* weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] sbyte* weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -52,7 +56,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightbvARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<sbyte> weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<sbyte> weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -65,7 +71,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightsvARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] short* weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] short* weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -78,7 +86,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightsvARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<short> weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<short> weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -91,7 +101,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightivARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] int* weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] int* weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -104,7 +116,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightivARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<int> weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<int> weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -117,7 +131,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightfvARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] float* weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] float* weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -130,7 +146,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightfvARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<float> weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<float> weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -143,7 +161,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightdvARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] double* weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] double* weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -156,7 +176,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightdvARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<double> weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<double> weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -169,7 +191,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightubvARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] byte* weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] byte* weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -182,7 +206,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightubvARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<byte> weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<byte> weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -195,7 +221,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightusvARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ushort* weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ushort* weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -208,7 +236,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightusvARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<ushort> weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<ushort> weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -221,7 +251,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightuivARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] uint* weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] uint* weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -234,7 +266,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glWeightuivARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<uint> weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<uint> weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -253,7 +287,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from type and stride.
         /// </param>
         [NativeApi(EntryPoint = "glWeightPointerARB")]
-        public abstract unsafe void WeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void WeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer)
+            => ImplWeightPointer(size, type, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -272,7 +308,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from type and stride.
         /// </param>
         [NativeApi(EntryPoint = "glWeightPointerARB")]
-        public abstract void WeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplWeightPointer<T0>(size, type, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -284,7 +322,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glWeightubvARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] string weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Weight([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] string weights)
+            => ImplWeight(size, weights);
 
         /// <summary>
         /// To be added.
@@ -303,7 +343,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from type and stride.
         /// </param>
         [NativeApi(EntryPoint = "glWeightPointerARB")]
-        public abstract unsafe void WeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] WeightPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void WeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] WeightPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer)
+            => ImplWeightPointer(size, type, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -322,11 +364,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from type and stride.
         /// </param>
         [NativeApi(EntryPoint = "glWeightPointerARB")]
-        public abstract void WeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] WeightPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] WeightPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplWeightPointer<T0>(size, type, stride, pointer);
 
-        public ArbVertexBlend(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbVertexBlend(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

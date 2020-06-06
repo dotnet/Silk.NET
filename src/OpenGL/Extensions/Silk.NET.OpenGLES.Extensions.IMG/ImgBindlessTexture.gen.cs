@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.IMG
 {
     [Extension("IMG_bindless_texture")]
-    public abstract unsafe partial class ImgBindlessTexture : NativeExtension<GL>
+    public unsafe partial class ImgBindlessTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "IMG_bindless_texture";
         /// <summary>
@@ -27,7 +27,9 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetTextureHandleIMG")]
-        public abstract ulong GetTextureHandle([Flow(FlowDirection.In)] uint texture);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public ulong GetTextureHandle([Flow(FlowDirection.In)] uint texture)
+            => ImplGetTextureHandle(texture);
 
         /// <summary>
         /// To be added.
@@ -40,7 +42,9 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetTextureSamplerHandleIMG")]
-        public abstract ulong GetTextureSamplerHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint sampler);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public ulong GetTextureSamplerHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint sampler)
+            => ImplGetTextureSamplerHandle(texture, sampler);
 
         /// <summary>
         /// To be added.
@@ -55,7 +59,9 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformHandleui64IMG")]
-        public abstract void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value)
+            => ImplProgramUniformHandle(program, location, value);
 
         /// <summary>
         /// To be added.
@@ -74,7 +80,9 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformHandleui64vIMG")]
-        public abstract unsafe void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* values);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* values)
+            => ImplProgramUniformHandle(program, location, count, values);
 
         /// <summary>
         /// To be added.
@@ -93,7 +101,9 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformHandleui64vIMG")]
-        public abstract void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<ulong> values);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<ulong> values)
+            => ImplProgramUniformHandle(program, location, count, values);
 
         /// <summary>
         /// To be added.
@@ -105,7 +115,9 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUniformHandleui64IMG")]
-        public abstract void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value)
+            => ImplUniformHandle(location, value);
 
         /// <summary>
         /// To be added.
@@ -121,7 +133,9 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformHandleui64vIMG")]
-        public abstract unsafe void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* value)
+            => ImplUniformHandle(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -137,11 +151,14 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformHandleui64vIMG")]
-        public abstract void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<ulong> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<ulong> value)
+            => ImplUniformHandle(location, count, value);
 
-        public ImgBindlessTexture(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ImgBindlessTexture(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

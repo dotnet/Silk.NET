@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_separate_shader_objects")]
-    public abstract unsafe partial class ExtSeparateShaderObjects : NativeExtension<GL>
+    public unsafe partial class ExtSeparateShaderObjects : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_separate_shader_objects";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glActiveProgramEXT")]
-        public abstract void ActiveProgram([Flow(FlowDirection.In)] uint program);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ActiveProgram([Flow(FlowDirection.In)] uint program)
+            => ImplActiveProgram(program);
 
         /// <summary>
         /// To be added.
@@ -39,7 +41,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCreateShaderProgramEXT")]
-        public abstract unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] char* @string);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] char* @string)
+            => ImplCreateShaderProgram(type, @string);
 
         /// <summary>
         /// To be added.
@@ -52,7 +56,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCreateShaderProgramEXT")]
-        public abstract uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] Span<char> @string);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] Span<char> @string)
+            => ImplCreateShaderProgram(type, @string);
 
         /// <summary>
         /// To be added.
@@ -64,7 +70,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUseShaderProgramEXT")]
-        public abstract void UseShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint program);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UseShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint program)
+            => ImplUseShaderProgram(type, program);
 
         /// <summary>
         /// To be added.
@@ -77,11 +85,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCreateShaderProgramEXT")]
-        public abstract uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] string @string);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] string @string)
+            => ImplCreateShaderProgram(type, @string);
 
-        public ExtSeparateShaderObjects(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtSeparateShaderObjects(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

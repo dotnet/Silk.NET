@@ -6,26 +6,29 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan.Extensions.KHR
 {
     [Extension("VK_KHR_maintenance1")]
-    public abstract unsafe partial class KhrMaintenance1 : NativeExtension<Vk>
+    public unsafe partial class KhrMaintenance1 : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_KHR_maintenance1";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkTrimCommandPoolKHR")]
-        public abstract void TrimCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint flags);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TrimCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint flags)
+            => ImplTrimCommandPool(device, commandPool, flags);
 
-        public KhrMaintenance1(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrMaintenance1(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

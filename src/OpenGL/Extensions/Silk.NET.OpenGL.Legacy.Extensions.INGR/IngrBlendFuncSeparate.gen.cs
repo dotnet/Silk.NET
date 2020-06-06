@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.INGR
 {
     [Extension("INGR_blend_func_separate")]
-    public abstract unsafe partial class IngrBlendFuncSeparate : NativeExtension<GL>
+    public unsafe partial class IngrBlendFuncSeparate : NativeExtension<GL>
     {
         public const string ExtensionName = "INGR_blend_func_separate";
         /// <summary>
@@ -35,7 +35,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.INGR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
-        public abstract void BlendFuncSeparate([Flow(FlowDirection.In)] INGR sfactorRGB, [Flow(FlowDirection.In)] INGR dfactorRGB, [Flow(FlowDirection.In)] INGR sfactorAlpha, [Flow(FlowDirection.In)] INGR dfactorAlpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendFuncSeparate([Flow(FlowDirection.In)] INGR sfactorRGB, [Flow(FlowDirection.In)] INGR dfactorRGB, [Flow(FlowDirection.In)] INGR sfactorAlpha, [Flow(FlowDirection.In)] INGR dfactorAlpha)
+            => ImplBlendFuncSeparate(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);
 
         /// <summary>
         /// To be added.
@@ -53,11 +55,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.INGR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendFuncSeparateINGR")]
-        public abstract void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha)
+            => ImplBlendFuncSeparate(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);
 
-        public IngrBlendFuncSeparate(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public IngrBlendFuncSeparate(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_shader_pixel_local_storage2")]
-    public abstract unsafe partial class ExtShaderPixelLocalStorage2 : NativeExtension<GL>
+    public unsafe partial class ExtShaderPixelLocalStorage2 : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_shader_pixel_local_storage2";
         /// <summary>
@@ -33,7 +33,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glClearPixelLocalStorageuiEXT")]
-        public abstract unsafe void ClearPixelLocalStorage([Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* values);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ClearPixelLocalStorage([Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* values)
+            => ImplClearPixelLocalStorage(offset, n, values);
 
         /// <summary>
         /// To be added.
@@ -49,7 +51,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glClearPixelLocalStorageuiEXT")]
-        public abstract void ClearPixelLocalStorage([Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> values);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClearPixelLocalStorage([Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> values)
+            => ImplClearPixelLocalStorage(offset, n, values);
 
         /// <summary>
         /// To be added.
@@ -61,7 +65,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferPixelLocalStorageSizeEXT")]
-        public abstract void FramebufferPixelLocalStorageSize([Flow(FlowDirection.In)] uint target, [Flow(FlowDirection.In)] uint size);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferPixelLocalStorageSize([Flow(FlowDirection.In)] uint target, [Flow(FlowDirection.In)] uint size)
+            => ImplFramebufferPixelLocalStorageSize(target, size);
 
         /// <summary>
         /// To be added.
@@ -71,11 +77,14 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetFramebufferPixelLocalStorageSizeEXT")]
-        public abstract uint GetFramebufferPixelLocalStorageSize([Flow(FlowDirection.In)] uint target);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint GetFramebufferPixelLocalStorageSize([Flow(FlowDirection.In)] uint target)
+            => ImplGetFramebufferPixelLocalStorageSize(target);
 
-        public ExtShaderPixelLocalStorage2(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtShaderPixelLocalStorage2(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

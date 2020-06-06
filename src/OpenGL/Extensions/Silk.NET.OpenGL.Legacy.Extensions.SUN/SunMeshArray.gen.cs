@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
 {
     [Extension("SUN_mesh_array")]
-    public abstract unsafe partial class SunMeshArray : NativeExtension<GL>
+    public unsafe partial class SunMeshArray : NativeExtension<GL>
     {
         public const string ExtensionName = "SUN_mesh_array";
         /// <summary>
@@ -35,7 +35,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawMeshArraysSUN")]
-        public abstract void DrawMeshArrays([Flow(FlowDirection.In)] SUN mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint width);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawMeshArrays([Flow(FlowDirection.In)] SUN mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint width)
+            => ImplDrawMeshArrays(mode, first, count, width);
 
         /// <summary>
         /// To be added.
@@ -53,11 +55,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawMeshArraysSUN")]
-        public abstract void DrawMeshArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint width);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawMeshArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint width)
+            => ImplDrawMeshArrays(mode, first, count, width);
 
-        public SunMeshArray(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SunMeshArray(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

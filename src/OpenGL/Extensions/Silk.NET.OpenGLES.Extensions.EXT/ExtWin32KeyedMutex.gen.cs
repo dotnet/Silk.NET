@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_win32_keyed_mutex")]
-    public abstract unsafe partial class ExtWin32KeyedMutex : NativeExtension<GL>
+    public unsafe partial class ExtWin32KeyedMutex : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_win32_keyed_mutex";
         /// <summary>
@@ -33,7 +33,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glAcquireKeyedMutexWin32EXT")]
-        public abstract bool AcquireKeyedMutexWin32([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong key, [Flow(FlowDirection.In)] uint timeout);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool AcquireKeyedMutexWin32([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong key, [Flow(FlowDirection.In)] uint timeout)
+            => ImplAcquireKeyedMutexWin32(memory, key, timeout);
 
         /// <summary>
         /// To be added.
@@ -46,11 +48,14 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glReleaseKeyedMutexWin32EXT")]
-        public abstract bool ReleaseKeyedMutexWin32([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong key);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool ReleaseKeyedMutexWin32([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong key)
+            => ImplReleaseKeyedMutexWin32(memory, key);
 
-        public ExtWin32KeyedMutex(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtWin32KeyedMutex(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

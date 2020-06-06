@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_shading_language_include")]
-    public abstract unsafe partial class ArbShadingLanguageInclude : NativeExtension<GL>
+    public unsafe partial class ArbShadingLanguageInclude : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_shading_language_include";
         /// <summary>
@@ -37,7 +37,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glCompileShaderIncludeARB")]
-        public abstract unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** path, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** path, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length)
+            => ImplCompileShaderInclude(shader, count, path, length);
 
         /// <summary>
         /// To be added.
@@ -57,7 +59,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glCompileShaderIncludeARB")]
-        public abstract unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** path, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> length);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** path, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> length)
+            => ImplCompileShaderInclude(shader, count, path, length);
 
         /// <summary>
         /// To be added.
@@ -70,7 +74,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is taken from namelen.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteNamedStringARB")]
-        public abstract unsafe void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] char* name)
+            => ImplDeleteNamedString(namelen, name);
 
         /// <summary>
         /// To be added.
@@ -83,7 +89,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is taken from namelen.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteNamedStringARB")]
-        public abstract void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] Span<char> name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] Span<char> name)
+            => ImplDeleteNamedString(namelen, name);
 
         /// <summary>
         /// To be added.
@@ -107,7 +115,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public abstract unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] char* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* @string);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] char* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* @string)
+            => ImplGetNamedString(namelen, name, bufSize, stringlen, @string);
 
         /// <summary>
         /// To be added.
@@ -131,7 +141,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public abstract void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] Span<char> name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> @string);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] Span<char> name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> @string)
+            => ImplGetNamedString(namelen, name, bufSize, stringlen, @string);
 
         /// <summary>
         /// To be added.
@@ -151,7 +163,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetNamedStringivARB")]
-        public abstract unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] char* name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] char* name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetNamedString(namelen, name, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -171,7 +185,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetNamedStringivARB")]
-        public abstract void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] Span<char> name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] Span<char> name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetNamedString(namelen, name, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -185,7 +201,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsNamedStringARB")]
-        public abstract unsafe bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] char* name)
+            => ImplIsNamedString(namelen, name);
 
         /// <summary>
         /// To be added.
@@ -199,7 +217,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsNamedStringARB")]
-        public abstract bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] Span<char> name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] Span<char> name)
+            => ImplIsNamedString(namelen, name);
 
         /// <summary>
         /// To be added.
@@ -222,7 +242,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is taken from stringlen.
         /// </param>
         [NativeApi(EntryPoint = "glNamedStringARB")]
-        public abstract unsafe void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] char* name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] char* @string);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] char* name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] char* @string)
+            => ImplNamedString(type, namelen, name, stringlen, @string);
 
         /// <summary>
         /// To be added.
@@ -245,7 +267,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is taken from stringlen.
         /// </param>
         [NativeApi(EntryPoint = "glNamedStringARB")]
-        public abstract void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] Span<char> name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] Span<char> @string);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] Span<char> name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] Span<char> @string)
+            => ImplNamedString(type, namelen, name, stringlen, @string);
 
         /// <summary>
         /// To be added.
@@ -257,7 +281,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteNamedStringARB")]
-        public abstract void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name)
+            => ImplDeleteNamedString(namelen, name);
 
         /// <summary>
         /// To be added.
@@ -279,7 +305,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public abstract unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, 1)] out string @string);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, 1)] out string @string)
+            => ImplGetNamedString(namelen, name, bufSize, stringlen, @string);
 
         /// <summary>
         /// To be added.
@@ -301,7 +329,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public abstract void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, 1)] out string @string);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, 1)] out string @string)
+            => ImplGetNamedString(namelen, name, bufSize, stringlen, @string);
 
         /// <summary>
         /// To be added.
@@ -320,7 +350,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetNamedStringivARB")]
-        public abstract unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetNamedString(namelen, name, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -339,7 +371,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetNamedStringivARB")]
-        public abstract void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetNamedString(namelen, name, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -352,7 +386,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsNamedStringARB")]
-        public abstract bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name)
+            => ImplIsNamedString(namelen, name);
 
         /// <summary>
         /// To be added.
@@ -373,7 +409,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glNamedStringARB")]
-        public abstract void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In)] string @string);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In)] string @string)
+            => ImplNamedString(type, namelen, name, stringlen, @string);
 
         /// <summary>
         /// To be added.
@@ -392,6 +430,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// This parameter's element count is taken from count.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] pathSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length)
         {
             // StringArrayOverloader
@@ -417,6 +456,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// This parameter's element count is taken from count.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] pathSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> length)
         {
             // StringArrayOverloader
@@ -435,15 +475,17 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// This parameter's element count is taken from namelen.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] char name)
         {
             // ArrayParameterOverloader
             DeleteNamedString(1, &name);
         }
 
-        public ArbShadingLanguageInclude(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbShadingLanguageInclude(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

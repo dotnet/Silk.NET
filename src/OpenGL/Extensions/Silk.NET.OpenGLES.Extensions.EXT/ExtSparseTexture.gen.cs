@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_sparse_texture")]
-    public abstract unsafe partial class ExtSparseTexture : NativeExtension<GL>
+    public unsafe partial class ExtSparseTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_sparse_texture";
         /// <summary>
@@ -50,11 +50,14 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexPageCommitmentEXT")]
-        public abstract void TexPageCommitment([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool commit);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexPageCommitment([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool commit)
+            => ImplTexPageCommitment(target, level, xoffset, yoffset, zoffset, width, height, depth, commit);
 
-        public ExtSparseTexture(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtSparseTexture(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

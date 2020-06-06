@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_buffer_storage")]
-    public abstract unsafe partial class ArbBufferStorage : NativeExtension<GL>
+    public unsafe partial class ArbBufferStorage : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_buffer_storage";
         /// <summary>
@@ -36,7 +36,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBufferStorage")]
-        public abstract unsafe void BufferStorage([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void BufferStorage([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags)
+            => ImplBufferStorage(target, size, data, flags);
 
         /// <summary>
         /// To be added.
@@ -55,7 +57,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBufferStorage")]
-        public abstract void BufferStorage<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BufferStorage<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
+            => ImplBufferStorage<T0>(target, size, data, flags);
 
         /// <summary>
         /// To be added.
@@ -74,7 +78,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBufferStorage")]
-        public abstract unsafe void BufferStorage([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void BufferStorage([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags)
+            => ImplBufferStorage(target, size, data, flags);
 
         /// <summary>
         /// To be added.
@@ -93,7 +99,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBufferStorage")]
-        public abstract void BufferStorage<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BufferStorage<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
+            => ImplBufferStorage<T0>(target, size, data, flags);
 
         /// <summary>
         /// To be added.
@@ -111,6 +119,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// <param name="flags">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BufferStorage([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags)
         {
             // IntPtrOverloader
@@ -133,6 +142,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// <param name="flags">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BufferStorage<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // IntPtrOverloader
@@ -155,6 +165,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// <param name="flags">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BufferStorage([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags)
         {
             // IntPtrOverloader
@@ -177,15 +188,17 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// <param name="flags">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BufferStorage<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // IntPtrOverloader
             BufferStorage(target, new UIntPtr(size), data, flags);
         }
 
-        public ArbBufferStorage(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbBufferStorage(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

@@ -6,28 +6,31 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_flush_raster")]
-    public abstract unsafe partial class SgixFlushRaster : NativeExtension<GL>
+    public unsafe partial class SgixFlushRaster : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_flush_raster";
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glFlushRasterSGIX")]
-        public abstract void FlushRaster();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FlushRaster()
+            => ImplFlushRaster();
 
-        public SgixFlushRaster(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgixFlushRaster(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

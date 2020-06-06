@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_fog_coord")]
-    public abstract unsafe partial class ExtFogCoord : NativeExtension<GL>
+    public unsafe partial class ExtFogCoord : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_fog_coord";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFogCoordfEXT")]
-        public abstract void FogCoord([Flow(FlowDirection.In)] float coord);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FogCoord([Flow(FlowDirection.In)] float coord)
+            => ImplFogCoord(coord);
 
         /// <summary>
         /// To be added.
@@ -36,7 +38,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glFogCoordfvEXT")]
-        public abstract unsafe void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] float* coord);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] float* coord)
+            => ImplFogCoord(coord);
 
         /// <summary>
         /// To be added.
@@ -46,7 +50,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glFogCoordfvEXT")]
-        public abstract void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] ref float coord);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] ref float coord)
+            => ImplFogCoord(coord);
 
         /// <summary>
         /// To be added.
@@ -55,7 +61,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFogCoorddEXT")]
-        public abstract void FogCoord([Flow(FlowDirection.In)] double coord);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FogCoord([Flow(FlowDirection.In)] double coord)
+            => ImplFogCoord(coord);
 
         /// <summary>
         /// To be added.
@@ -65,7 +73,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glFogCoorddvEXT")]
-        public abstract unsafe void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] double* coord);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] double* coord)
+            => ImplFogCoord(coord);
 
         /// <summary>
         /// To be added.
@@ -75,7 +85,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glFogCoorddvEXT")]
-        public abstract void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] ref double coord);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] ref double coord)
+            => ImplFogCoord(coord);
 
         /// <summary>
         /// To be added.
@@ -91,7 +103,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from type and stride.
         /// </param>
         [NativeApi(EntryPoint = "glFogCoordPointerEXT")]
-        public abstract unsafe void FogCoordPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void FogCoordPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer)
+            => ImplFogCoordPointer(type, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -107,7 +121,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from type and stride.
         /// </param>
         [NativeApi(EntryPoint = "glFogCoordPointerEXT")]
-        public abstract void FogCoordPointer<T0>([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FogCoordPointer<T0>([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplFogCoordPointer<T0>(type, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -123,7 +139,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from type and stride.
         /// </param>
         [NativeApi(EntryPoint = "glFogCoordPointerEXT")]
-        public abstract unsafe void FogCoordPointer([Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void FogCoordPointer([Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer)
+            => ImplFogCoordPointer(type, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -139,11 +157,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// This parameter's element count is computed from type and stride.
         /// </param>
         [NativeApi(EntryPoint = "glFogCoordPointerEXT")]
-        public abstract void FogCoordPointer<T0>([Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FogCoordPointer<T0>([Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplFogCoordPointer<T0>(type, stride, pointer);
 
-        public ExtFogCoord(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtFogCoord(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

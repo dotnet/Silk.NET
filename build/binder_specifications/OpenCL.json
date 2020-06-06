@@ -3093,9 +3093,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -3256,9 +3256,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -3853,9 +3853,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -4016,9 +4016,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -4168,9 +4168,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -4300,9 +4300,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -18362,9 +18362,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -18512,9 +18512,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -21073,9 +21073,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -21174,9 +21174,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -21277,9 +21277,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -21360,9 +21360,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -21635,9 +21635,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -21865,9 +21865,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -24906,9 +24906,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -25136,9 +25136,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -25498,9 +25498,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -25715,9 +25715,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -26216,9 +26216,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -26433,9 +26433,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -27287,9 +27287,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -27473,9 +27473,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -31478,9 +31478,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -31561,9 +31561,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -34145,9 +34145,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -34228,9 +34228,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -34547,9 +34547,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]
@@ -34733,9 +34733,9 @@
                   "Flow": 1,
                   "Attributes": [
                     {
-                      "Name": "Ultz.SuperInvoke.InteropServices.PinObjectAttribute",
+                      "Name": "PinObjectAttribute",
                       "Arguments": [
-                        "Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall"
+                        "PinMode.UntilNextCall"
                       ]
                     }
                   ]

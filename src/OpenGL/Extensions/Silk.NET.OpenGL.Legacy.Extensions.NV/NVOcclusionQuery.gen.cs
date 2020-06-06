@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_occlusion_query")]
-    public abstract unsafe partial class NVOcclusionQuery : NativeExtension<GL>
+    public unsafe partial class NVOcclusionQuery : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_occlusion_query";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBeginOcclusionQueryNV")]
-        public abstract void BeginOcclusionQuery([Flow(FlowDirection.In)] uint id);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BeginOcclusionQuery([Flow(FlowDirection.In)] uint id)
+            => ImplBeginOcclusionQuery(id);
 
         /// <summary>
         /// To be added.
@@ -39,7 +41,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteOcclusionQueriesNV")]
-        public abstract unsafe void DeleteOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids)
+            => ImplDeleteOcclusionQueries(n, ids);
 
         /// <summary>
         /// To be added.
@@ -52,13 +56,17 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteOcclusionQueriesNV")]
-        public abstract void DeleteOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> ids)
+            => ImplDeleteOcclusionQueries(n, ids);
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glEndOcclusionQueryNV")]
-        public abstract void EndOcclusionQuery();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void EndOcclusionQuery()
+            => ImplEndOcclusionQuery();
 
         /// <summary>
         /// To be added.
@@ -71,7 +79,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenOcclusionQueriesNV")]
-        public abstract unsafe void GenOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids)
+            => ImplGenOcclusionQueries(n, ids);
 
         /// <summary>
         /// To be added.
@@ -84,7 +94,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenOcclusionQueriesNV")]
-        public abstract void GenOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenOcclusionQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+            => ImplGenOcclusionQueries(n, ids);
 
         /// <summary>
         /// To be added.
@@ -100,7 +112,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetOcclusionQueryivNV")]
-        public abstract unsafe void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetOcclusionQuery(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -116,7 +130,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetOcclusionQueryivNV")]
-        public abstract void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetOcclusionQuery(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -132,7 +148,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV")]
-        public abstract unsafe void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetOcclusionQuery(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -148,7 +166,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV")]
-        public abstract void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params)
+            => ImplGetOcclusionQuery(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -158,7 +178,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsOcclusionQueryNV")]
-        public abstract bool IsOcclusionQuery([Flow(FlowDirection.In)] uint id);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsOcclusionQuery([Flow(FlowDirection.In)] uint id)
+            => ImplIsOcclusionQuery(id);
 
         /// <summary>
         /// To be added.
@@ -174,7 +196,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetOcclusionQueryivNV")]
-        public abstract unsafe void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetOcclusionQuery(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -190,7 +214,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetOcclusionQueryivNV")]
-        public abstract void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetOcclusionQuery(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -206,7 +232,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV")]
-        public abstract unsafe void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetOcclusionQuery(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -222,7 +250,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetOcclusionQueryuivNV")]
-        public abstract void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetOcclusionQuery([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] OcclusionQueryParameterNameNV pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params)
+            => ImplGetOcclusionQuery(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -234,6 +264,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteOcclusionQuery([Count(Parameter = "n"), Flow(FlowDirection.In)] uint ids)
         {
             // ArrayParameterOverloader
@@ -250,6 +281,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenOcclusionQuery()
         {
             const uint n = 1;
@@ -259,9 +291,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             return ret;
         }
 
-        public NVOcclusionQuery(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVOcclusionQuery(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

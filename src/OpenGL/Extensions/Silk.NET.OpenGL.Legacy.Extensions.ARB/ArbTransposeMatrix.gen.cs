@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_transpose_matrix")]
-    public abstract unsafe partial class ArbTransposeMatrix : NativeExtension<GL>
+    public unsafe partial class ArbTransposeMatrix : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_transpose_matrix";
         /// <summary>
@@ -27,7 +27,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 16 elements.
         /// </param>
         [NativeApi(EntryPoint = "glLoadTransposeMatrixfARB")]
-        public abstract unsafe void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m)
+            => ImplLoadTransposeMatrix(m);
 
         /// <summary>
         /// To be added.
@@ -37,7 +39,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 16 elements.
         /// </param>
         [NativeApi(EntryPoint = "glLoadTransposeMatrixfARB")]
-        public abstract void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<float> m);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<float> m)
+            => ImplLoadTransposeMatrix(m);
 
         /// <summary>
         /// To be added.
@@ -47,7 +51,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 16 elements.
         /// </param>
         [NativeApi(EntryPoint = "glLoadTransposeMatrixdARB")]
-        public abstract unsafe void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m)
+            => ImplLoadTransposeMatrix(m);
 
         /// <summary>
         /// To be added.
@@ -57,7 +63,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 16 elements.
         /// </param>
         [NativeApi(EntryPoint = "glLoadTransposeMatrixdARB")]
-        public abstract void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<double> m);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<double> m)
+            => ImplLoadTransposeMatrix(m);
 
         /// <summary>
         /// To be added.
@@ -67,7 +75,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 16 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultTransposeMatrixfARB")]
-        public abstract unsafe void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m)
+            => ImplMultTransposeMatrix(m);
 
         /// <summary>
         /// To be added.
@@ -77,7 +87,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 16 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultTransposeMatrixfARB")]
-        public abstract void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<float> m);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<float> m)
+            => ImplMultTransposeMatrix(m);
 
         /// <summary>
         /// To be added.
@@ -87,7 +99,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 16 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultTransposeMatrixdARB")]
-        public abstract unsafe void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m)
+            => ImplMultTransposeMatrix(m);
 
         /// <summary>
         /// To be added.
@@ -97,11 +111,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 16 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultTransposeMatrixdARB")]
-        public abstract void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<double> m);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] Span<double> m)
+            => ImplMultTransposeMatrix(m);
 
-        public ArbTransposeMatrix(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbTransposeMatrix(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

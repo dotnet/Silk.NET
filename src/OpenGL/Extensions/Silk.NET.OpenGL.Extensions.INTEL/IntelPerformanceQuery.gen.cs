@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.INTEL
 {
     [Extension("INTEL_performance_query")]
-    public abstract unsafe partial class IntelPerformanceQuery : NativeExtension<GL>
+    public unsafe partial class IntelPerformanceQuery : NativeExtension<GL>
     {
         public const string ExtensionName = "INTEL_performance_query";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBeginPerfQueryINTEL")]
-        public abstract void BeginPerfQuery([Flow(FlowDirection.In)] uint queryHandle);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BeginPerfQuery([Flow(FlowDirection.In)] uint queryHandle)
+            => ImplBeginPerfQuery(queryHandle);
 
         /// <summary>
         /// To be added.
@@ -38,7 +40,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCreatePerfQueryINTEL")]
-        public abstract unsafe void CreatePerfQuery([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] uint* queryHandle);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CreatePerfQuery([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] uint* queryHandle)
+            => ImplCreatePerfQuery(queryId, queryHandle);
 
         /// <summary>
         /// To be added.
@@ -50,7 +54,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCreatePerfQueryINTEL")]
-        public abstract void CreatePerfQuery([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] Span<uint> queryHandle);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CreatePerfQuery([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] Span<uint> queryHandle)
+            => ImplCreatePerfQuery(queryId, queryHandle);
 
         /// <summary>
         /// To be added.
@@ -59,7 +65,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDeletePerfQueryINTEL")]
-        public abstract void DeletePerfQuery([Flow(FlowDirection.In)] uint queryHandle);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeletePerfQuery([Flow(FlowDirection.In)] uint queryHandle)
+            => ImplDeletePerfQuery(queryHandle);
 
         /// <summary>
         /// To be added.
@@ -68,7 +76,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEndPerfQueryINTEL")]
-        public abstract void EndPerfQuery([Flow(FlowDirection.In)] uint queryHandle);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void EndPerfQuery([Flow(FlowDirection.In)] uint queryHandle)
+            => ImplEndPerfQuery(queryHandle);
 
         /// <summary>
         /// To be added.
@@ -77,7 +87,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetFirstPerfQueryIdINTEL")]
-        public abstract unsafe void GetFirstPerfQueryId([Flow(FlowDirection.Out)] uint* queryId);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFirstPerfQueryId([Flow(FlowDirection.Out)] uint* queryId)
+            => ImplGetFirstPerfQueryId(queryId);
 
         /// <summary>
         /// To be added.
@@ -86,7 +98,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetFirstPerfQueryIdINTEL")]
-        public abstract void GetFirstPerfQueryId([Flow(FlowDirection.Out)] Span<uint> queryId);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFirstPerfQueryId([Flow(FlowDirection.Out)] Span<uint> queryId)
+            => ImplGetFirstPerfQueryId(queryId);
 
         /// <summary>
         /// To be added.
@@ -98,7 +112,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetNextPerfQueryIdINTEL")]
-        public abstract unsafe void GetNextPerfQueryId([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] uint* nextQueryId);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetNextPerfQueryId([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] uint* nextQueryId)
+            => ImplGetNextPerfQueryId(queryId, nextQueryId);
 
         /// <summary>
         /// To be added.
@@ -110,7 +126,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetNextPerfQueryIdINTEL")]
-        public abstract void GetNextPerfQueryId([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] Span<uint> nextQueryId);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetNextPerfQueryId([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.Out)] Span<uint> nextQueryId)
+            => ImplGetNextPerfQueryId(queryId, nextQueryId);
 
         /// <summary>
         /// To be added.
@@ -149,7 +167,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
-        public abstract unsafe void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] char* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] char* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] char* counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] char* counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue)
+            => ImplGetPerfCounterInfo(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
 
         /// <summary>
         /// To be added.
@@ -188,7 +208,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
-        public abstract void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] Span<char> counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] Span<char> counterDesc, [Flow(FlowDirection.Out)] Span<uint> counterOffset, [Flow(FlowDirection.Out)] Span<uint> counterDataSize, [Flow(FlowDirection.Out)] Span<uint> counterTypeEnum, [Flow(FlowDirection.Out)] Span<uint> counterDataTypeEnum, [Flow(FlowDirection.Out)] Span<ulong> rawCounterMaxValue);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] Span<char> counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] Span<char> counterDesc, [Flow(FlowDirection.Out)] Span<uint> counterOffset, [Flow(FlowDirection.Out)] Span<uint> counterDataSize, [Flow(FlowDirection.Out)] Span<uint> counterTypeEnum, [Flow(FlowDirection.Out)] Span<uint> counterDataTypeEnum, [Flow(FlowDirection.Out)] Span<ulong> rawCounterMaxValue)
+            => ImplGetPerfCounterInfo(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
 
         /// <summary>
         /// To be added.
@@ -209,7 +231,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL")]
-        public abstract unsafe void GetPerfQueryData([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] void* data, [Flow(FlowDirection.Out)] uint* bytesWritten);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPerfQueryData([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] void* data, [Flow(FlowDirection.Out)] uint* bytesWritten)
+            => ImplGetPerfQueryData(queryHandle, flags, dataSize, data, bytesWritten);
 
         /// <summary>
         /// To be added.
@@ -230,7 +254,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetPerfQueryDataINTEL")]
-        public abstract void GetPerfQueryData<T0>([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] Span<T0> data, [Flow(FlowDirection.Out)] Span<uint> bytesWritten) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetPerfQueryData<T0>([Flow(FlowDirection.In)] uint queryHandle, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] uint dataSize, [Flow(FlowDirection.Out)] Span<T0> data, [Flow(FlowDirection.Out)] Span<uint> bytesWritten) where T0 : unmanaged
+            => ImplGetPerfQueryData<T0>(queryHandle, flags, dataSize, data, bytesWritten);
 
         /// <summary>
         /// To be added.
@@ -242,7 +268,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL")]
-        public abstract unsafe void GetPerfQueryIdByName([Flow(FlowDirection.Out)] char* queryName, [Flow(FlowDirection.Out)] uint* queryId);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPerfQueryIdByName([Flow(FlowDirection.Out)] char* queryName, [Flow(FlowDirection.Out)] uint* queryId)
+            => ImplGetPerfQueryIdByName(queryName, queryId);
 
         /// <summary>
         /// To be added.
@@ -254,7 +282,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL")]
-        public abstract void GetPerfQueryIdByName([Flow(FlowDirection.Out)] Span<char> queryName, [Flow(FlowDirection.Out)] Span<uint> queryId);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetPerfQueryIdByName([Flow(FlowDirection.Out)] Span<char> queryName, [Flow(FlowDirection.Out)] Span<uint> queryId)
+            => ImplGetPerfQueryIdByName(queryName, queryId);
 
         /// <summary>
         /// To be added.
@@ -281,7 +311,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
-        public abstract unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] char* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] char* queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask)
+            => ImplGetPerfQueryInfo(queryId, queryNameLength, queryName, dataSize, noCounters, noInstances, capsMask);
 
         /// <summary>
         /// To be added.
@@ -308,7 +340,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
-        public abstract void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] Span<char> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<uint> capsMask);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] Span<char> queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<uint> capsMask)
+            => ImplGetPerfQueryInfo(queryId, queryNameLength, queryName, dataSize, noCounters, noInstances, capsMask);
 
         /// <summary>
         /// To be added.
@@ -347,7 +381,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
-        public abstract unsafe void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] uint* counterOffset, [Flow(FlowDirection.Out)] uint* counterDataSize, [Flow(FlowDirection.Out)] uint* counterTypeEnum, [Flow(FlowDirection.Out)] uint* counterDataTypeEnum, [Flow(FlowDirection.Out)] ulong* rawCounterMaxValue)
+            => ImplGetPerfCounterInfo(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
 
         /// <summary>
         /// To be added.
@@ -386,7 +422,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetPerfCounterInfoINTEL")]
-        public abstract void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] Span<uint> counterOffset, [Flow(FlowDirection.Out)] Span<uint> counterDataSize, [Flow(FlowDirection.Out)] Span<uint> counterTypeEnum, [Flow(FlowDirection.Out)] Span<uint> counterDataTypeEnum, [Flow(FlowDirection.Out)] Span<ulong> rawCounterMaxValue);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetPerfCounterInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint counterId, [Flow(FlowDirection.In)] uint counterNameLength, [Flow(FlowDirection.Out)] string counterName, [Flow(FlowDirection.In)] uint counterDescLength, [Flow(FlowDirection.Out)] string counterDesc, [Flow(FlowDirection.Out)] Span<uint> counterOffset, [Flow(FlowDirection.Out)] Span<uint> counterDataSize, [Flow(FlowDirection.Out)] Span<uint> counterTypeEnum, [Flow(FlowDirection.Out)] Span<uint> counterDataTypeEnum, [Flow(FlowDirection.Out)] Span<ulong> rawCounterMaxValue)
+            => ImplGetPerfCounterInfo(queryId, counterId, counterNameLength, counterName, counterDescLength, counterDesc, counterOffset, counterDataSize, counterTypeEnum, counterDataTypeEnum, rawCounterMaxValue);
 
         /// <summary>
         /// To be added.
@@ -398,7 +436,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL")]
-        public abstract unsafe void GetPerfQueryIdByName([Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] uint* queryId);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPerfQueryIdByName([Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] uint* queryId)
+            => ImplGetPerfQueryIdByName(queryName, queryId);
 
         /// <summary>
         /// To be added.
@@ -410,7 +450,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetPerfQueryIdByNameINTEL")]
-        public abstract void GetPerfQueryIdByName([Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] Span<uint> queryId);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetPerfQueryIdByName([Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] Span<uint> queryId)
+            => ImplGetPerfQueryIdByName(queryName, queryId);
 
         /// <summary>
         /// To be added.
@@ -437,7 +479,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
-        public abstract unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] uint* dataSize, [Flow(FlowDirection.Out)] uint* noCounters, [Flow(FlowDirection.Out)] uint* noInstances, [Flow(FlowDirection.Out)] uint* capsMask)
+            => ImplGetPerfQueryInfo(queryId, queryNameLength, queryName, dataSize, noCounters, noInstances, capsMask);
 
         /// <summary>
         /// To be added.
@@ -464,7 +508,9 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetPerfQueryInfoINTEL")]
-        public abstract void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<uint> capsMask);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetPerfQueryInfo([Flow(FlowDirection.In)] uint queryId, [Flow(FlowDirection.In)] uint queryNameLength, [Flow(FlowDirection.Out)] string queryName, [Flow(FlowDirection.Out)] Span<uint> dataSize, [Flow(FlowDirection.Out)] Span<uint> noCounters, [Flow(FlowDirection.Out)] Span<uint> noInstances, [Flow(FlowDirection.Out)] Span<uint> capsMask)
+            => ImplGetPerfQueryInfo(queryId, queryNameLength, queryName, dataSize, noCounters, noInstances, capsMask);
 
         /// <summary>
         /// To be added.
@@ -475,6 +521,7 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// <param name="queryHandle">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint CreatePerfQuery()
         {
             const uint queryId = 1;
@@ -490,6 +537,7 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// <param name="queryId">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GetFirstPerfQueryId()
         {
             // ReturnTypeOverloader
@@ -507,6 +555,7 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// <param name="nextQueryId">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GetNextPerfQueryId()
         {
             const uint queryId = 1;
@@ -525,6 +574,7 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// <param name="queryId">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GetPerfQueryIdByName([Flow(FlowDirection.Out)] char* queryName)
         {
             // ReturnTypeOverloader
@@ -542,6 +592,7 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
         /// <param name="queryId">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GetPerfQueryIdByName([Flow(FlowDirection.Out)] string queryName)
         {
             // ReturnTypeOverloader
@@ -550,9 +601,10 @@ namespace Silk.NET.OpenGL.Extensions.INTEL
             return ret;
         }
 
-        public IntelPerformanceQuery(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public IntelPerformanceQuery(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

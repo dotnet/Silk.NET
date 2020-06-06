@@ -8,7 +8,9 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 

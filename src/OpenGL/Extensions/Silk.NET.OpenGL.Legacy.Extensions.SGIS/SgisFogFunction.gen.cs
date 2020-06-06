@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
     [Extension("SGIS_fog_function")]
-    public abstract unsafe partial class SgisFogFunction : NativeExtension<GL>
+    public unsafe partial class SgisFogFunction : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIS_fog_function";
         /// <summary>
@@ -30,7 +30,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glFogFuncSGIS")]
-        public abstract unsafe void FogFunc([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void FogFunc([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points)
+            => ImplFogFunc(n, points);
 
         /// <summary>
         /// To be added.
@@ -43,7 +45,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glFogFuncSGIS")]
-        public abstract void FogFunc([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> points);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FogFunc([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> points)
+            => ImplFogFunc(n, points);
 
         /// <summary>
         /// To be added.
@@ -53,7 +57,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter contains 0 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetFogFuncSGIS")]
-        public abstract unsafe void GetFogFunc([Count(Count = 0), Flow(FlowDirection.Out)] float* points);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFogFunc([Count(Count = 0), Flow(FlowDirection.Out)] float* points)
+            => ImplGetFogFunc(points);
 
         /// <summary>
         /// To be added.
@@ -63,7 +69,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter contains 0 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetFogFuncSGIS")]
-        public abstract void GetFogFunc([Count(Count = 0), Flow(FlowDirection.Out)] out float points);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFogFunc([Count(Count = 0), Flow(FlowDirection.Out)] out float points)
+            => ImplGetFogFunc(points);
 
         /// <summary>
         /// To be added.
@@ -72,6 +80,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// To be added.
         /// This parameter contains 0 elements.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe float GetFogFunc()
         {
             // ReturnTypeOverloader
@@ -80,9 +89,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
             return ret;
         }
 
-        public SgisFogFunction(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgisFogFunction(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

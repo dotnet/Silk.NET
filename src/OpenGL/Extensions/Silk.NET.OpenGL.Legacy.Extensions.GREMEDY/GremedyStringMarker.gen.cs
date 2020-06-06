@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
 {
     [Extension("GREMEDY_string_marker")]
-    public abstract unsafe partial class GremedyStringMarker : NativeExtension<GL>
+    public unsafe partial class GremedyStringMarker : NativeExtension<GL>
     {
         public const string ExtensionName = "GREMEDY_string_marker";
         /// <summary>
@@ -30,7 +30,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
         /// This parameter's element count is taken from len.
         /// </param>
         [NativeApi(EntryPoint = "glStringMarkerGREMEDY")]
-        public abstract unsafe void StringMarker([Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] void* @string);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void StringMarker([Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] void* @string)
+            => ImplStringMarker(len, @string);
 
         /// <summary>
         /// To be added.
@@ -43,11 +45,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
         /// This parameter's element count is taken from len.
         /// </param>
         [NativeApi(EntryPoint = "glStringMarkerGREMEDY")]
-        public abstract void StringMarker<T0>([Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] Span<T0> @string) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void StringMarker<T0>([Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] Span<T0> @string) where T0 : unmanaged
+            => ImplStringMarker<T0>(len, @string);
 
-        public GremedyStringMarker(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public GremedyStringMarker(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

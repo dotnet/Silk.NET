@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
     [Extension("QCOM_extended_get")]
-    public abstract unsafe partial class QComExtendedGet : NativeExtension<GL>
+    public unsafe partial class QComExtendedGet : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_extended_get";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetBufferPointervQCOM")]
-        public abstract unsafe void ExtGetBufferPointer([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.Out)] void** @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ExtGetBufferPointer([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.Out)] void** @params)
+            => ImplExtGetBufferPointer(target, @params);
 
         /// <summary>
         /// To be added.
@@ -46,7 +48,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetBuffersQCOM")]
-        public abstract unsafe void ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] uint* buffers, [Flow(FlowDirection.In)] int maxBuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numBuffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] uint* buffers, [Flow(FlowDirection.In)] int maxBuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numBuffers)
+            => ImplExtGetBuffers(buffers, maxBuffers, numBuffers);
 
         /// <summary>
         /// To be added.
@@ -63,7 +67,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetBuffersQCOM")]
-        public abstract void ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] Span<uint> buffers, [Flow(FlowDirection.In)] int maxBuffers, [Count(Count = 1), Flow(FlowDirection.Out)] out int numBuffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] Span<uint> buffers, [Flow(FlowDirection.In)] int maxBuffers, [Count(Count = 1), Flow(FlowDirection.Out)] out int numBuffers)
+            => ImplExtGetBuffers(buffers, maxBuffers, numBuffers);
 
         /// <summary>
         /// To be added.
@@ -80,7 +86,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetFramebuffersQCOM")]
-        public abstract unsafe void ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] uint* framebuffers, [Flow(FlowDirection.In)] int maxFramebuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numFramebuffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] uint* framebuffers, [Flow(FlowDirection.In)] int maxFramebuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numFramebuffers)
+            => ImplExtGetFramebuffers(framebuffers, maxFramebuffers, numFramebuffers);
 
         /// <summary>
         /// To be added.
@@ -97,7 +105,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetFramebuffersQCOM")]
-        public abstract void ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] Span<uint> framebuffers, [Flow(FlowDirection.In)] int maxFramebuffers, [Count(Count = 1), Flow(FlowDirection.Out)] out int numFramebuffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] Span<uint> framebuffers, [Flow(FlowDirection.In)] int maxFramebuffers, [Count(Count = 1), Flow(FlowDirection.Out)] out int numFramebuffers)
+            => ImplExtGetFramebuffers(framebuffers, maxFramebuffers, numFramebuffers);
 
         /// <summary>
         /// To be added.
@@ -114,7 +124,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetRenderbuffersQCOM")]
-        public abstract unsafe void ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] uint* renderbuffers, [Flow(FlowDirection.In)] int maxRenderbuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numRenderbuffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] uint* renderbuffers, [Flow(FlowDirection.In)] int maxRenderbuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numRenderbuffers)
+            => ImplExtGetRenderbuffers(renderbuffers, maxRenderbuffers, numRenderbuffers);
 
         /// <summary>
         /// To be added.
@@ -131,7 +143,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetRenderbuffersQCOM")]
-        public abstract void ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] Span<uint> renderbuffers, [Flow(FlowDirection.In)] int maxRenderbuffers, [Count(Count = 1), Flow(FlowDirection.Out)] out int numRenderbuffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] Span<uint> renderbuffers, [Flow(FlowDirection.In)] int maxRenderbuffers, [Count(Count = 1), Flow(FlowDirection.Out)] out int numRenderbuffers)
+            => ImplExtGetRenderbuffers(renderbuffers, maxRenderbuffers, numRenderbuffers);
 
         /// <summary>
         /// To be added.
@@ -152,7 +166,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetTexLevelParameterivQCOM")]
-        public abstract unsafe void ExtGetTexLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] QCOM face, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] QCOM pname, [Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ExtGetTexLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] QCOM face, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] QCOM pname, [Flow(FlowDirection.Out)] int* @params)
+            => ImplExtGetTexLevelParameter(texture, face, level, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -173,7 +189,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetTexLevelParameterivQCOM")]
-        public abstract void ExtGetTexLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] QCOM face, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] QCOM pname, [Flow(FlowDirection.Out)] Span<int> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ExtGetTexLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] QCOM face, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] QCOM pname, [Flow(FlowDirection.Out)] Span<int> @params)
+            => ImplExtGetTexLevelParameter(texture, face, level, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -212,7 +230,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM")]
-        public abstract unsafe void ExtGetTexSubImage([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] QCOM type, [Flow(FlowDirection.Out)] void* texels);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ExtGetTexSubImage([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] QCOM type, [Flow(FlowDirection.Out)] void* texels)
+            => ImplExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, texels);
 
         /// <summary>
         /// To be added.
@@ -251,7 +271,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM")]
-        public abstract void ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] QCOM type, [Flow(FlowDirection.Out)] Span<T0> texels) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] QCOM format, [Flow(FlowDirection.In)] QCOM type, [Flow(FlowDirection.Out)] Span<T0> texels) where T0 : unmanaged
+            => ImplExtGetTexSubImage<T0>(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, texels);
 
         /// <summary>
         /// To be added.
@@ -266,7 +288,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetTexturesQCOM")]
-        public abstract unsafe void ExtGetTextures([Flow(FlowDirection.Out)] uint* textures, [Flow(FlowDirection.In)] int maxTextures, [Flow(FlowDirection.Out)] int* numTextures);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ExtGetTextures([Flow(FlowDirection.Out)] uint* textures, [Flow(FlowDirection.In)] int maxTextures, [Flow(FlowDirection.Out)] int* numTextures)
+            => ImplExtGetTextures(textures, maxTextures, numTextures);
 
         /// <summary>
         /// To be added.
@@ -281,7 +305,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetTexturesQCOM")]
-        public abstract void ExtGetTextures([Flow(FlowDirection.Out)] Span<uint> textures, [Flow(FlowDirection.In)] int maxTextures, [Flow(FlowDirection.Out)] Span<int> numTextures);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ExtGetTextures([Flow(FlowDirection.Out)] Span<uint> textures, [Flow(FlowDirection.In)] int maxTextures, [Flow(FlowDirection.Out)] Span<int> numTextures)
+            => ImplExtGetTextures(textures, maxTextures, numTextures);
 
         /// <summary>
         /// To be added.
@@ -296,7 +322,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glExtTexObjectStateOverrideiQCOM")]
-        public abstract void ExtTexObjectStateOverride([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] QCOM pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ExtTexObjectStateOverride([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] QCOM pname, [Flow(FlowDirection.In)] int param)
+            => ImplExtTexObjectStateOverride(target, pname, param);
 
         /// <summary>
         /// To be added.
@@ -335,7 +363,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM")]
-        public abstract unsafe void ExtGetTexSubImage([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.Out)] void* texels);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ExtGetTexSubImage([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.Out)] void* texels)
+            => ImplExtGetTexSubImage(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, texels);
 
         /// <summary>
         /// To be added.
@@ -374,11 +404,14 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetTexSubImageQCOM")]
-        public abstract void ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.Out)] Span<T0> texels) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ExtGetTexSubImage<T0>([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.Out)] Span<T0> texels) where T0 : unmanaged
+            => ImplExtGetTexSubImage<T0>(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, texels);
 
-        public QComExtendedGet(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public QComExtendedGet(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

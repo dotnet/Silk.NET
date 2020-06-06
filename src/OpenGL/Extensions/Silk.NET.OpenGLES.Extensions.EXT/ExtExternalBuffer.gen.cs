@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_external_buffer")]
-    public abstract unsafe partial class ExtExternalBuffer : NativeExtension<GL>
+    public unsafe partial class ExtExternalBuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_external_buffer";
         /// <summary>
@@ -38,7 +38,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBufferStorageExternalEXT")]
-        public abstract void BufferStorageExternal([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] IntPtr clientBuffer, [Flow(FlowDirection.In)] uint flags);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BufferStorageExternal([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] IntPtr clientBuffer, [Flow(FlowDirection.In)] uint flags)
+            => ImplBufferStorageExternal(target, offset, size, clientBuffer, flags);
 
         /// <summary>
         /// To be added.
@@ -59,7 +61,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glNamedBufferStorageExternalEXT")]
-        public abstract void NamedBufferStorageExternal([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] IntPtr clientBuffer, [Flow(FlowDirection.In)] uint flags);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void NamedBufferStorageExternal([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] IntPtr clientBuffer, [Flow(FlowDirection.In)] uint flags)
+            => ImplNamedBufferStorageExternal(buffer, offset, size, clientBuffer, flags);
 
         /// <summary>
         /// To be added.
@@ -79,6 +83,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// <param name="flags">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BufferStorageExternal([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] int clientBuffer, [Flow(FlowDirection.In)] uint flags)
         {
             // IntPtrOverloader
@@ -103,15 +108,17 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// <param name="flags">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void NamedBufferStorageExternal([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] int clientBuffer, [Flow(FlowDirection.In)] uint flags)
         {
             // IntPtrOverloader
             NamedBufferStorageExternal(buffer, new IntPtr(offset), new UIntPtr(size), new IntPtr(clientBuffer), flags);
         }
 
-        public ExtExternalBuffer(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtExternalBuffer(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

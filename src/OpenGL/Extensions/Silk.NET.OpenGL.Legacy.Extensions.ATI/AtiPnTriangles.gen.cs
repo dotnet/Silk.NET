@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
 {
     [Extension("ATI_pn_triangles")]
-    public abstract unsafe partial class AtiPnTriangles : NativeExtension<GL>
+    public unsafe partial class AtiPnTriangles : NativeExtension<GL>
     {
         public const string ExtensionName = "ATI_pn_triangles";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPNTrianglesiATI")]
-        public abstract void Pntriangles([Flow(FlowDirection.In)] ATI pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Pntriangles([Flow(FlowDirection.In)] ATI pname, [Flow(FlowDirection.In)] int param)
+            => ImplPntriangles(pname, param);
 
         /// <summary>
         /// To be added.
@@ -41,7 +43,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPNTrianglesfATI")]
-        public abstract void Pntriangles([Flow(FlowDirection.In)] ATI pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Pntriangles([Flow(FlowDirection.In)] ATI pname, [Flow(FlowDirection.In)] float param)
+            => ImplPntriangles(pname, param);
 
         /// <summary>
         /// To be added.
@@ -53,7 +57,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPNTrianglesiATI")]
-        public abstract void Pntriangles([Flow(FlowDirection.In)] PNTrianglesPNameATI pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Pntriangles([Flow(FlowDirection.In)] PNTrianglesPNameATI pname, [Flow(FlowDirection.In)] int param)
+            => ImplPntriangles(pname, param);
 
         /// <summary>
         /// To be added.
@@ -65,11 +71,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPNTrianglesfATI")]
-        public abstract void Pntriangles([Flow(FlowDirection.In)] PNTrianglesPNameATI pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Pntriangles([Flow(FlowDirection.In)] PNTrianglesPNameATI pname, [Flow(FlowDirection.In)] float param)
+            => ImplPntriangles(pname, param);
 
-        public AtiPnTriangles(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AtiPnTriangles(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

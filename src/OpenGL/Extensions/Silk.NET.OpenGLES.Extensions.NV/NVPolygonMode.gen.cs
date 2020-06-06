@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_polygon_mode")]
-    public abstract unsafe partial class NVPolygonMode : NativeExtension<GL>
+    public unsafe partial class NVPolygonMode : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_polygon_mode";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPolygonModeNV")]
-        public abstract void PolygonMode([Flow(FlowDirection.In)] NV face, [Flow(FlowDirection.In)] NV mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PolygonMode([Flow(FlowDirection.In)] NV face, [Flow(FlowDirection.In)] NV mode)
+            => ImplPolygonMode(face, mode);
 
         /// <summary>
         /// To be added.
@@ -41,11 +43,14 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPolygonModeNV")]
-        public abstract void PolygonMode([Flow(FlowDirection.In)] NV face, [Flow(FlowDirection.In)] PolygonMode mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PolygonMode([Flow(FlowDirection.In)] NV face, [Flow(FlowDirection.In)] PolygonMode mode)
+            => ImplPolygonMode(face, mode);
 
-        public NVPolygonMode(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVPolygonMode(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_fragment_program")]
-    public abstract unsafe partial class NVFragmentProgram : NativeExtension<GL>
+    public unsafe partial class NVFragmentProgram : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_fragment_program";
         /// <summary>
@@ -37,7 +37,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV")]
-        public abstract unsafe void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetProgramNamedParameter(id, len, name, @params);
 
         /// <summary>
         /// To be added.
@@ -57,7 +59,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV")]
-        public abstract void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] ref byte name, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] ref byte name, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
+            => ImplGetProgramNamedParameter(id, len, name, @params);
 
         /// <summary>
         /// To be added.
@@ -77,7 +81,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV")]
-        public abstract unsafe void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params)
+            => ImplGetProgramNamedParameter(id, len, name, @params);
 
         /// <summary>
         /// To be added.
@@ -97,7 +103,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV")]
-        public abstract void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] ref byte name, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] ref byte name, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params)
+            => ImplGetProgramNamedParameter(id, len, name, @params);
 
         /// <summary>
         /// To be added.
@@ -125,7 +133,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramNamedParameter4fNV")]
-        public abstract unsafe void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w)
+            => ImplProgramNamedParameter4(id, len, name, x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -153,7 +163,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramNamedParameter4fNV")]
-        public abstract void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] ref byte name, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] ref byte name, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w)
+            => ImplProgramNamedParameter4(id, len, name, x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -173,7 +185,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV")]
-        public abstract unsafe void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.In)] float* v)
+            => ImplProgramNamedParameter4(id, len, name, v);
 
         /// <summary>
         /// To be added.
@@ -193,7 +207,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV")]
-        public abstract void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] ref byte name, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] ref byte name, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v)
+            => ImplProgramNamedParameter4(id, len, name, v);
 
         /// <summary>
         /// To be added.
@@ -221,7 +237,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramNamedParameter4dNV")]
-        public abstract unsafe void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w)
+            => ImplProgramNamedParameter4(id, len, name, x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -249,7 +267,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramNamedParameter4dNV")]
-        public abstract void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] ref byte name, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] ref byte name, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w)
+            => ImplProgramNamedParameter4(id, len, name, x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -269,7 +289,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV")]
-        public abstract unsafe void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] byte* name, [Count(Count = 4), Flow(FlowDirection.In)] double* v)
+            => ImplProgramNamedParameter4(id, len, name, v);
 
         /// <summary>
         /// To be added.
@@ -289,7 +311,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV")]
-        public abstract void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] ref byte name, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Count(Count = 1), Flow(FlowDirection.In)] ref byte name, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v)
+            => ImplProgramNamedParameter4(id, len, name, v);
 
         /// <summary>
         /// To be added.
@@ -308,7 +332,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV")]
-        public abstract unsafe void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetProgramNamedParameter(id, len, name, @params);
 
         /// <summary>
         /// To be added.
@@ -327,7 +353,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramNamedParameterfvNV")]
-        public abstract void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
+            => ImplGetProgramNamedParameter(id, len, name, @params);
 
         /// <summary>
         /// To be added.
@@ -346,7 +374,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV")]
-        public abstract unsafe void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params)
+            => ImplGetProgramNamedParameter(id, len, name, @params);
 
         /// <summary>
         /// To be added.
@@ -365,7 +395,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramNamedParameterdvNV")]
-        public abstract void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramNamedParameter([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params)
+            => ImplGetProgramNamedParameter(id, len, name, @params);
 
         /// <summary>
         /// To be added.
@@ -392,7 +424,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramNamedParameter4fNV")]
-        public abstract void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w)
+            => ImplProgramNamedParameter4(id, len, name, x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -411,7 +445,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV")]
-        public abstract unsafe void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.In)] float* v)
+            => ImplProgramNamedParameter4(id, len, name, v);
 
         /// <summary>
         /// To be added.
@@ -430,7 +466,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glProgramNamedParameter4fvNV")]
-        public abstract void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v)
+            => ImplProgramNamedParameter4(id, len, name, v);
 
         /// <summary>
         /// To be added.
@@ -457,7 +495,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramNamedParameter4dNV")]
-        public abstract void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w)
+            => ImplProgramNamedParameter4(id, len, name, x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -476,7 +516,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV")]
-        public abstract unsafe void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.In)] double* v)
+            => ImplProgramNamedParameter4(id, len, name, v);
 
         /// <summary>
         /// To be added.
@@ -495,11 +537,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glProgramNamedParameter4dvNV")]
-        public abstract void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramNamedParameter4([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint len, [Flow(FlowDirection.In)] string name, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v)
+            => ImplProgramNamedParameter4(id, len, name, v);
 
-        public NVFragmentProgram(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVFragmentProgram(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

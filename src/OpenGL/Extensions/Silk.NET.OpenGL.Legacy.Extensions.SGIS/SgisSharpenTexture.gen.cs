@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
     [Extension("SGIS_sharpen_texture")]
-    public abstract unsafe partial class SgisSharpenTexture : NativeExtension<GL>
+    public unsafe partial class SgisSharpenTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIS_sharpen_texture";
         /// <summary>
@@ -30,7 +30,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
-        public abstract unsafe void GetSharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points)
+            => ImplGetSharpenTexFunc(target, points);
 
         /// <summary>
         /// To be added.
@@ -43,7 +45,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
-        public abstract void GetSharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points)
+            => ImplGetSharpenTexFunc(target, points);
 
         /// <summary>
         /// To be added.
@@ -59,7 +63,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
-        public abstract unsafe void SharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points)
+            => ImplSharpenTexFunc(target, n, points);
 
         /// <summary>
         /// To be added.
@@ -75,7 +81,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
-        public abstract void SharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> points);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> points)
+            => ImplSharpenTexFunc(target, n, points);
 
         /// <summary>
         /// To be added.
@@ -88,7 +96,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
-        public abstract unsafe void GetSharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points)
+            => ImplGetSharpenTexFunc(target, points);
 
         /// <summary>
         /// To be added.
@@ -101,7 +111,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
-        public abstract void GetSharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points)
+            => ImplGetSharpenTexFunc(target, points);
 
         /// <summary>
         /// To be added.
@@ -117,7 +129,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
-        public abstract unsafe void SharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points)
+            => ImplSharpenTexFunc(target, n, points);
 
         /// <summary>
         /// To be added.
@@ -133,7 +147,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
-        public abstract void SharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> points);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> points)
+            => ImplSharpenTexFunc(target, n, points);
 
         /// <summary>
         /// To be added.
@@ -145,6 +161,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// To be added.
         /// This parameter's element count is computed from target.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe float GetSharpenTexFunc([Flow(FlowDirection.In)] SGIS target)
         {
             // ReturnTypeOverloader
@@ -163,6 +180,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// To be added.
         /// This parameter's element count is computed from target.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe float GetSharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target)
         {
             // ReturnTypeOverloader
@@ -171,9 +189,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
             return ret;
         }
 
-        public SgisSharpenTexture(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgisSharpenTexture(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_igloo_interface")]
-    public abstract unsafe partial class SgixIglooInterface : NativeExtension<GL>
+    public unsafe partial class SgixIglooInterface : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_igloo_interface";
         /// <summary>
@@ -30,7 +30,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glIglooInterfaceSGIX")]
-        public abstract unsafe void IglooInterface([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] void* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void IglooInterface([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] void* @params)
+            => ImplIglooInterface(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -43,11 +45,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glIglooInterfaceSGIX")]
-        public abstract void IglooInterface<T0>([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref T0 @params) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void IglooInterface<T0>([Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref T0 @params) where T0 : unmanaged
+            => ImplIglooInterface<T0>(pname, @params);
 
-        public SgixIglooInterface(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgixIglooInterface(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

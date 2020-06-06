@@ -3,6 +3,9 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan

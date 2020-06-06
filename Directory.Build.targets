@@ -1,0 +1,5 @@
+<Project>
+    <ItemGroup>
+        <PackageReference Update="Microsoft.Net.Compilers.Toolset" Version="3.7.0-3.20303.6" />
+    </ItemGroup>
+</Project>

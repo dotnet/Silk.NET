@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [Extension("OES_EGL_image")]
-    public abstract unsafe partial class OesEglImage : NativeExtension<GL>
+    public unsafe partial class OesEglImage : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_EGL_image";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
-        public abstract void EglimageTargetRenderbufferStorage([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void EglimageTargetRenderbufferStorage([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image)
+            => ImplEglimageTargetRenderbufferStorage(target, image);
 
         /// <summary>
         /// To be added.
@@ -41,7 +43,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetTexture2DOES")]
-        public abstract void EglimageTargetTexture2D([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void EglimageTargetTexture2D([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image)
+            => ImplEglimageTargetTexture2D(target, image);
 
         /// <summary>
         /// To be added.
@@ -52,6 +56,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// <param name="image">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void EglimageTargetRenderbufferStorage([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] int image)
         {
             // IntPtrOverloader
@@ -67,15 +72,17 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// <param name="image">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void EglimageTargetTexture2D([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] int image)
         {
             // IntPtrOverloader
             EglimageTargetTexture2D(target, new IntPtr(image));
         }
 
-        public OesEglImage(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public OesEglImage(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_clip_control")]
-    public abstract unsafe partial class ExtClipControl : NativeExtension<GL>
+    public unsafe partial class ExtClipControl : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_clip_control";
         /// <summary>
@@ -29,11 +29,14 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glClipControlEXT")]
-        public abstract void ClipControl([Flow(FlowDirection.In)] EXT origin, [Flow(FlowDirection.In)] EXT depth);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClipControl([Flow(FlowDirection.In)] EXT origin, [Flow(FlowDirection.In)] EXT depth)
+            => ImplClipControl(origin, depth);
 
-        public ExtClipControl(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtClipControl(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

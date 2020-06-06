@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_multitexture")]
-    public abstract unsafe partial class ArbMultitexture : NativeExtension<GL>
+    public unsafe partial class ArbMultitexture : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_multitexture";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glActiveTextureARB")]
-        public abstract void ActiveTexture([Flow(FlowDirection.In)] ARB texture);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ActiveTexture([Flow(FlowDirection.In)] ARB texture)
+            => ImplActiveTexture(texture);
 
         /// <summary>
         /// To be added.
@@ -35,7 +37,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glClientActiveTextureARB")]
-        public abstract void ClientActiveTexture([Flow(FlowDirection.In)] ARB texture);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClientActiveTexture([Flow(FlowDirection.In)] ARB texture)
+            => ImplClientActiveTexture(texture);
 
         /// <summary>
         /// To be added.
@@ -47,7 +51,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1dARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] double s);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] double s)
+            => ImplMultiTexCoord1(target, s);
 
         /// <summary>
         /// To be added.
@@ -60,7 +66,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1dvARB")]
-        public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] double* v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -73,7 +81,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1dvARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] ref double v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] ref double v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -85,7 +95,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1fARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] float s);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] float s)
+            => ImplMultiTexCoord1(target, s);
 
         /// <summary>
         /// To be added.
@@ -98,7 +110,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1fvARB")]
-        public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] float* v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -111,7 +125,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1fvARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] ref float v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] ref float v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -123,7 +139,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1iARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int s);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int s)
+            => ImplMultiTexCoord1(target, s);
 
         /// <summary>
         /// To be added.
@@ -136,7 +154,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1ivARB")]
-        public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] int* v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -149,7 +169,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1ivARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] ref int v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] ref int v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -161,7 +183,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1sARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] short s);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] short s)
+            => ImplMultiTexCoord1(target, s);
 
         /// <summary>
         /// To be added.
@@ -174,7 +198,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1svARB")]
-        public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] short* v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -187,7 +213,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1svARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] ref short v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] ref short v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -202,7 +230,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2dARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t)
+            => ImplMultiTexCoord2(target, s, t);
 
         /// <summary>
         /// To be added.
@@ -215,7 +245,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2dvARB")]
-        public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] double* v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -228,7 +260,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2dvARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] Span<double> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] Span<double> v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -243,7 +277,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2fARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t)
+            => ImplMultiTexCoord2(target, s, t);
 
         /// <summary>
         /// To be added.
@@ -256,7 +292,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2fvARB")]
-        public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] float* v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -269,7 +307,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2fvARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -284,7 +324,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2iARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t)
+            => ImplMultiTexCoord2(target, s, t);
 
         /// <summary>
         /// To be added.
@@ -297,7 +339,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2ivARB")]
-        public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] int* v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -310,7 +354,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2ivARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] Span<int> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] Span<int> v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -325,7 +371,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2sARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t)
+            => ImplMultiTexCoord2(target, s, t);
 
         /// <summary>
         /// To be added.
@@ -338,7 +386,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2svARB")]
-        public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] short* v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -351,7 +401,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2svARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] Span<short> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] Span<short> v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -369,7 +421,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3dARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r)
+            => ImplMultiTexCoord3(target, s, t, r);
 
         /// <summary>
         /// To be added.
@@ -382,7 +436,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3dvARB")]
-        public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] double* v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -395,7 +451,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3dvARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -413,7 +471,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3fARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r)
+            => ImplMultiTexCoord3(target, s, t, r);
 
         /// <summary>
         /// To be added.
@@ -426,7 +486,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3fvARB")]
-        public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -439,7 +501,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3fvARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -457,7 +521,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3iARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r)
+            => ImplMultiTexCoord3(target, s, t, r);
 
         /// <summary>
         /// To be added.
@@ -470,7 +536,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3ivARB")]
-        public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] int* v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -483,7 +551,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3ivARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] Span<int> v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -501,7 +571,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3sARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r)
+            => ImplMultiTexCoord3(target, s, t, r);
 
         /// <summary>
         /// To be added.
@@ -514,7 +586,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3svARB")]
-        public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] short* v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -527,7 +601,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3svARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] Span<short> v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -548,7 +624,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4dARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r, [Flow(FlowDirection.In)] double q);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r, [Flow(FlowDirection.In)] double q)
+            => ImplMultiTexCoord4(target, s, t, r, q);
 
         /// <summary>
         /// To be added.
@@ -561,7 +639,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4dvARB")]
-        public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] double* v)
+            => ImplMultiTexCoord4(target, v);
 
         /// <summary>
         /// To be added.
@@ -574,7 +654,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4dvARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v)
+            => ImplMultiTexCoord4(target, v);
 
         /// <summary>
         /// To be added.
@@ -595,7 +677,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4fARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float q);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float q)
+            => ImplMultiTexCoord4(target, s, t, r, q);
 
         /// <summary>
         /// To be added.
@@ -608,7 +692,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4fvARB")]
-        public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] float* v)
+            => ImplMultiTexCoord4(target, v);
 
         /// <summary>
         /// To be added.
@@ -621,7 +707,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4fvARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v)
+            => ImplMultiTexCoord4(target, v);
 
         /// <summary>
         /// To be added.
@@ -642,7 +730,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4iARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r, [Flow(FlowDirection.In)] int q);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r, [Flow(FlowDirection.In)] int q)
+            => ImplMultiTexCoord4(target, s, t, r, q);
 
         /// <summary>
         /// To be added.
@@ -655,7 +745,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4ivARB")]
-        public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] int* v)
+            => ImplMultiTexCoord4(target, v);
 
         /// <summary>
         /// To be added.
@@ -668,7 +760,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4ivARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v)
+            => ImplMultiTexCoord4(target, v);
 
         /// <summary>
         /// To be added.
@@ -689,7 +783,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4sARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r, [Flow(FlowDirection.In)] short q);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r, [Flow(FlowDirection.In)] short q)
+            => ImplMultiTexCoord4(target, s, t, r, q);
 
         /// <summary>
         /// To be added.
@@ -702,7 +798,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4svARB")]
-        public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] short* v)
+            => ImplMultiTexCoord4(target, v);
 
         /// <summary>
         /// To be added.
@@ -715,7 +813,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4svARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> v)
+            => ImplMultiTexCoord4(target, v);
 
         /// <summary>
         /// To be added.
@@ -724,7 +824,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glActiveTextureARB")]
-        public abstract void ActiveTexture([Flow(FlowDirection.In)] TextureUnit texture);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ActiveTexture([Flow(FlowDirection.In)] TextureUnit texture)
+            => ImplActiveTexture(texture);
 
         /// <summary>
         /// To be added.
@@ -733,7 +835,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glClientActiveTextureARB")]
-        public abstract void ClientActiveTexture([Flow(FlowDirection.In)] TextureUnit texture);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClientActiveTexture([Flow(FlowDirection.In)] TextureUnit texture)
+            => ImplClientActiveTexture(texture);
 
         /// <summary>
         /// To be added.
@@ -745,7 +849,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1dARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s)
+            => ImplMultiTexCoord1(target, s);
 
         /// <summary>
         /// To be added.
@@ -758,7 +864,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1dvARB")]
-        public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] double* v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -771,7 +879,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1dvARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref double v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref double v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -783,7 +893,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1fARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s)
+            => ImplMultiTexCoord1(target, s);
 
         /// <summary>
         /// To be added.
@@ -796,7 +908,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1fvARB")]
-        public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] float* v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -809,7 +923,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1fvARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref float v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref float v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -821,7 +937,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1iARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s)
+            => ImplMultiTexCoord1(target, s);
 
         /// <summary>
         /// To be added.
@@ -834,7 +952,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1ivARB")]
-        public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] int* v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -847,7 +967,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1ivARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref int v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref int v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -859,7 +981,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1sARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s)
+            => ImplMultiTexCoord1(target, s);
 
         /// <summary>
         /// To be added.
@@ -872,7 +996,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1svARB")]
-        public abstract unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] short* v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -885,7 +1011,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord1svARB")]
-        public abstract void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref short v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref short v)
+            => ImplMultiTexCoord1(target, v);
 
         /// <summary>
         /// To be added.
@@ -900,7 +1028,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2dARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t)
+            => ImplMultiTexCoord2(target, s, t);
 
         /// <summary>
         /// To be added.
@@ -913,7 +1043,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2dvARB")]
-        public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] double* v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -926,7 +1058,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2dvARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<double> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<double> v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -941,7 +1075,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2fARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t)
+            => ImplMultiTexCoord2(target, s, t);
 
         /// <summary>
         /// To be added.
@@ -954,7 +1090,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2fvARB")]
-        public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] float* v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -967,7 +1105,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2fvARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -982,7 +1122,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2iARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t)
+            => ImplMultiTexCoord2(target, s, t);
 
         /// <summary>
         /// To be added.
@@ -995,7 +1137,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2ivARB")]
-        public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] int* v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -1008,7 +1152,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2ivARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<int> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<int> v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -1023,7 +1169,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2sARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t)
+            => ImplMultiTexCoord2(target, s, t);
 
         /// <summary>
         /// To be added.
@@ -1036,7 +1184,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2svARB")]
-        public abstract unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] short* v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -1049,7 +1199,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord2svARB")]
-        public abstract void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<short> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<short> v)
+            => ImplMultiTexCoord2(target, v);
 
         /// <summary>
         /// To be added.
@@ -1067,7 +1219,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3dARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r)
+            => ImplMultiTexCoord3(target, s, t, r);
 
         /// <summary>
         /// To be added.
@@ -1080,7 +1234,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3dvARB")]
-        public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] double* v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -1093,7 +1249,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3dvARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -1111,7 +1269,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3fARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r)
+            => ImplMultiTexCoord3(target, s, t, r);
 
         /// <summary>
         /// To be added.
@@ -1124,7 +1284,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3fvARB")]
-        public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -1137,7 +1299,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3fvARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -1155,7 +1319,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3iARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r)
+            => ImplMultiTexCoord3(target, s, t, r);
 
         /// <summary>
         /// To be added.
@@ -1168,7 +1334,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3ivARB")]
-        public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] int* v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -1181,7 +1349,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3ivARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<int> v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -1199,7 +1369,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3sARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r)
+            => ImplMultiTexCoord3(target, s, t, r);
 
         /// <summary>
         /// To be added.
@@ -1212,7 +1384,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3svARB")]
-        public abstract unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] short* v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -1225,7 +1399,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord3svARB")]
-        public abstract void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<short> v)
+            => ImplMultiTexCoord3(target, v);
 
         /// <summary>
         /// To be added.
@@ -1246,7 +1422,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4dARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r, [Flow(FlowDirection.In)] double q);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r, [Flow(FlowDirection.In)] double q)
+            => ImplMultiTexCoord4(target, s, t, r, q);
 
         /// <summary>
         /// To be added.
@@ -1259,7 +1437,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4dvARB")]
-        public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] double* v)
+            => ImplMultiTexCoord4(target, v);
 
         /// <summary>
         /// To be added.
@@ -1272,7 +1452,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4dvARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v)
+            => ImplMultiTexCoord4(target, v);
 
         /// <summary>
         /// To be added.
@@ -1293,7 +1475,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4fARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float q);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float q)
+            => ImplMultiTexCoord4(target, s, t, r, q);
 
         /// <summary>
         /// To be added.
@@ -1306,7 +1490,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4fvARB")]
-        public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] float* v)
+            => ImplMultiTexCoord4(target, v);
 
         /// <summary>
         /// To be added.
@@ -1319,7 +1505,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4fvARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v)
+            => ImplMultiTexCoord4(target, v);
 
         /// <summary>
         /// To be added.
@@ -1340,7 +1528,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4iARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r, [Flow(FlowDirection.In)] int q);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r, [Flow(FlowDirection.In)] int q)
+            => ImplMultiTexCoord4(target, s, t, r, q);
 
         /// <summary>
         /// To be added.
@@ -1353,7 +1543,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4ivARB")]
-        public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] int* v)
+            => ImplMultiTexCoord4(target, v);
 
         /// <summary>
         /// To be added.
@@ -1366,7 +1558,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4ivARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v)
+            => ImplMultiTexCoord4(target, v);
 
         /// <summary>
         /// To be added.
@@ -1387,7 +1581,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4sARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r, [Flow(FlowDirection.In)] short q);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r, [Flow(FlowDirection.In)] short q)
+            => ImplMultiTexCoord4(target, s, t, r, q);
 
         /// <summary>
         /// To be added.
@@ -1400,7 +1596,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4svARB")]
-        public abstract unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] short* v)
+            => ImplMultiTexCoord4(target, v);
 
         /// <summary>
         /// To be added.
@@ -1413,11 +1611,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glMultiTexCoord4svARB")]
-        public abstract void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> v)
+            => ImplMultiTexCoord4(target, v);
 
-        public ArbMultitexture(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbMultitexture(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

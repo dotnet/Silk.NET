@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [Extension("OES_mapbuffer")]
-    public abstract unsafe partial class OesMapbuffer : NativeExtension<GL>
+    public unsafe partial class OesMapbuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_mapbuffer";
         /// <summary>
@@ -32,7 +32,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetBufferPointervOES")]
-        public abstract unsafe void GetBufferPointer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Flow(FlowDirection.Out)] void** @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetBufferPointer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES pname, [Flow(FlowDirection.Out)] void** @params)
+            => ImplGetBufferPointer(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -45,7 +47,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glMapBufferOES")]
-        public abstract unsafe void* MapBuffer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES access);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void* MapBuffer([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES access)
+            => ImplMapBuffer(target, access);
 
         /// <summary>
         /// To be added.
@@ -55,7 +59,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glUnmapBufferOES")]
-        public abstract bool UnmapBuffer([Flow(FlowDirection.In)] OES target);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool UnmapBuffer([Flow(FlowDirection.In)] OES target)
+            => ImplUnmapBuffer(target);
 
         /// <summary>
         /// To be added.
@@ -70,7 +76,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetBufferPointervOES")]
-        public abstract unsafe void GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Flow(FlowDirection.Out)] void** @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Flow(FlowDirection.Out)] void** @params)
+            => ImplGetBufferPointer(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -83,11 +91,14 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glMapBufferOES")]
-        public abstract unsafe void* MapBuffer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferAccessARB access);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void* MapBuffer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferAccessARB access)
+            => ImplMapBuffer(target, access);
 
-        public OesMapbuffer(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public OesMapbuffer(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

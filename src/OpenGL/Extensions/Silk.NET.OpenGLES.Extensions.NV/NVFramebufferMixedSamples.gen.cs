@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_framebuffer_mixed_samples")]
-    public abstract unsafe partial class NVFramebufferMixedSamples : NativeExtension<GL>
+    public unsafe partial class NVFramebufferMixedSamples : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_framebuffer_mixed_samples";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCoverageModulationNV")]
-        public abstract void CoverageModulation([Flow(FlowDirection.In)] NV components);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CoverageModulation([Flow(FlowDirection.In)] NV components)
+            => ImplCoverageModulation(components);
 
         /// <summary>
         /// To be added.
@@ -39,7 +41,9 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glCoverageModulationTableNV")]
-        public abstract unsafe void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* v)
+            => ImplCoverageModulationTable(n, v);
 
         /// <summary>
         /// To be added.
@@ -52,7 +56,9 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glCoverageModulationTableNV")]
-        public abstract void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> v)
+            => ImplCoverageModulationTable(n, v);
 
         /// <summary>
         /// To be added.
@@ -64,7 +70,9 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetCoverageModulationTableNV")]
-        public abstract unsafe void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* v)
+            => ImplGetCoverageModulationTable(bufSize, v);
 
         /// <summary>
         /// To be added.
@@ -76,7 +84,9 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetCoverageModulationTableNV")]
-        public abstract void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<float> v)
+            => ImplGetCoverageModulationTable(bufSize, v);
 
         /// <summary>
         /// To be added.
@@ -88,7 +98,9 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glRasterSamplesEXT")]
-        public abstract void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations)
+            => ImplRasterSamples(samples, fixedsamplelocations);
 
         /// <summary>
         /// To be added.
@@ -99,6 +111,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// <param name="v">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe float GetCoverageModulationTable()
         {
             const uint bufSize = 1;
@@ -108,9 +121,10 @@ namespace Silk.NET.OpenGLES.Extensions.NV
             return ret;
         }
 
-        public NVFramebufferMixedSamples(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVFramebufferMixedSamples(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

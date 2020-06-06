@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
     [Extension("SGIS_multisample")]
-    public abstract unsafe partial class SgisMultisample : NativeExtension<GL>
+    public unsafe partial class SgisMultisample : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIS_multisample";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSampleMaskSGIS")]
-        public abstract void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert)
+            => ImplSampleMask(value, invert);
 
         /// <summary>
         /// To be added.
@@ -38,7 +40,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSamplePatternSGIS")]
-        public abstract void SamplePattern([Flow(FlowDirection.In)] SGIS pattern);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplePattern([Flow(FlowDirection.In)] SGIS pattern)
+            => ImplSamplePattern(pattern);
 
         /// <summary>
         /// To be added.
@@ -47,11 +51,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSamplePatternSGIS")]
-        public abstract void SamplePattern([Flow(FlowDirection.In)] SamplePatternSGIS pattern);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplePattern([Flow(FlowDirection.In)] SamplePatternSGIS pattern)
+            => ImplSamplePattern(pattern);
 
-        public SgisMultisample(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgisMultisample(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

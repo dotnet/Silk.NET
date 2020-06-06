@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [Extension("OES_viewport_array")]
-    public abstract unsafe partial class OesViewportArray : NativeExtension<GL>
+    public unsafe partial class OesViewportArray : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_viewport_array";
         /// <summary>
@@ -32,7 +32,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDepthRangeArrayfvOES")]
-        public abstract unsafe void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v)
+            => ImplDepthRangeArray(first, count, v);
 
         /// <summary>
         /// To be added.
@@ -47,7 +49,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDepthRangeArrayfvOES")]
-        public abstract void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<float> v)
+            => ImplDepthRangeArray(first, count, v);
 
         /// <summary>
         /// To be added.
@@ -62,7 +66,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDepthRangeIndexedfOES")]
-        public abstract void DepthRangeIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DepthRangeIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f)
+            => ImplDepthRangeIndexed(index, n, f);
 
         /// <summary>
         /// To be added.
@@ -74,7 +80,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDisableiOES")]
-        public abstract void Disable([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Disable([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index)
+            => ImplDisable(target, index);
 
         /// <summary>
         /// To be added.
@@ -86,7 +94,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEnableiOES")]
-        public abstract void Enable([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Enable([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index)
+            => ImplEnable(target, index);
 
         /// <summary>
         /// To be added.
@@ -102,7 +112,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetFloati_vOES")]
-        public abstract unsafe void GetFloat([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFloat([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data)
+            => ImplGetFloat(target, index, data);
 
         /// <summary>
         /// To be added.
@@ -118,7 +130,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetFloati_vOES")]
-        public abstract void GetFloat([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFloat([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data)
+            => ImplGetFloat(target, index, data);
 
         /// <summary>
         /// To be added.
@@ -131,7 +145,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsEnablediOES")]
-        public abstract bool IsEnabled([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsEnabled([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index)
+            => ImplIsEnabled(target, index);
 
         /// <summary>
         /// To be added.
@@ -147,7 +163,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from count.
         /// </param>
         [NativeApi(EntryPoint = "glScissorArrayvOES")]
-        public abstract unsafe void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* v)
+            => ImplScissorArray(first, count, v);
 
         /// <summary>
         /// To be added.
@@ -163,7 +181,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from count.
         /// </param>
         [NativeApi(EntryPoint = "glScissorArrayvOES")]
-        public abstract void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref int v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref int v)
+            => ImplScissorArray(first, count, v);
 
         /// <summary>
         /// To be added.
@@ -184,7 +204,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glScissorIndexedOES")]
-        public abstract void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int left, [Flow(FlowDirection.In)] int bottom, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int left, [Flow(FlowDirection.In)] int bottom, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplScissorIndexed(index, left, bottom, width, height);
 
         /// <summary>
         /// To be added.
@@ -197,7 +219,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glScissorIndexedvOES")]
-        public abstract unsafe void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v)
+            => ImplScissorIndexed(index, v);
 
         /// <summary>
         /// To be added.
@@ -210,7 +234,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glScissorIndexedvOES")]
-        public abstract void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v)
+            => ImplScissorIndexed(index, v);
 
         /// <summary>
         /// To be added.
@@ -226,7 +252,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from count.
         /// </param>
         [NativeApi(EntryPoint = "glViewportArrayvOES")]
-        public abstract unsafe void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] float* v)
+            => ImplViewportArray(first, count, v);
 
         /// <summary>
         /// To be added.
@@ -242,7 +270,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is computed from count.
         /// </param>
         [NativeApi(EntryPoint = "glViewportArrayvOES")]
-        public abstract void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref float v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref float v)
+            => ImplViewportArray(first, count, v);
 
         /// <summary>
         /// To be added.
@@ -263,7 +293,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glViewportIndexedfOES")]
-        public abstract void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float w, [Flow(FlowDirection.In)] float h);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float w, [Flow(FlowDirection.In)] float h)
+            => ImplViewportIndexed(index, x, y, w, h);
 
         /// <summary>
         /// To be added.
@@ -276,7 +308,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glViewportIndexedfvOES")]
-        public abstract unsafe void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v)
+            => ImplViewportIndexed(index, v);
 
         /// <summary>
         /// To be added.
@@ -289,7 +323,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glViewportIndexedfvOES")]
-        public abstract void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v)
+            => ImplViewportIndexed(index, v);
 
         /// <summary>
         /// To be added.
@@ -301,7 +337,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDisableiOES")]
-        public abstract void Disable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Disable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index)
+            => ImplDisable(target, index);
 
         /// <summary>
         /// To be added.
@@ -313,7 +351,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEnableiOES")]
-        public abstract void Enable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Enable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index)
+            => ImplEnable(target, index);
 
         /// <summary>
         /// To be added.
@@ -326,11 +366,14 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsEnablediOES")]
-        public abstract bool IsEnabled([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsEnabled([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index)
+            => ImplIsEnabled(target, index);
 
-        public OesViewportArray(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public OesViewportArray(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

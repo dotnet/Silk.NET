@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [Extension("OES_draw_buffers_indexed")]
-    public abstract unsafe partial class OesDrawBuffersIndexed : NativeExtension<GL>
+    public unsafe partial class OesDrawBuffersIndexed : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_draw_buffers_indexed";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendEquationiOES")]
-        public abstract void BlendEquation([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendEquation([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES mode)
+            => ImplBlendEquation(buf, mode);
 
         /// <summary>
         /// To be added.
@@ -44,7 +46,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendEquationSeparateiOES")]
-        public abstract void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES modeRGB, [Flow(FlowDirection.In)] OES modeAlpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES modeRGB, [Flow(FlowDirection.In)] OES modeAlpha)
+            => ImplBlendEquationSeparate(buf, modeRGB, modeAlpha);
 
         /// <summary>
         /// To be added.
@@ -59,7 +63,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendFunciOES")]
-        public abstract void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES src, [Flow(FlowDirection.In)] OES dst);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES src, [Flow(FlowDirection.In)] OES dst)
+            => ImplBlendFunc(buf, src, dst);
 
         /// <summary>
         /// To be added.
@@ -80,7 +86,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
-        public abstract void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES srcRGB, [Flow(FlowDirection.In)] OES dstRGB, [Flow(FlowDirection.In)] OES srcAlpha, [Flow(FlowDirection.In)] OES dstAlpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] OES srcRGB, [Flow(FlowDirection.In)] OES dstRGB, [Flow(FlowDirection.In)] OES srcAlpha, [Flow(FlowDirection.In)] OES dstAlpha)
+            => ImplBlendFuncSeparate(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
 
         /// <summary>
         /// To be added.
@@ -101,7 +109,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glColorMaskiOES")]
-        public abstract void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a)
+            => ImplColorMask(index, r, g, b, a);
 
         /// <summary>
         /// To be added.
@@ -113,7 +123,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDisableiOES")]
-        public abstract void Disable([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Disable([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index)
+            => ImplDisable(target, index);
 
         /// <summary>
         /// To be added.
@@ -125,7 +137,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEnableiOES")]
-        public abstract void Enable([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Enable([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index)
+            => ImplEnable(target, index);
 
         /// <summary>
         /// To be added.
@@ -138,7 +152,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsEnablediOES")]
-        public abstract bool IsEnabled([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsEnabled([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint index)
+            => ImplIsEnabled(target, index);
 
         /// <summary>
         /// To be added.
@@ -150,7 +166,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendEquationiOES")]
-        public abstract void BlendEquation([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendEquation([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT mode)
+            => ImplBlendEquation(buf, mode);
 
         /// <summary>
         /// To be added.
@@ -165,7 +183,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendEquationSeparateiOES")]
-        public abstract void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha)
+            => ImplBlendEquationSeparate(buf, modeRGB, modeAlpha);
 
         /// <summary>
         /// To be added.
@@ -180,7 +200,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendFunciOES")]
-        public abstract void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor src, [Flow(FlowDirection.In)] BlendingFactor dst);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor src, [Flow(FlowDirection.In)] BlendingFactor dst)
+            => ImplBlendFunc(buf, src, dst);
 
         /// <summary>
         /// To be added.
@@ -201,7 +223,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendFuncSeparateiOES")]
-        public abstract void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha)
+            => ImplBlendFuncSeparate(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
 
         /// <summary>
         /// To be added.
@@ -213,7 +237,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDisableiOES")]
-        public abstract void Disable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Disable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index)
+            => ImplDisable(target, index);
 
         /// <summary>
         /// To be added.
@@ -225,7 +251,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEnableiOES")]
-        public abstract void Enable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Enable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index)
+            => ImplEnable(target, index);
 
         /// <summary>
         /// To be added.
@@ -238,11 +266,14 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsEnablediOES")]
-        public abstract bool IsEnabled([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsEnabled([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index)
+            => ImplIsEnabled(target, index);
 
-        public OesDrawBuffersIndexed(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public OesDrawBuffersIndexed(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
     [Extension("SGIS_texture_filter4")]
-    public abstract unsafe partial class SgisTextureFilter4 : NativeExtension<GL>
+    public unsafe partial class SgisTextureFilter4 : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIS_texture_filter4";
         /// <summary>
@@ -33,7 +33,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is computed from target and filter.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
-        public abstract unsafe void GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] float* weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] float* weights)
+            => ImplGetTexFilterFunc(target, filter, weights);
 
         /// <summary>
         /// To be added.
@@ -49,7 +51,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is computed from target and filter.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
-        public abstract void GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] out float weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] out float weights)
+            => ImplGetTexFilterFunc(target, filter, weights);
 
         /// <summary>
         /// To be added.
@@ -68,7 +72,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
-        public abstract unsafe void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* weights)
+            => ImplTexFilterFunc(target, filter, n, weights);
 
         /// <summary>
         /// To be added.
@@ -87,7 +93,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
-        public abstract void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> weights)
+            => ImplTexFilterFunc(target, filter, n, weights);
 
         /// <summary>
         /// To be added.
@@ -103,7 +111,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is computed from target and filter.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
-        public abstract unsafe void GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] float* weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] float* weights)
+            => ImplGetTexFilterFunc(target, filter, weights);
 
         /// <summary>
         /// To be added.
@@ -119,7 +129,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is computed from target and filter.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexFilterFuncSGIS")]
-        public abstract void GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] out float weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Computed = "target, filter"), Flow(FlowDirection.Out)] out float weights)
+            => ImplGetTexFilterFunc(target, filter, weights);
 
         /// <summary>
         /// To be added.
@@ -138,7 +150,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
-        public abstract unsafe void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* weights)
+            => ImplTexFilterFunc(target, filter, n, weights);
 
         /// <summary>
         /// To be added.
@@ -157,11 +171,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
-        public abstract void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> weights);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> weights)
+            => ImplTexFilterFunc(target, filter, n, weights);
 
-        public SgisTextureFilter4(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgisTextureFilter4(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

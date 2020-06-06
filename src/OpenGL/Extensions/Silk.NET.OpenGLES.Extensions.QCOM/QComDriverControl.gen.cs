@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
     [Extension("QCOM_driver_control")]
-    public abstract unsafe partial class QComDriverControl : NativeExtension<GL>
+    public unsafe partial class QComDriverControl : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_driver_control";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDisableDriverControlQCOM")]
-        public abstract void DisableDriverControl([Flow(FlowDirection.In)] uint driverControl);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DisableDriverControl([Flow(FlowDirection.In)] uint driverControl)
+            => ImplDisableDriverControl(driverControl);
 
         /// <summary>
         /// To be added.
@@ -35,7 +37,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEnableDriverControlQCOM")]
-        public abstract void EnableDriverControl([Flow(FlowDirection.In)] uint driverControl);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void EnableDriverControl([Flow(FlowDirection.In)] uint driverControl)
+            => ImplEnableDriverControl(driverControl);
 
         /// <summary>
         /// To be added.
@@ -51,7 +55,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glGetDriverControlsQCOM")]
-        public abstract unsafe void GetDriverControl([Flow(FlowDirection.Out)] int* num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] uint* driverControls);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetDriverControl([Flow(FlowDirection.Out)] int* num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] uint* driverControls)
+            => ImplGetDriverControl(num, size, driverControls);
 
         /// <summary>
         /// To be added.
@@ -67,7 +73,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glGetDriverControlsQCOM")]
-        public abstract void GetDriverControl([Flow(FlowDirection.Out)] Span<int> num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<uint> driverControls);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetDriverControl([Flow(FlowDirection.Out)] Span<int> num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<uint> driverControls)
+            => ImplGetDriverControl(num, size, driverControls);
 
         /// <summary>
         /// To be added.
@@ -86,7 +94,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetDriverControlStringQCOM")]
-        public abstract unsafe void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* driverControlString);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* driverControlString)
+            => ImplGetDriverControlString(driverControl, bufSize, length, driverControlString);
 
         /// <summary>
         /// To be added.
@@ -105,7 +115,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetDriverControlStringQCOM")]
-        public abstract void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> driverControlString);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> driverControlString)
+            => ImplGetDriverControlString(driverControl, bufSize, length, driverControlString);
 
         /// <summary>
         /// To be added.
@@ -123,7 +135,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetDriverControlStringQCOM")]
-        public abstract unsafe void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string driverControlString);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string driverControlString)
+            => ImplGetDriverControlString(driverControl, bufSize, length, driverControlString);
 
         /// <summary>
         /// To be added.
@@ -141,11 +155,14 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetDriverControlStringQCOM")]
-        public abstract void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<uint> length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string driverControlString);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<uint> length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string driverControlString)
+            => ImplGetDriverControlString(driverControl, bufSize, length, driverControlString);
 
-        public QComDriverControl(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public QComDriverControl(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

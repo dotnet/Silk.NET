@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_EGL_image_storage")]
-    public abstract unsafe partial class ExtEglImageStorage : NativeExtension<GL>
+    public unsafe partial class ExtEglImageStorage : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_EGL_image_storage";
         /// <summary>
@@ -32,7 +32,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetTexStorageEXT")]
-        public abstract unsafe void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] int* attrib_list);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] int* attrib_list)
+            => ImplEglimageTargetTexStorage(target, image, attrib_list);
 
         /// <summary>
         /// To be added.
@@ -47,7 +49,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetTexStorageEXT")]
-        public abstract void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] Span<int> attrib_list);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] Span<int> attrib_list)
+            => ImplEglimageTargetTexStorage(target, image, attrib_list);
 
         /// <summary>
         /// To be added.
@@ -62,7 +66,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetTextureStorageEXT")]
-        public abstract unsafe void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] int* attrib_list);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] int* attrib_list)
+            => ImplEglimageTargetTextureStorage(texture, image, attrib_list);
 
         /// <summary>
         /// To be added.
@@ -77,7 +83,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetTextureStorageEXT")]
-        public abstract void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] Span<int> attrib_list);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] Span<int> attrib_list)
+            => ImplEglimageTargetTextureStorage(texture, image, attrib_list);
 
         /// <summary>
         /// To be added.
@@ -91,6 +99,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// <param name="attrib_list">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int image, [Flow(FlowDirection.In)] int* attrib_list)
         {
             // IntPtrOverloader
@@ -109,6 +118,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// <param name="attrib_list">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int image, [Flow(FlowDirection.In)] Span<int> attrib_list)
         {
             // IntPtrOverloader
@@ -127,6 +137,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// <param name="attrib_list">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int image, [Flow(FlowDirection.In)] int* attrib_list)
         {
             // IntPtrOverloader
@@ -145,15 +156,17 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// <param name="attrib_list">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int image, [Flow(FlowDirection.In)] Span<int> attrib_list)
         {
             // IntPtrOverloader
             EglimageTargetTextureStorage(texture, new IntPtr(image), attrib_list);
         }
 
-        public ExtEglImageStorage(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtEglImageStorage(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

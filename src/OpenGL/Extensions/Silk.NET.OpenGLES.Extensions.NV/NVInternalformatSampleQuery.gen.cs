@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_internalformat_sample_query")]
-    public abstract unsafe partial class NVInternalformatSampleQuery : NativeExtension<GL>
+    public unsafe partial class NVInternalformatSampleQuery : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_internalformat_sample_query";
         /// <summary>
@@ -42,7 +42,9 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
-        public abstract unsafe void GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetInternalformatSample(target, internalformat, samples, pname, count, @params);
 
         /// <summary>
         /// To be added.
@@ -67,7 +69,9 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
-        public abstract void GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetInternalformatSample([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+            => ImplGetInternalformatSample(target, internalformat, samples, pname, count, @params);
 
         /// <summary>
         /// To be added.
@@ -92,7 +96,9 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
-        public abstract unsafe void GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetInternalformatSample(target, internalformat, samples, pname, count, @params);
 
         /// <summary>
         /// To be added.
@@ -117,11 +123,14 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetInternalformatSampleivNV")]
-        public abstract void GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetInternalformatSample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+            => ImplGetInternalformatSample(target, internalformat, samples, pname, count, @params);
 
-        public NVInternalformatSampleQuery(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVInternalformatSampleQuery(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

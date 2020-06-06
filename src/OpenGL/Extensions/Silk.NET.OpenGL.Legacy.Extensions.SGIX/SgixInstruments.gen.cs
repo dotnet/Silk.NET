@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_instruments")]
-    public abstract unsafe partial class SgixInstruments : NativeExtension<GL>
+    public unsafe partial class SgixInstruments : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_instruments";
         /// <summary>
@@ -24,7 +24,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// </summary>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetInstrumentsSGIX")]
-        public abstract int GetInstruments();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int GetInstruments()
+            => ImplGetInstruments();
 
         /// <summary>
         /// To be added.
@@ -37,7 +39,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glInstrumentsBufferSGIX")]
-        public abstract unsafe void InstrumentsBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] int* buffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void InstrumentsBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] int* buffer)
+            => ImplInstrumentsBuffer(size, buffer);
 
         /// <summary>
         /// To be added.
@@ -50,7 +54,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glInstrumentsBufferSGIX")]
-        public abstract void InstrumentsBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<int> buffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void InstrumentsBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<int> buffer)
+            => ImplInstrumentsBuffer(size, buffer);
 
         /// <summary>
         /// To be added.
@@ -61,7 +67,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glPollInstrumentsSGIX")]
-        public abstract unsafe int PollInstruments([Count(Count = 1), Flow(FlowDirection.Out)] int* marker_p);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe int PollInstruments([Count(Count = 1), Flow(FlowDirection.Out)] int* marker_p)
+            => ImplPollInstruments(marker_p);
 
         /// <summary>
         /// To be added.
@@ -72,7 +80,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glPollInstrumentsSGIX")]
-        public abstract int PollInstruments([Count(Count = 1), Flow(FlowDirection.Out)] out int marker_p);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int PollInstruments([Count(Count = 1), Flow(FlowDirection.Out)] out int marker_p)
+            => ImplPollInstruments(marker_p);
 
         /// <summary>
         /// To be added.
@@ -81,13 +91,17 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glReadInstrumentsSGIX")]
-        public abstract void ReadInstruments([Flow(FlowDirection.In)] int marker);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReadInstruments([Flow(FlowDirection.In)] int marker)
+            => ImplReadInstruments(marker);
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glStartInstrumentsSGIX")]
-        public abstract void StartInstruments();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void StartInstruments()
+            => ImplStartInstruments();
 
         /// <summary>
         /// To be added.
@@ -96,11 +110,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glStopInstrumentsSGIX")]
-        public abstract void StopInstruments([Flow(FlowDirection.In)] int marker);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void StopInstruments([Flow(FlowDirection.In)] int marker)
+            => ImplStopInstruments(marker);
 
-        public SgixInstruments(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgixInstruments(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

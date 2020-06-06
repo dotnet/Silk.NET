@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.7.0-3.20303.6" PrivateAssets="all" />
+        <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.0.0" PrivateAssets="all" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\Core\Silk.NET.BuildTools\Silk.NET.BuildTools.csproj" />
+      <ProjectReference Include="..\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
+    </ItemGroup>
+
+</Project>

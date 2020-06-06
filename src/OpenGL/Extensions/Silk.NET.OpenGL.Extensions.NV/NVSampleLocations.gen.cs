@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.NV
 {
     [Extension("NV_sample_locations")]
-    public abstract unsafe partial class NVSampleLocations : NativeExtension<GL>
+    public unsafe partial class NVSampleLocations : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_sample_locations";
         /// <summary>
@@ -35,7 +35,9 @@ namespace Silk.NET.OpenGL.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvNV")]
-        public abstract unsafe void FramebufferSampleLocations([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void FramebufferSampleLocations([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v)
+            => ImplFramebufferSampleLocations(target, start, count, v);
 
         /// <summary>
         /// To be added.
@@ -53,7 +55,9 @@ namespace Silk.NET.OpenGL.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvNV")]
-        public abstract void FramebufferSampleLocations([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferSampleLocations([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<float> v)
+            => ImplFramebufferSampleLocations(target, start, count, v);
 
         /// <summary>
         /// To be added.
@@ -71,7 +75,9 @@ namespace Silk.NET.OpenGL.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glNamedFramebufferSampleLocationsfvNV")]
-        public abstract unsafe void NamedFramebufferSampleLocations([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void NamedFramebufferSampleLocations([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v)
+            => ImplNamedFramebufferSampleLocations(framebuffer, start, count, v);
 
         /// <summary>
         /// To be added.
@@ -89,13 +95,17 @@ namespace Silk.NET.OpenGL.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glNamedFramebufferSampleLocationsfvNV")]
-        public abstract void NamedFramebufferSampleLocations([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void NamedFramebufferSampleLocations([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<float> v)
+            => ImplNamedFramebufferSampleLocations(framebuffer, start, count, v);
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glResolveDepthValuesNV")]
-        public abstract void ResolveDepthValues();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ResolveDepthValues()
+            => ImplResolveDepthValues();
 
         /// <summary>
         /// To be added.
@@ -113,7 +123,9 @@ namespace Silk.NET.OpenGL.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvNV")]
-        public abstract unsafe void FramebufferSampleLocations([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void FramebufferSampleLocations([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v)
+            => ImplFramebufferSampleLocations(target, start, count, v);
 
         /// <summary>
         /// To be added.
@@ -131,11 +143,14 @@ namespace Silk.NET.OpenGL.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvNV")]
-        public abstract void FramebufferSampleLocations([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferSampleLocations([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<float> v)
+            => ImplFramebufferSampleLocations(target, start, count, v);
 
-        public NVSampleLocations(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVSampleLocations(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

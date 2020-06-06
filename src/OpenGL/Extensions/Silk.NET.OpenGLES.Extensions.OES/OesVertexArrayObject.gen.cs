@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [Extension("OES_vertex_array_object")]
-    public abstract unsafe partial class OesVertexArrayObject : NativeExtension<GL>
+    public unsafe partial class OesVertexArrayObject : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_vertex_array_object";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindVertexArrayOES")]
-        public abstract void BindVertexArray([Flow(FlowDirection.In)] uint array);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindVertexArray([Flow(FlowDirection.In)] uint array)
+            => ImplBindVertexArray(array);
 
         /// <summary>
         /// To be added.
@@ -39,7 +41,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteVertexArraysOES")]
-        public abstract unsafe void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* arrays);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* arrays)
+            => ImplDeleteVertexArrays(n, arrays);
 
         /// <summary>
         /// To be added.
@@ -52,7 +56,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteVertexArraysOES")]
-        public abstract void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> arrays);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> arrays)
+            => ImplDeleteVertexArrays(n, arrays);
 
         /// <summary>
         /// To be added.
@@ -65,7 +71,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenVertexArraysOES")]
-        public abstract unsafe void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays)
+            => ImplGenVertexArrays(n, arrays);
 
         /// <summary>
         /// To be added.
@@ -78,7 +86,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenVertexArraysOES")]
-        public abstract void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
+            => ImplGenVertexArrays(n, arrays);
 
         /// <summary>
         /// To be added.
@@ -88,7 +98,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsVertexArrayOES")]
-        public abstract bool IsVertexArray([Flow(FlowDirection.In)] uint array);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsVertexArray([Flow(FlowDirection.In)] uint array)
+            => ImplIsVertexArray(array);
 
         /// <summary>
         /// To be added.
@@ -100,6 +112,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteVertexArray([Count(Parameter = "n"), Flow(FlowDirection.In)] uint arrays)
         {
             // ArrayParameterOverloader
@@ -116,6 +129,7 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenVertexArray()
         {
             const uint n = 1;
@@ -125,9 +139,10 @@ namespace Silk.NET.OpenGLES.Extensions.OES
             return ret;
         }
 
-        public OesVertexArrayObject(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public OesVertexArrayObject(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_list_priority")]
-    public abstract unsafe partial class SgixListPriority : NativeExtension<GL>
+    public unsafe partial class SgixListPriority : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_list_priority";
         /// <summary>
@@ -33,7 +33,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetListParameterfvSGIX")]
-        public abstract unsafe void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetListParameter(list, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -49,7 +51,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetListParameterfvSGIX")]
-        public abstract void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetListParameter(list, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -65,7 +69,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetListParameterivSGIX")]
-        public abstract unsafe void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetListParameter(list, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -81,7 +87,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetListParameterivSGIX")]
-        public abstract void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetListParameter(list, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -96,7 +104,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glListParameterfSGIX")]
-        public abstract void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] float param)
+            => ImplListParameter(list, pname, param);
 
         /// <summary>
         /// To be added.
@@ -112,7 +122,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glListParameterfvSGIX")]
-        public abstract unsafe void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params)
+            => ImplListParameter(list, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -128,7 +140,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glListParameterfvSGIX")]
-        public abstract void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params)
+            => ImplListParameter(list, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -143,7 +157,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glListParameteriSGIX")]
-        public abstract void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Flow(FlowDirection.In)] int param)
+            => ImplListParameter(list, pname, param);
 
         /// <summary>
         /// To be added.
@@ -159,7 +175,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glListParameterivSGIX")]
-        public abstract unsafe void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplListParameter(list, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -175,7 +193,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glListParameterivSGIX")]
-        public abstract void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplListParameter(list, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -191,7 +211,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetListParameterfvSGIX")]
-        public abstract unsafe void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetListParameter(list, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -207,7 +229,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetListParameterfvSGIX")]
-        public abstract void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetListParameter(list, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -223,7 +247,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetListParameterivSGIX")]
-        public abstract unsafe void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetListParameter(list, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -239,7 +265,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetListParameterivSGIX")]
-        public abstract void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetListParameter(list, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -254,7 +282,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glListParameterfSGIX")]
-        public abstract void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Flow(FlowDirection.In)] float param)
+            => ImplListParameter(list, pname, param);
 
         /// <summary>
         /// To be added.
@@ -270,7 +300,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glListParameterfvSGIX")]
-        public abstract unsafe void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params)
+            => ImplListParameter(list, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -286,7 +318,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glListParameterfvSGIX")]
-        public abstract void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params)
+            => ImplListParameter(list, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -301,7 +335,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glListParameteriSGIX")]
-        public abstract void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Flow(FlowDirection.In)] int param)
+            => ImplListParameter(list, pname, param);
 
         /// <summary>
         /// To be added.
@@ -317,7 +353,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glListParameterivSGIX")]
-        public abstract unsafe void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplListParameter(list, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -333,11 +371,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glListParameterivSGIX")]
-        public abstract void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplListParameter(list, pname, @params);
 
-        public SgixListPriority(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgixListPriority(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

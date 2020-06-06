@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.HP
 {
     [Extension("HP_image_transform")]
-    public abstract unsafe partial class HPImageTransform : NativeExtension<GL>
+    public unsafe partial class HPImageTransform : NativeExtension<GL>
     {
         public const string ExtensionName = "HP_image_transform";
         /// <summary>
@@ -33,7 +33,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetImageTransformParameterivHP")]
-        public abstract unsafe void GetImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetImageTransformParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -49,7 +51,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetImageTransformParameterivHP")]
-        public abstract void GetImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetImageTransformParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -65,7 +69,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetImageTransformParameterfvHP")]
-        public abstract unsafe void GetImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetImageTransformParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -81,7 +87,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetImageTransformParameterfvHP")]
-        public abstract void GetImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetImageTransformParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -96,7 +104,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glImageTransformParameteriHP")]
-        public abstract void ImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Flow(FlowDirection.In)] int param)
+            => ImplImageTransformParameter(target, pname, param);
 
         /// <summary>
         /// To be added.
@@ -111,7 +121,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glImageTransformParameterfHP")]
-        public abstract void ImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Flow(FlowDirection.In)] float param)
+            => ImplImageTransformParameter(target, pname, param);
 
         /// <summary>
         /// To be added.
@@ -127,7 +139,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glImageTransformParameterivHP")]
-        public abstract unsafe void ImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplImageTransformParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -143,7 +157,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glImageTransformParameterivHP")]
-        public abstract void ImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplImageTransformParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -159,7 +175,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glImageTransformParameterfvHP")]
-        public abstract unsafe void ImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params)
+            => ImplImageTransformParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -175,7 +193,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glImageTransformParameterfvHP")]
-        public abstract void ImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ImageTransformParameter([Flow(FlowDirection.In)] HP target, [Flow(FlowDirection.In)] HP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params)
+            => ImplImageTransformParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -191,7 +211,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetImageTransformParameterivHP")]
-        public abstract unsafe void GetImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetImageTransformParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -207,7 +229,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetImageTransformParameterivHP")]
-        public abstract void GetImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetImageTransformParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -223,7 +247,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetImageTransformParameterfvHP")]
-        public abstract unsafe void GetImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetImageTransformParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -239,7 +265,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetImageTransformParameterfvHP")]
-        public abstract void GetImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetImageTransformParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -254,7 +282,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glImageTransformParameteriHP")]
-        public abstract void ImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Flow(FlowDirection.In)] int param)
+            => ImplImageTransformParameter(target, pname, param);
 
         /// <summary>
         /// To be added.
@@ -269,7 +299,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glImageTransformParameterfHP")]
-        public abstract void ImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Flow(FlowDirection.In)] float param)
+            => ImplImageTransformParameter(target, pname, param);
 
         /// <summary>
         /// To be added.
@@ -285,7 +317,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glImageTransformParameterivHP")]
-        public abstract unsafe void ImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplImageTransformParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -301,7 +335,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glImageTransformParameterivHP")]
-        public abstract void ImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplImageTransformParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -317,7 +353,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glImageTransformParameterfvHP")]
-        public abstract unsafe void ImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params)
+            => ImplImageTransformParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -333,11 +371,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glImageTransformParameterfvHP")]
-        public abstract void ImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params)
+            => ImplImageTransformParameter(target, pname, @params);
 
-        public HPImageTransform(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public HPImageTransform(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

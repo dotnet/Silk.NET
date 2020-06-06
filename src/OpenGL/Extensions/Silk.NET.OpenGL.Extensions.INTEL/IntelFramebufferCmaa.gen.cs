@@ -6,28 +6,31 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.INTEL
 {
     [Extension("INTEL_framebuffer_CMAA")]
-    public abstract unsafe partial class IntelFramebufferCmaa : NativeExtension<GL>
+    public unsafe partial class IntelFramebufferCmaa : NativeExtension<GL>
     {
         public const string ExtensionName = "INTEL_framebuffer_CMAA";
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glApplyFramebufferAttachmentCMAAINTEL")]
-        public abstract void ApplyFramebufferAttachmentCmaa();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ApplyFramebufferAttachmentCmaa()
+            => ImplApplyFramebufferAttachmentCmaa();
 
-        public IntelFramebufferCmaa(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public IntelFramebufferCmaa(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.IMG
 {
     [Extension("IMG_framebuffer_downsample")]
-    public abstract unsafe partial class ImgFramebufferDownsample : NativeExtension<GL>
+    public unsafe partial class ImgFramebufferDownsample : NativeExtension<GL>
     {
         public const string ExtensionName = "IMG_framebuffer_downsample";
         /// <summary>
@@ -44,7 +44,9 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferTexture2DDownsampleIMG")]
-        public abstract void FramebufferTexture2DDownsample([Flow(FlowDirection.In)] IMG target, [Flow(FlowDirection.In)] IMG attachment, [Flow(FlowDirection.In)] IMG textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xscale, [Flow(FlowDirection.In)] int yscale);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferTexture2DDownsample([Flow(FlowDirection.In)] IMG target, [Flow(FlowDirection.In)] IMG attachment, [Flow(FlowDirection.In)] IMG textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xscale, [Flow(FlowDirection.In)] int yscale)
+            => ImplFramebufferTexture2DDownsample(target, attachment, textarget, texture, level, xscale, yscale);
 
         /// <summary>
         /// To be added.
@@ -71,7 +73,9 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureLayerDownsampleIMG")]
-        public abstract void FramebufferTextureLayerDownsample([Flow(FlowDirection.In)] IMG target, [Flow(FlowDirection.In)] IMG attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] int xscale, [Flow(FlowDirection.In)] int yscale);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferTextureLayerDownsample([Flow(FlowDirection.In)] IMG target, [Flow(FlowDirection.In)] IMG attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] int xscale, [Flow(FlowDirection.In)] int yscale)
+            => ImplFramebufferTextureLayerDownsample(target, attachment, texture, level, layer, xscale, yscale);
 
         /// <summary>
         /// To be added.
@@ -98,7 +102,9 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferTexture2DDownsampleIMG")]
-        public abstract void FramebufferTexture2DDownsample([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xscale, [Flow(FlowDirection.In)] int yscale);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferTexture2DDownsample([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xscale, [Flow(FlowDirection.In)] int yscale)
+            => ImplFramebufferTexture2DDownsample(target, attachment, textarget, texture, level, xscale, yscale);
 
         /// <summary>
         /// To be added.
@@ -125,11 +131,14 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureLayerDownsampleIMG")]
-        public abstract void FramebufferTextureLayerDownsample([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] int xscale, [Flow(FlowDirection.In)] int yscale);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferTextureLayerDownsample([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] int xscale, [Flow(FlowDirection.In)] int yscale)
+            => ImplFramebufferTextureLayerDownsample(target, attachment, texture, level, layer, xscale, yscale);
 
-        public ImgFramebufferDownsample(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ImgFramebufferDownsample(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

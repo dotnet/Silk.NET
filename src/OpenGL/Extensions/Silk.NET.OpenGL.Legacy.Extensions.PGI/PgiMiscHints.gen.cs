@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.PGI
 {
     [Extension("PGI_misc_hints")]
-    public abstract unsafe partial class PgiMiscHints : NativeExtension<GL>
+    public unsafe partial class PgiMiscHints : NativeExtension<GL>
     {
         public const string ExtensionName = "PGI_misc_hints";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.PGI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glHintPGI")]
-        public abstract void Hint([Flow(FlowDirection.In)] PGI target, [Flow(FlowDirection.In)] int mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Hint([Flow(FlowDirection.In)] PGI target, [Flow(FlowDirection.In)] int mode)
+            => ImplHint(target, mode);
 
         /// <summary>
         /// To be added.
@@ -41,11 +43,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.PGI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glHintPGI")]
-        public abstract void Hint([Flow(FlowDirection.In)] HintTargetPGI target, [Flow(FlowDirection.In)] int mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Hint([Flow(FlowDirection.In)] HintTargetPGI target, [Flow(FlowDirection.In)] int mode)
+            => ImplHint(target, mode);
 
-        public PgiMiscHints(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public PgiMiscHints(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

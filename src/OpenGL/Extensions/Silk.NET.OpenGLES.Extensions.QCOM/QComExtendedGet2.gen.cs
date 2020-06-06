@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
     [Extension("QCOM_extended_get2")]
-    public abstract unsafe partial class QComExtendedGet2 : NativeExtension<GL>
+    public unsafe partial class QComExtendedGet2 : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_extended_get2";
         /// <summary>
@@ -34,7 +34,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetProgramsQCOM")]
-        public abstract unsafe void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] uint* programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] int* numPrograms);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] uint* programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] int* numPrograms)
+            => ImplExtGetProgram(programs, maxPrograms, numPrograms);
 
         /// <summary>
         /// To be added.
@@ -51,7 +53,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetProgramsQCOM")]
-        public abstract void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Span<uint> programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] out int numPrograms);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Span<uint> programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] out int numPrograms)
+            => ImplExtGetProgram(programs, maxPrograms, numPrograms);
 
         /// <summary>
         /// To be added.
@@ -69,7 +73,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public abstract unsafe void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Flow(FlowDirection.Out)] char* source, [Flow(FlowDirection.Out)] int* length);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Flow(FlowDirection.Out)] char* source, [Flow(FlowDirection.Out)] int* length)
+            => ImplExtGetProgramBinarySource(program, shadertype, source, length);
 
         /// <summary>
         /// To be added.
@@ -87,7 +93,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public abstract void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Flow(FlowDirection.Out)] Span<char> source, [Flow(FlowDirection.Out)] Span<int> length);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Flow(FlowDirection.Out)] Span<char> source, [Flow(FlowDirection.Out)] Span<int> length)
+            => ImplExtGetProgramBinarySource(program, shadertype, source, length);
 
         /// <summary>
         /// To be added.
@@ -104,7 +112,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
-        public abstract unsafe void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] uint* shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] int* numShaders);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] uint* shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] int* numShaders)
+            => ImplExtGetShaders(shaders, maxShaders, numShaders);
 
         /// <summary>
         /// To be added.
@@ -121,7 +131,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
-        public abstract void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Span<uint> shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] out int numShaders);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Span<uint> shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] out int numShaders)
+            => ImplExtGetShaders(shaders, maxShaders, numShaders);
 
         /// <summary>
         /// To be added.
@@ -131,7 +143,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glExtIsProgramBinaryQCOM")]
-        public abstract bool ExtIsProgramBinary([Flow(FlowDirection.In)] uint program);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool ExtIsProgramBinary([Flow(FlowDirection.In)] uint program)
+            => ImplExtIsProgramBinary(program);
 
         /// <summary>
         /// To be added.
@@ -149,7 +163,9 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public abstract unsafe void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.Out)] string source, [Flow(FlowDirection.Out)] int* length);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.Out)] string source, [Flow(FlowDirection.Out)] int* length)
+            => ImplExtGetProgramBinarySource(program, shadertype, source, length);
 
         /// <summary>
         /// To be added.
@@ -167,11 +183,14 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public abstract void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.Out)] string source, [Flow(FlowDirection.Out)] Span<int> length);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.Out)] string source, [Flow(FlowDirection.Out)] Span<int> length)
+            => ImplExtGetProgramBinarySource(program, shadertype, source, length);
 
-        public QComExtendedGet2(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public QComExtendedGet2(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

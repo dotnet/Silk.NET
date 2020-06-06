@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.KHR
 {
     [Extension("KHR_debug")]
-    public abstract unsafe partial class KhrDebug : NativeExtension<GL>
+    public unsafe partial class KhrDebug : NativeExtension<GL>
     {
         public const string ExtensionName = "KHR_debug";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageCallbackKHR")]
-        public abstract unsafe void DebugMessageCallback([Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall)] DebugProcKhr callback, [Flow(FlowDirection.In)] void* userParam);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DebugMessageCallback([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProcKhr callback, [Flow(FlowDirection.In)] void* userParam)
+            => ImplDebugMessageCallback(callback, userParam);
 
         /// <summary>
         /// To be added.
@@ -41,7 +43,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageCallbackKHR")]
-        public abstract void DebugMessageCallback<T0>([Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall)] DebugProcKhr callback, [Flow(FlowDirection.In)] Span<T0> userParam) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DebugMessageCallback<T0>([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProcKhr callback, [Flow(FlowDirection.In)] Span<T0> userParam) where T0 : unmanaged
+            => ImplDebugMessageCallback<T0>(callback, userParam);
 
         /// <summary>
         /// To be added.
@@ -65,7 +69,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageControlKHR")]
-        public abstract unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled)
+            => ImplDebugMessageControl(source, type, severity, count, ids, enabled);
 
         /// <summary>
         /// To be added.
@@ -89,7 +95,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageControlKHR")]
-        public abstract void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<uint> ids, [Flow(FlowDirection.In)] bool enabled);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+            => ImplDebugMessageControl(source, type, severity, count, ids, enabled);
 
         /// <summary>
         /// To be added.
@@ -113,7 +121,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageInsertKHR")]
-        public abstract unsafe void DebugMessageInsert([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] char* buf);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DebugMessageInsert([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] char* buf)
+            => ImplDebugMessageInsert(source, type, id, severity, length, buf);
 
         /// <summary>
         /// To be added.
@@ -137,7 +147,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageInsertKHR")]
-        public abstract void DebugMessageInsert([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<char> buf);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DebugMessageInsert([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<char> buf)
+            => ImplDebugMessageInsert(source, type, id, severity, length, buf);
 
         /// <summary>
         /// To be added.
@@ -174,7 +186,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetDebugMessageLogKHR")]
-        public abstract unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* messageLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* messageLog)
+            => ImplGetDebugMessageLog(count, bufSize, sources, types, ids, severities, lengths, messageLog);
 
         /// <summary>
         /// To be added.
@@ -211,7 +225,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetDebugMessageLogKHR")]
-        public abstract uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> messageLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> messageLog)
+            => ImplGetDebugMessageLog(count, bufSize, sources, types, ids, severities, lengths, messageLog);
 
         /// <summary>
         /// To be added.
@@ -233,7 +249,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectLabelKHR")]
-        public abstract unsafe void GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* label)
+            => ImplGetObjectLabel(identifier, name, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -255,7 +273,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectLabelKHR")]
-        public abstract void GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> label)
+            => ImplGetObjectLabel(identifier, name, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -275,7 +295,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectPtrLabelKHR")]
-        public abstract unsafe void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* label)
+            => ImplGetObjectPtrLabel(ptr, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -295,7 +317,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectPtrLabelKHR")]
-        public abstract void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> label) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> label) where T0 : unmanaged
+            => ImplGetObjectPtrLabel<T0>(ptr, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -307,7 +331,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetPointervKHR")]
-        public abstract unsafe void GetPointer([Flow(FlowDirection.In)] KHR pname, [Flow(FlowDirection.Out)] void** @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPointer([Flow(FlowDirection.In)] KHR pname, [Flow(FlowDirection.Out)] void** @params)
+            => ImplGetPointer(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -325,7 +351,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glObjectLabelKHR")]
-        public abstract unsafe void ObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] char* label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] char* label)
+            => ImplObjectLabel(identifier, name, length, label);
 
         /// <summary>
         /// To be added.
@@ -343,7 +371,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glObjectLabelKHR")]
-        public abstract void ObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<char> label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<char> label)
+            => ImplObjectLabel(identifier, name, length, label);
 
         /// <summary>
         /// To be added.
@@ -358,7 +388,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glObjectPtrLabelKHR")]
-        public abstract unsafe void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] char* label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] char* label)
+            => ImplObjectPtrLabel(ptr, length, label);
 
         /// <summary>
         /// To be added.
@@ -373,13 +405,17 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glObjectPtrLabelKHR")]
-        public abstract void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<char> label) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<char> label) where T0 : unmanaged
+            => ImplObjectPtrLabel<T0>(ptr, length, label);
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glPopDebugGroupKHR")]
-        public abstract void PopDebugGroup();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PopDebugGroup()
+            => ImplPopDebugGroup();
 
         /// <summary>
         /// To be added.
@@ -397,7 +433,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPushDebugGroupKHR")]
-        public abstract unsafe void PushDebugGroup([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] char* message);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void PushDebugGroup([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] char* message)
+            => ImplPushDebugGroup(source, id, length, message);
 
         /// <summary>
         /// To be added.
@@ -415,7 +453,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPushDebugGroupKHR")]
-        public abstract void PushDebugGroup([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<char> message);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PushDebugGroup([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<char> message)
+            => ImplPushDebugGroup(source, id, length, message);
 
         /// <summary>
         /// To be added.
@@ -439,7 +479,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageControlKHR")]
-        public abstract unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled)
+            => ImplDebugMessageControl(source, type, severity, count, ids, enabled);
 
         /// <summary>
         /// To be added.
@@ -463,7 +505,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageControlKHR")]
-        public abstract void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<uint> ids, [Flow(FlowDirection.In)] bool enabled);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+            => ImplDebugMessageControl(source, type, severity, count, ids, enabled);
 
         /// <summary>
         /// To be added.
@@ -487,7 +531,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageInsertKHR")]
-        public abstract void DebugMessageInsert([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string buf);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DebugMessageInsert([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string buf)
+            => ImplDebugMessageInsert(source, type, id, severity, length, buf);
 
         /// <summary>
         /// To be added.
@@ -523,7 +569,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetDebugMessageLogKHR")]
-        public abstract unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -6)] out string messageLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -6)] out string messageLog)
+            => ImplGetDebugMessageLog(count, bufSize, sources, types, ids, severities, lengths, messageLog);
 
         /// <summary>
         /// To be added.
@@ -559,7 +607,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetDebugMessageLogKHR")]
-        public abstract uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -6)] out string messageLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -6)] out string messageLog)
+            => ImplGetDebugMessageLog(count, bufSize, sources, types, ids, severities, lengths, messageLog);
 
         /// <summary>
         /// To be added.
@@ -580,7 +630,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectLabelKHR")]
-        public abstract unsafe void GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label)
+            => ImplGetObjectLabel(identifier, name, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -601,7 +653,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectLabelKHR")]
-        public abstract void GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<uint> length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<uint> length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label)
+            => ImplGetObjectLabel(identifier, name, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -620,7 +674,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectPtrLabelKHR")]
-        public abstract unsafe void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label)
+            => ImplGetObjectPtrLabel(ptr, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -639,7 +695,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectPtrLabelKHR")]
-        public abstract void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label) where T0 : unmanaged
+            => ImplGetObjectPtrLabel<T0>(ptr, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -657,7 +715,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glObjectLabelKHR")]
-        public abstract void ObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label)
+            => ImplObjectLabel(identifier, name, length, label);
 
         /// <summary>
         /// To be added.
@@ -672,7 +732,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glObjectPtrLabelKHR")]
-        public abstract unsafe void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label)
+            => ImplObjectPtrLabel(ptr, length, label);
 
         /// <summary>
         /// To be added.
@@ -687,7 +749,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glObjectPtrLabelKHR")]
-        public abstract void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label) where T0 : unmanaged
+            => ImplObjectPtrLabel<T0>(ptr, length, label);
 
         /// <summary>
         /// To be added.
@@ -705,7 +769,9 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPushDebugGroupKHR")]
-        public abstract void PushDebugGroup([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string message);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PushDebugGroup([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string message)
+            => ImplPushDebugGroup(source, id, length, message);
 
         /// <summary>
         /// To be added.
@@ -716,6 +782,7 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
         /// <param name="@params">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void* GetPointer([Flow(FlowDirection.In)] KHR pname)
         {
             // ReturnTypeOverloader
@@ -724,9 +791,10 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
             return ret;
         }
 
-        public KhrDebug(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrDebug(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

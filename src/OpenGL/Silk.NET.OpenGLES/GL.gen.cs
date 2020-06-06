@@ -6,14 +6,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Loader;
-using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES
 {
-    public abstract unsafe partial class GL : NativeAPI
+    public unsafe partial class GL : NativeAPI
     {
 
         /// <summary>
@@ -23,7 +24,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glActiveTexture")]
-        public abstract void ActiveTexture([Flow(FlowDirection.In)] GLEnum texture);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ActiveTexture([Flow(FlowDirection.In)] GLEnum texture)
+            => ImplActiveTexture(texture);
 
         /// <summary>
         /// To be added.
@@ -35,7 +38,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glAttachShader")]
-        public abstract void AttachShader([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint shader);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void AttachShader([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint shader)
+            => ImplAttachShader(program, shader);
 
         /// <summary>
         /// To be added.
@@ -50,7 +55,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindAttribLocation")]
-        public abstract unsafe void BindAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void BindAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] char* name)
+            => ImplBindAttribLocation(program, index, name);
 
         /// <summary>
         /// To be added.
@@ -65,7 +72,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindAttribLocation")]
-        public abstract void BindAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Span<char> name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Span<char> name)
+            => ImplBindAttribLocation(program, index, name);
 
         /// <summary>
         /// To be added.
@@ -77,7 +86,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindBuffer")]
-        public abstract void BindBuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint buffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindBuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint buffer)
+            => ImplBindBuffer(target, buffer);
 
         /// <summary>
         /// To be added.
@@ -89,7 +100,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindFramebuffer")]
-        public abstract void BindFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint framebuffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint framebuffer)
+            => ImplBindFramebuffer(target, framebuffer);
 
         /// <summary>
         /// To be added.
@@ -101,7 +114,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindRenderbuffer")]
-        public abstract void BindRenderbuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint renderbuffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindRenderbuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint renderbuffer)
+            => ImplBindRenderbuffer(target, renderbuffer);
 
         /// <summary>
         /// To be added.
@@ -113,7 +128,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindTexture")]
-        public abstract void BindTexture([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint texture);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindTexture([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint texture)
+            => ImplBindTexture(target, texture);
 
         /// <summary>
         /// To be added.
@@ -131,7 +148,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendColor")]
-        public abstract void BlendColor([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendColor([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha)
+            => ImplBlendColor(red, green, blue, alpha);
 
         /// <summary>
         /// To be added.
@@ -140,7 +159,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendEquation")]
-        public abstract void BlendEquation([Flow(FlowDirection.In)] GLEnum mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendEquation([Flow(FlowDirection.In)] GLEnum mode)
+            => ImplBlendEquation(mode);
 
         /// <summary>
         /// To be added.
@@ -152,7 +173,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendEquationSeparate")]
-        public abstract void BlendEquationSeparate([Flow(FlowDirection.In)] GLEnum modeRGB, [Flow(FlowDirection.In)] GLEnum modeAlpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendEquationSeparate([Flow(FlowDirection.In)] GLEnum modeRGB, [Flow(FlowDirection.In)] GLEnum modeAlpha)
+            => ImplBlendEquationSeparate(modeRGB, modeAlpha);
 
         /// <summary>
         /// To be added.
@@ -164,7 +187,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendFunc")]
-        public abstract void BlendFunc([Flow(FlowDirection.In)] GLEnum sfactor, [Flow(FlowDirection.In)] GLEnum dfactor);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendFunc([Flow(FlowDirection.In)] GLEnum sfactor, [Flow(FlowDirection.In)] GLEnum dfactor)
+            => ImplBlendFunc(sfactor, dfactor);
 
         /// <summary>
         /// To be added.
@@ -182,7 +207,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendFuncSeparate")]
-        public abstract void BlendFuncSeparate([Flow(FlowDirection.In)] GLEnum sfactorRGB, [Flow(FlowDirection.In)] GLEnum dfactorRGB, [Flow(FlowDirection.In)] GLEnum sfactorAlpha, [Flow(FlowDirection.In)] GLEnum dfactorAlpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendFuncSeparate([Flow(FlowDirection.In)] GLEnum sfactorRGB, [Flow(FlowDirection.In)] GLEnum dfactorRGB, [Flow(FlowDirection.In)] GLEnum sfactorAlpha, [Flow(FlowDirection.In)] GLEnum dfactorAlpha)
+            => ImplBlendFuncSeparate(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);
 
         /// <summary>
         /// To be added.
@@ -201,7 +228,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBufferData")]
-        public abstract unsafe void BufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] GLEnum usage);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void BufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] GLEnum usage)
+            => ImplBufferData(target, size, data, usage);
 
         /// <summary>
         /// To be added.
@@ -220,7 +249,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBufferData")]
-        public abstract void BufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
+            => ImplBufferData<T0>(target, size, data, usage);
 
         /// <summary>
         /// To be added.
@@ -239,7 +270,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glBufferSubData")]
-        public abstract unsafe void BufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void BufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data)
+            => ImplBufferSubData(target, offset, size, data);
 
         /// <summary>
         /// To be added.
@@ -258,7 +291,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glBufferSubData")]
-        public abstract void BufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged
+            => ImplBufferSubData<T0>(target, offset, size, data);
 
         /// <summary>
         /// To be added.
@@ -268,7 +303,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCheckFramebufferStatus")]
-        public abstract GLEnum CheckFramebufferStatus([Flow(FlowDirection.In)] GLEnum target);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public GLEnum CheckFramebufferStatus([Flow(FlowDirection.In)] GLEnum target)
+            => ImplCheckFramebufferStatus(target);
 
         /// <summary>
         /// To be added.
@@ -277,7 +314,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glClear")]
-        public abstract void Clear([Flow(FlowDirection.In)] uint mask);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Clear([Flow(FlowDirection.In)] uint mask)
+            => ImplClear(mask);
 
         /// <summary>
         /// To be added.
@@ -295,7 +334,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glClearColor")]
-        public abstract void ClearColor([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClearColor([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha)
+            => ImplClearColor(red, green, blue, alpha);
 
         /// <summary>
         /// To be added.
@@ -304,7 +345,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glClearDepthf")]
-        public abstract void ClearDepth([Flow(FlowDirection.In)] float d);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClearDepth([Flow(FlowDirection.In)] float d)
+            => ImplClearDepth(d);
 
         /// <summary>
         /// To be added.
@@ -313,7 +356,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glClearStencil")]
-        public abstract void ClearStencil([Flow(FlowDirection.In)] int s);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClearStencil([Flow(FlowDirection.In)] int s)
+            => ImplClearStencil(s);
 
         /// <summary>
         /// To be added.
@@ -331,7 +376,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glColorMask")]
-        public abstract void ColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha)
+            => ImplColorMask(red, green, blue, alpha);
 
         /// <summary>
         /// To be added.
@@ -340,7 +387,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCompileShader")]
-        public abstract void CompileShader([Flow(FlowDirection.In)] uint shader);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CompileShader([Flow(FlowDirection.In)] uint shader)
+            => ImplCompileShader(shader);
 
         /// <summary>
         /// To be added.
@@ -371,7 +420,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexImage2D")]
-        public abstract unsafe void CompressedTexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CompressedTexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data)
+            => ImplCompressedTexImage2D(target, level, internalformat, width, height, border, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -402,7 +453,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexImage2D")]
-        public abstract void CompressedTexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CompressedTexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged
+            => ImplCompressedTexImage2D<T0>(target, level, internalformat, width, height, border, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -436,7 +489,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexSubImage2D")]
-        public abstract unsafe void CompressedTexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CompressedTexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data)
+            => ImplCompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -470,7 +525,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexSubImage2D")]
-        public abstract void CompressedTexSubImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CompressedTexSubImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged
+            => ImplCompressedTexSubImage2D<T0>(target, level, xoffset, yoffset, width, height, format, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -500,7 +557,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCopyTexImage2D")]
-        public abstract void CopyTexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CopyTexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border)
+            => ImplCopyTexImage2D(target, level, internalformat, x, y, width, height, border);
 
         /// <summary>
         /// To be added.
@@ -530,14 +589,18 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCopyTexSubImage2D")]
-        public abstract void CopyTexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CopyTexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplCopyTexSubImage2D(target, level, xoffset, yoffset, x, y, width, height);
 
         /// <summary>
         /// To be added.
         /// </summary>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCreateProgram")]
-        public abstract uint CreateProgram();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint CreateProgram()
+            => ImplCreateProgram();
 
         /// <summary>
         /// To be added.
@@ -547,7 +610,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCreateShader")]
-        public abstract uint CreateShader([Flow(FlowDirection.In)] GLEnum type);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint CreateShader([Flow(FlowDirection.In)] GLEnum type)
+            => ImplCreateShader(type);
 
         /// <summary>
         /// To be added.
@@ -556,7 +621,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCullFace")]
-        public abstract void CullFace([Flow(FlowDirection.In)] GLEnum mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CullFace([Flow(FlowDirection.In)] GLEnum mode)
+            => ImplCullFace(mode);
 
         /// <summary>
         /// To be added.
@@ -569,7 +636,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteBuffers")]
-        public abstract unsafe void DeleteBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* buffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* buffers)
+            => ImplDeleteBuffers(n, buffers);
 
         /// <summary>
         /// To be added.
@@ -582,7 +651,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteBuffers")]
-        public abstract void DeleteBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> buffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> buffers)
+            => ImplDeleteBuffers(n, buffers);
 
         /// <summary>
         /// To be added.
@@ -595,7 +666,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteFramebuffers")]
-        public abstract unsafe void DeleteFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* framebuffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* framebuffers)
+            => ImplDeleteFramebuffers(n, framebuffers);
 
         /// <summary>
         /// To be added.
@@ -608,7 +681,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteFramebuffers")]
-        public abstract void DeleteFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> framebuffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> framebuffers)
+            => ImplDeleteFramebuffers(n, framebuffers);
 
         /// <summary>
         /// To be added.
@@ -617,7 +692,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteProgram")]
-        public abstract void DeleteProgram([Flow(FlowDirection.In)] uint program);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteProgram([Flow(FlowDirection.In)] uint program)
+            => ImplDeleteProgram(program);
 
         /// <summary>
         /// To be added.
@@ -630,7 +707,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteRenderbuffers")]
-        public abstract unsafe void DeleteRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* renderbuffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* renderbuffers)
+            => ImplDeleteRenderbuffers(n, renderbuffers);
 
         /// <summary>
         /// To be added.
@@ -643,7 +722,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteRenderbuffers")]
-        public abstract void DeleteRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> renderbuffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> renderbuffers)
+            => ImplDeleteRenderbuffers(n, renderbuffers);
 
         /// <summary>
         /// To be added.
@@ -652,7 +733,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteShader")]
-        public abstract void DeleteShader([Flow(FlowDirection.In)] uint shader);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteShader([Flow(FlowDirection.In)] uint shader)
+            => ImplDeleteShader(shader);
 
         /// <summary>
         /// To be added.
@@ -665,7 +748,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteTextures")]
-        public abstract unsafe void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures)
+            => ImplDeleteTextures(n, textures);
 
         /// <summary>
         /// To be added.
@@ -678,7 +763,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteTextures")]
-        public abstract void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> textures);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> textures)
+            => ImplDeleteTextures(n, textures);
 
         /// <summary>
         /// To be added.
@@ -687,7 +774,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDepthFunc")]
-        public abstract void DepthFunc([Flow(FlowDirection.In)] GLEnum func);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DepthFunc([Flow(FlowDirection.In)] GLEnum func)
+            => ImplDepthFunc(func);
 
         /// <summary>
         /// To be added.
@@ -696,7 +785,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDepthMask")]
-        public abstract void DepthMask([Flow(FlowDirection.In)] bool flag);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DepthMask([Flow(FlowDirection.In)] bool flag)
+            => ImplDepthMask(flag);
 
         /// <summary>
         /// To be added.
@@ -708,7 +799,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDepthRangef")]
-        public abstract void DepthRange([Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DepthRange([Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f)
+            => ImplDepthRange(n, f);
 
         /// <summary>
         /// To be added.
@@ -720,7 +813,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDetachShader")]
-        public abstract void DetachShader([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint shader);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DetachShader([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint shader)
+            => ImplDetachShader(program, shader);
 
         /// <summary>
         /// To be added.
@@ -729,7 +824,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDisable")]
-        public abstract void Disable([Flow(FlowDirection.In)] GLEnum cap);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Disable([Flow(FlowDirection.In)] GLEnum cap)
+            => ImplDisable(cap);
 
         /// <summary>
         /// To be added.
@@ -738,7 +835,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDisableVertexAttribArray")]
-        public abstract void DisableVertexAttribArray([Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DisableVertexAttribArray([Flow(FlowDirection.In)] uint index)
+            => ImplDisableVertexAttribArray(index);
 
         /// <summary>
         /// To be added.
@@ -753,7 +852,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawArrays")]
-        public abstract void DrawArrays([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawArrays([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count)
+            => ImplDrawArrays(mode, first, count);
 
         /// <summary>
         /// To be added.
@@ -772,7 +873,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from count and type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElements")]
-        public abstract unsafe void DrawElements([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawElements([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices)
+            => ImplDrawElements(mode, count, type, indices);
 
         /// <summary>
         /// To be added.
@@ -791,7 +894,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from count and type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElements")]
-        public abstract void DrawElements<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawElements<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged
+            => ImplDrawElements<T0>(mode, count, type, indices);
 
         /// <summary>
         /// To be added.
@@ -800,7 +905,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEnable")]
-        public abstract void Enable([Flow(FlowDirection.In)] GLEnum cap);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Enable([Flow(FlowDirection.In)] GLEnum cap)
+            => ImplEnable(cap);
 
         /// <summary>
         /// To be added.
@@ -809,19 +916,25 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEnableVertexAttribArray")]
-        public abstract void EnableVertexAttribArray([Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void EnableVertexAttribArray([Flow(FlowDirection.In)] uint index)
+            => ImplEnableVertexAttribArray(index);
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glFinish")]
-        public abstract void Finish();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Finish()
+            => ImplFinish();
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glFlush")]
-        public abstract void Flush();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Flush()
+            => ImplFlush();
 
         /// <summary>
         /// To be added.
@@ -839,7 +952,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferRenderbuffer")]
-        public abstract void FramebufferRenderbuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] GLEnum renderbuffertarget, [Flow(FlowDirection.In)] uint renderbuffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferRenderbuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] GLEnum renderbuffertarget, [Flow(FlowDirection.In)] uint renderbuffer)
+            => ImplFramebufferRenderbuffer(target, attachment, renderbuffertarget, renderbuffer);
 
         /// <summary>
         /// To be added.
@@ -860,7 +975,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferTexture2D")]
-        public abstract void FramebufferTexture2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] GLEnum textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferTexture2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] GLEnum textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level)
+            => ImplFramebufferTexture2D(target, attachment, textarget, texture, level);
 
         /// <summary>
         /// To be added.
@@ -869,7 +986,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFrontFace")]
-        public abstract void FrontFace([Flow(FlowDirection.In)] GLEnum mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FrontFace([Flow(FlowDirection.In)] GLEnum mode)
+            => ImplFrontFace(mode);
 
         /// <summary>
         /// To be added.
@@ -882,7 +1001,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenBuffers")]
-        public abstract unsafe void GenBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* buffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* buffers)
+            => ImplGenBuffers(n, buffers);
 
         /// <summary>
         /// To be added.
@@ -895,7 +1016,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenBuffers")]
-        public abstract void GenBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> buffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> buffers)
+            => ImplGenBuffers(n, buffers);
 
         /// <summary>
         /// To be added.
@@ -904,7 +1027,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGenerateMipmap")]
-        public abstract void GenerateMipmap([Flow(FlowDirection.In)] GLEnum target);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenerateMipmap([Flow(FlowDirection.In)] GLEnum target)
+            => ImplGenerateMipmap(target);
 
         /// <summary>
         /// To be added.
@@ -917,7 +1042,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenFramebuffers")]
-        public abstract unsafe void GenFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* framebuffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* framebuffers)
+            => ImplGenFramebuffers(n, framebuffers);
 
         /// <summary>
         /// To be added.
@@ -930,7 +1057,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenFramebuffers")]
-        public abstract void GenFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> framebuffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> framebuffers)
+            => ImplGenFramebuffers(n, framebuffers);
 
         /// <summary>
         /// To be added.
@@ -943,7 +1072,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenRenderbuffers")]
-        public abstract unsafe void GenRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* renderbuffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* renderbuffers)
+            => ImplGenRenderbuffers(n, renderbuffers);
 
         /// <summary>
         /// To be added.
@@ -956,7 +1087,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenRenderbuffers")]
-        public abstract void GenRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> renderbuffers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> renderbuffers)
+            => ImplGenRenderbuffers(n, renderbuffers);
 
         /// <summary>
         /// To be added.
@@ -969,7 +1102,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenTextures")]
-        public abstract unsafe void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* textures);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* textures)
+            => ImplGenTextures(n, textures);
 
         /// <summary>
         /// To be added.
@@ -982,7 +1117,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenTextures")]
-        public abstract void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
+            => ImplGenTextures(n, textures);
 
         /// <summary>
         /// To be added.
@@ -1013,7 +1150,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveAttrib")]
-        public abstract unsafe void GetActiveAttrib([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetActiveAttrib([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* name)
+            => ImplGetActiveAttrib(program, index, bufSize, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -1044,7 +1183,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveAttrib")]
-        public abstract void GetActiveAttrib([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetActiveAttrib([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> name)
+            => ImplGetActiveAttrib(program, index, bufSize, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -1075,7 +1216,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniform")]
-        public abstract unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* name)
+            => ImplGetActiveUniform(program, index, bufSize, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -1106,7 +1249,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniform")]
-        public abstract void GetActiveUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetActiveUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> name)
+            => ImplGetActiveUniform(program, index, bufSize, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -1126,7 +1271,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from maxCount.
         /// </param>
         [NativeApi(EntryPoint = "glGetAttachedShaders")]
-        public abstract unsafe void GetAttachedShaders([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] uint* shaders);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetAttachedShaders([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] uint* shaders)
+            => ImplGetAttachedShaders(program, maxCount, count, shaders);
 
         /// <summary>
         /// To be added.
@@ -1146,7 +1293,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from maxCount.
         /// </param>
         [NativeApi(EntryPoint = "glGetAttachedShaders")]
-        public abstract void GetAttachedShaders([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] Span<uint> shaders);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetAttachedShaders([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] Span<uint> shaders)
+            => ImplGetAttachedShaders(program, maxCount, count, shaders);
 
         /// <summary>
         /// To be added.
@@ -1159,7 +1308,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetAttribLocation")]
-        public abstract unsafe int GetAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe int GetAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] char* name)
+            => ImplGetAttribLocation(program, name);
 
         /// <summary>
         /// To be added.
@@ -1172,7 +1323,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetAttribLocation")]
-        public abstract int GetAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] Span<char> name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int GetAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] Span<char> name)
+            => ImplGetAttribLocation(program, name);
 
         /// <summary>
         /// To be added.
@@ -1185,7 +1338,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetBooleanv")]
-        public abstract unsafe void GetBoolean([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] bool* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetBoolean([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] bool* data)
+            => ImplGetBoolean(pname, data);
 
         /// <summary>
         /// To be added.
@@ -1198,7 +1353,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetBooleanv")]
-        public abstract void GetBoolean([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out bool data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetBoolean([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out bool data)
+            => ImplGetBoolean(pname, data);
 
         /// <summary>
         /// To be added.
@@ -1214,7 +1371,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetBufferParameteriv")]
-        public abstract unsafe void GetBufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetBufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetBufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1230,14 +1389,18 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetBufferParameteriv")]
-        public abstract void GetBufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetBufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetBufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
         /// </summary>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetError")]
-        public abstract GLEnum GetError();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public GLEnum GetError()
+            => ImplGetError();
 
         /// <summary>
         /// To be added.
@@ -1250,7 +1413,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFloatv")]
-        public abstract unsafe void GetFloat([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFloat([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* data)
+            => ImplGetFloat(pname, data);
 
         /// <summary>
         /// To be added.
@@ -1263,7 +1428,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFloatv")]
-        public abstract void GetFloat([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFloat([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float data)
+            => ImplGetFloat(pname, data);
 
         /// <summary>
         /// To be added.
@@ -1282,7 +1449,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameteriv")]
-        public abstract unsafe void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetFramebufferAttachmentParameter(target, attachment, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1301,7 +1470,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameteriv")]
-        public abstract void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetFramebufferAttachmentParameter(target, attachment, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1314,7 +1485,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetIntegerv")]
-        public abstract unsafe void GetInteger([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetInteger([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* data)
+            => ImplGetInteger(pname, data);
 
         /// <summary>
         /// To be added.
@@ -1327,7 +1500,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetIntegerv")]
-        public abstract void GetInteger([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetInteger([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int data)
+            => ImplGetInteger(pname, data);
 
         /// <summary>
         /// To be added.
@@ -1343,7 +1518,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramiv")]
-        public abstract unsafe void GetProgram([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgram([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetProgram(program, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1359,7 +1536,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramiv")]
-        public abstract void GetProgram([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgram([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetProgram(program, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1379,7 +1558,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramInfoLog")]
-        public abstract unsafe void GetProgramInfoLog([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramInfoLog([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* infoLog)
+            => ImplGetProgramInfoLog(program, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -1399,7 +1580,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramInfoLog")]
-        public abstract void GetProgramInfoLog([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramInfoLog([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> infoLog)
+            => ImplGetProgramInfoLog(program, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -1415,7 +1598,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetRenderbufferParameteriv")]
-        public abstract unsafe void GetRenderbufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetRenderbufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetRenderbufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1431,7 +1616,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetRenderbufferParameteriv")]
-        public abstract void GetRenderbufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetRenderbufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetRenderbufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1447,7 +1634,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderiv")]
-        public abstract unsafe void GetShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetShader(shader, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1463,7 +1652,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderiv")]
-        public abstract void GetShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetShader(shader, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1483,7 +1674,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderInfoLog")]
-        public abstract unsafe void GetShaderInfoLog([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetShaderInfoLog([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* infoLog)
+            => ImplGetShaderInfoLog(shader, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -1503,7 +1696,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderInfoLog")]
-        public abstract void GetShaderInfoLog([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetShaderInfoLog([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> infoLog)
+            => ImplGetShaderInfoLog(shader, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -1523,7 +1718,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
-        public abstract unsafe void GetShaderPrecisionFormat([Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] GLEnum precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetShaderPrecisionFormat([Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] GLEnum precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision)
+            => ImplGetShaderPrecisionFormat(shadertype, precisiontype, range, precision);
 
         /// <summary>
         /// To be added.
@@ -1543,7 +1740,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
-        public abstract void GetShaderPrecisionFormat([Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] GLEnum precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetShaderPrecisionFormat([Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] GLEnum precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision)
+            => ImplGetShaderPrecisionFormat(shadertype, precisiontype, range, precision);
 
         /// <summary>
         /// To be added.
@@ -1563,7 +1762,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderSource")]
-        public abstract unsafe void GetShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* source);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* source)
+            => ImplGetShaderSource(shader, bufSize, length, source);
 
         /// <summary>
         /// To be added.
@@ -1583,7 +1784,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderSource")]
-        public abstract void GetShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> source);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> source)
+            => ImplGetShaderSource(shader, bufSize, length, source);
 
         /// <summary>
         /// To be added.
@@ -1593,7 +1796,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetString")]
-        public abstract unsafe byte* GetString([Flow(FlowDirection.In)] GLEnum name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe byte* GetString([Flow(FlowDirection.In)] GLEnum name)
+            => ImplGetString(name);
 
         /// <summary>
         /// To be added.
@@ -1609,7 +1814,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterfv")]
-        public abstract unsafe void GetTexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1625,7 +1832,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterfv")]
-        public abstract void GetTexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1641,7 +1850,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameteriv")]
-        public abstract unsafe void GetTexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1657,7 +1868,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameteriv")]
-        public abstract void GetTexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1673,7 +1886,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from program and location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformfv")]
-        public abstract unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetUniform(program, location, @params);
 
         /// <summary>
         /// To be added.
@@ -1689,7 +1904,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from program and location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformfv")]
-        public abstract void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetUniform(program, location, @params);
 
         /// <summary>
         /// To be added.
@@ -1705,7 +1922,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from program and location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformiv")]
-        public abstract unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetUniform(program, location, @params);
 
         /// <summary>
         /// To be added.
@@ -1721,7 +1940,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from program and location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformiv")]
-        public abstract void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetUniform(program, location, @params);
 
         /// <summary>
         /// To be added.
@@ -1734,7 +1955,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetUniformLocation")]
-        public abstract unsafe int GetUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe int GetUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] char* name)
+            => ImplGetUniformLocation(program, name);
 
         /// <summary>
         /// To be added.
@@ -1747,7 +1970,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetUniformLocation")]
-        public abstract int GetUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] Span<char> name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int GetUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] Span<char> name)
+            => ImplGetUniformLocation(program, name);
 
         /// <summary>
         /// To be added.
@@ -1763,7 +1988,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribfv")]
-        public abstract unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1779,7 +2006,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribfv")]
-        public abstract void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1795,7 +2024,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribiv")]
-        public abstract unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1811,7 +2042,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribiv")]
-        public abstract void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<int> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<int> @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1827,7 +2060,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribPointerv")]
-        public abstract unsafe void GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** pointer)
+            => ImplGetVertexAttribPointer(index, pname, pointer);
 
         /// <summary>
         /// To be added.
@@ -1843,7 +2078,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribPointerv")]
-        public abstract unsafe void GetVertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* pointer) where T0 : unmanaged
+            => ImplGetVertexAttribPointer<T0>(index, pname, pointer);
 
         /// <summary>
         /// To be added.
@@ -1855,7 +2092,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glHint")]
-        public abstract void Hint([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Hint([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum mode)
+            => ImplHint(target, mode);
 
         /// <summary>
         /// To be added.
@@ -1865,7 +2104,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsBuffer")]
-        public abstract bool IsBuffer([Flow(FlowDirection.In)] uint buffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsBuffer([Flow(FlowDirection.In)] uint buffer)
+            => ImplIsBuffer(buffer);
 
         /// <summary>
         /// To be added.
@@ -1875,7 +2116,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsEnabled")]
-        public abstract bool IsEnabled([Flow(FlowDirection.In)] GLEnum cap);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsEnabled([Flow(FlowDirection.In)] GLEnum cap)
+            => ImplIsEnabled(cap);
 
         /// <summary>
         /// To be added.
@@ -1885,7 +2128,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsFramebuffer")]
-        public abstract bool IsFramebuffer([Flow(FlowDirection.In)] uint framebuffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsFramebuffer([Flow(FlowDirection.In)] uint framebuffer)
+            => ImplIsFramebuffer(framebuffer);
 
         /// <summary>
         /// To be added.
@@ -1895,7 +2140,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsProgram")]
-        public abstract bool IsProgram([Flow(FlowDirection.In)] uint program);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsProgram([Flow(FlowDirection.In)] uint program)
+            => ImplIsProgram(program);
 
         /// <summary>
         /// To be added.
@@ -1905,7 +2152,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsRenderbuffer")]
-        public abstract bool IsRenderbuffer([Flow(FlowDirection.In)] uint renderbuffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsRenderbuffer([Flow(FlowDirection.In)] uint renderbuffer)
+            => ImplIsRenderbuffer(renderbuffer);
 
         /// <summary>
         /// To be added.
@@ -1915,7 +2164,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsShader")]
-        public abstract bool IsShader([Flow(FlowDirection.In)] uint shader);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsShader([Flow(FlowDirection.In)] uint shader)
+            => ImplIsShader(shader);
 
         /// <summary>
         /// To be added.
@@ -1925,7 +2176,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsTexture")]
-        public abstract bool IsTexture([Flow(FlowDirection.In)] uint texture);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsTexture([Flow(FlowDirection.In)] uint texture)
+            => ImplIsTexture(texture);
 
         /// <summary>
         /// To be added.
@@ -1934,7 +2187,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glLineWidth")]
-        public abstract void LineWidth([Flow(FlowDirection.In)] float width);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void LineWidth([Flow(FlowDirection.In)] float width)
+            => ImplLineWidth(width);
 
         /// <summary>
         /// To be added.
@@ -1943,7 +2198,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glLinkProgram")]
-        public abstract void LinkProgram([Flow(FlowDirection.In)] uint program);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void LinkProgram([Flow(FlowDirection.In)] uint program)
+            => ImplLinkProgram(program);
 
         /// <summary>
         /// To be added.
@@ -1955,7 +2212,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPixelStorei")]
-        public abstract void PixelStore([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PixelStore([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param)
+            => ImplPixelStore(pname, param);
 
         /// <summary>
         /// To be added.
@@ -1967,7 +2226,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPolygonOffset")]
-        public abstract void PolygonOffset([Flow(FlowDirection.In)] float factor, [Flow(FlowDirection.In)] float units);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PolygonOffset([Flow(FlowDirection.In)] float factor, [Flow(FlowDirection.In)] float units)
+            => ImplPolygonOffset(factor, units);
 
         /// <summary>
         /// To be added.
@@ -1995,7 +2256,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
         [NativeApi(EntryPoint = "glReadPixels")]
-        public abstract unsafe void ReadPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] void* pixels);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ReadPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] void* pixels)
+            => ImplReadPixels(x, y, width, height, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -2023,13 +2286,17 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
         [NativeApi(EntryPoint = "glReadPixels")]
-        public abstract void ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged
+            => ImplReadPixels<T0>(x, y, width, height, format, type, pixels);
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glReleaseShaderCompiler")]
-        public abstract void ReleaseShaderCompiler();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReleaseShaderCompiler()
+            => ImplReleaseShaderCompiler();
 
         /// <summary>
         /// To be added.
@@ -2047,7 +2314,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glRenderbufferStorage")]
-        public abstract void RenderbufferStorage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void RenderbufferStorage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplRenderbufferStorage(target, internalformat, width, height);
 
         /// <summary>
         /// To be added.
@@ -2059,7 +2328,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSampleCoverage")]
-        public abstract void SampleCoverage([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SampleCoverage([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert)
+            => ImplSampleCoverage(value, invert);
 
         /// <summary>
         /// To be added.
@@ -2077,7 +2348,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glScissor")]
-        public abstract void Scissor([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Scissor([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplScissor(x, y, width, height);
 
         /// <summary>
         /// To be added.
@@ -2100,7 +2373,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glShaderBinary")]
-        public abstract unsafe void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] GLEnum binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] GLEnum binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
+            => ImplShaderBinary(count, shaders, binaryformat, binary, length);
 
         /// <summary>
         /// To be added.
@@ -2123,7 +2398,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glShaderBinary")]
-        public abstract void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> shaders, [Flow(FlowDirection.In)] GLEnum binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> shaders, [Flow(FlowDirection.In)] GLEnum binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+            => ImplShaderBinary<T0>(count, shaders, binaryformat, binary, length);
 
         /// <summary>
         /// To be added.
@@ -2143,7 +2420,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glShaderSource")]
-        public abstract unsafe void ShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length)
+            => ImplShaderSource(shader, count, @string, length);
 
         /// <summary>
         /// To be added.
@@ -2163,7 +2442,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glShaderSource")]
-        public abstract unsafe void ShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> length);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> length)
+            => ImplShaderSource(shader, count, @string, length);
 
         /// <summary>
         /// To be added.
@@ -2178,7 +2459,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glStencilFunc")]
-        public abstract void StencilFunc([Flow(FlowDirection.In)] GLEnum func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void StencilFunc([Flow(FlowDirection.In)] GLEnum func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask)
+            => ImplStencilFunc(func, @ref, mask);
 
         /// <summary>
         /// To be added.
@@ -2196,7 +2479,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glStencilFuncSeparate")]
-        public abstract void StencilFuncSeparate([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void StencilFuncSeparate([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask)
+            => ImplStencilFuncSeparate(face, func, @ref, mask);
 
         /// <summary>
         /// To be added.
@@ -2205,7 +2490,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glStencilMask")]
-        public abstract void StencilMask([Flow(FlowDirection.In)] uint mask);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void StencilMask([Flow(FlowDirection.In)] uint mask)
+            => ImplStencilMask(mask);
 
         /// <summary>
         /// To be added.
@@ -2217,7 +2504,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glStencilMaskSeparate")]
-        public abstract void StencilMaskSeparate([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] uint mask);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void StencilMaskSeparate([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] uint mask)
+            => ImplStencilMaskSeparate(face, mask);
 
         /// <summary>
         /// To be added.
@@ -2232,7 +2521,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glStencilOp")]
-        public abstract void StencilOp([Flow(FlowDirection.In)] GLEnum fail, [Flow(FlowDirection.In)] GLEnum zfail, [Flow(FlowDirection.In)] GLEnum zpass);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void StencilOp([Flow(FlowDirection.In)] GLEnum fail, [Flow(FlowDirection.In)] GLEnum zfail, [Flow(FlowDirection.In)] GLEnum zpass)
+            => ImplStencilOp(fail, zfail, zpass);
 
         /// <summary>
         /// To be added.
@@ -2250,7 +2541,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glStencilOpSeparate")]
-        public abstract void StencilOpSeparate([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] GLEnum dppass);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void StencilOpSeparate([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum sfail, [Flow(FlowDirection.In)] GLEnum dpfail, [Flow(FlowDirection.In)] GLEnum dppass)
+            => ImplStencilOpSeparate(face, sfail, dpfail, dppass);
 
         /// <summary>
         /// To be added.
@@ -2284,7 +2577,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage2D")]
-        public abstract unsafe void TexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels)
+            => ImplTexImage2D(target, level, internalformat, width, height, border, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -2318,7 +2613,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage2D")]
-        public abstract void TexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged
+            => ImplTexImage2D<T0>(target, level, internalformat, width, height, border, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -2333,7 +2630,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterf")]
-        public abstract void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param)
+            => ImplTexParameter(target, pname, param);
 
         /// <summary>
         /// To be added.
@@ -2349,7 +2648,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterfv")]
-        public abstract unsafe void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params)
+            => ImplTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -2365,7 +2666,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterfv")]
-        public abstract void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params)
+            => ImplTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -2380,7 +2683,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameteri")]
-        public abstract void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param)
+            => ImplTexParameter(target, pname, param);
 
         /// <summary>
         /// To be added.
@@ -2396,7 +2701,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameteriv")]
-        public abstract unsafe void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -2412,7 +2719,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameteriv")]
-        public abstract void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -2446,7 +2755,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage2D")]
-        public abstract unsafe void TexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels)
+            => ImplTexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -2480,7 +2791,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage2D")]
-        public abstract void TexSubImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexSubImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged
+            => ImplTexSubImage2D<T0>(target, level, xoffset, yoffset, width, height, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -2492,7 +2805,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUniform1f")]
-        public abstract void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0)
+            => ImplUniform1(location, v0);
 
         /// <summary>
         /// To be added.
@@ -2508,7 +2823,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform1fv")]
-        public abstract unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplUniform1(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2524,7 +2841,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform1fv")]
-        public abstract void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplUniform1(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2536,7 +2855,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUniform1i")]
-        public abstract void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0)
+            => ImplUniform1(location, v0);
 
         /// <summary>
         /// To be added.
@@ -2552,7 +2873,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform1iv")]
-        public abstract unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value)
+            => ImplUniform1(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2568,7 +2891,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform1iv")]
-        public abstract void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value)
+            => ImplUniform1(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2583,7 +2908,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUniform2f")]
-        public abstract void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1)
+            => ImplUniform2(location, v0, v1);
 
         /// <summary>
         /// To be added.
@@ -2599,7 +2926,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform2fv")]
-        public abstract unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplUniform2(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2615,7 +2944,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform2fv")]
-        public abstract void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplUniform2(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2630,7 +2961,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUniform2i")]
-        public abstract void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1)
+            => ImplUniform2(location, v0, v1);
 
         /// <summary>
         /// To be added.
@@ -2646,7 +2979,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform2iv")]
-        public abstract unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value)
+            => ImplUniform2(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2662,7 +2997,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform2iv")]
-        public abstract void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value)
+            => ImplUniform2(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2680,7 +3017,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUniform3f")]
-        public abstract void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2)
+            => ImplUniform3(location, v0, v1, v2);
 
         /// <summary>
         /// To be added.
@@ -2696,7 +3035,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform3fv")]
-        public abstract unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplUniform3(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2712,7 +3053,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform3fv")]
-        public abstract void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplUniform3(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2730,7 +3073,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUniform3i")]
-        public abstract void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2)
+            => ImplUniform3(location, v0, v1, v2);
 
         /// <summary>
         /// To be added.
@@ -2746,7 +3091,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform3iv")]
-        public abstract unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value)
+            => ImplUniform3(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2762,7 +3109,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform3iv")]
-        public abstract void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value)
+            => ImplUniform3(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2783,7 +3132,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUniform4f")]
-        public abstract void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] float v3);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] float v3)
+            => ImplUniform4(location, v0, v1, v2, v3);
 
         /// <summary>
         /// To be added.
@@ -2799,7 +3150,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform4fv")]
-        public abstract unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplUniform4(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2815,7 +3168,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform4fv")]
-        public abstract void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplUniform4(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2836,7 +3191,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUniform4i")]
-        public abstract void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2, [Flow(FlowDirection.In)] int v3);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2, [Flow(FlowDirection.In)] int v3)
+            => ImplUniform4(location, v0, v1, v2, v3);
 
         /// <summary>
         /// To be added.
@@ -2852,7 +3209,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform4iv")]
-        public abstract unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value)
+            => ImplUniform4(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2868,7 +3227,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform4iv")]
-        public abstract void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value)
+            => ImplUniform4(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -2887,7 +3248,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix2fv")]
-        public abstract unsafe void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplUniformMatrix2(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -2906,7 +3269,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix2fv")]
-        public abstract void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplUniformMatrix2(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -2925,7 +3290,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix3fv")]
-        public abstract unsafe void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplUniformMatrix3(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -2944,7 +3311,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix3fv")]
-        public abstract void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplUniformMatrix3(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -2963,7 +3332,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix4fv")]
-        public abstract unsafe void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplUniformMatrix4(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -2982,7 +3353,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix4fv")]
-        public abstract void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplUniformMatrix4(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -2991,7 +3364,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUseProgram")]
-        public abstract void UseProgram([Flow(FlowDirection.In)] uint program);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UseProgram([Flow(FlowDirection.In)] uint program)
+            => ImplUseProgram(program);
 
         /// <summary>
         /// To be added.
@@ -3000,7 +3375,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glValidateProgram")]
-        public abstract void ValidateProgram([Flow(FlowDirection.In)] uint program);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ValidateProgram([Flow(FlowDirection.In)] uint program)
+            => ImplValidateProgram(program);
 
         /// <summary>
         /// To be added.
@@ -3012,7 +3389,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib1f")]
-        public abstract void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x)
+            => ImplVertexAttrib1(index, x);
 
         /// <summary>
         /// To be added.
@@ -3025,7 +3404,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib1fv")]
-        public abstract unsafe void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] float* v)
+            => ImplVertexAttrib1(index, v);
 
         /// <summary>
         /// To be added.
@@ -3038,7 +3419,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib1fv")]
-        public abstract void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ref float v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ref float v)
+            => ImplVertexAttrib1(index, v);
 
         /// <summary>
         /// To be added.
@@ -3053,7 +3436,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib2f")]
-        public abstract void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y)
+            => ImplVertexAttrib2(index, x, y);
 
         /// <summary>
         /// To be added.
@@ -3066,7 +3451,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib2fv")]
-        public abstract unsafe void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] float* v)
+            => ImplVertexAttrib2(index, v);
 
         /// <summary>
         /// To be added.
@@ -3079,7 +3466,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib2fv")]
-        public abstract void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v)
+            => ImplVertexAttrib2(index, v);
 
         /// <summary>
         /// To be added.
@@ -3097,7 +3486,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib3f")]
-        public abstract void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z)
+            => ImplVertexAttrib3(index, x, y, z);
 
         /// <summary>
         /// To be added.
@@ -3110,7 +3501,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib3fv")]
-        public abstract unsafe void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+            => ImplVertexAttrib3(index, v);
 
         /// <summary>
         /// To be added.
@@ -3123,7 +3516,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib3fv")]
-        public abstract void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v)
+            => ImplVertexAttrib3(index, v);
 
         /// <summary>
         /// To be added.
@@ -3144,7 +3539,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4f")]
-        public abstract void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w)
+            => ImplVertexAttrib4(index, x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -3157,7 +3554,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4fv")]
-        public abstract unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -3170,7 +3569,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4fv")]
-        public abstract void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -3195,7 +3596,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointer")]
-        public abstract unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer)
+            => ImplVertexAttribPointer(index, size, type, normalized, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -3220,7 +3623,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointer")]
-        public abstract void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplVertexAttribPointer<T0>(index, size, type, normalized, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -3238,7 +3643,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glViewport")]
-        public abstract void Viewport([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Viewport([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplViewport(x, y, width, height);
 
         /// <summary>
         /// To be added.
@@ -3247,7 +3654,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glActiveTexture")]
-        public abstract void ActiveTexture([Flow(FlowDirection.In)] TextureUnit texture);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ActiveTexture([Flow(FlowDirection.In)] TextureUnit texture)
+            => ImplActiveTexture(texture);
 
         /// <summary>
         /// To be added.
@@ -3262,7 +3671,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindAttribLocation")]
-        public abstract void BindAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] string name)
+            => ImplBindAttribLocation(program, index, name);
 
         /// <summary>
         /// To be added.
@@ -3274,7 +3685,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindBuffer")]
-        public abstract void BindBuffer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint buffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindBuffer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint buffer)
+            => ImplBindBuffer(target, buffer);
 
         /// <summary>
         /// To be added.
@@ -3286,7 +3699,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindFramebuffer")]
-        public abstract void BindFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint framebuffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint framebuffer)
+            => ImplBindFramebuffer(target, framebuffer);
 
         /// <summary>
         /// To be added.
@@ -3298,7 +3713,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindRenderbuffer")]
-        public abstract void BindRenderbuffer([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint renderbuffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindRenderbuffer([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint renderbuffer)
+            => ImplBindRenderbuffer(target, renderbuffer);
 
         /// <summary>
         /// To be added.
@@ -3310,7 +3727,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindTexture")]
-        public abstract void BindTexture([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint texture);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindTexture([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint texture)
+            => ImplBindTexture(target, texture);
 
         /// <summary>
         /// To be added.
@@ -3319,7 +3738,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendEquation")]
-        public abstract void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode)
+            => ImplBlendEquation(mode);
 
         /// <summary>
         /// To be added.
@@ -3331,7 +3752,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendEquationSeparate")]
-        public abstract void BlendEquationSeparate([Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendEquationSeparate([Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha)
+            => ImplBlendEquationSeparate(modeRGB, modeAlpha);
 
         /// <summary>
         /// To be added.
@@ -3343,7 +3766,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendFunc")]
-        public abstract void BlendFunc([Flow(FlowDirection.In)] BlendingFactor sfactor, [Flow(FlowDirection.In)] BlendingFactor dfactor);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendFunc([Flow(FlowDirection.In)] BlendingFactor sfactor, [Flow(FlowDirection.In)] BlendingFactor dfactor)
+            => ImplBlendFunc(sfactor, dfactor);
 
         /// <summary>
         /// To be added.
@@ -3361,7 +3786,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendFuncSeparate")]
-        public abstract void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha)
+            => ImplBlendFuncSeparate(sfactorRGB, dfactorRGB, sfactorAlpha, dfactorAlpha);
 
         /// <summary>
         /// To be added.
@@ -3380,7 +3807,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBufferData")]
-        public abstract unsafe void BufferData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] BufferUsageARB usage);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void BufferData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] BufferUsageARB usage)
+            => ImplBufferData(target, size, data, usage);
 
         /// <summary>
         /// To be added.
@@ -3399,7 +3828,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBufferData")]
-        public abstract void BufferData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BufferData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
+            => ImplBufferData<T0>(target, size, data, usage);
 
         /// <summary>
         /// To be added.
@@ -3418,7 +3849,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glBufferSubData")]
-        public abstract unsafe void BufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void BufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data)
+            => ImplBufferSubData(target, offset, size, data);
 
         /// <summary>
         /// To be added.
@@ -3437,7 +3870,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from size.
         /// </param>
         [NativeApi(EntryPoint = "glBufferSubData")]
-        public abstract void BufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged
+            => ImplBufferSubData<T0>(target, offset, size, data);
 
         /// <summary>
         /// To be added.
@@ -3447,7 +3882,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCheckFramebufferStatus")]
-        public abstract GLEnum CheckFramebufferStatus([Flow(FlowDirection.In)] FramebufferTarget target);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public GLEnum CheckFramebufferStatus([Flow(FlowDirection.In)] FramebufferTarget target)
+            => ImplCheckFramebufferStatus(target);
 
         /// <summary>
         /// To be added.
@@ -3478,7 +3915,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexImage2D")]
-        public abstract unsafe void CompressedTexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CompressedTexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data)
+            => ImplCompressedTexImage2D(target, level, internalformat, width, height, border, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -3509,7 +3948,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexImage2D")]
-        public abstract void CompressedTexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CompressedTexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged
+            => ImplCompressedTexImage2D<T0>(target, level, internalformat, width, height, border, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -3543,7 +3984,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexSubImage2D")]
-        public abstract unsafe void CompressedTexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CompressedTexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data)
+            => ImplCompressedTexSubImage2D(target, level, xoffset, yoffset, width, height, format, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -3577,7 +4020,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexSubImage2D")]
-        public abstract void CompressedTexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CompressedTexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged
+            => ImplCompressedTexSubImage2D<T0>(target, level, xoffset, yoffset, width, height, format, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -3607,7 +4052,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCopyTexImage2D")]
-        public abstract void CopyTexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CopyTexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border)
+            => ImplCopyTexImage2D(target, level, internalformat, x, y, width, height, border);
 
         /// <summary>
         /// To be added.
@@ -3637,7 +4084,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCopyTexSubImage2D")]
-        public abstract void CopyTexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CopyTexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplCopyTexSubImage2D(target, level, xoffset, yoffset, x, y, width, height);
 
         /// <summary>
         /// To be added.
@@ -3647,7 +4096,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCreateShader")]
-        public abstract uint CreateShader([Flow(FlowDirection.In)] ShaderType type);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint CreateShader([Flow(FlowDirection.In)] ShaderType type)
+            => ImplCreateShader(type);
 
         /// <summary>
         /// To be added.
@@ -3656,7 +4107,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCullFace")]
-        public abstract void CullFace([Flow(FlowDirection.In)] CullFaceMode mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CullFace([Flow(FlowDirection.In)] CullFaceMode mode)
+            => ImplCullFace(mode);
 
         /// <summary>
         /// To be added.
@@ -3665,7 +4118,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDepthFunc")]
-        public abstract void DepthFunc([Flow(FlowDirection.In)] DepthFunction func);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DepthFunc([Flow(FlowDirection.In)] DepthFunction func)
+            => ImplDepthFunc(func);
 
         /// <summary>
         /// To be added.
@@ -3674,7 +4129,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDisable")]
-        public abstract void Disable([Flow(FlowDirection.In)] EnableCap cap);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Disable([Flow(FlowDirection.In)] EnableCap cap)
+            => ImplDisable(cap);
 
         /// <summary>
         /// To be added.
@@ -3689,7 +4146,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawArrays")]
-        public abstract void DrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count)
+            => ImplDrawArrays(mode, first, count);
 
         /// <summary>
         /// To be added.
@@ -3708,7 +4167,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from count and type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElements")]
-        public abstract unsafe void DrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices)
+            => ImplDrawElements(mode, count, type, indices);
 
         /// <summary>
         /// To be added.
@@ -3727,7 +4188,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from count and type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElements")]
-        public abstract void DrawElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged
+            => ImplDrawElements<T0>(mode, count, type, indices);
 
         /// <summary>
         /// To be added.
@@ -3736,7 +4199,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEnable")]
-        public abstract void Enable([Flow(FlowDirection.In)] EnableCap cap);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Enable([Flow(FlowDirection.In)] EnableCap cap)
+            => ImplEnable(cap);
 
         /// <summary>
         /// To be added.
@@ -3754,7 +4219,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferRenderbuffer")]
-        public abstract void FramebufferRenderbuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] RenderbufferTarget renderbuffertarget, [Flow(FlowDirection.In)] uint renderbuffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferRenderbuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] RenderbufferTarget renderbuffertarget, [Flow(FlowDirection.In)] uint renderbuffer)
+            => ImplFramebufferRenderbuffer(target, attachment, renderbuffertarget, renderbuffer);
 
         /// <summary>
         /// To be added.
@@ -3775,7 +4242,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferTexture2D")]
-        public abstract void FramebufferTexture2D([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferTexture2D([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level)
+            => ImplFramebufferTexture2D(target, attachment, textarget, texture, level);
 
         /// <summary>
         /// To be added.
@@ -3784,7 +4253,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFrontFace")]
-        public abstract void FrontFace([Flow(FlowDirection.In)] FrontFaceDirection mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FrontFace([Flow(FlowDirection.In)] FrontFaceDirection mode)
+            => ImplFrontFace(mode);
 
         /// <summary>
         /// To be added.
@@ -3793,7 +4264,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGenerateMipmap")]
-        public abstract void GenerateMipmap([Flow(FlowDirection.In)] TextureTarget target);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenerateMipmap([Flow(FlowDirection.In)] TextureTarget target)
+            => ImplGenerateMipmap(target);
 
         /// <summary>
         /// To be added.
@@ -3823,7 +4296,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveAttrib")]
-        public abstract unsafe void GetActiveAttrib([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetActiveAttrib([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name)
+            => ImplGetActiveAttrib(program, index, bufSize, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -3853,7 +4328,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveAttrib")]
-        public abstract void GetActiveAttrib([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetActiveAttrib([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name)
+            => ImplGetActiveAttrib(program, index, bufSize, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -3883,7 +4360,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniform")]
-        public abstract unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name)
+            => ImplGetActiveUniform(program, index, bufSize, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -3913,7 +4392,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniform")]
-        public abstract void GetActiveUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetActiveUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name)
+            => ImplGetActiveUniform(program, index, bufSize, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -3926,7 +4407,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetAttribLocation")]
-        public abstract int GetAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int GetAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string name)
+            => ImplGetAttribLocation(program, name);
 
         /// <summary>
         /// To be added.
@@ -3939,7 +4422,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetBooleanv")]
-        public abstract unsafe void GetBoolean([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] bool* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetBoolean([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] bool* data)
+            => ImplGetBoolean(pname, data);
 
         /// <summary>
         /// To be added.
@@ -3952,7 +4437,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetBooleanv")]
-        public abstract void GetBoolean([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out bool data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetBoolean([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out bool data)
+            => ImplGetBoolean(pname, data);
 
         /// <summary>
         /// To be added.
@@ -3968,7 +4455,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetBufferParameteriv")]
-        public abstract unsafe void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetBufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -3984,7 +4473,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetBufferParameteriv")]
-        public abstract void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetBufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -3997,7 +4488,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFloatv")]
-        public abstract unsafe void GetFloat([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFloat([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* data)
+            => ImplGetFloat(pname, data);
 
         /// <summary>
         /// To be added.
@@ -4010,7 +4503,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFloatv")]
-        public abstract void GetFloat([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFloat([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float data)
+            => ImplGetFloat(pname, data);
 
         /// <summary>
         /// To be added.
@@ -4029,7 +4524,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameteriv")]
-        public abstract unsafe void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetFramebufferAttachmentParameter(target, attachment, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4048,7 +4545,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameteriv")]
-        public abstract void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetFramebufferAttachmentParameter(target, attachment, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4061,7 +4560,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetIntegerv")]
-        public abstract unsafe void GetInteger([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetInteger([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* data)
+            => ImplGetInteger(pname, data);
 
         /// <summary>
         /// To be added.
@@ -4074,7 +4575,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetIntegerv")]
-        public abstract void GetInteger([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetInteger([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int data)
+            => ImplGetInteger(pname, data);
 
         /// <summary>
         /// To be added.
@@ -4090,7 +4593,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramiv")]
-        public abstract unsafe void GetProgram([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramPropertyARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgram([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramPropertyARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetProgram(program, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4106,7 +4611,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramiv")]
-        public abstract void GetProgram([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramPropertyARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgram([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramPropertyARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetProgram(program, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4125,7 +4632,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramInfoLog")]
-        public abstract unsafe void GetProgramInfoLog([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramInfoLog([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog)
+            => ImplGetProgramInfoLog(program, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -4144,7 +4653,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramInfoLog")]
-        public abstract void GetProgramInfoLog([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramInfoLog([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog)
+            => ImplGetProgramInfoLog(program, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -4160,7 +4671,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetRenderbufferParameteriv")]
-        public abstract unsafe void GetRenderbufferParameter([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] RenderbufferParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetRenderbufferParameter([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] RenderbufferParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetRenderbufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4176,7 +4689,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetRenderbufferParameteriv")]
-        public abstract void GetRenderbufferParameter([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] RenderbufferParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetRenderbufferParameter([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] RenderbufferParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetRenderbufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4192,7 +4707,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderiv")]
-        public abstract unsafe void GetShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] ShaderParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] ShaderParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetShader(shader, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4208,7 +4725,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderiv")]
-        public abstract void GetShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] ShaderParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] ShaderParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetShader(shader, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4227,7 +4746,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderInfoLog")]
-        public abstract unsafe void GetShaderInfoLog([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetShaderInfoLog([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog)
+            => ImplGetShaderInfoLog(shader, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -4246,7 +4767,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderInfoLog")]
-        public abstract void GetShaderInfoLog([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetShaderInfoLog([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog)
+            => ImplGetShaderInfoLog(shader, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -4266,7 +4789,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
-        public abstract unsafe void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision)
+            => ImplGetShaderPrecisionFormat(shadertype, precisiontype, range, precision);
 
         /// <summary>
         /// To be added.
@@ -4286,7 +4811,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
-        public abstract void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision)
+            => ImplGetShaderPrecisionFormat(shadertype, precisiontype, range, precision);
 
         /// <summary>
         /// To be added.
@@ -4305,7 +4832,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderSource")]
-        public abstract unsafe void GetShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string source);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string source)
+            => ImplGetShaderSource(shader, bufSize, length, source);
 
         /// <summary>
         /// To be added.
@@ -4324,7 +4853,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderSource")]
-        public abstract void GetShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string source);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string source)
+            => ImplGetShaderSource(shader, bufSize, length, source);
 
         /// <summary>
         /// To be added.
@@ -4334,7 +4865,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetString")]
-        public abstract string GetString([Flow(FlowDirection.In)] StringName name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public string GetString([Flow(FlowDirection.In)] StringName name)
+            => ImplGetString(name);
 
         /// <summary>
         /// To be added.
@@ -4350,7 +4883,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterfv")]
-        public abstract unsafe void GetTexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4366,7 +4901,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterfv")]
-        public abstract void GetTexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4382,7 +4919,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameteriv")]
-        public abstract unsafe void GetTexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4398,7 +4937,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameteriv")]
-        public abstract void GetTexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4411,7 +4952,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetUniformLocation")]
-        public abstract int GetUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int GetUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string name)
+            => ImplGetUniformLocation(program, name);
 
         /// <summary>
         /// To be added.
@@ -4427,7 +4970,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribfv")]
-        public abstract unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4443,7 +4988,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribfv")]
-        public abstract void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4459,7 +5006,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribiv")]
-        public abstract unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4475,7 +5024,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribiv")]
-        public abstract void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<int> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<int> @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4491,7 +5042,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribPointerv")]
-        public abstract unsafe void GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerPropertyARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerPropertyARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** pointer)
+            => ImplGetVertexAttribPointer(index, pname, pointer);
 
         /// <summary>
         /// To be added.
@@ -4507,7 +5060,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribPointerv")]
-        public abstract unsafe void GetVertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerPropertyARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerPropertyARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* pointer) where T0 : unmanaged
+            => ImplGetVertexAttribPointer<T0>(index, pname, pointer);
 
         /// <summary>
         /// To be added.
@@ -4519,7 +5074,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glHint")]
-        public abstract void Hint([Flow(FlowDirection.In)] HintTarget target, [Flow(FlowDirection.In)] HintMode mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Hint([Flow(FlowDirection.In)] HintTarget target, [Flow(FlowDirection.In)] HintMode mode)
+            => ImplHint(target, mode);
 
         /// <summary>
         /// To be added.
@@ -4529,7 +5086,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsEnabled")]
-        public abstract bool IsEnabled([Flow(FlowDirection.In)] EnableCap cap);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsEnabled([Flow(FlowDirection.In)] EnableCap cap)
+            => ImplIsEnabled(cap);
 
         /// <summary>
         /// To be added.
@@ -4541,7 +5100,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPixelStorei")]
-        public abstract void PixelStore([Flow(FlowDirection.In)] PixelStoreParameter pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PixelStore([Flow(FlowDirection.In)] PixelStoreParameter pname, [Flow(FlowDirection.In)] int param)
+            => ImplPixelStore(pname, param);
 
         /// <summary>
         /// To be added.
@@ -4569,7 +5130,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
         [NativeApi(EntryPoint = "glReadPixels")]
-        public abstract unsafe void ReadPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] void* pixels);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ReadPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] void* pixels)
+            => ImplReadPixels(x, y, width, height, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -4597,7 +5160,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
         [NativeApi(EntryPoint = "glReadPixels")]
-        public abstract void ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged
+            => ImplReadPixels<T0>(x, y, width, height, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -4615,7 +5180,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glRenderbufferStorage")]
-        public abstract void RenderbufferStorage([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void RenderbufferStorage([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplRenderbufferStorage(target, internalformat, width, height);
 
         /// <summary>
         /// To be added.
@@ -4630,7 +5197,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glStencilFunc")]
-        public abstract void StencilFunc([Flow(FlowDirection.In)] StencilFunction func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void StencilFunc([Flow(FlowDirection.In)] StencilFunction func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask)
+            => ImplStencilFunc(func, @ref, mask);
 
         /// <summary>
         /// To be added.
@@ -4648,7 +5217,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glStencilFuncSeparate")]
-        public abstract void StencilFuncSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilFunction func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void StencilFuncSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilFunction func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask)
+            => ImplStencilFuncSeparate(face, func, @ref, mask);
 
         /// <summary>
         /// To be added.
@@ -4660,7 +5231,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glStencilMaskSeparate")]
-        public abstract void StencilMaskSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] uint mask);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void StencilMaskSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] uint mask)
+            => ImplStencilMaskSeparate(face, mask);
 
         /// <summary>
         /// To be added.
@@ -4675,7 +5248,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glStencilOp")]
-        public abstract void StencilOp([Flow(FlowDirection.In)] StencilOp fail, [Flow(FlowDirection.In)] StencilOp zfail, [Flow(FlowDirection.In)] StencilOp zpass);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void StencilOp([Flow(FlowDirection.In)] StencilOp fail, [Flow(FlowDirection.In)] StencilOp zfail, [Flow(FlowDirection.In)] StencilOp zpass)
+            => ImplStencilOp(fail, zfail, zpass);
 
         /// <summary>
         /// To be added.
@@ -4693,7 +5268,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glStencilOpSeparate")]
-        public abstract void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void StencilOpSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilOp sfail, [Flow(FlowDirection.In)] StencilOp dpfail, [Flow(FlowDirection.In)] StencilOp dppass)
+            => ImplStencilOpSeparate(face, sfail, dpfail, dppass);
 
         /// <summary>
         /// To be added.
@@ -4727,7 +5304,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage2D")]
-        public abstract unsafe void TexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels)
+            => ImplTexImage2D(target, level, internalformat, width, height, border, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -4761,7 +5340,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage2D")]
-        public abstract void TexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged
+            => ImplTexImage2D<T0>(target, level, internalformat, width, height, border, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -4776,7 +5357,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterf")]
-        public abstract void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] float param)
+            => ImplTexParameter(target, pname, param);
 
         /// <summary>
         /// To be added.
@@ -4792,7 +5375,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterfv")]
-        public abstract unsafe void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params)
+            => ImplTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4808,7 +5393,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterfv")]
-        public abstract void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params)
+            => ImplTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4823,7 +5410,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameteri")]
-        public abstract void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] int param)
+            => ImplTexParameter(target, pname, param);
 
         /// <summary>
         /// To be added.
@@ -4839,7 +5428,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameteriv")]
-        public abstract unsafe void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4855,7 +5446,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameteriv")]
-        public abstract void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplTexParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -4889,7 +5482,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage2D")]
-        public abstract unsafe void TexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels)
+            => ImplTexSubImage2D(target, level, xoffset, yoffset, width, height, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -4923,7 +5518,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, and height.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage2D")]
-        public abstract void TexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged
+            => ImplTexSubImage2D<T0>(target, level, xoffset, yoffset, width, height, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -4948,7 +5545,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointer")]
-        public abstract unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer)
+            => ImplVertexAttribPointer(index, size, type, normalized, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -4973,7 +5572,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointer")]
-        public abstract void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplVertexAttribPointer<T0>(index, size, type, normalized, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -4985,7 +5586,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBeginQuery")]
-        public abstract void BeginQuery([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint id);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BeginQuery([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint id)
+            => ImplBeginQuery(target, id);
 
         /// <summary>
         /// To be added.
@@ -4994,7 +5597,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBeginTransformFeedback")]
-        public abstract void BeginTransformFeedback([Flow(FlowDirection.In)] GLEnum primitiveMode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BeginTransformFeedback([Flow(FlowDirection.In)] GLEnum primitiveMode)
+            => ImplBeginTransformFeedback(primitiveMode);
 
         /// <summary>
         /// To be added.
@@ -5009,7 +5614,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindBufferBase")]
-        public abstract void BindBufferBase([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindBufferBase([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer)
+            => ImplBindBufferBase(target, index, buffer);
 
         /// <summary>
         /// To be added.
@@ -5030,7 +5637,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindBufferRange")]
-        public abstract void BindBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size)
+            => ImplBindBufferRange(target, index, buffer, offset, size);
 
         /// <summary>
         /// To be added.
@@ -5042,7 +5651,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindSampler")]
-        public abstract void BindSampler([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint sampler);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindSampler([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint sampler)
+            => ImplBindSampler(unit, sampler);
 
         /// <summary>
         /// To be added.
@@ -5054,7 +5665,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindTransformFeedback")]
-        public abstract void BindTransformFeedback([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint id);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindTransformFeedback([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint id)
+            => ImplBindTransformFeedback(target, id);
 
         /// <summary>
         /// To be added.
@@ -5063,7 +5676,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindVertexArray")]
-        public abstract void BindVertexArray([Flow(FlowDirection.In)] uint array);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindVertexArray([Flow(FlowDirection.In)] uint array)
+            => ImplBindVertexArray(array);
 
         /// <summary>
         /// To be added.
@@ -5099,7 +5714,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlitFramebuffer")]
-        public abstract void BlitFramebuffer([Flow(FlowDirection.In)] int srcX0, [Flow(FlowDirection.In)] int srcY0, [Flow(FlowDirection.In)] int srcX1, [Flow(FlowDirection.In)] int srcY1, [Flow(FlowDirection.In)] int dstX0, [Flow(FlowDirection.In)] int dstY0, [Flow(FlowDirection.In)] int dstX1, [Flow(FlowDirection.In)] int dstY1, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] GLEnum filter);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlitFramebuffer([Flow(FlowDirection.In)] int srcX0, [Flow(FlowDirection.In)] int srcY0, [Flow(FlowDirection.In)] int srcX1, [Flow(FlowDirection.In)] int srcY1, [Flow(FlowDirection.In)] int dstX0, [Flow(FlowDirection.In)] int dstY0, [Flow(FlowDirection.In)] int dstX1, [Flow(FlowDirection.In)] int dstY1, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] GLEnum filter)
+            => ImplBlitFramebuffer(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter);
 
         /// <summary>
         /// To be added.
@@ -5115,7 +5732,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from buffer.
         /// </param>
         [NativeApi(EntryPoint = "glClearBufferiv")]
-        public abstract unsafe void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] int* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] int* value)
+            => ImplClearBuffer(buffer, drawbuffer, value);
 
         /// <summary>
         /// To be added.
@@ -5131,7 +5750,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from buffer.
         /// </param>
         [NativeApi(EntryPoint = "glClearBufferiv")]
-        public abstract void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref int value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref int value)
+            => ImplClearBuffer(buffer, drawbuffer, value);
 
         /// <summary>
         /// To be added.
@@ -5147,7 +5768,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from buffer.
         /// </param>
         [NativeApi(EntryPoint = "glClearBufferuiv")]
-        public abstract unsafe void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] uint* value)
+            => ImplClearBuffer(buffer, drawbuffer, value);
 
         /// <summary>
         /// To be added.
@@ -5163,7 +5786,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from buffer.
         /// </param>
         [NativeApi(EntryPoint = "glClearBufferuiv")]
-        public abstract void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref uint value)
+            => ImplClearBuffer(buffer, drawbuffer, value);
 
         /// <summary>
         /// To be added.
@@ -5179,7 +5804,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from buffer.
         /// </param>
         [NativeApi(EntryPoint = "glClearBufferfv")]
-        public abstract unsafe void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] float* value)
+            => ImplClearBuffer(buffer, drawbuffer, value);
 
         /// <summary>
         /// To be added.
@@ -5195,7 +5822,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from buffer.
         /// </param>
         [NativeApi(EntryPoint = "glClearBufferfv")]
-        public abstract void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref float value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref float value)
+            => ImplClearBuffer(buffer, drawbuffer, value);
 
         /// <summary>
         /// To be added.
@@ -5213,7 +5842,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glClearBufferfi")]
-        public abstract void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] float depth, [Flow(FlowDirection.In)] int stencil);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] float depth, [Flow(FlowDirection.In)] int stencil)
+            => ImplClearBuffer(buffer, drawbuffer, depth, stencil);
 
         /// <summary>
         /// To be added.
@@ -5229,7 +5860,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glClientWaitSync")]
-        public abstract GLEnum ClientWaitSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public GLEnum ClientWaitSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout)
+            => ImplClientWaitSync(sync, flags, timeout);
 
         /// <summary>
         /// To be added.
@@ -5263,7 +5896,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexImage3D")]
-        public abstract unsafe void CompressedTexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CompressedTexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data)
+            => ImplCompressedTexImage3D(target, level, internalformat, width, height, depth, border, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -5297,7 +5932,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexImage3D")]
-        public abstract void CompressedTexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CompressedTexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged
+            => ImplCompressedTexImage3D<T0>(target, level, internalformat, width, height, depth, border, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -5337,7 +5974,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexSubImage3D")]
-        public abstract unsafe void CompressedTexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CompressedTexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data)
+            => ImplCompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -5377,7 +6016,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexSubImage3D")]
-        public abstract void CompressedTexSubImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CompressedTexSubImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged
+            => ImplCompressedTexSubImage3D<T0>(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -5398,7 +6039,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCopyBufferSubData")]
-        public abstract void CopyBufferSubData([Flow(FlowDirection.In)] GLEnum readTarget, [Flow(FlowDirection.In)] GLEnum writeTarget, [Flow(FlowDirection.In)] IntPtr readOffset, [Flow(FlowDirection.In)] IntPtr writeOffset, [Flow(FlowDirection.In)] UIntPtr size);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CopyBufferSubData([Flow(FlowDirection.In)] GLEnum readTarget, [Flow(FlowDirection.In)] GLEnum writeTarget, [Flow(FlowDirection.In)] IntPtr readOffset, [Flow(FlowDirection.In)] IntPtr writeOffset, [Flow(FlowDirection.In)] UIntPtr size)
+            => ImplCopyBufferSubData(readTarget, writeTarget, readOffset, writeOffset, size);
 
         /// <summary>
         /// To be added.
@@ -5431,7 +6074,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCopyTexSubImage3D")]
-        public abstract void CopyTexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CopyTexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplCopyTexSubImage3D(target, level, xoffset, yoffset, zoffset, x, y, width, height);
 
         /// <summary>
         /// To be added.
@@ -5444,7 +6089,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteQueries")]
-        public abstract unsafe void DeleteQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids)
+            => ImplDeleteQueries(n, ids);
 
         /// <summary>
         /// To be added.
@@ -5457,7 +6104,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteQueries")]
-        public abstract void DeleteQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> ids)
+            => ImplDeleteQueries(n, ids);
 
         /// <summary>
         /// To be added.
@@ -5470,7 +6119,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteSamplers")]
-        public abstract unsafe void DeleteSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* samplers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* samplers)
+            => ImplDeleteSamplers(count, samplers);
 
         /// <summary>
         /// To be added.
@@ -5483,7 +6134,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteSamplers")]
-        public abstract void DeleteSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> samplers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> samplers)
+            => ImplDeleteSamplers(count, samplers);
 
         /// <summary>
         /// To be added.
@@ -5492,7 +6145,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteSync")]
-        public abstract void DeleteSync([Flow(FlowDirection.In)] IntPtr sync);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteSync([Flow(FlowDirection.In)] IntPtr sync)
+            => ImplDeleteSync(sync);
 
         /// <summary>
         /// To be added.
@@ -5505,7 +6160,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteTransformFeedbacks")]
-        public abstract unsafe void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids)
+            => ImplDeleteTransformFeedbacks(n, ids);
 
         /// <summary>
         /// To be added.
@@ -5518,7 +6175,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteTransformFeedbacks")]
-        public abstract void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> ids)
+            => ImplDeleteTransformFeedbacks(n, ids);
 
         /// <summary>
         /// To be added.
@@ -5531,7 +6190,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteVertexArrays")]
-        public abstract unsafe void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* arrays);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* arrays)
+            => ImplDeleteVertexArrays(n, arrays);
 
         /// <summary>
         /// To be added.
@@ -5544,7 +6205,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteVertexArrays")]
-        public abstract void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> arrays);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> arrays)
+            => ImplDeleteVertexArrays(n, arrays);
 
         /// <summary>
         /// To be added.
@@ -5562,7 +6225,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawArraysInstanced")]
-        public abstract void DrawArraysInstanced([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint instancecount);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawArraysInstanced([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint instancecount)
+            => ImplDrawArraysInstanced(mode, first, count, instancecount);
 
         /// <summary>
         /// To be added.
@@ -5575,7 +6240,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDrawBuffers")]
-        public abstract unsafe void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] GLEnum* bufs);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] GLEnum* bufs)
+            => ImplDrawBuffers(n, bufs);
 
         /// <summary>
         /// To be added.
@@ -5588,7 +6255,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDrawBuffers")]
-        public abstract void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<GLEnum> bufs);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<GLEnum> bufs)
+            => ImplDrawBuffers(n, bufs);
 
         /// <summary>
         /// To be added.
@@ -5610,7 +6279,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsInstanced")]
-        public abstract unsafe void DrawElementsInstanced([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawElementsInstanced([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount)
+            => ImplDrawElementsInstanced(mode, count, type, indices, instancecount);
 
         /// <summary>
         /// To be added.
@@ -5632,7 +6303,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsInstanced")]
-        public abstract void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] uint instancecount) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] uint instancecount) where T0 : unmanaged
+            => ImplDrawElementsInstanced<T0>(mode, count, type, indices, instancecount);
 
         /// <summary>
         /// To be added.
@@ -5657,7 +6330,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from count and type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElements")]
-        public abstract unsafe void DrawRangeElements([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawRangeElements([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices)
+            => ImplDrawRangeElements(mode, start, end, count, type, indices);
 
         /// <summary>
         /// To be added.
@@ -5682,7 +6357,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from count and type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElements")]
-        public abstract void DrawRangeElements<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawRangeElements<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged
+            => ImplDrawRangeElements<T0>(mode, start, end, count, type, indices);
 
         /// <summary>
         /// To be added.
@@ -5691,13 +6368,17 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEndQuery")]
-        public abstract void EndQuery([Flow(FlowDirection.In)] GLEnum target);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void EndQuery([Flow(FlowDirection.In)] GLEnum target)
+            => ImplEndQuery(target);
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glEndTransformFeedback")]
-        public abstract void EndTransformFeedback();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void EndTransformFeedback()
+            => ImplEndTransformFeedback();
 
         /// <summary>
         /// To be added.
@@ -5710,7 +6391,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glFenceSync")]
-        public abstract IntPtr FenceSync([Flow(FlowDirection.In)] GLEnum condition, [Flow(FlowDirection.In)] uint flags);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public IntPtr FenceSync([Flow(FlowDirection.In)] GLEnum condition, [Flow(FlowDirection.In)] uint flags)
+            => ImplFenceSync(condition, flags);
 
         /// <summary>
         /// To be added.
@@ -5725,7 +6408,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFlushMappedBufferRange")]
-        public abstract void FlushMappedBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FlushMappedBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length)
+            => ImplFlushMappedBufferRange(target, offset, length);
 
         /// <summary>
         /// To be added.
@@ -5746,7 +6431,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureLayer")]
-        public abstract void FramebufferTextureLayer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferTextureLayer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer)
+            => ImplFramebufferTextureLayer(target, attachment, texture, level, layer);
 
         /// <summary>
         /// To be added.
@@ -5759,7 +6446,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenQueries")]
-        public abstract unsafe void GenQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids)
+            => ImplGenQueries(n, ids);
 
         /// <summary>
         /// To be added.
@@ -5772,7 +6461,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenQueries")]
-        public abstract void GenQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+            => ImplGenQueries(n, ids);
 
         /// <summary>
         /// To be added.
@@ -5785,7 +6476,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGenSamplers")]
-        public abstract unsafe void GenSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* samplers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* samplers)
+            => ImplGenSamplers(count, samplers);
 
         /// <summary>
         /// To be added.
@@ -5798,7 +6491,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGenSamplers")]
-        public abstract void GenSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> samplers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> samplers)
+            => ImplGenSamplers(count, samplers);
 
         /// <summary>
         /// To be added.
@@ -5811,7 +6506,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenTransformFeedbacks")]
-        public abstract unsafe void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids)
+            => ImplGenTransformFeedbacks(n, ids);
 
         /// <summary>
         /// To be added.
@@ -5824,7 +6521,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenTransformFeedbacks")]
-        public abstract void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+            => ImplGenTransformFeedbacks(n, ids);
 
         /// <summary>
         /// To be added.
@@ -5837,7 +6536,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenVertexArrays")]
-        public abstract unsafe void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays)
+            => ImplGenVertexArrays(n, arrays);
 
         /// <summary>
         /// To be added.
@@ -5850,7 +6551,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenVertexArrays")]
-        public abstract void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
+            => ImplGenVertexArrays(n, arrays);
 
         /// <summary>
         /// To be added.
@@ -5869,7 +6572,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from program, uniformBlockIndex, and pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
-        public abstract unsafe void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetActiveUniformBlock(program, uniformBlockIndex, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -5888,7 +6593,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from program, uniformBlockIndex, and pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
-        public abstract void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetActiveUniformBlock(program, uniformBlockIndex, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -5911,7 +6618,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockName")]
-        public abstract unsafe void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* uniformBlockName);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* uniformBlockName)
+            => ImplGetActiveUniformBlockName(program, uniformBlockIndex, bufSize, length, uniformBlockName);
 
         /// <summary>
         /// To be added.
@@ -5934,7 +6643,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockName")]
-        public abstract void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> uniformBlockName);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> uniformBlockName)
+            => ImplGetActiveUniformBlockName(program, uniformBlockIndex, bufSize, length, uniformBlockName);
 
         /// <summary>
         /// To be added.
@@ -5957,7 +6668,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from uniformCount and pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
-        public abstract unsafe void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] uint* uniformIndices, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] uint* uniformIndices, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetActiveUniforms(program, uniformCount, uniformIndices, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -5980,7 +6693,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from uniformCount and pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
-        public abstract void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] Span<uint> uniformIndices, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] Span<uint> uniformIndices, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetActiveUniforms(program, uniformCount, uniformIndices, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -5996,7 +6711,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetBufferParameteri64v")]
-        public abstract unsafe void GetBufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetBufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* @params)
+            => ImplGetBufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6012,7 +6729,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetBufferParameteri64v")]
-        public abstract void GetBufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetBufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long @params)
+            => ImplGetBufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6028,7 +6747,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetBufferPointerv")]
-        public abstract unsafe void GetBufferPointer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetBufferPointer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params)
+            => ImplGetBufferPointer(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6044,7 +6765,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetBufferPointerv")]
-        public abstract unsafe void GetBufferPointer<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetBufferPointer<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged
+            => ImplGetBufferPointer<T0>(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6058,7 +6781,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetFragDataLocation")]
-        public abstract unsafe int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] char* name)
+            => ImplGetFragDataLocation(program, name);
 
         /// <summary>
         /// To be added.
@@ -6072,7 +6797,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetFragDataLocation")]
-        public abstract int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] ref char name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] ref char name)
+            => ImplGetFragDataLocation(program, name);
 
         /// <summary>
         /// To be added.
@@ -6088,7 +6815,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetIntegeri_v")]
-        public abstract unsafe void GetInteger([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] int* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetInteger([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] int* data)
+            => ImplGetInteger(target, index, data);
 
         /// <summary>
         /// To be added.
@@ -6104,7 +6833,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetIntegeri_v")]
-        public abstract void GetInteger([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out int data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetInteger([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out int data)
+            => ImplGetInteger(target, index, data);
 
         /// <summary>
         /// To be added.
@@ -6117,7 +6848,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetInteger64v")]
-        public abstract unsafe void GetInteger64([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetInteger64([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* data)
+            => ImplGetInteger64(pname, data);
 
         /// <summary>
         /// To be added.
@@ -6130,7 +6863,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetInteger64v")]
-        public abstract void GetInteger64([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetInteger64([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long data)
+            => ImplGetInteger64(pname, data);
 
         /// <summary>
         /// To be added.
@@ -6146,7 +6881,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetInteger64i_v")]
-        public abstract unsafe void GetInteger64([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] long* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetInteger64([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] long* data)
+            => ImplGetInteger64(target, index, data);
 
         /// <summary>
         /// To be added.
@@ -6162,7 +6899,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetInteger64i_v")]
-        public abstract void GetInteger64([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out long data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetInteger64([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out long data)
+            => ImplGetInteger64(target, index, data);
 
         /// <summary>
         /// To be added.
@@ -6184,7 +6923,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetInternalformativ")]
-        public abstract unsafe void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetInternalformat(target, internalformat, pname, count, @params);
 
         /// <summary>
         /// To be added.
@@ -6206,7 +6947,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetInternalformativ")]
-        public abstract void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+            => ImplGetInternalformat(target, internalformat, pname, count, @params);
 
         /// <summary>
         /// To be added.
@@ -6230,7 +6973,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramBinary")]
-        public abstract unsafe void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary)
+            => ImplGetProgramBinary(program, bufSize, length, binaryFormat, binary);
 
         /// <summary>
         /// To be added.
@@ -6254,7 +6999,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramBinary")]
-        public abstract void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
+            => ImplGetProgramBinary<T0>(program, bufSize, length, binaryFormat, binary);
 
         /// <summary>
         /// To be added.
@@ -6270,7 +7017,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetQueryiv")]
-        public abstract unsafe void GetQuery([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetQuery([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetQuery(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6286,7 +7035,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetQueryiv")]
-        public abstract void GetQuery([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetQuery([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetQuery(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6302,7 +7053,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetQueryObjectuiv")]
-        public abstract unsafe void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetQueryObject(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6318,7 +7071,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetQueryObjectuiv")]
-        public abstract void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params)
+            => ImplGetQueryObject(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6334,7 +7089,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameteriv")]
-        public abstract unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetSamplerParameter(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6350,7 +7107,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameteriv")]
-        public abstract void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetSamplerParameter(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6366,7 +7125,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterfv")]
-        public abstract unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetSamplerParameter(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6382,7 +7143,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterfv")]
-        public abstract void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetSamplerParameter(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6395,7 +7158,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetStringi")]
-        public abstract unsafe byte* GetString([Flow(FlowDirection.In)] GLEnum name, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe byte* GetString([Flow(FlowDirection.In)] GLEnum name, [Flow(FlowDirection.In)] uint index)
+            => ImplGetString(name, index);
 
         /// <summary>
         /// To be added.
@@ -6418,7 +7183,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetSynciv")]
-        public abstract unsafe void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values)
+            => ImplGetSync(sync, pname, count, length, values);
 
         /// <summary>
         /// To be added.
@@ -6441,7 +7208,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetSynciv")]
-        public abstract void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+            => ImplGetSync(sync, pname, count, length, values);
 
         /// <summary>
         /// To be added.
@@ -6472,7 +7241,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetTransformFeedbackVarying")]
-        public abstract unsafe void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* name)
+            => ImplGetTransformFeedbackVarying(program, index, bufSize, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -6503,7 +7274,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetTransformFeedbackVarying")]
-        public abstract void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> name)
+            => ImplGetTransformFeedbackVarying(program, index, bufSize, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -6519,7 +7292,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from program and location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformuiv")]
-        public abstract unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetUniform(program, location, @params);
 
         /// <summary>
         /// To be added.
@@ -6535,7 +7310,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from program and location.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformuiv")]
-        public abstract void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out uint @params)
+            => ImplGetUniform(program, location, @params);
 
         /// <summary>
         /// To be added.
@@ -6549,7 +7326,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetUniformBlockIndex")]
-        public abstract unsafe uint GetUniformBlockIndex([Flow(FlowDirection.In)] uint program, [Count(Count = 0), Flow(FlowDirection.In)] char* uniformBlockName);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe uint GetUniformBlockIndex([Flow(FlowDirection.In)] uint program, [Count(Count = 0), Flow(FlowDirection.In)] char* uniformBlockName)
+            => ImplGetUniformBlockIndex(program, uniformBlockName);
 
         /// <summary>
         /// To be added.
@@ -6563,7 +7342,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetUniformBlockIndex")]
-        public abstract uint GetUniformBlockIndex([Flow(FlowDirection.In)] uint program, [Count(Count = 0), Flow(FlowDirection.In)] ref char uniformBlockName);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint GetUniformBlockIndex([Flow(FlowDirection.In)] uint program, [Count(Count = 0), Flow(FlowDirection.In)] ref char uniformBlockName)
+            => ImplGetUniformBlockIndex(program, uniformBlockName);
 
         /// <summary>
         /// To be added.
@@ -6583,7 +7364,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from uniformCount.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformIndices")]
-        public abstract unsafe void GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] char** uniformNames, [Count(Computed = "uniformCount"), Flow(FlowDirection.Out)] uint* uniformIndices);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] char** uniformNames, [Count(Computed = "uniformCount"), Flow(FlowDirection.Out)] uint* uniformIndices)
+            => ImplGetUniformIndices(program, uniformCount, uniformNames, uniformIndices);
 
         /// <summary>
         /// To be added.
@@ -6603,7 +7386,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from uniformCount.
         /// </param>
         [NativeApi(EntryPoint = "glGetUniformIndices")]
-        public abstract unsafe void GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] ref char* uniformNames, [Count(Computed = "uniformCount"), Flow(FlowDirection.Out)] out uint uniformIndices);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] ref char* uniformNames, [Count(Computed = "uniformCount"), Flow(FlowDirection.Out)] out uint uniformIndices)
+            => ImplGetUniformIndices(program, uniformCount, uniformNames, uniformIndices);
 
         /// <summary>
         /// To be added.
@@ -6619,7 +7404,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribIiv")]
-        public abstract unsafe void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetVertexAttribI(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6635,7 +7422,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribIiv")]
-        public abstract void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetVertexAttribI(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6651,7 +7440,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribIuiv")]
-        public abstract unsafe void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetVertexAttribI(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6667,7 +7458,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribIuiv")]
-        public abstract void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out uint @params)
+            => ImplGetVertexAttribI(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -6683,7 +7476,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from numAttachments.
         /// </param>
         [NativeApi(EntryPoint = "glInvalidateFramebuffer")]
-        public abstract unsafe void InvalidateFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] GLEnum* attachments);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void InvalidateFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] GLEnum* attachments)
+            => ImplInvalidateFramebuffer(target, numAttachments, attachments);
 
         /// <summary>
         /// To be added.
@@ -6699,7 +7494,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from numAttachments.
         /// </param>
         [NativeApi(EntryPoint = "glInvalidateFramebuffer")]
-        public abstract void InvalidateFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] Span<GLEnum> attachments);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void InvalidateFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] Span<GLEnum> attachments)
+            => ImplInvalidateFramebuffer(target, numAttachments, attachments);
 
         /// <summary>
         /// To be added.
@@ -6727,7 +7524,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer")]
-        public abstract unsafe void InvalidateSubFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] GLEnum* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void InvalidateSubFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] GLEnum* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplInvalidateSubFramebuffer(target, numAttachments, attachments, x, y, width, height);
 
         /// <summary>
         /// To be added.
@@ -6755,7 +7554,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer")]
-        public abstract void InvalidateSubFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] Span<GLEnum> attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void InvalidateSubFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] Span<GLEnum> attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplInvalidateSubFramebuffer(target, numAttachments, attachments, x, y, width, height);
 
         /// <summary>
         /// To be added.
@@ -6765,7 +7566,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsQuery")]
-        public abstract bool IsQuery([Flow(FlowDirection.In)] uint id);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsQuery([Flow(FlowDirection.In)] uint id)
+            => ImplIsQuery(id);
 
         /// <summary>
         /// To be added.
@@ -6775,7 +7578,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsSampler")]
-        public abstract bool IsSampler([Flow(FlowDirection.In)] uint sampler);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsSampler([Flow(FlowDirection.In)] uint sampler)
+            => ImplIsSampler(sampler);
 
         /// <summary>
         /// To be added.
@@ -6785,7 +7590,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsSync")]
-        public abstract bool IsSync([Flow(FlowDirection.In)] IntPtr sync);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsSync([Flow(FlowDirection.In)] IntPtr sync)
+            => ImplIsSync(sync);
 
         /// <summary>
         /// To be added.
@@ -6795,7 +7602,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsTransformFeedback")]
-        public abstract bool IsTransformFeedback([Flow(FlowDirection.In)] uint id);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsTransformFeedback([Flow(FlowDirection.In)] uint id)
+            => ImplIsTransformFeedback(id);
 
         /// <summary>
         /// To be added.
@@ -6805,7 +7614,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsVertexArray")]
-        public abstract bool IsVertexArray([Flow(FlowDirection.In)] uint array);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsVertexArray([Flow(FlowDirection.In)] uint array)
+            => ImplIsVertexArray(array);
 
         /// <summary>
         /// To be added.
@@ -6824,13 +7635,17 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glMapBufferRange")]
-        public abstract unsafe void* MapBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void* MapBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access)
+            => ImplMapBufferRange(target, offset, length, access);
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glPauseTransformFeedback")]
-        public abstract void PauseTransformFeedback();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PauseTransformFeedback()
+            => ImplPauseTransformFeedback();
 
         /// <summary>
         /// To be added.
@@ -6849,7 +7664,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramBinary")]
-        public abstract unsafe void ProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
+            => ImplProgramBinary(program, binaryFormat, binary, length);
 
         /// <summary>
         /// To be added.
@@ -6868,7 +7685,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramBinary")]
-        public abstract void ProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+            => ImplProgramBinary<T0>(program, binaryFormat, binary, length);
 
         /// <summary>
         /// To be added.
@@ -6883,7 +7702,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramParameteri")]
-        public abstract void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int value)
+            => ImplProgramParameter(program, pname, value);
 
         /// <summary>
         /// To be added.
@@ -6892,7 +7713,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glReadBuffer")]
-        public abstract void ReadBuffer([Flow(FlowDirection.In)] GLEnum src);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReadBuffer([Flow(FlowDirection.In)] GLEnum src)
+            => ImplReadBuffer(src);
 
         /// <summary>
         /// To be added.
@@ -6913,13 +7736,17 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glRenderbufferStorageMultisample")]
-        public abstract void RenderbufferStorageMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void RenderbufferStorageMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplRenderbufferStorageMultisample(target, samples, internalformat, width, height);
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glResumeTransformFeedback")]
-        public abstract void ResumeTransformFeedback();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ResumeTransformFeedback()
+            => ImplResumeTransformFeedback();
 
         /// <summary>
         /// To be added.
@@ -6934,7 +7761,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameteri")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param)
+            => ImplSamplerParameter(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -6950,7 +7779,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameteriv")]
-        public abstract unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param)
+            => ImplSamplerParameter(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -6966,7 +7797,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameteriv")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param)
+            => ImplSamplerParameter(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -6981,7 +7814,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterf")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param)
+            => ImplSamplerParameter(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -6997,7 +7832,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterfv")]
-        public abstract unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param)
+            => ImplSamplerParameter(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -7013,7 +7850,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterfv")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float param)
+            => ImplSamplerParameter(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -7050,7 +7889,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, height, and depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage3D")]
-        public abstract unsafe void TexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels)
+            => ImplTexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -7087,7 +7928,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, height, and depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage3D")]
-        public abstract void TexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged
+            => ImplTexImage3D<T0>(target, level, internalformat, width, height, depth, border, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -7108,7 +7951,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexStorage2D")]
-        public abstract void TexStorage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexStorage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplTexStorage2D(target, levels, internalformat, width, height);
 
         /// <summary>
         /// To be added.
@@ -7132,7 +7977,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexStorage3D")]
-        public abstract void TexStorage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexStorage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth)
+            => ImplTexStorage3D(target, levels, internalformat, width, height, depth);
 
         /// <summary>
         /// To be added.
@@ -7172,7 +8019,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, height, and depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage3D")]
-        public abstract unsafe void TexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels)
+            => ImplTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -7212,7 +8061,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, height, and depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage3D")]
-        public abstract void TexSubImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexSubImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged
+            => ImplTexSubImage3D<T0>(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -7231,7 +8082,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTransformFeedbackVaryings")]
-        public abstract unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** varyings, [Flow(FlowDirection.In)] GLEnum bufferMode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** varyings, [Flow(FlowDirection.In)] GLEnum bufferMode)
+            => ImplTransformFeedbackVaryings(program, count, varyings, bufferMode);
 
         /// <summary>
         /// To be added.
@@ -7243,7 +8096,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUniform1ui")]
-        public abstract void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0)
+            => ImplUniform1(location, v0);
 
         /// <summary>
         /// To be added.
@@ -7259,7 +8114,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform1uiv")]
-        public abstract unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value)
+            => ImplUniform1(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -7275,7 +8132,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform1uiv")]
-        public abstract void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value)
+            => ImplUniform1(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -7290,7 +8149,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUniform2ui")]
-        public abstract void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1)
+            => ImplUniform2(location, v0, v1);
 
         /// <summary>
         /// To be added.
@@ -7306,7 +8167,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform2uiv")]
-        public abstract unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value)
+            => ImplUniform2(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -7322,7 +8185,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform2uiv")]
-        public abstract void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value)
+            => ImplUniform2(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -7340,7 +8205,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUniform3ui")]
-        public abstract void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2)
+            => ImplUniform3(location, v0, v1, v2);
 
         /// <summary>
         /// To be added.
@@ -7356,7 +8223,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform3uiv")]
-        public abstract unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value)
+            => ImplUniform3(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -7372,7 +8241,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform3uiv")]
-        public abstract void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value)
+            => ImplUniform3(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -7393,7 +8264,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUniform4ui")]
-        public abstract void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2, [Flow(FlowDirection.In)] uint v3);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2, [Flow(FlowDirection.In)] uint v3)
+            => ImplUniform4(location, v0, v1, v2, v3);
 
         /// <summary>
         /// To be added.
@@ -7409,7 +8282,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform4uiv")]
-        public abstract unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value)
+            => ImplUniform4(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -7425,7 +8300,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniform4uiv")]
-        public abstract void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value)
+            => ImplUniform4(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -7440,7 +8317,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUniformBlockBinding")]
-        public abstract void UniformBlockBinding([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint uniformBlockBinding);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UniformBlockBinding([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint uniformBlockBinding)
+            => ImplUniformBlockBinding(program, uniformBlockIndex, uniformBlockBinding);
 
         /// <summary>
         /// To be added.
@@ -7459,7 +8338,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix2x3fv")]
-        public abstract unsafe void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplUniformMatrix2x3(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -7478,7 +8359,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix2x3fv")]
-        public abstract void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplUniformMatrix2x3(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -7497,7 +8380,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix2x4fv")]
-        public abstract unsafe void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplUniformMatrix2x4(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -7516,7 +8401,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix2x4fv")]
-        public abstract void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplUniformMatrix2x4(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -7535,7 +8422,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix3x2fv")]
-        public abstract unsafe void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplUniformMatrix3x2(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -7554,7 +8443,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix3x2fv")]
-        public abstract void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplUniformMatrix3x2(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -7573,7 +8464,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix3x4fv")]
-        public abstract unsafe void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplUniformMatrix3x4(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -7592,7 +8485,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix3x4fv")]
-        public abstract void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplUniformMatrix3x4(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -7611,7 +8506,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix4x2fv")]
-        public abstract unsafe void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplUniformMatrix4x2(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -7630,7 +8527,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix4x2fv")]
-        public abstract void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplUniformMatrix4x2(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -7649,7 +8548,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix4x3fv")]
-        public abstract unsafe void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplUniformMatrix4x3(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -7668,7 +8569,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformMatrix4x3fv")]
-        public abstract void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplUniformMatrix4x3(location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -7678,7 +8581,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glUnmapBuffer")]
-        public abstract bool UnmapBuffer([Flow(FlowDirection.In)] GLEnum target);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool UnmapBuffer([Flow(FlowDirection.In)] GLEnum target)
+            => ImplUnmapBuffer(target);
 
         /// <summary>
         /// To be added.
@@ -7690,7 +8595,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribDivisor")]
-        public abstract void VertexAttribDivisor([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint divisor);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribDivisor([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint divisor)
+            => ImplVertexAttribDivisor(index, divisor);
 
         /// <summary>
         /// To be added.
@@ -7711,7 +8618,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribI4i")]
-        public abstract void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z, [Flow(FlowDirection.In)] int w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z, [Flow(FlowDirection.In)] int w)
+            => ImplVertexAttribI4(index, x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -7732,7 +8641,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribI4ui")]
-        public abstract void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint z, [Flow(FlowDirection.In)] uint w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint z, [Flow(FlowDirection.In)] uint w)
+            => ImplVertexAttribI4(index, x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -7745,7 +8656,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribI4iv")]
-        public abstract unsafe void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v)
+            => ImplVertexAttribI4(index, v);
 
         /// <summary>
         /// To be added.
@@ -7758,7 +8671,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribI4iv")]
-        public abstract void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v)
+            => ImplVertexAttribI4(index, v);
 
         /// <summary>
         /// To be added.
@@ -7771,7 +8686,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribI4uiv")]
-        public abstract unsafe void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* v)
+            => ImplVertexAttribI4(index, v);
 
         /// <summary>
         /// To be added.
@@ -7784,7 +8701,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribI4uiv")]
-        public abstract void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<uint> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<uint> v)
+            => ImplVertexAttribI4(index, v);
 
         /// <summary>
         /// To be added.
@@ -7806,7 +8725,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIPointer")]
-        public abstract unsafe void VertexAttribIPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribIPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer)
+            => ImplVertexAttribIPointer(index, size, type, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -7828,7 +8749,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIPointer")]
-        public abstract void VertexAttribIPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribIPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplVertexAttribIPointer<T0>(index, size, type, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -7843,7 +8766,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glWaitSync")]
-        public abstract void WaitSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WaitSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout)
+            => ImplWaitSync(sync, flags, timeout);
 
         /// <summary>
         /// To be added.
@@ -7855,7 +8780,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBeginQuery")]
-        public abstract void BeginQuery([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint id);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BeginQuery([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint id)
+            => ImplBeginQuery(target, id);
 
         /// <summary>
         /// To be added.
@@ -7864,7 +8791,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBeginTransformFeedback")]
-        public abstract void BeginTransformFeedback([Flow(FlowDirection.In)] PrimitiveType primitiveMode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BeginTransformFeedback([Flow(FlowDirection.In)] PrimitiveType primitiveMode)
+            => ImplBeginTransformFeedback(primitiveMode);
 
         /// <summary>
         /// To be added.
@@ -7879,7 +8808,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindBufferBase")]
-        public abstract void BindBufferBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindBufferBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer)
+            => ImplBindBufferBase(target, index, buffer);
 
         /// <summary>
         /// To be added.
@@ -7900,7 +8831,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindBufferRange")]
-        public abstract void BindBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size)
+            => ImplBindBufferRange(target, index, buffer, offset, size);
 
         /// <summary>
         /// To be added.
@@ -7912,7 +8845,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindTransformFeedback")]
-        public abstract void BindTransformFeedback([Flow(FlowDirection.In)] BindTransformFeedbackTarget target, [Flow(FlowDirection.In)] uint id);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindTransformFeedback([Flow(FlowDirection.In)] BindTransformFeedbackTarget target, [Flow(FlowDirection.In)] uint id)
+            => ImplBindTransformFeedback(target, id);
 
         /// <summary>
         /// To be added.
@@ -7948,7 +8883,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlitFramebuffer")]
-        public abstract void BlitFramebuffer([Flow(FlowDirection.In)] int srcX0, [Flow(FlowDirection.In)] int srcY0, [Flow(FlowDirection.In)] int srcX1, [Flow(FlowDirection.In)] int srcY1, [Flow(FlowDirection.In)] int dstX0, [Flow(FlowDirection.In)] int dstY0, [Flow(FlowDirection.In)] int dstX1, [Flow(FlowDirection.In)] int dstY1, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] BlitFramebufferFilter filter);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlitFramebuffer([Flow(FlowDirection.In)] int srcX0, [Flow(FlowDirection.In)] int srcY0, [Flow(FlowDirection.In)] int srcX1, [Flow(FlowDirection.In)] int srcY1, [Flow(FlowDirection.In)] int dstX0, [Flow(FlowDirection.In)] int dstY0, [Flow(FlowDirection.In)] int dstX1, [Flow(FlowDirection.In)] int dstY1, [Flow(FlowDirection.In)] uint mask, [Flow(FlowDirection.In)] BlitFramebufferFilter filter)
+            => ImplBlitFramebuffer(srcX0, srcY0, srcX1, srcY1, dstX0, dstY0, dstX1, dstY1, mask, filter);
 
         /// <summary>
         /// To be added.
@@ -7964,7 +8901,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from buffer.
         /// </param>
         [NativeApi(EntryPoint = "glClearBufferiv")]
-        public abstract unsafe void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] int* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] int* value)
+            => ImplClearBuffer(buffer, drawbuffer, value);
 
         /// <summary>
         /// To be added.
@@ -7980,7 +8919,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from buffer.
         /// </param>
         [NativeApi(EntryPoint = "glClearBufferiv")]
-        public abstract void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref int value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref int value)
+            => ImplClearBuffer(buffer, drawbuffer, value);
 
         /// <summary>
         /// To be added.
@@ -7996,7 +8937,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from buffer.
         /// </param>
         [NativeApi(EntryPoint = "glClearBufferuiv")]
-        public abstract unsafe void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] uint* value)
+            => ImplClearBuffer(buffer, drawbuffer, value);
 
         /// <summary>
         /// To be added.
@@ -8012,7 +8955,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from buffer.
         /// </param>
         [NativeApi(EntryPoint = "glClearBufferuiv")]
-        public abstract void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref uint value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref uint value)
+            => ImplClearBuffer(buffer, drawbuffer, value);
 
         /// <summary>
         /// To be added.
@@ -8028,7 +8973,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from buffer.
         /// </param>
         [NativeApi(EntryPoint = "glClearBufferfv")]
-        public abstract unsafe void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] float* value)
+            => ImplClearBuffer(buffer, drawbuffer, value);
 
         /// <summary>
         /// To be added.
@@ -8044,7 +8991,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from buffer.
         /// </param>
         [NativeApi(EntryPoint = "glClearBufferfv")]
-        public abstract void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref float value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref float value)
+            => ImplClearBuffer(buffer, drawbuffer, value);
 
         /// <summary>
         /// To be added.
@@ -8062,7 +9011,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glClearBufferfi")]
-        public abstract void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] float depth, [Flow(FlowDirection.In)] int stencil);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] float depth, [Flow(FlowDirection.In)] int stencil)
+            => ImplClearBuffer(buffer, drawbuffer, depth, stencil);
 
         /// <summary>
         /// To be added.
@@ -8096,7 +9047,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexImage3D")]
-        public abstract unsafe void CompressedTexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CompressedTexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data)
+            => ImplCompressedTexImage3D(target, level, internalformat, width, height, depth, border, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -8130,7 +9083,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexImage3D")]
-        public abstract void CompressedTexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CompressedTexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged
+            => ImplCompressedTexImage3D<T0>(target, level, internalformat, width, height, depth, border, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -8170,7 +9125,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexSubImage3D")]
-        public abstract unsafe void CompressedTexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CompressedTexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data)
+            => ImplCompressedTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -8210,7 +9167,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from imageSize.
         /// </param>
         [NativeApi(EntryPoint = "glCompressedTexSubImage3D")]
-        public abstract void CompressedTexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CompressedTexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged
+            => ImplCompressedTexSubImage3D<T0>(target, level, xoffset, yoffset, zoffset, width, height, depth, format, imageSize, data);
 
         /// <summary>
         /// To be added.
@@ -8231,7 +9190,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCopyBufferSubData")]
-        public abstract void CopyBufferSubData([Flow(FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(FlowDirection.In)] IntPtr readOffset, [Flow(FlowDirection.In)] IntPtr writeOffset, [Flow(FlowDirection.In)] UIntPtr size);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CopyBufferSubData([Flow(FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(FlowDirection.In)] IntPtr readOffset, [Flow(FlowDirection.In)] IntPtr writeOffset, [Flow(FlowDirection.In)] UIntPtr size)
+            => ImplCopyBufferSubData(readTarget, writeTarget, readOffset, writeOffset, size);
 
         /// <summary>
         /// To be added.
@@ -8264,7 +9225,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCopyTexSubImage3D")]
-        public abstract void CopyTexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CopyTexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplCopyTexSubImage3D(target, level, xoffset, yoffset, zoffset, x, y, width, height);
 
         /// <summary>
         /// To be added.
@@ -8282,7 +9245,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawArraysInstanced")]
-        public abstract void DrawArraysInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint instancecount);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawArraysInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint instancecount)
+            => ImplDrawArraysInstanced(mode, first, count, instancecount);
 
         /// <summary>
         /// To be added.
@@ -8295,7 +9260,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDrawBuffers")]
-        public abstract unsafe void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] DrawBufferMode* bufs);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] DrawBufferMode* bufs)
+            => ImplDrawBuffers(n, bufs);
 
         /// <summary>
         /// To be added.
@@ -8308,7 +9275,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDrawBuffers")]
-        public abstract void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<DrawBufferMode> bufs);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<DrawBufferMode> bufs)
+            => ImplDrawBuffers(n, bufs);
 
         /// <summary>
         /// To be added.
@@ -8330,7 +9299,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsInstanced")]
-        public abstract unsafe void DrawElementsInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawElementsInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount)
+            => ImplDrawElementsInstanced(mode, count, type, indices, instancecount);
 
         /// <summary>
         /// To be added.
@@ -8352,7 +9323,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsInstanced")]
-        public abstract void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] uint instancecount) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] uint instancecount) where T0 : unmanaged
+            => ImplDrawElementsInstanced<T0>(mode, count, type, indices, instancecount);
 
         /// <summary>
         /// To be added.
@@ -8377,7 +9350,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from count and type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElements")]
-        public abstract unsafe void DrawRangeElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawRangeElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices)
+            => ImplDrawRangeElements(mode, start, end, count, type, indices);
 
         /// <summary>
         /// To be added.
@@ -8402,7 +9377,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from count and type.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElements")]
-        public abstract void DrawRangeElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawRangeElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged
+            => ImplDrawRangeElements<T0>(mode, start, end, count, type, indices);
 
         /// <summary>
         /// To be added.
@@ -8411,7 +9388,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEndQuery")]
-        public abstract void EndQuery([Flow(FlowDirection.In)] QueryTarget target);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void EndQuery([Flow(FlowDirection.In)] QueryTarget target)
+            => ImplEndQuery(target);
 
         /// <summary>
         /// To be added.
@@ -8424,7 +9403,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glFenceSync")]
-        public abstract IntPtr FenceSync([Flow(FlowDirection.In)] SyncCondition condition, [Flow(FlowDirection.In)] uint flags);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public IntPtr FenceSync([Flow(FlowDirection.In)] SyncCondition condition, [Flow(FlowDirection.In)] uint flags)
+            => ImplFenceSync(condition, flags);
 
         /// <summary>
         /// To be added.
@@ -8439,7 +9420,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFlushMappedBufferRange")]
-        public abstract void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length)
+            => ImplFlushMappedBufferRange(target, offset, length);
 
         /// <summary>
         /// To be added.
@@ -8460,7 +9443,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureLayer")]
-        public abstract void FramebufferTextureLayer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferTextureLayer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer)
+            => ImplFramebufferTextureLayer(target, attachment, texture, level, layer);
 
         /// <summary>
         /// To be added.
@@ -8479,7 +9464,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from program, uniformBlockIndex, and pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
-        public abstract unsafe void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] UniformBlockPName pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] UniformBlockPName pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetActiveUniformBlock(program, uniformBlockIndex, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8498,7 +9485,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from program, uniformBlockIndex, and pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
-        public abstract void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] UniformBlockPName pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] UniformBlockPName pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetActiveUniformBlock(program, uniformBlockIndex, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8520,7 +9509,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockName")]
-        public abstract unsafe void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string uniformBlockName);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string uniformBlockName)
+            => ImplGetActiveUniformBlockName(program, uniformBlockIndex, bufSize, length, uniformBlockName);
 
         /// <summary>
         /// To be added.
@@ -8542,7 +9533,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformBlockName")]
-        public abstract void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string uniformBlockName);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string uniformBlockName)
+            => ImplGetActiveUniformBlockName(program, uniformBlockIndex, bufSize, length, uniformBlockName);
 
         /// <summary>
         /// To be added.
@@ -8565,7 +9558,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from uniformCount and pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
-        public abstract unsafe void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] uint* uniformIndices, [Flow(FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] uint* uniformIndices, [Flow(FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetActiveUniforms(program, uniformCount, uniformIndices, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8588,7 +9583,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from uniformCount and pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
-        public abstract void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] Span<uint> uniformIndices, [Flow(FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] Span<uint> uniformIndices, [Flow(FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetActiveUniforms(program, uniformCount, uniformIndices, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8604,7 +9601,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetBufferParameteri64v")]
-        public abstract unsafe void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* @params)
+            => ImplGetBufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8620,7 +9619,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetBufferParameteri64v")]
-        public abstract void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long @params)
+            => ImplGetBufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8636,7 +9637,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetBufferPointerv")]
-        public abstract unsafe void GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params)
+            => ImplGetBufferPointer(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8652,7 +9655,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetBufferPointerv")]
-        public abstract unsafe void GetBufferPointer<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetBufferPointer<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged
+            => ImplGetBufferPointer<T0>(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8665,7 +9670,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetFragDataLocation")]
-        public abstract int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string name)
+            => ImplGetFragDataLocation(program, name);
 
         /// <summary>
         /// To be added.
@@ -8678,7 +9685,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetInteger64v")]
-        public abstract unsafe void GetInteger64([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetInteger64([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* data)
+            => ImplGetInteger64(pname, data);
 
         /// <summary>
         /// To be added.
@@ -8691,7 +9700,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetInteger64v")]
-        public abstract void GetInteger64([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetInteger64([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long data)
+            => ImplGetInteger64(pname, data);
 
         /// <summary>
         /// To be added.
@@ -8713,7 +9724,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetInternalformativ")]
-        public abstract unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetInternalformat(target, internalformat, pname, count, @params);
 
         /// <summary>
         /// To be added.
@@ -8735,7 +9748,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetInternalformativ")]
-        public abstract void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+            => ImplGetInternalformat(target, internalformat, pname, count, @params);
 
         /// <summary>
         /// To be added.
@@ -8751,7 +9766,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetQueryiv")]
-        public abstract unsafe void GetQuery([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetQuery([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetQuery(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8767,7 +9784,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetQueryiv")]
-        public abstract void GetQuery([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetQuery([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetQuery(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8783,7 +9802,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetQueryObjectuiv")]
-        public abstract unsafe void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetQueryObject(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8799,7 +9820,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetQueryObjectuiv")]
-        public abstract void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params)
+            => ImplGetQueryObject(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8815,7 +9838,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameteriv")]
-        public abstract unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetSamplerParameter(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8831,7 +9856,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameteriv")]
-        public abstract void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetSamplerParameter(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8847,7 +9874,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterfv")]
-        public abstract unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetSamplerParameter(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8863,7 +9892,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterfv")]
-        public abstract void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetSamplerParameter(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -8876,7 +9907,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetStringi")]
-        public abstract string GetString([Flow(FlowDirection.In)] StringName name, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public string GetString([Flow(FlowDirection.In)] StringName name, [Flow(FlowDirection.In)] uint index)
+            => ImplGetString(name, index);
 
         /// <summary>
         /// To be added.
@@ -8899,7 +9932,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetSynciv")]
-        public abstract unsafe void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values)
+            => ImplGetSync(sync, pname, count, length, values);
 
         /// <summary>
         /// To be added.
@@ -8922,7 +9957,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetSynciv")]
-        public abstract void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+            => ImplGetSync(sync, pname, count, length, values);
 
         /// <summary>
         /// To be added.
@@ -8952,7 +9989,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetTransformFeedbackVarying")]
-        public abstract unsafe void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] GlslTypeToken* type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] GlslTypeToken* type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name)
+            => ImplGetTransformFeedbackVarying(program, index, bufSize, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -8982,7 +10021,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetTransformFeedbackVarying")]
-        public abstract void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out GlslTypeToken type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out GlslTypeToken type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name)
+            => ImplGetTransformFeedbackVarying(program, index, bufSize, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -8995,7 +10036,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetUniformBlockIndex")]
-        public abstract uint GetUniformBlockIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string uniformBlockName);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint GetUniformBlockIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string uniformBlockName)
+            => ImplGetUniformBlockIndex(program, uniformBlockName);
 
         /// <summary>
         /// To be added.
@@ -9011,7 +10054,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribIiv")]
-        public abstract unsafe void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetVertexAttribI(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -9027,7 +10072,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribIiv")]
-        public abstract void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetVertexAttribI(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -9043,7 +10090,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribIuiv")]
-        public abstract unsafe void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetVertexAttribI(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -9059,7 +10108,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribIuiv")]
-        public abstract void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out uint @params)
+            => ImplGetVertexAttribI(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -9075,7 +10126,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from numAttachments.
         /// </param>
         [NativeApi(EntryPoint = "glInvalidateFramebuffer")]
-        public abstract unsafe void InvalidateFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] InvalidateFramebufferAttachment* attachments);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void InvalidateFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] InvalidateFramebufferAttachment* attachments)
+            => ImplInvalidateFramebuffer(target, numAttachments, attachments);
 
         /// <summary>
         /// To be added.
@@ -9091,7 +10144,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from numAttachments.
         /// </param>
         [NativeApi(EntryPoint = "glInvalidateFramebuffer")]
-        public abstract void InvalidateFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] Span<InvalidateFramebufferAttachment> attachments);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void InvalidateFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] Span<InvalidateFramebufferAttachment> attachments)
+            => ImplInvalidateFramebuffer(target, numAttachments, attachments);
 
         /// <summary>
         /// To be added.
@@ -9119,7 +10174,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer")]
-        public abstract unsafe void InvalidateSubFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] InvalidateFramebufferAttachment* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void InvalidateSubFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] InvalidateFramebufferAttachment* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplInvalidateSubFramebuffer(target, numAttachments, attachments, x, y, width, height);
 
         /// <summary>
         /// To be added.
@@ -9147,7 +10204,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer")]
-        public abstract void InvalidateSubFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] Span<InvalidateFramebufferAttachment> attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void InvalidateSubFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] Span<InvalidateFramebufferAttachment> attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplInvalidateSubFramebuffer(target, numAttachments, attachments, x, y, width, height);
 
         /// <summary>
         /// To be added.
@@ -9166,7 +10225,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glMapBufferRange")]
-        public abstract unsafe void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access)
+            => ImplMapBufferRange(target, offset, length, access);
 
         /// <summary>
         /// To be added.
@@ -9181,7 +10242,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramParameteri")]
-        public abstract void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramParameterPName pname, [Flow(FlowDirection.In)] int value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramParameterPName pname, [Flow(FlowDirection.In)] int value)
+            => ImplProgramParameter(program, pname, value);
 
         /// <summary>
         /// To be added.
@@ -9190,7 +10253,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glReadBuffer")]
-        public abstract void ReadBuffer([Flow(FlowDirection.In)] ReadBufferMode src);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReadBuffer([Flow(FlowDirection.In)] ReadBufferMode src)
+            => ImplReadBuffer(src);
 
         /// <summary>
         /// To be added.
@@ -9211,7 +10276,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glRenderbufferStorageMultisample")]
-        public abstract void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplRenderbufferStorageMultisample(target, samples, internalformat, width, height);
 
         /// <summary>
         /// To be added.
@@ -9226,7 +10293,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameteri")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Flow(FlowDirection.In)] int param)
+            => ImplSamplerParameter(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -9242,7 +10311,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameteriv")]
-        public abstract unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param)
+            => ImplSamplerParameter(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -9258,7 +10329,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameteriv")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param)
+            => ImplSamplerParameter(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -9273,7 +10346,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterf")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Flow(FlowDirection.In)] float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Flow(FlowDirection.In)] float param)
+            => ImplSamplerParameter(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -9289,7 +10364,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterfv")]
-        public abstract unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param)
+            => ImplSamplerParameter(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -9305,7 +10382,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterfv")]
-        public abstract void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float param)
+            => ImplSamplerParameter(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -9342,7 +10421,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, height, and depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage3D")]
-        public abstract unsafe void TexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels)
+            => ImplTexImage3D(target, level, internalformat, width, height, depth, border, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -9379,7 +10460,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, height, and depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexImage3D")]
-        public abstract void TexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged
+            => ImplTexImage3D<T0>(target, level, internalformat, width, height, depth, border, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -9400,7 +10483,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexStorage2D")]
-        public abstract void TexStorage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexStorage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplTexStorage2D(target, levels, internalformat, width, height);
 
         /// <summary>
         /// To be added.
@@ -9424,7 +10509,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexStorage3D")]
-        public abstract void TexStorage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexStorage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth)
+            => ImplTexStorage3D(target, levels, internalformat, width, height, depth);
 
         /// <summary>
         /// To be added.
@@ -9464,7 +10551,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, height, and depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage3D")]
-        public abstract unsafe void TexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels)
+            => ImplTexSubImage3D(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -9504,7 +10593,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from format, type, width, height, and depth.
         /// </param>
         [NativeApi(EntryPoint = "glTexSubImage3D")]
-        public abstract void TexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged
+            => ImplTexSubImage3D<T0>(target, level, xoffset, yoffset, zoffset, width, height, depth, format, type, pixels);
 
         /// <summary>
         /// To be added.
@@ -9523,7 +10614,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTransformFeedbackVaryings")]
-        public abstract unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** varyings, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** varyings, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode)
+            => ImplTransformFeedbackVaryings(program, count, varyings, bufferMode);
 
         /// <summary>
         /// To be added.
@@ -9533,7 +10626,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glUnmapBuffer")]
-        public abstract bool UnmapBuffer([Flow(FlowDirection.In)] BufferTargetARB target);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool UnmapBuffer([Flow(FlowDirection.In)] BufferTargetARB target)
+            => ImplUnmapBuffer(target);
 
         /// <summary>
         /// To be added.
@@ -9555,7 +10650,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIPointer")]
-        public abstract unsafe void VertexAttribIPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribIPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer)
+            => ImplVertexAttribIPointer(index, size, type, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -9577,7 +10674,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIPointer")]
-        public abstract void VertexAttribIPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribIPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplVertexAttribIPointer<T0>(index, size, type, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -9589,7 +10688,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glActiveShaderProgram")]
-        public abstract void ActiveShaderProgram([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint program);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ActiveShaderProgram([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint program)
+            => ImplActiveShaderProgram(pipeline, program);
 
         /// <summary>
         /// To be added.
@@ -9616,7 +10717,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindImageTexture")]
-        public abstract void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] GLEnum access, [Flow(FlowDirection.In)] GLEnum format);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] GLEnum access, [Flow(FlowDirection.In)] GLEnum format)
+            => ImplBindImageTexture(unit, texture, level, layered, layer, access, format);
 
         /// <summary>
         /// To be added.
@@ -9625,7 +10728,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindProgramPipeline")]
-        public abstract void BindProgramPipeline([Flow(FlowDirection.In)] uint pipeline);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindProgramPipeline([Flow(FlowDirection.In)] uint pipeline)
+            => ImplBindProgramPipeline(pipeline);
 
         /// <summary>
         /// To be added.
@@ -9643,7 +10748,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindVertexBuffer")]
-        public abstract void BindVertexBuffer([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] uint stride);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindVertexBuffer([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] uint stride)
+            => ImplBindVertexBuffer(bindingindex, buffer, offset, stride);
 
         /// <summary>
         /// To be added.
@@ -9660,7 +10767,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCreateShaderProgramv")]
-        public abstract unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** strings);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** strings)
+            => ImplCreateShaderProgram(type, count, strings);
 
         /// <summary>
         /// To be added.
@@ -9673,7 +10782,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteProgramPipelines")]
-        public abstract unsafe void DeleteProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* pipelines);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* pipelines)
+            => ImplDeleteProgramPipelines(n, pipelines);
 
         /// <summary>
         /// To be added.
@@ -9686,7 +10797,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteProgramPipelines")]
-        public abstract void DeleteProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> pipelines);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> pipelines)
+            => ImplDeleteProgramPipelines(n, pipelines);
 
         /// <summary>
         /// To be added.
@@ -9701,7 +10814,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDispatchCompute")]
-        public abstract void DispatchCompute([Flow(FlowDirection.In)] uint num_groups_x, [Flow(FlowDirection.In)] uint num_groups_y, [Flow(FlowDirection.In)] uint num_groups_z);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DispatchCompute([Flow(FlowDirection.In)] uint num_groups_x, [Flow(FlowDirection.In)] uint num_groups_y, [Flow(FlowDirection.In)] uint num_groups_z)
+            => ImplDispatchCompute(num_groups_x, num_groups_y, num_groups_z);
 
         /// <summary>
         /// To be added.
@@ -9710,7 +10825,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDispatchComputeIndirect")]
-        public abstract void DispatchComputeIndirect([Flow(FlowDirection.In)] IntPtr indirect);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DispatchComputeIndirect([Flow(FlowDirection.In)] IntPtr indirect)
+            => ImplDispatchComputeIndirect(indirect);
 
         /// <summary>
         /// To be added.
@@ -9722,7 +10839,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawArraysIndirect")]
-        public abstract unsafe void DrawArraysIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] void* indirect);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawArraysIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] void* indirect)
+            => ImplDrawArraysIndirect(mode, indirect);
 
         /// <summary>
         /// To be added.
@@ -9734,7 +10853,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawArraysIndirect")]
-        public abstract void DrawArraysIndirect<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawArraysIndirect<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged
+            => ImplDrawArraysIndirect<T0>(mode, indirect);
 
         /// <summary>
         /// To be added.
@@ -9749,7 +10870,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsIndirect")]
-        public abstract unsafe void DrawElementsIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* indirect);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawElementsIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* indirect)
+            => ImplDrawElementsIndirect(mode, type, indirect);
 
         /// <summary>
         /// To be added.
@@ -9764,7 +10887,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsIndirect")]
-        public abstract void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged
+            => ImplDrawElementsIndirect<T0>(mode, type, indirect);
 
         /// <summary>
         /// To be added.
@@ -9779,7 +10904,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferParameteri")]
-        public abstract void FramebufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param)
+            => ImplFramebufferParameter(target, pname, param);
 
         /// <summary>
         /// To be added.
@@ -9792,7 +10919,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenProgramPipelines")]
-        public abstract unsafe void GenProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* pipelines);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* pipelines)
+            => ImplGenProgramPipelines(n, pipelines);
 
         /// <summary>
         /// To be added.
@@ -9805,7 +10934,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenProgramPipelines")]
-        public abstract void GenProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> pipelines);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> pipelines)
+            => ImplGenProgramPipelines(n, pipelines);
 
         /// <summary>
         /// To be added.
@@ -9821,7 +10952,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetBooleani_v")]
-        public abstract unsafe void GetBoolean([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] bool* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetBoolean([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] bool* data)
+            => ImplGetBoolean(target, index, data);
 
         /// <summary>
         /// To be added.
@@ -9837,7 +10970,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetBooleani_v")]
-        public abstract void GetBoolean([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out bool data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetBoolean([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out bool data)
+            => ImplGetBoolean(target, index, data);
 
         /// <summary>
         /// To be added.
@@ -9853,7 +10988,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFramebufferParameteriv")]
-        public abstract unsafe void GetFramebufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFramebufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetFramebufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -9869,7 +11006,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFramebufferParameteriv")]
-        public abstract void GetFramebufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFramebufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetFramebufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -9885,7 +11024,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetMultisamplefv")]
-        public abstract unsafe void GetMultisample([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* val);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetMultisample([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* val)
+            => ImplGetMultisample(pname, index, val);
 
         /// <summary>
         /// To be added.
@@ -9901,7 +11042,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetMultisamplefv")]
-        public abstract void GetMultisample([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float val);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetMultisample([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float val)
+            => ImplGetMultisample(pname, index, val);
 
         /// <summary>
         /// To be added.
@@ -9920,7 +11063,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
-        public abstract unsafe void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetProgramInterface(program, programInterface, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -9939,7 +11084,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
-        public abstract void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetProgramInterface(program, programInterface, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -9955,7 +11102,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineiv")]
-        public abstract unsafe void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetProgramPipeline(pipeline, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -9971,7 +11120,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineiv")]
-        public abstract void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetProgramPipeline(pipeline, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -9991,7 +11142,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineInfoLog")]
-        public abstract unsafe void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* infoLog)
+            => ImplGetProgramPipelineInfoLog(pipeline, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -10011,7 +11164,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineInfoLog")]
-        public abstract void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> infoLog)
+            => ImplGetProgramPipelineInfoLog(pipeline, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -10044,7 +11199,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramResourceiv")]
-        public abstract unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] GLEnum* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] GLEnum* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetProgramResource(program, programInterface, index, propCount, props, count, length, @params);
 
         /// <summary>
         /// To be added.
@@ -10077,7 +11234,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramResourceiv")]
-        public abstract void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] Span<GLEnum> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] Span<GLEnum> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+            => ImplGetProgramResource(program, programInterface, index, propCount, props, count, length, @params);
 
         /// <summary>
         /// To be added.
@@ -10094,7 +11253,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetProgramResourceIndex")]
-        public abstract unsafe uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] char* name)
+            => ImplGetProgramResourceIndex(program, programInterface, name);
 
         /// <summary>
         /// To be added.
@@ -10111,7 +11272,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetProgramResourceIndex")]
-        public abstract uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] ref char name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] ref char name)
+            => ImplGetProgramResourceIndex(program, programInterface, name);
 
         /// <summary>
         /// To be added.
@@ -10128,7 +11291,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetProgramResourceLocation")]
-        public abstract unsafe int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] char* name)
+            => ImplGetProgramResourceLocation(program, programInterface, name);
 
         /// <summary>
         /// To be added.
@@ -10145,7 +11310,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetProgramResourceLocation")]
-        public abstract int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] ref char name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] ref char name)
+            => ImplGetProgramResourceLocation(program, programInterface, name);
 
         /// <summary>
         /// To be added.
@@ -10171,7 +11338,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramResourceName")]
-        public abstract unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* name)
+            => ImplGetProgramResourceName(program, programInterface, index, bufSize, length, name);
 
         /// <summary>
         /// To be added.
@@ -10197,7 +11366,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramResourceName")]
-        public abstract void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> name)
+            => ImplGetProgramResourceName(program, programInterface, index, bufSize, length, name);
 
         /// <summary>
         /// To be added.
@@ -10216,7 +11387,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexLevelParameteriv")]
-        public abstract unsafe void GetTexLevelParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexLevelParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetTexLevelParameter(target, level, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -10235,7 +11408,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexLevelParameteriv")]
-        public abstract void GetTexLevelParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexLevelParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetTexLevelParameter(target, level, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -10254,7 +11429,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexLevelParameterfv")]
-        public abstract unsafe void GetTexLevelParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexLevelParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetTexLevelParameter(target, level, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -10273,7 +11450,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexLevelParameterfv")]
-        public abstract void GetTexLevelParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexLevelParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetTexLevelParameter(target, level, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -10283,7 +11462,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsProgramPipeline")]
-        public abstract bool IsProgramPipeline([Flow(FlowDirection.In)] uint pipeline);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsProgramPipeline([Flow(FlowDirection.In)] uint pipeline)
+            => ImplIsProgramPipeline(pipeline);
 
         /// <summary>
         /// To be added.
@@ -10292,7 +11473,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMemoryBarrier")]
-        public abstract void MemoryBarrier([Flow(FlowDirection.In)] uint barriers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MemoryBarrier([Flow(FlowDirection.In)] uint barriers)
+            => ImplMemoryBarrier(barriers);
 
         /// <summary>
         /// To be added.
@@ -10301,7 +11484,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMemoryBarrierByRegion")]
-        public abstract void MemoryBarrierByRegion([Flow(FlowDirection.In)] uint barriers);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MemoryBarrierByRegion([Flow(FlowDirection.In)] uint barriers)
+            => ImplMemoryBarrierByRegion(barriers);
 
         /// <summary>
         /// To be added.
@@ -10316,7 +11501,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1i")]
-        public abstract void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0)
+            => ImplProgramUniform1(program, location, v0);
 
         /// <summary>
         /// To be added.
@@ -10331,7 +11518,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1ui")]
-        public abstract void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0)
+            => ImplProgramUniform1(program, location, v0);
 
         /// <summary>
         /// To be added.
@@ -10346,7 +11535,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1f")]
-        public abstract void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0)
+            => ImplProgramUniform1(program, location, v0);
 
         /// <summary>
         /// To be added.
@@ -10365,7 +11556,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1iv")]
-        public abstract unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value)
+            => ImplProgramUniform1(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10384,7 +11577,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1iv")]
-        public abstract void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value)
+            => ImplProgramUniform1(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10403,7 +11598,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1uiv")]
-        public abstract unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value)
+            => ImplProgramUniform1(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10422,7 +11619,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1uiv")]
-        public abstract void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value)
+            => ImplProgramUniform1(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10441,7 +11640,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1fv")]
-        public abstract unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniform1(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10460,7 +11661,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform1fv")]
-        public abstract void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniform1(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10478,7 +11681,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2i")]
-        public abstract void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1)
+            => ImplProgramUniform2(program, location, v0, v1);
 
         /// <summary>
         /// To be added.
@@ -10496,7 +11701,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2ui")]
-        public abstract void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1)
+            => ImplProgramUniform2(program, location, v0, v1);
 
         /// <summary>
         /// To be added.
@@ -10514,7 +11721,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2f")]
-        public abstract void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1)
+            => ImplProgramUniform2(program, location, v0, v1);
 
         /// <summary>
         /// To be added.
@@ -10533,7 +11742,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2iv")]
-        public abstract unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value)
+            => ImplProgramUniform2(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10552,7 +11763,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2iv")]
-        public abstract void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value)
+            => ImplProgramUniform2(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10571,7 +11784,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2uiv")]
-        public abstract unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value)
+            => ImplProgramUniform2(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10590,7 +11805,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2uiv")]
-        public abstract void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value)
+            => ImplProgramUniform2(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10609,7 +11826,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2fv")]
-        public abstract unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniform2(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10628,7 +11847,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform2fv")]
-        public abstract void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniform2(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10649,7 +11870,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3i")]
-        public abstract void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2)
+            => ImplProgramUniform3(program, location, v0, v1, v2);
 
         /// <summary>
         /// To be added.
@@ -10670,7 +11893,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3ui")]
-        public abstract void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2)
+            => ImplProgramUniform3(program, location, v0, v1, v2);
 
         /// <summary>
         /// To be added.
@@ -10691,7 +11916,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3f")]
-        public abstract void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2)
+            => ImplProgramUniform3(program, location, v0, v1, v2);
 
         /// <summary>
         /// To be added.
@@ -10710,7 +11937,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3iv")]
-        public abstract unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value)
+            => ImplProgramUniform3(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10729,7 +11958,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3iv")]
-        public abstract void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value)
+            => ImplProgramUniform3(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10748,7 +11979,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3uiv")]
-        public abstract unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value)
+            => ImplProgramUniform3(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10767,7 +12000,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3uiv")]
-        public abstract void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value)
+            => ImplProgramUniform3(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10786,7 +12021,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3fv")]
-        public abstract unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniform3(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10805,7 +12042,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform3fv")]
-        public abstract void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniform3(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10829,7 +12068,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4i")]
-        public abstract void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2, [Flow(FlowDirection.In)] int v3);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2, [Flow(FlowDirection.In)] int v3)
+            => ImplProgramUniform4(program, location, v0, v1, v2, v3);
 
         /// <summary>
         /// To be added.
@@ -10853,7 +12094,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4ui")]
-        public abstract void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2, [Flow(FlowDirection.In)] uint v3);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2, [Flow(FlowDirection.In)] uint v3)
+            => ImplProgramUniform4(program, location, v0, v1, v2, v3);
 
         /// <summary>
         /// To be added.
@@ -10877,7 +12120,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4f")]
-        public abstract void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] float v3);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] float v3)
+            => ImplProgramUniform4(program, location, v0, v1, v2, v3);
 
         /// <summary>
         /// To be added.
@@ -10896,7 +12141,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4iv")]
-        public abstract unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value)
+            => ImplProgramUniform4(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10915,7 +12162,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4iv")]
-        public abstract void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value)
+            => ImplProgramUniform4(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10934,7 +12183,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4uiv")]
-        public abstract unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value)
+            => ImplProgramUniform4(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10953,7 +12204,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4uiv")]
-        public abstract void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value)
+            => ImplProgramUniform4(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10972,7 +12225,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4fv")]
-        public abstract unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniform4(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -10991,7 +12246,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniform4fv")]
-        public abstract void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniform4(program, location, count, value);
 
         /// <summary>
         /// To be added.
@@ -11013,7 +12270,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2fv")]
-        public abstract unsafe void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11035,7 +12294,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2fv")]
-        public abstract void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11057,7 +12318,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x3fv")]
-        public abstract unsafe void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix2x3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11079,7 +12342,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x3fv")]
-        public abstract void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix2x3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11101,7 +12366,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x4fv")]
-        public abstract unsafe void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix2x4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11123,7 +12390,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x4fv")]
-        public abstract void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix2x4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11145,7 +12414,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3fv")]
-        public abstract unsafe void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11167,7 +12438,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3fv")]
-        public abstract void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11189,7 +12462,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x2fv")]
-        public abstract unsafe void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix3x2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11211,7 +12486,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x2fv")]
-        public abstract void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix3x2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11233,7 +12510,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x4fv")]
-        public abstract unsafe void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix3x4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11255,7 +12534,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x4fv")]
-        public abstract void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix3x4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11277,7 +12558,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4fv")]
-        public abstract unsafe void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11299,7 +12582,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4fv")]
-        public abstract void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix4(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11321,7 +12606,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x2fv")]
-        public abstract unsafe void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix4x2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11343,7 +12630,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x2fv")]
-        public abstract void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix4x2(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11365,7 +12654,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x3fv")]
-        public abstract unsafe void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value)
+            => ImplProgramUniformMatrix4x3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11387,7 +12678,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x3fv")]
-        public abstract void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value)
+            => ImplProgramUniformMatrix4x3(program, location, count, transpose, value);
 
         /// <summary>
         /// To be added.
@@ -11399,7 +12692,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSampleMaski")]
-        public abstract void SampleMask([Flow(FlowDirection.In)] uint maskNumber, [Flow(FlowDirection.In)] uint mask);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SampleMask([Flow(FlowDirection.In)] uint maskNumber, [Flow(FlowDirection.In)] uint mask)
+            => ImplSampleMask(maskNumber, mask);
 
         /// <summary>
         /// To be added.
@@ -11423,7 +12718,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexStorage2DMultisample")]
-        public abstract void TexStorage2DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedsamplelocations);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexStorage2DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedsamplelocations)
+            => ImplTexStorage2DMultisample(target, samples, internalformat, width, height, fixedsamplelocations);
 
         /// <summary>
         /// To be added.
@@ -11438,7 +12735,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUseProgramStages")]
-        public abstract void UseProgramStages([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint stages, [Flow(FlowDirection.In)] uint program);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UseProgramStages([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint stages, [Flow(FlowDirection.In)] uint program)
+            => ImplUseProgramStages(pipeline, stages, program);
 
         /// <summary>
         /// To be added.
@@ -11447,7 +12746,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glValidateProgramPipeline")]
-        public abstract void ValidateProgramPipeline([Flow(FlowDirection.In)] uint pipeline);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ValidateProgramPipeline([Flow(FlowDirection.In)] uint pipeline)
+            => ImplValidateProgramPipeline(pipeline);
 
         /// <summary>
         /// To be added.
@@ -11459,7 +12760,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribBinding")]
-        public abstract void VertexAttribBinding([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] uint bindingindex);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribBinding([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] uint bindingindex)
+            => ImplVertexAttribBinding(attribindex, bindingindex);
 
         /// <summary>
         /// To be added.
@@ -11480,7 +12783,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribFormat")]
-        public abstract void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint relativeoffset);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint relativeoffset)
+            => ImplVertexAttribFormat(attribindex, size, type, normalized, relativeoffset);
 
         /// <summary>
         /// To be added.
@@ -11498,7 +12803,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIFormat")]
-        public abstract void VertexAttribIFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint relativeoffset);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribIFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint relativeoffset)
+            => ImplVertexAttribIFormat(attribindex, size, type, relativeoffset);
 
         /// <summary>
         /// To be added.
@@ -11510,7 +12817,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexBindingDivisor")]
-        public abstract void VertexBindingDivisor([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint divisor);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexBindingDivisor([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint divisor)
+            => ImplVertexBindingDivisor(bindingindex, divisor);
 
         /// <summary>
         /// To be added.
@@ -11537,7 +12846,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindImageTexture")]
-        public abstract void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] BufferAccessARB access, [Flow(FlowDirection.In)] InternalFormat format);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindImageTexture([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] BufferAccessARB access, [Flow(FlowDirection.In)] InternalFormat format)
+            => ImplBindImageTexture(unit, texture, level, layered, layer, access, format);
 
         /// <summary>
         /// To be added.
@@ -11554,7 +12865,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glCreateShaderProgramv")]
-        public abstract unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** strings);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** strings)
+            => ImplCreateShaderProgram(type, count, strings);
 
         /// <summary>
         /// To be added.
@@ -11566,7 +12879,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawArraysIndirect")]
-        public abstract unsafe void DrawArraysIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] void* indirect);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawArraysIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] void* indirect)
+            => ImplDrawArraysIndirect(mode, indirect);
 
         /// <summary>
         /// To be added.
@@ -11578,7 +12893,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawArraysIndirect")]
-        public abstract void DrawArraysIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawArraysIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged
+            => ImplDrawArraysIndirect<T0>(mode, indirect);
 
         /// <summary>
         /// To be added.
@@ -11593,7 +12910,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsIndirect")]
-        public abstract unsafe void DrawElementsIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] void* indirect);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawElementsIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] void* indirect)
+            => ImplDrawElementsIndirect(mode, type, indirect);
 
         /// <summary>
         /// To be added.
@@ -11608,7 +12927,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsIndirect")]
-        public abstract void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged
+            => ImplDrawElementsIndirect<T0>(mode, type, indirect);
 
         /// <summary>
         /// To be added.
@@ -11623,7 +12944,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferParameteri")]
-        public abstract void FramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferParameterName pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferParameterName pname, [Flow(FlowDirection.In)] int param)
+            => ImplFramebufferParameter(target, pname, param);
 
         /// <summary>
         /// To be added.
@@ -11639,7 +12962,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetBooleani_v")]
-        public abstract unsafe void GetBoolean([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] bool* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetBoolean([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] bool* data)
+            => ImplGetBoolean(target, index, data);
 
         /// <summary>
         /// To be added.
@@ -11655,7 +12980,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from target.
         /// </param>
         [NativeApi(EntryPoint = "glGetBooleani_v")]
-        public abstract void GetBoolean([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out bool data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetBoolean([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out bool data)
+            => ImplGetBoolean(target, index, data);
 
         /// <summary>
         /// To be added.
@@ -11671,7 +12998,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFramebufferParameteriv")]
-        public abstract unsafe void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetFramebufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -11687,7 +13016,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetFramebufferParameteriv")]
-        public abstract void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetFramebufferParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -11703,7 +13034,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetMultisamplefv")]
-        public abstract unsafe void GetMultisample([Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* val);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetMultisample([Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* val)
+            => ImplGetMultisample(pname, index, val);
 
         /// <summary>
         /// To be added.
@@ -11719,7 +13052,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetMultisamplefv")]
-        public abstract void GetMultisample([Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float val);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetMultisample([Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float val)
+            => ImplGetMultisample(pname, index, val);
 
         /// <summary>
         /// To be added.
@@ -11738,7 +13073,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
-        public abstract unsafe void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] ProgramInterfacePName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] ProgramInterfacePName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetProgramInterface(program, programInterface, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -11757,7 +13094,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
-        public abstract void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] ProgramInterfacePName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] ProgramInterfacePName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetProgramInterface(program, programInterface, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -11773,7 +13112,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineiv")]
-        public abstract unsafe void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] PipelineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] PipelineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetProgramPipeline(pipeline, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -11789,7 +13130,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineiv")]
-        public abstract void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] PipelineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] PipelineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetProgramPipeline(pipeline, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -11808,7 +13151,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineInfoLog")]
-        public abstract unsafe void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog)
+            => ImplGetProgramPipelineInfoLog(pipeline, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -11827,7 +13172,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramPipelineInfoLog")]
-        public abstract void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string infoLog)
+            => ImplGetProgramPipelineInfoLog(pipeline, bufSize, length, infoLog);
 
         /// <summary>
         /// To be added.
@@ -11860,7 +13207,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramResourceiv")]
-        public abstract unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetProgramResource(program, programInterface, index, propCount, props, count, length, @params);
 
         /// <summary>
         /// To be added.
@@ -11893,7 +13242,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramResourceiv")]
-        public abstract void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] Span<ProgramResourceProperty> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] Span<ProgramResourceProperty> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+            => ImplGetProgramResource(program, programInterface, index, propCount, props, count, length, @params);
 
         /// <summary>
         /// To be added.
@@ -11909,7 +13260,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetProgramResourceIndex")]
-        public abstract uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] string name)
+            => ImplGetProgramResourceIndex(program, programInterface, name);
 
         /// <summary>
         /// To be added.
@@ -11925,7 +13278,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetProgramResourceLocation")]
-        public abstract int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] string name)
+            => ImplGetProgramResourceLocation(program, programInterface, name);
 
         /// <summary>
         /// To be added.
@@ -11950,7 +13305,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramResourceName")]
-        public abstract unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string name)
+            => ImplGetProgramResourceName(program, programInterface, index, bufSize, length, name);
 
         /// <summary>
         /// To be added.
@@ -11975,7 +13332,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetProgramResourceName")]
-        public abstract void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string name)
+            => ImplGetProgramResourceName(program, programInterface, index, bufSize, length, name);
 
         /// <summary>
         /// To be added.
@@ -11994,7 +13353,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexLevelParameteriv")]
-        public abstract unsafe void GetTexLevelParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexLevelParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetTexLevelParameter(target, level, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -12013,7 +13374,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexLevelParameteriv")]
-        public abstract void GetTexLevelParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexLevelParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetTexLevelParameter(target, level, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -12032,7 +13395,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexLevelParameterfv")]
-        public abstract unsafe void GetTexLevelParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexLevelParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetTexLevelParameter(target, level, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -12051,7 +13416,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexLevelParameterfv")]
-        public abstract void GetTexLevelParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexLevelParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetTexLevelParameter(target, level, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -12075,7 +13442,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexStorage2DMultisample")]
-        public abstract void TexStorage2DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedsamplelocations);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexStorage2DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] bool fixedsamplelocations)
+            => ImplTexStorage2DMultisample(target, samples, internalformat, width, height, fixedsamplelocations);
 
         /// <summary>
         /// To be added.
@@ -12096,7 +13465,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribFormat")]
-        public abstract void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint relativeoffset);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint relativeoffset)
+            => ImplVertexAttribFormat(attribindex, size, type, normalized, relativeoffset);
 
         /// <summary>
         /// To be added.
@@ -12114,13 +13485,17 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribIFormat")]
-        public abstract void VertexAttribIFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint relativeoffset);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribIFormat([Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint relativeoffset)
+            => ImplVertexAttribIFormat(attribindex, size, type, relativeoffset);
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glBlendBarrier")]
-        public abstract void BlendBarrier();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendBarrier()
+            => ImplBlendBarrier();
 
         /// <summary>
         /// To be added.
@@ -12132,7 +13507,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendEquationi")]
-        public abstract void BlendEquation([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] GLEnum mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendEquation([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] GLEnum mode)
+            => ImplBlendEquation(buf, mode);
 
         /// <summary>
         /// To be added.
@@ -12147,7 +13524,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendEquationSeparatei")]
-        public abstract void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] GLEnum modeRGB, [Flow(FlowDirection.In)] GLEnum modeAlpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] GLEnum modeRGB, [Flow(FlowDirection.In)] GLEnum modeAlpha)
+            => ImplBlendEquationSeparate(buf, modeRGB, modeAlpha);
 
         /// <summary>
         /// To be added.
@@ -12162,7 +13541,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendFunci")]
-        public abstract void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] GLEnum src, [Flow(FlowDirection.In)] GLEnum dst);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] GLEnum src, [Flow(FlowDirection.In)] GLEnum dst)
+            => ImplBlendFunc(buf, src, dst);
 
         /// <summary>
         /// To be added.
@@ -12183,7 +13564,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendFuncSeparatei")]
-        public abstract void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] GLEnum srcRGB, [Flow(FlowDirection.In)] GLEnum dstRGB, [Flow(FlowDirection.In)] GLEnum srcAlpha, [Flow(FlowDirection.In)] GLEnum dstAlpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] GLEnum srcRGB, [Flow(FlowDirection.In)] GLEnum dstRGB, [Flow(FlowDirection.In)] GLEnum srcAlpha, [Flow(FlowDirection.In)] GLEnum dstAlpha)
+            => ImplBlendFuncSeparate(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
 
         /// <summary>
         /// To be added.
@@ -12204,7 +13587,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glColorMaski")]
-        public abstract void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a)
+            => ImplColorMask(index, r, g, b, a);
 
         /// <summary>
         /// To be added.
@@ -12255,7 +13640,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCopyImageSubData")]
-        public abstract void CopyImageSubData([Flow(FlowDirection.In)] uint srcName, [Flow(FlowDirection.In)] GLEnum srcTarget, [Flow(FlowDirection.In)] int srcLevel, [Flow(FlowDirection.In)] int srcX, [Flow(FlowDirection.In)] int srcY, [Flow(FlowDirection.In)] int srcZ, [Flow(FlowDirection.In)] uint dstName, [Flow(FlowDirection.In)] GLEnum dstTarget, [Flow(FlowDirection.In)] int dstLevel, [Flow(FlowDirection.In)] int dstX, [Flow(FlowDirection.In)] int dstY, [Flow(FlowDirection.In)] int dstZ, [Flow(FlowDirection.In)] uint srcWidth, [Flow(FlowDirection.In)] uint srcHeight, [Flow(FlowDirection.In)] uint srcDepth);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CopyImageSubData([Flow(FlowDirection.In)] uint srcName, [Flow(FlowDirection.In)] GLEnum srcTarget, [Flow(FlowDirection.In)] int srcLevel, [Flow(FlowDirection.In)] int srcX, [Flow(FlowDirection.In)] int srcY, [Flow(FlowDirection.In)] int srcZ, [Flow(FlowDirection.In)] uint dstName, [Flow(FlowDirection.In)] GLEnum dstTarget, [Flow(FlowDirection.In)] int dstLevel, [Flow(FlowDirection.In)] int dstX, [Flow(FlowDirection.In)] int dstY, [Flow(FlowDirection.In)] int dstZ, [Flow(FlowDirection.In)] uint srcWidth, [Flow(FlowDirection.In)] uint srcHeight, [Flow(FlowDirection.In)] uint srcDepth)
+            => ImplCopyImageSubData(srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth);
 
         /// <summary>
         /// To be added.
@@ -12267,7 +13654,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageCallback")]
-        public abstract unsafe void DebugMessageCallback([Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall)] DebugProc callback, [Flow(FlowDirection.In)] void* userParam);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DebugMessageCallback([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProc callback, [Flow(FlowDirection.In)] void* userParam)
+            => ImplDebugMessageCallback(callback, userParam);
 
         /// <summary>
         /// To be added.
@@ -12279,7 +13668,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageCallback")]
-        public abstract void DebugMessageCallback<T0>([Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall)] DebugProc callback, [Flow(FlowDirection.In)] Span<T0> userParam) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DebugMessageCallback<T0>([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProc callback, [Flow(FlowDirection.In)] Span<T0> userParam) where T0 : unmanaged
+            => ImplDebugMessageCallback<T0>(callback, userParam);
 
         /// <summary>
         /// To be added.
@@ -12304,7 +13695,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageControl")]
-        public abstract unsafe void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled)
+            => ImplDebugMessageControl(source, type, severity, count, ids, enabled);
 
         /// <summary>
         /// To be added.
@@ -12329,7 +13722,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageControl")]
-        public abstract void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> ids, [Flow(FlowDirection.In)] bool enabled);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+            => ImplDebugMessageControl(source, type, severity, count, ids, enabled);
 
         /// <summary>
         /// To be added.
@@ -12354,7 +13749,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from buf and length.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageInsert")]
-        public abstract unsafe void DebugMessageInsert([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(FlowDirection.In)] char* buf);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DebugMessageInsert([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(FlowDirection.In)] char* buf)
+            => ImplDebugMessageInsert(source, type, id, severity, length, buf);
 
         /// <summary>
         /// To be added.
@@ -12379,7 +13776,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from buf and length.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageInsert")]
-        public abstract void DebugMessageInsert([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(FlowDirection.In)] ref char buf);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DebugMessageInsert([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(FlowDirection.In)] ref char buf)
+            => ImplDebugMessageInsert(source, type, id, severity, length, buf);
 
         /// <summary>
         /// To be added.
@@ -12391,7 +13790,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDisablei")]
-        public abstract void Disable([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Disable([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index)
+            => ImplDisable(target, index);
 
         /// <summary>
         /// To be added.
@@ -12413,7 +13814,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsBaseVertex")]
-        public abstract unsafe void DrawElementsBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawElementsBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex)
+            => ImplDrawElementsBaseVertex(mode, count, type, indices, basevertex);
 
         /// <summary>
         /// To be added.
@@ -12435,7 +13838,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsBaseVertex")]
-        public abstract void DrawElementsBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawElementsBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged
+            => ImplDrawElementsBaseVertex<T0>(mode, count, type, indices, basevertex);
 
         /// <summary>
         /// To be added.
@@ -12460,7 +13865,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex")]
-        public abstract unsafe void DrawElementsInstancedBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawElementsInstancedBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex)
+            => ImplDrawElementsInstancedBaseVertex(mode, count, type, indices, instancecount, basevertex);
 
         /// <summary>
         /// To be added.
@@ -12485,7 +13892,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex")]
-        public abstract void DrawElementsInstancedBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawElementsInstancedBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged
+            => ImplDrawElementsInstancedBaseVertex<T0>(mode, count, type, indices, instancecount, basevertex);
 
         /// <summary>
         /// To be added.
@@ -12513,7 +13922,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex")]
-        public abstract unsafe void DrawRangeElementsBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawRangeElementsBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex)
+            => ImplDrawRangeElementsBaseVertex(mode, start, end, count, type, indices, basevertex);
 
         /// <summary>
         /// To be added.
@@ -12541,7 +13952,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex")]
-        public abstract void DrawRangeElementsBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawRangeElementsBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged
+            => ImplDrawRangeElementsBaseVertex<T0>(mode, start, end, count, type, indices, basevertex);
 
         /// <summary>
         /// To be added.
@@ -12553,7 +13966,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEnablei")]
-        public abstract void Enable([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Enable([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index)
+            => ImplEnable(target, index);
 
         /// <summary>
         /// To be added.
@@ -12571,7 +13986,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferTexture")]
-        public abstract void FramebufferTexture([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferTexture([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level)
+            => ImplFramebufferTexture(target, attachment, texture, level);
 
         /// <summary>
         /// To be added.
@@ -12608,7 +14025,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetDebugMessageLog")]
-        public abstract unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] GLEnum* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] GLEnum* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] GLEnum* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* messageLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] GLEnum* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] GLEnum* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] GLEnum* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* messageLog)
+            => ImplGetDebugMessageLog(count, bufSize, sources, types, ids, severities, lengths, messageLog);
 
         /// <summary>
         /// To be added.
@@ -12645,14 +14064,18 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetDebugMessageLog")]
-        public abstract uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<GLEnum> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<GLEnum> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<GLEnum> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> messageLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<GLEnum> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<GLEnum> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<GLEnum> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> messageLog)
+            => ImplGetDebugMessageLog(count, bufSize, sources, types, ids, severities, lengths, messageLog);
 
         /// <summary>
         /// To be added.
         /// </summary>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetGraphicsResetStatus")]
-        public abstract GLEnum GetGraphicsResetStatus();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public GLEnum GetGraphicsResetStatus()
+            => ImplGetGraphicsResetStatus();
 
         /// <summary>
         /// To be added.
@@ -12671,7 +14094,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetnUniformfv")]
-        public abstract unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetnUniform(program, location, bufSize, @params);
 
         /// <summary>
         /// To be added.
@@ -12690,7 +14115,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetnUniformfv")]
-        public abstract void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> @params)
+            => ImplGetnUniform(program, location, bufSize, @params);
 
         /// <summary>
         /// To be added.
@@ -12709,7 +14136,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetnUniformiv")]
-        public abstract unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetnUniform(program, location, bufSize, @params);
 
         /// <summary>
         /// To be added.
@@ -12728,7 +14157,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetnUniformiv")]
-        public abstract void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<int> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<int> @params)
+            => ImplGetnUniform(program, location, bufSize, @params);
 
         /// <summary>
         /// To be added.
@@ -12747,7 +14178,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetnUniformuiv")]
-        public abstract unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetnUniform(program, location, bufSize, @params);
 
         /// <summary>
         /// To be added.
@@ -12766,7 +14199,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetnUniformuiv")]
-        public abstract void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<uint> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<uint> @params)
+            => ImplGetnUniform(program, location, bufSize, @params);
 
         /// <summary>
         /// To be added.
@@ -12789,7 +14224,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectLabel")]
-        public abstract unsafe void GetObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* label)
+            => ImplGetObjectLabel(identifier, name, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -12812,7 +14249,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectLabel")]
-        public abstract void GetObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> label)
+            => ImplGetObjectLabel(identifier, name, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -12832,7 +14271,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectPtrLabel")]
-        public abstract unsafe void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* label)
+            => ImplGetObjectPtrLabel(ptr, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -12852,7 +14293,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectPtrLabel")]
-        public abstract void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> label) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> label) where T0 : unmanaged
+            => ImplGetObjectPtrLabel<T0>(ptr, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -12866,7 +14309,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         [System.Obsolete("Deprecated in version 3.2")]
         [NativeApi(EntryPoint = "glGetPointerv")]
-        public abstract unsafe void GetPointer([Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPointer([Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params)
+            => ImplGetPointer(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -12880,7 +14325,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         [System.Obsolete("Deprecated in version 3.2")]
         [NativeApi(EntryPoint = "glGetPointerv")]
-        public abstract unsafe void GetPointer<T0>([Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPointer<T0>([Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged
+            => ImplGetPointer<T0>(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -12896,7 +14343,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIiv")]
-        public abstract unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -12912,7 +14361,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIiv")]
-        public abstract void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -12928,7 +14379,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIuiv")]
-        public abstract unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -12944,7 +14397,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIuiv")]
-        public abstract void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -12960,7 +14415,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIiv")]
-        public abstract unsafe void GetTexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -12976,7 +14433,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIiv")]
-        public abstract void GetTexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -12992,7 +14451,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIuiv")]
-        public abstract unsafe void GetTexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -13008,7 +14469,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIuiv")]
-        public abstract void GetTexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -13021,7 +14484,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsEnabledi")]
-        public abstract bool IsEnabled([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsEnabled([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index)
+            => ImplIsEnabled(target, index);
 
         /// <summary>
         /// To be added.
@@ -13030,7 +14495,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMinSampleShading")]
-        public abstract void MinSampleShading([Flow(FlowDirection.In)] float value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MinSampleShading([Flow(FlowDirection.In)] float value)
+            => ImplMinSampleShading(value);
 
         /// <summary>
         /// To be added.
@@ -13049,7 +14516,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from label and length.
         /// </param>
         [NativeApi(EntryPoint = "glObjectLabel")]
-        public abstract unsafe void ObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] char* label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] char* label)
+            => ImplObjectLabel(identifier, name, length, label);
 
         /// <summary>
         /// To be added.
@@ -13068,7 +14537,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from label and length.
         /// </param>
         [NativeApi(EntryPoint = "glObjectLabel")]
-        public abstract void ObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] ref char label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] ref char label)
+            => ImplObjectLabel(identifier, name, length, label);
 
         /// <summary>
         /// To be added.
@@ -13084,7 +14555,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from label and length.
         /// </param>
         [NativeApi(EntryPoint = "glObjectPtrLabel")]
-        public abstract unsafe void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] char* label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] char* label)
+            => ImplObjectPtrLabel(ptr, length, label);
 
         /// <summary>
         /// To be added.
@@ -13100,7 +14573,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from label and length.
         /// </param>
         [NativeApi(EntryPoint = "glObjectPtrLabel")]
-        public abstract void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] ref char label) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] ref char label) where T0 : unmanaged
+            => ImplObjectPtrLabel<T0>(ptr, length, label);
 
         /// <summary>
         /// To be added.
@@ -13112,13 +14587,17 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPatchParameteri")]
-        public abstract void PatchParameter([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PatchParameter([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int value)
+            => ImplPatchParameter(pname, value);
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glPopDebugGroup")]
-        public abstract void PopDebugGroup();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PopDebugGroup()
+            => ImplPopDebugGroup();
 
         /// <summary>
         /// To be added.
@@ -13148,7 +14627,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPrimitiveBoundingBox")]
-        public abstract void PrimitiveBoundingBox([Flow(FlowDirection.In)] float minX, [Flow(FlowDirection.In)] float minY, [Flow(FlowDirection.In)] float minZ, [Flow(FlowDirection.In)] float minW, [Flow(FlowDirection.In)] float maxX, [Flow(FlowDirection.In)] float maxY, [Flow(FlowDirection.In)] float maxZ, [Flow(FlowDirection.In)] float maxW);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PrimitiveBoundingBox([Flow(FlowDirection.In)] float minX, [Flow(FlowDirection.In)] float minY, [Flow(FlowDirection.In)] float minZ, [Flow(FlowDirection.In)] float minW, [Flow(FlowDirection.In)] float maxX, [Flow(FlowDirection.In)] float maxY, [Flow(FlowDirection.In)] float maxZ, [Flow(FlowDirection.In)] float maxW)
+            => ImplPrimitiveBoundingBox(minX, minY, minZ, minW, maxX, maxY, maxZ, maxW);
 
         /// <summary>
         /// To be added.
@@ -13167,7 +14648,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from message and length.
         /// </param>
         [NativeApi(EntryPoint = "glPushDebugGroup")]
-        public abstract unsafe void PushDebugGroup([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(FlowDirection.In)] char* message);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void PushDebugGroup([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(FlowDirection.In)] char* message)
+            => ImplPushDebugGroup(source, id, length, message);
 
         /// <summary>
         /// To be added.
@@ -13186,7 +14669,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from message and length.
         /// </param>
         [NativeApi(EntryPoint = "glPushDebugGroup")]
-        public abstract void PushDebugGroup([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(FlowDirection.In)] ref char message);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PushDebugGroup([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(FlowDirection.In)] ref char message)
+            => ImplPushDebugGroup(source, id, length, message);
 
         /// <summary>
         /// To be added.
@@ -13217,7 +14702,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glReadnPixels")]
-        public abstract unsafe void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data)
+            => ImplReadnPixels(x, y, width, height, format, type, bufSize, data);
 
         /// <summary>
         /// To be added.
@@ -13248,7 +14735,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glReadnPixels")]
-        public abstract void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+            => ImplReadnPixels<T0>(x, y, width, height, format, type, bufSize, data);
 
         /// <summary>
         /// To be added.
@@ -13264,7 +14753,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIiv")]
-        public abstract unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -13280,7 +14771,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIiv")]
-        public abstract void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -13296,7 +14789,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIuiv")]
-        public abstract unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -13312,7 +14807,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIuiv")]
-        public abstract void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -13327,7 +14824,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexBuffer")]
-        public abstract void TexBuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint buffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexBuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint buffer)
+            => ImplTexBuffer(target, internalformat, buffer);
 
         /// <summary>
         /// To be added.
@@ -13348,7 +14847,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexBufferRange")]
-        public abstract void TexBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size)
+            => ImplTexBufferRange(target, internalformat, buffer, offset, size);
 
         /// <summary>
         /// To be added.
@@ -13364,7 +14865,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIiv")]
-        public abstract unsafe void TexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -13380,7 +14883,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIiv")]
-        public abstract void TexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -13396,7 +14901,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIuiv")]
-        public abstract unsafe void TexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params)
+            => ImplTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -13412,7 +14919,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIuiv")]
-        public abstract void TexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint @params)
+            => ImplTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -13439,7 +14948,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexStorage3DMultisample")]
-        public abstract void TexStorage3DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexStorage3DMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations)
+            => ImplTexStorage3DMultisample(target, samples, internalformat, width, height, depth, fixedsamplelocations);
 
         /// <summary>
         /// To be added.
@@ -13451,7 +14962,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendEquationi")]
-        public abstract void BlendEquation([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendEquation([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT mode)
+            => ImplBlendEquation(buf, mode);
 
         /// <summary>
         /// To be added.
@@ -13466,7 +14979,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendEquationSeparatei")]
-        public abstract void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendEquationSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha)
+            => ImplBlendEquationSeparate(buf, modeRGB, modeAlpha);
 
         /// <summary>
         /// To be added.
@@ -13481,7 +14996,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendFunci")]
-        public abstract void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor src, [Flow(FlowDirection.In)] BlendingFactor dst);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendFunc([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor src, [Flow(FlowDirection.In)] BlendingFactor dst)
+            => ImplBlendFunc(buf, src, dst);
 
         /// <summary>
         /// To be added.
@@ -13502,7 +15019,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBlendFuncSeparatei")]
-        public abstract void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha)
+            => ImplBlendFuncSeparate(buf, srcRGB, dstRGB, srcAlpha, dstAlpha);
 
         /// <summary>
         /// To be added.
@@ -13553,7 +15072,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCopyImageSubData")]
-        public abstract void CopyImageSubData([Flow(FlowDirection.In)] uint srcName, [Flow(FlowDirection.In)] CopyImageSubDataTarget srcTarget, [Flow(FlowDirection.In)] int srcLevel, [Flow(FlowDirection.In)] int srcX, [Flow(FlowDirection.In)] int srcY, [Flow(FlowDirection.In)] int srcZ, [Flow(FlowDirection.In)] uint dstName, [Flow(FlowDirection.In)] CopyImageSubDataTarget dstTarget, [Flow(FlowDirection.In)] int dstLevel, [Flow(FlowDirection.In)] int dstX, [Flow(FlowDirection.In)] int dstY, [Flow(FlowDirection.In)] int dstZ, [Flow(FlowDirection.In)] uint srcWidth, [Flow(FlowDirection.In)] uint srcHeight, [Flow(FlowDirection.In)] uint srcDepth);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CopyImageSubData([Flow(FlowDirection.In)] uint srcName, [Flow(FlowDirection.In)] CopyImageSubDataTarget srcTarget, [Flow(FlowDirection.In)] int srcLevel, [Flow(FlowDirection.In)] int srcX, [Flow(FlowDirection.In)] int srcY, [Flow(FlowDirection.In)] int srcZ, [Flow(FlowDirection.In)] uint dstName, [Flow(FlowDirection.In)] CopyImageSubDataTarget dstTarget, [Flow(FlowDirection.In)] int dstLevel, [Flow(FlowDirection.In)] int dstX, [Flow(FlowDirection.In)] int dstY, [Flow(FlowDirection.In)] int dstZ, [Flow(FlowDirection.In)] uint srcWidth, [Flow(FlowDirection.In)] uint srcHeight, [Flow(FlowDirection.In)] uint srcDepth)
+            => ImplCopyImageSubData(srcName, srcTarget, srcLevel, srcX, srcY, srcZ, dstName, dstTarget, dstLevel, dstX, dstY, dstZ, srcWidth, srcHeight, srcDepth);
 
         /// <summary>
         /// To be added.
@@ -13578,7 +15099,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageControl")]
-        public abstract unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled)
+            => ImplDebugMessageControl(source, type, severity, count, ids, enabled);
 
         /// <summary>
         /// To be added.
@@ -13603,7 +15126,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageControl")]
-        public abstract void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> ids, [Flow(FlowDirection.In)] bool enabled);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+            => ImplDebugMessageControl(source, type, severity, count, ids, enabled);
 
         /// <summary>
         /// To be added.
@@ -13627,7 +15152,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDebugMessageInsert")]
-        public abstract void DebugMessageInsert([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string buf);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DebugMessageInsert([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string buf)
+            => ImplDebugMessageInsert(source, type, id, severity, length, buf);
 
         /// <summary>
         /// To be added.
@@ -13639,7 +15166,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDisablei")]
-        public abstract void Disable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Disable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index)
+            => ImplDisable(target, index);
 
         /// <summary>
         /// To be added.
@@ -13661,7 +15190,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsBaseVertex")]
-        public abstract unsafe void DrawElementsBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawElementsBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex)
+            => ImplDrawElementsBaseVertex(mode, count, type, indices, basevertex);
 
         /// <summary>
         /// To be added.
@@ -13683,7 +15214,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsBaseVertex")]
-        public abstract void DrawElementsBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawElementsBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged
+            => ImplDrawElementsBaseVertex<T0>(mode, count, type, indices, basevertex);
 
         /// <summary>
         /// To be added.
@@ -13708,7 +15241,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex")]
-        public abstract unsafe void DrawElementsInstancedBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawElementsInstancedBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex)
+            => ImplDrawElementsInstancedBaseVertex(mode, count, type, indices, instancecount, basevertex);
 
         /// <summary>
         /// To be added.
@@ -13733,7 +15268,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex")]
-        public abstract void DrawElementsInstancedBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawElementsInstancedBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged
+            => ImplDrawElementsInstancedBaseVertex<T0>(mode, count, type, indices, instancecount, basevertex);
 
         /// <summary>
         /// To be added.
@@ -13761,7 +15298,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex")]
-        public abstract unsafe void DrawRangeElementsBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DrawRangeElementsBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex)
+            => ImplDrawRangeElementsBaseVertex(mode, start, end, count, type, indices, basevertex);
 
         /// <summary>
         /// To be added.
@@ -13789,7 +15328,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex")]
-        public abstract void DrawRangeElementsBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawRangeElementsBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged
+            => ImplDrawRangeElementsBaseVertex<T0>(mode, start, end, count, type, indices, basevertex);
 
         /// <summary>
         /// To be added.
@@ -13801,7 +15342,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEnablei")]
-        public abstract void Enable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void Enable([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index)
+            => ImplEnable(target, index);
 
         /// <summary>
         /// To be added.
@@ -13819,7 +15362,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferTexture")]
-        public abstract void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level)
+            => ImplFramebufferTexture(target, attachment, texture, level);
 
         /// <summary>
         /// To be added.
@@ -13855,7 +15400,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetDebugMessageLog")]
-        public abstract unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -6)] out string messageLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -6)] out string messageLog)
+            => ImplGetDebugMessageLog(count, bufSize, sources, types, ids, severities, lengths, messageLog);
 
         /// <summary>
         /// To be added.
@@ -13891,7 +15438,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetDebugMessageLog")]
-        public abstract uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -6)] out string messageLog);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -6)] out string messageLog)
+            => ImplGetDebugMessageLog(count, bufSize, sources, types, ids, severities, lengths, messageLog);
 
         /// <summary>
         /// To be added.
@@ -13913,7 +15462,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectLabel")]
-        public abstract unsafe void GetObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label)
+            => ImplGetObjectLabel(identifier, name, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -13935,7 +15486,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectLabel")]
-        public abstract void GetObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label)
+            => ImplGetObjectLabel(identifier, name, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -13954,7 +15507,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectPtrLabel")]
-        public abstract unsafe void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label)
+            => ImplGetObjectPtrLabel(ptr, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -13973,7 +15528,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectPtrLabel")]
-        public abstract void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string label) where T0 : unmanaged
+            => ImplGetObjectPtrLabel<T0>(ptr, bufSize, length, label);
 
         /// <summary>
         /// To be added.
@@ -13987,7 +15544,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         [System.Obsolete("Deprecated in version 3.2")]
         [NativeApi(EntryPoint = "glGetPointerv")]
-        public abstract unsafe void GetPointer([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPointer([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params)
+            => ImplGetPointer(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -14001,7 +15560,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         [System.Obsolete("Deprecated in version 3.2")]
         [NativeApi(EntryPoint = "glGetPointerv")]
-        public abstract unsafe void GetPointer<T0>([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetPointer<T0>([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged
+            => ImplGetPointer<T0>(pname, @params);
 
         /// <summary>
         /// To be added.
@@ -14017,7 +15578,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIiv")]
-        public abstract unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -14033,7 +15596,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIiv")]
-        public abstract void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -14049,7 +15614,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIuiv")]
-        public abstract unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -14065,7 +15632,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetSamplerParameterIuiv")]
-        public abstract void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params)
+            => ImplGetSamplerParameterI(sampler, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -14081,7 +15650,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIiv")]
-        public abstract unsafe void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -14097,7 +15668,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIiv")]
-        public abstract void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -14113,7 +15686,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIuiv")]
-        public abstract unsafe void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -14129,7 +15704,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetTexParameterIuiv")]
-        public abstract void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params)
+            => ImplGetTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -14142,7 +15719,9 @@ namespace Silk.NET.OpenGLES
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsEnabledi")]
-        public abstract bool IsEnabled([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsEnabled([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index)
+            => ImplIsEnabled(target, index);
 
         /// <summary>
         /// To be added.
@@ -14160,7 +15739,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glObjectLabel")]
-        public abstract void ObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label)
+            => ImplObjectLabel(identifier, name, length, label);
 
         /// <summary>
         /// To be added.
@@ -14175,7 +15756,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glObjectPtrLabel")]
-        public abstract unsafe void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label)
+            => ImplObjectPtrLabel(ptr, length, label);
 
         /// <summary>
         /// To be added.
@@ -14190,7 +15773,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glObjectPtrLabel")]
-        public abstract void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label) where T0 : unmanaged
+            => ImplObjectPtrLabel<T0>(ptr, length, label);
 
         /// <summary>
         /// To be added.
@@ -14202,7 +15787,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPatchParameteri")]
-        public abstract void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value)
+            => ImplPatchParameter(pname, value);
 
         /// <summary>
         /// To be added.
@@ -14220,7 +15807,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glPushDebugGroup")]
-        public abstract void PushDebugGroup([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string message);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PushDebugGroup([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string message)
+            => ImplPushDebugGroup(source, id, length, message);
 
         /// <summary>
         /// To be added.
@@ -14251,7 +15840,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glReadnPixels")]
-        public abstract unsafe void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data)
+            => ImplReadnPixels(x, y, width, height, format, type, bufSize, data);
 
         /// <summary>
         /// To be added.
@@ -14282,7 +15873,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from bufSize.
         /// </param>
         [NativeApi(EntryPoint = "glReadnPixels")]
-        public abstract void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+            => ImplReadnPixels<T0>(x, y, width, height, format, type, bufSize, data);
 
         /// <summary>
         /// To be added.
@@ -14298,7 +15891,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIiv")]
-        public abstract unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -14314,7 +15909,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIiv")]
-        public abstract void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -14330,7 +15927,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIuiv")]
-        public abstract unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -14346,7 +15945,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glSamplerParameterIuiv")]
-        public abstract void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint param)
+            => ImplSamplerParameterI(sampler, pname, param);
 
         /// <summary>
         /// To be added.
@@ -14361,7 +15962,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexBuffer")]
-        public abstract void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer)
+            => ImplTexBuffer(target, internalformat, buffer);
 
         /// <summary>
         /// To be added.
@@ -14382,7 +15985,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexBufferRange")]
-        public abstract void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size)
+            => ImplTexBufferRange(target, internalformat, buffer, offset, size);
 
         /// <summary>
         /// To be added.
@@ -14398,7 +16003,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIiv")]
-        public abstract unsafe void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -14414,7 +16021,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIiv")]
-        public abstract void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -14430,7 +16039,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIuiv")]
-        public abstract unsafe void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params)
+            => ImplTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -14446,7 +16057,9 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glTexParameterIuiv")]
-        public abstract void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint @params)
+            => ImplTexParameterI(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -14473,7 +16086,9 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTexStorage3DMultisample")]
-        public abstract void TexStorage3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TexStorage3DMultisample([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations)
+            => ImplTexStorage3DMultisample(target, samples, internalformat, width, height, depth, fixedsamplelocations);
 
         /// <summary>
         /// To be added.
@@ -14491,6 +16106,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="usage">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] GLEnum usage)
         {
             // IntPtrOverloader
@@ -14513,6 +16129,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="usage">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
         {
             // IntPtrOverloader
@@ -14535,6 +16152,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from size.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data)
         {
             // IntPtrOverloader
@@ -14557,6 +16175,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from size.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged
         {
             // IntPtrOverloader
@@ -14573,6 +16192,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteBuffer([Count(Parameter = "n"), Flow(FlowDirection.In)] uint buffers)
         {
             // ArrayParameterOverloader
@@ -14589,6 +16209,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteFramebuffer([Count(Parameter = "n"), Flow(FlowDirection.In)] uint framebuffers)
         {
             // ArrayParameterOverloader
@@ -14605,6 +16226,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteRenderbuffer([Count(Parameter = "n"), Flow(FlowDirection.In)] uint renderbuffers)
         {
             // ArrayParameterOverloader
@@ -14621,6 +16243,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteTexture([Count(Parameter = "n"), Flow(FlowDirection.In)] uint textures)
         {
             // ArrayParameterOverloader
@@ -14637,6 +16260,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenBuffer()
         {
             const uint n = 1;
@@ -14656,6 +16280,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenFramebuffer()
         {
             const uint n = 1;
@@ -14675,6 +16300,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenRenderbuffer()
         {
             const uint n = 1;
@@ -14694,6 +16320,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenTexture()
         {
             const uint n = 1;
@@ -14713,6 +16340,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe bool GetBoolean([Flow(FlowDirection.In)] GLEnum pname)
         {
             // ReturnTypeOverloader
@@ -14731,6 +16359,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe float GetFloat([Flow(FlowDirection.In)] GLEnum pname)
         {
             // ReturnTypeOverloader
@@ -14749,6 +16378,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe int GetInteger([Flow(FlowDirection.In)] GLEnum pname)
         {
             // ReturnTypeOverloader
@@ -14774,6 +16404,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from count.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void ShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] @stringSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length)
         {
             // StringArrayOverloader
@@ -14799,6 +16430,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from count.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void ShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] @stringSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> length)
         {
             // StringArrayOverloader
@@ -14823,6 +16455,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="usage">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BufferData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] BufferUsageARB usage)
         {
             // IntPtrOverloader
@@ -14845,6 +16478,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="usage">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BufferData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
         {
             // IntPtrOverloader
@@ -14867,6 +16501,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from size.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data)
         {
             // IntPtrOverloader
@@ -14889,6 +16524,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from size.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged
         {
             // IntPtrOverloader
@@ -14905,6 +16541,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe bool GetBoolean([Flow(FlowDirection.In)] GetPName pname)
         {
             // ReturnTypeOverloader
@@ -14923,6 +16560,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe float GetFloat([Flow(FlowDirection.In)] GetPName pname)
         {
             // ReturnTypeOverloader
@@ -14941,6 +16579,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe int GetInteger([Flow(FlowDirection.In)] GetPName pname)
         {
             // ReturnTypeOverloader
@@ -14967,6 +16606,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="size">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BindBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size)
         {
             // IntPtrOverloader
@@ -14986,6 +16626,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         /// <returns>See summary.</returns>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe GLEnum ClientWaitSync([Flow(FlowDirection.In)] int sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout)
         {
             // IntPtrOverloader
@@ -15010,6 +16651,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="size">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void CopyBufferSubData([Flow(FlowDirection.In)] GLEnum readTarget, [Flow(FlowDirection.In)] GLEnum writeTarget, [Flow(FlowDirection.In)] int readOffset, [Flow(FlowDirection.In)] int writeOffset, [Flow(FlowDirection.In)] uint size)
         {
             // IntPtrOverloader
@@ -15026,6 +16668,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteQuery([Count(Parameter = "n"), Flow(FlowDirection.In)] uint ids)
         {
             // ArrayParameterOverloader
@@ -15042,6 +16685,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from count.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteSampler([Count(Parameter = "count"), Flow(FlowDirection.In)] uint samplers)
         {
             // ArrayParameterOverloader
@@ -15054,6 +16698,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="sync">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteSync([Flow(FlowDirection.In)] int sync)
         {
             // IntPtrOverloader
@@ -15070,6 +16715,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteTransformFeedback([Count(Parameter = "n"), Flow(FlowDirection.In)] uint ids)
         {
             // ArrayParameterOverloader
@@ -15086,6 +16732,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteVertexArray([Count(Parameter = "n"), Flow(FlowDirection.In)] uint arrays)
         {
             // ArrayParameterOverloader
@@ -15104,6 +16751,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="length">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void FlushMappedBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint length)
         {
             // IntPtrOverloader
@@ -15120,6 +16768,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenQuery()
         {
             const uint n = 1;
@@ -15139,6 +16788,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from count.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenSampler()
         {
             const uint count = 1;
@@ -15158,6 +16808,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenTransformFeedback()
         {
             const uint n = 1;
@@ -15177,6 +16828,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenVertexArray()
         {
             const uint n = 1;
@@ -15196,6 +16848,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe long GetInteger64([Flow(FlowDirection.In)] GLEnum pname)
         {
             // ReturnTypeOverloader
@@ -15224,6 +16877,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from count.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void GetSync([Flow(FlowDirection.In)] int sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values)
         {
             // IntPtrOverloader
@@ -15250,6 +16904,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from count.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void GetSync([Flow(FlowDirection.In)] int sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
         {
             // IntPtrOverloader
@@ -15273,6 +16928,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is computed from uniformCount.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] string[] uniformNamesSa, [Count(Computed = "uniformCount"), Flow(FlowDirection.Out)] uint* uniformIndices)
         {
             // StringArrayOverloader
@@ -15288,6 +16944,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         /// <returns>See summary.</returns>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe bool IsSync([Flow(FlowDirection.In)] int sync)
         {
             // IntPtrOverloader
@@ -15310,6 +16967,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         /// <returns>See summary.</returns>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void* MapBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] uint access)
         {
             // IntPtrOverloader
@@ -15332,6 +16990,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="bufferMode">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] varyingsSa, [Flow(FlowDirection.In)] GLEnum bufferMode)
         {
             // StringArrayOverloader
@@ -15352,6 +17011,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="timeout">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void WaitSync([Flow(FlowDirection.In)] int sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout)
         {
             // IntPtrOverloader
@@ -15376,6 +17036,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="size">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BindBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size)
         {
             // IntPtrOverloader
@@ -15400,6 +17061,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="size">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void CopyBufferSubData([Flow(FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(FlowDirection.In)] int readOffset, [Flow(FlowDirection.In)] int writeOffset, [Flow(FlowDirection.In)] uint size)
         {
             // IntPtrOverloader
@@ -15418,6 +17080,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="length">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint length)
         {
             // IntPtrOverloader
@@ -15434,6 +17097,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is computed from pname.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe long GetInteger64([Flow(FlowDirection.In)] GetPName pname)
         {
             // ReturnTypeOverloader
@@ -15462,6 +17126,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from count.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void GetSync([Flow(FlowDirection.In)] int sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values)
         {
             // IntPtrOverloader
@@ -15488,6 +17153,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from count.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void GetSync([Flow(FlowDirection.In)] int sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
         {
             // IntPtrOverloader
@@ -15510,6 +17176,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// </param>
         /// <returns>See summary.</returns>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] uint access)
         {
             // IntPtrOverloader
@@ -15532,6 +17199,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="bufferMode">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] varyingsSa, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode)
         {
             // StringArrayOverloader
@@ -15555,6 +17223,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="stride">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void BindVertexBuffer([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint stride)
         {
             // IntPtrOverloader
@@ -15575,6 +17244,7 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         /// <returns>See summary.</returns>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] stringsSa)
         {
             // StringArrayOverloader
@@ -15594,6 +17264,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteProgramPipeline([Count(Parameter = "n"), Flow(FlowDirection.In)] uint pipelines)
         {
             // ArrayParameterOverloader
@@ -15606,6 +17277,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="indirect">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DispatchComputeIndirect([Flow(FlowDirection.In)] int indirect)
         {
             // IntPtrOverloader
@@ -15622,6 +17294,7 @@ namespace Silk.NET.OpenGLES
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenProgramPipeline()
         {
             const uint n = 1;
@@ -15645,6 +17318,7 @@ namespace Silk.NET.OpenGLES
         /// This parameter's element count is taken from count.
         /// </param>
         /// <returns>See summary.</returns>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] stringsSa)
         {
             // StringArrayOverloader
@@ -15665,6 +17339,7 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [System.Obsolete("Deprecated in version 3.2")]
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void* GetPointer([Flow(FlowDirection.In)] GLEnum pname)
         {
             // ReturnTypeOverloader
@@ -15691,6 +17366,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="size">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void TexBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size)
         {
             // IntPtrOverloader
@@ -15708,6 +17384,7 @@ namespace Silk.NET.OpenGLES
         /// This parameter contains 1 elements.
         /// </param>
         [System.Obsolete("Deprecated in version 3.2")]
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void* GetPointer([Flow(FlowDirection.In)] GetPointervPName pname)
         {
             // ReturnTypeOverloader
@@ -15734,6 +17411,7 @@ namespace Silk.NET.OpenGLES
         /// <param name="size">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size)
         {
             // IntPtrOverloader
@@ -15743,9 +17421,10 @@ namespace Silk.NET.OpenGLES
         private SearchPathContainer _searchPaths;
         public override SearchPathContainer SearchPaths => _searchPaths ??= new OpenGLESLibraryNameContainer();
 
-        public GL(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public GL(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

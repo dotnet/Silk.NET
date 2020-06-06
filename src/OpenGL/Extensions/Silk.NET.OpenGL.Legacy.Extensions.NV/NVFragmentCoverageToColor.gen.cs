@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_fragment_coverage_to_color")]
-    public abstract unsafe partial class NVFragmentCoverageToColor : NativeExtension<GL>
+    public unsafe partial class NVFragmentCoverageToColor : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_fragment_coverage_to_color";
         /// <summary>
@@ -26,11 +26,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFragmentCoverageColorNV")]
-        public abstract void FragmentCoverageColor([Flow(FlowDirection.In)] uint color);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FragmentCoverageColor([Flow(FlowDirection.In)] uint color)
+            => ImplFragmentCoverageColor(color);
 
-        public NVFragmentCoverageToColor(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVFragmentCoverageToColor(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

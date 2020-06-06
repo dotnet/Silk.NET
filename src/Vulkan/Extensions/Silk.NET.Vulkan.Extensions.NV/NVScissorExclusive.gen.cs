@@ -6,30 +6,35 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan.Extensions.NV
 {
     [Extension("VK_NV_scissor_exclusive")]
-    public abstract unsafe partial class NVScissorExclusive : NativeExtension<Vk>
+    public unsafe partial class NVScissorExclusive : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_NV_scissor_exclusive";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetExclusiveScissorNV")]
-        public abstract unsafe void CmdSetExclusiveScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Computed = "exclusiveScissorCount"), Flow(FlowDirection.In)] Rect2D* pExclusiveScissors);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CmdSetExclusiveScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Computed = "exclusiveScissorCount"), Flow(FlowDirection.In)] Rect2D* pExclusiveScissors)
+            => ImplCmdSetExclusiveScissor(commandBuffer, firstExclusiveScissor, exclusiveScissorCount, pExclusiveScissors);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetExclusiveScissorNV")]
-        public abstract void CmdSetExclusiveScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Computed = "exclusiveScissorCount"), Flow(FlowDirection.In)] ref Rect2D pExclusiveScissors);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CmdSetExclusiveScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Computed = "exclusiveScissorCount"), Flow(FlowDirection.In)] ref Rect2D pExclusiveScissors)
+            => ImplCmdSetExclusiveScissor(commandBuffer, firstExclusiveScissor, exclusiveScissorCount, pExclusiveScissors);
 
-        public NVScissorExclusive(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVScissorExclusive(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

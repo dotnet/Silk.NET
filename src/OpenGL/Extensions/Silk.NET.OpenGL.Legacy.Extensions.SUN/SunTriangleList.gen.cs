@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
 {
     [Extension("SUN_triangle_list")]
-    public abstract unsafe partial class SunTriangleList : NativeExtension<GL>
+    public unsafe partial class SunTriangleList : NativeExtension<GL>
     {
         public const string ExtensionName = "SUN_triangle_list";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glReplacementCodeuiSUN")]
-        public abstract void ReplacementCode([Flow(FlowDirection.In)] uint code);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReplacementCode([Flow(FlowDirection.In)] uint code)
+            => ImplReplacementCode(code);
 
         /// <summary>
         /// To be added.
@@ -35,7 +37,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glReplacementCodeusSUN")]
-        public abstract void ReplacementCode([Flow(FlowDirection.In)] ushort code);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReplacementCode([Flow(FlowDirection.In)] ushort code)
+            => ImplReplacementCode(code);
 
         /// <summary>
         /// To be added.
@@ -44,7 +48,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glReplacementCodeubSUN")]
-        public abstract void ReplacementCode([Flow(FlowDirection.In)] byte code);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReplacementCode([Flow(FlowDirection.In)] byte code)
+            => ImplReplacementCode(code);
 
         /// <summary>
         /// To be added.
@@ -54,7 +60,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// This parameter contains 0 elements.
         /// </param>
         [NativeApi(EntryPoint = "glReplacementCodeuivSUN")]
-        public abstract unsafe void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] uint* code);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] uint* code)
+            => ImplReplacementCode(code);
 
         /// <summary>
         /// To be added.
@@ -64,7 +72,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// This parameter contains 0 elements.
         /// </param>
         [NativeApi(EntryPoint = "glReplacementCodeuivSUN")]
-        public abstract void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] ref uint code);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] ref uint code)
+            => ImplReplacementCode(code);
 
         /// <summary>
         /// To be added.
@@ -74,7 +84,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// This parameter contains 0 elements.
         /// </param>
         [NativeApi(EntryPoint = "glReplacementCodeusvSUN")]
-        public abstract unsafe void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] ushort* code);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] ushort* code)
+            => ImplReplacementCode(code);
 
         /// <summary>
         /// To be added.
@@ -84,7 +96,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// This parameter contains 0 elements.
         /// </param>
         [NativeApi(EntryPoint = "glReplacementCodeusvSUN")]
-        public abstract void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] ref ushort code);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] ref ushort code)
+            => ImplReplacementCode(code);
 
         /// <summary>
         /// To be added.
@@ -94,7 +108,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// This parameter contains 0 elements.
         /// </param>
         [NativeApi(EntryPoint = "glReplacementCodeubvSUN")]
-        public abstract unsafe void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] byte* code);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] byte* code)
+            => ImplReplacementCode(code);
 
         /// <summary>
         /// To be added.
@@ -104,7 +120,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// This parameter contains 0 elements.
         /// </param>
         [NativeApi(EntryPoint = "glReplacementCodeubvSUN")]
-        public abstract void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] ref byte code);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] ref byte code)
+            => ImplReplacementCode(code);
 
         /// <summary>
         /// To be added.
@@ -120,7 +138,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// This parameter's element count is computed from type and stride.
         /// </param>
         [NativeApi(EntryPoint = "glReplacementCodePointerSUN")]
-        public abstract unsafe void ReplacementCodePointer([Flow(FlowDirection.In)] SUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void** pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ReplacementCodePointer([Flow(FlowDirection.In)] SUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void** pointer)
+            => ImplReplacementCodePointer(type, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -136,7 +156,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// This parameter's element count is computed from type and stride.
         /// </param>
         [NativeApi(EntryPoint = "glReplacementCodePointerSUN")]
-        public abstract unsafe void ReplacementCodePointer<T0>([Flow(FlowDirection.In)] SUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0* pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ReplacementCodePointer<T0>([Flow(FlowDirection.In)] SUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0* pointer) where T0 : unmanaged
+            => ImplReplacementCodePointer<T0>(type, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -145,7 +167,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glReplacementCodeubvSUN")]
-        public abstract void ReplacementCode([Flow(FlowDirection.In)] string code);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReplacementCode([Flow(FlowDirection.In)] string code)
+            => ImplReplacementCode(code);
 
         /// <summary>
         /// To be added.
@@ -161,7 +185,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// This parameter's element count is computed from type and stride.
         /// </param>
         [NativeApi(EntryPoint = "glReplacementCodePointerSUN")]
-        public abstract unsafe void ReplacementCodePointer([Flow(FlowDirection.In)] ReplacementCodeTypeSUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void** pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ReplacementCodePointer([Flow(FlowDirection.In)] ReplacementCodeTypeSUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void** pointer)
+            => ImplReplacementCodePointer(type, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -177,11 +203,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         /// This parameter's element count is computed from type and stride.
         /// </param>
         [NativeApi(EntryPoint = "glReplacementCodePointerSUN")]
-        public abstract unsafe void ReplacementCodePointer<T0>([Flow(FlowDirection.In)] ReplacementCodeTypeSUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0* pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ReplacementCodePointer<T0>([Flow(FlowDirection.In)] ReplacementCodeTypeSUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0* pointer) where T0 : unmanaged
+            => ImplReplacementCodePointer<T0>(type, stride, pointer);
 
-        public SunTriangleList(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SunTriangleList(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

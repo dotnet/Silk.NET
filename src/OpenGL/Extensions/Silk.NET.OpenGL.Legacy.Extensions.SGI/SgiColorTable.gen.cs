@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
 {
     [Extension("SGI_color_table")]
-    public abstract unsafe partial class SgiColorTable : NativeExtension<GL>
+    public unsafe partial class SgiColorTable : NativeExtension<GL>
     {
         public const string ExtensionName = "SGI_color_table";
         /// <summary>
@@ -42,7 +42,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from format, type, and width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableSGI")]
-        public abstract unsafe void ColorTable([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ColorTable([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table)
+            => ImplColorTable(target, internalformat, width, format, type, table);
 
         /// <summary>
         /// To be added.
@@ -67,7 +69,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from format, type, and width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableSGI")]
-        public abstract void ColorTable<T0>([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 table) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ColorTable<T0>([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 table) where T0 : unmanaged
+            => ImplColorTable<T0>(target, internalformat, width, format, type, table);
 
         /// <summary>
         /// To be added.
@@ -83,7 +87,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableParameterfvSGI")]
-        public abstract unsafe void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params)
+            => ImplColorTableParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -99,7 +105,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableParameterfvSGI")]
-        public abstract void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params)
+            => ImplColorTableParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -115,7 +123,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableParameterivSGI")]
-        public abstract unsafe void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplColorTableParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -131,7 +141,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableParameterivSGI")]
-        public abstract void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplColorTableParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -152,7 +164,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCopyColorTableSGI")]
-        public abstract void CopyColorTable([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CopyColorTable([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI internalformat, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width)
+            => ImplCopyColorTable(target, internalformat, x, y, width);
 
         /// <summary>
         /// To be added.
@@ -171,7 +185,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from target, format, and type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableSGI")]
-        public abstract unsafe void GetColorTable([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* table);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetColorTable([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* table)
+            => ImplGetColorTable(target, format, type, table);
 
         /// <summary>
         /// To be added.
@@ -190,7 +206,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from target, format, and type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableSGI")]
-        public abstract void GetColorTable<T0>([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetColorTable<T0>([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI format, [Flow(FlowDirection.In)] SGI type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged
+            => ImplGetColorTable<T0>(target, format, type, table);
 
         /// <summary>
         /// To be added.
@@ -206,7 +224,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableParameterfvSGI")]
-        public abstract unsafe void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetColorTableParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -222,7 +242,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableParameterfvSGI")]
-        public abstract void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetColorTableParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -238,7 +260,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableParameterivSGI")]
-        public abstract unsafe void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetColorTableParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -254,7 +278,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableParameterivSGI")]
-        public abstract void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetColorTableParameter([Flow(FlowDirection.In)] SGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetColorTableParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -279,7 +305,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from format, type, and width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableSGI")]
-        public abstract unsafe void ColorTable([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ColorTable([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* table)
+            => ImplColorTable(target, internalformat, width, format, type, table);
 
         /// <summary>
         /// To be added.
@@ -304,7 +332,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from format, type, and width.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableSGI")]
-        public abstract void ColorTable<T0>([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 table) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ColorTable<T0>([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 table) where T0 : unmanaged
+            => ImplColorTable<T0>(target, internalformat, width, format, type, table);
 
         /// <summary>
         /// To be added.
@@ -320,7 +350,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableParameterfvSGI")]
-        public abstract unsafe void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params)
+            => ImplColorTableParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -336,7 +368,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableParameterfvSGI")]
-        public abstract void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params)
+            => ImplColorTableParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -352,7 +386,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableParameterivSGI")]
-        public abstract unsafe void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params)
+            => ImplColorTableParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -368,7 +404,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glColorTableParameterivSGI")]
-        public abstract void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] SGI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params)
+            => ImplColorTableParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -389,7 +427,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glCopyColorTableSGI")]
-        public abstract void CopyColorTable([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CopyColorTable([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width)
+            => ImplCopyColorTable(target, internalformat, x, y, width);
 
         /// <summary>
         /// To be added.
@@ -408,7 +448,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from target, format, and type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableSGI")]
-        public abstract unsafe void GetColorTable([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* table);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetColorTable([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] void* table)
+            => ImplGetColorTable(target, format, type, table);
 
         /// <summary>
         /// To be added.
@@ -427,7 +469,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from target, format, and type.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableSGI")]
-        public abstract void GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetColorTable<T0>([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, format, type"), Flow(FlowDirection.Out)] out T0 table) where T0 : unmanaged
+            => ImplGetColorTable<T0>(target, format, type, table);
 
         /// <summary>
         /// To be added.
@@ -443,7 +487,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableParameterfvSGI")]
-        public abstract unsafe void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetColorTableParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -459,7 +505,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableParameterfvSGI")]
-        public abstract void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetColorTableParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -475,7 +523,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableParameterivSGI")]
-        public abstract unsafe void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetColorTableParameter(target, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -491,11 +541,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetColorTableParameterivSGI")]
-        public abstract void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetColorTableParameter(target, pname, @params);
 
-        public SgiColorTable(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgiColorTable(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

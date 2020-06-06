@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_ES2_compatibility")]
-    public abstract unsafe partial class ArbES2Compatibility : NativeExtension<GL>
+    public unsafe partial class ArbES2Compatibility : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_ES2_compatibility";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glClearDepthf")]
-        public abstract void ClearDepth([Flow(FlowDirection.In)] float d);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClearDepth([Flow(FlowDirection.In)] float d)
+            => ImplClearDepth(d);
 
         /// <summary>
         /// To be added.
@@ -38,7 +40,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDepthRangef")]
-        public abstract void DepthRange([Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DepthRange([Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f)
+            => ImplDepthRange(n, f);
 
         /// <summary>
         /// To be added.
@@ -58,7 +62,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
-        public abstract unsafe void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision)
+            => ImplGetShaderPrecisionFormat(shadertype, precisiontype, range, precision);
 
         /// <summary>
         /// To be added.
@@ -78,13 +84,17 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
-        public abstract void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] ARB precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision)
+            => ImplGetShaderPrecisionFormat(shadertype, precisiontype, range, precision);
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glReleaseShaderCompiler")]
-        public abstract void ReleaseShaderCompiler();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ReleaseShaderCompiler()
+            => ImplReleaseShaderCompiler();
 
         /// <summary>
         /// To be added.
@@ -107,7 +117,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glShaderBinary")]
-        public abstract unsafe void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ARB binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] ARB binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
+            => ImplShaderBinary(count, shaders, binaryformat, binary, length);
 
         /// <summary>
         /// To be added.
@@ -130,7 +142,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glShaderBinary")]
-        public abstract void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> shaders, [Flow(FlowDirection.In)] ARB binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> shaders, [Flow(FlowDirection.In)] ARB binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+            => ImplShaderBinary<T0>(count, shaders, binaryformat, binary, length);
 
         /// <summary>
         /// To be added.
@@ -150,7 +164,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
-        public abstract unsafe void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision)
+            => ImplGetShaderPrecisionFormat(shadertype, precisiontype, range, precision);
 
         /// <summary>
         /// To be added.
@@ -170,11 +186,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
-        public abstract void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision)
+            => ImplGetShaderPrecisionFormat(shadertype, precisiontype, range, precision);
 
-        public ArbES2Compatibility(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbES2Compatibility(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

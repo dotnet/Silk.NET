@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_light_texture")]
-    public abstract unsafe partial class ExtLightTexture : NativeExtension<GL>
+    public unsafe partial class ExtLightTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_light_texture";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glApplyTextureEXT")]
-        public abstract void ApplyTexture([Flow(FlowDirection.In)] EXT mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ApplyTexture([Flow(FlowDirection.In)] EXT mode)
+            => ImplApplyTexture(mode);
 
         /// <summary>
         /// To be added.
@@ -35,7 +37,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTextureLightEXT")]
-        public abstract void TextureLight([Flow(FlowDirection.In)] EXT pname);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TextureLight([Flow(FlowDirection.In)] EXT pname)
+            => ImplTextureLight(pname);
 
         /// <summary>
         /// To be added.
@@ -47,7 +51,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTextureMaterialEXT")]
-        public abstract void TextureMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] EXT mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TextureMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] EXT mode)
+            => ImplTextureMaterial(face, mode);
 
         /// <summary>
         /// To be added.
@@ -56,7 +62,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glApplyTextureEXT")]
-        public abstract void ApplyTexture([Flow(FlowDirection.In)] LightTextureModeEXT mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ApplyTexture([Flow(FlowDirection.In)] LightTextureModeEXT mode)
+            => ImplApplyTexture(mode);
 
         /// <summary>
         /// To be added.
@@ -65,7 +73,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTextureLightEXT")]
-        public abstract void TextureLight([Flow(FlowDirection.In)] LightTexturePNameEXT pname);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TextureLight([Flow(FlowDirection.In)] LightTexturePNameEXT pname)
+            => ImplTextureLight(pname);
 
         /// <summary>
         /// To be added.
@@ -77,11 +87,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glTextureMaterialEXT")]
-        public abstract void TextureMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] MaterialParameter mode);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void TextureMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] MaterialParameter mode)
+            => ImplTextureMaterial(face, mode);
 
-        public ExtLightTexture(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtLightTexture(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

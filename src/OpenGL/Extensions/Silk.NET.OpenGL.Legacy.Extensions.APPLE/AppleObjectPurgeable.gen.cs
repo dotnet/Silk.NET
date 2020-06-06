@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
     [Extension("APPLE_object_purgeable")]
-    public abstract unsafe partial class AppleObjectPurgeable : NativeExtension<GL>
+    public unsafe partial class AppleObjectPurgeable : NativeExtension<GL>
     {
         public const string ExtensionName = "APPLE_object_purgeable";
         /// <summary>
@@ -36,7 +36,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectParameterivAPPLE")]
-        public abstract unsafe void GetObjectParameter([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetObjectParameter([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetObjectParameter(objectType, name, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -55,7 +57,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// This parameter's element count is computed from pname.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectParameterivAPPLE")]
-        public abstract void GetObjectParameter([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetObjectParameter([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetObjectParameter(objectType, name, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -71,7 +75,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glObjectPurgeableAPPLE")]
-        public abstract APPLE ObjectPurgeable([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE option);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public APPLE ObjectPurgeable([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE option)
+            => ImplObjectPurgeable(objectType, name, option);
 
         /// <summary>
         /// To be added.
@@ -87,11 +93,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glObjectUnpurgeableAPPLE")]
-        public abstract APPLE ObjectUnpurgeable([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE option);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public APPLE ObjectUnpurgeable([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE option)
+            => ImplObjectUnpurgeable(objectType, name, option);
 
-        public AppleObjectPurgeable(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AppleObjectPurgeable(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

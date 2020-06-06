@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_transform_feedback2")]
-    public abstract unsafe partial class NVTransformFeedback2 : NativeExtension<GL>
+    public unsafe partial class NVTransformFeedback2 : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_transform_feedback2";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindTransformFeedbackNV")]
-        public abstract void BindTransformFeedback([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint id);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindTransformFeedback([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint id)
+            => ImplBindTransformFeedback(target, id);
 
         /// <summary>
         /// To be added.
@@ -42,7 +44,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteTransformFeedbacksNV")]
-        public abstract unsafe void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids)
+            => ImplDeleteTransformFeedbacks(n, ids);
 
         /// <summary>
         /// To be added.
@@ -55,7 +59,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glDeleteTransformFeedbacksNV")]
-        public abstract void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> ids)
+            => ImplDeleteTransformFeedbacks(n, ids);
 
         /// <summary>
         /// To be added.
@@ -67,7 +73,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawTransformFeedbackNV")]
-        public abstract void DrawTransformFeedback([Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] uint id);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawTransformFeedback([Flow(FlowDirection.In)] NV mode, [Flow(FlowDirection.In)] uint id)
+            => ImplDrawTransformFeedback(mode, id);
 
         /// <summary>
         /// To be added.
@@ -80,7 +88,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenTransformFeedbacksNV")]
-        public abstract unsafe void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids)
+            => ImplGenTransformFeedbacks(n, ids);
 
         /// <summary>
         /// To be added.
@@ -93,7 +103,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from n.
         /// </param>
         [NativeApi(EntryPoint = "glGenTransformFeedbacksNV")]
-        public abstract void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+            => ImplGenTransformFeedbacks(n, ids);
 
         /// <summary>
         /// To be added.
@@ -103,19 +115,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsTransformFeedbackNV")]
-        public abstract bool IsTransformFeedback([Flow(FlowDirection.In)] uint id);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsTransformFeedback([Flow(FlowDirection.In)] uint id)
+            => ImplIsTransformFeedback(id);
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glPauseTransformFeedbackNV")]
-        public abstract void PauseTransformFeedback();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PauseTransformFeedback()
+            => ImplPauseTransformFeedback();
 
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glResumeTransformFeedbackNV")]
-        public abstract void ResumeTransformFeedback();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ResumeTransformFeedback()
+            => ImplResumeTransformFeedback();
 
         /// <summary>
         /// To be added.
@@ -127,7 +145,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindTransformFeedbackNV")]
-        public abstract void BindTransformFeedback([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint id);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindTransformFeedback([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint id)
+            => ImplBindTransformFeedback(target, id);
 
         /// <summary>
         /// To be added.
@@ -139,7 +159,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawTransformFeedbackNV")]
-        public abstract void DrawTransformFeedback([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawTransformFeedback([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id)
+            => ImplDrawTransformFeedback(mode, id);
 
         /// <summary>
         /// To be added.
@@ -151,6 +173,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DeleteTransformFeedback([Count(Parameter = "n"), Flow(FlowDirection.In)] uint ids)
         {
             // ArrayParameterOverloader
@@ -167,6 +190,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// This parameter's element count is taken from n.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe uint GenTransformFeedback()
         {
             const uint n = 1;
@@ -176,9 +200,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             return ret;
         }
 
-        public NVTransformFeedback2(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVTransformFeedback2(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

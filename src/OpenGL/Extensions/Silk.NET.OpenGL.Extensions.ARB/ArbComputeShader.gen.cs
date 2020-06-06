@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_compute_shader")]
-    public abstract unsafe partial class ArbComputeShader : NativeExtension<GL>
+    public unsafe partial class ArbComputeShader : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_compute_shader";
         /// <summary>
@@ -32,7 +32,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDispatchCompute")]
-        public abstract void DispatchCompute([Flow(FlowDirection.In)] uint num_groups_x, [Flow(FlowDirection.In)] uint num_groups_y, [Flow(FlowDirection.In)] uint num_groups_z);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DispatchCompute([Flow(FlowDirection.In)] uint num_groups_x, [Flow(FlowDirection.In)] uint num_groups_y, [Flow(FlowDirection.In)] uint num_groups_z)
+            => ImplDispatchCompute(num_groups_x, num_groups_y, num_groups_z);
 
         /// <summary>
         /// To be added.
@@ -41,7 +43,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDispatchComputeIndirect")]
-        public abstract void DispatchComputeIndirect([Flow(FlowDirection.In)] IntPtr indirect);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DispatchComputeIndirect([Flow(FlowDirection.In)] IntPtr indirect)
+            => ImplDispatchComputeIndirect(indirect);
 
         /// <summary>
         /// To be added.
@@ -49,15 +53,17 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         /// <param name="indirect">
         /// To be added.
         /// </param>
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
         public unsafe void DispatchComputeIndirect([Flow(FlowDirection.In)] int indirect)
         {
             // IntPtrOverloader
             DispatchComputeIndirect(new IntPtr(indirect));
         }
 
-        public ArbComputeShader(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbComputeShader(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

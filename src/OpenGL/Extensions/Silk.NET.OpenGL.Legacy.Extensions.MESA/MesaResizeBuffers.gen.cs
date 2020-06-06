@@ -6,28 +6,31 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
 {
     [Extension("MESA_resize_buffers")]
-    public abstract unsafe partial class MesaResizeBuffers : NativeExtension<GL>
+    public unsafe partial class MesaResizeBuffers : NativeExtension<GL>
     {
         public const string ExtensionName = "MESA_resize_buffers";
         /// <summary>
         /// To be added.
         /// </summary>
         [NativeApi(EntryPoint = "glResizeBuffersMESA")]
-        public abstract void ResizeBuffers();
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ResizeBuffers()
+            => ImplResizeBuffers();
 
-        public MesaResizeBuffers(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public MesaResizeBuffers(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

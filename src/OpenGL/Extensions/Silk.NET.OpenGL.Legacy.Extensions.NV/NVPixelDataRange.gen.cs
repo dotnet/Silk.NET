@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_pixel_data_range")]
-    public abstract unsafe partial class NVPixelDataRange : NativeExtension<GL>
+    public unsafe partial class NVPixelDataRange : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_pixel_data_range";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFlushPixelDataRangeNV")]
-        public abstract void FlushPixelDataRange([Flow(FlowDirection.In)] NV target);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FlushPixelDataRange([Flow(FlowDirection.In)] NV target)
+            => ImplFlushPixelDataRange(target);
 
         /// <summary>
         /// To be added.
@@ -42,7 +44,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from length.
         /// </param>
         [NativeApi(EntryPoint = "glPixelDataRangeNV")]
-        public abstract unsafe void PixelDataRange([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void PixelDataRange([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* pointer)
+            => ImplPixelDataRange(target, length, pointer);
 
         /// <summary>
         /// To be added.
@@ -58,7 +62,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from length.
         /// </param>
         [NativeApi(EntryPoint = "glPixelDataRangeNV")]
-        public abstract void PixelDataRange<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PixelDataRange<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : unmanaged
+            => ImplPixelDataRange<T0>(target, length, pointer);
 
         /// <summary>
         /// To be added.
@@ -67,7 +73,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFlushPixelDataRangeNV")]
-        public abstract void FlushPixelDataRange([Flow(FlowDirection.In)] PixelDataRangeTargetNV target);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FlushPixelDataRange([Flow(FlowDirection.In)] PixelDataRangeTargetNV target)
+            => ImplFlushPixelDataRange(target);
 
         /// <summary>
         /// To be added.
@@ -83,7 +91,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from length.
         /// </param>
         [NativeApi(EntryPoint = "glPixelDataRangeNV")]
-        public abstract unsafe void PixelDataRange([Flow(FlowDirection.In)] PixelDataRangeTargetNV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void PixelDataRange([Flow(FlowDirection.In)] PixelDataRangeTargetNV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* pointer)
+            => ImplPixelDataRange(target, length, pointer);
 
         /// <summary>
         /// To be added.
@@ -99,11 +109,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from length.
         /// </param>
         [NativeApi(EntryPoint = "glPixelDataRangeNV")]
-        public abstract void PixelDataRange<T0>([Flow(FlowDirection.In)] PixelDataRangeTargetNV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void PixelDataRange<T0>([Flow(FlowDirection.In)] PixelDataRangeTargetNV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : unmanaged
+            => ImplPixelDataRange<T0>(target, length, pointer);
 
-        public NVPixelDataRange(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVPixelDataRange(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

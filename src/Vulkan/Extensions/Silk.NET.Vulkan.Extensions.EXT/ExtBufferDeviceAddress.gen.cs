@@ -6,30 +6,35 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan.Extensions.EXT
 {
     [Extension("VK_EXT_buffer_device_address")]
-    public abstract unsafe partial class ExtBufferDeviceAddress : NativeExtension<Vk>
+    public unsafe partial class ExtBufferDeviceAddress : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_buffer_device_address";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetBufferDeviceAddressEXT")]
-        public abstract unsafe ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo)
+            => ImplGetBufferDeviceAddress(device, pInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetBufferDeviceAddressEXT")]
-        public abstract ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref BufferDeviceAddressInfo pInfo);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref BufferDeviceAddressInfo pInfo)
+            => ImplGetBufferDeviceAddress(device, pInfo);
 
-        public ExtBufferDeviceAddress(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtBufferDeviceAddress(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

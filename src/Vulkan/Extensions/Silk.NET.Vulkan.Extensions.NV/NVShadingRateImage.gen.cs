@@ -6,42 +6,53 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan.Extensions.NV
 {
     [Extension("VK_NV_shading_rate_image")]
-    public abstract unsafe partial class NVShadingRateImage : NativeExtension<Vk>
+    public unsafe partial class NVShadingRateImage : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_NV_shading_rate_image";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBindShadingRateImageNV")]
-        public abstract void CmdBindShadingRateImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ImageView imageView, [Count(Count = 0)] ImageLayout imageLayout);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CmdBindShadingRateImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] ImageView imageView, [Count(Count = 0)] ImageLayout imageLayout)
+            => ImplCmdBindShadingRateImage(commandBuffer, imageView, imageLayout);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetCoarseSampleOrderNV")]
-        public abstract unsafe void CmdSetCoarseSampleOrder([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Count = 0)] uint customSampleOrderCount, [Count(Computed = "customSampleOrderCount"), Flow(FlowDirection.In)] CoarseSampleOrderCustomNV* pCustomSampleOrders);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CmdSetCoarseSampleOrder([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Count = 0)] uint customSampleOrderCount, [Count(Computed = "customSampleOrderCount"), Flow(FlowDirection.In)] CoarseSampleOrderCustomNV* pCustomSampleOrders)
+            => ImplCmdSetCoarseSampleOrder(commandBuffer, sampleOrderType, customSampleOrderCount, pCustomSampleOrders);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetCoarseSampleOrderNV")]
-        public abstract void CmdSetCoarseSampleOrder([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Count = 0)] uint customSampleOrderCount, [Count(Computed = "customSampleOrderCount"), Flow(FlowDirection.In)] ref CoarseSampleOrderCustomNV pCustomSampleOrders);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CmdSetCoarseSampleOrder([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Count = 0)] uint customSampleOrderCount, [Count(Computed = "customSampleOrderCount"), Flow(FlowDirection.In)] ref CoarseSampleOrderCustomNV pCustomSampleOrders)
+            => ImplCmdSetCoarseSampleOrder(commandBuffer, sampleOrderType, customSampleOrderCount, pCustomSampleOrders);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewportShadingRatePaletteNV")]
-        public abstract unsafe void CmdSetViewportShadingRatePalette([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] ShadingRatePaletteNV* pShadingRatePalettes);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void CmdSetViewportShadingRatePalette([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] ShadingRatePaletteNV* pShadingRatePalettes)
+            => ImplCmdSetViewportShadingRatePalette(commandBuffer, firstViewport, viewportCount, pShadingRatePalettes);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewportShadingRatePaletteNV")]
-        public abstract void CmdSetViewportShadingRatePalette([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] ref ShadingRatePaletteNV pShadingRatePalettes);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void CmdSetViewportShadingRatePalette([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] ref ShadingRatePaletteNV pShadingRatePalettes)
+            => ImplCmdSetViewportShadingRatePalette(commandBuffer, firstViewport, viewportCount, pShadingRatePalettes);
 
-        public NVShadingRateImage(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVShadingRateImage(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

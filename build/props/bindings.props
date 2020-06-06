@@ -2,6 +2,4 @@
     <ItemGroup>
         <ProjectReference Include="$(MSBuildThisFileDirectory)..\..\src\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
     </ItemGroup>
-    
-    <Import Project="common.props" />
 </Project>

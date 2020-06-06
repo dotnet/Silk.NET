@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.IMG
 {
     [Extension("IMG_multisampled_render_to_texture")]
-    public abstract unsafe partial class ImgMultisampledRenderToTexture : NativeExtension<GL>
+    public unsafe partial class ImgMultisampledRenderToTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "IMG_multisampled_render_to_texture";
         /// <summary>
@@ -41,7 +41,9 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferTexture2DMultisampleIMG")]
-        public abstract void FramebufferTexture2DMultisample([Flow(FlowDirection.In)] IMG target, [Flow(FlowDirection.In)] IMG attachment, [Flow(FlowDirection.In)] IMG textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferTexture2DMultisample([Flow(FlowDirection.In)] IMG target, [Flow(FlowDirection.In)] IMG attachment, [Flow(FlowDirection.In)] IMG textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples)
+            => ImplFramebufferTexture2DMultisample(target, attachment, textarget, texture, level, samples);
 
         /// <summary>
         /// To be added.
@@ -62,7 +64,9 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleIMG")]
-        public abstract void RenderbufferStorageMultisample([Flow(FlowDirection.In)] IMG target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] IMG internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void RenderbufferStorageMultisample([Flow(FlowDirection.In)] IMG target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] IMG internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplRenderbufferStorageMultisample(target, samples, internalformat, width, height);
 
         /// <summary>
         /// To be added.
@@ -86,7 +90,9 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferTexture2DMultisampleIMG")]
-        public abstract void FramebufferTexture2DMultisample([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferTexture2DMultisample([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] TextureTarget textarget, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint samples)
+            => ImplFramebufferTexture2DMultisample(target, attachment, textarget, texture, level, samples);
 
         /// <summary>
         /// To be added.
@@ -107,11 +113,14 @@ namespace Silk.NET.OpenGLES.Extensions.IMG
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleIMG")]
-        public abstract void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height)
+            => ImplRenderbufferStorageMultisample(target, samples, internalformat, width, height);
 
-        public ImgMultisampledRenderToTexture(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ImgMultisampledRenderToTexture(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

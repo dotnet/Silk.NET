@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.OVR
 {
     [Extension("OVR_multiview")]
-    public abstract unsafe partial class OvrMultiview : NativeExtension<GL>
+    public unsafe partial class OvrMultiview : NativeExtension<GL>
     {
         public const string ExtensionName = "OVR_multiview";
         /// <summary>
@@ -41,7 +41,9 @@ namespace Silk.NET.OpenGL.Extensions.OVR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR")]
-        public abstract void FramebufferTextureMultiview([Flow(FlowDirection.In)] OVR target, [Flow(FlowDirection.In)] OVR attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferTextureMultiview([Flow(FlowDirection.In)] OVR target, [Flow(FlowDirection.In)] OVR attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews)
+            => ImplFramebufferTextureMultiview(target, attachment, texture, level, baseViewIndex, numViews);
 
         /// <summary>
         /// To be added.
@@ -65,11 +67,14 @@ namespace Silk.NET.OpenGL.Extensions.OVR
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR")]
-        public abstract void FramebufferTextureMultiview([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FramebufferTextureMultiview([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews)
+            => ImplFramebufferTextureMultiview(target, attachment, texture, level, baseViewIndex, numViews);
 
-        public OvrMultiview(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public OvrMultiview(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

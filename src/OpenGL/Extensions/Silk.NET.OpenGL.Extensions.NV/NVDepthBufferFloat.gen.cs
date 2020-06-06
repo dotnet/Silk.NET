@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.NV
 {
     [Extension("NV_depth_buffer_float")]
-    public abstract unsafe partial class NVDepthBufferFloat : NativeExtension<GL>
+    public unsafe partial class NVDepthBufferFloat : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_depth_buffer_float";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glClearDepthdNV")]
-        public abstract void ClearDepth([Flow(FlowDirection.In)] double depth);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ClearDepth([Flow(FlowDirection.In)] double depth)
+            => ImplClearDepth(depth);
 
         /// <summary>
         /// To be added.
@@ -38,7 +40,9 @@ namespace Silk.NET.OpenGL.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDepthBoundsdNV")]
-        public abstract void DepthBounds([Flow(FlowDirection.In)] double zmin, [Flow(FlowDirection.In)] double zmax);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DepthBounds([Flow(FlowDirection.In)] double zmin, [Flow(FlowDirection.In)] double zmax)
+            => ImplDepthBounds(zmin, zmax);
 
         /// <summary>
         /// To be added.
@@ -50,11 +54,14 @@ namespace Silk.NET.OpenGL.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDepthRangedNV")]
-        public abstract void DepthRange([Flow(FlowDirection.In)] double zNear, [Flow(FlowDirection.In)] double zFar);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DepthRange([Flow(FlowDirection.In)] double zNear, [Flow(FlowDirection.In)] double zFar)
+            => ImplDepthRange(zNear, zFar);
 
-        public NVDepthBufferFloat(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVDepthBufferFloat(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

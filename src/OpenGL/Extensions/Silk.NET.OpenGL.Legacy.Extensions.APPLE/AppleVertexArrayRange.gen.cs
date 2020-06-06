@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
     [Extension("APPLE_vertex_array_range")]
-    public abstract unsafe partial class AppleVertexArrayRange : NativeExtension<GL>
+    public unsafe partial class AppleVertexArrayRange : NativeExtension<GL>
     {
         public const string ExtensionName = "APPLE_vertex_array_range";
         /// <summary>
@@ -30,7 +30,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// This parameter's element count is taken from length.
         /// </param>
         [NativeApi(EntryPoint = "glFlushVertexArrayRangeAPPLE")]
-        public abstract unsafe void FlushVertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void FlushVertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] void* pointer)
+            => ImplFlushVertexArrayRange(length, pointer);
 
         /// <summary>
         /// To be added.
@@ -43,7 +45,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// This parameter's element count is taken from length.
         /// </param>
         [NativeApi(EntryPoint = "glFlushVertexArrayRangeAPPLE")]
-        public abstract void FlushVertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FlushVertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged
+            => ImplFlushVertexArrayRange<T0>(length, pointer);
 
         /// <summary>
         /// To be added.
@@ -55,7 +59,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexArrayParameteriAPPLE")]
-        public abstract void VertexArrayParameter([Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexArrayParameter([Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] int param)
+            => ImplVertexArrayParameter(pname, param);
 
         /// <summary>
         /// To be added.
@@ -68,7 +74,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// This parameter's element count is taken from length.
         /// </param>
         [NativeApi(EntryPoint = "glVertexArrayRangeAPPLE")]
-        public abstract unsafe void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] void* pointer)
+            => ImplVertexArrayRange(length, pointer);
 
         /// <summary>
         /// To be added.
@@ -81,7 +89,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// This parameter's element count is taken from length.
         /// </param>
         [NativeApi(EntryPoint = "glVertexArrayRangeAPPLE")]
-        public abstract void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged
+            => ImplVertexArrayRange<T0>(length, pointer);
 
         /// <summary>
         /// To be added.
@@ -93,11 +103,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexArrayParameteriAPPLE")]
-        public abstract void VertexArrayParameter([Flow(FlowDirection.In)] VertexArrayPNameAPPLE pname, [Flow(FlowDirection.In)] int param);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexArrayParameter([Flow(FlowDirection.In)] VertexArrayPNameAPPLE pname, [Flow(FlowDirection.In)] int param)
+            => ImplVertexArrayParameter(pname, param);
 
-        public AppleVertexArrayRange(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AppleVertexArrayRange(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

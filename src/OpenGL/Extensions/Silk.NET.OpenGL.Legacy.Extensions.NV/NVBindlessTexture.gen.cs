@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_bindless_texture")]
-    public abstract unsafe partial class NVBindlessTexture : NativeExtension<GL>
+    public unsafe partial class NVBindlessTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_bindless_texture";
         /// <summary>
@@ -39,7 +39,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetImageHandleNV")]
-        public abstract ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] NV format);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] NV format)
+            => ImplGetImageHandle(texture, level, layered, layer, format);
 
         /// <summary>
         /// To be added.
@@ -49,7 +51,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetTextureHandleNV")]
-        public abstract ulong GetTextureHandle([Flow(FlowDirection.In)] uint texture);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public ulong GetTextureHandle([Flow(FlowDirection.In)] uint texture)
+            => ImplGetTextureHandle(texture);
 
         /// <summary>
         /// To be added.
@@ -62,7 +66,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetTextureSamplerHandleNV")]
-        public abstract ulong GetTextureSamplerHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint sampler);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public ulong GetTextureSamplerHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint sampler)
+            => ImplGetTextureSamplerHandle(texture, sampler);
 
         /// <summary>
         /// To be added.
@@ -72,7 +78,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsImageHandleResidentNV")]
-        public abstract bool IsImageHandleResident([Flow(FlowDirection.In)] ulong handle);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsImageHandleResident([Flow(FlowDirection.In)] ulong handle)
+            => ImplIsImageHandleResident(handle);
 
         /// <summary>
         /// To be added.
@@ -82,7 +90,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsTextureHandleResidentNV")]
-        public abstract bool IsTextureHandleResident([Flow(FlowDirection.In)] ulong handle);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsTextureHandleResident([Flow(FlowDirection.In)] ulong handle)
+            => ImplIsTextureHandleResident(handle);
 
         /// <summary>
         /// To be added.
@@ -91,7 +101,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMakeImageHandleNonResidentNV")]
-        public abstract void MakeImageHandleNonResident([Flow(FlowDirection.In)] ulong handle);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MakeImageHandleNonResident([Flow(FlowDirection.In)] ulong handle)
+            => ImplMakeImageHandleNonResident(handle);
 
         /// <summary>
         /// To be added.
@@ -103,7 +115,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMakeImageHandleResidentNV")]
-        public abstract void MakeImageHandleResident([Flow(FlowDirection.In)] ulong handle, [Flow(FlowDirection.In)] NV access);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MakeImageHandleResident([Flow(FlowDirection.In)] ulong handle, [Flow(FlowDirection.In)] NV access)
+            => ImplMakeImageHandleResident(handle, access);
 
         /// <summary>
         /// To be added.
@@ -112,7 +126,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMakeTextureHandleNonResidentNV")]
-        public abstract void MakeTextureHandleNonResident([Flow(FlowDirection.In)] ulong handle);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MakeTextureHandleNonResident([Flow(FlowDirection.In)] ulong handle)
+            => ImplMakeTextureHandleNonResident(handle);
 
         /// <summary>
         /// To be added.
@@ -121,7 +137,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glMakeTextureHandleResidentNV")]
-        public abstract void MakeTextureHandleResident([Flow(FlowDirection.In)] ulong handle);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void MakeTextureHandleResident([Flow(FlowDirection.In)] ulong handle)
+            => ImplMakeTextureHandleResident(handle);
 
         /// <summary>
         /// To be added.
@@ -136,7 +154,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformHandleui64NV")]
-        public abstract void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value)
+            => ImplProgramUniformHandle(program, location, value);
 
         /// <summary>
         /// To be added.
@@ -155,7 +175,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformHandleui64vNV")]
-        public abstract unsafe void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* values);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* values)
+            => ImplProgramUniformHandle(program, location, count, values);
 
         /// <summary>
         /// To be added.
@@ -174,7 +196,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glProgramUniformHandleui64vNV")]
-        public abstract void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<ulong> values);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<ulong> values)
+            => ImplProgramUniformHandle(program, location, count, values);
 
         /// <summary>
         /// To be added.
@@ -186,7 +210,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUniformHandleui64NV")]
-        public abstract void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] ulong value)
+            => ImplUniformHandle(location, value);
 
         /// <summary>
         /// To be added.
@@ -202,7 +228,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformHandleui64vNV")]
-        public abstract unsafe void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ulong* value)
+            => ImplUniformHandle(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -218,7 +246,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// This parameter's element count is taken from count.
         /// </param>
         [NativeApi(EntryPoint = "glUniformHandleui64vNV")]
-        public abstract void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<ulong> value);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<ulong> value)
+            => ImplUniformHandle(location, count, value);
 
         /// <summary>
         /// To be added.
@@ -240,11 +270,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetImageHandleNV")]
-        public abstract ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] PixelFormat format);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] PixelFormat format)
+            => ImplGetImageHandle(texture, level, layered, layer, format);
 
-        public NVBindlessTexture(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVBindlessTexture(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
 {
     [Extension("MESA_window_pos")]
-    public abstract unsafe partial class MesaWindowPos : NativeExtension<GL>
+    public unsafe partial class MesaWindowPos : NativeExtension<GL>
     {
         public const string ExtensionName = "MESA_window_pos";
         /// <summary>
@@ -29,7 +29,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos2dMESA")]
-        public abstract void WindowPos2([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos2([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y)
+            => ImplWindowPos2(x, y);
 
         /// <summary>
         /// To be added.
@@ -39,7 +41,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos2dvMESA")]
-        public abstract unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] double* v)
+            => ImplWindowPos2(v);
 
         /// <summary>
         /// To be added.
@@ -49,7 +53,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos2dvMESA")]
-        public abstract void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<double> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<double> v)
+            => ImplWindowPos2(v);
 
         /// <summary>
         /// To be added.
@@ -61,7 +67,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos2fMESA")]
-        public abstract void WindowPos2([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos2([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y)
+            => ImplWindowPos2(x, y);
 
         /// <summary>
         /// To be added.
@@ -71,7 +79,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos2fvMESA")]
-        public abstract unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] float* v)
+            => ImplWindowPos2(v);
 
         /// <summary>
         /// To be added.
@@ -81,7 +91,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos2fvMESA")]
-        public abstract void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<float> v)
+            => ImplWindowPos2(v);
 
         /// <summary>
         /// To be added.
@@ -93,7 +105,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos2iMESA")]
-        public abstract void WindowPos2([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos2([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y)
+            => ImplWindowPos2(x, y);
 
         /// <summary>
         /// To be added.
@@ -103,7 +117,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos2ivMESA")]
-        public abstract unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] int* v)
+            => ImplWindowPos2(v);
 
         /// <summary>
         /// To be added.
@@ -113,7 +129,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos2ivMESA")]
-        public abstract void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<int> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<int> v)
+            => ImplWindowPos2(v);
 
         /// <summary>
         /// To be added.
@@ -125,7 +143,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos2sMESA")]
-        public abstract void WindowPos2([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos2([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y)
+            => ImplWindowPos2(x, y);
 
         /// <summary>
         /// To be added.
@@ -135,7 +155,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos2svMESA")]
-        public abstract unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] short* v)
+            => ImplWindowPos2(v);
 
         /// <summary>
         /// To be added.
@@ -145,7 +167,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos2svMESA")]
-        public abstract void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<short> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] Span<short> v)
+            => ImplWindowPos2(v);
 
         /// <summary>
         /// To be added.
@@ -160,7 +184,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos3dMESA")]
-        public abstract void WindowPos3([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos3([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z)
+            => ImplWindowPos3(x, y, z);
 
         /// <summary>
         /// To be added.
@@ -170,7 +196,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos3dvMESA")]
-        public abstract unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] double* v)
+            => ImplWindowPos3(v);
 
         /// <summary>
         /// To be added.
@@ -180,7 +208,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos3dvMESA")]
-        public abstract void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<double> v)
+            => ImplWindowPos3(v);
 
         /// <summary>
         /// To be added.
@@ -195,7 +225,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos3fMESA")]
-        public abstract void WindowPos3([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos3([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z)
+            => ImplWindowPos3(x, y, z);
 
         /// <summary>
         /// To be added.
@@ -205,7 +237,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos3fvMESA")]
-        public abstract unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] float* v)
+            => ImplWindowPos3(v);
 
         /// <summary>
         /// To be added.
@@ -215,7 +249,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos3fvMESA")]
-        public abstract void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<float> v)
+            => ImplWindowPos3(v);
 
         /// <summary>
         /// To be added.
@@ -230,7 +266,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos3iMESA")]
-        public abstract void WindowPos3([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos3([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z)
+            => ImplWindowPos3(x, y, z);
 
         /// <summary>
         /// To be added.
@@ -240,7 +278,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos3ivMESA")]
-        public abstract unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] int* v)
+            => ImplWindowPos3(v);
 
         /// <summary>
         /// To be added.
@@ -250,7 +290,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos3ivMESA")]
-        public abstract void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<int> v)
+            => ImplWindowPos3(v);
 
         /// <summary>
         /// To be added.
@@ -265,7 +307,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos3sMESA")]
-        public abstract void WindowPos3([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos3([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z)
+            => ImplWindowPos3(x, y, z);
 
         /// <summary>
         /// To be added.
@@ -275,7 +319,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos3svMESA")]
-        public abstract unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] short* v)
+            => ImplWindowPos3(v);
 
         /// <summary>
         /// To be added.
@@ -285,7 +331,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos3svMESA")]
-        public abstract void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] Span<short> v)
+            => ImplWindowPos3(v);
 
         /// <summary>
         /// To be added.
@@ -303,7 +351,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos4dMESA")]
-        public abstract void WindowPos4([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos4([Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w)
+            => ImplWindowPos4(x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -313,7 +363,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos4dvMESA")]
-        public abstract unsafe void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] double* v)
+            => ImplWindowPos4(v);
 
         /// <summary>
         /// To be added.
@@ -323,7 +375,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos4dvMESA")]
-        public abstract void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<double> v)
+            => ImplWindowPos4(v);
 
         /// <summary>
         /// To be added.
@@ -341,7 +395,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos4fMESA")]
-        public abstract void WindowPos4([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos4([Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w)
+            => ImplWindowPos4(x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -351,7 +407,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos4fvMESA")]
-        public abstract unsafe void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] float* v)
+            => ImplWindowPos4(v);
 
         /// <summary>
         /// To be added.
@@ -361,7 +419,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos4fvMESA")]
-        public abstract void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<float> v)
+            => ImplWindowPos4(v);
 
         /// <summary>
         /// To be added.
@@ -379,7 +439,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos4iMESA")]
-        public abstract void WindowPos4([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z, [Flow(FlowDirection.In)] int w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos4([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z, [Flow(FlowDirection.In)] int w)
+            => ImplWindowPos4(x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -389,7 +451,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos4ivMESA")]
-        public abstract unsafe void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] int* v)
+            => ImplWindowPos4(v);
 
         /// <summary>
         /// To be added.
@@ -399,7 +463,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos4ivMESA")]
-        public abstract void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<int> v)
+            => ImplWindowPos4(v);
 
         /// <summary>
         /// To be added.
@@ -417,7 +483,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos4sMESA")]
-        public abstract void WindowPos4([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z, [Flow(FlowDirection.In)] short w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos4([Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z, [Flow(FlowDirection.In)] short w)
+            => ImplWindowPos4(x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -427,7 +495,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos4svMESA")]
-        public abstract unsafe void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] short* v)
+            => ImplWindowPos4(v);
 
         /// <summary>
         /// To be added.
@@ -437,11 +507,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glWindowPos4svMESA")]
-        public abstract void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<short> v)
+            => ImplWindowPos4(v);
 
-        public MesaWindowPos(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public MesaWindowPos(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
 {
     [Extension("ATI_vertex_array_object")]
-    public abstract unsafe partial class AtiVertexArrayObject : NativeExtension<GL>
+    public unsafe partial class AtiVertexArrayObject : NativeExtension<GL>
     {
         public const string ExtensionName = "ATI_vertex_array_object";
         /// <summary>
@@ -41,7 +41,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glArrayObjectATI")]
-        public abstract void ArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ATI type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ATI type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset)
+            => ImplArrayObject(array, size, type, stride, buffer, offset);
 
         /// <summary>
         /// To be added.
@@ -50,7 +52,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glFreeObjectBufferATI")]
-        public abstract void FreeObjectBuffer([Flow(FlowDirection.In)] uint buffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void FreeObjectBuffer([Flow(FlowDirection.In)] uint buffer)
+            => ImplFreeObjectBuffer(buffer);
 
         /// <summary>
         /// To be added.
@@ -66,7 +70,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetArrayObjectfvATI")]
-        public abstract unsafe void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetArrayObject(array, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -82,7 +88,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetArrayObjectfvATI")]
-        public abstract void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetArrayObject(array, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -98,7 +106,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetArrayObjectivATI")]
-        public abstract unsafe void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetArrayObject(array, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -114,7 +124,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetArrayObjectivATI")]
-        public abstract void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetArrayObject([Flow(FlowDirection.In)] ATI array, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetArrayObject(array, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -130,7 +142,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectBufferfvATI")]
-        public abstract unsafe void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetObjectBuffer(buffer, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -146,7 +160,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectBufferfvATI")]
-        public abstract void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetObjectBuffer(buffer, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -162,7 +178,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectBufferivATI")]
-        public abstract unsafe void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetObjectBuffer(buffer, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -178,7 +196,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectBufferivATI")]
-        public abstract void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetObjectBuffer(buffer, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -194,7 +214,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVariantArrayObjectfvATI")]
-        public abstract unsafe void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetVariantArrayObject(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -210,7 +232,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVariantArrayObjectfvATI")]
-        public abstract void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetVariantArrayObject(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -226,7 +250,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVariantArrayObjectivATI")]
-        public abstract unsafe void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetVariantArrayObject(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -242,7 +268,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVariantArrayObjectivATI")]
-        public abstract void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetVariantArrayObject(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -252,7 +280,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsObjectBufferATI")]
-        public abstract bool IsObjectBuffer([Flow(FlowDirection.In)] uint buffer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public bool IsObjectBuffer([Flow(FlowDirection.In)] uint buffer)
+            => ImplIsObjectBuffer(buffer);
 
         /// <summary>
         /// To be added.
@@ -269,7 +299,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glNewObjectBufferATI")]
-        public abstract unsafe uint NewObjectBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] ATI usage);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe uint NewObjectBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] ATI usage)
+            => ImplNewObjectBuffer(size, pointer, usage);
 
         /// <summary>
         /// To be added.
@@ -286,7 +318,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glNewObjectBufferATI")]
-        public abstract uint NewObjectBuffer<T0>([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> pointer, [Flow(FlowDirection.In)] ATI usage) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint NewObjectBuffer<T0>([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> pointer, [Flow(FlowDirection.In)] ATI usage) where T0 : unmanaged
+            => ImplNewObjectBuffer<T0>(size, pointer, usage);
 
         /// <summary>
         /// To be added.
@@ -308,7 +342,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUpdateObjectBufferATI")]
-        public abstract unsafe void UpdateObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] ATI preserve);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void UpdateObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] ATI preserve)
+            => ImplUpdateObjectBuffer(buffer, offset, size, pointer, preserve);
 
         /// <summary>
         /// To be added.
@@ -330,7 +366,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUpdateObjectBufferATI")]
-        public abstract void UpdateObjectBuffer<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> pointer, [Flow(FlowDirection.In)] ATI preserve) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UpdateObjectBuffer<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> pointer, [Flow(FlowDirection.In)] ATI preserve) where T0 : unmanaged
+            => ImplUpdateObjectBuffer<T0>(buffer, offset, size, pointer, preserve);
 
         /// <summary>
         /// To be added.
@@ -351,7 +389,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVariantArrayObjectATI")]
-        public abstract void VariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ATI type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset)
+            => ImplVariantArrayObject(id, type, stride, buffer, offset);
 
         /// <summary>
         /// To be added.
@@ -375,7 +415,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glArrayObjectATI")]
-        public abstract void ArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset)
+            => ImplArrayObject(array, size, type, stride, buffer, offset);
 
         /// <summary>
         /// To be added.
@@ -391,7 +433,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetArrayObjectfvATI")]
-        public abstract unsafe void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetArrayObject(array, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -407,7 +451,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetArrayObjectfvATI")]
-        public abstract void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetArrayObject(array, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -423,7 +469,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetArrayObjectivATI")]
-        public abstract unsafe void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetArrayObject(array, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -439,7 +487,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetArrayObjectivATI")]
-        public abstract void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetArrayObject([Flow(FlowDirection.In)] EnableCap array, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetArrayObject(array, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -455,7 +505,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectBufferfvATI")]
-        public abstract unsafe void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetObjectBuffer(buffer, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -471,7 +523,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectBufferfvATI")]
-        public abstract void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetObjectBuffer(buffer, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -487,7 +541,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectBufferivATI")]
-        public abstract unsafe void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetObjectBuffer(buffer, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -503,7 +559,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetObjectBufferivATI")]
-        public abstract void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetObjectBuffer(buffer, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -519,7 +577,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVariantArrayObjectfvATI")]
-        public abstract unsafe void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetVariantArrayObject(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -535,7 +595,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVariantArrayObjectfvATI")]
-        public abstract void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out float @params)
+            => ImplGetVariantArrayObject(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -551,7 +613,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVariantArrayObjectivATI")]
-        public abstract unsafe void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetVariantArrayObject(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -567,7 +631,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVariantArrayObjectivATI")]
-        public abstract void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params)
+            => ImplGetVariantArrayObject(id, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -584,7 +650,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glNewObjectBufferATI")]
-        public abstract unsafe uint NewObjectBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] ArrayObjectUsageATI usage);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe uint NewObjectBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] ArrayObjectUsageATI usage)
+            => ImplNewObjectBuffer(size, pointer, usage);
 
         /// <summary>
         /// To be added.
@@ -601,7 +669,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glNewObjectBufferATI")]
-        public abstract uint NewObjectBuffer<T0>([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> pointer, [Flow(FlowDirection.In)] ArrayObjectUsageATI usage) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public uint NewObjectBuffer<T0>([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> pointer, [Flow(FlowDirection.In)] ArrayObjectUsageATI usage) where T0 : unmanaged
+            => ImplNewObjectBuffer<T0>(size, pointer, usage);
 
         /// <summary>
         /// To be added.
@@ -623,7 +693,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUpdateObjectBufferATI")]
-        public abstract unsafe void UpdateObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] PreserveModeATI preserve);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void UpdateObjectBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer, [Flow(FlowDirection.In)] PreserveModeATI preserve)
+            => ImplUpdateObjectBuffer(buffer, offset, size, pointer, preserve);
 
         /// <summary>
         /// To be added.
@@ -645,7 +717,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glUpdateObjectBufferATI")]
-        public abstract void UpdateObjectBuffer<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> pointer, [Flow(FlowDirection.In)] PreserveModeATI preserve) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void UpdateObjectBuffer<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> pointer, [Flow(FlowDirection.In)] PreserveModeATI preserve) where T0 : unmanaged
+            => ImplUpdateObjectBuffer<T0>(buffer, offset, size, pointer, preserve);
 
         /// <summary>
         /// To be added.
@@ -666,11 +740,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVariantArrayObjectATI")]
-        public abstract void VariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset)
+            => ImplVariantArrayObject(id, type, stride, buffer, offset);
 
-        public AtiVertexArrayObject(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AtiVertexArrayObject(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

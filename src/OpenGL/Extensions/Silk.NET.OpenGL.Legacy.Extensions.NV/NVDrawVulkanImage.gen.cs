@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_draw_vulkan_image")]
-    public abstract unsafe partial class NVDrawVulkanImage : NativeExtension<GL>
+    public unsafe partial class NVDrawVulkanImage : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_draw_vulkan_image";
         /// <summary>
@@ -56,7 +56,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDrawVkImageNV")]
-        public abstract void DrawVkImage([Flow(FlowDirection.In)] ulong vkImage, [Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] float x0, [Flow(FlowDirection.In)] float y0, [Flow(FlowDirection.In)] float x1, [Flow(FlowDirection.In)] float y1, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float s0, [Flow(FlowDirection.In)] float t0, [Flow(FlowDirection.In)] float s1, [Flow(FlowDirection.In)] float t1);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DrawVkImage([Flow(FlowDirection.In)] ulong vkImage, [Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] float x0, [Flow(FlowDirection.In)] float y0, [Flow(FlowDirection.In)] float x1, [Flow(FlowDirection.In)] float y1, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float s0, [Flow(FlowDirection.In)] float t0, [Flow(FlowDirection.In)] float s1, [Flow(FlowDirection.In)] float t1)
+            => ImplDrawVkImage(vkImage, sampler, x0, y0, x1, y1, z, s0, t0, s1, t1);
 
         /// <summary>
         /// To be added.
@@ -67,7 +69,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
-        public abstract unsafe IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] char* name)
+            => ImplGetVkProcAddr(name);
 
         /// <summary>
         /// To be added.
@@ -78,7 +82,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
-        public abstract IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] ref char name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] ref char name)
+            => ImplGetVkProcAddr(name);
 
         /// <summary>
         /// To be added.
@@ -87,7 +93,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSignalVkFenceNV")]
-        public abstract void SignalVkFence([Flow(FlowDirection.In)] ulong vkFence);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SignalVkFence([Flow(FlowDirection.In)] ulong vkFence)
+            => ImplSignalVkFence(vkFence);
 
         /// <summary>
         /// To be added.
@@ -96,7 +104,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glSignalVkSemaphoreNV")]
-        public abstract void SignalVkSemaphore([Flow(FlowDirection.In)] ulong vkSemaphore);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void SignalVkSemaphore([Flow(FlowDirection.In)] ulong vkSemaphore)
+            => ImplSignalVkSemaphore(vkSemaphore);
 
         /// <summary>
         /// To be added.
@@ -105,7 +115,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glWaitVkSemaphoreNV")]
-        public abstract void WaitVkSemaphore([Flow(FlowDirection.In)] ulong vkSemaphore);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void WaitVkSemaphore([Flow(FlowDirection.In)] ulong vkSemaphore)
+            => ImplWaitVkSemaphore(vkSemaphore);
 
         /// <summary>
         /// To be added.
@@ -115,11 +127,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
-        public abstract IntPtr GetVkProcAddr([Flow(FlowDirection.In)] string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public IntPtr GetVkProcAddr([Flow(FlowDirection.In)] string name)
+            => ImplGetVkProcAddr(name);
 
-        public NVDrawVulkanImage(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVDrawVulkanImage(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

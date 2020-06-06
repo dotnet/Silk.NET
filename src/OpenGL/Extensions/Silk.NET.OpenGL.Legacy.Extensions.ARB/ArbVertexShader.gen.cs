@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_vertex_shader")]
-    public abstract unsafe partial class ArbVertexShader : NativeExtension<GL>
+    public unsafe partial class ArbVertexShader : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_vertex_shader";
         /// <summary>
@@ -32,7 +32,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindAttribLocationARB")]
-        public abstract unsafe void BindAttribLocation([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void BindAttribLocation([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] char* name)
+            => ImplBindAttribLocation(programObj, index, name);
 
         /// <summary>
         /// To be added.
@@ -47,7 +49,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindAttribLocationARB")]
-        public abstract void BindAttribLocation([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Span<char> name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindAttribLocation([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Span<char> name)
+            => ImplBindAttribLocation(programObj, index, name);
 
         /// <summary>
         /// To be added.
@@ -56,7 +60,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glDisableVertexAttribArrayARB")]
-        public abstract void DisableVertexAttribArray([Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void DisableVertexAttribArray([Flow(FlowDirection.In)] uint index)
+            => ImplDisableVertexAttribArray(index);
 
         /// <summary>
         /// To be added.
@@ -65,7 +71,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glEnableVertexAttribArrayARB")]
-        public abstract void EnableVertexAttribArray([Flow(FlowDirection.In)] uint index);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void EnableVertexAttribArray([Flow(FlowDirection.In)] uint index)
+            => ImplEnableVertexAttribArray(index);
 
         /// <summary>
         /// To be added.
@@ -96,7 +104,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from maxLength.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveAttribARB")]
-        public abstract unsafe void GetActiveAttrib([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetActiveAttrib([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] char* name)
+            => ImplGetActiveAttrib(programObj, index, maxLength, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -127,7 +137,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is taken from maxLength.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveAttribARB")]
-        public abstract void GetActiveAttrib([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetActiveAttrib([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<char> name)
+            => ImplGetActiveAttrib(programObj, index, maxLength, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -140,7 +152,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetAttribLocationARB")]
-        public abstract unsafe int GetAttribLocation([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] char* name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe int GetAttribLocation([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] char* name)
+            => ImplGetAttribLocation(programObj, name);
 
         /// <summary>
         /// To be added.
@@ -153,7 +167,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetAttribLocationARB")]
-        public abstract int GetAttribLocation([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] Span<char> name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int GetAttribLocation([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] Span<char> name)
+            => ImplGetAttribLocation(programObj, name);
 
         /// <summary>
         /// To be added.
@@ -169,7 +185,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribdvARB")]
-        public abstract unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -185,7 +203,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribdvARB")]
-        public abstract void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -201,7 +221,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribfvARB")]
-        public abstract unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -217,7 +239,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribfvARB")]
-        public abstract void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -233,7 +257,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribivARB")]
-        public abstract unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -249,7 +275,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribivARB")]
-        public abstract void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<int> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<int> @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -265,7 +293,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribPointervARB")]
-        public abstract unsafe void GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** pointer)
+            => ImplGetVertexAttribPointer(index, pname, pointer);
 
         /// <summary>
         /// To be added.
@@ -281,7 +311,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribPointervARB")]
-        public abstract unsafe void GetVertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* pointer) where T0 : unmanaged
+            => ImplGetVertexAttribPointer<T0>(index, pname, pointer);
 
         /// <summary>
         /// To be added.
@@ -293,7 +325,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib1fARB")]
-        public abstract void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x)
+            => ImplVertexAttrib1(index, x);
 
         /// <summary>
         /// To be added.
@@ -305,7 +339,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib1sARB")]
-        public abstract void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] short x);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] short x)
+            => ImplVertexAttrib1(index, x);
 
         /// <summary>
         /// To be added.
@@ -317,7 +353,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib1dARB")]
-        public abstract void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x)
+            => ImplVertexAttrib1(index, x);
 
         /// <summary>
         /// To be added.
@@ -330,7 +368,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib1fvARB")]
-        public abstract unsafe void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] float* v)
+            => ImplVertexAttrib1(index, v);
 
         /// <summary>
         /// To be added.
@@ -343,7 +383,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib1fvARB")]
-        public abstract void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ref float v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ref float v)
+            => ImplVertexAttrib1(index, v);
 
         /// <summary>
         /// To be added.
@@ -356,7 +398,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib1svARB")]
-        public abstract unsafe void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] short* v)
+            => ImplVertexAttrib1(index, v);
 
         /// <summary>
         /// To be added.
@@ -369,7 +413,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib1svARB")]
-        public abstract void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ref short v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ref short v)
+            => ImplVertexAttrib1(index, v);
 
         /// <summary>
         /// To be added.
@@ -382,7 +428,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib1dvARB")]
-        public abstract unsafe void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] double* v)
+            => ImplVertexAttrib1(index, v);
 
         /// <summary>
         /// To be added.
@@ -395,7 +443,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib1dvARB")]
-        public abstract void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ref double v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ref double v)
+            => ImplVertexAttrib1(index, v);
 
         /// <summary>
         /// To be added.
@@ -410,7 +460,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib2fARB")]
-        public abstract void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y)
+            => ImplVertexAttrib2(index, x, y);
 
         /// <summary>
         /// To be added.
@@ -425,7 +477,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib2sARB")]
-        public abstract void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y)
+            => ImplVertexAttrib2(index, x, y);
 
         /// <summary>
         /// To be added.
@@ -440,7 +494,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib2dARB")]
-        public abstract void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y)
+            => ImplVertexAttrib2(index, x, y);
 
         /// <summary>
         /// To be added.
@@ -453,7 +509,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib2fvARB")]
-        public abstract unsafe void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] float* v)
+            => ImplVertexAttrib2(index, v);
 
         /// <summary>
         /// To be added.
@@ -466,7 +524,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib2fvARB")]
-        public abstract void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v)
+            => ImplVertexAttrib2(index, v);
 
         /// <summary>
         /// To be added.
@@ -479,7 +539,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib2svARB")]
-        public abstract unsafe void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] short* v)
+            => ImplVertexAttrib2(index, v);
 
         /// <summary>
         /// To be added.
@@ -492,7 +554,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib2svARB")]
-        public abstract void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<short> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<short> v)
+            => ImplVertexAttrib2(index, v);
 
         /// <summary>
         /// To be added.
@@ -505,7 +569,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib2dvARB")]
-        public abstract unsafe void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] double* v)
+            => ImplVertexAttrib2(index, v);
 
         /// <summary>
         /// To be added.
@@ -518,7 +584,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 2 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib2dvARB")]
-        public abstract void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<double> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<double> v)
+            => ImplVertexAttrib2(index, v);
 
         /// <summary>
         /// To be added.
@@ -536,7 +604,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib3fARB")]
-        public abstract void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z)
+            => ImplVertexAttrib3(index, x, y, z);
 
         /// <summary>
         /// To be added.
@@ -554,7 +624,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib3sARB")]
-        public abstract void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z)
+            => ImplVertexAttrib3(index, x, y, z);
 
         /// <summary>
         /// To be added.
@@ -572,7 +644,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib3dARB")]
-        public abstract void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z)
+            => ImplVertexAttrib3(index, x, y, z);
 
         /// <summary>
         /// To be added.
@@ -585,7 +659,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib3fvARB")]
-        public abstract unsafe void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] float* v)
+            => ImplVertexAttrib3(index, v);
 
         /// <summary>
         /// To be added.
@@ -598,7 +674,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib3fvARB")]
-        public abstract void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v)
+            => ImplVertexAttrib3(index, v);
 
         /// <summary>
         /// To be added.
@@ -611,7 +689,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib3svARB")]
-        public abstract unsafe void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] short* v)
+            => ImplVertexAttrib3(index, v);
 
         /// <summary>
         /// To be added.
@@ -624,7 +704,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib3svARB")]
-        public abstract void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] Span<short> v)
+            => ImplVertexAttrib3(index, v);
 
         /// <summary>
         /// To be added.
@@ -637,7 +719,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib3dvARB")]
-        public abstract unsafe void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] double* v)
+            => ImplVertexAttrib3(index, v);
 
         /// <summary>
         /// To be added.
@@ -650,7 +734,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 3 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib3dvARB")]
-        public abstract void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> v)
+            => ImplVertexAttrib3(index, v);
 
         /// <summary>
         /// To be added.
@@ -671,7 +757,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4fARB")]
-        public abstract void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w)
+            => ImplVertexAttrib4(index, x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -692,7 +780,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4sARB")]
-        public abstract void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z, [Flow(FlowDirection.In)] short w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z, [Flow(FlowDirection.In)] short w)
+            => ImplVertexAttrib4(index, x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -713,7 +803,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4dARB")]
-        public abstract void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w)
+            => ImplVertexAttrib4(index, x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -726,7 +818,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4fvARB")]
-        public abstract unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -739,7 +833,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4fvARB")]
-        public abstract void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -752,7 +848,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4svARB")]
-        public abstract unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] short* v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -765,7 +863,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4svARB")]
-        public abstract void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -778,7 +878,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4dvARB")]
-        public abstract unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] double* v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -791,7 +893,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4dvARB")]
-        public abstract void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -804,7 +908,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4ivARB")]
-        public abstract unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -817,7 +923,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4ivARB")]
-        public abstract void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -830,7 +938,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4bvARB")]
-        public abstract unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] sbyte* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] sbyte* v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -843,7 +953,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4bvARB")]
-        public abstract void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<sbyte> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<sbyte> v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -856,7 +968,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4ubvARB")]
-        public abstract unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] byte* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] byte* v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -869,7 +983,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4ubvARB")]
-        public abstract void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<byte> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<byte> v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -882,7 +998,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4usvARB")]
-        public abstract unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ushort* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ushort* v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -895,7 +1013,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4usvARB")]
-        public abstract void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<ushort> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<ushort> v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -908,7 +1028,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4uivARB")]
-        public abstract unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -921,7 +1043,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4uivARB")]
-        public abstract void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<uint> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<uint> v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -942,7 +1066,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4NubARB")]
-        public abstract void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] byte x, [Flow(FlowDirection.In)] byte y, [Flow(FlowDirection.In)] byte z, [Flow(FlowDirection.In)] byte w);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] byte x, [Flow(FlowDirection.In)] byte y, [Flow(FlowDirection.In)] byte z, [Flow(FlowDirection.In)] byte w)
+            => ImplVertexAttrib4N(index, x, y, z, w);
 
         /// <summary>
         /// To be added.
@@ -955,7 +1081,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4NbvARB")]
-        public abstract unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] sbyte* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] sbyte* v)
+            => ImplVertexAttrib4N(index, v);
 
         /// <summary>
         /// To be added.
@@ -968,7 +1096,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4NbvARB")]
-        public abstract void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<sbyte> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<sbyte> v)
+            => ImplVertexAttrib4N(index, v);
 
         /// <summary>
         /// To be added.
@@ -981,7 +1111,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4NsvARB")]
-        public abstract unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] short* v)
+            => ImplVertexAttrib4N(index, v);
 
         /// <summary>
         /// To be added.
@@ -994,7 +1126,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4NsvARB")]
-        public abstract void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> v)
+            => ImplVertexAttrib4N(index, v);
 
         /// <summary>
         /// To be added.
@@ -1007,7 +1141,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4NivARB")]
-        public abstract unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v)
+            => ImplVertexAttrib4N(index, v);
 
         /// <summary>
         /// To be added.
@@ -1020,7 +1156,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4NivARB")]
-        public abstract void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v)
+            => ImplVertexAttrib4N(index, v);
 
         /// <summary>
         /// To be added.
@@ -1033,7 +1171,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4NubvARB")]
-        public abstract unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] byte* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] byte* v)
+            => ImplVertexAttrib4N(index, v);
 
         /// <summary>
         /// To be added.
@@ -1046,7 +1186,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4NubvARB")]
-        public abstract void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<byte> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<byte> v)
+            => ImplVertexAttrib4N(index, v);
 
         /// <summary>
         /// To be added.
@@ -1059,7 +1201,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4NusvARB")]
-        public abstract unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ushort* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ushort* v)
+            => ImplVertexAttrib4N(index, v);
 
         /// <summary>
         /// To be added.
@@ -1072,7 +1216,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4NusvARB")]
-        public abstract void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<ushort> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<ushort> v)
+            => ImplVertexAttrib4N(index, v);
 
         /// <summary>
         /// To be added.
@@ -1085,7 +1231,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4NuivARB")]
-        public abstract unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* v)
+            => ImplVertexAttrib4N(index, v);
 
         /// <summary>
         /// To be added.
@@ -1098,7 +1246,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4NuivARB")]
-        public abstract void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<uint> v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<uint> v)
+            => ImplVertexAttrib4N(index, v);
 
         /// <summary>
         /// To be added.
@@ -1123,7 +1273,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointerARB")]
-        public abstract unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer)
+            => ImplVertexAttribPointer(index, size, type, normalized, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -1148,7 +1300,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointerARB")]
-        public abstract void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplVertexAttribPointer<T0>(index, size, type, normalized, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -1163,7 +1317,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glBindAttribLocationARB")]
-        public abstract void BindAttribLocation([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void BindAttribLocation([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] string name)
+            => ImplBindAttribLocation(programObj, index, name);
 
         /// <summary>
         /// To be added.
@@ -1193,7 +1349,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveAttribARB")]
-        public abstract unsafe void GetActiveAttrib([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetActiveAttrib([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name)
+            => ImplGetActiveAttrib(programObj, index, maxLength, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -1223,7 +1381,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glGetActiveAttribARB")]
-        public abstract void GetActiveAttrib([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetActiveAttrib([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint maxLength, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -4)] out string name)
+            => ImplGetActiveAttrib(programObj, index, maxLength, length, size, type, name);
 
         /// <summary>
         /// To be added.
@@ -1236,7 +1396,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// </param>
         /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetAttribLocationARB")]
-        public abstract int GetAttribLocation([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] string name);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public int GetAttribLocation([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] string name)
+            => ImplGetAttribLocation(programObj, name);
 
         /// <summary>
         /// To be added.
@@ -1252,7 +1414,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribdvARB")]
-        public abstract unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1268,7 +1432,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribdvARB")]
-        public abstract void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1284,7 +1450,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribfvARB")]
-        public abstract unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1300,7 +1468,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribfvARB")]
-        public abstract void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1316,7 +1486,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribivARB")]
-        public abstract unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1332,7 +1504,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 4 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribivARB")]
-        public abstract void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<int> @params);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<int> @params)
+            => ImplGetVertexAttrib(index, pname, @params);
 
         /// <summary>
         /// To be added.
@@ -1348,7 +1522,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribPointervARB")]
-        public abstract unsafe void GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerPropertyARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerPropertyARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** pointer)
+            => ImplGetVertexAttribPointer(index, pname, pointer);
 
         /// <summary>
         /// To be added.
@@ -1364,7 +1540,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter contains 1 elements.
         /// </param>
         [NativeApi(EntryPoint = "glGetVertexAttribPointervARB")]
-        public abstract unsafe void GetVertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerPropertyARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void GetVertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerPropertyARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* pointer) where T0 : unmanaged
+            => ImplGetVertexAttribPointer<T0>(index, pname, pointer);
 
         /// <summary>
         /// To be added.
@@ -1376,7 +1554,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4ubvARB")]
-        public abstract void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] string v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] string v)
+            => ImplVertexAttrib4(index, v);
 
         /// <summary>
         /// To be added.
@@ -1388,7 +1568,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttrib4NubvARB")]
-        public abstract void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] string v);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] string v)
+            => ImplVertexAttrib4N(index, v);
 
         /// <summary>
         /// To be added.
@@ -1413,7 +1595,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointerARB")]
-        public abstract unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer)
+            => ImplVertexAttribPointer(index, size, type, normalized, stride, pointer);
 
         /// <summary>
         /// To be added.
@@ -1438,11 +1622,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         /// This parameter's element count is computed from size, type, and stride.
         /// </param>
         [NativeApi(EntryPoint = "glVertexAttribPointerARB")]
-        public abstract void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged
+            => ImplVertexAttribPointer<T0>(index, size, type, normalized, stride, pointer);
 
-        public ArbVertexShader(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbVertexShader(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }

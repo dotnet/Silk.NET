@@ -6,17 +6,17 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_stencil_two_side")]
-    public abstract unsafe partial class ExtStencilTwoSide : NativeExtension<GL>
+    public unsafe partial class ExtStencilTwoSide : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_stencil_two_side";
         /// <summary>
@@ -26,7 +26,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glActiveStencilFaceEXT")]
-        public abstract void ActiveStencilFace([Flow(FlowDirection.In)] EXT face);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ActiveStencilFace([Flow(FlowDirection.In)] EXT face)
+            => ImplActiveStencilFace(face);
 
         /// <summary>
         /// To be added.
@@ -35,11 +37,14 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         /// To be added.
         /// </param>
         [NativeApi(EntryPoint = "glActiveStencilFaceEXT")]
-        public abstract void ActiveStencilFace([Flow(FlowDirection.In)] StencilFaceDirection face);
+        [System.Runtime.CompilerServices.MethodImpl((System.Runtime.CompilerServices.MethodImplOptions)(512 | 256))]
+        public void ActiveStencilFace([Flow(FlowDirection.In)] StencilFaceDirection face)
+            => ImplActiveStencilFace(face);
 
-        public ExtStencilTwoSide(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtStencilTwoSide(INativeContext ctx)
+            : base(ctx)
         {
+            InitializeNative();
         }
     }
 }
