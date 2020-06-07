@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.CodeAnalysis.Text;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.Core.Native;
@@ -18,10 +20,17 @@ namespace Silk.NET.Generators.Interop
     {
         protected override bool Predicate(SourceGeneratorContext context, IMethodSymbol decl, INamedTypeSymbol declParent)
         {
-            return GoAhead(decl) || GoAhead(declParent);
-            bool GoAhead(ISymbol sym)
+            var declRet = GoAhead(decl);
+            var parentRet = GoAhead(declParent);
+            if ((declRet is null) && parentRet.GetValueOrDefault())
             {
-                var goAhead = false;
+                // TODO report a warning or something
+            }
+
+            return (declRet ?? true) && parentRet.GetValueOrDefault();
+            bool? GoAhead(ISymbol sym)
+            {
+                bool? goAhead = null;
                 foreach (var attribute in sym.GetAttributes())
                 {
                     if (attribute.AttributeClass?.Name == nameof(NativeApiAttribute) &&
@@ -38,6 +47,7 @@ namespace Silk.NET.Generators.Interop
                         return false;
                     }
                 }
+                
                 return goAhead;
             }
         }
@@ -273,6 +283,7 @@ namespace Silk.NET.Generators.Interop
                 sw.WriteLine("    }");
                 sw.WriteLine("}");
                 sw.WriteLine();
+                ctx.AddSource($"{kvp.Key.Name}.Impl.gen.cs", SourceText.From(sw.ToString()));
             }
         }
     }
@@ -299,7 +310,7 @@ namespace Silk.NET.Generators.Interop
             foreach (var (tree, node, nodeParent) in nodes)
             {
                 var semantics = comp.GetSemanticModel(tree);
-                var method = (semantics.GetDeclaredSymbol(node) as IMethodSymbol)!;
+                var method = (ModelExtensions.GetDeclaredSymbol(semantics, node) as IMethodSymbol)!;
                 var type = method.ContainingType;
 
                 if (!Predicate(context, method, type) || visited.Contains(type.Name))

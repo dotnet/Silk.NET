@@ -12,8 +12,8 @@
     </ItemGroup>
     
     <ItemGroup>
-      <ProjectReference Include="..\Core\Silk.NET.BuildTools\Silk.NET.BuildTools.csproj" />
-      <ProjectReference Include="..\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
+      <ProjectReference Include="..\Silk.NET.BuildTools\Silk.NET.BuildTools.csproj" />
+      <ProjectReference Include="..\Silk.NET.Core\Silk.NET.Core.csproj" />
     </ItemGroup>
 
 </Project>

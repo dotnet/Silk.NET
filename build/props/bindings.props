@@ -1,5 +1,8 @@
 <Project>
     <ItemGroup>
         <ProjectReference Include="$(MSBuildThisFileDirectory)..\..\src\Core\Silk.NET.Core\Silk.NET.Core.csproj" />
+        <ProjectReference Include="$(MSBuildThisFileDirectory)..\..\src\Core\Silk.NET.Generators.Interop\Silk.NET.Generators.Interop.csproj"
+                          OutputItemType="Analyzer"
+                          ReferenceOutputAssembly="false" />
     </ItemGroup>
 </Project>

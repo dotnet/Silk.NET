@@ -263,7 +263,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Input.Extensions",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing.Extensions.Veldrid", "src\Windowing\Extensions\Silk.NET.Windowing.Extensions.Veldrid\Silk.NET.Windowing.Extensions.Veldrid.csproj", "{F5D5B4B4-58B7-48D9-881B-DD6A4001793E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Generators.Interop", "src\Silk.NET.Generators.Interop\Silk.NET.Generators.Interop.csproj", "{B8BFA172-5F9A-4971-BB31-D11F050D0FD5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Generators.Interop", "src\Core\Silk.NET.Generators.Interop\Silk.NET.Generators.Interop.csproj", "{B8BFA172-5F9A-4971-BB31-D11F050D0FD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
