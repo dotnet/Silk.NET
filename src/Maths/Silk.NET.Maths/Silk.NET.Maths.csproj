@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+        <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.1'">INTRINSICS;$(DefineConstants)</DefineConstants>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
+    </ItemGroup>
+
+</Project>
