@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="ClangSharp" Version="10.0.0-beta" />
       <PackageReference Include="CommandLineParser" Version="2.7.82" />
       <PackageReference Include="HtmlAgilityPack" Version="1.11.18" />
       <PackageReference Include="Humanizer.Core" Version="2.7.9" />
