@@ -1,15 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
-        <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.1'">INTRINSICS;$(DefineConstants)</DefineConstants>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.0;net5.0</TargetFrameworks>
+        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.0' Or '$(TargetFramework)' == 'net5.0'">
+            INTRINSICS;$(DefineConstants)
+        </DefineConstants>
+        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.0' Or 
+                                    '$(TargetFramework)' == 'net5.0' Or
+                                    '$(TargetFramework)' == 'netstandard2.1'">
+            BTEC_INTRINSICS;$(DefineConstants)
+        </DefineConstants>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>8.0</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="System.Memory" Version="4.5.3" />
-      <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
-      <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.1" />
+        <PackageReference Include="System.Memory" Version="4.5.3"/>
+        <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.1"/>
     </ItemGroup>
 
 </Project>
