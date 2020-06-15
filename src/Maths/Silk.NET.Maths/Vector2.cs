@@ -266,12 +266,12 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static Vector2<T> Transform(Vector2<T> vec, Matrix2<T> mat)
+        public static Vector2<T> Transform(Vector2<T> vec, Matrix2X2<T> mat)
         {
             throw new NotImplementedException();
         }
 
-        public static void Transform(ref Vector2<T> vec, ref Matrix2<T> mat, out Vector2<T> result)
+        public static void Transform(ref Vector2<T> vec, ref Matrix2X2<T> mat, out Vector2<T> result)
         {
             throw new NotImplementedException();
         }
@@ -286,12 +286,12 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static Vector2<T> Transform(Matrix2<T> mat, Vector2<T> vec)
+        public static Vector2<T> Transform(Matrix2X2<T> mat, Vector2<T> vec)
         {
             throw new NotImplementedException();
         }
 
-        public static void Transform(ref Matrix2<T> mat, ref Vector2<T> vec, out Vector2<T> result)
+        public static void Transform(ref Matrix2X2<T> mat, ref Vector2<T> vec, out Vector2<T> result)
         {
             throw new NotImplementedException();
         }
@@ -326,12 +326,12 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static Vector2<T> operator *(Vector2<T> vec, Matrix2<T> mat)
+        public static Vector2<T> operator *(Vector2<T> vec, Matrix2X2<T> mat)
         {
             throw new NotImplementedException();
         }
 
-        public static Vector2<T> operator *(Matrix2<T> mat, Vector2<T> vec)
+        public static Vector2<T> operator *(Matrix2X2<T> mat, Vector2<T> vec)
         {
             throw new NotImplementedException();
         }

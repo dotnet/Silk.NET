@@ -279,27 +279,27 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static Vector3<T> TransformVector(Vector3<T> vec, Matrix4<T> mat)
+        public static Vector3<T> TransformVector(Vector3<T> vec, Matrix4X4<T> mat)
         {
             throw new NotImplementedException();
         }
 
-        public static void TransformVector(ref Vector3<T> vec, ref Matrix4<T> mat, out Vector3<T> result)
+        public static void TransformVector(ref Vector3<T> vec, ref Matrix4X4<T> mat, out Vector3<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Vector3<T> TransformNormal(Vector3<T> norm, Matrix4<T> mat)
+        public static Vector3<T> TransformNormal(Vector3<T> norm, Matrix4X4<T> mat)
         {
             throw new NotImplementedException();
         }
 
-        public static void TransformNormal(ref Vector3<T> norm, ref Matrix4<T> mat, out Vector3<T> result)
+        public static void TransformNormal(ref Vector3<T> norm, ref Matrix4X4<T> mat, out Vector3<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Vector3<T> TransformNormalInverse(Vector3<T> norm, Matrix4<T> invMat)
+        public static Vector3<T> TransformNormalInverse(Vector3<T> norm, Matrix4X4<T> invMat)
         {
             throw new NotImplementedException();
         }
@@ -307,29 +307,29 @@ namespace Silk.NET.Maths
         public static void TransformNormalInverse
         (
             ref Vector3<T> norm,
-            ref Matrix4<T> invMat,
+            ref Matrix4X4<T> invMat,
             out Vector3<T> result
         )
         {
             throw new NotImplementedException();
         }
 
-        public static Vector3<T> TransformPosition(Vector3<T> pos, Matrix4<T> mat)
+        public static Vector3<T> TransformPosition(Vector3<T> pos, Matrix4X4<T> mat)
         {
             throw new NotImplementedException();
         }
 
-        public static void TransformPosition(ref Vector3<T> pos, ref Matrix4<T> mat, out Vector3<T> result)
+        public static void TransformPosition(ref Vector3<T> pos, ref Matrix4X4<T> mat, out Vector3<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Vector3<T> Transform(Vector3<T> vec, Matrix3<T> mat)
+        public static Vector3<T> Transform(Vector3<T> vec, Matrix3X3<T> mat)
         {
             throw new NotImplementedException();
         }
 
-        public static void Transform(ref Vector3<T> vec, ref Matrix3<T> mat, out Vector3<T> result)
+        public static void Transform(ref Vector3<T> vec, ref Matrix3X3<T> mat, out Vector3<T> result)
         {
             throw new NotImplementedException();
         }
@@ -344,22 +344,22 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static Vector3<T> Transform(Matrix3<T> mat, Vector3<T> vec)
+        public static Vector3<T> Transform(Matrix3X3<T> mat, Vector3<T> vec)
         {
             throw new NotImplementedException();
         }
 
-        public static void Transform(ref Matrix3<T> mat, ref Vector3<T> vec, out Vector3<T> result)
+        public static void Transform(ref Matrix3X3<T> mat, ref Vector3<T> vec, out Vector3<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Vector3<T> TransformPerspective(Vector3<T> vec, Matrix4<T> mat)
+        public static Vector3<T> TransformPerspective(Vector3<T> vec, Matrix4X4<T> mat)
         {
             throw new NotImplementedException();
         }
 
-        public static void TransformPerspective(ref Vector3<T> vec, ref Matrix4<T> mat, out Vector3<T> result)
+        public static void TransformPerspective(ref Vector3<T> vec, ref Matrix4X4<T> mat, out Vector3<T> result)
         {
             throw new NotImplementedException();
         }
@@ -383,7 +383,7 @@ namespace Silk.NET.Maths
             T height,
             T minZ,
             T maxZ,
-            Matrix4<T> worldViewProjection
+            Matrix4X4<T> worldViewProjection
         )
         {
             throw new NotImplementedException();
@@ -398,7 +398,7 @@ namespace Silk.NET.Maths
             T height,
             T minZ,
             T maxZ,
-            Matrix4<T> inverseWorldViewProjection
+            Matrix4X4<T> inverseWorldViewProjection
         )
         {
             throw new NotImplementedException();
@@ -434,12 +434,12 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static Vector3<T> operator *(Vector3<T> vec, Matrix3<T> mat)
+        public static Vector3<T> operator *(Vector3<T> vec, Matrix3X3<T> mat)
         {
             throw new NotImplementedException();
         }
 
-        public static Vector3<T> operator *(Matrix3<T> mat, Vector3<T> vec)
+        public static Vector3<T> operator *(Matrix3X3<T> mat, Vector3<T> vec)
         {
             throw new NotImplementedException();
         }

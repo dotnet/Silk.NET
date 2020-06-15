@@ -255,12 +255,12 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static Vector4<T> Transform(Vector4<T> vec, Matrix4<T> mat)
+        public static Vector4<T> Transform(Vector4<T> vec, Matrix4X4<T> mat)
         {
             throw new NotImplementedException();
         }
 
-        public static void Transform(ref Vector4<T> vec, ref Matrix4<T> mat, out Vector4<T> result)
+        public static void Transform(ref Vector4<T> vec, ref Matrix4X4<T> mat, out Vector4<T> result)
         {
             throw new NotImplementedException();
         }
@@ -275,12 +275,12 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static Vector4<T> Transform(Matrix4<T> mat, Vector4<T> vec)
+        public static Vector4<T> Transform(Matrix4X4<T> mat, Vector4<T> vec)
         {
             throw new NotImplementedException();
         }
 
-        public static void Transform(ref Matrix4<T> mat, ref Vector4<T> vec, out Vector4<T> result)
+        public static void Transform(ref Matrix4X4<T> mat, ref Vector4<T> vec, out Vector4<T> result)
         {
             throw new NotImplementedException();
         }
@@ -315,12 +315,12 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static Vector4<T> operator *(Vector4<T> vec, Matrix4<T> mat)
+        public static Vector4<T> operator *(Vector4<T> vec, Matrix4X4<T> mat)
         {
             throw new NotImplementedException();
         }
 
-        public static Vector4<T> operator *(Matrix4<T> mat, Vector4<T> vec)
+        public static Vector4<T> operator *(Matrix4X4<T> mat, Vector4<T> vec)
         {
             throw new NotImplementedException();
         }

@@ -8,21 +8,21 @@ using System;
 namespace Silk.NET.Maths
 {
     [Serializable]
-    public struct Matrix4<T> : IEquatable<Matrix4<T>> where T:unmanaged
+    public struct Matrix4X4<T> : IEquatable<Matrix4X4<T>> where T:unmanaged
     {
-        public static readonly Matrix4<T> Identity;
-        public static readonly Matrix4<T> Zero;
+        public static readonly Matrix4X4<T> Identity;
+        public static readonly Matrix4X4<T> Zero;
         public Vector4<T> Row0;
         public Vector4<T> Row1;
         public Vector4<T> Row2;
         public Vector4<T> Row3;
 
-        public Matrix4(Vector4<T> row0, Vector4<T> row1, Vector4<T> row2, Vector4<T> row3)
+        public Matrix4X4(Vector4<T> row0, Vector4<T> row1, Vector4<T> row2, Vector4<T> row3)
         {
             throw new NotImplementedException();
         }
 
-        public Matrix4
+        public Matrix4X4
         (
             T m00,
             T m01,
@@ -45,7 +45,7 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public Matrix4(Matrix3<T> topLeft)
+        public Matrix4X4(Matrix3X3<T> topLeft)
         {
             throw new NotImplementedException();
         }
@@ -100,7 +100,7 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public Matrix4<T> Normalized()
+        public Matrix4X4<T> Normalized()
         {
             throw new NotImplementedException();
         }
@@ -110,27 +110,27 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public Matrix4<T> Inverted()
+        public Matrix4X4<T> Inverted()
         {
             throw new NotImplementedException();
         }
 
-        public Matrix4<T> ClearTranslation()
+        public Matrix4X4<T> ClearTranslation()
         {
             throw new NotImplementedException();
         }
 
-        public Matrix4<T> ClearScale()
+        public Matrix4X4<T> ClearScale()
         {
             throw new NotImplementedException();
         }
 
-        public Matrix4<T> ClearRotation()
+        public Matrix4X4<T> ClearRotation()
         {
             throw new NotImplementedException();
         }
 
-        public Matrix4<T> ClearProjection()
+        public Matrix4X4<T> ClearProjection()
         {
             throw new NotImplementedException();
         }
@@ -155,102 +155,102 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static void CreateFromAxisAngle(Vector3<T> axis, T angle, out Matrix4<T> result)
+        public static void CreateFromAxisAngle(Vector3<T> axis, T angle, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> CreateFromAxisAngle(Vector3<T> axis, T angle)
+        public static Matrix4X4<T> CreateFromAxisAngle(Vector3<T> axis, T angle)
         {
             throw new NotImplementedException();
         }
 
-        public static void CreateFromQuaternion(ref Quaternion<T> q, out Matrix4<T> result)
+        public static void CreateFromQuaternion(ref Quaternion<T> q, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> CreateFromQuaternion(Quaternion<T> q)
+        public static Matrix4X4<T> CreateFromQuaternion(Quaternion<T> q)
         {
             throw new NotImplementedException();
         }
 
-        public static void CreateRotationX(T angle, out Matrix4<T> result)
+        public static void CreateRotationX(T angle, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> CreateRotationX(T angle)
+        public static Matrix4X4<T> CreateRotationX(T angle)
         {
             throw new NotImplementedException();
         }
 
-        public static void CreateRotationY(T angle, out Matrix4<T> result)
+        public static void CreateRotationY(T angle, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> CreateRotationY(T angle)
+        public static Matrix4X4<T> CreateRotationY(T angle)
         {
             throw new NotImplementedException();
         }
 
-        public static void CreateRotationZ(T angle, out Matrix4<T> result)
+        public static void CreateRotationZ(T angle, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> CreateRotationZ(T angle)
+        public static Matrix4X4<T> CreateRotationZ(T angle)
         {
             throw new NotImplementedException();
         }
 
-        public static void CreateTranslation(T x, T y, T z, out Matrix4<T> result)
+        public static void CreateTranslation(T x, T y, T z, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static void CreateTranslation(ref Vector3<T> vector, out Matrix4<T> result)
+        public static void CreateTranslation(ref Vector3<T> vector, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> CreateTranslation(T x, T y, T z)
+        public static Matrix4X4<T> CreateTranslation(T x, T y, T z)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> CreateTranslation(Vector3<T> vector)
+        public static Matrix4X4<T> CreateTranslation(Vector3<T> vector)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> CreateScale(T scale)
+        public static Matrix4X4<T> CreateScale(T scale)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> CreateScale(Vector3<T> scale)
+        public static Matrix4X4<T> CreateScale(Vector3<T> scale)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> CreateScale(T x, T y, T z)
+        public static Matrix4X4<T> CreateScale(T x, T y, T z)
         {
             throw new NotImplementedException();
         }
 
-        public static void CreateScale(T scale, out Matrix4<T> result)
+        public static void CreateScale(T scale, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static void CreateScale(ref Vector3<T> scale, out Matrix4<T> result)
+        public static void CreateScale(ref Vector3<T> scale, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static void CreateScale(T x, T y, T z, out Matrix4<T> result)
+        public static void CreateScale(T x, T y, T z, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
@@ -261,13 +261,13 @@ namespace Silk.NET.Maths
             T height,
             T depthNear,
             T depthFar,
-            out Matrix4<T> result
+            out Matrix4X4<T> result
         )
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> CreateOrthographic
+        public static Matrix4X4<T> CreateOrthographic
         (
             T width,
             T height,
@@ -286,13 +286,13 @@ namespace Silk.NET.Maths
             T top,
             T depthNear,
             T depthFar,
-            out Matrix4<T> result
+            out Matrix4X4<T> result
         )
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> CreateOrthographicOffCenter
+        public static Matrix4X4<T> CreateOrthographicOffCenter
         (
             T left,
             T right,
@@ -311,13 +311,13 @@ namespace Silk.NET.Maths
             T aspect,
             T depthNear,
             T depthFar,
-            out Matrix4<T> result
+            out Matrix4X4<T> result
         )
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> CreatePerspectiveFieldOfView
+        public static Matrix4X4<T> CreatePerspectiveFieldOfView
         (
             T fovy,
             T aspect,
@@ -336,13 +336,13 @@ namespace Silk.NET.Maths
             T top,
             T depthNear,
             T depthFar,
-            out Matrix4<T> result
+            out Matrix4X4<T> result
         )
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> CreatePerspectiveOffCenter
+        public static Matrix4X4<T> CreatePerspectiveOffCenter
         (
             T left,
             T right,
@@ -355,12 +355,12 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> LookAt(Vector3<T> eye, Vector3<T> target, Vector3<T> up)
+        public static Matrix4X4<T> LookAt(Vector3<T> eye, Vector3<T> target, Vector3<T> up)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> LookAt
+        public static Matrix4X4<T> LookAt
         (
             T eyeX,
             T eyeY,
@@ -376,92 +376,92 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> Add(Matrix4<T> left, Matrix4<T> right)
+        public static Matrix4X4<T> Add(Matrix4X4<T> left, Matrix4X4<T> right)
         {
             throw new NotImplementedException();
         }
 
-        public static void Add(ref Matrix4<T> left, ref Matrix4<T> right, out Matrix4<T> result)
+        public static void Add(ref Matrix4X4<T> left, ref Matrix4X4<T> right, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> Subtract(Matrix4<T> left, Matrix4<T> right)
+        public static Matrix4X4<T> Subtract(Matrix4X4<T> left, Matrix4X4<T> right)
         {
             throw new NotImplementedException();
         }
 
-        public static void Subtract(ref Matrix4<T> left, ref Matrix4<T> right, out Matrix4<T> result)
+        public static void Subtract(ref Matrix4X4<T> left, ref Matrix4X4<T> right, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> Multiply(Matrix4<T> left, Matrix4<T> right)
+        public static Matrix4X4<T> Multiply(Matrix4X4<T> left, Matrix4X4<T> right)
         {
             throw new NotImplementedException();
         }
 
-        public static void Multiply(ref Matrix4<T> left, ref Matrix4<T> right, out Matrix4<T> result)
+        public static void Multiply(ref Matrix4X4<T> left, ref Matrix4X4<T> right, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> Multiply(Matrix4<T> left, T right)
+        public static Matrix4X4<T> Multiply(Matrix4X4<T> left, T right)
         {
             throw new NotImplementedException();
         }
 
-        public static void Multiply(ref Matrix4<T> left, T right, out Matrix4<T> result)
+        public static void Multiply(ref Matrix4X4<T> left, T right, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static void Invert(ref Matrix4<T> mat, out Matrix4<T> result)
+        public static void Invert(ref Matrix4X4<T> mat, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> Invert(Matrix4<T> mat)
+        public static Matrix4X4<T> Invert(Matrix4X4<T> mat)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> Transpose(Matrix4<T> mat)
+        public static Matrix4X4<T> Transpose(Matrix4X4<T> mat)
         {
             throw new NotImplementedException();
         }
 
-        public static void Transpose(ref Matrix4<T> mat, out Matrix4<T> result)
+        public static void Transpose(ref Matrix4X4<T> mat, out Matrix4X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> operator *(Matrix4<T> left, Matrix4<T> right)
+        public static Matrix4X4<T> operator *(Matrix4X4<T> left, Matrix4X4<T> right)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> operator *(Matrix4<T> left, T right)
+        public static Matrix4X4<T> operator *(Matrix4X4<T> left, T right)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> operator +(Matrix4<T> left, Matrix4<T> right)
+        public static Matrix4X4<T> operator +(Matrix4X4<T> left, Matrix4X4<T> right)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix4<T> operator -(Matrix4<T> left, Matrix4<T> right)
+        public static Matrix4X4<T> operator -(Matrix4X4<T> left, Matrix4X4<T> right)
         {
             throw new NotImplementedException();
         }
 
-        public static bool operator ==(Matrix4<T> left, Matrix4<T> right)
+        public static bool operator ==(Matrix4X4<T> left, Matrix4X4<T> right)
         {
             throw new NotImplementedException();
         }
 
-        public static bool operator !=(Matrix4<T> left, Matrix4<T> right)
+        public static bool operator !=(Matrix4X4<T> left, Matrix4X4<T> right)
         {
             throw new NotImplementedException();
         }
@@ -481,7 +481,7 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public bool Equals(Matrix4<T> other)
+        public bool Equals(Matrix4X4<T> other)
         {
             throw new NotImplementedException();
         }

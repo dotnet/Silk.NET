@@ -196,12 +196,12 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static Quaternion<T> FromMatrix(Matrix3<T> matrix)
+        public static Quaternion<T> FromMatrix(Matrix3X3<T> matrix)
         {
             throw new NotImplementedException();
         }
 
-        public static void FromMatrix(ref Matrix3<T> matrix, out Quaternion<T> result)
+        public static void FromMatrix(ref Matrix3X3<T> matrix, out Quaternion<T> result)
         {
             throw new NotImplementedException();
         }

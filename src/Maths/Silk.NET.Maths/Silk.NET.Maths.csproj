@@ -4,9 +4,7 @@
         <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.0' Or '$(TargetFramework)' == 'net5.0'">
             INTRINSICS;$(DefineConstants)
         </DefineConstants>
-        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.0' Or 
-                                    '$(TargetFramework)' == 'net5.0' Or
-                                    '$(TargetFramework)' == 'netstandard2.1'">
+        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.0' Or &#xD;&#xA;                                    '$(TargetFramework)' == 'net5.0' Or&#xD;&#xA;                                    '$(TargetFramework)' == 'netstandard2.1'">
             BTEC_INTRINSICS;$(DefineConstants)
         </DefineConstants>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -14,8 +12,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="System.Memory" Version="4.5.3"/>
-        <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.1"/>
+        <PackageReference Include="System.Memory" Version="4.5.3" />
+        <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.1" />
     </ItemGroup>
 
 </Project>

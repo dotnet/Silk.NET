@@ -100,32 +100,32 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static void Multiply(ref Matrix3x2<T> left, ref Matrix2<T> right, out Matrix3x2<T> result)
+        public static void Multiply(ref Matrix3x2<T> left, ref Matrix2X2<T> right, out Matrix3x2<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix3x2<T> Multiply(Matrix3x2<T> left, Matrix2<T> right)
+        public static Matrix3x2<T> Multiply(Matrix3x2<T> left, Matrix2X2<T> right)
         {
             throw new NotImplementedException();
         }
 
-        public static void Multiply(ref Matrix3x2<T> left, ref Matrix2x3<T> right, out Matrix3<T> result)
+        public static void Multiply(ref Matrix3x2<T> left, ref Matrix2X3<T> right, out Matrix3X3<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix3<T> Multiply(Matrix3x2<T> left, Matrix2x3<T> right)
+        public static Matrix3X3<T> Multiply(Matrix3x2<T> left, Matrix2X3<T> right)
         {
             throw new NotImplementedException();
         }
 
-        public static void Multiply(ref Matrix3x2<T> left, ref Matrix2x4<T> right, out Matrix3x4<T> result)
+        public static void Multiply(ref Matrix3x2<T> left, ref Matrix2X4<T> right, out Matrix3X4<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix3x4<T> Multiply(Matrix3x2<T> left, Matrix2x4<T> right)
+        public static Matrix3X4<T> Multiply(Matrix3x2<T> left, Matrix2X4<T> right)
         {
             throw new NotImplementedException();
         }
@@ -150,12 +150,12 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static void Transpose(ref Matrix3x2<T> mat, out Matrix2x3<T> result)
+        public static void Transpose(ref Matrix3x2<T> mat, out Matrix2X3<T> result)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix2x3<T> Transpose(Matrix3x2<T> mat)
+        public static Matrix2X3<T> Transpose(Matrix3x2<T> mat)
         {
             throw new NotImplementedException();
         }
@@ -170,17 +170,17 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public static Matrix3x2<T> operator *(Matrix3x2<T> left, Matrix2<T> right)
+        public static Matrix3x2<T> operator *(Matrix3x2<T> left, Matrix2X2<T> right)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix3<T> operator *(Matrix3x2<T> left, Matrix2x3<T> right)
+        public static Matrix3X3<T> operator *(Matrix3x2<T> left, Matrix2X3<T> right)
         {
             throw new NotImplementedException();
         }
 
-        public static Matrix3x4<T> operator *(Matrix3x2<T> left, Matrix2x4<T> right)
+        public static Matrix3X4<T> operator *(Matrix3x2<T> left, Matrix2X4<T> right)
         {
             throw new NotImplementedException();
         }
