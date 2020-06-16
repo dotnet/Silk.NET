@@ -280,7 +280,9 @@ namespace Silk.NET.Maths
 
         public static Vector2<T> BaryCentric(Vector2<T> a, Vector2<T> b, Vector2<T> c, T u, T v)
         {
-            throw new NotImplementedException();
+            return a * Scalar<T>.Subtract(Scalar<T>.One, u) * (Scalar<T>.Subtract(Scalar<T>.One, v))
+                   + b * u * (Scalar<T>.Subtract(Scalar<T>.One, v))
+                   + c * Scalar<T>.Subtract(Scalar<T>.One, u) * v;
         }
 
         public static void BaryCentric
@@ -293,7 +295,7 @@ namespace Silk.NET.Maths
             out Vector2<T> result
         )
         {
-            throw new NotImplementedException();
+            result = BaryCentric(a, b, c, u, v);
         }
 
         public static Vector2<T> Transform(Vector2<T> vec, Matrix2X2<T> mat)
