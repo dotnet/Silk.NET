@@ -14,6 +14,18 @@ using System.Text;
 
 namespace Silk.NET.Maths
 {
+    /* Note: The following patterns are used throughout the code here and are described here
+    *
+    * PATTERN:
+    *    if (typeof(T) == typeof(int)) { ... }
+    *    else if (typeof(T) == typeof(float)) { ... }
+     *   ...
+    * EXPLANATION:
+    *    At runtime, each instantiation of Vector2<T> will be type-specific, and each of these typeof blocks will be eliminated,
+    *    as typeof(T) is a (JIT) compile-time constant for each instantiation. This design was chosen to eliminate any overhead from
+    *    delegates and other patterns.
+    */
+        
     [Serializable]
     public struct Vector2<T> : IEquatable<Vector2<T>>, IFormattable where T : unmanaged, IFormattable
     {
