@@ -239,7 +239,7 @@ namespace Silk.NET.Maths
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T Add(T right, T left)
+        public static T Add(T left, T right)
         {
             if (typeof(T) == typeof(byte))
             {
@@ -301,7 +301,7 @@ namespace Silk.NET.Maths
         }
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T Subtract(T right, T left)
+        public static T Subtract(T left, T right)
         {
             if (typeof(T) == typeof(byte))
             {
@@ -363,7 +363,7 @@ namespace Silk.NET.Maths
         }
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T Multiply(T right, T left)
+        public static T Multiply(T left, T right)
         {
             if (typeof(T) == typeof(byte))
             {
@@ -425,7 +425,7 @@ namespace Silk.NET.Maths
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T Divide(T right, T left)
+        public static T Divide(T left, T right)
         {
             if (typeof(T) == typeof(byte))
             {
@@ -487,7 +487,7 @@ namespace Silk.NET.Maths
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T Min(T right, T left)
+        public static T Min(T left, T right)
         {
             if (typeof(T) == typeof(byte))
             {
@@ -549,7 +549,7 @@ namespace Silk.NET.Maths
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T Max(T right, T left)
+        public static T Max(T left, T right)
         {
             if (typeof(T) == typeof(byte))
             {
