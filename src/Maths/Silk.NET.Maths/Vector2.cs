@@ -589,9 +589,15 @@ namespace Silk.NET.Maths
 #if BTEC_INTRINSICS
         public unsafe Vector<T> AsVector()
         {
-            Vector<T> vec = new Vector<T>();
-            Unsafe.Copy(&vec, ref X);
-            return vec;
+            if (Vector<T>.Count >= 2)
+            {
+                Vector<T> vec = new Vector<T>();
+                Unsafe.Copy(&vec, ref X);
+                return vec;
+            }
+
+            Scalar<T>.ThrowVectorTooSmall();
+            return default; // not reached
         }
 #endif
     }

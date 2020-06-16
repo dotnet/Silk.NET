@@ -147,6 +147,11 @@ namespace Silk.NET.Maths
         {
             throw new NotSupportedException("Half not supported by the underlying type");
         }
+        
+        internal static void ThrowVectorTooSmall()
+        {
+            throw new NotSupportedException("Vector<T> too small too fit");
+        }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T SquareRoot(T value)
