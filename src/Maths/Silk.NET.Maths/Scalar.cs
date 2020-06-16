@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 namespace Silk.NET.Maths
 {
     internal static class Scalar<T>
-        where T : unmanaged
+        IFormattable where T : unmanaged, IFormattable
     {
         /* Note: The following patterns are used throughout the code here and are described here
         *
@@ -173,66 +173,607 @@ namespace Silk.NET.Maths
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T SquareRoot(T value)
         {
-            throw new NotImplementedException();
+            if (typeof(T) == typeof(byte))
+            {
+                return (T) (object) (MathF.Sqrt((byte) (object) value));
+            }
+
+            if (typeof(T) == typeof(sbyte))
+            {
+                return (T) (object) (MathF.Sqrt((sbyte) (object) value));
+            }
+
+            if (typeof(T) == typeof(ushort))
+            {
+                return (T) (object) (MathF.Sqrt((ushort) (object) value));
+            }
+
+            if (typeof(T) == typeof(short))
+            {
+                return (T) (object) (MathF.Sqrt((short) (object) value));
+            }
+
+            if (typeof(T) == typeof(uint))
+            {
+                return (T) (object) (MathF.Sqrt((uint) (object) value));
+            }
+
+            if (typeof(T) == typeof(int))
+            {
+                return (T) (object) (MathF.Sqrt((int) (object) value));
+            }
+
+            if (typeof(T) == typeof(ulong))
+            {
+                return (T) (object) (Math.Sqrt((ulong) (object) value));
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                return (T) (object) (Math.Sqrt((long) (object) value));
+            }
+
+            if (typeof(T) == typeof(Half))
+            {
+                return (T) (object) (MathF.Sqrt((Half) (object) value));
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return (T) (object) (MathF.Sqrt((float) (object) value));
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return (T) (object) (Math.Sqrt((double) (object) value));
+            }
+
+            ThrowInvalidType();
+            return default;
+                
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Add(T right, T left)
         {
-            throw new NotImplementedException();
+            if (typeof(T) == typeof(byte))
+            {
+                return (T) (object) ((byte) (object) left + (byte) (object) right);
+            }
+
+            if (typeof(T) == typeof(sbyte))
+            {
+                return (T) (object) ((sbyte) (object) left + (sbyte) (object) right);
+            }
+
+            if (typeof(T) == typeof(ushort))
+            {
+                return (T) (object) ((ushort) (object) left + (ushort) (object) right);
+            }
+
+            if (typeof(T) == typeof(short))
+            {
+                return (T) (object) ((short) (object) left + (short) (object) right);
+            }
+
+            if (typeof(T) == typeof(uint))
+            {
+                return (T) (object) ((uint) (object) left + (uint) (object) right);
+            }
+
+            if (typeof(T) == typeof(int))
+            {
+                return (T) (object) ((int) (object) left + (int) (object) right);
+            }
+
+            if (typeof(T) == typeof(ulong))
+            {
+                return (T) (object) ((ulong) (object) left + (ulong) (object) right);
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                return (T) (object) ((long) (object) left + (long) (object) right);
+            }
+
+            if (typeof(T) == typeof(Half))
+            {
+                return (T) (object) ((Half) (object) left + (Half) (object) right);
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return (T) (object) ((float) (object) left + (float) (object) right);
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return (T) (object) ((double) (object) left + (double) (object) right);
+            }
+
+            ThrowInvalidType();
+            return default;
         }
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Subtract(T right, T left)
         {
-            throw new NotImplementedException();
+            if (typeof(T) == typeof(byte))
+            {
+                return (T) (object) ((byte) (object) left - (byte) (object) right);
+            }
+
+            if (typeof(T) == typeof(sbyte))
+            {
+                return (T) (object) ((sbyte) (object) left - (sbyte) (object) right);
+            }
+
+            if (typeof(T) == typeof(ushort))
+            {
+                return (T) (object) ((ushort) (object) left - (ushort) (object) right);
+            }
+
+            if (typeof(T) == typeof(short))
+            {
+                return (T) (object) ((short) (object) left - (short) (object) right);
+            }
+
+            if (typeof(T) == typeof(uint))
+            {
+                return (T) (object) ((uint) (object) left - (uint) (object) right);
+            }
+
+            if (typeof(T) == typeof(int))
+            {
+                return (T) (object) ((int) (object) left - (int) (object) right);
+            }
+
+            if (typeof(T) == typeof(ulong))
+            {
+                return (T) (object) ((ulong) (object) left - (ulong) (object) right);
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                return (T) (object) ((long) (object) left - (long) (object) right);
+            }
+
+            if (typeof(T) == typeof(Half))
+            {
+                return (T) (object) ((Half) (object) left - (Half) (object) right);
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return (T) (object) ((float) (object) left - (float) (object) right);
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return (T) (object) ((double) (object) left - (double) (object) right);
+            }
+
+            ThrowInvalidType();
+            return default;
         }
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Multiply(T right, T left)
         {
-            throw new NotImplementedException();
+            if (typeof(T) == typeof(byte))
+            {
+                return (T) (object) ((byte) (object) left * (byte) (object) right);
+            }
+
+            if (typeof(T) == typeof(sbyte))
+            {
+                return (T) (object) ((sbyte) (object) left * (sbyte) (object) right);
+            }
+
+            if (typeof(T) == typeof(ushort))
+            {
+                return (T) (object) ((ushort) (object) left * (ushort) (object) right);
+            }
+
+            if (typeof(T) == typeof(short))
+            {
+                return (T) (object) ((short) (object) left * (short) (object) right);
+            }
+
+            if (typeof(T) == typeof(uint))
+            {
+                return (T) (object) ((uint) (object) left * (uint) (object) right);
+            }
+
+            if (typeof(T) == typeof(int))
+            {
+                return (T) (object) ((int) (object) left * (int) (object) right);
+            }
+
+            if (typeof(T) == typeof(ulong))
+            {
+                return (T) (object) ((ulong) (object) left * (ulong) (object) right);
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                return (T) (object) ((long) (object) left * (long) (object) right);
+            }
+
+            if (typeof(T) == typeof(Half))
+            {
+                return (T) (object) ((Half) (object) left * (Half) (object) right);
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return (T) (object) ((float) (object) left * (float) (object) right);
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return (T) (object) ((double) (object) left * (double) (object) right);
+            }
+
+            ThrowInvalidType();
+            return default;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Divide(T right, T left)
         {
-            throw new NotImplementedException();
+            if (typeof(T) == typeof(byte))
+            {
+                return (T) (object) ((byte) (object) left / (byte) (object) right);
+            }
+
+            if (typeof(T) == typeof(sbyte))
+            {
+                return (T) (object) ((sbyte) (object) left / (sbyte) (object) right);
+            }
+
+            if (typeof(T) == typeof(ushort))
+            {
+                return (T) (object) ((ushort) (object) left / (ushort) (object) right);
+            }
+
+            if (typeof(T) == typeof(short))
+            {
+                return (T) (object) ((short) (object) left / (short) (object) right);
+            }
+
+            if (typeof(T) == typeof(uint))
+            {
+                return (T) (object) ((uint) (object) left / (uint) (object) right);
+            }
+
+            if (typeof(T) == typeof(int))
+            {
+                return (T) (object) ((int) (object) left / (int) (object) right);
+            }
+
+            if (typeof(T) == typeof(ulong))
+            {
+                return (T) (object) ((ulong) (object) left / (ulong) (object) right);
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                return (T) (object) ((long) (object) left / (long) (object) right);
+            }
+
+            if (typeof(T) == typeof(Half))
+            {
+                return (T) (object) ((Half) (object) left / (Half) (object) right);
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return (T) (object) ((float) (object) left / (float) (object) right);
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return (T) (object) ((double) (object) left / (double) (object) right);
+            }
+
+            ThrowInvalidType();
+            return default;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Min(T right, T left)
         {
-            throw new NotImplementedException();
+            if (typeof(T) == typeof(byte))
+            {
+                return (T) (object) (Math.Min((byte) (object) left, (byte) (object) right));
+            }
+
+            if (typeof(T) == typeof(sbyte))
+            {
+                return (T) (object) (Math.Min((sbyte) (object) left, (sbyte) (object) right));
+            }
+
+            if (typeof(T) == typeof(ushort))
+            {
+                return (T) (object) (Math.Min((ushort) (object) left, (ushort) (object) right));
+            }
+
+            if (typeof(T) == typeof(short))
+            {
+                return (T) (object) (Math.Min((short) (object) left, (short) (object) right));
+            }
+
+            if (typeof(T) == typeof(uint))
+            {
+                return (T) (object) (Math.Min((uint) (object) left, (uint) (object) right));
+            }
+
+            if (typeof(T) == typeof(int))
+            {
+                return (T) (object) (Math.Min((int) (object) left, (int) (object) right));
+            }
+
+            if (typeof(T) == typeof(ulong))
+            {
+                return (T) (object) (Math.Min((ulong) (object) left, (ulong) (object) right));
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                return (T) (object) (Math.Min((long) (object) left, (long) (object) right));
+            }
+
+            if (typeof(T) == typeof(Half))
+            {
+                return (T) (object) (Math.Min((Half) (object) left, (Half) (object) right));
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return (T) (object) (Math.Min((float) (object) left, (float) (object) right));
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return (T) (object) (Math.Min((double) (object) left, (double) (object) right));
+            }
+
+            ThrowInvalidType();
+            return default;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Max(T right, T left)
         {
-            throw new NotImplementedException();
+            if (typeof(T) == typeof(byte))
+            {
+                return (T) (object) (Math.Max((byte) (object) left, (byte) (object) right));
+            }
+
+            if (typeof(T) == typeof(sbyte))
+            {
+                return (T) (object) (Math.Max((sbyte) (object) left, (sbyte) (object) right));
+            }
+
+            if (typeof(T) == typeof(ushort))
+            {
+                return (T) (object) (Math.Max((ushort) (object) left, (ushort) (object) right));
+            }
+
+            if (typeof(T) == typeof(short))
+            {
+                return (T) (object) (Math.Max((short) (object) left, (short) (object) right));
+            }
+
+            if (typeof(T) == typeof(uint))
+            {
+                return (T) (object) (Math.Max((uint) (object) left, (uint) (object) right));
+            }
+
+            if (typeof(T) == typeof(int))
+            {
+                return (T) (object) (Math.Max((int) (object) left, (int) (object) right));
+            }
+
+            if (typeof(T) == typeof(ulong))
+            {
+                return (T) (object) (Math.Max((ulong) (object) left, (ulong) (object) right));
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                return (T) (object) (Math.Max((long) (object) left, (long) (object) right));
+            }
+
+            if (typeof(T) == typeof(Half))
+            {
+                return (T) (object) (Math.Max((Half) (object) left, (Half) (object) right));
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return (T) (object) (Math.Max((float) (object) left, (float) (object) right));
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return (T) (object) (Math.Max((double) (object) left, (double) (object) right));
+            }
+
+            ThrowInvalidType();
+            return default;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool Larger(T left, T right)
         {
-            throw new NotImplementedException();
+            if (typeof(T) == typeof(byte))
+            {
+                return ((byte) (object) left > (byte) (object) right);
+            }
+
+            if (typeof(T) == typeof(sbyte))
+            {
+                return ((sbyte) (object) left > (sbyte) (object) right);
+            }
+
+            if (typeof(T) == typeof(ushort))
+            {
+                return ((ushort) (object) left > (ushort) (object) right);
+            }
+
+            if (typeof(T) == typeof(short))
+            {
+                return ((short) (object) left > (short) (object) right);
+            }
+
+            if (typeof(T) == typeof(uint))
+            {
+                return ((uint) (object) left > (uint) (object) right);
+            }
+
+            if (typeof(T) == typeof(int))
+            {
+                return ((int) (object) left > (int) (object) right);
+            }
+
+            if (typeof(T) == typeof(ulong))
+            {
+                return ((ulong) (object) left > (ulong) (object) right);
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                return ((long) (object) left > (long) (object) right);
+            }
+
+            if (typeof(T) == typeof(Half))
+            {
+                return ((Half) (object) left > (Half) (object) right);
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return ((float) (object) left > (float) (object) right);
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return ((double) (object) left > (double) (object) right);
+            }
+
+            ThrowInvalidType();
+            return default;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Clamp(T value, T min, T max)
         {
-            throw new NotImplementedException();
+            return Min(Max(value, min), max);
         }
         
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Negate(T value)
         {
-            throw new NotImplementedException();
+            if (typeof(T) == typeof(sbyte))
+            {
+                return (T) (object) (-(sbyte) (object) value);
+            }
+
+            if (typeof(T) == typeof(short))
+            {
+                return (T) (object) (-(short) (object) value);
+            }
+
+            if (typeof(T) == typeof(int))
+            {
+                return (T) (object) (-(int) (object) value);
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                return (T) (object) (-(long) (object) value);
+            }
+
+            if (typeof(T) == typeof(Half))
+            {
+                return (T) (object) (-(Half) (object) value);
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return (T) (object) (-(float) (object) value);
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return (T) (object) (-(double) (object) value);
+            }
+
+            ThrowInvalidType();
+            return default;
         }
 
         public static bool Equal(T left, T right)
         {
-            throw new NotImplementedException();
+            if (typeof(T) == typeof(byte))
+            {
+                return ((byte) (object) left == (byte) (object) right);
+            }
+
+            if (typeof(T) == typeof(sbyte))
+            {
+                return ((sbyte) (object) left == (sbyte) (object) right);
+            }
+
+            if (typeof(T) == typeof(ushort))
+            {
+                return ((ushort) (object) left == (ushort) (object) right);
+            }
+
+            if (typeof(T) == typeof(short))
+            {
+                return ((short) (object) left == (short) (object) right);
+            }
+
+            if (typeof(T) == typeof(uint))
+            {
+                return ((uint) (object) left == (uint) (object) right);
+            }
+
+            if (typeof(T) == typeof(int))
+            {
+                return ((int) (object) left == (int) (object) right);
+            }
+
+            if (typeof(T) == typeof(ulong))
+            {
+                return ((ulong) (object) left == (ulong) (object) right);
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                return ((long) (object) left == (long) (object) right);
+            }
+
+            if (typeof(T) == typeof(Half))
+            {
+                return ((Half) (object) left == (Half) (object) right);
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return ((float) (object) left == (float) (object) right);
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return ((double) (object) left == (double) (object) right);
+            }
+
+            ThrowInvalidType();
+            return default;
         }
     }
 }
