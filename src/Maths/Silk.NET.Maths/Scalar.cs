@@ -1,4 +1,4 @@
-// This file is part of Silk.NET.
+﻿// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -11,6 +11,18 @@ namespace Silk.NET.Maths
     internal static class Scalar<T>
         where T : unmanaged
     {
+        /* Note: The following patterns are used throughout the code here and are described here
+        *
+        * PATTERN:
+        *    if (typeof(T) == typeof(int)) { ... }
+        *    else if (typeof(T) == typeof(float)) { ... }
+         *   ...
+        * EXPLANATION:
+        *    At runtime, each instantiation of Scalar<T> will be type-specific, and each of these typeof blocks will be eliminated,
+        *    as typeof(T) is a (JIT) compile-time constant for each instantiation. This design was chosen to eliminate any overhead from
+        *    delegates and other patterns.
+        */
+        
         public static T One
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
