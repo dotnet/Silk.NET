@@ -8,8 +8,8 @@ using System.Runtime.CompilerServices;
 
 namespace Silk.NET.Maths
 {
-    internal static class Scalar<T>
-        IFormattable where T : unmanaged, IFormattable
+    internal static class Scalar<T> 
+        where T : unmanaged, IFormattable
     {
         /* Note: The following patterns are used throughout the code here and are described here
         *
@@ -164,8 +164,13 @@ namespace Silk.NET.Maths
         {
             throw new NotSupportedException("Half not supported by the underlying type");
         }
+
+        internal static void ThrowIndexOutOfRange()
+        {
+            throw new IndexOutOfRangeException();
+        }
         
-        internal static void ThrowVectorTooSmall()
+        internal static void ThrowVectorTTooSmall()
         {
             throw new NotSupportedException("Vector<T> too small too fit");
         }
