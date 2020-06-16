@@ -143,6 +143,11 @@ namespace Silk.NET.Maths
                 ThrowInvalidType();
         }
 
+        internal static void ThrowHalfNotSupported()
+        {
+            throw new NotSupportedException("Half not supported by the underlying type");
+        }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T SquareRoot(T value)
         {

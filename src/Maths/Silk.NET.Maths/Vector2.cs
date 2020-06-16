@@ -449,10 +449,10 @@ namespace Silk.NET.Maths
                 return (Vector64<T>)(object)Vector64.Create((int)(object)X, (int)(object)Y);
             }
 
-            /*if (typeof(T) == typeof(Half))
+            if (typeof(T) == typeof(Half))
             {
-                return (Vector64<T>)(object)Vector64.Create((Half)(object)X, (Half)(object)Y, 0, 0);
-            }*/
+                Scalar<T>.ThrowHalfNotSupported();
+            }
 
             if (typeof(T) == typeof(float))
             {
@@ -505,10 +505,10 @@ namespace Silk.NET.Maths
                 return (Vector128<T>)(object)Vector128.Create((long)(object)X, (long)(object)Y);
             }
 
-            /*if (typeof(T) == typeof(Half))
+            if (typeof(T) == typeof(Half))
             {
-                retrn (Vector128<T>)(object)Vector128.Create((Half)(object)X, (Half)(object)Y, 0, 0, 0, 0, 0, 0);
-            }*/
+                Scalar<T>.ThrowHalfNotSupported();
+            }
 
             if (typeof(T) == typeof(float))
             {
@@ -566,10 +566,10 @@ namespace Silk.NET.Maths
                 return (Vector256<T>)(object)Vector256.Create((long)(object)X, (long)(object)Y, 0, 0);
             }
 
-            /*if (typeof(T) == typeof(Half))
+            if (typeof(T) == typeof(Half))
             {
-                retrn (Vector256<T>)(object)Vector256.Create((Half)(object)X, (Half)(object)Y, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-            }*/
+                Scalar<T>.ThrowHalfNotSupported();
+            }
 
             if (typeof(T) == typeof(float))
             {
