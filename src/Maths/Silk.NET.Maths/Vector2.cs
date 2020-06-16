@@ -56,19 +56,47 @@ namespace Silk.NET.Maths
 
         public T this[int index]
         {
-            get => Unsafe.Add(ref X, index);
-            set => Unsafe.Add(ref X, index) = value;
+            readonly get
+            {
+                if (index == 0)
+                {
+                    return X;
+                }
+
+                if (index == 1)
+                {
+                    return Y;
+                }
+
+                Scalar<T>.ThrowIndexOutOfRange();
+                return default;
+            }
+            set
+            {
+                if (index == 0)
+                {
+                    X = value;
+                }
+                else if (index == 1)
+                {
+                    Y = value;
+                }
+                else
+                {
+                    Scalar<T>.ThrowIndexOutOfRange();
+                }
+            }
         }
 
-        public T Length => Scalar<T>.SquareRoot(LengthSquared);
+        public readonly T Length => Scalar<T>.SquareRoot(LengthSquared);
 
-        public T LengthSquared => Dot(this, this);
+        public readonly T LengthSquared => Dot(this, this);
 
-        public Vector2<T> PerpendicularRight => new Vector2<T>(Y, Scalar<T>.Negate(X));
+        public readonly Vector2<T> PerpendicularRight => new Vector2<T>(Y, Scalar<T>.Negate(X));
 
-        public Vector2<T> PerpendicularLeft => new Vector2<T>(Scalar<T>.Negate(Y), X);
+        public readonly Vector2<T> PerpendicularLeft => new Vector2<T>(Scalar<T>.Negate(Y), X);
 
-        public Vector2<T> Normalized()
+        public readonly Vector2<T> Normalized()
         {
             return Normalize(this);
         }
@@ -392,11 +420,11 @@ namespace Silk.NET.Maths
             return new Vector2<T>(values.X, values.Y);
         }
 
-        public override string ToString() => ToString("G");
+        public override readonly string ToString() => ToString("G");
 
-        public string ToString(string format) => ToString(format, CultureInfo.CurrentCulture);
+        public readonly string ToString(string format) => ToString(format, CultureInfo.CurrentCulture);
 
-        public string ToString(string format, IFormatProvider formatProvider)
+        public readonly string ToString(string format, IFormatProvider formatProvider)
         {
             var sb = new StringBuilder();
             string separator = NumberFormatInfo.GetInstance(formatProvider).NumberGroupSeparator;
@@ -409,7 +437,7 @@ namespace Silk.NET.Maths
             return sb.ToString();
         }
 
-        public override int GetHashCode()
+        public override readonly int GetHashCode()
         {
 #if NETSTANDARD2_1
             return HashCode.Combine(X, Y);
@@ -418,18 +446,18 @@ namespace Silk.NET.Maths
 #endif
         }
 
-        public override bool Equals(object obj) => obj is Vector2<T> vec && Equals(vec);
+        public override readonly bool Equals(object obj) => obj is Vector2<T> vec && Equals(vec);
 
-        public bool Equals(Vector2<T> other) => Scalar<T>.Equal(X, other.X) && Scalar<T>.Equal(Y, other.Y);
+        public readonly bool Equals(Vector2<T> other) => Scalar<T>.Equal(X, other.X) && Scalar<T>.Equal(Y, other.Y);
 
-        public void Deconstruct(out T x, out T y)
+        public readonly void Deconstruct(out T x, out T y)
         {
             x = X;
             y = Y;
         }
 
 #if INTRINSICS 
-        public Vector64<T> AsVector64()
+        public readonly Vector64<T> AsVector64()
         {
             if (typeof(T) == typeof(byte))
             {
@@ -475,7 +503,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        public Vector128<T> AsVector128()
+        public readonly Vector128<T> AsVector128()
         {
             if (typeof(T) == typeof(byte))
             {
@@ -536,7 +564,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        public Vector256<T> AsVector256()
+        public readonly Vector256<T> AsVector256()
         {
             if (typeof(T) == typeof(byte))
             {
@@ -599,16 +627,16 @@ namespace Silk.NET.Maths
 #endif
 
 #if BTEC_INTRINSICS
-        public unsafe Vector<T> AsVector()
-        {
+        public readonly unsafe Vector<T> AsVector()
+        { 
             if (Vector<T>.Count >= 2)
             {
-                Vector<T> vec = new Vector<T>();
-                Unsafe.Copy(&vec, ref X);
+                Span<T> span = stackalloc T[] {X, Y};
+                var vec = new Vector<T>(span);
                 return vec;
             }
 
-            Scalar<T>.ThrowVectorTooSmall();
+            Scalar<T>.ThrowVectorTTooSmall();
             return default; // not reached
         }
 #endif
