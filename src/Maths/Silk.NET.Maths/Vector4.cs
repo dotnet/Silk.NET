@@ -16,7 +16,7 @@ using System.Runtime.Intrinsics;
 namespace Silk.NET.Maths
 {
     [Serializable]
-    public struct Vector4<T> : IEquatable<Vector4<T>>, IFormattable where T : unmanaged, IFormattable
+    public readonly struct Vector4<T> : IEquatable<Vector4<T>>, IFormattable where T : unmanaged, IFormattable
     {
         public static Vector4<T> UnitX => new Vector4<T>(Scalar<T>.One, default, default, default);
         public static Vector4<T> UnitY => new Vector4<T>(default, Scalar<T>.One, default, default);
@@ -27,10 +27,11 @@ namespace Silk.NET.Maths
         public static Vector4<T> PositiveInfinity => new Vector4<T>(Scalar<T>.PositiveInfinity);
         public static Vector4<T> NegativeInfinity => new Vector4<T>(Scalar<T>.NegativeInfinity);
         public static unsafe int SizeInBytes => sizeof(Vector4<T>);
-        public T X;
-        public T Y;
-        public T Z;
-        public T W;
+        
+        public readonly T X;
+        public readonly T Y;
+        public readonly T Z;
+        public readonly T W;
 
         public Vector4(T value) : this(value, value, value, value)
         { }
@@ -57,10 +58,18 @@ namespace Silk.NET.Maths
         {
             this = xyzw;
         }
+        
+        public Vector4<T> WithX(T x) => new Vector4<T>(x, Y, Z, W);
+        
+        public Vector4<T> WithY(T y) => new Vector4<T>(X, y, Z, W);
+        
+        public Vector4<T> WithZ(T z) => new Vector4<T>(X, Y, z, W);
+        
+        public Vector4<T> WithW(T w) => new Vector4<T>(X, Y, Y, w);
 
         public T this[int index]
         {
-            readonly get
+            get
             {
                 if (index == 0)
                     return X;
@@ -77,19 +86,6 @@ namespace Silk.NET.Maths
                 Scalar<T>.ThrowIndexOutOfRange();
                 return default;
             }
-            set
-            {
-                if (index == 0)
-                    X = value;
-                else if (index == 1)
-                    Y = value;
-                else if (index == 2)
-                    Z = value;
-                else if (index == 3)
-                    W = value;
-                else
-                    Scalar<T>.ThrowIndexOutOfRange();
-            }
         }
 
         public T Length => Scalar<T>.SquareRoot(LengthSquared);
@@ -100,12 +96,7 @@ namespace Silk.NET.Maths
         {
             return Normalize(this);
         }
-
-        public void Normalize()
-        {
-            this = Normalized();
-        }
-
+        
         public static Vector4<T> Add(Vector4<T> a, Vector4<T> b)
         {
             return new Vector4<T>
@@ -552,7 +543,7 @@ namespace Silk.NET.Maths
             w = W;
         }
 #if INTRINSICS 
-        public readonly Vector64<T> AsVector64()
+        public Vector64<T> AsVector64()
         {
             if (typeof(T) == typeof(byte))
             {
@@ -586,7 +577,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        public readonly Vector128<T> AsVector128()
+        public Vector128<T> AsVector128()
         {
             if (typeof(T) == typeof(byte))
             {
@@ -632,7 +623,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        public readonly Vector256<T> AsVector256()
+        public Vector256<T> AsVector256()
         {
             if (typeof(T) == typeof(byte))
             {
@@ -695,7 +686,7 @@ namespace Silk.NET.Maths
 #endif
 
 #if BTEC_INTRINSICS
-        public readonly unsafe Vector<T> AsVector()
+        public unsafe Vector<T> AsVector()
         { 
             if (Vector<T>.Count >= 4)
             {
