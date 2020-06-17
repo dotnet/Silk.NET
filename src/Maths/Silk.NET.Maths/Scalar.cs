@@ -160,9 +160,9 @@ namespace Silk.NET.Maths
                 ThrowInvalidType();
         }
 
-        internal static void ThrowHalfNotSupported()
+        internal static void ThrowUnderlyingNotSupporting()
         {
-            throw new NotSupportedException("Half not supported by the underlying type");
+            throw new NotSupportedException($"{typeof(T).FullName} not supported by the underlying type");
         }
 
         internal static void ThrowIndexOutOfRange()
