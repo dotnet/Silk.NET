@@ -85,11 +85,11 @@ namespace Silk.NET.Maths
             }
         }
 
-        public T Length => Scalar<T>.SquareRoot(LengthSquared);
+        public readonly T Length => Scalar<T>.SquareRoot(LengthSquared);
 
-        public T LengthSquared => Dot(this, this);
+        public readonly T LengthSquared => Dot(this, this);
 
-        public Vector3<T> Normalized() => Normalize(this);
+        public readonly Vector3<T> Normalized() => Normalize(this);
 
         public void Normalize()
         {
@@ -454,11 +454,11 @@ namespace Silk.NET.Maths
             return new Vector3<T>(values.X, values.Y, values.Z);
         }
 
-        public override string ToString() => ToString("G");
+        public override readonly string ToString() => ToString("G");
 
-        public string ToString(string format) => ToString(format, CultureInfo.CurrentCulture);
+        public readonly string ToString(string format) => ToString(format, CultureInfo.CurrentCulture);
         
-        public string ToString(string format, IFormatProvider formatProvider)
+        public readonly string ToString(string format, IFormatProvider formatProvider)
         {
             var sb = new StringBuilder();
             string separator = NumberFormatInfo.GetInstance(formatProvider).NumberGroupSeparator;
@@ -474,7 +474,7 @@ namespace Silk.NET.Maths
             return sb.ToString();
         }
 
-        public override int GetHashCode()
+        public override readonly int GetHashCode()
         {
             #if NETSTANDARD2_1
             return HashCode.Combine(X, Y, Z);
@@ -483,16 +483,16 @@ namespace Silk.NET.Maths
             #endif
         }
 
-        public override bool Equals(object obj) => obj is Vector3<T> vec && Equals(vec);
+        public override readonly bool Equals(object obj) => obj is Vector3<T> vec && Equals(vec);
 
-        public bool Equals(Vector3<T> other)
+        public readonly bool Equals(Vector3<T> other)
         {
             return Scalar<T>.Equal(X, other.X)
                    && Scalar<T>.Equal(Y, other.Y)
                    && Scalar<T>.Equal(Z, other.Z);
         }
 
-        public void Deconstruct(out T x, out T y, out T z)
+        public readonly void Deconstruct(out T x, out T y, out T z)
         {
             x = X;
             y = Y;
