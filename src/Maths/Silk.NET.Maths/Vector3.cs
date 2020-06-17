@@ -291,18 +291,18 @@ namespace Silk.NET.Maths
             result = BaryCentric(a, b, c, u, v);
         }
         
-        public static Vector3<T> Transform(Vector3<T> norm, Matrix3X3<T> mat)
+        public static Vector3<T> Transform(Vector3<T> vec, Matrix3X3<T> mat)
         {
             return new Vector3<T>(
-                Scalar<T>.Add(Scalar<T>.Multiply(norm.X, mat.M11), Scalar<T>.Add(Scalar<T>.Multiply(norm.Y, mat.M21), Scalar<T>.Multiply(norm.Z, mat.M31))),
-                Scalar<T>.Add(Scalar<T>.Multiply(norm.X, mat.M12), Scalar<T>.Add(Scalar<T>.Multiply(norm.Y, mat.M22), Scalar<T>.Multiply(norm.Z, mat.M32))),
-                Scalar<T>.Add(Scalar<T>.Multiply(norm.X, mat.M13), Scalar<T>.Add(Scalar<T>.Multiply(norm.Y, mat.M23), Scalar<T>.Multiply(norm.Z, mat.M33))));
+                Scalar<T>.Add(Scalar<T>.Multiply(vec.X, mat.M11), Scalar<T>.Add(Scalar<T>.Multiply(vec.Y, mat.M21), Scalar<T>.Multiply(vec.Z, mat.M31))),
+                Scalar<T>.Add(Scalar<T>.Multiply(vec.X, mat.M12), Scalar<T>.Add(Scalar<T>.Multiply(vec.Y, mat.M22), Scalar<T>.Multiply(vec.Z, mat.M32))),
+                Scalar<T>.Add(Scalar<T>.Multiply(vec.X, mat.M13), Scalar<T>.Add(Scalar<T>.Multiply(vec.Y, mat.M23), Scalar<T>.Multiply(vec.Z, mat.M33))));
         }
         
         
-        public static void Transform(ref Vector3<T> norm, ref Matrix3X3<T> mat, out Vector3<T> result)
+        public static void Transform(ref Vector3<T> vec, ref Matrix3X3<T> mat, out Vector3<T> result)
         {
-            result = Transform(norm, mat);
+            result = Transform(vec, mat);
         }
 
         public static Vector3<T> Transform(Vector3<T> vec, Quaternion<T> quat)
@@ -358,14 +358,14 @@ namespace Silk.NET.Maths
             result = Transform(vec, quat);
         }
 
-        public static Vector3<T> Transform(Matrix3X3<T> mat, Vector3<T> vec)
+        public static Vector3<T> Negate(Vector3<T> vec)
         {
-            return Transform(vec, mat);
+            return new Vector3<T>(Scalar<T>.Negate(vec.X), Scalar<T>.Negate(vec.Y), Scalar<T>.Negate(vec.Z));
         }
 
-        public static void Transform(ref Matrix3X3<T> mat, ref Vector3<T> vec, out Vector3<T> result)
+        public static void Negate(ref Vector3<T> vec, out Vector3<T> result)
         {
-            result = Transform(mat, vec);
+            result = Negate(vec);
         }
 
         public static T CalculateAngle(Vector3<T> first, Vector3<T> second)
@@ -391,7 +391,7 @@ namespace Silk.NET.Maths
 
         public static Vector3<T> operator -(Vector3<T> vec)
         {
-            return new Vector3<T>(Scalar<T>.Negate(vec.X), Scalar<T>.Negate(vec.Y), Scalar<T>.Negate(vec.Z));
+            return Negate(vec);
         }
 
         public static Vector3<T> operator *(Vector3<T> vec, T scale)

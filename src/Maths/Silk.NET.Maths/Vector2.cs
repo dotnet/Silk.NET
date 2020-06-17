@@ -342,16 +342,6 @@ namespace Silk.NET.Maths
             result = Transform(vec, quat);
         }
 
-        public static Vector2<T> Transform(Matrix2X2<T> mat, Vector2<T> vec)
-        {
-            return Transform(vec, mat);
-        }
-
-        public static void Transform(ref Matrix2X2<T> mat, ref Vector2<T> vec, out Vector2<T> result)
-        {
-            result = Transform(mat, vec);
-        }
-
         public static Vector2<T> Negate(Vector2<T> vec)
         {
             return new Vector2<T>(Scalar<T>.Negate(vec.X), Scalar<T>.Negate(vec.Y));
