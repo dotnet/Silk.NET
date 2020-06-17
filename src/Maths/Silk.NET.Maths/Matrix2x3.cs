@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Globalization;
 
 namespace Silk.NET.Maths
 {
@@ -218,7 +219,12 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public override string ToString()
+
+        public override string ToString() => ToString("G");
+
+        public string ToString(string format) => ToString(format, CultureInfo.CurrentCulture);
+        
+        public string ToString(string format, IFormatProvider formatProvider)
         {
             throw new NotImplementedException();
         }

@@ -4,11 +4,12 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Globalization;
 
 namespace Silk.NET.Maths
 {
     [Serializable]
-    public struct Quaternion<T> : IEquatable<Quaternion<T>> where T:unmanaged
+    public struct Quaternion<T> : IEquatable<Quaternion<T>>, IFormattable where T : unmanaged, IFormattable
     {
         public static readonly Quaternion<T> Identity;
         public Vector3<T> Xyz;
@@ -246,7 +247,12 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public override string ToString()
+
+        public override string ToString() => ToString("G");
+
+        public string ToString(string format) => ToString(format, CultureInfo.CurrentCulture);
+        
+        public string ToString(string format, IFormatProvider formatProvider)
         {
             throw new NotImplementedException();
         }
