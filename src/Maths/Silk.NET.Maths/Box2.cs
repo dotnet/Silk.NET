@@ -11,8 +11,8 @@ namespace Silk.NET.Maths
 {
     public struct Box2<T> : IEquatable<Box2<T>>, IFormattable where T : unmanaged, IFormattable
     {
-        private Vector2<T> Min;
-        private Vector2<T> Max;
+        public Vector2<T> Min;
+        public Vector2<T> Max;
 
         public Box2(Vector2<T> min, Vector2<T> max)
         {
