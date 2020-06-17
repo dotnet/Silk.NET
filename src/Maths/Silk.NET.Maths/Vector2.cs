@@ -150,10 +150,22 @@ namespace Silk.NET.Maths
         {
             return new Vector2<T>(Scalar<T>.Divide(vector.X, scale), Scalar<T>.Divide(vector.Y, scale));
         }
-
+        
+        
         public static void Divide(ref Vector2<T> vector, T scale, out Vector2<T> result)
         {
             result = Divide(vector, scale);
+        }
+        
+        public static Vector2<T> Divide(T value, Vector2<T> scale)
+        {
+            return new Vector2<T>(Scalar<T>.Divide(value, scale.X), Scalar<T>.Divide(value, scale.Y));
+        }
+        
+        
+        public static void Divide(T value, ref Vector2<T> scale, out Vector2<T> result)
+        {
+            result = Divide(value, scale);
         }
 
         public static Vector2<T> Divide(Vector2<T> vector, Vector2<T> scale)
@@ -384,7 +396,7 @@ namespace Silk.NET.Maths
 
         public static Vector2<T> operator *(Matrix2X2<T> mat, Vector2<T> vec)
         {
-            return Transform(mat, vec);
+            return Transform(vec, mat);
         }
 
         public static Vector2<T> operator *(Quaternion<T> quat, Vector2<T> vec)
@@ -395,6 +407,11 @@ namespace Silk.NET.Maths
         public static Vector2<T> operator /(Vector2<T> vec, T scale)
         {
             return Divide(vec, scale);
+        }
+        
+        public static Vector2<T> operator /(T value, Vector2<T> scale)
+        {
+            return Divide(value, scale);
         }
 
         public static bool operator ==(Vector2<T> left, Vector2<T> right)
