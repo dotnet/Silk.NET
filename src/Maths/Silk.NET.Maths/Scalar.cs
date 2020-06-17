@@ -143,7 +143,7 @@ namespace Silk.NET.Maths
         
         internal static void ThrowInvalidType()
         {
-            throw new NotSupportedException(); // TODO: Document what went wrong
+            throw new NotSupportedException("This operation isn't supported for the current type.");
         }
 
         internal static void ThrowForUnsupportedBaseType()
@@ -175,7 +175,7 @@ namespace Silk.NET.Maths
         
         internal static void ThrowVectorTTooSmall()
         {
-            throw new NotSupportedException("Vector<T> too small too fit");
+            throw new NotSupportedException("Vector<T> too small to fit");
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
