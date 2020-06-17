@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -84,6 +84,71 @@ namespace Silk.NET.Maths
                 if (typeof(T) == typeof(double))
                 {
                     return (T)(object)(double)1;
+                }
+
+                ThrowInvalidType();
+                return default;
+            }
+        }
+        
+        public static T Two
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get
+            {
+                if (typeof(T) == typeof(byte))
+                {
+                    return (T)(object)(byte)2;
+                }
+
+                if (typeof(T) == typeof(sbyte))
+                {
+                    return (T)(object)(sbyte)2;
+                }
+
+                if (typeof(T) == typeof(ushort))
+                {
+                    return (T)(object)(ushort)2;
+                }
+
+                if (typeof(T) == typeof(short))
+                {
+                    return (T)(object)(short)2;
+                }
+
+                if (typeof(T) == typeof(uint))
+                {
+                    return (T)(object)(uint)2;
+                }
+
+                if (typeof(T) == typeof(int))
+                {
+                    return (T)(object)2;
+                }
+
+                if (typeof(T) == typeof(ulong))
+                {
+                    return (T)(object)(ulong)2;
+                }
+
+                if (typeof(T) == typeof(long))
+                {
+                    return (T)(object)(long)2;
+                }
+
+                if (typeof(T) == typeof(Half))
+                {
+                    return (T)(object)(Half)2;
+                }
+
+                if (typeof(T) == typeof(float))
+                {
+                    return (T)(object)(float)2;
+                }
+
+                if (typeof(T) == typeof(double))
+                {
+                    return (T)(object)(double)2;
                 }
 
                 ThrowInvalidType();
