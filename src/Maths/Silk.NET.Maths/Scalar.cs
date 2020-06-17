@@ -1,4 +1,4 @@
-// This file is part of Silk.NET.
+﻿// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -801,6 +801,131 @@ namespace Silk.NET.Maths
             ThrowInvalidType();
             return default;
         }
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool LargerEquals(T left, T right)
+        {
+            if (typeof(T) == typeof(byte))
+            {
+                return ((byte) (object) left >= (byte) (object) right);
+            }
+
+            if (typeof(T) == typeof(sbyte))
+            {
+                return ((sbyte) (object) left >= (sbyte) (object) right);
+            }
+
+            if (typeof(T) == typeof(ushort))
+            {
+                return ((ushort) (object) left >= (ushort) (object) right);
+            }
+
+            if (typeof(T) == typeof(short))
+            {
+                return ((short) (object) left >= (short) (object) right);
+            }
+
+            if (typeof(T) == typeof(uint))
+            {
+                return ((uint) (object) left >= (uint) (object) right);
+            }
+
+            if (typeof(T) == typeof(int))
+            {
+                return ((int) (object) left >= (int) (object) right);
+            }
+
+            if (typeof(T) == typeof(ulong))
+            {
+                return ((ulong) (object) left >= (ulong) (object) right);
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                return ((long) (object) left >= (long) (object) right);
+            }
+
+            if (typeof(T) == typeof(Half))
+            {
+                return ((Half) (object) left >= (Half) (object) right);
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return ((float) (object) left >= (float) (object) right);
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return ((double) (object) left >= (double) (object) right);
+            }
+
+            ThrowInvalidType();
+            return default;
+        }
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool SmallerEquals(T left, T right)
+        {
+            if (typeof(T) == typeof(byte))
+            {
+                return ((byte) (object) left <= (byte) (object) right);
+            }
+
+            if (typeof(T) == typeof(sbyte))
+            {
+                return ((sbyte) (object) left <= (sbyte) (object) right);
+            }
+
+            if (typeof(T) == typeof(ushort))
+            {
+                return ((ushort) (object) left <= (ushort) (object) right);
+            }
+
+            if (typeof(T) == typeof(short))
+            {
+                return ((short) (object) left <= (short) (object) right);
+            }
+
+            if (typeof(T) == typeof(uint))
+            {
+                return ((uint) (object) left <= (uint) (object) right);
+            }
+
+            if (typeof(T) == typeof(int))
+            {
+                return ((int) (object) left <= (int) (object) right);
+            }
+
+            if (typeof(T) == typeof(ulong))
+            {
+                return ((ulong) (object) left <= (ulong) (object) right);
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                return ((long) (object) left <= (long) (object) right);
+            }
+
+            if (typeof(T) == typeof(Half))
+            {
+                return ((Half) (object) left <= (Half) (object) right);
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return ((float) (object) left <= (float) (object) right);
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return ((double) (object) left <= (double) (object) right);
+            }
+
+            ThrowInvalidType();
+            return default;
+        }
+
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Clamp(T value, T min, T max)
         {
