@@ -4,17 +4,30 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Globalization;
 
 namespace Silk.NET.Maths
 {
     [Serializable]
-    public struct Matrix3X3<T> : IEquatable<Matrix3X3<T>> where T:unmanaged
+    public struct Matrix3X3<T> : IEquatable<Matrix3X3<T>>, IFormattable where T : unmanaged, IFormattable
     {
         public static readonly Matrix3X3<T> Identity;
         public static readonly Matrix3X3<T> Zero;
         public Vector3<T> Row0;
         public Vector3<T> Row1;
         public Vector3<T> Row2;
+        
+        public T M11 => Row0.X;
+        public T M12 => Row0.Y;
+        public T M13 => Row0.Z;
+
+        public T M21 => Row1.X;
+        public T M22 => Row1.Y;
+        public T M23 => Row1.Z;
+        
+        public T M31 => Row2.X;
+        public T M32 => Row2.Y;
+        public T M33 => Row2.Z;
 
         public Matrix3X3(Vector3<T> row0, Vector3<T> row1, Vector3<T> row2)
         {
@@ -244,7 +257,12 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public override string ToString()
+
+        public override string ToString() => ToString("G");
+
+        public string ToString(string format) => ToString(format, CultureInfo.CurrentCulture);
+        
+        public string ToString(string format, IFormatProvider formatProvider)
         {
             throw new NotImplementedException();
         }

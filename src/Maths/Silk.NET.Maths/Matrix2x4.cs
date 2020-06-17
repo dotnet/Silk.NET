@@ -4,15 +4,26 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Globalization;
 
 namespace Silk.NET.Maths
 {
-    public struct Matrix2X4<T> : IEquatable<Matrix2X4<T>> where T:unmanaged
+    public struct Matrix2X4<T> : IEquatable<Matrix2X4<T>>, IFormattable where T : unmanaged, IFormattable
     {
         public static readonly Matrix2X4<T> Zero;
         public Vector4<T> Row0;
         public Vector4<T> Row1;
 
+        public T M11 => Row0.X;
+        public T M12 => Row0.Y;
+        public T M13 => Row0.Z;
+        public T M14 => Row0.W;
+
+        public T M21 => Row1.X;
+        public T M22 => Row1.Y;
+        public T M23 => Row1.Z;
+        public T M24 => Row1.W;
+        
         public Matrix2X4(Vector4<T> row0, Vector4<T> row1)
         {
             throw new NotImplementedException();
@@ -226,7 +237,12 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public override string ToString()
+
+        public override string ToString() => ToString("G");
+
+        public string ToString(string format) => ToString(format, CultureInfo.CurrentCulture);
+        
+        public string ToString(string format, IFormatProvider formatProvider)
         {
             throw new NotImplementedException();
         }
