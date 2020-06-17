@@ -780,5 +780,66 @@ namespace Silk.NET.Maths
             ThrowInvalidType();
             return default;
         }
+
+        public static T Acos(T value)
+        {
+            if (typeof(T) == typeof(byte))
+            {
+                return (T) (object) (MathF.Acos((byte) (object) value));
+            }
+
+            if (typeof(T) == typeof(sbyte))
+            {
+                return (T) (object) (MathF.Acos((sbyte) (object) value));
+            }
+
+            if (typeof(T) == typeof(ushort))
+            {
+                return (T) (object) (MathF.Acos((ushort) (object) value));
+            }
+
+            if (typeof(T) == typeof(short))
+            {
+                return (T) (object) (MathF.Acos((short) (object) value));
+            }
+
+            if (typeof(T) == typeof(uint))
+            {
+                return (T) (object) (MathF.Acos((uint) (object) value));
+            }
+
+            if (typeof(T) == typeof(int))
+            {
+                return (T) (object) (MathF.Acos((int) (object) value));
+            }
+
+            if (typeof(T) == typeof(ulong))
+            {
+                return (T) (object) (Math.Acos((ulong) (object) value));
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                return (T) (object) (Math.Acos((long) (object) value));
+            }
+
+            if (typeof(T) == typeof(Half))
+            {
+                return (T) (object) (MathF.Acos((Half) (object) value));
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return (T) (object) (MathF.Acos((float) (object) value));
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return (T) (object) (Math.Acos((double) (object) value));
+            }
+
+            ThrowInvalidType();
+            return default;
+        }
     }
 }
