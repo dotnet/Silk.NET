@@ -29,6 +29,10 @@ namespace Silk.NET.Maths
 
         public Vector2<T> Center => Min + Max / Scalar<T>.Two;
 
+        public Box2<T> WithMin(Vector2<T> min) => new Box2<T>(min, Max);
+        
+        public Box2<T> WithMax(Vector2<T> max) => new Box2<T>(Min, max);
+
         public bool Contains(Vector2<T> point, bool boundaryInclusive = false)
             => boundaryInclusive 
                 ? Scalar<T>.LargerEquals(point.X, Min.X)
