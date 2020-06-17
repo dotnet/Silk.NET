@@ -5,6 +5,9 @@
 
 using System;
 using System.Runtime.CompilerServices;
+#if NETSTANDARD2_0
+using MathF = System.Math;
+#endif
 
 namespace Silk.NET.Maths
 {
