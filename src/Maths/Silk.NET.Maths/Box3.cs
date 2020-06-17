@@ -9,10 +9,10 @@ using System.Text;
 
 namespace Silk.NET.Maths
 {
-    public struct Box3<T> : IEquatable<Box3<T>>, IFormattable where T : unmanaged, IFormattable
+    public readonly struct Box3<T> : IEquatable<Box3<T>>, IFormattable where T : unmanaged, IFormattable
     {
-        public Vector3<T> Min;
-        public Vector3<T> Max;
+        public readonly Vector3<T> Min;
+        public readonly Vector3<T> Max;
         
         public Box3(Vector3<T> min, Vector3<T> max)
         {
@@ -63,20 +63,11 @@ namespace Silk.NET.Maths
         public T DistanceToNearestEdge(Vector3<T> point)
             => Vector3<T>.ComponentMax(Vector3<T>.Zero, Vector3<T>.ComponentMax(Min - point, point - Max)).Length;
 
-        public void Translate(Vector3<T> distance)
-            => this = Translated(distance);
-
         public Box3<T> Translated(Vector3<T> distance) 
             => new Box3<T>(Min + distance, Max + distance);
 
-        public void Scale(Vector3<T> scale, Vector3<T> anchor)
-            => this = Scaled(scale, anchor);
-
         public Box3<T> Scaled(Vector3<T> scale, Vector3<T> anchor)
             => new Box3<T>(anchor + (Min - anchor) * scale, anchor + (Max - anchor) * scale);
-
-        public void Inflate(Vector3<T> point)
-            => this = Inflated(point);
 
         public Box3<T> Inflated(Vector3<T> point)
             => new Box3<T>(Vector3<T>.ComponentMin(point, Min), Vector3<T>.ComponentMin(point, Max));
