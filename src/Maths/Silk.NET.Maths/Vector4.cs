@@ -201,6 +201,22 @@ namespace Silk.NET.Maths
         {
             result = Divide(vector, scale);
         }
+        
+        public static Vector4<T> Divide(T value, Vector4<T> scale)
+        {
+            return new Vector4<T>
+            (
+                Scalar<T>.Divide(value, scale.X),
+                Scalar<T>.Divide(value, scale.Y),
+                Scalar<T>.Divide(value, scale.Z),
+                Scalar<T>.Divide(value, scale.W)
+            );
+        }
+
+        public static void Divide(T value, ref Vector4<T> scale, out Vector4<T> result)
+        {
+            result = Divide(value, scale);
+        }
 
         public static Vector4<T> ComponentMin(Vector4<T> a, Vector4<T> b)
         {
@@ -464,6 +480,11 @@ namespace Silk.NET.Maths
         public static Vector4<T> operator /(Vector4<T> vec, T scale)
         {
             return Divide(vec, scale);
+        }
+
+        public static Vector4<T> operator /(T value, Vector4<T> scale)
+        {
+            return Divide(value, scale);
         }
 
         public static bool operator ==(Vector4<T> left, Vector4<T> right)
