@@ -4,7 +4,7 @@
         <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.0' Or '$(TargetFramework)' == 'net5.0'">
             INTRINSICS;$(DefineConstants)
         </DefineConstants>
-        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.0' Or &#xD;&#xA;                                    '$(TargetFramework)' == 'net5.0' Or&#xD;&#xA;                                    '$(TargetFramework)' == 'netstandard2.1'">
+        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.0' Or '$(TargetFramework)' == 'net5.0' Or '$(TargetFramework)' == 'netstandard2.1'">
             BTEC_INTRINSICS;$(DefineConstants)
         </DefineConstants>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
