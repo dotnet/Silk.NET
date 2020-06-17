@@ -85,10 +85,7 @@ namespace Silk.NET.Maths
 
         public Vector2<T> PerpendicularLeft => new Vector2<T>(Scalar<T>.Negate(Y), X);
 
-        public Vector2<T> Normalized()
-        {
-            return Normalize(this);
-        }
+        public Vector2<T> Normalize() => Normalize(this);
 
         public static Vector2<T> Add(Vector2<T> a, Vector2<T> b)
         {

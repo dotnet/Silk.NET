@@ -84,7 +84,7 @@ namespace Silk.NET.Maths
 
         public T LengthSquared => Dot(this, this);
 
-        public Vector3<T> Normalized() => Normalize(this);
+        public Vector3<T> Normalize() => Normalize(this);
 
         public static Vector3<T> Add(Vector3<T> a, Vector3<T> b)
         {
