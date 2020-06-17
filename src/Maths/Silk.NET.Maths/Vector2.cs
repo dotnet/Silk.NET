@@ -500,7 +500,7 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(Half))
             {
-                Scalar<T>.ThrowUnderlyingNotSupporting();
+                Scalar<T>.ThrowNotSupportedByUnderlying();
             }
 
             if (typeof(T) == typeof(float))
@@ -556,7 +556,7 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(Half))
             {
-                Scalar<T>.ThrowUnderlyingNotSupporting();
+                Scalar<T>.ThrowNotSupportedByUnderlying();
             }
 
             if (typeof(T) == typeof(float))
@@ -617,7 +617,7 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(Half))
             {
-                Scalar<T>.ThrowUnderlyingNotSupporting();
+                Scalar<T>.ThrowNotSupportedByUnderlying();
             }
 
             if (typeof(T) == typeof(float))

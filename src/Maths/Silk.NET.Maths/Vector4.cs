@@ -579,7 +579,7 @@ namespace Silk.NET.Maths
                 typeof(T) == typeof(Half) ||
                 typeof(T) == typeof(float))
             {
-                Scalar<T>.ThrowUnderlyingNotSupporting();
+                Scalar<T>.ThrowNotSupportedByUnderlying();
             }
             
             Scalar<T>.ThrowInvalidType();
@@ -620,7 +620,7 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(ulong)||typeof(T) == typeof(long) || typeof(T) == typeof(Half) || typeof(T) == typeof(double))
             {
-                Scalar<T>.ThrowUnderlyingNotSupporting();
+                Scalar<T>.ThrowNotSupportedByUnderlying();
             }
 
             if (typeof(T) == typeof(float))
@@ -676,7 +676,7 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(Half))
             {
-                Scalar<T>.ThrowUnderlyingNotSupporting();
+                Scalar<T>.ThrowNotSupportedByUnderlying();
             }
 
             if (typeof(T) == typeof(float))

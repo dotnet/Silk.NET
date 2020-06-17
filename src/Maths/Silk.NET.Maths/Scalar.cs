@@ -163,7 +163,7 @@ namespace Silk.NET.Maths
                 ThrowInvalidType();
         }
 
-        internal static void ThrowUnderlyingNotSupporting()
+        internal static void ThrowNotSupportedByUnderlying()
         {
             throw new NotSupportedException($"{typeof(T).FullName} not supported by the underlying type");
         }
@@ -723,6 +723,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool Equal(T left, T right)
         {
             if (typeof(T) == typeof(byte))
@@ -783,7 +784,8 @@ namespace Silk.NET.Maths
             ThrowInvalidType();
             return default;
         }
-
+        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T Acos(T value)
         {
             if (typeof(T) == typeof(byte))
