@@ -1,4 +1,4 @@
-// This file is part of Silk.NET.
+﻿// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -154,6 +154,16 @@ namespace Silk.NET.Maths
         public static void Divide(ref Vector3<T> vector, ref Vector3<T> scale, out Vector3<T> result)
         {
             result = Divide(vector, scale);
+        }
+        
+        public static Vector3<T> Divide(T value, Vector3<T> scale)
+        {
+            return new Vector3<T>(Scalar<T>.Divide(value, scale.X), Scalar<T>.Divide(value, scale.Y), Scalar<T>.Divide(value, scale.Z));
+        }
+
+        public static void Divide(T value, ref Vector3<T> scale, out Vector3<T> result)
+        {
+            result = Divide(value, scale);
         }
 
         public static Vector3<T> ComponentMin(Vector3<T> a, Vector3<T> b)
@@ -416,7 +426,7 @@ namespace Silk.NET.Maths
 
         public static Vector3<T> operator *(Matrix3X3<T> mat, Vector3<T> vec)
         {
-            return Transform(mat, vec);
+            return Transform(vec, mat);
         }
 
         public static Vector3<T> operator *(Quaternion<T> quat, Vector3<T> vec)
@@ -437,6 +447,11 @@ namespace Silk.NET.Maths
         public static Vector3<T> operator /(Vector3<T> vec, Vector3<T> scale)
         {
             return Divide(vec, scale);
+        }
+                
+        public static Vector3<T> operator /(T value, Vector3<T> scale)
+        {
+            return Divide(value, scale);
         }
 
         public static bool operator ==(Vector3<T> left, Vector3<T> right)
