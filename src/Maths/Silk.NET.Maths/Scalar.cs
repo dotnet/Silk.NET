@@ -172,7 +172,7 @@ namespace Silk.NET.Maths
         
         internal static void ThrowVectorTTooSmall()
         {
-            throw new NotSupportedException("Vector<T> too small too fit");
+            throw new NotSupportedException("Vector<T> too small to fit");
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
