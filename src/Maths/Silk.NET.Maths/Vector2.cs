@@ -27,7 +27,7 @@ namespace Silk.NET.Maths
     */
         
     [Serializable]
-    public struct Vector2<T> : IEquatable<Vector2<T>>, IFormattable where T : unmanaged, IFormattable
+    public readonly struct Vector2<T> : IEquatable<Vector2<T>>, IFormattable where T : unmanaged, IFormattable
     {
         public static Vector2<T> UnitX => new Vector2<T>(Scalar<T>.One, default);
 
@@ -42,8 +42,8 @@ namespace Silk.NET.Maths
         public static Vector2<T> NegativeInfinity => new Vector2<T>(Scalar<T>.NegativeInfinity);
 
         public static unsafe int SizeInBytes => sizeof(Vector2<T>);
-        public T X;
-        public T Y;
+        public readonly T X;
+        public readonly T Y;
 
         public Vector2(T value) : this(value, value)
         { }
@@ -54,9 +54,13 @@ namespace Silk.NET.Maths
             Y = y;
         }
 
+        public Vector2<T> WithX(T x) => new Vector2<T>(x, Y);
+        
+        public Vector2<T> WithY(T y) => new Vector2<T>(X, y);
+        
         public T this[int index]
         {
-            readonly get
+            get
             {
                 if (index == 0)
                 {
@@ -71,40 +75,17 @@ namespace Silk.NET.Maths
                 Scalar<T>.ThrowIndexOutOfRange();
                 return default;
             }
-            set
-            {
-                if (index == 0)
-                {
-                    X = value;
-                }
-                else if (index == 1)
-                {
-                    Y = value;
-                }
-                else
-                {
-                    Scalar<T>.ThrowIndexOutOfRange();
-                }
-            }
         }
 
-        public readonly T Length => Scalar<T>.SquareRoot(LengthSquared);
+        public T Length => Scalar<T>.SquareRoot(LengthSquared);
 
-        public readonly T LengthSquared => Dot(this, this);
+        public T LengthSquared => Dot(this, this);
 
-        public readonly Vector2<T> PerpendicularRight => new Vector2<T>(Y, Scalar<T>.Negate(X));
+        public Vector2<T> PerpendicularRight => new Vector2<T>(Y, Scalar<T>.Negate(X));
 
-        public readonly Vector2<T> PerpendicularLeft => new Vector2<T>(Scalar<T>.Negate(Y), X);
+        public Vector2<T> PerpendicularLeft => new Vector2<T>(Scalar<T>.Negate(Y), X);
 
-        public readonly Vector2<T> Normalized()
-        {
-            return Normalize(this);
-        }
-
-        public void Normalize()
-        {
-            this = Normalize(this);
-        }
+        public Vector2<T> Normalize() => Normalize(this);
 
         public static Vector2<T> Add(Vector2<T> a, Vector2<T> b)
         {
@@ -429,11 +410,11 @@ namespace Silk.NET.Maths
             return new Vector2<T>(values.X, values.Y);
         }
 
-        public override readonly string ToString() => ToString("G");
+        public override string ToString() => ToString("G");
 
-        public readonly string ToString(string format) => ToString(format, CultureInfo.CurrentCulture);
+        public string ToString(string format) => ToString(format, CultureInfo.CurrentCulture);
 
-        public readonly string ToString(string format, IFormatProvider formatProvider)
+        public string ToString(string format, IFormatProvider formatProvider)
         {
             var sb = new StringBuilder();
             string separator = NumberFormatInfo.GetInstance(formatProvider).NumberGroupSeparator;
@@ -446,7 +427,7 @@ namespace Silk.NET.Maths
             return sb.ToString();
         }
 
-        public override readonly int GetHashCode()
+        public override int GetHashCode()
         {
 #if NETSTANDARD2_1
             return HashCode.Combine(X, Y);
@@ -455,18 +436,18 @@ namespace Silk.NET.Maths
 #endif
         }
 
-        public override readonly bool Equals(object obj) => obj is Vector2<T> vec && Equals(vec);
+        public override bool Equals(object obj) => obj is Vector2<T> vec && Equals(vec);
 
-        public readonly bool Equals(Vector2<T> other) => Scalar<T>.Equal(X, other.X) && Scalar<T>.Equal(Y, other.Y);
+        public bool Equals(Vector2<T> other) => Scalar<T>.Equal(X, other.X) && Scalar<T>.Equal(Y, other.Y);
 
-        public readonly void Deconstruct(out T x, out T y)
+        public void Deconstruct(out T x, out T y)
         {
             x = X;
             y = Y;
         }
 
 #if INTRINSICS 
-        public readonly Vector64<T> AsVector64()
+        public Vector64<T> AsVector64()
         {
             if (typeof(T) == typeof(byte))
             {
@@ -512,7 +493,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        public readonly Vector128<T> AsVector128()
+        public Vector128<T> AsVector128()
         {
             if (typeof(T) == typeof(byte))
             {
@@ -573,7 +554,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        public readonly Vector256<T> AsVector256()
+        public Vector256<T> AsVector256()
         {
             if (typeof(T) == typeof(byte))
             {
@@ -636,7 +617,7 @@ namespace Silk.NET.Maths
 #endif
 
 #if BTEC_INTRINSICS
-        public readonly unsafe Vector<T> AsVector()
+        public unsafe Vector<T> AsVector()
         { 
             if (Vector<T>.Count >= 2)
             {
