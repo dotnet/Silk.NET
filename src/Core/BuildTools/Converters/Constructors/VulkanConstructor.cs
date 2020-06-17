@@ -17,7 +17,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
     public class VulkanConstructor : IConstructor
     {
         /// <inheritdoc />
-        public void WriteFunctions(Profile profile, IEnumerable<Function> functions, ProfileConverterOptions opts)
+        public void WriteFunctions(Profile profile, IEnumerable<Function> functions, ProfileConverterOptions opts, BindTask task)
         {
             foreach (var function in functions)
             {
@@ -38,7 +38,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             "Core",
                             new Project
                             {
-                                CategoryName = "Core", ExtensionName = "Core", IsRoot = true,
+                                IsRoot = true,
                                 Namespace = string.Empty
                             }
                         );
@@ -52,7 +52,6 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             category,
                             new Project
                             {
-                                CategoryName = category, ExtensionName = $"{opts.Prefix.ToUpper()}_{category}",
                                 IsRoot = false,
                                 Namespace = $".{category.CheckMemberName(opts.Prefix)}"
                             }
@@ -63,14 +62,14 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     if
                     (
                         !profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
-                            .Interfaces.ContainsKey(preCategory)
+                            .Classes[0].NativeApis.ContainsKey(preCategory)
                     )
                     {
                         profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
-                            .Interfaces.Add
+                            .Classes[0].NativeApis.Add
                             (
                                 preCategory,
-                                new Interface
+                                new NativeApiSet
                                 {
                                     Name =
                                         $"I{Naming.Translate(TrimName(rawCategory, opts), opts.Prefix).CheckMemberName(opts.Prefix)}"
@@ -80,14 +79,14 @@ namespace Silk.NET.BuildTools.Converters.Constructors
 
                     // add the function to the interface
                     profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
-                        .Interfaces[preCategory]
+                        .Classes[0].NativeApis[preCategory]
                         .Functions.Add(function);
                 }
             }
         }
         
         /// <inheritdoc />
-        public void WriteEnums(Profile profile, IEnumerable<Enum> enums, ProfileConverterOptions opts)
+        public void WriteEnums(Profile profile, IEnumerable<Enum> enums, ProfileConverterOptions opts, BindTask task)
         {
             if (!profile.Projects.ContainsKey("Core"))
             {
@@ -96,18 +95,18 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     "Core",
                     new Project
                     {
-                        CategoryName = "Core", ExtensionName = "Core", IsRoot = false,
+                        IsRoot = false,
                         Namespace = string.Empty
                     }
                 );
             }
 
             profile.Projects["Core"].Enums.AddRange(enums);
-            profile.TypeMaps.Add(enums.RemoveDuplicates((x, y) => x.NativeName == y.NativeName).ToDictionary(x => x.NativeName, x => x.Name));
+            task.TypeMaps.Add(enums.RemoveDuplicates((x, y) => x.NativeName == y.NativeName).ToDictionary(x => x.NativeName, x => x.Name));
         }
         
         /// <inheritdoc />
-        public void WriteStructs(Profile profile, IEnumerable<Struct> structs, ProfileConverterOptions opts)
+        public void WriteStructs(Profile profile, IEnumerable<Struct> structs, ProfileConverterOptions opts, BindTask task)
         {
             var map = new Dictionary<string, string>();
             foreach (var @struct in structs)
@@ -126,8 +125,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     (
                         "Core",
                         new Project
-                        {
-                            CategoryName = "Core", ExtensionName = "Core", IsRoot = true,
+                        {IsRoot = true,
                             Namespace = string.Empty
                         }
                     );
@@ -141,7 +139,6 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                         category,
                         new Project
                         {
-                            CategoryName = category, ExtensionName = $"{opts.Prefix.ToUpper()}_{category}",
                             IsRoot = false,
                             Namespace = $".{category.CheckMemberName(opts.Prefix)}"
                         }
@@ -156,13 +153,16 @@ namespace Silk.NET.BuildTools.Converters.Constructors
             }
             
             // register the type map
-            profile.TypeMaps.Add(map);
+            task.TypeMaps.Add(map);
         }
 
         /// <inheritdoc />
-        public void WriteConstants(Profile profile, IEnumerable<Constant> constants, ProfileConverterOptions opts)
+        public void WriteConstants(Profile profile, IEnumerable<Constant> constants, ProfileConverterOptions opts, BindTask task)
         {
-            profile.Constants.AddRange(constants.Where(x => profile.Constants.All(y => y.Name != x.Name)));
+            profile.Projects["Core"]
+                .Classes[0]
+                .Constants.AddRange
+                    (constants.Where(x => profile.Projects["Core"].Classes[0].Constants.All(y => y.Name != x.Name)));
         }
 
         /// <summary>

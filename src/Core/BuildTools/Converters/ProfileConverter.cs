@@ -18,7 +18,7 @@ namespace Silk.NET.BuildTools.Converters
     public static class ProfileConverter
     {
         public static IEnumerable<Profile> ReadProfiles
-            (IReader reader, IConstructor ctor, Stream input, ProfileConverterOptions opts)
+            (IReader reader, IConstructor ctor, Stream input, ProfileConverterOptions opts, BindTask task)
         {
             var obj = reader.Load(input);
             Console.WriteLine("Reading enums...");
@@ -38,27 +38,34 @@ namespace Silk.NET.BuildTools.Converters
 
             foreach (var profile in profiles)
             {
-                ctor.WriteEnums(profile, enums, opts);
-                ctor.WriteFunctions(profile, functions, opts);
-                ctor.WriteStructs(profile, structs, opts);
-                ctor.WriteConstants(profile, constants, opts);
-                foreach (var typeMap in profile.TypeMaps)
+                ctor.WriteEnums(profile, enums, opts, task);
+                ctor.WriteFunctions(profile, functions, opts, task);
+                ctor.WriteStructs(profile, structs, opts, task);
+                ctor.WriteConstants(profile, constants, opts, task);
+                foreach (var typeMap in task.TypeMaps)
                 {
                     TypeMapper.Map
                     (
                         typeMap,
-                        profile.Projects.Values.SelectMany(x => x.Interfaces.Values).SelectMany(x => x.Functions)
+                        profile.Projects.Values.SelectMany(x => x.Classes.SelectMany(y => y.NativeApis.Values))
+                            .SelectMany(x => x.Functions)
                     );
                 }
 
-                foreach (var typeMap in profile.TypeMaps)
+                foreach (var typeMap in task.TypeMaps)
                 {
                     TypeMapper.Map(typeMap, structs);
                 }
 
-                foreach (var constant in profile.Constants)
+                foreach (var kvp in profile.Projects)
                 {
-                    constant.Type = TypeMapper.MapOne(profile.TypeMaps, constant.Type);
+                    foreach (var @class in kvp.Value.Classes)
+                    {
+                        foreach (var constant in @class.Constants)
+                        {
+                            constant.Type = TypeMapper.MapOne(task.TypeMaps, constant.Type);
+                        }
+                    }
                 }
 
                 Console.WriteLine($"Created profile \"{profile.Name}\" version {profile.Version}");
@@ -79,7 +86,7 @@ namespace Silk.NET.BuildTools.Converters
             return File.OpenRead(path);
         }
 
-        public static void WriteProfiles(CommandLineOptions opts)
+        public static void WriteProfiles(CommandLineOptions opts, BindTask task)
         {
             if (!Directory.Exists(opts.OutputFolder))
             {
@@ -113,7 +120,7 @@ namespace Silk.NET.BuildTools.Converters
                         TypeMaps = opts.Typemap.Select(File.ReadAllText)
                             .Select(JsonConvert.DeserializeObject<Dictionary<string, string>>)
                             .ToList()
-                    }
+                    }, task
                 ))
                 {
                     using var outStream = opts.OutputFolder == null
@@ -140,9 +147,7 @@ namespace Silk.NET.BuildTools.Converters
             return new Profile
             {
                 Name = name,
-                Version = version?.ToString(2),
-                TypeMaps = opts.TypeMaps ?? new List<Dictionary<string, string>>(), // NRE
-                ClassName = opts.Prefix.ToUpper().CheckMemberName(opts.Prefix)
+                Version = version?.ToString(2)
             };
         }
     }

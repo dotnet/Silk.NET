@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common.Functions;
 
 namespace Silk.NET.BuildTools.Common
@@ -12,21 +13,19 @@ namespace Silk.NET.BuildTools.Common
     /// Represents an interface containing native functions. As of Preview 4, all
     /// interfaces are merged into the appropriate mixed-mode classes at bind time. 
     /// </summary>
-    public class Interface
+    public class NativeApiSet
     {
         /// <summary>
         /// Gets or sets the name of this interface.
         /// </summary>
         public string Name { get; set; }
+        
+        [JsonIgnore]
+        public Class NativeApiBase { get; set; }
 
         /// <summary>
         /// Gets or sets the functions contained within this interface.
         /// </summary>
         public List<Function> Functions { get; set; } = new List<Function>();
-
-        /// <summary>
-        /// Gets or sets a list of attributes to be applied to this interface.
-        /// </summary>
-        public List<Attribute> Attributes { get; set; } = new List<Attribute>();
     }
 }

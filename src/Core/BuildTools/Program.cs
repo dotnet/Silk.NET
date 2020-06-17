@@ -36,24 +36,24 @@ namespace Silk.NET.BuildTools
 
         private static void Switch(string[] args)
         {
-            switch (args[0].ToLower())
-            {
-                case "bind":
-                    Binder.Bind(GetArgs<BindOptions>(args));
-                    break;
-                case "convert":
-                    ProfileConverter.WriteProfiles(GetArgs<CommandLineOptions>(args));
-                    break;
-                case "bake":
-                    ProfileBakery.Bake(GetArgs<BakeryOptions>(args));
-                    break;
-                case "clean":
-                    Directory.GetFiles(args[1], "*.gen.cs", SearchOption.AllDirectories).ForEach(File.Delete);
-                    break;
-                default:
-                    PipelineFile(args);
-                    break;
-            }
+            //switch (args[0].ToLower())
+            //{
+            //    case "bind":
+            //        Binder.Bind(GetArgs<BindOptions>(args));
+            //        break;
+            //    case "convert":
+            //        ProfileConverter.WriteProfiles(GetArgs<CommandLineOptions>(args));
+            //        break;
+            //    case "bake":
+            //        ProfileBakery.Bake(GetArgs<BakeryOptions>(args));
+            //        break;
+            //    case "clean":
+            //        Directory.GetFiles(args[1], "*.gen.cs", SearchOption.AllDirectories).ForEach(File.Delete);
+            //        break;
+            //    default:
+            //        PipelineFile(args);
+            //        break;
+            //}
         }
 
         private static void PipelineFile(string[] args)

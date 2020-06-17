@@ -17,6 +17,8 @@ namespace Silk.NET.BuildTools
     public struct BindTask
     {
         // TODO the dishwasher
+        [JsonProperty("sources")] public string[] Sources { get; set; }
+        [JsonProperty("destination")] public string OutputFolder { get; set; }
         [JsonProperty("mode")] public ConverterMode Mode { get; set; }
         [JsonProperty("cacheKey")] public string CacheKey { get; set; }
         [JsonProperty("controlDescriptors")] public string[] Controls { get; set; } 
@@ -25,12 +27,11 @@ namespace Silk.NET.BuildTools
         [JsonProperty("extensionsNamespace")] public string ExtensionsNamespace { get; set; }
         [JsonProperty("outputMode")] public OutputMode OutputMode { get; set; }
         [JsonProperty("legacyNameContainer")] public NameContainer NameContainer { get; set; }
+        [JsonProperty("typeMaps")] public List<Dictionary<string, string>> TypeMaps { get; set; }
     }
 
     public struct ClangTaskOptions
     {
-        [JsonProperty("include")]
-        public string[] Include { get; set; }
         [JsonProperty("args")]
         public string[] ClangArgs { get; set; }
         [JsonProperty("projects")]
@@ -51,7 +52,7 @@ namespace Silk.NET.BuildTools
 
     public enum OutputMode
     {
-        DefaultFunctionPointers = 1, // for now just use super invoke
-        LegacySuperInvoke = 1
+        Default = 1, // fnptrs, for now just use super invoke
+        Legacy = 1 // super invoke
     }
 }

@@ -30,9 +30,9 @@ namespace Silk.NET.BuildTools.Bind
         {
             CliOptions = args;
             Console.WriteLine("Loading profiles...");
-            CliOptions.InputFiles.Select(File.ReadAllText)
-                .Select(JsonConvert.DeserializeObject<Profile>)
-                .ForEach(x => x.Flush());
+            //CliOptions.InputFiles.Select(File.ReadAllText)
+            //    .Select(JsonConvert.DeserializeObject<Profile>)
+            //    .ForEach(x => x.Flush());
         }
     }
 }

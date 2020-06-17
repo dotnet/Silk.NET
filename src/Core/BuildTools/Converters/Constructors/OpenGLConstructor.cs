@@ -17,7 +17,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
     public class OpenGLConstructor : IConstructor
     {
         /// <inheritdoc />
-        public void WriteFunctions(Profile profile, IEnumerable<Function> functions, ProfileConverterOptions opts)
+        public void WriteFunctions(Profile profile, IEnumerable<Function> functions, ProfileConverterOptions opts, BindTask task)
         {
             foreach (var function in functions)
             {
@@ -37,7 +37,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             "Core",
                             new Project
                             {
-                                CategoryName = "Core", ExtensionName = "Core", IsRoot = true,
+                                IsRoot = true,
                                 Namespace = string.Empty
                             }
                         );
@@ -51,7 +51,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             category,
                             new Project
                             {
-                                CategoryName = category, ExtensionName = category, IsRoot = false,
+                                IsRoot = false,
                                 Namespace = $".{category.CheckMemberName(opts.Prefix)}"
                             }
                         );
@@ -61,14 +61,14 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     if
                     (
                         !profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
-                            .Interfaces.ContainsKey(rawCategory)
+                            .Classes[0].NativeApis.ContainsKey(rawCategory)
                     )
                     {
                         profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
-                            .Interfaces.Add
+                            .Classes[0].NativeApis.Add
                             (
                                 rawCategory,
-                                new Interface
+                                new NativeApiSet
                                 {
                                     Name =
                                         $"I{Naming.Translate(TrimName(rawCategory, opts), opts.Prefix).CheckMemberName(opts.Prefix)}"
@@ -78,17 +78,17 @@ namespace Silk.NET.BuildTools.Converters.Constructors
 
                     // add the function to the interface
                     profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
-                        .Interfaces[rawCategory]
+                        .Classes[0].NativeApis[rawCategory]
                         .Functions.Add(function);
                 }
             }
         }
         
         /// <inheritdoc />
-        public void WriteEnums(Profile profile, IEnumerable<Enum> enums, ProfileConverterOptions opts)
+        public void WriteEnums(Profile profile, IEnumerable<Enum> enums, ProfileConverterOptions opts, BindTask task)
         {
             var mergedEnums = new Dictionary<string, Enum>();
-            var gl = profile.ClassName.ToUpper().CheckMemberName(opts.Prefix);
+            var gl = profile.Projects["Core"].Classes[0].ClassName.ToUpper().CheckMemberName(opts.Prefix);
             mergedEnums.Add
             (
                 $"{gl}Enum",
@@ -106,7 +106,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     "Core",
                     new Project
                     {
-                        CategoryName = "Core", ExtensionName = "Core", IsRoot = true,
+                        IsRoot = true,
                         Namespace = string.Empty
                     }
                 );
@@ -158,7 +158,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                         @enum.ExtensionName,
                         new Project
                         {
-                            CategoryName = @enum.ExtensionName, ExtensionName = @enum.ExtensionName, IsRoot = @enum.ExtensionName == "Core",
+                            IsRoot = @enum.ExtensionName == "Core",
                             Namespace = @enum.ExtensionName == "Core"
                                 ? string.Empty
                                 : $".{@enum.ExtensionName.CheckMemberName(opts.Prefix)}"
@@ -171,13 +171,13 @@ namespace Silk.NET.BuildTools.Converters.Constructors
         }
 
         /// <inheritdoc />
-        public void WriteStructs(Profile profile, IEnumerable<Struct> structs, ProfileConverterOptions opts)
+        public void WriteStructs(Profile profile, IEnumerable<Struct> structs, ProfileConverterOptions opts, BindTask task)
         {
             // do nothing
         }
 
         /// <inheritdoc />
-        public void WriteConstants(Profile profile, IEnumerable<Constant> constants, ProfileConverterOptions opts)
+        public void WriteConstants(Profile profile, IEnumerable<Constant> constants, ProfileConverterOptions opts, BindTask task)
         {
             // do nothing
         }
