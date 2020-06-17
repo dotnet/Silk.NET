@@ -7,11 +7,19 @@ using System;
 
 namespace Silk.NET.Maths
 {
-    public struct Matrix2X3<T> : IEquatable<Matrix2X3<T>> where T:unmanaged
+    public struct Matrix2X3<T> : IEquatable<Matrix2X3<T>>, IFormattable where T : unmanaged, IFormattable
     {
         public static readonly Matrix2X3<T> Zero;
         public Vector3<T> Row0;
         public Vector3<T> Row1;
+        
+        public T M11 => Row0.X;
+        public T M12 => Row0.Y;
+        public T M13 => Row0.Z;
+
+        public T M21 => Row1.X;
+        public T M22 => Row1.Y;
+        public T M23 => Row1.Z;
 
         public Matrix2X3(Vector3<T> row0, Vector3<T> row1)
         {

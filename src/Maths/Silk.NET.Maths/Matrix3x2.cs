@@ -7,12 +7,21 @@ using System;
 
 namespace Silk.NET.Maths
 {
-    public struct Matrix3x2<T> : IEquatable<Matrix3x2<T>> where T:unmanaged
+    public struct Matrix3x2<T> : IEquatable<Matrix3x2<T>>, IFormattable where T : unmanaged, IFormattable
     {
         public static readonly Matrix3x2<T> Zero;
         public Vector2<T> Row0;
         public Vector2<T> Row1;
         public Vector2<T> Row2;
+
+        public T M11 => Row0.X;
+        public T M12 => Row0.Y;
+
+        public T M21 => Row1.X;
+        public T M22 => Row1.Y;
+        
+        public T M31 => Row2.X;
+        public T M32 => Row2.Y;
 
         public Matrix3x2(Vector2<T> row0, Vector2<T> row1, Vector2<T> row2)
         {

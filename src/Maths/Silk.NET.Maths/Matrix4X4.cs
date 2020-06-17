@@ -8,7 +8,7 @@ using System;
 namespace Silk.NET.Maths
 {
     [Serializable]
-    public struct Matrix4X4<T> : IEquatable<Matrix4X4<T>> where T:unmanaged
+    public struct Matrix4X4<T> : IEquatable<Matrix4X4<T>>, IFormattable where T : unmanaged, IFormattable
     {
         public static readonly Matrix4X4<T> Identity;
         public static readonly Matrix4X4<T> Zero;
@@ -17,6 +17,27 @@ namespace Silk.NET.Maths
         public Vector4<T> Row2;
         public Vector4<T> Row3;
 
+        public T M11 => Row0.X;
+        public T M12 => Row0.Y;
+        public T M13 => Row0.Z;
+        public T M14 => Row0.W;
+
+        public T M21 => Row1.X;
+        public T M22 => Row1.Y;
+        public T M23 => Row1.Z;
+        public T M24 => Row1.W;
+        
+        public T M31 => Row2.X;
+        public T M32 => Row2.Y;
+        public T M33 => Row2.Z;
+        public T M34 => Row2.W;
+        
+        public T M41 => Row3.X;
+        public T M42 => Row3.Y;
+        public T M43 => Row3.Z;
+        public T M44 => Row3.W;
+
+        
         public Matrix4X4(Vector4<T> row0, Vector4<T> row1, Vector4<T> row2, Vector4<T> row3)
         {
             throw new NotImplementedException();
