@@ -140,7 +140,7 @@ namespace Silk.NET.Maths
         
         internal static void ThrowInvalidType()
         {
-            throw new NotSupportedException(); // TODO: Document what went wrong
+            throw new NotSupportedException("This operation isn't supported for the current type.");
         }
 
         internal static void ThrowForUnsupportedBaseType()
