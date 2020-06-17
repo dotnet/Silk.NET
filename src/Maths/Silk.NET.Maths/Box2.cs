@@ -82,10 +82,8 @@ namespace Silk.NET.Maths
         public static bool operator !=(Box2<T> left, Box2<T> right) 
             => !(left == right);
 
-        public bool Equals(Box2<T> other)
-        {
-            throw new NotImplementedException();
-        }
+        public bool Equals(Box2<T> other) 
+            => this == other;
 
         public override bool Equals(object obj)
             => obj is Box2<T> box && Equals(box);
