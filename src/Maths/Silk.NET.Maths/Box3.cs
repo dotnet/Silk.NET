@@ -63,13 +63,13 @@ namespace Silk.NET.Maths
         public T DistanceToNearestEdge(Vector3<T> point)
             => Vector3<T>.ComponentMax(Vector3<T>.Zero, Vector3<T>.ComponentMax(Min - point, point - Max)).Length;
 
-        public Box3<T> Translated(Vector3<T> distance) 
+        public Box3<T> Translate(Vector3<T> distance) 
             => new Box3<T>(Min + distance, Max + distance);
 
-        public Box3<T> Scaled(Vector3<T> scale, Vector3<T> anchor)
+        public Box3<T> Scale(Vector3<T> scale, Vector3<T> anchor)
             => new Box3<T>(anchor + (Min - anchor) * scale, anchor + (Max - anchor) * scale);
 
-        public Box3<T> Inflated(Vector3<T> point)
+        public Box3<T> Inflate(Vector3<T> point)
             => new Box3<T>(Vector3<T>.ComponentMin(point, Min), Vector3<T>.ComponentMin(point, Max));
 
         public static bool operator ==(Box3<T> left, Box3<T> right) 
