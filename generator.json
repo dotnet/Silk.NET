@@ -156,7 +156,7 @@
             "clang": {},
             "bakery": {
                 "profileNames": [
-                    "cl"
+                    "opencl"
                 ]
             },
             "output": {
