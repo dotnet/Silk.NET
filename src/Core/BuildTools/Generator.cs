@@ -31,6 +31,12 @@ namespace Silk.NET.BuildTools
             for (var i = 0; i < config.Tasks.Length; i++)
             {
                 var i1 = i;
+                foreach (var file in Directory.GetFiles
+                    (config.Tasks[i].OutputOpts.Folder, "*.gen.cs", SearchOption.AllDirectories))
+                {
+                    File.Delete(file);
+                }
+
                 tasks[i] = Task.Run(() => RunTask(config.Tasks[i1]));
             }
 
@@ -60,11 +66,6 @@ namespace Silk.NET.BuildTools
                         typeMap.Add(includedKvp.Key, includedKvp.Value);
                     }
                 }
-            }
-            
-            foreach (var file in Directory.GetFiles(task.OutputOpts.Folder, "*.gen.cs", SearchOption.AllDirectories))
-            {
-                File.Delete(file);
             }
             
             Profile profile;
