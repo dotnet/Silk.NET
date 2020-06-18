@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -245,7 +245,7 @@ namespace Silk.NET.Maths
         }
 
         public static Half Parse
-            (string s, NumberStyles style = DefaultParseStyle, IFormatProvider formatProvider = null)
+            (string s, NumberStyles style = DefaultParseStyle, IFormatProvider? formatProvider = null)
         {
             if (s is null)
             {
@@ -256,7 +256,7 @@ namespace Silk.NET.Maths
         }
 
         public static Half Parse
-            (ReadOnlySpan<char> s, NumberStyles style = DefaultParseStyle, IFormatProvider formatProvider = null)
+            (ReadOnlySpan<char> s, NumberStyles style = DefaultParseStyle, IFormatProvider? formatProvider = null)
         {
             throw new NotImplementedException();
         }
@@ -271,13 +271,13 @@ namespace Silk.NET.Maths
             return TryParse(s, DefaultParseStyle, null, out result);
         }
 
-        public static bool TryParse(string s, NumberStyles style, IFormatProvider formatProvider, out Half result)
+        public static bool TryParse(string s, NumberStyles style, IFormatProvider? formatProvider, out Half result)
         {
             return TryParse(s.AsSpan(), style, formatProvider, out result);
         }
 
         public static bool TryParse
-            (ReadOnlySpan<char> s, NumberStyles style, IFormatProvider formatProvider, out Half result)
+            (ReadOnlySpan<char> s, NumberStyles style, IFormatProvider? formatProvider, out Half result)
         {
             throw new NotImplementedException();
         }
@@ -303,7 +303,7 @@ namespace Silk.NET.Maths
             return (ushort) (value.m_value & ~SignMask);
         }
 
-        public int CompareTo(object obj)
+        public int CompareTo(object? obj)
         {
             if (!(obj is Half))
             {
@@ -339,7 +339,7 @@ namespace Silk.NET.Maths
             return 1;
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             return obj is Half && Equals((Half) obj);
         }
@@ -367,7 +367,7 @@ namespace Silk.NET.Maths
             // TODO: Implement this
         }
 
-        public string ToString(string format = null, IFormatProvider formatProvider = null)
+        public string ToString(string? format = null, IFormatProvider? formatProvider = null)
         {
             return $"0x{m_value:X4}";
             // throw new NotImplementedException();
@@ -375,7 +375,7 @@ namespace Silk.NET.Maths
         }
 
         public bool TryFormat
-            (Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider formatProvider)
+            (Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider? formatProvider)
         {
             throw new NotImplementedException();
         }
@@ -392,6 +392,7 @@ namespace Silk.NET.Maths
             return sign ? new Half((ushort) (h.m_value | SignMask)) : h;
         }
 
+        [CLSCompliant(false)]
         public static implicit operator Half(uint value)
         {
             var shiftDist = Helpers.LeadingZeroCount(value) - 21;
@@ -417,6 +418,7 @@ namespace Silk.NET.Maths
             return sign ? new Half((ushort) (h.m_value | SignMask)) : h;
         }
 
+        [CLSCompliant(false)]
         public static implicit operator Half(ulong value)
         {
             var shiftDist = Helpers.LeadingZeroCount(value) - 53;
@@ -439,6 +441,7 @@ namespace Silk.NET.Maths
             return (int) value;
         }
 
+        [CLSCompliant(false)]
         public static implicit operator Half(ushort value)
         {
             return (uint) value;
@@ -449,6 +452,7 @@ namespace Silk.NET.Maths
             return (uint) value;
         }
 
+        [CLSCompliant(false)]
         public static implicit operator Half(sbyte value)
         {
             return (int) value;
@@ -536,6 +540,7 @@ namespace Silk.NET.Maths
             return sign ? -alignedSig : alignedSig;
         }
 
+        [CLSCompliant(false)]
         public static explicit operator uint(Half value) // 0 for every case
         {
             var sign = IsNegative(value);
@@ -580,6 +585,7 @@ namespace Silk.NET.Maths
             return sign ? -alignedSig : alignedSig;
         }
 
+        [CLSCompliant(false)]
         public static explicit operator ulong(Half value) // 0 for PosInfinity/NaN, long.MinValue for NegInfinity
         {
             var sign = IsNegative(value);
@@ -607,6 +613,7 @@ namespace Silk.NET.Maths
             return (short) (int) value;
         }
 
+        [CLSCompliant(false)]
         public static explicit operator ushort(Half value)
         {
             return (ushort) (short) (int) value;
@@ -617,6 +624,7 @@ namespace Silk.NET.Maths
             return (byte) (sbyte) (int) value;
         }
 
+        [CLSCompliant(false)]
         public static explicit operator sbyte(Half value)
         {
             return (sbyte) (int) value;
@@ -873,7 +881,6 @@ namespace Silk.NET.Maths
             /// </summary>
             /// <param name="value">The value.</param>
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            [CLSCompliant(false)]
             public static int LeadingZeroCount(uint value)
             {
                 // Unguarded fallback contract is 0->31
@@ -891,7 +898,6 @@ namespace Silk.NET.Maths
             /// </summary>
             /// <param name="value">The value.</param>
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            [CLSCompliant(false)]
             public static int LeadingZeroCount(ulong value)
             {
                 var hi = (uint) (value >> 32);

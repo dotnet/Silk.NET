@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text;
 
@@ -81,7 +82,7 @@ namespace Silk.NET.Maths
         public bool Equals(Box3<T> other) 
             => this == other;
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
             => obj is Box3<T> box && Equals(box);
 
         public override int GetHashCode()
@@ -95,9 +96,9 @@ namespace Silk.NET.Maths
 
         public override string ToString() => ToString("G");
 
-        public string ToString(string format) => ToString(format, CultureInfo.CurrentCulture);
+        public string ToString(string? format) => ToString(format, CultureInfo.CurrentCulture);
         
-        public string ToString(string format, IFormatProvider formatProvider)
+        public string ToString(string? format, IFormatProvider? formatProvider)
         {
             var sb = new StringBuilder();
             sb.Append(Min.ToString(format, formatProvider));
