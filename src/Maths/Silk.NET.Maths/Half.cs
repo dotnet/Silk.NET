@@ -392,6 +392,7 @@ namespace Silk.NET.Maths
             return sign ? new Half((ushort) (h.m_value | SignMask)) : h;
         }
 
+        [CLSCompliant(false)]
         public static implicit operator Half(uint value)
         {
             var shiftDist = Helpers.LeadingZeroCount(value) - 21;
@@ -417,6 +418,7 @@ namespace Silk.NET.Maths
             return sign ? new Half((ushort) (h.m_value | SignMask)) : h;
         }
 
+        [CLSCompliant(false)]
         public static implicit operator Half(ulong value)
         {
             var shiftDist = Helpers.LeadingZeroCount(value) - 53;
@@ -439,6 +441,7 @@ namespace Silk.NET.Maths
             return (int) value;
         }
 
+        [CLSCompliant(false)]
         public static implicit operator Half(ushort value)
         {
             return (uint) value;
@@ -449,6 +452,7 @@ namespace Silk.NET.Maths
             return (uint) value;
         }
 
+        [CLSCompliant(false)]
         public static implicit operator Half(sbyte value)
         {
             return (int) value;
@@ -536,6 +540,7 @@ namespace Silk.NET.Maths
             return sign ? -alignedSig : alignedSig;
         }
 
+        [CLSCompliant(false)]
         public static explicit operator uint(Half value) // 0 for every case
         {
             var sign = IsNegative(value);
@@ -580,6 +585,7 @@ namespace Silk.NET.Maths
             return sign ? -alignedSig : alignedSig;
         }
 
+        [CLSCompliant(false)]
         public static explicit operator ulong(Half value) // 0 for PosInfinity/NaN, long.MinValue for NegInfinity
         {
             var sign = IsNegative(value);
@@ -607,6 +613,7 @@ namespace Silk.NET.Maths
             return (short) (int) value;
         }
 
+        [CLSCompliant(false)]
         public static explicit operator ushort(Half value)
         {
             return (ushort) (short) (int) value;
@@ -617,6 +624,7 @@ namespace Silk.NET.Maths
             return (byte) (sbyte) (int) value;
         }
 
+        [CLSCompliant(false)]
         public static explicit operator sbyte(Half value)
         {
             return (sbyte) (int) value;
@@ -873,7 +881,6 @@ namespace Silk.NET.Maths
             /// </summary>
             /// <param name="value">The value.</param>
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            [CLSCompliant(false)]
             public static int LeadingZeroCount(uint value)
             {
                 // Unguarded fallback contract is 0->31
@@ -891,7 +898,6 @@ namespace Silk.NET.Maths
             /// </summary>
             /// <param name="value">The value.</param>
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            [CLSCompliant(false)]
             public static int LeadingZeroCount(ulong value)
             {
                 var hi = (uint) (value >> 32);
