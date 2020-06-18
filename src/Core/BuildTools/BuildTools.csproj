@@ -4,6 +4,7 @@
         <OutputType>Exe</OutputType>
         <TargetFramework>netcoreapp3.0</TargetFramework>
         <RootNamespace>Silk.NET.BuildTools</RootNamespace>
+        <GenerateDocumentationFile>false</GenerateDocumentationFile>
     </PropertyGroup>
 
     <ItemGroup>

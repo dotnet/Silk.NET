@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using MoreLinq.Extensions;
@@ -32,8 +33,12 @@ namespace Silk.NET.BuildTools.Bind
         /// <summary>
         /// The license text for the project.
         /// </summary>
-        public static Lazy<string> LicenseText { get; } =
-            new Lazy<string>(() => File.ReadAllText(Binder.CliOptions.License));
+        public static Dictionary<string,string> CachedLicenseTexts { get; } = new Dictionary<string,string>();
+
+        public static string LicenseText(this BindTask task) => CachedLicenseTexts.TryGetValue
+            (task.OutputOpts.License, out var val)
+            ? val
+            : CachedLicenseTexts[task.OutputOpts.License] = File.ReadAllText(task.OutputOpts.License);
 
         /// <summary>
         /// Writes this enum to a file.
@@ -45,7 +50,7 @@ namespace Silk.NET.BuildTools.Bind
         public static void WriteEnum(this Enum @enum, string file, Profile profile, Project project, BindTask task)
         {
             var sw = new StreamWriter(file);
-            sw.WriteLine(LicenseText.Value);
+            sw.WriteLine(task.LicenseText());
             sw.WriteLine();
             var ns = project.IsRoot ? task.Namespace : task.ExtensionsNamespace;
             sw.WriteLine("using System;");
@@ -87,7 +92,7 @@ namespace Silk.NET.BuildTools.Bind
         public static void WriteStruct(this Struct @struct, string file, Profile profile, Project project, BindTask task)
         {
             var sw = new StreamWriter(file);
-            sw.WriteLine(LicenseText.Value);
+            sw.WriteLine(task.LicenseText());
             sw.WriteLine();
             sw.WriteLine("using System;");
             sw.WriteLine("using System.Runtime.InteropServices;");
@@ -259,7 +264,7 @@ namespace Silk.NET.BuildTools.Bind
         {
             using var sw = new StreamWriter(file);
             
-            sw.WriteLine(LicenseText.Value);
+            sw.WriteLine(task.LicenseText());
             sw.WriteLine("using Silk.NET.Core.Loader;");
             sw.WriteLine();
             sw.WriteLine($"namespace {task.Namespace}{project.Namespace}");
@@ -306,7 +311,7 @@ namespace Silk.NET.BuildTools.Bind
                 if (project.IsRoot)
                 {
                     var sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.gen.cs"));
-                    sw.Write(LicenseText.Value);
+                    sw.Write(task.LicenseText());
                     sw.WriteLine("using System;");
                     sw.WriteLine("using System.Runtime.InteropServices;");
                     sw.WriteLine("using System.Text;");
@@ -457,7 +462,7 @@ namespace Silk.NET.BuildTools.Bind
                     {
                         var name = i.Name.Substring(1);
                         var sw = new StreamWriter(Path.Combine(folder, $"{name}.gen.cs"));
-                        sw.Write(LicenseText.Value);
+                        sw.Write(task.LicenseText());
                         sw.WriteLine("using System;");
                         sw.WriteLine("using System.Runtime.InteropServices;");
                         sw.WriteLine("using System.Text;");
@@ -610,7 +615,7 @@ namespace Silk.NET.BuildTools.Bind
             csproj.WriteLine("  <PropertyGroup>");
             csproj.WriteLine("    <TargetFramework>netstandard2.0</TargetFramework>");
             csproj.WriteLine("    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>");
-            csproj.WriteLine("    <LangVersion>latest</LangVersion>");
+            csproj.WriteLine("    <LangVersion>preview</LangVersion>");
             csproj.WriteLine("  </PropertyGroup>");
             csproj.WriteLine();
             csproj.WriteLine("  <ItemGroup>");
@@ -621,8 +626,7 @@ namespace Silk.NET.BuildTools.Bind
                     folder,
                     Path.Combine
                     (
-                        Binder.CliOptions.OutputPath,
-                        task.OutputFolder,
+                        task.OutputOpts.Folder,
                         prof.Projects["Core"].GetProjectName(task),
                         $"{prof.Projects["Core"].GetProjectName(task)}.csproj"
                     )
@@ -632,7 +636,7 @@ namespace Silk.NET.BuildTools.Bind
 
             csproj.WriteLine("  </ItemGroup>");
             csproj.WriteLine();
-            csproj.WriteLine($"  <Import Project=\"{Path.GetRelativePath(folder, Binder.CliOptions.Props)}\" />");
+            csproj.WriteLine($"  <Import Project=\"{Path.GetRelativePath(folder, task.OutputOpts.Props)}\" />");
             csproj.WriteLine("</Project>");
             csproj.Flush();
             csproj.Dispose();
@@ -644,8 +648,7 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="profile">The profile containing the profiles, interfaces, and enums.</param>
         public static void Flush(this Profile profile, BindTask task)
         {
-            var outFolder = task.OutputFolder;
-            var rootFolder = Path.Combine(Binder.CliOptions.OutputPath, outFolder);
+            var rootFolder = task.OutputOpts.Folder;
             if (!Directory.Exists(rootFolder))
             {
                 Directory.CreateDirectory(rootFolder);

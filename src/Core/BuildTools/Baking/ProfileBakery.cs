@@ -24,47 +24,15 @@ namespace Silk.NET.BuildTools.Baking
     public static class ProfileBakery
     {
         /// <summary>
-        /// Bake the given options.
-        /// </summary>
-        /// <param name="cliOptions">The options to bake.</param>
-        public static void Bake(BakeryOptions cliOptions)
-        {
-            Console.WriteLine("Baking raw profiles...");
-            Bake
-            (
-                cliOptions.BakeryInformation
-                    .Select(File.ReadAllText)
-                    .SelectMany(JsonConvert.DeserializeObject<ProfileBakeryInformation[]>),
-                cliOptions.Folder,
-                cliOptions.PrettyPrinted,
-                cliOptions.DocumentationFolder
-            );
-            Console.WriteLine("Finishing up...");
-            if (!cliOptions.PreserveRawAPIs)
-            {
-                DeleteRawAPIs(cliOptions.Folder);
-            }
-        }
-        
-        /// <summary>
         /// Bakes APIs together given the <see cref="ProfileBakeryInformation" />, and outputs the baked
         /// profile to the given folder.
         /// </summary>
-        /// <param name="information">The information of what APIs to bake.</param>
-        /// <param name="folder">The output folder.</param>
-        /// <param name="pretty">Whether the output JSON should be pretty-printed.</param>
-        /// <param name="docs">The documentation string.</param>
-        public static void Bake(ProfileBakeryInformation information, string folder, bool pretty, string docs)
+        public static Profile Bake(string name, IReadOnlyList<Profile> impl)
         {
-            // get APIs implemented
-            var impl = information.Implements.Select(x => File.ReadAllText(Path.Combine(folder, $"api-{x}.json")))
-                .Select(JsonConvert.DeserializeObject<Profile>)
-                .ToList();
-
             // create the profile
             var profile = new Profile
             {
-                Name = information.Name
+                Name = name
             };
             profile.Projects.Add
             (
@@ -90,15 +58,8 @@ namespace Silk.NET.BuildTools.Baking
             Vary(profile);
             CheckForDuplicates(profile);
             TypeMapper.MapEnums(profile); // we need to map the enums to make sure they are correct for their extension.
-
-            // save this to disk
-            File.WriteAllText
-            (
-                Path.Combine(folder, $"{information.Name}.json"),
-                JsonConvert.SerializeObject(profile, pretty ? Formatting.Indented : Formatting.None)
-            );
-
-            Console.WriteLine($"Created profile \"{information.Name}\".");
+            Console.WriteLine($"Created profile \"{name}\".");
+            return profile;
         }
 
         private static void Vary(Profile profile)
@@ -281,18 +242,6 @@ namespace Silk.NET.BuildTools.Baking
             {
                 File.Delete(file);
             }
-        }
-
-        /// <summary>
-        /// Bakes multiple sets of APIs together, and outputs them to the given folder.
-        /// </summary>
-        /// <param name="information">The information for the sets of APIs.</param>
-        /// <param name="folder">The output folder.</param>
-        /// <param name="pretty">Whether the output JSON should be pretty-printed.</param>
-        /// <param name="d">The documentation string.</param>
-        public static void Bake(IEnumerable<ProfileBakeryInformation> information, string folder, bool pretty, string d)
-        {
-            information.ForEach(b => Bake(b, folder, pretty, d));
         }
     }
 }

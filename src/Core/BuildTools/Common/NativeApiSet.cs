@@ -19,9 +19,6 @@ namespace Silk.NET.BuildTools.Common
         /// Gets or sets the name of this interface.
         /// </summary>
         public string Name { get; set; }
-        
-        [JsonIgnore]
-        public Class NativeApiBase { get; set; }
 
         /// <summary>
         /// Gets or sets the functions contained within this interface.

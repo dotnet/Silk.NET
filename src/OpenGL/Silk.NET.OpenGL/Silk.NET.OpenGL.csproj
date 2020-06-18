@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <LangVersion>8</LangVersion>
+    <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
   <Import Project="..\..\..\build\props\bindings.props" />

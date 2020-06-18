@@ -29,7 +29,7 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="obj">The specification to read from.</param>
         /// <param name="opts">The options to use while reading.</param>
         /// <returns>A list of all structs in the specification.</returns>
-        IEnumerable<Struct> ReadStructs(object obj, ProfileConverterOptions opts);
+        IEnumerable<Struct> ReadStructs(object obj, BindTask task);
         
         /// <summary>
         /// Read the functions from the specification.
@@ -37,7 +37,7 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="obj">The specification to read from.</param>
         /// <param name="opts">The options to use while reading.</param>
         /// <returns>A list of all functions in the specification.</returns>
-        IEnumerable<Function> ReadFunctions(object obj, ProfileConverterOptions opts);
+        IEnumerable<Function> ReadFunctions(object obj, BindTask task);
         
         /// <summary>
         /// Read the enums from the specification.
@@ -45,7 +45,7 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="obj">The specification to read from.</param>
         /// <param name="opts">The options to use while reading.</param>
         /// <returns>A list of all enums in the specification.</returns>
-        IEnumerable<Enum> ReadEnums(object obj, ProfileConverterOptions opts);
+        IEnumerable<Enum> ReadEnums(object obj, BindTask task);
         
         /// <summary>
         /// Read the constants from the specification.
@@ -53,6 +53,6 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="obj">The specification to read from.</param>
         /// <param name="opts">The options to use while reading.</param>
         /// <returns>A list of all constants in the specification.</returns>
-        IEnumerable<Constant> ReadConstants(object obj, ProfileConverterOptions opts);
+        IEnumerable<Constant> ReadConstants(object obj, BindTask task);
     }
 }

@@ -5,17 +5,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using CommandLine;
-using CommandLine.Text;
-using MoreLinq;
 using Newtonsoft.Json;
-using Silk.NET.BuildTools.Baking;
-using Silk.NET.BuildTools.Bind;
-using Silk.NET.BuildTools.Converters;
-using Silk.NET.BuildTools.Pipeline;
+using Silk.NET.BuildTools.Common;
 
 namespace Silk.NET.BuildTools
 {
@@ -23,79 +15,89 @@ namespace Silk.NET.BuildTools
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("Silk.NET Build Tools");
-            Console.WriteLine($"(C) {DateTime.Now.Year} Ultz Limited");
-            Console.WriteLine();
-            var sw = new Stopwatch();
-            sw.Start();
-            Switch(args);
-            sw.Stop();
-            Console.WriteLine();
-            Console.WriteLine("Completed in {0} seconds.", sw.Elapsed.TotalSeconds);
-        }
-
-        private static void Switch(string[] args)
-        {
-            //switch (args[0].ToLower())
-            //{
-            //    case "bind":
-            //        Binder.Bind(GetArgs<BindOptions>(args));
-            //        break;
-            //    case "convert":
-            //        ProfileConverter.WriteProfiles(GetArgs<CommandLineOptions>(args));
-            //        break;
-            //    case "bake":
-            //        ProfileBakery.Bake(GetArgs<BakeryOptions>(args));
-            //        break;
-            //    case "clean":
-            //        Directory.GetFiles(args[1], "*.gen.cs", SearchOption.AllDirectories).ForEach(File.Delete);
-            //        break;
-            //    default:
-            //        PipelineFile(args);
-            //        break;
-            //}
-        }
-
-        private static void PipelineFile(string[] args)
-        {
-            if (File.Exists(args[0]))
+            if (args.Length == 1 && args[0] == "jsonex")
             {
-                Environment.CurrentDirectory = Path.GetDirectoryName(args[0]);
-                var tasks = JsonConvert.DeserializeObject<PipelineTask[]>
-                    (File.ReadAllText(Path.GetFileName(args[0])));
-                for (var index = 0; index < tasks.Length; index++)
-                {
-                    var task = tasks[index];
-                    Console.WriteLine($"Starting task \"{task.Task}\" ({index})...");
-                    Switch(new[] {task.Task}.Concat(task.Args).ToArray());
-                    Console.WriteLine("Task completed successfully.");
-                    Console.WriteLine();
-                }
+                // get a template json file
+                Console.WriteLine
+                (
+                    JsonConvert.SerializeObject
+                    (
+                        ExampleJsonFile, Formatting.Indented
+                    )
+                );
+
+                return;
             }
-            else
+            
+            foreach (var arg in args)
             {
-                Console.WriteLine("File not found.");
+                var abs = Path.GetFullPath(arg);
+                Environment.CurrentDirectory = Path.GetDirectoryName
+                    (arg) ?? throw new NullReferenceException("Dir path null.");
+                Generator.Run(JsonConvert.DeserializeObject<Config>(File.ReadAllText(abs)));
             }
         }
+        
+        ///////////////////////////////////////////////////////////////////////////////////////
+        // The meaningful part of the file ends here, from here it's just an example structure.
+        ///////////////////////////////////////////////////////////////////////////////////////
 
-        private static T GetArgs<T>(IEnumerable<string> args)
+        private static Config ExampleJsonFile = new Config
         {
-            object val = null;
-            var parserResult = new Parser(x => x.HelpWriter = TextWriter.Null).ParseArguments<T>(args);
-            parserResult.WithParsed(result => val = result);
-            parserResult.WithNotParsed
-            (
-                errs =>
+            Tasks = new[]
+            {
+                new BindTask
                 {
-                    var helpText = HelpText.AutoBuild
-                        (parserResult, h => HelpText.DefaultParsingErrorsHandler(parserResult, h), e => e);
-                    helpText.Copyright = string.Empty;
-                    helpText.Heading = string.Empty;
-                    Console.WriteLine(helpText);
-                    Environment.Exit(-1);
+                    BakeryOpts = new BakeryOptions
+                    {
+                        Include = new[] {"glcore"}
+                    },
+                    CacheFolder = "/path/to/cacheFolder",
+                    CacheKey = "glcoreCacheKey",
+                    ClangOpts = new ClangTaskOptions
+                    {
+                        ClangArgs = new[] {"--clang-arguments"},
+                        ClassMappings = new Dictionary<string, string>
+                        {
+                            {"sourceHeader.h", "DestinationClass"}
+                        }
+                    },
+                    Controls = new[]
+                    {
+                        "control-variables-to-define-how-gernation-runs",
+                        "convert-windows-only",
+                        "convert-macos-only",
+                        "convert-linux-only"
+                    },
+                    ConverterOpts = new ConverterOptions
+                    {
+                        Reader = "gl",
+                        Constructor = "gl",
+                        FunctionPrefix = "gl"
+                    },
+                    ExtensionsNamespace = "MyNamespace.ForExtensions",
+                    Namespace = "MyNamespace",
+                    Mode = ConverterMode.ConvertConstruct,
+                    Name = "Profile Name",
+                    Sources = new[] {"/path/to/sourceFile.xml", "/path/to/header.h"},
+                    NameContainer = new NameContainer
+                    {
+                        ClassName = "MyNameContainer",
+                        Android = "libapi.so",
+                        IOS = "libapi.dylib",
+                        Linux = "libapi.so",
+                        MacOS = "libapi.dylib",
+                        Windows = "api.dll"
+                    },
+                    OutputOpts = new OutputOptions
+                    {
+                        Folder = "/path/to/outputFolder", License = "/path/to/licenseFile",
+                        Mode = OutputMode.Legacy, Props = "/path/to/customMSBuild.props"
+                    },
+                    TypeMaps = new List<Dictionary<string, string>>
+                        {new Dictionary<string, string> {{"HWND", "nint"}}}
                 }
-            );
-            return (T) val;
-        }
+            }
+        };
     }
 }
