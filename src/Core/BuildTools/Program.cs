@@ -38,7 +38,7 @@ namespace Silk.NET.BuildTools
             {
                 var abs = Path.GetFullPath(arg);
                 Environment.CurrentDirectory = Path.GetDirectoryName
-                    (arg) ?? throw new NullReferenceException("Dir path null.");
+                    (abs) ?? throw new NullReferenceException("Dir path null.");
                 Generator.Run(JsonConvert.DeserializeObject<Config>(File.ReadAllText(abs)));
             }
         }
