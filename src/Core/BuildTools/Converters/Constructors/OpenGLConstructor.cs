@@ -89,18 +89,6 @@ namespace Silk.NET.BuildTools.Converters.Constructors
         /// <inheritdoc />
         public void WriteEnums(Profile profile, IEnumerable<Enum> enums, BindTask task)
         {
-            var mergedEnums = new Dictionary<string, Enum>();
-            var gl = profile.Projects["Core"].Classes[0].ClassName.ToUpper().CheckMemberName(task.ConverterOpts.FunctionPrefix);
-            mergedEnums.Add
-            (
-                $"{gl}Enum",
-                new Enum
-                {
-                    Name = $"{gl}Enum", ExtensionName = "Core", Attributes = new List<Attribute>(),
-                    Tokens = new List<Token>(), NativeName = "GLenum",
-                }
-            );
-
             if (!profile.Projects.ContainsKey("Core"))
             {
                 profile.Projects.Add
@@ -114,6 +102,18 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     }
                 );
             }
+
+            var mergedEnums = new Dictionary<string, Enum>();
+            var gl = profile.Projects["Core"].Classes[0].ClassName.ToUpper().CheckMemberName(task.ConverterOpts.FunctionPrefix);
+            mergedEnums.Add
+            (
+                $"{gl}Enum",
+                new Enum
+                {
+                    Name = $"{gl}Enum", ExtensionName = "Core", Attributes = new List<Attribute>(),
+                    Tokens = new List<Token>(), NativeName = "GLenum",
+                }
+            );
             
             // first, we need to categorise the enums into "Core", or their vendor (i.e. "NV", "SGI", "KHR" etc)
             foreach (var @enum in enums)

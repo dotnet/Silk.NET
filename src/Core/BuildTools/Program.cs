@@ -43,8 +43,10 @@ namespace Silk.NET.BuildTools
             }
         }
 
-        private class ConsoleWriter : TextWriter
+        internal class ConsoleWriter : TextWriter
         {
+            public Dictionary<int, string> Tasks { get; set; } = new Dictionary<int, string>();
+            
             private readonly TextWriter _base;
 
             public ConsoleWriter(TextWriter @base)
@@ -55,7 +57,8 @@ namespace Silk.NET.BuildTools
             public override Encoding Encoding { get; }
             public override void WriteLine(string? value)
             {
-                _base.WriteLine($"{Task.CurrentId}> " + value);
+                Tasks.TryGetValue(Task.CurrentId ?? -1, out var val);
+                _base.WriteLine($"[{DateTime.Now:T}] {val} {Task.CurrentId}> " + value);
             }
         }
         

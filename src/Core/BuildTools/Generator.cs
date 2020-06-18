@@ -45,6 +45,8 @@ namespace Silk.NET.BuildTools
 
         public static void RunTask(BindTask task)
         {
+            (Console.Out as Program.ConsoleWriter)?.Tasks.TryAdd(Task.CurrentId ?? -2, task.Name);
+            
             foreach (var typeMap in task.TypeMaps)
             {
                 var toAdd = new List<KeyValuePair<string, string>>();
