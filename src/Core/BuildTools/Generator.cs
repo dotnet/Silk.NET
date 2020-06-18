@@ -39,6 +39,34 @@ namespace Silk.NET.BuildTools
 
         public static void RunTask(BindTask task)
         {
+            foreach (var typeMap in task.TypeMaps)
+            {
+                var toAdd = new List<KeyValuePair<string, string>>();
+                foreach (var kvp in typeMap)
+                {
+                    if (kvp.Key.StartsWith("$include"))
+                    {
+                        toAdd.Add(kvp);
+                    }
+                }
+                
+                foreach (var kvp in toAdd)
+                {
+                    var includedMap = JsonConvert.DeserializeObject<Dictionary<string, string>>
+                        (File.ReadAllText(kvp.Value));
+                    typeMap.Remove(kvp.Key);
+                    foreach (var includedKvp in includedMap)
+                    {
+                        typeMap.Add(includedKvp.Key, includedKvp.Value);
+                    }
+                }
+            }
+            
+            foreach (var file in Directory.GetFiles(task.OutputOpts.Folder, "*.gen.cs", SearchOption.AllDirectories))
+            {
+                File.Delete(file);
+            }
+            
             Profile profile;
             if (ShouldConvert(task.Controls))
             {
@@ -81,8 +109,17 @@ namespace Silk.NET.BuildTools
             }
             else if (!string.IsNullOrWhiteSpace(task.CacheKey) && !string.IsNullOrWhiteSpace(task.CacheFolder))
             {
+                var file = Path.Combine(task.CacheFolder, task.CacheKey + ".json.gz");
+                if (!File.Exists(file))
+                {
+                    throw new InvalidOperationException
+                    (
+                        "Couldn't find a cached profile to fallback on" +
+                        "(conversion was skipped as per the control variables)"
+                    );
+                }
                 using var memoryStream = new MemoryStream();
-                using var fileStream = File.OpenWrite(Path.Combine(task.CacheFolder, task.CacheKey + ".json.gz"));
+                using var fileStream = File.OpenWrite(file);
                 using var gzStream = new GZipStream(fileStream, CompressionMode.Decompress);
                 gzStream.CopyTo(memoryStream);
                 profile = JsonConvert.DeserializeObject<Profile>(Encoding.UTF8.GetString(memoryStream.ToArray()));
@@ -91,7 +128,7 @@ namespace Silk.NET.BuildTools
             {
                 throw new InvalidOperationException
                 (
-                    "Couldn't find a cached profile to fallback" +
+                    "Couldn't find a cached profile to fallback on" +
                     "(conversion was skipped as per the control variables)"
                 );
             }

@@ -5,6 +5,7 @@
 
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Silk.NET.BuildTools.Common;
 
 namespace Silk.NET.BuildTools
@@ -19,11 +20,15 @@ namespace Silk.NET.BuildTools
         // TODO the dishwasher
         [JsonProperty("profileName")] public string Name { get; set; }
         [JsonProperty("sources")] public string[] Sources { get; set; }
-        [JsonProperty("mode")] public ConverterMode Mode { get; set; }
+
+        [JsonProperty("mode")]
+        [JsonConverter(typeof(StringEnumConverter))]
+        public ConverterMode Mode { get; set; }
+
         [JsonProperty("cacheDir")] public string CacheFolder { get; set; }
         [JsonProperty("cacheKey")] public string CacheKey { get; set; }
-        [JsonProperty("controlDescriptors")] public string[] Controls { get; set; } 
-        [JsonProperty("bakeryOptions")] public ConverterOptions ConverterOpts { get; set; }
+        [JsonProperty("controlDescriptors")] public string[] Controls { get; set; }
+        [JsonProperty("converter")] public ConverterOptions ConverterOpts { get; set; }
         [JsonProperty("clang")] public ClangTaskOptions ClangOpts { get; set; }
         [JsonProperty("bakery")] public BakeryOptions BakeryOpts { get; set; }
         [JsonProperty("output")] public OutputOptions OutputOpts { get; set; }
@@ -35,10 +40,8 @@ namespace Silk.NET.BuildTools
 
     public struct ClangTaskOptions
     {
-        [JsonProperty("args")]
-        public string[] ClangArgs { get; set; }
-        [JsonProperty("classes")]
-        public Dictionary<string, string> ClassMappings { get; set; }
+        [JsonProperty("args")] public string[] ClangArgs { get; set; }
+        [JsonProperty("classes")] public Dictionary<string, string> ClassMappings { get; set; }
     }
 
     public struct BakeryOptions
@@ -48,6 +51,7 @@ namespace Silk.NET.BuildTools
 
     public struct ConverterOptions
     {
+        [JsonProperty("className")] public string ClassName { get; set; }
         [JsonProperty("reader")] public string Reader { get; set; }
         [JsonProperty("constructor")] public string Constructor { get; set; }
         [JsonProperty("prefix")] public string FunctionPrefix { get; set; }
@@ -55,21 +59,27 @@ namespace Silk.NET.BuildTools
 
     public struct OutputOptions
     {
-        [JsonProperty("mode")] public OutputMode Mode { get; set; }
+        [JsonProperty("mode")]
+        [JsonConverter(typeof(StringEnumConverter))]
+        public OutputMode Mode { get; set; }
+
         /// <summary>
         /// Gets or sets the base output path where the binder will write the generated files.
         /// </summary>
-        [JsonProperty("path")] public string Folder { get; set; }
+        [JsonProperty("path")]
+        public string Folder { get; set; }
 
         /// <summary>
         /// Gets or sets the path to the license header.
         /// </summary>
-        [JsonProperty("licenseFile")]public string License { get; set; }
+        [JsonProperty("licenseFile")]
+        public string License { get; set; }
 
         /// <summary>
         /// Gets or sets the path to the binding's props file.
         /// </summary>
-        [JsonProperty("props")]public string Props { get; set; }
+        [JsonProperty("props")]
+        public string Props { get; set; }
     }
 
     public enum ConverterMode

@@ -38,7 +38,8 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             new Project
                             {
                                 IsRoot = true,
-                                Namespace = string.Empty
+                                Namespace = string.Empty,
+                                Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
                             }
                         );
                     }
@@ -52,7 +53,8 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             new Project
                             {
                                 IsRoot = false,
-                                Namespace = $".{category.CheckMemberName(task.ConverterOpts.FunctionPrefix)}"
+                                Namespace = $".{category.CheckMemberName(task.ConverterOpts.FunctionPrefix)}",
+                                Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
                             }
                         );
                     }
@@ -107,7 +109,8 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     new Project
                     {
                         IsRoot = true,
-                        Namespace = string.Empty
+                        Namespace = string.Empty,
+                        Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
                     }
                 );
             }
@@ -163,7 +166,8 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             IsRoot = @enum.ExtensionName == "Core",
                             Namespace = @enum.ExtensionName == "Core"
                                 ? string.Empty
-                                : $".{@enum.ExtensionName.CheckMemberName(task.ConverterOpts.FunctionPrefix)}"
+                                : $".{@enum.ExtensionName.CheckMemberName(task.ConverterOpts.FunctionPrefix)}",
+                            Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
                         }
                     );
                 }

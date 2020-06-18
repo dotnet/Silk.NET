@@ -39,7 +39,8 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             new Project
                             {
                                 IsRoot = true,
-                                Namespace = string.Empty
+                                Namespace = string.Empty,
+                                Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
                             }
                         );
                     }
@@ -53,7 +54,8 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             new Project
                             {
                                 IsRoot = false,
-                                Namespace = $".{category.CheckMemberName(task.ConverterOpts.FunctionPrefix)}"
+                                Namespace = $".{category.CheckMemberName(task.ConverterOpts.FunctionPrefix)}",
+                                Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
                             }
                         );
                     }
@@ -96,7 +98,8 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     new Project
                     {
                         IsRoot = false,
-                        Namespace = string.Empty
+                        Namespace = string.Empty,
+                        Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
                     }
                 );
             }
@@ -126,7 +129,8 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                         "Core",
                         new Project
                         {IsRoot = true,
-                            Namespace = string.Empty
+                            Namespace = string.Empty,
+                            Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
                         }
                     );
                 }
@@ -140,7 +144,8 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                         new Project
                         {
                             IsRoot = false,
-                            Namespace = $".{category.CheckMemberName(task.ConverterOpts.FunctionPrefix)}"
+                            Namespace = $".{category.CheckMemberName(task.ConverterOpts.FunctionPrefix)}",
+                            Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
                         }
                     );
                 }

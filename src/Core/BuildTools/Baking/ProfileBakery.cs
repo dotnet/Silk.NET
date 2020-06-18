@@ -39,7 +39,8 @@ namespace Silk.NET.BuildTools.Baking
                 "Core",
                 new Project
                 {
-                    Namespace = string.Empty, IsRoot = true
+                    Namespace = string.Empty, IsRoot = true,
+                    Classes = new List<Class>{}
                 }
             );
 

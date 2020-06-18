@@ -6,6 +6,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
 
@@ -15,6 +18,8 @@ namespace Silk.NET.BuildTools
     {
         private static void Main(string[] args)
         {
+            Console.SetOut(new ConsoleWriter(Console.Out));
+            
             if (args.Length == 1 && args[0] == "jsonex")
             {
                 // get a template json file
@@ -35,6 +40,22 @@ namespace Silk.NET.BuildTools
                 Environment.CurrentDirectory = Path.GetDirectoryName
                     (arg) ?? throw new NullReferenceException("Dir path null.");
                 Generator.Run(JsonConvert.DeserializeObject<Config>(File.ReadAllText(abs)));
+            }
+        }
+
+        private class ConsoleWriter : TextWriter
+        {
+            private readonly TextWriter _base;
+
+            public ConsoleWriter(TextWriter @base)
+            {
+                _base = @base;
+                Encoding = _base.Encoding;
+            }
+            public override Encoding Encoding { get; }
+            public override void WriteLine(string? value)
+            {
+                _base.WriteLine($"{Task.CurrentId}> " + value);
             }
         }
         
