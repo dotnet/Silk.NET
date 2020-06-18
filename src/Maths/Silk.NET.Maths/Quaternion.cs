@@ -250,14 +250,14 @@ namespace Silk.NET.Maths
 
         public override string ToString() => ToString("G");
 
-        public string ToString(string format) => ToString(format, CultureInfo.CurrentCulture);
+        public string ToString(string? format) => ToString(format, CultureInfo.CurrentCulture);
         
-        public string ToString(string format, IFormatProvider formatProvider)
+        public string ToString(string? format, IFormatProvider? formatProvider)
         {
             throw new NotImplementedException();
         }
 
-        public override bool Equals(object other)
+        public override bool Equals(object? other)
         {
             throw new NotImplementedException();
         }

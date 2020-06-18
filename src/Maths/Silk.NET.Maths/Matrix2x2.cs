@@ -237,9 +237,9 @@ namespace Silk.NET.Maths
 
         public override string ToString() => ToString("G");
 
-        public string ToString(string format) => ToString(format, CultureInfo.CurrentCulture);
+        public string ToString(string? format) => ToString(format, CultureInfo.CurrentCulture);
         
-        public string ToString(string format, IFormatProvider formatProvider)
+        public string ToString(string? format, IFormatProvider? formatProvider)
         {
             throw new NotImplementedException();
         }
@@ -249,7 +249,7 @@ namespace Silk.NET.Maths
             throw new NotImplementedException();
         }
 
-        public override bool Equals(object obj)
+        public override bool Equals(object? obj)
         {
             throw new NotImplementedException();
         }

@@ -461,9 +461,9 @@ namespace Silk.NET.Maths
 
         public override string ToString() => ToString("G");
 
-        public string ToString(string format) => ToString(format, CultureInfo.CurrentCulture);
+        public string ToString(string? format) => ToString(format, CultureInfo.CurrentCulture);
         
-        public string ToString(string format, IFormatProvider formatProvider)
+        public string ToString(string? format, IFormatProvider? formatProvider)
         {
             var sb = new StringBuilder();
             string separator = NumberFormatInfo.GetInstance(formatProvider).NumberGroupSeparator;
@@ -488,7 +488,7 @@ namespace Silk.NET.Maths
             #endif
         }
 
-        public override bool Equals(object obj) => obj is Vector3<T> vec && Equals(vec);
+        public override bool Equals(object? obj) => obj is Vector3<T> vec && Equals(vec);
 
         public bool Equals(Vector3<T> other)
         {
