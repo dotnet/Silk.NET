@@ -28,19 +28,23 @@ namespace Silk.NET.BuildTools
         public static void Run(Config config)
         {
             var tasks = new Task[config.Tasks.Length];
-            for (var i = 0; i < config.Tasks.Length; i++)
+            var dirsToCheckThrough = config.Tasks.Select(x => x.OutputOpts.Folder).Distinct();
+            foreach (var s in dirsToCheckThrough)
             {
-                var i1 = i;
-                foreach (var file in Directory.GetFiles
-                    (config.Tasks[i].OutputOpts.Folder, "*.gen.cs", SearchOption.AllDirectories))
+                foreach (var file in Directory.GetFiles(s, "*.gen.cs", SearchOption.AllDirectories))
                 {
                     File.Delete(file);
                 }
-
-                tasks[i] = Task.Run(() => RunTask(config.Tasks[i1]));
             }
 
-            Task.WaitAll(tasks);
+            for (var i = 0; i < config.Tasks.Length; i++)
+            {
+                var i1 = i;
+                //tasks[i] = Task.Run(() => RunTask(config.Tasks[i1]));
+                RunTask(config.Tasks[i1]);
+            }
+
+            //Task.WaitAll(tasks);
         }
 
         public static void RunTask(BindTask task)
@@ -104,6 +108,11 @@ namespace Silk.NET.BuildTools
 
                 if (!string.IsNullOrWhiteSpace(task.CacheKey) && !string.IsNullOrWhiteSpace(task.CacheFolder))
                 {
+                    if (!Directory.Exists(task.CacheFolder))
+                    {
+                        Directory.CreateDirectory(task.CacheFolder);
+                    }
+                
                     using var fileStream = File.OpenWrite(Path.Combine(task.CacheFolder, task.CacheKey + ".json.gz"));
                     using var gzStream = new GZipStream(fileStream, CompressionLevel.Optimal);
                     gzStream.Write(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(profile)));
