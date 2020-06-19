@@ -46,6 +46,7 @@ namespace Silk.NET.OpenGL.Legacy
         Texture2DArray = 0x8C1A,
         ProxyTexture2DArray = 0x8C1B,
         ProxyTexture2DArrayExt = 0x8C1B,
+        TextureBuffer = 0x8C2A,
         TextureCubeMapArray = 0x9009,
         TextureCubeMapArrayArb = 0x9009,
         TextureCubeMapArrayExt = 0x9009,

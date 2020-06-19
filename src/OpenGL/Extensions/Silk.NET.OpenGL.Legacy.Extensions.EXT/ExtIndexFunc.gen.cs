@@ -19,27 +19,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public abstract unsafe partial class ExtIndexFunc : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_index_func";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="func">
-        /// To be added.
-        /// </param>
-        /// <param name="@ref">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glIndexFuncEXT")]
         public abstract void IndexFunc([Flow(FlowDirection.In)] EXT func, [Flow(FlowDirection.In)] float @ref);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="func">
-        /// To be added.
-        /// </param>
-        /// <param name="@ref">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glIndexFuncEXT")]
         public abstract void IndexFunc([Flow(FlowDirection.In)] IndexFunctionEXT func, [Flow(FlowDirection.In)] float @ref);
 

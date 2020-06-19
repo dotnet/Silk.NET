@@ -19,43 +19,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public abstract unsafe partial class NVQueryResource : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_query_resource";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryType">
-        /// To be added.
-        /// </param>
-        /// <param name="tagId">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="buffer">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glQueryResourceNV")]
         public abstract unsafe int QueryResource([Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* buffer);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="queryType">
-        /// To be added.
-        /// </param>
-        /// <param name="tagId">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="buffer">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glQueryResourceNV")]
         public abstract int QueryResource([Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> buffer);
 

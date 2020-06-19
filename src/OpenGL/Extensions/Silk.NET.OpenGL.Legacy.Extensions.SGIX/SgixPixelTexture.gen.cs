@@ -19,21 +19,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
     public abstract unsafe partial class SgixPixelTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_pixel_texture";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glPixelTexGenSGIX")]
         public abstract void PixelTexGen([Flow(FlowDirection.In)] SGIX mode);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glPixelTexGenSGIX")]
         public abstract void PixelTexGen([Flow(FlowDirection.In)] PixelTexGenModeSGIX mode);
 

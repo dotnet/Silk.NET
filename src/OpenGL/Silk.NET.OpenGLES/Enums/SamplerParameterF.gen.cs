@@ -16,5 +16,7 @@ namespace Silk.NET.OpenGLES
         TextureMinLod = 0x813A,
         TextureMaxLod = 0x813B,
         TextureMaxAnisotropy = 0x84FE,
+        TextureLodBias = 0x8501,
+        TextureUnnormalizedCoordinatesArm = 0x8F6A,
     }
 }

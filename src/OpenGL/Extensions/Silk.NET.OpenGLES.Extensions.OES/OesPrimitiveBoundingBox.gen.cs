@@ -19,33 +19,6 @@ namespace Silk.NET.OpenGLES.Extensions.OES
     public abstract unsafe partial class OesPrimitiveBoundingBox : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_primitive_bounding_box";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="minX">
-        /// To be added.
-        /// </param>
-        /// <param name="minY">
-        /// To be added.
-        /// </param>
-        /// <param name="minZ">
-        /// To be added.
-        /// </param>
-        /// <param name="minW">
-        /// To be added.
-        /// </param>
-        /// <param name="maxX">
-        /// To be added.
-        /// </param>
-        /// <param name="maxY">
-        /// To be added.
-        /// </param>
-        /// <param name="maxZ">
-        /// To be added.
-        /// </param>
-        /// <param name="maxW">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glPrimitiveBoundingBoxOES")]
         public abstract void PrimitiveBoundingBox([Flow(FlowDirection.In)] float minX, [Flow(FlowDirection.In)] float minY, [Flow(FlowDirection.In)] float minZ, [Flow(FlowDirection.In)] float minW, [Flow(FlowDirection.In)] float maxX, [Flow(FlowDirection.In)] float maxY, [Flow(FlowDirection.In)] float maxZ, [Flow(FlowDirection.In)] float maxW);
 
