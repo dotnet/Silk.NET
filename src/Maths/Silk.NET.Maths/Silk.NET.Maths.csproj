@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.0;net5.0</TargetFrameworks>
-        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.0' Or '$(TargetFramework)' == 'net5.0'">
+        <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.0;netcoreapp5.0</TargetFrameworks>
+        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.0' Or '$(TargetFramework)' == 'netcoreapp5.0'">
             INTRINSICS;$(DefineConstants)
         </DefineConstants>
-        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.0' Or '$(TargetFramework)' == 'net5.0' Or '$(TargetFramework)' == 'netstandard2.1'">
+        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.0' Or '$(TargetFramework)' == 'netcoreapp5.0' Or '$(TargetFramework)' == 'netstandard2.1'">
             BTEC_INTRINSICS;$(DefineConstants)
         </DefineConstants>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -16,4 +16,10 @@
         <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.7.1" />
     </ItemGroup>
 
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+            <_Parameter1>Silk.Net.Maths.Tests</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
+    
 </Project>
