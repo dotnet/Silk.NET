@@ -19,12 +19,35 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public abstract unsafe partial class NVVertexArrayRange : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_vertex_array_range";
+        /// <summary>
+        /// To be added.
+        /// </summary>
         [NativeApi(EntryPoint = "glFlushVertexArrayRangeNV")]
         public abstract void FlushVertexArrayRange();
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="length">
+        /// To be added.
+        /// </param>
+        /// <param name="pointer">
+        /// To be added.
+        /// This parameter's element count is computed from length.
+        /// </param>
         [NativeApi(EntryPoint = "glVertexArrayRangeNV")]
         public abstract unsafe void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] void* pointer);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="length">
+        /// To be added.
+        /// </param>
+        /// <param name="pointer">
+        /// To be added.
+        /// This parameter's element count is computed from length.
+        /// </param>
         [NativeApi(EntryPoint = "glVertexArrayRangeNV")]
         public abstract void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 

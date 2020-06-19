@@ -19,6 +19,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public abstract unsafe partial class NVClipSpaceWScaling : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_clip_space_w_scaling";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="index">
+        /// To be added.
+        /// </param>
+        /// <param name="xcoeff">
+        /// To be added.
+        /// </param>
+        /// <param name="ycoeff">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glViewportPositionWScaleNV")]
         public abstract void ViewportPositionWScale([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float xcoeff, [Flow(FlowDirection.In)] float ycoeff);
 

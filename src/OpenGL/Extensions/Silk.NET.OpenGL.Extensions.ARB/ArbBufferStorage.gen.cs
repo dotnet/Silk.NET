@@ -19,36 +19,164 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public abstract unsafe partial class ArbBufferStorage : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_buffer_storage";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="data">
+        /// To be added.
+        /// This parameter's element count is taken from size.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBufferStorage")]
         public abstract unsafe void BufferStorage([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="data">
+        /// To be added.
+        /// This parameter's element count is taken from size.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBufferStorage")]
         public abstract void BufferStorage<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged;
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="data">
+        /// To be added.
+        /// This parameter's element count is taken from size.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBufferStorage")]
         public abstract unsafe void BufferStorage([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="data">
+        /// To be added.
+        /// This parameter's element count is taken from size.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBufferStorage")]
         public abstract void BufferStorage<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged;
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="data">
+        /// To be added.
+        /// This parameter's element count is taken from size.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         public unsafe void BufferStorage([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags)
         {
             // IntPtrOverloader
             BufferStorage(target, new UIntPtr(size), data, flags);
         }
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="data">
+        /// To be added.
+        /// This parameter's element count is taken from size.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         public unsafe void BufferStorage<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // IntPtrOverloader
             BufferStorage(target, new UIntPtr(size), data, flags);
         }
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="data">
+        /// To be added.
+        /// This parameter's element count is taken from size.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         public unsafe void BufferStorage([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags)
         {
             // IntPtrOverloader
             BufferStorage(target, new UIntPtr(size), data, flags);
         }
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="data">
+        /// To be added.
+        /// This parameter's element count is taken from size.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         public unsafe void BufferStorage<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // IntPtrOverloader

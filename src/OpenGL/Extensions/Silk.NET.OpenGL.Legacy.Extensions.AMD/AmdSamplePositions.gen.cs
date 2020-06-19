@@ -19,9 +19,35 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
     public abstract unsafe partial class AmdSamplePositions : NativeExtension<GL>
     {
         public const string ExtensionName = "AMD_sample_positions";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="index">
+        /// To be added.
+        /// </param>
+        /// <param name="val">
+        /// To be added.
+        /// This parameter contains 2 elements.
+        /// </param>
         [NativeApi(EntryPoint = "glSetMultisamplefvAMD")]
         public abstract unsafe void SetMultisample([Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] float* val);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="index">
+        /// To be added.
+        /// </param>
+        /// <param name="val">
+        /// To be added.
+        /// This parameter contains 2 elements.
+        /// </param>
         [NativeApi(EntryPoint = "glSetMultisamplefvAMD")]
         public abstract void SetMultisample([Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> val);
 

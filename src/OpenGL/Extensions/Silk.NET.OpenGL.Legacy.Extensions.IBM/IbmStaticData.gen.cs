@@ -19,6 +19,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
     public abstract unsafe partial class IbmStaticData : NativeExtension<GL>
     {
         public const string ExtensionName = "IBM_static_data";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glFlushStaticDataIBM")]
         public abstract void FlushStaticData([Flow(FlowDirection.In)] IBM target);
 

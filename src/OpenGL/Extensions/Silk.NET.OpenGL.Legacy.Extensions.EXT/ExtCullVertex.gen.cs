@@ -19,27 +19,107 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public abstract unsafe partial class ExtCullVertex : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_cull_vertex";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter contains 4 elements.
+        /// </param>
         [NativeApi(EntryPoint = "glCullParameterdvEXT")]
         public abstract unsafe void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter contains 4 elements.
+        /// </param>
         [NativeApi(EntryPoint = "glCullParameterdvEXT")]
         public abstract void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter contains 4 elements.
+        /// </param>
         [NativeApi(EntryPoint = "glCullParameterfvEXT")]
         public abstract unsafe void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter contains 4 elements.
+        /// </param>
         [NativeApi(EntryPoint = "glCullParameterfvEXT")]
         public abstract void CullParameter([Flow(FlowDirection.In)] EXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter contains 4 elements.
+        /// </param>
         [NativeApi(EntryPoint = "glCullParameterdvEXT")]
         public abstract unsafe void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter contains 4 elements.
+        /// </param>
         [NativeApi(EntryPoint = "glCullParameterdvEXT")]
         public abstract void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter contains 4 elements.
+        /// </param>
         [NativeApi(EntryPoint = "glCullParameterfvEXT")]
         public abstract unsafe void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter contains 4 elements.
+        /// </param>
         [NativeApi(EntryPoint = "glCullParameterfvEXT")]
         public abstract void CullParameter([Flow(FlowDirection.In)] CullParameterEXT pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params);
 

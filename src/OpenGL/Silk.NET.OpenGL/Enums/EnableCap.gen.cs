@@ -89,6 +89,5 @@ namespace Silk.NET.OpenGL
         SampleMask = 0x8E51,
         PrimitiveRestart = 0x8F9D,
         DebugOutput = 0x92E0,
-        ShadingRatePreserveAspectRatioQCom = 0x96A5,
     }
 }

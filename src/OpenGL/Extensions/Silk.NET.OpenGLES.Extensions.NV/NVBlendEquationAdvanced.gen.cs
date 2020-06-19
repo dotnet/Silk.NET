@@ -19,9 +19,21 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     public abstract unsafe partial class NVBlendEquationAdvanced : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_blend_equation_advanced";
+        /// <summary>
+        /// To be added.
+        /// </summary>
         [NativeApi(EntryPoint = "glBlendBarrierNV")]
         public abstract void BlendBarrier();
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="value">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendParameteriNV")]
         public abstract void BlendParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int value);
 

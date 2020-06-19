@@ -19,9 +19,21 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public abstract unsafe partial class ExtTexturePerturbNormal : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_texture_perturb_normal";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glTextureNormalEXT")]
         public abstract void TextureNormal([Flow(FlowDirection.In)] EXT mode);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glTextureNormalEXT")]
         public abstract void TextureNormal([Flow(FlowDirection.In)] TextureNormalModeEXT mode);
 

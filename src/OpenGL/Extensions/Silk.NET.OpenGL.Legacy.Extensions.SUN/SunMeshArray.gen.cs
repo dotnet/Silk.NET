@@ -19,9 +19,39 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
     public abstract unsafe partial class SunMeshArray : NativeExtension<GL>
     {
         public const string ExtensionName = "SUN_mesh_array";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
+        /// <param name="first">
+        /// To be added.
+        /// </param>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
+        /// <param name="width">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawMeshArraysSUN")]
         public abstract void DrawMeshArrays([Flow(FlowDirection.In)] SUN mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint width);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
+        /// <param name="first">
+        /// To be added.
+        /// </param>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
+        /// <param name="width">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawMeshArraysSUN")]
         public abstract void DrawMeshArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint width);
 

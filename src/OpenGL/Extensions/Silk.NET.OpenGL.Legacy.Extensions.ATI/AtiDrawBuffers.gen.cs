@@ -19,15 +19,55 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
     public abstract unsafe partial class AtiDrawBuffers : NativeExtension<GL>
     {
         public const string ExtensionName = "ATI_draw_buffers";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="bufs">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawBuffersATI")]
         public abstract unsafe void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ATI* bufs);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="bufs">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawBuffersATI")]
         public abstract void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<ATI> bufs);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="bufs">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawBuffersATI")]
         public abstract unsafe void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] DrawBufferMode* bufs);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="bufs">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawBuffersATI")]
         public abstract void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<DrawBufferMode> bufs);
 

@@ -19,11 +19,29 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     public abstract unsafe partial class NVPolygonMode : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_polygon_mode";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="face">
+        /// To be added.
+        /// </param>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glPolygonModeNV")]
         public abstract void PolygonMode([Flow(FlowDirection.In)] NV face, [Flow(FlowDirection.In)] NV mode);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="face">
+        /// To be added.
+        /// </param>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glPolygonModeNV")]
-        public abstract void PolygonMode([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] PolygonMode mode);
+        public abstract void PolygonMode([Flow(FlowDirection.In)] NV face, [Flow(FlowDirection.In)] PolygonMode mode);
 
         public NVPolygonMode(ref NativeApiContext ctx)
             : base(ref ctx)

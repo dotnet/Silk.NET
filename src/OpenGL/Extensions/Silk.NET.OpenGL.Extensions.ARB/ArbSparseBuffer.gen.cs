@@ -19,18 +19,78 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public abstract unsafe partial class ArbSparseBuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_sparse_buffer";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="commit">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBufferPageCommitmentARB")]
         public abstract void BufferPageCommitment([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] bool commit);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="commit">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glNamedBufferPageCommitmentEXT")]
         public abstract void NamedBufferPageCommitment([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] bool commit);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="commit">
+        /// To be added.
+        /// </param>
         public unsafe void BufferPageCommitment([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] bool commit)
         {
             // IntPtrOverloader
             BufferPageCommitment(target, new IntPtr(offset), new UIntPtr(size), commit);
         }
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="commit">
+        /// To be added.
+        /// </param>
         public unsafe void NamedBufferPageCommitment([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] bool commit)
         {
             // IntPtrOverloader

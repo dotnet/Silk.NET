@@ -5,6 +5,7 @@
             "sources": [
                 "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml"
             ],
+            "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "glcore",
             "controlDescriptors": [],
@@ -12,15 +13,16 @@
                 "reader": "gl",
                 "constructor": "gl",
                 "prefix": "gl",
-                "className": "GL",
-                "args": []
+                "className": "GL"
             },
+            "clang": {},
             "bakery": {
                 "profileNames": [
                     "glcore"
                 ]
             },
             "output": {
+                "mode": "Default",
                 "path": "src/OpenGL",
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props"
@@ -49,6 +51,7 @@
             "sources": [
                 "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml"
             ],
+            "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "gl",
             "controlDescriptors": [],
@@ -56,15 +59,16 @@
                 "reader": "gl",
                 "constructor": "gl",
                 "prefix": "gl",
-                "className": "GL",
-                "args": []
+                "className": "GL"
             },
+            "clang": {},
             "bakery": {
                 "profileNames": [
                     "gl"
                 ]
             },
             "output": {
+                "mode": "Default",
                 "path": "src/OpenGL",
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props"
@@ -93,6 +97,7 @@
             "sources": [
                 "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml"
             ],
+            "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "gles2",
             "controlDescriptors": [],
@@ -100,15 +105,16 @@
                 "reader": "gl",
                 "constructor": "gl",
                 "prefix": "gl",
-                "className": "GL",
-                "args": []
+                "className": "GL"
             },
+            "clang": {},
             "bakery": {
                 "profileNames": [
                     "gles2"
                 ]
             },
             "output": {
+                "mode": "Default",
                 "path": "src/OpenGL",
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props"
@@ -137,6 +143,7 @@
             "sources": [
                 "https://raw.githubusercontent.com/KhronosGroup/OpenCL-Docs/master/xml/cl.xml"
             ],
+            "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "cl",
             "controlDescriptors": [],
@@ -144,15 +151,16 @@
                 "reader": "cl",
                 "constructor": "cl",
                 "prefix": "cl",
-                "className": "CL",
-                "args": []
+                "className": "CL"
             },
+            "clang": {},
             "bakery": {
                 "profileNames": [
                     "opencl"
                 ]
             },
             "output": {
+                "mode": "Default",
                 "path": "src/OpenCL",
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props"
@@ -283,6 +291,7 @@
             "sources": [
                 "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/master/xml/vk.xml"
             ],
+            "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
             "cacheKey": "vulkan",
             "controlDescriptors": [],
@@ -290,15 +299,16 @@
                 "reader": "vk",
                 "constructor": "vk",
                 "prefix": "vk",
-                "className": "Vk",
-                "args": []
+                "className": "Vk"
             },
+            "clang": {},
             "bakery": {
                 "profileNames": [
                     "vulkan"
                 ]
             },
             "output": {
+                "mode": "Default",
                 "path": "src/Vulkan",
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props"

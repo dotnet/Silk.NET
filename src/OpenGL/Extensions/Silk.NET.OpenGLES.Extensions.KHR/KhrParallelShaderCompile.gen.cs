@@ -19,6 +19,12 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
     public abstract unsafe partial class KhrParallelShaderCompile : NativeExtension<GL>
     {
         public const string ExtensionName = "KHR_parallel_shader_compile";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glMaxShaderCompilerThreadsKHR")]
         public abstract void MaxShaderCompilerThreads([Flow(FlowDirection.In)] uint count);
 

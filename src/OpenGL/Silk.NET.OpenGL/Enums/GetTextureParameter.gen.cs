@@ -60,6 +60,5 @@ namespace Silk.NET.OpenGL
         TextureMaxClampSSgix = 0x8369,
         TextureMaxClampTSgix = 0x836A,
         TextureMaxClampRSgix = 0x836B,
-        TextureUnnormalizedCoordinatesArm = 0x8F6A,
     }
 }

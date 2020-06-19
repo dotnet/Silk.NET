@@ -8,7 +8,7 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES
 {
     /// <summary>
-    /// Contains the library name of OpenGLES.
+    /// Contains the library name of GLES.
     /// </summary>
     internal class OpenGLESLibraryNameContainer : SearchPathContainer
     {

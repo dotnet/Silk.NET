@@ -19,6 +19,33 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
     public abstract unsafe partial class QComTextureFoveated : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_texture_foveated";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="texture">
+        /// To be added.
+        /// </param>
+        /// <param name="layer">
+        /// To be added.
+        /// </param>
+        /// <param name="focalPoint">
+        /// To be added.
+        /// </param>
+        /// <param name="focalX">
+        /// To be added.
+        /// </param>
+        /// <param name="focalY">
+        /// To be added.
+        /// </param>
+        /// <param name="gainX">
+        /// To be added.
+        /// </param>
+        /// <param name="gainY">
+        /// To be added.
+        /// </param>
+        /// <param name="foveaArea">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glTextureFoveationParametersQCOM")]
         public abstract void TextureFoveationParameters([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint layer, [Flow(FlowDirection.In)] uint focalPoint, [Flow(FlowDirection.In)] float focalX, [Flow(FlowDirection.In)] float focalY, [Flow(FlowDirection.In)] float gainX, [Flow(FlowDirection.In)] float gainY, [Flow(FlowDirection.In)] float foveaArea);
 

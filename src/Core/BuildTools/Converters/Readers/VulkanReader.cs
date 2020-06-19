@@ -30,10 +30,10 @@ namespace Silk.NET.BuildTools.Converters.Readers
         }
 
         /// <inheritdoc />
-        public IEnumerable<Struct> ReadStructs(object obj, ProfileConverterOptions opts)
+        public IEnumerable<Struct> ReadStructs(object obj, BindTask task)
         {
             var spec = (VulkanSpecification) obj;
-            var structs = ConvertStructs(spec, opts);
+            var structs = ConvertStructs(spec, task);
             foreach (var feature in spec.Features.Select(x => x.Api).RemoveDuplicates())
             {
                 foreach (var (_, s) in structs)
@@ -53,9 +53,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
             }
         }
 
-        private Dictionary<string, Struct> ConvertStructs(VulkanSpecification spec, ProfileConverterOptions opts)
+        private Dictionary<string, Struct> ConvertStructs(VulkanSpecification spec, BindTask task)
         {
-            var prefix = opts.Prefix;
+            var prefix = task.ConverterOpts.FunctionPrefix;
             var ret = new Dictionary<string, Struct>();
             foreach (var s in spec.Structures)
             {
@@ -70,7 +70,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                     Count = string.IsNullOrEmpty(x.ElementCountSymbolic)
                                         ? x.ElementCount != 1 ? new Count(x.ElementCount) : null
                                         : new Count(x.ElementCountSymbolic, false),
-                                    Name = Naming.Translate(TrimName(x.Name, opts), prefix),
+                                    Name = Naming.Translate(TrimName(x.Name, task), prefix),
                                     Doc = $"/// <summary>{x.Comment}</summary>",
                                     NativeName = x.Name,
                                     NativeType = x.Type.ToString(),
@@ -81,16 +81,16 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                             (
                                                 Naming.Translate
                                                 (
-                                                    TrimName(x.LegalValues.Split(',').FirstOrDefault(), opts),
-                                                    opts.Prefix
+                                                    TrimName(x.LegalValues.Split(',').FirstOrDefault(), task),
+                                                    task.ConverterOpts.FunctionPrefix
                                                 ),
-                                                Naming.TranslateLite(TrimName("VkStructureType", opts), opts.Prefix)
+                                                Naming.TranslateLite(TrimName("VkStructureType", task), task.ConverterOpts.FunctionPrefix)
                                             )
                                             : null
                                 }
                             )
                             .ToList(),
-                        Name = Naming.TranslateLite(TrimName(s.Name, opts), prefix),
+                        Name = Naming.TranslateLite(TrimName(s.Name, task), prefix),
                         NativeName = s.Name
                     }
                 );
@@ -104,7 +104,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     {
                         Fields = new List<Field>
                             {new Field {Name = "Handle", Type = new Type {Name = h.CanBeDispatched ? "IntPtr" : "ulong"}}},
-                        Name = Naming.TranslateLite(TrimName(h.Name, opts), prefix),
+                        Name = Naming.TranslateLite(TrimName(h.Name, task), prefix),
                         NativeName = h.Name
                     }
                 );
@@ -115,8 +115,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 ret.Add(u.Name, new Struct
                 {
                     Attributes = new List<Attribute>{new Attribute{Name = "StructLayout", Arguments = new List<string>{"LayoutKind.Explicit"}}},
-                    Fields = GetFields(u, opts).ToList(),
-                    Name = Naming.TranslateLite(TrimName(u.Name, opts), prefix),
+                    Fields = GetFields(u, task).ToList(),
+                    Name = Naming.TranslateLite(TrimName(u.Name, task), prefix),
                     NativeName = u.Name
                 });
             }
@@ -124,7 +124,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             return ret;
         }
 
-        private IEnumerable<Field> GetFields(StructureDefinition union, ProfileConverterOptions opts)
+        private IEnumerable<Field> GetFields(StructureDefinition union, BindTask task)
         {
             foreach (var x in union.Members)
             {
@@ -132,10 +132,10 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 {
                     for (var i = 0; i < x.ElementCount; i++)
                     {
-                        var fieldSize = GetTypeSize(x.Type.Name, opts.TypeMaps);
+                        var fieldSize = GetTypeSize(x.Type.Name, task.TypeMaps);
                         yield return new Field
                         {
-                            Name = $"{Naming.Translate(x.Name, opts.Prefix)}_{i}",
+                            Name = $"{Naming.Translate(x.Name, task.ConverterOpts.FunctionPrefix)}_{i}",
                             Attributes = new List<Attribute>
                             {
                                 new Attribute{Name = "FieldOffset", Arguments = new List<string> {$"{i * fieldSize}"}}
@@ -151,7 +151,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 {
                     yield return new Field
                     {
-                        Name = $"{Naming.Translate(x.Name, opts.Prefix)}",
+                        Name = $"{Naming.Translate(x.Name, task.ConverterOpts.FunctionPrefix)}",
                         Attributes = new List<Attribute>
                         {
                             new Attribute{Name = "FieldOffset", Arguments = new List<string> {"0"}}
@@ -210,10 +210,10 @@ namespace Silk.NET.BuildTools.Converters.Readers
         }
 
         /// <inheritdoc />
-        public IEnumerable<Function> ReadFunctions(object obj, ProfileConverterOptions opts)
+        public IEnumerable<Function> ReadFunctions(object obj, BindTask task)
         {
             var spec = (VulkanSpecification) obj;
-            var functions = ConvertFunctions(spec, opts);
+            var functions = ConvertFunctions(spec, task);
             foreach (var feature in spec.Features)
             {
                 foreach (var name in feature.CommandNames)
@@ -224,7 +224,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         yield return new Function
                         {
                             ExtensionName = "Core",
-                            Categories = new List<string> {TrimName(feature.Name, opts)},
+                            Categories = new List<string> {TrimName(feature.Name, task)},
                             Name = function.Name,
                             NativeName = function.NativeName,
                             Parameters = function.Parameters,
@@ -247,8 +247,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             var function = functions[name];
                             yield return new Function
                             {
-                                ExtensionName = TrimName(extension.Name, opts),
-                                Categories = new List<string> {TrimName(extension.Name, opts)},
+                                ExtensionName = TrimName(extension.Name, task),
+                                Categories = new List<string> {TrimName(extension.Name, task)},
                                 Name = function.Name,
                                 NativeName = function.NativeName,
                                 Parameters = function.Parameters,
@@ -262,7 +262,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             }
         }
 
-        private Dictionary<string, Function> ConvertFunctions(VulkanSpecification spec, ProfileConverterOptions opts)
+        private Dictionary<string, Function> ConvertFunctions(VulkanSpecification spec, BindTask task)
         {
             var ret = new Dictionary<string, Function>();
             foreach (var function in spec.Commands)
@@ -271,7 +271,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 (
                     function.Name, new Function
                     {
-                        Name = Naming.Translate(NameTrimmer.Trim(TrimName(function.Name, opts), opts.Prefix), opts.Prefix),
+                        Name = Naming.Translate(NameTrimmer.Trim(TrimName(function.Name, task), task.ConverterOpts.FunctionPrefix), task.ConverterOpts.FunctionPrefix),
                         Parameters = function.Parameters.Select
                             (
                                 x => new Parameter
@@ -293,11 +293,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
         }
 
         /// <inheritdoc />
-        public IEnumerable<Enum> ReadEnums(object obj, ProfileConverterOptions opts)
+        public IEnumerable<Enum> ReadEnums(object obj, BindTask task)
         {
             var spec = (VulkanSpecification) obj;
-            opts.TypeMaps.Insert(0, spec.BaseTypes);
-            var enums = ConvertEnums(spec, opts);
+            task.TypeMaps.Insert(0, spec.BaseTypes);
+            var enums = ConvertEnums(spec, task);
             var tm = new Dictionary<string, string>();
             foreach (var feature in spec.Features.Select(x => x.Api).RemoveDuplicates())
             {
@@ -317,18 +317,18 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 }
             }
             
-            opts.TypeMaps.Insert(0, tm);
+            task.TypeMaps.Insert(0, tm);
         }
 
         /// <inheritdoc />
-        public IEnumerable<Constant> ReadConstants(object obj, ProfileConverterOptions opts)
+        public IEnumerable<Constant> ReadConstants(object obj, BindTask task)
         {
             var spec = (VulkanSpecification) obj;
             return spec.Constants.Select
             (
                 x => new Constant
                 {
-                    Name = Naming.Translate(TrimName(x.Name, opts), opts.Prefix), NativeName = x.Name, Value = x.Value,
+                    Name = Naming.Translate(TrimName(x.Name, task), task.ConverterOpts.FunctionPrefix), NativeName = x.Name, Value = x.Value,
                     Type = x.Type switch
                     {
                         ConstantType.Float32 => new Type {Name = "float"},
@@ -346,14 +346,14 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// <param name="name">The name to trim.</param>
         /// <param name="opts">The profile options containing the prefix.</param>
         /// <returns>The name, trimmed.</returns>
-        public string TrimName(string name, ProfileConverterOptions opts)
+        public string TrimName(string name, BindTask task)
         {
-            if (name.StartsWith($"{opts.Prefix.ToUpper()}_"))
+            if (name.StartsWith($"{task.ConverterOpts.FunctionPrefix.ToUpper()}_"))
             {
-                return name.Remove(0, opts.Prefix.Length + 1);
+                return name.Remove(0, task.ConverterOpts.FunctionPrefix.Length + 1);
             }
 
-            return name.ToLower().StartsWith(opts.Prefix.ToLower()) ? name.Remove(0, opts.Prefix.Length) : name;
+            return name.ToLower().StartsWith(task.ConverterOpts.FunctionPrefix.ToLower()) ? name.Remove(0, task.ConverterOpts.FunctionPrefix.Length) : name;
         }
 
         private static FlowDirection ConvertFlow(ParameterModifier mod)
@@ -367,7 +367,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             };
         }
         
-        private Dictionary<string, Enum> ConvertEnums(VulkanSpecification spec, ProfileConverterOptions opts)
+        private Dictionary<string, Enum> ConvertEnums(VulkanSpecification spec, BindTask task)
         {
             var ret = new Dictionary<string, Enum>();
             foreach (var e in spec.Enums)
@@ -377,7 +377,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     e.Name,
                     new Enum
                     {
-                        Name = Naming.TranslateLite(TrimName(e.Name, opts), opts.Prefix), NativeName = e.Name,
+                        Name = Naming.TranslateLite(TrimName(e.Name, task), task.ConverterOpts.FunctionPrefix), NativeName = e.Name,
                         Tokens = e.Values.Select
                             (
                                 x => new Token
@@ -385,8 +385,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                     Doc = $"/// <summary>{x.Comment}</summary>",
                                     Name = TryTrim
                                     (
-                                        Naming.Translate(TrimName(x.Name, opts), opts.Prefix),
-                                        Naming.TranslateLite(TrimName(e.Name, opts), opts.Prefix)
+                                        Naming.Translate(TrimName(x.Name, task), task.ConverterOpts.FunctionPrefix),
+                                        Naming.TranslateLite(TrimName(e.Name, task), task.ConverterOpts.FunctionPrefix)
                                     ),
                                     Value = x.Value.ToString(),
                                     NativeName = x.Name
@@ -400,7 +400,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 );
             }
 
-            opts.TypeMaps.Insert
+            task.TypeMaps.Insert
             (
                 0,
                 spec.Typedefs.Where

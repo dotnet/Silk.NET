@@ -20,11 +20,17 @@ namespace Silk.NET.BuildTools
         // TODO the dishwasher
         [JsonProperty("profileName")] public string Name { get; set; }
         [JsonProperty("sources")] public string[] Sources { get; set; }
+
+        [JsonProperty("mode")]
+        [JsonConverter(typeof(StringEnumConverter))]
+        public ConverterMode Mode { get; set; }
+
         [JsonProperty("cacheDir")] public string CacheFolder { get; set; }
         [JsonProperty("cacheKey")] public string CacheKey { get; set; }
         [JsonProperty("controlDescriptors")] public string[] Controls { get; set; }
         [JsonProperty("converter")] public ConverterOptions ConverterOpts { get; set; }
-        [JsonProperty("bakery")] public BakerySettings BakeryOpts { get; set; }
+        [JsonProperty("clang")] public ClangTaskOptions ClangOpts { get; set; }
+        [JsonProperty("bakery")] public BakeryOptions BakeryOpts { get; set; }
         [JsonProperty("output")] public OutputOptions OutputOpts { get; set; }
         [JsonProperty("namespace")] public string Namespace { get; set; }
         [JsonProperty("extensionsNamespace")] public string ExtensionsNamespace { get; set; }
@@ -38,7 +44,7 @@ namespace Silk.NET.BuildTools
         [JsonProperty("classes")] public Dictionary<string, string> ClassMappings { get; set; }
     }
 
-    public struct BakerySettings
+    public struct BakeryOptions
     {
         [JsonProperty("profileNames")] public string[] Include { get; set; }
     }
@@ -49,11 +55,14 @@ namespace Silk.NET.BuildTools
         [JsonProperty("reader")] public string Reader { get; set; }
         [JsonProperty("constructor")] public string Constructor { get; set; }
         [JsonProperty("prefix")] public string FunctionPrefix { get; set; }
-        [JsonProperty("args")] public string[] AdditionalArgs { get; set; }
     }
 
     public struct OutputOptions
     {
+        [JsonProperty("mode")]
+        [JsonConverter(typeof(StringEnumConverter))]
+        public OutputMode Mode { get; set; }
+
         /// <summary>
         /// Gets or sets the base output path where the binder will write the generated files.
         /// </summary>
@@ -71,5 +80,17 @@ namespace Silk.NET.BuildTools
         /// </summary>
         [JsonProperty("props")]
         public string Props { get; set; }
+    }
+
+    public enum ConverterMode
+    {
+        ConvertConstruct,
+        Clang
+    }
+
+    public enum OutputMode
+    {
+        Default = 1, // fnptrs, for now just use super invoke
+        Legacy = 1 // super invoke
     }
 }

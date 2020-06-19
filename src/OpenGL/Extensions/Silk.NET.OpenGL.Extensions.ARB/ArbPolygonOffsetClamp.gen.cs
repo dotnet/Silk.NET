@@ -19,6 +19,18 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public abstract unsafe partial class ArbPolygonOffsetClamp : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_polygon_offset_clamp";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="factor">
+        /// To be added.
+        /// </param>
+        /// <param name="units">
+        /// To be added.
+        /// </param>
+        /// <param name="clamp">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glPolygonOffsetClamp")]
         public abstract void PolygonOffsetClamp([Flow(FlowDirection.In)] float factor, [Flow(FlowDirection.In)] float units, [Flow(FlowDirection.In)] float clamp);
 

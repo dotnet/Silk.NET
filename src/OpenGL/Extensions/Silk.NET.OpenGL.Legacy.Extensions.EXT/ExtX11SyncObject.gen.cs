@@ -19,9 +19,35 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public abstract unsafe partial class ExtX11SyncObject : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_x11_sync_object";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="external_sync_type">
+        /// To be added.
+        /// </param>
+        /// <param name="external_sync">
+        /// To be added.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
+        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glImportSyncEXT")]
         public abstract IntPtr ImportSync([Flow(FlowDirection.In)] EXT external_sync_type, [Flow(FlowDirection.In)] IntPtr external_sync, [Flow(FlowDirection.In)] uint flags);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="external_sync_type">
+        /// To be added.
+        /// </param>
+        /// <param name="external_sync">
+        /// To be added.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
+        /// <returns>See summary.</returns>
         public unsafe IntPtr ImportSync([Flow(FlowDirection.In)] EXT external_sync_type, [Flow(FlowDirection.In)] int external_sync, [Flow(FlowDirection.In)] uint flags)
         {
             // IntPtrOverloader

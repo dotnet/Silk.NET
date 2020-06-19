@@ -19,15 +19,79 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public abstract unsafe partial class ArbShaderAtomicCounters : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_shader_atomic_counters";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="program">
+        /// To be added.
+        /// </param>
+        /// <param name="bufferIndex">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetActiveAtomicCounterBufferiv")]
         public abstract unsafe void GetActiveAtomicCounterBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufferIndex, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="program">
+        /// To be added.
+        /// </param>
+        /// <param name="bufferIndex">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetActiveAtomicCounterBufferiv")]
         public abstract void GetActiveAtomicCounterBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufferIndex, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="program">
+        /// To be added.
+        /// </param>
+        /// <param name="bufferIndex">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetActiveAtomicCounterBufferiv")]
         public abstract unsafe void GetActiveAtomicCounterBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufferIndex, [Flow(FlowDirection.In)] AtomicCounterBufferPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="program">
+        /// To be added.
+        /// </param>
+        /// <param name="bufferIndex">
+        /// To be added.
+        /// </param>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="@params">
+        /// To be added.
+        /// This parameter's element count is computed from pname.
+        /// </param>
         [NativeApi(EntryPoint = "glGetActiveAtomicCounterBufferiv")]
         public abstract void GetActiveAtomicCounterBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufferIndex, [Flow(FlowDirection.In)] AtomicCounterBufferPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 

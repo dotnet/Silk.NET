@@ -72,12 +72,20 @@ namespace Silk.NET.BuildTools
             {
                 new BindTask
                 {
-                    BakeryOpts = new BakerySettings
+                    BakeryOpts = new BakeryOptions
                     {
                         Include = new[] {"glcore"}
                     },
                     CacheFolder = "/path/to/cacheFolder",
                     CacheKey = "glcoreCacheKey",
+                    ClangOpts = new ClangTaskOptions
+                    {
+                        ClangArgs = new[] {"--clang-arguments"},
+                        ClassMappings = new Dictionary<string, string>
+                        {
+                            {"sourceHeader.h", "DestinationClass"}
+                        }
+                    },
                     Controls = new[]
                     {
                         "control-variables-to-define-how-gernation-runs",
@@ -89,12 +97,11 @@ namespace Silk.NET.BuildTools
                     {
                         Reader = "gl",
                         Constructor = "gl",
-                        FunctionPrefix = "gl",
-                        AdditionalArgs = new []{"--clang-args"},
-                        ClassName = "GL"
+                        FunctionPrefix = "gl"
                     },
                     ExtensionsNamespace = "MyNamespace.ForExtensions",
                     Namespace = "MyNamespace",
+                    Mode = ConverterMode.ConvertConstruct,
                     Name = "Profile Name",
                     Sources = new[] {"/path/to/sourceFile.xml", "/path/to/header.h"},
                     NameContainer = new NameContainer
@@ -109,7 +116,7 @@ namespace Silk.NET.BuildTools
                     OutputOpts = new OutputOptions
                     {
                         Folder = "/path/to/outputFolder", License = "/path/to/licenseFile",
-                        Props = "/path/to/customMSBuild.props"
+                        Mode = OutputMode.Legacy, Props = "/path/to/customMSBuild.props"
                     },
                     TypeMaps = new List<Dictionary<string, string>>
                         {new Dictionary<string, string> {{"HWND", "nint"}}}

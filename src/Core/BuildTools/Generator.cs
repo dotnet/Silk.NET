@@ -49,7 +49,7 @@ namespace Silk.NET.BuildTools
 
         public static void RunTask(BindTask task)
         {
-            //(Console.Out as Program.ConsoleWriter)?.Tasks.TryAdd(Task.CurrentId ?? -2, task.Name);
+            (Console.Out as Program.ConsoleWriter)?.Tasks.TryAdd(Task.CurrentId ?? -2, task.Name);
             
             foreach (var typeMap in task.TypeMaps)
             {
@@ -78,52 +78,33 @@ namespace Silk.NET.BuildTools
             if (ShouldConvert(task.Controls))
             {
                 var profiles = new List<Profile>();
-                foreach (var src in task.Sources)
+                if (task.Mode == ConverterMode.ConvertConstruct)
                 {
-                    profiles.AddRange
-                    (
-                        // BUG we have to serialize and then deserialize again because everything goes bat shit crazy
-                        JsonConvert.DeserializeObject<Profile[]>
+                    foreach (var src in task.Sources)
+                    {
+                        profiles.AddRange(ProfileConverter.ReadProfiles
                         (
-                            JsonConvert.SerializeObject
-                            (
-                                ProfileConverter.ReadProfiles
-                                (
-                                    task.ConverterOpts.Reader.ToLower() switch
-                                    {
-                                        "gl" => new OpenGLReader(),
-                                        "cl" => new OpenCLReader(),
-                                        "vk" => new VulkanReader(),
-                                        _ => throw new ArgumentException("Couldn't find a reader with that name")
-                                    }, task.ConverterOpts.Constructor.ToLower() switch
-                                    {
-                                        "gl" => new OpenGLConstructor(),
-                                        "cl" => new OpenCLConstructor(),
-                                        "vk" => new VulkanConstructor(),
-                                        _ => throw new ArgumentException("Couldn't find a reader with that name")
-                                    },
-                                    OpenPath(src),
-                                    new ProfileConverterOptions
-                                    {
-                                        Prefix = task.ConverterOpts.FunctionPrefix,
-                                        TypeMaps = task.TypeMaps
-                                    }
-                                )
-                            )
-                        )
-                    );
+                            task.ConverterOpts.Reader.ToLower() switch
+                            {
+                                "gl" => new OpenGLReader(),
+                                "cl" => new OpenCLReader(),
+                                "vk" => new VulkanReader(),
+                                _ => throw new ArgumentException("Couldn't find a reader with that name")
+                            }, task.ConverterOpts.Constructor.ToLower() switch
+                            {
+                                "gl" => new OpenGLConstructor(),
+                                "cl" => new OpenCLConstructor(),
+                                "vk" => new VulkanConstructor(),
+                                _ => throw new ArgumentException("Couldn't find a reader with that name")
+                            },
+                            OpenPath(src),
+                            task
+                        ));
+                    }
                 }
 
                 profile = ProfileBakery.Bake
-                (
-                    new ProfileBakeryInformation
-                    {
-                        ClassName = task.ConverterOpts.ClassName, ExtensionsNamespace = task.ExtensionsNamespace,
-                        FunctionPrefix = task.ConverterOpts.FunctionPrefix, Name = task.Name,
-                        Namespace = task.Namespace, NameContainer = task.NameContainer,
-                        OutputFolder = task.OutputOpts.Folder
-                    }, profiles.Where(x => task.BakeryOpts.Include.Contains(x.Name)).ToList()
-                );
+                    (task.Name, profiles.Where(x => task.BakeryOpts.Include.Contains(x.Name)).ToList());
 
                 if (!string.IsNullOrWhiteSpace(task.CacheKey) && !string.IsNullOrWhiteSpace(task.CacheFolder))
                 {

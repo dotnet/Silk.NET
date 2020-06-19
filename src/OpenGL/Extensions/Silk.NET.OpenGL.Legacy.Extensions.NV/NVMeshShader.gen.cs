@@ -19,30 +19,105 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public abstract unsafe partial class NVMeshShader : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_mesh_shader";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="first">
+        /// To be added.
+        /// </param>
+        /// <param name="count">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawMeshTasksNV")]
         public abstract void DrawMeshTask([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="indirect">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawMeshTasksIndirectNV")]
         public abstract void DrawMeshTasksIndirect([Flow(FlowDirection.In)] IntPtr indirect);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="indirect">
+        /// To be added.
+        /// </param>
+        /// <param name="drawcount">
+        /// To be added.
+        /// </param>
+        /// <param name="stride">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glMultiDrawMeshTasksIndirectNV")]
         public abstract void MultiDrawMeshTasksIndirect([Flow(FlowDirection.In)] IntPtr indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="indirect">
+        /// To be added.
+        /// </param>
+        /// <param name="drawcount">
+        /// To be added.
+        /// </param>
+        /// <param name="maxdrawcount">
+        /// To be added.
+        /// </param>
+        /// <param name="stride">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glMultiDrawMeshTasksIndirectCountNV")]
         public abstract void MultiDrawMeshTasksIndirectCount([Flow(FlowDirection.In)] IntPtr indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="indirect">
+        /// To be added.
+        /// </param>
         public unsafe void DrawMeshTasksIndirect([Flow(FlowDirection.In)] int indirect)
         {
             // IntPtrOverloader
             DrawMeshTasksIndirect(new IntPtr(indirect));
         }
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="indirect">
+        /// To be added.
+        /// </param>
+        /// <param name="drawcount">
+        /// To be added.
+        /// </param>
+        /// <param name="stride">
+        /// To be added.
+        /// </param>
         public unsafe void MultiDrawMeshTasksIndirect([Flow(FlowDirection.In)] int indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride)
         {
             // IntPtrOverloader
             MultiDrawMeshTasksIndirect(new IntPtr(indirect), drawcount, stride);
         }
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="indirect">
+        /// To be added.
+        /// </param>
+        /// <param name="drawcount">
+        /// To be added.
+        /// </param>
+        /// <param name="maxdrawcount">
+        /// To be added.
+        /// </param>
+        /// <param name="stride">
+        /// To be added.
+        /// </param>
         public unsafe void MultiDrawMeshTasksIndirectCount([Flow(FlowDirection.In)] int indirect, [Flow(FlowDirection.In)] int drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride)
         {
             // IntPtrOverloader

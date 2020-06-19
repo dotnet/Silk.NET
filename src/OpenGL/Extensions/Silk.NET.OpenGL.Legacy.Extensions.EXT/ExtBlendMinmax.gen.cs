@@ -19,9 +19,21 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public abstract unsafe partial class ExtBlendMinmax : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_blend_minmax";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendEquationEXT")]
         public abstract void BlendEquation([Flow(FlowDirection.In)] EXT mode);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendEquationEXT")]
         public abstract void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode);
 

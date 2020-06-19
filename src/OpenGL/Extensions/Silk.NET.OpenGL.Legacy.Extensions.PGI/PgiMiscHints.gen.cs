@@ -19,9 +19,27 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.PGI
     public abstract unsafe partial class PgiMiscHints : NativeExtension<GL>
     {
         public const string ExtensionName = "PGI_misc_hints";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glHintPGI")]
         public abstract void Hint([Flow(FlowDirection.In)] PGI target, [Flow(FlowDirection.In)] int mode);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glHintPGI")]
         public abstract void Hint([Flow(FlowDirection.In)] HintTargetPGI target, [Flow(FlowDirection.In)] int mode);
 

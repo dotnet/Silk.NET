@@ -106,14 +106,14 @@ namespace Silk.NET.BuildTools.Overloading
             return ret;
         }
 
-        public static IEnumerable<ImplementedFunction> GetOverloads(Interface @interface, Project core)
+        public static IEnumerable<ImplementedFunction> GetOverloads(NativeApiSet nativeApiSet, Project core)
         {
             var ret = new List<ImplementedFunction>();
-            foreach (var function in @interface.Functions)
+            foreach (var function in nativeApiSet.Functions)
             {
                 foreach (var overload in GetOverloads(function, core))
                 {
-                    if (!@interface.Functions.Any(x => x.Equals(overload.Signature)))
+                    if (!nativeApiSet.Functions.Any(x => x.Equals(overload.Signature)))
                     {
                         if (!ret.Any(x => x.Signature.Equals(overload.Signature)))
                         {

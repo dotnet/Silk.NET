@@ -19,6 +19,12 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public abstract unsafe partial class ArbES31Compatibility : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_ES3_1_compatibility";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="barriers">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glMemoryBarrierByRegion")]
         public abstract void MemoryBarrierByRegion([Flow(FlowDirection.In)] uint barriers);
 

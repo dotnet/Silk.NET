@@ -19,9 +19,27 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public abstract unsafe partial class ExtBlendEquationSeparate : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_blend_equation_separate";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="modeRGB">
+        /// To be added.
+        /// </param>
+        /// <param name="modeAlpha">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendEquationSeparateEXT")]
         public abstract void BlendEquationSeparate([Flow(FlowDirection.In)] EXT modeRGB, [Flow(FlowDirection.In)] EXT modeAlpha);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="modeRGB">
+        /// To be added.
+        /// </param>
+        /// <param name="modeAlpha">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBlendEquationSeparateEXT")]
         public abstract void BlendEquationSeparate([Flow(FlowDirection.In)] BlendEquationModeEXT modeRGB, [Flow(FlowDirection.In)] BlendEquationModeEXT modeAlpha);
 

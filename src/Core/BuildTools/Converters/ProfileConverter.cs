@@ -18,47 +18,54 @@ namespace Silk.NET.BuildTools.Converters
     public static class ProfileConverter
     {
         public static IEnumerable<Profile> ReadProfiles
-            (IReader reader, IConstructor ctor, Stream input, ProfileConverterOptions opts)
+            (IReader reader, IConstructor ctor, Stream input, BindTask task)
         {
             var obj = reader.Load(input);
             Console.WriteLine("Reading enums...");
-            var enums = reader.ReadEnums(obj, opts).OrderBy(x => x.Name).ToArray();
+            var enums = reader.ReadEnums(obj, task).OrderBy(x => x.Name).ToArray();
             Console.WriteLine("Reading functions...");
-            var functions = reader.ReadFunctions(obj, opts).OrderBy(x => x.Name).ToArray();
+            var functions = reader.ReadFunctions(obj, task).OrderBy(x => x.Name).ToArray();
             Console.WriteLine("Reading structs...");
-            var structs = reader.ReadStructs(obj, opts).OrderBy(x => x.Name).ToArray();
+            var structs = reader.ReadStructs(obj, task).OrderBy(x => x.Name).ToArray();
             Console.WriteLine("Reading constants...");
-            var constants = reader.ReadConstants(obj, opts).OrderBy(x => x.Name).ToArray();
+            var constants = reader.ReadConstants(obj, task).OrderBy(x => x.Name).ToArray();
             Console.WriteLine("Creating profiles...");
             var profiles = enums.Select(x => (x.ProfileName, x.ProfileVersion))
                 .Concat(functions.Select(x => (x.ProfileName, x.ProfileVersion)))
                 .Concat(structs.Select(x => (x.ProfileName, x.ProfileVersion)))
                 .Distinct()
-                .Select(x => CreateBlankProfile(x.ProfileName, x.ProfileVersion, opts));
+                .Select(x => CreateBlankProfile(x.ProfileName, x.ProfileVersion));
 
             foreach (var profile in profiles)
             {
-                ctor.WriteEnums(profile, enums, opts);
-                ctor.WriteFunctions(profile, functions, opts);
-                ctor.WriteStructs(profile, structs, opts);
-                ctor.WriteConstants(profile, constants, opts);
-                foreach (var typeMap in profile.TypeMaps)
+                ctor.WriteEnums(profile, enums, task);
+                ctor.WriteFunctions(profile, functions, task);
+                ctor.WriteStructs(profile, structs, task);
+                ctor.WriteConstants(profile, constants, task);
+                foreach (var typeMap in task.TypeMaps)
                 {
                     TypeMapper.Map
                     (
                         typeMap,
-                        profile.Projects.Values.SelectMany(x => x.Interfaces.Values).SelectMany(x => x.Functions)
+                        profile.Projects.Values.SelectMany(x => x.Classes.SelectMany(y => y.NativeApis.Values))
+                            .SelectMany(x => x.Functions)
                     );
                 }
 
-                foreach (var typeMap in profile.TypeMaps)
+                foreach (var typeMap in task.TypeMaps)
                 {
                     TypeMapper.Map(typeMap, structs);
                 }
 
-                foreach (var constant in profile.Constants)
+                foreach (var kvp in profile.Projects)
                 {
-                    constant.Type = TypeMapper.MapOne(profile.TypeMaps, constant.Type);
+                    foreach (var @class in kvp.Value.Classes)
+                    {
+                        foreach (var constant in @class.Constants)
+                        {
+                            constant.Type = TypeMapper.MapOne(task.TypeMaps, constant.Type);
+                        }
+                    }
                 }
 
                 Console.WriteLine($"Created profile \"{profile.Name}\" version {profile.Version}");
@@ -79,7 +86,7 @@ namespace Silk.NET.BuildTools.Converters
             return File.OpenRead(path);
         }
 
-        public static void WriteProfiles(CommandLineOptions opts)
+        public static void WriteProfiles(CommandLineOptions opts, BindTask task)
         {
             if (!Directory.Exists(opts.OutputFolder))
             {
@@ -106,14 +113,7 @@ namespace Silk.NET.BuildTools.Converters
             {
                 foreach (var profile in ReadProfiles
                 (
-                    reader, constructor, file,
-                    new ProfileConverterOptions
-                    {
-                        Prefix = opts.Prefix,
-                        TypeMaps = opts.Typemap.Select(File.ReadAllText)
-                            .Select(JsonConvert.DeserializeObject<Dictionary<string, string>>)
-                            .ToList()
-                    }
+                    reader, constructor, file, task
                 ))
                 {
                     using var outStream = opts.OutputFolder == null
@@ -135,14 +135,12 @@ namespace Silk.NET.BuildTools.Converters
             }
         }
 
-        private static Profile CreateBlankProfile(string name, Version version, ProfileConverterOptions opts)
+        private static Profile CreateBlankProfile(string name, Version version)
         {
             return new Profile
             {
                 Name = name,
-                Version = version?.ToString(2),
-                TypeMaps = opts.TypeMaps ?? new List<Dictionary<string, string>>(), // NRE
-                ClassName = opts.Prefix.ToUpper().CheckMemberName(opts.Prefix)
+                Version = version?.ToString(2)
             };
         }
     }

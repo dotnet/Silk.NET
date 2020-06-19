@@ -19,6 +19,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public abstract unsafe partial class NVConservativeRasterDilate : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_conservative_raster_dilate";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="pname">
+        /// To be added.
+        /// </param>
+        /// <param name="value">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glConservativeRasterParameterfNV")]
         public abstract void ConservativeRasterParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] float value);
 

@@ -19,6 +19,5 @@ namespace Silk.NET.OpenGL
         TextureWrapR = 0x8072,
         TextureCompareMode = 0x884C,
         TextureCompareFunc = 0x884D,
-        TextureUnnormalizedCoordinatesArm = 0x8F6A,
     }
 }

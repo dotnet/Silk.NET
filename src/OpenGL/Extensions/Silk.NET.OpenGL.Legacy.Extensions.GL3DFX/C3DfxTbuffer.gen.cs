@@ -19,6 +19,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.GL3DFX
     public abstract unsafe partial class C3DfxTbuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "3DFX_tbuffer";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mask">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glTbufferMask3DFX")]
         public abstract void TbufferMask3Dfx([Flow(FlowDirection.In)] uint mask);
 

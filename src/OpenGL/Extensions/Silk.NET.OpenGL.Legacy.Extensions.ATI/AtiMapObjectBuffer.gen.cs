@@ -19,9 +19,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
     public abstract unsafe partial class AtiMapObjectBuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "ATI_map_object_buffer";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
+        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glMapObjectBufferATI")]
         public abstract unsafe void* MapObjectBuffer([Flow(FlowDirection.In)] uint buffer);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glUnmapObjectBufferATI")]
         public abstract void UnmapObjectBuffer([Flow(FlowDirection.In)] uint buffer);
 

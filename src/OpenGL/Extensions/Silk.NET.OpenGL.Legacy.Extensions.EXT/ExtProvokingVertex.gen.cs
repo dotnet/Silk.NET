@@ -19,9 +19,21 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public abstract unsafe partial class ExtProvokingVertex : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_provoking_vertex";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glProvokingVertexEXT")]
         public abstract void ProvokingVertex([Flow(FlowDirection.In)] EXT mode);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="mode">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glProvokingVertexEXT")]
         public abstract void ProvokingVertex([Flow(FlowDirection.In)] VertexProvokingMode mode);
 

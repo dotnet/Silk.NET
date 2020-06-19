@@ -19,6 +19,42 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public abstract unsafe partial class NVDrawTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_draw_texture";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="texture">
+        /// To be added.
+        /// </param>
+        /// <param name="sampler">
+        /// To be added.
+        /// </param>
+        /// <param name="x0">
+        /// To be added.
+        /// </param>
+        /// <param name="y0">
+        /// To be added.
+        /// </param>
+        /// <param name="x1">
+        /// To be added.
+        /// </param>
+        /// <param name="y1">
+        /// To be added.
+        /// </param>
+        /// <param name="z">
+        /// To be added.
+        /// </param>
+        /// <param name="s0">
+        /// To be added.
+        /// </param>
+        /// <param name="t0">
+        /// To be added.
+        /// </param>
+        /// <param name="s1">
+        /// To be added.
+        /// </param>
+        /// <param name="t1">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawTextureNV")]
         public abstract void DrawTexture([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] float x0, [Flow(FlowDirection.In)] float y0, [Flow(FlowDirection.In)] float x1, [Flow(FlowDirection.In)] float y1, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float s0, [Flow(FlowDirection.In)] float t0, [Flow(FlowDirection.In)] float s1, [Flow(FlowDirection.In)] float t1);
 

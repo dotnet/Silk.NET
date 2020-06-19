@@ -19,9 +19,29 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public abstract unsafe partial class ExtDrawBuffers : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_draw_buffers";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="bufs">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawBuffersEXT")]
         public abstract unsafe void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] EXT* bufs);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="bufs">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         [NativeApi(EntryPoint = "glDrawBuffersEXT")]
         public abstract void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<EXT> bufs);
 

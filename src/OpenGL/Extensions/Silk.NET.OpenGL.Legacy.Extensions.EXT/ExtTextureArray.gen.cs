@@ -19,9 +19,45 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public abstract unsafe partial class ExtTextureArray : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_texture_array";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="attachment">
+        /// To be added.
+        /// </param>
+        /// <param name="texture">
+        /// To be added.
+        /// </param>
+        /// <param name="level">
+        /// To be added.
+        /// </param>
+        /// <param name="layer">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureLayerEXT")]
         public abstract void FramebufferTextureLayer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="attachment">
+        /// To be added.
+        /// </param>
+        /// <param name="texture">
+        /// To be added.
+        /// </param>
+        /// <param name="level">
+        /// To be added.
+        /// </param>
+        /// <param name="layer">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureLayerEXT")]
         public abstract void FramebufferTextureLayer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer);
 

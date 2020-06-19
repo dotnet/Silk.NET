@@ -19,18 +19,90 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public abstract unsafe partial class ExtExternalBuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_external_buffer";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="clientBuffer">
+        /// To be added.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glBufferStorageExternalEXT")]
         public abstract void BufferStorageExternal([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] IntPtr clientBuffer, [Flow(FlowDirection.In)] uint flags);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="clientBuffer">
+        /// To be added.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glNamedBufferStorageExternalEXT")]
         public abstract void NamedBufferStorageExternal([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] IntPtr clientBuffer, [Flow(FlowDirection.In)] uint flags);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="target">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="clientBuffer">
+        /// To be added.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         public unsafe void BufferStorageExternal([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] int clientBuffer, [Flow(FlowDirection.In)] uint flags)
         {
             // IntPtrOverloader
             BufferStorageExternal(target, new IntPtr(offset), new UIntPtr(size), new IntPtr(clientBuffer), flags);
         }
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="buffer">
+        /// To be added.
+        /// </param>
+        /// <param name="offset">
+        /// To be added.
+        /// </param>
+        /// <param name="size">
+        /// To be added.
+        /// </param>
+        /// <param name="clientBuffer">
+        /// To be added.
+        /// </param>
+        /// <param name="flags">
+        /// To be added.
+        /// </param>
         public unsafe void NamedBufferStorageExternal([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] int offset, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] int clientBuffer, [Flow(FlowDirection.In)] uint flags)
         {
             // IntPtrOverloader

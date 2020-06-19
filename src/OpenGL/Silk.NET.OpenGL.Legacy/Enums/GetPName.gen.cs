@@ -502,8 +502,6 @@ namespace Silk.NET.OpenGL.Legacy
         TransformFeedbackBufferStart = 0x8C84,
         TransformFeedbackBufferSize = 0x8C85,
         TransformFeedbackBufferBinding = 0x8C8F,
-        MotionEstimationSearchBlockXQCom = 0x8C90,
-        MotionEstimationSearchBlockYQCom = 0x8C91,
         StencilBackRef = 0x8CA3,
         StencilBackValueMask = 0x8CA4,
         StencilBackWritemask = 0x8CA5,
@@ -520,8 +518,6 @@ namespace Silk.NET.OpenGL.Legacy
         Timestamp = 0x8E28,
         ProvokingVertex = 0x8E4F,
         MaxSampleMaskWords = 0x8E59,
-        MaxTessControlUniformBlocks = 0x8E89,
-        MaxTessEvaluationUniformBlocks = 0x8E8A,
         PrimitiveRestartIndex = 0x8F9E,
         MinMapBufferAlignment = 0x90BC,
         ShaderStorageBufferBinding = 0x90D3,
@@ -548,7 +544,6 @@ namespace Silk.NET.OpenGL.Legacy
         MaxGeometryInputComponents = 0x9123,
         MaxGeometryOutputComponents = 0x9124,
         MaxFragmentInputComponents = 0x9125,
-        ContextProfileMask = 0x9126,
         TextureBufferOffsetAlignment = 0x919F,
         MaxComputeUniformBlocks = 0x91BB,
         MaxComputeTextureImageUnits = 0x91BC,
@@ -569,6 +564,5 @@ namespace Silk.NET.OpenGL.Legacy
         DriverUuidExt = 0x9598,
         DeviceLuidExt = 0x9599,
         DeviceNodeMaskExt = 0x959A,
-        ShadingRateQCom = 0x96A4,
     }
 }

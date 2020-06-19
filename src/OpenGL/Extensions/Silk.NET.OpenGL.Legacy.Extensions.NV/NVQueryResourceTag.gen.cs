@@ -19,33 +19,120 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public abstract unsafe partial class NVQueryResourceTag : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_query_resource_tag";
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="tagIds">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         [NativeApi(EntryPoint = "glDeleteQueryResourceTagNV")]
         public abstract unsafe void DeleteQueryResourceTag([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] int* tagIds);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="tagIds">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         [NativeApi(EntryPoint = "glDeleteQueryResourceTagNV")]
         public abstract void DeleteQueryResourceTag([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<int> tagIds);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="tagIds">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         [NativeApi(EntryPoint = "glGenQueryResourceTagNV")]
         public abstract unsafe void GenQueryResourceTag([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] int* tagIds);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="tagIds">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         [NativeApi(EntryPoint = "glGenQueryResourceTagNV")]
         public abstract void GenQueryResourceTag([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<int> tagIds);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="tagId">
+        /// To be added.
+        /// </param>
+        /// <param name="tagString">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glQueryResourceTagNV")]
         public abstract unsafe void QueryResourceTag([Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] char* tagString);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="tagId">
+        /// To be added.
+        /// </param>
+        /// <param name="tagString">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glQueryResourceTagNV")]
         public abstract void QueryResourceTag([Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] Span<char> tagString);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="tagId">
+        /// To be added.
+        /// </param>
+        /// <param name="tagString">
+        /// To be added.
+        /// </param>
         [NativeApi(EntryPoint = "glQueryResourceTagNV")]
         public abstract void QueryResourceTag([Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] string tagString);
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="tagIds">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         public unsafe void DeleteQueryResourceTag([Count(Parameter = "n"), Flow(FlowDirection.In)] int tagIds)
         {
             // ArrayParameterOverloader
             DeleteQueryResourceTag(1, &tagIds);
         }
 
+        /// <summary>
+        /// To be added.
+        /// </summary>
+        /// <param name="n">
+        /// To be added.
+        /// </param>
+        /// <param name="tagIds">
+        /// To be added.
+        /// This parameter's element count is taken from n.
+        /// </param>
         public unsafe int GenQueryResourceTag()
         {
             const uint n = 1;

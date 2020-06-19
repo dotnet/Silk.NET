@@ -12,9 +12,7 @@ namespace Silk.NET.OpenGLES.Extensions.MESA
 {
     public enum MESA
     {
-        FramebufferFlipXMesa = 0x8BBC,
         FramebufferFlipYMesa = 0x8BBB,
-        FramebufferSwapXYMesa = 0x8BBD,
         ProgramBinaryFormatMesa = 0x875F,
     }
 }
