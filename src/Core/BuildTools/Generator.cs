@@ -82,24 +82,33 @@ namespace Silk.NET.BuildTools
                 {
                     foreach (var src in task.Sources)
                     {
-                        profiles.AddRange(ProfileConverter.ReadProfiles
+                        profiles.AddRange
                         (
-                            task.ConverterOpts.Reader.ToLower() switch
-                            {
-                                "gl" => new OpenGLReader(),
-                                "cl" => new OpenCLReader(),
-                                "vk" => new VulkanReader(),
-                                _ => throw new ArgumentException("Couldn't find a reader with that name")
-                            }, task.ConverterOpts.Constructor.ToLower() switch
-                            {
-                                "gl" => new OpenGLConstructor(),
-                                "cl" => new OpenCLConstructor(),
-                                "vk" => new VulkanConstructor(),
-                                _ => throw new ArgumentException("Couldn't find a reader with that name")
-                            },
-                            OpenPath(src),
-                            task
-                        ));
+                            JsonConvert.DeserializeObject<Profile[]>
+                            (
+                                JsonConvert.SerializeObject
+                                (
+                                    ProfileConverter.ReadProfiles
+                                    (
+                                        task.ConverterOpts.Reader.ToLower() switch
+                                        {
+                                            "gl" => new OpenGLReader(),
+                                            "cl" => new OpenCLReader(),
+                                            "vk" => new VulkanReader(),
+                                            _ => throw new ArgumentException("Couldn't find a reader with that name")
+                                        }, task.ConverterOpts.Constructor.ToLower() switch
+                                        {
+                                            "gl" => new OpenGLConstructor(),
+                                            "cl" => new OpenCLConstructor(),
+                                            "vk" => new VulkanConstructor(),
+                                            _ => throw new ArgumentException("Couldn't find a reader with that name")
+                                        },
+                                        OpenPath(src),
+                                        task
+                                    )
+                                )
+                            )
+                        );
                     }
                 }
 
