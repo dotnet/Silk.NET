@@ -49,8 +49,11 @@ namespace Silk.NET.BuildTools
 
         public static void RunTask(BindTask task)
         {
-            (Console.Out as Program.ConsoleWriter)?.Tasks.TryAdd(Task.CurrentId ?? -2, task.Name);
-            
+            if (!(Program.ConsoleWriter.Instance is null))
+            {
+                Program.ConsoleWriter.Instance.CurrentName.Value = task.Name;
+            }
+
             foreach (var typeMap in task.TypeMaps)
             {
                 var toAdd = new List<KeyValuePair<string, string>>();
@@ -82,6 +85,26 @@ namespace Silk.NET.BuildTools
                 {
                     foreach (var src in task.Sources)
                     {
+                        var rawProfiles = ProfileConverter.ReadProfiles
+                        (
+                            task.ConverterOpts.Reader.ToLower() switch
+                            {
+                                "gl" => new OpenGLReader(),
+                                "cl" => new OpenCLReader(),
+                                "vk" => new VulkanReader(),
+                                _ => throw new ArgumentException("Couldn't find a reader with that name")
+                            }, task.ConverterOpts.Constructor.ToLower() switch
+                            {
+                                "gl" => new OpenGLConstructor(),
+                                "cl" => new OpenCLConstructor(),
+                                "vk" => new VulkanConstructor(),
+                                _ => throw new ArgumentException("Couldn't find a reader with that name")
+                            },
+                            OpenPath(src),
+                            task
+                        ).ToList();
+
+                        Console.WriteLine("Raw profile parsing complete, cloning in memory prior to baking...");
                         profiles.AddRange
                         (
                             // BUG this is an awful fix for a weird bug, but if we don't do this everything falls apart.
@@ -90,27 +113,12 @@ namespace Silk.NET.BuildTools
                             (
                                 JsonConvert.SerializeObject
                                 (
-                                    ProfileConverter.ReadProfiles
-                                    (
-                                        task.ConverterOpts.Reader.ToLower() switch
-                                        {
-                                            "gl" => new OpenGLReader(),
-                                            "cl" => new OpenCLReader(),
-                                            "vk" => new VulkanReader(),
-                                            _ => throw new ArgumentException("Couldn't find a reader with that name")
-                                        }, task.ConverterOpts.Constructor.ToLower() switch
-                                        {
-                                            "gl" => new OpenGLConstructor(),
-                                            "cl" => new OpenCLConstructor(),
-                                            "vk" => new VulkanConstructor(),
-                                            _ => throw new ArgumentException("Couldn't find a reader with that name")
-                                        },
-                                        OpenPath(src),
-                                        task
-                                    )
+                                    rawProfiles
                                 )
                             )
                         );
+                        
+                        Console.WriteLine("Profiles are ready.");
                     }
                 }
 

@@ -50,13 +50,17 @@ namespace Silk.NET.BuildTools.Baking
             var coreFunc = coreProjects.SelectMany(x => x.Classes);
             var coreEnums = coreProjects.SelectMany(x => x.Enums);
             var coreStructs = coreProjects.SelectMany(x => x.Structs);
+            Console.WriteLine("Profile Bakery: Gathering all the ingredients...");
             profile.Projects["Core"].Classes = profile.Projects["Core"].Classes.Concat(coreFunc).ToList();
             profile.Projects["Core"].Enums.AddRange(coreEnums);
             profile.Projects["Core"].Structs.AddRange(coreStructs);
             profile.Projects = profile.Projects.Concat(extProjects).ToDictionary();
 
+            Console.WriteLine("Profile Bakery: Stirring them until they form a nice paste...");
             MergeAll(profile); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
+            Console.WriteLine("Profile Bakery: Adding a bit of flavouring...");
             Vary(profile);
+            Console.WriteLine("Profile Bakery: Putting it in the oven until it turns a nice golden colour...");
             CheckForDuplicates(profile);
             TypeMapper.MapEnums(profile); // we need to map the enums to make sure they are correct for their extension.
             Console.WriteLine($"Created profile \"{name}\".");

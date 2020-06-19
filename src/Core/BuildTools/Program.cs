@@ -18,6 +18,9 @@ namespace Silk.NET.BuildTools
     {
         private static void Main(string[] args)
         {
+            Console.WriteLine("Silk.NET Build Tools");
+            Console.WriteLine("Copyright (C) Ultz Limited");
+            Console.WriteLine();
             Console.SetOut(new ConsoleWriter(Console.Out));
             
             if (args.Length == 1 && args[0] == "jsonex")
@@ -45,7 +48,8 @@ namespace Silk.NET.BuildTools
 
         internal class ConsoleWriter : TextWriter
         {
-            public Dictionary<int, string> Tasks { get; set; } = new Dictionary<int, string>();
+            internal static ConsoleWriter Instance { get; private set; }
+            public ThreadLocal<string> CurrentName = new ThreadLocal<string>();
             
             private readonly TextWriter _base;
 
@@ -53,12 +57,12 @@ namespace Silk.NET.BuildTools
             {
                 _base = @base;
                 Encoding = _base.Encoding;
+                Instance = this;
             }
             public override Encoding Encoding { get; }
             public override void WriteLine(string? value)
             {
-                Tasks.TryGetValue(Task.CurrentId ?? -1, out var val);
-                _base.WriteLine($"[{DateTime.Now:T}] {val} {Task.CurrentId}> " + value);
+                _base.WriteLine($"[{DateTime.Now:T}] [{CurrentName.Value}] {Task.CurrentId}> " + value);
             }
         }
         
