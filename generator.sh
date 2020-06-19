@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -z "$@" ]; then
-    export AddArgs="generator.json";
+    export AddArgs="build/binder_scripts/build.json";
 else
     export AddArgs="$@"
 fi

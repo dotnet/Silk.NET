@@ -117,7 +117,7 @@ namespace Silk.NET.BuildTools.Common
         {
             foreach (var project in profile.Projects.Values)
             {
-                foreach (var @interface in project.Classes.SelectMany(x => x.NativeApis.Values))
+                foreach (var @interface in project.Interfaces.Values)
                 {
                     foreach (var function in @interface.Functions)
                     {

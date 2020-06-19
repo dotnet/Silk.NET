@@ -1,0 +1,104 @@
+[
+  {
+    "Name": "OpenGL",
+    "Implements": [
+      "glcore",
+      "glcore-1.0",
+      "glcore-1.1",
+      "glcore-1.2",
+      "glcore-1.3",
+      "glcore-1.4",
+      "glcore-1.5",
+      "glcore-2.0",
+      "glcore-2.1",
+      "glcore-3.0",
+      "glcore-3.1",
+      "glcore-3.2",
+      "glcore-3.3",
+      "glcore-4.0",
+      "glcore-4.1",
+      "glcore-4.2",
+      "glcore-4.3",
+      "glcore-4.4",
+      "glcore-4.5",
+      "glcore-4.6"
+    ],
+    "Namespace": "Silk.NET.OpenGL",
+    "ExtensionsNamespace": "Silk.NET.OpenGL.Extensions",
+    "OutputFolder": "OpenGL",
+    "NameContainer": {
+      "Linux": "libGL.so.1",
+      "Windows": "opengl32.dll",
+      "MacOS": "/System/Library/Frameworks/OpenGL.framework/OpenGL",
+      "Android": "libGL.so.1",
+      "IOS": "/System/Library/Frameworks/OpenGL.framework/OpenGL",
+      "ClassName": "GLCoreLibraryNameContainer"
+    },
+    "FunctionPrefix": "gl",
+    "ClassName": "GL",
+    "SymbolLoader": null
+  },
+  {
+    "Name": "OpenGL (Compatibility Profile)",
+    "Implements": [
+      "gl",
+      "gl-1.0",
+      "gl-1.1",
+      "gl-1.2",
+      "gl-1.3",
+      "gl-1.4",
+      "gl-1.5",
+      "gl-2.0",
+      "gl-2.1",
+      "gl-3.0",
+      "gl-3.1",
+      "gl-3.2",
+      "gl-3.3",
+      "gl-4.0",
+      "gl-4.1",
+      "gl-4.2",
+      "gl-4.3",
+      "gl-4.4",
+      "gl-4.5",
+      "gl-4.6"
+    ],
+    "Namespace": "Silk.NET.OpenGL.Legacy",
+    "ExtensionsNamespace": "Silk.NET.OpenGL.Legacy.Extensions",
+    "OutputFolder": "OpenGL",
+    "NameContainer": {
+      "Linux": "libGL.so.1",
+      "Windows": "opengl32.dll",
+      "MacOS": "/System/Library/Frameworks/OpenGL.framework/OpenGL",
+      "Android": "libGL.so.1",
+      "IOS": "/System/Library/Frameworks/OpenGL.framework/OpenGL",
+      "ClassName": "OpenGLLibraryNameContainer"
+    },
+    "FunctionPrefix": "gl",
+    "ClassName": "GL",
+    "SymbolLoader": null
+  },
+  {
+    "Name": "GLES",
+    "Implements": [
+      "gles2",
+      "gles2-2.0",
+      "gles2-3.0",
+      "gles2-3.1",
+      "gles2-3.2"
+    ],
+    "Namespace": "Silk.NET.OpenGLES",
+    "ExtensionsNamespace": "Silk.NET.OpenGLES.Extensions",
+    "OutputFolder": "OpenGL",
+    "NameContainer": {
+      "Linux": "libGLESv2.so",
+      "Windows": "libGLESv2.dll",
+      "MacOS": "/System/Library/Frameworks/OpenGLES.framework/OpenGLES",
+      "Android": "libGLESv2.so",
+      "IOS": "/System/Library/Frameworks/OpenGLES.framework/OpenGLES",
+      "ClassName": "OpenGLESLibraryNameContainer"
+    },
+    "FunctionPrefix": "gl",
+    "ClassName": "GL",
+    "SymbolLoader": null
+  }
+]

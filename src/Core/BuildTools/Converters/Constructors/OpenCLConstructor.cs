@@ -17,7 +17,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
     public class OpenCLConstructor : IConstructor
     {
         /// <inheritdoc />
-        public void WriteFunctions(Profile profile, IEnumerable<Function> functions, BindTask task)
+        public void WriteFunctions(Profile profile, IEnumerable<Function> functions, ProfileConverterOptions opts)
         {
             foreach (var function in functions)
             {
@@ -37,9 +37,8 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             "Core",
                             new Project
                             {
-                                IsRoot = true,
-                                Namespace = string.Empty,
-                                Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
+                                CategoryName = "Core", ExtensionName = "Core", IsRoot = true,
+                                Namespace = string.Empty
                             }
                         );
                     }
@@ -52,9 +51,8 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             category,
                             new Project
                             {
-                                IsRoot = false,
-                                Namespace = $".{category.CheckMemberName(task.ConverterOpts.FunctionPrefix)}",
-                                Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
+                                CategoryName = category, ExtensionName = category, IsRoot = false,
+                                Namespace = $".{category.CheckMemberName(opts.Prefix)}"
                             }
                         );
                     }
@@ -63,48 +61,34 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     if
                     (
                         !profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
-                            .Classes[0].NativeApis.ContainsKey(rawCategory)
+                            .Interfaces.ContainsKey(rawCategory)
                     )
                     {
                         profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
-                            .Classes[0].NativeApis.Add
+                            .Interfaces.Add
                             (
                                 rawCategory,
-                                new NativeApiSet
+                                new Interface
                                 {
                                     Name =
-                                        $"I{Naming.Translate(TrimName(rawCategory, task), task.ConverterOpts.FunctionPrefix).CheckMemberName(task.ConverterOpts.FunctionPrefix)}"
+                                        $"I{Naming.Translate(TrimName(rawCategory, opts), opts.Prefix).CheckMemberName(opts.Prefix)}"
                                 }
                             );
                     }
 
                     // add the function to the interface
                     profile.Projects[function.ExtensionName == "Core" ? "Core" : category]
-                        .Classes[0].NativeApis[rawCategory]
+                        .Interfaces[rawCategory]
                         .Functions.Add(function);
                 }
             }
         }
         
         /// <inheritdoc />
-        public void WriteEnums(Profile profile, IEnumerable<Enum> enums, BindTask task)
+        public void WriteEnums(Profile profile, IEnumerable<Enum> enums, ProfileConverterOptions opts)
         {
-            if (!profile.Projects.ContainsKey("Core"))
-            {
-                profile.Projects.Add
-                (
-                    "Core",
-                    new Project
-                    {
-                        IsRoot = true,
-                        Namespace = string.Empty,
-                        Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
-                    }
-                );
-            }
-
             var mergedEnums = new Dictionary<string, Enum>();
-            var gl = profile.Projects["Core"].Classes[0].ClassName.ToUpper().CheckMemberName(task.ConverterOpts.FunctionPrefix);
+            var gl = profile.ClassName.ToUpper().CheckMemberName(opts.Prefix);
             mergedEnums.Add
             (
                 $"{gl}Enum",
@@ -114,6 +98,19 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                     Tokens = new List<Token>(), NativeName = "GLenum",
                 }
             );
+
+            if (!profile.Projects.ContainsKey("Core"))
+            {
+                profile.Projects.Add
+                (
+                    "Core",
+                    new Project
+                    {
+                        CategoryName = "Core", ExtensionName = "Core", IsRoot = true,
+                        Namespace = string.Empty
+                    }
+                );
+            }
             
             // first, we need to categorise the enums into "Core", or their vendor (i.e. "NV", "SGI", "KHR" etc)
             foreach (var @enum in enums)
@@ -142,7 +139,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                                 prefix,
                                 new Enum
                                 {
-                                    Name = prefix.CheckMemberName(task.ConverterOpts.FunctionPrefix), ExtensionName = prefix,
+                                    Name = prefix.CheckMemberName(opts.Prefix), ExtensionName = prefix,
                                     NativeName = "GLenum"
                                 }
                             );
@@ -163,11 +160,10 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                         @enum.ExtensionName,
                         new Project
                         {
-                            IsRoot = @enum.ExtensionName == "Core",
+                            CategoryName = @enum.ExtensionName, ExtensionName = @enum.ExtensionName, IsRoot = @enum.ExtensionName == "Core",
                             Namespace = @enum.ExtensionName == "Core"
                                 ? string.Empty
-                                : $".{@enum.ExtensionName.CheckMemberName(task.ConverterOpts.FunctionPrefix)}",
-                            Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
+                                : $".{@enum.ExtensionName.CheckMemberName(opts.Prefix)}"
                         }
                     );
                 }
@@ -177,15 +173,15 @@ namespace Silk.NET.BuildTools.Converters.Constructors
         }
         
         /// <inheritdoc />
-        public void WriteStructs(Profile profile, IEnumerable<Struct> structs, BindTask task)
+        public void WriteStructs(Profile profile, IEnumerable<Struct> structs, ProfileConverterOptions opts)
         {
             profile.Projects["Core"].Structs.AddRange(structs);
         }
 
         /// <inheritdoc />
-        public void WriteConstants(Profile profile, IEnumerable<Constant> constants, BindTask task)
+        public void WriteConstants(Profile profile, IEnumerable<Constant> constants, ProfileConverterOptions opts)
         {
-            profile.Projects["Core"].Classes[0].Constants.AddRange(constants);
+            profile.Constants.AddRange(constants);
         }
 
         /// <summary>
@@ -194,17 +190,14 @@ namespace Silk.NET.BuildTools.Converters.Constructors
         /// <param name="name">The name to trim.</param>
         /// <param name="opts">The converter options.</param>
         /// <returns>The trimmed name.</returns>
-        public string TrimName(string name, BindTask task)
+        public string TrimName(string name, ProfileConverterOptions opts)
         {
-            if (name.StartsWith($"{task.ConverterOpts.FunctionPrefix.ToUpper()}_"))
+            if (name.StartsWith($"{opts.Prefix.ToUpper()}_"))
             {
-                return name.Remove(0, task.ConverterOpts.FunctionPrefix.Length + 1);
+                return name.Remove(0, opts.Prefix.Length + 1);
             }
 
-            return name.StartsWith
-                (task.ConverterOpts.FunctionPrefix)
-                ? name.Remove(0, task.ConverterOpts.FunctionPrefix.Length)
-                : name;
+            return name.StartsWith(opts.Prefix) ? name.Remove(0, opts.Prefix.Length) : name;
         }
         
         private static string FormatCategory(string rawCategory)

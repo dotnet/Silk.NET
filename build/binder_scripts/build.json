@@ -1,0 +1,10 @@
+[
+    {
+        "Task": "clean",
+        "Args": ["../../src"]
+    },
+    {
+        "Task": "bind",
+        "Args": ["-i", "../binder_specifications/Vulkan.json", "../binder_specifications/OpenGL.json", "../binder_specifications/OpenCL.json", "../binder_specifications/OpenGL (Compatibility Profile).json", "../binder_specifications/GLES.json", "-o", "../../src", "-l", "../LICENSE_HEADER.txt", "-p", "../props/bindings.props"]
+    }
+]

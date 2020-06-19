@@ -135,7 +135,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         }
         
         /// <inheritdoc />
-        public IEnumerable<Struct> ReadStructs(object obj, BindTask task)
+        public IEnumerable<Struct> ReadStructs(object obj, ProfileConverterOptions opts)
         {
             var xd = (XDocument) obj;
             
@@ -144,7 +144,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 .Select(StructureDefinition.CreateFromXml)
                 .ToArray();
             
-            var structs = ConvertStructs(rawStructs, task);
+            var structs = ConvertStructs(rawStructs, opts);
             
             foreach (var feature in xd.Element
                     ("registry")
@@ -169,12 +169,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 }
             }
             
-            task.TypeMaps.Add(structs.ToDictionary(x => x.Key, x => x.Value.Name));
+            opts.TypeMaps.Add(structs.ToDictionary(x => x.Key, x => x.Value.Name));
         }
 
-        private static Dictionary<string, Struct> ConvertStructs(IEnumerable<StructureDefinition> spec, BindTask task)
+        private static Dictionary<string, Struct> ConvertStructs(IEnumerable<StructureDefinition> spec, ProfileConverterOptions opts)
         {
-            var prefix = task.ConverterOpts.FunctionPrefix;
+            var prefix = opts.Prefix;
             var ret = new Dictionary<string, Struct>();
             foreach (var s in spec)
             {
@@ -189,7 +189,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 Count = string.IsNullOrEmpty(x.ElementCountSymbolic)
                                     ? x.ElementCount != 1 ? new Count(x.ElementCount) : null
                                     : new Count(x.ElementCountSymbolic, false),
-                                Name = Naming.Translate(TrimName(x.Name, task), prefix),
+                                Name = Naming.Translate(TrimName(x.Name, opts), prefix),
                                 Doc = $"/// <summary>{x.Comment}</summary>",
                                 NativeName = x.Name,
                                 NativeType = x.Type.ToString(),
@@ -197,7 +197,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             }
                         )
                         .ToList(),
-                        Name = Naming.TranslateLite(TrimName(s.Name, task), prefix),
+                        Name = Naming.TranslateLite(TrimName(s.Name, opts), prefix),
                         NativeName = s.Name
                     }
                 );
@@ -223,7 +223,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         ////////////////////////////////////////////////////////////////////////////////////////
 
         /// <inheritdoc />
-        public IEnumerable<Function> ReadFunctions(object obj, BindTask task)
+        public IEnumerable<Function> ReadFunctions(object obj, ProfileConverterOptions opts)
         {
             var doc = obj as XDocument;
             Debug.Assert(doc != null, nameof(doc) + " != null");
@@ -234,7 +234,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var allFunctions = registry
                 .Elements("commands")
                 .Elements("command")
-                .Select(x => TranslateCommand(x, task))
+                .Select(x => TranslateCommand(x, opts))
                 .ToDictionary(x => x.Attribute("name")?.Value, x => x);
             Debug.Assert(allFunctions != null, nameof(allFunctions) + " != null");
             
@@ -271,7 +271,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             .Attributes("name")
                             .Select(x => x.Value))
                         {
-                            var xf = allFunctions[TrimName(function, task)];
+                            var xf = allFunctions[TrimName(function, opts)];
                             
                             var ret = new Function
                             {
@@ -288,11 +288,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                         }
                                     }
                                     : new List<Attribute>(),
-                                Categories = new List<string>{ExtensionName(api.Attribute("name")?.Value, task)},
+                                Categories = new List<string>{ExtensionName(api.Attribute("name")?.Value, opts)},
                                 Doc = string.Empty,
-                                ExtensionName = api.Name == "feature" ? "Core" : ExtensionName(api.Attribute("name")?.Value, task),
+                                ExtensionName = api.Name == "feature" ? "Core" : ExtensionName(api.Attribute("name")?.Value, opts),
                                 GenericTypeParameters = new List<GenericTypeParameter>(),
-                                Name = Naming.Translate(NameTrimmer.Trim(TrimName(xf.Attribute("name")?.Value, task), task.ConverterOpts.FunctionPrefix), task.ConverterOpts.FunctionPrefix),
+                                Name = Naming.Translate(NameTrimmer.Trim(TrimName(xf.Attribute("name")?.Value, opts), opts.Prefix), opts.Prefix),
                                 NativeName = function,
                                 Parameters = ParseParameters(xf),
                                 ProfileName = name,
@@ -695,9 +695,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
             };
         }
 
-        private static string FunctionName(XContainer e, BindTask task)
+        private static string FunctionName(XContainer e, ProfileConverterOptions opts)
         {
-            return TrimName(e.Element("proto")?.Element("name")?.Value, task);
+            return TrimName(e.Element("proto")?.Element("name")?.Value, opts);
         }
 
         /// <summary>
@@ -706,16 +706,14 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// <param name="name">The name to trim.</param>
         /// <param name="opts">The profile options containing the prefix.</param>
         /// <returns>The name, trimmed.</returns>
-        public static string TrimName(string name, BindTask task)
+        public static string TrimName(string name, ProfileConverterOptions opts)
         {
-            if (name.ToUpper().StartsWith($"{task.ConverterOpts.FunctionPrefix.ToUpper()}_"))
+            if (name.ToUpper().StartsWith($"{opts.Prefix.ToUpper()}_"))
             {
-                return name.Remove(0, task.ConverterOpts.FunctionPrefix.Length + 1);
+                return name.Remove(0, opts.Prefix.Length + 1);
             }
 
-            return name.ToLower().StartsWith(task.ConverterOpts.FunctionPrefix.ToLower())
-                ? name.Remove(0, task.ConverterOpts.FunctionPrefix.Length)
-                : name;
+            return name.ToLower().StartsWith(opts.Prefix.ToLower()) ? name.Remove(0, opts.Prefix.Length) : name;
         }
         
         private static string FunctionParameterType(XElement e)
@@ -748,11 +746,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
         }
 
         private int _unnamedParameters;
-        private XElement TranslateCommand(XContainer command, BindTask task)
+        private XElement TranslateCommand(XContainer command, ProfileConverterOptions opts)
         {
             var function = new XElement("function");
 
-            var cmdName = FunctionName(command, task);
+            var cmdName = FunctionName(command, opts);
             var name = new XAttribute("name", cmdName);
 
             var returns = new XElement
@@ -837,7 +835,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         ////////////////////////////////////////////////////////////////////////////////////////
 
         /// <inheritdoc />
-        public IEnumerable<Enum> ReadEnums(object obj, BindTask task)
+        public IEnumerable<Enum> ReadEnums(object obj, ProfileConverterOptions opts)
         {
             var doc = obj as XDocument;
             Debug.Assert(doc != null, $"{nameof(doc)} != null");
@@ -911,7 +909,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                     }
                                     : new List<Attribute>(),
                                 Doc = string.Empty,
-                                Name = Naming.Translate(TrimName(token.Value, task), task.ConverterOpts.FunctionPrefix),
+                                Name = Naming.Translate(TrimName(token.Value, opts), opts.Prefix),
                                 NativeName = token.Value,
                                 Value = allEnums.ContainsKey
                                     (token.Value)
@@ -927,8 +925,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             Attributes = new List<Attribute>(),
                             ExtensionName = api.Name == "feature"
                                 ? "Core"
-                                : ExtensionName(api.Attribute("name")?.Value, task),
-                            Name = Naming.Translate(TrimName(api.Attribute("name")?.Value, task), task.ConverterOpts.FunctionPrefix),
+                                : ExtensionName(api.Attribute("name")?.Value, opts),
+                            Name = Naming.Translate(TrimName(api.Attribute("name")?.Value, opts), opts.Prefix),
                             NativeName = api.Attribute("name")?.Value,
                             ProfileName = name,
                             ProfileVersion = apiVersion,
@@ -941,7 +939,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             }
         }
         
-        private static string ExtensionName(string ext, BindTask task)
+        private static string ExtensionName(string ext, ProfileConverterOptions opts)
         {
             switch (ext)
             {
@@ -952,20 +950,20 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     return "KHR_mipmap_image";
             }
 
-            var trimmedExt = TrimName(ext, task);
+            var trimmedExt = TrimName(ext, opts);
             var splitTrimmed = trimmedExt.Split('_');
             return splitTrimmed[0].ToUpper() + "_" + string.Join
                        ("_", new ArraySegment<string>(splitTrimmed, 1, splitTrimmed.Length - 1));
         }
 
         /// <inheritdoc />
-        public IEnumerable<Constant> ReadConstants(object obj, BindTask task)
+        public IEnumerable<Constant> ReadConstants(object obj, ProfileConverterOptions opts)
         {
             return Constants.Select
             (
                 x => new Constant
                 {
-                    Name = Naming.Translate(TrimName(GetName(x.Key, out var type), task), task.ConverterOpts.FunctionPrefix),
+                    Name = Naming.Translate(TrimName(GetName(x.Key, out var type), opts), opts.Prefix),
                     NativeName = GetName(x.Key, out _),
                     Type = new Type {Name = type}, Value = x.Value.ToString()
                 }

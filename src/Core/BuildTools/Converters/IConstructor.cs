@@ -23,7 +23,7 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="profile">The profile to write the projects to.</param>
         /// <param name="functions">The functions to write.</param>
         /// <param name="opts">The options for profile conversion.</param>
-        void WriteFunctions(Profile profile, IEnumerable<Function> functions, BindTask task);
+        void WriteFunctions(Profile profile, IEnumerable<Function> functions, ProfileConverterOptions opts);
         
         /// <summary>
         /// Writes a collection of enums to their appropriate projects.
@@ -31,7 +31,7 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="profile">The profile to write the projects to.</param>
         /// <param name="enums">The enums to write.</param>
         /// <param name="opts">The options for profile conversion.</param>
-        void WriteEnums(Profile profile, IEnumerable<Enum> enums, BindTask task);
+        void WriteEnums(Profile profile, IEnumerable<Enum> enums, ProfileConverterOptions opts);
         
         /// <summary>
         /// Writes a collection of structs to their appropriate projects.
@@ -39,7 +39,7 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="profile">The profile to write the projects to.</param>
         /// <param name="structs">The structs to write.</param>
         /// <param name="opts">The options for profile conversion.</param>
-        void WriteStructs(Profile profile, IEnumerable<Struct> structs, BindTask task);
+        void WriteStructs(Profile profile, IEnumerable<Struct> structs, ProfileConverterOptions opts);
         
         /// <summary>
         /// Writes a collection of constants to their appropriate projects.
@@ -47,6 +47,6 @@ namespace Silk.NET.BuildTools.Converters
         /// <param name="profile">The profile to write the projects to.</param>
         /// <param name="constants">The constants to write.</param>
         /// <param name="opts">The options for profile conversion.</param>
-        void WriteConstants(Profile profile, IEnumerable<Constant> constants, BindTask task);
+        void WriteConstants(Profile profile, IEnumerable<Constant> constants, ProfileConverterOptions opts);
     }
 }

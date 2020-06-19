@@ -24,59 +24,108 @@ namespace Silk.NET.BuildTools.Baking
     public static class ProfileBakery
     {
         /// <summary>
+        /// Bake the given options.
+        /// </summary>
+        /// <param name="cliOptions">The options to bake.</param>
+        public static void Bake(BakeryOptions cliOptions)
+        {
+            Console.WriteLine("Baking raw profiles...");
+            Bake
+            (
+                cliOptions.BakeryInformation
+                    .Select(File.ReadAllText)
+                    .SelectMany(JsonConvert.DeserializeObject<ProfileBakeryInformation[]>),
+                cliOptions.Folder,
+                cliOptions.PrettyPrinted,
+                cliOptions.DocumentationFolder
+            );
+            Console.WriteLine("Finishing up...");
+            if (!cliOptions.PreserveRawAPIs)
+            {
+                DeleteRawAPIs(cliOptions.Folder);
+            }
+        }
+        
+        /// <summary>
         /// Bakes APIs together given the <see cref="ProfileBakeryInformation" />, and outputs the baked
         /// profile to the given folder.
         /// </summary>
-        public static Profile Bake(string name, IReadOnlyList<Profile> impl)
+        /// <param name="information">The information of what APIs to bake.</param>
+        /// <param name="folder">The output folder.</param>
+        /// <param name="pretty">Whether the output JSON should be pretty-printed.</param>
+        /// <param name="docs">The documentation string.</param>
+        public static void Bake(ProfileBakeryInformation information, string folder, bool pretty, string docs)
         {
+            // get APIs implemented
+            var impl = information.Implements.Select(x => File.ReadAllText(Path.Combine(folder, $"api-{x}.json")))
+                .Select(JsonConvert.DeserializeObject<Profile>)
+                .ToList();
+
             // create the profile
             var profile = new Profile
             {
-                Name = name
+                Name = information.Name,
+                Namespace = information.Namespace,
+                ExtensionsNamespace = information.ExtensionsNamespace,
+                OutputFolder = information.OutputFolder,
+                ClassName = information.ClassName,
+                SymbolLoaderName = information.SymbolLoader
             };
             profile.Projects.Add
             (
                 "Core",
                 new Project
                 {
-                    Namespace = string.Empty, IsRoot = true,
-                    Classes = new List<Class>{}
+                    CategoryName = "Core", ExtensionName = "Core", Namespace = string.Empty, IsRoot = true
                 }
             );
 
             // bake in the implemented interfaces, enums, and extension projects
             var extProjects = impl.SelectMany(x => x.Projects.Where(y => y.Key != "Core"));
             var coreProjects = impl.Select(x => x.Projects["Core"]).ToList();
-            var coreFunc = coreProjects.SelectMany(x => x.Classes);
+            var coreFunc = coreProjects.SelectMany(x => x.Interfaces);
             var coreEnums = coreProjects.SelectMany(x => x.Enums);
             var coreStructs = coreProjects.SelectMany(x => x.Structs);
-            profile.Projects["Core"].Classes = profile.Projects["Core"].Classes.Concat(coreFunc).ToList();
+            profile.Projects["Core"].Interfaces = profile.Projects["Core"].Interfaces.Concat(coreFunc).ToDictionary();
             profile.Projects["Core"].Enums.AddRange(coreEnums);
             profile.Projects["Core"].Structs.AddRange(coreStructs);
             profile.Projects = profile.Projects.Concat(extProjects).ToDictionary();
+            profile.FunctionPrefix = information.FunctionPrefix;
+            profile.Names = information.NameContainer;
+            profile.Constants = impl.SelectMany(x => x.Constants).ToList();
 
             MergeAll(profile); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
             Vary(profile);
             CheckForDuplicates(profile);
             TypeMapper.MapEnums(profile); // we need to map the enums to make sure they are correct for their extension.
-            Console.WriteLine($"Created profile \"{name}\".");
-            return profile;
+
+            // bake in the documentation
+            if (!string.IsNullOrWhiteSpace(docs))
+            {
+                DocumentationWriter.Write(profile, docs);
+            }
+
+            // save this to disk
+            File.WriteAllText
+            (
+                Path.Combine(folder, $"{information.Name}.json"),
+                JsonConvert.SerializeObject(profile, pretty ? Formatting.Indented : Formatting.None)
+            );
+
+            Console.WriteLine($"Created profile \"{information.Name}\".");
         }
 
         private static void Vary(Profile profile)
         {
             foreach (var project in profile.Projects.Values)
             {
-                foreach (var @class in project.Classes)
+                foreach (var @interface in project.Interfaces.Values)
                 {
-                    foreach (var @interface in @class.NativeApis.Values)
-                    {
-                        @interface.Functions.AddRange
-                            (Overloader.GetEarlyVariants(@interface.Functions, profile.Projects["Core"]));
-                        @interface.Functions = Overloader.GetWithVariants
-                                (@interface.Functions, profile.Projects["Core"])
-                            .ToList();
-                    }
+                    @interface.Functions.AddRange
+                        (Overloader.GetEarlyVariants(@interface.Functions, profile.Projects["Core"]));
+                    @interface.Functions = Overloader.GetWithVariants
+                            (@interface.Functions, profile.Projects["Core"])
+                        .ToList();
                 }
             }
         }
@@ -86,8 +135,8 @@ namespace Silk.NET.BuildTools.Baking
             foreach (var project in profile.Projects.Values)
             {
                 var enums = new Dictionary<string, Enum>();
+                var interfaces = new Dictionary<string, Interface>();
                 var structs = new Dictionary<string, Struct>();
-                var classes = new Dictionary<string, Class>();
                 foreach (var enumeration in project.Enums)
                 {
                     if (enums.ContainsKey(enumeration.Name))
@@ -100,61 +149,23 @@ namespace Silk.NET.BuildTools.Baking
                     }
                 }
 
-                foreach (var @class in project.Classes)
+                foreach (var (key, @interface) in project.Interfaces)
                 {
-                    if (classes.ContainsKey(@class.ClassName))
+                    if (interfaces.ContainsKey(key))
                     {
-                        var interfaces = new Dictionary<string, NativeApiSet>();
-                        foreach (var (key, @interface) in @class.NativeApis.Concat(classes[@class.ClassName].NativeApis))
+                        foreach (var function in @interface.Functions)
                         {
-                            if (interfaces.ContainsKey(key))
+                            if (interfaces[key].Functions.Any(x => x.Equals(function)))
                             {
-                                foreach (var function in @interface.Functions)
-                                {
-                                    if (interfaces[key].Functions.Any(x => x.Equals(function)))
-                                    {
-                                        continue;
-                                    }
+                                continue;
+                            }
 
-                                    interfaces[key].Functions.Add(function);
-                                }
-                            }
-                            else
-                            {
-                                interfaces.Add(key, @interface);
-                            }
-                        }
-
-                        classes[@class.ClassName].NativeApis = interfaces;
-                        classes[@class.ClassName].Functions.AddRange(@class.Functions);
-
-                        var constants = new Dictionary<string, Constant>();
-                        foreach (var constant in @class.Constants.Concat(classes[@class.ClassName].Constants))
-                        {
-                            if (constants.ContainsKey(constant.Name))
-                            {
-                                if (constants[constant.Name].NativeName != constant.NativeName || constants[constant.Name].Value != constant.Value)
-                                {
-                                    Console.WriteLine($"Warning: Discarding duplicate constant {constant.Name}.");
-                                    Console.WriteLine($"    Original: {constants[constant.Name].NativeName} = {constants[constant.Name].Value}");
-                                    Console.WriteLine($"    Duplicate: {constant.NativeName} = {constant.Value}");
-                                }
-                            }
-                            else
-                            {
-                                constants.Add(constant.Name, constant);
-                            }
+                            interfaces[key].Functions.Add(function);
                         }
                     }
                     else
                     {
-                        classes[@class.ClassName] = new Class
-                        {
-                            ClassName = @class.ClassName,
-                            NativeApis = @class.NativeApis.ToDictionary(),
-                            Constants = @class.Constants.ToList(),
-                            Functions = @class.Functions.ToList()
-                        };
+                        interfaces.Add(key, @interface);
                     }
                 }
 
@@ -177,53 +188,70 @@ namespace Silk.NET.BuildTools.Baking
                 }
 
                 project.Enums = enums.Values.ToList();
-                project.Classes = classes.Values.ToList();
+                project.Interfaces = interfaces;
                 project.Structs = structs.Values.ToList();
             }
+
+            var constants = new Dictionary<string, Constant>();
+            foreach (var constant in profile.Constants)
+            {
+                if (constants.ContainsKey(constant.Name))
+                {
+                    if (constants[constant.Name].NativeName != constant.NativeName || constants[constant.Name].Value != constant.Value)
+                    {
+                        Console.WriteLine($"Warning: Discarding duplicate constant {constant.Name}.");
+                        Console.WriteLine($"    Original: {constants[constant.Name].NativeName} = {constants[constant.Name].Value}");
+                        Console.WriteLine($"    Duplicate: {constant.NativeName} = {constant.Value}");
+                    }
+                }
+                else
+                {
+                    constants.Add(constant.Name, constant);
+                }
+            }
+
+            profile.Constants = constants.Values.ToList();
         }
 
         private static void CheckForDuplicates(Profile profile)
         {
             foreach (var project in profile.Projects)
             {
-                foreach (var @class in project.Value.Classes)
+                foreach (var @interface in project.Value.Interfaces)
                 {
-                    foreach (var @interface in @class.NativeApis)
+                    var functions = new List<Function>();
+                    foreach (var f in @interface.Value.Functions)
                     {
-                        var functions = new List<Function>();
-                        foreach (var f in @interface.Value.Functions)
-                        {
-                            if (functions.Any(x => x.Equals(f))) continue;
-                            functions.Add(f);
-                        }
-
-                        @interface.Value.Functions = functions;
+                        if (functions.Any(x => x.Equals(f))) continue;
+                        functions.Add(f);
                     }
 
-                    foreach (var @enum in project.Value.Enums)
-                    {
-                        var tokens = new List<Token>();
-                        foreach (var token in @enum.Tokens)
-                        {
-                            var existingToken = tokens.FirstOrDefault(x => x.Name == token.Name);
-                            if (!(existingToken is null))
-                            {
-                                if (existingToken.Value != token.Value)
-                                {
-                                    Debug.WriteLine("Warning: Two tokens with the same name but different values.");
-                                    Debug.WriteLine($"    {existingToken.Name} = {existingToken.Value}");
-                                    Debug.WriteLine($"    {token.Name} = {token.Value}");
-                                    Debug.WriteLine($"{existingToken.Value} will be used.");
-                                }
+                    @interface.Value.Functions = functions;
+                }
 
-                                continue;
+                foreach (var @enum in project.Value.Enums)
+                {
+                    var tokens = new List<Token>();
+                    foreach (var token in @enum.Tokens)
+                    {
+                        var existingToken = tokens.FirstOrDefault(x => x.Name == token.Name);
+                        if (!(existingToken is null))
+                        {
+                            if (existingToken.Value != token.Value)
+                            {
+                                Debug.WriteLine("Warning: Two tokens with the same name but different values.");
+                                Debug.WriteLine($"    {existingToken.Name} = {existingToken.Value}");
+                                Debug.WriteLine($"    {token.Name} = {token.Value}");
+                                Debug.WriteLine($"{existingToken.Value} will be used.");
                             }
 
-                            tokens.Add(token);
+                            continue;
                         }
 
-                        @enum.Tokens = tokens;
+                        tokens.Add(token);
                     }
+
+                    @enum.Tokens = tokens;
                 }
             }
         }
@@ -243,6 +271,18 @@ namespace Silk.NET.BuildTools.Baking
             {
                 File.Delete(file);
             }
+        }
+
+        /// <summary>
+        /// Bakes multiple sets of APIs together, and outputs them to the given folder.
+        /// </summary>
+        /// <param name="information">The information for the sets of APIs.</param>
+        /// <param name="folder">The output folder.</param>
+        /// <param name="pretty">Whether the output JSON should be pretty-printed.</param>
+        /// <param name="d">The documentation string.</param>
+        public static void Bake(IEnumerable<ProfileBakeryInformation> information, string folder, bool pretty, string d)
+        {
+            information.ForEach(b => Bake(b, folder, pretty, d));
         }
     }
 }
