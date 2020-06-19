@@ -40,11 +40,11 @@ namespace Silk.NET.BuildTools
             for (var i = 0; i < config.Tasks.Length; i++)
             {
                 var i1 = i;
-                //tasks[i] = Task.Run(() => RunTask(config.Tasks[i1]));
-                RunTask(config.Tasks[i1]);
+                tasks[i] = Task.Run(() => RunTask(config.Tasks[i1]));
+                //RunTask(config.Tasks[i1]);
             }
 
-            //Task.WaitAll(tasks);
+            Task.WaitAll(tasks);
         }
 
         public static void RunTask(BindTask task)
@@ -84,6 +84,8 @@ namespace Silk.NET.BuildTools
                     {
                         profiles.AddRange
                         (
+                            // BUG this is an awful fix for a weird bug, but if we don't do this everything falls apart.
+                            // feel free to remove the serialize-deserialize and try for yourself would welcome a fix ;)
                             JsonConvert.DeserializeObject<Profile[]>
                             (
                                 JsonConvert.SerializeObject
