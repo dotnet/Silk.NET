@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -49,9 +50,11 @@ namespace Silk.NET.BuildTools
 
         public static void RunTask(BindTask task)
         {
+            Stopwatch sw = null;
             if (!(Program.ConsoleWriter.Instance is null))
             {
                 Program.ConsoleWriter.Instance.CurrentName.Value = task.Name;
+                sw = Stopwatch.StartNew();
             }
 
             foreach (var typeMap in task.TypeMaps)
@@ -80,6 +83,8 @@ namespace Silk.NET.BuildTools
             Profile profile;
             if (ShouldConvert(task.Controls))
             {
+                Console.WriteLine("Profile conversion started!");
+                var tsb4 = sw?.Elapsed.TotalSeconds;
                 var profiles = new List<Profile>();
                 if (task.Mode == ConverterMode.ConvertConstruct)
                 {
@@ -125,6 +130,10 @@ namespace Silk.NET.BuildTools
                 profile = ProfileBakery.Bake
                     (task.Name, profiles.Where(x => task.BakeryOpts.Include.Contains(x.Name)).ToList());
 
+                var tsaf = sw?.Elapsed.TotalSeconds - tsb4;
+                var tsafTxt = sw is null ? null : $", took {tsaf} second(s)";
+                Console.WriteLine($"Conversion complete{tsafTxt}.");
+
                 if (!string.IsNullOrWhiteSpace(task.CacheKey) && !string.IsNullOrWhiteSpace(task.CacheFolder))
                 {
                     if (!Directory.Exists(task.CacheFolder))
@@ -136,10 +145,13 @@ namespace Silk.NET.BuildTools
                     using var gzStream = new GZipStream(fileStream, CompressionLevel.Optimal);
                     gzStream.Write(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(profile)));
                     gzStream.Flush();
+                    Console.WriteLine("Written to cache for future use.");
                 }
             }
             else if (!string.IsNullOrWhiteSpace(task.CacheKey) && !string.IsNullOrWhiteSpace(task.CacheFolder))
             {
+                Console.WriteLine("Cache hit!");
+                var tsb4 = sw?.Elapsed.TotalSeconds;
                 var file = Path.Combine(task.CacheFolder, task.CacheKey + ".json.gz");
                 if (!File.Exists(file))
                 {
@@ -154,6 +166,9 @@ namespace Silk.NET.BuildTools
                 using var gzStream = new GZipStream(fileStream, CompressionMode.Decompress);
                 gzStream.CopyTo(memoryStream);
                 profile = JsonConvert.DeserializeObject<Profile>(Encoding.UTF8.GetString(memoryStream.ToArray()));
+                var tsaf = tsb4 - sw?.Elapsed.TotalSeconds;
+                var tsafTxt = sw is null ? null : $", took {tsaf} second(s)";
+                Console.WriteLine($"Cached profile loaded{tsafTxt}.");
             }
             else
             {
@@ -163,8 +178,16 @@ namespace Silk.NET.BuildTools
                     "(conversion was skipped as per the control variables)"
                 );
             }
-            
+
             profile.Flush(task);
+            sw?.Stop();
+            var af = sw is null ? null : $" after {sw.Elapsed.TotalSeconds} second(s)";
+            Console.WriteLine($"Task complete{af}.");
+            if (!(sw is null))
+            {
+                Program.ConsoleWriter.Instance.Timings.Value =
+                    new KeyValuePair<string, TimeSpan>(task.Name, sw.Elapsed);
+            }
             
             static bool ShouldConvert(string[] controls)
             {

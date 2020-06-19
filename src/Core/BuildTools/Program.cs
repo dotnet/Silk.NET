@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Threading;
@@ -21,8 +22,6 @@ namespace Silk.NET.BuildTools
             Console.WriteLine("Silk.NET Build Tools");
             Console.WriteLine("Copyright (C) Ultz Limited");
             Console.WriteLine();
-            Console.SetOut(new ConsoleWriter(Console.Out));
-            
             if (args.Length == 1 && args[0] == "jsonex")
             {
                 // get a template json file
@@ -36,33 +35,56 @@ namespace Silk.NET.BuildTools
 
                 return;
             }
-            
+
+            var sw = Stopwatch.StartNew();
             foreach (var arg in args)
             {
+                Console.SetOut(new ConsoleWriter(Console.Out));
+                var jobSw = Stopwatch.StartNew();
                 var abs = Path.GetFullPath(arg);
                 Environment.CurrentDirectory = Path.GetDirectoryName
                     (abs) ?? throw new NullReferenceException("Dir path null.");
                 Generator.Run(JsonConvert.DeserializeObject<Config>(File.ReadAllText(abs)));
+            
+                jobSw.Stop();
+                Console.SetOut(ConsoleWriter.Instance.Base);
+                Console.WriteLine();
+                Console.WriteLine("Job Summary");
+                Console.WriteLine("===========");
+                Console.WriteLine();
+                foreach (var kvp in ConsoleWriter.Instance.Timings.Values)
+                {
+                    Console.WriteLine($"Task \"{kvp.Key}\" took {kvp.Value.TotalSeconds} second(s) to complete.");
+                }
+                Console.WriteLine();
+                Console.WriteLine($"In total, this particular job took {jobSw.Elapsed.TotalSeconds} second(s) to complete.");
+                Console.WriteLine();
             }
+
+            sw.Stop();
+            Console.WriteLine($"Complete bind took {sw.Elapsed.TotalSeconds} second(s).");
         }
 
         internal class ConsoleWriter : TextWriter
         {
             internal static ConsoleWriter Instance { get; private set; }
-            public ThreadLocal<string> CurrentName = new ThreadLocal<string>();
-            
-            private readonly TextWriter _base;
+            public readonly ThreadLocal<string> CurrentName = new ThreadLocal<string>();
+
+            public readonly ThreadLocal<KeyValuePair<string, TimeSpan>> Timings =
+                new ThreadLocal<KeyValuePair<string, TimeSpan>>(true);
+
+            public readonly TextWriter Base;
 
             public ConsoleWriter(TextWriter @base)
             {
-                _base = @base;
-                Encoding = _base.Encoding;
+                Base = @base;
+                Encoding = Base.Encoding;
                 Instance = this;
             }
             public override Encoding Encoding { get; }
             public override void WriteLine(string? value)
             {
-                _base.WriteLine($"[{DateTime.Now:T}] [{CurrentName.Value}] {Task.CurrentId}> " + value);
+                Base.WriteLine($"[{DateTime.Now:T}] [{CurrentName.Value}] {Task.CurrentId}> " + value);
             }
         }
         
