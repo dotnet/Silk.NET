@@ -19,90 +19,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public abstract unsafe partial class ArbCopyBuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_copy_buffer";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="readTarget">
-        /// To be added.
-        /// </param>
-        /// <param name="writeTarget">
-        /// To be added.
-        /// </param>
-        /// <param name="readOffset">
-        /// To be added.
-        /// </param>
-        /// <param name="writeOffset">
-        /// To be added.
-        /// </param>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glCopyBufferSubData")]
         public abstract void CopyBufferSubData([Flow(FlowDirection.In)] ARB readTarget, [Flow(FlowDirection.In)] ARB writeTarget, [Flow(FlowDirection.In)] IntPtr readOffset, [Flow(FlowDirection.In)] IntPtr writeOffset, [Flow(FlowDirection.In)] UIntPtr size);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="readTarget">
-        /// To be added.
-        /// </param>
-        /// <param name="writeTarget">
-        /// To be added.
-        /// </param>
-        /// <param name="readOffset">
-        /// To be added.
-        /// </param>
-        /// <param name="writeOffset">
-        /// To be added.
-        /// </param>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glCopyBufferSubData")]
         public abstract void CopyBufferSubData([Flow(FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(FlowDirection.In)] IntPtr readOffset, [Flow(FlowDirection.In)] IntPtr writeOffset, [Flow(FlowDirection.In)] UIntPtr size);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="readTarget">
-        /// To be added.
-        /// </param>
-        /// <param name="writeTarget">
-        /// To be added.
-        /// </param>
-        /// <param name="readOffset">
-        /// To be added.
-        /// </param>
-        /// <param name="writeOffset">
-        /// To be added.
-        /// </param>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
         public unsafe void CopyBufferSubData([Flow(FlowDirection.In)] ARB readTarget, [Flow(FlowDirection.In)] ARB writeTarget, [Flow(FlowDirection.In)] int readOffset, [Flow(FlowDirection.In)] int writeOffset, [Flow(FlowDirection.In)] uint size)
         {
             // IntPtrOverloader
             CopyBufferSubData(readTarget, writeTarget, new IntPtr(readOffset), new IntPtr(writeOffset), new UIntPtr(size));
         }
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="readTarget">
-        /// To be added.
-        /// </param>
-        /// <param name="writeTarget">
-        /// To be added.
-        /// </param>
-        /// <param name="readOffset">
-        /// To be added.
-        /// </param>
-        /// <param name="writeOffset">
-        /// To be added.
-        /// </param>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
         public unsafe void CopyBufferSubData([Flow(FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(FlowDirection.In)] int readOffset, [Flow(FlowDirection.In)] int writeOffset, [Flow(FlowDirection.In)] uint size)
         {
             // IntPtrOverloader

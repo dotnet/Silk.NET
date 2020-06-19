@@ -19,132 +19,36 @@ namespace Silk.NET.OpenGL.Extensions.EXT
     public abstract unsafe partial class ExtEglImageStorage : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_EGL_image_storage";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="image">
-        /// To be added.
-        /// </param>
-        /// <param name="attrib_list">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetTexStorageEXT")]
         public abstract unsafe void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="image">
-        /// To be added.
-        /// </param>
-        /// <param name="attrib_list">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetTexStorageEXT")]
         public abstract void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] Span<int> attrib_list);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="image">
-        /// To be added.
-        /// </param>
-        /// <param name="attrib_list">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetTextureStorageEXT")]
         public abstract unsafe void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] int* attrib_list);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="image">
-        /// To be added.
-        /// </param>
-        /// <param name="attrib_list">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glEGLImageTargetTextureStorageEXT")]
         public abstract void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] Span<int> attrib_list);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="image">
-        /// To be added.
-        /// </param>
-        /// <param name="attrib_list">
-        /// To be added.
-        /// </param>
         public unsafe void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int image, [Flow(FlowDirection.In)] int* attrib_list)
         {
             // IntPtrOverloader
             EglimageTargetTexStorage(target, new IntPtr(image), attrib_list);
         }
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="image">
-        /// To be added.
-        /// </param>
-        /// <param name="attrib_list">
-        /// To be added.
-        /// </param>
         public unsafe void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int image, [Flow(FlowDirection.In)] Span<int> attrib_list)
         {
             // IntPtrOverloader
             EglimageTargetTexStorage(target, new IntPtr(image), attrib_list);
         }
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="image">
-        /// To be added.
-        /// </param>
-        /// <param name="attrib_list">
-        /// To be added.
-        /// </param>
         public unsafe void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int image, [Flow(FlowDirection.In)] int* attrib_list)
         {
             // IntPtrOverloader
             EglimageTargetTextureStorage(texture, new IntPtr(image), attrib_list);
         }
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="image">
-        /// To be added.
-        /// </param>
-        /// <param name="attrib_list">
-        /// To be added.
-        /// </param>
         public unsafe void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int image, [Flow(FlowDirection.In)] Span<int> attrib_list)
         {
             // IntPtrOverloader

@@ -45,7 +45,7 @@ namespace Silk.NET.BuildTools.Bind
         public static void WriteEnum(this Enum @enum, string file, Profile profile, Project project)
         {
             var sw = new StreamWriter(file);
-            sw.WriteLine(LicenseText.Value);
+            sw.WriteLine(profile.LicenseText ?? LicenseText.Value);
             sw.WriteLine();
             var ns = project.IsRoot ? profile.Namespace : profile.ExtensionsNamespace;
             sw.WriteLine("using System;");
@@ -87,7 +87,7 @@ namespace Silk.NET.BuildTools.Bind
         public static void WriteStruct(this Struct @struct, string file, Profile profile, Project project)
         {
             var sw = new StreamWriter(file);
-            sw.WriteLine(LicenseText.Value);
+            sw.WriteLine(profile.LicenseText ?? LicenseText.Value);
             sw.WriteLine();
             sw.WriteLine("using System;");
             sw.WriteLine("using System.Runtime.InteropServices;");
@@ -260,7 +260,7 @@ namespace Silk.NET.BuildTools.Bind
         {
             using var sw = new StreamWriter(file);
             
-            sw.WriteLine(LicenseText.Value);
+            sw.WriteLine(profile.LicenseText ?? LicenseText.Value);
             sw.WriteLine("using Silk.NET.Core.Loader;");
             sw.WriteLine();
             sw.WriteLine($"namespace {profile.Namespace}{project.Namespace}");
@@ -305,7 +305,7 @@ namespace Silk.NET.BuildTools.Bind
             if (project.IsRoot)
             {
                 var sw = new StreamWriter(Path.Combine(folder, $"{profile.ClassName}.gen.cs"));
-                sw.Write(LicenseText.Value);
+                sw.Write(profile.LicenseText ?? LicenseText.Value);
                 sw.WriteLine("using System;");
                 sw.WriteLine("using System.Runtime.InteropServices;");
                 sw.WriteLine("using System.Text;");
@@ -459,7 +459,7 @@ namespace Silk.NET.BuildTools.Bind
                 {
                     var name = i.Name.Substring(1);
                     var sw = new StreamWriter(Path.Combine(folder, $"{name}.gen.cs"));
-                    sw.Write(LicenseText.Value);
+                    sw.Write(profile.LicenseText ?? LicenseText.Value);
                     sw.WriteLine("using System;");
                     sw.WriteLine("using System.Runtime.InteropServices;");
                     sw.WriteLine("using System.Text;");
@@ -646,6 +646,35 @@ namespace Silk.NET.BuildTools.Bind
         {
             var outFolder = profile.OutputFolder;
             var rootFolder = Path.Combine(Binder.CliOptions.OutputPath, outFolder);
+            if (!Directory.Exists(rootFolder))
+            {
+                Directory.CreateDirectory(rootFolder);
+            }
+
+            if (!Directory.Exists(Path.Combine(rootFolder, "Extensions")))
+            {
+                Directory.CreateDirectory(Path.Combine(rootFolder, "Extensions"));
+            }
+
+            Console.WriteLine($"Loaded \"{profile.Name}\", writing {profile.Projects.Count} projects...");
+            profile.Projects.ForEach
+            (
+                x =>
+                    x.Value.Write
+                    (
+                        x.Key == "Core"
+                            ? Path.Combine(rootFolder, x.Value.GetProjectName(profile))
+                            : Path.Combine(rootFolder, "Extensions", x.Value.GetProjectName(profile)),
+                        profile
+                    )
+            );
+            Console.WriteLine($"Successfully wrote \"{profile.Name}\" to disk.");
+        }
+
+        public static void Flush(this Profile profile, BindTask task)
+        {
+            profile.LicenseText = File.ReadAllText(task.OutputOpts.License);
+            var rootFolder = task.OutputOpts.Folder;
             if (!Directory.Exists(rootFolder))
             {
                 Directory.CreateDirectory(rootFolder);

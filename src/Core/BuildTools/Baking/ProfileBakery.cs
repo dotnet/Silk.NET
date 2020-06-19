@@ -61,6 +61,19 @@ namespace Silk.NET.BuildTools.Baking
                 .Select(JsonConvert.DeserializeObject<Profile>)
                 .ToList();
 
+            // save this to disk
+            File.WriteAllText
+            (
+                Path.Combine(folder, $"{information.Name}.json"),
+                JsonConvert.SerializeObject(Bake(information, impl), pretty ? Formatting.Indented : Formatting.None)
+            );
+
+            Console.WriteLine($"Created profile \"{information.Name}\".");
+        }
+
+        public static Profile Bake(ProfileBakeryInformation information, List<Profile> impl)
+        {
+
             // create the profile
             var profile = new Profile
             {
@@ -98,21 +111,7 @@ namespace Silk.NET.BuildTools.Baking
             Vary(profile);
             CheckForDuplicates(profile);
             TypeMapper.MapEnums(profile); // we need to map the enums to make sure they are correct for their extension.
-
-            // bake in the documentation
-            if (!string.IsNullOrWhiteSpace(docs))
-            {
-                DocumentationWriter.Write(profile, docs);
-            }
-
-            // save this to disk
-            File.WriteAllText
-            (
-                Path.Combine(folder, $"{information.Name}.json"),
-                JsonConvert.SerializeObject(profile, pretty ? Formatting.Indented : Formatting.None)
-            );
-
-            Console.WriteLine($"Created profile \"{information.Name}\".");
+            return profile;
         }
 
         private static void Vary(Profile profile)

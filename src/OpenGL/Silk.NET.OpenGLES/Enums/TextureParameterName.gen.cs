@@ -82,6 +82,7 @@ namespace Silk.NET.OpenGLES
         TextureSwizzleB = 0x8E44,
         TextureSwizzleA = 0x8E45,
         TextureSwizzleRgba = 0x8E46,
+        TextureUnnormalizedCoordinatesArm = 0x8F6A,
         DepthStencilTextureMode = 0x90EA,
         TextureTilingExt = 0x9580,
     }

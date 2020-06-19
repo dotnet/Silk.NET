@@ -19,27 +19,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
     public abstract unsafe partial class AmdStencilOperationExtended : NativeExtension<GL>
     {
         public const string ExtensionName = "AMD_stencil_operation_extended";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glStencilOpValueAMD")]
         public abstract void StencilOpValue([Flow(FlowDirection.In)] AMD face, [Flow(FlowDirection.In)] uint value);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glStencilOpValueAMD")]
         public abstract void StencilOpValue([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] uint value);
 

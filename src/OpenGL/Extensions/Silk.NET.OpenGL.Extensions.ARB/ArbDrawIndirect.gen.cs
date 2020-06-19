@@ -19,111 +19,27 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public abstract unsafe partial class ArbDrawIndirect : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_draw_indirect";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
-        /// <param name="indirect">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDrawArraysIndirect")]
         public abstract unsafe void DrawArraysIndirect([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] void* indirect);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
-        /// <param name="indirect">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDrawArraysIndirect")]
         public abstract void DrawArraysIndirect<T0>([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged;
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="indirect">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDrawElementsIndirect")]
         public abstract unsafe void DrawElementsIndirect([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] void* indirect);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="indirect">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDrawElementsIndirect")]
         public abstract void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged;
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
-        /// <param name="indirect">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDrawArraysIndirect")]
         public abstract unsafe void DrawArraysIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] void* indirect);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
-        /// <param name="indirect">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDrawArraysIndirect")]
         public abstract void DrawArraysIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged;
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="indirect">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDrawElementsIndirect")]
         public abstract unsafe void DrawElementsIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] void* indirect);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="indirect">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDrawElementsIndirect")]
         public abstract void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged;
 

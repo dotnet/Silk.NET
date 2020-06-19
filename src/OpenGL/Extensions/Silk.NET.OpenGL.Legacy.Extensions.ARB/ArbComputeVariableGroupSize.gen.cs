@@ -19,27 +19,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public abstract unsafe partial class ArbComputeVariableGroupSize : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_compute_variable_group_size";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="num_groups_x">
-        /// To be added.
-        /// </param>
-        /// <param name="num_groups_y">
-        /// To be added.
-        /// </param>
-        /// <param name="num_groups_z">
-        /// To be added.
-        /// </param>
-        /// <param name="group_size_x">
-        /// To be added.
-        /// </param>
-        /// <param name="group_size_y">
-        /// To be added.
-        /// </param>
-        /// <param name="group_size_z">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDispatchComputeGroupSizeARB")]
         public abstract void DispatchComputeGroupSize([Flow(FlowDirection.In)] uint num_groups_x, [Flow(FlowDirection.In)] uint num_groups_y, [Flow(FlowDirection.In)] uint num_groups_z, [Flow(FlowDirection.In)] uint group_size_x, [Flow(FlowDirection.In)] uint group_size_y, [Flow(FlowDirection.In)] uint group_size_z);
 

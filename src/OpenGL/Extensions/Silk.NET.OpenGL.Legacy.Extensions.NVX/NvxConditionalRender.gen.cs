@@ -19,18 +19,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NVX
     public abstract unsafe partial class NvxConditionalRender : NativeExtension<GL>
     {
         public const string ExtensionName = "NVX_conditional_render";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glBeginConditionalRenderNVX")]
         public abstract void BeginConditionalRender([Flow(FlowDirection.In)] uint id);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
         [NativeApi(EntryPoint = "glEndConditionalRenderNVX")]
         public abstract void EndConditionalRender();
 

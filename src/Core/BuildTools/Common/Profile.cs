@@ -75,5 +75,11 @@ namespace Silk.NET.BuildTools.Common
         /// </summary>
         [JsonIgnore]
         public List<Dictionary<string, string>> TypeMaps { get; set; } = new List<Dictionary<string, string>>();
+
+        /// <summary>
+        /// Gets or sets the license text for each file output by this profile.
+        /// </summary>
+        [JsonIgnore]
+        public string LicenseText { get; set; }
     }
 }

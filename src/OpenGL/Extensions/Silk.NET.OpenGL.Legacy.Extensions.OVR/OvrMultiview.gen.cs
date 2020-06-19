@@ -19,51 +19,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OVR
     public abstract unsafe partial class OvrMultiview : NativeExtension<GL>
     {
         public const string ExtensionName = "OVR_multiview";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="attachment">
-        /// To be added.
-        /// </param>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="level">
-        /// To be added.
-        /// </param>
-        /// <param name="baseViewIndex">
-        /// To be added.
-        /// </param>
-        /// <param name="numViews">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR")]
         public abstract void FramebufferTextureMultiview([Flow(FlowDirection.In)] OVR target, [Flow(FlowDirection.In)] OVR attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="attachment">
-        /// To be added.
-        /// </param>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="level">
-        /// To be added.
-        /// </param>
-        /// <param name="baseViewIndex">
-        /// To be added.
-        /// </param>
-        /// <param name="numViews">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureMultiviewOVR")]
         public abstract void FramebufferTextureMultiview([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int baseViewIndex, [Flow(FlowDirection.In)] uint numViews);
 
