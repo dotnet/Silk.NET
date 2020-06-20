@@ -48,6 +48,22 @@ namespace Silk.NET.BuildTools.Common
             };
 
         /// <summary>
+        /// Trims the API prefix from the function names.
+        /// </summary>
+        /// <param name="name">The name to trim.</param>
+        /// <param name="opts">The converter options.</param>
+        /// <returns>The trimmed name.</returns>
+        public static string TrimName(string name, BindTask task)
+        {
+            if (name.StartsWith($"{task.ConverterOpts.FunctionPrefix.ToUpper()}_"))
+            {
+                return name.Remove(0, task.ConverterOpts.FunctionPrefix.Length + 1);
+            }
+
+            return name.StartsWith(task.ConverterOpts.FunctionPrefix) ? name.Remove(0, task.ConverterOpts.FunctionPrefix.Length) : name;
+        }
+
+        /// <summary>
         /// Translates an identifier name into a C#-style PascalCase name.
         /// </summary>
         /// <param name="name">The name to translate.</param>

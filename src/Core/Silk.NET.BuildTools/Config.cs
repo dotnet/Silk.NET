@@ -42,6 +42,7 @@ namespace Silk.NET.BuildTools
     {
         [JsonProperty("args")] public string[] ClangArgs { get; set; }
         [JsonProperty("classes")] public Dictionary<string, string> ClassMappings { get; set; }
+        [JsonProperty("prefix")] public string FunctionPrefix { get; set; }
     }
 
     public struct BakeryOptions
