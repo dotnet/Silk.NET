@@ -15,44 +15,22 @@ namespace Silk.Net.Maths.Tests
     public class IntScalarTests : SignedScalarTests<int> { }
     public class ULongScalarTests : UnsignedScalarTests<ulong> { }
     public class LongScalarTests : SignedScalarTests<long> { }
+    public class HalfScalarTests : FloatingPointScalarTests<Half> { }
+    public class FloatScalarTests : FloatingPointScalarTests<float> { }
+    public class DoubleScalarTests : FloatingPointScalarTests<double> { }
 
-    public class HalfScalarTests : SignedScalarTests<Half>
+    public abstract class FloatingPointScalarTests<T> : SignedScalarTests<T>
+        where T : unmanaged, IFormattable
     {
         [Fact]
-        public Half PositiveInfinityDoesNotThrow()
+        public T PositiveInfinityDoesNotThrow()
         {
-            return Scalar<Half>.PositiveInfinity;
+            return Scalar<T>.PositiveInfinity;
         }
         [Fact]
-        public Half NegativeInfinityDoesNotThrow()
+        public T NegativeInfinityDoesNotThrow()
         {
-            return Scalar<Half>.NegativeInfinity;
-        }
-    }
-    public class FloatScalarTests : SignedScalarTests<float> 
-    {
-        [Fact]
-        public float PositiveInfinityDoesNotThrow()
-        {
-            return Scalar<float>.PositiveInfinity;
-        }
-        [Fact]
-        public float NegativeInfinityDoesNotThrow()
-        {
-            return Scalar<float>.NegativeInfinity;
-        }
-    }
-    public class DoubleScalarTests : SignedScalarTests<double>  
-    {
-        [Fact]
-        public double PositiveInfinityDoesNotThrow()
-        {
-            return Scalar<double>.PositiveInfinity;
-        }
-        [Fact]
-        public double NegativeInfinityDoesNotThrow()
-        {
-            return Scalar<double>.NegativeInfinity;
+            return Scalar<T>.NegativeInfinity;
         }
     }
 
