@@ -17,7 +17,7 @@ using static Silk.NET.Maths.Scalar;
 namespace Silk.NET.Maths
 {
     [Serializable]
-    public readonly struct Vector4<T> : IEquatable<Vector4<T>>, IFormattable where T : unmanaged, IFormattable
+    public readonly partial struct Vector4<T> : IEquatable<Vector4<T>>, IFormattable where T : unmanaged, IFormattable
     {
         public static Vector4<T> UnitX => new Vector4<T>(Scalar<T>.One, default, default, default);
         public static Vector4<T> UnitY => new Vector4<T>(default, Scalar<T>.One, default, default);
@@ -643,7 +643,7 @@ namespace Silk.NET.Maths
         {
             if (Vector<T>.Count >= 4)
             {
-                var span = stackalloc T[] {X, Y, Z, W};
+                Span<T> span = stackalloc T[] {X, Y, Z, W};
                 var vec = new Vector<T>(span);
                 return vec;
             }

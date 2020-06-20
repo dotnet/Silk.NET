@@ -27,7 +27,7 @@ namespace Silk.NET.Maths
     */
 
     [Serializable]
-    public readonly struct Vector2<T> : IEquatable<Vector2<T>>, IFormattable where T : unmanaged, IFormattable
+    public readonly partial struct Vector2<T> : IEquatable<Vector2<T>>, IFormattable where T : unmanaged, IFormattable
     {
         public static Vector2<T> UnitX => new Vector2<T>(Scalar<T>.One, default);
 
@@ -531,7 +531,7 @@ namespace Silk.NET.Maths
         {
             if (Vector<T>.Count >= 2)
             {
-                var span = stackalloc T[] {X, Y};
+                Span<T> span = stackalloc T[] {X, Y};
                 var vec = new Vector<T>(span);
                 return vec;
             }
