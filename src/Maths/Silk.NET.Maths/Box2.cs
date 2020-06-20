@@ -6,6 +6,7 @@
 using System;
 using System.Globalization;
 using System.Text;
+using static Silk.NET.Maths.Scalar;
 
 namespace Silk.NET.Maths
 {
@@ -20,8 +21,9 @@ namespace Silk.NET.Maths
             Max = max;
         }
 
-        public Box2(T minX, T minY, T maxX, T maxY) : this (new Vector2<T>(minX, minY), new Vector2<T>(maxX, maxY))
-        { }
+        public Box2(T minX, T minY, T maxX, T maxY) : this(new Vector2<T>(minX, minY), new Vector2<T>(maxX, maxY))
+        {
+        }
 
         public Vector2<T> Size => Max - Min;
 
@@ -30,56 +32,51 @@ namespace Silk.NET.Maths
         public Vector2<T> Center => Min + Max / Scalar<T>.Two;
 
         public Box2<T> WithMin(Vector2<T> min) => new Box2<T>(min, Max);
-        
+
         public Box2<T> WithMax(Vector2<T> max) => new Box2<T>(Min, max);
 
-        public bool Contains(Vector2<T> point, bool boundaryInclusive = false)
-            => boundaryInclusive 
-                ? Scalar<T>.LargerEquals(point.X, Min.X)
-               && Scalar<T>.LargerEquals(point.Y, Min.Y)
-               && Scalar<T>.SmallerEquals(point.X, Max.X)
-               && Scalar<T>.SmallerEquals(point.Y, Min.Y)
-                :
-                Scalar<T>.Larger(point.X, Min.X)
-                && Scalar<T>.Larger(point.Y, Min.Y)
-                && Scalar<T>.Smaller(point.X, Max.X)
-                && Scalar<T>.Smaller(point.Y, Min.Y);
+        public bool Contains(Vector2<T> point, bool boundaryInclusive = false) =>
+            boundaryInclusive
+                ? LargerEquals(point.X, Min.X)
+                  && LargerEquals(point.Y, Min.Y)
+                  && SmallerEquals(point.X, Max.X)
+                  && SmallerEquals(point.Y, Min.Y)
+                : Larger(point.X, Min.X)
+                  && Larger(point.Y, Min.Y)
+                  && Smaller(point.X, Max.X)
+                  && Smaller(point.Y, Min.Y);
 
-        public bool Contains(Box2<T> other, bool boundaryInclusive = false)
-            => boundaryInclusive 
-                ? Scalar<T>.LargerEquals(other.Min.X, Min.X)
-                  && Scalar<T>.LargerEquals(other.Min.Y, Min.Y)
-                  && Scalar<T>.SmallerEquals(other.Max.X, Max.X)
-                  && Scalar<T>.SmallerEquals(other.Max.Y, Min.Y)
-                :
-                Scalar<T>.Larger(other.Min.X, Min.X)
-                && Scalar<T>.Larger(other.Min.Y, Min.Y)
-                && Scalar<T>.Smaller(other.Max.X, Max.X)
-                && Scalar<T>.Smaller(other.Max.Y, Min.Y);
+        public bool Contains(Box2<T> other, bool boundaryInclusive = false) =>
+            boundaryInclusive
+                ? LargerEquals(other.Min.X, Min.X)
+                  && LargerEquals(other.Min.Y, Min.Y)
+                  && SmallerEquals(other.Max.X, Max.X)
+                  && SmallerEquals(other.Max.Y, Min.Y)
+                : Larger(other.Min.X, Min.X)
+                  && Larger(other.Min.Y, Min.Y)
+                  && Smaller(other.Max.X, Max.X)
+                  && Smaller(other.Max.Y, Min.Y);
 
-        public T DistanceToNearestEdge(Vector2<T> point)
-            => Vector2<T>.ComponentMax(Vector2<T>.Zero, Vector2<T>.ComponentMax(Min - point, point - Max)).Length;
+        public T DistanceToNearestEdge(Vector2<T> point) => Vector2<T>.ComponentMax
+                (Vector2<T>.Zero, Vector2<T>.ComponentMax(Min - point, point - Max))
+            .Length;
 
-        public Box2<T> Translate(Vector2<T> distance) 
-            => new Box2<T>(Min + distance, Max + distance);
+        public Box2<T> Translate(Vector2<T> distance) => new Box2<T>(Min + distance, Max + distance);
 
-        public Box2<T> Scale(Vector2<T> scale, Vector2<T> anchor) 
-            => new Box2<T>(anchor + (Min - anchor) * scale, anchor + (Max - anchor) * scale);
+        public Box2<T> Scale
+            (Vector2<T> scale, Vector2<T> anchor) => new Box2<T>
+            (anchor + (Min - anchor) * scale, anchor + (Max - anchor) * scale);
 
-        public Box2<T> Inflate(Vector2<T> point) 
-            => new Box2<T>(Vector2<T>.ComponentMin(point, Min), Vector2<T>.ComponentMin(point, Max));
+        public Box2<T> Inflate
+            (Vector2<T> point) => new Box2<T>(Vector2<T>.ComponentMin(point, Min), Vector2<T>.ComponentMin(point, Max));
 
-        public static bool operator ==(Box2<T> left, Box2<T> right) 
-            => left.Min == right.Min && left.Max == right.Max;
+        public static bool operator ==(Box2<T> left, Box2<T> right) => left.Min == right.Min && left.Max == right.Max;
 
-        public static bool operator !=(Box2<T> left, Box2<T> right) 
-            => !(left == right);
+        public static bool operator !=(Box2<T> left, Box2<T> right) => !(left == right);
 
-        public bool Equals(Box2<T> other) 
-            => this == other;
+        public bool Equals(Box2<T> other) => this == other;
 
-        public override bool Equals(object? obj)
-            => obj is Box2<T> box && Equals(box);
+        public override bool Equals(object? obj) => obj is Box2<T> box && Equals(box);
 
         public override int GetHashCode()
         {
@@ -93,7 +90,7 @@ namespace Silk.NET.Maths
         public override string ToString() => ToString("G");
 
         public string ToString(string? format) => ToString(format, CultureInfo.CurrentCulture);
-        
+
         public string ToString(string? format, IFormatProvider? formatProvider)
         {
             var sb = new StringBuilder();
