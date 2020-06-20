@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths", "Silk.NET.Maths\Silk.NET.Maths.csproj", "{7B1355E0-E432-4412-B9F0-080AF98C880D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.Net.Maths.Tests", "Silk.Net.Maths.Tests\Silk.Net.Maths.Tests.csproj", "{34F0A2D1-BF50-4D84-882F-4030D8493B91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B1355E0-E432-4412-B9F0-080AF98C880D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B1355E0-E432-4412-B9F0-080AF98C880D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B1355E0-E432-4412-B9F0-080AF98C880D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B1355E0-E432-4412-B9F0-080AF98C880D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34F0A2D1-BF50-4D84-882F-4030D8493B91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34F0A2D1-BF50-4D84-882F-4030D8493B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34F0A2D1-BF50-4D84-882F-4030D8493B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34F0A2D1-BF50-4D84-882F-4030D8493B91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
