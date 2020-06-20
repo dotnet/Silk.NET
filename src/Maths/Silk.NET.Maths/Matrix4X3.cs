@@ -24,19 +24,17 @@ namespace Silk.NET.Maths
         public T M21 => Row1.X;
         public T M22 => Row1.Y;
         public T M23 => Row1.Z;
-        
+
         public T M31 => Row2.X;
         public T M32 => Row2.Y;
         public T M33 => Row2.Z;
-        
+
         public T M41 => Row3.X;
         public T M42 => Row3.Y;
         public T M43 => Row3.Z;
 
-        public Matrix4X3(Vector3<T> row0, Vector3<T> row1, Vector3<T> row2, Vector3<T> row3)
-        {
-            throw new NotImplementedException();
-        }
+        public Matrix4X3
+            (Vector3<T> row0, Vector3<T> row1, Vector3<T> row2, Vector3<T> row3) => throw new NotImplementedException();
 
         public Matrix4X3
         (
@@ -52,10 +50,8 @@ namespace Silk.NET.Maths
             T m30,
             T m31,
             T m32
-        )
-        {
+        ) =>
             throw new NotImplementedException();
-        }
 
         public Vector4<T> Column0 => throw new NotImplementedException();
         public Vector4<T> Column1 => throw new NotImplementedException();
@@ -75,224 +71,116 @@ namespace Silk.NET.Maths
             set => throw new NotImplementedException();
         }
 
-        public void Invert()
-        {
-            throw new NotImplementedException();
-        }
+        public void Invert() => throw new NotImplementedException();
 
-        public static void CreateFromAxisAngle(Vector3<T> axis, T angle, out Matrix4X3<T> result)
-        {
-            throw new NotImplementedException();
-        }
+        public static void CreateFromAxisAngle
+            (Vector3<T> axis, T angle, out Matrix4X3<T> result) => throw new NotImplementedException();
 
-        public static Matrix4X3<T> CreateFromAxisAngle(Vector3<T> axis, T angle)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> CreateFromAxisAngle(Vector3<T> axis, T angle) => throw new NotImplementedException();
 
-        public static void CreateFromQuaternion(ref Quaternion<T> q, out Matrix4X3<T> result)
-        {
-            throw new NotImplementedException();
-        }
+        public static void CreateFromQuaternion
+            (ref Quaternion<T> q, out Matrix4X3<T> result) => throw new NotImplementedException();
 
-        public static Matrix4X3<T> CreateFromQuaternion(Quaternion<T> q)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> CreateFromQuaternion(Quaternion<T> q) => throw new NotImplementedException();
 
-        public static void CreateRotationX(T angle, out Matrix4X3<T> result)
-        {
-            throw new NotImplementedException();
-        }
+        public static void CreateRotationX(T angle, out Matrix4X3<T> result) => throw new NotImplementedException();
 
-        public static Matrix4X3<T> CreateRotationX(T angle)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> CreateRotationX(T angle) => throw new NotImplementedException();
 
-        public static void CreateRotationY(T angle, out Matrix4X3<T> result)
-        {
-            throw new NotImplementedException();
-        }
+        public static void CreateRotationY(T angle, out Matrix4X3<T> result) => throw new NotImplementedException();
 
-        public static Matrix4X3<T> CreateRotationY(T angle)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> CreateRotationY(T angle) => throw new NotImplementedException();
 
-        public static void CreateRotationZ(T angle, out Matrix4X3<T> result)
-        {
-            throw new NotImplementedException();
-        }
+        public static void CreateRotationZ(T angle, out Matrix4X3<T> result) => throw new NotImplementedException();
 
-        public static Matrix4X3<T> CreateRotationZ(T angle)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> CreateRotationZ(T angle) => throw new NotImplementedException();
 
-        public static void CreateTranslation(T x, T y, T z, out Matrix4X3<T> result)
-        {
-            throw new NotImplementedException();
-        }
+        public static void CreateTranslation
+            (T x, T y, T z, out Matrix4X3<T> result) => throw new NotImplementedException();
 
-        public static void CreateTranslation(ref Vector3<T> vector, out Matrix4X3<T> result)
-        {
-            throw new NotImplementedException();
-        }
+        public static void CreateTranslation
+            (ref Vector3<T> vector, out Matrix4X3<T> result) => throw new NotImplementedException();
 
-        public static Matrix4X3<T> CreateTranslation(T x, T y, T z)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> CreateTranslation(T x, T y, T z) => throw new NotImplementedException();
 
-        public static Matrix4X3<T> CreateTranslation(Vector3<T> vector)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> CreateTranslation(Vector3<T> vector) => throw new NotImplementedException();
 
-        public static Matrix4X3<T> CreateScale(T scale)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> CreateScale(T scale) => throw new NotImplementedException();
 
-        public static Matrix4X3<T> CreateScale(Vector3<T> scale)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> CreateScale(Vector3<T> scale) => throw new NotImplementedException();
 
-        public static Matrix4X3<T> CreateScale(T x, T y, T z)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> CreateScale(T x, T y, T z) => throw new NotImplementedException();
 
-        public static Matrix4X4<T> Multiply(Matrix4X3<T> left, Matrix3X4<T> right)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X4<T> Multiply
+            (Matrix4X3<T> left, Matrix3X4<T> right) => throw new NotImplementedException();
 
-        public static void Multiply(ref Matrix4X3<T> left, ref Matrix3X4<T> right, out Matrix4X4<T> result)
-        {
+        public static void Multiply
+            (ref Matrix4X3<T> left, ref Matrix3X4<T> right, out Matrix4X4<T> result) =>
             throw new NotImplementedException();
-        }
 
-        public static Matrix4X3<T> Multiply(Matrix4X3<T> left, Matrix4X3<T> right)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> Multiply
+            (Matrix4X3<T> left, Matrix4X3<T> right) => throw new NotImplementedException();
 
-        public static void Multiply(ref Matrix4X3<T> left, ref Matrix4X3<T> right, out Matrix4X3<T> result)
-        {
+        public static void Multiply
+            (ref Matrix4X3<T> left, ref Matrix4X3<T> right, out Matrix4X3<T> result) =>
             throw new NotImplementedException();
-        }
 
-        public static Matrix4X3<T> Multiply(Matrix4X3<T> left, T right)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> Multiply(Matrix4X3<T> left, T right) => throw new NotImplementedException();
 
-        public static void Multiply(ref Matrix4X3<T> left, T right, out Matrix4X3<T> result)
-        {
-            throw new NotImplementedException();
-        }
+        public static void Multiply
+            (ref Matrix4X3<T> left, T right, out Matrix4X3<T> result) => throw new NotImplementedException();
 
-        public static Matrix4X3<T> Add(Matrix4X3<T> left, Matrix4X3<T> right)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> Add(Matrix4X3<T> left, Matrix4X3<T> right) => throw new NotImplementedException();
 
-        public static void Add(ref Matrix4X3<T> left, ref Matrix4X3<T> right, out Matrix4X3<T> result)
-        {
+        public static void Add
+            (ref Matrix4X3<T> left, ref Matrix4X3<T> right, out Matrix4X3<T> result) =>
             throw new NotImplementedException();
-        }
 
-        public static Matrix4X3<T> Subtract(Matrix4X3<T> left, Matrix4X3<T> right)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> Subtract
+            (Matrix4X3<T> left, Matrix4X3<T> right) => throw new NotImplementedException();
 
-        public static void Subtract(ref Matrix4X3<T> left, ref Matrix4X3<T> right, out Matrix4X3<T> result)
-        {
+        public static void Subtract
+            (ref Matrix4X3<T> left, ref Matrix4X3<T> right, out Matrix4X3<T> result) =>
             throw new NotImplementedException();
-        }
 
-        public static Matrix4X3<T> Invert(Matrix4X3<T> mat)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> Invert(Matrix4X3<T> mat) => throw new NotImplementedException();
 
-        public static void Invert(ref Matrix4X3<T> mat, out Matrix4X3<T> result)
-        {
-            throw new NotImplementedException();
-        }
+        public static void Invert(ref Matrix4X3<T> mat, out Matrix4X3<T> result) => throw new NotImplementedException();
 
-        public static Matrix3X4<T> Transpose(Matrix4X3<T> mat)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix3X4<T> Transpose(Matrix4X3<T> mat) => throw new NotImplementedException();
 
-        public static void Transpose(ref Matrix4X3<T> mat, out Matrix3X4<T> result)
-        {
-            throw new NotImplementedException();
-        }
+        public static void Transpose
+            (ref Matrix4X3<T> mat, out Matrix3X4<T> result) => throw new NotImplementedException();
 
-        public static Matrix4X4<T> operator *(Matrix4X3<T> left, Matrix3X4<T> right)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X4<T> operator *
+            (Matrix4X3<T> left, Matrix3X4<T> right) => throw new NotImplementedException();
 
-        public static Matrix4X3<T> operator *(Matrix4X3<T> left, Matrix4X3<T> right)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> operator *
+            (Matrix4X3<T> left, Matrix4X3<T> right) => throw new NotImplementedException();
 
-        public static Matrix4X3<T> operator *(Matrix4X3<T> left, T right)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> operator *(Matrix4X3<T> left, T right) => throw new NotImplementedException();
 
-        public static Matrix4X3<T> operator +(Matrix4X3<T> left, Matrix4X3<T> right)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> operator +
+            (Matrix4X3<T> left, Matrix4X3<T> right) => throw new NotImplementedException();
 
-        public static Matrix4X3<T> operator -(Matrix4X3<T> left, Matrix4X3<T> right)
-        {
-            throw new NotImplementedException();
-        }
+        public static Matrix4X3<T> operator -
+            (Matrix4X3<T> left, Matrix4X3<T> right) => throw new NotImplementedException();
 
-        public static bool operator ==(Matrix4X3<T> left, Matrix4X3<T> right)
-        {
-            throw new NotImplementedException();
-        }
+        public static bool operator ==(Matrix4X3<T> left, Matrix4X3<T> right) => throw new NotImplementedException();
 
-        public static bool operator !=(Matrix4X3<T> left, Matrix4X3<T> right)
-        {
-            throw new NotImplementedException();
-        }
+        public static bool operator !=(Matrix4X3<T> left, Matrix4X3<T> right) => throw new NotImplementedException();
 
 
         public override string ToString() => ToString("G");
 
         public string ToString(string? format) => ToString(format, CultureInfo.CurrentCulture);
-        
-        public string ToString(string? format, IFormatProvider? formatProvider)
-        {
-            throw new NotImplementedException();
-        }
 
-        public override int GetHashCode()
-        {
-            throw new NotImplementedException();
-        }
+        public string ToString(string? format, IFormatProvider? formatProvider) => throw new NotImplementedException();
 
-        public override bool Equals(object? obj)
-        {
-            throw new NotImplementedException();
-        }
+        public override int GetHashCode() => throw new NotImplementedException();
 
-        public bool Equals(Matrix4X3<T> other)
-        {
-            throw new NotImplementedException();
-        }
+        public override bool Equals(object? obj) => throw new NotImplementedException();
+
+        public bool Equals(Matrix4X3<T> other) => throw new NotImplementedException();
     }
 }
