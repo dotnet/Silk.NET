@@ -102,7 +102,7 @@ namespace Silk.NET.Maths
 
         public T LengthSquared => Dot(this, this);
 
-        public Vector4<T> Normalize() => Normalize(this);
+        public Vector4<T> Normalized() => Normalize(this);
 
         public static Vector4<T> Add(Vector4<T> a, Vector4<T> b) =>
             new Vector4<T>
@@ -376,6 +376,10 @@ namespace Silk.NET.Maths
                 (Scalar.Negate(vec.X), Scalar.Negate(vec.Y), Scalar.Negate(vec.Z), Scalar.Negate(vec.W));
 
         public static void Negate(ref Vector4<T> vec, out Vector4<T> result) => result = Negate(vec);
+        
+        public static Vector4<T> Cos(Vector4<T> vector) => new Vector4<T>(Scalar.Cos(vector.X), Scalar.Cos(vector.Y), Scalar.Cos(vector.Z), Scalar.Cos(vector.W));
+        
+        public static Vector4<T> Sin(Vector4<T> vector) => new Vector4<T>(Scalar.Sin(vector.X), Scalar.Sin(vector.Y), Scalar.Sin(vector.Z), Scalar.Sin(vector.W));
 
         public static Vector4<T> operator +(Vector4<T> left, Vector4<T> right) => Add(left, right);
 
