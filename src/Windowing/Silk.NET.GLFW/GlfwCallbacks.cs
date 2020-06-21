@@ -173,5 +173,13 @@ namespace Silk.NET.GLFW
         /// <param name="height">The new height, in screen coordinates, of the window.</param>
         /// <seealso cref="IGlfw.SetWindowSizeCallback" />
         public delegate void WindowSizeCallback(WindowHandle* window, int width, int height);
+
+        /// <summary>
+        /// The function signature for framebuffer size callback functions.
+        /// </summary>
+        /// <param name="window">The window whose framebuffer was resized.</param>
+        /// <param name="width">The new width, in pixels, of the framebuffer.</param>
+        /// <param name="height">The new height, in pixels, of the framebuffer.</param>
+        public delegate void FramebufferSizeCallback(WindowHandle* window, int width, int height);
     }
 }
