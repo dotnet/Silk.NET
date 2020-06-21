@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Windowing\Silk.NET.GLFW\Silk.NET.GLFW.csproj" />
+    <ProjectReference Include="..\..\Windowing\Silk.NET.GLFW\Silk.NET.GLFW.csproj" />
   </ItemGroup>
 
 </Project>
