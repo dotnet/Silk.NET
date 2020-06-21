@@ -376,10 +376,12 @@ namespace Silk.NET.Maths
                 (Scalar.Negate(vec.X), Scalar.Negate(vec.Y), Scalar.Negate(vec.Z), Scalar.Negate(vec.W));
 
         public static void Negate(ref Vector4<T> vec, out Vector4<T> result) => result = Negate(vec);
-        
-        public static Vector4<T> Cos(Vector4<T> vector) => new Vector4<T>(Scalar.Cos(vector.X), Scalar.Cos(vector.Y), Scalar.Cos(vector.Z), Scalar.Cos(vector.W));
-        
-        public static Vector4<T> Sin(Vector4<T> vector) => new Vector4<T>(Scalar.Sin(vector.X), Scalar.Sin(vector.Y), Scalar.Sin(vector.Z), Scalar.Sin(vector.W));
+
+        public static Vector4<T> Cos(Vector4<T> vector) => new Vector4<T>
+            (Scalar.Cos(vector.X), Scalar.Cos(vector.Y), Scalar.Cos(vector.Z), Scalar.Cos(vector.W));
+
+        public static Vector4<T> Sin(Vector4<T> vector) => new Vector4<T>
+            (Scalar.Sin(vector.X), Scalar.Sin(vector.Y), Scalar.Sin(vector.Z), Scalar.Sin(vector.W));
 
         public static Vector4<T> operator +(Vector4<T> left, Vector4<T> right) => Add(left, right);
 
@@ -435,14 +437,7 @@ namespace Silk.NET.Maths
             return sb.ToString();
         }
 
-        public override int GetHashCode()
-        {
-#if NETSTANDARD2_1
-            return HashCode.Combine(X, Y, Z, W);
-#else
-            return X.GetHashCode() ^ Y.GetHashCode() ^ Z.GetHashCode() ^ W.GetHashCode();
-#endif
-        }
+        public override int GetHashCode() => HashCode.Combine(X, Y, Z, W);
 
         public override bool Equals(object? obj) => obj is Vector4<T> vec && Equals(vec);
 
