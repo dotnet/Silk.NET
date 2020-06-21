@@ -325,6 +325,76 @@ namespace Silk.NET.Maths
             Debug.Fail("Unreachable Code");
             return default; // can't be reached
         }
+        
+        public static T As<T>(float value)
+            where T : unmanaged, IFormattable
+        {
+            ThrowForUnsupportedBaseType<T>();
+            if (typeof(T) == typeof(byte))
+            {
+                return (T) (object) (byte) value;
+            }
+
+            if (typeof(T) == typeof(sbyte))
+            {
+                return (T) (object) (sbyte) value;
+            }
+
+            if (typeof(T) == typeof(ushort))
+            {
+                return (T) (object) (ushort) value;
+            }
+
+            if (typeof(T) == typeof(short))
+            {
+                return (T) (object) (short) value;
+            }
+
+            if (typeof(T) == typeof(uint))
+            {
+                return (T) (object) (uint) value;
+            }
+
+            if (typeof(T) == typeof(int))
+            {
+                return (T) (object) (int) value;
+            }
+
+            return _As2<T>(value);
+        }
+
+        private static T _As2<T>(float value)
+            where T : unmanaged, IFormattable
+        {
+            if (typeof(T) == typeof(ulong))
+            {
+                return (T) (object) (ulong) value;
+            }
+
+            if (typeof(T) == typeof(long))
+            {
+                return (T) (object) (long) value;
+            }
+
+            if (typeof(T) == typeof(Half))
+            {
+                return (T) (object) (Half) value;
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return (T) (object) (float) value;
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return (T) (object) (double) value;
+            }
+
+
+            Debug.Fail("Unreachable Code");
+            return default;
+        }
 
         internal static void ThrowInvalidType() => throw new NotSupportedException
             ("This operation isn't supported for the current type.");

@@ -86,7 +86,7 @@ namespace Silk.NET.Maths
 
         public T LengthSquared => Dot(this, this);
 
-        public Vector3<T> Normalize() => Normalize(this);
+        public Vector3<T> Normalized() => Normalize(this);
 
         public static Vector3<T> Add
             (Vector3<T> a, Vector3<T> b) => new Vector3<T>
@@ -338,6 +338,10 @@ namespace Silk.NET.Maths
                 )
             );
         }
+        
+        public static Vector3<T> Cos(Vector3<T> vector) => new Vector3<T>(Scalar.Cos(vector.X), Scalar.Cos(vector.Y), Scalar.Cos(vector.Z));
+        
+        public static Vector3<T> Sin(Vector3<T> vector) => new Vector3<T>(Scalar.Sin(vector.X), Scalar.Sin(vector.Y), Scalar.Sin(vector.Z));
 
         public static void CalculateAngle
             (ref Vector3<T> first, ref Vector3<T> second, out T result) => result = CalculateAngle(first, second);

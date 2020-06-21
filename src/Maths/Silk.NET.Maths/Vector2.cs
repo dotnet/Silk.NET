@@ -86,7 +86,7 @@ namespace Silk.NET.Maths
 
         public Vector2<T> PerpendicularLeft => new Vector2<T>(Scalar.Negate(Y), X);
 
-        public Vector2<T> Normalize() => Normalize(this);
+        public Vector2<T> Normalized() => Normalize(this);
 
         public static Vector2<T> Add
             (Vector2<T> a, Vector2<T> b) => new Vector2<T>(Scalar.Add(a.X, b.X), Scalar.Add(a.Y, b.Y));
@@ -274,6 +274,10 @@ namespace Silk.NET.Maths
 
         public static void Transform
             (ref Vector2<T> vec, ref Quaternion<T> quat, out Vector2<T> result) => result = Transform(vec, quat);
+                
+        public static Vector2<T> Cos(Vector2<T> vector) => new Vector2<T>(Scalar.Cos(vector.X), Scalar.Cos(vector.Y));
+        
+        public static Vector2<T> Sin(Vector2<T> vector) => new Vector2<T>(Scalar.Sin(vector.X), Scalar.Sin(vector.Y));
 
         public static Vector2<T> Negate(Vector2<T> vec) => new Vector2<T>(Scalar.Negate(vec.X), Scalar.Negate(vec.Y));
 
