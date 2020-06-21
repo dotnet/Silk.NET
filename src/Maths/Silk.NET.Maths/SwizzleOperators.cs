@@ -1,4 +1,5 @@
 ﻿// ReSharper disable InconsistentNaming
+
 namespace Silk.NET.Maths
 {
     public readonly partial struct Vector2<T>
@@ -15,7 +16,7 @@ namespace Silk.NET.Maths
         public Vector2<T> XY => new Vector2<T>(X, Y);
         public Vector2<T> YX => new Vector2<T>(Y, X);
         public Vector2<T> YY => new Vector2<T>(Y, Y);
-        
+
         public Vector3<T> XXX => new Vector3<T>(X, X, X);
         public Vector3<T> XXY => new Vector3<T>(X, X, Y);
         public Vector3<T> XXZ => new Vector3<T>(X, X, Z);
@@ -74,7 +75,7 @@ namespace Silk.NET.Maths
         public Vector3<T> ZZX => new Vector3<T>(Z, Z, X);
         public Vector3<T> ZZY => new Vector3<T>(Z, Z, Y);
         public Vector3<T> ZZZ => new Vector3<T>(Z, Z, Z);
-        
+
         public Vector4<T> XXXX => new Vector4<T>(X, X, X, X);
         public Vector4<T> XXXY => new Vector4<T>(X, X, X, Y);
         public Vector4<T> XXXZ => new Vector4<T>(X, X, X, Z);

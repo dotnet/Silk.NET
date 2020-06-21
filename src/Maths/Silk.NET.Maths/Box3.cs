@@ -82,14 +82,7 @@ namespace Silk.NET.Maths
 
         public override bool Equals(object? obj) => obj is Box3<T> box && Equals(box);
 
-        public override int GetHashCode()
-        {
-#if NETSTANDARD2_1
-            return HashCode.Combine(Min, Max);
-#else
-            return Min.GetHashCode() ^ Max.GetHashCode();
-#endif
-        }
+        public override int GetHashCode() => HashCode.Combine(Min, Max);
 
         public override string ToString() => ToString("G");
 

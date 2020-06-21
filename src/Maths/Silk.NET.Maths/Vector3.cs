@@ -338,10 +338,12 @@ namespace Silk.NET.Maths
                 )
             );
         }
-        
-        public static Vector3<T> Cos(Vector3<T> vector) => new Vector3<T>(Scalar.Cos(vector.X), Scalar.Cos(vector.Y), Scalar.Cos(vector.Z));
-        
-        public static Vector3<T> Sin(Vector3<T> vector) => new Vector3<T>(Scalar.Sin(vector.X), Scalar.Sin(vector.Y), Scalar.Sin(vector.Z));
+
+        public static Vector3<T> Cos
+            (Vector3<T> vector) => new Vector3<T>(Scalar.Cos(vector.X), Scalar.Cos(vector.Y), Scalar.Cos(vector.Z));
+
+        public static Vector3<T> Sin
+            (Vector3<T> vector) => new Vector3<T>(Scalar.Sin(vector.X), Scalar.Sin(vector.Y), Scalar.Sin(vector.Z));
 
         public static void CalculateAngle
             (ref Vector3<T> first, ref Vector3<T> second, out T result) => result = CalculateAngle(first, second);
@@ -399,14 +401,7 @@ namespace Silk.NET.Maths
             return sb.ToString();
         }
 
-        public override int GetHashCode()
-        {
-#if NETSTANDARD2_1
-            return HashCode.Combine(X, Y, Z);
-#else
-            return X.GetHashCode() ^ Y.GetHashCode() ^ Z.GetHashCode();
-#endif
-        }
+        public override int GetHashCode() => HashCode.Combine(X, Y, Z);
 
         public override bool Equals(object? obj) => obj is Vector3<T> vec && Equals(vec);
 

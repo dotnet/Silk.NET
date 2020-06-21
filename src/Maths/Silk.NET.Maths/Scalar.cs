@@ -325,7 +325,7 @@ namespace Silk.NET.Maths
             Debug.Fail("Unreachable Code");
             return default; // can't be reached
         }
-        
+
         public static T As<T>(float value)
             where T : unmanaged, IFormattable
         {
@@ -383,7 +383,7 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) (float) value;
+                return (T) (object) value;
             }
 
             if (typeof(T) == typeof(double))
