@@ -3248,6 +3248,30 @@ namespace Silk.NET.GLFW
 
         /// <summary>
         /// <para>
+        /// This function sets the framebuffer resize callback of the specified window, which is called when the framebuffer of the specified window is resized.
+        /// </para>
+        /// </summary>
+        /// <param name="window">The window whose callback to set.</param>
+        /// <param name="callback">The new callback, or <c>null</c> to remove the currently set callback.</param>
+        /// <returns>
+        /// The previously set callback, or <c>null</c> if no callback was set or the library had not been initialized.
+        /// </returns>
+        /// <remarks>
+        /// <para>
+        /// This function must only be called from the main thread.
+        /// </para>
+        /// <para>
+        /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
+        /// </para>
+        /// </remarks>
+        public abstract unsafe GlfwCallbacks.FramebufferSizeCallback SetFramebufferSizeCallback
+        (
+            WindowHandle* window,
+            [PinObject(PinMode.UntilNextCall)] GlfwCallbacks.FramebufferSizeCallback callback
+        );
+
+        /// <summary>
+        /// <para>
         /// This function sets the value of the close flag of the specified window.
         /// </para>
         /// <para>
