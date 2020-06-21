@@ -11,6 +11,11 @@ namespace Silk.NET.Maths
 
     public readonly partial struct Vector3<T>
     {
+        public Vector2<T> XX => new Vector2<T>(X, X);
+        public Vector2<T> XY => new Vector2<T>(X, Y);
+        public Vector2<T> YX => new Vector2<T>(Y, X);
+        public Vector2<T> YY => new Vector2<T>(Y, Y);
+        
         public Vector3<T> XXX => new Vector3<T>(X, X, X);
         public Vector3<T> XXY => new Vector3<T>(X, X, Y);
         public Vector3<T> XXZ => new Vector3<T>(X, X, Z);
@@ -42,6 +47,34 @@ namespace Silk.NET.Maths
 
     public readonly partial struct Vector4<T>
     {
+        public Vector3<T> XXX => new Vector3<T>(X, X, X);
+        public Vector3<T> XXY => new Vector3<T>(X, X, Y);
+        public Vector3<T> XXZ => new Vector3<T>(X, X, Z);
+        public Vector3<T> XYX => new Vector3<T>(X, Y, X);
+        public Vector3<T> XYY => new Vector3<T>(X, Y, Y);
+        public Vector3<T> XYZ => new Vector3<T>(X, Y, Z);
+        public Vector3<T> XZX => new Vector3<T>(X, Z, X);
+        public Vector3<T> XZY => new Vector3<T>(X, Z, Y);
+        public Vector3<T> XZZ => new Vector3<T>(X, Z, Z);
+        public Vector3<T> YXX => new Vector3<T>(Y, X, X);
+        public Vector3<T> YXY => new Vector3<T>(Y, X, Y);
+        public Vector3<T> YXZ => new Vector3<T>(Y, X, Z);
+        public Vector3<T> YYX => new Vector3<T>(Y, Y, X);
+        public Vector3<T> YYY => new Vector3<T>(Y, Y, Y);
+        public Vector3<T> YYZ => new Vector3<T>(Y, Y, Z);
+        public Vector3<T> YZX => new Vector3<T>(Y, Z, X);
+        public Vector3<T> YZY => new Vector3<T>(Y, Z, Y);
+        public Vector3<T> YZZ => new Vector3<T>(Y, Z, Z);
+        public Vector3<T> ZXX => new Vector3<T>(Z, X, X);
+        public Vector3<T> ZXY => new Vector3<T>(Z, X, Y);
+        public Vector3<T> ZXZ => new Vector3<T>(Z, X, Z);
+        public Vector3<T> ZYX => new Vector3<T>(Z, Y, X);
+        public Vector3<T> ZYY => new Vector3<T>(Z, Y, Y);
+        public Vector3<T> ZYZ => new Vector3<T>(Z, Y, Z);
+        public Vector3<T> ZZX => new Vector3<T>(Z, Z, X);
+        public Vector3<T> ZZY => new Vector3<T>(Z, Z, Y);
+        public Vector3<T> ZZZ => new Vector3<T>(Z, Z, Z);
+        
         public Vector4<T> XXXX => new Vector4<T>(X, X, X, X);
         public Vector4<T> XXXY => new Vector4<T>(X, X, X, Y);
         public Vector4<T> XXXZ => new Vector4<T>(X, X, X, Z);
