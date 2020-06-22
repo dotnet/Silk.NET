@@ -20,8 +20,8 @@ jobs:
   - task: UseDotNet@2
     displayName: 'Install .NET 5.0'
     inputs:
-      version: $(dotnetCoreVersion)
       includePreviewVersions: true
+      version: $(dotnetCoreVersion)
   - script: dotnet pack --configuration $(buildConfiguration) --version-suffix build$(Build.BuildId)
     displayName: 'Build/Pack'
   - publish: build/output_packages
