@@ -71,8 +71,8 @@ namespace Silk.NET.BuildTools.Cpp
 
                 Console.WriteLine
                 (
-                    $"{diagnostic.Severity.ToString().Substring(20)}: clang {diagnostic.Category} " +
-                    $"{diagnostic.CategoryText.CString}"
+                    $"{diagnostic.Severity.ToString().Substring(13)}: clang {diagnostic.Category} " +
+                    $"{diagnostic.Spelling} ({diagnostic.CategoryText.CString})"
                 );
             }
 

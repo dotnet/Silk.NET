@@ -27,6 +27,7 @@ namespace Silk.NET.BuildTools
 {
     public static class Generator
     {
+        public const bool TestMode = true;
         public static void Run(Config config)
         {
             var tasks = new Task[config.Tasks.Length];
@@ -42,11 +43,20 @@ namespace Silk.NET.BuildTools
             for (var i = 0; i < config.Tasks.Length; i++)
             {
                 var i1 = i;
-                tasks[i] = Task.Run(() => RunTaskGuarded(config.Tasks[i1]));
-                //RunTask(config.Tasks[i1]);
+                if (TestMode)
+                {
+                    RunTask(config.Tasks[i1]);
+                }
+                else
+                {
+                    tasks[i] = Task.Run(() => RunTaskGuarded(config.Tasks[i1]));
+                }
             }
 
-            Task.WaitAll(tasks);
+            if (!TestMode)
+            {
+                Task.WaitAll(tasks);
+            }
         }
 
         public static void RunTaskGuarded(BindTask task)
