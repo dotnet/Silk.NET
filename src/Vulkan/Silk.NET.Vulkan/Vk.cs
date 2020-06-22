@@ -36,13 +36,6 @@ namespace Silk.NET.Vulkan
 
         public static unsafe Vk GetApi(ref InstanceCreateInfo info, out Instance instance)
         {
-            var api = GetApi(ref info, out var instance);
-            api.CurrentInstance = instance;
-            return api;
-        }
-
-        public static unsafe Vk GetApi(ref InstanceCreateInfo info, out Instance instance)
-        {
             var sym = new VkLoader(LibraryLoader.GetPlatformDefaultLoader());
             var ret = LibraryActivator.CreateInstance<Vk>(new VulkanLibraryNameContainer().GetLibraryName(), sym);
             sym.Vulkan = ret;
@@ -55,13 +48,6 @@ namespace Silk.NET.Vulkan
             }
 
             return ret;
-        }
-
-        public static Vk GetApi(ref InstanceCreateInfo info, ref AllocationCallbacks callbacks, out Instance instance)
-        {
-            var api = GetApi(ref info, ref callbacks, out var instance);
-            api.CurrentInstance = instance;
-            return api;
         }
 
         public static Vk GetApi(ref InstanceCreateInfo info, ref AllocationCallbacks callbacks, out Instance instance)
