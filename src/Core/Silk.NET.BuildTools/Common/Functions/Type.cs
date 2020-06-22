@@ -14,7 +14,7 @@ namespace Silk.NET.BuildTools.Common.Functions
     /// <summary>
     /// Represents a C# type signature.
     /// </summary>
-    public class Type : IEquatable<Type>
+    public class Type
     {
         /// <summary>
         /// Gets a value indicating whether this type is a pointer.
@@ -165,8 +165,7 @@ namespace Silk.NET.BuildTools.Common.Functions
             return ToString() == "UIntPtr" && !IsIn && !IsByRef && !IsOut;
         }
 
-        /// <inheritdoc />
-        public bool Equals(Type other)
+        public bool Eq(Type other) // can't use default equatable logic due to json.net thinking fnptrs self-reference
         {
             if (ReferenceEquals(null, other))
             {
@@ -184,37 +183,6 @@ namespace Silk.NET.BuildTools.Common.Functions
                    IsByRef == other.IsByRef &&
                    IsOut == other.IsOut &&
                    IsIn == other.IsIn;
-        }
-
-        /// <inheritdoc />
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, obj))
-            {
-                return true;
-            }
-
-            return obj is Type type && Equals(type);
-        }
-
-        /// <inheritdoc />
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                var hashCode = IndirectionLevels;
-                hashCode = (hashCode * 397) ^ ArrayDimensions;
-                hashCode = (hashCode * 397) ^ (Name != null ? Name.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ IsByRef.GetHashCode();
-                hashCode = (hashCode * 397) ^ IsOut.GetHashCode();
-                hashCode = (hashCode * 397) ^ IsIn.GetHashCode();
-                return hashCode;
-            }
         }
     }
 }

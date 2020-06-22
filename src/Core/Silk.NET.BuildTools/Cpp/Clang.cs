@@ -1,10 +1,11 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -54,7 +55,7 @@ namespace Silk.NET.BuildTools.Cpp
                     .CXTranslationUnit_VisitImplicitAttributes; // Implicit attributes should be visited
             translationFlags |= CXTranslationUnit_Flags.CXTranslationUnit_DetailedPreprocessingRecord;
             ReadOnlySpan<CXUnsavedFile> unsavedFiles = stackalloc CXUnsavedFile[] {CXUnsavedFile.Create(fileName, str)};
-            using var cxTranslationUnit = CXTranslationUnit.Parse
+            var cxTranslationUnit = CXTranslationUnit.Parse
                 (index, fileName, task.ClangOpts.ClangArgs, unsavedFiles, translationFlags);
             using var translationUnit = TranslationUnit.GetOrCreate(cxTranslationUnit);
 
@@ -139,8 +140,8 @@ namespace Silk.NET.BuildTools.Cpp
                     {
                         decl.Location.GetFileLocation(out CXFile file, out _, out _, out _);
                         var fileName = file.Name.ToString();
-
-                        if (!task.ClangOpts.Traverse.Contains(fileName))
+                        var fullFileName = Path.GetFullPath(fileName).Replace('\\', '/');
+                        if (task.ClangOpts.Traverse.All(x => !string.Equals(x, fullFileName, StringComparison.CurrentCultureIgnoreCase)))
                         {
                             // It is not uncommon for some declarations to be done using macros, which are themselves
                             // defined in an imported header file. We want to also check if the expansion location is
@@ -250,19 +251,29 @@ namespace Silk.NET.BuildTools.Cpp
                 return CallingConvention.StdCall;
             }
 
-            Type GetType(ClangSharp.Type type, out string nativeTypeName, out Count count)
+            Type GetType(ClangSharp.Type type, out Count count)
             {
                 count = null;
                 Type ret = null;
-                nativeTypeName = type.AsString;
 
                 if (type is ArrayType arrayType)
                 {
-                    ret = GetType(arrayType.ElementType, out var nativeElementTypeName, out _);
+                    ret = GetType(arrayType.ElementType, out var currentCount);
+                    ret.IndirectionLevels++;
+                    var asize = arrayType.Handle.ArraySize;
+                    if (asize != -1)
+                    {
+                        count = new Count
+                            ((int) (asize * (currentCount?.IsStatic ?? false ? currentCount.StaticCount : 1)));
+                    }
+                    else
+                    {
+                        count = currentCount;
+                    }
                 }
                 else if (type is AttributedType attributedType)
                 {
-                    ret = GetType(attributedType.ModifiedType, out var nativeModifiedTypeName, out _);
+                    ret = GetType(attributedType.ModifiedType, out _);
                 }
                 else if (type is BuiltinType)
                 {
@@ -368,7 +379,7 @@ namespace Silk.NET.BuildTools.Cpp
                 }
                 else if (type is ElaboratedType elaboratedType)
                 {
-                    ret = GetType(elaboratedType.NamedType, out var nativeNamedTypeName, out _);
+                    ret = new Type {Name = elaboratedType.NamedType.AsString};
                 }
                 else if (type is FunctionType functionType)
                 {
@@ -376,20 +387,20 @@ namespace Silk.NET.BuildTools.Cpp
                     {
                         ret = new Type
                         {
+                            Name = "void",
                             FunctionPointerSignature = new Function
                             {
-                                Name = "IntPtr",
                                 Convention = GetCallingConvention(functionProtoType.CallConv),
                                 Parameters = functionProtoType.ParamTypes.Select
                                     (
                                         (x, i) => new Parameter
                                         {
-                                            Name = $"parameter{i}", Type = GetType(x, out _, out var count2),
+                                            Name = $"parameter{i}", Type = GetType(x, out var count2),
                                             Count = count2
                                         }
                                     )
                                     .ToList(),
-                                ReturnType = GetType(functionProtoType.ReturnType, out _, out _)
+                                ReturnType = GetType(functionProtoType.ReturnType, out _)
                             }
                         };
                     }
@@ -400,12 +411,12 @@ namespace Silk.NET.BuildTools.Cpp
                 }
                 else if (type is PointerType pointerType)
                 {
-                    ret = GetType(pointerType.PointeeType, out _, out _);
+                    ret = GetType(pointerType.PointeeType, out _);
                     ret.IndirectionLevels++;
                 }
                 else if (type is ReferenceType referenceType)
                 {
-                    ret = GetType(referenceType.PointeeType, out _, out _);
+                    ret = GetType(referenceType.PointeeType, out _);
                     ret.IndirectionLevels++;
                 }
                 else if (type is TagType tagType)
@@ -416,11 +427,11 @@ namespace Silk.NET.BuildTools.Cpp
                     }
                     else if (tagType.Handle.IsConstQualified)
                     {
-                        ret = GetType(tagType.Decl.TypeForDecl, out var nativeDeclTypeName, out _);
+                        ret = GetType(tagType.Decl.TypeForDecl, out _);
                     }
                     else
                     {
-                        // The default name should be correct
+                        ret = new Type {Name = tagType.Decl.Name};
                     }
                 }
                 else if (type is TypedefType typedefType)
@@ -428,20 +439,14 @@ namespace Silk.NET.BuildTools.Cpp
                     // We check remapped names here so that types that have variable sizes
                     // can be treated correctly. Otherwise, they will resolve to a particular
                     // platform size, based on whatever parameters were passed into clang.
-                    ret = GetType(typedefType.Decl.UnderlyingType, out _, out _);
+                    ret = GetType(typedefType.Decl.UnderlyingType, out _);
                 }
                 else
                 {
                     Console.WriteLine($"Warning: Unsupported type: '{type.TypeClass}'. Falling back '{ret}'.");
                 }
 
-                Debug.Assert(!string.IsNullOrWhiteSpace(nativeTypeName));
-
-                if (nativeTypeName.Equals(ret))
-                {
-                    nativeTypeName = string.Empty;
-                }
-
+                ret.OriginalName = type.AsString;
                 return ret;
             }
 
@@ -513,7 +518,7 @@ namespace Silk.NET.BuildTools.Cpp
                                 NativeName = x.Name,
                                 Value = "0x"+x.InitVal.ToString("X")
                             }).ToList(),
-                            EnumBaseType = GetType(enumDecl.TypeForDecl, out _, out _)
+                            EnumBaseType = GetType(enumDecl.TypeForDecl, out _)
                         });
                         break;
                     }
@@ -533,8 +538,8 @@ namespace Silk.NET.BuildTools.Cpp
                                         x => new Field
                                         {
                                             Name = x.Name, NativeName = x.Name,
-                                            Type = GetType(x.Type, out var nativeTypeName, out var count),
-                                            NativeType = nativeTypeName, Count = count
+                                            Type = GetType(x.Type, out var count),
+                                            NativeType = x.Type.AsString, Count = count
                                         }
                                     )
                                     .ToList()
@@ -595,8 +600,8 @@ namespace Silk.NET.BuildTools.Cpp
                                         ? attributedType.Handle.FunctionTypeCallingConv
                                         : ((FunctionType) functionDecl.Type).CallConv
                                 ),
-                                Parameters = functionDecl.Parameters.Select(x => new Parameter{Name = x.Name, Type = GetType(x.Type, out _, out var count), Count = count}).ToList(),
-                                ReturnType = GetType(functionDecl.ReturnType, out _, out _)
+                                Parameters = functionDecl.Parameters.Select(x => new Parameter{Name = x.Name, Type = GetType(x.Type, out var count), Count = count}).ToList(),
+                                ReturnType = GetType(functionDecl.ReturnType, out _)
                             }
                         );
                         break;
@@ -635,20 +640,21 @@ namespace Silk.NET.BuildTools.Cpp
                     // case CX_DeclKind.CX_DeclKind_VarTemplateSpecialization:
                     // case CX_DeclKind.CX_DeclKind_VarTemplatePartialSpecialization:
 
-                    case CX_DeclKind.CX_DeclKind_EnumConstant:
-                    {
-                        var constantDecl = (EnumConstantDecl) decl;
-                        constants.Add
-                        (
-                            new Constant
-                            {
-                                Name = constantDecl.Name, NativeName = constantDecl.Name,
-                                Type = GetType(constantDecl.Type, out _, out _),
-                                Value = constantDecl.InitVal.ToString("X")
-                            }
-                        );
-                        break;
-                    }
+                    // BUG constants don't work. if we ever need enum constants that aren't in an enum, uncomment & fix
+                    // case CX_DeclKind.CX_DeclKind_EnumConstant:
+                    // {
+                    //     var constantDecl = (EnumConstantDecl) decl;
+                    //     constants.Add
+                    //     (
+                    //         new Constant
+                    //         {
+                    //             Name = constantDecl.Name, NativeName = constantDecl.Name,
+                    //             Type = GetType(constantDecl.Type, out _, out _),
+                    //             Value = "0x" + constantDecl.InitVal.ToString("X")
+                    //         }
+                    //     );
+                    //     break;
+                    // }
 
                     // case CX_DeclKind.CX_DeclKind_IndirectField:
                     // case CX_DeclKind.CX_DeclKind_OMPDeclareMapper:
@@ -672,7 +678,7 @@ namespace Silk.NET.BuildTools.Cpp
 
                     default:
                     {
-                        Console.WriteLine($"Warning: {decl.Kind} is not supported. Bindings may be incomplete.");
+                        //Console.WriteLine($"Warning: {decl.Kind} is not supported. Bindings may be incomplete.");
                         break;
                     }
                 }

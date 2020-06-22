@@ -60,7 +60,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                 return true;
             }
 
-            return Type.Equals(other.Type);
+            return Type.Eq(other.Type);
         }
 
         /// <inheritdoc />
