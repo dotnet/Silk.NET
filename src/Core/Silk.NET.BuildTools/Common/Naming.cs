@@ -55,12 +55,19 @@ namespace Silk.NET.BuildTools.Common
         /// <returns>The trimmed name.</returns>
         public static string TrimName(string name, BindTask task)
         {
+            if (task.FunctionPrefix is null)
+            {
+                return name;
+            }
+            
             if (name.StartsWith($"{task.FunctionPrefix.ToUpper()}_"))
             {
                 return name.Remove(0, task.FunctionPrefix.Length + 1);
             }
 
-            return name.StartsWith(task.FunctionPrefix) ? name.Remove(0, task.FunctionPrefix.Length) : name;
+            return name.ToUpper().StartsWith(task.FunctionPrefix.ToUpper())
+                ? name.Remove(0, task.FunctionPrefix.Length)
+                : name;
         }
 
         /// <summary>

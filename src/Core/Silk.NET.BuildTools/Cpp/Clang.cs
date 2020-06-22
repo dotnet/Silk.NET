@@ -511,11 +511,11 @@ namespace Silk.NET.BuildTools.Cpp
                         var enumDecl = (EnumDecl) decl;
                         enums.Add(new Enum
                         {
-                            Name = enumDecl.Name,
+                            Name = Naming.TranslateLite(Naming.TrimName(enumDecl.Name, task), task.FunctionPrefix),
                             NativeName = enumDecl.Name,
                             Tokens = enumDecl.Enumerators.Select(x => new Token
                             {
-                                Name = x.Name,
+                                Name = Naming.TranslateLite(Naming.TrimName(x.Name, task), task.FunctionPrefix),
                                 NativeName = x.Name,
                                 Value = "0x"+x.InitVal.ToString("X")
                             }).ToList(),
@@ -532,13 +532,14 @@ namespace Silk.NET.BuildTools.Cpp
                         (
                             new Struct
                             {
-                                Name = recordDecl.Name,
+                                Name = Naming.TranslateLite(Naming.TrimName(recordDecl.Name, task), task.FunctionPrefix),
                                 NativeName = recordDecl.Name,
                                 Fields = recordDecl.Fields.Select
                                     (
                                         x => new Field
                                         {
-                                            Name = x.Name, NativeName = x.Name,
+                                            Name = Naming.TranslateLite(Naming.TrimName(x.Name, task), task.FunctionPrefix),
+                                            NativeName = x.Name,
                                             Type = GetType(x.Type, out var count),
                                             NativeType = x.Type.AsString, Count = count,
                                             Attributes = recordDecl.IsUnion
@@ -612,7 +613,7 @@ namespace Silk.NET.BuildTools.Cpp
                         (
                             new Function
                             {
-                                Name = functionDecl.Name,
+                                Name = Naming.TranslateLite(Naming.TrimName(functionDecl.Name, task), task.FunctionPrefix),
                                 NativeName = functionDecl.Name,
                                 Convention = GetCallingConvention
                                 (
