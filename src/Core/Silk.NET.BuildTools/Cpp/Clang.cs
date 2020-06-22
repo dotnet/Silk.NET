@@ -114,8 +114,9 @@ namespace Silk.NET.BuildTools.Cpp
             project.Enums = enums;
             project.Classes.Add(@class);
             
-            Console.WriteLine("Creating translated name typemap...");
-            task.TypeMaps.Insert(0, TypeMapper.CreateVariedNameMap(project));
+            Console.WriteLine("Mapping C# names...");
+            TypeMapper.Map(TypeMapper.CreateVariedNameMap(project), project.Structs);
+            TypeMapper.Map(TypeMapper.CreateVariedNameMap(project), @class.NativeApis[fileName].Functions);
 
             return profile;
 
