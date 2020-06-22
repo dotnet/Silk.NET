@@ -95,8 +95,8 @@ namespace Silk.NET.BuildTools.Cpp
             Console.WriteLine("Visting declarations...");
             VisitDecls(translationUnitDecl.Decls);
             // ReSharper restore BitwiseOperatorOnEnumWithoutFlags
-            
-            Console.WriteLine("Finishing up...");
+
+            Console.WriteLine("Creating finished profile...");
             var destInfo = task.ClangOpts.ClassMappings[fileName];
             var indexOfOpenSqBracket = destInfo.IndexOf('[');
             var indexOfCloseSqBracket = destInfo.LastIndexOf(']');
@@ -113,6 +113,9 @@ namespace Silk.NET.BuildTools.Cpp
             project.Structs = structs;
             project.Enums = enums;
             project.Classes.Add(@class);
+            
+            Console.WriteLine("Creating translated name typemap...");
+            task.TypeMaps.Insert(0, TypeMapper.CreateVariedNameMap(project));
 
             return profile;
 
