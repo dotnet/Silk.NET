@@ -240,8 +240,6 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         CommandMemcpyIntel = 0x4205,
         CommandMigratememIntel = 0x4206,
         CommandMemadviseIntel = 0x4207,
-        MigrateMemObjectHostIntel = 0x1,
-        MigrateMemObjectContentUndefinedIntel = 0x2,
         InvalidVAApiMediaAdapterIntel = unchecked((int)0xFFFFFFFFFFFFFBB6),
         InvalidVAApiMediaSurfaceIntel = unchecked((int)0xFFFFFFFFFFFFFBB5),
         VAApiMediaSurfaceAlreadyAcquiredIntel = unchecked((int)0xFFFFFFFFFFFFFBB4),

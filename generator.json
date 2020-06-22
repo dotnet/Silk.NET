@@ -1,0 +1,344 @@
+{
+    "tasks": [
+        {
+            "profileName": "OpenGL",
+            "sources": [
+                "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml"
+            ],
+            "mode": "ConvertConstruct",
+            "cacheDir": "build/cache",
+            "cacheKey": "glcore",
+            "controlDescriptors": [],
+            "converter": {
+                "reader": "gl",
+                "constructor": "gl",
+                "className": "GL"
+            },
+            "prefix": "gl",
+            "clang": {},
+            "bakery": {
+                "profileNames": [
+                    "glcore"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/OpenGL",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.OpenGL",
+            "extensionsNamespace": "Silk.NET.OpenGL.Extensions",
+            "legacyNameContainer": {
+                "Linux": "libGL.so.1",
+                "Windows": "opengl32.dll",
+                "MacOS": "/System/Library/Frameworks/OpenGL.framework/OpenGL",
+                "Android": "libGL.so.1",
+                "IOS": "/System/Library/Frameworks/OpenGL.framework/OpenGL",
+                "ClassName": "GLCoreLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "$include.glTypeMap": "build/gl_typemap.json"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "OpenGL (Compatibility Profile)",
+            "sources": [
+                "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml"
+            ],
+            "mode": "ConvertConstruct",
+            "cacheDir": "build/cache",
+            "cacheKey": "gl",
+            "controlDescriptors": [],
+            "converter": {
+                "reader": "gl",
+                "constructor": "gl",
+                "className": "GL"
+            },
+            "prefix": "gl",
+            "clang": {},
+            "bakery": {
+                "profileNames": [
+                    "gl"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/OpenGL",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.OpenGL.Legacy",
+            "extensionsNamespace": "Silk.NET.OpenGL.Legacy.Extensions",
+            "legacyNameContainer": {
+                "Linux": "libGL.so.1",
+                "Windows": "opengl32.dll",
+                "MacOS": "/System/Library/Frameworks/OpenGL.framework/OpenGL",
+                "Android": "libGL.so.1",
+                "IOS": "/System/Library/Frameworks/OpenGL.framework/OpenGL",
+                "ClassName": "OpenGLLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "$include.glTypeMap": "build/gl_typemap.json"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "OpenGLES",
+            "sources": [
+                "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml"
+            ],
+            "mode": "ConvertConstruct",
+            "cacheDir": "build/cache",
+            "cacheKey": "gles2",
+            "controlDescriptors": [],
+            "converter": {
+                "reader": "gl",
+                "constructor": "gl",
+                "className": "GL"
+            },
+            "prefix": "gl",
+            "clang": {},
+            "bakery": {
+                "profileNames": [
+                    "gles2"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/OpenGL",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.OpenGLES",
+            "extensionsNamespace": "Silk.NET.OpenGLES.Extensions",
+            "legacyNameContainer": {
+                "Linux": "libGLESv2.so",
+                "Windows": "libGLESv2.dll",
+                "MacOS": "/System/Library/Frameworks/OpenGLES.framework/OpenGLES",
+                "Android": "libGLESv2.so",
+                "IOS": "/System/Library/Frameworks/OpenGLES.framework/OpenGLES",
+                "ClassName": "OpenGLESLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "$include.glTypeMap": "build/gl_typemap.json"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "OpenCL",
+            "sources": [
+                "https://raw.githubusercontent.com/KhronosGroup/OpenCL-Docs/master/xml/cl.xml"
+            ],
+            "mode": "ConvertConstruct",
+            "cacheDir": "build/cache",
+            "cacheKey": "cl",
+            "controlDescriptors": [],
+            "converter": {
+                "reader": "cl",
+                "constructor": "cl",
+                "className": "CL"
+            },
+            "prefix": "cl",
+            "clang": {},
+            "bakery": {
+                "profileNames": [
+                    "opencl"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/OpenCL",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.OpenCL",
+            "extensionsNamespace": "Silk.NET.OpenCL.Extensions",
+            "legacyNameContainer": {
+                "Linux": "libOpenCL.so",
+                "Windows": "opencl.dll",
+                "MacOS": "/System/Library/Frameworks/OpenCL.framework/OpenCL",
+                "Android": "libOpenCL.so",
+                "IOS": "/System/Library/Frameworks/OpenCL.framework/OpenCL",
+                "ClassName": "OpenCLLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "cl_GLsync": "intptr_t",
+                    "cl_accelerator_intel": "intptr_t",
+                    "cl_platform_id": "intptr_t",
+                    "cl_device_id": "intptr_t",
+                    "cl_context": "intptr_t",
+                    "cl_command_queue": "intptr_t",
+                    "cl_mem": "intptr_t",
+                    "cl_program": "intptr_t",
+                    "cl_kernel": "intptr_t",
+                    "cl_event": "intptr_t",
+                    "cl_sampler": "intptr_t",
+                    "cl_GLint": "cl_int",
+                    "cl_GLenum": "cl_uint",
+                    "cl_GLuint": "cl_uint",
+                    "cl_d3d11_device_source_khr": "cl_uint",
+                    "cl_d3d11_device_set_khr": "cl_uint",
+                    "cl_dx9_media_adapter_type_khr": "cl_uint",
+                    "cl_dx9_media_adapter_set_khr": "cl_uint",
+                    "cl_d3d10_device_source_khr": "cl_uint",
+                    "cl_d3d10_device_set_khr": "cl_uint",
+                    "cl_dx9_device_source_intel": "cl_uint",
+                    "cl_dx9_device_set_intel": "cl_uint",
+                    "cl_accelerator_type_intel": "cl_uint",
+                    "cl_accelerator_info_intel": "cl_uint",
+                    "cl_diagnostics_verbose_level": "cl_uint",
+                    "cl_va_api_device_source_intel": "cl_uint",
+                    "cl_va_api_device_set_intel": "cl_uint",
+                    "CLeglImageKHR": "intptr_t",
+                    "CLeglDisplayKHR": "intptr_t",
+                    "CLeglSyncKHR": "intptr_t",
+                    "cl_egl_image_properties_khr": "intptr_t",
+                    "cl_device_partition_property_ext": "cl_ulong",
+                    "cl_mem_migration_flags_ext": "CLenum",
+                    "cl_image_pitch_info_qcom": "cl_uint",
+                    "cl_image_format": "cl_uint",
+                    "cl_queue_priority_khr": "cl_uint",
+                    "cl_queue_throttle_khr": "cl_uint",
+                    "cl_import_properties_arm": "intptr_t",
+                    "cl_svm_mem_flags_arm": "CLenum",
+                    "cl_kernel_exec_info_arm": "cl_uint",
+                    "cl_device_svm_capabilities_arm": "CLenum",
+                    "cl_gl_context_info": "cl_uint",
+                    "cl_gl_object_type": "cl_uint",
+                    "cl_gl_texture_info": "cl_uint",
+                    "cl_gl_platform_info": "cl_uint",
+                    "cl_bool": "bool",
+                    "CLenum": "cl_ulong",
+                    "cl_device_type": "CLenum",
+                    "cl_platform_info": "cl_uint",
+                    "cl_device_info": "cl_uint",
+                    "cl_device_fp_config": "CLenum",
+                    "cl_device_mem_cache_type": "cl_uint",
+                    "cl_device_local_mem_type": "cl_uint",
+                    "cl_device_exec_capabilities": "CLenum",
+                    "cl_device_svm_capabilities": "CLenum",
+                    "cl_command_queue_properties": "CLenum",
+                    "cl_device_partition_property": "intptr_t",
+                    "cl_device_affinity_domain": "CLenum",
+                    "cl_context_properties": "intptr_t",
+                    "cl_context_info": "cl_uint",
+                    "cl_queue_properties": "CLenum",
+                    "cl_queue_properties_khr": "CLenum",
+                    "cl_command_queue_info": "cl_uint",
+                    "cl_channel_order": "cl_uint",
+                    "cl_channel_type": "cl_uint",
+                    "cl_mem_flags": "CLenum",
+                    "cl_svm_mem_flags": "CLenum",
+                    "cl_mem_object_type": "cl_uint",
+                    "cl_mem_info": "cl_uint",
+                    "cl_mem_migration_flags": "CLenum",
+                    "cl_image_info": "cl_uint",
+                    "cl_buffer_create_type": "cl_uint",
+                    "cl_addressing_mode": "cl_uint",
+                    "cl_filter_mode": "cl_uint",
+                    "cl_sampler_info": "cl_uint",
+                    "cl_map_flags": "CLenum",
+                    "cl_pipe_properties": "intptr_t",
+                    "cl_pipe_info": "cl_uint",
+                    "cl_program_info": "cl_uint",
+                    "cl_program_build_info": "cl_uint",
+                    "cl_program_binary_type": "cl_uint",
+                    "cl_build_status": "cl_int",
+                    "cl_kernel_info": "cl_uint",
+                    "cl_kernel_arg_info": "cl_uint",
+                    "cl_kernel_arg_address_qualifier": "cl_uint",
+                    "cl_kernel_arg_access_qualifier": "cl_uint",
+                    "cl_kernel_arg_type_qualifier": "CLenum",
+                    "cl_kernel_work_group_info": "cl_uint",
+                    "cl_kernel_sub_group_info": "cl_uint",
+                    "cl_event_info": "cl_uint",
+                    "cl_command_type": "cl_uint",
+                    "cl_profiling_info": "cl_uint",
+                    "cl_sampler_properties": "CLenum",
+                    "cl_kernel_exec_info": "cl_uint",
+                    "cl_device_unified_shared_memory_capabilities_intel": "CLenum",
+                    "cl_mem_properties_intel": "CLenum",
+                    "cl_mem_alloc_flags_intel": "CLenum",
+                    "cl_mem_info_intel": "cl_uint",
+                    "cl_unified_shared_memory_type_intel": "cl_uint",
+                    "cl_mem_migration_flags_intel": "CLenum",
+                    "cl_mem_advice_intel": "cl_uint",
+                    "cl_version": "cl_uint",
+                    "cl_mem_properties": "CLenum"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "Vulkan",
+            "sources": [
+                "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/master/xml/vk.xml"
+            ],
+            "mode": "ConvertConstruct",
+            "cacheDir": "build/cache",
+            "cacheKey": "vulkan",
+            "controlDescriptors": [],
+            "converter": {
+                "reader": "vk",
+                "constructor": "vk",
+                "className": "Vk"
+            },
+            "prefix": "vk",
+            "clang": {},
+            "bakery": {
+                "profileNames": [
+                    "vulkan"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Vulkan",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Vulkan",
+            "extensionsNamespace": "Silk.NET.Vulkan.Extensions",
+            "legacyNameContainer": {
+                "Linux": "libvulkan.so.1",
+                "Windows": "vulkan-1.dll",
+                "MacOS": "libMoltenVK.dylib",
+                "Android": "libvulkan.so.1",
+                "IOS": "__Internal",
+                "ClassName": "VulkanLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "PFN_vkInternalAllocationNotification": "FuncPtr",
+                    "PFN_vkInternalFreeNotification": "FuncPtr",
+                    "PFN_vkReallocationFunction": "FuncPtr",
+                    "PFN_vkAllocationFunction": "FuncPtr",
+                    "PFN_vkFreeFunction": "FuncPtr",
+                    "PFN_vkVoidFunction": "FuncPtr",
+                    "PFN_vkDebugReportCallbackEXT": "FuncPtr",
+                    "PFN_vkDebugUtilsMessengerCallbackEXT": "FuncPtr",
+                    "char": "byte"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        }
+    ]
+}

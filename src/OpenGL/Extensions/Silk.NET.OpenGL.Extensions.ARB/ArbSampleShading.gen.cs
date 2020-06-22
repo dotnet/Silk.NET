@@ -19,12 +19,6 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public abstract unsafe partial class ArbSampleShading : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_sample_shading";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glMinSampleShadingARB")]
         public abstract void MinSampleShading([Flow(FlowDirection.In)] float value);
 

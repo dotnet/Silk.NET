@@ -19,21 +19,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public abstract unsafe partial class ArbProvokingVertex : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_provoking_vertex";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glProvokingVertex")]
         public abstract void ProvokingVertex([Flow(FlowDirection.In)] ARB mode);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glProvokingVertex")]
         public abstract void ProvokingVertex([Flow(FlowDirection.In)] VertexProvokingMode mode);
 

@@ -1,4 +1,4 @@
-name: 'Continuous Deployment'
+name: 'CD-$(Build.BuildId)'
 pr: none
 
 trigger:
@@ -15,15 +15,14 @@ jobs:
 
   variables:
     buildConfiguration: 'Release'
-    dotnetCoreVersion: '3.1.100'
+    dotnetCoreVersion: '5.0.100-preview.5.20279.10'
 
   steps:
   - task: UseDotNet@2
-    displayName: 'Install .NET Core 3.1'
+    displayName: 'Install .NET 5.0'
     inputs:
       version: $(dotnetCoreVersion)
-  - script: dotnet run --configuration $(buildConfiguration) --project src/Core/BuildTools/BuildTools.csproj build/binder_scripts/build.json
-    displayName: 'Bind'
+      includePreviewVersions: true
   - script: dotnet pack --configuration $(buildConfiguration)
     displayName: 'Build/Pack'
   - script: dotnet nuget push **/Silk.NET.*.nupkg -s https://api.nuget.org/v3/index.json -k $(NUGET_API_KEY) -n true --skip-duplicate true

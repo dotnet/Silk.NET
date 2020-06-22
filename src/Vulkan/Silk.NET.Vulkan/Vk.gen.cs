@@ -45,6 +45,310 @@ namespace Silk.NET.Vulkan
         public const ulong WholeSize = (~0ul);
 
         /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdBeginRenderPass2")]
+        public abstract unsafe void CmdBeginRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassBeginInfo* pRenderPassBegin, [Count(Count = 0), Flow(FlowDirection.In)] SubpassBeginInfo* pSubpassBeginInfo);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdBeginRenderPass2")]
+        public abstract void CmdBeginRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref RenderPassBeginInfo pRenderPassBegin, [Count(Count = 0), Flow(FlowDirection.In)] ref SubpassBeginInfo pSubpassBeginInfo);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdDrawIndexedIndirectCount")]
+        public abstract void CmdDrawIndexedIndirectCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] Buffer countBuffer, [Count(Count = 0)] ulong countBufferOffset, [Count(Count = 0)] uint maxDrawCount, [Count(Count = 0)] uint stride);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdDrawIndirectCount")]
+        public abstract void CmdDrawIndirectCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] Buffer countBuffer, [Count(Count = 0)] ulong countBufferOffset, [Count(Count = 0)] uint maxDrawCount, [Count(Count = 0)] uint stride);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdEndRenderPass2")]
+        public abstract unsafe void CmdEndRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] SubpassEndInfo* pSubpassEndInfo);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdEndRenderPass2")]
+        public abstract void CmdEndRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref SubpassEndInfo pSubpassEndInfo);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdNextSubpass2")]
+        public abstract unsafe void CmdNextSubpass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] SubpassBeginInfo* pSubpassBeginInfo, [Count(Count = 0), Flow(FlowDirection.In)] SubpassEndInfo* pSubpassEndInfo);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdNextSubpass2")]
+        public abstract void CmdNextSubpass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref SubpassBeginInfo pSubpassBeginInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref SubpassEndInfo pSubpassEndInfo);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateRenderPass2")]
+        public abstract unsafe Result CreateRenderPass2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassCreateInfo2* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] RenderPass* pRenderPass);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateRenderPass2")]
+        public abstract Result CreateRenderPass2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref RenderPassCreateInfo2 pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out RenderPass pRenderPass);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetBufferDeviceAddress")]
+        public abstract unsafe ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetBufferDeviceAddress")]
+        public abstract ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref BufferDeviceAddressInfo pInfo);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
+        public abstract unsafe ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
+        public abstract ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref BufferDeviceAddressInfo pInfo);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
+        public abstract unsafe ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceMemoryOpaqueCaptureAddressInfo* pInfo);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
+        public abstract ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DeviceMemoryOpaqueCaptureAddressInfo pInfo);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetSemaphoreCounterValue")]
+        public abstract unsafe Result GetSemaphoreCounterValue([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pValue);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetSemaphoreCounterValue")]
+        public abstract Result GetSemaphoreCounterValue([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.Out)] out ulong pValue);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkResetQueryPool")]
+        public abstract void ResetQueryPool([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkSignalSemaphore")]
+        public abstract unsafe Result SignalSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreSignalInfo* pSignalInfo);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkSignalSemaphore")]
+        public abstract Result SignalSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref SemaphoreSignalInfo pSignalInfo);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkWaitSemaphores")]
+        public abstract unsafe Result WaitSemaphores([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreWaitInfo* pWaitInfo, [Count(Count = 0)] ulong timeout);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkWaitSemaphores")]
+        public abstract Result WaitSemaphores([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref SemaphoreWaitInfo pWaitInfo, [Count(Count = 0)] ulong timeout);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkBindBufferMemory2")]
+        public abstract unsafe Result BindBufferMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindBufferMemoryInfo* pBindInfos);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkBindBufferMemory2")]
+        public abstract Result BindBufferMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] ref BindBufferMemoryInfo pBindInfos);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkBindImageMemory2")]
+        public abstract unsafe Result BindImageMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindImageMemoryInfo* pBindInfos);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkBindImageMemory2")]
+        public abstract Result BindImageMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] ref BindImageMemoryInfo pBindInfos);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdDispatchBase")]
+        public abstract void CmdDispatchBase([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint baseGroupX, [Count(Count = 0)] uint baseGroupY, [Count(Count = 0)] uint baseGroupZ, [Count(Count = 0)] uint groupCountX, [Count(Count = 0)] uint groupCountY, [Count(Count = 0)] uint groupCountZ);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetDeviceMask")]
+        public abstract void CmdSetDeviceMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint deviceMask);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate")]
+        public abstract unsafe Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate")]
+        public abstract Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DescriptorUpdateTemplateCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorUpdateTemplate pDescriptorUpdateTemplate);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion")]
+        public abstract unsafe Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion")]
+        public abstract Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkDestroyDescriptorUpdateTemplate")]
+        public abstract unsafe void DestroyDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkDestroyDescriptorUpdateTemplate")]
+        public abstract void DestroyDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversion")]
+        public abstract unsafe void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversion")]
+        public abstract void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkEnumerateInstanceVersion")]
+        public abstract unsafe Result EnumerateInstanceVersion([Count(Count = 0)] uint* pApiVersion);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkEnumerateInstanceVersion")]
+        public abstract Result EnumerateInstanceVersion([Count(Count = 0)] ref uint pApiVersion);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroups")]
+        public abstract unsafe Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* pPhysicalDeviceGroupCount, [Count(Computed = "pPhysicalDeviceGroupCount")] PhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroups")]
+        public abstract Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] ref uint pPhysicalDeviceGroupCount, [Count(Computed = "pPhysicalDeviceGroupCount")] ref PhysicalDeviceGroupProperties pPhysicalDeviceGroupProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements2")]
+        public abstract unsafe void GetBufferMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements2")]
+        public abstract void GetBufferMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref BufferMemoryRequirementsInfo2 pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport")]
+        public abstract unsafe void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport")]
+        public abstract void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorSetLayoutSupport pSupport);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceGroupPeerMemoryFeatures")]
+        public abstract unsafe void GetDeviceGroupPeerMemoryFeatures([Count(Count = 0)] Device device, [Count(Count = 0)] uint heapIndex, [Count(Count = 0)] uint localDeviceIndex, [Count(Count = 0)] uint remoteDeviceIndex, [Count(Count = 0), Flow(FlowDirection.Out)] PeerMemoryFeatureFlags* pPeerMemoryFeatures);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceGroupPeerMemoryFeatures")]
+        public abstract void GetDeviceGroupPeerMemoryFeatures([Count(Count = 0)] Device device, [Count(Count = 0)] uint heapIndex, [Count(Count = 0)] uint localDeviceIndex, [Count(Count = 0)] uint remoteDeviceIndex, [Count(Count = 0), Flow(FlowDirection.Out)] out PeerMemoryFeatureFlags pPeerMemoryFeatures);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceQueue2")]
+        public abstract unsafe void GetDeviceQueue2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceQueueInfo2* pQueueInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Queue* pQueue);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetDeviceQueue2")]
+        public abstract void GetDeviceQueue2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DeviceQueueInfo2 pQueueInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out Queue pQueue);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements2")]
+        public abstract unsafe void GetImageMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements2")]
+        public abstract void GetImageMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref ImageMemoryRequirementsInfo2 pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2")]
+        public abstract unsafe void GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Computed = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2")]
+        public abstract void GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref ImageSparseMemoryRequirementsInfo2 pInfo, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount, [Count(Computed = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] out SparseImageMemoryRequirements2 pSparseMemoryRequirements);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties")]
+        public abstract unsafe void GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalBufferInfo* pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalBufferProperties* pExternalBufferProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties")]
+        public abstract void GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ref PhysicalDeviceExternalBufferInfo pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalBufferProperties pExternalBufferProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties")]
+        public abstract unsafe void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalFenceProperties* pExternalFenceProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties")]
+        public abstract void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ref PhysicalDeviceExternalFenceInfo pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalFenceProperties pExternalFenceProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties")]
+        public abstract unsafe void GetPhysicalDeviceExternalSemaphoreProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalSemaphoreInfo* pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalSemaphoreProperties* pExternalSemaphoreProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties")]
+        public abstract void GetPhysicalDeviceExternalSemaphoreProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ref PhysicalDeviceExternalSemaphoreInfo pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalSemaphoreProperties pExternalSemaphoreProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures2")]
+        public abstract unsafe void GetPhysicalDeviceFeatures2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceFeatures2* pFeatures);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures2")]
+        public abstract void GetPhysicalDeviceFeatures2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] out PhysicalDeviceFeatures2 pFeatures);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties2")]
+        public abstract unsafe void GetPhysicalDeviceFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0), Flow(FlowDirection.Out)] FormatProperties2* pFormatProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties2")]
+        public abstract void GetPhysicalDeviceFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0), Flow(FlowDirection.Out)] out FormatProperties2 pFormatProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2")]
+        public abstract unsafe Result GetPhysicalDeviceImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceImageFormatInfo2* pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ImageFormatProperties2* pImageFormatProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2")]
+        public abstract Result GetPhysicalDeviceImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ref PhysicalDeviceImageFormatInfo2 pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageFormatProperties2 pImageFormatProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties2")]
+        public abstract unsafe void GetPhysicalDeviceMemoryProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceMemoryProperties2* pMemoryProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties2")]
+        public abstract void GetPhysicalDeviceMemoryProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] out PhysicalDeviceMemoryProperties2 pMemoryProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties2")]
+        public abstract unsafe void GetPhysicalDeviceProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceProperties2* pProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties2")]
+        public abstract void GetPhysicalDeviceProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] out PhysicalDeviceProperties2 pProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2")]
+        public abstract unsafe void GetPhysicalDeviceQueueFamilyProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount, [Count(Computed = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] QueueFamilyProperties2* pQueueFamilyProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2")]
+        public abstract void GetPhysicalDeviceQueueFamilyProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pQueueFamilyPropertyCount, [Count(Computed = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] out QueueFamilyProperties2 pQueueFamilyProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
+        public abstract unsafe void GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties2* pProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
+        public abstract void GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ref PhysicalDeviceSparseImageFormatInfo2 pFormatInfo, [Count(Count = 0)] ref uint pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] out SparseImageFormatProperties2 pProperties);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkTrimCommandPool")]
+        public abstract void TrimCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint flags);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkUpdateDescriptorSetWithTemplate")]
+        public abstract unsafe void UpdateDescriptorSetWithTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSet descriptorSet, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] void* pData);
+
+        /// <summary>To be added.</summary>
+        [NativeApi(EntryPoint = "vkUpdateDescriptorSetWithTemplate")]
+        public abstract void UpdateDescriptorSetWithTemplate<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSet descriptorSet, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
+
+        /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkAllocateCommandBuffers")]
         public abstract unsafe Result AllocateCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CommandBufferAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->commandBufferCount"), Flow(FlowDirection.Out)] CommandBuffer* pCommandBuffers);
 
@@ -1013,308 +1317,31 @@ namespace Silk.NET.Vulkan
         public abstract FuncPtr GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string pName);
 
         /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkBindBufferMemory2")]
-        public abstract unsafe Result BindBufferMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindBufferMemoryInfo* pBindInfos);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkBindBufferMemory2")]
-        public abstract Result BindBufferMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] ref BindBufferMemoryInfo pBindInfos);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkBindImageMemory2")]
-        public abstract unsafe Result BindImageMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindImageMemoryInfo* pBindInfos);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkBindImageMemory2")]
-        public abstract Result BindImageMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] ref BindImageMemoryInfo pBindInfos);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCmdDispatchBase")]
-        public abstract void CmdDispatchBase([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint baseGroupX, [Count(Count = 0)] uint baseGroupY, [Count(Count = 0)] uint baseGroupZ, [Count(Count = 0)] uint groupCountX, [Count(Count = 0)] uint groupCountY, [Count(Count = 0)] uint groupCountZ);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetDeviceMask")]
-        public abstract void CmdSetDeviceMask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint deviceMask);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate")]
-        public abstract unsafe Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate")]
-        public abstract Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DescriptorUpdateTemplateCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorUpdateTemplate pDescriptorUpdateTemplate);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion")]
-        public abstract unsafe Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion")]
-        public abstract Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref SamplerYcbcrConversionCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SamplerYcbcrConversion pYcbcrConversion);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDescriptorUpdateTemplate")]
-        public abstract unsafe void DestroyDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkDestroyDescriptorUpdateTemplate")]
-        public abstract void DestroyDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversion")]
-        public abstract unsafe void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversion")]
-        public abstract void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceVersion")]
-        public abstract unsafe Result EnumerateInstanceVersion([Count(Count = 0)] uint* pApiVersion);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkEnumerateInstanceVersion")]
-        public abstract Result EnumerateInstanceVersion([Count(Count = 0)] ref uint pApiVersion);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroups")]
-        public abstract unsafe Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* pPhysicalDeviceGroupCount, [Count(Computed = "pPhysicalDeviceGroupCount")] PhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroups")]
-        public abstract Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] ref uint pPhysicalDeviceGroupCount, [Count(Computed = "pPhysicalDeviceGroupCount")] ref PhysicalDeviceGroupProperties pPhysicalDeviceGroupProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements2")]
-        public abstract unsafe void GetBufferMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements2")]
-        public abstract void GetBufferMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref BufferMemoryRequirementsInfo2 pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport")]
-        public abstract unsafe void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport")]
-        public abstract void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorSetLayoutSupport pSupport);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceGroupPeerMemoryFeatures")]
-        public abstract unsafe void GetDeviceGroupPeerMemoryFeatures([Count(Count = 0)] Device device, [Count(Count = 0)] uint heapIndex, [Count(Count = 0)] uint localDeviceIndex, [Count(Count = 0)] uint remoteDeviceIndex, [Count(Count = 0), Flow(FlowDirection.Out)] PeerMemoryFeatureFlags* pPeerMemoryFeatures);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceGroupPeerMemoryFeatures")]
-        public abstract void GetDeviceGroupPeerMemoryFeatures([Count(Count = 0)] Device device, [Count(Count = 0)] uint heapIndex, [Count(Count = 0)] uint localDeviceIndex, [Count(Count = 0)] uint remoteDeviceIndex, [Count(Count = 0), Flow(FlowDirection.Out)] out PeerMemoryFeatureFlags pPeerMemoryFeatures);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceQueue2")]
-        public abstract unsafe void GetDeviceQueue2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceQueueInfo2* pQueueInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Queue* pQueue);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceQueue2")]
-        public abstract void GetDeviceQueue2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DeviceQueueInfo2 pQueueInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out Queue pQueue);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements2")]
-        public abstract unsafe void GetImageMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetImageMemoryRequirements2")]
-        public abstract void GetImageMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref ImageMemoryRequirementsInfo2 pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryRequirements2 pMemoryRequirements);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2")]
-        public abstract unsafe void GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Computed = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2")]
-        public abstract void GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref ImageSparseMemoryRequirementsInfo2 pInfo, [Count(Count = 0)] ref uint pSparseMemoryRequirementCount, [Count(Computed = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] out SparseImageMemoryRequirements2 pSparseMemoryRequirements);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties")]
-        public abstract unsafe void GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalBufferInfo* pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalBufferProperties* pExternalBufferProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties")]
-        public abstract void GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ref PhysicalDeviceExternalBufferInfo pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalBufferProperties pExternalBufferProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties")]
-        public abstract unsafe void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalFenceProperties* pExternalFenceProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties")]
-        public abstract void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ref PhysicalDeviceExternalFenceInfo pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalFenceProperties pExternalFenceProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties")]
-        public abstract unsafe void GetPhysicalDeviceExternalSemaphoreProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalSemaphoreInfo* pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalSemaphoreProperties* pExternalSemaphoreProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties")]
-        public abstract void GetPhysicalDeviceExternalSemaphoreProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ref PhysicalDeviceExternalSemaphoreInfo pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalSemaphoreProperties pExternalSemaphoreProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures2")]
-        public abstract unsafe void GetPhysicalDeviceFeatures2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceFeatures2* pFeatures);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures2")]
-        public abstract void GetPhysicalDeviceFeatures2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] out PhysicalDeviceFeatures2 pFeatures);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties2")]
-        public abstract unsafe void GetPhysicalDeviceFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0), Flow(FlowDirection.Out)] FormatProperties2* pFormatProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties2")]
-        public abstract void GetPhysicalDeviceFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0), Flow(FlowDirection.Out)] out FormatProperties2 pFormatProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2")]
-        public abstract unsafe Result GetPhysicalDeviceImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceImageFormatInfo2* pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ImageFormatProperties2* pImageFormatProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2")]
-        public abstract Result GetPhysicalDeviceImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ref PhysicalDeviceImageFormatInfo2 pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageFormatProperties2 pImageFormatProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties2")]
-        public abstract unsafe void GetPhysicalDeviceMemoryProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceMemoryProperties2* pMemoryProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties2")]
-        public abstract void GetPhysicalDeviceMemoryProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] out PhysicalDeviceMemoryProperties2 pMemoryProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties2")]
-        public abstract unsafe void GetPhysicalDeviceProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceProperties2* pProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties2")]
-        public abstract void GetPhysicalDeviceProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] out PhysicalDeviceProperties2 pProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2")]
-        public abstract unsafe void GetPhysicalDeviceQueueFamilyProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount, [Count(Computed = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] QueueFamilyProperties2* pQueueFamilyProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2")]
-        public abstract void GetPhysicalDeviceQueueFamilyProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pQueueFamilyPropertyCount, [Count(Computed = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] out QueueFamilyProperties2 pQueueFamilyProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
-        public abstract unsafe void GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties2* pProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
-        public abstract void GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ref PhysicalDeviceSparseImageFormatInfo2 pFormatInfo, [Count(Count = 0)] ref uint pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] out SparseImageFormatProperties2 pProperties);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkTrimCommandPool")]
-        public abstract void TrimCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint flags);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkUpdateDescriptorSetWithTemplate")]
-        public abstract unsafe void UpdateDescriptorSetWithTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSet descriptorSet, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] void* pData);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkUpdateDescriptorSetWithTemplate")]
-        public abstract void UpdateDescriptorSetWithTemplate<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSet descriptorSet, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] ref T0 pData) where T0 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginRenderPass2")]
-        public abstract unsafe void CmdBeginRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassBeginInfo* pRenderPassBegin, [Count(Count = 0), Flow(FlowDirection.In)] SubpassBeginInfo* pSubpassBeginInfo);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCmdBeginRenderPass2")]
-        public abstract void CmdBeginRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref RenderPassBeginInfo pRenderPassBegin, [Count(Count = 0), Flow(FlowDirection.In)] ref SubpassBeginInfo pSubpassBeginInfo);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawIndexedIndirectCount")]
-        public abstract void CmdDrawIndexedIndirectCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] Buffer countBuffer, [Count(Count = 0)] ulong countBufferOffset, [Count(Count = 0)] uint maxDrawCount, [Count(Count = 0)] uint stride);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawIndirectCount")]
-        public abstract void CmdDrawIndirectCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] Buffer countBuffer, [Count(Count = 0)] ulong countBufferOffset, [Count(Count = 0)] uint maxDrawCount, [Count(Count = 0)] uint stride);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCmdEndRenderPass2")]
-        public abstract unsafe void CmdEndRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] SubpassEndInfo* pSubpassEndInfo);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCmdEndRenderPass2")]
-        public abstract void CmdEndRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref SubpassEndInfo pSubpassEndInfo);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCmdNextSubpass2")]
-        public abstract unsafe void CmdNextSubpass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] SubpassBeginInfo* pSubpassBeginInfo, [Count(Count = 0), Flow(FlowDirection.In)] SubpassEndInfo* pSubpassEndInfo);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCmdNextSubpass2")]
-        public abstract void CmdNextSubpass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref SubpassBeginInfo pSubpassBeginInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref SubpassEndInfo pSubpassEndInfo);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass2")]
-        public abstract unsafe Result CreateRenderPass2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassCreateInfo2* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] RenderPass* pRenderPass);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkCreateRenderPass2")]
-        public abstract Result CreateRenderPass2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref RenderPassCreateInfo2 pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out RenderPass pRenderPass);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferDeviceAddress")]
-        public abstract unsafe ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferDeviceAddress")]
-        public abstract ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref BufferDeviceAddressInfo pInfo);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
-        public abstract unsafe ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
-        public abstract ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref BufferDeviceAddressInfo pInfo);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
-        public abstract unsafe ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceMemoryOpaqueCaptureAddressInfo* pInfo);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
-        public abstract ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DeviceMemoryOpaqueCaptureAddressInfo pInfo);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreCounterValue")]
-        public abstract unsafe Result GetSemaphoreCounterValue([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pValue);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetSemaphoreCounterValue")]
-        public abstract Result GetSemaphoreCounterValue([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.Out)] out ulong pValue);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkResetQueryPool")]
-        public abstract void ResetQueryPool([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkSignalSemaphore")]
-        public abstract unsafe Result SignalSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreSignalInfo* pSignalInfo);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkSignalSemaphore")]
-        public abstract Result SignalSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref SemaphoreSignalInfo pSignalInfo);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkWaitSemaphores")]
-        public abstract unsafe Result WaitSemaphores([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreWaitInfo* pWaitInfo, [Count(Count = 0)] ulong timeout);
-
-        /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkWaitSemaphores")]
-        public abstract Result WaitSemaphores([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref SemaphoreWaitInfo pWaitInfo, [Count(Count = 0)] ulong timeout);
+        public unsafe PhysicalDeviceFeatures2 GetPhysicalDeviceFeatures2([Count(Count = 0)] PhysicalDevice physicalDevice)
+        {
+            // ReturnTypeOverloader
+            PhysicalDeviceFeatures2 ret = default;
+            GetPhysicalDeviceFeatures2(physicalDevice, &ret);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public unsafe PhysicalDeviceMemoryProperties2 GetPhysicalDeviceMemoryProperties2([Count(Count = 0)] PhysicalDevice physicalDevice)
+        {
+            // ReturnTypeOverloader
+            PhysicalDeviceMemoryProperties2 ret = default;
+            GetPhysicalDeviceMemoryProperties2(physicalDevice, &ret);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        public unsafe PhysicalDeviceProperties2 GetPhysicalDeviceProperties2([Count(Count = 0)] PhysicalDevice physicalDevice)
+        {
+            // ReturnTypeOverloader
+            PhysicalDeviceProperties2 ret = default;
+            GetPhysicalDeviceProperties2(physicalDevice, &ret);
+            return ret;
+        }
 
         /// <summary>To be added.</summary>
         public unsafe PhysicalDeviceFeatures GetPhysicalDeviceFeature([Count(Count = 0)] PhysicalDevice physicalDevice)
@@ -1355,33 +1382,6 @@ namespace Silk.NET.Vulkan
         {
             // IntPtrOverloader
             return GetQueryPoolResults(device, queryPool, firstQuery, queryCount, new UIntPtr(dataSize), ref pData, stride, flags);
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe PhysicalDeviceFeatures2 GetPhysicalDeviceFeatures2([Count(Count = 0)] PhysicalDevice physicalDevice)
-        {
-            // ReturnTypeOverloader
-            PhysicalDeviceFeatures2 ret = default;
-            GetPhysicalDeviceFeatures2(physicalDevice, &ret);
-            return ret;
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe PhysicalDeviceMemoryProperties2 GetPhysicalDeviceMemoryProperties2([Count(Count = 0)] PhysicalDevice physicalDevice)
-        {
-            // ReturnTypeOverloader
-            PhysicalDeviceMemoryProperties2 ret = default;
-            GetPhysicalDeviceMemoryProperties2(physicalDevice, &ret);
-            return ret;
-        }
-
-        /// <summary>To be added.</summary>
-        public unsafe PhysicalDeviceProperties2 GetPhysicalDeviceProperties2([Count(Count = 0)] PhysicalDevice physicalDevice)
-        {
-            // ReturnTypeOverloader
-            PhysicalDeviceProperties2 ret = default;
-            GetPhysicalDeviceProperties2(physicalDevice, &ret);
-            return ret;
         }
 
         private SearchPathContainer _searchPaths;

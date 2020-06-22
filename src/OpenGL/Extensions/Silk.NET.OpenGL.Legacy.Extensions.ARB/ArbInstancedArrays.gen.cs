@@ -19,15 +19,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
     public abstract unsafe partial class ArbInstancedArrays : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_instanced_arrays";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
-        /// <param name="divisor">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glVertexAttribDivisorARB")]
         public abstract void VertexAttribDivisor([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint divisor);
 

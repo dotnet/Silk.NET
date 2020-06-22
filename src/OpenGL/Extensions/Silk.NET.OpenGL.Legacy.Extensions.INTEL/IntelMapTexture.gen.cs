@@ -19,72 +19,15 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.INTEL
     public abstract unsafe partial class IntelMapTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "INTEL_map_texture";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="level">
-        /// To be added.
-        /// </param>
-        /// <param name="access">
-        /// To be added.
-        /// </param>
-        /// <param name="stride">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <param name="layout">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glMapTexture2DINTEL")]
         public abstract unsafe void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] int* stride, [Count(Count = 1), Flow(FlowDirection.Out)] INTEL* layout);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="level">
-        /// To be added.
-        /// </param>
-        /// <param name="access">
-        /// To be added.
-        /// </param>
-        /// <param name="stride">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <param name="layout">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glMapTexture2DINTEL")]
         public abstract unsafe void* MapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint access, [Count(Count = 1), Flow(FlowDirection.Out)] out int stride, [Count(Count = 1), Flow(FlowDirection.Out)] out INTEL layout);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glSyncTextureINTEL")]
         public abstract void SyncTexture([Flow(FlowDirection.In)] uint texture);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="level">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glUnmapTexture2DINTEL")]
         public abstract void UnmapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 

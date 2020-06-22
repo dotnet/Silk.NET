@@ -19,9 +19,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUNX
     public abstract unsafe partial class SunxConstantData : NativeExtension<GL>
     {
         public const string ExtensionName = "SUNX_constant_data";
-        /// <summary>
-        /// To be added.
-        /// </summary>
         [NativeApi(EntryPoint = "glFinishTextureSUNX")]
         public abstract void FinishTexture();
 

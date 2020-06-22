@@ -3,7 +3,7 @@
     <PropertyGroup>
         <PackageIconUrl>https://static.ultz.co.uk/img/SilkDotNet.png</PackageIconUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <LangVersion>8.0</LangVersion>
+        <LangVersion>preview</LangVersion>
         <PackageReleaseNotes>
         </PackageReleaseNotes>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>

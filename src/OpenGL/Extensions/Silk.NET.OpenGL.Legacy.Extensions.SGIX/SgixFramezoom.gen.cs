@@ -19,12 +19,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
     public abstract unsafe partial class SgixFramezoom : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_framezoom";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="factor">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFrameZoomSGIX")]
         public abstract void FrameZoom([Flow(FlowDirection.In)] int factor);
 

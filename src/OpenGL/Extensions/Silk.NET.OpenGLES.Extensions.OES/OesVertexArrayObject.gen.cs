@@ -19,103 +19,30 @@ namespace Silk.NET.OpenGLES.Extensions.OES
     public abstract unsafe partial class OesVertexArrayObject : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_vertex_array_object";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="array">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glBindVertexArrayOES")]
         public abstract void BindVertexArray([Flow(FlowDirection.In)] uint array);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="arrays">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         [NativeApi(EntryPoint = "glDeleteVertexArraysOES")]
         public abstract unsafe void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* arrays);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="arrays">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         [NativeApi(EntryPoint = "glDeleteVertexArraysOES")]
         public abstract void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> arrays);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="arrays">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         [NativeApi(EntryPoint = "glGenVertexArraysOES")]
         public abstract unsafe void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="arrays">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         [NativeApi(EntryPoint = "glGenVertexArraysOES")]
         public abstract void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="array">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsVertexArrayOES")]
         public abstract bool IsVertexArray([Flow(FlowDirection.In)] uint array);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="arrays">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         public unsafe void DeleteVertexArray([Count(Parameter = "n"), Flow(FlowDirection.In)] uint arrays)
         {
             // ArrayParameterOverloader
             DeleteVertexArrays(1, &arrays);
         }
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="n">
-        /// To be added.
-        /// </param>
-        /// <param name="arrays">
-        /// To be added.
-        /// This parameter's element count is taken from n.
-        /// </param>
         public unsafe uint GenVertexArray()
         {
             const uint n = 1;
