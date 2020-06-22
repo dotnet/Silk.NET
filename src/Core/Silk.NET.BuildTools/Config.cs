@@ -41,6 +41,7 @@ namespace Silk.NET.BuildTools
     public struct ClangTaskOptions
     {
         [JsonProperty("args")] public string[] ClangArgs { get; set; }
+        [JsonProperty("traverse")] public string[] Traverse { get; set; }
         [JsonProperty("classes")] public Dictionary<string, string> ClassMappings { get; set; }
         [JsonProperty("prefix")] public string FunctionPrefix { get; set; }
     }

@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
 namespace Silk.NET.BuildTools.Common.Enums
 {
@@ -34,6 +35,8 @@ namespace Silk.NET.BuildTools.Common.Enums
 
         [JsonIgnore]
         public Version ProfileVersion { get; set; }
+        
+        public Type EnumBaseType { get; set; }
 
         /// <summary>
         /// Gets or sets the extension to which this enum belongs. Generally, this is either Core or the

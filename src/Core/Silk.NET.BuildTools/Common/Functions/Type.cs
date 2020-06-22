@@ -23,6 +23,12 @@ namespace Silk.NET.BuildTools.Common.Functions
         public bool IsPointer => IndirectionLevels != 0;
 
         /// <summary>
+        /// Gets a value indicating whether this type is a function pointer.
+        /// </summary>
+        [JsonIgnore]
+        public bool IsFunctionPointer => !(FunctionPointerSignature is null);
+
+        /// <summary>
         /// Gets a value indicating whether this type is an array.
         /// </summary>
         [JsonIgnore]
@@ -94,6 +100,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets or sets a value indicating whether this type is an in type.
         /// </summary>
         public bool IsIn { get; set; }
+
+        /// <summary>
+        /// Gets or sets the function pointer signature if this type is a function pointer. May be null.
+        /// </summary>
+        public Function FunctionPointerSignature { get; set; }
 
         /// <inheritdoc />
         public override string ToString()

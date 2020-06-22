@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
@@ -74,6 +75,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets or sets the name (vendor) of the given extension.
         /// </summary>
         public string ExtensionName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the calling convention of this function.
+        /// </summary>
+        public CallingConvention Convention { get; set; }
 
         /// <inheritdoc />
         public override string ToString()

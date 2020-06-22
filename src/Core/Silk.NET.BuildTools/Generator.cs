@@ -21,6 +21,7 @@ using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Converters;
 using Silk.NET.BuildTools.Converters.Constructors;
 using Silk.NET.BuildTools.Converters.Readers;
+using Silk.NET.BuildTools.Cpp;
 
 namespace Silk.NET.BuildTools
 {
@@ -136,6 +137,13 @@ namespace Silk.NET.BuildTools
                         );
                         
                         Console.WriteLine("Profiles are ready.");
+                    }
+                }
+                else if (task.Mode == ConverterMode.Clang)
+                {
+                    foreach (var src in task.Sources)
+                    {
+                        profiles.Add(Clang.GenerateProfile(Path.GetFileName(src), OpenPath(src), task));
                     }
                 }
 
