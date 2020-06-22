@@ -19,129 +19,21 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public abstract unsafe partial class ArbTextureStorage : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_texture_storage";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glTexStorage1D")]
         public abstract void TexStorage1D([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glTexStorage2D")]
         public abstract void TexStorage2D([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
-        /// <param name="depth">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glTexStorage3D")]
         public abstract void TexStorage3D([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glTexStorage1D")]
         public abstract void TexStorage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glTexStorage2D")]
         public abstract void TexStorage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="levels">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
-        /// <param name="depth">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glTexStorage3D")]
         public abstract void TexStorage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint levels, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
 

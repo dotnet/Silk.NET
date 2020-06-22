@@ -19,21 +19,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public abstract unsafe partial class ExtStencilTwoSide : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_stencil_two_side";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glActiveStencilFaceEXT")]
         public abstract void ActiveStencilFace([Flow(FlowDirection.In)] EXT face);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glActiveStencilFaceEXT")]
         public abstract void ActiveStencilFace([Flow(FlowDirection.In)] StencilFaceDirection face);
 

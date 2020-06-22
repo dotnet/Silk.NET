@@ -19,21 +19,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
     public abstract unsafe partial class SgisTextureColorMask : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIS_texture_color_mask";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="red">
-        /// To be added.
-        /// </param>
-        /// <param name="green">
-        /// To be added.
-        /// </param>
-        /// <param name="blue">
-        /// To be added.
-        /// </param>
-        /// <param name="alpha">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
         public abstract void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
 

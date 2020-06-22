@@ -19,147 +19,27 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public abstract unsafe partial class NVGeometryProgram4 : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_geometry_program4";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="attachment">
-        /// To be added.
-        /// </param>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="level">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureEXT")]
         public abstract void FramebufferTexture([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="attachment">
-        /// To be added.
-        /// </param>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="level">
-        /// To be added.
-        /// </param>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT")]
         public abstract void FramebufferTextureFace([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] NV face);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="attachment">
-        /// To be added.
-        /// </param>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="level">
-        /// To be added.
-        /// </param>
-        /// <param name="layer">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureLayerEXT")]
         public abstract void FramebufferTextureLayer([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] NV attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="limit">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glProgramVertexLimitNV")]
         public abstract void ProgramVertexLimit([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] int limit);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="attachment">
-        /// To be added.
-        /// </param>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="level">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureEXT")]
         public abstract void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="attachment">
-        /// To be added.
-        /// </param>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="level">
-        /// To be added.
-        /// </param>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureFaceEXT")]
         public abstract void FramebufferTextureFace([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] TextureTarget face);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="attachment">
-        /// To be added.
-        /// </param>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="level">
-        /// To be added.
-        /// </param>
-        /// <param name="layer">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureLayerEXT")]
         public abstract void FramebufferTextureLayer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="limit">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glProgramVertexLimitNV")]
         public abstract void ProgramVertexLimit([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] int limit);
 

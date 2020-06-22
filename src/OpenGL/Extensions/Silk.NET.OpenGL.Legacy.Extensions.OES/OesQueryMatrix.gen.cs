@@ -19,33 +19,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
     public abstract unsafe partial class OesQueryMatrix : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_query_matrix";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mantissa">
-        /// To be added.
-        /// This parameter contains 16 elements.
-        /// </param>
-        /// <param name="exponent">
-        /// To be added.
-        /// This parameter contains 16 elements.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glQueryMatrixxOES")]
         public abstract unsafe uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] int* mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] int* exponent);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mantissa">
-        /// To be added.
-        /// This parameter contains 16 elements.
-        /// </param>
-        /// <param name="exponent">
-        /// To be added.
-        /// This parameter contains 16 elements.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glQueryMatrixxOES")]
         public abstract uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] Span<int> mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] Span<int> exponent);
 

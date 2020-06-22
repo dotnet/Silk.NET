@@ -19,65 +19,23 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public abstract unsafe partial class ExtLightTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_light_texture";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glApplyTextureEXT")]
         public abstract void ApplyTexture([Flow(FlowDirection.In)] EXT mode);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glTextureLightEXT")]
         public abstract void TextureLight([Flow(FlowDirection.In)] EXT pname);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glTextureMaterialEXT")]
         public abstract void TextureMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] EXT mode);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glApplyTextureEXT")]
         public abstract void ApplyTexture([Flow(FlowDirection.In)] LightTextureModeEXT mode);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glTextureLightEXT")]
         public abstract void TextureLight([Flow(FlowDirection.In)] LightTexturePNameEXT pname);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glTextureMaterialEXT")]
-        public abstract void TextureMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] MaterialParameter mode);
+        public abstract void TextureMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter mode);
 
         public ExtLightTexture(ref NativeApiContext ctx)
             : base(ref ctx)

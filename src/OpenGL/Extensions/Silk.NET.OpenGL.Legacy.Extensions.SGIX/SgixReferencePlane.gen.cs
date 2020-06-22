@@ -19,23 +19,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
     public abstract unsafe partial class SgixReferencePlane : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_reference_plane";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="equation">
-        /// To be added.
-        /// This parameter contains 4 elements.
-        /// </param>
         [NativeApi(EntryPoint = "glReferencePlaneSGIX")]
         public abstract unsafe void ReferencePlane([Count(Count = 4), Flow(FlowDirection.In)] double* equation);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="equation">
-        /// To be added.
-        /// This parameter contains 4 elements.
-        /// </param>
         [NativeApi(EntryPoint = "glReferencePlaneSGIX")]
         public abstract void ReferencePlane([Count(Count = 4), Flow(FlowDirection.In)] Span<double> equation);
 

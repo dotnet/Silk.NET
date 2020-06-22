@@ -19,49 +19,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public abstract unsafe partial class NVVdpauInterop2 : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_vdpau_interop2";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="vdpSurface">
-        /// To be added.
-        /// </param>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="numTextureNames">
-        /// To be added.
-        /// </param>
-        /// <param name="textureNames">
-        /// To be added.
-        /// This parameter's element count is taken from numTextureNames.
-        /// </param>
-        /// <param name="isFrameStructure">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glVDPAURegisterVideoSurfaceWithPictureStructureNV")]
         public abstract unsafe IntPtr VdpauregisterVideoSurfaceWithPictureStructure([Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] uint* textureNames, [Flow(FlowDirection.In)] bool isFrameStructure);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="vdpSurface">
-        /// To be added.
-        /// </param>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="numTextureNames">
-        /// To be added.
-        /// </param>
-        /// <param name="textureNames">
-        /// To be added.
-        /// This parameter's element count is taken from numTextureNames.
-        /// </param>
-        /// <param name="isFrameStructure">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glVDPAURegisterVideoSurfaceWithPictureStructureNV")]
         public abstract IntPtr VdpauregisterVideoSurfaceWithPictureStructure<T0>([Flow(FlowDirection.In)] Span<T0> vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] Span<uint> textureNames, [Flow(FlowDirection.In)] bool isFrameStructure) where T0 : unmanaged;
 

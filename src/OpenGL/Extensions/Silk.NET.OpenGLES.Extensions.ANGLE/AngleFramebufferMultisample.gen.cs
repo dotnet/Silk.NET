@@ -19,45 +19,9 @@ namespace Silk.NET.OpenGLES.Extensions.ANGLE
     public abstract unsafe partial class AngleFramebufferMultisample : NativeExtension<GL>
     {
         public const string ExtensionName = "ANGLE_framebuffer_multisample";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="samples">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleANGLE")]
         public abstract void RenderbufferStorageMultisample([Flow(FlowDirection.In)] ANGLE target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] ANGLE internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="samples">
-        /// To be added.
-        /// </param>
-        /// <param name="internalformat">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleANGLE")]
         public abstract void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 

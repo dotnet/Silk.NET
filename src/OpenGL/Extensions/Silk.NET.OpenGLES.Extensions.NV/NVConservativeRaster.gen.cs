@@ -19,15 +19,6 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     public abstract unsafe partial class NVConservativeRaster : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_conservative_raster";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="xbits">
-        /// To be added.
-        /// </param>
-        /// <param name="ybits">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glSubpixelPrecisionBiasNV")]
         public abstract void SubpixelPrecisionBias([Flow(FlowDirection.In)] uint xbits, [Flow(FlowDirection.In)] uint ybits);
 

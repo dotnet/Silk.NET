@@ -19,15 +19,6 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public abstract unsafe partial class ExtRasterMultisample : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_raster_multisample";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="samples">
-        /// To be added.
-        /// </param>
-        /// <param name="fixedsamplelocations">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glRasterSamplesEXT")]
         public abstract void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 

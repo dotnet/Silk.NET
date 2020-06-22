@@ -19,9 +19,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
     public abstract unsafe partial class MesaResizeBuffers : NativeExtension<GL>
     {
         public const string ExtensionName = "MESA_resize_buffers";
-        /// <summary>
-        /// To be added.
-        /// </summary>
         [NativeApi(EntryPoint = "glResizeBuffersMESA")]
         public abstract void ResizeBuffers();
 

@@ -19,117 +19,24 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public abstract unsafe partial class NVSampleLocations : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_sample_locations";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="start">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvNV")]
         public abstract unsafe void FramebufferSampleLocations([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="start">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvNV")]
         public abstract void FramebufferSampleLocations([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<float> v);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="framebuffer">
-        /// To be added.
-        /// </param>
-        /// <param name="start">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glNamedFramebufferSampleLocationsfvNV")]
         public abstract unsafe void NamedFramebufferSampleLocations([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="framebuffer">
-        /// To be added.
-        /// </param>
-        /// <param name="start">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glNamedFramebufferSampleLocationsfvNV")]
         public abstract void NamedFramebufferSampleLocations([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<float> v);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
         [NativeApi(EntryPoint = "glResolveDepthValuesNV")]
         public abstract void ResolveDepthValues();
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="start">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvNV")]
         public abstract unsafe void FramebufferSampleLocations([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="start">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="v">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvNV")]
         public abstract void FramebufferSampleLocations([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<float> v);
 

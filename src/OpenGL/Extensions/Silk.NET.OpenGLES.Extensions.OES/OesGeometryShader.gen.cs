@@ -19,39 +19,9 @@ namespace Silk.NET.OpenGLES.Extensions.OES
     public abstract unsafe partial class OesGeometryShader : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_geometry_shader";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="attachment">
-        /// To be added.
-        /// </param>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="level">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureOES")]
         public abstract void FramebufferTexture([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="attachment">
-        /// To be added.
-        /// </param>
-        /// <param name="texture">
-        /// To be added.
-        /// </param>
-        /// <param name="level">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glFramebufferTextureOES")]
         public abstract void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 

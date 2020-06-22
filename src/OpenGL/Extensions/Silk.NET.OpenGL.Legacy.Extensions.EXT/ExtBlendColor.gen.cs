@@ -19,21 +19,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     public abstract unsafe partial class ExtBlendColor : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_blend_color";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="red">
-        /// To be added.
-        /// </param>
-        /// <param name="green">
-        /// To be added.
-        /// </param>
-        /// <param name="blue">
-        /// To be added.
-        /// </param>
-        /// <param name="alpha">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glBlendColorEXT")]
         public abstract void BlendColor([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha);
 

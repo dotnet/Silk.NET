@@ -19,18 +19,6 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     public abstract unsafe partial class ExtPolygonOffsetClamp : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_polygon_offset_clamp";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="factor">
-        /// To be added.
-        /// </param>
-        /// <param name="units">
-        /// To be added.
-        /// </param>
-        /// <param name="clamp">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glPolygonOffsetClampEXT")]
         public abstract void PolygonOffsetClamp([Flow(FlowDirection.In)] float factor, [Flow(FlowDirection.In)] float units, [Flow(FlowDirection.In)] float clamp);
 

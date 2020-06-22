@@ -19,18 +19,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     public abstract unsafe partial class NVPrimitiveRestart : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_primitive_restart";
-        /// <summary>
-        /// To be added.
-        /// </summary>
         [NativeApi(EntryPoint = "glPrimitiveRestartNV")]
         public abstract void PrimitiveRestart();
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="index">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glPrimitiveRestartIndexNV")]
         public abstract void PrimitiveRestartIndex([Flow(FlowDirection.In)] uint index);
 

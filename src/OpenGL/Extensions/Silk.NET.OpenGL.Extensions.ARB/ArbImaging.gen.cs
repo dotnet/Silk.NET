@@ -19,39 +19,12 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     public abstract unsafe partial class ArbImaging : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_imaging";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="red">
-        /// To be added.
-        /// </param>
-        /// <param name="green">
-        /// To be added.
-        /// </param>
-        /// <param name="blue">
-        /// To be added.
-        /// </param>
-        /// <param name="alpha">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glBlendColor")]
         public abstract void BlendColor([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glBlendEquation")]
         public abstract void BlendEquation([Flow(FlowDirection.In)] ARB mode);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="mode">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glBlendEquation")]
         public abstract void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode);
 

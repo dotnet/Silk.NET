@@ -16,5 +16,6 @@ namespace Silk.NET.OpenGLES.Extensions.ARM
         MaliShaderBinaryArm = 0x8F60,
         FetchPerSampleArm = 0x8F65,
         FragmentShaderFramebufferFetchMrtArm = 0x8F66,
+        TextureUnnormalizedCoordinatesArm = 0x8F6A,
     }
 }
