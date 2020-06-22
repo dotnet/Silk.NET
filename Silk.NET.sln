@@ -39,6 +39,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Properties", "Build P
 ProjectSection(SolutionItems) = preProject
 	build\props\bindings.props = build\props\bindings.props
 	build\props\common.props = build\props\common.props
+	generator.json = generator.json
 EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFAC}") = "Silk.NET.Input.Common", "src\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj", "{8FFF49D6-B029-400B-8510-1A088868DFA6}"

@@ -12,9 +12,9 @@
             "converter": {
                 "reader": "gl",
                 "constructor": "gl",
-                "prefix": "gl",
                 "className": "GL"
             },
+            "prefix": "gl",
             "clang": {},
             "bakery": {
                 "profileNames": [
@@ -58,9 +58,9 @@
             "converter": {
                 "reader": "gl",
                 "constructor": "gl",
-                "prefix": "gl",
                 "className": "GL"
             },
+            "prefix": "gl",
             "clang": {},
             "bakery": {
                 "profileNames": [
@@ -104,9 +104,9 @@
             "converter": {
                 "reader": "gl",
                 "constructor": "gl",
-                "prefix": "gl",
                 "className": "GL"
             },
+            "prefix": "gl",
             "clang": {},
             "bakery": {
                 "profileNames": [
@@ -150,9 +150,9 @@
             "converter": {
                 "reader": "cl",
                 "constructor": "cl",
-                "prefix": "cl",
                 "className": "CL"
             },
+            "prefix": "cl",
             "clang": {},
             "bakery": {
                 "profileNames": [
@@ -298,9 +298,9 @@
             "converter": {
                 "reader": "vk",
                 "constructor": "vk",
-                "prefix": "vk",
                 "className": "Vk"
             },
+            "prefix": "vk",
             "clang": {},
             "bakery": {
                 "profileNames": [
