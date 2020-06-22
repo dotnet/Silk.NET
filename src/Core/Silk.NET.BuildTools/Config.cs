@@ -32,6 +32,7 @@ namespace Silk.NET.BuildTools
         [JsonProperty("clang")] public ClangTaskOptions ClangOpts { get; set; }
         [JsonProperty("bakery")] public BakeryOptions BakeryOpts { get; set; }
         [JsonProperty("output")] public OutputOptions OutputOpts { get; set; }
+        [JsonProperty("prefix")] public string FunctionPrefix { get; set; }
         [JsonProperty("namespace")] public string Namespace { get; set; }
         [JsonProperty("extensionsNamespace")] public string ExtensionsNamespace { get; set; }
         [JsonProperty("legacyNameContainer")] public NameContainer NameContainer { get; set; }
@@ -43,7 +44,6 @@ namespace Silk.NET.BuildTools
         [JsonProperty("args")] public string[] ClangArgs { get; set; }
         [JsonProperty("traverse")] public string[] Traverse { get; set; }
         [JsonProperty("classes")] public Dictionary<string, string> ClassMappings { get; set; }
-        [JsonProperty("prefix")] public string FunctionPrefix { get; set; }
     }
 
     public struct BakeryOptions
@@ -56,7 +56,6 @@ namespace Silk.NET.BuildTools
         [JsonProperty("className")] public string ClassName { get; set; }
         [JsonProperty("reader")] public string Reader { get; set; }
         [JsonProperty("constructor")] public string Constructor { get; set; }
-        [JsonProperty("prefix")] public string FunctionPrefix { get; set; }
     }
 
     public struct OutputOptions

@@ -116,7 +116,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 GenericTypeParameters = new List<GenericTypeParameter>(),
                                 Name = Naming.Translate(NameTrimmer
                                     .Trim(TrimName(xf.Attribute("name")?.Value, task),
-                                        task.ConverterOpts.FunctionPrefix), task.ConverterOpts.FunctionPrefix),
+                                        task.FunctionPrefix), task.FunctionPrefix),
                                 NativeName = function,
                                 Parameters = ParseParameters(xf),
                                 ProfileName = name,
@@ -481,13 +481,13 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// <returns>The name, trimmed.</returns>
         public string TrimName(string name, BindTask task)
         {
-            if (name.StartsWith($"{task.ConverterOpts.FunctionPrefix.ToUpper()}_"))
+            if (name.StartsWith($"{task.FunctionPrefix.ToUpper()}_"))
             {
-                return name.Remove(0, task.ConverterOpts.FunctionPrefix.Length + 1);
+                return name.Remove(0, task.FunctionPrefix.Length + 1);
             }
 
-            return name.ToLower().StartsWith(task.ConverterOpts.FunctionPrefix.ToLower())
-                ? name.Remove(0, task.ConverterOpts.FunctionPrefix.Length)
+            return name.ToLower().StartsWith(task.FunctionPrefix.ToLower())
+                ? name.Remove(0, task.FunctionPrefix.Length)
                 : name;
         } 
 
@@ -655,7 +655,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                     }
                                     : new List<Attribute>(),
                                 Doc = string.Empty,
-                                Name = Naming.Translate(TrimName(token.Value, task), task.ConverterOpts.FunctionPrefix),
+                                Name = Naming.Translate(TrimName(token.Value, task), task.FunctionPrefix),
                                 NativeName = token.Value,
                                 Value = allEnums[token.Value].Item1
                             }
@@ -669,7 +669,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             ExtensionName = api.Name == "feature"
                                 ? "Core"
                                 : TrimName(api.Attribute("name")?.Value, task),
-                            Name = Naming.Translate(TrimName(api.Attribute("name")?.Value, task), task.ConverterOpts.FunctionPrefix),
+                            Name = Naming.Translate(TrimName(api.Attribute("name")?.Value, task), task.FunctionPrefix),
                             NativeName = api.Attribute("name")?.Value,
                             ProfileName = name,
                             ProfileVersion = apiVersion,
@@ -719,7 +719,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 }
                                 : new List<Attribute>(),
                             Doc = string.Empty,
-                            Name = Naming.Translate(TrimName(@enum.Key, task), task.ConverterOpts.FunctionPrefix),
+                            Name = Naming.Translate(TrimName(@enum.Key, task), task.FunctionPrefix),
                             NativeName = @enum.Key,
                             Value = @enum.Value.Item1
                         });
@@ -742,7 +742,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                         }
                                         : new List<Attribute>(),
                                     Doc = string.Empty,
-                                    Name = Naming.Translate(TrimName(@enum.Key, task), task.ConverterOpts.FunctionPrefix),
+                                    Name = Naming.Translate(TrimName(@enum.Key, task), task.FunctionPrefix),
                                     NativeName = @enum.Key,
                                     Value = @enum.Value.Item1
                                 }

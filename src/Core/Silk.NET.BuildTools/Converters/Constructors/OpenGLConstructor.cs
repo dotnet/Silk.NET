@@ -53,7 +53,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             new Project
                             {
                                 IsRoot = false,
-                                Namespace = $".{category.CheckMemberName(task.ConverterOpts.FunctionPrefix)}",
+                                Namespace = $".{category.CheckMemberName(task.FunctionPrefix)}",
                                 Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
                             }
                         );
@@ -73,7 +73,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                                 new NativeApiSet
                                 {
                                     Name =
-                                        $"I{Naming.Translate(TrimName(rawCategory, task), task.ConverterOpts.FunctionPrefix).CheckMemberName(task.ConverterOpts.FunctionPrefix)}"
+                                        $"I{Naming.Translate(TrimName(rawCategory, task), task.FunctionPrefix).CheckMemberName(task.FunctionPrefix)}"
                                 }
                             );
                     }
@@ -104,7 +104,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
             }
 
             var mergedEnums = new Dictionary<string, Enum>();
-            var gl = profile.Projects["Core"].Classes[0].ClassName.ToUpper().CheckMemberName(task.ConverterOpts.FunctionPrefix);
+            var gl = profile.Projects["Core"].Classes[0].ClassName.ToUpper().CheckMemberName(task.FunctionPrefix);
             mergedEnums.Add
             (
                 $"{gl}Enum",
@@ -142,7 +142,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             prefix,
                             new Enum
                             {
-                                Name = prefix.CheckMemberName(task.ConverterOpts.FunctionPrefix), ExtensionName = prefix,
+                                Name = prefix.CheckMemberName(task.FunctionPrefix), ExtensionName = prefix,
                                 NativeName = "GLenum"
                             }
                         );
@@ -164,7 +164,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             IsRoot = @enum.ExtensionName == "Core",
                             Namespace = @enum.ExtensionName == "Core"
                                 ? string.Empty
-                                : $".{@enum.ExtensionName.CheckMemberName(task.ConverterOpts.FunctionPrefix)}",
+                                : $".{@enum.ExtensionName.CheckMemberName(task.FunctionPrefix)}",
                             Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
                         }
                     );
@@ -194,14 +194,14 @@ namespace Silk.NET.BuildTools.Converters.Constructors
         /// <returns>The trimmed name.</returns>
         public string TrimName(string name, BindTask task)
         {
-            if (name.StartsWith($"{task.ConverterOpts.FunctionPrefix.ToUpper()}_"))
+            if (name.StartsWith($"{task.FunctionPrefix.ToUpper()}_"))
             {
-                return name.Remove(0, task.ConverterOpts.FunctionPrefix.Length + 1);
+                return name.Remove(0, task.FunctionPrefix.Length + 1);
             }
 
             return name.StartsWith
-                (task.ConverterOpts.FunctionPrefix)
-                ? name.Remove(0, task.ConverterOpts.FunctionPrefix.Length)
+                (task.FunctionPrefix)
+                ? name.Remove(0, task.FunctionPrefix.Length)
                 : name;
         }
         

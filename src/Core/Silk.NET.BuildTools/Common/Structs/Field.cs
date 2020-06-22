@@ -40,9 +40,8 @@ namespace Silk.NET.BuildTools.Common.Structs
         /// </summary>
         public Type Type { get; set; }
         
-        // TODO: Be sure this is right
         /// <summary>
-        /// The number of elements this field contains; if greater than 1, this field is an array.
+        /// The number of elements this field contains; if greater than 1, this field is a fixed array.
         /// </summary>
         public Count Count { get; set; }
         
@@ -65,7 +64,7 @@ namespace Silk.NET.BuildTools.Common.Structs
         /// The default value of this field.
         /// </summary>
         public string DefaultAssignment { get; set; }
-        
+
         /// <summary>
         /// Convert this field into a string.
         /// </summary>

@@ -55,7 +55,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
         private Dictionary<string, Struct> ConvertStructs(VulkanSpecification spec, BindTask task)
         {
-            var prefix = task.ConverterOpts.FunctionPrefix;
+            var prefix = task.FunctionPrefix;
             var ret = new Dictionary<string, Struct>();
             foreach (var s in spec.Structures)
             {
@@ -82,9 +82,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                                 Naming.Translate
                                                 (
                                                     TrimName(x.LegalValues.Split(',').FirstOrDefault(), task),
-                                                    task.ConverterOpts.FunctionPrefix
+                                                    task.FunctionPrefix
                                                 ),
-                                                Naming.TranslateLite(TrimName("VkStructureType", task), task.ConverterOpts.FunctionPrefix)
+                                                Naming.TranslateLite(TrimName("VkStructureType", task), task.FunctionPrefix)
                                             )
                                             : null
                                 }
@@ -135,7 +135,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         var fieldSize = GetTypeSize(x.Type.Name, task.TypeMaps);
                         yield return new Field
                         {
-                            Name = $"{Naming.Translate(x.Name, task.ConverterOpts.FunctionPrefix)}_{i}",
+                            Name = $"{Naming.Translate(x.Name, task.FunctionPrefix)}_{i}",
                             Attributes = new List<Attribute>
                             {
                                 new Attribute{Name = "FieldOffset", Arguments = new List<string> {$"{i * fieldSize}"}}
@@ -151,7 +151,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 {
                     yield return new Field
                     {
-                        Name = $"{Naming.Translate(x.Name, task.ConverterOpts.FunctionPrefix)}",
+                        Name = $"{Naming.Translate(x.Name, task.FunctionPrefix)}",
                         Attributes = new List<Attribute>
                         {
                             new Attribute{Name = "FieldOffset", Arguments = new List<string> {"0"}}
@@ -271,7 +271,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 (
                     function.Name, new Function
                     {
-                        Name = Naming.Translate(NameTrimmer.Trim(TrimName(function.Name, task), task.ConverterOpts.FunctionPrefix), task.ConverterOpts.FunctionPrefix),
+                        Name = Naming.Translate(NameTrimmer.Trim(TrimName(function.Name, task), task.FunctionPrefix), task.FunctionPrefix),
                         Parameters = function.Parameters.Select
                             (
                                 x => new Parameter
@@ -328,7 +328,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             (
                 x => new Constant
                 {
-                    Name = Naming.Translate(TrimName(x.Name, task), task.ConverterOpts.FunctionPrefix), NativeName = x.Name, Value = x.Value,
+                    Name = Naming.Translate(TrimName(x.Name, task), task.FunctionPrefix), NativeName = x.Name, Value = x.Value,
                     Type = x.Type switch
                     {
                         ConstantType.Float32 => new Type {Name = "float"},
@@ -348,12 +348,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// <returns>The name, trimmed.</returns>
         public string TrimName(string name, BindTask task)
         {
-            if (name.StartsWith($"{task.ConverterOpts.FunctionPrefix.ToUpper()}_"))
+            if (name.StartsWith($"{task.FunctionPrefix.ToUpper()}_"))
             {
-                return name.Remove(0, task.ConverterOpts.FunctionPrefix.Length + 1);
+                return name.Remove(0, task.FunctionPrefix.Length + 1);
             }
 
-            return name.ToLower().StartsWith(task.ConverterOpts.FunctionPrefix.ToLower()) ? name.Remove(0, task.ConverterOpts.FunctionPrefix.Length) : name;
+            return name.ToLower().StartsWith(task.FunctionPrefix.ToLower()) ? name.Remove(0, task.FunctionPrefix.Length) : name;
         }
 
         private static FlowDirection ConvertFlow(ParameterModifier mod)
@@ -377,7 +377,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     e.Name,
                     new Enum
                     {
-                        Name = Naming.TranslateLite(TrimName(e.Name, task), task.ConverterOpts.FunctionPrefix), NativeName = e.Name,
+                        Name = Naming.TranslateLite(TrimName(e.Name, task), task.FunctionPrefix), NativeName = e.Name,
                         Tokens = e.Values.Select
                             (
                                 x => new Token
@@ -385,8 +385,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                     Doc = $"/// <summary>{x.Comment}</summary>",
                                     Name = TryTrim
                                     (
-                                        Naming.Translate(TrimName(x.Name, task), task.ConverterOpts.FunctionPrefix),
-                                        Naming.TranslateLite(TrimName(e.Name, task), task.ConverterOpts.FunctionPrefix)
+                                        Naming.Translate(TrimName(x.Name, task), task.FunctionPrefix),
+                                        Naming.TranslateLite(TrimName(e.Name, task), task.FunctionPrefix)
                                     ),
                                     Value = x.Value.ToString(),
                                     NativeName = x.Name

@@ -18,6 +18,7 @@ using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
+using Attribute = Silk.NET.BuildTools.Common.Attribute;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 
@@ -539,10 +540,29 @@ namespace Silk.NET.BuildTools.Cpp
                                         {
                                             Name = x.Name, NativeName = x.Name,
                                             Type = GetType(x.Type, out var count),
-                                            NativeType = x.Type.AsString, Count = count
+                                            NativeType = x.Type.AsString, Count = count,
+                                            Attributes = recordDecl.IsUnion
+                                                ? new List<Attribute>
+                                                {
+                                                    new Attribute
+                                                    {
+                                                        Name = "FieldOffset",
+                                                        Arguments = new List<string> {x.Handle.OffsetOfField.ToString()}
+                                                    }
+                                                }
+                                                : new List<Attribute>()
                                         }
                                     )
-                                    .ToList()
+                                    .ToList(),
+                                Attributes = recordDecl.IsUnion
+                                    ? new List<Attribute>
+                                    {
+                                        new Attribute
+                                        {
+                                            Name = "StructLayout", Arguments = new List<string> {"LayoutKind.Explicit"}
+                                        }
+                                    }
+                                    : new List<Attribute>()
                             }
                         );
                         break;
@@ -554,11 +574,11 @@ namespace Silk.NET.BuildTools.Cpp
                     // case CX_DeclKind.CX_DeclKind_ObjCTypeParam:
                     // case CX_DeclKind.CX_DeclKind_TypeAlias:
 
-                    // TODO MUST case CX_DeclKind.CX_DeclKind_Typedef:
-                    // TODO MUST {
-                    // TODO MUST     VisitTypedefDecl();
-                    // TODO MUST     break;
-                    // TODO MUST }
+                    // TODO perhaps? case CX_DeclKind.CX_DeclKind_Typedef:
+                    // TODO perhaps? {
+                    // TODO perhaps?     VisitTypedefDecl();
+                    // TODO perhaps?     break;
+                    // TODO perhaps? }
 
                     // case CX_DeclKind.CX_DeclKind_UnresolvedUsingTypename:
 

@@ -122,9 +122,9 @@ namespace Silk.NET.BuildTools
                     ConverterOpts = new ConverterOptions
                     {
                         Reader = "gl",
-                        Constructor = "gl",
-                        FunctionPrefix = "gl"
+                        Constructor = "gl"
                     },
+                    FunctionPrefix = "gl",
                     ExtensionsNamespace = "MyNamespace.ForExtensions",
                     Namespace = "MyNamespace",
                     Mode = ConverterMode.ConvertConstruct,

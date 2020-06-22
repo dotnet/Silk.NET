@@ -29,7 +29,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                 foreach (var rawCategory in function.Categories)
                 {
                     var category = FormatCategory(rawCategory);
-                    var preCategory = $"{task.ConverterOpts.FunctionPrefix.ToUpper()}_{rawCategory}";
+                    var preCategory = $"{task.FunctionPrefix.ToUpper()}_{rawCategory}";
                     // check that the root project exists
                     if (!profile.Projects.ContainsKey("Core"))
                     {
@@ -54,7 +54,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                             new Project
                             {
                                 IsRoot = false,
-                                Namespace = $".{category.CheckMemberName(task.ConverterOpts.FunctionPrefix)}",
+                                Namespace = $".{category.CheckMemberName(task.FunctionPrefix)}",
                                 Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
                             }
                         );
@@ -74,7 +74,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                                 new NativeApiSet
                                 {
                                     Name =
-                                        $"I{Naming.Translate(TrimName(rawCategory, task), task.ConverterOpts.FunctionPrefix).CheckMemberName(task.ConverterOpts.FunctionPrefix)}"
+                                        $"I{Naming.Translate(TrimName(rawCategory, task), task.FunctionPrefix).CheckMemberName(task.FunctionPrefix)}"
                                 }
                             );
                     }
@@ -144,7 +144,7 @@ namespace Silk.NET.BuildTools.Converters.Constructors
                         new Project
                         {
                             IsRoot = false,
-                            Namespace = $".{category.CheckMemberName(task.ConverterOpts.FunctionPrefix)}",
+                            Namespace = $".{category.CheckMemberName(task.FunctionPrefix)}",
                             Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
                         }
                     );
@@ -178,12 +178,15 @@ namespace Silk.NET.BuildTools.Converters.Constructors
         /// <returns>The trimmed name.</returns>
         public string TrimName(string name, BindTask task)
         {
-            if (name.StartsWith($"{task.ConverterOpts.FunctionPrefix.ToUpper()}_"))
+            if (name.StartsWith($"{task.FunctionPrefix.ToUpper()}_"))
             {
-                return name.Remove(0, task.ConverterOpts.FunctionPrefix.Length + 1);
+                return name.Remove(0, task.FunctionPrefix.Length + 1);
             }
 
-            return name.StartsWith(task.ConverterOpts.FunctionPrefix) ? name.Remove(0, task.ConverterOpts.FunctionPrefix.Length) : name;
+            return name.StartsWith
+                (task.FunctionPrefix)
+                ? name.Remove(0, task.FunctionPrefix.Length)
+                : name;
         }
 
         private static string FormatCategory(string rawCategory)

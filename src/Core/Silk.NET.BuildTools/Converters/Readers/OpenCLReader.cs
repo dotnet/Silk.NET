@@ -174,7 +174,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
         private static Dictionary<string, Struct> ConvertStructs(IEnumerable<StructureDefinition> spec, BindTask task)
         {
-            var prefix = task.ConverterOpts.FunctionPrefix;
+            var prefix = task.FunctionPrefix;
             var ret = new Dictionary<string, Struct>();
             foreach (var s in spec)
             {
@@ -292,7 +292,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 Doc = string.Empty,
                                 ExtensionName = api.Name == "feature" ? "Core" : ExtensionName(api.Attribute("name")?.Value, task),
                                 GenericTypeParameters = new List<GenericTypeParameter>(),
-                                Name = Naming.Translate(NameTrimmer.Trim(TrimName(xf.Attribute("name")?.Value, task), task.ConverterOpts.FunctionPrefix), task.ConverterOpts.FunctionPrefix),
+                                Name = Naming.Translate(NameTrimmer.Trim(TrimName(xf.Attribute("name")?.Value, task), task.FunctionPrefix), task.FunctionPrefix),
                                 NativeName = function,
                                 Parameters = ParseParameters(xf),
                                 ProfileName = name,
@@ -708,13 +708,13 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// <returns>The name, trimmed.</returns>
         public static string TrimName(string name, BindTask task)
         {
-            if (name.ToUpper().StartsWith($"{task.ConverterOpts.FunctionPrefix.ToUpper()}_"))
+            if (name.ToUpper().StartsWith($"{task.FunctionPrefix.ToUpper()}_"))
             {
-                return name.Remove(0, task.ConverterOpts.FunctionPrefix.Length + 1);
+                return name.Remove(0, task.FunctionPrefix.Length + 1);
             }
 
-            return name.ToLower().StartsWith(task.ConverterOpts.FunctionPrefix.ToLower())
-                ? name.Remove(0, task.ConverterOpts.FunctionPrefix.Length)
+            return name.ToLower().StartsWith(task.FunctionPrefix.ToLower())
+                ? name.Remove(0, task.FunctionPrefix.Length)
                 : name;
         }
         
@@ -911,7 +911,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                     }
                                     : new List<Attribute>(),
                                 Doc = string.Empty,
-                                Name = Naming.Translate(TrimName(token.Value, task), task.ConverterOpts.FunctionPrefix),
+                                Name = Naming.Translate(TrimName(token.Value, task), task.FunctionPrefix),
                                 NativeName = token.Value,
                                 Value = allEnums.ContainsKey
                                     (token.Value)
@@ -928,7 +928,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             ExtensionName = api.Name == "feature"
                                 ? "Core"
                                 : ExtensionName(api.Attribute("name")?.Value, task),
-                            Name = Naming.Translate(TrimName(api.Attribute("name")?.Value, task), task.ConverterOpts.FunctionPrefix),
+                            Name = Naming.Translate(TrimName(api.Attribute("name")?.Value, task), task.FunctionPrefix),
                             NativeName = api.Attribute("name")?.Value,
                             ProfileName = name,
                             ProfileVersion = apiVersion,
@@ -965,7 +965,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             (
                 x => new Constant
                 {
-                    Name = Naming.Translate(TrimName(GetName(x.Key, out var type), task), task.ConverterOpts.FunctionPrefix),
+                    Name = Naming.Translate(TrimName(GetName(x.Key, out var type), task), task.FunctionPrefix),
                     NativeName = GetName(x.Key, out _),
                     Type = new Type {Name = type}, Value = x.Value.ToString()
                 }
