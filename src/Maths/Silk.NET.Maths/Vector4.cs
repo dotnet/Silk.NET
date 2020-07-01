@@ -1,7 +1,4 @@
-﻿// This file is part of Silk.NET.
-// 
-// You may modify and distribute Silk.NET under the terms
-// of the MIT license. See the LICENSE file for details.
+#region
 
 #if BTEC_INTRINSICS
 using System.Numerics;
@@ -14,10 +11,12 @@ using System.Globalization;
 using System.Text;
 using static Silk.NET.Maths.Scalar;
 
+#endregion
+
 namespace Silk.NET.Maths
 {
     [Serializable]
-    public readonly partial struct Vector4<T> : IEquatable<Vector4<T>>, IFormattable where T : unmanaged, IFormattable
+    public readonly partial struct Vector4<T> : IVector4<T, Vector4<T>> where T : unmanaged, IFormattable
     {
         public static Vector4<T> UnitX => new Vector4<T>(Scalar<T>.One, default, default, default);
         public static Vector4<T> UnitY => new Vector4<T>(default, Scalar<T>.One, default, default);
@@ -29,35 +28,21 @@ namespace Silk.NET.Maths
         public static Vector4<T> NegativeInfinity => new Vector4<T>(Scalar<T>.NegativeInfinity);
         public static unsafe int SizeInBytes => sizeof(Vector4<T>);
 
-        public readonly T X;
-        public readonly T Y;
-        public readonly T Z;
-        public readonly T W;
+        public T X { get; }
+        public T Y { get; }
+        public T Z { get; }
+        public T W { get; }
 
-        public Vector4(T value) : this(value, value, value, value)
-        {
-        }
+        public Vector4(T value) : this(value, value, value, value) { }
 
-        public Vector4(T x, T y, T z, T w)
-        {
-            X = x;
-            Y = y;
-            Z = z;
-            W = w;
-        }
+        public Vector4(T x, T y, T z, T w) => (X, Y, Z, W) = (x, y, z, w);
 
-        public Vector4(Vector2<T> xyzw) : this(xyzw, xyzw)
-        {
-        }
+        public Vector4(Vector2<T> xyzw) : this(xyzw, xyzw) { }
 
 
-        public Vector4(Vector2<T> xy, Vector2<T> zw) : this(xy.X, xy.Y, zw.X, zw.Y)
-        {
-        }
+        public Vector4(Vector2<T> xy, Vector2<T> zw) : this(xy.X, xy.Y, zw.X, zw.Y) { }
 
-        public Vector4(Vector3<T> xyz, T w = default) : this(xyz.X, xyz.Y, xyz.Z, w)
-        {
-        }
+        public Vector4(Vector3<T> xyz, T w = default) : this(xyz.X, xyz.Y, xyz.Z, w) { }
 
         public Vector4(Vector4<T> xyzw) => this = xyzw;
 
@@ -97,120 +82,75 @@ namespace Silk.NET.Maths
                 return default;
             }
         }
-
+        
         public T Length => SquareRoot(LengthSquared);
 
         public T LengthSquared => Dot(this, this);
 
         public Vector4<T> Normalized() => Normalize(this);
 
-        public static Vector4<T> Add(Vector4<T> a, Vector4<T> b) =>
-            new Vector4<T>
-            (
-                Scalar.Add(a.X, b.X),
-                Scalar.Add(a.Y, b.Y),
-                Scalar.Add(a.Z, b.Z),
-                Scalar.Add(a.W, b.W)
-            );
+        public static Vector4<T> Add(Vector4<T> a, Vector4<T> b)
+            => new Vector4<T>(Scalar.Add(a.X, b.X), Scalar.Add(a.Y, b.Y), Scalar.Add(a.Z, b.Z), Scalar.Add(a.W, b.W));
 
         public static void Add(ref Vector4<T> a, ref Vector4<T> b, out Vector4<T> result) => result = Add(a, b);
 
-        public static Vector4<T> Subtract(Vector4<T> a, Vector4<T> b) =>
-            new Vector4<T>
-            (
-                Scalar.Subtract(a.X, b.X),
-                Scalar.Subtract(a.Y, b.Y),
-                Scalar.Subtract(a.Z, b.Z),
-                Scalar.Subtract(a.W, b.W)
-            );
+        [GenerateReferenceFunction]
+        public static Vector4<T> Subtract(Vector4<T> a, Vector4<T> b)
+            =>
+                new Vector4<T>
+                    (
+                    Scalar.Subtract(a.X, b.X), Scalar.Subtract(a.Y, b.Y), Scalar.Subtract(a.Z, b.Z),
+                    Scalar.Subtract(a.W, b.W));
 
-        public static void Subtract
-            (ref Vector4<T> a, ref Vector4<T> b, out Vector4<T> result) => result = Subtract(a, b);
+        [GenerateReferenceFunction]
+        public static Vector4<T> Multiply(Vector4<T> vector, T scale)
+            =>
+                new Vector4<T>
+                    (
+                    Scalar.Multiply(vector.X, scale), Scalar.Multiply(vector.Y, scale), Scalar.Multiply(vector.Z, scale),
+                    Scalar.Multiply(vector.W, scale));
 
-        public static Vector4<T> Multiply(Vector4<T> vector, T scale) =>
-            new Vector4<T>
-            (
-                Scalar.Multiply(vector.X, scale),
-                Scalar.Multiply(vector.Y, scale),
-                Scalar.Multiply(vector.Z, scale),
-                Scalar.Multiply(vector.W, scale)
-            );
+        [GenerateReferenceFunction]
+        public static Vector4<T> Multiply(Vector4<T> vector, Vector4<T> scale)
+            =>
+                new Vector4<T>
+                    (
+                    Scalar.Multiply(vector.X, scale.X), Scalar.Multiply(vector.Y, scale.Y),
+                    Scalar.Multiply(vector.Z, scale.Z), Scalar.Multiply(vector.W, scale.W));
 
-        public static void Multiply
-            (ref Vector4<T> vector, T scale, out Vector4<T> result) => result = Multiply(vector, scale);
+        [GenerateReferenceFunction]
+        public static Vector4<T> Divide(Vector4<T> vector, T scale)
+            =>
+                new Vector4<T>
+                    (
+                    Scalar.Divide(vector.X, scale), Scalar.Divide(vector.Y, scale), Scalar.Divide(vector.Z, scale),
+                    Scalar.Divide(vector.W, scale));
 
-        public static Vector4<T> Multiply(Vector4<T> vector, Vector4<T> scale) =>
-            new Vector4<T>
-            (
-                Scalar.Multiply(vector.X, scale.X),
-                Scalar.Multiply(vector.Y, scale.Y),
-                Scalar.Multiply(vector.Z, scale.Z),
-                Scalar.Multiply(vector.W, scale.W)
-            );
+        [GenerateReferenceFunction]
+        public static Vector4<T> Divide(Vector4<T> vector, Vector4<T> scale)
+            =>
+                new Vector4<T>
+                    (
+                    Scalar.Divide(vector.X, scale.X), Scalar.Divide(vector.Y, scale.Y), Scalar.Divide(vector.Z, scale.Z),
+                    Scalar.Divide(vector.W, scale.W));
 
-        public static void Multiply
-            (ref Vector4<T> vector, ref Vector4<T> scale, out Vector4<T> result) => result = Multiply(vector, scale);
+        [GenerateReferenceFunction]
+        public static Vector4<T> Divide(T value, Vector4<T> scale)
+            =>
+                new Vector4<T>
+                    (
+                    Scalar.Divide(value, scale.X), Scalar.Divide(value, scale.Y), Scalar.Divide(value, scale.Z),
+                    Scalar.Divide(value, scale.W));
 
-        public static Vector4<T> Divide(Vector4<T> vector, T scale) =>
-            new Vector4<T>
-            (
-                Scalar.Divide(vector.X, scale),
-                Scalar.Divide(vector.Y, scale),
-                Scalar.Divide(vector.Z, scale),
-                Scalar.Divide(vector.W, scale)
-            );
+        [GenerateReferenceFunction]
+        public static Vector4<T> ComponentMin(Vector4<T> a, Vector4<T> b)
+            => new Vector4<T>(Min(a.X, b.X), Min(a.Y, b.Y), Min(a.Z, b.Z), Min(a.W, b.W));
 
-        public static void Divide
-            (ref Vector4<T> vector, T scale, out Vector4<T> result) => result = Divide(vector, scale);
+        [GenerateReferenceFunction]
+        public static Vector4<T> ComponentMax(Vector4<T> a, Vector4<T> b)
+            => new Vector4<T>(Max(a.X, b.X), Max(a.Y, b.Y), Max(a.Z, b.Z), Max(a.W, b.W));
 
-        public static Vector4<T> Divide(Vector4<T> vector, Vector4<T> scale) =>
-            new Vector4<T>
-            (
-                Scalar.Divide(vector.X, scale.X),
-                Scalar.Divide(vector.Y, scale.Y),
-                Scalar.Divide(vector.Z, scale.Z),
-                Scalar.Divide(vector.W, scale.W)
-            );
-
-        public static void Divide
-            (ref Vector4<T> vector, ref Vector4<T> scale, out Vector4<T> result) => result = Divide(vector, scale);
-
-        public static Vector4<T> Divide(T value, Vector4<T> scale) =>
-            new Vector4<T>
-            (
-                Scalar.Divide(value, scale.X),
-                Scalar.Divide(value, scale.Y),
-                Scalar.Divide(value, scale.Z),
-                Scalar.Divide(value, scale.W)
-            );
-
-        public static void Divide
-            (T value, ref Vector4<T> scale, out Vector4<T> result) => result = Divide(value, scale);
-
-        public static Vector4<T> ComponentMin(Vector4<T> a, Vector4<T> b) =>
-            new Vector4<T>
-            (
-                Min(a.X, b.X),
-                Min(a.Y, b.Y),
-                Min(a.Z, b.Z),
-                Min(a.W, b.W)
-            );
-
-        public static void ComponentMin
-            (ref Vector4<T> a, ref Vector4<T> b, out Vector4<T> result) => result = ComponentMin(a, b);
-
-        public static Vector4<T> ComponentMax(Vector4<T> a, Vector4<T> b) =>
-            new Vector4<T>
-            (
-                Max(a.X, b.X),
-                Max(a.Y, b.Y),
-                Max(a.Z, b.Z),
-                Max(a.W, b.W)
-            );
-
-        public static void ComponentMax
-            (ref Vector4<T> a, ref Vector4<T> b, out Vector4<T> result) => result = ComponentMax(a, b);
-
+        [GenerateReferenceFunction]
         public static Vector4<T> MagnitudeMin(Vector4<T> left, Vector4<T> right)
         {
             if (Larger(left.LengthSquared, right.LengthSquared))
@@ -221,9 +161,7 @@ namespace Silk.NET.Maths
             return left;
         }
 
-        public static void MagnitudeMin
-            (ref Vector4<T> left, ref Vector4<T> right, out Vector4<T> result) => result = MagnitudeMin(left, right);
-
+        [GenerateReferenceFunction]
         public static Vector4<T> MagnitudeMax(Vector4<T> left, Vector4<T> right)
         {
             if (Larger(left.LengthSquared, right.LengthSquared))
@@ -234,89 +172,57 @@ namespace Silk.NET.Maths
             return right;
         }
 
-        public static void MagnitudeMax
-            (ref Vector4<T> left, ref Vector4<T> right, out Vector4<T> result) => result = MagnitudeMax(left, right);
+        [GenerateReferenceFunction]
+        public static Vector4<T> Clamp(Vector4<T> vec, Vector4<T> min, Vector4<T> max)
+            =>
+                new Vector4<T>
+                    (
+                    Scalar.Clamp(vec.X, min.X, max.X), Scalar.Clamp(vec.Y, min.Y, max.Y),
+                    Scalar.Clamp(vec.Z, min.Z, max.Z), Scalar.Clamp(vec.W, min.W, max.W));
 
-        public static Vector4<T> Clamp(Vector4<T> vec, Vector4<T> min, Vector4<T> max) =>
-            new Vector4<T>
-            (
-                Scalar.Clamp(vec.X, min.X, max.X),
-                Scalar.Clamp(vec.Y, min.Y, max.Y),
-                Scalar.Clamp(vec.Z, min.Z, max.Z),
-                Scalar.Clamp(vec.W, min.W, max.W)
-            );
-
-        public static void Clamp
-        (
-            ref Vector4<T> vec,
-            ref Vector4<T> min,
-            ref Vector4<T> max,
-            out Vector4<T> result
-        ) =>
-            result = Clamp(vec, min, max);
-
+        [GenerateReferenceFunction]
         public static Vector4<T> Normalize(Vector4<T> vec) => vec / vec.Length;
 
-        public static void Normalize(ref Vector4<T> vec, out Vector4<T> result) => result = Normalize(vec);
-
+        [GenerateReferenceFunction]
         public static T Dot(Vector4<T> left, Vector4<T> right)
         {
             var mul = left * right;
             return Scalar.Add(Scalar.Add(mul.X, mul.Y), Scalar.Add(mul.Z, mul.W));
         }
 
-        public static void Dot(ref Vector4<T> left, ref Vector4<T> right, out T result) => result = Dot(left, right);
+        [GenerateReferenceFunction]
+        public static Vector4<T> Lerp(Vector4<T> a, Vector4<T> b, T blend)
+            => a * Scalar.Subtract(Scalar<T>.One, blend) + b * blend;
 
-        public static Vector4<T> Lerp
-            (Vector4<T> a, Vector4<T> b, T blend) => a * Scalar.Subtract(Scalar<T>.One, blend) + b * blend;
+        [GenerateReferenceFunction]
+        public static Vector4<T> BaryCentric(Vector4<T> a, Vector4<T> b, Vector4<T> c, T u, T v)
+            =>
+                a * Scalar.Subtract(Scalar<T>.One, u) * Scalar.Subtract(Scalar<T>.One, v) +
+                b * u * Scalar.Subtract(Scalar<T>.One, v) + c * Scalar.Subtract(Scalar<T>.One, u) * v;
 
-        public static void Lerp
-            (ref Vector4<T> a, ref Vector4<T> b, T blend, out Vector4<T> result) => result = Lerp(a, b, blend);
+        [GenerateReferenceFunction]
+        public static Vector4<T> Transform(Vector4<T> vec, Matrix4X4<T> mat)
+            =>
+                new Vector4<T>
+                    (
+                    Scalar.Add
+                        (
+                            Scalar.Multiply(vec.X, mat.M11),
+                            Scalar.Add(Scalar.Multiply(vec.Y, mat.M21), Scalar.Multiply(vec.Z, mat.M31))),
+                    Scalar.Add
+                        (
+                            Scalar.Multiply(vec.X, mat.M12),
+                            Scalar.Add(Scalar.Multiply(vec.Y, mat.M22), Scalar.Multiply(vec.Z, mat.M32))),
+                    Scalar.Add
+                        (
+                            Scalar.Multiply(vec.X, mat.M13),
+                            Scalar.Add(Scalar.Multiply(vec.Y, mat.M23), Scalar.Multiply(vec.Z, mat.M33))),
+                    Scalar.Add
+                        (
+                            Scalar.Multiply(vec.X, mat.M14),
+                            Scalar.Add(Scalar.Multiply(vec.Y, mat.M24), Scalar.Multiply(vec.Z, mat.M34))));
 
-        public static Vector4<T> BaryCentric(Vector4<T> a, Vector4<T> b, Vector4<T> c, T u, T v) =>
-            a * Scalar.Subtract(Scalar<T>.One, u) * Scalar.Subtract(Scalar<T>.One, v)
-            + b * u * Scalar.Subtract(Scalar<T>.One, v)
-            + c * Scalar.Subtract(Scalar<T>.One, u) * v;
-
-        public static void BaryCentric
-        (
-            ref Vector4<T> a,
-            ref Vector4<T> b,
-            ref Vector4<T> c,
-            T u,
-            T v,
-            out Vector4<T> result
-        ) =>
-            result = BaryCentric(a, b, c, u, v);
-
-        public static Vector4<T> Transform(Vector4<T> vec, Matrix4X4<T> mat) =>
-            new Vector4<T>
-            (
-                Scalar.Add
-                (
-                    Scalar.Multiply(vec.X, mat.M11),
-                    Scalar.Add(Scalar.Multiply(vec.Y, mat.M21), Scalar.Multiply(vec.Z, mat.M31))
-                ),
-                Scalar.Add
-                (
-                    Scalar.Multiply(vec.X, mat.M12),
-                    Scalar.Add(Scalar.Multiply(vec.Y, mat.M22), Scalar.Multiply(vec.Z, mat.M32))
-                ),
-                Scalar.Add
-                (
-                    Scalar.Multiply(vec.X, mat.M13),
-                    Scalar.Add(Scalar.Multiply(vec.Y, mat.M23), Scalar.Multiply(vec.Z, mat.M33))
-                ),
-                Scalar.Add
-                (
-                    Scalar.Multiply(vec.X, mat.M14),
-                    Scalar.Add(Scalar.Multiply(vec.Y, mat.M24), Scalar.Multiply(vec.Z, mat.M34))
-                )
-            );
-
-        public static void Transform
-            (ref Vector4<T> vec, ref Matrix4X4<T> mat, out Vector4<T> result) => result = Transform(vec, mat);
-
+        [GenerateReferenceFunction]
         public static Vector4<T> Transform(Vector4<T> vec, Quaternion<T> quat)
         {
             // note that this is the same as Vector3<T> + the fourth element is just kept
@@ -336,52 +242,42 @@ namespace Silk.NET.Maths
             var zz2 = Scalar.Multiply(quat.Z, z2);
 
             return new Vector4<T>
-            (
-                Scalar.Add
                 (
-                    Scalar.Multiply(vec.X, Scalar.Subtract(Scalar<T>.One, Scalar.Subtract(yy2, zz2))),
-                    Scalar.Add
-                    (
-                        Scalar.Multiply(vec.Y, Scalar.Subtract(xy2, wz2)),
-                        Scalar.Multiply(vec.Z, Scalar.Add(xz2, wy2))
-                    )
-                ),
                 Scalar.Add
-                (
-                    Scalar.Multiply(vec.X, Scalar.Add(xy2, wz2)),
-                    Scalar.Add
                     (
-                        Scalar.Multiply(vec.Y, Scalar.Subtract(Scalar<T>.One, Scalar.Subtract(xx2, zz2))),
-                        Scalar.Multiply(vec.Z, Scalar.Subtract(yz2, wx2))
-                    )
-                ),
+                        Scalar.Multiply(vec.X, Scalar.Subtract(Scalar<T>.One, Scalar.Subtract(yy2, zz2))),
+                        Scalar.Add
+                            (
+                                Scalar.Multiply(vec.Y, Scalar.Subtract(xy2, wz2)),
+                                Scalar.Multiply(vec.Z, Scalar.Add(xz2, wy2)))),
                 Scalar.Add
-                (
-                    Scalar.Multiply(vec.X, Scalar.Subtract(xz2, wy2)),
-                    Scalar.Add
                     (
-                        Scalar.Multiply(vec.Y, Scalar.Add(yz2, wx2)),
-                        Scalar.Multiply(vec.Z, Scalar.Subtract(Scalar<T>.One, Scalar.Subtract(xx2, yy2)))
-                    )
-                ),
-                vec.W
-            );
+                        Scalar.Multiply(vec.X, Scalar.Add(xy2, wz2)),
+                        Scalar.Add
+                            (
+                                Scalar.Multiply(vec.Y, Scalar.Subtract(Scalar<T>.One, Scalar.Subtract(xx2, zz2))),
+                                Scalar.Multiply(vec.Z, Scalar.Subtract(yz2, wx2)))),
+                Scalar.Add
+                    (
+                        Scalar.Multiply(vec.X, Scalar.Subtract(xz2, wy2)),
+                        Scalar.Add
+                            (
+                                Scalar.Multiply(vec.Y, Scalar.Add(yz2, wx2)),
+                                Scalar.Multiply(vec.Z, Scalar.Subtract(Scalar<T>.One, Scalar.Subtract(xx2, yy2))))),
+                vec.W);
         }
 
-        public static void Transform
-            (ref Vector4<T> vec, ref Quaternion<T> quat, out Vector4<T> result) => result = Transform(vec, quat);
+        [GenerateReferenceFunction]
+        public static Vector4<T> Negate(Vector4<T> vec)
+            => new Vector4<T>(Scalar.Negate(vec.X), Scalar.Negate(vec.Y), Scalar.Negate(vec.Z), Scalar.Negate(vec.W));
+        
+        [GenerateReferenceFunction]
+        public static Vector4<T> Cos(Vector4<T> vector)
+            => new Vector4<T>(Scalar.Cos(vector.X), Scalar.Cos(vector.Y), Scalar.Cos(vector.Z), Scalar.Cos(vector.W));
 
-        public static Vector4<T> Negate(Vector4<T> vec) =>
-            new Vector4<T>
-                (Scalar.Negate(vec.X), Scalar.Negate(vec.Y), Scalar.Negate(vec.Z), Scalar.Negate(vec.W));
-
-        public static void Negate(ref Vector4<T> vec, out Vector4<T> result) => result = Negate(vec);
-
-        public static Vector4<T> Cos(Vector4<T> vector) => new Vector4<T>
-            (Scalar.Cos(vector.X), Scalar.Cos(vector.Y), Scalar.Cos(vector.Z), Scalar.Cos(vector.W));
-
-        public static Vector4<T> Sin(Vector4<T> vector) => new Vector4<T>
-            (Scalar.Sin(vector.X), Scalar.Sin(vector.Y), Scalar.Sin(vector.Z), Scalar.Sin(vector.W));
+        [GenerateReferenceFunction]
+        public static Vector4<T> Sin(Vector4<T> vector)
+            => new Vector4<T>(Scalar.Sin(vector.X), Scalar.Sin(vector.Y), Scalar.Sin(vector.Z), Scalar.Sin(vector.W));
 
         public static Vector4<T> operator +(Vector4<T> left, Vector4<T> right) => Add(left, right);
 
@@ -403,6 +299,8 @@ namespace Silk.NET.Maths
 
         public static Vector4<T> operator *(Quaternion<T> quat, Vector4<T> vec) => Transform(vec, quat);
 
+        public static Vector4<T> operator /(Vector4<T> vec, Vector4<T> scale) => Divide(vec, scale);
+
         public static Vector4<T> operator /(Vector4<T> vec, T scale) => Divide(vec, scale);
 
         public static Vector4<T> operator /(T value, Vector4<T> scale) => Divide(value, scale);
@@ -411,8 +309,8 @@ namespace Silk.NET.Maths
 
         public static bool operator !=(Vector4<T> left, Vector4<T> right) => !(left == right);
 
-        public static implicit operator Vector4<T>
-            ((T X, T Y, T Z, T W) values) => new Vector4<T>(values.X, values.Y, values.Z, values.W);
+        public static implicit operator Vector4<T>((T X, T Y, T Z, T W) values)
+            => new Vector4<T>(values.X, values.Y, values.Z, values.W);
 
         public override string ToString() => ToString("G");
 
@@ -423,16 +321,16 @@ namespace Silk.NET.Maths
             var sb = new StringBuilder();
             var separator = NumberFormatInfo.GetInstance(formatProvider).NumberGroupSeparator;
             sb.Append('<');
-            sb.Append(((IFormattable) X).ToString(format, formatProvider));
+            sb.Append(X.ToString(format, formatProvider));
             sb.Append(separator);
             sb.Append(' ');
-            sb.Append(((IFormattable) Y).ToString(format, formatProvider));
+            sb.Append(Y.ToString(format, formatProvider));
             sb.Append(separator);
             sb.Append(' ');
-            sb.Append(((IFormattable) Z).ToString(format, formatProvider));
+            sb.Append(Z.ToString(format, formatProvider));
             sb.Append(separator);
             sb.Append(' ');
-            sb.Append(((IFormattable) W).ToString(format, formatProvider));
+            sb.Append(W.ToString(format, formatProvider));
             sb.Append('>');
             return sb.ToString();
         }
@@ -441,11 +339,8 @@ namespace Silk.NET.Maths
 
         public override bool Equals(object? obj) => obj is Vector4<T> vec && Equals(vec);
 
-        public bool Equals(Vector4<T> other) =>
-            Equal(X, other.X)
-            && Equal(Y, other.Y)
-            && Equal(Z, other.Z)
-            && Equal(W, other.W);
+        public bool Equals(Vector4<T> other)
+            => Equal(X, other.X) && Equal(Y, other.Y) && Equal(Z, other.Z) && Equal(W, other.W);
 
         public void Deconstruct(out T x, out T y, out T z, out T w)
         {
@@ -454,36 +349,49 @@ namespace Silk.NET.Maths
             z = Z;
             w = W;
         }
+
 #if INTRINSICS
         public Vector64<T> AsVector64()
         {
             if (typeof(T) == typeof(byte))
             {
-                return (Vector64<T>) (object) Vector64.Create
-                    ((byte) (object) X, (byte) (object) Y, (byte) (object) Z, (byte) (object) W, 0, 0, 0, 0);
+                return
+                    (Vector64<T>)
+                        (object)
+                            Vector64.Create
+                                ((byte) (object) X, (byte) (object) Y, (byte) (object) Z, (byte) (object) W, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (Vector64<T>) (object) Vector64.Create
-                    ((sbyte) (object) X, (sbyte) (object) Y, (sbyte) (object) Z, (sbyte) (object) W, 0, 0, 0, 0);
+                return
+                    (Vector64<T>)
+                        (object)
+                            Vector64.Create
+                                (
+                                    (sbyte) (object) X, (sbyte) (object) Y, (sbyte) (object) Z, (sbyte) (object) W, 0, 0,
+                                    0, 0);
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (Vector64<T>) (object) Vector64.Create
-                    ((ushort) (object) X, (ushort) (object) Y, (ushort) (object) Z, (ushort) (object) W);
+                return
+                    (Vector64<T>)
+                        (object)
+                            Vector64.Create
+                                ((ushort) (object) X, (ushort) (object) Y, (ushort) (object) Z, (ushort) (object) W);
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (Vector64<T>) (object) Vector64.Create
-                    ((short) (object) X, (short) (object) Y, (short) (object) Z, (short) (object) W);
+                return
+                    (Vector64<T>)
+                        (object)
+                            Vector64.Create
+                                ((short) (object) X, (short) (object) Y, (short) (object) Z, (short) (object) W);
             }
 
-            if (typeof(T) == typeof(uint) ||
-                typeof(T) == typeof(int) ||
-                typeof(T) == typeof(Half) ||
+            if (typeof(T) == typeof(uint) || typeof(T) == typeof(int) || typeof(T) == typeof(Half) ||
                 typeof(T) == typeof(float))
             {
                 ThrowNotSupportedByUnderlying<T>();
@@ -497,44 +405,62 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(byte))
             {
-                return (Vector128<T>) (object) Vector128.Create
-                (
-                    (byte) (object) X, (byte) (object) Y, (byte) (object) Z, (byte) (object) W, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0
-                );
+                return
+                    (Vector128<T>)
+                        (object)
+                            Vector128.Create
+                                (
+                                    (byte) (object) X, (byte) (object) Y, (byte) (object) Z, (byte) (object) W, 0, 0, 0,
+                                    0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (Vector128<T>) (object) Vector128.Create
-                (
-                    (sbyte) (object) X, (sbyte) (object) Y, (sbyte) (object) Z, (sbyte) (object) W, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0
-                );
+                return
+                    (Vector128<T>)
+                        (object)
+                            Vector128.Create
+                                (
+                                    (sbyte) (object) X, (sbyte) (object) Y, (sbyte) (object) Z, (sbyte) (object) W, 0, 0,
+                                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (Vector128<T>) (object) Vector128.Create
-                    ((ushort) (object) X, (ushort) (object) Y, (ushort) (object) Z, (ushort) (object) W, 0, 0, 0, 0);
+                return
+                    (Vector128<T>)
+                        (object)
+                            Vector128.Create
+                                (
+                                    (ushort) (object) X, (ushort) (object) Y, (ushort) (object) Z, (ushort) (object) W,
+                                    0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (Vector128<T>) (object) Vector128.Create
-                    ((short) (object) X, (short) (object) Y, (short) (object) Z, (short) (object) W, 0, 0, 0, 0);
+                return
+                    (Vector128<T>)
+                        (object)
+                            Vector128.Create
+                                (
+                                    (short) (object) X, (short) (object) Y, (short) (object) Z, (short) (object) W, 0, 0,
+                                    0, 0);
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (Vector128<T>) (object) Vector128.Create
-                    ((uint) (object) X, (uint) (object) Y, (uint) (object) Z, (uint) (object) W);
+                return
+                    (Vector128<T>)
+                        (object)
+                            Vector128.Create((uint) (object) X, (uint) (object) Y, (uint) (object) Z, (uint) (object) W);
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (Vector128<T>) (object) Vector128.Create
-                    ((int) (object) X, (int) (object) Y, (int) (object) Z, (int) (object) W);
+                return
+                    (Vector128<T>)
+                        (object)
+                            Vector128.Create((int) (object) X, (int) (object) Y, (int) (object) Z, (int) (object) W);
             }
 
             if (typeof(T) == typeof(ulong) || typeof(T) == typeof(long) || typeof(T) == typeof(Half) ||
@@ -545,8 +471,11 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(float))
             {
-                return (Vector128<T>) (object) Vector128.Create
-                    ((float) (object) X, (float) (object) Y, (float) (object) Z, (float) (object) W);
+                return
+                    (Vector128<T>)
+                        (object)
+                            Vector128.Create
+                                ((float) (object) X, (float) (object) Y, (float) (object) Z, (float) (object) W);
             }
 
             ThrowInvalidType();
@@ -557,62 +486,81 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(byte))
             {
-                return (Vector256<T>) (object) Vector256.Create
-                (
-                    (byte) (object) X, (byte) (object) Y, (byte) (object) Z, (byte) (object) W, 0, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-                );
+                return
+                    (Vector256<T>)
+                        (object)
+                            Vector256.Create
+                                (
+                                    (byte) (object) X, (byte) (object) Y, (byte) (object) Z, (byte) (object) W, 0, 0, 0,
+                                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (Vector256<T>) (object) Vector256.Create
-                (
-                    (sbyte) (object) X, (sbyte) (object) Y, (sbyte) (object) Z, (sbyte) (object) W, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-                );
+                return
+                    (Vector256<T>)
+                        (object)
+                            Vector256.Create
+                                (
+                                    (sbyte) (object) X, (sbyte) (object) Y, (sbyte) (object) Z, (sbyte) (object) W, 0, 0,
+                                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (Vector256<T>) (object) Vector256.Create
-                (
-                    (ushort) (object) X, (ushort) (object) Y, (ushort) (object) Z, (ushort) (object) W, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0
-                );
+                return
+                    (Vector256<T>)
+                        (object)
+                            Vector256.Create
+                                (
+                                    (ushort) (object) X, (ushort) (object) Y, (ushort) (object) Z, (ushort) (object) W,
+                                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (Vector256<T>) (object) Vector256.Create
-                (
-                    (short) (object) X, (short) (object) Y, (short) (object) Z, (short) (object) W, 0, 0, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 0
-                );
+                return
+                    (Vector256<T>)
+                        (object)
+                            Vector256.Create
+                                (
+                                    (short) (object) X, (short) (object) Y, (short) (object) Z, (short) (object) W, 0, 0,
+                                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (Vector256<T>) (object) Vector256.Create
-                    ((uint) (object) X, (uint) (object) Y, (uint) (object) Z, (uint) (object) W, 0, 0, 0, 0);
+                return
+                    (Vector256<T>)
+                        (object)
+                            Vector256.Create
+                                ((uint) (object) X, (uint) (object) Y, (uint) (object) Z, (uint) (object) W, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (Vector256<T>) (object) Vector256.Create
-                    ((int) (object) X, (int) (object) Y, (int) (object) Z, (int) (object) W, 0, 0, 0, 0);
+                return
+                    (Vector256<T>)
+                        (object)
+                            Vector256.Create
+                                ((int) (object) X, (int) (object) Y, (int) (object) Z, (int) (object) W, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(ulong))
             {
-                return (Vector256<T>) (object) Vector256.Create
-                    ((ulong) (object) X, (ulong) (object) Y, (ulong) (object) Z, (ulong) (object) W);
+                return
+                    (Vector256<T>)
+                        (object)
+                            Vector256.Create
+                                ((ulong) (object) X, (ulong) (object) Y, (ulong) (object) Z, (ulong) (object) W);
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (Vector256<T>) (object) Vector256.Create
-                    ((long) (object) X, (long) (object) Y, (long) (object) Z, (long) (object) W);
+                return
+                    (Vector256<T>)
+                        (object)
+                            Vector256.Create((long) (object) X, (long) (object) Y, (long) (object) Z, (long) (object) W);
             }
 
             if (typeof(T) == typeof(Half))
@@ -622,14 +570,22 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(float))
             {
-                return (Vector256<T>) (object) Vector256.Create
-                    ((float) (object) X, (float) (object) Y, (float) (object) Z, (float) (object) W, 0, 0, 0, 0);
+                return
+                    (Vector256<T>)
+                        (object)
+                            Vector256.Create
+                                (
+                                    (float) (object) X, (float) (object) Y, (float) (object) Z, (float) (object) W, 0, 0,
+                                    0, 0);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (Vector256<T>) (object) Vector256.Create
-                    ((double) (object) X, (double) (object) Y, (double) (object) Z, (double) (object) W);
+                return
+                    (Vector256<T>)
+                        (object)
+                            Vector256.Create
+                                ((double) (object) X, (double) (object) Y, (double) (object) Z, (double) (object) W);
             }
 
             ThrowInvalidType();
@@ -638,6 +594,7 @@ namespace Silk.NET.Maths
 #endif
 
 #if BTEC_INTRINSICS
+        // @formatter:off
         public unsafe Vector<T> AsVector()
         {
             if (Vector<T>.Count >= 4)
@@ -650,6 +607,7 @@ namespace Silk.NET.Maths
             ThrowVectorTTooSmall();
             return default; // not reached
         }
+        // @formatter:on
 #endif
     }
 }
