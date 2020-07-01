@@ -1,10 +1,9 @@
-﻿// This file is part of Silk.NET.
-// 
-// You may modify and distribute Silk.NET under the terms
-// of the MIT license. See the LICENSE file for details.
+#region
 
 using System;
 using System.Globalization;
+
+#endregion
 
 namespace Silk.NET.Maths
 {
@@ -31,19 +30,8 @@ namespace Silk.NET.Maths
 
         public Matrix3X3(Vector3<T> row0, Vector3<T> row1, Vector3<T> row2) => throw new NotImplementedException();
 
-        public Matrix3X3
-        (
-            T m00,
-            T m01,
-            T m02,
-            T m10,
-            T m11,
-            T m12,
-            T m20,
-            T m21,
-            T m22
-        ) =>
-            throw new NotImplementedException();
+        public Matrix3X3(T m00, T m01, T m02, T m10, T m11, T m12, T m20, T m21, T m22)
+            => throw new NotImplementedException();
 
         public Matrix3X3(Matrix4X4<T> matrix) => throw new NotImplementedException();
 
@@ -87,13 +75,13 @@ namespace Silk.NET.Maths
 
         public Quaternion<T> ExtractRotation(bool rowNormalize = true) => throw new NotImplementedException();
 
-        public static void CreateFromAxisAngle
-            (Vector3<T> axis, T angle, out Matrix3X3<T> result) => throw new NotImplementedException();
+        public static void CreateFromAxisAngle(Vector3<T> axis, T angle, out Matrix3X3<T> result)
+            => throw new NotImplementedException();
 
         public static Matrix3X3<T> CreateFromAxisAngle(Vector3<T> axis, T angle) => throw new NotImplementedException();
 
-        public static void CreateFromQuaternion
-            (ref Quaternion<T> q, out Matrix3X3<T> result) => throw new NotImplementedException();
+        public static void CreateFromQuaternion(ref Quaternion<T> q, out Matrix3X3<T> result)
+            => throw new NotImplementedException();
 
         public static Matrix3X3<T> CreateFromQuaternion(Quaternion<T> q) => throw new NotImplementedException();
 
@@ -117,23 +105,21 @@ namespace Silk.NET.Maths
 
         public static void CreateScale(T scale, out Matrix3X3<T> result) => throw new NotImplementedException();
 
-        public static void CreateScale
-            (ref Vector3<T> scale, out Matrix3X3<T> result) => throw new NotImplementedException();
+        public static void CreateScale(ref Vector3<T> scale, out Matrix3X3<T> result)
+            => throw new NotImplementedException();
 
         public static void CreateScale(T x, T y, T z, out Matrix3X3<T> result) => throw new NotImplementedException();
 
         public static Matrix3X3<T> Add(Matrix3X3<T> left, Matrix3X3<T> right) => throw new NotImplementedException();
 
-        public static void Add
-            (ref Matrix3X3<T> left, ref Matrix3X3<T> right, out Matrix3X3<T> result) =>
-            throw new NotImplementedException();
+        public static void Add(ref Matrix3X3<T> left, ref Matrix3X3<T> right, out Matrix3X3<T> result)
+            => throw new NotImplementedException();
 
-        public static Matrix3X3<T> Multiply
-            (Matrix3X3<T> left, Matrix3X3<T> right) => throw new NotImplementedException();
+        public static Matrix3X3<T> Multiply(Matrix3X3<T> left, Matrix3X3<T> right)
+            => throw new NotImplementedException();
 
-        public static void Multiply
-            (ref Matrix3X3<T> left, ref Matrix3X3<T> right, out Matrix3X3<T> result) =>
-            throw new NotImplementedException();
+        public static void Multiply(ref Matrix3X3<T> left, ref Matrix3X3<T> right, out Matrix3X3<T> result)
+            => throw new NotImplementedException();
 
         public static void Invert(ref Matrix3X3<T> mat, out Matrix3X3<T> result) => throw new NotImplementedException();
 
@@ -141,11 +127,11 @@ namespace Silk.NET.Maths
 
         public static Matrix3X3<T> Transpose(Matrix3X3<T> mat) => throw new NotImplementedException();
 
-        public static void Transpose
-            (ref Matrix3X3<T> mat, out Matrix3X3<T> result) => throw new NotImplementedException();
+        public static void Transpose(ref Matrix3X3<T> mat, out Matrix3X3<T> result)
+            => throw new NotImplementedException();
 
-        public static Matrix3X3<T> operator *
-            (Matrix3X3<T> left, Matrix3X3<T> right) => throw new NotImplementedException();
+        public static Matrix3X3<T> operator *(Matrix3X3<T> left, Matrix3X3<T> right)
+            => throw new NotImplementedException();
 
         public static bool operator ==(Matrix3X3<T> left, Matrix3X3<T> right) => throw new NotImplementedException();
 

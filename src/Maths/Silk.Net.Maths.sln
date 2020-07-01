@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths", "Silk.NET.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.Net.Maths.Tests", "Silk.Net.Maths.Tests\Silk.Net.Maths.Tests.csproj", "{34F0A2D1-BF50-4D84-882F-4030D8493B91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertHelper", "ConvertHelper\ConvertHelper.csproj", "{E9682FDC-BCDF-4E23-8787-48EB900A37DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.Net.Maths.Generator", "Silk.Net.Maths.Generator\Silk.Net.Maths.Generator.csproj", "{C841D447-9D21-49F7-B033-58DBA178E7FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{34F0A2D1-BF50-4D84-882F-4030D8493B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34F0A2D1-BF50-4D84-882F-4030D8493B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34F0A2D1-BF50-4D84-882F-4030D8493B91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9682FDC-BCDF-4E23-8787-48EB900A37DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9682FDC-BCDF-4E23-8787-48EB900A37DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9682FDC-BCDF-4E23-8787-48EB900A37DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9682FDC-BCDF-4E23-8787-48EB900A37DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C841D447-9D21-49F7-B033-58DBA178E7FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C841D447-9D21-49F7-B033-58DBA178E7FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C841D447-9D21-49F7-B033-58DBA178E7FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C841D447-9D21-49F7-B033-58DBA178E7FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,58 +1,50 @@
-﻿using System;
+#region
+
+using System;
 using AutoFixture;
 using FluentAssertions;
 using Silk.NET.Maths;
 using Xunit;
 using static Silk.NET.Maths.Scalar;
 
+#endregion
+
 namespace Silk.Net.Maths.Tests
 {
-    public class ByteScalarTests : UnsignedScalarTests<byte>
+    public class A
     {
+        [Fact]
+        public void B()
+        {
+            var a = Vector4<float>.One;
+            Vector4<float>.Multiply(ref a, 2, out var result);
+            Assert.Equal(new Vector4<float>(2), result);
+        }
     }
+    
+    public class ByteScalarTests : UnsignedScalarTests<byte> { }
 
-    public class SByteScalarTests : SignedScalarTests<sbyte>
-    {
-    }
+    public class SByteScalarTests : SignedScalarTests<sbyte> { }
 
-    public class UShortScalarTests : UnsignedScalarTests<ushort>
-    {
-    }
+    public class UShortScalarTests : UnsignedScalarTests<ushort> { }
 
-    public class ShortScalarTests : SignedScalarTests<short>
-    {
-    }
+    public class ShortScalarTests : SignedScalarTests<short> { }
 
-    public class UIntScalarTests : UnsignedScalarTests<uint>
-    {
-    }
+    public class UIntScalarTests : UnsignedScalarTests<uint> { }
 
-    public class IntScalarTests : SignedScalarTests<int>
-    {
-    }
+    public class IntScalarTests : SignedScalarTests<int> { }
 
-    public class ULongScalarTests : UnsignedScalarTests<ulong>
-    {
-    }
+    public class ULongScalarTests : UnsignedScalarTests<ulong> { }
 
-    public class LongScalarTests : SignedScalarTests<long>
-    {
-    }
+    public class LongScalarTests : SignedScalarTests<long> { }
 
-    public class HalfScalarTests : FloatingPointScalarTests<Half>
-    {
-    }
+    public class HalfScalarTests : FloatingPointScalarTests<Half> { }
 
-    public class FloatScalarTests : FloatingPointScalarTests<float>
-    {
-    }
+    public class FloatScalarTests : FloatingPointScalarTests<float> { }
 
-    public class DoubleScalarTests : FloatingPointScalarTests<double>
-    {
-    }
+    public class DoubleScalarTests : FloatingPointScalarTests<double> { }
 
-    public abstract class FloatingPointScalarTests<T> : SignedScalarTests<T>
-        where T : unmanaged, IFormattable
+    public abstract class FloatingPointScalarTests<T> : SignedScalarTests<T> where T : unmanaged, IFormattable
     {
         [Fact]
         public T NegativeInfinityDoesNotThrow() => Scalar<T>.NegativeInfinity;
@@ -61,8 +53,7 @@ namespace Silk.Net.Maths.Tests
         public T PositiveInfinityDoesNotThrow() => Scalar<T>.PositiveInfinity;
     }
 
-    public abstract class SignedScalarTests<T> : UnsignedScalarTests<T>
-        where T : unmanaged, IFormattable
+    public abstract class SignedScalarTests<T> : UnsignedScalarTests<T> where T : unmanaged, IFormattable
     {
         [Theory]
         [InlineData(1, -1)]
@@ -70,8 +61,7 @@ namespace Silk.Net.Maths.Tests
         public void Negate(T value, T expected) => Scalar.Negate(value).Should().Be(expected);
     }
 
-    public abstract class UnsignedScalarTests<T>
-        where T : unmanaged, IFormattable
+    public abstract class UnsignedScalarTests<T> where T : unmanaged, IFormattable
     {
         [Theory]
         [InlineData(1, 1, 2)]
@@ -151,8 +141,8 @@ namespace Silk.Net.Maths.Tests
         public void ThrowIndexOutOfRangeThrows() => Assert.Throws<IndexOutOfRangeException>(ThrowIndexOutOfRange);
 
         [Fact]
-        public void ThrowNotSupportedByUnderlying() => Assert.Throws<NotSupportedException>
-            (Scalar.ThrowNotSupportedByUnderlying<T>);
+        public void ThrowNotSupportedByUnderlying()
+            => Assert.Throws<NotSupportedException>(Scalar.ThrowNotSupportedByUnderlying<T>);
 
         [Fact]
         public void ThrowVectorTTooSmall() => Assert.Throws<NotSupportedException>(Scalar.ThrowVectorTTooSmall);
@@ -179,10 +169,7 @@ namespace Silk.Net.Maths.Tests
         {
             var fixture = new Fixture();
             Assert.Throws<NotSupportedException>
-            (
-                () => Scalar.Clamp
-                    (fixture.Create<DateTime>(), fixture.Create<DateTime>(), fixture.Create<DateTime>())
-            );
+                (() => Scalar.Clamp(fixture.Create<DateTime>(), fixture.Create<DateTime>(), fixture.Create<DateTime>()));
         }
 
         [Fact]
@@ -247,8 +234,7 @@ namespace Silk.Net.Maths.Tests
         public void Negate()
         {
             var fixture = new Fixture();
-            Assert.Throws<NotSupportedException>
-                (() => Scalar.Negate(fixture.Create<DateTime>()));
+            Assert.Throws<NotSupportedException>(() => Scalar.Negate(fixture.Create<DateTime>()));
         }
 
         [Fact]

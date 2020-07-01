@@ -1,10 +1,9 @@
-﻿// This file is part of Silk.NET.
-// 
-// You may modify and distribute Silk.NET under the terms
-// of the MIT license. See the LICENSE file for details.
+#region
 
 using System;
 using System.Globalization;
+
+#endregion
 
 namespace Silk.NET.Maths
 {
@@ -28,21 +27,10 @@ namespace Silk.NET.Maths
         public T M41 => Row3.X;
         public T M42 => Row3.Y;
 
-        public Matrix4X2
-            (Vector2<T> row0, Vector2<T> row1, Vector2<T> row2, Vector2<T> row3) => throw new NotImplementedException();
+        public Matrix4X2(Vector2<T> row0, Vector2<T> row1, Vector2<T> row2, Vector2<T> row3)
+            => throw new NotImplementedException();
 
-        public Matrix4X2
-        (
-            T m00,
-            T m01,
-            T m10,
-            T m11,
-            T m20,
-            T m21,
-            T m30,
-            T m31
-        ) =>
-            throw new NotImplementedException();
+        public Matrix4X2(T m00, T m01, T m10, T m11, T m20, T m21, T m30, T m31) => throw new NotImplementedException();
 
         public Vector4<T> Column0
         {
@@ -78,8 +66,7 @@ namespace Silk.NET.Maths
 
         public static Matrix4X2<T> CreateScale(T scale) => throw new NotImplementedException();
 
-        public static void CreateScale
-            (Vector2<T> scale, out Matrix4X2<T> result) => throw new NotImplementedException();
+        public static void CreateScale(Vector2<T> scale, out Matrix4X2<T> result) => throw new NotImplementedException();
 
         public static Matrix4X2<T> CreateScale(Vector2<T> scale) => throw new NotImplementedException();
 
@@ -87,47 +74,42 @@ namespace Silk.NET.Maths
 
         public static Matrix4X2<T> CreateScale(T x, T y) => throw new NotImplementedException();
 
-        public static void Multiply
-            (ref Matrix4X2<T> left, T right, out Matrix4X2<T> result) => throw new NotImplementedException();
+        public static void Multiply(ref Matrix4X2<T> left, T right, out Matrix4X2<T> result)
+            => throw new NotImplementedException();
 
         public static Matrix4X2<T> Multiply(Matrix4X2<T> left, T right) => throw new NotImplementedException();
 
-        public static void Multiply
-            (ref Matrix4X2<T> left, ref Matrix2X2<T> right, out Matrix4X2<T> result) =>
-            throw new NotImplementedException();
+        public static void Multiply(ref Matrix4X2<T> left, ref Matrix2X2<T> right, out Matrix4X2<T> result)
+            => throw new NotImplementedException();
 
-        public static Matrix4X2<T> Multiply
-            (Matrix4X2<T> left, Matrix2X2<T> right) => throw new NotImplementedException();
+        public static Matrix4X2<T> Multiply(Matrix4X2<T> left, Matrix2X2<T> right)
+            => throw new NotImplementedException();
 
-        public static void Multiply
-            (ref Matrix4X2<T> left, ref Matrix2X3<T> right, out Matrix4X3<T> result) =>
-            throw new NotImplementedException();
+        public static void Multiply(ref Matrix4X2<T> left, ref Matrix2X3<T> right, out Matrix4X3<T> result)
+            => throw new NotImplementedException();
 
-        public static Matrix4X3<T> Multiply
-            (Matrix4X2<T> left, Matrix2X3<T> right) => throw new NotImplementedException();
+        public static Matrix4X3<T> Multiply(Matrix4X2<T> left, Matrix2X3<T> right)
+            => throw new NotImplementedException();
 
-        public static void Multiply
-            (ref Matrix4X2<T> left, ref Matrix2X4<T> right, out Matrix4X4<T> result) =>
-            throw new NotImplementedException();
+        public static void Multiply(ref Matrix4X2<T> left, ref Matrix2X4<T> right, out Matrix4X4<T> result)
+            => throw new NotImplementedException();
 
-        public static Matrix4X4<T> Multiply
-            (Matrix4X2<T> left, Matrix2X4<T> right) => throw new NotImplementedException();
+        public static Matrix4X4<T> Multiply(Matrix4X2<T> left, Matrix2X4<T> right)
+            => throw new NotImplementedException();
 
-        public static void Add
-            (ref Matrix4X2<T> left, ref Matrix4X2<T> right, out Matrix4X2<T> result) =>
-            throw new NotImplementedException();
+        public static void Add(ref Matrix4X2<T> left, ref Matrix4X2<T> right, out Matrix4X2<T> result)
+            => throw new NotImplementedException();
 
         public static Matrix4X2<T> Add(Matrix4X2<T> left, Matrix4X2<T> right) => throw new NotImplementedException();
 
-        public static void Subtract
-            (ref Matrix4X2<T> left, ref Matrix4X2<T> right, out Matrix4X2<T> result) =>
-            throw new NotImplementedException();
+        public static void Subtract(ref Matrix4X2<T> left, ref Matrix4X2<T> right, out Matrix4X2<T> result)
+            => throw new NotImplementedException();
 
-        public static Matrix4X2<T> Subtract
-            (Matrix4X2<T> left, Matrix4X2<T> right) => throw new NotImplementedException();
+        public static Matrix4X2<T> Subtract(Matrix4X2<T> left, Matrix4X2<T> right)
+            => throw new NotImplementedException();
 
-        public static void Transpose
-            (ref Matrix4X2<T> mat, out Matrix2X4<T> result) => throw new NotImplementedException();
+        public static void Transpose(ref Matrix4X2<T> mat, out Matrix2X4<T> result)
+            => throw new NotImplementedException();
 
         public static Matrix2X4<T> Transpose(Matrix4X2<T> mat) => throw new NotImplementedException();
 
@@ -135,20 +117,20 @@ namespace Silk.NET.Maths
 
         public static Matrix4X2<T> operator *(Matrix4X2<T> left, T right) => throw new NotImplementedException();
 
-        public static Matrix4X2<T> operator *
-            (Matrix4X2<T> left, Matrix2X2<T> right) => throw new NotImplementedException();
+        public static Matrix4X2<T> operator *(Matrix4X2<T> left, Matrix2X2<T> right)
+            => throw new NotImplementedException();
 
-        public static Matrix4X3<T> operator *
-            (Matrix4X2<T> left, Matrix2X3<T> right) => throw new NotImplementedException();
+        public static Matrix4X3<T> operator *(Matrix4X2<T> left, Matrix2X3<T> right)
+            => throw new NotImplementedException();
 
-        public static Matrix4X4<T> operator *
-            (Matrix4X2<T> left, Matrix2X4<T> right) => throw new NotImplementedException();
+        public static Matrix4X4<T> operator *(Matrix4X2<T> left, Matrix2X4<T> right)
+            => throw new NotImplementedException();
 
-        public static Matrix4X2<T> operator +
-            (Matrix4X2<T> left, Matrix4X2<T> right) => throw new NotImplementedException();
+        public static Matrix4X2<T> operator +(Matrix4X2<T> left, Matrix4X2<T> right)
+            => throw new NotImplementedException();
 
-        public static Matrix4X2<T> operator -
-            (Matrix4X2<T> left, Matrix4X2<T> right) => throw new NotImplementedException();
+        public static Matrix4X2<T> operator -(Matrix4X2<T> left, Matrix4X2<T> right)
+            => throw new NotImplementedException();
 
         public static bool operator ==(Matrix4X2<T> left, Matrix4X2<T> right) => throw new NotImplementedException();
 

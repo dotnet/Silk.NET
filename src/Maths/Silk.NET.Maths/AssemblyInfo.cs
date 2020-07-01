@@ -1,3 +1,7 @@
-﻿using System;
+#region
+
+using System;
+
+#endregion
 
 [assembly: CLSCompliant(true)]
