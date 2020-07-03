@@ -37467,6 +37467,41 @@
               "Attributes": []
             },
             {
+              "Name": "DeviceUuidKhr",
+              "NativeName": "CL_DEVICE_UUID_KHR",
+              "Value": "0x106A",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DriverUuidKhr",
+              "NativeName": "CL_DRIVER_UUID_KHR",
+              "Value": "0x106B",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceLuidValidKhr",
+              "NativeName": "CL_DEVICE_LUID_VALID_KHR",
+              "Value": "0x106C",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceLuidKhr",
+              "NativeName": "CL_DEVICE_LUID_KHR",
+              "Value": "0x106D",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceNodeMaskKhr",
+              "NativeName": "CL_DEVICE_NODE_MASK_KHR",
+              "Value": "0x106E",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
               "Name": "InvalidDX9MediaAdapterKhr",
               "NativeName": "CL_INVALID_DX9_MEDIA_ADAPTER_KHR",
               "Value": "unchecked((int)0xFFFFFFFFFFFFFC0E)",
@@ -50498,20 +50533,6 @@
               "Attributes": []
             },
             {
-              "Name": "MigrateMemObjectHostIntel",
-              "NativeName": "CL_MIGRATE_MEM_OBJECT_HOST_INTEL",
-              "Value": "0x1",
-              "Doc": "",
-              "Attributes": []
-            },
-            {
-              "Name": "MigrateMemObjectContentUndefinedIntel",
-              "NativeName": "CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED_INTEL",
-              "Value": "0x2",
-              "Doc": "",
-              "Attributes": []
-            },
-            {
               "Name": "InvalidVAApiMediaAdapterIntel",
               "NativeName": "CL_INVALID_VA_API_MEDIA_ADAPTER_INTEL",
               "Value": "unchecked((int)0xFFFFFFFFFFFFFBB6)",
@@ -55449,7 +55470,7 @@
                     "ArrayDimensions": 0,
                     "Name": "INTEL",
                     "Group": null,
-                    "OriginalName": "cl_mem_migration_flags_intel",
+                    "OriginalName": "cl_mem_migration_flags",
                     "OriginalGroup": null,
                     "GenericTypes": [],
                     "IsByRef": false,
@@ -55610,7 +55631,7 @@
                     "ArrayDimensions": 0,
                     "Name": "INTEL",
                     "Group": null,
-                    "OriginalName": "cl_mem_migration_flags_intel",
+                    "OriginalName": "cl_mem_migration_flags",
                     "OriginalGroup": null,
                     "GenericTypes": [],
                     "IsByRef": false,

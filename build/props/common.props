@@ -5,17 +5,21 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <LangVersion>8.0</LangVersion>
         <PackageReleaseNotes>
-            Silk.NET June 2020 Update
+            Silk.NET July 2020 Update
 
-            - FPS stabilization improvements
-            - Vulkan loader improvements
-            - Support EGL_NV_stream_consumer_eglimage
+            - Update to OpenCL v3.0.1 (Provisional Specification)
+            - Update to Vulkan v1.2.145
+            - Update to SuperInvoke v1.1.0
+            - Added an IGLContext implementation (GlfwContext) to Silk.NET.GLFW
+            - Added glfwSetFramebufferSizeCallback to Silk.NET.GLFW
+            - Fixed some cases of first-chance exceptions when loading native libraries
+            - Miscellaneous bug fixes and improvements
         </PackageReleaseNotes>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/Ultz/Silk.NET</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <VersionPrefix>1.3.0</VersionPrefix>
+        <VersionPrefix>1.4.0</VersionPrefix>
         <VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
         <Description>
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, GLFW, and Vulkan.
