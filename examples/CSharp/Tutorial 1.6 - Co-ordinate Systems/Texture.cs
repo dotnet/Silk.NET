@@ -1,10 +1,9 @@
 using Silk.NET.OpenGL;
-using System;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
-using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.Advanced;
 using SixLabors.ImageSharp.Processing;
+using System;
+using System.Runtime.InteropServices;
 
 namespace Tutorial
 {
@@ -18,7 +17,7 @@ namespace Tutorial
             Image<Rgba32> img = (Image<Rgba32>)Image.Load(path);
             img.Mutate(x => x.Flip(FlipMode.Vertical));
 
-            fixed (void* data = &MemoryMarshal.GetReference(img.GetPixelSpan()))
+            fixed (void* data = &MemoryMarshal.GetReference(img.GetPixelRowSpan(0)))
             {
                 Load(gl, data, (uint)img.Width, (uint)img.Height);
             }
