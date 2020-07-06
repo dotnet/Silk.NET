@@ -74,7 +74,7 @@ namespace Silk.NET.Maths.Generator {
                 context.AddSource(name, SourceText.From(s, Encoding.UTF8));
                 // File.WriteAllText($"./{name}.gen", s);
             }
-/*
+
             foreach (var group in methodGroups)
             {
                 var s = ProcessClass_GenerateProperties(group.Key, group.ToList());
@@ -86,7 +86,7 @@ namespace Silk.NET.Maths.Generator {
                 context.AddSource(name, SourceText.From(s, Encoding.UTF8));
                 // File.WriteAllText($"./{name}.gen", s);
             }
-            */
+
             foreach (var group in methodGroups)
             {
                 var s = ProcessClass_GenerateOperators(group.Key, group.ToList());
