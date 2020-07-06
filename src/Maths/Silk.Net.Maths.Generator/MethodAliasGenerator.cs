@@ -135,6 +135,20 @@ namespace {namespaceName}
 
             foreach (var method in methods)
             {
+                if (method.MethodKind != MethodKind.Ordinary) continue;
+
+                // special case for "Negate"
+                if (method.Parameters.Length == 1 && method.Name == "Negate" && SymbolEqualityComparer.Default.Equals(method.Parameters[0].Type, method.Parameters[0].ContainingType) && method.Parameters[0].RefKind == RefKind.None)
+                {
+                    source.Append(
+                        $"[MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]" +
+                        $"public static {method.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)} operator "+
+                        $"-({method.Parameters[0].Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)} {method.Parameters[0].Name})" +
+                        $" => {method.Name}({method.Parameters[0].Name});"
+                    );
+                    continue;
+                }
+                
                 // ignore non-binary
                 // ignore methods without `this` parameter
                 // ignore ref/in/out parameters
@@ -156,13 +170,11 @@ namespace {namespaceName}
                 // public static Vector4<T> operator /(Vector4<T> vec, T scale) => Divide(vec, scale);
                 source.Append
                 (
+                    $"[MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]" +
                     $"public static {method.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)} operator " +
                     $"{o}({method.Parameters[0].Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)} {method.Parameters[0].Name}," +
                     $" {method.Parameters[1].Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)} {method.Parameters[1].Name})" +
-                    $" {{ " +
-                    $"[MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]" +
-                    $"get => {method.Name}({method.Parameters[0].Name}, {method.Parameters[1].Name});" +
-                    $" }}"
+                    $"=> {method.Name}({method.Parameters[0].Name}, {method.Parameters[1].Name});"
                 );
             }
 
@@ -206,16 +218,19 @@ namespace {namespaceName}
 
             foreach (var method in methods)
             {
-                // ignore methods that don't have themselves as first parameter (this)
+                if (method.MethodKind != MethodKind.Ordinary) continue;
+                
+                // ignore methods that don't have themselves as first and only parameter (this)
                 if (method.Parameters.Length != 1 || 
-                    !method.Parameters[0].Type.Equals(method.ContainingType, SymbolEqualityComparer.Default)) continue;
+                    !method.Parameters[0].Type.Equals(method.ContainingType, SymbolEqualityComparer.Default) ||
+                    !method.Name.StartsWith("Get")) continue;
 
                 // ignore ref/in/out first parameters
                 if (method.Parameters[0].RefKind != RefKind.None) continue;
 
                 source.Append
                 (
-                    $"public readonly {method.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)} {method.Name} " +
+                    $"public readonly {method.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)} {method.Name.Substring(3)} " +
                     $" {{ " + 
                     $"[MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]" +
                     $"get => {method.Name}(this);" +
@@ -262,6 +277,8 @@ namespace {namespaceName}
 
             foreach (var method in methods)
             {
+                if (method.MethodKind != MethodKind.Ordinary) continue;
+                
                 source.Append("[MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]");
                 source.Append($"public");
                 if (method.IsStatic)
