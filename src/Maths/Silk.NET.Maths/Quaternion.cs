@@ -133,7 +133,7 @@ namespace Silk.NET.Maths
             }
 
             angle = Divide(angle, Two<T>());
-            axis = axis.Normalized();
+            axis = axis.Normalized;
             return Normalize(new Quaternion<T>(axis * Sin(angle), Cos(angle)));
         }
 
@@ -295,7 +295,7 @@ namespace Silk.NET.Maths
 
             if (Smaller(cosHalfAngle, default))
             {
-                q2 = new Quaternion<T>(Vector4<T>.Negate(q2.Xyzw));
+                q2 = new Quaternion<T>(q2.Xyzw.Negated);
                 cosHalfAngle = Negate(cosHalfAngle);
             }
 

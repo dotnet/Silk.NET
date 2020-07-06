@@ -15,8 +15,4 @@
         <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.0.0-beta2.final" PrivateAssets="all" />
     </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\Silk.Net.Maths.Generator.Shared\Silk.Net.Maths.Generator.Shared.csproj" />
-    </ItemGroup>
-
 </Project>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,43 +14,58 @@ namespace Silk.Net.Maths.Generator
     [Generator]
     public class ReferenceFunctionGenerator : ISourceGenerator
     {
-        // note that attributes are global. Yes this isn't ideal, but the IDE experience is at least acceptable like this
         private const string library = @"using System;
-    [AttributeUsage(AttributeTargets.Method)]
-    public class GenerateReferenceFunctionAttribute : Attribute
-    { }";
+namespace Silk.NET.Maths.Generator {
+    [AttributeUsage(AttributeTargets.Struct)]
+    public class GenerateMethodAliasesAttribute : Attribute
+    { }
+}";
         
         public void Initialize(InitializationContext context)
         {
-            // Register a factory that can create our custom syntax receiver
             context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
         }
 
         public void Execute(SourceGeneratorContext context)
         {
             context.AddSource("silk.net.maths.generator.shared.gen.cs", SourceText.From(library, Encoding.UTF8));
+
             if (!(context.SyntaxReceiver is SyntaxReceiver syntaxReceiver))
                 return;
 
-            var options = (context.Compilation as CSharpCompilation).SyntaxTrees[0].Options as CSharpParseOptions;
+            if (!(context.Compilation is CSharpCompilation cSharpCompilation))
+                return;
+            
+            var options = (cSharpCompilation).SyntaxTrees[0].Options as CSharpParseOptions;
             var compilation = context.Compilation.AddSyntaxTrees
                 (CSharpSyntaxTree.ParseText(SourceText.From(library, Encoding.UTF8), options));
-            var grfattribute = compilation.GetTypeByMetadataName
-                ("GenerateReferenceFunctionAttribute");
-
-            var methodSymbols = (from method in syntaxReceiver.MethodDeclarations
-                let semanticModel = compilation.GetSemanticModel(method.SyntaxTree)
-                select (IMethodSymbol)semanticModel.GetDeclaredSymbol(method)!
+            var att = compilation.GetTypeByMetadataName
+                ("Silk.NET.Maths.Generator.GenerateMethodAliasesAttribute");
+            
+            var structSymbols = (from s in syntaxReceiver.StructDeclarations
+                let semanticModel = compilation.GetSemanticModel(s.SyntaxTree)
+                select (INamedTypeSymbol) semanticModel.GetDeclaredSymbol(s)
                 into symbol
                 where !(symbol is null)
                 where symbol!.GetAttributes()
-                    .Any(x => SymbolEqualityComparer.Default.Equals(x.AttributeClass, grfattribute))
-                group symbol by symbol.ContainingType into g
-                select g);
+                    .Any(x => SymbolEqualityComparer.Default.Equals(x.AttributeClass, att))
+                select symbol)
+                .Distinct()
+                .ToArray();
 
-            foreach (var group in methodSymbols)
+            var methodGroups = (structSymbols.Where
+                    (s => s.ContainingSymbol.Equals(s.ContainingNamespace, SymbolEqualityComparer.Default))
+                .SelectMany(s => s.GetMembers(), (s, member) => new {s, member})
+                .Where(@t => !(@t.member is null))
+                .Where(@t => @t.member is IMethodSymbol)
+                .Select(@t => @t.member as IMethodSymbol)
+                .Where(method => method!.IsStatic)
+                .GroupBy(method => method.ContainingType)
+                .Select(g => g)).ToArray();
+            
+            foreach (var group in methodGroups)
             {
-                var s = ProcessClass(group.Key, group.ToList(), context);
+                var s = ProcessClass_GenerateRefFunctions(group.Key, group.ToList());
                 
                 if (s is null)
                     continue;
@@ -58,19 +74,41 @@ namespace Silk.Net.Maths.Generator
                 context.AddSource(name, SourceText.From(s, Encoding.UTF8));
                 // File.WriteAllText($"./{name}.gen", s);
             }
-        }
+/*
+            foreach (var group in methodGroups)
+            {
+                var s = ProcessClass_GenerateProperties(group.Key, group.ToList());
+                
+                if (s is null)
+                    continue;
 
-        private string? ProcessClass(INamedTypeSymbol structSymbol, List<IMethodSymbol> methods, SourceGeneratorContext 
-        context)
+                var name = $"{@group.Key.Name}.Properties.gen.cs";
+                context.AddSource(name, SourceText.From(s, Encoding.UTF8));
+                // File.WriteAllText($"./{name}.gen", s);
+            }
+            */
+            foreach (var group in methodGroups)
+            {
+                var s = ProcessClass_GenerateOperators(group.Key, group.ToList());
+                
+                if (s is null)
+                    continue;
+
+                var name = $"{@group.Key.Name}.Operators.gen.cs";
+                context.AddSource(name, SourceText.From(s, Encoding.UTF8));
+                // File.WriteAllText($"./{name}.gen", s);
+            }
+        }
+        
+        private string? ProcessClass_GenerateOperators(INamedTypeSymbol structSymbol, List<IMethodSymbol> methods)
         {
-            if (!structSymbol.ContainingSymbol.Equals(structSymbol.ContainingNamespace, SymbolEqualityComparer.Default))
-                return null;
-            
             string namespaceName = structSymbol.ContainingNamespace.ToDisplayString();
 
             StringBuilder source = new StringBuilder
             (
                 $@"
+using System.Runtime.CompilerServices;
+
 namespace {namespaceName}
 {{
     public"
@@ -97,6 +135,134 @@ namespace {namespaceName}
 
             foreach (var method in methods)
             {
+                // ignore non-binary
+                // ignore methods without `this` parameter
+                // ignore ref/in/out parameters
+                if (method.Parameters.Length != 2 ||
+                    !method.Parameters.Any(x => SymbolEqualityComparer.Default.Equals(x.Type, x.ContainingType)) ||
+                    method.Parameters.Any(x => x.RefKind != RefKind.None)) continue;
+
+                var o = method.Name switch
+                {
+                    "Add" => "+",
+                    "Subtract" => "-",
+                    "Divide" => "/",
+                    "Multiply" => "*",
+                    _ => null
+                };
+
+                if (o is null) continue;
+                
+                // public static Vector4<T> operator /(Vector4<T> vec, T scale) => Divide(vec, scale);
+                source.Append
+                (
+                    $"public static {method.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)} operator " +
+                    $"{o}({method.Parameters[0].Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)} {method.Parameters[0].Name}," +
+                    $" {method.Parameters[1].Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)} {method.Parameters[1].Name})" +
+                    $" {{ " +
+                    $"[MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]" +
+                    $"get => {method.Name}({method.Parameters[0].Name}, {method.Parameters[1].Name});" +
+                    $" }}"
+                );
+            }
+
+            source.Append("}}");
+
+            return source.ToString();
+        }
+
+        private string? ProcessClass_GenerateProperties(INamedTypeSymbol structSymbol, List<IMethodSymbol> methods)
+        {
+            string namespaceName = structSymbol.ContainingNamespace.ToDisplayString();
+
+            StringBuilder source = new StringBuilder
+            (
+                $@"
+using System.Runtime.CompilerServices;
+
+namespace {namespaceName}
+{{
+    public"
+            );
+
+            if (structSymbol.IsReadOnly)
+                source.Append(" readonly");
+            
+            source.Append($@" partial struct {structSymbol.Name}");
+            if (structSymbol.IsGenericType)
+            {
+                source.Append("<");
+                for (var index = 0; index < structSymbol.TypeParameters.Length; index++)
+                {
+                    var structSymbolTypeParameter = structSymbol.TypeParameters[index];
+                    source.Append(structSymbolTypeParameter.Name);
+                    if (index + 1 < structSymbol.TypeParameters.Length)
+                        source.Append(",");
+                }
+
+                source.Append(">");
+            }
+            source.Append("   {");
+
+            foreach (var method in methods)
+            {
+                // ignore methods that don't have themselves as first parameter (this)
+                if (method.Parameters.Length != 1 || 
+                    !method.Parameters[0].Type.Equals(method.ContainingType, SymbolEqualityComparer.Default)) continue;
+
+                // ignore ref/in/out first parameters
+                if (method.Parameters[0].RefKind != RefKind.None) continue;
+
+                source.Append
+                (
+                    $"public readonly {method.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)} {method.Name} " +
+                    $" {{ " + 
+                    $"[MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]" +
+                    $"get => {method.Name}(this);" +
+                    $" }}");
+            }
+
+            source.Append("}}");
+
+            return source.ToString();
+        }
+
+        private string? ProcessClass_GenerateRefFunctions(INamedTypeSymbol structSymbol, List<IMethodSymbol> methods)
+        {
+            string namespaceName = structSymbol.ContainingNamespace.ToDisplayString();
+
+            StringBuilder source = new StringBuilder
+            (
+                $@"
+using System.Runtime.CompilerServices;
+
+namespace {namespaceName}
+{{
+    public"
+            );
+
+            if (structSymbol.IsReadOnly)
+                source.Append(" readonly");
+            
+            source.Append($@" partial struct {structSymbol.Name}");
+            if (structSymbol.IsGenericType)
+            {
+                source.Append("<");
+                for (var index = 0; index < structSymbol.TypeParameters.Length; index++)
+                {
+                    var structSymbolTypeParameter = structSymbol.TypeParameters[index];
+                    source.Append(structSymbolTypeParameter.Name);
+                    if (index + 1 < structSymbol.TypeParameters.Length)
+                        source.Append(",");
+                }
+
+                source.Append(">");
+            }
+            source.Append("   {");
+
+            foreach (var method in methods)
+            {
+                source.Append("[MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]");
                 source.Append($"public");
                 if (method.IsStatic)
                     source.Append(" static");
@@ -213,20 +379,20 @@ namespace {namespaceName}
                 source.Append(");");
             }
 
-            source.Append("}}");
+            source.Append("} }");
 
             return source.ToString();
         }
 
         class SyntaxReceiver : ISyntaxReceiver
         {
-            public List<MethodDeclarationSyntax> MethodDeclarations = new List<MethodDeclarationSyntax>();
+            public List<StructDeclarationSyntax> StructDeclarations = new List<StructDeclarationSyntax>();
 
             public void OnVisitSyntaxNode(SyntaxNode syntaxNode)
             {
-                if (syntaxNode is MethodDeclarationSyntax mds)
+                if (syntaxNode is StructDeclarationSyntax sds)
                 {
-                    MethodDeclarations.Add(mds);
+                        StructDeclarations.Add(sds);
                 }
             }
         }

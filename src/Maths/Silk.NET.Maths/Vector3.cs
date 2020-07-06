@@ -16,7 +16,8 @@ using static Silk.NET.Maths.Scalar;
 namespace Silk.NET.Maths
 {
     [Serializable]
-    public readonly partial struct Vector3<T> : IVector3<T, Vector3<T>> where T : unmanaged, IFormattable
+    [Generator.GenerateMethodAliases]
+    public readonly partial struct Vector3<T> where T : unmanaged, IFormattable
     {
         public static Vector3<T> UnitX => new Vector3<T>(Scalar<T>.One, default, default);
         public static Vector3<T> UnitY => new Vector3<T>(default, Scalar<T>.One, default);
@@ -70,28 +71,28 @@ namespace Silk.NET.Maths
             }
         }
 
-        public T Length => SquareRoot(LengthSquared);
+        public static T GetLength(Vector3<T> vec) => SquareRoot(vec.LengthSquared);
 
-        public T LengthSquared => Dot(this, this);
+        public static T GetLengthSquared(Vector3<T> vec) => Dot(vec, vec);
 
-        public Vector3<T> Normalized() => Normalize(this);
+        public static Vector3<T> GetNormalized(Vector3<T> vec) => Normalize(vec);
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Add(Vector3<T> a, Vector3<T> b)
             => new Vector3<T>(Scalar.Add(a.X, b.X), Scalar.Add(a.Y, b.Y), Scalar.Add(a.Z, b.Z));
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Subtract(Vector3<T> a, Vector3<T> b)
             => new Vector3<T>(Scalar.Subtract(a.X, b.X), Scalar.Subtract(a.Y, b.Y), Scalar.Subtract(a.Z, b.Z));
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Multiply(Vector3<T> vector, T scale)
             =>
                 new Vector3<T>
                     (
                     Scalar.Multiply(vector.X, scale), Scalar.Multiply(vector.Y, scale), Scalar.Multiply(vector.Z, scale));
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Multiply(Vector3<T> vector, Vector3<T> scale)
             =>
                 new Vector3<T>
@@ -99,34 +100,34 @@ namespace Silk.NET.Maths
                     Scalar.Multiply(vector.X, scale.X), Scalar.Multiply(vector.Y, scale.Y),
                     Scalar.Multiply(vector.Z, scale.Z));
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Divide(Vector3<T> vector, T scale)
             =>
                 new Vector3<T>
                     (Scalar.Divide(vector.X, scale), Scalar.Divide(vector.Y, scale), Scalar.Divide(vector.Z, scale));
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Divide(Vector3<T> vector, Vector3<T> scale)
             =>
                 new Vector3<T>
                     (
                     Scalar.Divide(vector.X, scale.X), Scalar.Divide(vector.Y, scale.Y), Scalar.Divide(vector.Z, scale.Z));
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Divide(T value, Vector3<T> scale)
             =>
                 new Vector3<T>
                     (Scalar.Divide(value, scale.X), Scalar.Divide(value, scale.Y), Scalar.Divide(value, scale.Z));
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> ComponentMin(Vector3<T> a, Vector3<T> b)
             => new Vector3<T>(Min(a.X, b.X), Min(a.Y, b.Y), Min(a.Z, b.Z));
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> ComponentMax(Vector3<T> a, Vector3<T> b)
             => new Vector3<T>(Max(a.X, b.X), Max(a.Y, b.Y), Max(a.Z, b.Z));
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> MagnitudeMin(Vector3<T> left, Vector3<T> right)
         {
             if (Larger(left.LengthSquared, right.LengthSquared))
@@ -137,7 +138,7 @@ namespace Silk.NET.Maths
             return left;
         }
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> MagnitudeMax(Vector3<T> left, Vector3<T> right)
         {
             if (Larger(left.LengthSquared, right.LengthSquared))
@@ -148,7 +149,7 @@ namespace Silk.NET.Maths
             return right;
         }
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Clamp(Vector3<T> vec, Vector3<T> min, Vector3<T> max)
             =>
                 new Vector3<T>
@@ -156,23 +157,23 @@ namespace Silk.NET.Maths
                     Scalar.Clamp(vec.X, min.X, max.X), Scalar.Clamp(vec.Y, min.Y, max.Y),
                     Scalar.Clamp(vec.Z, min.Z, max.Z));
 
-        [GenerateReferenceFunction]
+        
         public static T Distance(Vector3<T> vec1, Vector3<T> vec2) => (vec1 - vec2).Length;
 
-        [GenerateReferenceFunction]
+        
         public static T DistanceSquared(Vector3<T> vec1, Vector3<T> vec2) => (vec1 - vec2).LengthSquared;
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Normalize(Vector3<T> vec) => vec / vec.Length;
 
-        [GenerateReferenceFunction]
+        
         public static T Dot(Vector3<T> left, Vector3<T> right)
         {
             var mul = left * right;
             return Scalar.Add(mul.X, Scalar.Add(mul.Y, mul.Z));
         }
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Cross(Vector3<T> left, Vector3<T> right)
             =>
                 new Vector3<T>
@@ -181,18 +182,18 @@ namespace Silk.NET.Maths
                     Scalar.Subtract(Scalar.Multiply(left.Z, right.X), Scalar.Multiply(left.X, right.Z)),
                     Scalar.Subtract(Scalar.Multiply(left.X, right.Y), Scalar.Multiply(left.Y, right.X)));
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Lerp(Vector3<T> a, Vector3<T> b, T blend)
             => a * Scalar.Subtract(Scalar<T>.One, blend) + b * blend;
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> BaryCentric(Vector3<T> a, Vector3<T> b, Vector3<T> c, T u, T v)
             =>
                 a * Scalar.Subtract(Scalar<T>.One, u) * Scalar.Subtract(Scalar<T>.One, v) +
                 b * u * Scalar.Subtract(Scalar<T>.One, v) + c * Scalar.Subtract(Scalar<T>.One, u) * v;
 
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Transform(Vector3<T> vec, Matrix3X3<T> mat)
             =>
                 new Vector3<T>
@@ -211,7 +212,7 @@ namespace Silk.NET.Maths
                             Scalar.Add(Scalar.Multiply(vec.Y, mat.M23), Scalar.Multiply(vec.Z, mat.M33))));
         
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Transform(Vector3<T> vec, Quaternion<T> quat)
         {
             var x2 = Scalar.Add(quat.X, quat.X);
@@ -253,11 +254,11 @@ namespace Silk.NET.Maths
                                 Scalar.Multiply(vec.Z, Scalar.Subtract(Scalar<T>.One, Scalar.Subtract(xx2, yy2))))));
         }
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Negate(Vector3<T> vec)
             => new Vector3<T>(Scalar.Negate(vec.X), Scalar.Negate(vec.Y), Scalar.Negate(vec.Z));
 
-        [GenerateReferenceFunction]
+        
         public static T CalculateAngle(Vector3<T> first, Vector3<T> second)
         {
             var dot = Dot(first, second);
@@ -269,39 +270,13 @@ namespace Silk.NET.Maths
                             Scalar.Negate(Scalar<T>.One), Scalar<T>.One));
         }
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Cos(Vector3<T> vector)
             => new Vector3<T>(Scalar.Cos(vector.X), Scalar.Cos(vector.Y), Scalar.Cos(vector.Z));
 
-        [GenerateReferenceFunction]
+        
         public static Vector3<T> Sin(Vector3<T> vector)
             => new Vector3<T>(Scalar.Sin(vector.X), Scalar.Sin(vector.Y), Scalar.Sin(vector.Z));
-
-        public static Vector3<T> operator +(Vector3<T> left, Vector3<T> right) => Add(left, right);
-
-        public static Vector3<T> operator -(Vector3<T> left, Vector3<T> right) => Subtract(left, right);
-
-        public static Vector3<T> operator -(Vector3<T> vec) => Negate(vec);
-
-        public static Vector3<T> operator *(Vector3<T> vec, T scale) => Multiply(vec, scale);
-
-        public static Vector3<T> operator *(T scale, Vector3<T> vec) => Multiply(vec, scale);
-
-        public static Vector3<T> operator *(Vector3<T> vec, Vector3<T> scale) => Multiply(vec, scale);
-
-        public static Vector3<T> operator *(Vector3<T> vec, Matrix3X3<T> mat) => Transform(vec, mat);
-
-        public static Vector3<T> operator *(Matrix3X3<T> mat, Vector3<T> vec) => Transform(vec, mat);
-
-        public static Vector3<T> operator *(Quaternion<T> quat, Vector3<T> vec) => Transform(vec, quat);
-
-        public static Vector3<T> operator *(Vector3<T> vec, Quaternion<T> quat) => Transform(vec, quat);
-
-        public static Vector3<T> operator /(Vector3<T> vec, T scale) => Divide(vec, scale);
-
-        public static Vector3<T> operator /(Vector3<T> vec, Vector3<T> scale) => Divide(vec, scale);
-
-        public static Vector3<T> operator /(T value, Vector3<T> scale) => Divide(value, scale);
 
         public static bool operator ==(Vector3<T> left, Vector3<T> right) => left.Equals(right);
 
