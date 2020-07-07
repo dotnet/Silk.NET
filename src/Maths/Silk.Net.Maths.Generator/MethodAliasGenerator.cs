@@ -278,6 +278,7 @@ namespace {namespaceName}
             foreach (var method in methods)
             {
                 if (method.MethodKind != MethodKind.Ordinary) continue;
+                if (method.ReturnsVoid) continue;
                 
                 source.Append("[MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]");
                 source.Append($"public");
