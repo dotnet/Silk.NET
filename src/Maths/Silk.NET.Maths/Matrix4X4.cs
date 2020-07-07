@@ -2,13 +2,14 @@
 
 using System;
 using System.Globalization;
-
+using static Silk.NET.Maths.Scalar;
 #endregion
 
 namespace Silk.NET.Maths
 {
     [Serializable]
-    public readonly struct Matrix4X4<T> : IEquatable<Matrix4X4<T>>, IFormattable where T : unmanaged, IFormattable
+    [Generator.GenerateMethodAliases]
+    public readonly partial struct Matrix4X4<T> : IEquatable<Matrix4X4<T>>, IFormattable where T : unmanaged, IFormattable
     {
         public static Matrix4X4<T> Identity
             => new Matrix4X4<T>(Vector4<T>.UnitX, Vector4<T>.UnitY, Vector4<T>.UnitZ, Vector4<T>.UnitW);
@@ -118,159 +119,77 @@ namespace Silk.NET.Maths
         public Matrix4X4<T> WithM44(T m44) => WithRow3(new Vector4<T>(M41, M42, M43, m44));
 
         public T Determinant => Scalar.Add(Scalar.Subtract(Scalar.Add(Scalar.Subtract(Scalar.Add(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar.Subtract(Scalar.Add(Scalar.Subtract(Scalar.Add(Scalar.Add(Scalar.Subtract(Scalar.Add(Scalar.Subtract(Scalar.Add(Scalar.Subtract(Scalar.Subtract(Scalar.Add(Scalar.Subtract(Scalar.Add(Scalar.Subtract(Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M11, M22), M33), M44), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M11, M22), M34), M43)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M11, M23), M34), M42)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M11, M23), M32), M44)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M11, M24), M32), M43)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M11, M24), M33), M42)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M12, M23), M34), M41)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M12, M23), M31), M44)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M12, M24), M31), M43)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M12, M24), M33), M41)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M12, M21), M33), M44)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M12, M21), M34), M43)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M13, M24), M31), M42)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M13, M24), M32), M41)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M13, M21), M32), M44)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M13, M21), M34), M42)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M13, M22), M34), M41)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M13, M22), M31), M44)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M14, M21), M32), M43)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M14, M21), M33), M42)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M14, M22), M33), M41)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M14, M22), M31), M43)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M14, M23), M31), M42)), Scalar.Multiply(Scalar.Multiply(Scalar.Multiply(M14, M23), M32), M41));
-        public Vector4<T> Column0 => new Vector4<T>(M11, M21, M31, M41);
-
-        public Vector4<T> Column1 => new Vector4<T>(M12, M22, M32, M42);
-
-        public Vector4<T> Column2 => new Vector4<T>(M13, M23, M33, M43);
-
-        public Vector4<T> Column3 => new Vector4<T>(M14, M24, M34, M44);
-
-        public Vector4<T> Diagonal => new Vector4<T>(M11, M22, M33, M44);
-
-        public T Trace => Scalar.Add(Scalar.Add(Scalar.Add(Row0.X, Row1.Y), Row2.Z), Row3.W);
+        public static Vector4<T> GetColumn0(Matrix4X4<T> mat) => new Vector4<T>(mat.M11, mat.M21, mat.M31, mat.M41);
+        public static Vector4<T> GetColumn1(Matrix4X4<T> mat) => new Vector4<T>(mat.M12, mat.M22, mat.M32, mat.M42);
+        public static Vector4<T> GetColumn2(Matrix4X4<T> mat) => new Vector4<T>(mat.M13, mat.M23, mat.M33, mat.M43);
+        public static Vector4<T> GetColumn3(Matrix4X4<T> mat) => new Vector4<T>(mat.M14, mat.M24, mat.M34, mat.M44);
+        public static Vector4<T> GetDiagonal(Matrix4X4<T> mat) => new Vector4<T>(mat.M11, mat.M22, mat.M33, mat.M44);
+        
+       public static T GetTrace(Matrix4X4<T> mat) => Scalar.Add(Scalar.Add(Scalar.Add(mat.M11, mat.M22), mat.M33), mat.M44);
 
         public T this[int rowIndex, int columnIndex] => this[rowIndex][columnIndex];
 
-        public Vector4<T> this[int rowIndex] => rowIndex switch
+        public Vector4<T> this[int rowIndex]
         {
-            0 => Row0,
-            1 => Row1,
-            2 => Row2,
-            3 => Row3
-        };
+            get
+            {
+                if (rowIndex == 0)
+                    return Row0;
+                if (rowIndex == 1)
+                    return Row1;
+                if (rowIndex == 2)
+                    return Row2;
+                if (rowIndex == 3)
+                    return Row3;
 
-        public Matrix4X4<T> Normalized() => Normalize(this);
-
-        public Matrix4X4<T> Inverted() => Invert(this);
-
-        public Matrix4X4<T> ClearTranslation() => ClearTranslation(this);
-
-        public Matrix4X4<T> ClearScale() => ClearScale(this);
-
-        public Matrix4X4<T> ClearRotation() => ClearRotation(this);
-
-        public Matrix4X4<T> ClearProjection() => ClearProjection(this);
-
-        public Vector3<T> ExtractTranslation() => ExtractTranslation(this);
-
-        public Vector3<T> ExtractScale() => ExtractScale(this);
-
-        public Quaternion<T> ExtractRotation(bool rowNormalize = true) => ExtractRotation(this, rowNormalize);
-
-        public Vector4<T> ExtractProjection() => ExtractProjection(this);
-
+                ThrowIndexOutOfRange();
+                return default;
+            }
+        }
+        
         public static Matrix4X4<T> CreateFromAxisAngle(Vector3<T> axis, T angle) => throw new NotImplementedException();
-
-
-        public static void CreateFromAxisAngle(ref Vector3<T> axis, T angle, out Matrix4X4<T> result)
-            => result = CreateFromAxisAngle(axis, angle);
 
         public static Matrix4X4<T> CreateFromQuaternion(Quaternion<T> q) => throw new NotImplementedException();
 
-        public static void CreateFromQuaternion(ref Quaternion<T> q, out Matrix4X4<T> result)
-            => result = CreateFromQuaternion(q);
-
         public static Matrix4X4<T> CreateRotationX(T angle) => throw new NotImplementedException();
-
-        public static void CreateRotationX(T angle, out Matrix4X4<T> result) => result = CreateRotationX(angle);
 
         public static Matrix4X4<T> CreateRotationY(T angle) => throw new NotImplementedException();
 
-        public static void CreateRotationY(T angle, out Matrix4X4<T> result) => result = CreateRotationY(angle);
-
         public static Matrix4X4<T> CreateRotationZ(T angle) => throw new NotImplementedException();
 
-        public static void CreateRotationZ(T angle, out Matrix4X4<T> result) => result = CreateRotationZ(angle);
-
-        public static Matrix4X4<T> CreateTranslation(T x, T y, T z) => CreateTranslation(new Vector3<T>(x, y, z));
-
         public static Matrix4X4<T> CreateTranslation(Vector3<T> vector) => throw new NotImplementedException();
-
-        public static void CreateTranslation(T x, T y, T z, out Matrix4X4<T> result)
-            => result = CreateTranslation(x, y, z);
-
-        public static void CreateTranslation(ref Vector3<T> vector, out Matrix4X4<T> result)
-            => result = CreateTranslation(vector);
 
         public static Matrix4X4<T> CreateScale(T scale) => throw new NotImplementedException();
 
         public static Matrix4X4<T> CreateScale(Vector3<T> scale) => throw new NotImplementedException();
-
-        public static Matrix4X4<T> CreateScale(T x, T y, T z) => CreateScale(new Vector3<T>(x, y, z));
-
-        public static void CreateScale(T scale, out Matrix4X4<T> result) => result = CreateScale(scale);
-
-        public static void CreateScale(ref Vector3<T> scale, out Matrix4X4<T> result) => result = CreateScale(scale);
-
-        public static void CreateScale(T x, T y, T z, out Matrix4X4<T> result) => result = CreateScale(x, y, z);
-
+        
         public static Matrix4X4<T> CreateOrthographic(T width, T height, T depthNear, T depthFar)
             => throw new NotImplementedException();
-
-        public static void CreateOrthographic(T width, T height, T depthNear, T depthFar, out Matrix4X4<T> result)
-            => result = CreateOrthographic(width, height, depthNear, depthFar);
-
         public static Matrix4X4<T> CreateOrthographicOffCenter
             (T left, T right, T bottom, T top, T depthNear, T depthFar) => throw new NotImplementedException();
-
-        public static void CreateOrthographicOffCenter
-            (T left, T right, T bottom, T top, T depthNear, T depthFar, out Matrix4X4<T> result)
-            => result = CreateOrthographicOffCenter(left, right, bottom, top, depthNear, depthFar);
 
         public static Matrix4X4<T> CreatePerspectiveFieldOfView(T fovy, T aspect, T depthNear, T depthFar)
             => throw new NotImplementedException();
 
-        public static void CreatePerspectiveFieldOfView
-            (T fovy, T aspect, T depthNear, T depthFar, out Matrix4X4<T> result)
-            => result = CreatePerspectiveFieldOfView(fovy, aspect, depthNear, depthFar);
-
         public static Matrix4X4<T> CreatePerspectiveOffCenter(T left, T right, T bottom, T top, T depthNear, T depthFar)
             => throw new NotImplementedException();
-
-        public static void CreatePerspectiveOffCenter
-            (T left, T right, T bottom, T top, T depthNear, T depthFar, out Matrix4X4<T> result)
-            => result = CreatePerspectiveOffCenter(left, right, bottom, top, depthNear, depthFar);
 
         public static Matrix4X4<T> LookAt(Vector3<T> eye, Vector3<T> target, Vector3<T> up)
             => throw new NotImplementedException();
 
-        public static Matrix4X4<T> LookAt(T eyeX, T eyeY, T eyeZ, T targetX, T targetY, T targetZ, T upX, T upY, T upZ)
-            =>
-                LookAt
-                    (
-                        new Vector3<T>(eyeX, eyeY, eyeZ), new Vector3<T>(targetX, targetY, targetZ),
-                        new Vector3<T>(upX, upY, upZ));
-
         public static Matrix4X4<T> Add(Matrix4X4<T> left, Matrix4X4<T> right) => throw new NotImplementedException();
-
-        public static void Add(ref Matrix4X4<T> left, ref Matrix4X4<T> right, out Matrix4X4<T> result)
-            => result = Add(left, right);
-
+        
         public static Matrix4X4<T> Subtract(Matrix4X4<T> left, Matrix4X4<T> right)
             => throw new NotImplementedException();
-
-        public static void Subtract(ref Matrix4X4<T> left, ref Matrix4X4<T> right, out Matrix4X4<T> result)
-            => result = Subtract(left, right);
 
         public static Matrix4X4<T> Multiply(Matrix4X4<T> left, Matrix4X4<T> right)
             => throw new NotImplementedException();
 
-        public static void Multiply(ref Matrix4X4<T> left, ref Matrix4X4<T> right, out Matrix4X4<T> result)
-            => result = Multiply(left, right);
-
         public static Matrix4X4<T> Multiply(Matrix4X4<T> left, T right) => throw new NotImplementedException();
-
-        public static void Multiply(ref Matrix4X4<T> left, T right, out Matrix4X4<T> result)
-            => result = Multiply(left, right);
 
         public static Matrix4X4<T> Invert(Matrix4X4<T> mat) => throw new NotImplementedException();
 
-        public static void Invert(ref Matrix4X4<T> mat, out Matrix4X4<T> result) => result = Invert(mat);
-
         public static Matrix4X4<T> Normalize(Matrix4X4<T> mat) => throw new NotImplementedException();
-
-        public static void Normalize(ref Matrix4X4<T> mat, out Matrix4X4<T> result) => result = Normalize(mat);
 
         public static Matrix4X4<T> ClearTranslation(Matrix4X4<T> mat) => throw new NotImplementedException();
 
@@ -291,23 +210,10 @@ namespace Silk.NET.Maths
 
         public static Matrix4X4<T> Transpose(Matrix4X4<T> mat) => throw new NotImplementedException();
 
-        public static void Transpose(ref Matrix4X4<T> mat, out Matrix4X4<T> result) => result = Transpose(mat);
-
-        public static Matrix4X4<T> operator *(Matrix4X4<T> left, Matrix4X4<T> right) => Multiply(left, right);
-
-        public static Matrix4X4<T> operator *(Matrix4X4<T> left, T right) => Multiply(left, right);
-
-        public static Matrix4X4<T> operator *(T left, Matrix4X4<T> right) => Multiply(right, left);
-
-        public static Matrix4X4<T> operator +(Matrix4X4<T> left, Matrix4X4<T> right) => Add(left, right);
-
-        public static Matrix4X4<T> operator -(Matrix4X4<T> left, Matrix4X4<T> right) => Subtract(left, right);
-
         public static bool operator ==(Matrix4X4<T> left, Matrix4X4<T> right) => left.Equals(right);
 
         public static bool operator !=(Matrix4X4<T> left, Matrix4X4<T> right) => !(left == right);
-
-
+        
         public override string ToString() => ToString("G");
 
         public string ToString(string? format) => ToString(format, CultureInfo.CurrentCulture);

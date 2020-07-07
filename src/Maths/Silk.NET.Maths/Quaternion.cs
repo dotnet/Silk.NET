@@ -15,7 +15,8 @@ using static Silk.NET.Maths.Scalar;
 namespace Silk.NET.Maths
 {
     [Serializable]
-    public readonly struct Quaternion<T> : IEquatable<Quaternion<T>>, IFormattable where T : unmanaged, IFormattable
+    [Generator.GenerateMethodAliases]
+    public readonly partial struct Quaternion<T> : IEquatable<Quaternion<T>>, IFormattable where T : unmanaged, IFormattable
     {
         public readonly Vector4<T> Xyzw;
 
@@ -42,69 +43,46 @@ namespace Silk.NET.Maths
         public Quaternion<T> WithZ(T z) => new Quaternion<T>(Xyzw.WithZ(z));
         public Quaternion<T> WithW(T w) => new Quaternion<T>(Xyzw.WithW(w));
 
-        public void ToAxisAngle(out Vector3<T> axis, out T angle)
+        public static void ToAxisAngle(Quaternion<T> quat, out Vector3<T> axis, out T angle)
         {
-            var q = this;
-            if (Larger(Abs(q.W), One<T>()))
-            {
-                q = q.Normalized();
-            }
-
-            angle = Scalar.Multiply(Two<T>(), Acos(q.W));
-
-            var denominator = SquareRoot(Scalar.Subtract(One<T>(), Scalar.Multiply(q.W, q.W)));
-            axis = Larger(denominator, As<T>(0.0001f)) ? q.Xyzw.XYZ / denominator : Vector3<T>.UnitX;
+            var v = ToAxisAngle(quat);
+            axis = v.XYZ;
+            angle = v.W;
         }
 
-        public Vector4<T> ToAxisAngle()
+        public static Vector4<T> ToAxisAngle(Quaternion<T> quat)
         {
-            ToAxisAngle(out var axis, out var angle);
+            if (Larger(Abs(quat.W), One<T>()))
+            {
+                quat = quat.Normalized;
+            }
+
+            var angle = Scalar.Multiply(Two<T>(), Acos(quat.W));
+
+            var denominator = SquareRoot(Scalar.Subtract(One<T>(), Scalar.Multiply(quat.W, quat.W)));
+            var axis = Larger(denominator, As<T>(0.0001f)) ? quat.Xyzw.XYZ / denominator : Vector3<T>.UnitX;
             return new Vector4<T>(axis, angle);
         }
 
-        public void ToEulerAngles(out Vector3<T> angles) => angles = ToEulerAngles();
+        public static T GetLength(Quaternion<T> quat) => SquareRoot(quat.LengthSquared);
 
-        public Vector3<T> ToEulerAngles() => ToEulerAngles(this);
-
-        public T Length => SquareRoot(LengthSquared);
-
-        public T LengthSquared => Xyzw.LengthSquared;
-
-        public Quaternion<T> Normalized() => Normalize(this);
-
-        public Quaternion<T> Inverted() => Invert(this);
-
-        public Quaternion<T> Conjugated() => Conjugate(this);
-
+        public static T GetLengthSquared(Quaternion<T> quat) => quat.Xyzw.LengthSquared;
+        
         public static Quaternion<T> Identity => new Quaternion<T>(default, default, default, One<T>());
 
         public static Quaternion<T> Add(Quaternion<T> left, Quaternion<T> right)
             => new Quaternion<T>(left.Xyzw + right.Xyzw);
 
-        public static void Add(ref Quaternion<T> left, ref Quaternion<T> right, out Quaternion<T> result)
-            => result = Add(left, right);
-
         public static Quaternion<T> Subtract(Quaternion<T> left, Quaternion<T> right)
             => new Quaternion<T>(left.Xyzw - right.Xyzw);
-
-        public static void Subtract(ref Quaternion<T> left, ref Quaternion<T> right, out Quaternion<T> result)
-            => result = Subtract(left, right);
 
         public static Quaternion<T> Multiply(Quaternion<T> left, Quaternion<T> right)
             => new Quaternion<T>(left.Xyzw * right.Xyzw);
 
-        public static void Multiply(ref Quaternion<T> left, ref Quaternion<T> right, out Quaternion<T> result)
-            => result = Multiply(left, right);
-
         public static Quaternion<T> Multiply(Quaternion<T> quaternion, T scale)
             => new Quaternion<T>(quaternion.Xyzw * scale);
 
-        public static void Multiply(ref Quaternion<T> quaternion, T scale, out Quaternion<T> result)
-            => result = Multiply(quaternion, scale);
-
         public static Quaternion<T> Conjugate(Quaternion<T> q) => new Quaternion<T>(-q.Xyzw.XYZ, q.W);
-
-        public static void Conjugate(ref Quaternion<T> q, out Quaternion<T> result) => result = Conjugate(q);
 
         public static Quaternion<T> Invert(Quaternion<T> q)
         {
@@ -119,12 +97,9 @@ namespace Silk.NET.Maths
             return q;
         }
 
-        public static void Invert(ref Quaternion<T> q, out Quaternion<T> result) => result = Invert(q);
-
         public static Quaternion<T> Normalize(Quaternion<T> q) => new Quaternion<T>(q.Xyzw / Divide(One<T>(), q.Length));
-
-        public static void Normalize(ref Quaternion<T> q, out Quaternion<T> result) => result = Normalize(q);
-
+        public static Quaternion<T> GetNormalized(Quaternion<T> q) => Normalize(q);
+        
         public static Quaternion<T> FromAxisAngle(Vector3<T> axis, T angle)
         {
             if (Equal(axis.LengthSquared, As<T>(0.0f)))
@@ -133,12 +108,9 @@ namespace Silk.NET.Maths
             }
 
             angle = Divide(angle, Two<T>());
-            axis = axis.Normalized();
+            axis = axis.Normalized;
             return Normalize(new Quaternion<T>(axis * Sin(angle), Cos(angle)));
         }
-
-        public static Quaternion<T> FromEulerAngles(T pitch, T yaw, T roll)
-            => FromEulerAngles(new Vector3<T>(pitch, yaw, roll));
 
         public static Quaternion<T> FromEulerAngles(Vector3<T> eulerAngles)
         {
@@ -159,9 +131,6 @@ namespace Silk.NET.Maths
                 Scalar.Subtract
                     (Scalar.Multiply(c.X, Scalar.Multiply(c.Y, c.Z)), Scalar.Multiply(s.X, Scalar.Multiply(s.Y, s.Z))));
         }
-
-        public static void FromEulerAngles(ref Vector3<T> eulerAngles, out Quaternion<T> result)
-            => result = FromEulerAngles(eulerAngles);
 
         public static Vector3<T> ToEulerAngles(Quaternion<T> q)
         {
@@ -205,8 +174,6 @@ namespace Silk.NET.Maths
 
             return new Vector3<T>(x, y, z);
         }
-
-        public static void ToEulerAngles(in Quaternion<T> q, out Vector3<T> result) => result = ToEulerAngles(q);
 
         public static Quaternion<T> FromMatrix(Matrix3X3<T> matrix)
         {
@@ -266,8 +233,6 @@ namespace Silk.NET.Maths
             }
         }
 
-        public static void FromMatrix(ref Matrix3X3<T> matrix, out Quaternion<T> result) => result = FromMatrix(matrix);
-
         public static Quaternion<T> Slerp(Quaternion<T> q1, Quaternion<T> q2, T blend)
         {
             // if either input is zero, return the other.
@@ -295,7 +260,7 @@ namespace Silk.NET.Maths
 
             if (Smaller(cosHalfAngle, default))
             {
-                q2 = new Quaternion<T>(Vector4<T>.Negate(q2.Xyzw));
+                q2 = new Quaternion<T>(q2.Xyzw.Negated);
                 cosHalfAngle = Negate(cosHalfAngle);
             }
 
@@ -325,20 +290,9 @@ namespace Silk.NET.Maths
             return Identity;
         }
 
-        public static Quaternion<T> operator +(Quaternion<T> left, Quaternion<T> right) => Add(left, right);
-
-        public static Quaternion<T> operator -(Quaternion<T> left, Quaternion<T> right) => Subtract(left, right);
-
-        public static Quaternion<T> operator *(Quaternion<T> left, Quaternion<T> right) => Multiply(left, right);
-
-        public static Quaternion<T> operator *(Quaternion<T> quaternion, T scale) => Multiply(quaternion, scale);
-
-        public static Quaternion<T> operator *(T scale, Quaternion<T> quaternion) => Multiply(quaternion, scale);
-
         public static bool operator ==(Quaternion<T> left, Quaternion<T> right) => left.Equals(right);
 
         public static bool operator !=(Quaternion<T> left, Quaternion<T> right) => !(left == right);
-
 
         public override string ToString() => ToString("G");
 
