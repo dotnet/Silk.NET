@@ -21,7 +21,7 @@ namespace Silk.Net.Maths.Tests
             Assert.Equal(new Vector4<float>(2), result);
         }
     }
-    
+
     public class ByteScalarTests : UnsignedScalarTests<byte> { }
 
     public class SByteScalarTests : SignedScalarTests<sbyte> { }
@@ -169,7 +169,9 @@ namespace Silk.Net.Maths.Tests
         {
             var fixture = new Fixture();
             Assert.Throws<NotSupportedException>
-                (() => Scalar.Clamp(fixture.Create<DateTime>(), fixture.Create<DateTime>(), fixture.Create<DateTime>()));
+            (
+                () => Scalar.Clamp(fixture.Create<DateTime>(), fixture.Create<DateTime>(), fixture.Create<DateTime>())
+            );
         }
 
         [Fact]

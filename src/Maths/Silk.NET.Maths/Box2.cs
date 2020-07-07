@@ -1,6 +1,7 @@
 #region
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text;
 using static Silk.NET.Maths.Scalar;
@@ -11,8 +12,8 @@ namespace Silk.NET.Maths
 {
     public readonly struct Box2<T> : IEquatable<Box2<T>>, IFormattable where T : unmanaged, IFormattable
     {
-        public readonly Vector2<T> Min;
-        public readonly Vector2<T> Max;
+        public Vector2<T> Min { get; }
+        public Vector2<T> Max { get; }
 
         public Box2(Vector2<T> min, Vector2<T> max) => (Min, Max) = (min, max);
 
@@ -28,21 +29,21 @@ namespace Silk.NET.Maths
 
         public Box2<T> WithMax(Vector2<T> max) => new Box2<T>(Min, max);
 
+#pragma warning disable RS0026 // Do not add multiple public overloads with optional parameters
         public bool Contains(Vector2<T> point, bool boundaryInclusive = false)
-            =>
-                boundaryInclusive
-                    ? LargerEquals(point.X, Min.X) && LargerEquals(point.Y, Min.Y) && SmallerEquals(point.X, Max.X) &&
-                      SmallerEquals(point.Y, Min.Y)
-                    : Larger(point.X, Min.X) && Larger(point.Y, Min.Y) && Smaller(point.X, Max.X) &&
-                      Smaller(point.Y, Min.Y);
+            => boundaryInclusive
+                ? LargerEquals(point.X, Min.X) && LargerEquals(point.Y, Min.Y) && SmallerEquals(point.X, Max.X) &&
+                  SmallerEquals(point.Y, Min.Y)
+                : Larger(point.X, Min.X) && Larger(point.Y, Min.Y) && Smaller(point.X, Max.X) && Smaller
+                    (point.Y, Min.Y);
 
         public bool Contains(Box2<T> other, bool boundaryInclusive = false)
-            =>
-                boundaryInclusive
-                    ? LargerEquals(other.Min.X, Min.X) && LargerEquals(other.Min.Y, Min.Y) &&
-                      SmallerEquals(other.Max.X, Max.X) && SmallerEquals(other.Max.Y, Min.Y)
-                    : Larger(other.Min.X, Min.X) && Larger(other.Min.Y, Min.Y) && Smaller(other.Max.X, Max.X) &&
-                      Smaller(other.Max.Y, Min.Y);
+            => boundaryInclusive
+                ? LargerEquals(other.Min.X, Min.X) && LargerEquals(other.Min.Y, Min.Y) && SmallerEquals
+                    (other.Max.X, Max.X) && SmallerEquals(other.Max.Y, Min.Y)
+                : Larger(other.Min.X, Min.X) && Larger(other.Min.Y, Min.Y) && Smaller(other.Max.X, Max.X) && Smaller
+                    (other.Max.Y, Min.Y);
+#pragma warning restore RS0026 // Do not add multiple public overloads with optional parameters
 
         public T DistanceToNearestEdge(Vector2<T> point)
             => Vector2<T>.ComponentMax(Vector2<T>.Zero, Vector2<T>.ComponentMax(Min - point, point - Max)).Length;

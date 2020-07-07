@@ -28,6 +28,7 @@ namespace ConvertHelper
                     {
                         break;
                     }
+
                     sb.AppendLine(i);
                 }
 
@@ -37,6 +38,7 @@ namespace ConvertHelper
                     Console.WriteLine(result.FormatErrorMessageFragment());
                     continue;
                 }
+
                 var transform = ArithmeticExpressionParser.Transform(result.Value);
                 if (!transform.HasValue)
                 {
