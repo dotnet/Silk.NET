@@ -17,7 +17,8 @@ namespace Silk.NET.Maths
         public Box3(Vector3<T> min, Vector3<T> max) => (Min, Max) = (min, max);
 
         public Box3(T minX, T minY, T minZ, T maxX, T maxY, T maxZ) : this
-            (new Vector3<T>(minX, minY, minZ), new Vector3<T>(maxX, maxY, maxZ)) { }
+            (new Vector3<T>(minX, minY, minZ), new Vector3<T>(maxX, maxY, maxZ))
+        { }
 
         public Vector3<T> Size => Max - Min;
 

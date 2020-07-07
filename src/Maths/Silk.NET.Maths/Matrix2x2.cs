@@ -38,7 +38,7 @@ namespace Silk.NET.Maths
 
         public T Trace => a(M11, M22);
 
-        public T this[int rowIndex, int columnIndex] => (rowIndex switch {0 => Row0, 1 => Row1})[columnIndex];
+        public T this[int rowIndex, int columnIndex] => (rowIndex switch { 0 => Row0, 1 => Row1 })[columnIndex];
 
         public Matrix2x2<T> WithM11(T m11) => new Matrix2x2<T>(m11, M12, M21, M22);
         public Matrix2x2<T> WithM12(T m12) => new Matrix2x2<T>(M11, m12, M21, M22);

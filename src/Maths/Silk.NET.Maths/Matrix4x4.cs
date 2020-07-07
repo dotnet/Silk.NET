@@ -17,9 +17,9 @@ namespace Silk.NET.Maths
 
         public static Matrix4x4<T> Zero => default;
         public readonly Vector4<T> Row0 { get; }
-        public readonly Vector4<T> Row1 {get;}
-        public readonly Vector4<T> Row2 {get;}
-        public readonly Vector4<T> Row3 {get;}
+        public readonly Vector4<T> Row1 { get; }
+        public readonly Vector4<T> Row2 { get; }
+        public readonly Vector4<T> Row3 { get; }
 
         public T M11 => Row0.X;
         public T M12 => Row0.Y;
@@ -67,12 +67,14 @@ namespace Silk.NET.Maths
         (
             new Vector4<T>(m11, m12, m13, m14), new Vector4<T>(m21, m22, m23, m24), new Vector4<T>(m31, m32, m33, m34),
             new Vector4<T>(m41, m42, m43, m44)
-        ) { }
+        )
+        { }
 
         public Matrix4x4(Matrix3x3<T> topLeft) : this
         (
             new Vector4<T>(topLeft.Row0, default), new Vector4<T>(topLeft.Row1, default), new Vector4<T>(topLeft.Row2, default), Vector4<T>.UnitW
-        ) { }
+        )
+        { }
 
         public Matrix4x4<T> WithRow0(Vector4<T> row0) => new Matrix4x4<T>(row0, Row1, Row2, Row3);
         public Matrix4x4<T> WithRow1(Vector4<T> row1) => new Matrix4x4<T>(Row0, row1, Row2, Row3);

@@ -39,7 +39,8 @@ namespace Silk.NET.Maths
         (
             new Vector3<T>(m11, m12, m13), new Vector3<T>(m21, m22, m23), new Vector3<T>(m31, m32, m33),
             new Vector3<T>(m41, m42, m43)
-        ) { }
+        )
+        { }
 
 
         public Matrix4x3<T> WithRow0(Vector3<T> row0) => new Matrix4x3<T>(row0, Row1, Row2, Row3);
@@ -82,7 +83,7 @@ namespace Silk.NET.Maths
 
         public T this[int rowIndex, int columnIndex] => this[rowIndex][columnIndex];
 
-        public Vector3<T> this[int rowIndex] => rowIndex switch {0 => Row0, 1 => Row1, 2 => Row2, 3 => Row3};
+        public Vector3<T> this[int rowIndex] => rowIndex switch { 0 => Row0, 1 => Row1, 2 => Row2, 3 => Row3 };
 
         public static Matrix4x4<T> CreateFromAxisAngle(Vector3<T> axis, T angle) => throw new NotImplementedException();
 

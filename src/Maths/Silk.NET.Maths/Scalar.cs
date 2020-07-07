@@ -61,7 +61,7 @@ namespace Silk.NET.Maths
     internal static class Scalar
     {
         private const MethodImplOptions MethodImplOptions =
-            System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512;
+            System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining | (MethodImplOptions)512;
 
         private const double HALF_PI = Math.PI / 2;
         /* Note: The following patterns are used throughout the code here and are described here
@@ -91,32 +91,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (T) (object) (byte) 1;
+                return (T)(object)(byte)1;
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (T) (object) (sbyte) 1;
+                return (T)(object)(sbyte)1;
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (T) (object) (ushort) 1;
+                return (T)(object)(ushort)1;
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (T) (object) (short) 1;
+                return (T)(object)(short)1;
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (T) (object) (uint) 1;
+                return (T)(object)(uint)1;
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (T) (object) 1;
+                return (T)(object)1;
             }
 
             return _One2<T>();
@@ -127,27 +127,27 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(ulong))
             {
-                return (T) (object) (ulong) 1;
+                return (T)(object)(ulong)1;
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (T) (object) (long) 1;
+                return (T)(object)(long)1;
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) 1;
+                return (T)(object)(Half)1;
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) (float) 1;
+                return (T)(object)(float)1;
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) (double) 1;
+                return (T)(object)(double)1;
             }
 
 
@@ -160,32 +160,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (T) (object) (byte) 2;
+                return (T)(object)(byte)2;
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (T) (object) (sbyte) 2;
+                return (T)(object)(sbyte)2;
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (T) (object) (ushort) 2;
+                return (T)(object)(ushort)2;
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (T) (object) (short) 2;
+                return (T)(object)(short)2;
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (T) (object) (uint) 2;
+                return (T)(object)(uint)2;
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (T) (object) 2;
+                return (T)(object)2;
             }
 
             return _Two2<T>();
@@ -195,27 +195,27 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(ulong))
             {
-                return (T) (object) (ulong) 2;
+                return (T)(object)(ulong)2;
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (T) (object) (long) 2;
+                return (T)(object)(long)2;
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) 2;
+                return (T)(object)(Half)2;
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) (float) 2;
+                return (T)(object)(float)2;
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) (double) 2;
+                return (T)(object)(double)2;
             }
 
 
@@ -228,17 +228,17 @@ namespace Silk.NET.Maths
             ThrowForIntegerBaseType<T>();
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) Math.PI;
+                return (T)(object)(Half)Math.PI;
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) (float) Math.PI;
+                return (T)(object)(float)Math.PI;
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) Math.PI;
+                return (T)(object)Math.PI;
             }
 
 
@@ -252,17 +252,17 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) HALF_PI;
+                return (T)(object)(Half)HALF_PI;
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) (float) HALF_PI;
+                return (T)(object)(float)HALF_PI;
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) HALF_PI;
+                return (T)(object)HALF_PI;
             }
 
             Debug.Fail("Unreachable Code");
@@ -275,17 +275,17 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) Half.PositiveInfinity;
+                return (T)(object)Half.PositiveInfinity;
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) float.PositiveInfinity;
+                return (T)(object)float.PositiveInfinity;
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) double.PositiveInfinity;
+                return (T)(object)double.PositiveInfinity;
             }
 
 
@@ -299,17 +299,17 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) Half.NegativeInfinity;
+                return (T)(object)Half.NegativeInfinity;
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) float.NegativeInfinity;
+                return (T)(object)float.NegativeInfinity;
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) double.NegativeInfinity;
+                return (T)(object)double.NegativeInfinity;
             }
 
 
@@ -322,32 +322,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (T) (object) (byte) value;
+                return (T)(object)(byte)value;
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (T) (object) (sbyte) value;
+                return (T)(object)(sbyte)value;
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (T) (object) (ushort) value;
+                return (T)(object)(ushort)value;
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (T) (object) (short) value;
+                return (T)(object)(short)value;
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (T) (object) (uint) value;
+                return (T)(object)(uint)value;
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (T) (object) (int) value;
+                return (T)(object)(int)value;
             }
 
             return _As2<T>(value);
@@ -357,27 +357,27 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(ulong))
             {
-                return (T) (object) (ulong) value;
+                return (T)(object)(ulong)value;
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (T) (object) (long) value;
+                return (T)(object)(long)value;
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) value;
+                return (T)(object)(Half)value;
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) value;
+                return (T)(object)value;
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) (double) value;
+                return (T)(object)(double)value;
             }
 
 
@@ -422,32 +422,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (T) (object) (byte) MathF.Sqrt((byte) (object) value);
+                return (T)(object)(byte)MathF.Sqrt((byte)(object)value);
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (T) (object) (sbyte) MathF.Sqrt((sbyte) (object) value);
+                return (T)(object)(sbyte)MathF.Sqrt((sbyte)(object)value);
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (T) (object) (ushort) MathF.Sqrt((ushort) (object) value);
+                return (T)(object)(ushort)MathF.Sqrt((ushort)(object)value);
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (T) (object) (short) MathF.Sqrt((short) (object) value);
+                return (T)(object)(short)MathF.Sqrt((short)(object)value);
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (T) (object) (uint) MathF.Sqrt((uint) (object) value);
+                return (T)(object)(uint)MathF.Sqrt((uint)(object)value);
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (T) (object) (int) MathF.Sqrt((int) (object) value);
+                return (T)(object)(int)MathF.Sqrt((int)(object)value);
             }
 
             return _SquareRoot2(value);
@@ -458,27 +458,27 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(ulong))
             {
-                return (T) (object) (ulong) Math.Sqrt((ulong) (object) value);
+                return (T)(object)(ulong)Math.Sqrt((ulong)(object)value);
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (T) (object) (long) Math.Sqrt((long) (object) value);
+                return (T)(object)(long)Math.Sqrt((long)(object)value);
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) MathF.Sqrt((Half) (object) value);
+                return (T)(object)(Half)MathF.Sqrt((Half)(object)value);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) MathF.Sqrt((float) (object) value);
+                return (T)(object)MathF.Sqrt((float)(object)value);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) Math.Sqrt((double) (object) value);
+                return (T)(object)Math.Sqrt((double)(object)value);
             }
 
 
@@ -492,32 +492,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (T) (object) (byte) ((byte) (object) left + (byte) (object) right);
+                return (T)(object)(byte)((byte)(object)left + (byte)(object)right);
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (T) (object) (sbyte) ((sbyte) (object) left + (sbyte) (object) right);
+                return (T)(object)(sbyte)((sbyte)(object)left + (sbyte)(object)right);
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (T) (object) (ushort) ((ushort) (object) left + (ushort) (object) right);
+                return (T)(object)(ushort)((ushort)(object)left + (ushort)(object)right);
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (T) (object) (short) ((short) (object) left + (short) (object) right);
+                return (T)(object)(short)((short)(object)left + (short)(object)right);
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (T) (object) ((uint) (object) left + (uint) (object) right);
+                return (T)(object)((uint)(object)left + (uint)(object)right);
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (T) (object) ((int) (object) left + (int) (object) right);
+                return (T)(object)((int)(object)left + (int)(object)right);
             }
 
             return _Add2(left, right);
@@ -528,27 +528,27 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(ulong))
             {
-                return (T) (object) ((ulong) (object) left + (ulong) (object) right);
+                return (T)(object)((ulong)(object)left + (ulong)(object)right);
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (T) (object) ((long) (object) left + (long) (object) right);
+                return (T)(object)((long)(object)left + (long)(object)right);
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) ((Half) (object) left + (Half) (object) right);
+                return (T)(object)(Half)((Half)(object)left + (Half)(object)right);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) ((float) (object) left + (float) (object) right);
+                return (T)(object)((float)(object)left + (float)(object)right);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) ((double) (object) left + (double) (object) right);
+                return (T)(object)((double)(object)left + (double)(object)right);
             }
 
             Debug.Fail("Unreachable Code");
@@ -561,32 +561,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (T) (object) (byte) ((byte) (object) left - (byte) (object) right);
+                return (T)(object)(byte)((byte)(object)left - (byte)(object)right);
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (T) (object) (sbyte) ((sbyte) (object) left - (sbyte) (object) right);
+                return (T)(object)(sbyte)((sbyte)(object)left - (sbyte)(object)right);
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (T) (object) (ushort) ((ushort) (object) left - (ushort) (object) right);
+                return (T)(object)(ushort)((ushort)(object)left - (ushort)(object)right);
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (T) (object) (short) ((short) (object) left - (short) (object) right);
+                return (T)(object)(short)((short)(object)left - (short)(object)right);
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (T) (object) ((uint) (object) left - (uint) (object) right);
+                return (T)(object)((uint)(object)left - (uint)(object)right);
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (T) (object) ((int) (object) left - (int) (object) right);
+                return (T)(object)((int)(object)left - (int)(object)right);
             }
 
             return _Subtract2(left, right);
@@ -597,27 +597,27 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(ulong))
             {
-                return (T) (object) ((ulong) (object) left - (ulong) (object) right);
+                return (T)(object)((ulong)(object)left - (ulong)(object)right);
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (T) (object) ((long) (object) left - (long) (object) right);
+                return (T)(object)((long)(object)left - (long)(object)right);
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) ((Half) (object) left - (Half) (object) right);
+                return (T)(object)(Half)((Half)(object)left - (Half)(object)right);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) ((float) (object) left - (float) (object) right);
+                return (T)(object)((float)(object)left - (float)(object)right);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) ((double) (object) left - (double) (object) right);
+                return (T)(object)((double)(object)left - (double)(object)right);
             }
 
             Debug.Fail("Unreachable Code");
@@ -630,32 +630,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (T) (object) (byte) ((byte) (object) left * (byte) (object) right);
+                return (T)(object)(byte)((byte)(object)left * (byte)(object)right);
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (T) (object) (sbyte) ((sbyte) (object) left * (sbyte) (object) right);
+                return (T)(object)(sbyte)((sbyte)(object)left * (sbyte)(object)right);
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (T) (object) (ushort) ((ushort) (object) left * (ushort) (object) right);
+                return (T)(object)(ushort)((ushort)(object)left * (ushort)(object)right);
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (T) (object) (short) ((short) (object) left * (short) (object) right);
+                return (T)(object)(short)((short)(object)left * (short)(object)right);
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (T) (object) ((uint) (object) left * (uint) (object) right);
+                return (T)(object)((uint)(object)left * (uint)(object)right);
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (T) (object) ((int) (object) left * (int) (object) right);
+                return (T)(object)((int)(object)left * (int)(object)right);
             }
 
             return _Multiply2(left, right);
@@ -666,27 +666,27 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(ulong))
             {
-                return (T) (object) ((ulong) (object) left * (ulong) (object) right);
+                return (T)(object)((ulong)(object)left * (ulong)(object)right);
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (T) (object) ((long) (object) left * (long) (object) right);
+                return (T)(object)((long)(object)left * (long)(object)right);
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) ((Half) (object) left * (Half) (object) right);
+                return (T)(object)(Half)((Half)(object)left * (Half)(object)right);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) ((float) (object) left * (float) (object) right);
+                return (T)(object)((float)(object)left * (float)(object)right);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) ((double) (object) left * (double) (object) right);
+                return (T)(object)((double)(object)left * (double)(object)right);
             }
 
             Debug.Fail("Unreachable Code");
@@ -699,32 +699,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (T) (object) (byte) ((byte) (object) left / (byte) (object) right);
+                return (T)(object)(byte)((byte)(object)left / (byte)(object)right);
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (T) (object) (sbyte) ((sbyte) (object) left / (sbyte) (object) right);
+                return (T)(object)(sbyte)((sbyte)(object)left / (sbyte)(object)right);
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (T) (object) (ushort) ((ushort) (object) left / (ushort) (object) right);
+                return (T)(object)(ushort)((ushort)(object)left / (ushort)(object)right);
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (T) (object) (short) ((short) (object) left / (short) (object) right);
+                return (T)(object)(short)((short)(object)left / (short)(object)right);
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (T) (object) ((uint) (object) left / (uint) (object) right);
+                return (T)(object)((uint)(object)left / (uint)(object)right);
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (T) (object) ((int) (object) left / (int) (object) right);
+                return (T)(object)((int)(object)left / (int)(object)right);
             }
 
             return _Divide2(left, right);
@@ -735,27 +735,27 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(ulong))
             {
-                return (T) (object) ((ulong) (object) left / (ulong) (object) right);
+                return (T)(object)((ulong)(object)left / (ulong)(object)right);
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (T) (object) ((long) (object) left / (long) (object) right);
+                return (T)(object)((long)(object)left / (long)(object)right);
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) ((Half) (object) left / (Half) (object) right);
+                return (T)(object)(Half)((Half)(object)left / (Half)(object)right);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) ((float) (object) left / (float) (object) right);
+                return (T)(object)((float)(object)left / (float)(object)right);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) ((double) (object) left / (double) (object) right);
+                return (T)(object)((double)(object)left / (double)(object)right);
             }
 
             Debug.Fail("Unreachable Code");
@@ -768,32 +768,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (T) (object) Math.Min((byte) (object) left, (byte) (object) right);
+                return (T)(object)Math.Min((byte)(object)left, (byte)(object)right);
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (T) (object) Math.Min((sbyte) (object) left, (sbyte) (object) right);
+                return (T)(object)Math.Min((sbyte)(object)left, (sbyte)(object)right);
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (T) (object) Math.Min((ushort) (object) left, (ushort) (object) right);
+                return (T)(object)Math.Min((ushort)(object)left, (ushort)(object)right);
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (T) (object) Math.Min((short) (object) left, (short) (object) right);
+                return (T)(object)Math.Min((short)(object)left, (short)(object)right);
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (T) (object) Math.Min((uint) (object) left, (uint) (object) right);
+                return (T)(object)Math.Min((uint)(object)left, (uint)(object)right);
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (T) (object) Math.Min((int) (object) left, (int) (object) right);
+                return (T)(object)Math.Min((int)(object)left, (int)(object)right);
             }
 
             return _Min2(left, right);
@@ -804,27 +804,27 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(ulong))
             {
-                return (T) (object) Math.Min((ulong) (object) left, (ulong) (object) right);
+                return (T)(object)Math.Min((ulong)(object)left, (ulong)(object)right);
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (T) (object) Math.Min((long) (object) left, (long) (object) right);
+                return (T)(object)Math.Min((long)(object)left, (long)(object)right);
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) Math.Min((Half) (object) left, (Half) (object) right);
+                return (T)(object)(Half)Math.Min((Half)(object)left, (Half)(object)right);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) Math.Min((float) (object) left, (float) (object) right);
+                return (T)(object)Math.Min((float)(object)left, (float)(object)right);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) Math.Min((double) (object) left, (double) (object) right);
+                return (T)(object)Math.Min((double)(object)left, (double)(object)right);
             }
 
             Debug.Fail("Unreachable Code");
@@ -837,32 +837,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (T) (object) Math.Max((byte) (object) left, (byte) (object) right);
+                return (T)(object)Math.Max((byte)(object)left, (byte)(object)right);
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (T) (object) Math.Max((sbyte) (object) left, (sbyte) (object) right);
+                return (T)(object)Math.Max((sbyte)(object)left, (sbyte)(object)right);
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (T) (object) Math.Max((ushort) (object) left, (ushort) (object) right);
+                return (T)(object)Math.Max((ushort)(object)left, (ushort)(object)right);
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (T) (object) Math.Max((short) (object) left, (short) (object) right);
+                return (T)(object)Math.Max((short)(object)left, (short)(object)right);
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (T) (object) Math.Max((uint) (object) left, (uint) (object) right);
+                return (T)(object)Math.Max((uint)(object)left, (uint)(object)right);
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (T) (object) Math.Max((int) (object) left, (int) (object) right);
+                return (T)(object)Math.Max((int)(object)left, (int)(object)right);
             }
 
             return _Max2(left, right);
@@ -873,27 +873,27 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(ulong))
             {
-                return (T) (object) Math.Max((ulong) (object) left, (ulong) (object) right);
+                return (T)(object)Math.Max((ulong)(object)left, (ulong)(object)right);
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (T) (object) Math.Max((long) (object) left, (long) (object) right);
+                return (T)(object)Math.Max((long)(object)left, (long)(object)right);
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) Math.Max((Half) (object) left, (Half) (object) right);
+                return (T)(object)(Half)Math.Max((Half)(object)left, (Half)(object)right);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) Math.Max((float) (object) left, (float) (object) right);
+                return (T)(object)Math.Max((float)(object)left, (float)(object)right);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) Math.Max((double) (object) left, (double) (object) right);
+                return (T)(object)Math.Max((double)(object)left, (double)(object)right);
             }
 
             Debug.Fail("Unreachable Code");
@@ -906,32 +906,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (byte) (object) left > (byte) (object) right;
+                return (byte)(object)left > (byte)(object)right;
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (sbyte) (object) left > (sbyte) (object) right;
+                return (sbyte)(object)left > (sbyte)(object)right;
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (ushort) (object) left > (ushort) (object) right;
+                return (ushort)(object)left > (ushort)(object)right;
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (short) (object) left > (short) (object) right;
+                return (short)(object)left > (short)(object)right;
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (uint) (object) left > (uint) (object) right;
+                return (uint)(object)left > (uint)(object)right;
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (int) (object) left > (int) (object) right;
+                return (int)(object)left > (int)(object)right;
             }
 
             return _Larger2(left, right);
@@ -942,27 +942,27 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(ulong))
             {
-                return (ulong) (object) left > (ulong) (object) right;
+                return (ulong)(object)left > (ulong)(object)right;
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (long) (object) left > (long) (object) right;
+                return (long)(object)left > (long)(object)right;
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (Half) (object) left > (Half) (object) right;
+                return (Half)(object)left > (Half)(object)right;
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (float) (object) left > (float) (object) right;
+                return (float)(object)left > (float)(object)right;
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (double) (object) left > (double) (object) right;
+                return (double)(object)left > (double)(object)right;
             }
 
 
@@ -976,32 +976,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (byte) (object) left < (byte) (object) right;
+                return (byte)(object)left < (byte)(object)right;
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (sbyte) (object) left < (sbyte) (object) right;
+                return (sbyte)(object)left < (sbyte)(object)right;
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (ushort) (object) left < (ushort) (object) right;
+                return (ushort)(object)left < (ushort)(object)right;
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (short) (object) left < (short) (object) right;
+                return (short)(object)left < (short)(object)right;
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (uint) (object) left < (uint) (object) right;
+                return (uint)(object)left < (uint)(object)right;
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (int) (object) left < (int) (object) right;
+                return (int)(object)left < (int)(object)right;
             }
 
             return _Smaller2(left, right);
@@ -1012,27 +1012,27 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(ulong))
             {
-                return (ulong) (object) left < (ulong) (object) right;
+                return (ulong)(object)left < (ulong)(object)right;
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (long) (object) left < (long) (object) right;
+                return (long)(object)left < (long)(object)right;
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (Half) (object) left < (Half) (object) right;
+                return (Half)(object)left < (Half)(object)right;
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (float) (object) left < (float) (object) right;
+                return (float)(object)left < (float)(object)right;
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (double) (object) left < (double) (object) right;
+                return (double)(object)left < (double)(object)right;
             }
 
 
@@ -1046,32 +1046,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (byte) (object) left >= (byte) (object) right;
+                return (byte)(object)left >= (byte)(object)right;
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (sbyte) (object) left >= (sbyte) (object) right;
+                return (sbyte)(object)left >= (sbyte)(object)right;
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (ushort) (object) left >= (ushort) (object) right;
+                return (ushort)(object)left >= (ushort)(object)right;
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (short) (object) left >= (short) (object) right;
+                return (short)(object)left >= (short)(object)right;
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (uint) (object) left >= (uint) (object) right;
+                return (uint)(object)left >= (uint)(object)right;
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (int) (object) left >= (int) (object) right;
+                return (int)(object)left >= (int)(object)right;
             }
 
             return _LargerEquals2(left, right);
@@ -1082,27 +1082,27 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(ulong))
             {
-                return (ulong) (object) left >= (ulong) (object) right;
+                return (ulong)(object)left >= (ulong)(object)right;
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (long) (object) left >= (long) (object) right;
+                return (long)(object)left >= (long)(object)right;
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (Half) (object) left >= (Half) (object) right;
+                return (Half)(object)left >= (Half)(object)right;
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (float) (object) left >= (float) (object) right;
+                return (float)(object)left >= (float)(object)right;
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (double) (object) left >= (double) (object) right;
+                return (double)(object)left >= (double)(object)right;
             }
 
 
@@ -1116,32 +1116,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (byte) (object) left <= (byte) (object) right;
+                return (byte)(object)left <= (byte)(object)right;
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (sbyte) (object) left <= (sbyte) (object) right;
+                return (sbyte)(object)left <= (sbyte)(object)right;
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (ushort) (object) left <= (ushort) (object) right;
+                return (ushort)(object)left <= (ushort)(object)right;
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (short) (object) left <= (short) (object) right;
+                return (short)(object)left <= (short)(object)right;
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (uint) (object) left <= (uint) (object) right;
+                return (uint)(object)left <= (uint)(object)right;
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (int) (object) left <= (int) (object) right;
+                return (int)(object)left <= (int)(object)right;
             }
 
             return _SmallerEquals2(left, right);
@@ -1152,27 +1152,27 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(ulong))
             {
-                return (ulong) (object) left <= (ulong) (object) right;
+                return (ulong)(object)left <= (ulong)(object)right;
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (long) (object) left <= (long) (object) right;
+                return (long)(object)left <= (long)(object)right;
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (Half) (object) left <= (Half) (object) right;
+                return (Half)(object)left <= (Half)(object)right;
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (float) (object) left <= (float) (object) right;
+                return (float)(object)left <= (float)(object)right;
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (double) (object) left <= (double) (object) right;
+                return (double)(object)left <= (double)(object)right;
             }
 
 
@@ -1188,37 +1188,37 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(sbyte))
             {
-                return (T) (object) (sbyte) -(sbyte) (object) value;
+                return (T)(object)(sbyte)-(sbyte)(object)value;
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (T) (object) (short) -(short) (object) value;
+                return (T)(object)(short)-(short)(object)value;
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (T) (object) -(int) (object) value;
+                return (T)(object)-(int)(object)value;
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (T) (object) -(long) (object) value;
+                return (T)(object)-(long)(object)value;
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) -(Half) (object) value;
+                return (T)(object)-(Half)(object)value;
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) -(float) (object) value;
+                return (T)(object)-(float)(object)value;
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) -(double) (object) value;
+                return (T)(object)-(double)(object)value;
             }
 
             ThrowInvalidType();
@@ -1232,32 +1232,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (byte) (object) left == (byte) (object) right;
+                return (byte)(object)left == (byte)(object)right;
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (sbyte) (object) left == (sbyte) (object) right;
+                return (sbyte)(object)left == (sbyte)(object)right;
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (ushort) (object) left == (ushort) (object) right;
+                return (ushort)(object)left == (ushort)(object)right;
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (short) (object) left == (short) (object) right;
+                return (short)(object)left == (short)(object)right;
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (uint) (object) left == (uint) (object) right;
+                return (uint)(object)left == (uint)(object)right;
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (int) (object) left == (int) (object) right;
+                return (int)(object)left == (int)(object)right;
             }
 
             return _Equal2(left, right);
@@ -1267,27 +1267,27 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(ulong))
             {
-                return (ulong) (object) left == (ulong) (object) right;
+                return (ulong)(object)left == (ulong)(object)right;
             }
 
             if (typeof(T) == typeof(long))
             {
-                return (long) (object) left == (long) (object) right;
+                return (long)(object)left == (long)(object)right;
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (Half) (object) left == (Half) (object) right;
+                return (Half)(object)left == (Half)(object)right;
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (float) (object) left == (float) (object) right;
+                return (float)(object)left == (float)(object)right;
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (double) (object) left == (double) (object) right;
+                return (double)(object)left == (double)(object)right;
             }
 
 
@@ -1301,17 +1301,17 @@ namespace Silk.NET.Maths
             ThrowForIntegerBaseType<T>();
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) MathF.Acos((Half) (object) value);
+                return (T)(object)(Half)MathF.Acos((Half)(object)value);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) MathF.Acos((float) (object) value);
+                return (T)(object)MathF.Acos((float)(object)value);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) Math.Acos((double) (object) value);
+                return (T)(object)Math.Acos((double)(object)value);
             }
 
             Debug.Fail("Unreachable Code");
@@ -1324,32 +1324,32 @@ namespace Silk.NET.Maths
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
             {
-                return (T) (object) (byte) MathF.Abs((byte) (object) value);
+                return (T)(object)(byte)MathF.Abs((byte)(object)value);
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return (T) (object) (sbyte) MathF.Abs((sbyte) (object) value);
+                return (T)(object)(sbyte)MathF.Abs((sbyte)(object)value);
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return (T) (object) (ushort) MathF.Abs((ushort) (object) value);
+                return (T)(object)(ushort)MathF.Abs((ushort)(object)value);
             }
 
             if (typeof(T) == typeof(short))
             {
-                return (T) (object) (short) MathF.Abs((short) (object) value);
+                return (T)(object)(short)MathF.Abs((short)(object)value);
             }
 
             if (typeof(T) == typeof(uint))
             {
-                return (T) (object) (uint) MathF.Abs((uint) (object) value);
+                return (T)(object)(uint)MathF.Abs((uint)(object)value);
             }
 
             if (typeof(T) == typeof(int))
             {
-                return (T) (object) (int) MathF.Abs((int) (object) value);
+                return (T)(object)(int)MathF.Abs((int)(object)value);
             }
 
             return _Abs2(value);
@@ -1365,22 +1365,22 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(long))
             {
-                return (T) (object) Math.Abs((long) (object) value);
+                return (T)(object)Math.Abs((long)(object)value);
             }
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) MathF.Abs((Half) (object) value);
+                return (T)(object)(Half)MathF.Abs((Half)(object)value);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) MathF.Abs((float) (object) value);
+                return (T)(object)MathF.Abs((float)(object)value);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) Math.Abs((double) (object) value);
+                return (T)(object)Math.Abs((double)(object)value);
             }
 
 
@@ -1395,17 +1395,17 @@ namespace Silk.NET.Maths
             ThrowForIntegerBaseType<T>();
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) MathF.Sin((Half) (object) value);
+                return (T)(object)(Half)MathF.Sin((Half)(object)value);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) MathF.Sin((float) (object) value);
+                return (T)(object)MathF.Sin((float)(object)value);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) Math.Sin((double) (object) value);
+                return (T)(object)Math.Sin((double)(object)value);
             }
 
 
@@ -1420,17 +1420,17 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) MathF.Sinh((Half) (object) value);
+                return (T)(object)(Half)MathF.Sinh((Half)(object)value);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) MathF.Sinh((float) (object) value);
+                return (T)(object)MathF.Sinh((float)(object)value);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) Math.Sinh((double) (object) value);
+                return (T)(object)Math.Sinh((double)(object)value);
             }
 
 
@@ -1444,17 +1444,17 @@ namespace Silk.NET.Maths
             ThrowForIntegerBaseType<T>();
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) MathF.Asin((Half) (object) value);
+                return (T)(object)(Half)MathF.Asin((Half)(object)value);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) MathF.Asin((float) (object) value);
+                return (T)(object)MathF.Asin((float)(object)value);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) Math.Asin((double) (object) value);
+                return (T)(object)Math.Asin((double)(object)value);
             }
 
 
@@ -1469,17 +1469,17 @@ namespace Silk.NET.Maths
             ThrowForIntegerBaseType<T>();
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) MathF.Atan((Half) (object) value);
+                return (T)(object)(Half)MathF.Atan((Half)(object)value);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) MathF.Atan((float) (object) value);
+                return (T)(object)MathF.Atan((float)(object)value);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) Math.Atan((double) (object) value);
+                return (T)(object)Math.Atan((double)(object)value);
             }
 
 
@@ -1493,17 +1493,17 @@ namespace Silk.NET.Maths
             ThrowForIntegerBaseType<T>();
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) Math.Atan2((Half) (object) left, (Half) (object) right);
+                return (T)(object)Math.Atan2((Half)(object)left, (Half)(object)right);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) Math.Atan2((float) (object) left, (float) (object) right);
+                return (T)(object)Math.Atan2((float)(object)left, (float)(object)right);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) Math.Atan2((double) (object) left, (double) (object) right);
+                return (T)(object)Math.Atan2((double)(object)left, (double)(object)right);
             }
 
             Debug.Fail("Unreachable Code");
@@ -1517,17 +1517,17 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) (short) (Half) (object) value;
+                return (T)(object)(Half)(short)(Half)(object)value;
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) (float) (int) (float) (object) value;
+                return (T)(object)(float)(int)(float)(object)value;
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) (double) (long) (double) (object) value;
+                return (T)(object)(double)(long)(double)(object)value;
             }
 
             return value;
@@ -1541,17 +1541,17 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) MathF.Cos((Half) (object) value);
+                return (T)(object)(Half)MathF.Cos((Half)(object)value);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) MathF.Cos((float) (object) value);
+                return (T)(object)MathF.Cos((float)(object)value);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) Math.Cos((double) (object) value);
+                return (T)(object)Math.Cos((double)(object)value);
             }
 
 
@@ -1567,17 +1567,17 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(Half))
             {
-                return (T) (object) (Half) MathF.Cosh((Half) (object) value);
+                return (T)(object)(Half)MathF.Cosh((Half)(object)value);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T) (object) MathF.Cosh((float) (object) value);
+                return (T)(object)MathF.Cosh((float)(object)value);
             }
 
             if (typeof(T) == typeof(double))
             {
-                return (T) (object) Math.Cosh((double) (object) value);
+                return (T)(object)Math.Cosh((double)(object)value);
             }
 
             Debug.Fail("Unreachable Code");
