@@ -47,7 +47,7 @@ namespace Silk.NET.Maths.Generator {
                 select (INamedTypeSymbol) semanticModel.GetDeclaredSymbol(s)
                 into symbol
                 where !(symbol is null)
-                where symbol!.GetAttributes()
+                where symbol.GetAttributes()
                     .Any(x => SymbolEqualityComparer.Default.Equals(x.AttributeClass, att))
                 select symbol)
                 .Distinct()
@@ -59,7 +59,7 @@ namespace Silk.NET.Maths.Generator {
                 .Where(@t => !(@t.member is null))
                 .Where(@t => @t.member is IMethodSymbol)
                 .Select(@t => @t.member as IMethodSymbol)
-                .Where(method => method!.IsStatic)
+                .Where(method => method.IsStatic)
                 .GroupBy(method => method.ContainingType)
                 .Select(g => g)).ToArray();
             
@@ -242,7 +242,7 @@ namespace {namespaceName}
             return source.ToString();
         }
 
-        private string? ProcessClass_GenerateRefFunctions(INamedTypeSymbol structSymbol, List<IMethodSymbol> methods)
+        private string ProcessClass_GenerateRefFunctions(INamedTypeSymbol structSymbol, List<IMethodSymbol> methods)
         {
             string namespaceName = structSymbol.ContainingNamespace.ToDisplayString();
 
