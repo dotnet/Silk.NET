@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkPhysicalDeviceFloatControlsProperties")]
     public unsafe struct PhysicalDeviceFloatControlsProperties
     {
         public PhysicalDeviceFloatControlsProperties
@@ -61,42 +63,99 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkShaderFloatControlsIndependence")]
+        [NativeName("Type.Name", "VkShaderFloatControlsIndependence")]
+        [NativeName("Name", "denormBehaviorIndependence")]
         public ShaderFloatControlsIndependence DenormBehaviorIndependence;
 /// <summary></summary>
+        [NativeName("Type", "VkShaderFloatControlsIndependence")]
+        [NativeName("Type.Name", "VkShaderFloatControlsIndependence")]
+        [NativeName("Name", "roundingModeIndependence")]
         public ShaderFloatControlsIndependence RoundingModeIndependence;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderSignedZeroInfNanPreserveFloat16")]
         public Bool32 ShaderSignedZeroInfNanPreserveFloat16;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderSignedZeroInfNanPreserveFloat32")]
         public Bool32 ShaderSignedZeroInfNanPreserveFloat32;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderSignedZeroInfNanPreserveFloat64")]
         public Bool32 ShaderSignedZeroInfNanPreserveFloat64;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderDenormPreserveFloat16")]
         public Bool32 ShaderDenormPreserveFloat16;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderDenormPreserveFloat32")]
         public Bool32 ShaderDenormPreserveFloat32;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderDenormPreserveFloat64")]
         public Bool32 ShaderDenormPreserveFloat64;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderDenormFlushToZeroFloat16")]
         public Bool32 ShaderDenormFlushToZeroFloat16;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderDenormFlushToZeroFloat32")]
         public Bool32 ShaderDenormFlushToZeroFloat32;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderDenormFlushToZeroFloat64")]
         public Bool32 ShaderDenormFlushToZeroFloat64;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderRoundingModeRTEFloat16")]
         public Bool32 ShaderRoundingModeRtefloat16;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderRoundingModeRTEFloat32")]
         public Bool32 ShaderRoundingModeRtefloat32;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderRoundingModeRTEFloat64")]
         public Bool32 ShaderRoundingModeRtefloat64;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderRoundingModeRTZFloat16")]
         public Bool32 ShaderRoundingModeRtzfloat16;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderRoundingModeRTZFloat32")]
         public Bool32 ShaderRoundingModeRtzfloat32;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderRoundingModeRTZFloat64")]
         public Bool32 ShaderRoundingModeRtzfloat64;
     }
 }

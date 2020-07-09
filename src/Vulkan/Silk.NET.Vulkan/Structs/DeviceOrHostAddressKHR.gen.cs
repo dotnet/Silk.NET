@@ -8,6 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
@@ -15,6 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [StructLayout(LayoutKind.Explicit)]
+    [NativeName("Name", "VkDeviceOrHostAddressKHR")]
     public unsafe struct DeviceOrHostAddressKHR
     {
         public DeviceOrHostAddressKHR
@@ -29,9 +31,15 @@ namespace Silk.NET.Vulkan
 
 /// <summary></summary>
         [FieldOffset(0)]
+        [NativeName("Type", "VkDeviceAddress")]
+        [NativeName("Type.Name", "VkDeviceAddress")]
+        [NativeName("Name", "deviceAddress")]
         public ulong DeviceAddress;
 /// <summary></summary>
         [FieldOffset(0)]
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "hostAddress")]
         public void* HostAddress;
     }
 }

@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkSurfaceFormatKHR")]
     public unsafe struct SurfaceFormatKHR
     {
         public SurfaceFormatKHR
@@ -27,8 +29,14 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkFormat")]
+        [NativeName("Type.Name", "VkFormat")]
+        [NativeName("Name", "format")]
         public Format Format;
 /// <summary></summary>
+        [NativeName("Type", "VkColorSpaceKHR")]
+        [NativeName("Type.Name", "VkColorSpaceKHR")]
+        [NativeName("Name", "colorSpace")]
         public ColorSpaceKHR ColorSpace;
     }
 }

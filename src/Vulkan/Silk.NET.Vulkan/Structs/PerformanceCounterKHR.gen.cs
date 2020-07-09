@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkPerformanceCounterKHR")]
     public unsafe struct PerformanceCounterKHR
     {
         public PerformanceCounterKHR
@@ -33,16 +35,34 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkPerformanceCounterUnitKHR")]
+        [NativeName("Type.Name", "VkPerformanceCounterUnitKHR")]
+        [NativeName("Name", "unit")]
         public PerformanceCounterUnitKHR Unit;
 /// <summary></summary>
+        [NativeName("Type", "VkPerformanceCounterScopeKHR")]
+        [NativeName("Type.Name", "VkPerformanceCounterScopeKHR")]
+        [NativeName("Name", "scope")]
         public PerformanceCounterScopeKHR Scope;
 /// <summary></summary>
+        [NativeName("Type", "VkPerformanceCounterStorageKHR")]
+        [NativeName("Type.Name", "VkPerformanceCounterStorageKHR")]
+        [NativeName("Name", "storage")]
         public PerformanceCounterStorageKHR Storage;
         /// <summary></summary>
+        [NativeName("Type", "uint8_t")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "uuid")]
        public fixed byte Uuid[16];
     }
 }

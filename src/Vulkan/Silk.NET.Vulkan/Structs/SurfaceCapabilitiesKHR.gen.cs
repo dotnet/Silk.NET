@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkSurfaceCapabilitiesKHR")]
     public unsafe struct SurfaceCapabilitiesKHR
     {
         public SurfaceCapabilitiesKHR
@@ -43,24 +45,54 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "minImageCount")]
         public uint MinImageCount;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxImageCount")]
         public uint MaxImageCount;
 /// <summary></summary>
+        [NativeName("Type", "VkExtent2D")]
+        [NativeName("Type.Name", "VkExtent2D")]
+        [NativeName("Name", "currentExtent")]
         public Extent2D CurrentExtent;
 /// <summary></summary>
+        [NativeName("Type", "VkExtent2D")]
+        [NativeName("Type.Name", "VkExtent2D")]
+        [NativeName("Name", "minImageExtent")]
         public Extent2D MinImageExtent;
 /// <summary></summary>
+        [NativeName("Type", "VkExtent2D")]
+        [NativeName("Type.Name", "VkExtent2D")]
+        [NativeName("Name", "maxImageExtent")]
         public Extent2D MaxImageExtent;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxImageArrayLayers")]
         public uint MaxImageArrayLayers;
 /// <summary></summary>
+        [NativeName("Type", "VkSurfaceTransformFlagsKHR")]
+        [NativeName("Type.Name", "VkSurfaceTransformFlagsKHR")]
+        [NativeName("Name", "supportedTransforms")]
         public SurfaceTransformFlagsKHR SupportedTransforms;
 /// <summary></summary>
+        [NativeName("Type", "VkSurfaceTransformFlagBitsKHR")]
+        [NativeName("Type.Name", "VkSurfaceTransformFlagBitsKHR")]
+        [NativeName("Name", "currentTransform")]
         public SurfaceTransformFlagsKHR CurrentTransform;
 /// <summary></summary>
+        [NativeName("Type", "VkCompositeAlphaFlagsKHR")]
+        [NativeName("Type.Name", "VkCompositeAlphaFlagsKHR")]
+        [NativeName("Name", "supportedCompositeAlpha")]
         public CompositeAlphaFlagsKHR SupportedCompositeAlpha;
 /// <summary></summary>
+        [NativeName("Type", "VkImageUsageFlags")]
+        [NativeName("Type.Name", "VkImageUsageFlags")]
+        [NativeName("Name", "supportedUsageFlags")]
         public ImageUsageFlags SupportedUsageFlags;
     }
 }

@@ -5,14 +5,17 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
     [Flags()]
+    [NativeName("Name", "VkSemaphoreImportFlagsKHR")]
     public enum SemaphoreImportFlagsKHR
     {
+        [NativeName("Name", "VK_SEMAPHORE_IMPORT_TEMPORARY_BIT")]
         SemaphoreImportTemporaryBit = 1,
     }
 }

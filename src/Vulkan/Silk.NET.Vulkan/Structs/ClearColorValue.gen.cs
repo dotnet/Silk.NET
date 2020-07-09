@@ -8,6 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
@@ -15,6 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [StructLayout(LayoutKind.Explicit)]
+    [NativeName("Name", "VkClearColorValue")]
     public unsafe struct ClearColorValue
     {
         public ClearColorValue
@@ -49,39 +51,75 @@ namespace Silk.NET.Vulkan
 
 /// <summary></summary>
         [FieldOffset(0)]
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "float32")]
         public float Float32_0;
 /// <summary></summary>
         [FieldOffset(4)]
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "float32")]
         public float Float32_1;
 /// <summary></summary>
         [FieldOffset(8)]
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "float32")]
         public float Float32_2;
 /// <summary></summary>
         [FieldOffset(12)]
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "float32")]
         public float Float32_3;
 /// <summary></summary>
         [FieldOffset(0)]
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "int32")]
         public int Int32_0;
 /// <summary></summary>
         [FieldOffset(4)]
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "int32")]
         public int Int32_1;
 /// <summary></summary>
         [FieldOffset(8)]
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "int32")]
         public int Int32_2;
 /// <summary></summary>
         [FieldOffset(12)]
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "int32")]
         public int Int32_3;
 /// <summary></summary>
         [FieldOffset(0)]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "uint32")]
         public uint Uint32_0;
 /// <summary></summary>
         [FieldOffset(4)]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "uint32")]
         public uint Uint32_1;
 /// <summary></summary>
         [FieldOffset(8)]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "uint32")]
         public uint Uint32_2;
 /// <summary></summary>
         [FieldOffset(12)]
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "uint32")]
         public uint Uint32_3;
     }
 }

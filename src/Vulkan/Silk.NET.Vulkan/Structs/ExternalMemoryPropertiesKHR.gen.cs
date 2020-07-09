@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkExternalMemoryPropertiesKHR")]
     public unsafe struct ExternalMemoryPropertiesKHR
     {
         public ExternalMemoryPropertiesKHR
@@ -29,10 +31,19 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkExternalMemoryFeatureFlags")]
+        [NativeName("Type.Name", "VkExternalMemoryFeatureFlags")]
+        [NativeName("Name", "externalMemoryFeatures")]
         public ExternalMemoryFeatureFlags ExternalMemoryFeatures;
 /// <summary></summary>
+        [NativeName("Type", "VkExternalMemoryHandleTypeFlags")]
+        [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlags")]
+        [NativeName("Name", "exportFromImportedHandleTypes")]
         public ExternalMemoryHandleTypeFlags ExportFromImportedHandleTypes;
 /// <summary></summary>
+        [NativeName("Type", "VkExternalMemoryHandleTypeFlags")]
+        [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlags")]
+        [NativeName("Name", "compatibleHandleTypes")]
         public ExternalMemoryHandleTypeFlags CompatibleHandleTypes;
     }
 }

@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkDescriptorPoolSize")]
     public unsafe struct DescriptorPoolSize
     {
         public DescriptorPoolSize
@@ -27,8 +29,14 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkDescriptorType")]
+        [NativeName("Type.Name", "VkDescriptorType")]
+        [NativeName("Name", "type")]
         public DescriptorType Type;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "descriptorCount")]
         public uint DescriptorCount;
     }
 }

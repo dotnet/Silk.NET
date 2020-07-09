@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkDrmFormatModifierPropertiesEXT")]
     public unsafe struct DrmFormatModifierPropertiesEXT
     {
         public DrmFormatModifierPropertiesEXT
@@ -29,10 +31,19 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "drmFormatModifier")]
         public ulong DrmFormatModifier;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "drmFormatModifierPlaneCount")]
         public uint DrmFormatModifierPlaneCount;
 /// <summary></summary>
+        [NativeName("Type", "VkFormatFeatureFlags")]
+        [NativeName("Type.Name", "VkFormatFeatureFlags")]
+        [NativeName("Name", "drmFormatModifierTilingFeatures")]
         public FormatFeatureFlags DrmFormatModifierTilingFeatures;
     }
 }

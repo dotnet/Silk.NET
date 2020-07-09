@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkPhysicalDeviceSparseProperties")]
     public unsafe struct PhysicalDeviceSparseProperties
     {
         public PhysicalDeviceSparseProperties
@@ -33,14 +35,29 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "residencyStandard2DBlockShape")]
         public Bool32 ResidencyStandard2DBlockShape;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "residencyStandard2DMultisampleBlockShape")]
         public Bool32 ResidencyStandard2DMultisampleBlockShape;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "residencyStandard3DBlockShape")]
         public Bool32 ResidencyStandard3DBlockShape;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "residencyAlignedMipSize")]
         public Bool32 ResidencyAlignedMipSize;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "residencyNonResidentStrict")]
         public Bool32 ResidencyNonResidentStrict;
     }
 }

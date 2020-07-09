@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkAttachmentDescription")]
     public unsafe struct AttachmentDescription
     {
         public AttachmentDescription
@@ -41,22 +43,49 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkAttachmentDescriptionFlags")]
+        [NativeName("Type.Name", "VkAttachmentDescriptionFlags")]
+        [NativeName("Name", "flags")]
         public AttachmentDescriptionFlags Flags;
 /// <summary></summary>
+        [NativeName("Type", "VkFormat")]
+        [NativeName("Type.Name", "VkFormat")]
+        [NativeName("Name", "format")]
         public Format Format;
 /// <summary></summary>
+        [NativeName("Type", "VkSampleCountFlagBits")]
+        [NativeName("Type.Name", "VkSampleCountFlagBits")]
+        [NativeName("Name", "samples")]
         public SampleCountFlags Samples;
 /// <summary></summary>
+        [NativeName("Type", "VkAttachmentLoadOp")]
+        [NativeName("Type.Name", "VkAttachmentLoadOp")]
+        [NativeName("Name", "loadOp")]
         public AttachmentLoadOp LoadOp;
 /// <summary></summary>
+        [NativeName("Type", "VkAttachmentStoreOp")]
+        [NativeName("Type.Name", "VkAttachmentStoreOp")]
+        [NativeName("Name", "storeOp")]
         public AttachmentStoreOp StoreOp;
 /// <summary></summary>
+        [NativeName("Type", "VkAttachmentLoadOp")]
+        [NativeName("Type.Name", "VkAttachmentLoadOp")]
+        [NativeName("Name", "stencilLoadOp")]
         public AttachmentLoadOp StencilLoadOp;
 /// <summary></summary>
+        [NativeName("Type", "VkAttachmentStoreOp")]
+        [NativeName("Type.Name", "VkAttachmentStoreOp")]
+        [NativeName("Name", "stencilStoreOp")]
         public AttachmentStoreOp StencilStoreOp;
 /// <summary></summary>
+        [NativeName("Type", "VkImageLayout")]
+        [NativeName("Type.Name", "VkImageLayout")]
+        [NativeName("Name", "initialLayout")]
         public ImageLayout InitialLayout;
 /// <summary></summary>
+        [NativeName("Type", "VkImageLayout")]
+        [NativeName("Type.Name", "VkImageLayout")]
+        [NativeName("Name", "finalLayout")]
         public ImageLayout FinalLayout;
     }
 }

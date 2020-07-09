@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkDescriptorPoolCreateInfo")]
     public unsafe struct DescriptorPoolCreateInfo
     {
         public DescriptorPoolCreateInfo
@@ -35,16 +37,34 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkDescriptorPoolCreateFlags")]
+        [NativeName("Type.Name", "VkDescriptorPoolCreateFlags")]
+        [NativeName("Name", "flags")]
         public DescriptorPoolCreateFlags Flags;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxSets")]
         public uint MaxSets;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "poolSizeCount")]
         public uint PoolSizeCount;
 /// <summary></summary>
+        [NativeName("Type", "VkDescriptorPoolSize*")]
+        [NativeName("Type.Name", "VkDescriptorPoolSize")]
+        [NativeName("Name", "pPoolSizes")]
         public DescriptorPoolSize* PPoolSizes;
     }
 }

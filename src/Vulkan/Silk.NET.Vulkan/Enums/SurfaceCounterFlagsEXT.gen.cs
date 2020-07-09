@@ -5,14 +5,17 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
     [Flags()]
+    [NativeName("Name", "VkSurfaceCounterFlagsEXT")]
     public enum SurfaceCounterFlagsEXT
     {
+        [NativeName("Name", "VK_SURFACE_COUNTER_VBLANK_EXT")]
         SurfaceCounterVblankExt = 1,
     }
 }

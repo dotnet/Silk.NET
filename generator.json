@@ -287,6 +287,60 @@
             ]
         },
         {
+            "profileName": "Vulkan",
+            "sources": [
+                "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/master/xml/vk.xml"
+            ],
+            "mode": "ConvertConstruct",
+            "cacheDir": "build/cache",
+            "cacheKey": "vulkan",
+            "controlDescriptors": [],
+            "converter": {
+                "reader": "vk",
+                "constructor": "vk",
+                "className": "Vk"
+            },
+            "prefix": "vk",
+            "clang": {},
+            "bakery": {
+                "profileNames": [
+                    "vulkan"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Vulkan",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Vulkan",
+            "extensionsNamespace": "Silk.NET.Vulkan.Extensions",
+            "legacyNameContainer": {
+                "Linux": "libvulkan.so.1",
+                "Windows": "vulkan-1.dll",
+                "MacOS": "libMoltenVK.dylib",
+                "Android": "libvulkan.so.1",
+                "IOS": "__Internal",
+                "ClassName": "VulkanLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "PFN_vkInternalAllocationNotification": "FuncPtr",
+                    "PFN_vkInternalFreeNotification": "FuncPtr",
+                    "PFN_vkReallocationFunction": "FuncPtr",
+                    "PFN_vkAllocationFunction": "FuncPtr",
+                    "PFN_vkFreeFunction": "FuncPtr",
+                    "PFN_vkVoidFunction": "FuncPtr",
+                    "PFN_vkDebugReportCallbackEXT": "FuncPtr",
+                    "PFN_vkDebugUtilsMessengerCallbackEXT": "FuncPtr",
+                    "char": "byte"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
             "profileName": "Assimp",
             "sources": [
                 "src/Assimp/Include/assimp.h"

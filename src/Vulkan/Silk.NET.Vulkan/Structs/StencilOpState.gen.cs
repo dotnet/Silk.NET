@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkStencilOpState")]
     public unsafe struct StencilOpState
     {
         public StencilOpState
@@ -37,18 +39,39 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStencilOp")]
+        [NativeName("Type.Name", "VkStencilOp")]
+        [NativeName("Name", "failOp")]
         public StencilOp FailOp;
 /// <summary></summary>
+        [NativeName("Type", "VkStencilOp")]
+        [NativeName("Type.Name", "VkStencilOp")]
+        [NativeName("Name", "passOp")]
         public StencilOp PassOp;
 /// <summary></summary>
+        [NativeName("Type", "VkStencilOp")]
+        [NativeName("Type.Name", "VkStencilOp")]
+        [NativeName("Name", "depthFailOp")]
         public StencilOp DepthFailOp;
 /// <summary></summary>
+        [NativeName("Type", "VkCompareOp")]
+        [NativeName("Type.Name", "VkCompareOp")]
+        [NativeName("Name", "compareOp")]
         public CompareOp CompareOp;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "compareMask")]
         public uint CompareMask;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "writeMask")]
         public uint WriteMask;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "reference")]
         public uint Reference;
     }
 }

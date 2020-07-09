@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkAccelerationStructureGeometryKHR")]
     public unsafe struct AccelerationStructureGeometryKHR
     {
         public AccelerationStructureGeometryKHR
@@ -33,14 +35,29 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkGeometryTypeKHR")]
+        [NativeName("Type.Name", "VkGeometryTypeKHR")]
+        [NativeName("Name", "geometryType")]
         public GeometryTypeKHR GeometryType;
 /// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureGeometryDataKHR")]
+        [NativeName("Type.Name", "VkAccelerationStructureGeometryDataKHR")]
+        [NativeName("Name", "geometry")]
         public AccelerationStructureGeometryDataKHR Geometry;
 /// <summary></summary>
+        [NativeName("Type", "VkGeometryFlagsKHR")]
+        [NativeName("Type.Name", "VkGeometryFlagsKHR")]
+        [NativeName("Name", "flags")]
         public GeometryFlagsKHR Flags;
     }
 }

@@ -5,14 +5,17 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
     [Flags()]
+    [NativeName("Name", "VkConditionalRenderingFlagsEXT")]
     public enum ConditionalRenderingFlagsEXT
     {
+        [NativeName("Name", "VK_CONDITIONAL_RENDERING_INVERTED_BIT_EXT")]
         ConditionalRenderingInvertedBitExt = 1,
     }
 }

@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkPhysicalDeviceVulkan12Features")]
     public unsafe struct PhysicalDeviceVulkan12Features
     {
         public PhysicalDeviceVulkan12Features
@@ -121,102 +123,249 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "samplerMirrorClampToEdge")]
         public Bool32 SamplerMirrorClampToEdge;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "drawIndirectCount")]
         public Bool32 DrawIndirectCount;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "storageBuffer8BitAccess")]
         public Bool32 StorageBuffer8BitAccess;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "uniformAndStorageBuffer8BitAccess")]
         public Bool32 UniformAndStorageBuffer8BitAccess;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "storagePushConstant8")]
         public Bool32 StoragePushConstant8;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderBufferInt64Atomics")]
         public Bool32 ShaderBufferInt64Atomics;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderSharedInt64Atomics")]
         public Bool32 ShaderSharedInt64Atomics;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderFloat16")]
         public Bool32 ShaderFloat16;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderInt8")]
         public Bool32 ShaderInt8;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorIndexing")]
         public Bool32 DescriptorIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderInputAttachmentArrayDynamicIndexing")]
         public Bool32 ShaderInputAttachmentArrayDynamicIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderUniformTexelBufferArrayDynamicIndexing")]
         public Bool32 ShaderUniformTexelBufferArrayDynamicIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderStorageTexelBufferArrayDynamicIndexing")]
         public Bool32 ShaderStorageTexelBufferArrayDynamicIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderUniformBufferArrayNonUniformIndexing")]
         public Bool32 ShaderUniformBufferArrayNonUniformIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderSampledImageArrayNonUniformIndexing")]
         public Bool32 ShaderSampledImageArrayNonUniformIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderStorageBufferArrayNonUniformIndexing")]
         public Bool32 ShaderStorageBufferArrayNonUniformIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderStorageImageArrayNonUniformIndexing")]
         public Bool32 ShaderStorageImageArrayNonUniformIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderInputAttachmentArrayNonUniformIndexing")]
         public Bool32 ShaderInputAttachmentArrayNonUniformIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderUniformTexelBufferArrayNonUniformIndexing")]
         public Bool32 ShaderUniformTexelBufferArrayNonUniformIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderStorageTexelBufferArrayNonUniformIndexing")]
         public Bool32 ShaderStorageTexelBufferArrayNonUniformIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingUniformBufferUpdateAfterBind")]
         public Bool32 DescriptorBindingUniformBufferUpdateAfterBind;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingSampledImageUpdateAfterBind")]
         public Bool32 DescriptorBindingSampledImageUpdateAfterBind;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingStorageImageUpdateAfterBind")]
         public Bool32 DescriptorBindingStorageImageUpdateAfterBind;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingStorageBufferUpdateAfterBind")]
         public Bool32 DescriptorBindingStorageBufferUpdateAfterBind;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingUniformTexelBufferUpdateAfterBind")]
         public Bool32 DescriptorBindingUniformTexelBufferUpdateAfterBind;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingStorageTexelBufferUpdateAfterBind")]
         public Bool32 DescriptorBindingStorageTexelBufferUpdateAfterBind;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingUpdateUnusedWhilePending")]
         public Bool32 DescriptorBindingUpdateUnusedWhilePending;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingPartiallyBound")]
         public Bool32 DescriptorBindingPartiallyBound;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingVariableDescriptorCount")]
         public Bool32 DescriptorBindingVariableDescriptorCount;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "runtimeDescriptorArray")]
         public Bool32 RuntimeDescriptorArray;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "samplerFilterMinmax")]
         public Bool32 SamplerFilterMinmax;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "scalarBlockLayout")]
         public Bool32 ScalarBlockLayout;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "imagelessFramebuffer")]
         public Bool32 ImagelessFramebuffer;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "uniformBufferStandardLayout")]
         public Bool32 UniformBufferStandardLayout;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderSubgroupExtendedTypes")]
         public Bool32 ShaderSubgroupExtendedTypes;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "separateDepthStencilLayouts")]
         public Bool32 SeparateDepthStencilLayouts;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "hostQueryReset")]
         public Bool32 HostQueryReset;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "timelineSemaphore")]
         public Bool32 TimelineSemaphore;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "bufferDeviceAddress")]
         public Bool32 BufferDeviceAddress;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "bufferDeviceAddressCaptureReplay")]
         public Bool32 BufferDeviceAddressCaptureReplay;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "bufferDeviceAddressMultiDevice")]
         public Bool32 BufferDeviceAddressMultiDevice;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "vulkanMemoryModel")]
         public Bool32 VulkanMemoryModel;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "vulkanMemoryModelDeviceScope")]
         public Bool32 VulkanMemoryModelDeviceScope;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "vulkanMemoryModelAvailabilityVisibilityChains")]
         public Bool32 VulkanMemoryModelAvailabilityVisibilityChains;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderOutputViewportIndex")]
         public Bool32 ShaderOutputViewportIndex;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderOutputLayer")]
         public Bool32 ShaderOutputLayer;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "subgroupBroadcastDynamicId")]
         public Bool32 SubgroupBroadcastDynamicId;
     }
 }

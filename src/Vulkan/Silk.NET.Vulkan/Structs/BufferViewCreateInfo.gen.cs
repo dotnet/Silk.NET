@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkBufferViewCreateInfo")]
     public unsafe struct BufferViewCreateInfo
     {
         public BufferViewCreateInfo
@@ -37,18 +39,39 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBufferViewCreateFlags")]
+        [NativeName("Type.Name", "VkBufferViewCreateFlags")]
+        [NativeName("Name", "flags")]
         public uint Flags;
 /// <summary></summary>
+        [NativeName("Type", "VkBuffer")]
+        [NativeName("Type.Name", "VkBuffer")]
+        [NativeName("Name", "buffer")]
         public Buffer Buffer;
 /// <summary></summary>
+        [NativeName("Type", "VkFormat")]
+        [NativeName("Type.Name", "VkFormat")]
+        [NativeName("Name", "format")]
         public Format Format;
 /// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "offset")]
         public ulong Offset;
 /// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "range")]
         public ulong Range;
     }
 }

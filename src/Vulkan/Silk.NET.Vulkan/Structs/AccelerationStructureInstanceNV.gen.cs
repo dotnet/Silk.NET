@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkAccelerationStructureInstanceNV")]
     public unsafe struct AccelerationStructureInstanceNV
     {
         public AccelerationStructureInstanceNV
@@ -35,16 +37,34 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkTransformMatrixKHR")]
+        [NativeName("Type.Name", "VkTransformMatrixKHR")]
+        [NativeName("Name", "transform")]
         public TransformMatrixKHR Transform;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "instanceCustomIndex")]
         public uint InstanceCustomIndex;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "mask")]
         public uint Mask;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "instanceShaderBindingTableRecordOffset")]
         public uint InstanceShaderBindingTableRecordOffset;
 /// <summary></summary>
+        [NativeName("Type", "VkGeometryInstanceFlagsKHR")]
+        [NativeName("Type.Name", "VkGeometryInstanceFlagsKHR")]
+        [NativeName("Name", "flags")]
         public GeometryInstanceFlagsKHR Flags;
 /// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "accelerationStructureReference")]
         public ulong AccelerationStructureReference;
     }
 }

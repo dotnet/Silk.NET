@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkPhysicalDeviceDescriptorIndexingPropertiesEXT")]
     public unsafe struct PhysicalDeviceDescriptorIndexingPropertiesEXT
     {
         public PhysicalDeviceDescriptorIndexingPropertiesEXT
@@ -73,54 +75,129 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxUpdateAfterBindDescriptorsInAllPools")]
         public uint MaxUpdateAfterBindDescriptorsInAllPools;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderUniformBufferArrayNonUniformIndexingNative")]
         public Bool32 ShaderUniformBufferArrayNonUniformIndexingNative;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderSampledImageArrayNonUniformIndexingNative")]
         public Bool32 ShaderSampledImageArrayNonUniformIndexingNative;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderStorageBufferArrayNonUniformIndexingNative")]
         public Bool32 ShaderStorageBufferArrayNonUniformIndexingNative;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderStorageImageArrayNonUniformIndexingNative")]
         public Bool32 ShaderStorageImageArrayNonUniformIndexingNative;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderInputAttachmentArrayNonUniformIndexingNative")]
         public Bool32 ShaderInputAttachmentArrayNonUniformIndexingNative;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "robustBufferAccessUpdateAfterBind")]
         public Bool32 RobustBufferAccessUpdateAfterBind;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "quadDivergentImplicitLod")]
         public Bool32 QuadDivergentImplicitLod;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxPerStageDescriptorUpdateAfterBindSamplers")]
         public uint MaxPerStageDescriptorUpdateAfterBindSamplers;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxPerStageDescriptorUpdateAfterBindUniformBuffers")]
         public uint MaxPerStageDescriptorUpdateAfterBindUniformBuffers;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxPerStageDescriptorUpdateAfterBindStorageBuffers")]
         public uint MaxPerStageDescriptorUpdateAfterBindStorageBuffers;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxPerStageDescriptorUpdateAfterBindSampledImages")]
         public uint MaxPerStageDescriptorUpdateAfterBindSampledImages;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxPerStageDescriptorUpdateAfterBindStorageImages")]
         public uint MaxPerStageDescriptorUpdateAfterBindStorageImages;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxPerStageDescriptorUpdateAfterBindInputAttachments")]
         public uint MaxPerStageDescriptorUpdateAfterBindInputAttachments;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxPerStageUpdateAfterBindResources")]
         public uint MaxPerStageUpdateAfterBindResources;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxDescriptorSetUpdateAfterBindSamplers")]
         public uint MaxDescriptorSetUpdateAfterBindSamplers;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxDescriptorSetUpdateAfterBindUniformBuffers")]
         public uint MaxDescriptorSetUpdateAfterBindUniformBuffers;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxDescriptorSetUpdateAfterBindUniformBuffersDynamic")]
         public uint MaxDescriptorSetUpdateAfterBindUniformBuffersDynamic;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxDescriptorSetUpdateAfterBindStorageBuffers")]
         public uint MaxDescriptorSetUpdateAfterBindStorageBuffers;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxDescriptorSetUpdateAfterBindStorageBuffersDynamic")]
         public uint MaxDescriptorSetUpdateAfterBindStorageBuffersDynamic;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxDescriptorSetUpdateAfterBindSampledImages")]
         public uint MaxDescriptorSetUpdateAfterBindSampledImages;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxDescriptorSetUpdateAfterBindStorageImages")]
         public uint MaxDescriptorSetUpdateAfterBindStorageImages;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxDescriptorSetUpdateAfterBindInputAttachments")]
         public uint MaxDescriptorSetUpdateAfterBindInputAttachments;
     }
 }

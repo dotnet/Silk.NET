@@ -5,15 +5,19 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
     [Flags()]
+    [NativeName("Name", "VkExternalSemaphoreFeatureFlags")]
     public enum ExternalSemaphoreFeatureFlags
     {
+        [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_FEATURE_EXPORTABLE_BIT")]
         ExternalSemaphoreFeatureExportableBit = 1,
+        [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_FEATURE_IMPORTABLE_BIT")]
         ExternalSemaphoreFeatureImportableBit = 2,
     }
 }

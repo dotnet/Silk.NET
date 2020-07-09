@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkPipelineShaderStageCreateInfo")]
     public unsafe struct PipelineShaderStageCreateInfo
     {
         public PipelineShaderStageCreateInfo
@@ -37,18 +39,39 @@ namespace Silk.NET.Vulkan
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkPipelineShaderStageCreateFlags")]
+        [NativeName("Type.Name", "VkPipelineShaderStageCreateFlags")]
+        [NativeName("Name", "flags")]
         public PipelineShaderStageCreateFlags Flags;
 /// <summary></summary>
+        [NativeName("Type", "VkShaderStageFlagBits")]
+        [NativeName("Type.Name", "VkShaderStageFlagBits")]
+        [NativeName("Name", "stage")]
         public ShaderStageFlags Stage;
 /// <summary></summary>
+        [NativeName("Type", "VkShaderModule")]
+        [NativeName("Type.Name", "VkShaderModule")]
+        [NativeName("Name", "module")]
         public ShaderModule Module;
 /// <summary></summary>
+        [NativeName("Type", "char*")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "pName")]
         public byte* PName;
 /// <summary></summary>
+        [NativeName("Type", "VkSpecializationInfo*")]
+        [NativeName("Type.Name", "VkSpecializationInfo")]
+        [NativeName("Name", "pSpecializationInfo")]
         public SpecializationInfo* PSpecializationInfo;
     }
 }

@@ -5,14 +5,17 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
     [Flags()]
+    [NativeName("Name", "VkIndirectStateFlagsNV")]
     public enum IndirectStateFlagsNV
     {
+        [NativeName("Name", "VK_INDIRECT_STATE_FLAG_FRONTFACE_BIT_NV")]
         IndirectStateFlagFrontfaceBitNV = 1,
     }
 }
