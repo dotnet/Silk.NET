@@ -293,7 +293,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing.Extensio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FramebufferResized", "src\Lab\FramebufferResized\FramebufferResized.csproj", "{7AF3C6CA-64FE-43F3-BD7B-C57C83AFAB79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 1.6 - Co-ordinate Systems", "examples\CSharp\Tutorial 1.6 - Co-ordinate Systems\Tutorial 1.6 - Co-ordinate Systems.csproj", "{7874B5F2-2428-4D4E-8FDB-8634573163B8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 2.1 - Co-ordinate Systems", "examples\CSharp\Tutorial 2.1 - Co-ordinate Systems\Tutorial 2.1 - Co-ordinate Systems.csproj", "{7874B5F2-2428-4D4E-8FDB-8634573163B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 2.2 - Camera", "examples\CSharp\Tutorial 2.2 - Camera\Tutorial 2.2 - Camera.csproj", "{4FBE561E-7FF9-4D69-91D5-945DE9A20291}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1832,6 +1834,18 @@ Global
 		{7874B5F2-2428-4D4E-8FDB-8634573163B8}.Release|x64.Build.0 = Release|Any CPU
 		{7874B5F2-2428-4D4E-8FDB-8634573163B8}.Release|x86.ActiveCfg = Release|Any CPU
 		{7874B5F2-2428-4D4E-8FDB-8634573163B8}.Release|x86.Build.0 = Release|Any CPU
+		{4FBE561E-7FF9-4D69-91D5-945DE9A20291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FBE561E-7FF9-4D69-91D5-945DE9A20291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FBE561E-7FF9-4D69-91D5-945DE9A20291}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4FBE561E-7FF9-4D69-91D5-945DE9A20291}.Debug|x64.Build.0 = Debug|Any CPU
+		{4FBE561E-7FF9-4D69-91D5-945DE9A20291}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4FBE561E-7FF9-4D69-91D5-945DE9A20291}.Debug|x86.Build.0 = Debug|Any CPU
+		{4FBE561E-7FF9-4D69-91D5-945DE9A20291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FBE561E-7FF9-4D69-91D5-945DE9A20291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FBE561E-7FF9-4D69-91D5-945DE9A20291}.Release|x64.ActiveCfg = Release|Any CPU
+		{4FBE561E-7FF9-4D69-91D5-945DE9A20291}.Release|x64.Build.0 = Release|Any CPU
+		{4FBE561E-7FF9-4D69-91D5-945DE9A20291}.Release|x86.ActiveCfg = Release|Any CPU
+		{4FBE561E-7FF9-4D69-91D5-945DE9A20291}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
@@ -1969,6 +1983,7 @@ Global
 		{F5D5B4B4-58B7-48D9-881B-DD6A4001793E} = {3501BAD6-406A-49BC-BE0E-5A49A3AAAE6A}
 		{7AF3C6CA-64FE-43F3-BD7B-C57C83AFAB79} = {DFA0E841-33E5-4533-AF00-964E21A141B8}
 		{7874B5F2-2428-4D4E-8FDB-8634573163B8} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
+		{4FBE561E-7FF9-4D69-91D5-945DE9A20291} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
 	EndGlobalSection
 	EndGlobalSection
 EndGlobal
