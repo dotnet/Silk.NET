@@ -29,11 +29,14 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDirectFBPresentationSupportEXT")]
-        public abstract unsafe Bool32 GetPhysicalDeviceDirectFbpresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(FlowDirection.Out)] IDirectFB* dfb);
+        public abstract Bool32 GetPhysicalDeviceDirectFbpresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(FlowDirection.Out)] IntPtr dfb);
 
         /// <summary>To be added.</summary>
-        [NativeApi(EntryPoint = "vkGetPhysicalDeviceDirectFBPresentationSupportEXT")]
-        public abstract Bool32 GetPhysicalDeviceDirectFbpresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(FlowDirection.Out)] out IDirectFB dfb);
+        public unsafe Bool32 GetPhysicalDeviceDirectFbpresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(FlowDirection.Out)] int dfb)
+        {
+            // IntPtrOverloader
+            return GetPhysicalDeviceDirectFbpresentationSupport(physicalDevice, queueFamilyIndex, new IntPtr(dfb));
+        }
 
         public ExtDirectfbSurface(ref NativeApiContext ctx)
             : base(ref ctx)
