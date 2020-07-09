@@ -37,6 +37,25 @@ namespace Silk.NET.BuildTools
         [JsonProperty("extensionsNamespace")] public string ExtensionsNamespace { get; set; }
         [JsonProperty("legacyNameContainer")] public NameContainer NameContainer { get; set; }
         [JsonProperty("typeMaps")] public List<Dictionary<string, string>> TypeMaps { get; set; }
+        // TODO the following 2 properties are only implemented in Clang. implement on ConvertConstruct?
+        [JsonProperty("exclude")] public List<string> ExcludedNativeNames { get; set; }
+        [JsonProperty("rename")] public Dictionary<string, string> RenamedNativeNames { get; set; }
+
+        public void InjectTypeMap(Dictionary<string, string> map)
+            => TypeMaps.Insert
+            (
+                NoM1
+                (
+                    TypeMaps.FindIndex
+                    (
+                        x => x.TryGetValue("$typemapPrecedesInjections", out var val)
+                             && bool.TryParse(val, out var valVal)
+                             && valVal
+                    )
+                ), map
+            );
+
+        private int NoM1(int val) => val == -1 ? 0 : val;
     }
 
     public struct ClangTaskOptions

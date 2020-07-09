@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -115,7 +116,7 @@ namespace Silk.NET.BuildTools.Common
             }
 
             var newName = builder.ToString().Pascalize();
-            return newName.CheckMemberName(prefix);
+            return newName.CheckMemberName(prefix).GetAlphanumericOnly();
         }
 
         /// <summary>
@@ -135,7 +136,24 @@ namespace Silk.NET.BuildTools.Common
             }
 
             var newName = builder.ToString().Pascalize();
-            return newName.CheckMemberName(prefix);
+            return newName.CheckMemberName(prefix).GetAlphanumericOnly();
+        }
+
+        public static string GetAlphanumericOnly(this string name)
+        {
+            const string alnum = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567889";
+            // ReSharper disable once SuggestVarOrType_Elsewhere
+            Span<char> newString = stackalloc char[name.Length];
+            var i = 0;
+            foreach (var c in name)
+            {
+                if (alnum.Contains(c))
+                {
+                    newString[i++] = c;
+                }
+            }
+
+            return new string(newString.Slice(0, i));
         }
     }
 }

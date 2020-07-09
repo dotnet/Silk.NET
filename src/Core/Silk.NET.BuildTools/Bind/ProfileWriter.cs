@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
+using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Structs;
 using Silk.NET.BuildTools.Overloading;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
@@ -54,6 +55,7 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine();
             var ns = project.IsRoot ? task.Namespace : task.ExtensionsNamespace;
             sw.WriteLine("using System;");
+            sw.WriteLine("using Silk.NET.Core.Attributes;");
             sw.WriteLine();
             sw.WriteLine("#pragma warning disable 1591");
             sw.WriteLine();
@@ -64,12 +66,14 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine($"    {attr}");
             }
 
+            sw.WriteLine($"    [NativeName(\"Name\", \"{@enum.NativeName}\")]");
             sw.WriteLine($"    public enum {@enum.Name}");
             sw.WriteLine("    {");
             for (var index = 0; index < @enum.Tokens.Count; index++)
             {
                 var token = @enum.Tokens[index];
 
+                sw.WriteLine($"        [NativeName(\"Name\", \"{token.NativeName}\")]");
                 sw.WriteLine
                 (
                     $"        {token.Name} = {token.Value}{(index != @enum.Tokens.Count ? "," : string.Empty)}"
@@ -98,6 +102,7 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("using System.Runtime.InteropServices;");
             sw.WriteLine("using System.Text;");
             sw.WriteLine("using Silk.NET.Core.Native;");
+            sw.WriteLine("using Silk.NET.Core.Attributes;");
             sw.WriteLine("using Ultz.SuperInvoke;");
             sw.WriteLine();
             sw.WriteLine("#pragma warning disable 1591");
@@ -110,6 +115,7 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine($"    {attr}");
             }
 
+            sw.WriteLine($"    [NativeName(\"Name\", \"{@struct.NativeName}\")]");
             sw.WriteLine($"    public unsafe struct {@struct.Name}");
             sw.WriteLine("    {");
             if (@struct.Fields.Any(x => x.Count is null))
@@ -192,6 +198,8 @@ namespace Silk.NET.BuildTools.Bind
                             : structField.Count.IsStatic
                                 ? structField.Count.StaticCount
                                 : 1;
+                        var typeFixup09072020 = new TypeSignatureBuilder(structField.Type).WithIndirectionLevel
+                            (structField.Type.IndirectionLevels - 1).Build();
                         for (var i = 0; i < count; i++)
                         {
                             sw.WriteLine($"        {structField.Doc}");
@@ -200,9 +208,12 @@ namespace Silk.NET.BuildTools.Bind
                                 sw.WriteLine($"        {attr}");
                             }
 
+                            sw.WriteLine($"        [NativeName(\"Type\", \"{structField.NativeType}\")]");
+                            sw.WriteLine($"        [NativeName(\"Type.Name\", \"{structField.Type.OriginalName}\")]");
+                            sw.WriteLine($"        [NativeName(\"Name\", \"{structField.NativeName}\")]");
                             sw.WriteLine
                             (
-                                $"        public {structField.Type} {structField.Name}_{i};"
+                                $"        public {typeFixup09072020} {structField.Name}_{i};"
                             );
                         }
                     }
@@ -224,15 +235,20 @@ namespace Silk.NET.BuildTools.Bind
                             : structField.Count.IsStatic
                                 ? structField.Count.StaticCount
                                 : 1;
+                        var typeFixup09072020 = new TypeSignatureBuilder(structField.Type).WithIndirectionLevel
+                            (structField.Type.IndirectionLevels - 1).Build();
 
                         foreach (var attr in structField.Attributes)
                         {
                             sw.WriteLine($"        {attr}");
                         }
 
+                        sw.WriteLine($"        [NativeName(\"Type\", \"{structField.NativeType}\")]");
+                        sw.WriteLine($"        [NativeName(\"Type.Name\", \"{structField.Type.OriginalName}\")]");
+                        sw.WriteLine($"        [NativeName(\"Name\", \"{structField.NativeName}\")]");
                         sw.WriteLine
                         (
-                            $"       public fixed {structField.Type} {structField.Name}[{count}];"
+                            $"       public fixed {typeFixup09072020} {structField.Name}[{count}];"
                         );
                     }
                 }
@@ -244,6 +260,9 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine($"        {attr}");
                     }
 
+                    sw.WriteLine($"        [NativeName(\"Type\", \"{structField.NativeType}\")]");
+                    sw.WriteLine($"        [NativeName(\"Type.Name\", \"{structField.Type.OriginalName}\")]");
+                    sw.WriteLine($"        [NativeName(\"Name\", \"{structField.NativeName}\")]");
                     sw.WriteLine($"        public {structField.Type} {structField.Name};");
                 }
             }
@@ -316,6 +335,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("using System.Runtime.InteropServices;");
                     sw.WriteLine("using System.Text;");
                     sw.WriteLine("using Silk.NET.Core.Native;");
+                    sw.WriteLine("using Silk.NET.Core.Attributes;");
                     sw.WriteLine("using Silk.NET.Core.Loader;");
                     sw.WriteLine("using Ultz.SuperInvoke;");
                     sw.WriteLine();
@@ -328,6 +348,8 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine("    {");
                     foreach (var constant in @class.Constants)
                     {
+                        sw.WriteLine($"        [NativeName(\"Type\", \"{constant.Type.OriginalName}\")]");
+                        sw.WriteLine($"        [NativeName(\"Name\", \"{constant.NativeName}\")]");
                         sw.WriteLine($"        public const {constant.Type} {constant.Name} = {constant.Value};");
                     }
 
@@ -421,6 +443,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine("using System;");
                         sw.WriteLine("using Silk.NET.Core.Loader;");
                         sw.WriteLine("using Silk.NET.Core.Native;");
+                        sw.WriteLine("using Silk.NET.Core.Attributes;");
                         sw.WriteLine();
                         sw.WriteLine("#pragma warning disable 1591");
                         sw.WriteLine();

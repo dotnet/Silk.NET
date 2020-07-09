@@ -287,53 +287,92 @@
             ]
         },
         {
-            "profileName": "Vulkan",
+            "profileName": "Assimp",
             "sources": [
-                "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/master/xml/vk.xml"
+                "src/Assimp/Include/assimp.h"
             ],
-            "mode": "ConvertConstruct",
+            "mode": "Clang",
             "cacheDir": "build/cache",
-            "cacheKey": "vulkan",
-            "controlDescriptors": [],
-            "converter": {
-                "reader": "vk",
-                "constructor": "vk",
-                "className": "Vk"
+            "cacheKey": "assimp",
+            "controlDescriptors": [
+                "convert-windows-only"
+            ],
+            "converter": {},
+            "prefix": "ai",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.26.28801/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/include",
+                    "-Isrc/Assimp/Include"
+                ],
+                "traverse": [
+                    "src/Assimp/Include/assimp/cexport.h",
+                    "src/Assimp/Include/assimp/cfileio.h",
+                    "src/Assimp/Include/assimp/cimport.h",
+                    "src/Assimp/Include/assimp/types.h",
+                    "src/Assimp/Include/assimp/importerdesc.h",
+                    "src/Assimp/Include/assimp/material.h",
+                    "src/Assimp/Include/assimp/version.h",
+                    "src/Assimp/Include/assimp/texture.h",
+                    "src/Assimp/Include/assimp/mesh.h",
+                    "src/Assimp/Include/assimp/light.h",
+                    "src/Assimp/Include/assimp/camera.h",
+                    "src/Assimp/Include/assimp/anim.h",
+                    "src/Assimp/Include/assimp/metadata.h",
+                    "src/Assimp/Include/assimp/scene.h",
+                    "src/Assimp/Include/assimp/aabb.h"
+                ],
+                "classes": {
+                    "assimp.h": "[Core]Assimp"
+                }
             },
-            "prefix": "vk",
-            "clang": {},
+            "exclude": [
+                "aiColor3D"
+            ],
+            "rename": {
+                "aiString": "AssimpString"
+            },
             "bakery": {
                 "profileNames": [
-                    "vulkan"
+                    "assimp"
                 ]
             },
             "output": {
                 "mode": "Default",
-                "path": "src/Vulkan",
+                "path": "src/Assimp",
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props"
             },
-            "namespace": "Silk.NET.Vulkan",
-            "extensionsNamespace": "Silk.NET.Vulkan.Extensions",
+            "namespace": "Silk.NET.Assimp",
+            "extensionsNamespace": "Silk.NET.Assimp.Extensions",
             "legacyNameContainer": {
-                "Linux": "libvulkan.so.1",
-                "Windows": "vulkan-1.dll",
-                "MacOS": "libMoltenVK.dylib",
-                "Android": "libvulkan.so.1",
+                "Linux": "libassimp.so.5",
+                "Windows": "Assimp32.dll",
+                "MacOS": "libassimp.5.dylib",
+                "Android": "libassimp.so.5",
                 "IOS": "__Internal",
-                "ClassName": "VulkanLibraryNameContainer"
+                "ClassName": "AssimpLibraryNameContainer"
             },
             "typeMaps": [
                 {
-                    "PFN_vkInternalAllocationNotification": "FuncPtr",
-                    "PFN_vkInternalFreeNotification": "FuncPtr",
-                    "PFN_vkReallocationFunction": "FuncPtr",
-                    "PFN_vkAllocationFunction": "FuncPtr",
-                    "PFN_vkFreeFunction": "FuncPtr",
-                    "PFN_vkVoidFunction": "FuncPtr",
-                    "PFN_vkDebugReportCallbackEXT": "FuncPtr",
-                    "PFN_vkDebugUtilsMessengerCallbackEXT": "FuncPtr",
-                    "char": "byte"
+                    "aiVector3D": "System.Numerics.Vector3",
+                    "aiColor4D": "System.Numerics.Vector4",
+                    "aiColor3D": "System.Numerics.Vector3",
+                    "aiVector2D": "System.Numerics.Vector2",
+                    "aiQuaternion": "System.Numerics.Quaternion",
+                    "aiMatrix4x4": "System.Numerics.Matrix4x4",
+                    "aiMatrix3x3": "AssimpMatrix3x3"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"

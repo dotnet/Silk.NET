@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using JetBrains.Annotations;
+using Silk.NET.BuildTools.Common.Structs;
 
 namespace Silk.NET.BuildTools.Common
 {
@@ -243,6 +244,21 @@ namespace Silk.NET.BuildTools.Common
             }
 
             return name;
+        }
+
+        public static Field WithFixedFieldFixup09072020(this Field field)
+        {
+            if (field.Count is null)
+            {
+                return field;
+            }
+            
+            if (field.Count.IsStatic)
+            {
+                field.Type.IndirectionLevels++;
+            }
+            
+            return field;
         }
     }
 }

@@ -5,14 +5,18 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL
 {
+    [NativeName("Name", "CombinerPortionNV")]
     public enum CombinerPortionNV
     {
+        [NativeName("Name", "GL_ALPHA")]
         Alpha = 0x1906,
+        [NativeName("Name", "GL_RGB")]
         Rgb = 0x1907,
     }
 }

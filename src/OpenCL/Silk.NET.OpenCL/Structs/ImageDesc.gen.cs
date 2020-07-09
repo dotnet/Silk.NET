@@ -8,12 +8,14 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenCL
 {
+    [NativeName("Name", "cl_image_desc")]
     public unsafe struct ImageDesc
     {
         public ImageDesc
@@ -41,22 +43,49 @@ namespace Silk.NET.OpenCL
         }
 
 /// <summary></summary>
+        [NativeName("Type", "cl_mem_object_type")]
+        [NativeName("Type.Name", "cl_mem_object_type")]
+        [NativeName("Name", "image_type")]
         public uint ImageType;
 /// <summary></summary>
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "image_width")]
         public UIntPtr ImageWidth;
 /// <summary></summary>
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "image_height")]
         public UIntPtr ImageHeight;
 /// <summary></summary>
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "image_depth")]
         public UIntPtr ImageDepth;
 /// <summary></summary>
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "image_array_size")]
         public UIntPtr ImageArraySize;
 /// <summary></summary>
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "image_row_pitch")]
         public UIntPtr ImageRowPitch;
 /// <summary></summary>
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "image_slice_pitch")]
         public UIntPtr ImageSlicePitch;
 /// <summary></summary>
+        [NativeName("Type", "cl_uint")]
+        [NativeName("Type.Name", "cl_uint")]
+        [NativeName("Name", "num_mip_levels")]
         public uint NumMipLevels;
 /// <summary></summary>
+        [NativeName("Type", "cl_uint")]
+        [NativeName("Type.Name", "cl_uint")]
+        [NativeName("Name", "num_samples")]
         public uint NumSamples;
     }
 }

@@ -5,14 +5,18 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy
 {
+    [NativeName("Name", "VertexShaderWriteMaskEXT")]
     public enum VertexShaderWriteMaskEXT
     {
+        [NativeName("Name", "GL_FALSE")]
         False = 0x0,
+        [NativeName("Name", "GL_TRUE")]
         True = 0x1,
     }
 }

@@ -5,15 +5,20 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL
 {
+    [NativeName("Name", "PolygonMode")]
     public enum PolygonMode
     {
+        [NativeName("Name", "GL_POINT")]
         Point = 0x1B00,
+        [NativeName("Name", "GL_LINE")]
         Line = 0x1B01,
+        [NativeName("Name", "GL_FILL")]
         Fill = 0x1B02,
     }
 }

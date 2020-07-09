@@ -6,6 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Loader;
 using Ultz.SuperInvoke;
 

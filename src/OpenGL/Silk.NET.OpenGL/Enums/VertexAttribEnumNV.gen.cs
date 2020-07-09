@@ -5,13 +5,16 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL
 {
+    [NativeName("Name", "VertexAttribEnumNV")]
     public enum VertexAttribEnumNV
     {
+        [NativeName("Name", "GL_PROGRAM_PARAMETER_NV")]
         ProgramParameterNV = 0x8644,
     }
 }

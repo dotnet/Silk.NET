@@ -5,14 +5,18 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy
 {
+    [NativeName("Name", "FfdTargetSGIX")]
     public enum FfdTargetSGIX
     {
+        [NativeName("Name", "GL_GEOMETRY_DEFORMATION_SGIX")]
         GeometryDeformationSgix = 0x8194,
+        [NativeName("Name", "GL_TEXTURE_DEFORMATION_SGIX")]
         TextureDeformationSgix = 0x8195,
     }
 }
