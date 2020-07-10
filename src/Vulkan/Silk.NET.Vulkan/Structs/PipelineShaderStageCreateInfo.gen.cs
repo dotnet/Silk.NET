@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineShaderStageCreateInfo")]
-    public unsafe struct PipelineShaderStageCreateInfo
+    public unsafe partial struct PipelineShaderStageCreateInfo
     {
         public PipelineShaderStageCreateInfo
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             SpecializationInfo* pSpecializationInfo = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Stage = stage;
-           Module = module;
-           PName = pName;
-           PSpecializationInfo = pSpecializationInfo;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Stage = stage;
+            Module = module;
+            PName = pName;
+            PSpecializationInfo = pSpecializationInfo;
         }
 
 /// <summary></summary>

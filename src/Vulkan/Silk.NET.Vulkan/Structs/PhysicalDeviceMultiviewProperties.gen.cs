@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMultiviewProperties")]
-    public unsafe struct PhysicalDeviceMultiviewProperties
+    public unsafe partial struct PhysicalDeviceMultiviewProperties
     {
         public PhysicalDeviceMultiviewProperties
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint maxMultiviewInstanceIndex = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxMultiviewViewCount = maxMultiviewViewCount;
-           MaxMultiviewInstanceIndex = maxMultiviewInstanceIndex;
+            SType = sType;
+            PNext = pNext;
+            MaxMultiviewViewCount = maxMultiviewViewCount;
+            MaxMultiviewInstanceIndex = maxMultiviewInstanceIndex;
         }
 
 /// <summary></summary>

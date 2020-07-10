@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceDiagnosticsConfigCreateInfoNV")]
-    public unsafe struct DeviceDiagnosticsConfigCreateInfoNV
+    public unsafe partial struct DeviceDiagnosticsConfigCreateInfoNV
     {
         public DeviceDiagnosticsConfigCreateInfoNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             DeviceDiagnosticsConfigFlagsNV flags = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
         }
 
 /// <summary></summary>

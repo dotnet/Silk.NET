@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSurfaceCapabilitiesKHR")]
-    public unsafe struct SurfaceCapabilitiesKHR
+    public unsafe partial struct SurfaceCapabilitiesKHR
     {
         public SurfaceCapabilitiesKHR
         (
@@ -32,16 +32,16 @@ namespace Silk.NET.Vulkan
             ImageUsageFlags supportedUsageFlags = default
         )
         {
-           MinImageCount = minImageCount;
-           MaxImageCount = maxImageCount;
-           CurrentExtent = currentExtent;
-           MinImageExtent = minImageExtent;
-           MaxImageExtent = maxImageExtent;
-           MaxImageArrayLayers = maxImageArrayLayers;
-           SupportedTransforms = supportedTransforms;
-           CurrentTransform = currentTransform;
-           SupportedCompositeAlpha = supportedCompositeAlpha;
-           SupportedUsageFlags = supportedUsageFlags;
+            MinImageCount = minImageCount;
+            MaxImageCount = maxImageCount;
+            CurrentExtent = currentExtent;
+            MinImageExtent = minImageExtent;
+            MaxImageExtent = maxImageExtent;
+            MaxImageArrayLayers = maxImageArrayLayers;
+            SupportedTransforms = supportedTransforms;
+            CurrentTransform = currentTransform;
+            SupportedCompositeAlpha = supportedCompositeAlpha;
+            SupportedUsageFlags = supportedUsageFlags;
         }
 
 /// <summary></summary>

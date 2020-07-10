@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayPresentInfoKHR")]
-    public unsafe struct DisplayPresentInfoKHR
+    public unsafe partial struct DisplayPresentInfoKHR
     {
         public DisplayPresentInfoKHR
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             Bool32 persistent = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SrcRect = srcRect;
-           DstRect = dstRect;
-           Persistent = persistent;
+            SType = sType;
+            PNext = pNext;
+            SrcRect = srcRect;
+            DstRect = dstRect;
+            Persistent = persistent;
         }
 
 /// <summary></summary>

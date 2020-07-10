@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalImageFormatInfo")]
-    public unsafe struct PhysicalDeviceExternalImageFormatInfo
+    public unsafe partial struct PhysicalDeviceExternalImageFormatInfo
     {
         public PhysicalDeviceExternalImageFormatInfo
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ExternalMemoryHandleTypeFlags handleType = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           HandleType = handleType;
+            SType = sType;
+            PNext = pNext;
+            HandleType = handleType;
         }
 
 /// <summary></summary>

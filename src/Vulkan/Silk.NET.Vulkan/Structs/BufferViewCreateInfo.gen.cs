@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferViewCreateInfo")]
-    public unsafe struct BufferViewCreateInfo
+    public unsafe partial struct BufferViewCreateInfo
     {
         public BufferViewCreateInfo
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             ulong range = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Buffer = buffer;
-           Format = format;
-           Offset = offset;
-           Range = range;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Buffer = buffer;
+            Format = format;
+            Offset = offset;
+            Range = range;
         }
 
 /// <summary></summary>

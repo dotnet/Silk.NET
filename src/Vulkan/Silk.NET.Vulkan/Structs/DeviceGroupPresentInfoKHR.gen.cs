@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupPresentInfoKHR")]
-    public unsafe struct DeviceGroupPresentInfoKHR
+    public unsafe partial struct DeviceGroupPresentInfoKHR
     {
         public DeviceGroupPresentInfoKHR
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             DeviceGroupPresentModeFlagsKHR mode = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SwapchainCount = swapchainCount;
-           PDeviceMasks = pDeviceMasks;
-           Mode = mode;
+            SType = sType;
+            PNext = pNext;
+            SwapchainCount = swapchainCount;
+            PDeviceMasks = pDeviceMasks;
+            Mode = mode;
         }
 
 /// <summary></summary>

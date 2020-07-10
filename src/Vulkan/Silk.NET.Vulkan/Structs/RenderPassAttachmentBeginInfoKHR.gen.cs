@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassAttachmentBeginInfoKHR")]
-    public unsafe struct RenderPassAttachmentBeginInfoKHR
+    public unsafe partial struct RenderPassAttachmentBeginInfoKHR
     {
         public RenderPassAttachmentBeginInfoKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             ImageView* pAttachments = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           AttachmentCount = attachmentCount;
-           PAttachments = pAttachments;
+            SType = sType;
+            PNext = pNext;
+            AttachmentCount = attachmentCount;
+            PAttachments = pAttachments;
         }
 
 /// <summary></summary>

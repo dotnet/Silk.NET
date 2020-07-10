@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPresentTimesInfoGOOGLE")]
-    public unsafe struct PresentTimesInfoGOOGLE
+    public unsafe partial struct PresentTimesInfoGOOGLE
     {
         public PresentTimesInfoGOOGLE
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             PresentTimeGOOGLE* pTimes = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SwapchainCount = swapchainCount;
-           PTimes = pTimes;
+            SType = sType;
+            PNext = pNext;
+            SwapchainCount = swapchainCount;
+            PTimes = pTimes;
         }
 
 /// <summary></summary>

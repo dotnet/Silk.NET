@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueueFamilyCheckpointPropertiesNV")]
-    public unsafe struct QueueFamilyCheckpointPropertiesNV
+    public unsafe partial struct QueueFamilyCheckpointPropertiesNV
     {
         public QueueFamilyCheckpointPropertiesNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             PipelineStageFlags checkpointExecutionStageMask = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           CheckpointExecutionStageMask = checkpointExecutionStageMask;
+            SType = sType;
+            PNext = pNext;
+            CheckpointExecutionStageMask = checkpointExecutionStageMask;
         }
 
 /// <summary></summary>

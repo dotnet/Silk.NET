@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineViewportSwizzleStateCreateInfoNV")]
-    public unsafe struct PipelineViewportSwizzleStateCreateInfoNV
+    public unsafe partial struct PipelineViewportSwizzleStateCreateInfoNV
     {
         public PipelineViewportSwizzleStateCreateInfoNV
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             ViewportSwizzleNV* pViewportSwizzles = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           ViewportCount = viewportCount;
-           PViewportSwizzles = pViewportSwizzles;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            ViewportCount = viewportCount;
+            PViewportSwizzles = pViewportSwizzles;
         }
 
 /// <summary></summary>

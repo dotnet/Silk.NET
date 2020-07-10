@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderSMBuiltinsPropertiesNV")]
-    public unsafe struct PhysicalDeviceShaderSMBuiltinsPropertiesNV
+    public unsafe partial struct PhysicalDeviceShaderSMBuiltinsPropertiesNV
     {
         public PhysicalDeviceShaderSMBuiltinsPropertiesNV
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint shaderWarpsPerSM = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ShaderSmcount = shaderSmcount;
-           ShaderWarpsPerSM = shaderWarpsPerSM;
+            SType = sType;
+            PNext = pNext;
+            ShaderSmcount = shaderSmcount;
+            ShaderWarpsPerSM = shaderWarpsPerSM;
         }
 
 /// <summary></summary>

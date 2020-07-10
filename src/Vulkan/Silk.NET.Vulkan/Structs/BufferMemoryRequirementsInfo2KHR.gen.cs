@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferMemoryRequirementsInfo2KHR")]
-    public unsafe struct BufferMemoryRequirementsInfo2KHR
+    public unsafe partial struct BufferMemoryRequirementsInfo2KHR
     {
         public BufferMemoryRequirementsInfo2KHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Buffer buffer = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Buffer = buffer;
+            SType = sType;
+            PNext = pNext;
+            Buffer = buffer;
         }
 
 /// <summary></summary>

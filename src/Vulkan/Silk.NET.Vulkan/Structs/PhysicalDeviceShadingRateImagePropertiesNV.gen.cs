@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShadingRateImagePropertiesNV")]
-    public unsafe struct PhysicalDeviceShadingRateImagePropertiesNV
+    public unsafe partial struct PhysicalDeviceShadingRateImagePropertiesNV
     {
         public PhysicalDeviceShadingRateImagePropertiesNV
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             uint shadingRateMaxCoarseSamples = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ShadingRateTexelSize = shadingRateTexelSize;
-           ShadingRatePaletteSize = shadingRatePaletteSize;
-           ShadingRateMaxCoarseSamples = shadingRateMaxCoarseSamples;
+            SType = sType;
+            PNext = pNext;
+            ShadingRateTexelSize = shadingRateTexelSize;
+            ShadingRatePaletteSize = shadingRatePaletteSize;
+            ShadingRateMaxCoarseSamples = shadingRateMaxCoarseSamples;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGeometryDataNV")]
-    public unsafe struct GeometryDataNV
+    public unsafe partial struct GeometryDataNV
     {
         public GeometryDataNV
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             GeometryAABBNV aabbs = default
         )
         {
-           Triangles = triangles;
-           Aabbs = aabbs;
+            Triangles = triangles;
+            Aabbs = aabbs;
         }
 
 /// <summary></summary>

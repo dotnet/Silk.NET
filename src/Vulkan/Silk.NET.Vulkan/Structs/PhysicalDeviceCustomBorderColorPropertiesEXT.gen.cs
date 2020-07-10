@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceCustomBorderColorPropertiesEXT")]
-    public unsafe struct PhysicalDeviceCustomBorderColorPropertiesEXT
+    public unsafe partial struct PhysicalDeviceCustomBorderColorPropertiesEXT
     {
         public PhysicalDeviceCustomBorderColorPropertiesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint maxCustomBorderColorSamplers = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxCustomBorderColorSamplers = maxCustomBorderColorSamplers;
+            SType = sType;
+            PNext = pNext;
+            MaxCustomBorderColorSamplers = maxCustomBorderColorSamplers;
         }
 
 /// <summary></summary>

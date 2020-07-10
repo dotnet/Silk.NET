@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueryPoolCreateInfo")]
-    public unsafe struct QueryPoolCreateInfo
+    public unsafe partial struct QueryPoolCreateInfo
     {
         public QueryPoolCreateInfo
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             QueryPipelineStatisticFlags pipelineStatistics = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           QueryType = queryType;
-           QueryCount = queryCount;
-           PipelineStatistics = pipelineStatistics;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            QueryType = queryType;
+            QueryCount = queryCount;
+            PipelineStatistics = pipelineStatistics;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineMultisampleStateCreateInfo")]
-    public unsafe struct PipelineMultisampleStateCreateInfo
+    public unsafe partial struct PipelineMultisampleStateCreateInfo
     {
         public PipelineMultisampleStateCreateInfo
         (
@@ -31,15 +31,15 @@ namespace Silk.NET.Vulkan
             Bool32 alphaToOneEnable = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           RasterizationSamples = rasterizationSamples;
-           SampleShadingEnable = sampleShadingEnable;
-           MinSampleShading = minSampleShading;
-           PSampleMask = pSampleMask;
-           AlphaToCoverageEnable = alphaToCoverageEnable;
-           AlphaToOneEnable = alphaToOneEnable;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            RasterizationSamples = rasterizationSamples;
+            SampleShadingEnable = sampleShadingEnable;
+            MinSampleShading = minSampleShading;
+            PSampleMask = pSampleMask;
+            AlphaToCoverageEnable = alphaToCoverageEnable;
+            AlphaToOneEnable = alphaToOneEnable;
         }
 
 /// <summary></summary>

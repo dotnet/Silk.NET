@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceMemory")]
-    public unsafe struct DeviceMemory
+    public unsafe partial struct DeviceMemory
     {
         public DeviceMemory
         (
             ulong handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSampler")]
-    public unsafe struct Sampler
+    public unsafe partial struct Sampler
     {
         public Sampler
         (
             ulong handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

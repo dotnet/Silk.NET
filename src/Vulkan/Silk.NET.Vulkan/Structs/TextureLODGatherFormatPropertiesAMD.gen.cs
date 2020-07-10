@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkTextureLODGatherFormatPropertiesAMD")]
-    public unsafe struct TextureLODGatherFormatPropertiesAMD
+    public unsafe partial struct TextureLODGatherFormatPropertiesAMD
     {
         public TextureLODGatherFormatPropertiesAMD
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 supportsTextureGatherLodbiasAmd = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SupportsTextureGatherLodbiasAmd = supportsTextureGatherLodbiasAmd;
+            SType = sType;
+            PNext = pNext;
+            SupportsTextureGatherLodbiasAmd = supportsTextureGatherLodbiasAmd;
         }
 
 /// <summary></summary>

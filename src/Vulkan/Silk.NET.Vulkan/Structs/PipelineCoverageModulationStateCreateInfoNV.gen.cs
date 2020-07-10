@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineCoverageModulationStateCreateInfoNV")]
-    public unsafe struct PipelineCoverageModulationStateCreateInfoNV
+    public unsafe partial struct PipelineCoverageModulationStateCreateInfoNV
     {
         public PipelineCoverageModulationStateCreateInfoNV
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             float* pCoverageModulationTable = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           CoverageModulationMode = coverageModulationMode;
-           CoverageModulationTableEnable = coverageModulationTableEnable;
-           CoverageModulationTableCount = coverageModulationTableCount;
-           PCoverageModulationTable = pCoverageModulationTable;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            CoverageModulationMode = coverageModulationMode;
+            CoverageModulationTableEnable = coverageModulationTableEnable;
+            CoverageModulationTableCount = coverageModulationTableCount;
+            PCoverageModulationTable = pCoverageModulationTable;
         }
 
 /// <summary></summary>

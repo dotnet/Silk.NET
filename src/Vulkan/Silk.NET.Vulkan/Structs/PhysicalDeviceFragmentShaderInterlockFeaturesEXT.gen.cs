@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT")]
-    public unsafe struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
+    public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
     {
         public PhysicalDeviceFragmentShaderInterlockFeaturesEXT
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             Bool32 fragmentShaderShadingRateInterlock = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           FragmentShaderSampleInterlock = fragmentShaderSampleInterlock;
-           FragmentShaderPixelInterlock = fragmentShaderPixelInterlock;
-           FragmentShaderShadingRateInterlock = fragmentShaderShadingRateInterlock;
+            SType = sType;
+            PNext = pNext;
+            FragmentShaderSampleInterlock = fragmentShaderSampleInterlock;
+            FragmentShaderPixelInterlock = fragmentShaderPixelInterlock;
+            FragmentShaderShadingRateInterlock = fragmentShaderShadingRateInterlock;
         }
 
 /// <summary></summary>

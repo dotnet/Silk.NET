@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiVectorKey")]
-    public unsafe struct VectorKey
+    public unsafe partial struct VectorKey
     {
         public VectorKey
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Assimp
             System.Numerics.Vector3 mValue = default
         )
         {
-           MTime = mTime;
-           MValue = mValue;
+            MTime = mTime;
+            MValue = mValue;
         }
 
 

@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFramebuffer")]
-    public unsafe struct Framebuffer
+    public unsafe partial struct Framebuffer
     {
         public Framebuffer
         (
             ulong handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

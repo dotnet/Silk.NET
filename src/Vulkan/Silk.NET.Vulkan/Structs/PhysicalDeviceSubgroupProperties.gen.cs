@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSubgroupProperties")]
-    public unsafe struct PhysicalDeviceSubgroupProperties
+    public unsafe partial struct PhysicalDeviceSubgroupProperties
     {
         public PhysicalDeviceSubgroupProperties
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             Bool32 quadOperationsInAllStages = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SubgroupSize = subgroupSize;
-           SupportedStages = supportedStages;
-           SupportedOperations = supportedOperations;
-           QuadOperationsInAllStages = quadOperationsInAllStages;
+            SType = sType;
+            PNext = pNext;
+            SubgroupSize = subgroupSize;
+            SupportedStages = supportedStages;
+            SupportedOperations = supportedOperations;
+            QuadOperationsInAllStages = quadOperationsInAllStages;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMemoryPriorityFeaturesEXT")]
-    public unsafe struct PhysicalDeviceMemoryPriorityFeaturesEXT
+    public unsafe partial struct PhysicalDeviceMemoryPriorityFeaturesEXT
     {
         public PhysicalDeviceMemoryPriorityFeaturesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 memoryPriority = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MemoryPriority = memoryPriority;
+            SType = sType;
+            PNext = pNext;
+            MemoryPriority = memoryPriority;
         }
 
 /// <summary></summary>

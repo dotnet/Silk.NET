@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRayTracingPipelineInterfaceCreateInfoKHR")]
-    public unsafe struct RayTracingPipelineInterfaceCreateInfoKHR
+    public unsafe partial struct RayTracingPipelineInterfaceCreateInfoKHR
     {
         public RayTracingPipelineInterfaceCreateInfoKHR
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             uint maxCallableSize = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxPayloadSize = maxPayloadSize;
-           MaxAttributeSize = maxAttributeSize;
-           MaxCallableSize = maxCallableSize;
+            SType = sType;
+            PNext = pNext;
+            MaxPayloadSize = maxPayloadSize;
+            MaxAttributeSize = maxAttributeSize;
+            MaxCallableSize = maxCallableSize;
         }
 
 /// <summary></summary>

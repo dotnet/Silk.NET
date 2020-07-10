@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineViewportCoarseSampleOrderStateCreateInfoNV")]
-    public unsafe struct PipelineViewportCoarseSampleOrderStateCreateInfoNV
+    public unsafe partial struct PipelineViewportCoarseSampleOrderStateCreateInfoNV
     {
         public PipelineViewportCoarseSampleOrderStateCreateInfoNV
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             CoarseSampleOrderCustomNV* pCustomSampleOrders = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SampleOrderType = sampleOrderType;
-           CustomSampleOrderCount = customSampleOrderCount;
-           PCustomSampleOrders = pCustomSampleOrders;
+            SType = sType;
+            PNext = pNext;
+            SampleOrderType = sampleOrderType;
+            CustomSampleOrderCount = customSampleOrderCount;
+            PCustomSampleOrders = pCustomSampleOrders;
         }
 
 /// <summary></summary>

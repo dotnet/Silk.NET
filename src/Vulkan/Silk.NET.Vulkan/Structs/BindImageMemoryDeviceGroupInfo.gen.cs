@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindImageMemoryDeviceGroupInfo")]
-    public unsafe struct BindImageMemoryDeviceGroupInfo
+    public unsafe partial struct BindImageMemoryDeviceGroupInfo
     {
         public BindImageMemoryDeviceGroupInfo
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             Rect2D* pSplitInstanceBindRegions = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DeviceIndexCount = deviceIndexCount;
-           PDeviceIndices = pDeviceIndices;
-           SplitInstanceBindRegionCount = splitInstanceBindRegionCount;
-           PSplitInstanceBindRegions = pSplitInstanceBindRegions;
+            SType = sType;
+            PNext = pNext;
+            DeviceIndexCount = deviceIndexCount;
+            PDeviceIndices = pDeviceIndices;
+            SplitInstanceBindRegionCount = splitInstanceBindRegionCount;
+            PSplitInstanceBindRegions = pSplitInstanceBindRegions;
         }
 
 /// <summary></summary>

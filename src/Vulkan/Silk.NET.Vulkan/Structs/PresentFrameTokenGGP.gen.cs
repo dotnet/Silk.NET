@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPresentFrameTokenGGP")]
-    public unsafe struct PresentFrameTokenGGP
+    public unsafe partial struct PresentFrameTokenGGP
     {
         public PresentFrameTokenGGP
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             IntPtr frameToken = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           FrameToken = frameToken;
+            SType = sType;
+            PNext = pNext;
+            FrameToken = frameToken;
         }
 
 /// <summary></summary>

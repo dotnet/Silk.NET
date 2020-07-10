@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkInstanceCreateInfo")]
-    public unsafe struct InstanceCreateInfo
+    public unsafe partial struct InstanceCreateInfo
     {
         public InstanceCreateInfo
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Vulkan
             byte** ppEnabledExtensionNames = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           PApplicationInfo = pApplicationInfo;
-           EnabledLayerCount = enabledLayerCount;
-           PpEnabledLayerNames = ppEnabledLayerNames;
-           EnabledExtensionCount = enabledExtensionCount;
-           PpEnabledExtensionNames = ppEnabledExtensionNames;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            PApplicationInfo = pApplicationInfo;
+            EnabledLayerCount = enabledLayerCount;
+            PpEnabledLayerNames = ppEnabledLayerNames;
+            EnabledExtensionCount = enabledExtensionCount;
+            PpEnabledExtensionNames = ppEnabledExtensionNames;
         }
 
 /// <summary></summary>

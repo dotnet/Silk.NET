@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageSubresource")]
-    public unsafe struct ImageSubresource
+    public unsafe partial struct ImageSubresource
     {
         public ImageSubresource
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint arrayLayer = default
         )
         {
-           AspectMask = aspectMask;
-           MipLevel = mipLevel;
-           ArrayLayer = arrayLayer;
+            AspectMask = aspectMask;
+            MipLevel = mipLevel;
+            ArrayLayer = arrayLayer;
         }
 
 /// <summary></summary>

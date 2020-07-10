@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMeshShaderPropertiesNV")]
-    public unsafe struct PhysicalDeviceMeshShaderPropertiesNV
+    public unsafe partial struct PhysicalDeviceMeshShaderPropertiesNV
     {
         public PhysicalDeviceMeshShaderPropertiesNV
         (
@@ -35,19 +35,19 @@ namespace Silk.NET.Vulkan
             uint meshOutputPerPrimitiveGranularity = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxDrawMeshTasksCount = maxDrawMeshTasksCount;
-           MaxTaskWorkGroupInvocations = maxTaskWorkGroupInvocations;
-           MaxTaskTotalMemorySize = maxTaskTotalMemorySize;
-           MaxTaskOutputCount = maxTaskOutputCount;
-           MaxMeshWorkGroupInvocations = maxMeshWorkGroupInvocations;
-           MaxMeshTotalMemorySize = maxMeshTotalMemorySize;
-           MaxMeshOutputVertices = maxMeshOutputVertices;
-           MaxMeshOutputPrimitives = maxMeshOutputPrimitives;
-           MaxMeshMultiviewViewCount = maxMeshMultiviewViewCount;
-           MeshOutputPerVertexGranularity = meshOutputPerVertexGranularity;
-           MeshOutputPerPrimitiveGranularity = meshOutputPerPrimitiveGranularity;
+            SType = sType;
+            PNext = pNext;
+            MaxDrawMeshTasksCount = maxDrawMeshTasksCount;
+            MaxTaskWorkGroupInvocations = maxTaskWorkGroupInvocations;
+            MaxTaskTotalMemorySize = maxTaskTotalMemorySize;
+            MaxTaskOutputCount = maxTaskOutputCount;
+            MaxMeshWorkGroupInvocations = maxMeshWorkGroupInvocations;
+            MaxMeshTotalMemorySize = maxMeshTotalMemorySize;
+            MaxMeshOutputVertices = maxMeshOutputVertices;
+            MaxMeshOutputPrimitives = maxMeshOutputPrimitives;
+            MaxMeshMultiviewViewCount = maxMeshMultiviewViewCount;
+            MeshOutputPerVertexGranularity = meshOutputPerVertexGranularity;
+            MeshOutputPerPrimitiveGranularity = meshOutputPerPrimitiveGranularity;
         }
 
 /// <summary></summary>

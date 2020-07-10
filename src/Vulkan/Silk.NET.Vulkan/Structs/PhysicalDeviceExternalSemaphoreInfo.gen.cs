@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalSemaphoreInfo")]
-    public unsafe struct PhysicalDeviceExternalSemaphoreInfo
+    public unsafe partial struct PhysicalDeviceExternalSemaphoreInfo
     {
         public PhysicalDeviceExternalSemaphoreInfo
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ExternalSemaphoreHandleTypeFlags handleType = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           HandleType = handleType;
+            SType = sType;
+            PNext = pNext;
+            HandleType = handleType;
         }
 
 /// <summary></summary>

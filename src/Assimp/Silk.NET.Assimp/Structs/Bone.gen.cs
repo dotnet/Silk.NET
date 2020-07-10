@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiBone")]
-    public unsafe struct Bone
+    public unsafe partial struct Bone
     {
         public Bone
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Assimp
             System.Numerics.Matrix4x4 mOffsetMatrix = default
         )
         {
-           MName = mName;
-           MNumWeights = mNumWeights;
-           MWeights = mWeights;
-           MOffsetMatrix = mOffsetMatrix;
+            MName = mName;
+            MNumWeights = mNumWeights;
+            MWeights = mWeights;
+            MOffsetMatrix = mOffsetMatrix;
         }
 
 

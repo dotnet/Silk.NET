@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceCreateInfo")]
-    public unsafe struct DeviceCreateInfo
+    public unsafe partial struct DeviceCreateInfo
     {
         public DeviceCreateInfo
         (
@@ -32,16 +32,16 @@ namespace Silk.NET.Vulkan
             PhysicalDeviceFeatures* pEnabledFeatures = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           QueueCreateInfoCount = queueCreateInfoCount;
-           PQueueCreateInfos = pQueueCreateInfos;
-           EnabledLayerCount = enabledLayerCount;
-           PpEnabledLayerNames = ppEnabledLayerNames;
-           EnabledExtensionCount = enabledExtensionCount;
-           PpEnabledExtensionNames = ppEnabledExtensionNames;
-           PEnabledFeatures = pEnabledFeatures;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            QueueCreateInfoCount = queueCreateInfoCount;
+            PQueueCreateInfos = pQueueCreateInfos;
+            EnabledLayerCount = enabledLayerCount;
+            PpEnabledLayerNames = ppEnabledLayerNames;
+            EnabledExtensionCount = enabledExtensionCount;
+            PpEnabledExtensionNames = ppEnabledExtensionNames;
+            PEnabledFeatures = pEnabledFeatures;
         }
 
 /// <summary></summary>

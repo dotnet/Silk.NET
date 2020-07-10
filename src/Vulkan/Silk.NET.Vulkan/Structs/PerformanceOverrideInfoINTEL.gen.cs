@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceOverrideInfoINTEL")]
-    public unsafe struct PerformanceOverrideInfoINTEL
+    public unsafe partial struct PerformanceOverrideInfoINTEL
     {
         public PerformanceOverrideInfoINTEL
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             ulong parameter = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Type = type;
-           Enable = enable;
-           Parameter = parameter;
+            SType = sType;
+            PNext = pNext;
+            Type = type;
+            Enable = enable;
+            Parameter = parameter;
         }
 
 /// <summary></summary>

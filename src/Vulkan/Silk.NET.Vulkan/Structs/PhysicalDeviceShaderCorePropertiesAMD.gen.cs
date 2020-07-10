@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderCorePropertiesAMD")]
-    public unsafe struct PhysicalDeviceShaderCorePropertiesAMD
+    public unsafe partial struct PhysicalDeviceShaderCorePropertiesAMD
     {
         public PhysicalDeviceShaderCorePropertiesAMD
         (
@@ -38,22 +38,22 @@ namespace Silk.NET.Vulkan
             uint vgprAllocationGranularity = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ShaderEngineCount = shaderEngineCount;
-           ShaderArraysPerEngineCount = shaderArraysPerEngineCount;
-           ComputeUnitsPerShaderArray = computeUnitsPerShaderArray;
-           SimdPerComputeUnit = simdPerComputeUnit;
-           WavefrontsPerSimd = wavefrontsPerSimd;
-           WavefrontSize = wavefrontSize;
-           SgprsPerSimd = sgprsPerSimd;
-           MinSgprAllocation = minSgprAllocation;
-           MaxSgprAllocation = maxSgprAllocation;
-           SgprAllocationGranularity = sgprAllocationGranularity;
-           VgprsPerSimd = vgprsPerSimd;
-           MinVgprAllocation = minVgprAllocation;
-           MaxVgprAllocation = maxVgprAllocation;
-           VgprAllocationGranularity = vgprAllocationGranularity;
+            SType = sType;
+            PNext = pNext;
+            ShaderEngineCount = shaderEngineCount;
+            ShaderArraysPerEngineCount = shaderArraysPerEngineCount;
+            ComputeUnitsPerShaderArray = computeUnitsPerShaderArray;
+            SimdPerComputeUnit = simdPerComputeUnit;
+            WavefrontsPerSimd = wavefrontsPerSimd;
+            WavefrontSize = wavefrontSize;
+            SgprsPerSimd = sgprsPerSimd;
+            MinSgprAllocation = minSgprAllocation;
+            MaxSgprAllocation = maxSgprAllocation;
+            SgprAllocationGranularity = sgprAllocationGranularity;
+            VgprsPerSimd = vgprsPerSimd;
+            MinVgprAllocation = minVgprAllocation;
+            MaxVgprAllocation = maxVgprAllocation;
+            VgprAllocationGranularity = vgprAllocationGranularity;
         }
 
 /// <summary></summary>

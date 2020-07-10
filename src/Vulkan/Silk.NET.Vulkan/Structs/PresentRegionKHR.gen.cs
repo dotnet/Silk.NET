@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPresentRegionKHR")]
-    public unsafe struct PresentRegionKHR
+    public unsafe partial struct PresentRegionKHR
     {
         public PresentRegionKHR
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             RectLayerKHR* pRectangles = default
         )
         {
-           RectangleCount = rectangleCount;
-           PRectangles = pRectangles;
+            RectangleCount = rectangleCount;
+            PRectangles = pRectangles;
         }
 
 /// <summary></summary>

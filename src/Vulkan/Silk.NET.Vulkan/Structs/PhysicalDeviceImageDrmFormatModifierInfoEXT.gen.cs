@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceImageDrmFormatModifierInfoEXT")]
-    public unsafe struct PhysicalDeviceImageDrmFormatModifierInfoEXT
+    public unsafe partial struct PhysicalDeviceImageDrmFormatModifierInfoEXT
     {
         public PhysicalDeviceImageDrmFormatModifierInfoEXT
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             uint* pQueueFamilyIndices = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DrmFormatModifier = drmFormatModifier;
-           SharingMode = sharingMode;
-           QueueFamilyIndexCount = queueFamilyIndexCount;
-           PQueueFamilyIndices = pQueueFamilyIndices;
+            SType = sType;
+            PNext = pNext;
+            DrmFormatModifier = drmFormatModifier;
+            SharingMode = sharingMode;
+            QueueFamilyIndexCount = queueFamilyIndexCount;
+            PQueueFamilyIndices = pQueueFamilyIndices;
         }
 
 /// <summary></summary>

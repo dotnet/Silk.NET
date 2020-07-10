@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBaseInStructure")]
-    public unsafe struct BaseInStructure
+    public unsafe partial struct BaseInStructure
     {
         public BaseInStructure
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             BaseInStructure* pNext = default
         )
         {
-           SType = sType;
-           PNext = pNext;
+            SType = sType;
+            PNext = pNext;
         }
 
 /// <summary></summary>

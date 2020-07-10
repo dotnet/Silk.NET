@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiFace")]
-    public unsafe struct Face
+    public unsafe partial struct Face
     {
         public Face
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Assimp
             uint* mIndices = default
         )
         {
-           MNumIndices = mNumIndices;
-           MIndices = mIndices;
+            MNumIndices = mNumIndices;
+            MIndices = mIndices;
         }
 
 

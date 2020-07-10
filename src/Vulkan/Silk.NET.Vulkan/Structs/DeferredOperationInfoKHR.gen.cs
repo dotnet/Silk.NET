@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeferredOperationInfoKHR")]
-    public unsafe struct DeferredOperationInfoKHR
+    public unsafe partial struct DeferredOperationInfoKHR
     {
         public DeferredOperationInfoKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             DeferredOperationKHR operationHandle = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           OperationHandle = operationHandle;
+            SType = sType;
+            PNext = pNext;
+            OperationHandle = operationHandle;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindAccelerationStructureMemoryInfoNV")]
-    public unsafe struct BindAccelerationStructureMemoryInfoNV
+    public unsafe partial struct BindAccelerationStructureMemoryInfoNV
     {
         public BindAccelerationStructureMemoryInfoNV
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             uint* pDeviceIndices = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           AccelerationStructure = accelerationStructure;
-           Memory = memory;
-           MemoryOffset = memoryOffset;
-           DeviceIndexCount = deviceIndexCount;
-           PDeviceIndices = pDeviceIndices;
+            SType = sType;
+            PNext = pNext;
+            AccelerationStructure = accelerationStructure;
+            Memory = memory;
+            MemoryOffset = memoryOffset;
+            DeviceIndexCount = deviceIndexCount;
+            PDeviceIndices = pDeviceIndices;
         }
 
 /// <summary></summary>

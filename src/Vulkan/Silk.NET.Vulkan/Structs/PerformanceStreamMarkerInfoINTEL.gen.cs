@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceStreamMarkerInfoINTEL")]
-    public unsafe struct PerformanceStreamMarkerInfoINTEL
+    public unsafe partial struct PerformanceStreamMarkerInfoINTEL
     {
         public PerformanceStreamMarkerInfoINTEL
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint marker = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Marker = marker;
+            SType = sType;
+            PNext = pNext;
+            Marker = marker;
         }
 
 /// <summary></summary>

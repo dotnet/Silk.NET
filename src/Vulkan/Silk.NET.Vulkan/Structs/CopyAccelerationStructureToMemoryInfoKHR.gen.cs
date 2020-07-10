@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCopyAccelerationStructureToMemoryInfoKHR")]
-    public unsafe struct CopyAccelerationStructureToMemoryInfoKHR
+    public unsafe partial struct CopyAccelerationStructureToMemoryInfoKHR
     {
         public CopyAccelerationStructureToMemoryInfoKHR
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             CopyAccelerationStructureModeKHR mode = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Src = src;
-           Dst = dst;
-           Mode = mode;
+            SType = sType;
+            PNext = pNext;
+            Src = src;
+            Dst = dst;
+            Mode = mode;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceVulkan11Properties")]
-    public unsafe struct PhysicalDeviceVulkan11Properties
+    public unsafe partial struct PhysicalDeviceVulkan11Properties
     {
         public PhysicalDeviceVulkan11Properties
         (
@@ -36,20 +36,20 @@ namespace Silk.NET.Vulkan
             ulong maxMemoryAllocationSize = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DeviceNodeMask = deviceNodeMask;
-           DeviceLuidvalid = deviceLuidvalid;
-           SubgroupSize = subgroupSize;
-           SubgroupSupportedStages = subgroupSupportedStages;
-           SubgroupSupportedOperations = subgroupSupportedOperations;
-           SubgroupQuadOperationsInAllStages = subgroupQuadOperationsInAllStages;
-           PointClippingBehavior = pointClippingBehavior;
-           MaxMultiviewViewCount = maxMultiviewViewCount;
-           MaxMultiviewInstanceIndex = maxMultiviewInstanceIndex;
-           ProtectedNoFault = protectedNoFault;
-           MaxPerSetDescriptors = maxPerSetDescriptors;
-           MaxMemoryAllocationSize = maxMemoryAllocationSize;
+            SType = sType;
+            PNext = pNext;
+            DeviceNodeMask = deviceNodeMask;
+            DeviceLuidvalid = deviceLuidvalid;
+            SubgroupSize = subgroupSize;
+            SubgroupSupportedStages = subgroupSupportedStages;
+            SubgroupSupportedOperations = subgroupSupportedOperations;
+            SubgroupQuadOperationsInAllStages = subgroupQuadOperationsInAllStages;
+            PointClippingBehavior = pointClippingBehavior;
+            MaxMultiviewViewCount = maxMultiviewViewCount;
+            MaxMultiviewInstanceIndex = maxMultiviewInstanceIndex;
+            ProtectedNoFault = protectedNoFault;
+            MaxPerSetDescriptors = maxPerSetDescriptors;
+            MaxMemoryAllocationSize = maxMemoryAllocationSize;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceUniformBufferStandardLayoutFeaturesKHR")]
-    public unsafe struct PhysicalDeviceUniformBufferStandardLayoutFeaturesKHR
+    public unsafe partial struct PhysicalDeviceUniformBufferStandardLayoutFeaturesKHR
     {
         public PhysicalDeviceUniformBufferStandardLayoutFeaturesKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 uniformBufferStandardLayout = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           UniformBufferStandardLayout = uniformBufferStandardLayout;
+            SType = sType;
+            PNext = pNext;
+            UniformBufferStandardLayout = uniformBufferStandardLayout;
         }
 
 /// <summary></summary>

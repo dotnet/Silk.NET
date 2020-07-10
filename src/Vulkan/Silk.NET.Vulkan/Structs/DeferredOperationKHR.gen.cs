@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeferredOperationKHR")]
-    public unsafe struct DeferredOperationKHR
+    public unsafe partial struct DeferredOperationKHR
     {
         public DeferredOperationKHR
         (
             ulong handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkShaderStatisticsInfoAMD")]
-    public unsafe struct ShaderStatisticsInfoAMD
+    public unsafe partial struct ShaderStatisticsInfoAMD
     {
         public ShaderStatisticsInfoAMD
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             uint numAvailableSgprs = default
         )
         {
-           ShaderStageMask = shaderStageMask;
-           ResourceUsage = resourceUsage;
-           NumPhysicalVgprs = numPhysicalVgprs;
-           NumPhysicalSgprs = numPhysicalSgprs;
-           NumAvailableVgprs = numAvailableVgprs;
-           NumAvailableSgprs = numAvailableSgprs;
+            ShaderStageMask = shaderStageMask;
+            ResourceUsage = resourceUsage;
+            NumPhysicalVgprs = numPhysicalVgprs;
+            NumPhysicalSgprs = numPhysicalSgprs;
+            NumAvailableVgprs = numAvailableVgprs;
+            NumAvailableSgprs = numAvailableSgprs;
         }
 
 /// <summary></summary>

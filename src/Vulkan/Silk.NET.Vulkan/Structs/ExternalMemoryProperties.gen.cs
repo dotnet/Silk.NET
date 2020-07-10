@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalMemoryProperties")]
-    public unsafe struct ExternalMemoryProperties
+    public unsafe partial struct ExternalMemoryProperties
     {
         public ExternalMemoryProperties
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ExternalMemoryHandleTypeFlags compatibleHandleTypes = default
         )
         {
-           ExternalMemoryFeatures = externalMemoryFeatures;
-           ExportFromImportedHandleTypes = exportFromImportedHandleTypes;
-           CompatibleHandleTypes = compatibleHandleTypes;
+            ExternalMemoryFeatures = externalMemoryFeatures;
+            ExportFromImportedHandleTypes = exportFromImportedHandleTypes;
+            CompatibleHandleTypes = compatibleHandleTypes;
         }
 
 /// <summary></summary>

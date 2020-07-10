@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageFormatProperties")]
-    public unsafe struct ImageFormatProperties
+    public unsafe partial struct ImageFormatProperties
     {
         public ImageFormatProperties
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             ulong maxResourceSize = default
         )
         {
-           MaxExtent = maxExtent;
-           MaxMipLevels = maxMipLevels;
-           MaxArrayLayers = maxArrayLayers;
-           SampleCounts = sampleCounts;
-           MaxResourceSize = maxResourceSize;
+            MaxExtent = maxExtent;
+            MaxMipLevels = maxMipLevels;
+            MaxArrayLayers = maxArrayLayers;
+            SampleCounts = sampleCounts;
+            MaxResourceSize = maxResourceSize;
         }
 
 /// <summary></summary>

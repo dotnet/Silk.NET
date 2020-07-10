@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceCornerSampledImageFeaturesNV")]
-    public unsafe struct PhysicalDeviceCornerSampledImageFeaturesNV
+    public unsafe partial struct PhysicalDeviceCornerSampledImageFeaturesNV
     {
         public PhysicalDeviceCornerSampledImageFeaturesNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 cornerSampledImage = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           CornerSampledImage = cornerSampledImage;
+            SType = sType;
+            PNext = pNext;
+            CornerSampledImage = cornerSampledImage;
         }
 
 /// <summary></summary>

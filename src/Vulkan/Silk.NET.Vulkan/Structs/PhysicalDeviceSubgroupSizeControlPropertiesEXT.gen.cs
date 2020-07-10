@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSubgroupSizeControlPropertiesEXT")]
-    public unsafe struct PhysicalDeviceSubgroupSizeControlPropertiesEXT
+    public unsafe partial struct PhysicalDeviceSubgroupSizeControlPropertiesEXT
     {
         public PhysicalDeviceSubgroupSizeControlPropertiesEXT
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             ShaderStageFlags requiredSubgroupSizeStages = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MinSubgroupSize = minSubgroupSize;
-           MaxSubgroupSize = maxSubgroupSize;
-           MaxComputeWorkgroupSubgroups = maxComputeWorkgroupSubgroups;
-           RequiredSubgroupSizeStages = requiredSubgroupSizeStages;
+            SType = sType;
+            PNext = pNext;
+            MinSubgroupSize = minSubgroupSize;
+            MaxSubgroupSize = maxSubgroupSize;
+            MaxComputeWorkgroupSubgroups = maxComputeWorkgroupSubgroups;
+            RequiredSubgroupSizeStages = requiredSubgroupSizeStages;
         }
 
 /// <summary></summary>

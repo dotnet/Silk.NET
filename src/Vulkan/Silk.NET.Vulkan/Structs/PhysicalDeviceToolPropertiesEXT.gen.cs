@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceToolPropertiesEXT")]
-    public unsafe struct PhysicalDeviceToolPropertiesEXT
+    public unsafe partial struct PhysicalDeviceToolPropertiesEXT
     {
         public PhysicalDeviceToolPropertiesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ToolPurposeFlagsEXT purposes = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Purposes = purposes;
+            SType = sType;
+            PNext = pNext;
+            Purposes = purposes;
         }
 
 /// <summary></summary>

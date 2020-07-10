@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorBufferInfo")]
-    public unsafe struct DescriptorBufferInfo
+    public unsafe partial struct DescriptorBufferInfo
     {
         public DescriptorBufferInfo
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ulong range = default
         )
         {
-           Buffer = buffer;
-           Offset = offset;
-           Range = range;
+            Buffer = buffer;
+            Offset = offset;
+            Range = range;
         }
 
 /// <summary></summary>

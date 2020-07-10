@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSparseProperties")]
-    public unsafe struct PhysicalDeviceSparseProperties
+    public unsafe partial struct PhysicalDeviceSparseProperties
     {
         public PhysicalDeviceSparseProperties
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             Bool32 residencyNonResidentStrict = default
         )
         {
-           ResidencyStandard2DBlockShape = residencyStandard2DBlockShape;
-           ResidencyStandard2DMultisampleBlockShape = residencyStandard2DMultisampleBlockShape;
-           ResidencyStandard3DBlockShape = residencyStandard3DBlockShape;
-           ResidencyAlignedMipSize = residencyAlignedMipSize;
-           ResidencyNonResidentStrict = residencyNonResidentStrict;
+            ResidencyStandard2DBlockShape = residencyStandard2DBlockShape;
+            ResidencyStandard2DMultisampleBlockShape = residencyStandard2DMultisampleBlockShape;
+            ResidencyStandard3DBlockShape = residencyStandard3DBlockShape;
+            ResidencyAlignedMipSize = residencyAlignedMipSize;
+            ResidencyNonResidentStrict = residencyNonResidentStrict;
         }
 
 /// <summary></summary>

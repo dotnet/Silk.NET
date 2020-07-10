@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayPowerInfoEXT")]
-    public unsafe struct DisplayPowerInfoEXT
+    public unsafe partial struct DisplayPowerInfoEXT
     {
         public DisplayPowerInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             DisplayPowerStateEXT powerState = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PowerState = powerState;
+            SType = sType;
+            PNext = pNext;
+            PowerState = powerState;
         }
 
 /// <summary></summary>

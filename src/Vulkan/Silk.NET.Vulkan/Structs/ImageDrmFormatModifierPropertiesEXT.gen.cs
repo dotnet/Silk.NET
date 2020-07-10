@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageDrmFormatModifierPropertiesEXT")]
-    public unsafe struct ImageDrmFormatModifierPropertiesEXT
+    public unsafe partial struct ImageDrmFormatModifierPropertiesEXT
     {
         public ImageDrmFormatModifierPropertiesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ulong drmFormatModifier = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DrmFormatModifier = drmFormatModifier;
+            SType = sType;
+            PNext = pNext;
+            DrmFormatModifier = drmFormatModifier;
         }
 
 /// <summary></summary>

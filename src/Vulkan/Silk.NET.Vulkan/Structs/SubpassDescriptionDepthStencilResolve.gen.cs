@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassDescriptionDepthStencilResolve")]
-    public unsafe struct SubpassDescriptionDepthStencilResolve
+    public unsafe partial struct SubpassDescriptionDepthStencilResolve
     {
         public SubpassDescriptionDepthStencilResolve
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             AttachmentReference2* pDepthStencilResolveAttachment = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DepthResolveMode = depthResolveMode;
-           StencilResolveMode = stencilResolveMode;
-           PDepthStencilResolveAttachment = pDepthStencilResolveAttachment;
+            SType = sType;
+            PNext = pNext;
+            DepthResolveMode = depthResolveMode;
+            StencilResolveMode = stencilResolveMode;
+            PDepthStencilResolveAttachment = pDepthStencilResolveAttachment;
         }
 
 /// <summary></summary>

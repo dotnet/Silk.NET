@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindSparseInfo")]
-    public unsafe struct BindSparseInfo
+    public unsafe partial struct BindSparseInfo
     {
         public BindSparseInfo
         (
@@ -34,18 +34,18 @@ namespace Silk.NET.Vulkan
             Semaphore* pSignalSemaphores = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           WaitSemaphoreCount = waitSemaphoreCount;
-           PWaitSemaphores = pWaitSemaphores;
-           BufferBindCount = bufferBindCount;
-           PBufferBinds = pBufferBinds;
-           ImageOpaqueBindCount = imageOpaqueBindCount;
-           PImageOpaqueBinds = pImageOpaqueBinds;
-           ImageBindCount = imageBindCount;
-           PImageBinds = pImageBinds;
-           SignalSemaphoreCount = signalSemaphoreCount;
-           PSignalSemaphores = pSignalSemaphores;
+            SType = sType;
+            PNext = pNext;
+            WaitSemaphoreCount = waitSemaphoreCount;
+            PWaitSemaphores = pWaitSemaphores;
+            BufferBindCount = bufferBindCount;
+            PBufferBinds = pBufferBinds;
+            ImageOpaqueBindCount = imageOpaqueBindCount;
+            PImageOpaqueBinds = pImageOpaqueBinds;
+            ImageBindCount = imageBindCount;
+            PImageBinds = pImageBinds;
+            SignalSemaphoreCount = signalSemaphoreCount;
+            PSignalSemaphores = pSignalSemaphores;
         }
 
 /// <summary></summary>

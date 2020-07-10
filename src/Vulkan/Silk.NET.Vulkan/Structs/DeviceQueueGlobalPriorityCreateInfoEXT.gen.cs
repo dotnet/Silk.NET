@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceQueueGlobalPriorityCreateInfoEXT")]
-    public unsafe struct DeviceQueueGlobalPriorityCreateInfoEXT
+    public unsafe partial struct DeviceQueueGlobalPriorityCreateInfoEXT
     {
         public DeviceQueueGlobalPriorityCreateInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             QueueGlobalPriorityEXT globalPriority = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           GlobalPriority = globalPriority;
+            SType = sType;
+            PNext = pNext;
+            GlobalPriority = globalPriority;
         }
 
 /// <summary></summary>

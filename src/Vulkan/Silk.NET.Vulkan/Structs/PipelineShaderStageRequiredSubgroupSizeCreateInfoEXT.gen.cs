@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineShaderStageRequiredSubgroupSizeCreateInfoEXT")]
-    public unsafe struct PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT
+    public unsafe partial struct PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT
     {
         public PipelineShaderStageRequiredSubgroupSizeCreateInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint requiredSubgroupSize = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           RequiredSubgroupSize = requiredSubgroupSize;
+            SType = sType;
+            PNext = pNext;
+            RequiredSubgroupSize = requiredSubgroupSize;
         }
 
 /// <summary></summary>

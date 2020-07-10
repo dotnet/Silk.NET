@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV")]
-    public unsafe struct PhysicalDeviceRepresentativeFragmentTestFeaturesNV
+    public unsafe partial struct PhysicalDeviceRepresentativeFragmentTestFeaturesNV
     {
         public PhysicalDeviceRepresentativeFragmentTestFeaturesNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 representativeFragmentTest = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           RepresentativeFragmentTest = representativeFragmentTest;
+            SType = sType;
+            PNext = pNext;
+            RepresentativeFragmentTest = representativeFragmentTest;
         }
 
 /// <summary></summary>

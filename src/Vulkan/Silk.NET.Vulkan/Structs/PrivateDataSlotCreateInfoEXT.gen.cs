@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPrivateDataSlotCreateInfoEXT")]
-    public unsafe struct PrivateDataSlotCreateInfoEXT
+    public unsafe partial struct PrivateDataSlotCreateInfoEXT
     {
         public PrivateDataSlotCreateInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             PrivateDataSlotCreateFlagsEXT flags = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCopyDescriptorSet")]
-    public unsafe struct CopyDescriptorSet
+    public unsafe partial struct CopyDescriptorSet
     {
         public CopyDescriptorSet
         (
@@ -31,15 +31,15 @@ namespace Silk.NET.Vulkan
             uint descriptorCount = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SrcSet = srcSet;
-           SrcBinding = srcBinding;
-           SrcArrayElement = srcArrayElement;
-           DstSet = dstSet;
-           DstBinding = dstBinding;
-           DstArrayElement = dstArrayElement;
-           DescriptorCount = descriptorCount;
+            SType = sType;
+            PNext = pNext;
+            SrcSet = srcSet;
+            SrcBinding = srcBinding;
+            SrcArrayElement = srcArrayElement;
+            DstSet = dstSet;
+            DstBinding = dstBinding;
+            DstArrayElement = dstArrayElement;
+            DescriptorCount = descriptorCount;
         }
 
 /// <summary></summary>

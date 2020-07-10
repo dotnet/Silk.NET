@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRasterizationStateRasterizationOrderAMD")]
-    public unsafe struct PipelineRasterizationStateRasterizationOrderAMD
+    public unsafe partial struct PipelineRasterizationStateRasterizationOrderAMD
     {
         public PipelineRasterizationStateRasterizationOrderAMD
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             RasterizationOrderAMD rasterizationOrder = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           RasterizationOrder = rasterizationOrder;
+            SType = sType;
+            PNext = pNext;
+            RasterizationOrder = rasterizationOrder;
         }
 
 /// <summary></summary>

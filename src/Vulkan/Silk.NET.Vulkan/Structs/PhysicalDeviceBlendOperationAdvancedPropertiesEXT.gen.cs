@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT")]
-    public unsafe struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
+    public unsafe partial struct PhysicalDeviceBlendOperationAdvancedPropertiesEXT
     {
         public PhysicalDeviceBlendOperationAdvancedPropertiesEXT
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Vulkan
             Bool32 advancedBlendAllOperations = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           AdvancedBlendMaxColorAttachments = advancedBlendMaxColorAttachments;
-           AdvancedBlendIndependentBlend = advancedBlendIndependentBlend;
-           AdvancedBlendNonPremultipliedSrcColor = advancedBlendNonPremultipliedSrcColor;
-           AdvancedBlendNonPremultipliedDstColor = advancedBlendNonPremultipliedDstColor;
-           AdvancedBlendCorrelatedOverlap = advancedBlendCorrelatedOverlap;
-           AdvancedBlendAllOperations = advancedBlendAllOperations;
+            SType = sType;
+            PNext = pNext;
+            AdvancedBlendMaxColorAttachments = advancedBlendMaxColorAttachments;
+            AdvancedBlendIndependentBlend = advancedBlendIndependentBlend;
+            AdvancedBlendNonPremultipliedSrcColor = advancedBlendNonPremultipliedSrcColor;
+            AdvancedBlendNonPremultipliedDstColor = advancedBlendNonPremultipliedDstColor;
+            AdvancedBlendCorrelatedOverlap = advancedBlendCorrelatedOverlap;
+            AdvancedBlendAllOperations = advancedBlendAllOperations;
         }
 
 /// <summary></summary>

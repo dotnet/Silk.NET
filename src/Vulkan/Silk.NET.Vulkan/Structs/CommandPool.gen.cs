@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandPool")]
-    public unsafe struct CommandPool
+    public unsafe partial struct CommandPool
     {
         public CommandPool
         (
             ulong handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

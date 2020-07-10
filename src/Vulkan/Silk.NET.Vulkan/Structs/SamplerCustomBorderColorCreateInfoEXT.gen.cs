@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerCustomBorderColorCreateInfoEXT")]
-    public unsafe struct SamplerCustomBorderColorCreateInfoEXT
+    public unsafe partial struct SamplerCustomBorderColorCreateInfoEXT
     {
         public SamplerCustomBorderColorCreateInfoEXT
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Format format = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           CustomBorderColor = customBorderColor;
-           Format = format;
+            SType = sType;
+            PNext = pNext;
+            CustomBorderColor = customBorderColor;
+            Format = format;
         }
 
 /// <summary></summary>

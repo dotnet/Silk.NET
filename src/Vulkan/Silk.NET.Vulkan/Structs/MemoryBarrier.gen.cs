@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryBarrier")]
-    public unsafe struct MemoryBarrier
+    public unsafe partial struct MemoryBarrier
     {
         public MemoryBarrier
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             AccessFlags dstAccessMask = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SrcAccessMask = srcAccessMask;
-           DstAccessMask = dstAccessMask;
+            SType = sType;
+            PNext = pNext;
+            SrcAccessMask = srcAccessMask;
+            DstAccessMask = dstAccessMask;
         }
 
 /// <summary></summary>

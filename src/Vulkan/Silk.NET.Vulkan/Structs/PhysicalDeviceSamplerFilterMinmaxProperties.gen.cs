@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSamplerFilterMinmaxProperties")]
-    public unsafe struct PhysicalDeviceSamplerFilterMinmaxProperties
+    public unsafe partial struct PhysicalDeviceSamplerFilterMinmaxProperties
     {
         public PhysicalDeviceSamplerFilterMinmaxProperties
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Bool32 filterMinmaxImageComponentMapping = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           FilterMinmaxSingleComponentFormats = filterMinmaxSingleComponentFormats;
-           FilterMinmaxImageComponentMapping = filterMinmaxImageComponentMapping;
+            SType = sType;
+            PNext = pNext;
+            FilterMinmaxSingleComponentFormats = filterMinmaxSingleComponentFormats;
+            FilterMinmaxImageComponentMapping = filterMinmaxImageComponentMapping;
         }
 
 /// <summary></summary>

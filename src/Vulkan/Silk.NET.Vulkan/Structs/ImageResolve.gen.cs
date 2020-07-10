@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageResolve")]
-    public unsafe struct ImageResolve
+    public unsafe partial struct ImageResolve
     {
         public ImageResolve
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             Extent3D extent = default
         )
         {
-           SrcSubresource = srcSubresource;
-           SrcOffset = srcOffset;
-           DstSubresource = dstSubresource;
-           DstOffset = dstOffset;
-           Extent = extent;
+            SrcSubresource = srcSubresource;
+            SrcOffset = srcOffset;
+            DstSubresource = dstSubresource;
+            DstOffset = dstOffset;
+            Extent = extent;
         }
 
 /// <summary></summary>

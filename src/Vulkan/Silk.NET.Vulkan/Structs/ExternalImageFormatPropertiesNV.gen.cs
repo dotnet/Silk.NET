@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalImageFormatPropertiesNV")]
-    public unsafe struct ExternalImageFormatPropertiesNV
+    public unsafe partial struct ExternalImageFormatPropertiesNV
     {
         public ExternalImageFormatPropertiesNV
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             ExternalMemoryHandleTypeFlagsNV compatibleHandleTypes = default
         )
         {
-           ImageFormatProperties = imageFormatProperties;
-           ExternalMemoryFeatures = externalMemoryFeatures;
-           ExportFromImportedHandleTypes = exportFromImportedHandleTypes;
-           CompatibleHandleTypes = compatibleHandleTypes;
+            ImageFormatProperties = imageFormatProperties;
+            ExternalMemoryFeatures = externalMemoryFeatures;
+            ExportFromImportedHandleTypes = exportFromImportedHandleTypes;
+            CompatibleHandleTypes = compatibleHandleTypes;
         }
 
 /// <summary></summary>

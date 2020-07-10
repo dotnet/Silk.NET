@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkShadingRatePaletteNV")]
-    public unsafe struct ShadingRatePaletteNV
+    public unsafe partial struct ShadingRatePaletteNV
     {
         public ShadingRatePaletteNV
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             ShadingRatePaletteEntryNV* pShadingRatePaletteEntries = default
         )
         {
-           ShadingRatePaletteEntryCount = shadingRatePaletteEntryCount;
-           PShadingRatePaletteEntries = pShadingRatePaletteEntries;
+            ShadingRatePaletteEntryCount = shadingRatePaletteEntryCount;
+            PShadingRatePaletteEntries = pShadingRatePaletteEntries;
         }
 
 /// <summary></summary>

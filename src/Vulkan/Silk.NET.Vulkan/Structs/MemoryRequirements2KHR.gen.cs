@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryRequirements2KHR")]
-    public unsafe struct MemoryRequirements2KHR
+    public unsafe partial struct MemoryRequirements2KHR
     {
         public MemoryRequirements2KHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             MemoryRequirements memoryRequirements = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MemoryRequirements = memoryRequirements;
+            SType = sType;
+            PNext = pNext;
+            MemoryRequirements = memoryRequirements;
         }
 
 /// <summary></summary>

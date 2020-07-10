@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineDiscardRectangleStateCreateInfoEXT")]
-    public unsafe struct PipelineDiscardRectangleStateCreateInfoEXT
+    public unsafe partial struct PipelineDiscardRectangleStateCreateInfoEXT
     {
         public PipelineDiscardRectangleStateCreateInfoEXT
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             Rect2D* pDiscardRectangles = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           DiscardRectangleMode = discardRectangleMode;
-           DiscardRectangleCount = discardRectangleCount;
-           PDiscardRectangles = pDiscardRectangles;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            DiscardRectangleMode = discardRectangleMode;
+            DiscardRectangleCount = discardRectangleCount;
+            PDiscardRectangles = pDiscardRectangles;
         }
 
 /// <summary></summary>

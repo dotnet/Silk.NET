@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.OpenCL
 {
     [NativeName("Name", "cl_name_version")]
-    public unsafe struct NameVersion
+    public unsafe partial struct NameVersion
     {
         public NameVersion
         (
             uint version = default
         )
         {
-           Version = version;
+            Version = version;
         }
 
 /// <summary></summary>

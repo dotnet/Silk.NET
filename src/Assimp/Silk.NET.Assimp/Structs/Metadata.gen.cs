@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiMetadata")]
-    public unsafe struct Metadata
+    public unsafe partial struct Metadata
     {
         public Metadata
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Assimp
             MetadataEntry* mValues = default
         )
         {
-           MNumProperties = mNumProperties;
-           MKeys = mKeys;
-           MValues = mValues;
+            MNumProperties = mNumProperties;
+            MKeys = mKeys;
+            MValues = mValues;
         }
 
 

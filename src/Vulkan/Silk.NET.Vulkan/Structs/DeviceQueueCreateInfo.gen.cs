@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceQueueCreateInfo")]
-    public unsafe struct DeviceQueueCreateInfo
+    public unsafe partial struct DeviceQueueCreateInfo
     {
         public DeviceQueueCreateInfo
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             float* pQueuePriorities = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           QueueFamilyIndex = queueFamilyIndex;
-           QueueCount = queueCount;
-           PQueuePriorities = pQueuePriorities;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            QueueFamilyIndex = queueFamilyIndex;
+            QueueCount = queueCount;
+            PQueuePriorities = pQueuePriorities;
         }
 
 /// <summary></summary>

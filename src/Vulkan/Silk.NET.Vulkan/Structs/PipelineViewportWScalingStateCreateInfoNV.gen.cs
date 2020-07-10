@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineViewportWScalingStateCreateInfoNV")]
-    public unsafe struct PipelineViewportWScalingStateCreateInfoNV
+    public unsafe partial struct PipelineViewportWScalingStateCreateInfoNV
     {
         public PipelineViewportWScalingStateCreateInfoNV
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             ViewportWScalingNV* pViewportWScalings = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ViewportWScalingEnable = viewportWScalingEnable;
-           ViewportCount = viewportCount;
-           PViewportWScalings = pViewportWScalings;
+            SType = sType;
+            PNext = pNext;
+            ViewportWScalingEnable = viewportWScalingEnable;
+            ViewportCount = viewportCount;
+            PViewportWScalings = pViewportWScalings;
         }
 
 /// <summary></summary>

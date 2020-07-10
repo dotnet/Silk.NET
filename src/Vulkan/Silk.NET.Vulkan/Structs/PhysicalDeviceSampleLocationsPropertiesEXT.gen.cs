@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSampleLocationsPropertiesEXT")]
-    public unsafe struct PhysicalDeviceSampleLocationsPropertiesEXT
+    public unsafe partial struct PhysicalDeviceSampleLocationsPropertiesEXT
     {
         public PhysicalDeviceSampleLocationsPropertiesEXT
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             Bool32 variableSampleLocations = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SampleLocationSampleCounts = sampleLocationSampleCounts;
-           MaxSampleLocationGridSize = maxSampleLocationGridSize;
-           SampleLocationSubPixelBits = sampleLocationSubPixelBits;
-           VariableSampleLocations = variableSampleLocations;
+            SType = sType;
+            PNext = pNext;
+            SampleLocationSampleCounts = sampleLocationSampleCounts;
+            MaxSampleLocationGridSize = maxSampleLocationGridSize;
+            SampleLocationSubPixelBits = sampleLocationSubPixelBits;
+            VariableSampleLocations = variableSampleLocations;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueueFamilyProperties2KHR")]
-    public unsafe struct QueueFamilyProperties2KHR
+    public unsafe partial struct QueueFamilyProperties2KHR
     {
         public QueueFamilyProperties2KHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             QueueFamilyProperties queueFamilyProperties = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           QueueFamilyProperties = queueFamilyProperties;
+            SType = sType;
+            PNext = pNext;
+            QueueFamilyProperties = queueFamilyProperties;
         }
 
 /// <summary></summary>

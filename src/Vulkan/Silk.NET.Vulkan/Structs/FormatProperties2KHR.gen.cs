@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFormatProperties2KHR")]
-    public unsafe struct FormatProperties2KHR
+    public unsafe partial struct FormatProperties2KHR
     {
         public FormatProperties2KHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             FormatProperties formatProperties = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           FormatProperties = formatProperties;
+            SType = sType;
+            PNext = pNext;
+            FormatProperties = formatProperties;
         }
 
 /// <summary></summary>

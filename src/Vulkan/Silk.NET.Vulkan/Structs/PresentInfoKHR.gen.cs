@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPresentInfoKHR")]
-    public unsafe struct PresentInfoKHR
+    public unsafe partial struct PresentInfoKHR
     {
         public PresentInfoKHR
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Vulkan
             Result* pResults = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           WaitSemaphoreCount = waitSemaphoreCount;
-           PWaitSemaphores = pWaitSemaphores;
-           SwapchainCount = swapchainCount;
-           PSwapchains = pSwapchains;
-           PImageIndices = pImageIndices;
-           PResults = pResults;
+            SType = sType;
+            PNext = pNext;
+            WaitSemaphoreCount = waitSemaphoreCount;
+            PWaitSemaphores = pWaitSemaphores;
+            SwapchainCount = swapchainCount;
+            PSwapchains = pSwapchains;
+            PImageIndices = pImageIndices;
+            PResults = pResults;
         }
 
 /// <summary></summary>

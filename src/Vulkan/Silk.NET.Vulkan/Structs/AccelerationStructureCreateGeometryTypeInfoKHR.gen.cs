@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureCreateGeometryTypeInfoKHR")]
-    public unsafe struct AccelerationStructureCreateGeometryTypeInfoKHR
+    public unsafe partial struct AccelerationStructureCreateGeometryTypeInfoKHR
     {
         public AccelerationStructureCreateGeometryTypeInfoKHR
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Vulkan
             Bool32 allowsTransforms = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           GeometryType = geometryType;
-           MaxPrimitiveCount = maxPrimitiveCount;
-           IndexType = indexType;
-           MaxVertexCount = maxVertexCount;
-           VertexFormat = vertexFormat;
-           AllowsTransforms = allowsTransforms;
+            SType = sType;
+            PNext = pNext;
+            GeometryType = geometryType;
+            MaxPrimitiveCount = maxPrimitiveCount;
+            IndexType = indexType;
+            MaxVertexCount = maxVertexCount;
+            VertexFormat = vertexFormat;
+            AllowsTransforms = allowsTransforms;
         }
 
 /// <summary></summary>

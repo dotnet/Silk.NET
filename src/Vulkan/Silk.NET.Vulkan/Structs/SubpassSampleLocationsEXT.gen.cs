@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassSampleLocationsEXT")]
-    public unsafe struct SubpassSampleLocationsEXT
+    public unsafe partial struct SubpassSampleLocationsEXT
     {
         public SubpassSampleLocationsEXT
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             SampleLocationsInfoEXT sampleLocationsInfo = default
         )
         {
-           SubpassIndex = subpassIndex;
-           SampleLocationsInfo = sampleLocationsInfo;
+            SubpassIndex = subpassIndex;
+            SampleLocationsInfo = sampleLocationsInfo;
         }
 
 /// <summary></summary>

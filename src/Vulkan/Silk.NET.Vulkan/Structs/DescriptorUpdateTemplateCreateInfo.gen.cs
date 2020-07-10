@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorUpdateTemplateCreateInfo")]
-    public unsafe struct DescriptorUpdateTemplateCreateInfo
+    public unsafe partial struct DescriptorUpdateTemplateCreateInfo
     {
         public DescriptorUpdateTemplateCreateInfo
         (
@@ -32,16 +32,16 @@ namespace Silk.NET.Vulkan
             uint set = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           DescriptorUpdateEntryCount = descriptorUpdateEntryCount;
-           PDescriptorUpdateEntries = pDescriptorUpdateEntries;
-           TemplateType = templateType;
-           DescriptorSetLayout = descriptorSetLayout;
-           PipelineBindPoint = pipelineBindPoint;
-           PipelineLayout = pipelineLayout;
-           Set = set;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            DescriptorUpdateEntryCount = descriptorUpdateEntryCount;
+            PDescriptorUpdateEntries = pDescriptorUpdateEntries;
+            TemplateType = templateType;
+            DescriptorSetLayout = descriptorSetLayout;
+            PipelineBindPoint = pipelineBindPoint;
+            PipelineLayout = pipelineLayout;
+            Set = set;
         }
 
 /// <summary></summary>

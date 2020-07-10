@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPresentRegionsKHR")]
-    public unsafe struct PresentRegionsKHR
+    public unsafe partial struct PresentRegionsKHR
     {
         public PresentRegionsKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             PresentRegionKHR* pRegions = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SwapchainCount = swapchainCount;
-           PRegions = pRegions;
+            SType = sType;
+            PNext = pNext;
+            SwapchainCount = swapchainCount;
+            PRegions = pRegions;
         }
 
 /// <summary></summary>

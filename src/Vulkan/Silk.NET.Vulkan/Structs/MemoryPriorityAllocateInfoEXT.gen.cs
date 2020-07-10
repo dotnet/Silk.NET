@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryPriorityAllocateInfoEXT")]
-    public unsafe struct MemoryPriorityAllocateInfoEXT
+    public unsafe partial struct MemoryPriorityAllocateInfoEXT
     {
         public MemoryPriorityAllocateInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             float priority = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Priority = priority;
+            SType = sType;
+            PNext = pNext;
+            Priority = priority;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMultiviewFeatures")]
-    public unsafe struct PhysicalDeviceMultiviewFeatures
+    public unsafe partial struct PhysicalDeviceMultiviewFeatures
     {
         public PhysicalDeviceMultiviewFeatures
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             Bool32 multiviewTessellationShader = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Multiview = multiview;
-           MultiviewGeometryShader = multiviewGeometryShader;
-           MultiviewTessellationShader = multiviewTessellationShader;
+            SType = sType;
+            PNext = pNext;
+            Multiview = multiview;
+            MultiviewGeometryShader = multiviewGeometryShader;
+            MultiviewTessellationShader = multiviewTessellationShader;
         }
 
 /// <summary></summary>

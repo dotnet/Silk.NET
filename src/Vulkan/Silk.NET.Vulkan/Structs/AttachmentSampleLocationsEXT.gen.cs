@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAttachmentSampleLocationsEXT")]
-    public unsafe struct AttachmentSampleLocationsEXT
+    public unsafe partial struct AttachmentSampleLocationsEXT
     {
         public AttachmentSampleLocationsEXT
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             SampleLocationsInfoEXT sampleLocationsInfo = default
         )
         {
-           AttachmentIndex = attachmentIndex;
-           SampleLocationsInfo = sampleLocationsInfo;
+            AttachmentIndex = attachmentIndex;
+            SampleLocationsInfo = sampleLocationsInfo;
         }
 
 /// <summary></summary>

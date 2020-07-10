@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiRay")]
-    public unsafe struct Ray
+    public unsafe partial struct Ray
     {
         public Ray
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Assimp
             System.Numerics.Vector3 dir = default
         )
         {
-           Pos = pos;
-           Dir = dir;
+            Pos = pos;
+            Dir = dir;
         }
 
 

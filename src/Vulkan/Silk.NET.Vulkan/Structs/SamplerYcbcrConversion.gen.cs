@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerYcbcrConversion")]
-    public unsafe struct SamplerYcbcrConversion
+    public unsafe partial struct SamplerYcbcrConversion
     {
         public SamplerYcbcrConversion
         (
             ulong handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

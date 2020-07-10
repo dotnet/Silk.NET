@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiString")]
-    public unsafe struct AssimpString
+    public unsafe partial struct AssimpString
     {
         public AssimpString
         (
             uint length = default
         )
         {
-           Length = length;
+            Length = length;
         }
 
 

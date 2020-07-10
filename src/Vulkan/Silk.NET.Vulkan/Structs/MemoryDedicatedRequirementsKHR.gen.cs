@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryDedicatedRequirementsKHR")]
-    public unsafe struct MemoryDedicatedRequirementsKHR
+    public unsafe partial struct MemoryDedicatedRequirementsKHR
     {
         public MemoryDedicatedRequirementsKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Bool32 requiresDedicatedAllocation = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PrefersDedicatedAllocation = prefersDedicatedAllocation;
-           RequiresDedicatedAllocation = requiresDedicatedAllocation;
+            SType = sType;
+            PNext = pNext;
+            PrefersDedicatedAllocation = prefersDedicatedAllocation;
+            RequiresDedicatedAllocation = requiresDedicatedAllocation;
         }
 
 /// <summary></summary>

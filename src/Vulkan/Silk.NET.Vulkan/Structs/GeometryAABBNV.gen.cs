@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGeometryAABBNV")]
-    public unsafe struct GeometryAABBNV
+    public unsafe partial struct GeometryAABBNV
     {
         public GeometryAABBNV
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             ulong offset = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           AabbData = aabbData;
-           NumAabbs = numAabbs;
-           Stride = stride;
-           Offset = offset;
+            SType = sType;
+            PNext = pNext;
+            AabbData = aabbData;
+            NumAabbs = numAabbs;
+            Stride = stride;
+            Offset = offset;
         }
 
 /// <summary></summary>

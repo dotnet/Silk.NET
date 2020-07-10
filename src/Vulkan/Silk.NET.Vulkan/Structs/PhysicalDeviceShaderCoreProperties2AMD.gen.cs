@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderCoreProperties2AMD")]
-    public unsafe struct PhysicalDeviceShaderCoreProperties2AMD
+    public unsafe partial struct PhysicalDeviceShaderCoreProperties2AMD
     {
         public PhysicalDeviceShaderCoreProperties2AMD
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint activeComputeUnitCount = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ShaderCoreFeatures = shaderCoreFeatures;
-           ActiveComputeUnitCount = activeComputeUnitCount;
+            SType = sType;
+            PNext = pNext;
+            ShaderCoreFeatures = shaderCoreFeatures;
+            ActiveComputeUnitCount = activeComputeUnitCount;
         }
 
 /// <summary></summary>

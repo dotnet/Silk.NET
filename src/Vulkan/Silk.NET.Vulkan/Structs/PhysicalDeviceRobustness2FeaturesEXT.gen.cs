@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceRobustness2FeaturesEXT")]
-    public unsafe struct PhysicalDeviceRobustness2FeaturesEXT
+    public unsafe partial struct PhysicalDeviceRobustness2FeaturesEXT
     {
         public PhysicalDeviceRobustness2FeaturesEXT
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             Bool32 nullDescriptor = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           RobustBufferAccess2 = robustBufferAccess2;
-           RobustImageAccess2 = robustImageAccess2;
-           NullDescriptor = nullDescriptor;
+            SType = sType;
+            PNext = pNext;
+            RobustBufferAccess2 = robustBufferAccess2;
+            RobustImageAccess2 = robustImageAccess2;
+            NullDescriptor = nullDescriptor;
         }
 
 /// <summary></summary>

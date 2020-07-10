@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkIndirectCommandsLayoutNV")]
-    public unsafe struct IndirectCommandsLayoutNV
+    public unsafe partial struct IndirectCommandsLayoutNV
     {
         public IndirectCommandsLayoutNV
         (
             ulong handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

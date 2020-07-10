@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSparseBufferMemoryBindInfo")]
-    public unsafe struct SparseBufferMemoryBindInfo
+    public unsafe partial struct SparseBufferMemoryBindInfo
     {
         public SparseBufferMemoryBindInfo
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             SparseMemoryBind* pBinds = default
         )
         {
-           Buffer = buffer;
-           BindCount = bindCount;
-           PBinds = pBinds;
+            Buffer = buffer;
+            BindCount = bindCount;
+            PBinds = pBinds;
         }
 
 /// <summary></summary>

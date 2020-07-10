@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetLayoutSupport")]
-    public unsafe struct DescriptorSetLayoutSupport
+    public unsafe partial struct DescriptorSetLayoutSupport
     {
         public DescriptorSetLayoutSupport
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 supported = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Supported = supported;
+            SType = sType;
+            PNext = pNext;
+            Supported = supported;
         }
 
 /// <summary></summary>

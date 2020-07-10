@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT")]
-    public unsafe struct PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT
+    public unsafe partial struct PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT
     {
         public PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 shaderDemoteToHelperInvocation = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ShaderDemoteToHelperInvocation = shaderDemoteToHelperInvocation;
+            SType = sType;
+            PNext = pNext;
+            ShaderDemoteToHelperInvocation = shaderDemoteToHelperInvocation;
         }
 
 /// <summary></summary>

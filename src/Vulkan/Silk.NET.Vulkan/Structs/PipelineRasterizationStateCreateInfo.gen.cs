@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRasterizationStateCreateInfo")]
-    public unsafe struct PipelineRasterizationStateCreateInfo
+    public unsafe partial struct PipelineRasterizationStateCreateInfo
     {
         public PipelineRasterizationStateCreateInfo
         (
@@ -35,19 +35,19 @@ namespace Silk.NET.Vulkan
             float lineWidth = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           DepthClampEnable = depthClampEnable;
-           RasterizerDiscardEnable = rasterizerDiscardEnable;
-           PolygonMode = polygonMode;
-           CullMode = cullMode;
-           FrontFace = frontFace;
-           DepthBiasEnable = depthBiasEnable;
-           DepthBiasConstantFactor = depthBiasConstantFactor;
-           DepthBiasClamp = depthBiasClamp;
-           DepthBiasSlopeFactor = depthBiasSlopeFactor;
-           LineWidth = lineWidth;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            DepthClampEnable = depthClampEnable;
+            RasterizerDiscardEnable = rasterizerDiscardEnable;
+            PolygonMode = polygonMode;
+            CullMode = cullMode;
+            FrontFace = frontFace;
+            DepthBiasEnable = depthBiasEnable;
+            DepthBiasConstantFactor = depthBiasConstantFactor;
+            DepthBiasClamp = depthBiasClamp;
+            DepthBiasSlopeFactor = depthBiasSlopeFactor;
+            LineWidth = lineWidth;
         }
 
 /// <summary></summary>

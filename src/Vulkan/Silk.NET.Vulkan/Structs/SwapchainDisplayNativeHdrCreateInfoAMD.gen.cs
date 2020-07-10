@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSwapchainDisplayNativeHdrCreateInfoAMD")]
-    public unsafe struct SwapchainDisplayNativeHdrCreateInfoAMD
+    public unsafe partial struct SwapchainDisplayNativeHdrCreateInfoAMD
     {
         public SwapchainDisplayNativeHdrCreateInfoAMD
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 localDimmingEnable = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           LocalDimmingEnable = localDimmingEnable;
+            SType = sType;
+            PNext = pNext;
+            LocalDimmingEnable = localDimmingEnable;
         }
 
 /// <summary></summary>

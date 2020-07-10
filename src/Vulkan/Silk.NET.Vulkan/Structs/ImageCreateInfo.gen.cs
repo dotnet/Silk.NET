@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageCreateInfo")]
-    public unsafe struct ImageCreateInfo
+    public unsafe partial struct ImageCreateInfo
     {
         public ImageCreateInfo
         (
@@ -37,21 +37,21 @@ namespace Silk.NET.Vulkan
             ImageLayout initialLayout = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           ImageType = imageType;
-           Format = format;
-           Extent = extent;
-           MipLevels = mipLevels;
-           ArrayLayers = arrayLayers;
-           Samples = samples;
-           Tiling = tiling;
-           Usage = usage;
-           SharingMode = sharingMode;
-           QueueFamilyIndexCount = queueFamilyIndexCount;
-           PQueueFamilyIndices = pQueueFamilyIndices;
-           InitialLayout = initialLayout;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            ImageType = imageType;
+            Format = format;
+            Extent = extent;
+            MipLevels = mipLevels;
+            ArrayLayers = arrayLayers;
+            Samples = samples;
+            Tiling = tiling;
+            Usage = usage;
+            SharingMode = sharingMode;
+            QueueFamilyIndexCount = queueFamilyIndexCount;
+            PQueueFamilyIndices = pQueueFamilyIndices;
+            InitialLayout = initialLayout;
         }
 
 /// <summary></summary>

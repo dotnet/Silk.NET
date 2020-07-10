@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetVariableDescriptorCountLayoutSupport")]
-    public unsafe struct DescriptorSetVariableDescriptorCountLayoutSupport
+    public unsafe partial struct DescriptorSetVariableDescriptorCountLayoutSupport
     {
         public DescriptorSetVariableDescriptorCountLayoutSupport
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint maxVariableDescriptorCount = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxVariableDescriptorCount = maxVariableDescriptorCount;
+            SType = sType;
+            PNext = pNext;
+            MaxVariableDescriptorCount = maxVariableDescriptorCount;
         }
 
 /// <summary></summary>

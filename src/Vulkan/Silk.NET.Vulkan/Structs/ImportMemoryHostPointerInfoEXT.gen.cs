@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImportMemoryHostPointerInfoEXT")]
-    public unsafe struct ImportMemoryHostPointerInfoEXT
+    public unsafe partial struct ImportMemoryHostPointerInfoEXT
     {
         public ImportMemoryHostPointerInfoEXT
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             void* pHostPointer = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           HandleType = handleType;
-           PHostPointer = pHostPointer;
+            SType = sType;
+            PNext = pNext;
+            HandleType = handleType;
+            PHostPointer = pHostPointer;
         }
 
 /// <summary></summary>

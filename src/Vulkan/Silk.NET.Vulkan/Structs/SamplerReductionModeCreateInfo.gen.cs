@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerReductionModeCreateInfo")]
-    public unsafe struct SamplerReductionModeCreateInfo
+    public unsafe partial struct SamplerReductionModeCreateInfo
     {
         public SamplerReductionModeCreateInfo
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             SamplerReductionMode reductionMode = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ReductionMode = reductionMode;
+            SType = sType;
+            PNext = pNext;
+            ReductionMode = reductionMode;
         }
 
 /// <summary></summary>

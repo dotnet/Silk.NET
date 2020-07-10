@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSubgroupSizeControlFeaturesEXT")]
-    public unsafe struct PhysicalDeviceSubgroupSizeControlFeaturesEXT
+    public unsafe partial struct PhysicalDeviceSubgroupSizeControlFeaturesEXT
     {
         public PhysicalDeviceSubgroupSizeControlFeaturesEXT
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Bool32 computeFullSubgroups = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SubgroupSizeControl = subgroupSizeControl;
-           ComputeFullSubgroups = computeFullSubgroups;
+            SType = sType;
+            PNext = pNext;
+            SubgroupSizeControl = subgroupSizeControl;
+            ComputeFullSubgroups = computeFullSubgroups;
         }
 
 /// <summary></summary>

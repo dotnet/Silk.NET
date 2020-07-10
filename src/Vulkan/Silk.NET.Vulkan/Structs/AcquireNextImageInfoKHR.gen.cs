@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAcquireNextImageInfoKHR")]
-    public unsafe struct AcquireNextImageInfoKHR
+    public unsafe partial struct AcquireNextImageInfoKHR
     {
         public AcquireNextImageInfoKHR
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             uint deviceMask = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Swapchain = swapchain;
-           Timeout = timeout;
-           Semaphore = semaphore;
-           Fence = fence;
-           DeviceMask = deviceMask;
+            SType = sType;
+            PNext = pNext;
+            Swapchain = swapchain;
+            Timeout = timeout;
+            Semaphore = semaphore;
+            Fence = fence;
+            DeviceMask = deviceMask;
         }
 
 /// <summary></summary>

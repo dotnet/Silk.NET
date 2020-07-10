@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGraphicsPipelineShaderGroupsCreateInfoNV")]
-    public unsafe struct GraphicsPipelineShaderGroupsCreateInfoNV
+    public unsafe partial struct GraphicsPipelineShaderGroupsCreateInfoNV
     {
         public GraphicsPipelineShaderGroupsCreateInfoNV
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             Pipeline* pPipelines = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           GroupCount = groupCount;
-           PGroups = pGroups;
-           PipelineCount = pipelineCount;
-           PPipelines = pPipelines;
+            SType = sType;
+            PNext = pNext;
+            GroupCount = groupCount;
+            PGroups = pGroups;
+            PipelineCount = pipelineCount;
+            PPipelines = pPipelines;
         }
 
 /// <summary></summary>

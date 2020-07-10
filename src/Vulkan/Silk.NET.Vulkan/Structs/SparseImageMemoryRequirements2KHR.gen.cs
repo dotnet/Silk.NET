@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSparseImageMemoryRequirements2KHR")]
-    public unsafe struct SparseImageMemoryRequirements2KHR
+    public unsafe partial struct SparseImageMemoryRequirements2KHR
     {
         public SparseImageMemoryRequirements2KHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             SparseImageMemoryRequirements memoryRequirements = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MemoryRequirements = memoryRequirements;
+            SType = sType;
+            PNext = pNext;
+            MemoryRequirements = memoryRequirements;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupCommandBufferBeginInfoKHR")]
-    public unsafe struct DeviceGroupCommandBufferBeginInfoKHR
+    public unsafe partial struct DeviceGroupCommandBufferBeginInfoKHR
     {
         public DeviceGroupCommandBufferBeginInfoKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint deviceMask = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DeviceMask = deviceMask;
+            SType = sType;
+            PNext = pNext;
+            DeviceMask = deviceMask;
         }
 
 /// <summary></summary>

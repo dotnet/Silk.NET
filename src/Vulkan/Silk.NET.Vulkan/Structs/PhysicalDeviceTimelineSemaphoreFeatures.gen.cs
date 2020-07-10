@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceTimelineSemaphoreFeatures")]
-    public unsafe struct PhysicalDeviceTimelineSemaphoreFeatures
+    public unsafe partial struct PhysicalDeviceTimelineSemaphoreFeatures
     {
         public PhysicalDeviceTimelineSemaphoreFeatures
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 timelineSemaphore = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           TimelineSemaphore = timelineSemaphore;
+            SType = sType;
+            PNext = pNext;
+            TimelineSemaphore = timelineSemaphore;
         }
 
 /// <summary></summary>

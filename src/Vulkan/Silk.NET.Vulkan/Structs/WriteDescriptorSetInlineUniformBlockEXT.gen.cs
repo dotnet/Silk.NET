@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkWriteDescriptorSetInlineUniformBlockEXT")]
-    public unsafe struct WriteDescriptorSetInlineUniformBlockEXT
+    public unsafe partial struct WriteDescriptorSetInlineUniformBlockEXT
     {
         public WriteDescriptorSetInlineUniformBlockEXT
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             void* pData = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DataSize = dataSize;
-           PData = pData;
+            SType = sType;
+            PNext = pNext;
+            DataSize = dataSize;
+            PData = pData;
         }
 
 /// <summary></summary>

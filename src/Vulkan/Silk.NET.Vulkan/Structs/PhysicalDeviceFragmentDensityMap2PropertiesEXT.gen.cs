@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFragmentDensityMap2PropertiesEXT")]
-    public unsafe struct PhysicalDeviceFragmentDensityMap2PropertiesEXT
+    public unsafe partial struct PhysicalDeviceFragmentDensityMap2PropertiesEXT
     {
         public PhysicalDeviceFragmentDensityMap2PropertiesEXT
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             uint maxDescriptorSetSubsampledSamplers = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SubsampledLoads = subsampledLoads;
-           SubsampledCoarseReconstructionEarlyAccess = subsampledCoarseReconstructionEarlyAccess;
-           MaxSubsampledArrayLayers = maxSubsampledArrayLayers;
-           MaxDescriptorSetSubsampledSamplers = maxDescriptorSetSubsampledSamplers;
+            SType = sType;
+            PNext = pNext;
+            SubsampledLoads = subsampledLoads;
+            SubsampledCoarseReconstructionEarlyAccess = subsampledCoarseReconstructionEarlyAccess;
+            MaxSubsampledArrayLayers = maxSubsampledArrayLayers;
+            MaxDescriptorSetSubsampledSamplers = maxDescriptorSetSubsampledSamplers;
         }
 
 /// <summary></summary>

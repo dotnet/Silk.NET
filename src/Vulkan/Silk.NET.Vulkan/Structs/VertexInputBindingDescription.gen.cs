@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVertexInputBindingDescription")]
-    public unsafe struct VertexInputBindingDescription
+    public unsafe partial struct VertexInputBindingDescription
     {
         public VertexInputBindingDescription
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             VertexInputRate inputRate = default
         )
         {
-           Binding = binding;
-           Stride = stride;
-           InputRate = inputRate;
+            Binding = binding;
+            Stride = stride;
+            InputRate = inputRate;
         }
 
 /// <summary></summary>

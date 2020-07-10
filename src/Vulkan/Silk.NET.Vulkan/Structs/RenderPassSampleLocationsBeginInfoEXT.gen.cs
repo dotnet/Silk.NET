@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassSampleLocationsBeginInfoEXT")]
-    public unsafe struct RenderPassSampleLocationsBeginInfoEXT
+    public unsafe partial struct RenderPassSampleLocationsBeginInfoEXT
     {
         public RenderPassSampleLocationsBeginInfoEXT
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             SubpassSampleLocationsEXT* pPostSubpassSampleLocations = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           AttachmentInitialSampleLocationsCount = attachmentInitialSampleLocationsCount;
-           PAttachmentInitialSampleLocations = pAttachmentInitialSampleLocations;
-           PostSubpassSampleLocationsCount = postSubpassSampleLocationsCount;
-           PPostSubpassSampleLocations = pPostSubpassSampleLocations;
+            SType = sType;
+            PNext = pNext;
+            AttachmentInitialSampleLocationsCount = attachmentInitialSampleLocationsCount;
+            PAttachmentInitialSampleLocations = pAttachmentInitialSampleLocations;
+            PostSubpassSampleLocationsCount = postSubpassSampleLocationsCount;
+            PPostSubpassSampleLocations = pPostSubpassSampleLocations;
         }
 
 /// <summary></summary>

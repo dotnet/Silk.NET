@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceVariablePointerFeaturesKHR")]
-    public unsafe struct PhysicalDeviceVariablePointerFeaturesKHR
+    public unsafe partial struct PhysicalDeviceVariablePointerFeaturesKHR
     {
         public PhysicalDeviceVariablePointerFeaturesKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Bool32 variablePointers = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           VariablePointersStorageBuffer = variablePointersStorageBuffer;
-           VariablePointers = variablePointers;
+            SType = sType;
+            PNext = pNext;
+            VariablePointersStorageBuffer = variablePointersStorageBuffer;
+            VariablePointers = variablePointers;
         }
 
 /// <summary></summary>

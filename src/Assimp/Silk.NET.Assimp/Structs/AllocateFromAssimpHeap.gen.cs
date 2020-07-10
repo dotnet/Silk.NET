@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "AllocateFromAssimpHeap")]
-    public unsafe struct AllocateFromAssimpHeap
+    public unsafe partial struct AllocateFromAssimpHeap
     {
     }
 }

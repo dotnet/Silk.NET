@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassDescription2")]
-    public unsafe struct SubpassDescription2
+    public unsafe partial struct SubpassDescription2
     {
         public SubpassDescription2
         (
@@ -35,19 +35,19 @@ namespace Silk.NET.Vulkan
             uint* pPreserveAttachments = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           PipelineBindPoint = pipelineBindPoint;
-           ViewMask = viewMask;
-           InputAttachmentCount = inputAttachmentCount;
-           PInputAttachments = pInputAttachments;
-           ColorAttachmentCount = colorAttachmentCount;
-           PColorAttachments = pColorAttachments;
-           PResolveAttachments = pResolveAttachments;
-           PDepthStencilAttachment = pDepthStencilAttachment;
-           PreserveAttachmentCount = preserveAttachmentCount;
-           PPreserveAttachments = pPreserveAttachments;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            PipelineBindPoint = pipelineBindPoint;
+            ViewMask = viewMask;
+            InputAttachmentCount = inputAttachmentCount;
+            PInputAttachments = pInputAttachments;
+            ColorAttachmentCount = colorAttachmentCount;
+            PColorAttachments = pColorAttachments;
+            PResolveAttachments = pResolveAttachments;
+            PDepthStencilAttachment = pDepthStencilAttachment;
+            PreserveAttachmentCount = preserveAttachmentCount;
+            PPreserveAttachments = pPreserveAttachments;
         }
 
 /// <summary></summary>

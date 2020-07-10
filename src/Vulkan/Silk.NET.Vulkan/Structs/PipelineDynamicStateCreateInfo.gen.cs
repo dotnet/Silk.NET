@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineDynamicStateCreateInfo")]
-    public unsafe struct PipelineDynamicStateCreateInfo
+    public unsafe partial struct PipelineDynamicStateCreateInfo
     {
         public PipelineDynamicStateCreateInfo
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             DynamicState* pDynamicStates = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           DynamicStateCount = dynamicStateCount;
-           PDynamicStates = pDynamicStates;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            DynamicStateCount = dynamicStateCount;
+            PDynamicStates = pDynamicStates;
         }
 
 /// <summary></summary>

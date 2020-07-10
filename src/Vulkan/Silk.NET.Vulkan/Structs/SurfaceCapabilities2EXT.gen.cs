@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSurfaceCapabilities2EXT")]
-    public unsafe struct SurfaceCapabilities2EXT
+    public unsafe partial struct SurfaceCapabilities2EXT
     {
         public SurfaceCapabilities2EXT
         (
@@ -35,19 +35,19 @@ namespace Silk.NET.Vulkan
             SurfaceCounterFlagsEXT supportedSurfaceCounters = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MinImageCount = minImageCount;
-           MaxImageCount = maxImageCount;
-           CurrentExtent = currentExtent;
-           MinImageExtent = minImageExtent;
-           MaxImageExtent = maxImageExtent;
-           MaxImageArrayLayers = maxImageArrayLayers;
-           SupportedTransforms = supportedTransforms;
-           CurrentTransform = currentTransform;
-           SupportedCompositeAlpha = supportedCompositeAlpha;
-           SupportedUsageFlags = supportedUsageFlags;
-           SupportedSurfaceCounters = supportedSurfaceCounters;
+            SType = sType;
+            PNext = pNext;
+            MinImageCount = minImageCount;
+            MaxImageCount = maxImageCount;
+            CurrentExtent = currentExtent;
+            MinImageExtent = minImageExtent;
+            MaxImageExtent = maxImageExtent;
+            MaxImageArrayLayers = maxImageArrayLayers;
+            SupportedTransforms = supportedTransforms;
+            CurrentTransform = currentTransform;
+            SupportedCompositeAlpha = supportedCompositeAlpha;
+            SupportedUsageFlags = supportedUsageFlags;
+            SupportedSurfaceCounters = supportedSurfaceCounters;
         }
 
 /// <summary></summary>

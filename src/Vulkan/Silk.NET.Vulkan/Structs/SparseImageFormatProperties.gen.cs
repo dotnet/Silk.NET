@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSparseImageFormatProperties")]
-    public unsafe struct SparseImageFormatProperties
+    public unsafe partial struct SparseImageFormatProperties
     {
         public SparseImageFormatProperties
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             SparseImageFormatFlags flags = default
         )
         {
-           AspectMask = aspectMask;
-           ImageGranularity = imageGranularity;
-           Flags = flags;
+            AspectMask = aspectMask;
+            ImageGranularity = imageGranularity;
+            Flags = flags;
         }
 
 /// <summary></summary>

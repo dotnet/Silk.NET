@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDrmFormatModifierPropertiesListEXT")]
-    public unsafe struct DrmFormatModifierPropertiesListEXT
+    public unsafe partial struct DrmFormatModifierPropertiesListEXT
     {
         public DrmFormatModifierPropertiesListEXT
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             DrmFormatModifierPropertiesEXT* pDrmFormatModifierProperties = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DrmFormatModifierCount = drmFormatModifierCount;
-           PDrmFormatModifierProperties = pDrmFormatModifierProperties;
+            SType = sType;
+            PNext = pNext;
+            DrmFormatModifierCount = drmFormatModifierCount;
+            PDrmFormatModifierProperties = pDrmFormatModifierProperties;
         }
 
 /// <summary></summary>

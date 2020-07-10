@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImportFenceFdInfoKHR")]
-    public unsafe struct ImportFenceFdInfoKHR
+    public unsafe partial struct ImportFenceFdInfoKHR
     {
         public ImportFenceFdInfoKHR
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             int fd = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Fence = fence;
-           Flags = flags;
-           HandleType = handleType;
-           Fd = fd;
+            SType = sType;
+            PNext = pNext;
+            Fence = fence;
+            Flags = flags;
+            HandleType = handleType;
+            Fd = fd;
         }
 
 /// <summary></summary>

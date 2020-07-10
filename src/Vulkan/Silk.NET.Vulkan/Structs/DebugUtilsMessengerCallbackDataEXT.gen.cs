@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDebugUtilsMessengerCallbackDataEXT")]
-    public unsafe struct DebugUtilsMessengerCallbackDataEXT
+    public unsafe partial struct DebugUtilsMessengerCallbackDataEXT
     {
         public DebugUtilsMessengerCallbackDataEXT
         (
@@ -34,18 +34,18 @@ namespace Silk.NET.Vulkan
             DebugUtilsObjectNameInfoEXT* pObjects = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           PMessageIdName = pMessageIdName;
-           MessageIdNumber = messageIdNumber;
-           PMessage = pMessage;
-           QueueLabelCount = queueLabelCount;
-           PQueueLabels = pQueueLabels;
-           CmdBufLabelCount = cmdBufLabelCount;
-           PCmdBufLabels = pCmdBufLabels;
-           ObjectCount = objectCount;
-           PObjects = pObjects;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            PMessageIdName = pMessageIdName;
+            MessageIdNumber = messageIdNumber;
+            PMessage = pMessage;
+            QueueLabelCount = queueLabelCount;
+            PQueueLabels = pQueueLabels;
+            CmdBufLabelCount = cmdBufLabelCount;
+            PCmdBufLabels = pCmdBufLabels;
+            ObjectCount = objectCount;
+            PObjects = pObjects;
         }
 
 /// <summary></summary>

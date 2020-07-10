@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSurfaceFullScreenExclusiveWin32InfoEXT")]
-    public unsafe struct SurfaceFullScreenExclusiveWin32InfoEXT
+    public unsafe partial struct SurfaceFullScreenExclusiveWin32InfoEXT
     {
         public SurfaceFullScreenExclusiveWin32InfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             IntPtr hmonitor = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Hmonitor = hmonitor;
+            SType = sType;
+            PNext = pNext;
+            Hmonitor = hmonitor;
         }
 
 /// <summary></summary>

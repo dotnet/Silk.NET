@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassCreateInfo")]
-    public unsafe struct RenderPassCreateInfo
+    public unsafe partial struct RenderPassCreateInfo
     {
         public RenderPassCreateInfo
         (
@@ -31,15 +31,15 @@ namespace Silk.NET.Vulkan
             SubpassDependency* pDependencies = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           AttachmentCount = attachmentCount;
-           PAttachments = pAttachments;
-           SubpassCount = subpassCount;
-           PSubpasses = pSubpasses;
-           DependencyCount = dependencyCount;
-           PDependencies = pDependencies;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            AttachmentCount = attachmentCount;
+            PAttachments = pAttachments;
+            SubpassCount = subpassCount;
+            PSubpasses = pSubpasses;
+            DependencyCount = dependencyCount;
+            PDependencies = pDependencies;
         }
 
 /// <summary></summary>

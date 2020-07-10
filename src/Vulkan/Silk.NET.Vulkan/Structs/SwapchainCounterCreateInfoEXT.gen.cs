@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSwapchainCounterCreateInfoEXT")]
-    public unsafe struct SwapchainCounterCreateInfoEXT
+    public unsafe partial struct SwapchainCounterCreateInfoEXT
     {
         public SwapchainCounterCreateInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             SurfaceCounterFlagsEXT surfaceCounters = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SurfaceCounters = surfaceCounters;
+            SType = sType;
+            PNext = pNext;
+            SurfaceCounters = surfaceCounters;
         }
 
 /// <summary></summary>

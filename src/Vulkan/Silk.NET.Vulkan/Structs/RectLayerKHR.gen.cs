@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRectLayerKHR")]
-    public unsafe struct RectLayerKHR
+    public unsafe partial struct RectLayerKHR
     {
         public RectLayerKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint layer = default
         )
         {
-           Offset = offset;
-           Extent = extent;
-           Layer = layer;
+            Offset = offset;
+            Extent = extent;
+            Layer = layer;
         }
 
 /// <summary></summary>

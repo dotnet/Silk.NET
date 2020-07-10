@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExclusiveScissorFeaturesNV")]
-    public unsafe struct PhysicalDeviceExclusiveScissorFeaturesNV
+    public unsafe partial struct PhysicalDeviceExclusiveScissorFeaturesNV
     {
         public PhysicalDeviceExclusiveScissorFeaturesNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 exclusiveScissor = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ExclusiveScissor = exclusiveScissor;
+            SType = sType;
+            PNext = pNext;
+            ExclusiveScissor = exclusiveScissor;
         }
 
 /// <summary></summary>

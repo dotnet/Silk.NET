@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkViewportSwizzleNV")]
-    public unsafe struct ViewportSwizzleNV
+    public unsafe partial struct ViewportSwizzleNV
     {
         public ViewportSwizzleNV
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             ViewportCoordinateSwizzleNV w = default
         )
         {
-           X = x;
-           Y = y;
-           Z = z;
-           W = w;
+            X = x;
+            Y = y;
+            Z = z;
+            W = w;
         }
 
 /// <summary></summary>

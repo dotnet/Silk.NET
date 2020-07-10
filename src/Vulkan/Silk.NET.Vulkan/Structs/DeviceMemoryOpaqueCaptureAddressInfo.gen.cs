@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceMemoryOpaqueCaptureAddressInfo")]
-    public unsafe struct DeviceMemoryOpaqueCaptureAddressInfo
+    public unsafe partial struct DeviceMemoryOpaqueCaptureAddressInfo
     {
         public DeviceMemoryOpaqueCaptureAddressInfo
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             DeviceMemory memory = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Memory = memory;
+            SType = sType;
+            PNext = pNext;
+            Memory = memory;
         }
 
 /// <summary></summary>

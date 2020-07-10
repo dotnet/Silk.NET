@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCoarseSampleLocationNV")]
-    public unsafe struct CoarseSampleLocationNV
+    public unsafe partial struct CoarseSampleLocationNV
     {
         public CoarseSampleLocationNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint sample = default
         )
         {
-           PixelX = pixelX;
-           PixelY = pixelY;
-           Sample = sample;
+            PixelX = pixelX;
+            PixelY = pixelY;
+            Sample = sample;
         }
 
 /// <summary></summary>

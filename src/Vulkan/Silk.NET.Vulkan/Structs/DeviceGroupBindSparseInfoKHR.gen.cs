@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupBindSparseInfoKHR")]
-    public unsafe struct DeviceGroupBindSparseInfoKHR
+    public unsafe partial struct DeviceGroupBindSparseInfoKHR
     {
         public DeviceGroupBindSparseInfoKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint memoryDeviceIndex = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ResourceDeviceIndex = resourceDeviceIndex;
-           MemoryDeviceIndex = memoryDeviceIndex;
+            SType = sType;
+            PNext = pNext;
+            ResourceDeviceIndex = resourceDeviceIndex;
+            MemoryDeviceIndex = memoryDeviceIndex;
         }
 
 /// <summary></summary>

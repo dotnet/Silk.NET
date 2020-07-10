@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalFenceInfoKHR")]
-    public unsafe struct PhysicalDeviceExternalFenceInfoKHR
+    public unsafe partial struct PhysicalDeviceExternalFenceInfoKHR
     {
         public PhysicalDeviceExternalFenceInfoKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ExternalFenceHandleTypeFlags handleType = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           HandleType = handleType;
+            SType = sType;
+            PNext = pNext;
+            HandleType = handleType;
         }
 
 /// <summary></summary>

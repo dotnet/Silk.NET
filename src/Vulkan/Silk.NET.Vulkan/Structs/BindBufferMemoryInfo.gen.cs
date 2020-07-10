@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindBufferMemoryInfo")]
-    public unsafe struct BindBufferMemoryInfo
+    public unsafe partial struct BindBufferMemoryInfo
     {
         public BindBufferMemoryInfo
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             ulong memoryOffset = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Buffer = buffer;
-           Memory = memory;
-           MemoryOffset = memoryOffset;
+            SType = sType;
+            PNext = pNext;
+            Buffer = buffer;
+            Memory = memory;
+            MemoryOffset = memoryOffset;
         }
 
 /// <summary></summary>

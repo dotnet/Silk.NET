@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceValueINTEL")]
-    public unsafe struct PerformanceValueINTEL
+    public unsafe partial struct PerformanceValueINTEL
     {
         public PerformanceValueINTEL
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             PerformanceValueDataINTEL data = default
         )
         {
-           Type = type;
-           Data = data;
+            Type = type;
+            Data = data;
         }
 
 /// <summary></summary>

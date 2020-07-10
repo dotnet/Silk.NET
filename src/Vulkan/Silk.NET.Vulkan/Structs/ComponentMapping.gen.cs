@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkComponentMapping")]
-    public unsafe struct ComponentMapping
+    public unsafe partial struct ComponentMapping
     {
         public ComponentMapping
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             ComponentSwizzle a = default
         )
         {
-           R = r;
-           G = g;
-           B = b;
-           A = a;
+            R = r;
+            G = g;
+            B = b;
+            A = a;
         }
 
 /// <summary></summary>

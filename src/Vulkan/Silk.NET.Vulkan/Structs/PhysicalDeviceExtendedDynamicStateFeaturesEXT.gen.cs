@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExtendedDynamicStateFeaturesEXT")]
-    public unsafe struct PhysicalDeviceExtendedDynamicStateFeaturesEXT
+    public unsafe partial struct PhysicalDeviceExtendedDynamicStateFeaturesEXT
     {
         public PhysicalDeviceExtendedDynamicStateFeaturesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 extendedDynamicState = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ExtendedDynamicState = extendedDynamicState;
+            SType = sType;
+            PNext = pNext;
+            ExtendedDynamicState = extendedDynamicState;
         }
 
 /// <summary></summary>

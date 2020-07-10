@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferInheritanceRenderPassTransformInfoQCOM")]
-    public unsafe struct CommandBufferInheritanceRenderPassTransformInfoQCOM
+    public unsafe partial struct CommandBufferInheritanceRenderPassTransformInfoQCOM
     {
         public CommandBufferInheritanceRenderPassTransformInfoQCOM
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Rect2D renderArea = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Transform = transform;
-           RenderArea = renderArea;
+            SType = sType;
+            PNext = pNext;
+            Transform = transform;
+            RenderArea = renderArea;
         }
 
 /// <summary></summary>

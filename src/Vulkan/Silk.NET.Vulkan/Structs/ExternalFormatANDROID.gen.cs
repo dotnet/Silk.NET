@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalFormatANDROID")]
-    public unsafe struct ExternalFormatANDROID
+    public unsafe partial struct ExternalFormatANDROID
     {
         public ExternalFormatANDROID
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ulong externalFormat = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ExternalFormat = externalFormat;
+            SType = sType;
+            PNext = pNext;
+            ExternalFormat = externalFormat;
         }
 
 /// <summary></summary>

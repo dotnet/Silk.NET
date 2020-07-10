@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceIDProperties")]
-    public unsafe struct PhysicalDeviceIDProperties
+    public unsafe partial struct PhysicalDeviceIDProperties
     {
         public PhysicalDeviceIDProperties
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Bool32 deviceLuidvalid = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DeviceNodeMask = deviceNodeMask;
-           DeviceLuidvalid = deviceLuidvalid;
+            SType = sType;
+            PNext = pNext;
+            DeviceNodeMask = deviceNodeMask;
+            DeviceLuidvalid = deviceLuidvalid;
         }
 
 /// <summary></summary>

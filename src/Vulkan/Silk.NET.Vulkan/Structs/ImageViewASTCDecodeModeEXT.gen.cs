@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageViewASTCDecodeModeEXT")]
-    public unsafe struct ImageViewASTCDecodeModeEXT
+    public unsafe partial struct ImageViewASTCDecodeModeEXT
     {
         public ImageViewASTCDecodeModeEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Format decodeMode = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DecodeMode = decodeMode;
+            SType = sType;
+            PNext = pNext;
+            DecodeMode = decodeMode;
         }
 
 /// <summary></summary>

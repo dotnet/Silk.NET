@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorImageInfo")]
-    public unsafe struct DescriptorImageInfo
+    public unsafe partial struct DescriptorImageInfo
     {
         public DescriptorImageInfo
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ImageLayout imageLayout = default
         )
         {
-           Sampler = sampler;
-           ImageView = imageView;
-           ImageLayout = imageLayout;
+            Sampler = sampler;
+            ImageView = imageView;
+            ImageLayout = imageLayout;
         }
 
 /// <summary></summary>

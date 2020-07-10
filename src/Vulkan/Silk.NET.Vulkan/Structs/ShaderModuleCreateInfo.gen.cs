@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkShaderModuleCreateInfo")]
-    public unsafe struct ShaderModuleCreateInfo
+    public unsafe partial struct ShaderModuleCreateInfo
     {
         public ShaderModuleCreateInfo
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             uint* pCode = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           CodeSize = codeSize;
-           PCode = pCode;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            CodeSize = codeSize;
+            PCode = pCode;
         }
 
 /// <summary></summary>

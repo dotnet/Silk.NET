@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExportFenceCreateInfo")]
-    public unsafe struct ExportFenceCreateInfo
+    public unsafe partial struct ExportFenceCreateInfo
     {
         public ExportFenceCreateInfo
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ExternalFenceHandleTypeFlags handleTypes = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           HandleTypes = handleTypes;
+            SType = sType;
+            PNext = pNext;
+            HandleTypes = handleTypes;
         }
 
 /// <summary></summary>

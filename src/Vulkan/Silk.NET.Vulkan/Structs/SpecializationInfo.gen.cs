@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSpecializationInfo")]
-    public unsafe struct SpecializationInfo
+    public unsafe partial struct SpecializationInfo
     {
         public SpecializationInfo
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             void* pData = default
         )
         {
-           MapEntryCount = mapEntryCount;
-           PMapEntries = pMapEntries;
-           DataSize = dataSize;
-           PData = pData;
+            MapEntryCount = mapEntryCount;
+            PMapEntries = pMapEntries;
+            DataSize = dataSize;
+            PData = pData;
         }
 
 /// <summary></summary>

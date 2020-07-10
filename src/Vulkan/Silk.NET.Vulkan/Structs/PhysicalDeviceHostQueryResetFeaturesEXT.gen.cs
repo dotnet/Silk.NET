@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceHostQueryResetFeaturesEXT")]
-    public unsafe struct PhysicalDeviceHostQueryResetFeaturesEXT
+    public unsafe partial struct PhysicalDeviceHostQueryResetFeaturesEXT
     {
         public PhysicalDeviceHostQueryResetFeaturesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 hostQueryReset = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           HostQueryReset = hostQueryReset;
+            SType = sType;
+            PNext = pNext;
+            HostQueryReset = hostQueryReset;
         }
 
 /// <summary></summary>

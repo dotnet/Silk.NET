@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.OpenCL
 {
     [NativeName("Name", "cl_dx9_surface_info_khr")]
-    public unsafe struct Dx9SurfaceInfoKhr
+    public unsafe partial struct Dx9SurfaceInfoKhr
     {
         public Dx9SurfaceInfoKhr
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.OpenCL
             IntPtr sharedHandle = default
         )
         {
-           Resource = resource;
-           SharedHandle = sharedHandle;
+            Resource = resource;
+            SharedHandle = sharedHandle;
         }
 
 /// <summary></summary>

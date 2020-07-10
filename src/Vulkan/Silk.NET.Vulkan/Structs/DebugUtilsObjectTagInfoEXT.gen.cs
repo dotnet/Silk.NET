@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDebugUtilsObjectTagInfoEXT")]
-    public unsafe struct DebugUtilsObjectTagInfoEXT
+    public unsafe partial struct DebugUtilsObjectTagInfoEXT
     {
         public DebugUtilsObjectTagInfoEXT
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             void* pTag = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ObjectType = objectType;
-           ObjectHandle = objectHandle;
-           TagName = tagName;
-           TagSize = tagSize;
-           PTag = pTag;
+            SType = sType;
+            PNext = pNext;
+            ObjectType = objectType;
+            ObjectHandle = objectHandle;
+            TagName = tagName;
+            TagSize = tagSize;
+            PTag = pTag;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkViewport")]
-    public unsafe struct Viewport
+    public unsafe partial struct Viewport
     {
         public Viewport
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             float maxDepth = default
         )
         {
-           X = x;
-           Y = y;
-           Width = width;
-           Height = height;
-           MinDepth = minDepth;
-           MaxDepth = maxDepth;
+            X = x;
+            Y = y;
+            Width = width;
+            Height = height;
+            MinDepth = minDepth;
+            MaxDepth = maxDepth;
         }
 
 /// <summary></summary>

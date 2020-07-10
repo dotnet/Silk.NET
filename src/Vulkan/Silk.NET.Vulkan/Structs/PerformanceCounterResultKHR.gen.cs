@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan
 {
     [StructLayout(LayoutKind.Explicit)]
     [NativeName("Name", "VkPerformanceCounterResultKHR")]
-    public unsafe struct PerformanceCounterResultKHR
+    public unsafe partial struct PerformanceCounterResultKHR
     {
         public PerformanceCounterResultKHR
         (
@@ -29,12 +29,12 @@ namespace Silk.NET.Vulkan
             double float64 = default
         )
         {
-           Int32 = int32;
-           Int64 = int64;
-           Uint32 = uint32;
-           Uint64 = uint64;
-           Float32 = float32;
-           Float64 = float64;
+            Int32 = int32;
+            Int64 = int64;
+            Uint32 = uint32;
+            Uint64 = uint64;
+            Float32 = float32;
+            Float64 = float64;
         }
 
 /// <summary></summary>

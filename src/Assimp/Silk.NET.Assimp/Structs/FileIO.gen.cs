@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiFileIO")]
-    public unsafe struct FileIO
+    public unsafe partial struct FileIO
     {
         public FileIO
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Assimp
             byte* userData = default
         )
         {
-           OpenProc = openProc;
-           CloseProc = closeProc;
-           UserData = userData;
+            OpenProc = openProc;
+            CloseProc = closeProc;
+            UserData = userData;
         }
 
 

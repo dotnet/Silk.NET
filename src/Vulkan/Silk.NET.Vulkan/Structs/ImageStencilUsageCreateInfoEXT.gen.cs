@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageStencilUsageCreateInfoEXT")]
-    public unsafe struct ImageStencilUsageCreateInfoEXT
+    public unsafe partial struct ImageStencilUsageCreateInfoEXT
     {
         public ImageStencilUsageCreateInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ImageUsageFlags stencilUsage = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           StencilUsage = stencilUsage;
+            SType = sType;
+            PNext = pNext;
+            StencilUsage = stencilUsage;
         }
 
 /// <summary></summary>

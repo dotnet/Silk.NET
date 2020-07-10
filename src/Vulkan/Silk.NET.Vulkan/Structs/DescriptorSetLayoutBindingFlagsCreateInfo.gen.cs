@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetLayoutBindingFlagsCreateInfo")]
-    public unsafe struct DescriptorSetLayoutBindingFlagsCreateInfo
+    public unsafe partial struct DescriptorSetLayoutBindingFlagsCreateInfo
     {
         public DescriptorSetLayoutBindingFlagsCreateInfo
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             DescriptorBindingFlags* pBindingFlags = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           BindingCount = bindingCount;
-           PBindingFlags = pBindingFlags;
+            SType = sType;
+            PNext = pNext;
+            BindingCount = bindingCount;
+            PBindingFlags = pBindingFlags;
         }
 
 /// <summary></summary>

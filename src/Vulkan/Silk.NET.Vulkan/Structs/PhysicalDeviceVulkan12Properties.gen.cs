@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceVulkan12Properties")]
-    public unsafe struct PhysicalDeviceVulkan12Properties
+    public unsafe partial struct PhysicalDeviceVulkan12Properties
     {
         public PhysicalDeviceVulkan12Properties
         (
@@ -74,58 +74,58 @@ namespace Silk.NET.Vulkan
             SampleCountFlags framebufferIntegerColorSampleCounts = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DriverID = driverID;
-           ConformanceVersion = conformanceVersion;
-           DenormBehaviorIndependence = denormBehaviorIndependence;
-           RoundingModeIndependence = roundingModeIndependence;
-           ShaderSignedZeroInfNanPreserveFloat16 = shaderSignedZeroInfNanPreserveFloat16;
-           ShaderSignedZeroInfNanPreserveFloat32 = shaderSignedZeroInfNanPreserveFloat32;
-           ShaderSignedZeroInfNanPreserveFloat64 = shaderSignedZeroInfNanPreserveFloat64;
-           ShaderDenormPreserveFloat16 = shaderDenormPreserveFloat16;
-           ShaderDenormPreserveFloat32 = shaderDenormPreserveFloat32;
-           ShaderDenormPreserveFloat64 = shaderDenormPreserveFloat64;
-           ShaderDenormFlushToZeroFloat16 = shaderDenormFlushToZeroFloat16;
-           ShaderDenormFlushToZeroFloat32 = shaderDenormFlushToZeroFloat32;
-           ShaderDenormFlushToZeroFloat64 = shaderDenormFlushToZeroFloat64;
-           ShaderRoundingModeRtefloat16 = shaderRoundingModeRtefloat16;
-           ShaderRoundingModeRtefloat32 = shaderRoundingModeRtefloat32;
-           ShaderRoundingModeRtefloat64 = shaderRoundingModeRtefloat64;
-           ShaderRoundingModeRtzfloat16 = shaderRoundingModeRtzfloat16;
-           ShaderRoundingModeRtzfloat32 = shaderRoundingModeRtzfloat32;
-           ShaderRoundingModeRtzfloat64 = shaderRoundingModeRtzfloat64;
-           MaxUpdateAfterBindDescriptorsInAllPools = maxUpdateAfterBindDescriptorsInAllPools;
-           ShaderUniformBufferArrayNonUniformIndexingNative = shaderUniformBufferArrayNonUniformIndexingNative;
-           ShaderSampledImageArrayNonUniformIndexingNative = shaderSampledImageArrayNonUniformIndexingNative;
-           ShaderStorageBufferArrayNonUniformIndexingNative = shaderStorageBufferArrayNonUniformIndexingNative;
-           ShaderStorageImageArrayNonUniformIndexingNative = shaderStorageImageArrayNonUniformIndexingNative;
-           ShaderInputAttachmentArrayNonUniformIndexingNative = shaderInputAttachmentArrayNonUniformIndexingNative;
-           RobustBufferAccessUpdateAfterBind = robustBufferAccessUpdateAfterBind;
-           QuadDivergentImplicitLod = quadDivergentImplicitLod;
-           MaxPerStageDescriptorUpdateAfterBindSamplers = maxPerStageDescriptorUpdateAfterBindSamplers;
-           MaxPerStageDescriptorUpdateAfterBindUniformBuffers = maxPerStageDescriptorUpdateAfterBindUniformBuffers;
-           MaxPerStageDescriptorUpdateAfterBindStorageBuffers = maxPerStageDescriptorUpdateAfterBindStorageBuffers;
-           MaxPerStageDescriptorUpdateAfterBindSampledImages = maxPerStageDescriptorUpdateAfterBindSampledImages;
-           MaxPerStageDescriptorUpdateAfterBindStorageImages = maxPerStageDescriptorUpdateAfterBindStorageImages;
-           MaxPerStageDescriptorUpdateAfterBindInputAttachments = maxPerStageDescriptorUpdateAfterBindInputAttachments;
-           MaxPerStageUpdateAfterBindResources = maxPerStageUpdateAfterBindResources;
-           MaxDescriptorSetUpdateAfterBindSamplers = maxDescriptorSetUpdateAfterBindSamplers;
-           MaxDescriptorSetUpdateAfterBindUniformBuffers = maxDescriptorSetUpdateAfterBindUniformBuffers;
-           MaxDescriptorSetUpdateAfterBindUniformBuffersDynamic = maxDescriptorSetUpdateAfterBindUniformBuffersDynamic;
-           MaxDescriptorSetUpdateAfterBindStorageBuffers = maxDescriptorSetUpdateAfterBindStorageBuffers;
-           MaxDescriptorSetUpdateAfterBindStorageBuffersDynamic = maxDescriptorSetUpdateAfterBindStorageBuffersDynamic;
-           MaxDescriptorSetUpdateAfterBindSampledImages = maxDescriptorSetUpdateAfterBindSampledImages;
-           MaxDescriptorSetUpdateAfterBindStorageImages = maxDescriptorSetUpdateAfterBindStorageImages;
-           MaxDescriptorSetUpdateAfterBindInputAttachments = maxDescriptorSetUpdateAfterBindInputAttachments;
-           SupportedDepthResolveModes = supportedDepthResolveModes;
-           SupportedStencilResolveModes = supportedStencilResolveModes;
-           IndependentResolveNone = independentResolveNone;
-           IndependentResolve = independentResolve;
-           FilterMinmaxSingleComponentFormats = filterMinmaxSingleComponentFormats;
-           FilterMinmaxImageComponentMapping = filterMinmaxImageComponentMapping;
-           MaxTimelineSemaphoreValueDifference = maxTimelineSemaphoreValueDifference;
-           FramebufferIntegerColorSampleCounts = framebufferIntegerColorSampleCounts;
+            SType = sType;
+            PNext = pNext;
+            DriverID = driverID;
+            ConformanceVersion = conformanceVersion;
+            DenormBehaviorIndependence = denormBehaviorIndependence;
+            RoundingModeIndependence = roundingModeIndependence;
+            ShaderSignedZeroInfNanPreserveFloat16 = shaderSignedZeroInfNanPreserveFloat16;
+            ShaderSignedZeroInfNanPreserveFloat32 = shaderSignedZeroInfNanPreserveFloat32;
+            ShaderSignedZeroInfNanPreserveFloat64 = shaderSignedZeroInfNanPreserveFloat64;
+            ShaderDenormPreserveFloat16 = shaderDenormPreserveFloat16;
+            ShaderDenormPreserveFloat32 = shaderDenormPreserveFloat32;
+            ShaderDenormPreserveFloat64 = shaderDenormPreserveFloat64;
+            ShaderDenormFlushToZeroFloat16 = shaderDenormFlushToZeroFloat16;
+            ShaderDenormFlushToZeroFloat32 = shaderDenormFlushToZeroFloat32;
+            ShaderDenormFlushToZeroFloat64 = shaderDenormFlushToZeroFloat64;
+            ShaderRoundingModeRtefloat16 = shaderRoundingModeRtefloat16;
+            ShaderRoundingModeRtefloat32 = shaderRoundingModeRtefloat32;
+            ShaderRoundingModeRtefloat64 = shaderRoundingModeRtefloat64;
+            ShaderRoundingModeRtzfloat16 = shaderRoundingModeRtzfloat16;
+            ShaderRoundingModeRtzfloat32 = shaderRoundingModeRtzfloat32;
+            ShaderRoundingModeRtzfloat64 = shaderRoundingModeRtzfloat64;
+            MaxUpdateAfterBindDescriptorsInAllPools = maxUpdateAfterBindDescriptorsInAllPools;
+            ShaderUniformBufferArrayNonUniformIndexingNative = shaderUniformBufferArrayNonUniformIndexingNative;
+            ShaderSampledImageArrayNonUniformIndexingNative = shaderSampledImageArrayNonUniformIndexingNative;
+            ShaderStorageBufferArrayNonUniformIndexingNative = shaderStorageBufferArrayNonUniformIndexingNative;
+            ShaderStorageImageArrayNonUniformIndexingNative = shaderStorageImageArrayNonUniformIndexingNative;
+            ShaderInputAttachmentArrayNonUniformIndexingNative = shaderInputAttachmentArrayNonUniformIndexingNative;
+            RobustBufferAccessUpdateAfterBind = robustBufferAccessUpdateAfterBind;
+            QuadDivergentImplicitLod = quadDivergentImplicitLod;
+            MaxPerStageDescriptorUpdateAfterBindSamplers = maxPerStageDescriptorUpdateAfterBindSamplers;
+            MaxPerStageDescriptorUpdateAfterBindUniformBuffers = maxPerStageDescriptorUpdateAfterBindUniformBuffers;
+            MaxPerStageDescriptorUpdateAfterBindStorageBuffers = maxPerStageDescriptorUpdateAfterBindStorageBuffers;
+            MaxPerStageDescriptorUpdateAfterBindSampledImages = maxPerStageDescriptorUpdateAfterBindSampledImages;
+            MaxPerStageDescriptorUpdateAfterBindStorageImages = maxPerStageDescriptorUpdateAfterBindStorageImages;
+            MaxPerStageDescriptorUpdateAfterBindInputAttachments = maxPerStageDescriptorUpdateAfterBindInputAttachments;
+            MaxPerStageUpdateAfterBindResources = maxPerStageUpdateAfterBindResources;
+            MaxDescriptorSetUpdateAfterBindSamplers = maxDescriptorSetUpdateAfterBindSamplers;
+            MaxDescriptorSetUpdateAfterBindUniformBuffers = maxDescriptorSetUpdateAfterBindUniformBuffers;
+            MaxDescriptorSetUpdateAfterBindUniformBuffersDynamic = maxDescriptorSetUpdateAfterBindUniformBuffersDynamic;
+            MaxDescriptorSetUpdateAfterBindStorageBuffers = maxDescriptorSetUpdateAfterBindStorageBuffers;
+            MaxDescriptorSetUpdateAfterBindStorageBuffersDynamic = maxDescriptorSetUpdateAfterBindStorageBuffersDynamic;
+            MaxDescriptorSetUpdateAfterBindSampledImages = maxDescriptorSetUpdateAfterBindSampledImages;
+            MaxDescriptorSetUpdateAfterBindStorageImages = maxDescriptorSetUpdateAfterBindStorageImages;
+            MaxDescriptorSetUpdateAfterBindInputAttachments = maxDescriptorSetUpdateAfterBindInputAttachments;
+            SupportedDepthResolveModes = supportedDepthResolveModes;
+            SupportedStencilResolveModes = supportedStencilResolveModes;
+            IndependentResolveNone = independentResolveNone;
+            IndependentResolve = independentResolve;
+            FilterMinmaxSingleComponentFormats = filterMinmaxSingleComponentFormats;
+            FilterMinmaxImageComponentMapping = filterMinmaxImageComponentMapping;
+            MaxTimelineSemaphoreValueDifference = maxTimelineSemaphoreValueDifference;
+            FramebufferIntegerColorSampleCounts = framebufferIntegerColorSampleCounts;
         }
 
 /// <summary></summary>

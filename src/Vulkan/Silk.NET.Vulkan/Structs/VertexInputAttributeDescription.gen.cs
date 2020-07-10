@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVertexInputAttributeDescription")]
-    public unsafe struct VertexInputAttributeDescription
+    public unsafe partial struct VertexInputAttributeDescription
     {
         public VertexInputAttributeDescription
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint offset = default
         )
         {
-           Location = location;
-           Binding = binding;
-           Format = format;
-           Offset = offset;
+            Location = location;
+            Binding = binding;
+            Format = format;
+            Offset = offset;
         }
 
 /// <summary></summary>

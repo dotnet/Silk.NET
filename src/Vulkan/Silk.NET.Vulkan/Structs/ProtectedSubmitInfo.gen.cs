@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkProtectedSubmitInfo")]
-    public unsafe struct ProtectedSubmitInfo
+    public unsafe partial struct ProtectedSubmitInfo
     {
         public ProtectedSubmitInfo
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 protectedSubmit = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ProtectedSubmit = protectedSubmit;
+            SType = sType;
+            PNext = pNext;
+            ProtectedSubmit = protectedSubmit;
         }
 
 /// <summary></summary>

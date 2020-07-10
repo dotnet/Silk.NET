@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineViewportStateCreateInfo")]
-    public unsafe struct PipelineViewportStateCreateInfo
+    public unsafe partial struct PipelineViewportStateCreateInfo
     {
         public PipelineViewportStateCreateInfo
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             Rect2D* pScissors = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           ViewportCount = viewportCount;
-           PViewports = pViewports;
-           ScissorCount = scissorCount;
-           PScissors = pScissors;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            ViewportCount = viewportCount;
+            PViewports = pViewports;
+            ScissorCount = scissorCount;
+            PScissors = pScissors;
         }
 
 /// <summary></summary>

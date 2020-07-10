@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFramebufferMixedSamplesCombinationNV")]
-    public unsafe struct FramebufferMixedSamplesCombinationNV
+    public unsafe partial struct FramebufferMixedSamplesCombinationNV
     {
         public FramebufferMixedSamplesCombinationNV
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             SampleCountFlags colorSamples = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           CoverageReductionMode = coverageReductionMode;
-           RasterizationSamples = rasterizationSamples;
-           DepthStencilSamples = depthStencilSamples;
-           ColorSamples = colorSamples;
+            SType = sType;
+            PNext = pNext;
+            CoverageReductionMode = coverageReductionMode;
+            RasterizationSamples = rasterizationSamples;
+            DepthStencilSamples = depthStencilSamples;
+            ColorSamples = colorSamples;
         }
 
 /// <summary></summary>

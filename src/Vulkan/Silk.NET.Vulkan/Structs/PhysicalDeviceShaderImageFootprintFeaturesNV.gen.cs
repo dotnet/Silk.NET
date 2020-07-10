@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderImageFootprintFeaturesNV")]
-    public unsafe struct PhysicalDeviceShaderImageFootprintFeaturesNV
+    public unsafe partial struct PhysicalDeviceShaderImageFootprintFeaturesNV
     {
         public PhysicalDeviceShaderImageFootprintFeaturesNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 imageFootprint = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ImageFootprint = imageFootprint;
+            SType = sType;
+            PNext = pNext;
+            ImageFootprint = imageFootprint;
         }
 
 /// <summary></summary>

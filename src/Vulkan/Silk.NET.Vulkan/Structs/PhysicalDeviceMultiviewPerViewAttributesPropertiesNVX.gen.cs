@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX")]
-    public unsafe struct PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX
+    public unsafe partial struct PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX
     {
         public PhysicalDeviceMultiviewPerViewAttributesPropertiesNVX
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 perViewPositionAllComponents = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PerViewPositionAllComponents = perViewPositionAllComponents;
+            SType = sType;
+            PNext = pNext;
+            PerViewPositionAllComponents = perViewPositionAllComponents;
         }
 
 /// <summary></summary>

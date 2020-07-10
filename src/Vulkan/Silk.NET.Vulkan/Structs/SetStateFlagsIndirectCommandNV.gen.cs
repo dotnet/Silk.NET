@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSetStateFlagsIndirectCommandNV")]
-    public unsafe struct SetStateFlagsIndirectCommandNV
+    public unsafe partial struct SetStateFlagsIndirectCommandNV
     {
         public SetStateFlagsIndirectCommandNV
         (
             uint data = default
         )
         {
-           Data = data;
+            Data = data;
         }
 
 /// <summary></summary>

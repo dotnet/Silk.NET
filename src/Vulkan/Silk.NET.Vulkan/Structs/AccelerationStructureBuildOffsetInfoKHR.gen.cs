@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureBuildOffsetInfoKHR")]
-    public unsafe struct AccelerationStructureBuildOffsetInfoKHR
+    public unsafe partial struct AccelerationStructureBuildOffsetInfoKHR
     {
         public AccelerationStructureBuildOffsetInfoKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint transformOffset = default
         )
         {
-           PrimitiveCount = primitiveCount;
-           PrimitiveOffset = primitiveOffset;
-           FirstVertex = firstVertex;
-           TransformOffset = transformOffset;
+            PrimitiveCount = primitiveCount;
+            PrimitiveOffset = primitiveOffset;
+            FirstVertex = firstVertex;
+            TransformOffset = transformOffset;
         }
 
 /// <summary></summary>

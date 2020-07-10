@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueryPoolPerformanceCreateInfoKHR")]
-    public unsafe struct QueryPoolPerformanceCreateInfoKHR
+    public unsafe partial struct QueryPoolPerformanceCreateInfoKHR
     {
         public QueryPoolPerformanceCreateInfoKHR
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             uint* pCounterIndices = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           QueueFamilyIndex = queueFamilyIndex;
-           CounterIndexCount = counterIndexCount;
-           PCounterIndices = pCounterIndices;
+            SType = sType;
+            PNext = pNext;
+            QueueFamilyIndex = queueFamilyIndex;
+            CounterIndexCount = counterIndexCount;
+            PCounterIndices = pCounterIndices;
         }
 
 /// <summary></summary>

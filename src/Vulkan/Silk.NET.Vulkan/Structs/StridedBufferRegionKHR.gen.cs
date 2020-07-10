@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkStridedBufferRegionKHR")]
-    public unsafe struct StridedBufferRegionKHR
+    public unsafe partial struct StridedBufferRegionKHR
     {
         public StridedBufferRegionKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             ulong size = default
         )
         {
-           Buffer = buffer;
-           Offset = offset;
-           Stride = stride;
-           Size = size;
+            Buffer = buffer;
+            Offset = offset;
+            Stride = stride;
+            Size = size;
         }
 
 /// <summary></summary>

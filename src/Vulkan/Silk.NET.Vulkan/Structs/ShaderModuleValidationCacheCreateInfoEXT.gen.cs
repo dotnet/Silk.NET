@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkShaderModuleValidationCacheCreateInfoEXT")]
-    public unsafe struct ShaderModuleValidationCacheCreateInfoEXT
+    public unsafe partial struct ShaderModuleValidationCacheCreateInfoEXT
     {
         public ShaderModuleValidationCacheCreateInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ValidationCacheEXT validationCache = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ValidationCache = validationCache;
+            SType = sType;
+            PNext = pNext;
+            ValidationCache = validationCache;
         }
 
 /// <summary></summary>

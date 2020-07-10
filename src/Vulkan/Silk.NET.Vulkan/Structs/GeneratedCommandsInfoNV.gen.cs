@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGeneratedCommandsInfoNV")]
-    public unsafe struct GeneratedCommandsInfoNV
+    public unsafe partial struct GeneratedCommandsInfoNV
     {
         public GeneratedCommandsInfoNV
         (
@@ -37,21 +37,21 @@ namespace Silk.NET.Vulkan
             ulong sequencesIndexOffset = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PipelineBindPoint = pipelineBindPoint;
-           Pipeline = pipeline;
-           IndirectCommandsLayout = indirectCommandsLayout;
-           StreamCount = streamCount;
-           PStreams = pStreams;
-           SequencesCount = sequencesCount;
-           PreprocessBuffer = preprocessBuffer;
-           PreprocessOffset = preprocessOffset;
-           PreprocessSize = preprocessSize;
-           SequencesCountBuffer = sequencesCountBuffer;
-           SequencesCountOffset = sequencesCountOffset;
-           SequencesIndexBuffer = sequencesIndexBuffer;
-           SequencesIndexOffset = sequencesIndexOffset;
+            SType = sType;
+            PNext = pNext;
+            PipelineBindPoint = pipelineBindPoint;
+            Pipeline = pipeline;
+            IndirectCommandsLayout = indirectCommandsLayout;
+            StreamCount = streamCount;
+            PStreams = pStreams;
+            SequencesCount = sequencesCount;
+            PreprocessBuffer = preprocessBuffer;
+            PreprocessOffset = preprocessOffset;
+            PreprocessSize = preprocessSize;
+            SequencesCountBuffer = sequencesCountBuffer;
+            SequencesCountOffset = sequencesCountOffset;
+            SequencesIndexBuffer = sequencesIndexBuffer;
+            SequencesIndexOffset = sequencesIndexOffset;
         }
 
 /// <summary></summary>

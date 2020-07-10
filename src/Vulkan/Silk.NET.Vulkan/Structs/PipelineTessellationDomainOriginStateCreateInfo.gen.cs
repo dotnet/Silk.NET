@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineTessellationDomainOriginStateCreateInfo")]
-    public unsafe struct PipelineTessellationDomainOriginStateCreateInfo
+    public unsafe partial struct PipelineTessellationDomainOriginStateCreateInfo
     {
         public PipelineTessellationDomainOriginStateCreateInfo
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             TessellationDomainOrigin domainOrigin = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DomainOrigin = domainOrigin;
+            SType = sType;
+            PNext = pNext;
+            DomainOrigin = domainOrigin;
         }
 
 /// <summary></summary>

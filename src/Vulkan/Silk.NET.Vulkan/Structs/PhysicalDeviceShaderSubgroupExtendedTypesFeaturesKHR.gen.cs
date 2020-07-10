@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR")]
-    public unsafe struct PhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR
+    public unsafe partial struct PhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR
     {
         public PhysicalDeviceShaderSubgroupExtendedTypesFeaturesKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 shaderSubgroupExtendedTypes = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ShaderSubgroupExtendedTypes = shaderSubgroupExtendedTypes;
+            SType = sType;
+            PNext = pNext;
+            ShaderSubgroupExtendedTypes = shaderSubgroupExtendedTypes;
         }
 
 /// <summary></summary>

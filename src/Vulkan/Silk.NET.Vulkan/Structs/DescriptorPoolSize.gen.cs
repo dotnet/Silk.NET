@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorPoolSize")]
-    public unsafe struct DescriptorPoolSize
+    public unsafe partial struct DescriptorPoolSize
     {
         public DescriptorPoolSize
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             uint descriptorCount = default
         )
         {
-           Type = type;
-           DescriptorCount = descriptorCount;
+            Type = type;
+            DescriptorCount = descriptorCount;
         }
 
 /// <summary></summary>

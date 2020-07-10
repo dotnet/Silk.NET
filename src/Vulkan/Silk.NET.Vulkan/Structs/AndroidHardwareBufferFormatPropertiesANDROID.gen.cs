@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAndroidHardwareBufferFormatPropertiesANDROID")]
-    public unsafe struct AndroidHardwareBufferFormatPropertiesANDROID
+    public unsafe partial struct AndroidHardwareBufferFormatPropertiesANDROID
     {
         public AndroidHardwareBufferFormatPropertiesANDROID
         (
@@ -32,16 +32,16 @@ namespace Silk.NET.Vulkan
             ChromaLocation suggestedYChromaOffset = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Format = format;
-           ExternalFormat = externalFormat;
-           FormatFeatures = formatFeatures;
-           SamplerYcbcrConversionComponents = samplerYcbcrConversionComponents;
-           SuggestedYcbcrModel = suggestedYcbcrModel;
-           SuggestedYcbcrRange = suggestedYcbcrRange;
-           SuggestedXChromaOffset = suggestedXChromaOffset;
-           SuggestedYChromaOffset = suggestedYChromaOffset;
+            SType = sType;
+            PNext = pNext;
+            Format = format;
+            ExternalFormat = externalFormat;
+            FormatFeatures = formatFeatures;
+            SamplerYcbcrConversionComponents = samplerYcbcrConversionComponents;
+            SuggestedYcbcrModel = suggestedYcbcrModel;
+            SuggestedYcbcrRange = suggestedYcbcrRange;
+            SuggestedXChromaOffset = suggestedXChromaOffset;
+            SuggestedYChromaOffset = suggestedYChromaOffset;
         }
 
 /// <summary></summary>

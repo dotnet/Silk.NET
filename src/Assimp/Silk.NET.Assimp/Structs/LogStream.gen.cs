@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiLogStream")]
-    public unsafe struct LogStream
+    public unsafe partial struct LogStream
     {
         public LogStream
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Assimp
             byte* user = default
         )
         {
-           Callback = callback;
-           User = user;
+            Callback = callback;
+            User = user;
         }
 
 

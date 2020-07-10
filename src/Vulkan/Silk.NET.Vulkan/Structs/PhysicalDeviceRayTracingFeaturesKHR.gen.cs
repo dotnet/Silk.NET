@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceRayTracingFeaturesKHR")]
-    public unsafe struct PhysicalDeviceRayTracingFeaturesKHR
+    public unsafe partial struct PhysicalDeviceRayTracingFeaturesKHR
     {
         public PhysicalDeviceRayTracingFeaturesKHR
         (
@@ -33,17 +33,17 @@ namespace Silk.NET.Vulkan
             Bool32 rayTracingPrimitiveCulling = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           RayTracing = rayTracing;
-           RayTracingShaderGroupHandleCaptureReplay = rayTracingShaderGroupHandleCaptureReplay;
-           RayTracingShaderGroupHandleCaptureReplayMixed = rayTracingShaderGroupHandleCaptureReplayMixed;
-           RayTracingAccelerationStructureCaptureReplay = rayTracingAccelerationStructureCaptureReplay;
-           RayTracingIndirectTraceRays = rayTracingIndirectTraceRays;
-           RayTracingIndirectAccelerationStructureBuild = rayTracingIndirectAccelerationStructureBuild;
-           RayTracingHostAccelerationStructureCommands = rayTracingHostAccelerationStructureCommands;
-           RayQuery = rayQuery;
-           RayTracingPrimitiveCulling = rayTracingPrimitiveCulling;
+            SType = sType;
+            PNext = pNext;
+            RayTracing = rayTracing;
+            RayTracingShaderGroupHandleCaptureReplay = rayTracingShaderGroupHandleCaptureReplay;
+            RayTracingShaderGroupHandleCaptureReplayMixed = rayTracingShaderGroupHandleCaptureReplayMixed;
+            RayTracingAccelerationStructureCaptureReplay = rayTracingAccelerationStructureCaptureReplay;
+            RayTracingIndirectTraceRays = rayTracingIndirectTraceRays;
+            RayTracingIndirectAccelerationStructureBuild = rayTracingIndirectAccelerationStructureBuild;
+            RayTracingHostAccelerationStructureCommands = rayTracingHostAccelerationStructureCommands;
+            RayQuery = rayQuery;
+            RayTracingPrimitiveCulling = rayTracingPrimitiveCulling;
         }
 
 /// <summary></summary>

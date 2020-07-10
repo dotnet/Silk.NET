@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiLight")]
-    public unsafe struct Light
+    public unsafe partial struct Light
     {
         public Light
         (
@@ -36,20 +36,20 @@ namespace Silk.NET.Assimp
             System.Numerics.Vector2 mSize = default
         )
         {
-           MName = mName;
-           MType = mType;
-           MPosition = mPosition;
-           MDirection = mDirection;
-           MUp = mUp;
-           MAttenuationConstant = mAttenuationConstant;
-           MAttenuationLinear = mAttenuationLinear;
-           MAttenuationQuadratic = mAttenuationQuadratic;
-           MColorDiffuse = mColorDiffuse;
-           MColorSpecular = mColorSpecular;
-           MColorAmbient = mColorAmbient;
-           MAngleInnerCone = mAngleInnerCone;
-           MAngleOuterCone = mAngleOuterCone;
-           MSize = mSize;
+            MName = mName;
+            MType = mType;
+            MPosition = mPosition;
+            MDirection = mDirection;
+            MUp = mUp;
+            MAttenuationConstant = mAttenuationConstant;
+            MAttenuationLinear = mAttenuationLinear;
+            MAttenuationQuadratic = mAttenuationQuadratic;
+            MColorDiffuse = mColorDiffuse;
+            MColorSpecular = mColorSpecular;
+            MColorAmbient = mColorAmbient;
+            MAngleInnerCone = mAngleInnerCone;
+            MAngleOuterCone = mAngleOuterCone;
+            MSize = mSize;
         }
 
 

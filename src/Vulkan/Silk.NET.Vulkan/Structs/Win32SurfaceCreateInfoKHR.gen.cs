@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkWin32SurfaceCreateInfoKHR")]
-    public unsafe struct Win32SurfaceCreateInfoKHR
+    public unsafe partial struct Win32SurfaceCreateInfoKHR
     {
         public Win32SurfaceCreateInfoKHR
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             IntPtr hwnd = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Hinstance = hinstance;
-           Hwnd = hwnd;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Hinstance = hinstance;
+            Hwnd = hwnd;
         }
 
 /// <summary></summary>

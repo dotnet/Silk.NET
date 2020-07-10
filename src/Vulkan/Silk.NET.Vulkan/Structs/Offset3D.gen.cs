@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkOffset3D")]
-    public unsafe struct Offset3D
+    public unsafe partial struct Offset3D
     {
         public Offset3D
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             int z = default
         )
         {
-           X = x;
-           Y = y;
-           Z = z;
+            X = x;
+            Y = y;
+            Z = z;
         }
 
 /// <summary></summary>

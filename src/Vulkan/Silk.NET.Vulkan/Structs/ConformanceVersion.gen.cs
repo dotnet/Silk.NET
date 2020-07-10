@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkConformanceVersion")]
-    public unsafe struct ConformanceVersion
+    public unsafe partial struct ConformanceVersion
     {
         public ConformanceVersion
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             byte patch = default
         )
         {
-           Major = major;
-           Minor = minor;
-           Subminor = subminor;
-           Patch = patch;
+            Major = major;
+            Minor = minor;
+            Subminor = subminor;
+            Patch = patch;
         }
 
 /// <summary></summary>

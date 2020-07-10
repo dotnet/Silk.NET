@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalMemoryHostPropertiesEXT")]
-    public unsafe struct PhysicalDeviceExternalMemoryHostPropertiesEXT
+    public unsafe partial struct PhysicalDeviceExternalMemoryHostPropertiesEXT
     {
         public PhysicalDeviceExternalMemoryHostPropertiesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ulong minImportedHostPointerAlignment = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MinImportedHostPointerAlignment = minImportedHostPointerAlignment;
+            SType = sType;
+            PNext = pNext;
+            MinImportedHostPointerAlignment = minImportedHostPointerAlignment;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureInstanceKHR")]
-    public unsafe struct AccelerationStructureInstanceKHR
+    public unsafe partial struct AccelerationStructureInstanceKHR
     {
         public AccelerationStructureInstanceKHR
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             ulong accelerationStructureReference = default
         )
         {
-           Transform = transform;
-           InstanceCustomIndex = instanceCustomIndex;
-           Mask = mask;
-           InstanceShaderBindingTableRecordOffset = instanceShaderBindingTableRecordOffset;
-           Flags = flags;
-           AccelerationStructureReference = accelerationStructureReference;
+            Transform = transform;
+            InstanceCustomIndex = instanceCustomIndex;
+            Mask = mask;
+            InstanceShaderBindingTableRecordOffset = instanceShaderBindingTableRecordOffset;
+            Flags = flags;
+            AccelerationStructureReference = accelerationStructureReference;
         }
 
 /// <summary></summary>

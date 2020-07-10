@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSparseImageMemoryRequirements")]
-    public unsafe struct SparseImageMemoryRequirements
+    public unsafe partial struct SparseImageMemoryRequirements
     {
         public SparseImageMemoryRequirements
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             ulong imageMipTailStride = default
         )
         {
-           FormatProperties = formatProperties;
-           ImageMipTailFirstLod = imageMipTailFirstLod;
-           ImageMipTailSize = imageMipTailSize;
-           ImageMipTailOffset = imageMipTailOffset;
-           ImageMipTailStride = imageMipTailStride;
+            FormatProperties = formatProperties;
+            ImageMipTailFirstLod = imageMipTailFirstLod;
+            ImageMipTailSize = imageMipTailSize;
+            ImageMipTailOffset = imageMipTailOffset;
+            ImageMipTailStride = imageMipTailStride;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineCreationFeedbackEXT")]
-    public unsafe struct PipelineCreationFeedbackEXT
+    public unsafe partial struct PipelineCreationFeedbackEXT
     {
         public PipelineCreationFeedbackEXT
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             ulong duration = default
         )
         {
-           Flags = flags;
-           Duration = duration;
+            Flags = flags;
+            Duration = duration;
         }
 
 /// <summary></summary>

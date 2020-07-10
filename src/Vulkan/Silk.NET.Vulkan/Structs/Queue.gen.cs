@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueue")]
-    public unsafe struct Queue
+    public unsafe partial struct Queue
     {
         public Queue
         (
             IntPtr handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

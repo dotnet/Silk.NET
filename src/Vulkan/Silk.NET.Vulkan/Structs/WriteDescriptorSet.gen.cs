@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkWriteDescriptorSet")]
-    public unsafe struct WriteDescriptorSet
+    public unsafe partial struct WriteDescriptorSet
     {
         public WriteDescriptorSet
         (
@@ -32,16 +32,16 @@ namespace Silk.NET.Vulkan
             BufferView* pTexelBufferView = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DstSet = dstSet;
-           DstBinding = dstBinding;
-           DstArrayElement = dstArrayElement;
-           DescriptorCount = descriptorCount;
-           DescriptorType = descriptorType;
-           PImageInfo = pImageInfo;
-           PBufferInfo = pBufferInfo;
-           PTexelBufferView = pTexelBufferView;
+            SType = sType;
+            PNext = pNext;
+            DstSet = dstSet;
+            DstBinding = dstBinding;
+            DstArrayElement = dstArrayElement;
+            DescriptorCount = descriptorCount;
+            DescriptorType = descriptorType;
+            PImageInfo = pImageInfo;
+            PBufferInfo = pBufferInfo;
+            PTexelBufferView = pTexelBufferView;
         }
 
 /// <summary></summary>

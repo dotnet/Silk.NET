@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureDeviceAddressInfoKHR")]
-    public unsafe struct AccelerationStructureDeviceAddressInfoKHR
+    public unsafe partial struct AccelerationStructureDeviceAddressInfoKHR
     {
         public AccelerationStructureDeviceAddressInfoKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             AccelerationStructureKHR accelerationStructure = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           AccelerationStructure = accelerationStructure;
+            SType = sType;
+            PNext = pNext;
+            AccelerationStructure = accelerationStructure;
         }
 
 /// <summary></summary>

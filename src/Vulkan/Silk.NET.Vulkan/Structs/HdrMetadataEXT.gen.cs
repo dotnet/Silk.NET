@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkHdrMetadataEXT")]
-    public unsafe struct HdrMetadataEXT
+    public unsafe partial struct HdrMetadataEXT
     {
         public HdrMetadataEXT
         (
@@ -32,16 +32,16 @@ namespace Silk.NET.Vulkan
             float maxFrameAverageLightLevel = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DisplayPrimaryRed = displayPrimaryRed;
-           DisplayPrimaryGreen = displayPrimaryGreen;
-           DisplayPrimaryBlue = displayPrimaryBlue;
-           WhitePoint = whitePoint;
-           MaxLuminance = maxLuminance;
-           MinLuminance = minLuminance;
-           MaxContentLightLevel = maxContentLightLevel;
-           MaxFrameAverageLightLevel = maxFrameAverageLightLevel;
+            SType = sType;
+            PNext = pNext;
+            DisplayPrimaryRed = displayPrimaryRed;
+            DisplayPrimaryGreen = displayPrimaryGreen;
+            DisplayPrimaryBlue = displayPrimaryBlue;
+            WhitePoint = whitePoint;
+            MaxLuminance = maxLuminance;
+            MinLuminance = minLuminance;
+            MaxContentLightLevel = maxContentLightLevel;
+            MaxFrameAverageLightLevel = maxFrameAverageLightLevel;
         }
 
 /// <summary></summary>

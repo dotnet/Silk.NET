@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiAnimation")]
-    public unsafe struct Animation
+    public unsafe partial struct Animation
     {
         public Animation
         (
@@ -31,15 +31,15 @@ namespace Silk.NET.Assimp
             MeshMorphAnim** mMorphMeshChannels = default
         )
         {
-           MName = mName;
-           MDuration = mDuration;
-           MTicksPerSecond = mTicksPerSecond;
-           MNumChannels = mNumChannels;
-           MChannels = mChannels;
-           MNumMeshChannels = mNumMeshChannels;
-           MMeshChannels = mMeshChannels;
-           MNumMorphMeshChannels = mNumMorphMeshChannels;
-           MMorphMeshChannels = mMorphMeshChannels;
+            MName = mName;
+            MDuration = mDuration;
+            MTicksPerSecond = mTicksPerSecond;
+            MNumChannels = mNumChannels;
+            MChannels = mChannels;
+            MNumMeshChannels = mNumMeshChannels;
+            MMeshChannels = mMeshChannels;
+            MNumMorphMeshChannels = mNumMorphMeshChannels;
+            MMorphMeshChannels = mMorphMeshChannels;
         }
 
 

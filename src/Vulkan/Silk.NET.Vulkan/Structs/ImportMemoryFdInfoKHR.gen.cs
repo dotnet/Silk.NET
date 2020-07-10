@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImportMemoryFdInfoKHR")]
-    public unsafe struct ImportMemoryFdInfoKHR
+    public unsafe partial struct ImportMemoryFdInfoKHR
     {
         public ImportMemoryFdInfoKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             int fd = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           HandleType = handleType;
-           Fd = fd;
+            SType = sType;
+            PNext = pNext;
+            HandleType = handleType;
+            Fd = fd;
         }
 
 /// <summary></summary>

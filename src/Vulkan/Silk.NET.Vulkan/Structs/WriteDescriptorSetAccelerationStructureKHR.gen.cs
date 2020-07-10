@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkWriteDescriptorSetAccelerationStructureKHR")]
-    public unsafe struct WriteDescriptorSetAccelerationStructureKHR
+    public unsafe partial struct WriteDescriptorSetAccelerationStructureKHR
     {
         public WriteDescriptorSetAccelerationStructureKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             AccelerationStructureKHR* pAccelerationStructures = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           AccelerationStructureCount = accelerationStructureCount;
-           PAccelerationStructures = pAccelerationStructures;
+            SType = sType;
+            PNext = pNext;
+            AccelerationStructureCount = accelerationStructureCount;
+            PAccelerationStructures = pAccelerationStructures;
         }
 
 /// <summary></summary>

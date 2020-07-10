@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorPoolCreateInfo")]
-    public unsafe struct DescriptorPoolCreateInfo
+    public unsafe partial struct DescriptorPoolCreateInfo
     {
         public DescriptorPoolCreateInfo
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             DescriptorPoolSize* pPoolSizes = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           MaxSets = maxSets;
-           PoolSizeCount = poolSizeCount;
-           PPoolSizes = pPoolSizes;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            MaxSets = maxSets;
+            PoolSizeCount = poolSizeCount;
+            PPoolSizes = pPoolSizes;
         }
 
 /// <summary></summary>

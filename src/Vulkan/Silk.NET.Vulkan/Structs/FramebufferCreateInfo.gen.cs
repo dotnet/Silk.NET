@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFramebufferCreateInfo")]
-    public unsafe struct FramebufferCreateInfo
+    public unsafe partial struct FramebufferCreateInfo
     {
         public FramebufferCreateInfo
         (
@@ -31,15 +31,15 @@ namespace Silk.NET.Vulkan
             uint layers = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           RenderPass = renderPass;
-           AttachmentCount = attachmentCount;
-           PAttachments = pAttachments;
-           Width = width;
-           Height = height;
-           Layers = layers;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            RenderPass = renderPass;
+            AttachmentCount = attachmentCount;
+            PAttachments = pAttachments;
+            Width = width;
+            Height = height;
+            Layers = layers;
         }
 
 /// <summary></summary>

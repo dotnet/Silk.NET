@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceConfigurationINTEL")]
-    public unsafe struct PerformanceConfigurationINTEL
+    public unsafe partial struct PerformanceConfigurationINTEL
     {
         public PerformanceConfigurationINTEL
         (
             ulong handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

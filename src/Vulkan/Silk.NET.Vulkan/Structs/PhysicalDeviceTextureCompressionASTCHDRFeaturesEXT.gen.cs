@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceTextureCompressionASTCHDRFeaturesEXT")]
-    public unsafe struct PhysicalDeviceTextureCompressionASTCHDRFeaturesEXT
+    public unsafe partial struct PhysicalDeviceTextureCompressionASTCHDRFeaturesEXT
     {
         public PhysicalDeviceTextureCompressionASTCHDRFeaturesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 textureCompressionAstcHdr = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           TextureCompressionAstcHdr = textureCompressionAstcHdr;
+            SType = sType;
+            PNext = pNext;
+            TextureCompressionAstcHdr = textureCompressionAstcHdr;
         }
 
 /// <summary></summary>

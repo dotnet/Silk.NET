@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineLibraryCreateInfoKHR")]
-    public unsafe struct PipelineLibraryCreateInfoKHR
+    public unsafe partial struct PipelineLibraryCreateInfoKHR
     {
         public PipelineLibraryCreateInfoKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Pipeline* pLibraries = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           LibraryCount = libraryCount;
-           PLibraries = pLibraries;
+            SType = sType;
+            PNext = pNext;
+            LibraryCount = libraryCount;
+            PLibraries = pLibraries;
         }
 
 /// <summary></summary>

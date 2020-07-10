@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayEventInfoEXT")]
-    public unsafe struct DisplayEventInfoEXT
+    public unsafe partial struct DisplayEventInfoEXT
     {
         public DisplayEventInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             DisplayEventTypeEXT displayEvent = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DisplayEvent = displayEvent;
+            SType = sType;
+            PNext = pNext;
+            DisplayEvent = displayEvent;
         }
 
 /// <summary></summary>

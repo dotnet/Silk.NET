@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBuffer")]
-    public unsafe struct CommandBuffer
+    public unsafe partial struct CommandBuffer
     {
         public CommandBuffer
         (
             IntPtr handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

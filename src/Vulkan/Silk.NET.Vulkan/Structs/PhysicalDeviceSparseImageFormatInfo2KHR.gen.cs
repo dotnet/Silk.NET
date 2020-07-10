@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSparseImageFormatInfo2KHR")]
-    public unsafe struct PhysicalDeviceSparseImageFormatInfo2KHR
+    public unsafe partial struct PhysicalDeviceSparseImageFormatInfo2KHR
     {
         public PhysicalDeviceSparseImageFormatInfo2KHR
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             ImageTiling tiling = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Format = format;
-           Type = type;
-           Samples = samples;
-           Usage = usage;
-           Tiling = tiling;
+            SType = sType;
+            PNext = pNext;
+            Format = format;
+            Type = type;
+            Samples = samples;
+            Usage = usage;
+            Tiling = tiling;
         }
 
 /// <summary></summary>

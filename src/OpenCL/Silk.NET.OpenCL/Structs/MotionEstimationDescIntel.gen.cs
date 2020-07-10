@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.OpenCL
 {
     [NativeName("Name", "cl_motion_estimation_desc_intel")]
-    public unsafe struct MotionEstimationDescIntel
+    public unsafe partial struct MotionEstimationDescIntel
     {
         public MotionEstimationDescIntel
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.OpenCL
             uint searchPathType = default
         )
         {
-           MbBlockType = mbBlockType;
-           SubpixelMode = subpixelMode;
-           SadAdjustMode = sadAdjustMode;
-           SearchPathType = searchPathType;
+            MbBlockType = mbBlockType;
+            SubpixelMode = subpixelMode;
+            SadAdjustMode = sadAdjustMode;
+            SearchPathType = searchPathType;
         }
 
 /// <summary></summary>

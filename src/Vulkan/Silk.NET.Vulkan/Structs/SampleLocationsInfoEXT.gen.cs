@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSampleLocationsInfoEXT")]
-    public unsafe struct SampleLocationsInfoEXT
+    public unsafe partial struct SampleLocationsInfoEXT
     {
         public SampleLocationsInfoEXT
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             SampleLocationEXT* pSampleLocations = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SampleLocationsPerPixel = sampleLocationsPerPixel;
-           SampleLocationGridSize = sampleLocationGridSize;
-           SampleLocationsCount = sampleLocationsCount;
-           PSampleLocations = pSampleLocations;
+            SType = sType;
+            PNext = pNext;
+            SampleLocationsPerPixel = sampleLocationsPerPixel;
+            SampleLocationGridSize = sampleLocationGridSize;
+            SampleLocationsCount = sampleLocationsCount;
+            PSampleLocations = pSampleLocations;
         }
 
 /// <summary></summary>

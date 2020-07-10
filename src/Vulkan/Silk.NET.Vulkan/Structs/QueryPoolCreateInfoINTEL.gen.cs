@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueryPoolCreateInfoINTEL")]
-    public unsafe struct QueryPoolCreateInfoINTEL
+    public unsafe partial struct QueryPoolCreateInfoINTEL
     {
         public QueryPoolCreateInfoINTEL
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             QueryPoolSamplingModeINTEL performanceCountersSampling = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PerformanceCountersSampling = performanceCountersSampling;
+            SType = sType;
+            PNext = pNext;
+            PerformanceCountersSampling = performanceCountersSampling;
         }
 
 /// <summary></summary>

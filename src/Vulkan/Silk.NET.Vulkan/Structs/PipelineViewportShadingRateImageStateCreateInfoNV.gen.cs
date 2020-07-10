@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineViewportShadingRateImageStateCreateInfoNV")]
-    public unsafe struct PipelineViewportShadingRateImageStateCreateInfoNV
+    public unsafe partial struct PipelineViewportShadingRateImageStateCreateInfoNV
     {
         public PipelineViewportShadingRateImageStateCreateInfoNV
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             ShadingRatePaletteNV* pShadingRatePalettes = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ShadingRateImageEnable = shadingRateImageEnable;
-           ViewportCount = viewportCount;
-           PShadingRatePalettes = pShadingRatePalettes;
+            SType = sType;
+            PNext = pNext;
+            ShadingRateImageEnable = shadingRateImageEnable;
+            ViewportCount = viewportCount;
+            PShadingRatePalettes = pShadingRatePalettes;
         }
 
 /// <summary></summary>

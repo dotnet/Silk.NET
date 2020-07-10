@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceGroupProperties")]
-    public unsafe struct PhysicalDeviceGroupProperties
+    public unsafe partial struct PhysicalDeviceGroupProperties
     {
         public PhysicalDeviceGroupProperties
         (
@@ -26,9 +26,9 @@ namespace Silk.NET.Vulkan
             Bool32 subsetAllocation = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PhysicalDeviceCount = physicalDeviceCount;
+            SType = sType;
+            PNext = pNext;
+            PhysicalDeviceCount = physicalDeviceCount;
            PhysicalDevices_0 = default;
            PhysicalDevices_1 = default;
            PhysicalDevices_2 = default;
@@ -61,7 +61,7 @@ namespace Silk.NET.Vulkan
            PhysicalDevices_29 = default;
            PhysicalDevices_30 = default;
            PhysicalDevices_31 = default;
-           SubsetAllocation = subsetAllocation;
+            SubsetAllocation = subsetAllocation;
         }
 
 /// <summary></summary>

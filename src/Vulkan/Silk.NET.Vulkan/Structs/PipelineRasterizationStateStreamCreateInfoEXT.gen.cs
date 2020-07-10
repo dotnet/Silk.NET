@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRasterizationStateStreamCreateInfoEXT")]
-    public unsafe struct PipelineRasterizationStateStreamCreateInfoEXT
+    public unsafe partial struct PipelineRasterizationStateStreamCreateInfoEXT
     {
         public PipelineRasterizationStateStreamCreateInfoEXT
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint rasterizationStream = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           RasterizationStream = rasterizationStream;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            RasterizationStream = rasterizationStream;
         }
 
 /// <summary></summary>

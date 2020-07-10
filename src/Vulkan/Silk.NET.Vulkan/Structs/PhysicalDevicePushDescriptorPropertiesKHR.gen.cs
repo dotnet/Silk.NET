@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePushDescriptorPropertiesKHR")]
-    public unsafe struct PhysicalDevicePushDescriptorPropertiesKHR
+    public unsafe partial struct PhysicalDevicePushDescriptorPropertiesKHR
     {
         public PhysicalDevicePushDescriptorPropertiesKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint maxPushDescriptors = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxPushDescriptors = maxPushDescriptors;
+            SType = sType;
+            PNext = pNext;
+            MaxPushDescriptors = maxPushDescriptors;
         }
 
 /// <summary></summary>

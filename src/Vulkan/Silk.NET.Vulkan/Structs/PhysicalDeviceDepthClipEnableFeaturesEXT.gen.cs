@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDepthClipEnableFeaturesEXT")]
-    public unsafe struct PhysicalDeviceDepthClipEnableFeaturesEXT
+    public unsafe partial struct PhysicalDeviceDepthClipEnableFeaturesEXT
     {
         public PhysicalDeviceDepthClipEnableFeaturesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 depthClipEnable = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DepthClipEnable = depthClipEnable;
+            SType = sType;
+            PNext = pNext;
+            DepthClipEnable = depthClipEnable;
         }
 
 /// <summary></summary>

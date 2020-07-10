@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkHeadlessSurfaceCreateInfoEXT")]
-    public unsafe struct HeadlessSurfaceCreateInfoEXT
+    public unsafe partial struct HeadlessSurfaceCreateInfoEXT
     {
         public HeadlessSurfaceCreateInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint flags = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
         }
 
 /// <summary></summary>

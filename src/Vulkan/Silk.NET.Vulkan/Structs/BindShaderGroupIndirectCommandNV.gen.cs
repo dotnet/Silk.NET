@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindShaderGroupIndirectCommandNV")]
-    public unsafe struct BindShaderGroupIndirectCommandNV
+    public unsafe partial struct BindShaderGroupIndirectCommandNV
     {
         public BindShaderGroupIndirectCommandNV
         (
             uint groupIndex = default
         )
         {
-           GroupIndex = groupIndex;
+            GroupIndex = groupIndex;
         }
 
 /// <summary></summary>

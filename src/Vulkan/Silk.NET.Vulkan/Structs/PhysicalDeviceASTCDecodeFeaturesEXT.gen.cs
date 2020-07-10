@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceASTCDecodeFeaturesEXT")]
-    public unsafe struct PhysicalDeviceASTCDecodeFeaturesEXT
+    public unsafe partial struct PhysicalDeviceASTCDecodeFeaturesEXT
     {
         public PhysicalDeviceASTCDecodeFeaturesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 decodeModeSharedExponent = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DecodeModeSharedExponent = decodeModeSharedExponent;
+            SType = sType;
+            PNext = pNext;
+            DecodeModeSharedExponent = decodeModeSharedExponent;
         }
 
 /// <summary></summary>

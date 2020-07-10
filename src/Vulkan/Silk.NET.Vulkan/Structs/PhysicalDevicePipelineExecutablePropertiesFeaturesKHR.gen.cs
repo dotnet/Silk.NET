@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR")]
-    public unsafe struct PhysicalDevicePipelineExecutablePropertiesFeaturesKHR
+    public unsafe partial struct PhysicalDevicePipelineExecutablePropertiesFeaturesKHR
     {
         public PhysicalDevicePipelineExecutablePropertiesFeaturesKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 pipelineExecutableInfo = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PipelineExecutableInfo = pipelineExecutableInfo;
+            SType = sType;
+            PNext = pNext;
+            PipelineExecutableInfo = pipelineExecutableInfo;
         }
 
 /// <summary></summary>

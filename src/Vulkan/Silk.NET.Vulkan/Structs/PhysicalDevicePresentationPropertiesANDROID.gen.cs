@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePresentationPropertiesANDROID")]
-    public unsafe struct PhysicalDevicePresentationPropertiesANDROID
+    public unsafe partial struct PhysicalDevicePresentationPropertiesANDROID
     {
         public PhysicalDevicePresentationPropertiesANDROID
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 sharedImage = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SharedImage = sharedImage;
+            SType = sType;
+            PNext = pNext;
+            SharedImage = sharedImage;
         }
 
 /// <summary></summary>

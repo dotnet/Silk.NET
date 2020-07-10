@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceVulkan12Features")]
-    public unsafe struct PhysicalDeviceVulkan12Features
+    public unsafe partial struct PhysicalDeviceVulkan12Features
     {
         public PhysicalDeviceVulkan12Features
         (
@@ -71,55 +71,55 @@ namespace Silk.NET.Vulkan
             Bool32 subgroupBroadcastDynamicId = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SamplerMirrorClampToEdge = samplerMirrorClampToEdge;
-           DrawIndirectCount = drawIndirectCount;
-           StorageBuffer8BitAccess = storageBuffer8BitAccess;
-           UniformAndStorageBuffer8BitAccess = uniformAndStorageBuffer8BitAccess;
-           StoragePushConstant8 = storagePushConstant8;
-           ShaderBufferInt64Atomics = shaderBufferInt64Atomics;
-           ShaderSharedInt64Atomics = shaderSharedInt64Atomics;
-           ShaderFloat16 = shaderFloat16;
-           ShaderInt8 = shaderInt8;
-           DescriptorIndexing = descriptorIndexing;
-           ShaderInputAttachmentArrayDynamicIndexing = shaderInputAttachmentArrayDynamicIndexing;
-           ShaderUniformTexelBufferArrayDynamicIndexing = shaderUniformTexelBufferArrayDynamicIndexing;
-           ShaderStorageTexelBufferArrayDynamicIndexing = shaderStorageTexelBufferArrayDynamicIndexing;
-           ShaderUniformBufferArrayNonUniformIndexing = shaderUniformBufferArrayNonUniformIndexing;
-           ShaderSampledImageArrayNonUniformIndexing = shaderSampledImageArrayNonUniformIndexing;
-           ShaderStorageBufferArrayNonUniformIndexing = shaderStorageBufferArrayNonUniformIndexing;
-           ShaderStorageImageArrayNonUniformIndexing = shaderStorageImageArrayNonUniformIndexing;
-           ShaderInputAttachmentArrayNonUniformIndexing = shaderInputAttachmentArrayNonUniformIndexing;
-           ShaderUniformTexelBufferArrayNonUniformIndexing = shaderUniformTexelBufferArrayNonUniformIndexing;
-           ShaderStorageTexelBufferArrayNonUniformIndexing = shaderStorageTexelBufferArrayNonUniformIndexing;
-           DescriptorBindingUniformBufferUpdateAfterBind = descriptorBindingUniformBufferUpdateAfterBind;
-           DescriptorBindingSampledImageUpdateAfterBind = descriptorBindingSampledImageUpdateAfterBind;
-           DescriptorBindingStorageImageUpdateAfterBind = descriptorBindingStorageImageUpdateAfterBind;
-           DescriptorBindingStorageBufferUpdateAfterBind = descriptorBindingStorageBufferUpdateAfterBind;
-           DescriptorBindingUniformTexelBufferUpdateAfterBind = descriptorBindingUniformTexelBufferUpdateAfterBind;
-           DescriptorBindingStorageTexelBufferUpdateAfterBind = descriptorBindingStorageTexelBufferUpdateAfterBind;
-           DescriptorBindingUpdateUnusedWhilePending = descriptorBindingUpdateUnusedWhilePending;
-           DescriptorBindingPartiallyBound = descriptorBindingPartiallyBound;
-           DescriptorBindingVariableDescriptorCount = descriptorBindingVariableDescriptorCount;
-           RuntimeDescriptorArray = runtimeDescriptorArray;
-           SamplerFilterMinmax = samplerFilterMinmax;
-           ScalarBlockLayout = scalarBlockLayout;
-           ImagelessFramebuffer = imagelessFramebuffer;
-           UniformBufferStandardLayout = uniformBufferStandardLayout;
-           ShaderSubgroupExtendedTypes = shaderSubgroupExtendedTypes;
-           SeparateDepthStencilLayouts = separateDepthStencilLayouts;
-           HostQueryReset = hostQueryReset;
-           TimelineSemaphore = timelineSemaphore;
-           BufferDeviceAddress = bufferDeviceAddress;
-           BufferDeviceAddressCaptureReplay = bufferDeviceAddressCaptureReplay;
-           BufferDeviceAddressMultiDevice = bufferDeviceAddressMultiDevice;
-           VulkanMemoryModel = vulkanMemoryModel;
-           VulkanMemoryModelDeviceScope = vulkanMemoryModelDeviceScope;
-           VulkanMemoryModelAvailabilityVisibilityChains = vulkanMemoryModelAvailabilityVisibilityChains;
-           ShaderOutputViewportIndex = shaderOutputViewportIndex;
-           ShaderOutputLayer = shaderOutputLayer;
-           SubgroupBroadcastDynamicId = subgroupBroadcastDynamicId;
+            SType = sType;
+            PNext = pNext;
+            SamplerMirrorClampToEdge = samplerMirrorClampToEdge;
+            DrawIndirectCount = drawIndirectCount;
+            StorageBuffer8BitAccess = storageBuffer8BitAccess;
+            UniformAndStorageBuffer8BitAccess = uniformAndStorageBuffer8BitAccess;
+            StoragePushConstant8 = storagePushConstant8;
+            ShaderBufferInt64Atomics = shaderBufferInt64Atomics;
+            ShaderSharedInt64Atomics = shaderSharedInt64Atomics;
+            ShaderFloat16 = shaderFloat16;
+            ShaderInt8 = shaderInt8;
+            DescriptorIndexing = descriptorIndexing;
+            ShaderInputAttachmentArrayDynamicIndexing = shaderInputAttachmentArrayDynamicIndexing;
+            ShaderUniformTexelBufferArrayDynamicIndexing = shaderUniformTexelBufferArrayDynamicIndexing;
+            ShaderStorageTexelBufferArrayDynamicIndexing = shaderStorageTexelBufferArrayDynamicIndexing;
+            ShaderUniformBufferArrayNonUniformIndexing = shaderUniformBufferArrayNonUniformIndexing;
+            ShaderSampledImageArrayNonUniformIndexing = shaderSampledImageArrayNonUniformIndexing;
+            ShaderStorageBufferArrayNonUniformIndexing = shaderStorageBufferArrayNonUniformIndexing;
+            ShaderStorageImageArrayNonUniformIndexing = shaderStorageImageArrayNonUniformIndexing;
+            ShaderInputAttachmentArrayNonUniformIndexing = shaderInputAttachmentArrayNonUniformIndexing;
+            ShaderUniformTexelBufferArrayNonUniformIndexing = shaderUniformTexelBufferArrayNonUniformIndexing;
+            ShaderStorageTexelBufferArrayNonUniformIndexing = shaderStorageTexelBufferArrayNonUniformIndexing;
+            DescriptorBindingUniformBufferUpdateAfterBind = descriptorBindingUniformBufferUpdateAfterBind;
+            DescriptorBindingSampledImageUpdateAfterBind = descriptorBindingSampledImageUpdateAfterBind;
+            DescriptorBindingStorageImageUpdateAfterBind = descriptorBindingStorageImageUpdateAfterBind;
+            DescriptorBindingStorageBufferUpdateAfterBind = descriptorBindingStorageBufferUpdateAfterBind;
+            DescriptorBindingUniformTexelBufferUpdateAfterBind = descriptorBindingUniformTexelBufferUpdateAfterBind;
+            DescriptorBindingStorageTexelBufferUpdateAfterBind = descriptorBindingStorageTexelBufferUpdateAfterBind;
+            DescriptorBindingUpdateUnusedWhilePending = descriptorBindingUpdateUnusedWhilePending;
+            DescriptorBindingPartiallyBound = descriptorBindingPartiallyBound;
+            DescriptorBindingVariableDescriptorCount = descriptorBindingVariableDescriptorCount;
+            RuntimeDescriptorArray = runtimeDescriptorArray;
+            SamplerFilterMinmax = samplerFilterMinmax;
+            ScalarBlockLayout = scalarBlockLayout;
+            ImagelessFramebuffer = imagelessFramebuffer;
+            UniformBufferStandardLayout = uniformBufferStandardLayout;
+            ShaderSubgroupExtendedTypes = shaderSubgroupExtendedTypes;
+            SeparateDepthStencilLayouts = separateDepthStencilLayouts;
+            HostQueryReset = hostQueryReset;
+            TimelineSemaphore = timelineSemaphore;
+            BufferDeviceAddress = bufferDeviceAddress;
+            BufferDeviceAddressCaptureReplay = bufferDeviceAddressCaptureReplay;
+            BufferDeviceAddressMultiDevice = bufferDeviceAddressMultiDevice;
+            VulkanMemoryModel = vulkanMemoryModel;
+            VulkanMemoryModelDeviceScope = vulkanMemoryModelDeviceScope;
+            VulkanMemoryModelAvailabilityVisibilityChains = vulkanMemoryModelAvailabilityVisibilityChains;
+            ShaderOutputViewportIndex = shaderOutputViewportIndex;
+            ShaderOutputLayer = shaderOutputLayer;
+            SubgroupBroadcastDynamicId = subgroupBroadcastDynamicId;
         }
 
 /// <summary></summary>

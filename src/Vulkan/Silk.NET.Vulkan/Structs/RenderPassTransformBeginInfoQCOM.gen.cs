@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassTransformBeginInfoQCOM")]
-    public unsafe struct RenderPassTransformBeginInfoQCOM
+    public unsafe partial struct RenderPassTransformBeginInfoQCOM
     {
         public RenderPassTransformBeginInfoQCOM
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             SurfaceTransformFlagsKHR transform = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Transform = transform;
+            SType = sType;
+            PNext = pNext;
+            Transform = transform;
         }
 
 /// <summary></summary>

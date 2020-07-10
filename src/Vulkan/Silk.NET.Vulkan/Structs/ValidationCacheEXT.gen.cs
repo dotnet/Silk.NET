@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkValidationCacheEXT")]
-    public unsafe struct ValidationCacheEXT
+    public unsafe partial struct ValidationCacheEXT
     {
         public ValidationCacheEXT
         (
             ulong handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

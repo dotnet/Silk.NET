@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan
 {
     [StructLayout(LayoutKind.Explicit)]
     [NativeName("Name", "VkPipelineExecutableStatisticValueKHR")]
-    public unsafe struct PipelineExecutableStatisticValueKHR
+    public unsafe partial struct PipelineExecutableStatisticValueKHR
     {
         public PipelineExecutableStatisticValueKHR
         (
@@ -27,10 +27,10 @@ namespace Silk.NET.Vulkan
             double f64 = default
         )
         {
-           B32 = b32;
-           I64 = i64;
-           U64 = u64;
-           F64 = f64;
+            B32 = b32;
+            I64 = i64;
+            U64 = u64;
+            F64 = f64;
         }
 
 /// <summary></summary>

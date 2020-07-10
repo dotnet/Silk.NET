@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferImageCopy")]
-    public unsafe struct BufferImageCopy
+    public unsafe partial struct BufferImageCopy
     {
         public BufferImageCopy
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             Extent3D imageExtent = default
         )
         {
-           BufferOffset = bufferOffset;
-           BufferRowLength = bufferRowLength;
-           BufferImageHeight = bufferImageHeight;
-           ImageSubresource = imageSubresource;
-           ImageOffset = imageOffset;
-           ImageExtent = imageExtent;
+            BufferOffset = bufferOffset;
+            BufferRowLength = bufferRowLength;
+            BufferImageHeight = bufferImageHeight;
+            ImageSubresource = imageSubresource;
+            ImageOffset = imageOffset;
+            ImageExtent = imageExtent;
         }
 
 /// <summary></summary>

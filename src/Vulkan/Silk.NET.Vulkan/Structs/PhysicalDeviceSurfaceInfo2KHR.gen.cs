@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSurfaceInfo2KHR")]
-    public unsafe struct PhysicalDeviceSurfaceInfo2KHR
+    public unsafe partial struct PhysicalDeviceSurfaceInfo2KHR
     {
         public PhysicalDeviceSurfaceInfo2KHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             SurfaceKHR surface = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Surface = surface;
+            SType = sType;
+            PNext = pNext;
+            Surface = surface;
         }
 
 /// <summary></summary>

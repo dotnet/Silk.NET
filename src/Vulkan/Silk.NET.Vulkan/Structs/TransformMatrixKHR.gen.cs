@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkTransformMatrixKHR")]
-    public unsafe struct TransformMatrixKHR
+    public unsafe partial struct TransformMatrixKHR
     {
         /// <summary></summary>
         [NativeName("Type", "float")]

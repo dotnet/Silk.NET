@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRayTracingShaderGroupCreateInfoNV")]
-    public unsafe struct RayTracingShaderGroupCreateInfoNV
+    public unsafe partial struct RayTracingShaderGroupCreateInfoNV
     {
         public RayTracingShaderGroupCreateInfoNV
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             uint intersectionShader = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Type = type;
-           GeneralShader = generalShader;
-           ClosestHitShader = closestHitShader;
-           AnyHitShader = anyHitShader;
-           IntersectionShader = intersectionShader;
+            SType = sType;
+            PNext = pNext;
+            Type = type;
+            GeneralShader = generalShader;
+            ClosestHitShader = closestHitShader;
+            AnyHitShader = anyHitShader;
+            IntersectionShader = intersectionShader;
         }
 
 /// <summary></summary>

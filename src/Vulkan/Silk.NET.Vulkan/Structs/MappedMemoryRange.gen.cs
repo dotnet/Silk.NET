@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMappedMemoryRange")]
-    public unsafe struct MappedMemoryRange
+    public unsafe partial struct MappedMemoryRange
     {
         public MappedMemoryRange
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             ulong size = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Memory = memory;
-           Offset = offset;
-           Size = size;
+            SType = sType;
+            PNext = pNext;
+            Memory = memory;
+            Offset = offset;
+            Size = size;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryOpaqueCaptureAddressAllocateInfo")]
-    public unsafe struct MemoryOpaqueCaptureAddressAllocateInfo
+    public unsafe partial struct MemoryOpaqueCaptureAddressAllocateInfo
     {
         public MemoryOpaqueCaptureAddressAllocateInfo
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ulong opaqueCaptureAddress = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           OpaqueCaptureAddress = opaqueCaptureAddress;
+            SType = sType;
+            PNext = pNext;
+            OpaqueCaptureAddress = opaqueCaptureAddress;
         }
 
 /// <summary></summary>

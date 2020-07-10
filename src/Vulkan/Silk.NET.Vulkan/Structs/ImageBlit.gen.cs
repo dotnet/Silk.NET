@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageBlit")]
-    public unsafe struct ImageBlit
+    public unsafe partial struct ImageBlit
     {
         public ImageBlit
         (
@@ -24,10 +24,10 @@ namespace Silk.NET.Vulkan
             ImageSubresourceLayers dstSubresource = default
         )
         {
-           SrcSubresource = srcSubresource;
+            SrcSubresource = srcSubresource;
            SrcOffsets_0 = default;
            SrcOffsets_1 = default;
-           DstSubresource = dstSubresource;
+            DstSubresource = dstSubresource;
            DstOffsets_0 = default;
            DstOffsets_1 = default;
         }

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetVariableDescriptorCountAllocateInfo")]
-    public unsafe struct DescriptorSetVariableDescriptorCountAllocateInfo
+    public unsafe partial struct DescriptorSetVariableDescriptorCountAllocateInfo
     {
         public DescriptorSetVariableDescriptorCountAllocateInfo
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint* pDescriptorCounts = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DescriptorSetCount = descriptorSetCount;
-           PDescriptorCounts = pDescriptorCounts;
+            SType = sType;
+            PNext = pNext;
+            DescriptorSetCount = descriptorSetCount;
+            PDescriptorCounts = pDescriptorCounts;
         }
 
 /// <summary></summary>

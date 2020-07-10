@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRasterizationDepthClipStateCreateInfoEXT")]
-    public unsafe struct PipelineRasterizationDepthClipStateCreateInfoEXT
+    public unsafe partial struct PipelineRasterizationDepthClipStateCreateInfoEXT
     {
         public PipelineRasterizationDepthClipStateCreateInfoEXT
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Bool32 depthClipEnable = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           DepthClipEnable = depthClipEnable;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            DepthClipEnable = depthClipEnable;
         }
 
 /// <summary></summary>

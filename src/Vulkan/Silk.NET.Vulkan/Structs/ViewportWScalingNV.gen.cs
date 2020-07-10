@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkViewportWScalingNV")]
-    public unsafe struct ViewportWScalingNV
+    public unsafe partial struct ViewportWScalingNV
     {
         public ViewportWScalingNV
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             float ycoeff = default
         )
         {
-           Xcoeff = xcoeff;
-           Ycoeff = ycoeff;
+            Xcoeff = xcoeff;
+            Ycoeff = ycoeff;
         }
 
 /// <summary></summary>

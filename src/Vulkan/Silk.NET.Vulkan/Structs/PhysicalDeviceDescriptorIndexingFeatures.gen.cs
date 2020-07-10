@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDescriptorIndexingFeatures")]
-    public unsafe struct PhysicalDeviceDescriptorIndexingFeatures
+    public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     {
         public PhysicalDeviceDescriptorIndexingFeatures
         (
@@ -44,28 +44,28 @@ namespace Silk.NET.Vulkan
             Bool32 runtimeDescriptorArray = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ShaderInputAttachmentArrayDynamicIndexing = shaderInputAttachmentArrayDynamicIndexing;
-           ShaderUniformTexelBufferArrayDynamicIndexing = shaderUniformTexelBufferArrayDynamicIndexing;
-           ShaderStorageTexelBufferArrayDynamicIndexing = shaderStorageTexelBufferArrayDynamicIndexing;
-           ShaderUniformBufferArrayNonUniformIndexing = shaderUniformBufferArrayNonUniformIndexing;
-           ShaderSampledImageArrayNonUniformIndexing = shaderSampledImageArrayNonUniformIndexing;
-           ShaderStorageBufferArrayNonUniformIndexing = shaderStorageBufferArrayNonUniformIndexing;
-           ShaderStorageImageArrayNonUniformIndexing = shaderStorageImageArrayNonUniformIndexing;
-           ShaderInputAttachmentArrayNonUniformIndexing = shaderInputAttachmentArrayNonUniformIndexing;
-           ShaderUniformTexelBufferArrayNonUniformIndexing = shaderUniformTexelBufferArrayNonUniformIndexing;
-           ShaderStorageTexelBufferArrayNonUniformIndexing = shaderStorageTexelBufferArrayNonUniformIndexing;
-           DescriptorBindingUniformBufferUpdateAfterBind = descriptorBindingUniformBufferUpdateAfterBind;
-           DescriptorBindingSampledImageUpdateAfterBind = descriptorBindingSampledImageUpdateAfterBind;
-           DescriptorBindingStorageImageUpdateAfterBind = descriptorBindingStorageImageUpdateAfterBind;
-           DescriptorBindingStorageBufferUpdateAfterBind = descriptorBindingStorageBufferUpdateAfterBind;
-           DescriptorBindingUniformTexelBufferUpdateAfterBind = descriptorBindingUniformTexelBufferUpdateAfterBind;
-           DescriptorBindingStorageTexelBufferUpdateAfterBind = descriptorBindingStorageTexelBufferUpdateAfterBind;
-           DescriptorBindingUpdateUnusedWhilePending = descriptorBindingUpdateUnusedWhilePending;
-           DescriptorBindingPartiallyBound = descriptorBindingPartiallyBound;
-           DescriptorBindingVariableDescriptorCount = descriptorBindingVariableDescriptorCount;
-           RuntimeDescriptorArray = runtimeDescriptorArray;
+            SType = sType;
+            PNext = pNext;
+            ShaderInputAttachmentArrayDynamicIndexing = shaderInputAttachmentArrayDynamicIndexing;
+            ShaderUniformTexelBufferArrayDynamicIndexing = shaderUniformTexelBufferArrayDynamicIndexing;
+            ShaderStorageTexelBufferArrayDynamicIndexing = shaderStorageTexelBufferArrayDynamicIndexing;
+            ShaderUniformBufferArrayNonUniformIndexing = shaderUniformBufferArrayNonUniformIndexing;
+            ShaderSampledImageArrayNonUniformIndexing = shaderSampledImageArrayNonUniformIndexing;
+            ShaderStorageBufferArrayNonUniformIndexing = shaderStorageBufferArrayNonUniformIndexing;
+            ShaderStorageImageArrayNonUniformIndexing = shaderStorageImageArrayNonUniformIndexing;
+            ShaderInputAttachmentArrayNonUniformIndexing = shaderInputAttachmentArrayNonUniformIndexing;
+            ShaderUniformTexelBufferArrayNonUniformIndexing = shaderUniformTexelBufferArrayNonUniformIndexing;
+            ShaderStorageTexelBufferArrayNonUniformIndexing = shaderStorageTexelBufferArrayNonUniformIndexing;
+            DescriptorBindingUniformBufferUpdateAfterBind = descriptorBindingUniformBufferUpdateAfterBind;
+            DescriptorBindingSampledImageUpdateAfterBind = descriptorBindingSampledImageUpdateAfterBind;
+            DescriptorBindingStorageImageUpdateAfterBind = descriptorBindingStorageImageUpdateAfterBind;
+            DescriptorBindingStorageBufferUpdateAfterBind = descriptorBindingStorageBufferUpdateAfterBind;
+            DescriptorBindingUniformTexelBufferUpdateAfterBind = descriptorBindingUniformTexelBufferUpdateAfterBind;
+            DescriptorBindingStorageTexelBufferUpdateAfterBind = descriptorBindingStorageTexelBufferUpdateAfterBind;
+            DescriptorBindingUpdateUnusedWhilePending = descriptorBindingUpdateUnusedWhilePending;
+            DescriptorBindingPartiallyBound = descriptorBindingPartiallyBound;
+            DescriptorBindingVariableDescriptorCount = descriptorBindingVariableDescriptorCount;
+            RuntimeDescriptorArray = runtimeDescriptorArray;
         }
 
 /// <summary></summary>

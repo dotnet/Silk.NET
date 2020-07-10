@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDedicatedAllocationImageCreateInfoNV")]
-    public unsafe struct DedicatedAllocationImageCreateInfoNV
+    public unsafe partial struct DedicatedAllocationImageCreateInfoNV
     {
         public DedicatedAllocationImageCreateInfoNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 dedicatedAllocation = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DedicatedAllocation = dedicatedAllocation;
+            SType = sType;
+            PNext = pNext;
+            DedicatedAllocation = dedicatedAllocation;
         }
 
 /// <summary></summary>

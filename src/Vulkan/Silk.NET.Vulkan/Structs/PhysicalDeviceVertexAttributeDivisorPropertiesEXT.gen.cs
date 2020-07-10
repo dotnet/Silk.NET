@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT")]
-    public unsafe struct PhysicalDeviceVertexAttributeDivisorPropertiesEXT
+    public unsafe partial struct PhysicalDeviceVertexAttributeDivisorPropertiesEXT
     {
         public PhysicalDeviceVertexAttributeDivisorPropertiesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint maxVertexAttribDivisor = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxVertexAttribDivisor = maxVertexAttribDivisor;
+            SType = sType;
+            PNext = pNext;
+            MaxVertexAttribDivisor = maxVertexAttribDivisor;
         }
 
 /// <summary></summary>

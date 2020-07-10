@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalSemaphoreProperties")]
-    public unsafe struct ExternalSemaphoreProperties
+    public unsafe partial struct ExternalSemaphoreProperties
     {
         public ExternalSemaphoreProperties
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             ExternalSemaphoreFeatureFlags externalSemaphoreFeatures = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ExportFromImportedHandleTypes = exportFromImportedHandleTypes;
-           CompatibleHandleTypes = compatibleHandleTypes;
-           ExternalSemaphoreFeatures = externalSemaphoreFeatures;
+            SType = sType;
+            PNext = pNext;
+            ExportFromImportedHandleTypes = exportFromImportedHandleTypes;
+            CompatibleHandleTypes = compatibleHandleTypes;
+            ExternalSemaphoreFeatures = externalSemaphoreFeatures;
         }
 
 /// <summary></summary>

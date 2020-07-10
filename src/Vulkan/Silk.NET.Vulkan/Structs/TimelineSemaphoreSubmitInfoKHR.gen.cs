@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkTimelineSemaphoreSubmitInfoKHR")]
-    public unsafe struct TimelineSemaphoreSubmitInfoKHR
+    public unsafe partial struct TimelineSemaphoreSubmitInfoKHR
     {
         public TimelineSemaphoreSubmitInfoKHR
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             ulong* pSignalSemaphoreValues = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           WaitSemaphoreValueCount = waitSemaphoreValueCount;
-           PWaitSemaphoreValues = pWaitSemaphoreValues;
-           SignalSemaphoreValueCount = signalSemaphoreValueCount;
-           PSignalSemaphoreValues = pSignalSemaphoreValues;
+            SType = sType;
+            PNext = pNext;
+            WaitSemaphoreValueCount = waitSemaphoreValueCount;
+            PWaitSemaphoreValues = pWaitSemaphoreValues;
+            SignalSemaphoreValueCount = signalSemaphoreValueCount;
+            PSignalSemaphoreValues = pSignalSemaphoreValues;
         }
 
 /// <summary></summary>

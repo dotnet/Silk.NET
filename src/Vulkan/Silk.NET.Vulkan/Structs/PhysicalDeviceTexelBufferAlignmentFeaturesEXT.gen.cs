@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceTexelBufferAlignmentFeaturesEXT")]
-    public unsafe struct PhysicalDeviceTexelBufferAlignmentFeaturesEXT
+    public unsafe partial struct PhysicalDeviceTexelBufferAlignmentFeaturesEXT
     {
         public PhysicalDeviceTexelBufferAlignmentFeaturesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 texelBufferAlignment = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           TexelBufferAlignment = texelBufferAlignment;
+            SType = sType;
+            PNext = pNext;
+            TexelBufferAlignment = texelBufferAlignment;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkLayerProperties")]
-    public unsafe struct LayerProperties
+    public unsafe partial struct LayerProperties
     {
         public LayerProperties
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             uint implementationVersion = default
         )
         {
-           SpecVersion = specVersion;
-           ImplementationVersion = implementationVersion;
+            SpecVersion = specVersion;
+            ImplementationVersion = implementationVersion;
         }
 
         /// <summary></summary>

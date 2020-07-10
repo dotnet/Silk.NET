@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkComputePipelineCreateInfo")]
-    public unsafe struct ComputePipelineCreateInfo
+    public unsafe partial struct ComputePipelineCreateInfo
     {
         public ComputePipelineCreateInfo
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             int basePipelineIndex = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Stage = stage;
-           Layout = layout;
-           BasePipelineHandle = basePipelineHandle;
-           BasePipelineIndex = basePipelineIndex;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Stage = stage;
+            Layout = layout;
+            BasePipelineHandle = basePipelineHandle;
+            BasePipelineIndex = basePipelineIndex;
         }
 
 /// <summary></summary>

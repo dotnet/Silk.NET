@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiCamera")]
-    public unsafe struct Camera
+    public unsafe partial struct Camera
     {
         public Camera
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Assimp
             float mAspect = default
         )
         {
-           MName = mName;
-           MPosition = mPosition;
-           MUp = mUp;
-           MLookAt = mLookAt;
-           MHorizontalFOV = mHorizontalFOV;
-           MClipPlaneNear = mClipPlaneNear;
-           MClipPlaneFar = mClipPlaneFar;
-           MAspect = mAspect;
+            MName = mName;
+            MPosition = mPosition;
+            MUp = mUp;
+            MLookAt = mLookAt;
+            MHorizontalFOV = mHorizontalFOV;
+            MClipPlaneNear = mClipPlaneNear;
+            MClipPlaneFar = mClipPlaneFar;
+            MAspect = mAspect;
         }
 
 

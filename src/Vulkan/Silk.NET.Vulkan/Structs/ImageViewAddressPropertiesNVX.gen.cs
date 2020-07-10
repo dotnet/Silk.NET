@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageViewAddressPropertiesNVX")]
-    public unsafe struct ImageViewAddressPropertiesNVX
+    public unsafe partial struct ImageViewAddressPropertiesNVX
     {
         public ImageViewAddressPropertiesNVX
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             ulong size = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DeviceAddress = deviceAddress;
-           Size = size;
+            SType = sType;
+            PNext = pNext;
+            DeviceAddress = deviceAddress;
+            Size = size;
         }
 
 /// <summary></summary>

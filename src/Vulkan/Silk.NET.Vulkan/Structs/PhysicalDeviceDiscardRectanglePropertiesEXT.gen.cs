@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDiscardRectanglePropertiesEXT")]
-    public unsafe struct PhysicalDeviceDiscardRectanglePropertiesEXT
+    public unsafe partial struct PhysicalDeviceDiscardRectanglePropertiesEXT
     {
         public PhysicalDeviceDiscardRectanglePropertiesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint maxDiscardRectangles = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxDiscardRectangles = maxDiscardRectangles;
+            SType = sType;
+            PNext = pNext;
+            MaxDiscardRectangles = maxDiscardRectangles;
         }
 
 /// <summary></summary>

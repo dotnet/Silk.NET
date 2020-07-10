@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassDependency")]
-    public unsafe struct SubpassDependency
+    public unsafe partial struct SubpassDependency
     {
         public SubpassDependency
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             DependencyFlags dependencyFlags = default
         )
         {
-           SrcSubpass = srcSubpass;
-           DstSubpass = dstSubpass;
-           SrcStageMask = srcStageMask;
-           DstStageMask = dstStageMask;
-           SrcAccessMask = srcAccessMask;
-           DstAccessMask = dstAccessMask;
-           DependencyFlags = dependencyFlags;
+            SrcSubpass = srcSubpass;
+            DstSubpass = dstSubpass;
+            SrcStageMask = srcStageMask;
+            DstStageMask = dstStageMask;
+            SrcAccessMask = srcAccessMask;
+            DstAccessMask = dstAccessMask;
+            DependencyFlags = dependencyFlags;
         }
 
 /// <summary></summary>

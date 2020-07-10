@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorSetLayoutBinding")]
-    public unsafe struct DescriptorSetLayoutBinding
+    public unsafe partial struct DescriptorSetLayoutBinding
     {
         public DescriptorSetLayoutBinding
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             Sampler* pImmutableSamplers = default
         )
         {
-           Binding = binding;
-           DescriptorType = descriptorType;
-           DescriptorCount = descriptorCount;
-           StageFlags = stageFlags;
-           PImmutableSamplers = pImmutableSamplers;
+            Binding = binding;
+            DescriptorType = descriptorType;
+            DescriptorCount = descriptorCount;
+            StageFlags = stageFlags;
+            PImmutableSamplers = pImmutableSamplers;
         }
 
 /// <summary></summary>

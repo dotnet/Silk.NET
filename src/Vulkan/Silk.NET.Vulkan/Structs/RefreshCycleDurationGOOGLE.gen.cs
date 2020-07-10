@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRefreshCycleDurationGOOGLE")]
-    public unsafe struct RefreshCycleDurationGOOGLE
+    public unsafe partial struct RefreshCycleDurationGOOGLE
     {
         public RefreshCycleDurationGOOGLE
         (
             ulong refreshDuration = default
         )
         {
-           RefreshDuration = refreshDuration;
+            RefreshDuration = refreshDuration;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceRobustness2PropertiesEXT")]
-    public unsafe struct PhysicalDeviceRobustness2PropertiesEXT
+    public unsafe partial struct PhysicalDeviceRobustness2PropertiesEXT
     {
         public PhysicalDeviceRobustness2PropertiesEXT
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             ulong robustUniformBufferAccessSizeAlignment = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           RobustStorageBufferAccessSizeAlignment = robustStorageBufferAccessSizeAlignment;
-           RobustUniformBufferAccessSizeAlignment = robustUniformBufferAccessSizeAlignment;
+            SType = sType;
+            PNext = pNext;
+            RobustStorageBufferAccessSizeAlignment = robustStorageBufferAccessSizeAlignment;
+            RobustUniformBufferAccessSizeAlignment = robustUniformBufferAccessSizeAlignment;
         }
 
 /// <summary></summary>

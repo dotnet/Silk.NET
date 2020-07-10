@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceIndexTypeUint8FeaturesEXT")]
-    public unsafe struct PhysicalDeviceIndexTypeUint8FeaturesEXT
+    public unsafe partial struct PhysicalDeviceIndexTypeUint8FeaturesEXT
     {
         public PhysicalDeviceIndexTypeUint8FeaturesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 indexTypeUint8 = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           IndexTypeUint8 = indexTypeUint8;
+            SType = sType;
+            PNext = pNext;
+            IndexTypeUint8 = indexTypeUint8;
         }
 
 /// <summary></summary>

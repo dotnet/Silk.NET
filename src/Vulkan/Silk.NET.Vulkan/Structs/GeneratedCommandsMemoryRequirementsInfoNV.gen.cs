@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGeneratedCommandsMemoryRequirementsInfoNV")]
-    public unsafe struct GeneratedCommandsMemoryRequirementsInfoNV
+    public unsafe partial struct GeneratedCommandsMemoryRequirementsInfoNV
     {
         public GeneratedCommandsMemoryRequirementsInfoNV
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             uint maxSequencesCount = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PipelineBindPoint = pipelineBindPoint;
-           Pipeline = pipeline;
-           IndirectCommandsLayout = indirectCommandsLayout;
-           MaxSequencesCount = maxSequencesCount;
+            SType = sType;
+            PNext = pNext;
+            PipelineBindPoint = pipelineBindPoint;
+            Pipeline = pipeline;
+            IndirectCommandsLayout = indirectCommandsLayout;
+            MaxSequencesCount = maxSequencesCount;
         }
 
 /// <summary></summary>

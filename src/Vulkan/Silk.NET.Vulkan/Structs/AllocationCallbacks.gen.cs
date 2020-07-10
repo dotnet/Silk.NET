@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAllocationCallbacks")]
-    public unsafe struct AllocationCallbacks
+    public unsafe partial struct AllocationCallbacks
     {
         public AllocationCallbacks
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             FuncPtr pfnInternalFree = default
         )
         {
-           PUserData = pUserData;
-           PfnAllocation = pfnAllocation;
-           PfnReallocation = pfnReallocation;
-           PfnFree = pfnFree;
-           PfnInternalAllocation = pfnInternalAllocation;
-           PfnInternalFree = pfnInternalFree;
+            PUserData = pUserData;
+            PfnAllocation = pfnAllocation;
+            PfnReallocation = pfnReallocation;
+            PfnFree = pfnFree;
+            PfnInternalAllocation = pfnInternalAllocation;
+            PfnInternalFree = pfnInternalFree;
         }
 
 /// <summary></summary>

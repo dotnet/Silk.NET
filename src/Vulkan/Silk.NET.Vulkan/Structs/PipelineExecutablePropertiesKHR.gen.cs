@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineExecutablePropertiesKHR")]
-    public unsafe struct PipelineExecutablePropertiesKHR
+    public unsafe partial struct PipelineExecutablePropertiesKHR
     {
         public PipelineExecutablePropertiesKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint subgroupSize = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Stages = stages;
-           SubgroupSize = subgroupSize;
+            SType = sType;
+            PNext = pNext;
+            Stages = stages;
+            SubgroupSize = subgroupSize;
         }
 
 /// <summary></summary>

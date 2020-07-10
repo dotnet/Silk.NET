@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan
 {
     [StructLayout(LayoutKind.Explicit)]
     [NativeName("Name", "VkDeviceOrHostAddressConstKHR")]
-    public unsafe struct DeviceOrHostAddressConstKHR
+    public unsafe partial struct DeviceOrHostAddressConstKHR
     {
         public DeviceOrHostAddressConstKHR
         (
@@ -25,8 +25,8 @@ namespace Silk.NET.Vulkan
             void* hostAddress = default
         )
         {
-           DeviceAddress = deviceAddress;
-           HostAddress = hostAddress;
+            DeviceAddress = deviceAddress;
+            HostAddress = hostAddress;
         }
 
 /// <summary></summary>

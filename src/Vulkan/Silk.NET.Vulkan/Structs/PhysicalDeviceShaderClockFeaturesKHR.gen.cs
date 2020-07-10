@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderClockFeaturesKHR")]
-    public unsafe struct PhysicalDeviceShaderClockFeaturesKHR
+    public unsafe partial struct PhysicalDeviceShaderClockFeaturesKHR
     {
         public PhysicalDeviceShaderClockFeaturesKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Bool32 shaderDeviceClock = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ShaderSubgroupClock = shaderSubgroupClock;
-           ShaderDeviceClock = shaderDeviceClock;
+            SType = sType;
+            PNext = pNext;
+            ShaderSubgroupClock = shaderSubgroupClock;
+            ShaderDeviceClock = shaderDeviceClock;
         }
 
 /// <summary></summary>

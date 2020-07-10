@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayProperties2KHR")]
-    public unsafe struct DisplayProperties2KHR
+    public unsafe partial struct DisplayProperties2KHR
     {
         public DisplayProperties2KHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             DisplayPropertiesKHR displayProperties = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DisplayProperties = displayProperties;
+            SType = sType;
+            PNext = pNext;
+            DisplayProperties = displayProperties;
         }
 
 /// <summary></summary>

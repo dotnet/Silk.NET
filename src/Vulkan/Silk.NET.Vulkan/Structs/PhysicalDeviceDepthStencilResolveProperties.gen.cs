@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDepthStencilResolveProperties")]
-    public unsafe struct PhysicalDeviceDepthStencilResolveProperties
+    public unsafe partial struct PhysicalDeviceDepthStencilResolveProperties
     {
         public PhysicalDeviceDepthStencilResolveProperties
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             Bool32 independentResolve = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SupportedDepthResolveModes = supportedDepthResolveModes;
-           SupportedStencilResolveModes = supportedStencilResolveModes;
-           IndependentResolveNone = independentResolveNone;
-           IndependentResolve = independentResolve;
+            SType = sType;
+            PNext = pNext;
+            SupportedDepthResolveModes = supportedDepthResolveModes;
+            SupportedStencilResolveModes = supportedStencilResolveModes;
+            IndependentResolveNone = independentResolveNone;
+            IndependentResolve = independentResolve;
         }
 
 /// <summary></summary>

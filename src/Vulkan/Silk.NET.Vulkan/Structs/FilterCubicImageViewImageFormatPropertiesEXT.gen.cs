@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFilterCubicImageViewImageFormatPropertiesEXT")]
-    public unsafe struct FilterCubicImageViewImageFormatPropertiesEXT
+    public unsafe partial struct FilterCubicImageViewImageFormatPropertiesEXT
     {
         public FilterCubicImageViewImageFormatPropertiesEXT
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Bool32 filterCubicMinmax = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           FilterCubic = filterCubic;
-           FilterCubicMinmax = filterCubicMinmax;
+            SType = sType;
+            PNext = pNext;
+            FilterCubic = filterCubic;
+            FilterCubicMinmax = filterCubicMinmax;
         }
 
 /// <summary></summary>

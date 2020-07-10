@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAndroidHardwareBufferPropertiesANDROID")]
-    public unsafe struct AndroidHardwareBufferPropertiesANDROID
+    public unsafe partial struct AndroidHardwareBufferPropertiesANDROID
     {
         public AndroidHardwareBufferPropertiesANDROID
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint memoryTypeBits = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           AllocationSize = allocationSize;
-           MemoryTypeBits = memoryTypeBits;
+            SType = sType;
+            PNext = pNext;
+            AllocationSize = allocationSize;
+            MemoryTypeBits = memoryTypeBits;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalMemoryImageCreateInfo")]
-    public unsafe struct ExternalMemoryImageCreateInfo
+    public unsafe partial struct ExternalMemoryImageCreateInfo
     {
         public ExternalMemoryImageCreateInfo
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ExternalMemoryHandleTypeFlags handleTypes = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           HandleTypes = handleTypes;
+            SType = sType;
+            PNext = pNext;
+            HandleTypes = handleTypes;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferBeginInfo")]
-    public unsafe struct CommandBufferBeginInfo
+    public unsafe partial struct CommandBufferBeginInfo
     {
         public CommandBufferBeginInfo
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             CommandBufferInheritanceInfo* pInheritanceInfo = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           PInheritanceInfo = pInheritanceInfo;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            PInheritanceInfo = pInheritanceInfo;
         }
 
 /// <summary></summary>

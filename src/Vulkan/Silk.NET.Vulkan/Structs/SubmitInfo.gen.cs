@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubmitInfo")]
-    public unsafe struct SubmitInfo
+    public unsafe partial struct SubmitInfo
     {
         public SubmitInfo
         (
@@ -31,15 +31,15 @@ namespace Silk.NET.Vulkan
             Semaphore* pSignalSemaphores = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           WaitSemaphoreCount = waitSemaphoreCount;
-           PWaitSemaphores = pWaitSemaphores;
-           PWaitDstStageMask = pWaitDstStageMask;
-           CommandBufferCount = commandBufferCount;
-           PCommandBuffers = pCommandBuffers;
-           SignalSemaphoreCount = signalSemaphoreCount;
-           PSignalSemaphores = pSignalSemaphores;
+            SType = sType;
+            PNext = pNext;
+            WaitSemaphoreCount = waitSemaphoreCount;
+            PWaitSemaphores = pWaitSemaphores;
+            PWaitDstStageMask = pWaitDstStageMask;
+            CommandBufferCount = commandBufferCount;
+            PCommandBuffers = pCommandBuffers;
+            SignalSemaphoreCount = signalSemaphoreCount;
+            PSignalSemaphores = pSignalSemaphores;
         }
 
 /// <summary></summary>

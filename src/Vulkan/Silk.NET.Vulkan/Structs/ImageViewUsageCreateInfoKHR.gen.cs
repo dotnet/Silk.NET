@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageViewUsageCreateInfoKHR")]
-    public unsafe struct ImageViewUsageCreateInfoKHR
+    public unsafe partial struct ImageViewUsageCreateInfoKHR
     {
         public ImageViewUsageCreateInfoKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ImageUsageFlags usage = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Usage = usage;
+            SType = sType;
+            PNext = pNext;
+            Usage = usage;
         }
 
 /// <summary></summary>

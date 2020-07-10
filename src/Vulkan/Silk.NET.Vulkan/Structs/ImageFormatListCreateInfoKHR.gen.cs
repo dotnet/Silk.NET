@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageFormatListCreateInfoKHR")]
-    public unsafe struct ImageFormatListCreateInfoKHR
+    public unsafe partial struct ImageFormatListCreateInfoKHR
     {
         public ImageFormatListCreateInfoKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Format* pViewFormats = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ViewFormatCount = viewFormatCount;
-           PViewFormats = pViewFormats;
+            SType = sType;
+            PNext = pNext;
+            ViewFormatCount = viewFormatCount;
+            PViewFormats = pViewFormats;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFeatures")]
-    public unsafe struct PhysicalDeviceFeatures
+    public unsafe partial struct PhysicalDeviceFeatures
     {
         public PhysicalDeviceFeatures
         (
@@ -77,61 +77,61 @@ namespace Silk.NET.Vulkan
             Bool32 inheritedQueries = default
         )
         {
-           RobustBufferAccess = robustBufferAccess;
-           FullDrawIndexUint32 = fullDrawIndexUint32;
-           ImageCubeArray = imageCubeArray;
-           IndependentBlend = independentBlend;
-           GeometryShader = geometryShader;
-           TessellationShader = tessellationShader;
-           SampleRateShading = sampleRateShading;
-           DualSrcBlend = dualSrcBlend;
-           LogicOp = logicOp;
-           MultiDrawIndirect = multiDrawIndirect;
-           DrawIndirectFirstInstance = drawIndirectFirstInstance;
-           DepthClamp = depthClamp;
-           DepthBiasClamp = depthBiasClamp;
-           FillModeNonSolid = fillModeNonSolid;
-           DepthBounds = depthBounds;
-           WideLines = wideLines;
-           LargePoints = largePoints;
-           AlphaToOne = alphaToOne;
-           MultiViewport = multiViewport;
-           SamplerAnisotropy = samplerAnisotropy;
-           TextureCompressionEtc2 = textureCompressionEtc2;
-           TextureCompressionAstcLdr = textureCompressionAstcLdr;
-           TextureCompressionBC = textureCompressionBC;
-           OcclusionQueryPrecise = occlusionQueryPrecise;
-           PipelineStatisticsQuery = pipelineStatisticsQuery;
-           VertexPipelineStoresAndAtomics = vertexPipelineStoresAndAtomics;
-           FragmentStoresAndAtomics = fragmentStoresAndAtomics;
-           ShaderTessellationAndGeometryPointSize = shaderTessellationAndGeometryPointSize;
-           ShaderImageGatherExtended = shaderImageGatherExtended;
-           ShaderStorageImageExtendedFormats = shaderStorageImageExtendedFormats;
-           ShaderStorageImageMultisample = shaderStorageImageMultisample;
-           ShaderStorageImageReadWithoutFormat = shaderStorageImageReadWithoutFormat;
-           ShaderStorageImageWriteWithoutFormat = shaderStorageImageWriteWithoutFormat;
-           ShaderUniformBufferArrayDynamicIndexing = shaderUniformBufferArrayDynamicIndexing;
-           ShaderSampledImageArrayDynamicIndexing = shaderSampledImageArrayDynamicIndexing;
-           ShaderStorageBufferArrayDynamicIndexing = shaderStorageBufferArrayDynamicIndexing;
-           ShaderStorageImageArrayDynamicIndexing = shaderStorageImageArrayDynamicIndexing;
-           ShaderClipDistance = shaderClipDistance;
-           ShaderCullDistance = shaderCullDistance;
-           ShaderFloat64 = shaderFloat64;
-           ShaderInt64 = shaderInt64;
-           ShaderInt16 = shaderInt16;
-           ShaderResourceResidency = shaderResourceResidency;
-           ShaderResourceMinLod = shaderResourceMinLod;
-           SparseBinding = sparseBinding;
-           SparseResidencyBuffer = sparseResidencyBuffer;
-           SparseResidencyImage2D = sparseResidencyImage2D;
-           SparseResidencyImage3D = sparseResidencyImage3D;
-           SparseResidency2Samples = sparseResidency2Samples;
-           SparseResidency4Samples = sparseResidency4Samples;
-           SparseResidency8Samples = sparseResidency8Samples;
-           SparseResidency16Samples = sparseResidency16Samples;
-           SparseResidencyAliased = sparseResidencyAliased;
-           VariableMultisampleRate = variableMultisampleRate;
-           InheritedQueries = inheritedQueries;
+            RobustBufferAccess = robustBufferAccess;
+            FullDrawIndexUint32 = fullDrawIndexUint32;
+            ImageCubeArray = imageCubeArray;
+            IndependentBlend = independentBlend;
+            GeometryShader = geometryShader;
+            TessellationShader = tessellationShader;
+            SampleRateShading = sampleRateShading;
+            DualSrcBlend = dualSrcBlend;
+            LogicOp = logicOp;
+            MultiDrawIndirect = multiDrawIndirect;
+            DrawIndirectFirstInstance = drawIndirectFirstInstance;
+            DepthClamp = depthClamp;
+            DepthBiasClamp = depthBiasClamp;
+            FillModeNonSolid = fillModeNonSolid;
+            DepthBounds = depthBounds;
+            WideLines = wideLines;
+            LargePoints = largePoints;
+            AlphaToOne = alphaToOne;
+            MultiViewport = multiViewport;
+            SamplerAnisotropy = samplerAnisotropy;
+            TextureCompressionEtc2 = textureCompressionEtc2;
+            TextureCompressionAstcLdr = textureCompressionAstcLdr;
+            TextureCompressionBC = textureCompressionBC;
+            OcclusionQueryPrecise = occlusionQueryPrecise;
+            PipelineStatisticsQuery = pipelineStatisticsQuery;
+            VertexPipelineStoresAndAtomics = vertexPipelineStoresAndAtomics;
+            FragmentStoresAndAtomics = fragmentStoresAndAtomics;
+            ShaderTessellationAndGeometryPointSize = shaderTessellationAndGeometryPointSize;
+            ShaderImageGatherExtended = shaderImageGatherExtended;
+            ShaderStorageImageExtendedFormats = shaderStorageImageExtendedFormats;
+            ShaderStorageImageMultisample = shaderStorageImageMultisample;
+            ShaderStorageImageReadWithoutFormat = shaderStorageImageReadWithoutFormat;
+            ShaderStorageImageWriteWithoutFormat = shaderStorageImageWriteWithoutFormat;
+            ShaderUniformBufferArrayDynamicIndexing = shaderUniformBufferArrayDynamicIndexing;
+            ShaderSampledImageArrayDynamicIndexing = shaderSampledImageArrayDynamicIndexing;
+            ShaderStorageBufferArrayDynamicIndexing = shaderStorageBufferArrayDynamicIndexing;
+            ShaderStorageImageArrayDynamicIndexing = shaderStorageImageArrayDynamicIndexing;
+            ShaderClipDistance = shaderClipDistance;
+            ShaderCullDistance = shaderCullDistance;
+            ShaderFloat64 = shaderFloat64;
+            ShaderInt64 = shaderInt64;
+            ShaderInt16 = shaderInt16;
+            ShaderResourceResidency = shaderResourceResidency;
+            ShaderResourceMinLod = shaderResourceMinLod;
+            SparseBinding = sparseBinding;
+            SparseResidencyBuffer = sparseResidencyBuffer;
+            SparseResidencyImage2D = sparseResidencyImage2D;
+            SparseResidencyImage3D = sparseResidencyImage3D;
+            SparseResidency2Samples = sparseResidency2Samples;
+            SparseResidency4Samples = sparseResidency4Samples;
+            SparseResidency8Samples = sparseResidency8Samples;
+            SparseResidency16Samples = sparseResidency16Samples;
+            SparseResidencyAliased = sparseResidencyAliased;
+            VariableMultisampleRate = variableMultisampleRate;
+            InheritedQueries = inheritedQueries;
         }
 
 /// <summary></summary>

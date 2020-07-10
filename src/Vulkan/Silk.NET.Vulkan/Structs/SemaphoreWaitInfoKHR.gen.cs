@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSemaphoreWaitInfoKHR")]
-    public unsafe struct SemaphoreWaitInfoKHR
+    public unsafe partial struct SemaphoreWaitInfoKHR
     {
         public SemaphoreWaitInfoKHR
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             ulong* pValues = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           SemaphoreCount = semaphoreCount;
-           PSemaphores = pSemaphores;
-           PValues = pValues;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            SemaphoreCount = semaphoreCount;
+            PSemaphores = pSemaphores;
+            PValues = pValues;
         }
 
 /// <summary></summary>

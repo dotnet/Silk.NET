@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferInheritanceConditionalRenderingInfoEXT")]
-    public unsafe struct CommandBufferInheritanceConditionalRenderingInfoEXT
+    public unsafe partial struct CommandBufferInheritanceConditionalRenderingInfoEXT
     {
         public CommandBufferInheritanceConditionalRenderingInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 conditionalRenderingEnable = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ConditionalRenderingEnable = conditionalRenderingEnable;
+            SType = sType;
+            PNext = pNext;
+            ConditionalRenderingEnable = conditionalRenderingEnable;
         }
 
 /// <summary></summary>

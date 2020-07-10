@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureGeometryAabbsDataKHR")]
-    public unsafe struct AccelerationStructureGeometryAabbsDataKHR
+    public unsafe partial struct AccelerationStructureGeometryAabbsDataKHR
     {
         public AccelerationStructureGeometryAabbsDataKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             ulong stride = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Data = data;
-           Stride = stride;
+            SType = sType;
+            PNext = pNext;
+            Data = data;
+            Stride = stride;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageFormatProperties2")]
-    public unsafe struct ImageFormatProperties2
+    public unsafe partial struct ImageFormatProperties2
     {
         public ImageFormatProperties2
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ImageFormatProperties imageFormatProperties = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ImageFormatProperties = imageFormatProperties;
+            SType = sType;
+            PNext = pNext;
+            ImageFormatProperties = imageFormatProperties;
         }
 
 /// <summary></summary>

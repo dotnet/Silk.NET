@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.OpenCL
 {
     [NativeName("Name", "cl_image_format")]
-    public unsafe struct ImageFormat
+    public unsafe partial struct ImageFormat
     {
         public ImageFormat
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.OpenCL
             uint imageChannelDataType = default
         )
         {
-           ImageChannelOrder = imageChannelOrder;
-           ImageChannelDataType = imageChannelDataType;
+            ImageChannelOrder = imageChannelOrder;
+            ImageChannelDataType = imageChannelDataType;
         }
 
 /// <summary></summary>

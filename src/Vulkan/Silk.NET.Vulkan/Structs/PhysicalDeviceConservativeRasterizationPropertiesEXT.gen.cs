@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceConservativeRasterizationPropertiesEXT")]
-    public unsafe struct PhysicalDeviceConservativeRasterizationPropertiesEXT
+    public unsafe partial struct PhysicalDeviceConservativeRasterizationPropertiesEXT
     {
         public PhysicalDeviceConservativeRasterizationPropertiesEXT
         (
@@ -33,17 +33,17 @@ namespace Silk.NET.Vulkan
             Bool32 conservativeRasterizationPostDepthCoverage = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PrimitiveOverestimationSize = primitiveOverestimationSize;
-           MaxExtraPrimitiveOverestimationSize = maxExtraPrimitiveOverestimationSize;
-           ExtraPrimitiveOverestimationSizeGranularity = extraPrimitiveOverestimationSizeGranularity;
-           PrimitiveUnderestimation = primitiveUnderestimation;
-           ConservativePointAndLineRasterization = conservativePointAndLineRasterization;
-           DegenerateTrianglesRasterized = degenerateTrianglesRasterized;
-           DegenerateLinesRasterized = degenerateLinesRasterized;
-           FullyCoveredFragmentShaderInputVariable = fullyCoveredFragmentShaderInputVariable;
-           ConservativeRasterizationPostDepthCoverage = conservativeRasterizationPostDepthCoverage;
+            SType = sType;
+            PNext = pNext;
+            PrimitiveOverestimationSize = primitiveOverestimationSize;
+            MaxExtraPrimitiveOverestimationSize = maxExtraPrimitiveOverestimationSize;
+            ExtraPrimitiveOverestimationSizeGranularity = extraPrimitiveOverestimationSizeGranularity;
+            PrimitiveUnderestimation = primitiveUnderestimation;
+            ConservativePointAndLineRasterization = conservativePointAndLineRasterization;
+            DegenerateTrianglesRasterized = degenerateTrianglesRasterized;
+            DegenerateLinesRasterized = degenerateLinesRasterized;
+            FullyCoveredFragmentShaderInputVariable = fullyCoveredFragmentShaderInputVariable;
+            ConservativeRasterizationPostDepthCoverage = conservativeRasterizationPostDepthCoverage;
         }
 
 /// <summary></summary>

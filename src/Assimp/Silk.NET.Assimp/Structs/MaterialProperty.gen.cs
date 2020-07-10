@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiMaterialProperty")]
-    public unsafe struct MaterialProperty
+    public unsafe partial struct MaterialProperty
     {
         public MaterialProperty
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Assimp
             byte* mData = default
         )
         {
-           MKey = mKey;
-           MSemantic = mSemantic;
-           MIndex = mIndex;
-           MDataLength = mDataLength;
-           MType = mType;
-           MData = mData;
+            MKey = mKey;
+            MSemantic = mSemantic;
+            MIndex = mIndex;
+            MDataLength = mDataLength;
+            MType = mType;
+            MData = mData;
         }
 
 

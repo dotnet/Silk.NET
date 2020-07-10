@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineCoverageToColorStateCreateInfoNV")]
-    public unsafe struct PipelineCoverageToColorStateCreateInfoNV
+    public unsafe partial struct PipelineCoverageToColorStateCreateInfoNV
     {
         public PipelineCoverageToColorStateCreateInfoNV
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             uint coverageToColorLocation = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           CoverageToColorEnable = coverageToColorEnable;
-           CoverageToColorLocation = coverageToColorLocation;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            CoverageToColorEnable = coverageToColorEnable;
+            CoverageToColorLocation = coverageToColorLocation;
         }
 
 /// <summary></summary>

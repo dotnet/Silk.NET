@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkStencilOpState")]
-    public unsafe struct StencilOpState
+    public unsafe partial struct StencilOpState
     {
         public StencilOpState
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             uint reference = default
         )
         {
-           FailOp = failOp;
-           PassOp = passOp;
-           DepthFailOp = depthFailOp;
-           CompareOp = compareOp;
-           CompareMask = compareMask;
-           WriteMask = writeMask;
-           Reference = reference;
+            FailOp = failOp;
+            PassOp = passOp;
+            DepthFailOp = depthFailOp;
+            CompareOp = compareOp;
+            CompareMask = compareMask;
+            WriteMask = writeMask;
+            Reference = reference;
         }
 
 /// <summary></summary>

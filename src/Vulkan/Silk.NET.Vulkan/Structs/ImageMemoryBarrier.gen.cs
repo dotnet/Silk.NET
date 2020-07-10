@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageMemoryBarrier")]
-    public unsafe struct ImageMemoryBarrier
+    public unsafe partial struct ImageMemoryBarrier
     {
         public ImageMemoryBarrier
         (
@@ -32,16 +32,16 @@ namespace Silk.NET.Vulkan
             ImageSubresourceRange subresourceRange = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SrcAccessMask = srcAccessMask;
-           DstAccessMask = dstAccessMask;
-           OldLayout = oldLayout;
-           NewLayout = newLayout;
-           SrcQueueFamilyIndex = srcQueueFamilyIndex;
-           DstQueueFamilyIndex = dstQueueFamilyIndex;
-           Image = image;
-           SubresourceRange = subresourceRange;
+            SType = sType;
+            PNext = pNext;
+            SrcAccessMask = srcAccessMask;
+            DstAccessMask = dstAccessMask;
+            OldLayout = oldLayout;
+            NewLayout = newLayout;
+            SrcQueueFamilyIndex = srcQueueFamilyIndex;
+            DstQueueFamilyIndex = dstQueueFamilyIndex;
+            Image = image;
+            SubresourceRange = subresourceRange;
         }
 
 /// <summary></summary>

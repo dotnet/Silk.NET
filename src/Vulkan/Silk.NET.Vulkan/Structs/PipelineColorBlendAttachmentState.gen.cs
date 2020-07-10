@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineColorBlendAttachmentState")]
-    public unsafe struct PipelineColorBlendAttachmentState
+    public unsafe partial struct PipelineColorBlendAttachmentState
     {
         public PipelineColorBlendAttachmentState
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Vulkan
             ColorComponentFlags colorWriteMask = default
         )
         {
-           BlendEnable = blendEnable;
-           SrcColorBlendFactor = srcColorBlendFactor;
-           DstColorBlendFactor = dstColorBlendFactor;
-           ColorBlendOp = colorBlendOp;
-           SrcAlphaBlendFactor = srcAlphaBlendFactor;
-           DstAlphaBlendFactor = dstAlphaBlendFactor;
-           AlphaBlendOp = alphaBlendOp;
-           ColorWriteMask = colorWriteMask;
+            BlendEnable = blendEnable;
+            SrcColorBlendFactor = srcColorBlendFactor;
+            DstColorBlendFactor = dstColorBlendFactor;
+            ColorBlendOp = colorBlendOp;
+            SrcAlphaBlendFactor = srcAlphaBlendFactor;
+            DstAlphaBlendFactor = dstAlphaBlendFactor;
+            AlphaBlendOp = alphaBlendOp;
+            ColorWriteMask = colorWriteMask;
         }
 
 /// <summary></summary>

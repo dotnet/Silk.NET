@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineVertexInputStateCreateInfo")]
-    public unsafe struct PipelineVertexInputStateCreateInfo
+    public unsafe partial struct PipelineVertexInputStateCreateInfo
     {
         public PipelineVertexInputStateCreateInfo
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             VertexInputAttributeDescription* pVertexAttributeDescriptions = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           VertexBindingDescriptionCount = vertexBindingDescriptionCount;
-           PVertexBindingDescriptions = pVertexBindingDescriptions;
-           VertexAttributeDescriptionCount = vertexAttributeDescriptionCount;
-           PVertexAttributeDescriptions = pVertexAttributeDescriptions;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            VertexBindingDescriptionCount = vertexBindingDescriptionCount;
+            PVertexBindingDescriptions = pVertexBindingDescriptions;
+            VertexAttributeDescriptionCount = vertexAttributeDescriptionCount;
+            PVertexAttributeDescriptions = pVertexAttributeDescriptions;
         }
 
 /// <summary></summary>

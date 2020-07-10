@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImagePipeSurfaceCreateInfoFUCHSIA")]
-    public unsafe struct ImagePipeSurfaceCreateInfoFUCHSIA
+    public unsafe partial struct ImagePipeSurfaceCreateInfoFUCHSIA
     {
         public ImagePipeSurfaceCreateInfoFUCHSIA
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             IntPtr imagePipeHandle = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           ImagePipeHandle = imagePipeHandle;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            ImagePipeHandle = imagePipeHandle;
         }
 
 /// <summary></summary>

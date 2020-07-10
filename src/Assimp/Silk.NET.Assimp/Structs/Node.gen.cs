@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiNode")]
-    public unsafe struct Node
+    public unsafe partial struct Node
     {
         public Node
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Assimp
             Metadata* mMetaData = default
         )
         {
-           MName = mName;
-           MTransformation = mTransformation;
-           MParent = mParent;
-           MNumChildren = mNumChildren;
-           MChildren = mChildren;
-           MNumMeshes = mNumMeshes;
-           MMeshes = mMeshes;
-           MMetaData = mMetaData;
+            MName = mName;
+            MTransformation = mTransformation;
+            MParent = mParent;
+            MNumChildren = mNumChildren;
+            MChildren = mChildren;
+            MNumMeshes = mNumMeshes;
+            MMeshes = mMeshes;
+            MMetaData = mMetaData;
         }
 
 

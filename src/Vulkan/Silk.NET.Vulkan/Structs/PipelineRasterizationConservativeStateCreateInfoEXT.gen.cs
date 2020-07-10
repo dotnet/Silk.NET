@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRasterizationConservativeStateCreateInfoEXT")]
-    public unsafe struct PipelineRasterizationConservativeStateCreateInfoEXT
+    public unsafe partial struct PipelineRasterizationConservativeStateCreateInfoEXT
     {
         public PipelineRasterizationConservativeStateCreateInfoEXT
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             float extraPrimitiveOverestimationSize = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           ConservativeRasterizationMode = conservativeRasterizationMode;
-           ExtraPrimitiveOverestimationSize = extraPrimitiveOverestimationSize;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            ConservativeRasterizationMode = conservativeRasterizationMode;
+            ExtraPrimitiveOverestimationSize = extraPrimitiveOverestimationSize;
         }
 
 /// <summary></summary>

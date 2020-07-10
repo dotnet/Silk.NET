@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImportSemaphoreWin32HandleInfoKHR")]
-    public unsafe struct ImportSemaphoreWin32HandleInfoKHR
+    public unsafe partial struct ImportSemaphoreWin32HandleInfoKHR
     {
         public ImportSemaphoreWin32HandleInfoKHR
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             IntPtr name = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Semaphore = semaphore;
-           Flags = flags;
-           HandleType = handleType;
-           Handle = handle;
-           Name = name;
+            SType = sType;
+            PNext = pNext;
+            Semaphore = semaphore;
+            Flags = flags;
+            HandleType = handleType;
+            Handle = handle;
+            Name = name;
         }
 
 /// <summary></summary>

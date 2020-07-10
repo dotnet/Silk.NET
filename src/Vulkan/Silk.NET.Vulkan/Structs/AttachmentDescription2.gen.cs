@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAttachmentDescription2")]
-    public unsafe struct AttachmentDescription2
+    public unsafe partial struct AttachmentDescription2
     {
         public AttachmentDescription2
         (
@@ -33,17 +33,17 @@ namespace Silk.NET.Vulkan
             ImageLayout finalLayout = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Format = format;
-           Samples = samples;
-           LoadOp = loadOp;
-           StoreOp = storeOp;
-           StencilLoadOp = stencilLoadOp;
-           StencilStoreOp = stencilStoreOp;
-           InitialLayout = initialLayout;
-           FinalLayout = finalLayout;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Format = format;
+            Samples = samples;
+            LoadOp = loadOp;
+            StoreOp = storeOp;
+            StencilLoadOp = stencilLoadOp;
+            StencilStoreOp = stencilStoreOp;
+            InitialLayout = initialLayout;
+            FinalLayout = finalLayout;
         }
 
 /// <summary></summary>

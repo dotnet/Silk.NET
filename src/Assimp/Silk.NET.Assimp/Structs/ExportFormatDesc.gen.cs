@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiExportFormatDesc")]
-    public unsafe struct ExportFormatDesc
+    public unsafe partial struct ExportFormatDesc
     {
         public ExportFormatDesc
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Assimp
             byte* fileExtension = default
         )
         {
-           Id = id;
-           Description = description;
-           FileExtension = fileExtension;
+            Id = id;
+            Description = description;
+            FileExtension = fileExtension;
         }
 
 

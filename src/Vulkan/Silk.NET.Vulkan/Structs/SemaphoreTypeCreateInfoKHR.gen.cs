@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSemaphoreTypeCreateInfoKHR")]
-    public unsafe struct SemaphoreTypeCreateInfoKHR
+    public unsafe partial struct SemaphoreTypeCreateInfoKHR
     {
         public SemaphoreTypeCreateInfoKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             ulong initialValue = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SemaphoreType = semaphoreType;
-           InitialValue = initialValue;
+            SType = sType;
+            PNext = pNext;
+            SemaphoreType = semaphoreType;
+            InitialValue = initialValue;
         }
 
 /// <summary></summary>

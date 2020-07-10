@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayPlanePropertiesKHR")]
-    public unsafe struct DisplayPlanePropertiesKHR
+    public unsafe partial struct DisplayPlanePropertiesKHR
     {
         public DisplayPlanePropertiesKHR
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             uint currentStackIndex = default
         )
         {
-           CurrentDisplay = currentDisplay;
-           CurrentStackIndex = currentStackIndex;
+            CurrentDisplay = currentDisplay;
+            CurrentStackIndex = currentStackIndex;
         }
 
 /// <summary></summary>

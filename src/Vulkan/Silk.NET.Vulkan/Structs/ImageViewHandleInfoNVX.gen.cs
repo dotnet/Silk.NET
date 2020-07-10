@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageViewHandleInfoNVX")]
-    public unsafe struct ImageViewHandleInfoNVX
+    public unsafe partial struct ImageViewHandleInfoNVX
     {
         public ImageViewHandleInfoNVX
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             Sampler sampler = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ImageView = imageView;
-           DescriptorType = descriptorType;
-           Sampler = sampler;
+            SType = sType;
+            PNext = pNext;
+            ImageView = imageView;
+            DescriptorType = descriptorType;
+            Sampler = sampler;
         }
 
 /// <summary></summary>

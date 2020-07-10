@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferAllocateInfo")]
-    public unsafe struct CommandBufferAllocateInfo
+    public unsafe partial struct CommandBufferAllocateInfo
     {
         public CommandBufferAllocateInfo
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             uint commandBufferCount = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           CommandPool = commandPool;
-           Level = level;
-           CommandBufferCount = commandBufferCount;
+            SType = sType;
+            PNext = pNext;
+            CommandPool = commandPool;
+            Level = level;
+            CommandBufferCount = commandBufferCount;
         }
 
 /// <summary></summary>

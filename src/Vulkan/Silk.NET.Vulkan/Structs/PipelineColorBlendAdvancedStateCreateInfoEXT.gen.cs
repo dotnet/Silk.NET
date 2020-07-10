@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineColorBlendAdvancedStateCreateInfoEXT")]
-    public unsafe struct PipelineColorBlendAdvancedStateCreateInfoEXT
+    public unsafe partial struct PipelineColorBlendAdvancedStateCreateInfoEXT
     {
         public PipelineColorBlendAdvancedStateCreateInfoEXT
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             BlendOverlapEXT blendOverlap = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SrcPremultiplied = srcPremultiplied;
-           DstPremultiplied = dstPremultiplied;
-           BlendOverlap = blendOverlap;
+            SType = sType;
+            PNext = pNext;
+            SrcPremultiplied = srcPremultiplied;
+            DstPremultiplied = dstPremultiplied;
+            BlendOverlap = blendOverlap;
         }
 
 /// <summary></summary>

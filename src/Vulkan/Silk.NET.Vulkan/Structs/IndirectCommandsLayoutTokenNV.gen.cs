@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkIndirectCommandsLayoutTokenNV")]
-    public unsafe struct IndirectCommandsLayoutTokenNV
+    public unsafe partial struct IndirectCommandsLayoutTokenNV
     {
         public IndirectCommandsLayoutTokenNV
         (
@@ -37,21 +37,21 @@ namespace Silk.NET.Vulkan
             uint* pIndexTypeValues = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           TokenType = tokenType;
-           Stream = stream;
-           Offset = offset;
-           VertexBindingUnit = vertexBindingUnit;
-           VertexDynamicStride = vertexDynamicStride;
-           PushconstantPipelineLayout = pushconstantPipelineLayout;
-           PushconstantShaderStageFlags = pushconstantShaderStageFlags;
-           PushconstantOffset = pushconstantOffset;
-           PushconstantSize = pushconstantSize;
-           IndirectStateFlags = indirectStateFlags;
-           IndexTypeCount = indexTypeCount;
-           PIndexTypes = pIndexTypes;
-           PIndexTypeValues = pIndexTypeValues;
+            SType = sType;
+            PNext = pNext;
+            TokenType = tokenType;
+            Stream = stream;
+            Offset = offset;
+            VertexBindingUnit = vertexBindingUnit;
+            VertexDynamicStride = vertexDynamicStride;
+            PushconstantPipelineLayout = pushconstantPipelineLayout;
+            PushconstantShaderStageFlags = pushconstantShaderStageFlags;
+            PushconstantOffset = pushconstantOffset;
+            PushconstantSize = pushconstantSize;
+            IndirectStateFlags = indirectStateFlags;
+            IndexTypeCount = indexTypeCount;
+            PIndexTypes = pIndexTypes;
+            PIndexTypeValues = pIndexTypeValues;
         }
 
 /// <summary></summary>

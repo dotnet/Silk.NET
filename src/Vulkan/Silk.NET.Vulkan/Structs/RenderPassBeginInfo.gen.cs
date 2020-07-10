@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassBeginInfo")]
-    public unsafe struct RenderPassBeginInfo
+    public unsafe partial struct RenderPassBeginInfo
     {
         public RenderPassBeginInfo
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             ClearValue* pClearValues = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           RenderPass = renderPass;
-           Framebuffer = framebuffer;
-           RenderArea = renderArea;
-           ClearValueCount = clearValueCount;
-           PClearValues = pClearValues;
+            SType = sType;
+            PNext = pNext;
+            RenderPass = renderPass;
+            Framebuffer = framebuffer;
+            RenderArea = renderArea;
+            ClearValueCount = clearValueCount;
+            PClearValues = pClearValues;
         }
 
 /// <summary></summary>

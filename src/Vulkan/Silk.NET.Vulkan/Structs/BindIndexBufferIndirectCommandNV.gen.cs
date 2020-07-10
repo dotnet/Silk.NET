@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindIndexBufferIndirectCommandNV")]
-    public unsafe struct BindIndexBufferIndirectCommandNV
+    public unsafe partial struct BindIndexBufferIndirectCommandNV
     {
         public BindIndexBufferIndirectCommandNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             IndexType indexType = default
         )
         {
-           BufferAddress = bufferAddress;
-           Size = size;
-           IndexType = indexType;
+            BufferAddress = bufferAddress;
+            Size = size;
+            IndexType = indexType;
         }
 
 /// <summary></summary>

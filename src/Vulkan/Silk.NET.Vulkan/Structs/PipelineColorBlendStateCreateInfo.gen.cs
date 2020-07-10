@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineColorBlendStateCreateInfo")]
-    public unsafe struct PipelineColorBlendStateCreateInfo
+    public unsafe partial struct PipelineColorBlendStateCreateInfo
     {
         public PipelineColorBlendStateCreateInfo
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             PipelineColorBlendAttachmentState* pAttachments = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           LogicOpEnable = logicOpEnable;
-           LogicOp = logicOp;
-           AttachmentCount = attachmentCount;
-           PAttachments = pAttachments;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            LogicOpEnable = logicOpEnable;
+            LogicOp = logicOp;
+            AttachmentCount = attachmentCount;
+            PAttachments = pAttachments;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRasterizationLineStateCreateInfoEXT")]
-    public unsafe struct PipelineRasterizationLineStateCreateInfoEXT
+    public unsafe partial struct PipelineRasterizationLineStateCreateInfoEXT
     {
         public PipelineRasterizationLineStateCreateInfoEXT
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             ushort lineStipplePattern = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           LineRasterizationMode = lineRasterizationMode;
-           StippledLineEnable = stippledLineEnable;
-           LineStippleFactor = lineStippleFactor;
-           LineStipplePattern = lineStipplePattern;
+            SType = sType;
+            PNext = pNext;
+            LineRasterizationMode = lineRasterizationMode;
+            StippledLineEnable = stippledLineEnable;
+            LineStippleFactor = lineStippleFactor;
+            LineStipplePattern = lineStipplePattern;
         }
 
 /// <summary></summary>

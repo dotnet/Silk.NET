@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDebugReportCallbackCreateInfoEXT")]
-    public unsafe struct DebugReportCallbackCreateInfoEXT
+    public unsafe partial struct DebugReportCallbackCreateInfoEXT
     {
         public DebugReportCallbackCreateInfoEXT
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             void* pUserData = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           PfnCallback = pfnCallback;
-           PUserData = pUserData;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            PfnCallback = pfnCallback;
+            PUserData = pUserData;
         }
 
 /// <summary></summary>

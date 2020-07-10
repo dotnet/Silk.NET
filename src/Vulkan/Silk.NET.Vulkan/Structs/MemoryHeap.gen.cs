@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryHeap")]
-    public unsafe struct MemoryHeap
+    public unsafe partial struct MemoryHeap
     {
         public MemoryHeap
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             MemoryHeapFlags flags = default
         )
         {
-           Size = size;
-           Flags = flags;
+            Size = size;
+            Flags = flags;
         }
 
 /// <summary></summary>

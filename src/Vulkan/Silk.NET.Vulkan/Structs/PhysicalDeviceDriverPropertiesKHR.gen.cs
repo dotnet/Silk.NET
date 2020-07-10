@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDriverPropertiesKHR")]
-    public unsafe struct PhysicalDeviceDriverPropertiesKHR
+    public unsafe partial struct PhysicalDeviceDriverPropertiesKHR
     {
         public PhysicalDeviceDriverPropertiesKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             ConformanceVersion conformanceVersion = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DriverID = driverID;
-           ConformanceVersion = conformanceVersion;
+            SType = sType;
+            PNext = pNext;
+            DriverID = driverID;
+            ConformanceVersion = conformanceVersion;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRayTracingPipelineCreateInfoKHR")]
-    public unsafe struct RayTracingPipelineCreateInfoKHR
+    public unsafe partial struct RayTracingPipelineCreateInfoKHR
     {
         public RayTracingPipelineCreateInfoKHR
         (
@@ -35,19 +35,19 @@ namespace Silk.NET.Vulkan
             int basePipelineIndex = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           StageCount = stageCount;
-           PStages = pStages;
-           GroupCount = groupCount;
-           PGroups = pGroups;
-           MaxRecursionDepth = maxRecursionDepth;
-           Libraries = libraries;
-           PLibraryInterface = pLibraryInterface;
-           Layout = layout;
-           BasePipelineHandle = basePipelineHandle;
-           BasePipelineIndex = basePipelineIndex;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            StageCount = stageCount;
+            PStages = pStages;
+            GroupCount = groupCount;
+            PGroups = pGroups;
+            MaxRecursionDepth = maxRecursionDepth;
+            Libraries = libraries;
+            PLibraryInterface = pLibraryInterface;
+            Layout = layout;
+            BasePipelineHandle = basePipelineHandle;
+            BasePipelineIndex = basePipelineIndex;
         }
 
 /// <summary></summary>

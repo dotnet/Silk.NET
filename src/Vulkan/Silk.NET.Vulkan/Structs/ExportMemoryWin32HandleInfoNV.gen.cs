@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExportMemoryWin32HandleInfoNV")]
-    public unsafe struct ExportMemoryWin32HandleInfoNV
+    public unsafe partial struct ExportMemoryWin32HandleInfoNV
     {
         public ExportMemoryWin32HandleInfoNV
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             int dwAccess = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PAttributes = pAttributes;
-           DwAccess = dwAccess;
+            SType = sType;
+            PNext = pNext;
+            PAttributes = pAttributes;
+            DwAccess = dwAccess;
         }
 
 /// <summary></summary>

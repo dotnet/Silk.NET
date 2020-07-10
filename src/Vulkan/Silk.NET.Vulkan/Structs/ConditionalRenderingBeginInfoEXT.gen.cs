@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkConditionalRenderingBeginInfoEXT")]
-    public unsafe struct ConditionalRenderingBeginInfoEXT
+    public unsafe partial struct ConditionalRenderingBeginInfoEXT
     {
         public ConditionalRenderingBeginInfoEXT
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             ConditionalRenderingFlagsEXT flags = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Buffer = buffer;
-           Offset = offset;
-           Flags = flags;
+            SType = sType;
+            PNext = pNext;
+            Buffer = buffer;
+            Offset = offset;
+            Flags = flags;
         }
 
 /// <summary></summary>

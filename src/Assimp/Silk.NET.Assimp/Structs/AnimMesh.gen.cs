@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiAnimMesh")]
-    public unsafe struct AnimMesh
+    public unsafe partial struct AnimMesh
     {
         public AnimMesh
         (
@@ -29,11 +29,11 @@ namespace Silk.NET.Assimp
             float mWeight = default
         )
         {
-           MName = mName;
-           MVertices = mVertices;
-           MNormals = mNormals;
-           MTangents = mTangents;
-           MBitangents = mBitangents;
+            MName = mName;
+            MVertices = mVertices;
+            MNormals = mNormals;
+            MTangents = mTangents;
+            MBitangents = mBitangents;
            MColors_0 = default;
            MColors_1 = default;
            MColors_2 = default;
@@ -50,8 +50,8 @@ namespace Silk.NET.Assimp
            MTextureCoords_5 = default;
            MTextureCoords_6 = default;
            MTextureCoords_7 = default;
-           MNumVertices = mNumVertices;
-           MWeight = mWeight;
+            MNumVertices = mNumVertices;
+            MWeight = mWeight;
         }
 
 

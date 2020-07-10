@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineCompilerControlCreateInfoAMD")]
-    public unsafe struct PipelineCompilerControlCreateInfoAMD
+    public unsafe partial struct PipelineCompilerControlCreateInfoAMD
     {
         public PipelineCompilerControlCreateInfoAMD
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             PipelineCompilerControlFlagsAMD compilerControlFlags = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           CompilerControlFlags = compilerControlFlags;
+            SType = sType;
+            PNext = pNext;
+            CompilerControlFlags = compilerControlFlags;
         }
 
 /// <summary></summary>

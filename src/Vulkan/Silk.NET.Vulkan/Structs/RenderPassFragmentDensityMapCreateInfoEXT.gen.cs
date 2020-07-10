@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassFragmentDensityMapCreateInfoEXT")]
-    public unsafe struct RenderPassFragmentDensityMapCreateInfoEXT
+    public unsafe partial struct RenderPassFragmentDensityMapCreateInfoEXT
     {
         public RenderPassFragmentDensityMapCreateInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             AttachmentReference fragmentDensityMapAttachment = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           FragmentDensityMapAttachment = fragmentDensityMapAttachment;
+            SType = sType;
+            PNext = pNext;
+            FragmentDensityMapAttachment = fragmentDensityMapAttachment;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryAllocateInfo")]
-    public unsafe struct MemoryAllocateInfo
+    public unsafe partial struct MemoryAllocateInfo
     {
         public MemoryAllocateInfo
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint memoryTypeIndex = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           AllocationSize = allocationSize;
-           MemoryTypeIndex = memoryTypeIndex;
+            SType = sType;
+            PNext = pNext;
+            AllocationSize = allocationSize;
+            MemoryTypeIndex = memoryTypeIndex;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureVersionKHR")]
-    public unsafe struct AccelerationStructureVersionKHR
+    public unsafe partial struct AccelerationStructureVersionKHR
     {
         public AccelerationStructureVersionKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             byte* versionData = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           VersionData = versionData;
+            SType = sType;
+            PNext = pNext;
+            VersionData = versionData;
         }
 
 /// <summary></summary>

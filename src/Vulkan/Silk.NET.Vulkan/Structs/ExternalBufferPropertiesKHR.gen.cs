@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExternalBufferPropertiesKHR")]
-    public unsafe struct ExternalBufferPropertiesKHR
+    public unsafe partial struct ExternalBufferPropertiesKHR
     {
         public ExternalBufferPropertiesKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ExternalMemoryProperties externalMemoryProperties = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ExternalMemoryProperties = externalMemoryProperties;
+            SType = sType;
+            PNext = pNext;
+            ExternalMemoryProperties = externalMemoryProperties;
         }
 
 /// <summary></summary>

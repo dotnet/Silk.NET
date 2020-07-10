@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkIndirectCommandsLayoutCreateInfoNV")]
-    public unsafe struct IndirectCommandsLayoutCreateInfoNV
+    public unsafe partial struct IndirectCommandsLayoutCreateInfoNV
     {
         public IndirectCommandsLayoutCreateInfoNV
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Vulkan
             uint* pStreamStrides = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           PipelineBindPoint = pipelineBindPoint;
-           TokenCount = tokenCount;
-           PTokens = pTokens;
-           StreamCount = streamCount;
-           PStreamStrides = pStreamStrides;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            PipelineBindPoint = pipelineBindPoint;
+            TokenCount = tokenCount;
+            PTokens = pTokens;
+            StreamCount = streamCount;
+            PStreamStrides = pStreamStrides;
         }
 
 /// <summary></summary>

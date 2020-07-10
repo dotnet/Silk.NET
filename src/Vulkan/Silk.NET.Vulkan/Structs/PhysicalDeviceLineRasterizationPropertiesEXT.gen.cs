@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceLineRasterizationPropertiesEXT")]
-    public unsafe struct PhysicalDeviceLineRasterizationPropertiesEXT
+    public unsafe partial struct PhysicalDeviceLineRasterizationPropertiesEXT
     {
         public PhysicalDeviceLineRasterizationPropertiesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint lineSubPixelPrecisionBits = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           LineSubPixelPrecisionBits = lineSubPixelPrecisionBits;
+            SType = sType;
+            PNext = pNext;
+            LineSubPixelPrecisionBits = lineSubPixelPrecisionBits;
         }
 
 /// <summary></summary>

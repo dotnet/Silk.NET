@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayPropertiesKHR")]
-    public unsafe struct DisplayPropertiesKHR
+    public unsafe partial struct DisplayPropertiesKHR
     {
         public DisplayPropertiesKHR
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             Bool32 persistentContent = default
         )
         {
-           Display = display;
-           DisplayName = displayName;
-           PhysicalDimensions = physicalDimensions;
-           PhysicalResolution = physicalResolution;
-           SupportedTransforms = supportedTransforms;
-           PlaneReorderPossible = planeReorderPossible;
-           PersistentContent = persistentContent;
+            Display = display;
+            DisplayName = displayName;
+            PhysicalDimensions = physicalDimensions;
+            PhysicalResolution = physicalResolution;
+            SupportedTransforms = supportedTransforms;
+            PlaneReorderPossible = planeReorderPossible;
+            PersistentContent = persistentContent;
         }
 
 /// <summary></summary>

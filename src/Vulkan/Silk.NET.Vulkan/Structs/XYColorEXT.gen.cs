@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkXYColorEXT")]
-    public unsafe struct XYColorEXT
+    public unsafe partial struct XYColorEXT
     {
         public XYColorEXT
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             float y = default
         )
         {
-           X = x;
-           Y = y;
+            X = x;
+            Y = y;
         }
 
 /// <summary></summary>

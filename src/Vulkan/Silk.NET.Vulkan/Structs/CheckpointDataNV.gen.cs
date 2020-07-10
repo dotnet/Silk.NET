@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCheckpointDataNV")]
-    public unsafe struct CheckpointDataNV
+    public unsafe partial struct CheckpointDataNV
     {
         public CheckpointDataNV
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             void* pCheckpointMarker = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Stage = stage;
-           PCheckpointMarker = pCheckpointMarker;
+            SType = sType;
+            PNext = pNext;
+            Stage = stage;
+            PCheckpointMarker = pCheckpointMarker;
         }
 
 /// <summary></summary>

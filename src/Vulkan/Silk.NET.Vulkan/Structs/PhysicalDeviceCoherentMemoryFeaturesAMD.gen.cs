@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceCoherentMemoryFeaturesAMD")]
-    public unsafe struct PhysicalDeviceCoherentMemoryFeaturesAMD
+    public unsafe partial struct PhysicalDeviceCoherentMemoryFeaturesAMD
     {
         public PhysicalDeviceCoherentMemoryFeaturesAMD
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 deviceCoherentMemory = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DeviceCoherentMemory = deviceCoherentMemory;
+            SType = sType;
+            PNext = pNext;
+            DeviceCoherentMemory = deviceCoherentMemory;
         }
 
 /// <summary></summary>

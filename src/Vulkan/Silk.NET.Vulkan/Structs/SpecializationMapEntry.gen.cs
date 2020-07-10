@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSpecializationMapEntry")]
-    public unsafe struct SpecializationMapEntry
+    public unsafe partial struct SpecializationMapEntry
     {
         public SpecializationMapEntry
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             UIntPtr size = default
         )
         {
-           ConstantID = constantID;
-           Offset = offset;
-           Size = size;
+            ConstantID = constantID;
+            Offset = offset;
+            Size = size;
         }
 
 /// <summary></summary>

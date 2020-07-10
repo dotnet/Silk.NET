@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkApplicationInfo")]
-    public unsafe struct ApplicationInfo
+    public unsafe partial struct ApplicationInfo
     {
         public ApplicationInfo
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             uint apiVersion = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PApplicationName = pApplicationName;
-           ApplicationVersion = applicationVersion;
-           PEngineName = pEngineName;
-           EngineVersion = engineVersion;
-           ApiVersion = apiVersion;
+            SType = sType;
+            PNext = pNext;
+            PApplicationName = pApplicationName;
+            ApplicationVersion = applicationVersion;
+            PEngineName = pEngineName;
+            EngineVersion = engineVersion;
+            ApiVersion = apiVersion;
         }
 
 /// <summary></summary>

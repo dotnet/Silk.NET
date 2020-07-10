@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorUpdateTemplateEntryKHR")]
-    public unsafe struct DescriptorUpdateTemplateEntryKHR
+    public unsafe partial struct DescriptorUpdateTemplateEntryKHR
     {
         public DescriptorUpdateTemplateEntryKHR
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             UIntPtr stride = default
         )
         {
-           DstBinding = dstBinding;
-           DstArrayElement = dstArrayElement;
-           DescriptorCount = descriptorCount;
-           DescriptorType = descriptorType;
-           Offset = offset;
-           Stride = stride;
+            DstBinding = dstBinding;
+            DstArrayElement = dstArrayElement;
+            DescriptorCount = descriptorCount;
+            DescriptorType = descriptorType;
+            Offset = offset;
+            Stride = stride;
         }
 
 /// <summary></summary>

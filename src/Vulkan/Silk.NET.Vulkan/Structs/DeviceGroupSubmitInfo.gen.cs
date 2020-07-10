@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupSubmitInfo")]
-    public unsafe struct DeviceGroupSubmitInfo
+    public unsafe partial struct DeviceGroupSubmitInfo
     {
         public DeviceGroupSubmitInfo
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Vulkan
             uint* pSignalSemaphoreDeviceIndices = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           WaitSemaphoreCount = waitSemaphoreCount;
-           PWaitSemaphoreDeviceIndices = pWaitSemaphoreDeviceIndices;
-           CommandBufferCount = commandBufferCount;
-           PCommandBufferDeviceMasks = pCommandBufferDeviceMasks;
-           SignalSemaphoreCount = signalSemaphoreCount;
-           PSignalSemaphoreDeviceIndices = pSignalSemaphoreDeviceIndices;
+            SType = sType;
+            PNext = pNext;
+            WaitSemaphoreCount = waitSemaphoreCount;
+            PWaitSemaphoreDeviceIndices = pWaitSemaphoreDeviceIndices;
+            CommandBufferCount = commandBufferCount;
+            PCommandBufferDeviceMasks = pCommandBufferDeviceMasks;
+            SignalSemaphoreCount = signalSemaphoreCount;
+            PSignalSemaphoreDeviceIndices = pSignalSemaphoreDeviceIndices;
         }
 
 /// <summary></summary>

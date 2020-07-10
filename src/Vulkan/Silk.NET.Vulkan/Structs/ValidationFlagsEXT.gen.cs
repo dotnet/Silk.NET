@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkValidationFlagsEXT")]
-    public unsafe struct ValidationFlagsEXT
+    public unsafe partial struct ValidationFlagsEXT
     {
         public ValidationFlagsEXT
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             ValidationCheckEXT* pDisabledValidationChecks = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DisabledValidationCheckCount = disabledValidationCheckCount;
-           PDisabledValidationChecks = pDisabledValidationChecks;
+            SType = sType;
+            PNext = pNext;
+            DisabledValidationCheckCount = disabledValidationCheckCount;
+            PDisabledValidationChecks = pDisabledValidationChecks;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePCIBusInfoPropertiesEXT")]
-    public unsafe struct PhysicalDevicePCIBusInfoPropertiesEXT
+    public unsafe partial struct PhysicalDevicePCIBusInfoPropertiesEXT
     {
         public PhysicalDevicePCIBusInfoPropertiesEXT
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             uint pciFunction = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PciDomain = pciDomain;
-           PciBus = pciBus;
-           PciDevice = pciDevice;
-           PciFunction = pciFunction;
+            SType = sType;
+            PNext = pNext;
+            PciDomain = pciDomain;
+            PciBus = pciBus;
+            PciDevice = pciDevice;
+            PciFunction = pciFunction;
         }
 
 /// <summary></summary>

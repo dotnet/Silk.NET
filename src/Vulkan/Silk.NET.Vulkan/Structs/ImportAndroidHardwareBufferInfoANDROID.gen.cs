@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImportAndroidHardwareBufferInfoANDROID")]
-    public unsafe struct ImportAndroidHardwareBufferInfoANDROID
+    public unsafe partial struct ImportAndroidHardwareBufferInfoANDROID
     {
         public ImportAndroidHardwareBufferInfoANDROID
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             IntPtr* buffer = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Buffer = buffer;
+            SType = sType;
+            PNext = pNext;
+            Buffer = buffer;
         }
 
 /// <summary></summary>

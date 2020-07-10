@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkClearAttachment")]
-    public unsafe struct ClearAttachment
+    public unsafe partial struct ClearAttachment
     {
         public ClearAttachment
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ClearValue clearValue = default
         )
         {
-           AspectMask = aspectMask;
-           ColorAttachment = colorAttachment;
-           ClearValue = clearValue;
+            AspectMask = aspectMask;
+            ColorAttachment = colorAttachment;
+            ClearValue = clearValue;
         }
 
 /// <summary></summary>

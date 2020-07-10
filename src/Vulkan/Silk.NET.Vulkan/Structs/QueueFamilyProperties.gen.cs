@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueueFamilyProperties")]
-    public unsafe struct QueueFamilyProperties
+    public unsafe partial struct QueueFamilyProperties
     {
         public QueueFamilyProperties
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Extent3D minImageTransferGranularity = default
         )
         {
-           QueueFlags = queueFlags;
-           QueueCount = queueCount;
-           TimestampValidBits = timestampValidBits;
-           MinImageTransferGranularity = minImageTransferGranularity;
+            QueueFlags = queueFlags;
+            QueueCount = queueCount;
+            TimestampValidBits = timestampValidBits;
+            MinImageTransferGranularity = minImageTransferGranularity;
         }
 
 /// <summary></summary>

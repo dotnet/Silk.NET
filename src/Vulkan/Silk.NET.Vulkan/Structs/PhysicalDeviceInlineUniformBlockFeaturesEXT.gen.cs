@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceInlineUniformBlockFeaturesEXT")]
-    public unsafe struct PhysicalDeviceInlineUniformBlockFeaturesEXT
+    public unsafe partial struct PhysicalDeviceInlineUniformBlockFeaturesEXT
     {
         public PhysicalDeviceInlineUniformBlockFeaturesEXT
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Bool32 descriptorBindingInlineUniformBlockUpdateAfterBind = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           InlineUniformBlock = inlineUniformBlock;
-           DescriptorBindingInlineUniformBlockUpdateAfterBind = descriptorBindingInlineUniformBlockUpdateAfterBind;
+            SType = sType;
+            PNext = pNext;
+            InlineUniformBlock = inlineUniformBlock;
+            DescriptorBindingInlineUniformBlockUpdateAfterBind = descriptorBindingInlineUniformBlockUpdateAfterBind;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSparseImageMemoryBind")]
-    public unsafe struct SparseImageMemoryBind
+    public unsafe partial struct SparseImageMemoryBind
     {
         public SparseImageMemoryBind
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             SparseMemoryBindFlags flags = default
         )
         {
-           Subresource = subresource;
-           Offset = offset;
-           Extent = extent;
-           Memory = memory;
-           MemoryOffset = memoryOffset;
-           Flags = flags;
+            Subresource = subresource;
+            Offset = offset;
+            Extent = extent;
+            Memory = memory;
+            MemoryOffset = memoryOffset;
+            Flags = flags;
         }
 
 /// <summary></summary>

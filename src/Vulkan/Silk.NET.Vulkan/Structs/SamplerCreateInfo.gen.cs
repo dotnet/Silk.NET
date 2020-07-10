@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerCreateInfo")]
-    public unsafe struct SamplerCreateInfo
+    public unsafe partial struct SamplerCreateInfo
     {
         public SamplerCreateInfo
         (
@@ -40,24 +40,24 @@ namespace Silk.NET.Vulkan
             Bool32 unnormalizedCoordinates = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           MagFilter = magFilter;
-           MinFilter = minFilter;
-           MipmapMode = mipmapMode;
-           AddressModeU = addressModeU;
-           AddressModeV = addressModeV;
-           AddressModeW = addressModeW;
-           MipLodBias = mipLodBias;
-           AnisotropyEnable = anisotropyEnable;
-           MaxAnisotropy = maxAnisotropy;
-           CompareEnable = compareEnable;
-           CompareOp = compareOp;
-           MinLod = minLod;
-           MaxLod = maxLod;
-           BorderColor = borderColor;
-           UnnormalizedCoordinates = unnormalizedCoordinates;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            MagFilter = magFilter;
+            MinFilter = minFilter;
+            MipmapMode = mipmapMode;
+            AddressModeU = addressModeU;
+            AddressModeV = addressModeV;
+            AddressModeW = addressModeW;
+            MipLodBias = mipLodBias;
+            AnisotropyEnable = anisotropyEnable;
+            MaxAnisotropy = maxAnisotropy;
+            CompareEnable = compareEnable;
+            CompareOp = compareOp;
+            MinLod = minLod;
+            MaxLod = maxLod;
+            BorderColor = borderColor;
+            UnnormalizedCoordinates = unnormalizedCoordinates;
         }
 
 /// <summary></summary>

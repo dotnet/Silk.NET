@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureMemoryRequirementsInfoKHR")]
-    public unsafe struct AccelerationStructureMemoryRequirementsInfoKHR
+    public unsafe partial struct AccelerationStructureMemoryRequirementsInfoKHR
     {
         public AccelerationStructureMemoryRequirementsInfoKHR
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             AccelerationStructureKHR accelerationStructure = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Type = type;
-           BuildType = buildType;
-           AccelerationStructure = accelerationStructure;
+            SType = sType;
+            PNext = pNext;
+            Type = type;
+            BuildType = buildType;
+            AccelerationStructure = accelerationStructure;
         }
 
 /// <summary></summary>

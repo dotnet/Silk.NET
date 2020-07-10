@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferMemoryBarrier")]
-    public unsafe struct BufferMemoryBarrier
+    public unsafe partial struct BufferMemoryBarrier
     {
         public BufferMemoryBarrier
         (
@@ -31,15 +31,15 @@ namespace Silk.NET.Vulkan
             ulong size = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SrcAccessMask = srcAccessMask;
-           DstAccessMask = dstAccessMask;
-           SrcQueueFamilyIndex = srcQueueFamilyIndex;
-           DstQueueFamilyIndex = dstQueueFamilyIndex;
-           Buffer = buffer;
-           Offset = offset;
-           Size = size;
+            SType = sType;
+            PNext = pNext;
+            SrcAccessMask = srcAccessMask;
+            DstAccessMask = dstAccessMask;
+            SrcQueueFamilyIndex = srcQueueFamilyIndex;
+            DstQueueFamilyIndex = dstQueueFamilyIndex;
+            Buffer = buffer;
+            Offset = offset;
+            Size = size;
         }
 
 /// <summary></summary>

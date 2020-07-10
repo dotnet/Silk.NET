@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExportMemoryAllocateInfoNV")]
-    public unsafe struct ExportMemoryAllocateInfoNV
+    public unsafe partial struct ExportMemoryAllocateInfoNV
     {
         public ExportMemoryAllocateInfoNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ExternalMemoryHandleTypeFlagsNV handleTypes = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           HandleTypes = handleTypes;
+            SType = sType;
+            PNext = pNext;
+            HandleTypes = handleTypes;
         }
 
 /// <summary></summary>

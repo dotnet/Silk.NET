@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGeometryTrianglesNV")]
-    public unsafe struct GeometryTrianglesNV
+    public unsafe partial struct GeometryTrianglesNV
     {
         public GeometryTrianglesNV
         (
@@ -35,19 +35,19 @@ namespace Silk.NET.Vulkan
             ulong transformOffset = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           VertexData = vertexData;
-           VertexOffset = vertexOffset;
-           VertexCount = vertexCount;
-           VertexStride = vertexStride;
-           VertexFormat = vertexFormat;
-           IndexData = indexData;
-           IndexOffset = indexOffset;
-           IndexCount = indexCount;
-           IndexType = indexType;
-           TransformData = transformData;
-           TransformOffset = transformOffset;
+            SType = sType;
+            PNext = pNext;
+            VertexData = vertexData;
+            VertexOffset = vertexOffset;
+            VertexCount = vertexCount;
+            VertexStride = vertexStride;
+            VertexFormat = vertexFormat;
+            IndexData = indexData;
+            IndexOffset = indexOffset;
+            IndexCount = indexCount;
+            IndexType = indexType;
+            TransformData = transformData;
+            TransformOffset = transformOffset;
         }
 
 /// <summary></summary>

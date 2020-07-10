@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDrawMeshTasksIndirectCommandNV")]
-    public unsafe struct DrawMeshTasksIndirectCommandNV
+    public unsafe partial struct DrawMeshTasksIndirectCommandNV
     {
         public DrawMeshTasksIndirectCommandNV
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             uint firstTask = default
         )
         {
-           TaskCount = taskCount;
-           FirstTask = firstTask;
+            TaskCount = taskCount;
+            FirstTask = firstTask;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.OpenCL
 {
     [NativeName("Name", "cl_image_desc")]
-    public unsafe struct ImageDesc
+    public unsafe partial struct ImageDesc
     {
         public ImageDesc
         (
@@ -31,15 +31,15 @@ namespace Silk.NET.OpenCL
             uint numSamples = default
         )
         {
-           ImageType = imageType;
-           ImageWidth = imageWidth;
-           ImageHeight = imageHeight;
-           ImageDepth = imageDepth;
-           ImageArraySize = imageArraySize;
-           ImageRowPitch = imageRowPitch;
-           ImageSlicePitch = imageSlicePitch;
-           NumMipLevels = numMipLevels;
-           NumSamples = numSamples;
+            ImageType = imageType;
+            ImageWidth = imageWidth;
+            ImageHeight = imageHeight;
+            ImageDepth = imageDepth;
+            ImageArraySize = imageArraySize;
+            ImageRowPitch = imageRowPitch;
+            ImageSlicePitch = imageSlicePitch;
+            NumMipLevels = numMipLevels;
+            NumSamples = numSamples;
         }
 
 /// <summary></summary>

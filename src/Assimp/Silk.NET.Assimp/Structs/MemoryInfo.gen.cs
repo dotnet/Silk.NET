@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiMemoryInfo")]
-    public unsafe struct MemoryInfo
+    public unsafe partial struct MemoryInfo
     {
         public MemoryInfo
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Assimp
             uint total = default
         )
         {
-           Textures = textures;
-           Materials = materials;
-           Meshes = meshes;
-           Nodes = nodes;
-           Animations = animations;
-           Cameras = cameras;
-           Lights = lights;
-           Total = total;
+            Textures = textures;
+            Materials = materials;
+            Meshes = meshes;
+            Nodes = nodes;
+            Animations = animations;
+            Cameras = cameras;
+            Lights = lights;
+            Total = total;
         }
 
 

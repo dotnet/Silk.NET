@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceConditionalRenderingFeaturesEXT")]
-    public unsafe struct PhysicalDeviceConditionalRenderingFeaturesEXT
+    public unsafe partial struct PhysicalDeviceConditionalRenderingFeaturesEXT
     {
         public PhysicalDeviceConditionalRenderingFeaturesEXT
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Bool32 inheritedConditionalRendering = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ConditionalRendering = conditionalRendering;
-           InheritedConditionalRendering = inheritedConditionalRendering;
+            SType = sType;
+            PNext = pNext;
+            ConditionalRendering = conditionalRendering;
+            InheritedConditionalRendering = inheritedConditionalRendering;
         }
 
 /// <summary></summary>

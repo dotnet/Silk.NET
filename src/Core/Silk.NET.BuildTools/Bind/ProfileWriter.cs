@@ -116,7 +116,7 @@ namespace Silk.NET.BuildTools.Bind
             }
 
             sw.WriteLine($"    [NativeName(\"Name\", \"{@struct.NativeName}\")]");
-            sw.WriteLine($"    public unsafe struct {@struct.Name}");
+            sw.WriteLine($"    public unsafe partial struct {@struct.Name}");
             sw.WriteLine("    {");
             if (@struct.Fields.Any(x => x.Count is null))
             {
@@ -174,7 +174,7 @@ namespace Silk.NET.BuildTools.Bind
 
                     var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
                     argName = Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
-                    sw.WriteLine($"           {field.Name} = {argName};");
+                    sw.WriteLine($"            {field.Name} = {argName};");
                 }
 
                 sw.WriteLine("        }");

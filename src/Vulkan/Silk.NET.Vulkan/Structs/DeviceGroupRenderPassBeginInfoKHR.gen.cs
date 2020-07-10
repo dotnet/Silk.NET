@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupRenderPassBeginInfoKHR")]
-    public unsafe struct DeviceGroupRenderPassBeginInfoKHR
+    public unsafe partial struct DeviceGroupRenderPassBeginInfoKHR
     {
         public DeviceGroupRenderPassBeginInfoKHR
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             Rect2D* pDeviceRenderAreas = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DeviceMask = deviceMask;
-           DeviceRenderAreaCount = deviceRenderAreaCount;
-           PDeviceRenderAreas = pDeviceRenderAreas;
+            SType = sType;
+            PNext = pNext;
+            DeviceMask = deviceMask;
+            DeviceRenderAreaCount = deviceRenderAreaCount;
+            PDeviceRenderAreas = pDeviceRenderAreas;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkInitializePerformanceApiInfoINTEL")]
-    public unsafe struct InitializePerformanceApiInfoINTEL
+    public unsafe partial struct InitializePerformanceApiInfoINTEL
     {
         public InitializePerformanceApiInfoINTEL
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             void* pUserData = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PUserData = pUserData;
+            SType = sType;
+            PNext = pNext;
+            PUserData = pUserData;
         }
 
 /// <summary></summary>

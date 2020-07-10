@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkNativeBufferUsage2ANDROID")]
-    public unsafe struct NativeBufferUsage2ANDROID
+    public unsafe partial struct NativeBufferUsage2ANDROID
     {
         public NativeBufferUsage2ANDROID
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             ulong producer = default
         )
         {
-           Consumer = consumer;
-           Producer = producer;
+            Consumer = consumer;
+            Producer = producer;
         }
 
 /// <summary></summary>

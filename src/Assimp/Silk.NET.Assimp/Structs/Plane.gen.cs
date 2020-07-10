@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiPlane")]
-    public unsafe struct Plane
+    public unsafe partial struct Plane
     {
         public Plane
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Assimp
             float d = default
         )
         {
-           A = a;
-           B = b;
-           C = c;
-           D = d;
+            A = a;
+            B = b;
+            C = c;
+            D = d;
         }
 
 

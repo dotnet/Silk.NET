@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV")]
-    public unsafe struct PhysicalDeviceFragmentShaderBarycentricFeaturesNV
+    public unsafe partial struct PhysicalDeviceFragmentShaderBarycentricFeaturesNV
     {
         public PhysicalDeviceFragmentShaderBarycentricFeaturesNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 fragmentShaderBarycentric = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           FragmentShaderBarycentric = fragmentShaderBarycentric;
+            SType = sType;
+            PNext = pNext;
+            FragmentShaderBarycentric = fragmentShaderBarycentric;
         }
 
 /// <summary></summary>

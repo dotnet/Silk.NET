@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineDepthStencilStateCreateInfo")]
-    public unsafe struct PipelineDepthStencilStateCreateInfo
+    public unsafe partial struct PipelineDepthStencilStateCreateInfo
     {
         public PipelineDepthStencilStateCreateInfo
         (
@@ -34,18 +34,18 @@ namespace Silk.NET.Vulkan
             float maxDepthBounds = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           DepthTestEnable = depthTestEnable;
-           DepthWriteEnable = depthWriteEnable;
-           DepthCompareOp = depthCompareOp;
-           DepthBoundsTestEnable = depthBoundsTestEnable;
-           StencilTestEnable = stencilTestEnable;
-           Front = front;
-           Back = back;
-           MinDepthBounds = minDepthBounds;
-           MaxDepthBounds = maxDepthBounds;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            DepthTestEnable = depthTestEnable;
+            DepthWriteEnable = depthWriteEnable;
+            DepthCompareOp = depthCompareOp;
+            DepthBoundsTestEnable = depthBoundsTestEnable;
+            StencilTestEnable = stencilTestEnable;
+            Front = front;
+            Back = back;
+            MinDepthBounds = minDepthBounds;
+            MaxDepthBounds = maxDepthBounds;
         }
 
 /// <summary></summary>

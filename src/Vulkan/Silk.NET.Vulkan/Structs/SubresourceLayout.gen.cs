@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubresourceLayout")]
-    public unsafe struct SubresourceLayout
+    public unsafe partial struct SubresourceLayout
     {
         public SubresourceLayout
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             ulong depthPitch = default
         )
         {
-           Offset = offset;
-           Size = size;
-           RowPitch = rowPitch;
-           ArrayPitch = arrayPitch;
-           DepthPitch = depthPitch;
+            Offset = offset;
+            Size = size;
+            RowPitch = rowPitch;
+            ArrayPitch = arrayPitch;
+            DepthPitch = depthPitch;
         }
 
 /// <summary></summary>

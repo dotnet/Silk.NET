@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCooperativeMatrixPropertiesNV")]
-    public unsafe struct CooperativeMatrixPropertiesNV
+    public unsafe partial struct CooperativeMatrixPropertiesNV
     {
         public CooperativeMatrixPropertiesNV
         (
@@ -32,16 +32,16 @@ namespace Silk.NET.Vulkan
             ScopeNV scope = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MSize = mSize;
-           NSize = nSize;
-           KSize = kSize;
-           AType = aType;
-           BType = bType;
-           CType = cType;
-           DType = dType;
-           Scope = scope;
+            SType = sType;
+            PNext = pNext;
+            MSize = mSize;
+            NSize = nSize;
+            KSize = kSize;
+            AType = aType;
+            BType = bType;
+            CType = cType;
+            DType = dType;
+            Scope = scope;
         }
 
 /// <summary></summary>

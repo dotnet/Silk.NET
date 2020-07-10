@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSharedPresentSurfaceCapabilitiesKHR")]
-    public unsafe struct SharedPresentSurfaceCapabilitiesKHR
+    public unsafe partial struct SharedPresentSurfaceCapabilitiesKHR
     {
         public SharedPresentSurfaceCapabilitiesKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ImageUsageFlags sharedPresentSupportedUsageFlags = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SharedPresentSupportedUsageFlags = sharedPresentSupportedUsageFlags;
+            SType = sType;
+            PNext = pNext;
+            SharedPresentSupportedUsageFlags = sharedPresentSupportedUsageFlags;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferCopy")]
-    public unsafe struct BufferCopy
+    public unsafe partial struct BufferCopy
     {
         public BufferCopy
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ulong size = default
         )
         {
-           SrcOffset = srcOffset;
-           DstOffset = dstOffset;
-           Size = size;
+            SrcOffset = srcOffset;
+            DstOffset = dstOffset;
+            Size = size;
         }
 
 /// <summary></summary>

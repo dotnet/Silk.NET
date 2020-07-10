@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCoarseSampleOrderCustomNV")]
-    public unsafe struct CoarseSampleOrderCustomNV
+    public unsafe partial struct CoarseSampleOrderCustomNV
     {
         public CoarseSampleOrderCustomNV
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             CoarseSampleLocationNV* pSampleLocations = default
         )
         {
-           ShadingRate = shadingRate;
-           SampleCount = sampleCount;
-           SampleLocationCount = sampleLocationCount;
-           PSampleLocations = pSampleLocations;
+            ShadingRate = shadingRate;
+            SampleCount = sampleCount;
+            SampleLocationCount = sampleLocationCount;
+            PSampleLocations = pSampleLocations;
         }
 
 /// <summary></summary>

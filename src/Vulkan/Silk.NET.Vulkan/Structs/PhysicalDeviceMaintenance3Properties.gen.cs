@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMaintenance3Properties")]
-    public unsafe struct PhysicalDeviceMaintenance3Properties
+    public unsafe partial struct PhysicalDeviceMaintenance3Properties
     {
         public PhysicalDeviceMaintenance3Properties
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             ulong maxMemoryAllocationSize = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxPerSetDescriptors = maxPerSetDescriptors;
-           MaxMemoryAllocationSize = maxMemoryAllocationSize;
+            SType = sType;
+            PNext = pNext;
+            MaxPerSetDescriptors = maxPerSetDescriptors;
+            MaxMemoryAllocationSize = maxMemoryAllocationSize;
         }
 
 /// <summary></summary>

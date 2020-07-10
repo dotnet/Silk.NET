@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan
 {
     [StructLayout(LayoutKind.Explicit)]
     [NativeName("Name", "VkPerformanceValueDataINTEL")]
-    public unsafe struct PerformanceValueDataINTEL
+    public unsafe partial struct PerformanceValueDataINTEL
     {
         public PerformanceValueDataINTEL
         (
@@ -28,11 +28,11 @@ namespace Silk.NET.Vulkan
             byte* valueString = default
         )
         {
-           Value32 = value32;
-           Value64 = value64;
-           ValueFloat = valueFloat;
-           ValueBool = valueBool;
-           ValueString = valueString;
+            Value32 = value32;
+            Value64 = value64;
+            ValueFloat = valueFloat;
+            ValueBool = valueBool;
+            ValueString = valueString;
         }
 
 /// <summary></summary>

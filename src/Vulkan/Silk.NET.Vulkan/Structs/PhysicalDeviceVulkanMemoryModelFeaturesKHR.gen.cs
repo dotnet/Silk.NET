@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceVulkanMemoryModelFeaturesKHR")]
-    public unsafe struct PhysicalDeviceVulkanMemoryModelFeaturesKHR
+    public unsafe partial struct PhysicalDeviceVulkanMemoryModelFeaturesKHR
     {
         public PhysicalDeviceVulkanMemoryModelFeaturesKHR
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             Bool32 vulkanMemoryModelAvailabilityVisibilityChains = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           VulkanMemoryModel = vulkanMemoryModel;
-           VulkanMemoryModelDeviceScope = vulkanMemoryModelDeviceScope;
-           VulkanMemoryModelAvailabilityVisibilityChains = vulkanMemoryModelAvailabilityVisibilityChains;
+            SType = sType;
+            PNext = pNext;
+            VulkanMemoryModel = vulkanMemoryModel;
+            VulkanMemoryModelDeviceScope = vulkanMemoryModelDeviceScope;
+            VulkanMemoryModelAvailabilityVisibilityChains = vulkanMemoryModelAvailabilityVisibilityChains;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerYcbcrConversionImageFormatPropertiesKHR")]
-    public unsafe struct SamplerYcbcrConversionImageFormatPropertiesKHR
+    public unsafe partial struct SamplerYcbcrConversionImageFormatPropertiesKHR
     {
         public SamplerYcbcrConversionImageFormatPropertiesKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint combinedImageSamplerDescriptorCount = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           CombinedImageSamplerDescriptorCount = combinedImageSamplerDescriptorCount;
+            SType = sType;
+            PNext = pNext;
+            CombinedImageSamplerDescriptorCount = combinedImageSamplerDescriptorCount;
         }
 
 /// <summary></summary>

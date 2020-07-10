@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineCreationFeedbackCreateInfoEXT")]
-    public unsafe struct PipelineCreationFeedbackCreateInfoEXT
+    public unsafe partial struct PipelineCreationFeedbackCreateInfoEXT
     {
         public PipelineCreationFeedbackCreateInfoEXT
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             PipelineCreationFeedbackEXT* pPipelineStageCreationFeedbacks = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PPipelineCreationFeedback = pPipelineCreationFeedback;
-           PipelineStageCreationFeedbackCount = pipelineStageCreationFeedbackCount;
-           PPipelineStageCreationFeedbacks = pPipelineStageCreationFeedbacks;
+            SType = sType;
+            PNext = pNext;
+            PPipelineCreationFeedback = pPipelineCreationFeedback;
+            PipelineStageCreationFeedbackCount = pipelineStageCreationFeedbackCount;
+            PPipelineStageCreationFeedbacks = pPipelineStageCreationFeedbacks;
         }
 
 /// <summary></summary>

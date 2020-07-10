@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.OpenCL
 {
     [NativeName("Name", "cl_mem_ext_host_ptr")]
-    public unsafe struct MemExtHostPtr
+    public unsafe partial struct MemExtHostPtr
     {
         public MemExtHostPtr
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.OpenCL
             uint hostCachePolicy = default
         )
         {
-           AllocationType = allocationType;
-           HostCachePolicy = hostCachePolicy;
+            AllocationType = allocationType;
+            HostCachePolicy = hostCachePolicy;
         }
 
 /// <summary></summary>

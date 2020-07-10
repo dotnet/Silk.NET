@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkValidationCacheCreateInfoEXT")]
-    public unsafe struct ValidationCacheCreateInfoEXT
+    public unsafe partial struct ValidationCacheCreateInfoEXT
     {
         public ValidationCacheCreateInfoEXT
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             void* pInitialData = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           InitialDataSize = initialDataSize;
-           PInitialData = pInitialData;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            InitialDataSize = initialDataSize;
+            PInitialData = pInitialData;
         }
 
 /// <summary></summary>

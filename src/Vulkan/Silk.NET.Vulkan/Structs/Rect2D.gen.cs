@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRect2D")]
-    public unsafe struct Rect2D
+    public unsafe partial struct Rect2D
     {
         public Rect2D
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             Extent2D extent = default
         )
         {
-           Offset = offset;
-           Extent = extent;
+            Offset = offset;
+            Extent = extent;
         }
 
 /// <summary></summary>

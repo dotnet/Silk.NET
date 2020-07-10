@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImportMemoryWin32HandleInfoNV")]
-    public unsafe struct ImportMemoryWin32HandleInfoNV
+    public unsafe partial struct ImportMemoryWin32HandleInfoNV
     {
         public ImportMemoryWin32HandleInfoNV
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             IntPtr handle = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           HandleType = handleType;
-           Handle = handle;
+            SType = sType;
+            PNext = pNext;
+            HandleType = handleType;
+            Handle = handle;
         }
 
 /// <summary></summary>

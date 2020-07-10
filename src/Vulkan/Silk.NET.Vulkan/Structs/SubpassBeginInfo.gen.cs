@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassBeginInfo")]
-    public unsafe struct SubpassBeginInfo
+    public unsafe partial struct SubpassBeginInfo
     {
         public SubpassBeginInfo
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             SubpassContents contents = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Contents = contents;
+            SType = sType;
+            PNext = pNext;
+            Contents = contents;
         }
 
 /// <summary></summary>

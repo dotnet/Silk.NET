@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDispatchIndirectCommand")]
-    public unsafe struct DispatchIndirectCommand
+    public unsafe partial struct DispatchIndirectCommand
     {
         public DispatchIndirectCommand
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint z = default
         )
         {
-           X = x;
-           Y = y;
-           Z = z;
+            X = x;
+            Y = y;
+            Z = z;
         }
 
 /// <summary></summary>

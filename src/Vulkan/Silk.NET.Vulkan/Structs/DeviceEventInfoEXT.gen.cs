@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceEventInfoEXT")]
-    public unsafe struct DeviceEventInfoEXT
+    public unsafe partial struct DeviceEventInfoEXT
     {
         public DeviceEventInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             DeviceEventTypeEXT deviceEvent = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DeviceEvent = deviceEvent;
+            SType = sType;
+            PNext = pNext;
+            DeviceEvent = deviceEvent;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSwapchainCreateInfoKHR")]
-    public unsafe struct SwapchainCreateInfoKHR
+    public unsafe partial struct SwapchainCreateInfoKHR
     {
         public SwapchainCreateInfoKHR
         (
@@ -40,24 +40,24 @@ namespace Silk.NET.Vulkan
             SwapchainKHR oldSwapchain = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Surface = surface;
-           MinImageCount = minImageCount;
-           ImageFormat = imageFormat;
-           ImageColorSpace = imageColorSpace;
-           ImageExtent = imageExtent;
-           ImageArrayLayers = imageArrayLayers;
-           ImageUsage = imageUsage;
-           ImageSharingMode = imageSharingMode;
-           QueueFamilyIndexCount = queueFamilyIndexCount;
-           PQueueFamilyIndices = pQueueFamilyIndices;
-           PreTransform = preTransform;
-           CompositeAlpha = compositeAlpha;
-           PresentMode = presentMode;
-           Clipped = clipped;
-           OldSwapchain = oldSwapchain;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Surface = surface;
+            MinImageCount = minImageCount;
+            ImageFormat = imageFormat;
+            ImageColorSpace = imageColorSpace;
+            ImageExtent = imageExtent;
+            ImageArrayLayers = imageArrayLayers;
+            ImageUsage = imageUsage;
+            ImageSharingMode = imageSharingMode;
+            QueueFamilyIndexCount = queueFamilyIndexCount;
+            PQueueFamilyIndices = pQueueFamilyIndices;
+            PreTransform = preTransform;
+            CompositeAlpha = compositeAlpha;
+            PresentMode = presentMode;
+            Clipped = clipped;
+            OldSwapchain = oldSwapchain;
         }
 
 /// <summary></summary>

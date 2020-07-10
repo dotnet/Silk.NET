@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFramebufferAttachmentImageInfoKHR")]
-    public unsafe struct FramebufferAttachmentImageInfoKHR
+    public unsafe partial struct FramebufferAttachmentImageInfoKHR
     {
         public FramebufferAttachmentImageInfoKHR
         (
@@ -31,15 +31,15 @@ namespace Silk.NET.Vulkan
             Format* pViewFormats = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Usage = usage;
-           Width = width;
-           Height = height;
-           LayerCount = layerCount;
-           ViewFormatCount = viewFormatCount;
-           PViewFormats = pViewFormats;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Usage = usage;
+            Width = width;
+            Height = height;
+            LayerCount = layerCount;
+            ViewFormatCount = viewFormatCount;
+            PViewFormats = pViewFormats;
         }
 
 /// <summary></summary>

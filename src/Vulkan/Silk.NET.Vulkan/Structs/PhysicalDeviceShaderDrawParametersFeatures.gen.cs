@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderDrawParametersFeatures")]
-    public unsafe struct PhysicalDeviceShaderDrawParametersFeatures
+    public unsafe partial struct PhysicalDeviceShaderDrawParametersFeatures
     {
         public PhysicalDeviceShaderDrawParametersFeatures
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 shaderDrawParameters = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ShaderDrawParameters = shaderDrawParameters;
+            SType = sType;
+            PNext = pNext;
+            ShaderDrawParameters = shaderDrawParameters;
         }
 
 /// <summary></summary>

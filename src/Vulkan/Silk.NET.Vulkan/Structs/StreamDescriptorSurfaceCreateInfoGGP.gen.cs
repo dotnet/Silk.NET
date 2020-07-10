@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkStreamDescriptorSurfaceCreateInfoGGP")]
-    public unsafe struct StreamDescriptorSurfaceCreateInfoGGP
+    public unsafe partial struct StreamDescriptorSurfaceCreateInfoGGP
     {
         public StreamDescriptorSurfaceCreateInfoGGP
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             IntPtr streamDescriptor = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           StreamDescriptor = streamDescriptor;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            StreamDescriptor = streamDescriptor;
         }
 
 /// <summary></summary>

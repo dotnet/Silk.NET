@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayPlaneCapabilitiesKHR")]
-    public unsafe struct DisplayPlaneCapabilitiesKHR
+    public unsafe partial struct DisplayPlaneCapabilitiesKHR
     {
         public DisplayPlaneCapabilitiesKHR
         (
@@ -31,15 +31,15 @@ namespace Silk.NET.Vulkan
             Extent2D maxDstExtent = default
         )
         {
-           SupportedAlpha = supportedAlpha;
-           MinSrcPosition = minSrcPosition;
-           MaxSrcPosition = maxSrcPosition;
-           MinSrcExtent = minSrcExtent;
-           MaxSrcExtent = maxSrcExtent;
-           MinDstPosition = minDstPosition;
-           MaxDstPosition = maxDstPosition;
-           MinDstExtent = minDstExtent;
-           MaxDstExtent = maxDstExtent;
+            SupportedAlpha = supportedAlpha;
+            MinSrcPosition = minSrcPosition;
+            MaxSrcPosition = maxSrcPosition;
+            MinSrcExtent = minSrcExtent;
+            MaxSrcExtent = maxSrcExtent;
+            MinDstPosition = minDstPosition;
+            MaxDstPosition = maxDstPosition;
+            MinDstExtent = minDstExtent;
+            MaxDstExtent = maxDstExtent;
         }
 
 /// <summary></summary>

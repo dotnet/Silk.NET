@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDeviceGeneratedCommandsPropertiesNV")]
-    public unsafe struct PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
+    public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
     {
         public PhysicalDeviceDeviceGeneratedCommandsPropertiesNV
         (
@@ -33,17 +33,17 @@ namespace Silk.NET.Vulkan
             uint minIndirectCommandsBufferOffsetAlignment = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxGraphicsShaderGroupCount = maxGraphicsShaderGroupCount;
-           MaxIndirectSequenceCount = maxIndirectSequenceCount;
-           MaxIndirectCommandsTokenCount = maxIndirectCommandsTokenCount;
-           MaxIndirectCommandsStreamCount = maxIndirectCommandsStreamCount;
-           MaxIndirectCommandsTokenOffset = maxIndirectCommandsTokenOffset;
-           MaxIndirectCommandsStreamStride = maxIndirectCommandsStreamStride;
-           MinSequencesCountBufferOffsetAlignment = minSequencesCountBufferOffsetAlignment;
-           MinSequencesIndexBufferOffsetAlignment = minSequencesIndexBufferOffsetAlignment;
-           MinIndirectCommandsBufferOffsetAlignment = minIndirectCommandsBufferOffsetAlignment;
+            SType = sType;
+            PNext = pNext;
+            MaxGraphicsShaderGroupCount = maxGraphicsShaderGroupCount;
+            MaxIndirectSequenceCount = maxIndirectSequenceCount;
+            MaxIndirectCommandsTokenCount = maxIndirectCommandsTokenCount;
+            MaxIndirectCommandsStreamCount = maxIndirectCommandsStreamCount;
+            MaxIndirectCommandsTokenOffset = maxIndirectCommandsTokenOffset;
+            MaxIndirectCommandsStreamStride = maxIndirectCommandsStreamStride;
+            MinSequencesCountBufferOffsetAlignment = minSequencesCountBufferOffsetAlignment;
+            MinSequencesIndexBufferOffsetAlignment = minSequencesIndexBufferOffsetAlignment;
+            MinIndirectCommandsBufferOffsetAlignment = minIndirectCommandsBufferOffsetAlignment;
         }
 
 /// <summary></summary>

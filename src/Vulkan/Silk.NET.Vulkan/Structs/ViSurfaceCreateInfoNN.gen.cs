@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkViSurfaceCreateInfoNN")]
-    public unsafe struct ViSurfaceCreateInfoNN
+    public unsafe partial struct ViSurfaceCreateInfoNN
     {
         public ViSurfaceCreateInfoNN
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             void* window = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Window = window;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Window = window;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceCooperativeMatrixPropertiesNV")]
-    public unsafe struct PhysicalDeviceCooperativeMatrixPropertiesNV
+    public unsafe partial struct PhysicalDeviceCooperativeMatrixPropertiesNV
     {
         public PhysicalDeviceCooperativeMatrixPropertiesNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ShaderStageFlags cooperativeMatrixSupportedStages = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           CooperativeMatrixSupportedStages = cooperativeMatrixSupportedStages;
+            SType = sType;
+            PNext = pNext;
+            CooperativeMatrixSupportedStages = cooperativeMatrixSupportedStages;
         }
 
 /// <summary></summary>

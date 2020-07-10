@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDirectFBSurfaceCreateInfoEXT")]
-    public unsafe struct DirectFBSurfaceCreateInfoEXT
+    public unsafe partial struct DirectFBSurfaceCreateInfoEXT
     {
         public DirectFBSurfaceCreateInfoEXT
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             IntPtr surface = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Dfb = dfb;
-           Surface = surface;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Dfb = dfb;
+            Surface = surface;
         }
 
 /// <summary></summary>

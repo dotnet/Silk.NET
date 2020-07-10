@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiAABB")]
-    public unsafe struct AABB
+    public unsafe partial struct AABB
     {
         public AABB
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Assimp
             System.Numerics.Vector3 mMax = default
         )
         {
-           MMin = mMin;
-           MMax = mMax;
+            MMin = mMin;
+            MMax = mMax;
         }
 
 

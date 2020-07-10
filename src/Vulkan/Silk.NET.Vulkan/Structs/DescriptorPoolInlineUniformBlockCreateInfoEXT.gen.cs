@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorPoolInlineUniformBlockCreateInfoEXT")]
-    public unsafe struct DescriptorPoolInlineUniformBlockCreateInfoEXT
+    public unsafe partial struct DescriptorPoolInlineUniformBlockCreateInfoEXT
     {
         public DescriptorPoolInlineUniformBlockCreateInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint maxInlineUniformBlockBindings = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxInlineUniformBlockBindings = maxInlineUniformBlockBindings;
+            SType = sType;
+            PNext = pNext;
+            MaxInlineUniformBlockBindings = maxInlineUniformBlockBindings;
         }
 
 /// <summary></summary>

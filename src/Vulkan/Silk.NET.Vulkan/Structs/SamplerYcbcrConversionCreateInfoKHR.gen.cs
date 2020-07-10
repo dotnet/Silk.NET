@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerYcbcrConversionCreateInfoKHR")]
-    public unsafe struct SamplerYcbcrConversionCreateInfoKHR
+    public unsafe partial struct SamplerYcbcrConversionCreateInfoKHR
     {
         public SamplerYcbcrConversionCreateInfoKHR
         (
@@ -32,16 +32,16 @@ namespace Silk.NET.Vulkan
             Bool32 forceExplicitReconstruction = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Format = format;
-           YcbcrModel = ycbcrModel;
-           YcbcrRange = ycbcrRange;
-           Components = components;
-           XChromaOffset = xChromaOffset;
-           YChromaOffset = yChromaOffset;
-           ChromaFilter = chromaFilter;
-           ForceExplicitReconstruction = forceExplicitReconstruction;
+            SType = sType;
+            PNext = pNext;
+            Format = format;
+            YcbcrModel = ycbcrModel;
+            YcbcrRange = ycbcrRange;
+            Components = components;
+            XChromaOffset = xChromaOffset;
+            YChromaOffset = yChromaOffset;
+            ChromaFilter = chromaFilter;
+            ForceExplicitReconstruction = forceExplicitReconstruction;
         }
 
 /// <summary></summary>

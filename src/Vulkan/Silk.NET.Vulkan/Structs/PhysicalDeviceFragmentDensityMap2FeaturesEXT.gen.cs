@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFragmentDensityMap2FeaturesEXT")]
-    public unsafe struct PhysicalDeviceFragmentDensityMap2FeaturesEXT
+    public unsafe partial struct PhysicalDeviceFragmentDensityMap2FeaturesEXT
     {
         public PhysicalDeviceFragmentDensityMap2FeaturesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 fragmentDensityMapDeferred = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           FragmentDensityMapDeferred = fragmentDensityMapDeferred;
+            SType = sType;
+            PNext = pNext;
+            FragmentDensityMapDeferred = fragmentDensityMapDeferred;
         }
 
 /// <summary></summary>

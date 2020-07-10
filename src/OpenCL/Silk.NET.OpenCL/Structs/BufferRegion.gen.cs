@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.OpenCL
 {
     [NativeName("Name", "cl_buffer_region")]
-    public unsafe struct BufferRegion
+    public unsafe partial struct BufferRegion
     {
         public BufferRegion
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.OpenCL
             UIntPtr size = default
         )
         {
-           Origin = origin;
-           Size = size;
+            Origin = origin;
+            Size = size;
         }
 
 /// <summary></summary>

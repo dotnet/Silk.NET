@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceRayTracingPropertiesNV")]
-    public unsafe struct PhysicalDeviceRayTracingPropertiesNV
+    public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
     {
         public PhysicalDeviceRayTracingPropertiesNV
         (
@@ -32,16 +32,16 @@ namespace Silk.NET.Vulkan
             uint maxDescriptorSetAccelerationStructures = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ShaderGroupHandleSize = shaderGroupHandleSize;
-           MaxRecursionDepth = maxRecursionDepth;
-           MaxShaderGroupStride = maxShaderGroupStride;
-           ShaderGroupBaseAlignment = shaderGroupBaseAlignment;
-           MaxGeometryCount = maxGeometryCount;
-           MaxInstanceCount = maxInstanceCount;
-           MaxTriangleCount = maxTriangleCount;
-           MaxDescriptorSetAccelerationStructures = maxDescriptorSetAccelerationStructures;
+            SType = sType;
+            PNext = pNext;
+            ShaderGroupHandleSize = shaderGroupHandleSize;
+            MaxRecursionDepth = maxRecursionDepth;
+            MaxShaderGroupStride = maxShaderGroupStride;
+            ShaderGroupBaseAlignment = shaderGroupBaseAlignment;
+            MaxGeometryCount = maxGeometryCount;
+            MaxInstanceCount = maxInstanceCount;
+            MaxTriangleCount = maxTriangleCount;
+            MaxDescriptorSetAccelerationStructures = maxDescriptorSetAccelerationStructures;
         }
 
 /// <summary></summary>

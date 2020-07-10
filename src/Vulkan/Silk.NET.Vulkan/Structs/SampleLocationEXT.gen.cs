@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSampleLocationEXT")]
-    public unsafe struct SampleLocationEXT
+    public unsafe partial struct SampleLocationEXT
     {
         public SampleLocationEXT
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             float y = default
         )
         {
-           X = x;
-           Y = y;
+            X = x;
+            Y = y;
         }
 
 /// <summary></summary>

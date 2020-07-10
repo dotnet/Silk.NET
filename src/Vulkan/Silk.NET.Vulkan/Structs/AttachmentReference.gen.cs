@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAttachmentReference")]
-    public unsafe struct AttachmentReference
+    public unsafe partial struct AttachmentReference
     {
         public AttachmentReference
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             ImageLayout layout = default
         )
         {
-           Attachment = attachment;
-           Layout = layout;
+            Attachment = attachment;
+            Layout = layout;
         }
 
 /// <summary></summary>

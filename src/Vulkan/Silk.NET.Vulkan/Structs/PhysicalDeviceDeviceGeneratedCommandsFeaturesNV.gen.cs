@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDeviceGeneratedCommandsFeaturesNV")]
-    public unsafe struct PhysicalDeviceDeviceGeneratedCommandsFeaturesNV
+    public unsafe partial struct PhysicalDeviceDeviceGeneratedCommandsFeaturesNV
     {
         public PhysicalDeviceDeviceGeneratedCommandsFeaturesNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 deviceGeneratedCommands = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DeviceGeneratedCommands = deviceGeneratedCommands;
+            SType = sType;
+            PNext = pNext;
+            DeviceGeneratedCommands = deviceGeneratedCommands;
         }
 
 /// <summary></summary>

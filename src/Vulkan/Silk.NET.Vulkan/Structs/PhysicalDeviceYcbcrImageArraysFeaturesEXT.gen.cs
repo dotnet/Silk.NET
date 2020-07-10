@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceYcbcrImageArraysFeaturesEXT")]
-    public unsafe struct PhysicalDeviceYcbcrImageArraysFeaturesEXT
+    public unsafe partial struct PhysicalDeviceYcbcrImageArraysFeaturesEXT
     {
         public PhysicalDeviceYcbcrImageArraysFeaturesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 ycbcrImageArrays = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           YcbcrImageArrays = ycbcrImageArrays;
+            SType = sType;
+            PNext = pNext;
+            YcbcrImageArrays = ycbcrImageArrays;
         }
 
 /// <summary></summary>

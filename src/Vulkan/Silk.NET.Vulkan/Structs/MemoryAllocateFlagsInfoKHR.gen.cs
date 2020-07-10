@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryAllocateFlagsInfoKHR")]
-    public unsafe struct MemoryAllocateFlagsInfoKHR
+    public unsafe partial struct MemoryAllocateFlagsInfoKHR
     {
         public MemoryAllocateFlagsInfoKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint deviceMask = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           DeviceMask = deviceMask;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            DeviceMask = deviceMask;
         }
 
 /// <summary></summary>

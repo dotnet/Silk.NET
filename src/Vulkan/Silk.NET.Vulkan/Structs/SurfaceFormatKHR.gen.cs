@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSurfaceFormatKHR")]
-    public unsafe struct SurfaceFormatKHR
+    public unsafe partial struct SurfaceFormatKHR
     {
         public SurfaceFormatKHR
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             ColorSpaceKHR colorSpace = default
         )
         {
-           Format = format;
-           ColorSpace = colorSpace;
+            Format = format;
+            ColorSpace = colorSpace;
         }
 
 /// <summary></summary>

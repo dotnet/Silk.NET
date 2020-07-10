@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageSwapchainCreateInfoKHR")]
-    public unsafe struct ImageSwapchainCreateInfoKHR
+    public unsafe partial struct ImageSwapchainCreateInfoKHR
     {
         public ImageSwapchainCreateInfoKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             SwapchainKHR swapchain = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Swapchain = swapchain;
+            SType = sType;
+            PNext = pNext;
+            Swapchain = swapchain;
         }
 
 /// <summary></summary>

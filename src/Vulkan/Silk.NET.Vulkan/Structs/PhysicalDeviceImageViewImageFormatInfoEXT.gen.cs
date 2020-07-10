@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceImageViewImageFormatInfoEXT")]
-    public unsafe struct PhysicalDeviceImageViewImageFormatInfoEXT
+    public unsafe partial struct PhysicalDeviceImageViewImageFormatInfoEXT
     {
         public PhysicalDeviceImageViewImageFormatInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ImageViewType imageViewType = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ImageViewType = imageViewType;
+            SType = sType;
+            PNext = pNext;
+            ImageViewType = imageViewType;
         }
 
 /// <summary></summary>

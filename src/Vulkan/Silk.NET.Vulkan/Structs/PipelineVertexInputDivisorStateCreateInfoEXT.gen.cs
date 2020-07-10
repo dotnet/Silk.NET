@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineVertexInputDivisorStateCreateInfoEXT")]
-    public unsafe struct PipelineVertexInputDivisorStateCreateInfoEXT
+    public unsafe partial struct PipelineVertexInputDivisorStateCreateInfoEXT
     {
         public PipelineVertexInputDivisorStateCreateInfoEXT
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             VertexInputBindingDivisorDescriptionEXT* pVertexBindingDivisors = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           VertexBindingDivisorCount = vertexBindingDivisorCount;
-           PVertexBindingDivisors = pVertexBindingDivisors;
+            SType = sType;
+            PNext = pNext;
+            VertexBindingDivisorCount = vertexBindingDivisorCount;
+            PVertexBindingDivisors = pVertexBindingDivisors;
         }
 
 /// <summary></summary>

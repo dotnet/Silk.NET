@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandPoolCreateInfo")]
-    public unsafe struct CommandPoolCreateInfo
+    public unsafe partial struct CommandPoolCreateInfo
     {
         public CommandPoolCreateInfo
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint queueFamilyIndex = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           QueueFamilyIndex = queueFamilyIndex;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            QueueFamilyIndex = queueFamilyIndex;
         }
 
 /// <summary></summary>

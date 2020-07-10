@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiMeshAnim")]
-    public unsafe struct MeshAnim
+    public unsafe partial struct MeshAnim
     {
         public MeshAnim
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Assimp
             MeshKey* mKeys = default
         )
         {
-           MName = mName;
-           MNumKeys = mNumKeys;
-           MKeys = mKeys;
+            MName = mName;
+            MNumKeys = mNumKeys;
+            MKeys = mKeys;
         }
 
 

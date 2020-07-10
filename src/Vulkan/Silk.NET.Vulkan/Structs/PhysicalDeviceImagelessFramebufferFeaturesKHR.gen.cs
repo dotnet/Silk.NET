@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceImagelessFramebufferFeaturesKHR")]
-    public unsafe struct PhysicalDeviceImagelessFramebufferFeaturesKHR
+    public unsafe partial struct PhysicalDeviceImagelessFramebufferFeaturesKHR
     {
         public PhysicalDeviceImagelessFramebufferFeaturesKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 imagelessFramebuffer = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ImagelessFramebuffer = imagelessFramebuffer;
+            SType = sType;
+            PNext = pNext;
+            ImagelessFramebuffer = imagelessFramebuffer;
         }
 
 /// <summary></summary>

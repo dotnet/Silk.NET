@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPastPresentationTimingGOOGLE")]
-    public unsafe struct PastPresentationTimingGOOGLE
+    public unsafe partial struct PastPresentationTimingGOOGLE
     {
         public PastPresentationTimingGOOGLE
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             ulong presentMargin = default
         )
         {
-           PresentID = presentID;
-           DesiredPresentTime = desiredPresentTime;
-           ActualPresentTime = actualPresentTime;
-           EarliestPresentTime = earliestPresentTime;
-           PresentMargin = presentMargin;
+            PresentID = presentID;
+            DesiredPresentTime = desiredPresentTime;
+            ActualPresentTime = actualPresentTime;
+            EarliestPresentTime = earliestPresentTime;
+            PresentMargin = presentMargin;
         }
 
 /// <summary></summary>

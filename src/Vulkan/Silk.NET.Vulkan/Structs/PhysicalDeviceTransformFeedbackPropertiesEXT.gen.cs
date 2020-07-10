@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceTransformFeedbackPropertiesEXT")]
-    public unsafe struct PhysicalDeviceTransformFeedbackPropertiesEXT
+    public unsafe partial struct PhysicalDeviceTransformFeedbackPropertiesEXT
     {
         public PhysicalDeviceTransformFeedbackPropertiesEXT
         (
@@ -34,18 +34,18 @@ namespace Silk.NET.Vulkan
             Bool32 transformFeedbackDraw = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxTransformFeedbackStreams = maxTransformFeedbackStreams;
-           MaxTransformFeedbackBuffers = maxTransformFeedbackBuffers;
-           MaxTransformFeedbackBufferSize = maxTransformFeedbackBufferSize;
-           MaxTransformFeedbackStreamDataSize = maxTransformFeedbackStreamDataSize;
-           MaxTransformFeedbackBufferDataSize = maxTransformFeedbackBufferDataSize;
-           MaxTransformFeedbackBufferDataStride = maxTransformFeedbackBufferDataStride;
-           TransformFeedbackQueries = transformFeedbackQueries;
-           TransformFeedbackStreamsLinesTriangles = transformFeedbackStreamsLinesTriangles;
-           TransformFeedbackRasterizationStreamSelect = transformFeedbackRasterizationStreamSelect;
-           TransformFeedbackDraw = transformFeedbackDraw;
+            SType = sType;
+            PNext = pNext;
+            MaxTransformFeedbackStreams = maxTransformFeedbackStreams;
+            MaxTransformFeedbackBuffers = maxTransformFeedbackBuffers;
+            MaxTransformFeedbackBufferSize = maxTransformFeedbackBufferSize;
+            MaxTransformFeedbackStreamDataSize = maxTransformFeedbackStreamDataSize;
+            MaxTransformFeedbackBufferDataSize = maxTransformFeedbackBufferDataSize;
+            MaxTransformFeedbackBufferDataStride = maxTransformFeedbackBufferDataStride;
+            TransformFeedbackQueries = transformFeedbackQueries;
+            TransformFeedbackStreamsLinesTriangles = transformFeedbackStreamsLinesTriangles;
+            TransformFeedbackRasterizationStreamSelect = transformFeedbackRasterizationStreamSelect;
+            TransformFeedbackDraw = transformFeedbackDraw;
         }
 
 /// <summary></summary>

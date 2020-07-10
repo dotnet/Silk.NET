@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindVertexBufferIndirectCommandNV")]
-    public unsafe struct BindVertexBufferIndirectCommandNV
+    public unsafe partial struct BindVertexBufferIndirectCommandNV
     {
         public BindVertexBufferIndirectCommandNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint stride = default
         )
         {
-           BufferAddress = bufferAddress;
-           Size = size;
-           Stride = stride;
+            BufferAddress = bufferAddress;
+            Size = size;
+            Stride = stride;
         }
 
 /// <summary></summary>

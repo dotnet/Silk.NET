@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiQuatKey")]
-    public unsafe struct QuatKey
+    public unsafe partial struct QuatKey
     {
         public QuatKey
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Assimp
             System.Numerics.Quaternion mValue = default
         )
         {
-           MTime = mTime;
-           MValue = mValue;
+            MTime = mTime;
+            MValue = mValue;
         }
 
 

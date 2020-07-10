@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceComputeShaderDerivativesFeaturesNV")]
-    public unsafe struct PhysicalDeviceComputeShaderDerivativesFeaturesNV
+    public unsafe partial struct PhysicalDeviceComputeShaderDerivativesFeaturesNV
     {
         public PhysicalDeviceComputeShaderDerivativesFeaturesNV
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Bool32 computeDerivativeGroupLinear = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ComputeDerivativeGroupQuads = computeDerivativeGroupQuads;
-           ComputeDerivativeGroupLinear = computeDerivativeGroupLinear;
+            SType = sType;
+            PNext = pNext;
+            ComputeDerivativeGroupQuads = computeDerivativeGroupQuads;
+            ComputeDerivativeGroupLinear = computeDerivativeGroupLinear;
         }
 
 /// <summary></summary>

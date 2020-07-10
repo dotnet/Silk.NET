@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryHostPointerPropertiesEXT")]
-    public unsafe struct MemoryHostPointerPropertiesEXT
+    public unsafe partial struct MemoryHostPointerPropertiesEXT
     {
         public MemoryHostPointerPropertiesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint memoryTypeBits = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MemoryTypeBits = memoryTypeBits;
+            SType = sType;
+            PNext = pNext;
+            MemoryTypeBits = memoryTypeBits;
         }
 
 /// <summary></summary>

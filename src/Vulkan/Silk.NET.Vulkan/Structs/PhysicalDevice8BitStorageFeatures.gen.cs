@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevice8BitStorageFeatures")]
-    public unsafe struct PhysicalDevice8BitStorageFeatures
+    public unsafe partial struct PhysicalDevice8BitStorageFeatures
     {
         public PhysicalDevice8BitStorageFeatures
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             Bool32 storagePushConstant8 = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           StorageBuffer8BitAccess = storageBuffer8BitAccess;
-           UniformAndStorageBuffer8BitAccess = uniformAndStorageBuffer8BitAccess;
-           StoragePushConstant8 = storagePushConstant8;
+            SType = sType;
+            PNext = pNext;
+            StorageBuffer8BitAccess = storageBuffer8BitAccess;
+            UniformAndStorageBuffer8BitAccess = uniformAndStorageBuffer8BitAccess;
+            StoragePushConstant8 = storagePushConstant8;
         }
 
 /// <summary></summary>

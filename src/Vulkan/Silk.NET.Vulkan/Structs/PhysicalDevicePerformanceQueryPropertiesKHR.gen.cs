@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePerformanceQueryPropertiesKHR")]
-    public unsafe struct PhysicalDevicePerformanceQueryPropertiesKHR
+    public unsafe partial struct PhysicalDevicePerformanceQueryPropertiesKHR
     {
         public PhysicalDevicePerformanceQueryPropertiesKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 allowCommandBufferQueryCopies = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           AllowCommandBufferQueryCopies = allowCommandBufferQueryCopies;
+            SType = sType;
+            PNext = pNext;
+            AllowCommandBufferQueryCopies = allowCommandBufferQueryCopies;
         }
 
 /// <summary></summary>

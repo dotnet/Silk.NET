@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBaseOutStructure")]
-    public unsafe struct BaseOutStructure
+    public unsafe partial struct BaseOutStructure
     {
         public BaseOutStructure
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             BaseOutStructure* pNext = default
         )
         {
-           SType = sType;
-           PNext = pNext;
+            SType = sType;
+            PNext = pNext;
         }
 
 /// <summary></summary>

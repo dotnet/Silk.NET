@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindImageMemoryInfo")]
-    public unsafe struct BindImageMemoryInfo
+    public unsafe partial struct BindImageMemoryInfo
     {
         public BindImageMemoryInfo
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             ulong memoryOffset = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Image = image;
-           Memory = memory;
-           MemoryOffset = memoryOffset;
+            SType = sType;
+            PNext = pNext;
+            Image = image;
+            Memory = memory;
+            MemoryOffset = memoryOffset;
         }
 
 /// <summary></summary>

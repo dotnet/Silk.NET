@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSemaphoreSignalInfo")]
-    public unsafe struct SemaphoreSignalInfo
+    public unsafe partial struct SemaphoreSignalInfo
     {
         public SemaphoreSignalInfo
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             ulong value = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Semaphore = semaphore;
-           Value = value;
+            SType = sType;
+            PNext = pNext;
+            Semaphore = semaphore;
+            Value = value;
         }
 
 /// <summary></summary>

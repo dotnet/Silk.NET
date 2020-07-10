@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceMemoryProperties2KHR")]
-    public unsafe struct PhysicalDeviceMemoryProperties2KHR
+    public unsafe partial struct PhysicalDeviceMemoryProperties2KHR
     {
         public PhysicalDeviceMemoryProperties2KHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             PhysicalDeviceMemoryProperties memoryProperties = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MemoryProperties = memoryProperties;
+            SType = sType;
+            PNext = pNext;
+            MemoryProperties = memoryProperties;
         }
 
 /// <summary></summary>

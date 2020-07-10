@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPushConstantRange")]
-    public unsafe struct PushConstantRange
+    public unsafe partial struct PushConstantRange
     {
         public PushConstantRange
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint size = default
         )
         {
-           StageFlags = stageFlags;
-           Offset = offset;
-           Size = size;
+            StageFlags = stageFlags;
+            Offset = offset;
+            Size = size;
         }
 
 /// <summary></summary>

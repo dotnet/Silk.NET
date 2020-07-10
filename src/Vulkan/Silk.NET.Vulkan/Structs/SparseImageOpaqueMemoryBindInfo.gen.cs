@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSparseImageOpaqueMemoryBindInfo")]
-    public unsafe struct SparseImageOpaqueMemoryBindInfo
+    public unsafe partial struct SparseImageOpaqueMemoryBindInfo
     {
         public SparseImageOpaqueMemoryBindInfo
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             SparseMemoryBind* pBinds = default
         )
         {
-           Image = image;
-           BindCount = bindCount;
-           PBinds = pBinds;
+            Image = image;
+            BindCount = bindCount;
+            PBinds = pBinds;
         }
 
 /// <summary></summary>

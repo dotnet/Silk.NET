@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerYcbcrConversionInfoKHR")]
-    public unsafe struct SamplerYcbcrConversionInfoKHR
+    public unsafe partial struct SamplerYcbcrConversionInfoKHR
     {
         public SamplerYcbcrConversionInfoKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             SamplerYcbcrConversion conversion = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Conversion = conversion;
+            SType = sType;
+            PNext = pNext;
+            Conversion = conversion;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSamplerYcbcrConversionFeatures")]
-    public unsafe struct PhysicalDeviceSamplerYcbcrConversionFeatures
+    public unsafe partial struct PhysicalDeviceSamplerYcbcrConversionFeatures
     {
         public PhysicalDeviceSamplerYcbcrConversionFeatures
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 samplerYcbcrConversion = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SamplerYcbcrConversion = samplerYcbcrConversion;
+            SType = sType;
+            PNext = pNext;
+            SamplerYcbcrConversion = samplerYcbcrConversion;
         }
 
 /// <summary></summary>

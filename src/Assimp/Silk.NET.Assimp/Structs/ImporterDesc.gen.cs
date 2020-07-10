@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiImporterDesc")]
-    public unsafe struct ImporterDesc
+    public unsafe partial struct ImporterDesc
     {
         public ImporterDesc
         (
@@ -32,16 +32,16 @@ namespace Silk.NET.Assimp
             byte* mFileExtensions = default
         )
         {
-           MName = mName;
-           MAuthor = mAuthor;
-           MMaintainer = mMaintainer;
-           MComments = mComments;
-           MFlags = mFlags;
-           MMinMajor = mMinMajor;
-           MMinMinor = mMinMinor;
-           MMaxMajor = mMaxMajor;
-           MMaxMinor = mMaxMinor;
-           MFileExtensions = mFileExtensions;
+            MName = mName;
+            MAuthor = mAuthor;
+            MMaintainer = mMaintainer;
+            MComments = mComments;
+            MFlags = mFlags;
+            MMinMajor = mMinMajor;
+            MMinMinor = mMinMinor;
+            MMaxMajor = mMaxMajor;
+            MMaxMinor = mMaxMinor;
+            MFileExtensions = mFileExtensions;
         }
 
 

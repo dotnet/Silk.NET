@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRayTracingShaderGroupCreateInfoKHR")]
-    public unsafe struct RayTracingShaderGroupCreateInfoKHR
+    public unsafe partial struct RayTracingShaderGroupCreateInfoKHR
     {
         public RayTracingShaderGroupCreateInfoKHR
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Vulkan
             void* pShaderGroupCaptureReplayHandle = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Type = type;
-           GeneralShader = generalShader;
-           ClosestHitShader = closestHitShader;
-           AnyHitShader = anyHitShader;
-           IntersectionShader = intersectionShader;
-           PShaderGroupCaptureReplayHandle = pShaderGroupCaptureReplayHandle;
+            SType = sType;
+            PNext = pNext;
+            Type = type;
+            GeneralShader = generalShader;
+            ClosestHitShader = closestHitShader;
+            AnyHitShader = anyHitShader;
+            IntersectionShader = intersectionShader;
+            PShaderGroupCaptureReplayHandle = pShaderGroupCaptureReplayHandle;
         }
 
 /// <summary></summary>

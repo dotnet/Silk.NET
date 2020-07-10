@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkTraceRaysIndirectCommandKHR")]
-    public unsafe struct TraceRaysIndirectCommandKHR
+    public unsafe partial struct TraceRaysIndirectCommandKHR
     {
         public TraceRaysIndirectCommandKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint depth = default
         )
         {
-           Width = width;
-           Height = height;
-           Depth = depth;
+            Width = width;
+            Height = height;
+            Depth = depth;
         }
 
 /// <summary></summary>

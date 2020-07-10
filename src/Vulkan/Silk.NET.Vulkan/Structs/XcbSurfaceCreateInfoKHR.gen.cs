@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkXcbSurfaceCreateInfoKHR")]
-    public unsafe struct XcbSurfaceCreateInfoKHR
+    public unsafe partial struct XcbSurfaceCreateInfoKHR
     {
         public XcbSurfaceCreateInfoKHR
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             IntPtr window = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Connection = connection;
-           Window = window;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Connection = connection;
+            Window = window;
         }
 
 /// <summary></summary>

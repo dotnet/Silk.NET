@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiPropertyStore")]
-    public unsafe struct PropertyStore
+    public unsafe partial struct PropertyStore
     {
         public PropertyStore
         (
             byte sentinel = default
         )
         {
-           Sentinel = sentinel;
+            Sentinel = sentinel;
         }
 
 

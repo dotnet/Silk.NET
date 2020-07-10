@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiMesh")]
-    public unsafe struct Mesh
+    public unsafe partial struct Mesh
     {
         public Mesh
         (
@@ -38,13 +38,13 @@ namespace Silk.NET.Assimp
             AABB mAABB = default
         )
         {
-           MPrimitiveTypes = mPrimitiveTypes;
-           MNumVertices = mNumVertices;
-           MNumFaces = mNumFaces;
-           MVertices = mVertices;
-           MNormals = mNormals;
-           MTangents = mTangents;
-           MBitangents = mBitangents;
+            MPrimitiveTypes = mPrimitiveTypes;
+            MNumVertices = mNumVertices;
+            MNumFaces = mNumFaces;
+            MVertices = mVertices;
+            MNormals = mNormals;
+            MTangents = mTangents;
+            MBitangents = mBitangents;
            MColors_0 = default;
            MColors_1 = default;
            MColors_2 = default;
@@ -61,15 +61,15 @@ namespace Silk.NET.Assimp
            MTextureCoords_5 = default;
            MTextureCoords_6 = default;
            MTextureCoords_7 = default;
-           MFaces = mFaces;
-           MNumBones = mNumBones;
-           MBones = mBones;
-           MMaterialIndex = mMaterialIndex;
-           MName = mName;
-           MNumAnimMeshes = mNumAnimMeshes;
-           MAnimMeshes = mAnimMeshes;
-           MMethod = mMethod;
-           MAABB = mAABB;
+            MFaces = mFaces;
+            MNumBones = mNumBones;
+            MBones = mBones;
+            MMaterialIndex = mMaterialIndex;
+            MName = mName;
+            MNumAnimMeshes = mNumAnimMeshes;
+            MAnimMeshes = mAnimMeshes;
+            MMethod = mMethod;
+            MAABB = mAABB;
         }
 
 

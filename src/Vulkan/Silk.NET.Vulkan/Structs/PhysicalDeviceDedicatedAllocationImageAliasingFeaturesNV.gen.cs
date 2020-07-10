@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV")]
-    public unsafe struct PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV
+    public unsafe partial struct PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV
     {
         public PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 dedicatedAllocationImageAliasing = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DedicatedAllocationImageAliasing = dedicatedAllocationImageAliasing;
+            SType = sType;
+            PNext = pNext;
+            DedicatedAllocationImageAliasing = dedicatedAllocationImageAliasing;
         }
 
 /// <summary></summary>

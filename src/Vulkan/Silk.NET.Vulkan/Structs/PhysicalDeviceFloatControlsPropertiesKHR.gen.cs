@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceFloatControlsPropertiesKHR")]
-    public unsafe struct PhysicalDeviceFloatControlsPropertiesKHR
+    public unsafe partial struct PhysicalDeviceFloatControlsPropertiesKHR
     {
         public PhysicalDeviceFloatControlsPropertiesKHR
         (
@@ -41,25 +41,25 @@ namespace Silk.NET.Vulkan
             Bool32 shaderRoundingModeRtzfloat64 = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DenormBehaviorIndependence = denormBehaviorIndependence;
-           RoundingModeIndependence = roundingModeIndependence;
-           ShaderSignedZeroInfNanPreserveFloat16 = shaderSignedZeroInfNanPreserveFloat16;
-           ShaderSignedZeroInfNanPreserveFloat32 = shaderSignedZeroInfNanPreserveFloat32;
-           ShaderSignedZeroInfNanPreserveFloat64 = shaderSignedZeroInfNanPreserveFloat64;
-           ShaderDenormPreserveFloat16 = shaderDenormPreserveFloat16;
-           ShaderDenormPreserveFloat32 = shaderDenormPreserveFloat32;
-           ShaderDenormPreserveFloat64 = shaderDenormPreserveFloat64;
-           ShaderDenormFlushToZeroFloat16 = shaderDenormFlushToZeroFloat16;
-           ShaderDenormFlushToZeroFloat32 = shaderDenormFlushToZeroFloat32;
-           ShaderDenormFlushToZeroFloat64 = shaderDenormFlushToZeroFloat64;
-           ShaderRoundingModeRtefloat16 = shaderRoundingModeRtefloat16;
-           ShaderRoundingModeRtefloat32 = shaderRoundingModeRtefloat32;
-           ShaderRoundingModeRtefloat64 = shaderRoundingModeRtefloat64;
-           ShaderRoundingModeRtzfloat16 = shaderRoundingModeRtzfloat16;
-           ShaderRoundingModeRtzfloat32 = shaderRoundingModeRtzfloat32;
-           ShaderRoundingModeRtzfloat64 = shaderRoundingModeRtzfloat64;
+            SType = sType;
+            PNext = pNext;
+            DenormBehaviorIndependence = denormBehaviorIndependence;
+            RoundingModeIndependence = roundingModeIndependence;
+            ShaderSignedZeroInfNanPreserveFloat16 = shaderSignedZeroInfNanPreserveFloat16;
+            ShaderSignedZeroInfNanPreserveFloat32 = shaderSignedZeroInfNanPreserveFloat32;
+            ShaderSignedZeroInfNanPreserveFloat64 = shaderSignedZeroInfNanPreserveFloat64;
+            ShaderDenormPreserveFloat16 = shaderDenormPreserveFloat16;
+            ShaderDenormPreserveFloat32 = shaderDenormPreserveFloat32;
+            ShaderDenormPreserveFloat64 = shaderDenormPreserveFloat64;
+            ShaderDenormFlushToZeroFloat16 = shaderDenormFlushToZeroFloat16;
+            ShaderDenormFlushToZeroFloat32 = shaderDenormFlushToZeroFloat32;
+            ShaderDenormFlushToZeroFloat64 = shaderDenormFlushToZeroFloat64;
+            ShaderRoundingModeRtefloat16 = shaderRoundingModeRtefloat16;
+            ShaderRoundingModeRtefloat32 = shaderRoundingModeRtefloat32;
+            ShaderRoundingModeRtefloat64 = shaderRoundingModeRtefloat64;
+            ShaderRoundingModeRtzfloat16 = shaderRoundingModeRtzfloat16;
+            ShaderRoundingModeRtzfloat32 = shaderRoundingModeRtzfloat32;
+            ShaderRoundingModeRtzfloat64 = shaderRoundingModeRtzfloat64;
         }
 
 /// <summary></summary>

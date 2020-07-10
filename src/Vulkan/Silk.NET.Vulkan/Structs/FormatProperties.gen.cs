@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFormatProperties")]
-    public unsafe struct FormatProperties
+    public unsafe partial struct FormatProperties
     {
         public FormatProperties
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             FormatFeatureFlags bufferFeatures = default
         )
         {
-           LinearTilingFeatures = linearTilingFeatures;
-           OptimalTilingFeatures = optimalTilingFeatures;
-           BufferFeatures = bufferFeatures;
+            LinearTilingFeatures = linearTilingFeatures;
+            OptimalTilingFeatures = optimalTilingFeatures;
+            BufferFeatures = bufferFeatures;
         }
 
 /// <summary></summary>

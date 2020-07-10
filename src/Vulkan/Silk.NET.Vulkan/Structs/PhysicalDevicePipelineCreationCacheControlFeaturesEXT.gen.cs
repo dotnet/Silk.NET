@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePipelineCreationCacheControlFeaturesEXT")]
-    public unsafe struct PhysicalDevicePipelineCreationCacheControlFeaturesEXT
+    public unsafe partial struct PhysicalDevicePipelineCreationCacheControlFeaturesEXT
     {
         public PhysicalDevicePipelineCreationCacheControlFeaturesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 pipelineCreationCacheControl = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PipelineCreationCacheControl = pipelineCreationCacheControl;
+            SType = sType;
+            PNext = pNext;
+            PipelineCreationCacheControl = pipelineCreationCacheControl;
         }
 
 /// <summary></summary>

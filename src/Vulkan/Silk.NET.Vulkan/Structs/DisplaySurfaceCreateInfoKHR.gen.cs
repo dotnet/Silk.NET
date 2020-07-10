@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplaySurfaceCreateInfoKHR")]
-    public unsafe struct DisplaySurfaceCreateInfoKHR
+    public unsafe partial struct DisplaySurfaceCreateInfoKHR
     {
         public DisplaySurfaceCreateInfoKHR
         (
@@ -32,16 +32,16 @@ namespace Silk.NET.Vulkan
             Extent2D imageExtent = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           DisplayMode = displayMode;
-           PlaneIndex = planeIndex;
-           PlaneStackIndex = planeStackIndex;
-           Transform = transform;
-           GlobalAlpha = globalAlpha;
-           AlphaMode = alphaMode;
-           ImageExtent = imageExtent;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            DisplayMode = displayMode;
+            PlaneIndex = planeIndex;
+            PlaneStackIndex = planeStackIndex;
+            Transform = transform;
+            GlobalAlpha = globalAlpha;
+            AlphaMode = alphaMode;
+            ImageExtent = imageExtent;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceLineRasterizationFeaturesEXT")]
-    public unsafe struct PhysicalDeviceLineRasterizationFeaturesEXT
+    public unsafe partial struct PhysicalDeviceLineRasterizationFeaturesEXT
     {
         public PhysicalDeviceLineRasterizationFeaturesEXT
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Vulkan
             Bool32 stippledSmoothLines = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           RectangularLines = rectangularLines;
-           BresenhamLines = bresenhamLines;
-           SmoothLines = smoothLines;
-           StippledRectangularLines = stippledRectangularLines;
-           StippledBresenhamLines = stippledBresenhamLines;
-           StippledSmoothLines = stippledSmoothLines;
+            SType = sType;
+            PNext = pNext;
+            RectangularLines = rectangularLines;
+            BresenhamLines = bresenhamLines;
+            SmoothLines = smoothLines;
+            StippledRectangularLines = stippledRectangularLines;
+            StippledBresenhamLines = stippledBresenhamLines;
+            StippledSmoothLines = stippledSmoothLines;
         }
 
 /// <summary></summary>

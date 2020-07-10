@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageDrmFormatModifierExplicitCreateInfoEXT")]
-    public unsafe struct ImageDrmFormatModifierExplicitCreateInfoEXT
+    public unsafe partial struct ImageDrmFormatModifierExplicitCreateInfoEXT
     {
         public ImageDrmFormatModifierExplicitCreateInfoEXT
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             SubresourceLayout* pPlaneLayouts = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DrmFormatModifier = drmFormatModifier;
-           DrmFormatModifierPlaneCount = drmFormatModifierPlaneCount;
-           PPlaneLayouts = pPlaneLayouts;
+            SType = sType;
+            PNext = pNext;
+            DrmFormatModifier = drmFormatModifier;
+            DrmFormatModifierPlaneCount = drmFormatModifierPlaneCount;
+            PPlaneLayouts = pPlaneLayouts;
         }
 
 /// <summary></summary>

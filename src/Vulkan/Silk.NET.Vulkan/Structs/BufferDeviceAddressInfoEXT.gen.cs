@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferDeviceAddressInfoEXT")]
-    public unsafe struct BufferDeviceAddressInfoEXT
+    public unsafe partial struct BufferDeviceAddressInfoEXT
     {
         public BufferDeviceAddressInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Buffer buffer = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Buffer = buffer;
+            SType = sType;
+            PNext = pNext;
+            Buffer = buffer;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceProperties")]
-    public unsafe struct PhysicalDeviceProperties
+    public unsafe partial struct PhysicalDeviceProperties
     {
         public PhysicalDeviceProperties
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             PhysicalDeviceSparseProperties sparseProperties = default
         )
         {
-           ApiVersion = apiVersion;
-           DriverVersion = driverVersion;
-           VendorID = vendorID;
-           DeviceID = deviceID;
-           DeviceType = deviceType;
-           Limits = limits;
-           SparseProperties = sparseProperties;
+            ApiVersion = apiVersion;
+            DriverVersion = driverVersion;
+            VendorID = vendorID;
+            DeviceID = deviceID;
+            DeviceType = deviceType;
+            Limits = limits;
+            SparseProperties = sparseProperties;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMultisamplePropertiesEXT")]
-    public unsafe struct MultisamplePropertiesEXT
+    public unsafe partial struct MultisamplePropertiesEXT
     {
         public MultisamplePropertiesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Extent2D maxSampleLocationGridSize = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxSampleLocationGridSize = maxSampleLocationGridSize;
+            SType = sType;
+            PNext = pNext;
+            MaxSampleLocationGridSize = maxSampleLocationGridSize;
         }
 
 /// <summary></summary>

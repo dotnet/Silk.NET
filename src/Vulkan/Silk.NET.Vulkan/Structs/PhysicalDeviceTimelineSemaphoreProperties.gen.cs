@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceTimelineSemaphoreProperties")]
-    public unsafe struct PhysicalDeviceTimelineSemaphoreProperties
+    public unsafe partial struct PhysicalDeviceTimelineSemaphoreProperties
     {
         public PhysicalDeviceTimelineSemaphoreProperties
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ulong maxTimelineSemaphoreValueDifference = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MaxTimelineSemaphoreValueDifference = maxTimelineSemaphoreValueDifference;
+            SType = sType;
+            PNext = pNext;
+            MaxTimelineSemaphoreValueDifference = maxTimelineSemaphoreValueDifference;
         }
 
 /// <summary></summary>

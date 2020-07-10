@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassInputAttachmentAspectCreateInfoKHR")]
-    public unsafe struct RenderPassInputAttachmentAspectCreateInfoKHR
+    public unsafe partial struct RenderPassInputAttachmentAspectCreateInfoKHR
     {
         public RenderPassInputAttachmentAspectCreateInfoKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             InputAttachmentAspectReference* pAspectReferences = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           AspectReferenceCount = aspectReferenceCount;
-           PAspectReferences = pAspectReferences;
+            SType = sType;
+            PNext = pNext;
+            AspectReferenceCount = aspectReferenceCount;
+            PAspectReferences = pAspectReferences;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVertexInputBindingDivisorDescriptionEXT")]
-    public unsafe struct VertexInputBindingDivisorDescriptionEXT
+    public unsafe partial struct VertexInputBindingDivisorDescriptionEXT
     {
         public VertexInputBindingDivisorDescriptionEXT
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             uint divisor = default
         )
         {
-           Binding = binding;
-           Divisor = divisor;
+            Binding = binding;
+            Divisor = divisor;
         }
 
 /// <summary></summary>

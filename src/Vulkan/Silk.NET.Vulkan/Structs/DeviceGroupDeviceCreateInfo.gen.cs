@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceGroupDeviceCreateInfo")]
-    public unsafe struct DeviceGroupDeviceCreateInfo
+    public unsafe partial struct DeviceGroupDeviceCreateInfo
     {
         public DeviceGroupDeviceCreateInfo
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             PhysicalDevice* pPhysicalDevices = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PhysicalDeviceCount = physicalDeviceCount;
-           PPhysicalDevices = pPhysicalDevices;
+            SType = sType;
+            PNext = pNext;
+            PhysicalDeviceCount = physicalDeviceCount;
+            PPhysicalDevices = pPhysicalDevices;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassMultiviewCreateInfoKHR")]
-    public unsafe struct RenderPassMultiviewCreateInfoKHR
+    public unsafe partial struct RenderPassMultiviewCreateInfoKHR
     {
         public RenderPassMultiviewCreateInfoKHR
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Vulkan
             uint* pCorrelationMasks = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SubpassCount = subpassCount;
-           PViewMasks = pViewMasks;
-           DependencyCount = dependencyCount;
-           PViewOffsets = pViewOffsets;
-           CorrelationMaskCount = correlationMaskCount;
-           PCorrelationMasks = pCorrelationMasks;
+            SType = sType;
+            PNext = pNext;
+            SubpassCount = subpassCount;
+            PViewMasks = pViewMasks;
+            DependencyCount = dependencyCount;
+            PViewOffsets = pViewOffsets;
+            CorrelationMaskCount = correlationMaskCount;
+            PCorrelationMasks = pCorrelationMasks;
         }
 
 /// <summary></summary>

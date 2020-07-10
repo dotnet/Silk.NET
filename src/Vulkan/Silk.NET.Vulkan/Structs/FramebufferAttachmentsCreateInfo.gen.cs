@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFramebufferAttachmentsCreateInfo")]
-    public unsafe struct FramebufferAttachmentsCreateInfo
+    public unsafe partial struct FramebufferAttachmentsCreateInfo
     {
         public FramebufferAttachmentsCreateInfo
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             FramebufferAttachmentImageInfo* pAttachmentImageInfos = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           AttachmentImageInfoCount = attachmentImageInfoCount;
-           PAttachmentImageInfos = pAttachmentImageInfos;
+            SType = sType;
+            PNext = pNext;
+            AttachmentImageInfoCount = attachmentImageInfoCount;
+            PAttachmentImageInfos = pAttachmentImageInfos;
         }
 
 /// <summary></summary>

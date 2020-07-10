@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineSampleLocationsStateCreateInfoEXT")]
-    public unsafe struct PipelineSampleLocationsStateCreateInfoEXT
+    public unsafe partial struct PipelineSampleLocationsStateCreateInfoEXT
     {
         public PipelineSampleLocationsStateCreateInfoEXT
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             SampleLocationsInfoEXT sampleLocationsInfo = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SampleLocationsEnable = sampleLocationsEnable;
-           SampleLocationsInfo = sampleLocationsInfo;
+            SType = sType;
+            PNext = pNext;
+            SampleLocationsEnable = sampleLocationsEnable;
+            SampleLocationsInfo = sampleLocationsInfo;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiTexel")]
-    public unsafe struct Texel
+    public unsafe partial struct Texel
     {
         public Texel
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Assimp
             byte a = default
         )
         {
-           B = b;
-           G = g;
-           R = r;
-           A = a;
+            B = b;
+            G = g;
+            R = r;
+            A = a;
         }
 
 

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassEndInfoKHR")]
-    public unsafe struct SubpassEndInfoKHR
+    public unsafe partial struct SubpassEndInfoKHR
     {
         public SubpassEndInfoKHR
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             void* pNext = default
         )
         {
-           SType = sType;
-           PNext = pNext;
+            SType = sType;
+            PNext = pNext;
         }
 
 /// <summary></summary>

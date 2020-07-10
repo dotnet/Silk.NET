@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDrawIndirectCommand")]
-    public unsafe struct DrawIndirectCommand
+    public unsafe partial struct DrawIndirectCommand
     {
         public DrawIndirectCommand
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint firstInstance = default
         )
         {
-           VertexCount = vertexCount;
-           InstanceCount = instanceCount;
-           FirstVertex = firstVertex;
-           FirstInstance = firstInstance;
+            VertexCount = vertexCount;
+            InstanceCount = instanceCount;
+            FirstVertex = firstVertex;
+            FirstInstance = firstInstance;
         }
 
 /// <summary></summary>

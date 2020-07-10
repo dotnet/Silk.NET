@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureCreateInfoNV")]
-    public unsafe struct AccelerationStructureCreateInfoNV
+    public unsafe partial struct AccelerationStructureCreateInfoNV
     {
         public AccelerationStructureCreateInfoNV
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             AccelerationStructureInfoNV info = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           CompactedSize = compactedSize;
-           Info = info;
+            SType = sType;
+            PNext = pNext;
+            CompactedSize = compactedSize;
+            Info = info;
         }
 
 /// <summary></summary>

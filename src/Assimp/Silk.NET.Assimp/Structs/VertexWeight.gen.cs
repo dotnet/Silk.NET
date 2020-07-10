@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiVertexWeight")]
-    public unsafe struct VertexWeight
+    public unsafe partial struct VertexWeight
     {
         public VertexWeight
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Assimp
             float mWeight = default
         )
         {
-           MVertexId = mVertexId;
-           MWeight = mWeight;
+            MVertexId = mVertexId;
+            MWeight = mWeight;
         }
 
 

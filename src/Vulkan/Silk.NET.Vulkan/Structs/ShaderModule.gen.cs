@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkShaderModule")]
-    public unsafe struct ShaderModule
+    public unsafe partial struct ShaderModule
     {
         public ShaderModule
         (
             ulong handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

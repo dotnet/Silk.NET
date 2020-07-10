@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureBuildGeometryInfoKHR")]
-    public unsafe struct AccelerationStructureBuildGeometryInfoKHR
+    public unsafe partial struct AccelerationStructureBuildGeometryInfoKHR
     {
         public AccelerationStructureBuildGeometryInfoKHR
         (
@@ -33,17 +33,17 @@ namespace Silk.NET.Vulkan
             DeviceOrHostAddressKHR scratchData = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Type = type;
-           Flags = flags;
-           Update = update;
-           SrcAccelerationStructure = srcAccelerationStructure;
-           DstAccelerationStructure = dstAccelerationStructure;
-           GeometryArrayOfPointers = geometryArrayOfPointers;
-           GeometryCount = geometryCount;
-           PpGeometries = ppGeometries;
-           ScratchData = scratchData;
+            SType = sType;
+            PNext = pNext;
+            Type = type;
+            Flags = flags;
+            Update = update;
+            SrcAccelerationStructure = srcAccelerationStructure;
+            DstAccelerationStructure = dstAccelerationStructure;
+            GeometryArrayOfPointers = geometryArrayOfPointers;
+            GeometryCount = geometryCount;
+            PpGeometries = ppGeometries;
+            ScratchData = scratchData;
         }
 
 /// <summary></summary>

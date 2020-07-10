@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCalibratedTimestampInfoEXT")]
-    public unsafe struct CalibratedTimestampInfoEXT
+    public unsafe partial struct CalibratedTimestampInfoEXT
     {
         public CalibratedTimestampInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             TimeDomainEXT timeDomain = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           TimeDomain = timeDomain;
+            SType = sType;
+            PNext = pNext;
+            TimeDomain = timeDomain;
         }
 
 /// <summary></summary>

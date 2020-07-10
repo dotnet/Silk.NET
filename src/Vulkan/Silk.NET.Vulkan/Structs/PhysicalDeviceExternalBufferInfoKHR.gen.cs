@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceExternalBufferInfoKHR")]
-    public unsafe struct PhysicalDeviceExternalBufferInfoKHR
+    public unsafe partial struct PhysicalDeviceExternalBufferInfoKHR
     {
         public PhysicalDeviceExternalBufferInfoKHR
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             ExternalMemoryHandleTypeFlags handleType = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Usage = usage;
-           HandleType = handleType;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Usage = usage;
+            HandleType = handleType;
         }
 
 /// <summary></summary>

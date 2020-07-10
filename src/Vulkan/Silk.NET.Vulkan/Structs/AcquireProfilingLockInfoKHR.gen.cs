@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAcquireProfilingLockInfoKHR")]
-    public unsafe struct AcquireProfilingLockInfoKHR
+    public unsafe partial struct AcquireProfilingLockInfoKHR
     {
         public AcquireProfilingLockInfoKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             ulong timeout = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Timeout = timeout;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Timeout = timeout;
         }
 
 /// <summary></summary>

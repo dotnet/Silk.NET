@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMetalSurfaceCreateInfoEXT")]
-    public unsafe struct MetalSurfaceCreateInfoEXT
+    public unsafe partial struct MetalSurfaceCreateInfoEXT
     {
         public MetalSurfaceCreateInfoEXT
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             IntPtr* pLayer = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           PLayer = pLayer;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            PLayer = pLayer;
         }
 
 /// <summary></summary>

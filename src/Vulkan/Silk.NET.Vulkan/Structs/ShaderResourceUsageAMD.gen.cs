@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkShaderResourceUsageAMD")]
-    public unsafe struct ShaderResourceUsageAMD
+    public unsafe partial struct ShaderResourceUsageAMD
     {
         public ShaderResourceUsageAMD
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             UIntPtr scratchMemUsageInBytes = default
         )
         {
-           NumUsedVgprs = numUsedVgprs;
-           NumUsedSgprs = numUsedSgprs;
-           LdsSizePerLocalWorkGroup = ldsSizePerLocalWorkGroup;
-           LdsUsageSizeInBytes = ldsUsageSizeInBytes;
-           ScratchMemUsageInBytes = scratchMemUsageInBytes;
+            NumUsedVgprs = numUsedVgprs;
+            NumUsedSgprs = numUsedSgprs;
+            LdsSizePerLocalWorkGroup = ldsSizePerLocalWorkGroup;
+            LdsUsageSizeInBytes = ldsUsageSizeInBytes;
+            ScratchMemUsageInBytes = scratchMemUsageInBytes;
         }
 
 /// <summary></summary>

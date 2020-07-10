@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAndroidSurfaceCreateInfoKHR")]
-    public unsafe struct AndroidSurfaceCreateInfoKHR
+    public unsafe partial struct AndroidSurfaceCreateInfoKHR
     {
         public AndroidSurfaceCreateInfoKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             IntPtr* window = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Window = window;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Window = window;
         }
 
 /// <summary></summary>

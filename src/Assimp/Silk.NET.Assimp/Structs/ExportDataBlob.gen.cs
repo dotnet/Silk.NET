@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiExportDataBlob")]
-    public unsafe struct ExportDataBlob
+    public unsafe partial struct ExportDataBlob
     {
         public ExportDataBlob
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Assimp
             ExportDataBlob* next = default
         )
         {
-           Size = size;
-           Data = data;
-           Name = name;
-           Next = next;
+            Size = size;
+            Data = data;
+            Name = name;
+            Next = next;
         }
 
 

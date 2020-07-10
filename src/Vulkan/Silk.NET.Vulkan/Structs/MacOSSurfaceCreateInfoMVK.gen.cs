@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMacOSSurfaceCreateInfoMVK")]
-    public unsafe struct MacOSSurfaceCreateInfoMVK
+    public unsafe partial struct MacOSSurfaceCreateInfoMVK
     {
         public MacOSSurfaceCreateInfoMVK
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             void* pView = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           PView = pView;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            PView = pView;
         }
 
 /// <summary></summary>

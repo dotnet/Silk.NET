@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceCoverageReductionModeFeaturesNV")]
-    public unsafe struct PhysicalDeviceCoverageReductionModeFeaturesNV
+    public unsafe partial struct PhysicalDeviceCoverageReductionModeFeaturesNV
     {
         public PhysicalDeviceCoverageReductionModeFeaturesNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 coverageReductionMode = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           CoverageReductionMode = coverageReductionMode;
+            SType = sType;
+            PNext = pNext;
+            CoverageReductionMode = coverageReductionMode;
         }
 
 /// <summary></summary>

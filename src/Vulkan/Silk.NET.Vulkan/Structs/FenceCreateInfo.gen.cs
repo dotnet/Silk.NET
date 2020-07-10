@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFenceCreateInfo")]
-    public unsafe struct FenceCreateInfo
+    public unsafe partial struct FenceCreateInfo
     {
         public FenceCreateInfo
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             FenceCreateFlags flags = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
         }
 
 /// <summary></summary>

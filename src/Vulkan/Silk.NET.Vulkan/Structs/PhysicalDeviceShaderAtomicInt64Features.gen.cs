@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceShaderAtomicInt64Features")]
-    public unsafe struct PhysicalDeviceShaderAtomicInt64Features
+    public unsafe partial struct PhysicalDeviceShaderAtomicInt64Features
     {
         public PhysicalDeviceShaderAtomicInt64Features
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             Bool32 shaderSharedInt64Atomics = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ShaderBufferInt64Atomics = shaderBufferInt64Atomics;
-           ShaderSharedInt64Atomics = shaderSharedInt64Atomics;
+            SType = sType;
+            PNext = pNext;
+            ShaderBufferInt64Atomics = shaderBufferInt64Atomics;
+            ShaderSharedInt64Atomics = shaderSharedInt64Atomics;
         }
 
 /// <summary></summary>

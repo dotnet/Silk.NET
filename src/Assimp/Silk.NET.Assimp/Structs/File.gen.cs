@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiFile")]
-    public unsafe struct File
+    public unsafe partial struct File
     {
         public File
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Assimp
             byte* userData = default
         )
         {
-           ReadProc = readProc;
-           WriteProc = writeProc;
-           TellProc = tellProc;
-           FileSizeProc = fileSizeProc;
-           SeekProc = seekProc;
-           FlushProc = flushProc;
-           UserData = userData;
+            ReadProc = readProc;
+            WriteProc = writeProc;
+            TellProc = tellProc;
+            FileSizeProc = fileSizeProc;
+            SeekProc = seekProc;
+            FlushProc = flushProc;
+            UserData = userData;
         }
 
 

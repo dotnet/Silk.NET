@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferInheritanceInfo")]
-    public unsafe struct CommandBufferInheritanceInfo
+    public unsafe partial struct CommandBufferInheritanceInfo
     {
         public CommandBufferInheritanceInfo
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Vulkan
             QueryPipelineStatisticFlags pipelineStatistics = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           RenderPass = renderPass;
-           Subpass = subpass;
-           Framebuffer = framebuffer;
-           OcclusionQueryEnable = occlusionQueryEnable;
-           QueryFlags = queryFlags;
-           PipelineStatistics = pipelineStatistics;
+            SType = sType;
+            PNext = pNext;
+            RenderPass = renderPass;
+            Subpass = subpass;
+            Framebuffer = framebuffer;
+            OcclusionQueryEnable = occlusionQueryEnable;
+            QueryFlags = queryFlags;
+            PipelineStatistics = pipelineStatistics;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayNativeHdrSurfaceCapabilitiesAMD")]
-    public unsafe struct DisplayNativeHdrSurfaceCapabilitiesAMD
+    public unsafe partial struct DisplayNativeHdrSurfaceCapabilitiesAMD
     {
         public DisplayNativeHdrSurfaceCapabilitiesAMD
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 localDimmingSupport = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           LocalDimmingSupport = localDimmingSupport;
+            SType = sType;
+            PNext = pNext;
+            LocalDimmingSupport = localDimmingSupport;
         }
 
 /// <summary></summary>

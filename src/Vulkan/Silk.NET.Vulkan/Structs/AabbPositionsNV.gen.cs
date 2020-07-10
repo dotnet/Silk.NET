@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAabbPositionsNV")]
-    public unsafe struct AabbPositionsNV
+    public unsafe partial struct AabbPositionsNV
     {
         public AabbPositionsNV
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             float maxZ = default
         )
         {
-           MinX = minX;
-           MinY = minY;
-           MinZ = minZ;
-           MaxX = maxX;
-           MaxY = maxY;
-           MaxZ = maxZ;
+            MinX = minX;
+            MinY = minY;
+            MinZ = minZ;
+            MaxX = maxX;
+            MaxY = maxY;
+            MaxZ = maxZ;
         }
 
 /// <summary></summary>

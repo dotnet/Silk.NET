@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkIOSSurfaceCreateInfoMVK")]
-    public unsafe struct IOSSurfaceCreateInfoMVK
+    public unsafe partial struct IOSSurfaceCreateInfoMVK
     {
         public IOSSurfaceCreateInfoMVK
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             void* pView = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           PView = pView;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            PView = pView;
         }
 
 /// <summary></summary>

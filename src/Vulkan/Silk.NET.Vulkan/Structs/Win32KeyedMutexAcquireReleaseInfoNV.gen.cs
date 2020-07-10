@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkWin32KeyedMutexAcquireReleaseInfoNV")]
-    public unsafe struct Win32KeyedMutexAcquireReleaseInfoNV
+    public unsafe partial struct Win32KeyedMutexAcquireReleaseInfoNV
     {
         public Win32KeyedMutexAcquireReleaseInfoNV
         (
@@ -31,15 +31,15 @@ namespace Silk.NET.Vulkan
             ulong* pReleaseKeys = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           AcquireCount = acquireCount;
-           PAcquireSyncs = pAcquireSyncs;
-           PAcquireKeys = pAcquireKeys;
-           PAcquireTimeoutMilliseconds = pAcquireTimeoutMilliseconds;
-           ReleaseCount = releaseCount;
-           PReleaseSyncs = pReleaseSyncs;
-           PReleaseKeys = pReleaseKeys;
+            SType = sType;
+            PNext = pNext;
+            AcquireCount = acquireCount;
+            PAcquireSyncs = pAcquireSyncs;
+            PAcquireKeys = pAcquireKeys;
+            PAcquireTimeoutMilliseconds = pAcquireTimeoutMilliseconds;
+            ReleaseCount = releaseCount;
+            PReleaseSyncs = pReleaseSyncs;
+            PReleaseKeys = pReleaseKeys;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineInputAssemblyStateCreateInfo")]
-    public unsafe struct PipelineInputAssemblyStateCreateInfo
+    public unsafe partial struct PipelineInputAssemblyStateCreateInfo
     {
         public PipelineInputAssemblyStateCreateInfo
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             Bool32 primitiveRestartEnable = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Topology = topology;
-           PrimitiveRestartEnable = primitiveRestartEnable;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Topology = topology;
+            PrimitiveRestartEnable = primitiveRestartEnable;
         }
 
 /// <summary></summary>

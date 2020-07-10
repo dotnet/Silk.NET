@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSurfaceFormat2KHR")]
-    public unsafe struct SurfaceFormat2KHR
+    public unsafe partial struct SurfaceFormat2KHR
     {
         public SurfaceFormat2KHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             SurfaceFormatKHR surfaceFormat = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SurfaceFormat = surfaceFormat;
+            SType = sType;
+            PNext = pNext;
+            SurfaceFormat = surfaceFormat;
         }
 
 /// <summary></summary>

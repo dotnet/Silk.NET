@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBindBufferMemoryDeviceGroupInfo")]
-    public unsafe struct BindBufferMemoryDeviceGroupInfo
+    public unsafe partial struct BindBufferMemoryDeviceGroupInfo
     {
         public BindBufferMemoryDeviceGroupInfo
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint* pDeviceIndices = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DeviceIndexCount = deviceIndexCount;
-           PDeviceIndices = pDeviceIndices;
+            SType = sType;
+            PNext = pNext;
+            DeviceIndexCount = deviceIndexCount;
+            PDeviceIndices = pDeviceIndices;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.OpenCL
 {
     [NativeName("Name", "cl_mem_android_native_buffer_host_ptr")]
-    public unsafe struct MemAndroidNativeBufferHostPtr
+    public unsafe partial struct MemAndroidNativeBufferHostPtr
     {
         public MemAndroidNativeBufferHostPtr
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.OpenCL
             void* anbPtr = default
         )
         {
-           ExtHostPtr = extHostPtr;
-           AnbPtr = anbPtr;
+            ExtHostPtr = extHostPtr;
+            AnbPtr = anbPtr;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR")]
-    public unsafe struct PhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR
+    public unsafe partial struct PhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR
     {
         public PhysicalDeviceSeparateDepthStencilLayoutsFeaturesKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 separateDepthStencilLayouts = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SeparateDepthStencilLayouts = separateDepthStencilLayouts;
+            SType = sType;
+            PNext = pNext;
+            SeparateDepthStencilLayouts = separateDepthStencilLayouts;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGraphicsPipelineCreateInfo")]
-    public unsafe struct GraphicsPipelineCreateInfo
+    public unsafe partial struct GraphicsPipelineCreateInfo
     {
         public GraphicsPipelineCreateInfo
         (
@@ -41,25 +41,25 @@ namespace Silk.NET.Vulkan
             int basePipelineIndex = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           StageCount = stageCount;
-           PStages = pStages;
-           PVertexInputState = pVertexInputState;
-           PInputAssemblyState = pInputAssemblyState;
-           PTessellationState = pTessellationState;
-           PViewportState = pViewportState;
-           PRasterizationState = pRasterizationState;
-           PMultisampleState = pMultisampleState;
-           PDepthStencilState = pDepthStencilState;
-           PColorBlendState = pColorBlendState;
-           PDynamicState = pDynamicState;
-           Layout = layout;
-           RenderPass = renderPass;
-           Subpass = subpass;
-           BasePipelineHandle = basePipelineHandle;
-           BasePipelineIndex = basePipelineIndex;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            StageCount = stageCount;
+            PStages = pStages;
+            PVertexInputState = pVertexInputState;
+            PInputAssemblyState = pInputAssemblyState;
+            PTessellationState = pTessellationState;
+            PViewportState = pViewportState;
+            PRasterizationState = pRasterizationState;
+            PMultisampleState = pMultisampleState;
+            PDepthStencilState = pDepthStencilState;
+            PColorBlendState = pColorBlendState;
+            PDynamicState = pDynamicState;
+            Layout = layout;
+            RenderPass = renderPass;
+            Subpass = subpass;
+            BasePipelineHandle = basePipelineHandle;
+            BasePipelineIndex = basePipelineIndex;
         }
 
 /// <summary></summary>

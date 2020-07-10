@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkExtensionProperties")]
-    public unsafe struct ExtensionProperties
+    public unsafe partial struct ExtensionProperties
     {
         public ExtensionProperties
         (
             uint specVersion = default
         )
         {
-           SpecVersion = specVersion;
+            SpecVersion = specVersion;
         }
 
         /// <summary></summary>

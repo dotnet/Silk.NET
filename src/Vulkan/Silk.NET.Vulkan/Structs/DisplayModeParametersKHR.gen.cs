@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayModeParametersKHR")]
-    public unsafe struct DisplayModeParametersKHR
+    public unsafe partial struct DisplayModeParametersKHR
     {
         public DisplayModeParametersKHR
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             uint refreshRate = default
         )
         {
-           VisibleRegion = visibleRegion;
-           RefreshRate = refreshRate;
+            VisibleRegion = visibleRegion;
+            RefreshRate = refreshRate;
         }
 
 /// <summary></summary>

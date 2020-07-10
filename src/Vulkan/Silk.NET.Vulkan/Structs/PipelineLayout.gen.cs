@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineLayout")]
-    public unsafe struct PipelineLayout
+    public unsafe partial struct PipelineLayout
     {
         public PipelineLayout
         (
             ulong handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

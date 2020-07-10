@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan
 {
     [StructLayout(LayoutKind.Explicit)]
     [NativeName("Name", "VkAccelerationStructureGeometryDataKHR")]
-    public unsafe struct AccelerationStructureGeometryDataKHR
+    public unsafe partial struct AccelerationStructureGeometryDataKHR
     {
         public AccelerationStructureGeometryDataKHR
         (
@@ -26,9 +26,9 @@ namespace Silk.NET.Vulkan
             AccelerationStructureGeometryInstancesDataKHR instances = default
         )
         {
-           Triangles = triangles;
-           Aabbs = aabbs;
-           Instances = instances;
+            Triangles = triangles;
+            Aabbs = aabbs;
+            Instances = instances;
         }
 
 /// <summary></summary>

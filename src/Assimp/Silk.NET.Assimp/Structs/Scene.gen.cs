@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiScene")]
-    public unsafe struct Scene
+    public unsafe partial struct Scene
     {
         public Scene
         (
@@ -38,22 +38,22 @@ namespace Silk.NET.Assimp
             void* mPrivate = default
         )
         {
-           MFlags = mFlags;
-           MRootNode = mRootNode;
-           MNumMeshes = mNumMeshes;
-           MMeshes = mMeshes;
-           MNumMaterials = mNumMaterials;
-           MMaterials = mMaterials;
-           MNumAnimations = mNumAnimations;
-           MAnimations = mAnimations;
-           MNumTextures = mNumTextures;
-           MTextures = mTextures;
-           MNumLights = mNumLights;
-           MLights = mLights;
-           MNumCameras = mNumCameras;
-           MCameras = mCameras;
-           MMetaData = mMetaData;
-           MPrivate = mPrivate;
+            MFlags = mFlags;
+            MRootNode = mRootNode;
+            MNumMeshes = mNumMeshes;
+            MMeshes = mMeshes;
+            MNumMaterials = mNumMaterials;
+            MMaterials = mMaterials;
+            MNumAnimations = mNumAnimations;
+            MAnimations = mAnimations;
+            MNumTextures = mNumTextures;
+            MTextures = mTextures;
+            MNumLights = mNumLights;
+            MLights = mLights;
+            MNumCameras = mNumCameras;
+            MCameras = mCameras;
+            MMetaData = mMetaData;
+            MPrivate = mPrivate;
         }
 
 

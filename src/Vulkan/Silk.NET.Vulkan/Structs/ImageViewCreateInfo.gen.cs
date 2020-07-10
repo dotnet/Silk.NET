@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageViewCreateInfo")]
-    public unsafe struct ImageViewCreateInfo
+    public unsafe partial struct ImageViewCreateInfo
     {
         public ImageViewCreateInfo
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Vulkan
             ImageSubresourceRange subresourceRange = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Image = image;
-           ViewType = viewType;
-           Format = format;
-           Components = components;
-           SubresourceRange = subresourceRange;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Image = image;
+            ViewType = viewType;
+            Format = format;
+            Components = components;
+            SubresourceRange = subresourceRange;
         }
 
 /// <summary></summary>

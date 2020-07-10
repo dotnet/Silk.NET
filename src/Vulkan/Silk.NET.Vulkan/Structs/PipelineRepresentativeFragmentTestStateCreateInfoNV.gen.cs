@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineRepresentativeFragmentTestStateCreateInfoNV")]
-    public unsafe struct PipelineRepresentativeFragmentTestStateCreateInfoNV
+    public unsafe partial struct PipelineRepresentativeFragmentTestStateCreateInfoNV
     {
         public PipelineRepresentativeFragmentTestStateCreateInfoNV
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 representativeFragmentTestEnable = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           RepresentativeFragmentTestEnable = representativeFragmentTestEnable;
+            SType = sType;
+            PNext = pNext;
+            RepresentativeFragmentTestEnable = representativeFragmentTestEnable;
         }
 
 /// <summary></summary>

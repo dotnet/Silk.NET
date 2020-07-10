@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkInputAttachmentAspectReference")]
-    public unsafe struct InputAttachmentAspectReference
+    public unsafe partial struct InputAttachmentAspectReference
     {
         public InputAttachmentAspectReference
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ImageAspectFlags aspectMask = default
         )
         {
-           Subpass = subpass;
-           InputAttachmentIndex = inputAttachmentIndex;
-           AspectMask = aspectMask;
+            Subpass = subpass;
+            InputAttachmentIndex = inputAttachmentIndex;
+            AspectMask = aspectMask;
         }
 
 /// <summary></summary>

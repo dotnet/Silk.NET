@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiNodeAnim")]
-    public unsafe struct NodeAnim
+    public unsafe partial struct NodeAnim
     {
         public NodeAnim
         (
@@ -31,15 +31,15 @@ namespace Silk.NET.Assimp
             AnimBehaviour mPostState = default
         )
         {
-           MNodeName = mNodeName;
-           MNumPositionKeys = mNumPositionKeys;
-           MPositionKeys = mPositionKeys;
-           MNumRotationKeys = mNumRotationKeys;
-           MRotationKeys = mRotationKeys;
-           MNumScalingKeys = mNumScalingKeys;
-           MScalingKeys = mScalingKeys;
-           MPreState = mPreState;
-           MPostState = mPostState;
+            MNodeName = mNodeName;
+            MNumPositionKeys = mNumPositionKeys;
+            MPositionKeys = mPositionKeys;
+            MNumRotationKeys = mNumRotationKeys;
+            MRotationKeys = mRotationKeys;
+            MNumScalingKeys = mNumScalingKeys;
+            MScalingKeys = mScalingKeys;
+            MPreState = mPreState;
+            MPostState = mPostState;
         }
 
 

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineTessellationStateCreateInfo")]
-    public unsafe struct PipelineTessellationStateCreateInfo
+    public unsafe partial struct PipelineTessellationStateCreateInfo
     {
         public PipelineTessellationStateCreateInfo
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             uint patchControlPoints = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           PatchControlPoints = patchControlPoints;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            PatchControlPoints = patchControlPoints;
         }
 
 /// <summary></summary>

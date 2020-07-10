@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePointClippingPropertiesKHR")]
-    public unsafe struct PhysicalDevicePointClippingPropertiesKHR
+    public unsafe partial struct PhysicalDevicePointClippingPropertiesKHR
     {
         public PhysicalDevicePointClippingPropertiesKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             PointClippingBehavior pointClippingBehavior = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PointClippingBehavior = pointClippingBehavior;
+            SType = sType;
+            PNext = pNext;
+            PointClippingBehavior = pointClippingBehavior;
         }
 
 /// <summary></summary>

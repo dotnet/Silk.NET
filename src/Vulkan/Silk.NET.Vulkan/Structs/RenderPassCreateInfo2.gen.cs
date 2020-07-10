@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRenderPassCreateInfo2")]
-    public unsafe struct RenderPassCreateInfo2
+    public unsafe partial struct RenderPassCreateInfo2
     {
         public RenderPassCreateInfo2
         (
@@ -33,17 +33,17 @@ namespace Silk.NET.Vulkan
             uint* pCorrelatedViewMasks = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           AttachmentCount = attachmentCount;
-           PAttachments = pAttachments;
-           SubpassCount = subpassCount;
-           PSubpasses = pSubpasses;
-           DependencyCount = dependencyCount;
-           PDependencies = pDependencies;
-           CorrelatedViewMaskCount = correlatedViewMaskCount;
-           PCorrelatedViewMasks = pCorrelatedViewMasks;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            AttachmentCount = attachmentCount;
+            PAttachments = pAttachments;
+            SubpassCount = subpassCount;
+            PSubpasses = pSubpasses;
+            DependencyCount = dependencyCount;
+            PDependencies = pDependencies;
+            CorrelatedViewMaskCount = correlatedViewMaskCount;
+            PCorrelatedViewMasks = pCorrelatedViewMasks;
         }
 
 /// <summary></summary>

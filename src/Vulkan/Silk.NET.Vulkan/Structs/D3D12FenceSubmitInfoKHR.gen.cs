@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkD3D12FenceSubmitInfoKHR")]
-    public unsafe struct D3D12FenceSubmitInfoKHR
+    public unsafe partial struct D3D12FenceSubmitInfoKHR
     {
         public D3D12FenceSubmitInfoKHR
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             ulong* pSignalSemaphoreValues = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           WaitSemaphoreValuesCount = waitSemaphoreValuesCount;
-           PWaitSemaphoreValues = pWaitSemaphoreValues;
-           SignalSemaphoreValuesCount = signalSemaphoreValuesCount;
-           PSignalSemaphoreValues = pSignalSemaphoreValues;
+            SType = sType;
+            PNext = pNext;
+            WaitSemaphoreValuesCount = waitSemaphoreValuesCount;
+            PWaitSemaphoreValues = pWaitSemaphoreValues;
+            SignalSemaphoreValuesCount = signalSemaphoreValuesCount;
+            PSignalSemaphoreValues = pSignalSemaphoreValues;
         }
 
 /// <summary></summary>

@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSurfaceKHR")]
-    public unsafe struct SurfaceKHR
+    public unsafe partial struct SurfaceKHR
     {
         public SurfaceKHR
         (
             ulong handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

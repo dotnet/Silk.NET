@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSwapchainImageCreateInfoANDROID")]
-    public unsafe struct SwapchainImageCreateInfoANDROID
+    public unsafe partial struct SwapchainImageCreateInfoANDROID
     {
         public SwapchainImageCreateInfoANDROID
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             SwapchainImageUsageFlagsANDROID usage = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Usage = usage;
+            SType = sType;
+            PNext = pNext;
+            Usage = usage;
         }
 
 /// <summary></summary>

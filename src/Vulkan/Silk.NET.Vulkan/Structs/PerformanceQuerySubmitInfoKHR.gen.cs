@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceQuerySubmitInfoKHR")]
-    public unsafe struct PerformanceQuerySubmitInfoKHR
+    public unsafe partial struct PerformanceQuerySubmitInfoKHR
     {
         public PerformanceQuerySubmitInfoKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint counterPassIndex = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           CounterPassIndex = counterPassIndex;
+            SType = sType;
+            PNext = pNext;
+            CounterPassIndex = counterPassIndex;
         }
 
 /// <summary></summary>

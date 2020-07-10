@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryType")]
-    public unsafe struct MemoryType
+    public unsafe partial struct MemoryType
     {
         public MemoryType
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             uint heapIndex = default
         )
         {
-           PropertyFlags = propertyFlags;
-           HeapIndex = heapIndex;
+            PropertyFlags = propertyFlags;
+            HeapIndex = heapIndex;
         }
 
 /// <summary></summary>

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImagePlaneMemoryRequirementsInfoKHR")]
-    public unsafe struct ImagePlaneMemoryRequirementsInfoKHR
+    public unsafe partial struct ImagePlaneMemoryRequirementsInfoKHR
     {
         public ImagePlaneMemoryRequirementsInfoKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             ImageAspectFlags planeAspect = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PlaneAspect = planeAspect;
+            SType = sType;
+            PNext = pNext;
+            PlaneAspect = planeAspect;
         }
 
 /// <summary></summary>

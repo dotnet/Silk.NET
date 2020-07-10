@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDevicePrivateDataFeaturesEXT")]
-    public unsafe struct PhysicalDevicePrivateDataFeaturesEXT
+    public unsafe partial struct PhysicalDevicePrivateDataFeaturesEXT
     {
         public PhysicalDevicePrivateDataFeaturesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 privateData = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PrivateData = privateData;
+            SType = sType;
+            PNext = pNext;
+            PrivateData = privateData;
         }
 
 /// <summary></summary>

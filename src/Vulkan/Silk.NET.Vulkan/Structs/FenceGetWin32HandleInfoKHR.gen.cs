@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFenceGetWin32HandleInfoKHR")]
-    public unsafe struct FenceGetWin32HandleInfoKHR
+    public unsafe partial struct FenceGetWin32HandleInfoKHR
     {
         public FenceGetWin32HandleInfoKHR
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Vulkan
             ExternalFenceHandleTypeFlags handleType = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Fence = fence;
-           HandleType = handleType;
+            SType = sType;
+            PNext = pNext;
+            Fence = fence;
+            HandleType = handleType;
         }
 
 /// <summary></summary>

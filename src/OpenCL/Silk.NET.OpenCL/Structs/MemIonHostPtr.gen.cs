@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.OpenCL
 {
     [NativeName("Name", "cl_mem_ion_host_ptr")]
-    public unsafe struct MemIonHostPtr
+    public unsafe partial struct MemIonHostPtr
     {
         public MemIonHostPtr
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.OpenCL
             void* ionHostptr = default
         )
         {
-           ExtHostPtr = extHostPtr;
-           IonFiledesc = ionFiledesc;
-           IonHostptr = ionHostptr;
+            ExtHostPtr = extHostPtr;
+            IonFiledesc = ionFiledesc;
+            IonHostptr = ionHostptr;
         }
 
 /// <summary></summary>

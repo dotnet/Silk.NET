@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageSubresourceRange")]
-    public unsafe struct ImageSubresourceRange
+    public unsafe partial struct ImageSubresourceRange
     {
         public ImageSubresourceRange
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             uint layerCount = default
         )
         {
-           AspectMask = aspectMask;
-           BaseMipLevel = baseMipLevel;
-           LevelCount = levelCount;
-           BaseArrayLayer = baseArrayLayer;
-           LayerCount = layerCount;
+            AspectMask = aspectMask;
+            BaseMipLevel = baseMipLevel;
+            LevelCount = levelCount;
+            BaseArrayLayer = baseArrayLayer;
+            LayerCount = layerCount;
         }
 
 /// <summary></summary>

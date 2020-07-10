@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDebugUtilsLabelEXT")]
-    public unsafe struct DebugUtilsLabelEXT
+    public unsafe partial struct DebugUtilsLabelEXT
     {
         public DebugUtilsLabelEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             byte* pLabelName = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PLabelName = pLabelName;
+            SType = sType;
+            PNext = pNext;
+            PLabelName = pLabelName;
         }
 
 /// <summary></summary>

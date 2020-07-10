@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDebugUtilsObjectNameInfoEXT")]
-    public unsafe struct DebugUtilsObjectNameInfoEXT
+    public unsafe partial struct DebugUtilsObjectNameInfoEXT
     {
         public DebugUtilsObjectNameInfoEXT
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             byte* pObjectName = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ObjectType = objectType;
-           ObjectHandle = objectHandle;
-           PObjectName = pObjectName;
+            SType = sType;
+            PNext = pNext;
+            ObjectType = objectType;
+            ObjectHandle = objectHandle;
+            PObjectName = pObjectName;
         }
 
 /// <summary></summary>

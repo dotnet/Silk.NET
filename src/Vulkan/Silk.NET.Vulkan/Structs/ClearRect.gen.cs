@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkClearRect")]
-    public unsafe struct ClearRect
+    public unsafe partial struct ClearRect
     {
         public ClearRect
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint layerCount = default
         )
         {
-           Rect = rect;
-           BaseArrayLayer = baseArrayLayer;
-           LayerCount = layerCount;
+            Rect = rect;
+            BaseArrayLayer = baseArrayLayer;
+            LayerCount = layerCount;
         }
 
 /// <summary></summary>

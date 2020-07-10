@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPrivateDataSlotEXT")]
-    public unsafe struct PrivateDataSlotEXT
+    public unsafe partial struct PrivateDataSlotEXT
     {
         public PrivateDataSlotEXT
         (
             ulong handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

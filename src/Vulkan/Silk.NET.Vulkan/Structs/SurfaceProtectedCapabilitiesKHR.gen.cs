@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSurfaceProtectedCapabilitiesKHR")]
-    public unsafe struct SurfaceProtectedCapabilitiesKHR
+    public unsafe partial struct SurfaceProtectedCapabilitiesKHR
     {
         public SurfaceProtectedCapabilitiesKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 supportsProtected = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SupportsProtected = supportsProtected;
+            SType = sType;
+            PNext = pNext;
+            SupportsProtected = supportsProtected;
         }
 
 /// <summary></summary>

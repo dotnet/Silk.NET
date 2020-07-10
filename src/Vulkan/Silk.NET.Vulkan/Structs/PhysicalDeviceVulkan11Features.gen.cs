@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceVulkan11Features")]
-    public unsafe struct PhysicalDeviceVulkan11Features
+    public unsafe partial struct PhysicalDeviceVulkan11Features
     {
         public PhysicalDeviceVulkan11Features
         (
@@ -36,20 +36,20 @@ namespace Silk.NET.Vulkan
             Bool32 shaderDrawParameters = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           StorageBuffer16BitAccess = storageBuffer16BitAccess;
-           UniformAndStorageBuffer16BitAccess = uniformAndStorageBuffer16BitAccess;
-           StoragePushConstant16 = storagePushConstant16;
-           StorageInputOutput16 = storageInputOutput16;
-           Multiview = multiview;
-           MultiviewGeometryShader = multiviewGeometryShader;
-           MultiviewTessellationShader = multiviewTessellationShader;
-           VariablePointersStorageBuffer = variablePointersStorageBuffer;
-           VariablePointers = variablePointers;
-           ProtectedMemory = protectedMemory;
-           SamplerYcbcrConversion = samplerYcbcrConversion;
-           ShaderDrawParameters = shaderDrawParameters;
+            SType = sType;
+            PNext = pNext;
+            StorageBuffer16BitAccess = storageBuffer16BitAccess;
+            UniformAndStorageBuffer16BitAccess = uniformAndStorageBuffer16BitAccess;
+            StoragePushConstant16 = storagePushConstant16;
+            StorageInputOutput16 = storageInputOutput16;
+            Multiview = multiview;
+            MultiviewGeometryShader = multiviewGeometryShader;
+            MultiviewTessellationShader = multiviewTessellationShader;
+            VariablePointersStorageBuffer = variablePointersStorageBuffer;
+            VariablePointers = variablePointers;
+            ProtectedMemory = protectedMemory;
+            SamplerYcbcrConversion = samplerYcbcrConversion;
+            ShaderDrawParameters = shaderDrawParameters;
         }
 
 /// <summary></summary>

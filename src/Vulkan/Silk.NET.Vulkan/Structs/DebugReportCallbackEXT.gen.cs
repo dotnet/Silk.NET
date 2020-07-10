@@ -16,14 +16,14 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDebugReportCallbackEXT")]
-    public unsafe struct DebugReportCallbackEXT
+    public unsafe partial struct DebugReportCallbackEXT
     {
         public DebugReportCallbackEXT
         (
             ulong handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 

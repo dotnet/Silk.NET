@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBufferCreateInfo")]
-    public unsafe struct BufferCreateInfo
+    public unsafe partial struct BufferCreateInfo
     {
         public BufferCreateInfo
         (
@@ -30,14 +30,14 @@ namespace Silk.NET.Vulkan
             uint* pQueueFamilyIndices = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Size = size;
-           Usage = usage;
-           SharingMode = sharingMode;
-           QueueFamilyIndexCount = queueFamilyIndexCount;
-           PQueueFamilyIndices = pQueueFamilyIndices;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Size = size;
+            Usage = usage;
+            SharingMode = sharingMode;
+            QueueFamilyIndexCount = queueFamilyIndexCount;
+            PQueueFamilyIndices = pQueueFamilyIndices;
         }
 
 /// <summary></summary>

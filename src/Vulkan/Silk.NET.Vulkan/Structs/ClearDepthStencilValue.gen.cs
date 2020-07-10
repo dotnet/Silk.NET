@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkClearDepthStencilValue")]
-    public unsafe struct ClearDepthStencilValue
+    public unsafe partial struct ClearDepthStencilValue
     {
         public ClearDepthStencilValue
         (
@@ -24,8 +24,8 @@ namespace Silk.NET.Vulkan
             uint stencil = default
         )
         {
-           Depth = depth;
-           Stencil = stencil;
+            Depth = depth;
+            Stencil = stencil;
         }
 
 /// <summary></summary>

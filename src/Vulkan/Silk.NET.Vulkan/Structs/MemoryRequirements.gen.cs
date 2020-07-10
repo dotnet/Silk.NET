@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryRequirements")]
-    public unsafe struct MemoryRequirements
+    public unsafe partial struct MemoryRequirements
     {
         public MemoryRequirements
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint memoryTypeBits = default
         )
         {
-           Size = size;
-           Alignment = alignment;
-           MemoryTypeBits = memoryTypeBits;
+            Size = size;
+            Alignment = alignment;
+            MemoryTypeBits = memoryTypeBits;
         }
 
 /// <summary></summary>

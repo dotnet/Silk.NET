@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkMemoryFdPropertiesKHR")]
-    public unsafe struct MemoryFdPropertiesKHR
+    public unsafe partial struct MemoryFdPropertiesKHR
     {
         public MemoryFdPropertiesKHR
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint memoryTypeBits = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MemoryTypeBits = memoryTypeBits;
+            SType = sType;
+            PNext = pNext;
+            MemoryTypeBits = memoryTypeBits;
         }
 
 /// <summary></summary>

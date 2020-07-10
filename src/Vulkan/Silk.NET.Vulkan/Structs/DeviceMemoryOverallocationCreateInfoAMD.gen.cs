@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceMemoryOverallocationCreateInfoAMD")]
-    public unsafe struct DeviceMemoryOverallocationCreateInfoAMD
+    public unsafe partial struct DeviceMemoryOverallocationCreateInfoAMD
     {
         public DeviceMemoryOverallocationCreateInfoAMD
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             MemoryOverallocationBehaviorAMD overallocationBehavior = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           OverallocationBehavior = overallocationBehavior;
+            SType = sType;
+            PNext = pNext;
+            OverallocationBehavior = overallocationBehavior;
         }
 
 /// <summary></summary>

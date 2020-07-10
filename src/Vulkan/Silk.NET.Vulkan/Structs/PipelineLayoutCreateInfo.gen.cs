@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineLayoutCreateInfo")]
-    public unsafe struct PipelineLayoutCreateInfo
+    public unsafe partial struct PipelineLayoutCreateInfo
     {
         public PipelineLayoutCreateInfo
         (
@@ -29,13 +29,13 @@ namespace Silk.NET.Vulkan
             PushConstantRange* pPushConstantRanges = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           SetLayoutCount = setLayoutCount;
-           PSetLayouts = pSetLayouts;
-           PushConstantRangeCount = pushConstantRangeCount;
-           PPushConstantRanges = pPushConstantRanges;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            SetLayoutCount = setLayoutCount;
+            PSetLayouts = pSetLayouts;
+            PushConstantRangeCount = pushConstantRangeCount;
+            PPushConstantRanges = pPushConstantRanges;
         }
 
 /// <summary></summary>

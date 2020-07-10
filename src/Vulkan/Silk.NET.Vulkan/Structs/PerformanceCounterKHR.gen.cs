@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceCounterKHR")]
-    public unsafe struct PerformanceCounterKHR
+    public unsafe partial struct PerformanceCounterKHR
     {
         public PerformanceCounterKHR
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             PerformanceCounterStorageKHR storage = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Unit = unit;
-           Scope = scope;
-           Storage = storage;
+            SType = sType;
+            PNext = pNext;
+            Unit = unit;
+            Scope = scope;
+            Storage = storage;
         }
 
 /// <summary></summary>

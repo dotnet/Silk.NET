@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceBufferAddressFeaturesEXT")]
-    public unsafe struct PhysicalDeviceBufferAddressFeaturesEXT
+    public unsafe partial struct PhysicalDeviceBufferAddressFeaturesEXT
     {
         public PhysicalDeviceBufferAddressFeaturesEXT
         (
@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             Bool32 bufferDeviceAddressMultiDevice = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           BufferDeviceAddress = bufferDeviceAddress;
-           BufferDeviceAddressCaptureReplay = bufferDeviceAddressCaptureReplay;
-           BufferDeviceAddressMultiDevice = bufferDeviceAddressMultiDevice;
+            SType = sType;
+            PNext = pNext;
+            BufferDeviceAddress = bufferDeviceAddress;
+            BufferDeviceAddressCaptureReplay = bufferDeviceAddressCaptureReplay;
+            BufferDeviceAddressMultiDevice = bufferDeviceAddressMultiDevice;
         }
 
 /// <summary></summary>

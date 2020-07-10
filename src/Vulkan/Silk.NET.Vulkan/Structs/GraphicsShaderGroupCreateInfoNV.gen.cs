@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGraphicsShaderGroupCreateInfoNV")]
-    public unsafe struct GraphicsShaderGroupCreateInfoNV
+    public unsafe partial struct GraphicsShaderGroupCreateInfoNV
     {
         public GraphicsShaderGroupCreateInfoNV
         (
@@ -28,12 +28,12 @@ namespace Silk.NET.Vulkan
             PipelineTessellationStateCreateInfo* pTessellationState = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           StageCount = stageCount;
-           PStages = pStages;
-           PVertexInputState = pVertexInputState;
-           PTessellationState = pTessellationState;
+            SType = sType;
+            PNext = pNext;
+            StageCount = stageCount;
+            PStages = pStages;
+            PVertexInputState = pVertexInputState;
+            PTessellationState = pTessellationState;
         }
 
 /// <summary></summary>

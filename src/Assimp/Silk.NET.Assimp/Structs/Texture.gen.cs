@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiTexture")]
-    public unsafe struct Texture
+    public unsafe partial struct Texture
     {
         public Texture
         (
@@ -26,10 +26,10 @@ namespace Silk.NET.Assimp
             AssimpString mFilename = default
         )
         {
-           MWidth = mWidth;
-           MHeight = mHeight;
-           PcData = pcData;
-           MFilename = mFilename;
+            MWidth = mWidth;
+            MHeight = mHeight;
+            PcData = pcData;
+            MFilename = mFilename;
         }
 
 

@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDevicePrivateDataCreateInfoEXT")]
-    public unsafe struct DevicePrivateDataCreateInfoEXT
+    public unsafe partial struct DevicePrivateDataCreateInfoEXT
     {
         public DevicePrivateDataCreateInfoEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             uint privateDataSlotRequestCount = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PrivateDataSlotRequestCount = privateDataSlotRequestCount;
+            SType = sType;
+            PNext = pNext;
+            PrivateDataSlotRequestCount = privateDataSlotRequestCount;
         }
 
 /// <summary></summary>

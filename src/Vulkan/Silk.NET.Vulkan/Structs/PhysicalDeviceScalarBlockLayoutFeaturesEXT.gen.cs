@@ -16,7 +16,7 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceScalarBlockLayoutFeaturesEXT")]
-    public unsafe struct PhysicalDeviceScalarBlockLayoutFeaturesEXT
+    public unsafe partial struct PhysicalDeviceScalarBlockLayoutFeaturesEXT
     {
         public PhysicalDeviceScalarBlockLayoutFeaturesEXT
         (
@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
             Bool32 scalarBlockLayout = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ScalarBlockLayout = scalarBlockLayout;
+            SType = sType;
+            PNext = pNext;
+            ScalarBlockLayout = scalarBlockLayout;
         }
 
 /// <summary></summary>

@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan
 {
     [StructLayout(LayoutKind.Explicit)]
     [NativeName("Name", "VkClearValue")]
-    public unsafe struct ClearValue
+    public unsafe partial struct ClearValue
     {
         public ClearValue
         (
@@ -25,8 +25,8 @@ namespace Silk.NET.Vulkan
             ClearDepthStencilValue depthStencil = default
         )
         {
-           Color = color;
-           DepthStencil = depthStencil;
+            Color = color;
+            DepthStencil = depthStencil;
         }
 
 /// <summary></summary>
