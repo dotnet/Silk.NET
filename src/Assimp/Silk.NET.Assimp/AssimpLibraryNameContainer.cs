@@ -25,7 +25,7 @@ namespace Silk.NET.Assimp
         public override string IOS => "__Internal";
 
         /// <inheritdoc />
-        public override string Windows64 => "Assimp32.dll";
+        public override string Windows64 => "Assimp64.dll";
 
         /// <inheritdoc />
         public override string Windows86 => "Assimp32.dll";

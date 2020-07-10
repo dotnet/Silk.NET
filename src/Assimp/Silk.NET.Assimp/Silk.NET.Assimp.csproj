@@ -5,6 +5,10 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
+    
+  <ItemGroup>
+    <PackageReference Include="Ultz.Native.Assimp" Version="5.0.1" />
+  </ItemGroup>
 
   <Import Project="..\..\..\build\props\bindings.props" />
 </Project>
