@@ -30,7 +30,5 @@ namespace Silk.NET.Assimp
         Aivector3D = 0x6,
         [NativeName("Name", "AI_META_MAX")]
         MetaMax = 0x7,
-        [NativeName("Name", "FORCE_32BIT")]
-        Force32Bit = 0x7FFFFFFF,
     }
 }

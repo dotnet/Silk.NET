@@ -60,7 +60,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "sampleLocationCoordinateRange")]
-       public fixed float SampleLocationCoordinateRange[2];
+        public fixed float SampleLocationCoordinateRange[2];
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

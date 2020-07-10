@@ -26,7 +26,5 @@ namespace Silk.NET.Assimp
         TextureMappingPlane = 0x4,
         [NativeName("Name", "aiTextureMapping_OTHER")]
         TextureMappingOther = 0x5,
-        [NativeName("Name", "_aiTextureMapping_Force32Bit")]
-        aiTextureMappingForce32Bit = 0x7FFFFFFF,
     }
 }

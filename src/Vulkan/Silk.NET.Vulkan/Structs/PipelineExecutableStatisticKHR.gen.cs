@@ -46,12 +46,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "char")]
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "name")]
-       public fixed byte Name[256];
+        public fixed byte Name[256];
         /// <summary></summary>
         [NativeName("Type", "char")]
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "description")]
-       public fixed byte Description[256];
+        public fixed byte Description[256];
 /// <summary></summary>
         [NativeName("Type", "VkPipelineExecutableStatisticFormatKHR")]
         [NativeName("Type.Name", "VkPipelineExecutableStatisticFormatKHR")]

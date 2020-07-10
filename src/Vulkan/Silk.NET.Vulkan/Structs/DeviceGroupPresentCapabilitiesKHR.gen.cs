@@ -44,7 +44,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "presentMask")]
-       public fixed uint PresentMask[32];
+        public fixed uint PresentMask[32];
 /// <summary></summary>
         [NativeName("Type", "VkDeviceGroupPresentModeFlagsKHR")]
         [NativeName("Type.Name", "VkDeviceGroupPresentModeFlagsKHR")]

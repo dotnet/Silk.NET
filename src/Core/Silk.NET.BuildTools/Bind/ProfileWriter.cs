@@ -248,7 +248,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine($"        [NativeName(\"Name\", \"{structField.NativeName}\")]");
                         sw.WriteLine
                         (
-                            $"       public fixed {typeFixup09072020} {structField.Name}[{count}];"
+                            $"        public fixed {typeFixup09072020} {structField.Name}[{count}];"
                         );
                     }
                 }

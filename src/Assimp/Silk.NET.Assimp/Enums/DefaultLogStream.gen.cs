@@ -22,7 +22,5 @@ namespace Silk.NET.Assimp
         DefaultLogStreamStderr = 0x4,
         [NativeName("Name", "aiDefaultLogStream_DEBUGGER")]
         DefaultLogStreamDebugger = 0x8,
-        [NativeName("Name", "_AI_DLS_ENFORCE_ENUM_SIZE")]
-        AIDlsEnforceEnumSize = 0x7FFFFFFF,
     }
 }

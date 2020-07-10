@@ -22,7 +22,5 @@ namespace Silk.NET.Assimp
         TextureMapModeDecal = 0x3,
         [NativeName("Name", "aiTextureMapMode_Mirror")]
         TextureMapModeMirror = 0x2,
-        [NativeName("Name", "_aiTextureMapMode_Force32Bit")]
-        aiTextureMapModeForce32Bit = 0x7FFFFFFF,
     }
 }

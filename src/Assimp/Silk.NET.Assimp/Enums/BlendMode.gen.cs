@@ -18,7 +18,5 @@ namespace Silk.NET.Assimp
         BlendModeDefault = 0x0,
         [NativeName("Name", "aiBlendMode_Additive")]
         BlendModeAdditive = 0x1,
-        [NativeName("Name", "_aiBlendMode_Force32Bit")]
-        aiBlendModeForce32Bit = 0x7FFFFFFF,
     }
 }

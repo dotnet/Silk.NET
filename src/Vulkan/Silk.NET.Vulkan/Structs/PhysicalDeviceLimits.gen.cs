@@ -488,7 +488,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxComputeWorkGroupCount")]
-       public fixed uint MaxComputeWorkGroupCount[3];
+        public fixed uint MaxComputeWorkGroupCount[3];
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -498,7 +498,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxComputeWorkGroupSize")]
-       public fixed uint MaxComputeWorkGroupSize[3];
+        public fixed uint MaxComputeWorkGroupSize[3];
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -543,12 +543,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxViewportDimensions")]
-       public fixed uint MaxViewportDimensions[2];
+        public fixed uint MaxViewportDimensions[2];
         /// <summary></summary>
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "viewportBoundsRange")]
-       public fixed float ViewportBoundsRange[2];
+        public fixed float ViewportBoundsRange[2];
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -713,12 +713,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "pointSizeRange")]
-       public fixed float PointSizeRange[2];
+        public fixed float PointSizeRange[2];
         /// <summary></summary>
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "lineWidthRange")]
-       public fixed float LineWidthRange[2];
+        public fixed float LineWidthRange[2];
 /// <summary></summary>
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]

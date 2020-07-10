@@ -22,7 +22,5 @@ namespace Silk.NET.Assimp
         AnimBehaviourLinear = 0x2,
         [NativeName("Name", "aiAnimBehaviour_REPEAT")]
         AnimBehaviourRepeat = 0x3,
-        [NativeName("Name", "_aiAnimBehaviour_Force32Bit")]
-        aiAnimBehaviourForce32Bit = 0x7FFFFFFF,
     }
 }

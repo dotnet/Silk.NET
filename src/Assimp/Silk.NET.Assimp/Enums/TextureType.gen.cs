@@ -52,7 +52,5 @@ namespace Silk.NET.Assimp
         TextureTypeAmbientOcclusion = 0x11,
         [NativeName("Name", "aiTextureType_UNKNOWN")]
         TextureTypeUnknown = 0x12,
-        [NativeName("Name", "_aiTextureType_Force32Bit")]
-        aiTextureTypeForce32Bit = 0x7FFFFFFF,
     }
 }

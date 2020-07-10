@@ -393,7 +393,23 @@
             },
             "exclude": [
                 "aiColor3D",
-                "ai_real"
+                "ai_real",
+                "_AI_ENFORCE_ENUM_SIZE",
+                "_aiAnimBehaviour_Force32Bit",
+                "_aiBlendMode_Force32Bit",
+                "_AI_DLS_ENFORCE_ENUM_SIZE",
+                "_aiLightSource_Force32Bit",
+                "FORCE_32BIT",
+                "_aiMorphingMethod_Force32Bit",
+                "_AI_ORIGIN_ENFORCE_ENUM_SIZE",
+                "_aiPrimitiveType_Force32Bit",
+                "_aiPTI_Force32Bit",
+                "_aiShadingMode_Force32Bit",
+                "_aiTextureFlags_Force32Bit",
+                "_aiTextureMapMode_Force32Bit",
+                "_aiTextureMapping_Force32Bit",
+                "_aiTextureOp_Force32Bit",
+                "_aiTextureType_Force32Bit"
             ],
             "rename": {
                 "aiString": "AssimpString"

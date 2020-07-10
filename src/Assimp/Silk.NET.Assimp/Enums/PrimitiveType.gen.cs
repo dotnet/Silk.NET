@@ -22,7 +22,5 @@ namespace Silk.NET.Assimp
         PrimitiveTypeTriangle = 0x4,
         [NativeName("Name", "aiPrimitiveType_POLYGON")]
         PrimitiveTypePolygon = 0x8,
-        [NativeName("Name", "_aiPrimitiveType_Force32Bit")]
-        aiPrimitiveTypeForce32Bit = 0x7FFFFFFF,
     }
 }

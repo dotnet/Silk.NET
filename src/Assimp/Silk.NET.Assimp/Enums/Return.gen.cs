@@ -20,7 +20,5 @@ namespace Silk.NET.Assimp
         ReturnFailure = unchecked((int)0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "aiReturn_OUTOFMEMORY")]
         ReturnOutofmemory = unchecked((int)0xFFFFFFFFFFFFFFFD),
-        [NativeName("Name", "_AI_ENFORCE_ENUM_SIZE")]
-        AIEnforceEnumSize = 0x7FFFFFFF,
     }
 }

@@ -20,7 +20,5 @@ namespace Silk.NET.Assimp
         MorphingMethodMorphNormalized = 0x2,
         [NativeName("Name", "aiMorphingMethod_MORPH_RELATIVE")]
         MorphingMethodMorphRelative = 0x3,
-        [NativeName("Name", "_aiMorphingMethod_Force32Bit")]
-        aiMorphingMethodForce32Bit = 0x7FFFFFFF,
     }
 }

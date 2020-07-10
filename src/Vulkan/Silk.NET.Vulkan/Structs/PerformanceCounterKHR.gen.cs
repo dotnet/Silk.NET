@@ -63,6 +63,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "uuid")]
-       public fixed byte Uuid[16];
+        public fixed byte Uuid[16];
     }
 }

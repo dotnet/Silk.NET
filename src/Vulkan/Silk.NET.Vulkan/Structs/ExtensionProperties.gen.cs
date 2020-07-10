@@ -30,7 +30,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "char")]
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "extensionName")]
-       public fixed byte ExtensionName[256];
+        public fixed byte ExtensionName[256];
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

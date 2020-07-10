@@ -77,6 +77,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "blendConstants")]
-       public fixed float BlendConstants[4];
+        public fixed float BlendConstants[4];
     }
 }

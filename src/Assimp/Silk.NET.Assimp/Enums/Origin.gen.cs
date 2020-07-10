@@ -20,7 +20,5 @@ namespace Silk.NET.Assimp
         OriginCur = 0x1,
         [NativeName("Name", "aiOrigin_END")]
         OriginEnd = 0x2,
-        [NativeName("Name", "_AI_ORIGIN_ENFORCE_ENUM_SIZE")]
-        AIOriginEnforceEnumSize = 0x7FFFFFFF,
     }
 }

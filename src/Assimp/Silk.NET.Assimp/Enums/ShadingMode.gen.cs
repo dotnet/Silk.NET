@@ -34,7 +34,5 @@ namespace Silk.NET.Assimp
         ShadingModeNoShading = 0x9,
         [NativeName("Name", "aiShadingMode_Fresnel")]
         ShadingModeFresnel = 0xA,
-        [NativeName("Name", "_aiShadingMode_Force32Bit")]
-        aiShadingModeForce32Bit = 0x7FFFFFFF,
     }
 }

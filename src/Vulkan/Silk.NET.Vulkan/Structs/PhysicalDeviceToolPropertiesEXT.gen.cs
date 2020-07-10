@@ -44,12 +44,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "char")]
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "name")]
-       public fixed byte Name[256];
+        public fixed byte Name[256];
         /// <summary></summary>
         [NativeName("Type", "char")]
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "version")]
-       public fixed byte Version[256];
+        public fixed byte Version[256];
 /// <summary></summary>
         [NativeName("Type", "VkToolPurposeFlagsEXT")]
         [NativeName("Type.Name", "VkToolPurposeFlagsEXT")]
@@ -59,11 +59,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "char")]
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "description")]
-       public fixed byte Description[256];
+        public fixed byte Description[256];
         /// <summary></summary>
         [NativeName("Type", "char")]
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "layer")]
-       public fixed byte Layer[256];
+        public fixed byte Layer[256];
     }
 }

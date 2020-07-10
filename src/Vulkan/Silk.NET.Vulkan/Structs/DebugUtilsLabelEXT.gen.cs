@@ -49,6 +49,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "color")]
-       public fixed float Color[4];
+        public fixed float Color[4];
     }
 }

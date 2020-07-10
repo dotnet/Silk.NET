@@ -20,7 +20,5 @@ namespace Silk.NET.Assimp
         TextureFlagsUseAlpha = 0x2,
         [NativeName("Name", "aiTextureFlags_IgnoreAlpha")]
         TextureFlagsIgnoreAlpha = 0x4,
-        [NativeName("Name", "_aiTextureFlags_Force32Bit")]
-        aiTextureFlagsForce32Bit = 0x7FFFFFFF,
     }
 }

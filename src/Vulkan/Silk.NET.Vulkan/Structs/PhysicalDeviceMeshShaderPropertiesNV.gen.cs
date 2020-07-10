@@ -74,7 +74,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxTaskWorkGroupSize")]
-       public fixed uint MaxTaskWorkGroupSize[3];
+        public fixed uint MaxTaskWorkGroupSize[3];
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -94,7 +94,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "maxMeshWorkGroupSize")]
-       public fixed uint MaxMeshWorkGroupSize[3];
+        public fixed uint MaxMeshWorkGroupSize[3];
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

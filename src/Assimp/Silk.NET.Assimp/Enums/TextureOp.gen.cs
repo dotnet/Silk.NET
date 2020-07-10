@@ -26,7 +26,5 @@ namespace Silk.NET.Assimp
         TextureOpSmoothAdd = 0x4,
         [NativeName("Name", "aiTextureOp_SignedAdd")]
         TextureOpSignedAdd = 0x5,
-        [NativeName("Name", "_aiTextureOp_Force32Bit")]
-        aiTextureOpForce32Bit = 0x7FFFFFFF,
     }
 }

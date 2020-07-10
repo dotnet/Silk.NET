@@ -45,7 +45,7 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "char [9]")]
         [NativeName("Type.Name", "char [9]")]
         [NativeName("Name", "achFormatHint")]
-       public fixed byte AchFormatHint[9];
+        public fixed byte AchFormatHint[9];
 
         [NativeName("Type", "aiTexel *")]
         [NativeName("Type.Name", "aiTexel *")]

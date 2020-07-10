@@ -26,7 +26,5 @@ namespace Silk.NET.Assimp
         LightSourceAmbient = 0x4,
         [NativeName("Name", "aiLightSource_AREA")]
         LightSourceArea = 0x5,
-        [NativeName("Name", "_aiLightSource_Force32Bit")]
-        aiLightSourceForce32Bit = 0x7FFFFFFF,
     }
 }

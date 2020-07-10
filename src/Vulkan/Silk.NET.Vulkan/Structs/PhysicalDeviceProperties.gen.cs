@@ -67,12 +67,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "char")]
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "deviceName")]
-       public fixed byte DeviceName[256];
+        public fixed byte DeviceName[256];
         /// <summary></summary>
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "pipelineCacheUUID")]
-       public fixed byte PipelineCacheUuid[16];
+        public fixed byte PipelineCacheUuid[16];
 /// <summary></summary>
         [NativeName("Type", "VkPhysicalDeviceLimits")]
         [NativeName("Type.Name", "VkPhysicalDeviceLimits")]

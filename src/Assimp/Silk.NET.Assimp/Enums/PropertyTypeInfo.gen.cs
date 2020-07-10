@@ -24,7 +24,5 @@ namespace Silk.NET.Assimp
         PtiInteger = 0x4,
         [NativeName("Name", "aiPTI_Buffer")]
         PtiBuffer = 0x5,
-        [NativeName("Name", "_aiPTI_Force32Bit")]
-        aiPtiForce32Bit = 0x7FFFFFFF,
     }
 }

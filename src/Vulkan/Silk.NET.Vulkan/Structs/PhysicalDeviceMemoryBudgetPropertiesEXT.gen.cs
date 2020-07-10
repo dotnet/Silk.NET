@@ -42,11 +42,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkDeviceSize")]
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "heapBudget")]
-       public fixed ulong HeapBudget[16];
+        public fixed ulong HeapBudget[16];
         /// <summary></summary>
         [NativeName("Type", "VkDeviceSize")]
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "heapUsage")]
-       public fixed ulong HeapUsage[16];
+        public fixed ulong HeapUsage[16];
     }
 }

@@ -34,6 +34,6 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "char [1024]")]
         [NativeName("Type.Name", "char [1024]")]
         [NativeName("Name", "data")]
-       public fixed byte Data[1024];
+        public fixed byte Data[1024];
     }
 }

@@ -46,17 +46,17 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "deviceUUID")]
-       public fixed byte DeviceUuid[16];
+        public fixed byte DeviceUuid[16];
         /// <summary></summary>
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "driverUUID")]
-       public fixed byte DriverUuid[16];
+        public fixed byte DriverUuid[16];
         /// <summary></summary>
         [NativeName("Type", "uint8_t")]
         [NativeName("Type.Name", "uint8_t")]
         [NativeName("Name", "deviceLUID")]
-       public fixed byte DeviceLuid[8];
+        public fixed byte DeviceLuid[8];
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

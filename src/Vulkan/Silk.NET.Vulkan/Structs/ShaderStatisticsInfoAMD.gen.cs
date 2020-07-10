@@ -70,6 +70,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "computeWorkGroupSize")]
-       public fixed uint ComputeWorkGroupSize[3];
+        public fixed uint ComputeWorkGroupSize[3];
     }
 }

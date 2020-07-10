@@ -51,12 +51,12 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "char")]
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "driverName")]
-       public fixed byte DriverName[256];
+        public fixed byte DriverName[256];
         /// <summary></summary>
         [NativeName("Type", "char")]
         [NativeName("Type.Name", "char")]
         [NativeName("Name", "driverInfo")]
-       public fixed byte DriverInfo[256];
+        public fixed byte DriverInfo[256];
 /// <summary></summary>
         [NativeName("Type", "VkConformanceVersion")]
         [NativeName("Type.Name", "VkConformanceVersion")]
