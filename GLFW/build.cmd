@@ -1,1 +1,1 @@
-nuget pack Ultz.Native.GLFW.nuspec
+..\nuget pack Ultz.Native.GLFW.nuspec
