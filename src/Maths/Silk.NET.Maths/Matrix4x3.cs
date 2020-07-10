@@ -2,6 +2,8 @@
 
 using System;
 using System.Globalization;
+using static Silk.NET.Maths.ShortScalarHelper;
+using static Silk.NET.Maths.Scalar;
 
 #endregion
 

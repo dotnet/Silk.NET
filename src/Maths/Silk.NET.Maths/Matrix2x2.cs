@@ -9,10 +9,10 @@ using static Silk.NET.Maths.Scalar;
 
 namespace Silk.NET.Maths
 {
-    public struct Matrix2x2<T> : IEquatable<Matrix2x2<T>>, IFormattable where T : unmanaged, IFormattable
+    public readonly struct Matrix2x2<T> : IEquatable<Matrix2x2<T>>, IFormattable where T : unmanaged, IFormattable
     {
-        public static readonly Matrix2x2<T> Identity;
-        public static readonly Matrix2x2<T> Zero;
+        public static Matrix2x2<T> Identity => new Matrix2x2<T>(One<T>(), default, One<T>(), default);
+        public static Matrix2x2<T> Zero => default;
         public Vector2<T> Row0 { get; }
         public Vector2<T> Row1 { get; }
 

@@ -2,14 +2,16 @@
 
 using System;
 using System.Globalization;
+using static Silk.NET.Maths.ShortScalarHelper;
+using static Silk.NET.Maths.Scalar;
 
 #endregion
 
 namespace Silk.NET.Maths
 {
-    public struct Matrix2x3<T> : IEquatable<Matrix2x3<T>>, IFormattable where T : unmanaged, IFormattable
+    public readonly struct Matrix2x3<T> : IEquatable<Matrix2x3<T>>, IFormattable where T : unmanaged, IFormattable
     {
-        public static readonly Matrix2x3<T> Zero;
+        public static Matrix2x3<T> Zero => default;
         public Vector3<T> Row0 { get; }
         public Vector3<T> Row1 { get; }
 
@@ -23,30 +25,26 @@ namespace Silk.NET.Maths
 
         public Matrix2x3(Vector3<T> row0, Vector3<T> row1) => throw new NotImplementedException();
 
-        public Matrix2x3(T m00, T m01, T m02, T m10, T m11, T m12) => throw new NotImplementedException();
+        public Matrix2x3(T m11, T m12, T m13, T m21, T m22, T m23) => throw new NotImplementedException();
 
         public Vector2<T> Column0
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public Vector2<T> Column1
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public Vector2<T> Column2
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public Vector2<T> Diagonal
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public T Trace => throw new NotImplementedException();
@@ -54,7 +52,6 @@ namespace Silk.NET.Maths
         public T this[int rowIndex, int columnIndex]
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public static void CreateRotation(T angle, out Matrix2x3<T> result) => throw new NotImplementedException();

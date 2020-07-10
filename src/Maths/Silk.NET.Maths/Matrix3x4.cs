@@ -2,15 +2,17 @@
 
 using System;
 using System.Globalization;
+using static Silk.NET.Maths.ShortScalarHelper;
+using static Silk.NET.Maths.Scalar;
 
 #endregion
 
 namespace Silk.NET.Maths
 {
     [Serializable]
-    public struct Matrix3x4<T> : IEquatable<Matrix3x4<T>>, IFormattable where T : unmanaged, IFormattable
+    public readonly struct Matrix3x4<T> : IEquatable<Matrix3x4<T>>, IFormattable where T : unmanaged, IFormattable
     {
-        public static Matrix3x4<T> Zero;
+        public static Matrix3x4<T> Zero => default;
         public Vector4<T> Row0 { get; }
         public Vector4<T> Row1 { get; }
         public Vector4<T> Row2 { get; }
@@ -32,7 +34,7 @@ namespace Silk.NET.Maths
 
         public Matrix3x4(Vector4<T> row0, Vector4<T> row1, Vector4<T> row2) => throw new NotImplementedException();
 
-        public Matrix3x4(T m00, T m01, T m02, T m03, T m10, T m11, T m12, T m13, T m20, T m21, T m22, T m23)
+        public Matrix3x4(T m11, T m12, T m13, T m14, T m21, T m22, T m23, T m24, T m31, T m32, T m33, T m34)
             => throw new NotImplementedException();
 
         public Vector3<T> Column0 => throw new NotImplementedException();

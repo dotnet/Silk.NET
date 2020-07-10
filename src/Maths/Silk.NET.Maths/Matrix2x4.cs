@@ -2,14 +2,16 @@
 
 using System;
 using System.Globalization;
+using static Silk.NET.Maths.ShortScalarHelper;
+using static Silk.NET.Maths.Scalar;
 
 #endregion
 
 namespace Silk.NET.Maths
 {
-    public struct Matrix2x4<T> : IEquatable<Matrix2x4<T>>, IFormattable where T : unmanaged, IFormattable
+    public readonly struct Matrix2x4<T> : IEquatable<Matrix2x4<T>>, IFormattable where T : unmanaged, IFormattable
     {
-        public static readonly Matrix2x4<T> Zero;
+        public static Matrix2x4<T> Zero => default;
         public Vector4<T> Row0 { get; }
         public Vector4<T> Row1 { get; }
 
@@ -25,36 +27,31 @@ namespace Silk.NET.Maths
 
         public Matrix2x4(Vector4<T> row0, Vector4<T> row1) => throw new NotImplementedException();
 
-        public Matrix2x4(T m00, T m01, T m02, T m03, T m10, T m11, T m12, T m13) => throw new NotImplementedException();
+        public Matrix2x4(T m11, T m12, T m13, T m14, T m21, T m22, T m23, T m24) => throw new NotImplementedException();
 
         public Vector2<T> Column0
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public Vector2<T> Column1
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public Vector2<T> Column2
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public Vector2<T> Column3
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public Vector2<T> Diagonal
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public T Trace => throw new NotImplementedException();
@@ -62,7 +59,6 @@ namespace Silk.NET.Maths
         public T this[int rowIndex, int columnIndex]
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public static void CreateRotation(T angle, out Matrix2x4<T> result) => throw new NotImplementedException();

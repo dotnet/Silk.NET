@@ -2,16 +2,18 @@
 
 using System;
 using System.Globalization;
+using static Silk.NET.Maths.ShortScalarHelper;
+using static Silk.NET.Maths.Scalar;
 
 #endregion
 
 namespace Silk.NET.Maths
 {
     [Serializable]
-    public struct Matrix3x3<T> : IEquatable<Matrix3x3<T>>, IFormattable where T : unmanaged, IFormattable
+    public readonly struct Matrix3x3<T> : IEquatable<Matrix3x3<T>>, IFormattable where T : unmanaged, IFormattable
     {
-        public static readonly Matrix3x3<T> Identity;
-        public static readonly Matrix3x3<T> Zero;
+        public static Matrix3x3<T> Identity => new Matrix3x3<T>(One<T>(), default, default, default, One<T>(), default, default, default, One<T>());
+        public static Matrix3x3<T> Zero => default;
         public Vector3<T> Row0 { get; }
         public Vector3<T> Row1 { get; }
         public Vector3<T> Row2 { get; }
@@ -30,7 +32,7 @@ namespace Silk.NET.Maths
 
         public Matrix3x3(Vector3<T> row0, Vector3<T> row1, Vector3<T> row2) => throw new NotImplementedException();
 
-        public Matrix3x3(T m00, T m01, T m02, T m10, T m11, T m12, T m20, T m21, T m22)
+        public Matrix3x3(T m11, T m12, T m13, T m21, T m22, T m23, T m31, T m32, T m33)
             => throw new NotImplementedException();
 
         public Matrix3x3(Matrix4x4<T> matrix) => throw new NotImplementedException();
@@ -46,7 +48,6 @@ namespace Silk.NET.Maths
         public Vector3<T> Diagonal
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public T Trace => throw new NotImplementedException();
@@ -54,7 +55,6 @@ namespace Silk.NET.Maths
         public T this[int rowIndex, int columnIndex]
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public void Invert() => throw new NotImplementedException();

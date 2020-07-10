@@ -35,7 +35,7 @@ namespace Silk.NET.Maths
 
         public Vector3(T x, T y, T z) => (X, Y, Z) = (x, y, z);
 
-        public Vector3(Vector2<T> v, T z = default) => (X, Y, Z) = (v.X, v.Y, z);
+        public Vector3(Vector2<T> v, T z) => (X, Y, Z) = (v.X, v.Y, z);
 
         public Vector3(Vector3<T> v) => this = v;
 
@@ -496,7 +496,7 @@ namespace Silk.NET.Maths
         {
             if (Vector<T>.Count >= 3)
             {
-                var span = stackalloc T[] {X, Y, Z};
+                Span<T> span = stackalloc T[] {X, Y, Z};
                 var vec = new Vector<T>(span);
                 return vec;
             }

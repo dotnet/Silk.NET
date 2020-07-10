@@ -25,7 +25,7 @@ namespace Silk.NET.Maths
         public Vector3<T> HalfSize => (Max - Min) / Scalar<T>.Two;
 
         public Vector3<T> Center => Min + Max / Scalar<T>.Two;
-
+        
         public bool Contains(Vector3<T> point, bool boundaryInclusive = false)
             => boundaryInclusive
                 ? LargerEquals(point.X, Min.X) && LargerEquals(point.Y, Min.Y) && LargerEquals(point.Z, Min.Z) &&

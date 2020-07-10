@@ -2,6 +2,7 @@
 
 using System;
 using System.Globalization;
+using static Silk.NET.Maths.ShortScalarHelper;
 using static Silk.NET.Maths.Scalar;
 
 #endregion
@@ -393,7 +394,7 @@ namespace Silk.NET.Maths
 
         public static Vector3<T> ExtractScale(Matrix4x4<T> mat) => throw new NotImplementedException();
 
-        public static Quaternion<T> ExtractRotation(Matrix4x4<T> mat, bool rowNormalize = true)
+        public static Quaternion<T> ExtractRotation(Matrix4x4<T> mat, bool rowNormalize)
             => throw new NotImplementedException();
 
         public static Vector4<T> ExtractProjection(Matrix4x4<T> mat) => throw new NotImplementedException();

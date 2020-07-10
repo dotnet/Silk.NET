@@ -2,14 +2,16 @@
 
 using System;
 using System.Globalization;
+using static Silk.NET.Maths.ShortScalarHelper;
+using static Silk.NET.Maths.Scalar;
 
 #endregion
 
 namespace Silk.NET.Maths
 {
-    public struct Matrix4x2<T> : IEquatable<Matrix4x2<T>>, IFormattable where T : unmanaged, IFormattable
+    public readonly struct Matrix4x2<T> : IEquatable<Matrix4x2<T>>, IFormattable where T : unmanaged, IFormattable
     {
-        public static readonly Matrix4x2<T> Zero;
+        public static Matrix4x2<T> Zero => default;
         public Vector2<T> Row0 { get; }
         public Vector2<T> Row1 { get; }
         public Vector2<T> Row2 { get; }
@@ -30,24 +32,21 @@ namespace Silk.NET.Maths
         public Matrix4x2(Vector2<T> row0, Vector2<T> row1, Vector2<T> row2, Vector2<T> row3)
             => throw new NotImplementedException();
 
-        public Matrix4x2(T m00, T m01, T m10, T m11, T m20, T m21, T m30, T m31) => throw new NotImplementedException();
+        public Matrix4x2(T m11, T m12, T m21, T m22, T m31, T m32, T m41, T m42) => throw new NotImplementedException();
 
         public Vector4<T> Column0
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public Vector4<T> Column1
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public Vector2<T> Diagonal
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public T Trace => throw new NotImplementedException();
@@ -55,7 +54,6 @@ namespace Silk.NET.Maths
         public T this[int rowIndex, int columnIndex]
         {
             get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
         }
 
         public static void CreateRotation(T angle, out Matrix4x2<T> result) => throw new NotImplementedException();

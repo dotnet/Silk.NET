@@ -40,14 +40,14 @@ namespace ConvertHelper
         private static readonly TokenListParser<ArithmeticExpressionToken, string> Factor =
             (from lparen in Token.EqualTo
                     (ArithmeticExpressionToken.LParen)
-                from expr in Parse.Ref(() => Expr)
-                from rparen in Token.EqualTo(ArithmeticExpressionToken.RParen)
-                select $"({expr})").Or(Constant);
+             from expr in Parse.Ref(() => Expr)
+             from rparen in Token.EqualTo(ArithmeticExpressionToken.RParen)
+             select $"({expr})").Or(Constant);
 
         private static readonly TokenListParser<ArithmeticExpressionToken, string> Operand = (from sign in Token.EqualTo
                     (ArithmeticExpressionToken.Minus)
-                from factor in Factor
-                select $"Scalar.Negate<T>({factor})").Or(Factor)
+                                                                                              from factor in Factor
+                                                                                              select $"Scalar.Negate<T>({factor})").Or(Factor)
             .Named("expression");
 
         private static readonly TokenListParser<ArithmeticExpressionToken, string> Term = Parse.Chain
