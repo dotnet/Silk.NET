@@ -227,11 +227,11 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public abstract unsafe void SetImportPropertyFloat(PropertyStore* store, byte* szName, double value);
+        public abstract unsafe void SetImportPropertyFloat(PropertyStore* store, byte* szName, float value);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public abstract void SetImportPropertyFloat(Span<PropertyStore> store, Span<byte> szName, double value);
+        public abstract void SetImportPropertyFloat(Span<PropertyStore> store, Span<byte> szName, float value);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
@@ -347,11 +347,11 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public abstract unsafe Return GetMaterialFloatArray(Material* pMat, byte* pKey, uint type, uint index, double* pOut, uint* pMax);
+        public abstract unsafe Return GetMaterialFloatArray(Material* pMat, byte* pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public abstract Return GetMaterialFloatArray(Span<Material> pMat, Span<byte> pKey, uint type, uint index, Span<double> pOut, Span<uint> pMax);
+        public abstract Return GetMaterialFloatArray(Span<Material> pMat, Span<byte> pKey, uint type, uint index, Span<float> pOut, Span<uint> pMax);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
@@ -395,11 +395,11 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public abstract unsafe Return GetMaterialTexture(Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, double* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public abstract unsafe Return GetMaterialTexture(Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public abstract Return GetMaterialTexture(Span<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<double> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags);
+        public abstract Return GetMaterialTexture(Span<Material> mat, TextureType type, uint index, Span<AssimpString> path, Span<TextureMapping> mapping, Span<uint> uvindex, Span<float> blend, Span<TextureOp> op, Span<TextureMapMode> mapmode, Span<uint> flags);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetLegalString")]
@@ -507,11 +507,11 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public abstract unsafe void SetImportPropertyFloat(PropertyStore* store, string szName, double value);
+        public abstract unsafe void SetImportPropertyFloat(PropertyStore* store, string szName, float value);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public abstract void SetImportPropertyFloat(Span<PropertyStore> store, string szName, double value);
+        public abstract void SetImportPropertyFloat(Span<PropertyStore> store, string szName, float value);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
@@ -539,11 +539,11 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public abstract unsafe Return GetMaterialFloatArray(Material* pMat, string pKey, uint type, uint index, double* pOut, uint* pMax);
+        public abstract unsafe Return GetMaterialFloatArray(Material* pMat, string pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public abstract Return GetMaterialFloatArray(Span<Material> pMat, string pKey, uint type, uint index, Span<double> pOut, Span<uint> pMax);
+        public abstract Return GetMaterialFloatArray(Span<Material> pMat, string pKey, uint type, uint index, Span<float> pOut, Span<uint> pMax);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]

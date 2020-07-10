@@ -455,10 +455,17 @@ namespace Silk.NET.BuildTools.Cpp
                     // We check remapped names here so that types that have variable sizes
                     // can be treated correctly. Otherwise, they will resolve to a particular
                     // platform size, based on whatever parameters were passed into clang.
-                    ret = GetType(typedefType.Decl.UnderlyingType, out _, out var getTypeSuccess);
-                    if (!getTypeSuccess)
+                    if (task.ExcludedNativeNames.Contains(typedefType.Decl.Name))
                     {
                         ret = new Type {Name = typedefType.Decl.Name};
+                    }
+                    else
+                    {
+                        ret = GetType(typedefType.Decl.UnderlyingType, out _, out var getTypeSuccess);
+                        if (!getTypeSuccess)
+                        {
+                            ret = new Type {Name = typedefType.Decl.Name};
+                        }
                     }
                 }
                 else
@@ -534,7 +541,7 @@ namespace Silk.NET.BuildTools.Cpp
                         if (!(existing is null) && existing.ClangMetadata?[0] != enumDecl.Location.ToString())
                         {
                             Console.WriteLine("Warning: Existing enum with same native name.");
-                            Console.WriteLine($"    Existing: {existing.NativeName}, {existing.ClangMetadata}");
+                            Console.WriteLine($"    Existing: {existing.NativeName}, {existing.ClangMetadata[0]}");
                             Console.WriteLine($"    New: {existing.NativeName}, {enumDecl.Location}");
                             Console.WriteLine("Skipping...");
                             break;

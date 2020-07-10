@@ -20,10 +20,10 @@ namespace Silk.NET.Assimp
     {
         public Plane
         (
-            double a = default,
-            double b = default,
-            double c = default,
-            double d = default
+            float a = default,
+            float b = default,
+            float c = default,
+            float d = default
         )
         {
            A = a;
@@ -36,21 +36,21 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "ai_real")]
         [NativeName("Type.Name", "ai_real")]
         [NativeName("Name", "a")]
-        public double A;
+        public float A;
 
         [NativeName("Type", "ai_real")]
         [NativeName("Type.Name", "ai_real")]
         [NativeName("Name", "b")]
-        public double B;
+        public float B;
 
         [NativeName("Type", "ai_real")]
         [NativeName("Type.Name", "ai_real")]
         [NativeName("Name", "c")]
-        public double C;
+        public float C;
 
         [NativeName("Type", "ai_real")]
         [NativeName("Type.Name", "ai_real")]
         [NativeName("Name", "d")]
-        public double D;
+        public float D;
     }
 }

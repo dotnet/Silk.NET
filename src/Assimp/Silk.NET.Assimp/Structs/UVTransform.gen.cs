@@ -22,7 +22,7 @@ namespace Silk.NET.Assimp
         (
             System.Numerics.Vector2 mTranslation = default,
             System.Numerics.Vector2 mScaling = default,
-            double mRotation = default
+            float mRotation = default
         )
         {
            MTranslation = mTranslation;
@@ -44,6 +44,6 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "ai_real")]
         [NativeName("Type.Name", "ai_real")]
         [NativeName("Name", "mRotation")]
-        public double MRotation;
+        public float MRotation;
     }
 }

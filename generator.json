@@ -392,7 +392,8 @@
                 }
             },
             "exclude": [
-                "aiColor3D"
+                "aiColor3D",
+                "ai_real"
             ],
             "rename": {
                 "aiString": "AssimpString"
@@ -426,7 +427,8 @@
                     "aiVector2D": "System.Numerics.Vector2",
                     "aiQuaternion": "System.Numerics.Quaternion",
                     "aiMatrix4x4": "System.Numerics.Matrix4x4",
-                    "aiMatrix3x3": "AssimpMatrix3x3"
+                    "aiMatrix3x3": "AssimpMatrix3x3",
+                    "ai_real": "float"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
