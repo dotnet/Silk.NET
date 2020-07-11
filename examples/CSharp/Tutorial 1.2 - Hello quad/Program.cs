@@ -83,7 +83,7 @@ namespace Tutorial
             }
 
             //Getting the opengl api for drawing to the screen.
-            Gl = GL.GetApi();
+            Gl = GL.GetApi(window);
 
             //Creating a vertex array.
             Vao = Gl.GenVertexArray();

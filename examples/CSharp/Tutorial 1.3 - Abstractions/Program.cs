@@ -58,7 +58,7 @@ namespace Tutorial
                 input.Keyboards[i].KeyDown += KeyDown;
             }
 
-            Gl = GL.GetApi();
+            Gl = GL.GetApi(window);
             
             //Instantiating our new abstractions
             Ebo = new BufferObject<uint>(Gl, Indices, BufferTargetARB.ElementArrayBuffer);
