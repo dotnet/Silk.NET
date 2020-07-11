@@ -36,8 +36,7 @@ namespace Tutorial
             Pitch += yOffset;
 
             //We don't want to be able to look behind us by going over our head or under our feet so make sure it stays within these bounds
-            if (Pitch > 89.0f) { Pitch = 89.0f; }
-            if (Pitch < -89.0f) { Pitch = -89.0f; }
+            Pitch = Math.Clamp(Pitch, -89f, 89f);
 
             var cameraDirection = Vector3.Zero;
             cameraDirection.X = MathF.Cos(MathHelper.DegreesToRadians(Yaw)) * MathF.Cos(MathHelper.DegreesToRadians(Pitch));

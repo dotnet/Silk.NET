@@ -16,6 +16,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <None Update="lighting.frag">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
       <None Update="Shader.frag">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>

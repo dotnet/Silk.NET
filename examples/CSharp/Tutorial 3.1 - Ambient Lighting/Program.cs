@@ -4,6 +4,7 @@ using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
@@ -21,9 +22,10 @@ namespace Tutorial
 
         private static BufferObject<float> Vbo;
         private static BufferObject<uint> Ebo;
-        private static VertexArrayObject<float, uint> Vao;
-        private static Texture Texture;
-        private static Shader Shader;
+        private static VertexArrayObject<float, uint> VaoCube;
+        private static VertexArrayObject<float, uint> VaoLamp;
+        private static Shader LightingShader;
+        private static Shader LampShader;
 
         private static Camera Camera;
 
@@ -35,48 +37,48 @@ namespace Tutorial
 
         private static readonly float[] Vertices =
         {
-            //X    Y      Z     U   V
-            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
-             0.5f, -0.5f, -0.5f,  1.0f, 0.0f,
-             0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-             0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-            -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f,  0.0f, 0.0f,
+            //X    Y      Z
+            -0.5f, -0.5f, -0.5f,
+             0.5f, -0.5f, -0.5f,
+             0.5f,  0.5f, -0.5f,
+             0.5f,  0.5f, -0.5f,
+            -0.5f,  0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
 
-            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-             0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-             0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-             0.5f,  0.5f,  0.5f,  1.0f, 1.0f,
-            -0.5f,  0.5f,  0.5f,  0.0f, 1.0f,
-            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
+            -0.5f, -0.5f,  0.5f,
+             0.5f, -0.5f,  0.5f,
+             0.5f,  0.5f,  0.5f,
+             0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+            -0.5f, -0.5f,  0.5f,
 
-            -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-            -0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-            -0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+            -0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,
+            -0.5f, -0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
 
-             0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-             0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-             0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-             0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-             0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-             0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
+             0.5f,  0.5f,  0.5f,
+             0.5f,  0.5f, -0.5f,
+             0.5f, -0.5f, -0.5f,
+             0.5f, -0.5f, -0.5f,
+             0.5f, -0.5f,  0.5f,
+             0.5f,  0.5f,  0.5f,
 
-            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
-             0.5f, -0.5f, -0.5f,  1.0f, 1.0f,
-             0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-             0.5f, -0.5f,  0.5f,  1.0f, 0.0f,
-            -0.5f, -0.5f,  0.5f,  0.0f, 0.0f,
-            -0.5f, -0.5f, -0.5f,  0.0f, 1.0f,
+            -0.5f, -0.5f, -0.5f,
+             0.5f, -0.5f, -0.5f,
+             0.5f, -0.5f,  0.5f,
+             0.5f, -0.5f,  0.5f,
+            -0.5f, -0.5f,  0.5f,
+            -0.5f, -0.5f, -0.5f,
 
-            -0.5f,  0.5f, -0.5f,  0.0f, 1.0f,
-             0.5f,  0.5f, -0.5f,  1.0f, 1.0f,
-             0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-             0.5f,  0.5f,  0.5f,  1.0f, 0.0f,
-            -0.5f,  0.5f,  0.5f,  0.0f, 0.0f,
-            -0.5f,  0.5f, -0.5f,  0.0f, 1.0f
+            -0.5f,  0.5f, -0.5f,
+             0.5f,  0.5f, -0.5f,
+             0.5f,  0.5f,  0.5f,
+             0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f, -0.5f
         };
 
         private static readonly uint[] Indices =
@@ -119,16 +121,17 @@ namespace Tutorial
 
             Ebo = new BufferObject<uint>(Gl, Indices, BufferTargetARB.ElementArrayBuffer);
             Vbo = new BufferObject<float>(Gl, Vertices, BufferTargetARB.ArrayBuffer);
-            Vao = new VertexArrayObject<float, uint>(Gl, Vbo, Ebo);
+            VaoCube = new VertexArrayObject<float, uint>(Gl, Vbo, Ebo);
 
-            Vao.VertexAttributePointer(0, 3, VertexAttribPointerType.Float, 5, 0);
-            Vao.VertexAttributePointer(1, 2, VertexAttribPointerType.Float, 5, 3);
+            VaoCube.VertexAttributePointer(0, 3, VertexAttribPointerType.Float, 3, 0);
 
-            Shader = new Shader(Gl, "shader.vert", "shader.frag");
+            //The lighting shader will give our main cube its colour multiplied by the lights intensity
+            LightingShader = new Shader(Gl, "shader.vert", "lighting.frag");
+            //The Lamp shader uses a fragment shader that just colours it solid white so that we know it is the light source
+            LampShader = new Shader(Gl, "shader.vert", "shader.frag");
 
-            Texture = new Texture(Gl, "silk.png");
-
-            Camera = new Camera(Vector3.UnitZ * 3, Vector3.UnitZ * -1, Vector3.UnitY, Width / Height);
+            //Start a camera at position 3 on the Z axis, looking at position -1 on the Z axis
+            Camera = new Camera(Vector3.UnitZ * 6, Vector3.UnitZ * -1, Vector3.UnitY, Width / Height);
         }
 
         private static unsafe void OnUpdate(double deltaTime)
@@ -162,21 +165,30 @@ namespace Tutorial
             Gl.Enable(EnableCap.DepthTest);
             Gl.Clear((uint)(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));
 
-            Vao.Bind();
-            Texture.Bind();
-            Shader.Use();
-            Shader.SetUniform("uTexture0", 0);
+            VaoCube.Bind();
+            LightingShader.Use();
 
-            //Use elapsed time to convert to radians to allow our cube to rotate over time
-            var difference = (DateTime.UtcNow - StartTime).TotalMilliseconds / 10;
-
-            var model = Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(difference)) * Matrix4x4.CreateRotationX(MathHelper.DegreesToRadians(difference));
-
-            Shader.SetUniform("uModel", model);
-            Shader.SetUniform("uView", Camera.GetViewMatrix());
-            Shader.SetUniform("uProjection", Camera.GetProjectionMatrix());
+            //Slightly rotate the cube to give it an angled face to look at
+            LightingShader.SetUniform("uModel", Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(25f)));
+            LightingShader.SetUniform("uView", Camera.GetViewMatrix());
+            LightingShader.SetUniform("uProjection", Camera.GetProjectionMatrix());
+            LightingShader.SetUniform("objectColor", new Vector3(1.0f, 0.5f, 0.31f));
+            LightingShader.SetUniform("lightColor", Vector3.One);
 
             //We're drawing with just vertices and no indicies, and it takes 36 verticies to have a six-sided textured cube
+            Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
+
+            LampShader.Use();
+
+            //The Lamp cube is going to be a scaled down version of the normal cubes verticies moved to a different screen location
+            var lampMatrix = Matrix4x4.Identity;
+            lampMatrix *= Matrix4x4.CreateScale(0.2f);
+            lampMatrix *= Matrix4x4.CreateTranslation(new Vector3(1.2f, 1.0f, 2.0f));
+
+            LampShader.SetUniform("uModel", lampMatrix);
+            LampShader.SetUniform("uView", Camera.GetViewMatrix());
+            LampShader.SetUniform("uProjection", Camera.GetProjectionMatrix());
+
             Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
         }
 
@@ -203,9 +215,8 @@ namespace Tutorial
         {
             Vbo.Dispose();
             Ebo.Dispose();
-            Vao.Dispose();
-            Shader.Dispose();
-            Texture.Dispose();
+            VaoCube.Dispose();
+            LightingShader.Dispose();
         }
 
         private static void KeyDown(IKeyboard keyboard, Key key, int arg3)
