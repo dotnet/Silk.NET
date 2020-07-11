@@ -23,7 +23,12 @@ namespace Silk.NET.Core.Loader
         /// </summary>
         /// <param name="name">The name of the library to load.</param>
         /// <returns>Pointer to the library.</returns>
-        protected override IntPtr CoreLoadNativeLibrary(string name) => UnderlyingLoader.LoadNativeLibrary(name);
+        protected override IntPtr CoreLoadNativeLibrary(string name)
+        {
+            var ret = IntPtr.Zero;
+            UnderlyingLoader.TryLoadNativeLibrary(name, out ret);
+            return ret;
+        }
         
         /// <summary>
         /// Free a native library.
