@@ -10,4 +10,8 @@
       <PackageReference Include="Silk.NET" Version="1.1.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\src\Core\Silk.NET\Silk.NET.csproj" />
+    </ItemGroup>
+
 </Project>
