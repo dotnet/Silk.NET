@@ -8,8 +8,11 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Silk.NET" Version="1.4.0" />
       <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0-rc0003" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\src\Core\Silk.NET\Silk.NET.csproj" />
     </ItemGroup>
 
     <ItemGroup>
