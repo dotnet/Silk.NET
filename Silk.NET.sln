@@ -297,6 +297,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 2.1 - Co-ordinate 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 2.2 - Camera", "examples\CSharp\Tutorial 2.2 - Camera\Tutorial 2.2 - Camera.csproj", "{4FBE561E-7FF9-4D69-91D5-945DE9A20291}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 3.1 - Ambient Lighting", "examples\CSharp\Tutorial 3.1 - Ambient Lighting\Tutorial 3.1 - Ambient Lighting.csproj", "{0451BC01-130B-4C35-9F23-87A3AFDFED2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1846,6 +1848,18 @@ Global
 		{4FBE561E-7FF9-4D69-91D5-945DE9A20291}.Release|x64.Build.0 = Release|Any CPU
 		{4FBE561E-7FF9-4D69-91D5-945DE9A20291}.Release|x86.ActiveCfg = Release|Any CPU
 		{4FBE561E-7FF9-4D69-91D5-945DE9A20291}.Release|x86.Build.0 = Release|Any CPU
+		{0451BC01-130B-4C35-9F23-87A3AFDFED2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0451BC01-130B-4C35-9F23-87A3AFDFED2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0451BC01-130B-4C35-9F23-87A3AFDFED2E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0451BC01-130B-4C35-9F23-87A3AFDFED2E}.Debug|x64.Build.0 = Debug|Any CPU
+		{0451BC01-130B-4C35-9F23-87A3AFDFED2E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0451BC01-130B-4C35-9F23-87A3AFDFED2E}.Debug|x86.Build.0 = Debug|Any CPU
+		{0451BC01-130B-4C35-9F23-87A3AFDFED2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0451BC01-130B-4C35-9F23-87A3AFDFED2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0451BC01-130B-4C35-9F23-87A3AFDFED2E}.Release|x64.ActiveCfg = Release|Any CPU
+		{0451BC01-130B-4C35-9F23-87A3AFDFED2E}.Release|x64.Build.0 = Release|Any CPU
+		{0451BC01-130B-4C35-9F23-87A3AFDFED2E}.Release|x86.ActiveCfg = Release|Any CPU
+		{0451BC01-130B-4C35-9F23-87A3AFDFED2E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
@@ -1984,6 +1998,7 @@ Global
 		{7AF3C6CA-64FE-43F3-BD7B-C57C83AFAB79} = {DFA0E841-33E5-4533-AF00-964E21A141B8}
 		{7874B5F2-2428-4D4E-8FDB-8634573163B8} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
 		{4FBE561E-7FF9-4D69-91D5-945DE9A20291} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
+		{0451BC01-130B-4C35-9F23-87A3AFDFED2E} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
 	EndGlobalSection
 	EndGlobalSection
 EndGlobal
