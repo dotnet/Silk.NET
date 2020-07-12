@@ -25,8 +25,7 @@ namespace Silk.NET.Core.Loader
         /// <returns>Pointer to the library.</returns>
         protected override IntPtr CoreLoadNativeLibrary(string name)
         {
-            var ret = IntPtr.Zero;
-            UnderlyingLoader.TryLoadNativeLibrary(name, out ret);
+            UnderlyingLoader.TryLoadNativeLibrary(name, out var ret);
             return ret;
         }
         
