@@ -23,10 +23,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public abstract void DrawVkImage([Flow(FlowDirection.In)] ulong vkImage, [Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] float x0, [Flow(FlowDirection.In)] float y0, [Flow(FlowDirection.In)] float x1, [Flow(FlowDirection.In)] float y1, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float s0, [Flow(FlowDirection.In)] float t0, [Flow(FlowDirection.In)] float s1, [Flow(FlowDirection.In)] float t1);
 
         [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
-        public abstract unsafe IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] char* name);
+        public abstract unsafe IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
-        public abstract IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] ref char name);
+        public abstract IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] ref byte name);
 
         [NativeApi(EntryPoint = "glSignalVkFenceNV")]
         public abstract void SignalVkFence([Flow(FlowDirection.In)] ulong vkFence);

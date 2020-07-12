@@ -22,9 +22,9 @@ namespace Silk.NET.OpenXR
         (
             StructureType type = StructureType.TypeGraphicsBindingOpenglESAndroidKhr,
             void* next = default,
-            EGLDisplay display = default,
-            EGLConfig config = default,
-            EGLContext context = default
+            IntPtr display = default,
+            IntPtr config = default,
+            IntPtr context = default
         )
         {
             Type = type;
@@ -48,16 +48,16 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "EGLDisplay")]
         [NativeName("Type.Name", "EGLDisplay")]
         [NativeName("Name", "display")]
-        public EGLDisplay Display;
+        public IntPtr Display;
 /// <summary></summary>
         [NativeName("Type", "EGLConfig")]
         [NativeName("Type.Name", "EGLConfig")]
         [NativeName("Name", "config")]
-        public EGLConfig Config;
+        public IntPtr Config;
 /// <summary></summary>
         [NativeName("Type", "EGLContext")]
         [NativeName("Type.Name", "EGLContext")]
         [NativeName("Name", "context")]
-        public EGLContext Context;
+        public IntPtr Context;
     }
 }

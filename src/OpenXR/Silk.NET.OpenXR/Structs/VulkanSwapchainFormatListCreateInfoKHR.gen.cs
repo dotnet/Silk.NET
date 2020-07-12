@@ -23,7 +23,7 @@ namespace Silk.NET.OpenXR
             StructureType type = StructureType.TypeVulkanSwapchainFormatListCreateInfoKhr,
             void* next = default,
             uint viewFormatCount = default,
-            VkFormat* viewFormats = default
+            uint* viewFormats = default
         )
         {
             Type = type;
@@ -51,6 +51,6 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "VkFormat*")]
         [NativeName("Type.Name", "VkFormat")]
         [NativeName("Name", "viewFormats")]
-        public VkFormat* ViewFormats;
+        public uint* ViewFormats;
     }
 }

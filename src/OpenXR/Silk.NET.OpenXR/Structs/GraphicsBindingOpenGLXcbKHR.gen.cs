@@ -24,10 +24,10 @@ namespace Silk.NET.OpenXR
             void* next = default,
             IntPtr* connection = default,
             uint screenNumber = default,
-            xcb_glx_fbconfig_t fbconfigid = default,
+            IntPtr fbconfigid = default,
             IntPtr visualid = default,
-            xcb_glx_drawable_t glxDrawable = default,
-            xcb_glx_context_t glxContext = default
+            IntPtr glxDrawable = default,
+            IntPtr glxContext = default
         )
         {
             Type = type;
@@ -64,7 +64,7 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "xcb_glx_fbconfig_t")]
         [NativeName("Type.Name", "xcb_glx_fbconfig_t")]
         [NativeName("Name", "fbconfigid")]
-        public xcb_glx_fbconfig_t Fbconfigid;
+        public IntPtr Fbconfigid;
 /// <summary></summary>
         [NativeName("Type", "xcb_visualid_t")]
         [NativeName("Type.Name", "xcb_visualid_t")]
@@ -74,11 +74,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "xcb_glx_drawable_t")]
         [NativeName("Type.Name", "xcb_glx_drawable_t")]
         [NativeName("Name", "glxDrawable")]
-        public xcb_glx_drawable_t GlxDrawable;
+        public IntPtr GlxDrawable;
 /// <summary></summary>
         [NativeName("Type", "xcb_glx_context_t")]
         [NativeName("Type.Name", "xcb_glx_context_t")]
         [NativeName("Name", "glxContext")]
-        public xcb_glx_context_t GlxContext;
+        public IntPtr GlxContext;
     }
 }

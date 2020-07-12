@@ -24,7 +24,7 @@ namespace Silk.NET.OpenXR
             void* next = default,
             IntPtr* xDisplay = default,
             uint visualid = default,
-            GLXFBConfig glxFbconfig = default,
+            IntPtr glxFbconfig = default,
             IntPtr glxDrawable = default,
             IntPtr glxContext = default
         )
@@ -62,7 +62,7 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "GLXFBConfig")]
         [NativeName("Type.Name", "GLXFBConfig")]
         [NativeName("Name", "glxFBConfig")]
-        public GLXFBConfig GlxFbconfig;
+        public IntPtr GlxFbconfig;
 /// <summary></summary>
         [NativeName("Type", "GLXDrawable")]
         [NativeName("Type.Name", "GLXDrawable")]

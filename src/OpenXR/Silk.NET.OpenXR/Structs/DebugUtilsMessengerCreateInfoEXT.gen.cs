@@ -24,7 +24,7 @@ namespace Silk.NET.OpenXR
             void* next = default,
             DebugUtilsMessageSeverityFlagsEXT messageSeverities = default,
             DebugUtilsMessageTypeFlagsEXT messageTypes = default,
-            PFN_xrDebugUtilsMessengerCallbackEXT userCallback = default,
+            FuncPtr userCallback = default,
             void* userData = default
         )
         {
@@ -60,7 +60,7 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "PFN_xrDebugUtilsMessengerCallbackEXT")]
         [NativeName("Type.Name", "PFN_xrDebugUtilsMessengerCallbackEXT")]
         [NativeName("Name", "userCallback")]
-        public PFN_xrDebugUtilsMessengerCallbackEXT UserCallback;
+        public FuncPtr UserCallback;
 /// <summary></summary>
         [NativeName("Type", "void*")]
         [NativeName("Type.Name", "void")]

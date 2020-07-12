@@ -23,7 +23,7 @@ namespace Silk.NET.OpenXR
             StructureType type = StructureType.TypeGraphicsBindingD3D12Khr,
             void* next = default,
             IntPtr device = default,
-            ID3D12CommandQueue* queue = default
+            IntPtr queue = default
         )
         {
             Type = type;
@@ -51,6 +51,6 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "ID3D12CommandQueue*")]
         [NativeName("Type.Name", "ID3D12CommandQueue")]
         [NativeName("Name", "queue")]
-        public ID3D12CommandQueue* Queue;
+        public IntPtr Queue;
     }
 }

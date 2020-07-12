@@ -177,6 +177,15 @@
             },
             "typeMaps": [
                 {
+                    "ID3D11Buffer*": "IntPtr",
+                    "ID3D11Texture2D*":  "IntPtr",
+                    "ID3D11Texture3D*": "IntPtr",
+                    "ID3D11Device*": "IntPtr",
+                    "ID3D12Device*": "IntPtr",
+                    "ID3D12Resource*": "IntPtr",
+                    "ID3D12CommandQueue*": "IntPtr"
+                },
+                {
                     "cl_GLsync": "intptr_t",
                     "cl_accelerator_intel": "intptr_t",
                     "cl_platform_id": "intptr_t",
@@ -498,7 +507,21 @@
                     "VkPhysicalDevice": "Silk.NET.GLFW.VkHandle",
                     "VkImage": "ulong",
                     "VkDevice": "Silk.NET.GLFW.VkHandle",
-                    "PFN_xrVoidFunction": "FuncPtr"
+                    "PFN_xrVoidFunction": "FuncPtr",
+                    "PFN_xrDebugUtilsMessengerCallbackEXT": "FuncPtr",
+                    "PFNEGLGETPROCADDRESSPROC": "FuncPtr",
+                    "ID3D11Buffer*": "IntPtr",
+                    "ID3D11Texture2D*":  "IntPtr",
+                    "ID3D11Texture3D*": "IntPtr",
+                    "ID3D11Device*": "IntPtr",
+                    "ID3D12Device*": "IntPtr",
+                    "ID3D12Resource*": "IntPtr",
+                    "ID3D12CommandQueue*": "IntPtr",
+                    "EGLDisplay": "IntPtr",
+                    "EGLConfig": "IntPtr",
+                    "EGLContext": "IntPtr",
+                    "GLXFBConfig": "IntPtr",
+                    "VkFormat": "uint"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"

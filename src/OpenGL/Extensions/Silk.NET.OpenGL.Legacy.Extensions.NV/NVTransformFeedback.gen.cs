@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     {
         public const string ExtensionName = "NV_transform_feedback";
         [NativeApi(EntryPoint = "glActiveVaryingNV")]
-        public abstract unsafe void ActiveVarying([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] char* name);
+        public abstract unsafe void ActiveVarying([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glActiveVaryingNV")]
-        public abstract void ActiveVarying([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] ref char name);
+        public abstract void ActiveVarying([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] ref byte name);
 
         [NativeApi(EntryPoint = "glBeginTransformFeedbackNV")]
         public abstract void BeginTransformFeedback([Flow(FlowDirection.In)] NV primitiveMode);
@@ -41,10 +41,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public abstract void EndTransformFeedback();
 
         [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
-        public abstract unsafe void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Computed = "program, index, bufSize"), Flow(FlowDirection.Out)] char* name);
+        public abstract unsafe void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] NV* type, [Count(Computed = "program, index, bufSize"), Flow(FlowDirection.Out)] byte* name);
 
         [NativeApi(EntryPoint = "glGetActiveVaryingNV")]
-        public abstract void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type, [Count(Computed = "program, index, bufSize"), Flow(FlowDirection.Out)] out char name);
+        public abstract void GetActiveVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out NV type, [Count(Computed = "program, index, bufSize"), Flow(FlowDirection.Out)] out byte name);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbackVaryingNV")]
         public abstract unsafe void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] int* location);
@@ -53,10 +53,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public abstract void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out int location);
 
         [NativeApi(EntryPoint = "glGetVaryingLocationNV")]
-        public abstract unsafe int GetVaryingLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] char* name);
+        public abstract unsafe int GetVaryingLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetVaryingLocationNV")]
-        public abstract int GetVaryingLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] ref char name);
+        public abstract int GetVaryingLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] ref byte name);
 
         [NativeApi(EntryPoint = "glTransformFeedbackAttribsNV")]
         public abstract unsafe void TransformFeedbackAttrib([Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* attribs, [Flow(FlowDirection.In)] NV bufferMode);
