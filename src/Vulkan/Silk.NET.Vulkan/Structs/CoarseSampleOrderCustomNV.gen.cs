@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct CoarseSampleOrderCustomNV
+    [NativeName("Name", "VkCoarseSampleOrderCustomNV")]
+    public unsafe partial struct CoarseSampleOrderCustomNV
     {
         public CoarseSampleOrderCustomNV
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.Vulkan
             CoarseSampleLocationNV* pSampleLocations = default
         )
         {
-           ShadingRate = shadingRate;
-           SampleCount = sampleCount;
-           SampleLocationCount = sampleLocationCount;
-           PSampleLocations = pSampleLocations;
+            ShadingRate = shadingRate;
+            SampleCount = sampleCount;
+            SampleLocationCount = sampleLocationCount;
+            PSampleLocations = pSampleLocations;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkShadingRatePaletteEntryNV")]
+        [NativeName("Type.Name", "VkShadingRatePaletteEntryNV")]
+        [NativeName("Name", "shadingRate")]
         public ShadingRatePaletteEntryNV ShadingRate;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "sampleCount")]
         public uint SampleCount;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "sampleLocationCount")]
         public uint SampleLocationCount;
 /// <summary></summary>
+        [NativeName("Type", "VkCoarseSampleLocationNV*")]
+        [NativeName("Type.Name", "VkCoarseSampleLocationNV")]
+        [NativeName("Name", "pSampleLocations")]
         public CoarseSampleLocationNV* PSampleLocations;
     }
 }

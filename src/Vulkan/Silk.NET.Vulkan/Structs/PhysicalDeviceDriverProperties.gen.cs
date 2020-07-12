@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceDriverProperties
+    [NativeName("Name", "VkPhysicalDeviceDriverProperties")]
+    public unsafe partial struct PhysicalDeviceDriverProperties
     {
         public PhysicalDeviceDriverProperties
         (
@@ -24,23 +26,41 @@ namespace Silk.NET.Vulkan
             ConformanceVersion conformanceVersion = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DriverID = driverID;
-           ConformanceVersion = conformanceVersion;
+            SType = sType;
+            PNext = pNext;
+            DriverID = driverID;
+            ConformanceVersion = conformanceVersion;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkDriverId")]
+        [NativeName("Type.Name", "VkDriverId")]
+        [NativeName("Name", "driverID")]
         public DriverId DriverID;
         /// <summary></summary>
-       public fixed byte DriverName[256];
+        [NativeName("Type", "char")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "driverName")]
+        public fixed byte DriverName[256];
         /// <summary></summary>
-       public fixed byte DriverInfo[256];
+        [NativeName("Type", "char")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "driverInfo")]
+        public fixed byte DriverInfo[256];
 /// <summary></summary>
+        [NativeName("Type", "VkConformanceVersion")]
+        [NativeName("Type.Name", "VkConformanceVersion")]
+        [NativeName("Name", "conformanceVersion")]
         public ConformanceVersion ConformanceVersion;
     }
 }

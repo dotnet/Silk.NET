@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct GeometryDataNV
+    [NativeName("Name", "VkGeometryDataNV")]
+    public unsafe partial struct GeometryDataNV
     {
         public GeometryDataNV
         (
@@ -22,13 +24,19 @@ namespace Silk.NET.Vulkan
             GeometryAABBNV aabbs = default
         )
         {
-           Triangles = triangles;
-           Aabbs = aabbs;
+            Triangles = triangles;
+            Aabbs = aabbs;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkGeometryTrianglesNV")]
+        [NativeName("Type.Name", "VkGeometryTrianglesNV")]
+        [NativeName("Name", "triangles")]
         public GeometryTrianglesNV Triangles;
 /// <summary></summary>
+        [NativeName("Type", "VkGeometryAABBNV")]
+        [NativeName("Type.Name", "VkGeometryAABBNV")]
+        [NativeName("Name", "aabbs")]
         public GeometryAABBNV Aabbs;
     }
 }

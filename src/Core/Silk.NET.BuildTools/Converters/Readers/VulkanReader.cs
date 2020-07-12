@@ -87,7 +87,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                                 Naming.TranslateLite(TrimName("VkStructureType", task), task.FunctionPrefix)
                                             )
                                             : null
-                                }
+                                }.WithFixedFieldFixup09072020()
                             )
                             .ToList(),
                         Name = Naming.TranslateLite(TrimName(s.Name, task), prefix),
@@ -296,7 +296,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
         public IEnumerable<Enum> ReadEnums(object obj, BindTask task)
         {
             var spec = (VulkanSpecification) obj;
-            task.TypeMaps.Insert(0, spec.BaseTypes);
+            task.InjectTypeMap(spec.BaseTypes);
             var enums = ConvertEnums(spec, task);
             var tm = new Dictionary<string, string>();
             foreach (var feature in spec.Features.Select(x => x.Api).RemoveDuplicates())
@@ -317,7 +317,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 }
             }
             
-            task.TypeMaps.Insert(0, tm);
+            task.InjectTypeMap(tm);
         }
 
         /// <inheritdoc />
@@ -400,9 +400,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 );
             }
 
-            task.TypeMaps.Insert
+            task.InjectTypeMap
             (
-                0,
                 spec.Typedefs.Where
                         (typedef => typedef.Type == "VkFlags" && !ret.ContainsKey(typedef.Requires ?? "__SilkNetNull"))
                     .ToDictionary(typedef => typedef.Name, typedef => typedef.Type)

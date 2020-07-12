@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DescriptorSetLayoutBinding
+    [NativeName("Name", "VkDescriptorSetLayoutBinding")]
+    public unsafe partial struct DescriptorSetLayoutBinding
     {
         public DescriptorSetLayoutBinding
         (
@@ -25,22 +27,37 @@ namespace Silk.NET.Vulkan
             Sampler* pImmutableSamplers = default
         )
         {
-           Binding = binding;
-           DescriptorType = descriptorType;
-           DescriptorCount = descriptorCount;
-           StageFlags = stageFlags;
-           PImmutableSamplers = pImmutableSamplers;
+            Binding = binding;
+            DescriptorType = descriptorType;
+            DescriptorCount = descriptorCount;
+            StageFlags = stageFlags;
+            PImmutableSamplers = pImmutableSamplers;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "binding")]
         public uint Binding;
 /// <summary></summary>
+        [NativeName("Type", "VkDescriptorType")]
+        [NativeName("Type.Name", "VkDescriptorType")]
+        [NativeName("Name", "descriptorType")]
         public DescriptorType DescriptorType;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "descriptorCount")]
         public uint DescriptorCount;
 /// <summary></summary>
+        [NativeName("Type", "VkShaderStageFlags")]
+        [NativeName("Type.Name", "VkShaderStageFlags")]
+        [NativeName("Name", "stageFlags")]
         public ShaderStageFlags StageFlags;
 /// <summary></summary>
+        [NativeName("Type", "VkSampler*")]
+        [NativeName("Type.Name", "VkSampler")]
+        [NativeName("Name", "pImmutableSamplers")]
         public Sampler* PImmutableSamplers;
     }
 }

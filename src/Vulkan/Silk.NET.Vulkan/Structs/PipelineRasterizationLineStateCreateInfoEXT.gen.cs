@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PipelineRasterizationLineStateCreateInfoEXT
+    [NativeName("Name", "VkPipelineRasterizationLineStateCreateInfoEXT")]
+    public unsafe partial struct PipelineRasterizationLineStateCreateInfoEXT
     {
         public PipelineRasterizationLineStateCreateInfoEXT
         (
@@ -26,25 +28,43 @@ namespace Silk.NET.Vulkan
             ushort lineStipplePattern = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           LineRasterizationMode = lineRasterizationMode;
-           StippledLineEnable = stippledLineEnable;
-           LineStippleFactor = lineStippleFactor;
-           LineStipplePattern = lineStipplePattern;
+            SType = sType;
+            PNext = pNext;
+            LineRasterizationMode = lineRasterizationMode;
+            StippledLineEnable = stippledLineEnable;
+            LineStippleFactor = lineStippleFactor;
+            LineStipplePattern = lineStipplePattern;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkLineRasterizationModeEXT")]
+        [NativeName("Type.Name", "VkLineRasterizationModeEXT")]
+        [NativeName("Name", "lineRasterizationMode")]
         public LineRasterizationModeEXT LineRasterizationMode;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "stippledLineEnable")]
         public Bool32 StippledLineEnable;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "lineStippleFactor")]
         public uint LineStippleFactor;
 /// <summary></summary>
+        [NativeName("Type", "uint16_t")]
+        [NativeName("Type.Name", "uint16_t")]
+        [NativeName("Name", "lineStipplePattern")]
         public ushort LineStipplePattern;
     }
 }

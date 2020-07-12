@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PresentRegionKHR
+    [NativeName("Name", "VkPresentRegionKHR")]
+    public unsafe partial struct PresentRegionKHR
     {
         public PresentRegionKHR
         (
@@ -22,13 +24,19 @@ namespace Silk.NET.Vulkan
             RectLayerKHR* pRectangles = default
         )
         {
-           RectangleCount = rectangleCount;
-           PRectangles = pRectangles;
+            RectangleCount = rectangleCount;
+            PRectangles = pRectangles;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "rectangleCount")]
         public uint RectangleCount;
 /// <summary></summary>
+        [NativeName("Type", "VkRectLayerKHR*")]
+        [NativeName("Type.Name", "VkRectLayerKHR")]
+        [NativeName("Name", "pRectangles")]
         public RectLayerKHR* PRectangles;
     }
 }

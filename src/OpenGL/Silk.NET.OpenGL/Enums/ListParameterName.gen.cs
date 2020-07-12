@@ -5,13 +5,16 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL
 {
+    [NativeName("Name", "ListParameterName")]
     public enum ListParameterName
     {
+        [NativeName("Name", "GL_LIST_PRIORITY_SGIX")]
         ListPrioritySgix = 0x8182,
     }
 }

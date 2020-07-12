@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceFragmentDensityMapPropertiesEXT
+    [NativeName("Name", "VkPhysicalDeviceFragmentDensityMapPropertiesEXT")]
+    public unsafe partial struct PhysicalDeviceFragmentDensityMapPropertiesEXT
     {
         public PhysicalDeviceFragmentDensityMapPropertiesEXT
         (
@@ -25,22 +27,37 @@ namespace Silk.NET.Vulkan
             Bool32 fragmentDensityInvocations = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MinFragmentDensityTexelSize = minFragmentDensityTexelSize;
-           MaxFragmentDensityTexelSize = maxFragmentDensityTexelSize;
-           FragmentDensityInvocations = fragmentDensityInvocations;
+            SType = sType;
+            PNext = pNext;
+            MinFragmentDensityTexelSize = minFragmentDensityTexelSize;
+            MaxFragmentDensityTexelSize = maxFragmentDensityTexelSize;
+            FragmentDensityInvocations = fragmentDensityInvocations;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkExtent2D")]
+        [NativeName("Type.Name", "VkExtent2D")]
+        [NativeName("Name", "minFragmentDensityTexelSize")]
         public Extent2D MinFragmentDensityTexelSize;
 /// <summary></summary>
+        [NativeName("Type", "VkExtent2D")]
+        [NativeName("Type.Name", "VkExtent2D")]
+        [NativeName("Name", "maxFragmentDensityTexelSize")]
         public Extent2D MaxFragmentDensityTexelSize;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "fragmentDensityInvocations")]
         public Bool32 FragmentDensityInvocations;
     }
 }

@@ -135,7 +135,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets a value indicating whether the count is computed from other parameters.
         /// </summary>
         [JsonIgnore]
-        public bool IsComputed => ComputedFromNames.Any();
+        public bool IsComputed => ComputedFromNames?.Any() ?? false;
 
         /// <summary>
         /// Gets a value indicating whether the count is retrieved from a constant.

@@ -5,14 +5,17 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
     [Flags()]
+    [NativeName("Name", "VkSparseMemoryBindFlags")]
     public enum SparseMemoryBindFlags
     {
+        [NativeName("Name", "VK_SPARSE_MEMORY_BIND_METADATA_BIT")]
         SparseMemoryBindMetadataBit = 1,
     }
 }

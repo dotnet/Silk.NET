@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
+    [NativeName("Name", "VkPhysicalDeviceFragmentShaderInterlockFeaturesEXT")]
+    public unsafe partial struct PhysicalDeviceFragmentShaderInterlockFeaturesEXT
     {
         public PhysicalDeviceFragmentShaderInterlockFeaturesEXT
         (
@@ -25,22 +27,37 @@ namespace Silk.NET.Vulkan
             Bool32 fragmentShaderShadingRateInterlock = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           FragmentShaderSampleInterlock = fragmentShaderSampleInterlock;
-           FragmentShaderPixelInterlock = fragmentShaderPixelInterlock;
-           FragmentShaderShadingRateInterlock = fragmentShaderShadingRateInterlock;
+            SType = sType;
+            PNext = pNext;
+            FragmentShaderSampleInterlock = fragmentShaderSampleInterlock;
+            FragmentShaderPixelInterlock = fragmentShaderPixelInterlock;
+            FragmentShaderShadingRateInterlock = fragmentShaderShadingRateInterlock;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "fragmentShaderSampleInterlock")]
         public Bool32 FragmentShaderSampleInterlock;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "fragmentShaderPixelInterlock")]
         public Bool32 FragmentShaderPixelInterlock;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "fragmentShaderShadingRateInterlock")]
         public Bool32 FragmentShaderShadingRateInterlock;
     }
 }

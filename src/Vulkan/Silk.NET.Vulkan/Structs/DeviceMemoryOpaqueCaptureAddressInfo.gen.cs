@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DeviceMemoryOpaqueCaptureAddressInfo
+    [NativeName("Name", "VkDeviceMemoryOpaqueCaptureAddressInfo")]
+    public unsafe partial struct DeviceMemoryOpaqueCaptureAddressInfo
     {
         public DeviceMemoryOpaqueCaptureAddressInfo
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.Vulkan
             DeviceMemory memory = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Memory = memory;
+            SType = sType;
+            PNext = pNext;
+            Memory = memory;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkDeviceMemory")]
+        [NativeName("Type.Name", "VkDeviceMemory")]
+        [NativeName("Name", "memory")]
         public DeviceMemory Memory;
     }
 }

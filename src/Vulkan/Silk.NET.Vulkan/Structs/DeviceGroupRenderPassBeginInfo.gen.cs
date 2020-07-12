@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DeviceGroupRenderPassBeginInfo
+    [NativeName("Name", "VkDeviceGroupRenderPassBeginInfo")]
+    public unsafe partial struct DeviceGroupRenderPassBeginInfo
     {
         public DeviceGroupRenderPassBeginInfo
         (
@@ -25,22 +27,37 @@ namespace Silk.NET.Vulkan
             Rect2D* pDeviceRenderAreas = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DeviceMask = deviceMask;
-           DeviceRenderAreaCount = deviceRenderAreaCount;
-           PDeviceRenderAreas = pDeviceRenderAreas;
+            SType = sType;
+            PNext = pNext;
+            DeviceMask = deviceMask;
+            DeviceRenderAreaCount = deviceRenderAreaCount;
+            PDeviceRenderAreas = pDeviceRenderAreas;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "deviceMask")]
         public uint DeviceMask;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "deviceRenderAreaCount")]
         public uint DeviceRenderAreaCount;
 /// <summary></summary>
+        [NativeName("Type", "VkRect2D*")]
+        [NativeName("Type.Name", "VkRect2D")]
+        [NativeName("Name", "pDeviceRenderAreas")]
         public Rect2D* PDeviceRenderAreas;
     }
 }

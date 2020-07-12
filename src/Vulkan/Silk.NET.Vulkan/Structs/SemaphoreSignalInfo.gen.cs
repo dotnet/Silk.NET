@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct SemaphoreSignalInfo
+    [NativeName("Name", "VkSemaphoreSignalInfo")]
+    public unsafe partial struct SemaphoreSignalInfo
     {
         public SemaphoreSignalInfo
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.Vulkan
             ulong value = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Semaphore = semaphore;
-           Value = value;
+            SType = sType;
+            PNext = pNext;
+            Semaphore = semaphore;
+            Value = value;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkSemaphore")]
+        [NativeName("Type.Name", "VkSemaphore")]
+        [NativeName("Name", "semaphore")]
         public Semaphore Semaphore;
 /// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "value")]
         public ulong Value;
     }
 }

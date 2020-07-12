@@ -8,23 +8,28 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct SetStateFlagsIndirectCommandNV
+    [NativeName("Name", "VkSetStateFlagsIndirectCommandNV")]
+    public unsafe partial struct SetStateFlagsIndirectCommandNV
     {
         public SetStateFlagsIndirectCommandNV
         (
             uint data = default
         )
         {
-           Data = data;
+            Data = data;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "data")]
         public uint Data;
     }
 }

@@ -31,6 +31,7 @@ namespace Silk.NET.BuildTools.Common
         public string ExtensionName { get; set; }
         [JsonIgnore] public string ProfileName { get; set; }
         [JsonIgnore] public Version ProfileVersion { get; set; }
+        [JsonIgnore] public string[] ClangMetadata { get; set; }
         
         /// <summary>
         /// A list of fields this struct contains.
