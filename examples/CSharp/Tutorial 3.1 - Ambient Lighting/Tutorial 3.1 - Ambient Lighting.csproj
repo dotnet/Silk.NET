@@ -8,15 +8,25 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0-rc0003" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\..\..\src\Core\Silk.NET\Silk.NET.csproj" />
     </ItemGroup>
 
     <ItemGroup>
+      <None Update="lighting.frag">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
       <None Update="Shader.frag">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
       <None Update="Shader.vert">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+      <None Update="silk.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>
 

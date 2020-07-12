@@ -1,10 +1,9 @@
 using Silk.NET.OpenGL;
-using System;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
-using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.Advanced;
 using SixLabors.ImageSharp.Processing;
+using System;
+using System.Runtime.InteropServices;
 
 namespace Tutorial
 {
