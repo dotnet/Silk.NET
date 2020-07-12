@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ImportMemoryWin32HandleInfoNV
+    [NativeName("Name", "VkImportMemoryWin32HandleInfoNV")]
+    public unsafe partial struct ImportMemoryWin32HandleInfoNV
     {
         public ImportMemoryWin32HandleInfoNV
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.Vulkan
             IntPtr handle = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           HandleType = handleType;
-           Handle = handle;
+            SType = sType;
+            PNext = pNext;
+            HandleType = handleType;
+            Handle = handle;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkExternalMemoryHandleTypeFlagsNV")]
+        [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlagsNV")]
+        [NativeName("Name", "handleType")]
         public ExternalMemoryHandleTypeFlagsNV HandleType;
 /// <summary></summary>
+        [NativeName("Type", "HANDLE")]
+        [NativeName("Type.Name", "HANDLE")]
+        [NativeName("Name", "handle")]
         public IntPtr Handle;
     }
 }

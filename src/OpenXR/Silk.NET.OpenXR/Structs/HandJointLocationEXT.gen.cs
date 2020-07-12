@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct HandJointLocationEXT
+    [NativeName("Name", "XrHandJointLocationEXT")]
+    public unsafe partial struct HandJointLocationEXT
     {
         public HandJointLocationEXT
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.OpenXR
             float radius = default
         )
         {
-           LocationFlags = locationFlags;
-           Pose = pose;
-           Radius = radius;
+            LocationFlags = locationFlags;
+            Pose = pose;
+            Radius = radius;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "XrSpaceLocationFlags")]
+        [NativeName("Type.Name", "XrSpaceLocationFlags")]
+        [NativeName("Name", "locationFlags")]
         public SpaceLocationFlags LocationFlags;
 /// <summary></summary>
+        [NativeName("Type", "XrPosef")]
+        [NativeName("Type.Name", "XrPosef")]
+        [NativeName("Name", "pose")]
         public Posef Pose;
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "radius")]
         public float Radius;
     }
 }

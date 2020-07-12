@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DisplayPlaneProperties2KHR
+    [NativeName("Name", "VkDisplayPlaneProperties2KHR")]
+    public unsafe partial struct DisplayPlaneProperties2KHR
     {
         public DisplayPlaneProperties2KHR
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.Vulkan
             DisplayPlanePropertiesKHR displayPlaneProperties = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           DisplayPlaneProperties = displayPlaneProperties;
+            SType = sType;
+            PNext = pNext;
+            DisplayPlaneProperties = displayPlaneProperties;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkDisplayPlanePropertiesKHR")]
+        [NativeName("Type.Name", "VkDisplayPlanePropertiesKHR")]
+        [NativeName("Name", "displayPlaneProperties")]
         public DisplayPlanePropertiesKHR DisplayPlaneProperties;
     }
 }

@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct HandMeshVertexBufferMSFT
+    [NativeName("Name", "XrHandMeshVertexBufferMSFT")]
+    public unsafe partial struct HandMeshVertexBufferMSFT
     {
         public HandMeshVertexBufferMSFT
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.OpenXR
             HandMeshVertexMSFT* vertices = default
         )
         {
-           VertexUpdateTime = vertexUpdateTime;
-           VertexCapacityInput = vertexCapacityInput;
-           VertexCountOutput = vertexCountOutput;
-           Vertices = vertices;
+            VertexUpdateTime = vertexUpdateTime;
+            VertexCapacityInput = vertexCapacityInput;
+            VertexCountOutput = vertexCountOutput;
+            Vertices = vertices;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "XrTime")]
+        [NativeName("Type.Name", "XrTime")]
+        [NativeName("Name", "vertexUpdateTime")]
         public long VertexUpdateTime;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "vertexCapacityInput")]
         public uint VertexCapacityInput;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "vertexCountOutput")]
         public uint VertexCountOutput;
 /// <summary></summary>
+        [NativeName("Type", "XrHandMeshVertexMSFT*")]
+        [NativeName("Type.Name", "XrHandMeshVertexMSFT")]
+        [NativeName("Name", "vertices")]
         public HandMeshVertexMSFT* Vertices;
     }
 }

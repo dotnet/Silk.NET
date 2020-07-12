@@ -3,7 +3,6 @@ using System;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.Advanced;
 using SixLabors.ImageSharp.Processing;
 
 namespace Tutorial
@@ -21,7 +20,7 @@ namespace Tutorial
             //where as openGL has origin in the bottom-left corner.
             img.Mutate(x => x.Flip(FlipMode.Vertical));
 
-            fixed (void* data = &MemoryMarshal.GetReference(img.GetPixelSpan()))
+            fixed (void* data = &MemoryMarshal.GetReference(img.GetPixelRowSpan(0)))
             {
                 //Loading the actual image.
                 Load(gl, data, (uint)img.Width, (uint)img.Height);

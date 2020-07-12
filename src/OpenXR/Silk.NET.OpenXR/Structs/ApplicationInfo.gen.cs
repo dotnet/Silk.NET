@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct ApplicationInfo
+    [NativeName("Name", "XrApplicationInfo")]
+    public unsafe partial struct ApplicationInfo
     {
         public ApplicationInfo
         (
@@ -23,20 +25,35 @@ namespace Silk.NET.OpenXR
             ulong apiVersion = default
         )
         {
-           ApplicationVersion = applicationVersion;
-           EngineVersion = engineVersion;
-           ApiVersion = apiVersion;
+            ApplicationVersion = applicationVersion;
+            EngineVersion = engineVersion;
+            ApiVersion = apiVersion;
         }
 
         /// <summary></summary>
-       public fixed byte ApplicationName[128];
+        [NativeName("Type", "char")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "applicationName")]
+        public fixed byte ApplicationName[128];
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "applicationVersion")]
         public uint ApplicationVersion;
         /// <summary></summary>
-       public fixed byte EngineName[128];
+        [NativeName("Type", "char")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "engineName")]
+        public fixed byte EngineName[128];
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "engineVersion")]
         public uint EngineVersion;
 /// <summary></summary>
+        [NativeName("Type", "XrVersion")]
+        [NativeName("Type.Name", "XrVersion")]
+        [NativeName("Name", "apiVersion")]
         public ulong ApiVersion;
     }
 }

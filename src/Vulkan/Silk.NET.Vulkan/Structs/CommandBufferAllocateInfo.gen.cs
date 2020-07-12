@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct CommandBufferAllocateInfo
+    [NativeName("Name", "VkCommandBufferAllocateInfo")]
+    public unsafe partial struct CommandBufferAllocateInfo
     {
         public CommandBufferAllocateInfo
         (
@@ -25,22 +27,37 @@ namespace Silk.NET.Vulkan
             uint commandBufferCount = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           CommandPool = commandPool;
-           Level = level;
-           CommandBufferCount = commandBufferCount;
+            SType = sType;
+            PNext = pNext;
+            CommandPool = commandPool;
+            Level = level;
+            CommandBufferCount = commandBufferCount;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkCommandPool")]
+        [NativeName("Type.Name", "VkCommandPool")]
+        [NativeName("Name", "commandPool")]
         public CommandPool CommandPool;
 /// <summary></summary>
+        [NativeName("Type", "VkCommandBufferLevel")]
+        [NativeName("Type.Name", "VkCommandBufferLevel")]
+        [NativeName("Name", "level")]
         public CommandBufferLevel Level;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "commandBufferCount")]
         public uint CommandBufferCount;
     }
 }

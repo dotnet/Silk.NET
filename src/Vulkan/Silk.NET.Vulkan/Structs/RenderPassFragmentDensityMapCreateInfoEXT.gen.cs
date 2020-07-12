@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct RenderPassFragmentDensityMapCreateInfoEXT
+    [NativeName("Name", "VkRenderPassFragmentDensityMapCreateInfoEXT")]
+    public unsafe partial struct RenderPassFragmentDensityMapCreateInfoEXT
     {
         public RenderPassFragmentDensityMapCreateInfoEXT
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.Vulkan
             AttachmentReference fragmentDensityMapAttachment = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           FragmentDensityMapAttachment = fragmentDensityMapAttachment;
+            SType = sType;
+            PNext = pNext;
+            FragmentDensityMapAttachment = fragmentDensityMapAttachment;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkAttachmentReference")]
+        [NativeName("Type.Name", "VkAttachmentReference")]
+        [NativeName("Name", "fragmentDensityMapAttachment")]
         public AttachmentReference FragmentDensityMapAttachment;
     }
 }

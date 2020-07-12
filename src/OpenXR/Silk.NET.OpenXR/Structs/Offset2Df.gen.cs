@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct Offset2Df
+    [NativeName("Name", "XrOffset2Df")]
+    public unsafe partial struct Offset2Df
     {
         public Offset2Df
         (
@@ -22,13 +24,19 @@ namespace Silk.NET.OpenXR
             float y = default
         )
         {
-           X = x;
-           Y = y;
+            X = x;
+            Y = y;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "x")]
         public float X;
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "y")]
         public float Y;
     }
 }

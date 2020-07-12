@@ -175,6 +175,7 @@ namespace Silk.NET.BuildTools
                     using var gzStream = new GZipStream(fileStream, CompressionLevel.Optimal);
                     gzStream.Write(Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(profile)));
                     gzStream.Flush();
+                    fileStream.Flush();
                     Console.WriteLine("Written to cache for future use.");
                 }
             }

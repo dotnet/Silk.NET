@@ -6,6 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Loader;
 using Ultz.SuperInvoke;
 
@@ -15,23 +16,59 @@ namespace Silk.NET.OpenXR
 {
     public abstract unsafe partial class XR : NativeAPI
     {
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_FALSE")]
         public const uint False = 0;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_ACTION_NAME_SIZE")]
         public const uint MaxActionNameSize = 64;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_ACTION_SET_NAME_SIZE")]
         public const uint MaxActionSetNameSize = 64;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_API_LAYER_DESCRIPTION_SIZE")]
         public const uint MaxApiLayerDescriptionSize = 256;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_API_LAYER_NAME_SIZE")]
         public const uint MaxApiLayerNameSize = 256;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_APPLICATION_NAME_SIZE")]
         public const uint MaxApplicationNameSize = 128;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_ENGINE_NAME_SIZE")]
         public const uint MaxEngineNameSize = 128;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_EXTENSION_NAME_SIZE")]
         public const uint MaxExtensionNameSize = 128;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_GRAPHICS_APIS_SUPPORTED")]
         public const uint MaxGraphicsApisSupported = 32;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_LOCALIZED_ACTION_NAME_SIZE")]
         public const uint MaxLocalizedActionNameSize = 128;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_LOCALIZED_ACTION_SET_NAME_SIZE")]
         public const uint MaxLocalizedActionSetNameSize = 128;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_PATH_LENGTH")]
         public const uint MaxPathLength = 256;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_RESULT_STRING_SIZE")]
         public const uint MaxResultStringSize = 64;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_RUNTIME_NAME_SIZE")]
         public const uint MaxRuntimeNameSize = 128;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_STRUCTURE_NAME_SIZE")]
         public const uint MaxStructureNameSize = 64;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MAX_SYSTEM_NAME_SIZE")]
         public const uint MaxSystemNameSize = 256;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_MIN_COMPOSITION_LAYERS_SUPPORTED")]
         public const uint MinCompositionLayersSupported = 16;
+        [NativeName("Type", "")]
+        [NativeName("Name", "XR_TRUE")]
         public const uint True = 1;
 
         /// <summary>To be added.</summary>
@@ -288,11 +325,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
-        public abstract unsafe Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* name, [Count(Count = 0)] PFN_xrVoidFunction* function);
+        public abstract unsafe Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* name, [Count(Count = 0)] FuncPtr* function);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
-        public abstract Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref byte name, [Count(Count = 0)] ref PFN_xrVoidFunction function);
+        public abstract Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref byte name, [Count(Count = 0)] ref FuncPtr function);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProperties")]
@@ -452,11 +489,11 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
-        public abstract unsafe Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string name, [Count(Count = 0)] PFN_xrVoidFunction* function);
+        public abstract unsafe Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string name, [Count(Count = 0)] FuncPtr* function);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
-        public abstract Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string name, [Count(Count = 0)] ref PFN_xrVoidFunction function);
+        public abstract Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string name, [Count(Count = 0)] ref FuncPtr function);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrPathToString")]

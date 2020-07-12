@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct SwapchainImageD3D11KHR
+    [NativeName("Name", "XrSwapchainImageD3D11KHR")]
+    public unsafe partial struct SwapchainImageD3D11KHR
     {
         public SwapchainImageD3D11KHR
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.OpenXR
             IntPtr texture = default
         )
         {
-           Type = type;
-           Next = next;
-           Texture = texture;
+            Type = type;
+            Next = next;
+            Texture = texture;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
         public StructureType Type;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
         public void* Next;
 /// <summary></summary>
+        [NativeName("Type", "ID3D11Texture2D*")]
+        [NativeName("Type.Name", "ID3D11Texture2D")]
+        [NativeName("Name", "texture")]
         public IntPtr Texture;
     }
 }

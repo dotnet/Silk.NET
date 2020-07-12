@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PerformanceValueINTEL
+    [NativeName("Name", "VkPerformanceValueINTEL")]
+    public unsafe partial struct PerformanceValueINTEL
     {
         public PerformanceValueINTEL
         (
@@ -22,13 +24,19 @@ namespace Silk.NET.Vulkan
             PerformanceValueDataINTEL data = default
         )
         {
-           Type = type;
-           Data = data;
+            Type = type;
+            Data = data;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkPerformanceValueTypeINTEL")]
+        [NativeName("Type.Name", "VkPerformanceValueTypeINTEL")]
+        [NativeName("Name", "type")]
         public PerformanceValueTypeINTEL Type;
 /// <summary></summary>
+        [NativeName("Type", "VkPerformanceValueDataINTEL")]
+        [NativeName("Type.Name", "VkPerformanceValueDataINTEL")]
+        [NativeName("Name", "data")]
         public PerformanceValueDataINTEL Data;
     }
 }

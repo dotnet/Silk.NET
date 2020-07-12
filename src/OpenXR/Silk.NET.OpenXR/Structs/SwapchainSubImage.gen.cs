@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct SwapchainSubImage
+    [NativeName("Name", "XrSwapchainSubImage")]
+    public unsafe partial struct SwapchainSubImage
     {
         public SwapchainSubImage
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.OpenXR
             uint imageArrayIndex = default
         )
         {
-           Swapchain = swapchain;
-           ImageRect = imageRect;
-           ImageArrayIndex = imageArrayIndex;
+            Swapchain = swapchain;
+            ImageRect = imageRect;
+            ImageArrayIndex = imageArrayIndex;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "XrSwapchain")]
+        [NativeName("Type.Name", "XrSwapchain")]
+        [NativeName("Name", "swapchain")]
         public Swapchain Swapchain;
 /// <summary></summary>
+        [NativeName("Type", "XrRect2Di")]
+        [NativeName("Type.Name", "XrRect2Di")]
+        [NativeName("Name", "imageRect")]
         public Rect2Di ImageRect;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "imageArrayIndex")]
         public uint ImageArrayIndex;
     }
 }

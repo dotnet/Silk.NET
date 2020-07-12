@@ -5,14 +5,18 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES
 {
+    [NativeName("Name", "FogCoordinatePointerType")]
     public enum FogCoordinatePointerType
     {
+        [NativeName("Name", "GL_FLOAT")]
         Float = 0x1406,
+        [NativeName("Name", "GL_DOUBLE")]
         Double = 0x140A,
     }
 }

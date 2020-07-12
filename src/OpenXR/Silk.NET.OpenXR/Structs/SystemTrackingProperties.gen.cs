@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct SystemTrackingProperties
+    [NativeName("Name", "XrSystemTrackingProperties")]
+    public unsafe partial struct SystemTrackingProperties
     {
         public SystemTrackingProperties
         (
@@ -22,13 +24,19 @@ namespace Silk.NET.OpenXR
             uint positionTracking = default
         )
         {
-           OrientationTracking = orientationTracking;
-           PositionTracking = positionTracking;
+            OrientationTracking = orientationTracking;
+            PositionTracking = positionTracking;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "XrBool32")]
+        [NativeName("Type.Name", "XrBool32")]
+        [NativeName("Name", "orientationTracking")]
         public uint OrientationTracking;
 /// <summary></summary>
+        [NativeName("Type", "XrBool32")]
+        [NativeName("Type.Name", "XrBool32")]
+        [NativeName("Name", "positionTracking")]
         public uint PositionTracking;
     }
 }

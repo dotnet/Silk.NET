@@ -5,15 +5,19 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
     [Flags()]
+    [NativeName("Name", "XrSwapchainCreateFlags")]
     public enum SwapchainCreateFlags
     {
+        [NativeName("Name", "XR_SWAPCHAIN_CREATE_PROTECTED_CONTENT_BIT")]
         SwapchainCreateProtectedContentBit = 1,
+        [NativeName("Name", "XR_SWAPCHAIN_CREATE_STATIC_IMAGE_BIT")]
         SwapchainCreateStaticImageBit = 2,
     }
 }

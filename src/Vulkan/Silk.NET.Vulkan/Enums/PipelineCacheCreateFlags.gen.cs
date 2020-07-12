@@ -5,14 +5,17 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
     [Flags()]
+    [NativeName("Name", "VkPipelineCacheCreateFlags")]
     public enum PipelineCacheCreateFlags
     {
+        [NativeName("Name", "VK_PIPELINE_CACHE_CREATE_EXTERNALLY_SYNCHRONIZED_BIT_EXT")]
         PipelineCacheCreateExternallySynchronizedBitExt = 1,
     }
 }

@@ -5,14 +5,18 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
+    [NativeName("Name", "XrHandPoseTypeMSFT")]
     public enum HandPoseTypeMSFT
     {
+        [NativeName("Name", "XR_HAND_POSE_TYPE_TRACKED_MSFT")]
         HandPoseTypeTrackedMsft = 0,
+        [NativeName("Name", "XR_HAND_POSE_TYPE_REFERENCE_OPEN_PALM_MSFT")]
         HandPoseTypeReferenceOpenPalmMsft = 1,
     }
 }

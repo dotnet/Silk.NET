@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct HandMeshIndexBufferMSFT
+    [NativeName("Name", "XrHandMeshIndexBufferMSFT")]
+    public unsafe partial struct HandMeshIndexBufferMSFT
     {
         public HandMeshIndexBufferMSFT
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.OpenXR
             uint* indices = default
         )
         {
-           IndexBufferKey = indexBufferKey;
-           IndexCapacityInput = indexCapacityInput;
-           IndexCountOutput = indexCountOutput;
-           Indices = indices;
+            IndexBufferKey = indexBufferKey;
+            IndexCapacityInput = indexCapacityInput;
+            IndexCountOutput = indexCountOutput;
+            Indices = indices;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "indexBufferKey")]
         public uint IndexBufferKey;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "indexCapacityInput")]
         public uint IndexCapacityInput;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "indexCountOutput")]
         public uint IndexCountOutput;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t*")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "indices")]
         public uint* Indices;
     }
 }

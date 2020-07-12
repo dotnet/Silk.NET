@@ -36,6 +36,9 @@ namespace Silk.NET.BuildTools.Common.Enums
         [JsonIgnore]
         public Version ProfileVersion { get; set; }
         
+        [JsonIgnore]
+        public string[] ClangMetadata { get; set; }
+        
         public Type EnumBaseType { get; set; }
 
         /// <summary>

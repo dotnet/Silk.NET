@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct SemaphoreTypeCreateInfoKHR
+    [NativeName("Name", "VkSemaphoreTypeCreateInfoKHR")]
+    public unsafe partial struct SemaphoreTypeCreateInfoKHR
     {
         public SemaphoreTypeCreateInfoKHR
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.Vulkan
             ulong initialValue = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SemaphoreType = semaphoreType;
-           InitialValue = initialValue;
+            SType = sType;
+            PNext = pNext;
+            SemaphoreType = semaphoreType;
+            InitialValue = initialValue;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkSemaphoreType")]
+        [NativeName("Type.Name", "VkSemaphoreType")]
+        [NativeName("Name", "semaphoreType")]
         public SemaphoreType SemaphoreType;
 /// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "initialValue")]
         public ulong InitialValue;
     }
 }

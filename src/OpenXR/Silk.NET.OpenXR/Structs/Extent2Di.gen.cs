@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct Extent2Di
+    [NativeName("Name", "XrExtent2Di")]
+    public unsafe partial struct Extent2Di
     {
         public Extent2Di
         (
@@ -22,13 +24,19 @@ namespace Silk.NET.OpenXR
             int height = default
         )
         {
-           Width = width;
-           Height = height;
+            Width = width;
+            Height = height;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "width")]
         public int Width;
 /// <summary></summary>
+        [NativeName("Type", "int32_t")]
+        [NativeName("Type.Name", "int32_t")]
+        [NativeName("Name", "height")]
         public int Height;
     }
 }

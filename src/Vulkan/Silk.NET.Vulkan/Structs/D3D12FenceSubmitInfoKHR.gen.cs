@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct D3D12FenceSubmitInfoKHR
+    [NativeName("Name", "VkD3D12FenceSubmitInfoKHR")]
+    public unsafe partial struct D3D12FenceSubmitInfoKHR
     {
         public D3D12FenceSubmitInfoKHR
         (
@@ -26,25 +28,43 @@ namespace Silk.NET.Vulkan
             ulong* pSignalSemaphoreValues = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           WaitSemaphoreValuesCount = waitSemaphoreValuesCount;
-           PWaitSemaphoreValues = pWaitSemaphoreValues;
-           SignalSemaphoreValuesCount = signalSemaphoreValuesCount;
-           PSignalSemaphoreValues = pSignalSemaphoreValues;
+            SType = sType;
+            PNext = pNext;
+            WaitSemaphoreValuesCount = waitSemaphoreValuesCount;
+            PWaitSemaphoreValues = pWaitSemaphoreValues;
+            SignalSemaphoreValuesCount = signalSemaphoreValuesCount;
+            PSignalSemaphoreValues = pSignalSemaphoreValues;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "waitSemaphoreValuesCount")]
         public uint WaitSemaphoreValuesCount;
 /// <summary></summary>
+        [NativeName("Type", "uint64_t*")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "pWaitSemaphoreValues")]
         public ulong* PWaitSemaphoreValues;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "signalSemaphoreValuesCount")]
         public uint SignalSemaphoreValuesCount;
 /// <summary></summary>
+        [NativeName("Type", "uint64_t*")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "pSignalSemaphoreValues")]
         public ulong* PSignalSemaphoreValues;
     }
 }

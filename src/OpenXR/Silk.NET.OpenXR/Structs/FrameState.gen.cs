@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct FrameState
+    [NativeName("Name", "XrFrameState")]
+    public unsafe partial struct FrameState
     {
         public FrameState
         (
@@ -25,22 +27,37 @@ namespace Silk.NET.OpenXR
             uint shouldRender = default
         )
         {
-           Type = type;
-           Next = next;
-           PredictedDisplayTime = predictedDisplayTime;
-           PredictedDisplayPeriod = predictedDisplayPeriod;
-           ShouldRender = shouldRender;
+            Type = type;
+            Next = next;
+            PredictedDisplayTime = predictedDisplayTime;
+            PredictedDisplayPeriod = predictedDisplayPeriod;
+            ShouldRender = shouldRender;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
         public StructureType Type;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
         public void* Next;
 /// <summary></summary>
+        [NativeName("Type", "XrTime")]
+        [NativeName("Type.Name", "XrTime")]
+        [NativeName("Name", "predictedDisplayTime")]
         public long PredictedDisplayTime;
 /// <summary></summary>
+        [NativeName("Type", "XrDuration")]
+        [NativeName("Type.Name", "XrDuration")]
+        [NativeName("Name", "predictedDisplayPeriod")]
         public long PredictedDisplayPeriod;
 /// <summary></summary>
+        [NativeName("Type", "XrBool32")]
+        [NativeName("Type.Name", "XrBool32")]
+        [NativeName("Name", "shouldRender")]
         public uint ShouldRender;
     }
 }

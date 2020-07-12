@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct AcquireProfilingLockInfoKHR
+    [NativeName("Name", "VkAcquireProfilingLockInfoKHR")]
+    public unsafe partial struct AcquireProfilingLockInfoKHR
     {
         public AcquireProfilingLockInfoKHR
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.Vulkan
             ulong timeout = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Timeout = timeout;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Timeout = timeout;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkAcquireProfilingLockFlagsKHR")]
+        [NativeName("Type.Name", "VkAcquireProfilingLockFlagsKHR")]
+        [NativeName("Name", "flags")]
         public AcquireProfilingLockFlagsKHR Flags;
 /// <summary></summary>
+        [NativeName("Type", "uint64_t")]
+        [NativeName("Type.Name", "uint64_t")]
+        [NativeName("Name", "timeout")]
         public ulong Timeout;
     }
 }

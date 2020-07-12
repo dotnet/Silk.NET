@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct EventDataSessionStateChanged
+    [NativeName("Name", "XrEventDataSessionStateChanged")]
+    public unsafe partial struct EventDataSessionStateChanged
     {
         public EventDataSessionStateChanged
         (
@@ -25,22 +27,37 @@ namespace Silk.NET.OpenXR
             long time = default
         )
         {
-           Type = type;
-           Next = next;
-           Session = session;
-           State = state;
-           Time = time;
+            Type = type;
+            Next = next;
+            Session = session;
+            State = state;
+            Time = time;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
         public StructureType Type;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
         public void* Next;
 /// <summary></summary>
+        [NativeName("Type", "XrSession")]
+        [NativeName("Type.Name", "XrSession")]
+        [NativeName("Name", "session")]
         public Session Session;
 /// <summary></summary>
+        [NativeName("Type", "XrSessionState")]
+        [NativeName("Type.Name", "XrSessionState")]
+        [NativeName("Name", "state")]
         public SessionState State;
 /// <summary></summary>
+        [NativeName("Type", "XrTime")]
+        [NativeName("Type.Name", "XrTime")]
+        [NativeName("Name", "time")]
         public long Time;
     }
 }

@@ -6,6 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Loader;
 using Ultz.SuperInvoke;
 
@@ -15,90 +16,260 @@ namespace Silk.NET.OpenCL
 {
     public abstract unsafe partial class CL : NativeAPI
     {
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_CHAR_BIT")]
         public const int CharBit = 8;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_CHAR_MAX")]
         public const int CharMax = 127;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_CHAR_MIN")]
         public const int CharMin = -127 - 1;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_DBL_DIG")]
         public const double DblDig = 15;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_DBL_EPSILON")]
         public const double DblEpsilon = 2.220446049250313080847e-16;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_DBL_MANT_DIG")]
         public const double DblMantDig = 53;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_DBL_MAX")]
         public const double DblMax = 1.7976931348623158e+308;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_DBL_MAX_10_EXP")]
         public const double DblMax10Exp = +308;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_DBL_MAX_EXP")]
         public const double DblMaxExp = +1024;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_DBL_MIN")]
         public const double DblMin = 2.225073858507201383090e-308;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_DBL_MIN_10_EXP")]
         public const double DblMin10Exp = -307;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_DBL_MIN_EXP")]
         public const double DblMinExp = -1021;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_DBL_RADIX")]
         public const double DblRadix = 2;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_DEVICE_PARTITION_BY_COUNTS_LIST_END")]
         public const int DevicePartitionByCountsListEnd = 0x0;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_FLT_DIG")]
         public const float FltDig = 6;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_FLT_EPSILON")]
         public const float FltEpsilon = 1.1920928955078125e-7f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_FLT_MANT_DIG")]
         public const float FltMantDig = 24;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_FLT_MAX")]
         public const float FltMax = 340282346638528859811704183484516925440.0f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_FLT_MAX_10_EXP")]
         public const float FltMax10Exp = +38;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_FLT_MAX_EXP")]
         public const float FltMaxExp = +128;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_FLT_MIN")]
         public const float FltMin = 1.175494350822287507969e-38f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_FLT_MIN_10_EXP")]
         public const float FltMin10Exp = -37;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_FLT_MIN_EXP")]
         public const float FltMinExp = -125;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_FLT_RADIX")]
         public const float FltRadix = 2;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_HALF_DIG")]
         public const short HalfDig = 3;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_HALF_EPSILON")]
         public const short HalfEpsilon = unchecked((short)9.765625e-04f);
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_HALF_MANT_DIG")]
         public const short HalfMantDig = 11;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_HALF_MAX")]
         public const short HalfMax = unchecked((short)65504.0f);
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_HALF_MAX_10_EXP")]
         public const short HalfMax10Exp = +4;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_HALF_MAX_EXP")]
         public const short HalfMaxExp = +16;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_HALF_MIN")]
         public const short HalfMin = unchecked((short)6.103515625e-05f);
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_HALF_MIN_10_EXP")]
         public const short HalfMin10Exp = -4;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_HALF_MIN_EXP")]
         public const short HalfMinExp = -13;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_HALF_RADIX")]
         public const short HalfRadix = 2;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_HUGE_VAL")]
         public const double HugeVal = double.PositiveInfinity;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_HUGE_VALF")]
         public const float HugeValf = (float) 1e50;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_INFINITY")]
         public const float Infinity = float.PositiveInfinity;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_INT_MAX")]
         public const int IntMax = 2147483647;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_INT_MIN")]
         public const int IntMin = -2147483647 - 1;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_LONG_MAX")]
         public const long LongMax = 0x7FFFFFFFFFFFFFFFL;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_LONG_MIN")]
         public const long LongMin = -0x7FFFFFFFFFFFFFFFL - 1L;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_1_PI")]
         public const double M1PI = 0.31830988618379067154;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_1_PI_F")]
         public const float M1PIF = 0.318309886f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_2_PI")]
         public const double M2PI = 0.63661977236758134308;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_2_PI_F")]
         public const float M2PIF = 0.636619772f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_2_SQRTPI")]
         public const double M2Sqrtpi = 1.12837916709551257390;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_2_SQRTPI_F")]
         public const float M2SqrtpiF = 1.128379167f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_MAXFLOAT")]
         public const float Maxfloat = float.MaxValue;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_E")]
         public const double ME = 2.7182818284590452354;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_E_F")]
         public const float MEF = 2.718281828f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_LN10")]
         public const double MLN10 = 2.30258509299404568402;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_LN10_F")]
         public const float MLN10F = 2.302585093f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_LN2")]
         public const double MLN2 = 0.69314718055994530942;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_LN2_F")]
         public const float MLN2F = 0.693147181f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_LOG10E")]
         public const double MLog10E = 0.43429448190325182765;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_LOG10E_F")]
         public const float MLog10EF = 0.434294482f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_LOG2E")]
         public const double MLog2E = 1.4426950408889634074;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_LOG2E_F")]
         public const float MLog2EF = 1.442695041f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_PI")]
         public const double MPI = 3.14159265358979323846;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_PI_2")]
         public const double MPI2 = 1.57079632679489661923;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_PI_2_F")]
         public const float MPI2F = 1.570796327f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_PI_4")]
         public const double MPI4 = 0.78539816339744830962;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_PI_4_F")]
         public const float MPI4F = 0.785398163f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_PI_F")]
         public const float MPIF = 3.141592654f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_SQRT1_2")]
         public const double MSqrt12 = 0.70710678118654752440;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_SQRT1_2_F")]
         public const float MSqrt12F = 0.707106781f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_SQRT2")]
         public const double MSqrt2 = 1.41421356237309504880;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_M_SQRT2_F")]
         public const float MSqrt2F = 1.414213562f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_NAME_VERSION_MAX_NAME_SIZE")]
         public const int NameVersionMaxNameSize = 64;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_NAN")]
         public const float Nan = float.NaN;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_PARTITION_BY_COUNTS_LIST_END_EXT")]
         public const int PartitionByCountsListEndExt = 0;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_PARTITION_BY_NAMES_LIST_END_EXT")]
         public const int PartitionByNamesListEndExt = 0 - 1;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_PARTITION_BY_NAMES_LIST_END_INTEL")]
         public const int PartitionByNamesListEndIntel = -1;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_PROPERTIES_LIST_END_EXT")]
         public const int PropertiesListEndExt = 0;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_SCHAR_MAX")]
         public const int ScharMax = 127;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_SCHAR_MIN")]
         public const int ScharMin = -127 - 1;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_SHRT_MAX")]
         public const short ShrtMax = 32767;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_SHRT_MIN")]
         public const short ShrtMin = -32767 - 1;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_UCHAR_MAX")]
         public const int UcharMax = 255;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_UINT_MAX")]
         public const uint UintMax = 0xffffffffU;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_ULONG_MAX")]
         public const ulong UlongMax = 0xFFFFFFFFFFFFFFFFUL;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_USHRT_MAX")]
         public const ushort UshrtMax = 65535;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_VERSION_MAJOR_BITS")]
         public const int VersionMajorBits = 10;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_VERSION_MINOR_BITS")]
         public const int VersionMinorBits = 10;
+        [NativeName("Type", "")]
+        [NativeName("Name", "CL_VERSION_PATCH_BITS")]
         public const int VersionPatchBits = 12;
 
         [NativeApi(EntryPoint = "clCreateBufferWithProperties")]

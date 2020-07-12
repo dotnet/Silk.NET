@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct SystemEyeGazeInteractionPropertiesEXT
+    [NativeName("Name", "XrSystemEyeGazeInteractionPropertiesEXT")]
+    public unsafe partial struct SystemEyeGazeInteractionPropertiesEXT
     {
         public SystemEyeGazeInteractionPropertiesEXT
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.OpenXR
             uint supportsEyeGazeInteraction = default
         )
         {
-           Type = type;
-           Next = next;
-           SupportsEyeGazeInteraction = supportsEyeGazeInteraction;
+            Type = type;
+            Next = next;
+            SupportsEyeGazeInteraction = supportsEyeGazeInteraction;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
         public StructureType Type;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
         public void* Next;
 /// <summary></summary>
+        [NativeName("Type", "XrBool32")]
+        [NativeName("Type.Name", "XrBool32")]
+        [NativeName("Name", "supportsEyeGazeInteraction")]
         public uint SupportsEyeGazeInteraction;
     }
 }

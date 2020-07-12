@@ -341,6 +341,117 @@
             ]
         },
         {
+            "profileName": "Assimp",
+            "sources": [
+                "src/Assimp/Include/assimp.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "assimp",
+            "controlDescriptors": [
+                "convert-windows-only"
+            ],
+            "converter": {},
+            "prefix": "ai",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.26.28801/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/include",
+                    "-Isrc/Assimp/Include"
+                ],
+                "traverse": [
+                    "src/Assimp/Include/assimp/cexport.h",
+                    "src/Assimp/Include/assimp/cfileio.h",
+                    "src/Assimp/Include/assimp/cimport.h",
+                    "src/Assimp/Include/assimp/types.h",
+                    "src/Assimp/Include/assimp/importerdesc.h",
+                    "src/Assimp/Include/assimp/material.h",
+                    "src/Assimp/Include/assimp/version.h",
+                    "src/Assimp/Include/assimp/texture.h",
+                    "src/Assimp/Include/assimp/mesh.h",
+                    "src/Assimp/Include/assimp/light.h",
+                    "src/Assimp/Include/assimp/camera.h",
+                    "src/Assimp/Include/assimp/anim.h",
+                    "src/Assimp/Include/assimp/metadata.h",
+                    "src/Assimp/Include/assimp/scene.h",
+                    "src/Assimp/Include/assimp/aabb.h"
+                ],
+                "classes": {
+                    "assimp.h": "[Core]Assimp"
+                }
+            },
+            "exclude": [
+                "aiColor3D",
+                "ai_real",
+                "_AI_ENFORCE_ENUM_SIZE",
+                "_aiAnimBehaviour_Force32Bit",
+                "_aiBlendMode_Force32Bit",
+                "_AI_DLS_ENFORCE_ENUM_SIZE",
+                "_aiLightSource_Force32Bit",
+                "FORCE_32BIT",
+                "_aiMorphingMethod_Force32Bit",
+                "_AI_ORIGIN_ENFORCE_ENUM_SIZE",
+                "_aiPrimitiveType_Force32Bit",
+                "_aiPTI_Force32Bit",
+                "_aiShadingMode_Force32Bit",
+                "_aiTextureFlags_Force32Bit",
+                "_aiTextureMapMode_Force32Bit",
+                "_aiTextureMapping_Force32Bit",
+                "_aiTextureOp_Force32Bit",
+                "_aiTextureType_Force32Bit"
+            ],
+            "rename": {
+                "aiString": "AssimpString"
+            },
+            "bakery": {
+                "profileNames": [
+                    "assimp"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Assimp",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Assimp",
+            "extensionsNamespace": "Silk.NET.Assimp.Extensions",
+            "legacyNameContainer": {
+                "Linux": "libassimp.so.5",
+                "Windows": "Assimp32.dll",
+                "MacOS": "libassimp.5.dylib",
+                "Android": "libassimp.so.5",
+                "IOS": "__Internal",
+                "ClassName": "AssimpLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "aiVector3D": "System.Numerics.Vector3",
+                    "aiColor4D": "System.Numerics.Vector4",
+                    "aiColor3D": "System.Numerics.Vector3",
+                    "aiVector2D": "System.Numerics.Vector2",
+                    "aiQuaternion": "System.Numerics.Quaternion",
+                    "aiMatrix4x4": "System.Numerics.Matrix4x4",
+                    "aiMatrix3x3": "AssimpMatrix3x3",
+                    "ai_real": "float"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
             "profileName": "OpenXR",
             "sources": [
                 "https://raw.githubusercontent.com/KhronosGroup/OpenXR-SDK-Source/master/specification/registry/xr.xml"

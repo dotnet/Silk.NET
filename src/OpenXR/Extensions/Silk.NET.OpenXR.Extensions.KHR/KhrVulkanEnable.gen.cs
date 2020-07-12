@@ -29,11 +29,11 @@ namespace Silk.NET.OpenXR.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanGraphicsDeviceKHR")]
-        public abstract unsafe Result GetVulkanGraphicsDevice([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] VkInstance vkInstance, [Count(Count = 0)] VkPhysicalDevice* vkPhysicalDevice);
+        public abstract unsafe Result GetVulkanGraphicsDevice([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] Silk.NET.GLFW.VkHandle vkInstance, [Count(Count = 0)] Silk.NET.GLFW.VkHandle* vkPhysicalDevice);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanGraphicsDeviceKHR")]
-        public abstract Result GetVulkanGraphicsDevice([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] VkInstance vkInstance, [Count(Count = 0)] ref VkPhysicalDevice vkPhysicalDevice);
+        public abstract Result GetVulkanGraphicsDevice([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] Silk.NET.GLFW.VkHandle vkInstance, [Count(Count = 0)] ref Silk.NET.GLFW.VkHandle vkPhysicalDevice);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanGraphicsRequirementsKHR")]

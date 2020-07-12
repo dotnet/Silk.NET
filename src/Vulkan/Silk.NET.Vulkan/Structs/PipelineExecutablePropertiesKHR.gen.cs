@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PipelineExecutablePropertiesKHR
+    [NativeName("Name", "VkPipelineExecutablePropertiesKHR")]
+    public unsafe partial struct PipelineExecutablePropertiesKHR
     {
         public PipelineExecutablePropertiesKHR
         (
@@ -24,23 +26,41 @@ namespace Silk.NET.Vulkan
             uint subgroupSize = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Stages = stages;
-           SubgroupSize = subgroupSize;
+            SType = sType;
+            PNext = pNext;
+            Stages = stages;
+            SubgroupSize = subgroupSize;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkShaderStageFlags")]
+        [NativeName("Type.Name", "VkShaderStageFlags")]
+        [NativeName("Name", "stages")]
         public ShaderStageFlags Stages;
         /// <summary></summary>
-       public fixed byte Name[256];
+        [NativeName("Type", "char")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "name")]
+        public fixed byte Name[256];
         /// <summary></summary>
-       public fixed byte Description[256];
+        [NativeName("Type", "char")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "description")]
+        public fixed byte Description[256];
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "subgroupSize")]
         public uint SubgroupSize;
     }
 }

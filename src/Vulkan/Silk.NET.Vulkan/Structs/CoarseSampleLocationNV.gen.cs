@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct CoarseSampleLocationNV
+    [NativeName("Name", "VkCoarseSampleLocationNV")]
+    public unsafe partial struct CoarseSampleLocationNV
     {
         public CoarseSampleLocationNV
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.Vulkan
             uint sample = default
         )
         {
-           PixelX = pixelX;
-           PixelY = pixelY;
-           Sample = sample;
+            PixelX = pixelX;
+            PixelY = pixelY;
+            Sample = sample;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "pixelX")]
         public uint PixelX;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "pixelY")]
         public uint PixelY;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "sample")]
         public uint Sample;
     }
 }

@@ -5,13 +5,16 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy
 {
+    [NativeName("Name", "QueryCounterTarget")]
     public enum QueryCounterTarget
     {
+        [NativeName("Name", "GL_TIMESTAMP")]
         Timestamp = 0x8E28,
     }
 }

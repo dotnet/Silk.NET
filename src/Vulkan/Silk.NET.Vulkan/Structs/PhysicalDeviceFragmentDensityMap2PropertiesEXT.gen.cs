@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceFragmentDensityMap2PropertiesEXT
+    [NativeName("Name", "VkPhysicalDeviceFragmentDensityMap2PropertiesEXT")]
+    public unsafe partial struct PhysicalDeviceFragmentDensityMap2PropertiesEXT
     {
         public PhysicalDeviceFragmentDensityMap2PropertiesEXT
         (
@@ -26,25 +28,43 @@ namespace Silk.NET.Vulkan
             uint maxDescriptorSetSubsampledSamplers = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           SubsampledLoads = subsampledLoads;
-           SubsampledCoarseReconstructionEarlyAccess = subsampledCoarseReconstructionEarlyAccess;
-           MaxSubsampledArrayLayers = maxSubsampledArrayLayers;
-           MaxDescriptorSetSubsampledSamplers = maxDescriptorSetSubsampledSamplers;
+            SType = sType;
+            PNext = pNext;
+            SubsampledLoads = subsampledLoads;
+            SubsampledCoarseReconstructionEarlyAccess = subsampledCoarseReconstructionEarlyAccess;
+            MaxSubsampledArrayLayers = maxSubsampledArrayLayers;
+            MaxDescriptorSetSubsampledSamplers = maxDescriptorSetSubsampledSamplers;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "subsampledLoads")]
         public Bool32 SubsampledLoads;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "subsampledCoarseReconstructionEarlyAccess")]
         public Bool32 SubsampledCoarseReconstructionEarlyAccess;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxSubsampledArrayLayers")]
         public uint MaxSubsampledArrayLayers;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxDescriptorSetSubsampledSamplers")]
         public uint MaxDescriptorSetSubsampledSamplers;
     }
 }

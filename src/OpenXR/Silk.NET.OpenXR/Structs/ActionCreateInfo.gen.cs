@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct ActionCreateInfo
+    [NativeName("Name", "XrActionCreateInfo")]
+    public unsafe partial struct ActionCreateInfo
     {
         public ActionCreateInfo
         (
@@ -25,26 +27,47 @@ namespace Silk.NET.OpenXR
             ulong* subactionPaths = default
         )
         {
-           Type = type;
-           Next = next;
-           ActionType = actionType;
-           CountSubactionPaths = countSubactionPaths;
-           SubactionPaths = subactionPaths;
+            Type = type;
+            Next = next;
+            ActionType = actionType;
+            CountSubactionPaths = countSubactionPaths;
+            SubactionPaths = subactionPaths;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
         public StructureType Type;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
         public void* Next;
         /// <summary></summary>
-       public fixed byte ActionName[64];
+        [NativeName("Type", "char")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "actionName")]
+        public fixed byte ActionName[64];
 /// <summary></summary>
+        [NativeName("Type", "XrActionType")]
+        [NativeName("Type.Name", "XrActionType")]
+        [NativeName("Name", "actionType")]
         public ActionType ActionType;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "countSubactionPaths")]
         public uint CountSubactionPaths;
 /// <summary></summary>
+        [NativeName("Type", "XrPath*")]
+        [NativeName("Type.Name", "XrPath")]
+        [NativeName("Name", "subactionPaths")]
         public ulong* SubactionPaths;
         /// <summary></summary>
-       public fixed byte LocalizedActionName[128];
+        [NativeName("Type", "char")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "localizedActionName")]
+        public fixed byte LocalizedActionName[128];
     }
 }

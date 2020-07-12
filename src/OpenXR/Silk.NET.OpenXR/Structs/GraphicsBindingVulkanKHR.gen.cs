@@ -8,47 +8,70 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct GraphicsBindingVulkanKHR
+    [NativeName("Name", "XrGraphicsBindingVulkanKHR")]
+    public unsafe partial struct GraphicsBindingVulkanKHR
     {
         public GraphicsBindingVulkanKHR
         (
             StructureType type = StructureType.TypeGraphicsBindingVulkanKhr,
             void* next = default,
-            VkInstance instance = default,
-            VkPhysicalDevice physicalDevice = default,
-            VkDevice device = default,
+            Silk.NET.GLFW.VkHandle instance = default,
+            Silk.NET.GLFW.VkHandle physicalDevice = default,
+            Silk.NET.GLFW.VkHandle device = default,
             uint queueFamilyIndex = default,
             uint queueIndex = default
         )
         {
-           Type = type;
-           Next = next;
-           Instance = instance;
-           PhysicalDevice = physicalDevice;
-           Device = device;
-           QueueFamilyIndex = queueFamilyIndex;
-           QueueIndex = queueIndex;
+            Type = type;
+            Next = next;
+            Instance = instance;
+            PhysicalDevice = physicalDevice;
+            Device = device;
+            QueueFamilyIndex = queueFamilyIndex;
+            QueueIndex = queueIndex;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
         public StructureType Type;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
         public void* Next;
 /// <summary></summary>
-        public VkInstance Instance;
+        [NativeName("Type", "VkInstance")]
+        [NativeName("Type.Name", "VkInstance")]
+        [NativeName("Name", "instance")]
+        public Silk.NET.GLFW.VkHandle Instance;
 /// <summary></summary>
-        public VkPhysicalDevice PhysicalDevice;
+        [NativeName("Type", "VkPhysicalDevice")]
+        [NativeName("Type.Name", "VkPhysicalDevice")]
+        [NativeName("Name", "physicalDevice")]
+        public Silk.NET.GLFW.VkHandle PhysicalDevice;
 /// <summary></summary>
-        public VkDevice Device;
+        [NativeName("Type", "VkDevice")]
+        [NativeName("Type.Name", "VkDevice")]
+        [NativeName("Name", "device")]
+        public Silk.NET.GLFW.VkHandle Device;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "queueFamilyIndex")]
         public uint QueueFamilyIndex;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "queueIndex")]
         public uint QueueIndex;
     }
 }

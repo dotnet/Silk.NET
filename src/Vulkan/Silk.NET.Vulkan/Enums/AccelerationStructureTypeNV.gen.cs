@@ -5,14 +5,18 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkAccelerationStructureTypeNV")]
     public enum AccelerationStructureTypeNV
     {
+        [NativeName("Name", "VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_KHR")]
         AccelerationStructureTypeTopLevelKhr = 0,
+        [NativeName("Name", "VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_KHR")]
         AccelerationStructureTypeBottomLevelKhr = 1,
     }
 }

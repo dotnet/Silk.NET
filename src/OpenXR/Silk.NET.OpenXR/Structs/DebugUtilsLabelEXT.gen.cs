@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct DebugUtilsLabelEXT
+    [NativeName("Name", "XrDebugUtilsLabelEXT")]
+    public unsafe partial struct DebugUtilsLabelEXT
     {
         public DebugUtilsLabelEXT
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.OpenXR
             byte* labelName = default
         )
         {
-           Type = type;
-           Next = next;
-           LabelName = labelName;
+            Type = type;
+            Next = next;
+            LabelName = labelName;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
         public StructureType Type;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
         public void* Next;
 /// <summary></summary>
+        [NativeName("Type", "char*")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "labelName")]
         public byte* LabelName;
     }
 }

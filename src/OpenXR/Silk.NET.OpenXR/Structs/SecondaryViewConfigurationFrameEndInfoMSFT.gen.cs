@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct SecondaryViewConfigurationFrameEndInfoMSFT
+    [NativeName("Name", "XrSecondaryViewConfigurationFrameEndInfoMSFT")]
+    public unsafe partial struct SecondaryViewConfigurationFrameEndInfoMSFT
     {
         public SecondaryViewConfigurationFrameEndInfoMSFT
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.OpenXR
             SecondaryViewConfigurationLayerInfoMSFT* viewConfigurationLayersInfo = default
         )
         {
-           Type = type;
-           Next = next;
-           ViewConfigurationCount = viewConfigurationCount;
-           ViewConfigurationLayersInfo = viewConfigurationLayersInfo;
+            Type = type;
+            Next = next;
+            ViewConfigurationCount = viewConfigurationCount;
+            ViewConfigurationLayersInfo = viewConfigurationLayersInfo;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
         public StructureType Type;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
         public void* Next;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "viewConfigurationCount")]
         public uint ViewConfigurationCount;
 /// <summary></summary>
+        [NativeName("Type", "XrSecondaryViewConfigurationLayerInfoMSFT*")]
+        [NativeName("Type.Name", "XrSecondaryViewConfigurationLayerInfoMSFT")]
+        [NativeName("Name", "viewConfigurationLayersInfo")]
         public SecondaryViewConfigurationLayerInfoMSFT* ViewConfigurationLayersInfo;
     }
 }

@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct BaseInStructure
+    [NativeName("Name", "VkBaseInStructure")]
+    public unsafe partial struct BaseInStructure
     {
         public BaseInStructure
         (
@@ -22,13 +24,19 @@ namespace Silk.NET.Vulkan
             BaseInStructure* pNext = default
         )
         {
-           SType = sType;
-           PNext = pNext;
+            SType = sType;
+            PNext = pNext;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "VkBaseInStructure*")]
+        [NativeName("Type.Name", "VkBaseInStructure")]
+        [NativeName("Name", "pNext")]
         public BaseInStructure* PNext;
     }
 }

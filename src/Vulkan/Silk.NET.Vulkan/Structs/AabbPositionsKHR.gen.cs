@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct AabbPositionsKHR
+    [NativeName("Name", "VkAabbPositionsKHR")]
+    public unsafe partial struct AabbPositionsKHR
     {
         public AabbPositionsKHR
         (
@@ -26,25 +28,43 @@ namespace Silk.NET.Vulkan
             float maxZ = default
         )
         {
-           MinX = minX;
-           MinY = minY;
-           MinZ = minZ;
-           MaxX = maxX;
-           MaxY = maxY;
-           MaxZ = maxZ;
+            MinX = minX;
+            MinY = minY;
+            MinZ = minZ;
+            MaxX = maxX;
+            MaxY = maxY;
+            MaxZ = maxZ;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "minX")]
         public float MinX;
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "minY")]
         public float MinY;
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "minZ")]
         public float MinZ;
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "maxX")]
         public float MaxX;
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "maxY")]
         public float MaxY;
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "maxZ")]
         public float MaxZ;
     }
 }

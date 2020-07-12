@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct VulkanSwapchainFormatListCreateInfoKHR
+    [NativeName("Name", "XrVulkanSwapchainFormatListCreateInfoKHR")]
+    public unsafe partial struct VulkanSwapchainFormatListCreateInfoKHR
     {
         public VulkanSwapchainFormatListCreateInfoKHR
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.OpenXR
             VkFormat* viewFormats = default
         )
         {
-           Type = type;
-           Next = next;
-           ViewFormatCount = viewFormatCount;
-           ViewFormats = viewFormats;
+            Type = type;
+            Next = next;
+            ViewFormatCount = viewFormatCount;
+            ViewFormats = viewFormats;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
         public StructureType Type;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
         public void* Next;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "viewFormatCount")]
         public uint ViewFormatCount;
 /// <summary></summary>
+        [NativeName("Type", "VkFormat*")]
+        [NativeName("Type.Name", "VkFormat")]
+        [NativeName("Name", "viewFormats")]
         public VkFormat* ViewFormats;
     }
 }

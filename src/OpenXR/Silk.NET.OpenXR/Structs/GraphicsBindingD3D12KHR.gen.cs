@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenXR
 {
-    public unsafe struct GraphicsBindingD3D12KHR
+    [NativeName("Name", "XrGraphicsBindingD3D12KHR")]
+    public unsafe partial struct GraphicsBindingD3D12KHR
     {
         public GraphicsBindingD3D12KHR
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.OpenXR
             ID3D12CommandQueue* queue = default
         )
         {
-           Type = type;
-           Next = next;
-           Device = device;
-           Queue = queue;
+            Type = type;
+            Next = next;
+            Device = device;
+            Queue = queue;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "XrStructureType")]
+        [NativeName("Type.Name", "XrStructureType")]
+        [NativeName("Name", "type")]
         public StructureType Type;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "next")]
         public void* Next;
 /// <summary></summary>
+        [NativeName("Type", "ID3D12Device*")]
+        [NativeName("Type.Name", "ID3D12Device")]
+        [NativeName("Name", "device")]
         public IntPtr Device;
 /// <summary></summary>
+        [NativeName("Type", "ID3D12CommandQueue*")]
+        [NativeName("Type.Name", "ID3D12CommandQueue")]
+        [NativeName("Name", "queue")]
         public ID3D12CommandQueue* Queue;
     }
 }
