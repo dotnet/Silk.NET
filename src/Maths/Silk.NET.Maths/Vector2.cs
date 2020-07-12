@@ -27,7 +27,8 @@ namespace Silk.NET.Maths
 
     [Serializable]
     [Generator.GenerateMethodAliases]
-    public readonly partial struct Vector2<T> where T : unmanaged, IFormattable
+    public readonly partial struct Vector2<T>
+        where T : unmanaged, IFormattable
     {
         public static Vector2<T> UnitX => new Vector2<T>(Scalar<T>.One, default);
 
@@ -84,43 +85,43 @@ namespace Silk.NET.Maths
 
         public static Vector2<T> GetNormalized(Vector2<T> vec) => Normalize(vec);
 
-        
+
         public static Vector2<T> Add(Vector2<T> a, Vector2<T> b)
             => new Vector2<T>(Scalar.Add(a.X, b.X), Scalar.Add(a.Y, b.Y));
 
-        
+
         public static Vector2<T> Subtract(Vector2<T> a, Vector2<T> b)
             => new Vector2<T>(Scalar.Subtract(a.X, b.X), Scalar.Subtract(a.Y, b.Y));
 
-        
+
         public static Vector2<T> Multiply(Vector2<T> vector, T scale)
             => new Vector2<T>(Scalar.Multiply(vector.X, scale), Scalar.Multiply(vector.Y, scale));
 
-        
+
         public static Vector2<T> Multiply(Vector2<T> vector, Vector2<T> scale)
             => new Vector2<T>(Scalar.Multiply(vector.X, scale.X), Scalar.Multiply(vector.Y, scale.Y));
 
-        
+
         public static Vector2<T> Divide(Vector2<T> vector, T scale)
             => new Vector2<T>(Scalar.Divide(vector.X, scale), Scalar.Divide(vector.Y, scale));
 
-        
+
         public static Vector2<T> Divide(T value, Vector2<T> scale)
             => new Vector2<T>(Scalar.Divide(value, scale.X), Scalar.Divide(value, scale.Y));
 
-        
+
         public static Vector2<T> Divide(Vector2<T> vector, Vector2<T> scale)
             => new Vector2<T>(Scalar.Divide(vector.X, scale.X), Scalar.Divide(vector.Y, scale.Y));
 
-        
+
         public static Vector2<T> ComponentMin(Vector2<T> a, Vector2<T> b)
             => new Vector2<T>(Min(a.X, b.X), Min(a.Y, b.Y));
 
-        
+
         public static Vector2<T> ComponentMax(Vector2<T> a, Vector2<T> b)
             => new Vector2<T>(Max(a.X, b.X), Max(a.Y, b.Y));
 
-        
+
         public static Vector2<T> MagnitudeMin(Vector2<T> left, Vector2<T> right)
         {
             if (Larger(left.LengthSquared, right.LengthSquared))
@@ -131,7 +132,7 @@ namespace Silk.NET.Maths
             return left;
         }
 
-        
+
         public static Vector2<T> MagnitudeMax(Vector2<T> left, Vector2<T> right)
         {
             if (Larger(left.LengthSquared, right.LengthSquared))
@@ -142,49 +143,48 @@ namespace Silk.NET.Maths
             return right;
         }
 
-        
+
         public static Vector2<T> Clamp(Vector2<T> vec, Vector2<T> min, Vector2<T> max)
             => new Vector2<T>(Scalar.Clamp(vec.X, min.X, max.X), Scalar.Clamp(vec.Y, min.Y, max.Y));
 
-        
+
         public static T Distance(Vector2<T> vec1, Vector2<T> vec2) => (vec1 - vec2).Length;
 
-        
+
         public static T DistanceSquared(Vector2<T> vec1, Vector2<T> vec2) => (vec1 - vec2).LengthSquared;
 
-        
+
         public static Vector2<T> Normalize(Vector2<T> vec) => vec / vec.Length;
 
-        
+
         public static T Dot(Vector2<T> left, Vector2<T> right)
         {
             var mul = left * right;
             return Scalar.Add(mul.X, mul.Y);
         }
 
-        
+
         public static T PerpDot(Vector2<T> left, Vector2<T> right)
             => Scalar.Subtract(Scalar.Multiply(left.X, right.Y), Scalar.Multiply(left.Y, right.X));
 
-        
+
         public static Vector2<T> Lerp(Vector2<T> a, Vector2<T> b, T blend)
             => a * Scalar.Subtract(Scalar<T>.One, blend) + b * blend;
 
-        
+
         public static Vector2<T> BaryCentric(Vector2<T> a, Vector2<T> b, Vector2<T> c, T u, T v)
-            =>
-                a * Scalar.Subtract(Scalar<T>.One, u) * Scalar.Subtract(Scalar<T>.One, v) +
-                b * u * Scalar.Subtract(Scalar<T>.One, v) + c * Scalar.Subtract(Scalar<T>.One, u) * v;
+            => a * Scalar.Subtract(Scalar<T>.One, u) * Scalar.Subtract(Scalar<T>.One, v) +
+               b * u * Scalar.Subtract(Scalar<T>.One, v) + c * Scalar.Subtract(Scalar<T>.One, u) * v;
 
-        
-        public static Vector2<T> Transform(Vector2<T> vec, Matrix2X2<T> mat)
-            =>
-                new Vector2<T>
-                    (
-                    Scalar.Add(Scalar.Multiply(vec.X, mat.M11), Scalar.Multiply(vec.Y, mat.M21)),
-                    Scalar.Add(Scalar.Multiply(vec.X, mat.M12), Scalar.Multiply(vec.Y, mat.M22)));
 
-        
+        public static Vector2<T> Transform(Vector2<T> vec, Matrix2x2<T> mat)
+            => new Vector2<T>
+            (
+                Scalar.Add(Scalar.Multiply(vec.X, mat.M11), Scalar.Multiply(vec.Y, mat.M21)),
+                Scalar.Add(Scalar.Multiply(vec.X, mat.M12), Scalar.Multiply(vec.Y, mat.M22))
+            );
+
+
         public static Vector2<T> Transform(Vector2<T> vec, Quaternion<T> quat)
         {
             var x2 = Scalar.Add(quat.X, quat.X);
@@ -198,24 +198,27 @@ namespace Silk.NET.Maths
             var zz2 = Scalar.Multiply(quat.Z, z2);
 
             return new Vector2<T>
+            (
+                Scalar.Add
                 (
+                    Scalar.Multiply(vec.X, Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, yy2), zz2)),
+                    Scalar.Multiply(vec.Y, Scalar.Subtract(xy2, wz2))
+                ),
                 Scalar.Add
-                    (
-                        Scalar.Multiply(vec.X, Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, yy2), zz2)),
-                        Scalar.Multiply(vec.Y, Scalar.Subtract(xy2, wz2))),
-                Scalar.Add
-                    (
-                        Scalar.Multiply(vec.X, Scalar.Add(xy2, wz2)),
-                        Scalar.Multiply(vec.Y, Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, xx2), zz2))));
+                (
+                    Scalar.Multiply(vec.X, Scalar.Add(xy2, wz2)),
+                    Scalar.Multiply(vec.Y, Scalar.Subtract(Scalar.Subtract(Scalar<T>.One, xx2), zz2))
+                )
+            );
         }
 
-        
+
         public static Vector2<T> Cos(Vector2<T> vector) => new Vector2<T>(Scalar.Cos(vector.X), Scalar.Cos(vector.Y));
 
-        
+
         public static Vector2<T> Sin(Vector2<T> vector) => new Vector2<T>(Scalar.Sin(vector.X), Scalar.Sin(vector.Y));
-        
-        
+
+
         public static Vector2<T> Negate(Vector2<T> vec) => new Vector2<T>(Scalar.Negate(vec.X), Scalar.Negate(vec.Y));
 
         public static bool operator ==(Vector2<T> left, Vector2<T> right) => left.Equals(right);
@@ -304,32 +307,26 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(byte))
             {
-                return
-                    (Vector128<T>)
-                        (object)
-                            Vector128.Create
-                                ((byte) (object) X, (byte) (object) Y, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                return (Vector128<T>) (object) Vector128.Create
+                    ((byte) (object) X, (byte) (object) Y, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return
-                    (Vector128<T>)
-                        (object)
-                            Vector128.Create
-                                ((sbyte) (object) X, (sbyte) (object) Y, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                return (Vector128<T>) (object) Vector128.Create
+                    ((sbyte) (object) X, (sbyte) (object) Y, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return
-                    (Vector128<T>) (object) Vector128.Create((ushort) (object) X, (ushort) (object) Y, 0, 0, 0, 0, 0, 0);
+                return (Vector128<T>) (object) Vector128.Create
+                    ((ushort) (object) X, (ushort) (object) Y, 0, 0, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(short))
             {
-                return
-                    (Vector128<T>) (object) Vector128.Create((short) (object) X, (short) (object) Y, 0, 0, 0, 0, 0, 0);
+                return (Vector128<T>) (object) Vector128.Create
+                    ((short) (object) X, (short) (object) Y, 0, 0, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(uint))
@@ -375,42 +372,32 @@ namespace Silk.NET.Maths
         {
             if (typeof(T) == typeof(byte))
             {
-                return
-                    (Vector256<T>)
-                        (object)
-                            Vector256.Create
-                                (
-                                    (byte) (object) X, (byte) (object) Y, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                return (Vector256<T>) (object) Vector256.Create
+                (
+                    (byte) (object) X, (byte) (object) Y, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0
+                );
             }
 
             if (typeof(T) == typeof(sbyte))
             {
-                return
-                    (Vector256<T>)
-                        (object)
-                            Vector256.Create
-                                (
-                                    (sbyte) (object) X, (sbyte) (object) Y, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                return (Vector256<T>) (object) Vector256.Create
+                (
+                    (sbyte) (object) X, (sbyte) (object) Y, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                    0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+                );
             }
 
             if (typeof(T) == typeof(ushort))
             {
-                return
-                    (Vector256<T>)
-                        (object)
-                            Vector256.Create
-                                ((ushort) (object) X, (ushort) (object) Y, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                return (Vector256<T>) (object) Vector256.Create
+                    ((ushort) (object) X, (ushort) (object) Y, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(short))
             {
-                return
-                    (Vector256<T>)
-                        (object)
-                            Vector256.Create
-                                ((short) (object) X, (short) (object) Y, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                return (Vector256<T>) (object) Vector256.Create
+                    ((short) (object) X, (short) (object) Y, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(uint))
@@ -440,8 +427,8 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(float))
             {
-                return
-                    (Vector256<T>) (object) Vector256.Create((float) (object) X, (float) (object) Y, 0, 0, 0, 0, 0, 0);
+                return (Vector256<T>) (object) Vector256.Create
+                    ((float) (object) X, (float) (object) Y, 0, 0, 0, 0, 0, 0);
             }
 
             if (typeof(T) == typeof(double))

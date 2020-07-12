@@ -6,7 +6,7 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-#endregion // ReSharper disable once CheckNamespace
+#endregion
 
 namespace Silk.NET.Maths
 {
@@ -230,11 +230,12 @@ namespace Silk.NET.Maths
             => throw new NotImplementedException();
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static bool AreZero(Half left, Half right) =>
-            // IEEE defines that positive and negative zero are equal, this gives us a quick equality check
-            // for two values by or'ing the private bits together and stripping the sign. They are both zero,
-            // and therefore equivalent, if the resulting value is still zero.
-            (ushort)((left.m_value | right.m_value) & ~SignMask) == 0;
+        private static bool AreZero(Half left, Half right)
+            =>
+                // IEEE defines that positive and negative zero are equal, this gives us a quick equality check
+                // for two values by or'ing the private bits together and stripping the sign. They are both zero,
+                // and therefore equivalent, if the resulting value is still zero.
+                (ushort)((left.m_value | right.m_value) & ~SignMask) == 0;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static bool IsNaNOrZero(Half value) => ((value.m_value - 1) & ~SignMask) >= PositiveInfinityBits;
@@ -650,12 +651,11 @@ namespace Silk.NET.Maths
             public const int HalfSignificandShift = 0;
 
             private static ReadOnlySpan<byte> Log2DeBruijn
-                =>
-                    new byte[32]
-                    {
-                        00, 09, 01, 10, 13, 21, 02, 29, 11, 14, 16, 18, 22, 25, 03, 30, 08, 12, 20, 28, 15, 17, 24, 07, 19,
-                        27, 23, 06, 26, 05, 04, 31
-                    };
+                => new byte[32]
+                {
+                    00, 09, 01, 10, 13, 21, 02, 29, 11, 14, 16, 18, 22, 25, 03, 30, 08, 12, 20, 28, 15, 17, 24, 07, 19,
+                    27, 23, 06, 26, 05, 04, 31
+                };
 
             public static double CreateDouble(ulong value) => BitConverter.Int64BitsToDouble((long)value);
 
@@ -664,19 +664,16 @@ namespace Silk.NET.Maths
             public static unsafe Half CreateHalf(ushort value) => *(Half*)&value;
 
             public static Half CreateHalf(bool sign, ushort exp, ushort sig)
-                =>
-                    CreateHalf
-                        ((ushort)(((sign ? 1U : 0U) << HalfSignShift) | ((uint)exp << SingleExponentShift) | sig));
+                => CreateHalf
+                    ((ushort)(((sign ? 1U : 0U) << HalfSignShift) | ((uint)exp << SingleExponentShift) | sig));
 
             public static float CreateSingle(bool sign, byte exp, uint sig)
-                =>
-                    Int32BitsToSingle
-                        ((int)(((sign ? 1U : 0U) << SingleSignShift) | ((uint)exp << SingleExponentShift) | sig));
+                => Int32BitsToSingle
+                    ((int)(((sign ? 1U : 0U) << SingleSignShift) | ((uint)exp << SingleExponentShift) | sig));
 
             public static double CreateDouble(bool sign, ushort exp, ulong sig)
-                =>
-                    BitConverter.Int64BitsToDouble
-                        ((long)(((sign ? 1UL : 0UL) << DoubleSignShift) | ((ulong)exp << DoubleExponentShift) | sig));
+                => BitConverter.Int64BitsToDouble
+                    ((long)(((sign ? 1UL : 0UL) << DoubleSignShift) | ((ulong)exp << DoubleExponentShift) | sig));
 
             public static unsafe ushort ToUInt16(Half value) => *(ushort*)&value;
 
@@ -787,11 +784,12 @@ namespace Silk.NET.Maths
 
                 // uint.MaxValue >> 27 is always in range [0 - 31] so we use Unsafe.AddByteOffset to avoid bounds check
                 return Unsafe.AddByteOffset
-                    (
-                        // Using deBruijn sequence, k=2, n=5 (2^5=32) : 0b_0000_0111_1100_0100_1010_1100_1101_1101u
-                        ref MemoryMarshal.GetReference(Log2DeBruijn),
-                        // uint|long -> IntPtr cast on 32-bit platforms does expensive overflow checks not needed here
-                        (IntPtr)(int)((value * 0x07C4ACDDu) >> 27));
+                (
+                    // Using deBruijn sequence, k=2, n=5 (2^5=32) : 0b_0000_0111_1100_0100_1010_1100_1101_1101u
+                    ref MemoryMarshal.GetReference(Log2DeBruijn),
+                    // uint|long -> IntPtr cast on 32-bit platforms does expensive overflow checks not needed here
+                    (IntPtr)(int)((value * 0x07C4ACDDu) >> 27)
+                );
             }
         }
     }

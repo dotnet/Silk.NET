@@ -27,7 +27,9 @@ namespace ConvertHelper
         {
             var next = SkipWhiteSpace(span);
             if (!next.HasValue)
+            {
                 yield break;
+            }
 
             do
             {

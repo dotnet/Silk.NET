@@ -12,7 +12,7 @@ namespace ConvertHelper
         private static void Main(string[] args)
         {
             Console.WriteLine
-                ("Hey! I'll try to convert any normal C# expression to a Silk.Net.Maths.Scalar using expression!");
+                ("Hey! I'll try to convert any normal C# expression to a Silk.NET.Maths.Scalar using expression!");
             Console.WriteLine("Simply paste your code below, and I'll translate line-by-line. I'll try to keep `,`");
             Console.WriteLine("A single empty line will start translation");
 
@@ -28,6 +28,7 @@ namespace ConvertHelper
                     {
                         break;
                     }
+
                     sb.AppendLine(i);
                 }
 
@@ -37,6 +38,7 @@ namespace ConvertHelper
                     Console.WriteLine(result.FormatErrorMessageFragment());
                     continue;
                 }
+
                 var transform = ArithmeticExpressionParser.Transform(result.Value);
                 if (!transform.HasValue)
                 {

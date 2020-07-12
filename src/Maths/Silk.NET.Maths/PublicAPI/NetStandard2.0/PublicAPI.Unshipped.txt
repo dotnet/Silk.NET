@@ -1,0 +1,1434 @@
+Silk.NET.Maths.Box2<T>
+Silk.NET.Maths.Box2<T>.Box2(Silk.NET.Maths.Vector2<T> min, Silk.NET.Maths.Vector2<T> max) -> void
+Silk.NET.Maths.Box2<T>.Box2(T minX, T minY, T maxX, T maxY) -> void
+Silk.NET.Maths.Box2<T>.Center.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Box2<T>.Contains(Silk.NET.Maths.Box2<T> other, bool boundaryInclusive = false) -> bool
+Silk.NET.Maths.Box2<T>.Contains(Silk.NET.Maths.Vector2<T> point, bool boundaryInclusive = false) -> bool
+Silk.NET.Maths.Box2<T>.DistanceToNearestEdge(Silk.NET.Maths.Vector2<T> point) -> T
+Silk.NET.Maths.Box2<T>.Equals(Silk.NET.Maths.Box2<T> other) -> bool
+Silk.NET.Maths.Box2<T>.HalfSize.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Box2<T>.Inflate(Silk.NET.Maths.Vector2<T> point) -> Silk.NET.Maths.Box2<T>
+Silk.NET.Maths.Box2<T>.Max.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Box2<T>.Min.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Box2<T>.Scale(Silk.NET.Maths.Vector2<T> scale, Silk.NET.Maths.Vector2<T> anchor) -> Silk.NET.Maths.Box2<T>
+Silk.NET.Maths.Box2<T>.Size.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Box2<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Box2<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Box2<T>.Translate(Silk.NET.Maths.Vector2<T> distance) -> Silk.NET.Maths.Box2<T>
+Silk.NET.Maths.Box2<T>.WithMax(Silk.NET.Maths.Vector2<T> max) -> Silk.NET.Maths.Box2<T>
+Silk.NET.Maths.Box2<T>.WithMin(Silk.NET.Maths.Vector2<T> min) -> Silk.NET.Maths.Box2<T>
+Silk.NET.Maths.Box3<T>
+Silk.NET.Maths.Box3<T>.Box3(Silk.NET.Maths.Vector3<T> min, Silk.NET.Maths.Vector3<T> max) -> void
+Silk.NET.Maths.Box3<T>.Box3(T minX, T minY, T minZ, T maxX, T maxY, T maxZ) -> void
+Silk.NET.Maths.Box3<T>.Center.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Box3<T>.Contains(Silk.NET.Maths.Box3<T> other, bool boundaryInclusive = false) -> bool
+Silk.NET.Maths.Box3<T>.Contains(Silk.NET.Maths.Vector3<T> point, bool boundaryInclusive = false) -> bool
+Silk.NET.Maths.Box3<T>.DistanceToNearestEdge(Silk.NET.Maths.Vector3<T> point) -> T
+Silk.NET.Maths.Box3<T>.Equals(Silk.NET.Maths.Box3<T> other) -> bool
+Silk.NET.Maths.Box3<T>.HalfSize.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Box3<T>.Inflate(Silk.NET.Maths.Vector3<T> point) -> Silk.NET.Maths.Box3<T>
+Silk.NET.Maths.Box3<T>.Max.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Box3<T>.Min.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Box3<T>.Scale(Silk.NET.Maths.Vector3<T> scale, Silk.NET.Maths.Vector3<T> anchor) -> Silk.NET.Maths.Box3<T>
+Silk.NET.Maths.Box3<T>.Size.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Box3<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Box3<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Box3<T>.Translate(Silk.NET.Maths.Vector3<T> distance) -> Silk.NET.Maths.Box3<T>
+Silk.NET.Maths.Half
+Silk.NET.Maths.Half.CompareTo(Silk.NET.Maths.Half other) -> int
+Silk.NET.Maths.Half.CompareTo(object? obj) -> int
+Silk.NET.Maths.Half.Equals(Silk.NET.Maths.Half other) -> bool
+Silk.NET.Maths.Half.ToString(string? format = null, System.IFormatProvider? formatProvider = null) -> string!
+Silk.NET.Maths.Half.TryFormat(System.Span<char> destination, out int charsWritten, System.ReadOnlySpan<char> format, System.IFormatProvider? formatProvider) -> bool
+Silk.NET.Maths.Matrix2x2<T>
+Silk.NET.Maths.Matrix2x2<T>.Column0.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x2<T>.Column1.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x2<T>.Determinant.get -> T
+Silk.NET.Maths.Matrix2x2<T>.Diagonal.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x2<T>.Equals(Silk.NET.Maths.Matrix2x2<T> other) -> bool
+Silk.NET.Maths.Matrix2x2<T>.M11.get -> T
+Silk.NET.Maths.Matrix2x2<T>.M12.get -> T
+Silk.NET.Maths.Matrix2x2<T>.M21.get -> T
+Silk.NET.Maths.Matrix2x2<T>.M22.get -> T
+Silk.NET.Maths.Matrix2x2<T>.Matrix2x2(Silk.NET.Maths.Vector2<T> row0, Silk.NET.Maths.Vector2<T> row1) -> void
+Silk.NET.Maths.Matrix2x2<T>.Matrix2x2(T m11, T m12, T m21, T m22) -> void
+Silk.NET.Maths.Matrix2x2<T>.Matrix2x2(T value) -> void
+Silk.NET.Maths.Matrix2x2<T>.Row0.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x2<T>.Row1.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x2<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Matrix2x2<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Matrix2x2<T>.Trace.get -> T
+Silk.NET.Maths.Matrix2x2<T>.WithM11(T m11) -> Silk.NET.Maths.Matrix2x2<T>
+Silk.NET.Maths.Matrix2x2<T>.WithM12(T m12) -> Silk.NET.Maths.Matrix2x2<T>
+Silk.NET.Maths.Matrix2x2<T>.WithM21(T m21) -> Silk.NET.Maths.Matrix2x2<T>
+Silk.NET.Maths.Matrix2x2<T>.WithM22(T m22) -> Silk.NET.Maths.Matrix2x2<T>
+Silk.NET.Maths.Matrix2x2<T>.this[int rowIndex, int columnIndex].get -> T
+Silk.NET.Maths.Matrix2x3<T>
+Silk.NET.Maths.Matrix2x3<T>.Column0.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x3<T>.Column1.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x3<T>.Column2.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x3<T>.Diagonal.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x3<T>.Equals(Silk.NET.Maths.Matrix2x3<T> other) -> bool
+Silk.NET.Maths.Matrix2x3<T>.M11.get -> T
+Silk.NET.Maths.Matrix2x3<T>.M12.get -> T
+Silk.NET.Maths.Matrix2x3<T>.M13.get -> T
+Silk.NET.Maths.Matrix2x3<T>.M21.get -> T
+Silk.NET.Maths.Matrix2x3<T>.M22.get -> T
+Silk.NET.Maths.Matrix2x3<T>.M23.get -> T
+Silk.NET.Maths.Matrix2x3<T>.Matrix2x3(Silk.NET.Maths.Vector3<T> row0, Silk.NET.Maths.Vector3<T> row1) -> void
+Silk.NET.Maths.Matrix2x3<T>.Matrix2x3(T m11, T m12, T m13, T m21, T m22, T m23) -> void
+Silk.NET.Maths.Matrix2x3<T>.Row0.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix2x3<T>.Row1.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix2x3<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Matrix2x3<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Matrix2x3<T>.Trace.get -> T
+Silk.NET.Maths.Matrix2x3<T>.this[int rowIndex, int columnIndex].get -> T
+Silk.NET.Maths.Matrix2x4<T>
+Silk.NET.Maths.Matrix2x4<T>.Column0.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x4<T>.Column1.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x4<T>.Column2.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x4<T>.Column3.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x4<T>.Diagonal.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix2x4<T>.Equals(Silk.NET.Maths.Matrix2x4<T> other) -> bool
+Silk.NET.Maths.Matrix2x4<T>.M11.get -> T
+Silk.NET.Maths.Matrix2x4<T>.M12.get -> T
+Silk.NET.Maths.Matrix2x4<T>.M13.get -> T
+Silk.NET.Maths.Matrix2x4<T>.M14.get -> T
+Silk.NET.Maths.Matrix2x4<T>.M21.get -> T
+Silk.NET.Maths.Matrix2x4<T>.M22.get -> T
+Silk.NET.Maths.Matrix2x4<T>.M23.get -> T
+Silk.NET.Maths.Matrix2x4<T>.M24.get -> T
+Silk.NET.Maths.Matrix2x4<T>.Matrix2x4(Silk.NET.Maths.Vector4<T> row0, Silk.NET.Maths.Vector4<T> row1) -> void
+Silk.NET.Maths.Matrix2x4<T>.Matrix2x4(T m11, T m12, T m13, T m14, T m21, T m22, T m23, T m24) -> void
+Silk.NET.Maths.Matrix2x4<T>.Row0.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix2x4<T>.Row1.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix2x4<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Matrix2x4<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Matrix2x4<T>.Trace.get -> T
+Silk.NET.Maths.Matrix2x4<T>.this[int rowIndex, int columnIndex].get -> T
+Silk.NET.Maths.Matrix3x2<T>
+Silk.NET.Maths.Matrix3x2<T>.Column0.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x2<T>.Column0.set -> void
+Silk.NET.Maths.Matrix3x2<T>.Column1.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x2<T>.Column1.set -> void
+Silk.NET.Maths.Matrix3x2<T>.Diagonal.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix3x2<T>.Diagonal.set -> void
+Silk.NET.Maths.Matrix3x2<T>.Equals(Silk.NET.Maths.Matrix3x2<T> other) -> bool
+Silk.NET.Maths.Matrix3x2<T>.M11.get -> T
+Silk.NET.Maths.Matrix3x2<T>.M12.get -> T
+Silk.NET.Maths.Matrix3x2<T>.M21.get -> T
+Silk.NET.Maths.Matrix3x2<T>.M22.get -> T
+Silk.NET.Maths.Matrix3x2<T>.M31.get -> T
+Silk.NET.Maths.Matrix3x2<T>.M32.get -> T
+Silk.NET.Maths.Matrix3x2<T>.Matrix3x2(Silk.NET.Maths.Vector2<T> row0, Silk.NET.Maths.Vector2<T> row1, Silk.NET.Maths.Vector2<T> row2) -> void
+Silk.NET.Maths.Matrix3x2<T>.Matrix3x2(T m11, T m12, T m21, T m22, T m31, T m32) -> void
+Silk.NET.Maths.Matrix3x2<T>.Row0.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix3x2<T>.Row1.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix3x2<T>.Row2.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix3x2<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Matrix3x2<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Matrix3x2<T>.Trace.get -> T
+Silk.NET.Maths.Matrix3x2<T>.this[int rowIndex, int columnIndex].get -> T
+Silk.NET.Maths.Matrix3x2<T>.this[int rowIndex, int columnIndex].set -> void
+Silk.NET.Maths.Matrix3x3<T>
+Silk.NET.Maths.Matrix3x3<T>.ClearRotation() -> Silk.NET.Maths.Matrix3x3<T>
+Silk.NET.Maths.Matrix3x3<T>.ClearScale() -> Silk.NET.Maths.Matrix3x3<T>
+Silk.NET.Maths.Matrix3x3<T>.Column0.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x3<T>.Column1.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x3<T>.Column2.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x3<T>.Determinant.get -> T
+Silk.NET.Maths.Matrix3x3<T>.Diagonal.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x3<T>.Equals(Silk.NET.Maths.Matrix3x3<T> other) -> bool
+Silk.NET.Maths.Matrix3x3<T>.ExtractRotation(bool rowNormalize = true) -> Silk.NET.Maths.Quaternion<T>
+Silk.NET.Maths.Matrix3x3<T>.ExtractScale() -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x3<T>.Invert() -> void
+Silk.NET.Maths.Matrix3x3<T>.Inverted() -> Silk.NET.Maths.Matrix3x3<T>
+Silk.NET.Maths.Matrix3x3<T>.M11.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M12.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M13.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M21.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M22.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M23.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M31.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M32.get -> T
+Silk.NET.Maths.Matrix3x3<T>.M33.get -> T
+Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Matrix4x4<T> matrix) -> void
+Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(Silk.NET.Maths.Vector3<T> row0, Silk.NET.Maths.Vector3<T> row1, Silk.NET.Maths.Vector3<T> row2) -> void
+Silk.NET.Maths.Matrix3x3<T>.Matrix3x3(T m11, T m12, T m13, T m21, T m22, T m23, T m31, T m32, T m33) -> void
+Silk.NET.Maths.Matrix3x3<T>.Normalize() -> void
+Silk.NET.Maths.Matrix3x3<T>.Normalized() -> Silk.NET.Maths.Matrix3x3<T>
+Silk.NET.Maths.Matrix3x3<T>.Row0.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x3<T>.Row1.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x3<T>.Row2.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x3<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Matrix3x3<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Matrix3x3<T>.Trace.get -> T
+Silk.NET.Maths.Matrix3x3<T>.Transpose() -> void
+Silk.NET.Maths.Matrix3x3<T>.this[int rowIndex, int columnIndex].get -> T
+Silk.NET.Maths.Matrix3x4<T>
+Silk.NET.Maths.Matrix3x4<T>.Column0.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x4<T>.Column1.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x4<T>.Column2.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x4<T>.Column3.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x4<T>.Diagonal.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix3x4<T>.Diagonal.set -> void
+Silk.NET.Maths.Matrix3x4<T>.Equals(Silk.NET.Maths.Matrix3x4<T> other) -> bool
+Silk.NET.Maths.Matrix3x4<T>.Invert() -> void
+Silk.NET.Maths.Matrix3x4<T>.M11.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M12.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M13.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M14.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M21.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M22.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M23.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M24.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M31.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M32.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M33.get -> T
+Silk.NET.Maths.Matrix3x4<T>.M34.get -> T
+Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(Silk.NET.Maths.Vector4<T> row0, Silk.NET.Maths.Vector4<T> row1, Silk.NET.Maths.Vector4<T> row2) -> void
+Silk.NET.Maths.Matrix3x4<T>.Matrix3x4(T m11, T m12, T m13, T m14, T m21, T m22, T m23, T m24, T m31, T m32, T m33, T m34) -> void
+Silk.NET.Maths.Matrix3x4<T>.Row0.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix3x4<T>.Row1.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix3x4<T>.Row2.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix3x4<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Matrix3x4<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Matrix3x4<T>.Trace.get -> T
+Silk.NET.Maths.Matrix3x4<T>.this[int rowIndex, int columnIndex].get -> T
+Silk.NET.Maths.Matrix3x4<T>.this[int rowIndex, int columnIndex].set -> void
+Silk.NET.Maths.Matrix4x2<T>
+Silk.NET.Maths.Matrix4x2<T>.Column0.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x2<T>.Column1.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x2<T>.Diagonal.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix4x2<T>.Equals(Silk.NET.Maths.Matrix4x2<T> other) -> bool
+Silk.NET.Maths.Matrix4x2<T>.M11.get -> T
+Silk.NET.Maths.Matrix4x2<T>.M12.get -> T
+Silk.NET.Maths.Matrix4x2<T>.M21.get -> T
+Silk.NET.Maths.Matrix4x2<T>.M22.get -> T
+Silk.NET.Maths.Matrix4x2<T>.M31.get -> T
+Silk.NET.Maths.Matrix4x2<T>.M32.get -> T
+Silk.NET.Maths.Matrix4x2<T>.M41.get -> T
+Silk.NET.Maths.Matrix4x2<T>.M42.get -> T
+Silk.NET.Maths.Matrix4x2<T>.Matrix4x2(Silk.NET.Maths.Vector2<T> row0, Silk.NET.Maths.Vector2<T> row1, Silk.NET.Maths.Vector2<T> row2, Silk.NET.Maths.Vector2<T> row3) -> void
+Silk.NET.Maths.Matrix4x2<T>.Matrix4x2(T m11, T m12, T m21, T m22, T m31, T m32, T m41, T m42) -> void
+Silk.NET.Maths.Matrix4x2<T>.Row0.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix4x2<T>.Row1.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix4x2<T>.Row2.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix4x2<T>.Row3.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Matrix4x2<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Matrix4x2<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Matrix4x2<T>.Trace.get -> T
+Silk.NET.Maths.Matrix4x2<T>.this[int rowIndex, int columnIndex].get -> T
+Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.Column0.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x3<T>.Column1.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x3<T>.Column2.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x3<T>.Diagonal.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix4x3<T>.Equals(Silk.NET.Maths.Matrix4x3<T> other) -> bool
+Silk.NET.Maths.Matrix4x3<T>.M11.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M12.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M13.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M21.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M22.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M23.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M31.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M32.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M33.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M41.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M42.get -> T
+Silk.NET.Maths.Matrix4x3<T>.M43.get -> T
+Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(Silk.NET.Maths.Vector3<T> row0, Silk.NET.Maths.Vector3<T> row1, Silk.NET.Maths.Vector3<T> row2, Silk.NET.Maths.Vector3<T> row3) -> void
+Silk.NET.Maths.Matrix4x3<T>.Matrix4x3(T m11, T m12, T m13, T m21, T m22, T m23, T m31, T m32, T m33, T m41, T m42, T m43) -> void
+Silk.NET.Maths.Matrix4x3<T>.Row0.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix4x3<T>.Row1.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix4x3<T>.Row2.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix4x3<T>.Row3.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix4x3<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Matrix4x3<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Matrix4x3<T>.Trace.get -> T
+Silk.NET.Maths.Matrix4x3<T>.WithColumn0(Silk.NET.Maths.Vector4<T> column) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithColumn1(Silk.NET.Maths.Vector4<T> column) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithColumn2(Silk.NET.Maths.Vector4<T> column) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithM11(T m11) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithM12(T m12) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithM13(T m13) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithM21(T m21) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithM22(T m22) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithM23(T m23) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithM31(T m31) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithM32(T m32) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithM33(T m33) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithM41(T m41) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithM42(T m42) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithM43(T m43) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithRow0(Silk.NET.Maths.Vector3<T> row0) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithRow1(Silk.NET.Maths.Vector3<T> row1) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithRow2(Silk.NET.Maths.Vector3<T> row2) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.WithRow3(Silk.NET.Maths.Vector3<T> row3) -> Silk.NET.Maths.Matrix4x3<T>
+Silk.NET.Maths.Matrix4x3<T>.this[int rowIndex, int columnIndex].get -> T
+Silk.NET.Maths.Matrix4x3<T>.this[int rowIndex].get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.Column0.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x4<T>.Column1.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x4<T>.Column2.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x4<T>.Column3.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x4<T>.Determinant.get -> T
+Silk.NET.Maths.Matrix4x4<T>.Diagonal.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x4<T>.Equals(Silk.NET.Maths.Matrix4x4<T> other) -> bool
+Silk.NET.Maths.Matrix4x4<T>.M11.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M12.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M13.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M14.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M21.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M22.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M23.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M24.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M31.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M32.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M33.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M34.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M41.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M42.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M43.get -> T
+Silk.NET.Maths.Matrix4x4<T>.M44.get -> T
+Silk.NET.Maths.Matrix4x4<T>.Matrix4x4(Silk.NET.Maths.Matrix3x3<T> topLeft) -> void
+Silk.NET.Maths.Matrix4x4<T>.Matrix4x4(Silk.NET.Maths.Vector4<T> row0, Silk.NET.Maths.Vector4<T> row1, Silk.NET.Maths.Vector4<T> row2, Silk.NET.Maths.Vector4<T> row3) -> void
+Silk.NET.Maths.Matrix4x4<T>.Matrix4x4(T m11, T m12, T m13, T m14, T m21, T m22, T m23, T m24, T m31, T m32, T m33, T m34, T m41, T m42, T m43, T m44) -> void
+Silk.NET.Maths.Matrix4x4<T>.Row0.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x4<T>.Row1.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x4<T>.Row2.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x4<T>.Row3.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Matrix4x4<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Matrix4x4<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Matrix4x4<T>.Trace.get -> T
+Silk.NET.Maths.Matrix4x4<T>.WithColumn0(Silk.NET.Maths.Vector4<T> column) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithColumn1(Silk.NET.Maths.Vector4<T> column) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithColumn2(Silk.NET.Maths.Vector4<T> column) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithColumn3(Silk.NET.Maths.Vector4<T> column) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM11(T m11) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM12(T m12) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM13(T m13) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM14(T m14) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM21(T m21) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM22(T m22) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM23(T m23) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM24(T m24) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM31(T m31) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM32(T m32) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM33(T m33) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM34(T m34) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM41(T m41) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM42(T m42) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM43(T m43) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithM44(T m44) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithRow0(Silk.NET.Maths.Vector4<T> row0) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithRow1(Silk.NET.Maths.Vector4<T> row1) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithRow2(Silk.NET.Maths.Vector4<T> row2) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.WithRow3(Silk.NET.Maths.Vector4<T> row3) -> Silk.NET.Maths.Matrix4x4<T>
+Silk.NET.Maths.Matrix4x4<T>.this[int rowIndex, int columnIndex].get -> T
+Silk.NET.Maths.Matrix4x4<T>.this[int rowIndex].get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Quaternion<T>
+Silk.NET.Maths.Quaternion<T>.Equals(Silk.NET.Maths.Quaternion<T> other) -> bool
+Silk.NET.Maths.Quaternion<T>.Length.get -> T
+Silk.NET.Maths.Quaternion<T>.LengthSquared.get -> T
+Silk.NET.Maths.Quaternion<T>.Normalized.get -> Silk.NET.Maths.Quaternion<T>
+Silk.NET.Maths.Quaternion<T>.Quaternion(Silk.NET.Maths.Vector3<T> xyz, T w) -> void
+Silk.NET.Maths.Quaternion<T>.Quaternion(Silk.NET.Maths.Vector4<T> xyzw) -> void
+Silk.NET.Maths.Quaternion<T>.Quaternion(T x, T y, T z, T w) -> void
+Silk.NET.Maths.Quaternion<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Quaternion<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Quaternion<T>.W.get -> T
+Silk.NET.Maths.Quaternion<T>.WithW(T w) -> Silk.NET.Maths.Quaternion<T>
+Silk.NET.Maths.Quaternion<T>.WithX(T x) -> Silk.NET.Maths.Quaternion<T>
+Silk.NET.Maths.Quaternion<T>.WithY(T y) -> Silk.NET.Maths.Quaternion<T>
+Silk.NET.Maths.Quaternion<T>.WithZ(T z) -> Silk.NET.Maths.Quaternion<T>
+Silk.NET.Maths.Quaternion<T>.X.get -> T
+Silk.NET.Maths.Quaternion<T>.Xyzw.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Quaternion<T>.Y.get -> T
+Silk.NET.Maths.Quaternion<T>.Z.get -> T
+Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector2<T>.Deconstruct(out T x, out T y) -> void
+Silk.NET.Maths.Vector2<T>.Equals(Silk.NET.Maths.Vector2<T> other) -> bool
+Silk.NET.Maths.Vector2<T>.Length.get -> T
+Silk.NET.Maths.Vector2<T>.LengthSquared.get -> T
+Silk.NET.Maths.Vector2<T>.Normalized.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector2<T>.PerpendicularLeft.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector2<T>.PerpendicularRight.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector2<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Vector2<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Vector2<T>.Vector2(T value) -> void
+Silk.NET.Maths.Vector2<T>.Vector2(T x, T y) -> void
+Silk.NET.Maths.Vector2<T>.WithX(T x) -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector2<T>.WithY(T y) -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector2<T>.X.get -> T
+Silk.NET.Maths.Vector2<T>.XX.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector2<T>.XY.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector2<T>.Y.get -> T
+Silk.NET.Maths.Vector2<T>.YX.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector2<T>.YY.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector2<T>.this[int index].get -> T
+Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.Deconstruct(out T x, out T y, out T z) -> void
+Silk.NET.Maths.Vector3<T>.Equals(Silk.NET.Maths.Vector3<T> other) -> bool
+Silk.NET.Maths.Vector3<T>.Length.get -> T
+Silk.NET.Maths.Vector3<T>.LengthSquared.get -> T
+Silk.NET.Maths.Vector3<T>.Normalized.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Vector3<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Vector3<T>.Vector3(Silk.NET.Maths.Vector2<T> v, T z) -> void
+Silk.NET.Maths.Vector3<T>.Vector3(Silk.NET.Maths.Vector3<T> v) -> void
+Silk.NET.Maths.Vector3<T>.Vector3(Silk.NET.Maths.Vector4<T> v) -> void
+Silk.NET.Maths.Vector3<T>.Vector3(T value) -> void
+Silk.NET.Maths.Vector3<T>.Vector3(T x, T y, T z) -> void
+Silk.NET.Maths.Vector3<T>.WithX(T x) -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.WithY(T y) -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.WithZ(T z) -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.X.get -> T
+Silk.NET.Maths.Vector3<T>.XX.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector3<T>.XXX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.XXY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.XXZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.XY.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector3<T>.XYX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.XYY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.XYZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.XZX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.XZY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.XZZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.Y.get -> T
+Silk.NET.Maths.Vector3<T>.YX.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector3<T>.YXX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.YXY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.YXZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.YY.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector3<T>.YYX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.YYY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.YYZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.YZX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.YZY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.YZZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.Z.get -> T
+Silk.NET.Maths.Vector3<T>.ZXX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.ZXY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.ZXZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.ZYX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.ZYY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.ZYZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.ZZX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.ZZY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.ZZZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector3<T>.this[int index].get -> T
+Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.Deconstruct(out T x, out T y, out T z, out T w) -> void
+Silk.NET.Maths.Vector4<T>.Equals(Silk.NET.Maths.Vector4<T> other) -> bool
+Silk.NET.Maths.Vector4<T>.Length.get -> T
+Silk.NET.Maths.Vector4<T>.LengthSquared.get -> T
+Silk.NET.Maths.Vector4<T>.Negated.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.Normalized.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ToString(string? format) -> string!
+Silk.NET.Maths.Vector4<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
+Silk.NET.Maths.Vector4<T>.Vector4(Silk.NET.Maths.Vector2<T> xy, Silk.NET.Maths.Vector2<T> zw) -> void
+Silk.NET.Maths.Vector4<T>.Vector4(Silk.NET.Maths.Vector2<T> xyzw) -> void
+Silk.NET.Maths.Vector4<T>.Vector4(Silk.NET.Maths.Vector3<T> xyz, T w) -> void
+Silk.NET.Maths.Vector4<T>.Vector4(Silk.NET.Maths.Vector4<T> xyzw) -> void
+Silk.NET.Maths.Vector4<T>.Vector4(T value) -> void
+Silk.NET.Maths.Vector4<T>.Vector4(T x, T y, T z, T w) -> void
+Silk.NET.Maths.Vector4<T>.W.get -> T
+Silk.NET.Maths.Vector4<T>.WWWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WWWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WWWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WWWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WWXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WWXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WWXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WWXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WWYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WWYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WWYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WWYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WWZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WWZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WWZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WWZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WXZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WYZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WZZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WithW(T w) -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WithX(T x) -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WithY(T y) -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.WithZ(T z) -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.X.get -> T
+Silk.NET.Maths.Vector4<T>.XWWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XWWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XWWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XWWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XWXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XWXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XWXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XWXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XWYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XWYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XWYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XWYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XWZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XWZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XWZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XWZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XX.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector4<T>.XXWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XXWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XXWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XXWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XXX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.XXXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XXXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XXXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XXXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XXY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.XXYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XXYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XXYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XXYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XXZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.XXZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XXZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XXZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XXZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XY.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector4<T>.XYWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XYWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XYWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XYWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XYX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.XYXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XYXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XYXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XYXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XYY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.XYYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XYYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XYYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XYYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XYZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.XYZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XYZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XYZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XYZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.XZXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.XZYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.XZZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.XZZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.Y.get -> T
+Silk.NET.Maths.Vector4<T>.YWWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YWWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YWWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YWWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YWXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YWXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YWXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YWXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YWYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YWYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YWYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YWYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YWZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YWZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YWZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YWZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YX.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector4<T>.YXWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YXWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YXWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YXWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YXX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.YXXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YXXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YXXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YXXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YXY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.YXYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YXYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YXYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YXYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YXZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.YXZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YXZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YXZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YXZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YY.get -> Silk.NET.Maths.Vector2<T>
+Silk.NET.Maths.Vector4<T>.YYWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YYWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YYWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YYWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YYX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.YYXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YYXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YYXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YYXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YYY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.YYYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YYYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YYYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YYYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YYZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.YYZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YYZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YYZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YYZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.YZXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.YZYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.YZZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.YZZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.Z.get -> T
+Silk.NET.Maths.Vector4<T>.ZWWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZWWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZWWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZWWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZWXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZWXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZWXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZWXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZWYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZWYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZWYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZWYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZWZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZWZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZWZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZWZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.ZXXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.ZXYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.ZXZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZXZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.ZYXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.ZYYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.ZYZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZYZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZWW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZWX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZWY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZWZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZX.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.ZZXW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZXX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZXY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZXZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZY.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.ZZYW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZYX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZYY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZYZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZZ.get -> Silk.NET.Maths.Vector3<T>
+Silk.NET.Maths.Vector4<T>.ZZZW.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZZX.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZZY.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.ZZZZ.get -> Silk.NET.Maths.Vector4<T>
+Silk.NET.Maths.Vector4<T>.this[int index].get -> T
+override Silk.NET.Maths.Box2<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Box2<T>.GetHashCode() -> int
+override Silk.NET.Maths.Box2<T>.ToString() -> string!
+override Silk.NET.Maths.Box3<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Box3<T>.GetHashCode() -> int
+override Silk.NET.Maths.Box3<T>.ToString() -> string!
+override Silk.NET.Maths.Half.Equals(object? obj) -> bool
+override Silk.NET.Maths.Half.GetHashCode() -> int
+override Silk.NET.Maths.Half.ToString() -> string!
+override Silk.NET.Maths.Matrix2x2<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Matrix2x2<T>.GetHashCode() -> int
+override Silk.NET.Maths.Matrix2x2<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix2x3<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Matrix2x3<T>.GetHashCode() -> int
+override Silk.NET.Maths.Matrix2x3<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix2x4<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Matrix2x4<T>.GetHashCode() -> int
+override Silk.NET.Maths.Matrix2x4<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix3x2<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Matrix3x2<T>.GetHashCode() -> int
+override Silk.NET.Maths.Matrix3x2<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix3x3<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Matrix3x3<T>.GetHashCode() -> int
+override Silk.NET.Maths.Matrix3x3<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix3x4<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Matrix3x4<T>.GetHashCode() -> int
+override Silk.NET.Maths.Matrix3x4<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix4x2<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Matrix4x2<T>.GetHashCode() -> int
+override Silk.NET.Maths.Matrix4x2<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix4x3<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Matrix4x3<T>.GetHashCode() -> int
+override Silk.NET.Maths.Matrix4x3<T>.ToString() -> string!
+override Silk.NET.Maths.Matrix4x4<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Matrix4x4<T>.GetHashCode() -> int
+override Silk.NET.Maths.Matrix4x4<T>.ToString() -> string!
+override Silk.NET.Maths.Quaternion<T>.Equals(object? other) -> bool
+override Silk.NET.Maths.Quaternion<T>.GetHashCode() -> int
+override Silk.NET.Maths.Quaternion<T>.ToString() -> string!
+override Silk.NET.Maths.Vector2<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Vector2<T>.GetHashCode() -> int
+override Silk.NET.Maths.Vector2<T>.ToString() -> string!
+override Silk.NET.Maths.Vector3<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Vector3<T>.GetHashCode() -> int
+override Silk.NET.Maths.Vector3<T>.ToString() -> string!
+override Silk.NET.Maths.Vector4<T>.Equals(object? obj) -> bool
+override Silk.NET.Maths.Vector4<T>.GetHashCode() -> int
+override Silk.NET.Maths.Vector4<T>.ToString() -> string!
+static Silk.NET.Maths.Box2<T>.operator !=(Silk.NET.Maths.Box2<T> left, Silk.NET.Maths.Box2<T> right) -> bool
+static Silk.NET.Maths.Box2<T>.operator ==(Silk.NET.Maths.Box2<T> left, Silk.NET.Maths.Box2<T> right) -> bool
+static Silk.NET.Maths.Box3<T>.operator !=(Silk.NET.Maths.Box3<T> left, Silk.NET.Maths.Box3<T> right) -> bool
+static Silk.NET.Maths.Box3<T>.operator ==(Silk.NET.Maths.Box3<T> left, Silk.NET.Maths.Box3<T> right) -> bool
+static Silk.NET.Maths.Half.IsFinite(Silk.NET.Maths.Half value) -> bool
+static Silk.NET.Maths.Half.IsInfinity(Silk.NET.Maths.Half value) -> bool
+static Silk.NET.Maths.Half.IsNaN(Silk.NET.Maths.Half value) -> bool
+static Silk.NET.Maths.Half.IsNegative(Silk.NET.Maths.Half value) -> bool
+static Silk.NET.Maths.Half.IsNegativeInfinity(Silk.NET.Maths.Half value) -> bool
+static Silk.NET.Maths.Half.IsNormal(Silk.NET.Maths.Half value) -> bool
+static Silk.NET.Maths.Half.IsPositiveInfinity(Silk.NET.Maths.Half value) -> bool
+static Silk.NET.Maths.Half.IsSubnormal(Silk.NET.Maths.Half value) -> bool
+static Silk.NET.Maths.Half.Parse(System.ReadOnlySpan<char> s, System.Globalization.NumberStyles style = System.Globalization.NumberStyles.AllowThousands | System.Globalization.NumberStyles.Float, System.IFormatProvider? formatProvider = null) -> Silk.NET.Maths.Half
+static Silk.NET.Maths.Half.Parse(string! s, System.Globalization.NumberStyles style = System.Globalization.NumberStyles.AllowThousands | System.Globalization.NumberStyles.Float, System.IFormatProvider? formatProvider = null) -> Silk.NET.Maths.Half
+static Silk.NET.Maths.Half.TryParse(System.ReadOnlySpan<char> s, System.Globalization.NumberStyles style, System.IFormatProvider? formatProvider, out Silk.NET.Maths.Half result) -> bool
+static Silk.NET.Maths.Half.TryParse(System.ReadOnlySpan<char> s, out Silk.NET.Maths.Half result) -> bool
+static Silk.NET.Maths.Half.TryParse(string! s, System.Globalization.NumberStyles style, System.IFormatProvider? formatProvider, out Silk.NET.Maths.Half result) -> bool
+static Silk.NET.Maths.Half.TryParse(string! s, out Silk.NET.Maths.Half result) -> bool
+static Silk.NET.Maths.Half.explicit operator Silk.NET.Maths.Half(double value) -> Silk.NET.Maths.Half
+static Silk.NET.Maths.Half.explicit operator Silk.NET.Maths.Half(float value) -> Silk.NET.Maths.Half
+static Silk.NET.Maths.Half.explicit operator byte(Silk.NET.Maths.Half value) -> byte
+static Silk.NET.Maths.Half.explicit operator int(Silk.NET.Maths.Half value) -> int
+static Silk.NET.Maths.Half.explicit operator long(Silk.NET.Maths.Half value) -> long
+static Silk.NET.Maths.Half.explicit operator sbyte(Silk.NET.Maths.Half value) -> sbyte
+static Silk.NET.Maths.Half.explicit operator short(Silk.NET.Maths.Half value) -> short
+static Silk.NET.Maths.Half.explicit operator uint(Silk.NET.Maths.Half value) -> uint
+static Silk.NET.Maths.Half.explicit operator ulong(Silk.NET.Maths.Half value) -> ulong
+static Silk.NET.Maths.Half.explicit operator ushort(Silk.NET.Maths.Half value) -> ushort
+static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(byte value) -> Silk.NET.Maths.Half
+static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(int value) -> Silk.NET.Maths.Half
+static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(long value) -> Silk.NET.Maths.Half
+static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(sbyte value) -> Silk.NET.Maths.Half
+static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(short value) -> Silk.NET.Maths.Half
+static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(uint value) -> Silk.NET.Maths.Half
+static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(ulong value) -> Silk.NET.Maths.Half
+static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(ushort value) -> Silk.NET.Maths.Half
+static Silk.NET.Maths.Half.implicit operator double(Silk.NET.Maths.Half value) -> double
+static Silk.NET.Maths.Half.implicit operator float(Silk.NET.Maths.Half value) -> float
+static Silk.NET.Maths.Half.operator !=(Silk.NET.Maths.Half left, Silk.NET.Maths.Half right) -> bool
+static Silk.NET.Maths.Half.operator +(Silk.NET.Maths.Half value) -> Silk.NET.Maths.Half
+static Silk.NET.Maths.Half.operator -(Silk.NET.Maths.Half value) -> Silk.NET.Maths.Half
+static Silk.NET.Maths.Half.operator <(Silk.NET.Maths.Half left, Silk.NET.Maths.Half right) -> bool
+static Silk.NET.Maths.Half.operator <=(Silk.NET.Maths.Half left, Silk.NET.Maths.Half right) -> bool
+static Silk.NET.Maths.Half.operator ==(Silk.NET.Maths.Half left, Silk.NET.Maths.Half right) -> bool
+static Silk.NET.Maths.Half.operator >(Silk.NET.Maths.Half left, Silk.NET.Maths.Half right) -> bool
+static Silk.NET.Maths.Half.operator >=(Silk.NET.Maths.Half left, Silk.NET.Maths.Half right) -> bool
+static Silk.NET.Maths.Matrix2x2<T>.Add(Silk.NET.Maths.Matrix2x2<T> left, Silk.NET.Maths.Matrix2x2<T> right) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.Add(ref Silk.NET.Maths.Matrix2x2<T> left, ref Silk.NET.Maths.Matrix2x2<T> right, out Silk.NET.Maths.Matrix2x2<T> result) -> void
+static Silk.NET.Maths.Matrix2x2<T>.CreateRotation(T angle) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.CreateRotation(T angle, out Silk.NET.Maths.Matrix2x2<T> result) -> void
+static Silk.NET.Maths.Matrix2x2<T>.CreateScale(Silk.NET.Maths.Vector2<T> scale) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.CreateScale(Silk.NET.Maths.Vector2<T> scale, out Silk.NET.Maths.Matrix2x2<T> result) -> void
+static Silk.NET.Maths.Matrix2x2<T>.CreateScale(T scale) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.CreateScale(T scale, out Silk.NET.Maths.Matrix2x2<T> result) -> void
+static Silk.NET.Maths.Matrix2x2<T>.CreateScale(T x, T y) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.CreateScale(T x, T y, out Silk.NET.Maths.Matrix2x2<T> result) -> void
+static Silk.NET.Maths.Matrix2x2<T>.Identity.get -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.Invert(Silk.NET.Maths.Matrix2x2<T> mat) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.Invert(ref Silk.NET.Maths.Matrix2x2<T> mat, out Silk.NET.Maths.Matrix2x2<T> result) -> void
+static Silk.NET.Maths.Matrix2x2<T>.Multiply(Silk.NET.Maths.Matrix2x2<T> left, Silk.NET.Maths.Matrix2x2<T> right) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.Multiply(Silk.NET.Maths.Matrix2x2<T> left, Silk.NET.Maths.Matrix2x3<T> right) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x2<T>.Multiply(Silk.NET.Maths.Matrix2x2<T> left, Silk.NET.Maths.Matrix2x4<T> right) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x2<T>.Multiply(Silk.NET.Maths.Matrix2x2<T> left, T right) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.Multiply(ref Silk.NET.Maths.Matrix2x2<T> left, T right, out Silk.NET.Maths.Matrix2x2<T> result) -> void
+static Silk.NET.Maths.Matrix2x2<T>.Multiply(ref Silk.NET.Maths.Matrix2x2<T> left, ref Silk.NET.Maths.Matrix2x2<T> right, out Silk.NET.Maths.Matrix2x2<T> result) -> void
+static Silk.NET.Maths.Matrix2x2<T>.Multiply(ref Silk.NET.Maths.Matrix2x2<T> left, ref Silk.NET.Maths.Matrix2x3<T> right, out Silk.NET.Maths.Matrix2x3<T> result) -> void
+static Silk.NET.Maths.Matrix2x2<T>.Multiply(ref Silk.NET.Maths.Matrix2x2<T> left, ref Silk.NET.Maths.Matrix2x4<T> right, out Silk.NET.Maths.Matrix2x4<T> result) -> void
+static Silk.NET.Maths.Matrix2x2<T>.Subtract(Silk.NET.Maths.Matrix2x2<T> left, Silk.NET.Maths.Matrix2x2<T> right) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.Subtract(ref Silk.NET.Maths.Matrix2x2<T> left, ref Silk.NET.Maths.Matrix2x2<T> right, out Silk.NET.Maths.Matrix2x2<T> result) -> void
+static Silk.NET.Maths.Matrix2x2<T>.Transpose(Silk.NET.Maths.Matrix2x2<T> mat) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.Transpose(ref Silk.NET.Maths.Matrix2x2<T> mat, out Silk.NET.Maths.Matrix2x2<T> result) -> void
+static Silk.NET.Maths.Matrix2x2<T>.Zero.get -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.operator !=(Silk.NET.Maths.Matrix2x2<T> left, Silk.NET.Maths.Matrix2x2<T> right) -> bool
+static Silk.NET.Maths.Matrix2x2<T>.operator *(Silk.NET.Maths.Matrix2x2<T> left, Silk.NET.Maths.Matrix2x2<T> right) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.operator *(Silk.NET.Maths.Matrix2x2<T> left, Silk.NET.Maths.Matrix2x3<T> right) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x2<T>.operator *(Silk.NET.Maths.Matrix2x2<T> left, Silk.NET.Maths.Matrix2x4<T> right) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x2<T>.operator *(Silk.NET.Maths.Matrix2x2<T> left, T right) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.operator *(T left, Silk.NET.Maths.Matrix2x2<T> right) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.operator +(Silk.NET.Maths.Matrix2x2<T> left, Silk.NET.Maths.Matrix2x2<T> right) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.operator -(Silk.NET.Maths.Matrix2x2<T> left, Silk.NET.Maths.Matrix2x2<T> right) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x2<T>.operator ==(Silk.NET.Maths.Matrix2x2<T> left, Silk.NET.Maths.Matrix2x2<T> right) -> bool
+static Silk.NET.Maths.Matrix2x3<T>.Add(Silk.NET.Maths.Matrix2x3<T> left, Silk.NET.Maths.Matrix2x3<T> right) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.Add(ref Silk.NET.Maths.Matrix2x3<T> left, ref Silk.NET.Maths.Matrix2x3<T> right, out Silk.NET.Maths.Matrix2x3<T> result) -> void
+static Silk.NET.Maths.Matrix2x3<T>.CreateRotation(T angle) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.CreateRotation(T angle, out Silk.NET.Maths.Matrix2x3<T> result) -> void
+static Silk.NET.Maths.Matrix2x3<T>.CreateScale(Silk.NET.Maths.Vector2<T> scale) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.CreateScale(Silk.NET.Maths.Vector2<T> scale, out Silk.NET.Maths.Matrix2x3<T> result) -> void
+static Silk.NET.Maths.Matrix2x3<T>.CreateScale(T scale) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.CreateScale(T scale, out Silk.NET.Maths.Matrix2x3<T> result) -> void
+static Silk.NET.Maths.Matrix2x3<T>.CreateScale(T x, T y) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.CreateScale(T x, T y, out Silk.NET.Maths.Matrix2x3<T> result) -> void
+static Silk.NET.Maths.Matrix2x3<T>.Multiply(Silk.NET.Maths.Matrix2x3<T> left, Silk.NET.Maths.Matrix3x2<T> right) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x3<T>.Multiply(Silk.NET.Maths.Matrix2x3<T> left, Silk.NET.Maths.Matrix3x3<T> right) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.Multiply(Silk.NET.Maths.Matrix2x3<T> left, Silk.NET.Maths.Matrix3x4<T> right) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x3<T>.Multiply(Silk.NET.Maths.Matrix2x3<T> left, T right) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.Multiply(ref Silk.NET.Maths.Matrix2x3<T> left, T right, out Silk.NET.Maths.Matrix2x3<T> result) -> void
+static Silk.NET.Maths.Matrix2x3<T>.Multiply(ref Silk.NET.Maths.Matrix2x3<T> left, ref Silk.NET.Maths.Matrix3x2<T> right, out Silk.NET.Maths.Matrix2x2<T> result) -> void
+static Silk.NET.Maths.Matrix2x3<T>.Multiply(ref Silk.NET.Maths.Matrix2x3<T> left, ref Silk.NET.Maths.Matrix3x3<T> right, out Silk.NET.Maths.Matrix2x3<T> result) -> void
+static Silk.NET.Maths.Matrix2x3<T>.Multiply(ref Silk.NET.Maths.Matrix2x3<T> left, ref Silk.NET.Maths.Matrix3x4<T> right, out Silk.NET.Maths.Matrix2x4<T> result) -> void
+static Silk.NET.Maths.Matrix2x3<T>.Subtract(Silk.NET.Maths.Matrix2x3<T> left, Silk.NET.Maths.Matrix2x3<T> right) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.Subtract(ref Silk.NET.Maths.Matrix2x3<T> left, ref Silk.NET.Maths.Matrix2x3<T> right, out Silk.NET.Maths.Matrix2x3<T> result) -> void
+static Silk.NET.Maths.Matrix2x3<T>.Transpose(Silk.NET.Maths.Matrix2x3<T> mat) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix2x3<T>.Transpose(ref Silk.NET.Maths.Matrix2x3<T> mat, out Silk.NET.Maths.Matrix3x2<T> result) -> void
+static Silk.NET.Maths.Matrix2x3<T>.Zero.get -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.operator !=(Silk.NET.Maths.Matrix2x3<T> left, Silk.NET.Maths.Matrix2x3<T> right) -> bool
+static Silk.NET.Maths.Matrix2x3<T>.operator *(Silk.NET.Maths.Matrix2x3<T> left, Silk.NET.Maths.Matrix3x2<T> right) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x3<T>.operator *(Silk.NET.Maths.Matrix2x3<T> left, Silk.NET.Maths.Matrix3x3<T> right) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.operator *(Silk.NET.Maths.Matrix2x3<T> left, Silk.NET.Maths.Matrix3x4<T> right) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x3<T>.operator *(Silk.NET.Maths.Matrix2x3<T> left, T right) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.operator *(T left, Silk.NET.Maths.Matrix2x3<T> right) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.operator +(Silk.NET.Maths.Matrix2x3<T> left, Silk.NET.Maths.Matrix2x3<T> right) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.operator -(Silk.NET.Maths.Matrix2x3<T> left, Silk.NET.Maths.Matrix2x3<T> right) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x3<T>.operator ==(Silk.NET.Maths.Matrix2x3<T> left, Silk.NET.Maths.Matrix2x3<T> right) -> bool
+static Silk.NET.Maths.Matrix2x4<T>.Add(Silk.NET.Maths.Matrix2x4<T> left, Silk.NET.Maths.Matrix2x4<T> right) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.Add(ref Silk.NET.Maths.Matrix2x4<T> left, ref Silk.NET.Maths.Matrix2x4<T> right, out Silk.NET.Maths.Matrix2x4<T> result) -> void
+static Silk.NET.Maths.Matrix2x4<T>.CreateRotation(T angle) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.CreateRotation(T angle, out Silk.NET.Maths.Matrix2x4<T> result) -> void
+static Silk.NET.Maths.Matrix2x4<T>.CreateScale(Silk.NET.Maths.Vector2<T> scale) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.CreateScale(Silk.NET.Maths.Vector2<T> scale, out Silk.NET.Maths.Matrix2x4<T> result) -> void
+static Silk.NET.Maths.Matrix2x4<T>.CreateScale(T scale) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.CreateScale(T scale, out Silk.NET.Maths.Matrix2x4<T> result) -> void
+static Silk.NET.Maths.Matrix2x4<T>.CreateScale(T x, T y) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.CreateScale(T x, T y, out Silk.NET.Maths.Matrix2x4<T> result) -> void
+static Silk.NET.Maths.Matrix2x4<T>.Multiply(Silk.NET.Maths.Matrix2x4<T> left, Silk.NET.Maths.Matrix4x2<T> right) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x4<T>.Multiply(Silk.NET.Maths.Matrix2x4<T> left, Silk.NET.Maths.Matrix4x3<T> right) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x4<T>.Multiply(Silk.NET.Maths.Matrix2x4<T> left, Silk.NET.Maths.Matrix4x4<T> right) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.Multiply(Silk.NET.Maths.Matrix2x4<T> left, T right) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.Multiply(ref Silk.NET.Maths.Matrix2x4<T> left, T right, out Silk.NET.Maths.Matrix2x4<T> result) -> void
+static Silk.NET.Maths.Matrix2x4<T>.Multiply(ref Silk.NET.Maths.Matrix2x4<T> left, ref Silk.NET.Maths.Matrix4x2<T> right, out Silk.NET.Maths.Matrix2x2<T> result) -> void
+static Silk.NET.Maths.Matrix2x4<T>.Multiply(ref Silk.NET.Maths.Matrix2x4<T> left, ref Silk.NET.Maths.Matrix4x3<T> right, out Silk.NET.Maths.Matrix2x3<T> result) -> void
+static Silk.NET.Maths.Matrix2x4<T>.Multiply(ref Silk.NET.Maths.Matrix2x4<T> left, ref Silk.NET.Maths.Matrix4x4<T> right, out Silk.NET.Maths.Matrix2x4<T> result) -> void
+static Silk.NET.Maths.Matrix2x4<T>.Subtract(Silk.NET.Maths.Matrix2x4<T> left, Silk.NET.Maths.Matrix2x4<T> right) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.Subtract(ref Silk.NET.Maths.Matrix2x4<T> left, ref Silk.NET.Maths.Matrix2x4<T> right, out Silk.NET.Maths.Matrix2x4<T> result) -> void
+static Silk.NET.Maths.Matrix2x4<T>.Transpose(Silk.NET.Maths.Matrix2x4<T> mat) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix2x4<T>.Transpose(ref Silk.NET.Maths.Matrix2x4<T> mat, out Silk.NET.Maths.Matrix4x2<T> result) -> void
+static Silk.NET.Maths.Matrix2x4<T>.Zero.get -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.operator !=(Silk.NET.Maths.Matrix2x4<T> left, Silk.NET.Maths.Matrix2x4<T> right) -> bool
+static Silk.NET.Maths.Matrix2x4<T>.operator *(Silk.NET.Maths.Matrix2x4<T> left, Silk.NET.Maths.Matrix4x2<T> right) -> Silk.NET.Maths.Matrix2x2<T>
+static Silk.NET.Maths.Matrix2x4<T>.operator *(Silk.NET.Maths.Matrix2x4<T> left, Silk.NET.Maths.Matrix4x3<T> right) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix2x4<T>.operator *(Silk.NET.Maths.Matrix2x4<T> left, Silk.NET.Maths.Matrix4x4<T> right) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.operator *(Silk.NET.Maths.Matrix2x4<T> left, T right) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.operator *(T left, Silk.NET.Maths.Matrix2x4<T> right) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.operator +(Silk.NET.Maths.Matrix2x4<T> left, Silk.NET.Maths.Matrix2x4<T> right) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.operator -(Silk.NET.Maths.Matrix2x4<T> left, Silk.NET.Maths.Matrix2x4<T> right) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix2x4<T>.operator ==(Silk.NET.Maths.Matrix2x4<T> left, Silk.NET.Maths.Matrix2x4<T> right) -> bool
+static Silk.NET.Maths.Matrix3x2<T>.Add(Silk.NET.Maths.Matrix3x2<T> left, Silk.NET.Maths.Matrix3x2<T> right) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.Add(ref Silk.NET.Maths.Matrix3x2<T> left, ref Silk.NET.Maths.Matrix3x2<T> right, out Silk.NET.Maths.Matrix3x2<T> result) -> void
+static Silk.NET.Maths.Matrix3x2<T>.CreateRotation(T angle) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.CreateRotation(T angle, out Silk.NET.Maths.Matrix3x2<T> result) -> void
+static Silk.NET.Maths.Matrix3x2<T>.CreateScale(Silk.NET.Maths.Vector2<T> scale) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.CreateScale(Silk.NET.Maths.Vector2<T> scale, out Silk.NET.Maths.Matrix3x2<T> result) -> void
+static Silk.NET.Maths.Matrix3x2<T>.CreateScale(T scale) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.CreateScale(T scale, out Silk.NET.Maths.Matrix3x2<T> result) -> void
+static Silk.NET.Maths.Matrix3x2<T>.CreateScale(T x, T y) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.CreateScale(T x, T y, out Silk.NET.Maths.Matrix3x2<T> result) -> void
+static Silk.NET.Maths.Matrix3x2<T>.Multiply(Silk.NET.Maths.Matrix3x2<T> left, Silk.NET.Maths.Matrix2x2<T> right) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.Multiply(Silk.NET.Maths.Matrix3x2<T> left, Silk.NET.Maths.Matrix2x3<T> right) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x2<T>.Multiply(Silk.NET.Maths.Matrix3x2<T> left, Silk.NET.Maths.Matrix2x4<T> right) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x2<T>.Multiply(Silk.NET.Maths.Matrix3x2<T> left, T right) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.Multiply(ref Silk.NET.Maths.Matrix3x2<T> left, T right, out Silk.NET.Maths.Matrix3x2<T> result) -> void
+static Silk.NET.Maths.Matrix3x2<T>.Multiply(ref Silk.NET.Maths.Matrix3x2<T> left, ref Silk.NET.Maths.Matrix2x2<T> right, out Silk.NET.Maths.Matrix3x2<T> result) -> void
+static Silk.NET.Maths.Matrix3x2<T>.Multiply(ref Silk.NET.Maths.Matrix3x2<T> left, ref Silk.NET.Maths.Matrix2x3<T> right, out Silk.NET.Maths.Matrix3x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x2<T>.Multiply(ref Silk.NET.Maths.Matrix3x2<T> left, ref Silk.NET.Maths.Matrix2x4<T> right, out Silk.NET.Maths.Matrix3x4<T> result) -> void
+static Silk.NET.Maths.Matrix3x2<T>.Subtract(Silk.NET.Maths.Matrix3x2<T> left, Silk.NET.Maths.Matrix3x2<T> right) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.Subtract(ref Silk.NET.Maths.Matrix3x2<T> left, ref Silk.NET.Maths.Matrix3x2<T> right, out Silk.NET.Maths.Matrix3x2<T> result) -> void
+static Silk.NET.Maths.Matrix3x2<T>.Transpose(Silk.NET.Maths.Matrix3x2<T> mat) -> Silk.NET.Maths.Matrix2x3<T>
+static Silk.NET.Maths.Matrix3x2<T>.Transpose(ref Silk.NET.Maths.Matrix3x2<T> mat, out Silk.NET.Maths.Matrix2x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x2<T>.Zero.get -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.operator !=(Silk.NET.Maths.Matrix3x2<T> left, Silk.NET.Maths.Matrix3x2<T> right) -> bool
+static Silk.NET.Maths.Matrix3x2<T>.operator *(Silk.NET.Maths.Matrix3x2<T> left, Silk.NET.Maths.Matrix2x2<T> right) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.operator *(Silk.NET.Maths.Matrix3x2<T> left, Silk.NET.Maths.Matrix2x3<T> right) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x2<T>.operator *(Silk.NET.Maths.Matrix3x2<T> left, Silk.NET.Maths.Matrix2x4<T> right) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x2<T>.operator *(Silk.NET.Maths.Matrix3x2<T> left, T right) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.operator *(T left, Silk.NET.Maths.Matrix3x2<T> right) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.operator +(Silk.NET.Maths.Matrix3x2<T> left, Silk.NET.Maths.Matrix3x2<T> right) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.operator -(Silk.NET.Maths.Matrix3x2<T> left, Silk.NET.Maths.Matrix3x2<T> right) -> Silk.NET.Maths.Matrix3x2<T>
+static Silk.NET.Maths.Matrix3x2<T>.operator ==(Silk.NET.Maths.Matrix3x2<T> left, Silk.NET.Maths.Matrix3x2<T> right) -> bool
+static Silk.NET.Maths.Matrix3x3<T>.Add(Silk.NET.Maths.Matrix3x3<T> left, Silk.NET.Maths.Matrix3x3<T> right) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.Add(ref Silk.NET.Maths.Matrix3x3<T> left, ref Silk.NET.Maths.Matrix3x3<T> right, out Silk.NET.Maths.Matrix3x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x3<T>.CreateFromAxisAngle(Silk.NET.Maths.Vector3<T> axis, T angle) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.CreateFromAxisAngle(Silk.NET.Maths.Vector3<T> axis, T angle, out Silk.NET.Maths.Matrix3x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x3<T>.CreateFromQuaternion(Silk.NET.Maths.Quaternion<T> q) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.CreateFromQuaternion(ref Silk.NET.Maths.Quaternion<T> q, out Silk.NET.Maths.Matrix3x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x3<T>.CreateRotationX(T angle) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.CreateRotationX(T angle, out Silk.NET.Maths.Matrix3x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x3<T>.CreateRotationY(T angle) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.CreateRotationY(T angle, out Silk.NET.Maths.Matrix3x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x3<T>.CreateRotationZ(T angle) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.CreateRotationZ(T angle, out Silk.NET.Maths.Matrix3x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x3<T>.CreateScale(Silk.NET.Maths.Vector3<T> scale) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.CreateScale(T scale) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.CreateScale(T scale, out Silk.NET.Maths.Matrix3x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x3<T>.CreateScale(T x, T y, T z) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.CreateScale(T x, T y, T z, out Silk.NET.Maths.Matrix3x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x3<T>.CreateScale(ref Silk.NET.Maths.Vector3<T> scale, out Silk.NET.Maths.Matrix3x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x3<T>.Identity.get -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.Invert(Silk.NET.Maths.Matrix3x3<T> mat) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.Invert(ref Silk.NET.Maths.Matrix3x3<T> mat, out Silk.NET.Maths.Matrix3x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x3<T>.Multiply(Silk.NET.Maths.Matrix3x3<T> left, Silk.NET.Maths.Matrix3x3<T> right) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.Multiply(ref Silk.NET.Maths.Matrix3x3<T> left, ref Silk.NET.Maths.Matrix3x3<T> right, out Silk.NET.Maths.Matrix3x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x3<T>.Transpose(Silk.NET.Maths.Matrix3x3<T> mat) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.Transpose(ref Silk.NET.Maths.Matrix3x3<T> mat, out Silk.NET.Maths.Matrix3x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x3<T>.Zero.get -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.operator !=(Silk.NET.Maths.Matrix3x3<T> left, Silk.NET.Maths.Matrix3x3<T> right) -> bool
+static Silk.NET.Maths.Matrix3x3<T>.operator *(Silk.NET.Maths.Matrix3x3<T> left, Silk.NET.Maths.Matrix3x3<T> right) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x3<T>.operator ==(Silk.NET.Maths.Matrix3x3<T> left, Silk.NET.Maths.Matrix3x3<T> right) -> bool
+static Silk.NET.Maths.Matrix3x4<T>.Add(Silk.NET.Maths.Matrix3x4<T> left, Silk.NET.Maths.Matrix3x4<T> right) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.Add(ref Silk.NET.Maths.Matrix3x4<T> left, ref Silk.NET.Maths.Matrix3x4<T> right, out Silk.NET.Maths.Matrix3x4<T> result) -> void
+static Silk.NET.Maths.Matrix3x4<T>.CreateFromAxisAngle(Silk.NET.Maths.Vector3<T> axis, T angle) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.CreateFromAxisAngle(Silk.NET.Maths.Vector3<T> axis, T angle, out Silk.NET.Maths.Matrix3x4<T> result) -> void
+static Silk.NET.Maths.Matrix3x4<T>.CreateFromQuaternion(Silk.NET.Maths.Quaternion<T> q) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.CreateFromQuaternion(ref Silk.NET.Maths.Quaternion<T> q, out Silk.NET.Maths.Matrix3x4<T> result) -> void
+static Silk.NET.Maths.Matrix3x4<T>.CreateRotationX(T angle) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.CreateRotationX(T angle, out Silk.NET.Maths.Matrix3x4<T> result) -> void
+static Silk.NET.Maths.Matrix3x4<T>.CreateRotationY(T angle) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.CreateRotationY(T angle, out Silk.NET.Maths.Matrix3x4<T> result) -> void
+static Silk.NET.Maths.Matrix3x4<T>.CreateRotationZ(T angle) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.CreateRotationZ(T angle, out Silk.NET.Maths.Matrix3x4<T> result) -> void
+static Silk.NET.Maths.Matrix3x4<T>.CreateScale(Silk.NET.Maths.Vector3<T> scale) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.CreateScale(T scale) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.CreateScale(T x, T y, T z) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.CreateTranslation(Silk.NET.Maths.Vector3<T> vector) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.CreateTranslation(T x, T y, T z) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.CreateTranslation(T x, T y, T z, out Silk.NET.Maths.Matrix3x4<T> result) -> void
+static Silk.NET.Maths.Matrix3x4<T>.CreateTranslation(ref Silk.NET.Maths.Vector3<T> vector, out Silk.NET.Maths.Matrix3x4<T> result) -> void
+static Silk.NET.Maths.Matrix3x4<T>.Invert(Silk.NET.Maths.Matrix3x4<T> mat) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.Invert(ref Silk.NET.Maths.Matrix3x4<T> mat, out Silk.NET.Maths.Matrix3x4<T> result) -> void
+static Silk.NET.Maths.Matrix3x4<T>.Multiply(Silk.NET.Maths.Matrix3x4<T> left, Silk.NET.Maths.Matrix3x4<T> right) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.Multiply(Silk.NET.Maths.Matrix3x4<T> left, Silk.NET.Maths.Matrix4x3<T> right) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x4<T>.Multiply(Silk.NET.Maths.Matrix3x4<T> left, T right) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.Multiply(ref Silk.NET.Maths.Matrix3x4<T> left, T right, out Silk.NET.Maths.Matrix3x4<T> result) -> void
+static Silk.NET.Maths.Matrix3x4<T>.Multiply(ref Silk.NET.Maths.Matrix3x4<T> left, ref Silk.NET.Maths.Matrix3x4<T> right, out Silk.NET.Maths.Matrix3x4<T> result) -> void
+static Silk.NET.Maths.Matrix3x4<T>.Multiply(ref Silk.NET.Maths.Matrix3x4<T> left, ref Silk.NET.Maths.Matrix4x3<T> right, out Silk.NET.Maths.Matrix3x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x4<T>.Subtract(Silk.NET.Maths.Matrix3x4<T> left, Silk.NET.Maths.Matrix3x4<T> right) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.Subtract(ref Silk.NET.Maths.Matrix3x4<T> left, ref Silk.NET.Maths.Matrix3x4<T> right, out Silk.NET.Maths.Matrix3x4<T> result) -> void
+static Silk.NET.Maths.Matrix3x4<T>.Transpose(Silk.NET.Maths.Matrix3x4<T> mat) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix3x4<T>.Transpose(ref Silk.NET.Maths.Matrix3x4<T> mat, out Silk.NET.Maths.Matrix4x3<T> result) -> void
+static Silk.NET.Maths.Matrix3x4<T>.Zero.get -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.operator !=(Silk.NET.Maths.Matrix3x4<T> left, Silk.NET.Maths.Matrix3x4<T> right) -> bool
+static Silk.NET.Maths.Matrix3x4<T>.operator *(Silk.NET.Maths.Matrix3x4<T> left, Silk.NET.Maths.Matrix3x4<T> right) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.operator *(Silk.NET.Maths.Matrix3x4<T> left, Silk.NET.Maths.Matrix4x3<T> right) -> Silk.NET.Maths.Matrix3x3<T>
+static Silk.NET.Maths.Matrix3x4<T>.operator *(Silk.NET.Maths.Matrix3x4<T> left, T right) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.operator +(Silk.NET.Maths.Matrix3x4<T> left, Silk.NET.Maths.Matrix3x4<T> right) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.operator -(Silk.NET.Maths.Matrix3x4<T> left, Silk.NET.Maths.Matrix3x4<T> right) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix3x4<T>.operator ==(Silk.NET.Maths.Matrix3x4<T> left, Silk.NET.Maths.Matrix3x4<T> right) -> bool
+static Silk.NET.Maths.Matrix4x2<T>.Add(Silk.NET.Maths.Matrix4x2<T> left, Silk.NET.Maths.Matrix4x2<T> right) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.Add(ref Silk.NET.Maths.Matrix4x2<T> left, ref Silk.NET.Maths.Matrix4x2<T> right, out Silk.NET.Maths.Matrix4x2<T> result) -> void
+static Silk.NET.Maths.Matrix4x2<T>.CreateRotation(T angle) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.CreateRotation(T angle, out Silk.NET.Maths.Matrix4x2<T> result) -> void
+static Silk.NET.Maths.Matrix4x2<T>.CreateScale(Silk.NET.Maths.Vector2<T> scale) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.CreateScale(Silk.NET.Maths.Vector2<T> scale, out Silk.NET.Maths.Matrix4x2<T> result) -> void
+static Silk.NET.Maths.Matrix4x2<T>.CreateScale(T scale) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.CreateScale(T scale, out Silk.NET.Maths.Matrix4x2<T> result) -> void
+static Silk.NET.Maths.Matrix4x2<T>.CreateScale(T x, T y) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.CreateScale(T x, T y, out Silk.NET.Maths.Matrix4x2<T> result) -> void
+static Silk.NET.Maths.Matrix4x2<T>.Multiply(Silk.NET.Maths.Matrix4x2<T> left, Silk.NET.Maths.Matrix2x2<T> right) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.Multiply(Silk.NET.Maths.Matrix4x2<T> left, Silk.NET.Maths.Matrix2x3<T> right) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x2<T>.Multiply(Silk.NET.Maths.Matrix4x2<T> left, Silk.NET.Maths.Matrix2x4<T> right) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x2<T>.Multiply(Silk.NET.Maths.Matrix4x2<T> left, T right) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.Multiply(ref Silk.NET.Maths.Matrix4x2<T> left, T right, out Silk.NET.Maths.Matrix4x2<T> result) -> void
+static Silk.NET.Maths.Matrix4x2<T>.Multiply(ref Silk.NET.Maths.Matrix4x2<T> left, ref Silk.NET.Maths.Matrix2x2<T> right, out Silk.NET.Maths.Matrix4x2<T> result) -> void
+static Silk.NET.Maths.Matrix4x2<T>.Multiply(ref Silk.NET.Maths.Matrix4x2<T> left, ref Silk.NET.Maths.Matrix2x3<T> right, out Silk.NET.Maths.Matrix4x3<T> result) -> void
+static Silk.NET.Maths.Matrix4x2<T>.Multiply(ref Silk.NET.Maths.Matrix4x2<T> left, ref Silk.NET.Maths.Matrix2x4<T> right, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x2<T>.Subtract(Silk.NET.Maths.Matrix4x2<T> left, Silk.NET.Maths.Matrix4x2<T> right) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.Subtract(ref Silk.NET.Maths.Matrix4x2<T> left, ref Silk.NET.Maths.Matrix4x2<T> right, out Silk.NET.Maths.Matrix4x2<T> result) -> void
+static Silk.NET.Maths.Matrix4x2<T>.Transpose(Silk.NET.Maths.Matrix4x2<T> mat) -> Silk.NET.Maths.Matrix2x4<T>
+static Silk.NET.Maths.Matrix4x2<T>.Transpose(ref Silk.NET.Maths.Matrix4x2<T> mat, out Silk.NET.Maths.Matrix2x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x2<T>.Zero.get -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.operator !=(Silk.NET.Maths.Matrix4x2<T> left, Silk.NET.Maths.Matrix4x2<T> right) -> bool
+static Silk.NET.Maths.Matrix4x2<T>.operator *(Silk.NET.Maths.Matrix4x2<T> left, Silk.NET.Maths.Matrix2x2<T> right) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.operator *(Silk.NET.Maths.Matrix4x2<T> left, Silk.NET.Maths.Matrix2x3<T> right) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x2<T>.operator *(Silk.NET.Maths.Matrix4x2<T> left, Silk.NET.Maths.Matrix2x4<T> right) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x2<T>.operator *(Silk.NET.Maths.Matrix4x2<T> left, T right) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.operator *(T left, Silk.NET.Maths.Matrix4x2<T> right) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.operator +(Silk.NET.Maths.Matrix4x2<T> left, Silk.NET.Maths.Matrix4x2<T> right) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.operator -(Silk.NET.Maths.Matrix4x2<T> left, Silk.NET.Maths.Matrix4x2<T> right) -> Silk.NET.Maths.Matrix4x2<T>
+static Silk.NET.Maths.Matrix4x2<T>.operator ==(Silk.NET.Maths.Matrix4x2<T> left, Silk.NET.Maths.Matrix4x2<T> right) -> bool
+static Silk.NET.Maths.Matrix4x3<T>.Add(Silk.NET.Maths.Matrix4x3<T> left, Silk.NET.Maths.Matrix4x3<T> right) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.Add(ref Silk.NET.Maths.Matrix4x3<T> left, ref Silk.NET.Maths.Matrix4x3<T> right, out Silk.NET.Maths.Matrix4x3<T> result) -> void
+static Silk.NET.Maths.Matrix4x3<T>.CreateFromAxisAngle(Silk.NET.Maths.Vector3<T> axis, T angle) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x3<T>.CreateFromAxisAngle(ref Silk.NET.Maths.Vector3<T> axis, T angle, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x3<T>.CreateFromQuaternion(Silk.NET.Maths.Quaternion<T> q) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x3<T>.CreateFromQuaternion(ref Silk.NET.Maths.Quaternion<T> q, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x3<T>.CreateRotationX(T angle) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x3<T>.CreateRotationX(T angle, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x3<T>.CreateRotationY(T angle) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x3<T>.CreateRotationY(T angle, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x3<T>.CreateRotationZ(T angle) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x3<T>.CreateRotationZ(T angle, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x3<T>.CreateScale(Silk.NET.Maths.Vector3<T> scale) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.CreateScale(T scale) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.CreateScale(T x, T y, T z) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.CreateTranslation(Silk.NET.Maths.Vector3<T> vector) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.CreateTranslation(T x, T y, T z) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.CreateTranslation(T x, T y, T z, out Silk.NET.Maths.Matrix4x3<T> result) -> void
+static Silk.NET.Maths.Matrix4x3<T>.CreateTranslation(ref Silk.NET.Maths.Vector3<T> vector, out Silk.NET.Maths.Matrix4x3<T> result) -> void
+static Silk.NET.Maths.Matrix4x3<T>.Invert(Silk.NET.Maths.Matrix4x3<T> mat) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.Invert(ref Silk.NET.Maths.Matrix4x3<T> mat, out Silk.NET.Maths.Matrix4x3<T> result) -> void
+static Silk.NET.Maths.Matrix4x3<T>.Multiply(Silk.NET.Maths.Matrix4x3<T> left, Silk.NET.Maths.Matrix3x4<T> right) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x3<T>.Multiply(Silk.NET.Maths.Matrix4x3<T> left, Silk.NET.Maths.Matrix4x3<T> right) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.Multiply(Silk.NET.Maths.Matrix4x3<T> left, T right) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.Multiply(ref Silk.NET.Maths.Matrix4x3<T> left, T right, out Silk.NET.Maths.Matrix4x3<T> result) -> void
+static Silk.NET.Maths.Matrix4x3<T>.Multiply(ref Silk.NET.Maths.Matrix4x3<T> left, ref Silk.NET.Maths.Matrix3x4<T> right, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x3<T>.Multiply(ref Silk.NET.Maths.Matrix4x3<T> left, ref Silk.NET.Maths.Matrix4x3<T> right, out Silk.NET.Maths.Matrix4x3<T> result) -> void
+static Silk.NET.Maths.Matrix4x3<T>.Subtract(Silk.NET.Maths.Matrix4x3<T> left, Silk.NET.Maths.Matrix4x3<T> right) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.Subtract(ref Silk.NET.Maths.Matrix4x3<T> left, ref Silk.NET.Maths.Matrix4x3<T> right, out Silk.NET.Maths.Matrix4x3<T> result) -> void
+static Silk.NET.Maths.Matrix4x3<T>.Transpose(Silk.NET.Maths.Matrix4x3<T> mat) -> Silk.NET.Maths.Matrix3x4<T>
+static Silk.NET.Maths.Matrix4x3<T>.Transpose(ref Silk.NET.Maths.Matrix4x3<T> mat, out Silk.NET.Maths.Matrix3x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x3<T>.Zero.get -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.operator !=(Silk.NET.Maths.Matrix4x3<T> left, Silk.NET.Maths.Matrix4x3<T> right) -> bool
+static Silk.NET.Maths.Matrix4x3<T>.operator *(Silk.NET.Maths.Matrix4x3<T> left, Silk.NET.Maths.Matrix3x4<T> right) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x3<T>.operator *(Silk.NET.Maths.Matrix4x3<T> left, Silk.NET.Maths.Matrix4x3<T> right) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.operator *(Silk.NET.Maths.Matrix4x3<T> left, T right) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.operator *(T left, Silk.NET.Maths.Matrix4x3<T> right) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.operator +(Silk.NET.Maths.Matrix4x3<T> left, Silk.NET.Maths.Matrix4x3<T> right) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.operator -(Silk.NET.Maths.Matrix4x3<T> left, Silk.NET.Maths.Matrix4x3<T> right) -> Silk.NET.Maths.Matrix4x3<T>
+static Silk.NET.Maths.Matrix4x3<T>.operator ==(Silk.NET.Maths.Matrix4x3<T> left, Silk.NET.Maths.Matrix4x3<T> right) -> bool
+static Silk.NET.Maths.Matrix4x4<T>.Add(Silk.NET.Maths.Matrix4x4<T> left, Silk.NET.Maths.Matrix4x4<T> right) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.Add(ref Silk.NET.Maths.Matrix4x4<T> left, ref Silk.NET.Maths.Matrix4x4<T> right, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.ClearProjection(Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.ClearProjection(ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.ClearRotation(Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.ClearRotation(ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.ClearScale(Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.ClearScale(ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.ClearTranslation(Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.ClearTranslation(ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.CreateFromAxisAngle(Silk.NET.Maths.Vector3<T> axis, T angle) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.CreateFromAxisAngle(ref Silk.NET.Maths.Vector3<T> axis, T angle, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.CreateFromQuaternion(Silk.NET.Maths.Quaternion<T> q) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.CreateFromQuaternion(ref Silk.NET.Maths.Quaternion<T> q, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.CreateOrthographic(T width, T height, T depthNear, T depthFar) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.CreateOrthographic(T width, T height, T depthNear, T depthFar, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.CreateOrthographicOffCenter(T left, T right, T bottom, T top, T depthNear, T depthFar) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.CreateOrthographicOffCenter(T left, T right, T bottom, T top, T depthNear, T depthFar, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.CreatePerspectiveFieldOfView(T fovy, T aspect, T depthNear, T depthFar) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.CreatePerspectiveFieldOfView(T fovy, T aspect, T depthNear, T depthFar, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.CreatePerspectiveOffCenter(T left, T right, T bottom, T top, T depthNear, T depthFar) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.CreatePerspectiveOffCenter(T left, T right, T bottom, T top, T depthNear, T depthFar, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.CreateRotationX(T angle) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.CreateRotationX(T angle, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.CreateRotationY(T angle) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.CreateRotationY(T angle, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.CreateRotationZ(T angle) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.CreateRotationZ(T angle, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.CreateScale(Silk.NET.Maths.Vector3<T> scale) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.CreateScale(T scale) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.CreateScale(T scale, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.CreateScale(ref Silk.NET.Maths.Vector3<T> scale, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.CreateTranslation(Silk.NET.Maths.Vector3<T> vector) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.CreateTranslation(ref Silk.NET.Maths.Vector3<T> vector, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.ExtractProjection(Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Matrix4x4<T>.ExtractProjection(ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.ExtractRotation(Silk.NET.Maths.Matrix4x4<T> mat, bool rowNormalize) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Matrix4x4<T>.ExtractRotation(ref Silk.NET.Maths.Matrix4x4<T> mat, bool rowNormalize, out Silk.NET.Maths.Quaternion<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.ExtractScale(Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Matrix4x4<T>.ExtractScale(ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.ExtractTranslation(Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Matrix4x4<T>.ExtractTranslation(ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.GetColumn0(Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Matrix4x4<T>.GetColumn0(ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.GetColumn1(Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Matrix4x4<T>.GetColumn1(ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.GetColumn2(Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Matrix4x4<T>.GetColumn2(ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.GetColumn3(Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Matrix4x4<T>.GetColumn3(ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.GetDiagonal(Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Matrix4x4<T>.GetDiagonal(ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.GetTrace(Silk.NET.Maths.Matrix4x4<T> mat) -> T
+static Silk.NET.Maths.Matrix4x4<T>.GetTrace(ref Silk.NET.Maths.Matrix4x4<T> mat, out T result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.Identity.get -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.Invert(Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.Invert(ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.LookAt(Silk.NET.Maths.Vector3<T> eye, Silk.NET.Maths.Vector3<T> target, Silk.NET.Maths.Vector3<T> up) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.LookAt(ref Silk.NET.Maths.Vector3<T> eye, ref Silk.NET.Maths.Vector3<T> target, ref Silk.NET.Maths.Vector3<T> up, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.Multiply(Silk.NET.Maths.Matrix4x4<T> left, Silk.NET.Maths.Matrix4x4<T> right) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.Multiply(Silk.NET.Maths.Matrix4x4<T> left, T right) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.Multiply(ref Silk.NET.Maths.Matrix4x4<T> left, T right, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.Multiply(ref Silk.NET.Maths.Matrix4x4<T> left, ref Silk.NET.Maths.Matrix4x4<T> right, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.Normalize(Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.Normalize(ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.Subtract(Silk.NET.Maths.Matrix4x4<T> left, Silk.NET.Maths.Matrix4x4<T> right) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.Subtract(ref Silk.NET.Maths.Matrix4x4<T> left, ref Silk.NET.Maths.Matrix4x4<T> right, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.Transpose(Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.Transpose(ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Matrix4x4<T> result) -> void
+static Silk.NET.Maths.Matrix4x4<T>.Zero.get -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.operator !=(Silk.NET.Maths.Matrix4x4<T> left, Silk.NET.Maths.Matrix4x4<T> right) -> bool
+static Silk.NET.Maths.Matrix4x4<T>.operator *(Silk.NET.Maths.Matrix4x4<T> left, Silk.NET.Maths.Matrix4x4<T> right) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.operator *(Silk.NET.Maths.Matrix4x4<T> left, T right) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.operator +(Silk.NET.Maths.Matrix4x4<T> left, Silk.NET.Maths.Matrix4x4<T> right) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.operator -(Silk.NET.Maths.Matrix4x4<T> left, Silk.NET.Maths.Matrix4x4<T> right) -> Silk.NET.Maths.Matrix4x4<T>
+static Silk.NET.Maths.Matrix4x4<T>.operator ==(Silk.NET.Maths.Matrix4x4<T> left, Silk.NET.Maths.Matrix4x4<T> right) -> bool
+static Silk.NET.Maths.Quaternion<T>.Add(Silk.NET.Maths.Quaternion<T> left, Silk.NET.Maths.Quaternion<T> right) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.Add(ref Silk.NET.Maths.Quaternion<T> left, ref Silk.NET.Maths.Quaternion<T> right, out Silk.NET.Maths.Quaternion<T> result) -> void
+static Silk.NET.Maths.Quaternion<T>.Conjugate(Silk.NET.Maths.Quaternion<T> q) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.Conjugate(ref Silk.NET.Maths.Quaternion<T> q, out Silk.NET.Maths.Quaternion<T> result) -> void
+static Silk.NET.Maths.Quaternion<T>.FromAxisAngle(Silk.NET.Maths.Vector3<T> axis, T angle) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.FromAxisAngle(ref Silk.NET.Maths.Vector3<T> axis, T angle, out Silk.NET.Maths.Quaternion<T> result) -> void
+static Silk.NET.Maths.Quaternion<T>.FromEulerAngles(Silk.NET.Maths.Vector3<T> eulerAngles) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.FromEulerAngles(ref Silk.NET.Maths.Vector3<T> eulerAngles, out Silk.NET.Maths.Quaternion<T> result) -> void
+static Silk.NET.Maths.Quaternion<T>.FromMatrix(Silk.NET.Maths.Matrix3x3<T> matrix) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.FromMatrix(ref Silk.NET.Maths.Matrix3x3<T> matrix, out Silk.NET.Maths.Quaternion<T> result) -> void
+static Silk.NET.Maths.Quaternion<T>.GetLength(Silk.NET.Maths.Quaternion<T> quat) -> T
+static Silk.NET.Maths.Quaternion<T>.GetLength(ref Silk.NET.Maths.Quaternion<T> quat, out T result) -> void
+static Silk.NET.Maths.Quaternion<T>.GetLengthSquared(Silk.NET.Maths.Quaternion<T> quat) -> T
+static Silk.NET.Maths.Quaternion<T>.GetLengthSquared(ref Silk.NET.Maths.Quaternion<T> quat, out T result) -> void
+static Silk.NET.Maths.Quaternion<T>.GetNormalized(Silk.NET.Maths.Quaternion<T> q) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.GetNormalized(ref Silk.NET.Maths.Quaternion<T> q, out Silk.NET.Maths.Quaternion<T> result) -> void
+static Silk.NET.Maths.Quaternion<T>.Identity.get -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.Invert(Silk.NET.Maths.Quaternion<T> q) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.Invert(ref Silk.NET.Maths.Quaternion<T> q, out Silk.NET.Maths.Quaternion<T> result) -> void
+static Silk.NET.Maths.Quaternion<T>.Multiply(Silk.NET.Maths.Quaternion<T> left, Silk.NET.Maths.Quaternion<T> right) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.Multiply(Silk.NET.Maths.Quaternion<T> quaternion, T scale) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.Multiply(ref Silk.NET.Maths.Quaternion<T> left, ref Silk.NET.Maths.Quaternion<T> right, out Silk.NET.Maths.Quaternion<T> result) -> void
+static Silk.NET.Maths.Quaternion<T>.Multiply(ref Silk.NET.Maths.Quaternion<T> quaternion, T scale, out Silk.NET.Maths.Quaternion<T> result) -> void
+static Silk.NET.Maths.Quaternion<T>.Normalize(Silk.NET.Maths.Quaternion<T> q) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.Normalize(ref Silk.NET.Maths.Quaternion<T> q, out Silk.NET.Maths.Quaternion<T> result) -> void
+static Silk.NET.Maths.Quaternion<T>.Slerp(Silk.NET.Maths.Quaternion<T> q1, Silk.NET.Maths.Quaternion<T> q2, T blend) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.Slerp(ref Silk.NET.Maths.Quaternion<T> q1, ref Silk.NET.Maths.Quaternion<T> q2, T blend, out Silk.NET.Maths.Quaternion<T> result) -> void
+static Silk.NET.Maths.Quaternion<T>.Subtract(Silk.NET.Maths.Quaternion<T> left, Silk.NET.Maths.Quaternion<T> right) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.Subtract(ref Silk.NET.Maths.Quaternion<T> left, ref Silk.NET.Maths.Quaternion<T> right, out Silk.NET.Maths.Quaternion<T> result) -> void
+static Silk.NET.Maths.Quaternion<T>.ToAxisAngle(Silk.NET.Maths.Quaternion<T> quat) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Quaternion<T>.ToAxisAngle(Silk.NET.Maths.Quaternion<T> quat, out Silk.NET.Maths.Vector3<T> axis, out T angle) -> void
+static Silk.NET.Maths.Quaternion<T>.ToAxisAngle(ref Silk.NET.Maths.Quaternion<T> quat, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Quaternion<T>.ToEulerAngles(Silk.NET.Maths.Quaternion<T> q) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Quaternion<T>.ToEulerAngles(ref Silk.NET.Maths.Quaternion<T> q, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Quaternion<T>.operator !=(Silk.NET.Maths.Quaternion<T> left, Silk.NET.Maths.Quaternion<T> right) -> bool
+static Silk.NET.Maths.Quaternion<T>.operator *(Silk.NET.Maths.Quaternion<T> left, Silk.NET.Maths.Quaternion<T> right) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.operator *(Silk.NET.Maths.Quaternion<T> quaternion, T scale) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.operator +(Silk.NET.Maths.Quaternion<T> left, Silk.NET.Maths.Quaternion<T> right) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.operator -(Silk.NET.Maths.Quaternion<T> left, Silk.NET.Maths.Quaternion<T> right) -> Silk.NET.Maths.Quaternion<T>
+static Silk.NET.Maths.Quaternion<T>.operator ==(Silk.NET.Maths.Quaternion<T> left, Silk.NET.Maths.Quaternion<T> right) -> bool
+static Silk.NET.Maths.Vector2<T>.Add(Silk.NET.Maths.Vector2<T> a, Silk.NET.Maths.Vector2<T> b) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Add(ref Silk.NET.Maths.Vector2<T> a, ref Silk.NET.Maths.Vector2<T> b, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.BaryCentric(Silk.NET.Maths.Vector2<T> a, Silk.NET.Maths.Vector2<T> b, Silk.NET.Maths.Vector2<T> c, T u, T v) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.BaryCentric(ref Silk.NET.Maths.Vector2<T> a, ref Silk.NET.Maths.Vector2<T> b, ref Silk.NET.Maths.Vector2<T> c, T u, T v, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.Clamp(Silk.NET.Maths.Vector2<T> vec, Silk.NET.Maths.Vector2<T> min, Silk.NET.Maths.Vector2<T> max) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Clamp(ref Silk.NET.Maths.Vector2<T> vec, ref Silk.NET.Maths.Vector2<T> min, ref Silk.NET.Maths.Vector2<T> max, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.ComponentMax(Silk.NET.Maths.Vector2<T> a, Silk.NET.Maths.Vector2<T> b) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.ComponentMax(ref Silk.NET.Maths.Vector2<T> a, ref Silk.NET.Maths.Vector2<T> b, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.ComponentMin(Silk.NET.Maths.Vector2<T> a, Silk.NET.Maths.Vector2<T> b) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.ComponentMin(ref Silk.NET.Maths.Vector2<T> a, ref Silk.NET.Maths.Vector2<T> b, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.Cos(Silk.NET.Maths.Vector2<T> vector) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Cos(ref Silk.NET.Maths.Vector2<T> vector, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.Distance(Silk.NET.Maths.Vector2<T> vec1, Silk.NET.Maths.Vector2<T> vec2) -> T
+static Silk.NET.Maths.Vector2<T>.Distance(ref Silk.NET.Maths.Vector2<T> vec1, ref Silk.NET.Maths.Vector2<T> vec2, out T result) -> void
+static Silk.NET.Maths.Vector2<T>.DistanceSquared(Silk.NET.Maths.Vector2<T> vec1, Silk.NET.Maths.Vector2<T> vec2) -> T
+static Silk.NET.Maths.Vector2<T>.DistanceSquared(ref Silk.NET.Maths.Vector2<T> vec1, ref Silk.NET.Maths.Vector2<T> vec2, out T result) -> void
+static Silk.NET.Maths.Vector2<T>.Divide(Silk.NET.Maths.Vector2<T> vector, Silk.NET.Maths.Vector2<T> scale) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Divide(Silk.NET.Maths.Vector2<T> vector, T scale) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Divide(T value, Silk.NET.Maths.Vector2<T> scale) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Divide(T value, ref Silk.NET.Maths.Vector2<T> scale, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.Divide(ref Silk.NET.Maths.Vector2<T> vector, T scale, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.Divide(ref Silk.NET.Maths.Vector2<T> vector, ref Silk.NET.Maths.Vector2<T> scale, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.Dot(Silk.NET.Maths.Vector2<T> left, Silk.NET.Maths.Vector2<T> right) -> T
+static Silk.NET.Maths.Vector2<T>.Dot(ref Silk.NET.Maths.Vector2<T> left, ref Silk.NET.Maths.Vector2<T> right, out T result) -> void
+static Silk.NET.Maths.Vector2<T>.GetLength(Silk.NET.Maths.Vector2<T> vec) -> T
+static Silk.NET.Maths.Vector2<T>.GetLength(ref Silk.NET.Maths.Vector2<T> vec, out T result) -> void
+static Silk.NET.Maths.Vector2<T>.GetLengthSquared(Silk.NET.Maths.Vector2<T> vec) -> T
+static Silk.NET.Maths.Vector2<T>.GetLengthSquared(ref Silk.NET.Maths.Vector2<T> vec, out T result) -> void
+static Silk.NET.Maths.Vector2<T>.GetNormalized(Silk.NET.Maths.Vector2<T> vec) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.GetNormalized(ref Silk.NET.Maths.Vector2<T> vec, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.GetPerpendicularLeft(Silk.NET.Maths.Vector2<T> vec) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.GetPerpendicularLeft(ref Silk.NET.Maths.Vector2<T> vec, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.GetPerpendicularRight(Silk.NET.Maths.Vector2<T> vec) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.GetPerpendicularRight(ref Silk.NET.Maths.Vector2<T> vec, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.Lerp(Silk.NET.Maths.Vector2<T> a, Silk.NET.Maths.Vector2<T> b, T blend) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Lerp(ref Silk.NET.Maths.Vector2<T> a, ref Silk.NET.Maths.Vector2<T> b, T blend, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.MagnitudeMax(Silk.NET.Maths.Vector2<T> left, Silk.NET.Maths.Vector2<T> right) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.MagnitudeMax(ref Silk.NET.Maths.Vector2<T> left, ref Silk.NET.Maths.Vector2<T> right, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.MagnitudeMin(Silk.NET.Maths.Vector2<T> left, Silk.NET.Maths.Vector2<T> right) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.MagnitudeMin(ref Silk.NET.Maths.Vector2<T> left, ref Silk.NET.Maths.Vector2<T> right, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.Multiply(Silk.NET.Maths.Vector2<T> vector, Silk.NET.Maths.Vector2<T> scale) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Multiply(Silk.NET.Maths.Vector2<T> vector, T scale) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Multiply(ref Silk.NET.Maths.Vector2<T> vector, T scale, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.Multiply(ref Silk.NET.Maths.Vector2<T> vector, ref Silk.NET.Maths.Vector2<T> scale, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.Negate(Silk.NET.Maths.Vector2<T> vec) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Negate(ref Silk.NET.Maths.Vector2<T> vec, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.NegativeInfinity.get -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Normalize(Silk.NET.Maths.Vector2<T> vec) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Normalize(ref Silk.NET.Maths.Vector2<T> vec, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.One.get -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.PerpDot(Silk.NET.Maths.Vector2<T> left, Silk.NET.Maths.Vector2<T> right) -> T
+static Silk.NET.Maths.Vector2<T>.PerpDot(ref Silk.NET.Maths.Vector2<T> left, ref Silk.NET.Maths.Vector2<T> right, out T result) -> void
+static Silk.NET.Maths.Vector2<T>.PositiveInfinity.get -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Sin(Silk.NET.Maths.Vector2<T> vector) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Sin(ref Silk.NET.Maths.Vector2<T> vector, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.SizeInBytes.get -> int
+static Silk.NET.Maths.Vector2<T>.Subtract(Silk.NET.Maths.Vector2<T> a, Silk.NET.Maths.Vector2<T> b) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Subtract(ref Silk.NET.Maths.Vector2<T> a, ref Silk.NET.Maths.Vector2<T> b, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.Transform(Silk.NET.Maths.Vector2<T> vec, Silk.NET.Maths.Matrix2x2<T> mat) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Transform(Silk.NET.Maths.Vector2<T> vec, Silk.NET.Maths.Quaternion<T> quat) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Transform(ref Silk.NET.Maths.Vector2<T> vec, ref Silk.NET.Maths.Matrix2x2<T> mat, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.Transform(ref Silk.NET.Maths.Vector2<T> vec, ref Silk.NET.Maths.Quaternion<T> quat, out Silk.NET.Maths.Vector2<T> result) -> void
+static Silk.NET.Maths.Vector2<T>.UnitX.get -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.UnitY.get -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.Zero.get -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.implicit operator Silk.NET.Maths.Vector2<T>((T X, T Y) values) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.operator !=(Silk.NET.Maths.Vector2<T> left, Silk.NET.Maths.Vector2<T> right) -> bool
+static Silk.NET.Maths.Vector2<T>.operator *(Silk.NET.Maths.Vector2<T> vector, Silk.NET.Maths.Vector2<T> scale) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.operator *(Silk.NET.Maths.Vector2<T> vector, T scale) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.operator +(Silk.NET.Maths.Vector2<T> a, Silk.NET.Maths.Vector2<T> b) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.operator -(Silk.NET.Maths.Vector2<T> a, Silk.NET.Maths.Vector2<T> b) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.operator -(Silk.NET.Maths.Vector2<T> vec) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.operator /(Silk.NET.Maths.Vector2<T> vector, Silk.NET.Maths.Vector2<T> scale) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.operator /(Silk.NET.Maths.Vector2<T> vector, T scale) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.operator /(T value, Silk.NET.Maths.Vector2<T> scale) -> Silk.NET.Maths.Vector2<T>
+static Silk.NET.Maths.Vector2<T>.operator ==(Silk.NET.Maths.Vector2<T> left, Silk.NET.Maths.Vector2<T> right) -> bool
+static Silk.NET.Maths.Vector3<T>.Add(Silk.NET.Maths.Vector3<T> a, Silk.NET.Maths.Vector3<T> b) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Add(ref Silk.NET.Maths.Vector3<T> a, ref Silk.NET.Maths.Vector3<T> b, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.BaryCentric(Silk.NET.Maths.Vector3<T> a, Silk.NET.Maths.Vector3<T> b, Silk.NET.Maths.Vector3<T> c, T u, T v) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.BaryCentric(ref Silk.NET.Maths.Vector3<T> a, ref Silk.NET.Maths.Vector3<T> b, ref Silk.NET.Maths.Vector3<T> c, T u, T v, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.CalculateAngle(Silk.NET.Maths.Vector3<T> first, Silk.NET.Maths.Vector3<T> second) -> T
+static Silk.NET.Maths.Vector3<T>.CalculateAngle(ref Silk.NET.Maths.Vector3<T> first, ref Silk.NET.Maths.Vector3<T> second, out T result) -> void
+static Silk.NET.Maths.Vector3<T>.Clamp(Silk.NET.Maths.Vector3<T> vec, Silk.NET.Maths.Vector3<T> min, Silk.NET.Maths.Vector3<T> max) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Clamp(ref Silk.NET.Maths.Vector3<T> vec, ref Silk.NET.Maths.Vector3<T> min, ref Silk.NET.Maths.Vector3<T> max, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.ComponentMax(Silk.NET.Maths.Vector3<T> a, Silk.NET.Maths.Vector3<T> b) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.ComponentMax(ref Silk.NET.Maths.Vector3<T> a, ref Silk.NET.Maths.Vector3<T> b, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.ComponentMin(Silk.NET.Maths.Vector3<T> a, Silk.NET.Maths.Vector3<T> b) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.ComponentMin(ref Silk.NET.Maths.Vector3<T> a, ref Silk.NET.Maths.Vector3<T> b, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.Cos(Silk.NET.Maths.Vector3<T> vector) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Cos(ref Silk.NET.Maths.Vector3<T> vector, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.Cross(Silk.NET.Maths.Vector3<T> left, Silk.NET.Maths.Vector3<T> right) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Cross(ref Silk.NET.Maths.Vector3<T> left, ref Silk.NET.Maths.Vector3<T> right, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.Distance(Silk.NET.Maths.Vector3<T> vec1, Silk.NET.Maths.Vector3<T> vec2) -> T
+static Silk.NET.Maths.Vector3<T>.Distance(ref Silk.NET.Maths.Vector3<T> vec1, ref Silk.NET.Maths.Vector3<T> vec2, out T result) -> void
+static Silk.NET.Maths.Vector3<T>.DistanceSquared(Silk.NET.Maths.Vector3<T> vec1, Silk.NET.Maths.Vector3<T> vec2) -> T
+static Silk.NET.Maths.Vector3<T>.DistanceSquared(ref Silk.NET.Maths.Vector3<T> vec1, ref Silk.NET.Maths.Vector3<T> vec2, out T result) -> void
+static Silk.NET.Maths.Vector3<T>.Divide(Silk.NET.Maths.Vector3<T> vector, Silk.NET.Maths.Vector3<T> scale) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Divide(Silk.NET.Maths.Vector3<T> vector, T scale) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Divide(T value, Silk.NET.Maths.Vector3<T> scale) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Divide(T value, ref Silk.NET.Maths.Vector3<T> scale, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.Divide(ref Silk.NET.Maths.Vector3<T> vector, T scale, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.Divide(ref Silk.NET.Maths.Vector3<T> vector, ref Silk.NET.Maths.Vector3<T> scale, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.Dot(Silk.NET.Maths.Vector3<T> left, Silk.NET.Maths.Vector3<T> right) -> T
+static Silk.NET.Maths.Vector3<T>.Dot(ref Silk.NET.Maths.Vector3<T> left, ref Silk.NET.Maths.Vector3<T> right, out T result) -> void
+static Silk.NET.Maths.Vector3<T>.GetLength(Silk.NET.Maths.Vector3<T> vec) -> T
+static Silk.NET.Maths.Vector3<T>.GetLength(ref Silk.NET.Maths.Vector3<T> vec, out T result) -> void
+static Silk.NET.Maths.Vector3<T>.GetLengthSquared(Silk.NET.Maths.Vector3<T> vec) -> T
+static Silk.NET.Maths.Vector3<T>.GetLengthSquared(ref Silk.NET.Maths.Vector3<T> vec, out T result) -> void
+static Silk.NET.Maths.Vector3<T>.GetNormalized(Silk.NET.Maths.Vector3<T> vec) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.GetNormalized(ref Silk.NET.Maths.Vector3<T> vec, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.Lerp(Silk.NET.Maths.Vector3<T> a, Silk.NET.Maths.Vector3<T> b, T blend) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Lerp(ref Silk.NET.Maths.Vector3<T> a, ref Silk.NET.Maths.Vector3<T> b, T blend, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.MagnitudeMax(Silk.NET.Maths.Vector3<T> left, Silk.NET.Maths.Vector3<T> right) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.MagnitudeMax(ref Silk.NET.Maths.Vector3<T> left, ref Silk.NET.Maths.Vector3<T> right, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.MagnitudeMin(Silk.NET.Maths.Vector3<T> left, Silk.NET.Maths.Vector3<T> right) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.MagnitudeMin(ref Silk.NET.Maths.Vector3<T> left, ref Silk.NET.Maths.Vector3<T> right, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.Multiply(Silk.NET.Maths.Vector3<T> vector, Silk.NET.Maths.Vector3<T> scale) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Multiply(Silk.NET.Maths.Vector3<T> vector, T scale) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Multiply(ref Silk.NET.Maths.Vector3<T> vector, T scale, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.Multiply(ref Silk.NET.Maths.Vector3<T> vector, ref Silk.NET.Maths.Vector3<T> scale, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.Negate(Silk.NET.Maths.Vector3<T> vec) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Negate(ref Silk.NET.Maths.Vector3<T> vec, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.NegativeInfinity.get -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Normalize(Silk.NET.Maths.Vector3<T> vec) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Normalize(ref Silk.NET.Maths.Vector3<T> vec, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.One.get -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.PositiveInfinity.get -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Sin(Silk.NET.Maths.Vector3<T> vector) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Sin(ref Silk.NET.Maths.Vector3<T> vector, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.SizeInBytes.get -> int
+static Silk.NET.Maths.Vector3<T>.Subtract(Silk.NET.Maths.Vector3<T> a, Silk.NET.Maths.Vector3<T> b) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Subtract(ref Silk.NET.Maths.Vector3<T> a, ref Silk.NET.Maths.Vector3<T> b, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.Transform(Silk.NET.Maths.Vector3<T> vec, Silk.NET.Maths.Matrix3x3<T> mat) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Transform(Silk.NET.Maths.Vector3<T> vec, Silk.NET.Maths.Quaternion<T> quat) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Transform(ref Silk.NET.Maths.Vector3<T> vec, ref Silk.NET.Maths.Matrix3x3<T> mat, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.Transform(ref Silk.NET.Maths.Vector3<T> vec, ref Silk.NET.Maths.Quaternion<T> quat, out Silk.NET.Maths.Vector3<T> result) -> void
+static Silk.NET.Maths.Vector3<T>.UnitX.get -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.UnitY.get -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.UnitZ.get -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.Zero.get -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.implicit operator Silk.NET.Maths.Vector3<T>((T X, T Y, T Z) values) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.operator !=(Silk.NET.Maths.Vector3<T> left, Silk.NET.Maths.Vector3<T> right) -> bool
+static Silk.NET.Maths.Vector3<T>.operator *(Silk.NET.Maths.Vector3<T> vector, Silk.NET.Maths.Vector3<T> scale) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.operator *(Silk.NET.Maths.Vector3<T> vector, T scale) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.operator +(Silk.NET.Maths.Vector3<T> a, Silk.NET.Maths.Vector3<T> b) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.operator -(Silk.NET.Maths.Vector3<T> a, Silk.NET.Maths.Vector3<T> b) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.operator -(Silk.NET.Maths.Vector3<T> vec) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.operator /(Silk.NET.Maths.Vector3<T> vector, Silk.NET.Maths.Vector3<T> scale) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.operator /(Silk.NET.Maths.Vector3<T> vector, T scale) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.operator /(T value, Silk.NET.Maths.Vector3<T> scale) -> Silk.NET.Maths.Vector3<T>
+static Silk.NET.Maths.Vector3<T>.operator ==(Silk.NET.Maths.Vector3<T> left, Silk.NET.Maths.Vector3<T> right) -> bool
+static Silk.NET.Maths.Vector4<T>.Add(Silk.NET.Maths.Vector4<T> a, Silk.NET.Maths.Vector4<T> b) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Add(ref Silk.NET.Maths.Vector4<T> a, ref Silk.NET.Maths.Vector4<T> b, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.BaryCentric(Silk.NET.Maths.Vector4<T> a, Silk.NET.Maths.Vector4<T> b, Silk.NET.Maths.Vector4<T> c, T u, T v) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.BaryCentric(ref Silk.NET.Maths.Vector4<T> a, ref Silk.NET.Maths.Vector4<T> b, ref Silk.NET.Maths.Vector4<T> c, T u, T v, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.Clamp(Silk.NET.Maths.Vector4<T> vec, Silk.NET.Maths.Vector4<T> min, Silk.NET.Maths.Vector4<T> max) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Clamp(ref Silk.NET.Maths.Vector4<T> vec, ref Silk.NET.Maths.Vector4<T> min, ref Silk.NET.Maths.Vector4<T> max, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.ComponentMax(Silk.NET.Maths.Vector4<T> a, Silk.NET.Maths.Vector4<T> b) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.ComponentMax(ref Silk.NET.Maths.Vector4<T> a, ref Silk.NET.Maths.Vector4<T> b, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.ComponentMin(Silk.NET.Maths.Vector4<T> a, Silk.NET.Maths.Vector4<T> b) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.ComponentMin(ref Silk.NET.Maths.Vector4<T> a, ref Silk.NET.Maths.Vector4<T> b, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.Cos(Silk.NET.Maths.Vector4<T> vector) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Cos(ref Silk.NET.Maths.Vector4<T> vector, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.Divide(Silk.NET.Maths.Vector4<T> vector, Silk.NET.Maths.Vector4<T> scale) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Divide(Silk.NET.Maths.Vector4<T> vector, T scale) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Divide(T value, Silk.NET.Maths.Vector4<T> scale) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Divide(T value, ref Silk.NET.Maths.Vector4<T> scale, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.Divide(ref Silk.NET.Maths.Vector4<T> vector, T scale, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.Divide(ref Silk.NET.Maths.Vector4<T> vector, ref Silk.NET.Maths.Vector4<T> scale, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.Dot(Silk.NET.Maths.Vector4<T> left, Silk.NET.Maths.Vector4<T> right) -> T
+static Silk.NET.Maths.Vector4<T>.Dot(ref Silk.NET.Maths.Vector4<T> left, ref Silk.NET.Maths.Vector4<T> right, out T result) -> void
+static Silk.NET.Maths.Vector4<T>.GetLength(Silk.NET.Maths.Vector4<T> vec) -> T
+static Silk.NET.Maths.Vector4<T>.GetLength(ref Silk.NET.Maths.Vector4<T> vec, out T result) -> void
+static Silk.NET.Maths.Vector4<T>.GetLengthSquared(Silk.NET.Maths.Vector4<T> vec) -> T
+static Silk.NET.Maths.Vector4<T>.GetLengthSquared(ref Silk.NET.Maths.Vector4<T> vec, out T result) -> void
+static Silk.NET.Maths.Vector4<T>.GetNegated(Silk.NET.Maths.Vector4<T> vec) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.GetNegated(ref Silk.NET.Maths.Vector4<T> vec, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.GetNormalized(Silk.NET.Maths.Vector4<T> vec) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.GetNormalized(ref Silk.NET.Maths.Vector4<T> vec, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.Lerp(Silk.NET.Maths.Vector4<T> a, Silk.NET.Maths.Vector4<T> b, T blend) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Lerp(ref Silk.NET.Maths.Vector4<T> a, ref Silk.NET.Maths.Vector4<T> b, T blend, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.MagnitudeMax(Silk.NET.Maths.Vector4<T> left, Silk.NET.Maths.Vector4<T> right) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.MagnitudeMax(ref Silk.NET.Maths.Vector4<T> left, ref Silk.NET.Maths.Vector4<T> right, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.MagnitudeMin(Silk.NET.Maths.Vector4<T> left, Silk.NET.Maths.Vector4<T> right) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.MagnitudeMin(ref Silk.NET.Maths.Vector4<T> left, ref Silk.NET.Maths.Vector4<T> right, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.Multiply(Silk.NET.Maths.Vector4<T> vector, Silk.NET.Maths.Vector4<T> scale) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Multiply(Silk.NET.Maths.Vector4<T> vector, T scale) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Multiply(ref Silk.NET.Maths.Vector4<T> vector, T scale, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.Multiply(ref Silk.NET.Maths.Vector4<T> vector, ref Silk.NET.Maths.Vector4<T> scale, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.NegativeInfinity.get -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.One.get -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.PositiveInfinity.get -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Sin(Silk.NET.Maths.Vector4<T> vector) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Sin(ref Silk.NET.Maths.Vector4<T> vector, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.SizeInBytes.get -> int
+static Silk.NET.Maths.Vector4<T>.Subtract(Silk.NET.Maths.Vector4<T> a, Silk.NET.Maths.Vector4<T> b) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Subtract(ref Silk.NET.Maths.Vector4<T> a, ref Silk.NET.Maths.Vector4<T> b, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.Transform(Silk.NET.Maths.Vector4<T> vec, Silk.NET.Maths.Matrix4x4<T> mat) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Transform(Silk.NET.Maths.Vector4<T> vec, Silk.NET.Maths.Quaternion<T> quat) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Transform(ref Silk.NET.Maths.Vector4<T> vec, ref Silk.NET.Maths.Matrix4x4<T> mat, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.Transform(ref Silk.NET.Maths.Vector4<T> vec, ref Silk.NET.Maths.Quaternion<T> quat, out Silk.NET.Maths.Vector4<T> result) -> void
+static Silk.NET.Maths.Vector4<T>.UnitW.get -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.UnitX.get -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.UnitY.get -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.UnitZ.get -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.Zero.get -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.implicit operator Silk.NET.Maths.Vector4<T>((T X, T Y, T Z, T W) values) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.operator !=(Silk.NET.Maths.Vector4<T> left, Silk.NET.Maths.Vector4<T> right) -> bool
+static Silk.NET.Maths.Vector4<T>.operator *(Silk.NET.Maths.Vector4<T> vector, Silk.NET.Maths.Vector4<T> scale) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.operator *(Silk.NET.Maths.Vector4<T> vector, T scale) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.operator +(Silk.NET.Maths.Vector4<T> a, Silk.NET.Maths.Vector4<T> b) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.operator -(Silk.NET.Maths.Vector4<T> a, Silk.NET.Maths.Vector4<T> b) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.operator /(Silk.NET.Maths.Vector4<T> vector, Silk.NET.Maths.Vector4<T> scale) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.operator /(Silk.NET.Maths.Vector4<T> vector, T scale) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.operator /(T value, Silk.NET.Maths.Vector4<T> scale) -> Silk.NET.Maths.Vector4<T>
+static Silk.NET.Maths.Vector4<T>.operator ==(Silk.NET.Maths.Vector4<T> left, Silk.NET.Maths.Vector4<T> right) -> bool
+static readonly Silk.NET.Maths.Half.Epsilon -> Silk.NET.Maths.Half
+static readonly Silk.NET.Maths.Half.MaxValue -> Silk.NET.Maths.Half
+static readonly Silk.NET.Maths.Half.MinValue -> Silk.NET.Maths.Half
+static readonly Silk.NET.Maths.Half.NaN -> Silk.NET.Maths.Half
+static readonly Silk.NET.Maths.Half.NegativeInfinity -> Silk.NET.Maths.Half
+static readonly Silk.NET.Maths.Half.PositiveInfinity -> Silk.NET.Maths.Half
