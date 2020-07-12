@@ -76,7 +76,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                     NativeType = x.Type.ToString(),
                                     Type = ConvertType(x.Type),
                                     DefaultAssignment =
-                                        x.Type.Name == "VkStructureType" && !string.IsNullOrWhiteSpace(x.LegalValues)
+                                        (x.Type.Name == "VkStructureType" || x.Type.Name == "XrStructureType")
+                                        && !string.IsNullOrWhiteSpace(x.LegalValues)
                                             ? "StructureType." + TryTrim
                                             (
                                                 Naming.Translate

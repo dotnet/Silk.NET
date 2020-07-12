@@ -452,7 +452,7 @@ namespace Silk.NET.OpenCL
         DeviceWorkGroupCollectiveFunctionsSupport = 0x1068,
         DeviceGenericAddressSpaceSupport = 0x1069,
         DeviceOpenclCFeatures = 0x106F,
-        DeviceDeviceEnqueueSupport = 0x1070,
+        DeviceDeviceEnqueueCapabilities = 0x1070,
         DevicePipeSupport = 0x1071,
         DeviceNumericVersion = 0x105E,
         DeviceExtensionsWithVersion = 0x1060,
@@ -468,5 +468,7 @@ namespace Silk.NET.OpenCL
         VersionMinorBits = 0x10,
         VersionPatchBits = 0x12,
         NameVersionMaxNameSize = 0x64,
+        DeviceQueueSupported = 0x1,
+        DeviceQueueReplaceableDefault = 0x2,
     }
 }

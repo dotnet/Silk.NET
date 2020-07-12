@@ -339,6 +339,60 @@
                     "$include.commonTypeMap": "build/csharp_typemap.json"
                 }
             ]
+        },
+        {
+            "profileName": "OpenXR",
+            "sources": [
+                "https://raw.githubusercontent.com/KhronosGroup/OpenXR-SDK-Source/master/specification/registry/xr.xml"
+            ],
+            "mode": "ConvertConstruct",
+            "cacheDir": "build/cache",
+            "cacheKey": "openxr",
+            "controlDescriptors": [],
+            "converter": {
+                "reader": "vk",
+                "constructor": "vk",
+                "className": "XR"
+            },
+            "prefix": "xr",
+            "clang": {},
+            "bakery": {
+                "profileNames": [
+                    "openxr"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/OpenXR",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.OpenXR",
+            "extensionsNamespace": "Silk.NET.OpenXR.Extensions",
+            "legacyNameContainer": {
+                "Linux": "libopenxr_loader.so.1",
+                "Windows": "openxr_loader.dll",
+                "MacOS": "null",
+                "Android": "libopenxr_loader.so.1",
+                "IOS": "__Internal",
+                "ClassName": "OpenXRLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "char": "byte",
+                    "XR_DEFINE_ATOM": "uint64_t",
+                    "LUID": "ulong",
+                    "D3D_FEATURE_LEVEL": "uint",
+                    "VkInstance": "Silk.NET.GLFW.VkHandle",
+                    "VkPhysicalDevice": "Silk.NET.GLFW.VkHandle",
+                    "VkImage": "ulong",
+                    "VkDevice": "Silk.NET.GLFW.VkHandle",
+                    "PFN_xrVoidFunction": "FuncPtr"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
         }
     ]
 }

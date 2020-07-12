@@ -1,0 +1,42 @@
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
+
+using System;
+using System.Runtime.InteropServices;
+using System.Text;
+using Silk.NET.Core.Native;
+using Ultz.SuperInvoke;
+
+#pragma warning disable 1591
+
+namespace Silk.NET.OpenXR
+{
+    public unsafe struct Fovf
+    {
+        public Fovf
+        (
+            float angleLeft = default,
+            float angleRight = default,
+            float angleUp = default,
+            float angleDown = default
+        )
+        {
+           AngleLeft = angleLeft;
+           AngleRight = angleRight;
+           AngleUp = angleUp;
+           AngleDown = angleDown;
+        }
+
+/// <summary></summary>
+        public float AngleLeft;
+/// <summary></summary>
+        public float AngleRight;
+/// <summary></summary>
+        public float AngleUp;
+/// <summary></summary>
+        public float AngleDown;
+    }
+}

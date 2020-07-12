@@ -27,7 +27,7 @@ namespace Silk.NET.BuildTools
 {
     public static class Generator
     {
-        public const bool TestMode = true;
+        public const bool TestMode = false;
         public static void Run(Config config)
         {
             var tasks = new Task[config.Tasks.Length];
