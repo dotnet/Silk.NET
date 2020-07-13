@@ -1,12 +1,14 @@
-#region
+// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
+
 
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Text;
 using static Silk.NET.Maths.Scalar;
-
-#endregion
 
 namespace Silk.NET.Maths
 {

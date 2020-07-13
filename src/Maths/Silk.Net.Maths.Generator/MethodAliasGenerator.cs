@@ -1,4 +1,7 @@
-﻿#region
+﻿// This file is part of Silk.NET.
+// 
+// You may modify and distribute Silk.NET under the terms
+// of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
 using System.Linq;
@@ -7,8 +10,6 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
-
-#endregion
 
 namespace Silk.Net.Maths.Generator
 {
