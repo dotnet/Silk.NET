@@ -15,5 +15,6 @@ void main()
     gl_Position = uProjection * uView * uModel * vec4(vPos, 1.0);
     //We want to know the fragments position in World space, so we multiply ONLY by uModel and not uView or uProjection
     fPos = vec3(uModel * vec4(vPos, 1.0));
-    fNormal = vNormal;
+    //The Normal needs to be in World space too, but needs to account for Scaling of the object
+    fNormal = mat3(transpose(inverse(uModel))) * vPos;
 }
