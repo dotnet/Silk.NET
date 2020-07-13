@@ -1,3 +1,4 @@
+#nullable enable
 Silk.NET.Maths.Vector2<T>.AsVector() -> System.Numerics.Vector<T>
 Silk.NET.Maths.Vector3<T>.AsVector() -> System.Numerics.Vector<T>
 Silk.NET.Maths.Vector4<T>.AsVector() -> System.Numerics.Vector<T>

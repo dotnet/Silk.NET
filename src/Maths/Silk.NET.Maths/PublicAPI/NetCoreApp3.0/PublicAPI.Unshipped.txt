@@ -1,3 +1,4 @@
+#nullable enable
 Silk.NET.Maths.Vector2<T>.AsVector64() -> System.Runtime.Intrinsics.Vector64<T>
 Silk.NET.Maths.Vector3<T>.AsVector64() -> System.Runtime.Intrinsics.Vector64<T>
 Silk.NET.Maths.Vector4<T>.AsVector64() -> System.Runtime.Intrinsics.Vector64<T>

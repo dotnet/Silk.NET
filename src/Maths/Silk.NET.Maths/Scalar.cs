@@ -390,9 +390,6 @@ namespace Silk.NET.Maths
             => throw new NotSupportedException("This operation isn't supported for the current type.");
 
         [M(MethodImplOptions)]
-#if !NETSTANDARD2_0
-        [DoesNotReturn]
-#endif
         internal static void ThrowForUnsupportedBaseType<T>() where T : unmanaged, IFormattable
         {
             if (typeof(T) != typeof(byte) && typeof(T) != typeof(sbyte) && typeof(T) != typeof(ushort) &&

@@ -1,3 +1,4 @@
+#nullable enable
 Silk.NET.Maths.Box2<T>
 Silk.NET.Maths.Box2<T>.Box2(Silk.NET.Maths.Vector2<T> min, Silk.NET.Maths.Vector2<T> max) -> void
 Silk.NET.Maths.Box2<T>.Box2(T minX, T minY, T maxX, T maxY) -> void
