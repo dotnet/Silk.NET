@@ -1,5 +1,5 @@
 // This file is part of Silk.NET.
-// 
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -38,6 +38,11 @@ namespace Silk.NET.Windowing.Common
         new Size Size { get; set; }
 
         /// <summary>
+        /// Elapsed time in seconds since the value was set. Starts at 0 when the Window is initialized.
+        /// </summary>
+        double Time { get; set; }
+
+        /// <summary>
         /// The window title.
         /// </summary>
         string Title { get; set; }
@@ -51,7 +56,7 @@ namespace Silk.NET.Windowing.Common
         /// The window border.
         /// </summary>
         WindowBorder WindowBorder { get; set; }
-        
+
         /// <summary>
         /// Whether or not the window's framebuffer should be transparent.
         /// </summary>

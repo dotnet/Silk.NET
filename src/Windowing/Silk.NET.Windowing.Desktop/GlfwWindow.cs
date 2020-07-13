@@ -1,5 +1,5 @@
 // This file is part of Silk.NET.
-// 
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -222,6 +222,18 @@ namespace Silk.NET.Windowing.Desktop
                 _initialOptions.Size = value;
                 _nonFullscreenSize = value;
                 _size = value;
+            }
+        }
+
+        public double Time
+        {
+            get
+            {
+                return _glfw.GetTime();
+            }
+            set
+            {
+                _glfw.SetTime(value);
             }
         }
 
@@ -677,7 +689,7 @@ namespace Silk.NET.Windowing.Desktop
             _windowPtr = (WindowHandle*) 0;
         }
 
-        // Disable parameter because 
+        // Disable parameter because
         // ReSharper disable once UnusedParameter.Local
         private void Dispose(bool disposing)
         {

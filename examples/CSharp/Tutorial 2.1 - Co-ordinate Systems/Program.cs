@@ -133,7 +133,7 @@ namespace Tutorial
             Shader.SetUniform("uTexture0", 0);
 
             //Use elapsed time to convert to radians to allow our cube to rotate over time
-            var difference = (DateTime.UtcNow - StartTime).TotalMilliseconds / 10;
+            var difference = window.Time * 10;
 
             var model = Matrix4x4.CreateRotationY((float)DegreesToRadians(difference)) * Matrix4x4.CreateRotationX((float)DegreesToRadians(difference));
             var view = Matrix4x4.CreateLookAt(CameraPosition, CameraTarget, CameraUp);
