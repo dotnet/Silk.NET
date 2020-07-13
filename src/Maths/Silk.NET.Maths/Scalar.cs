@@ -405,9 +405,6 @@ namespace Silk.NET.Maths
         }
 
         [M(MethodImplOptions)]
-#if !NETSTANDARD2_0
-        [DoesNotReturn]
-#endif
         internal static void ThrowForIntegerBaseType<T>() where T : unmanaged, IFormattable
         {
             if (typeof(T) != typeof(Half) && typeof(T) != typeof(float) && typeof(T) != typeof(double))

@@ -2,11 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths", "Silk.NET.Maths\Silk.NET.Maths.csproj", "{7B1355E0-E432-4412-B9F0-080AF98C880D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths.Tests", "Silk.NET.Maths.Tests\Silk.NET.Maths.Tests.csproj", "{34F0A2D1-BF50-4D84-882F-4030D8493B91}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertHelper", "ConvertHelper\ConvertHelper.csproj", "{E9682FDC-BCDF-4E23-8787-48EB900A37DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths.Generator", "Silk.NET.Maths.Generator\Silk.NET.Maths.Generator.csproj", "{C841D447-9D21-49F7-B033-58DBA178E7FA}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Silk.NET.Maths.Tests", "Silk.NET.Maths.Tests\Silk.NET.Maths.Tests.fsproj", "{C3215652-5D03-4982-BF23-61CD8B00340B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,10 +18,6 @@ Global
 		{7B1355E0-E432-4412-B9F0-080AF98C880D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B1355E0-E432-4412-B9F0-080AF98C880D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B1355E0-E432-4412-B9F0-080AF98C880D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{34F0A2D1-BF50-4D84-882F-4030D8493B91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{34F0A2D1-BF50-4D84-882F-4030D8493B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{34F0A2D1-BF50-4D84-882F-4030D8493B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{34F0A2D1-BF50-4D84-882F-4030D8493B91}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E9682FDC-BCDF-4E23-8787-48EB900A37DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E9682FDC-BCDF-4E23-8787-48EB900A37DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9682FDC-BCDF-4E23-8787-48EB900A37DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -30,5 +26,9 @@ Global
 		{C841D447-9D21-49F7-B033-58DBA178E7FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C841D447-9D21-49F7-B033-58DBA178E7FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C841D447-9D21-49F7-B033-58DBA178E7FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3215652-5D03-4982-BF23-61CD8B00340B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3215652-5D03-4982-BF23-61CD8B00340B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3215652-5D03-4982-BF23-61CD8B00340B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3215652-5D03-4982-BF23-61CD8B00340B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
