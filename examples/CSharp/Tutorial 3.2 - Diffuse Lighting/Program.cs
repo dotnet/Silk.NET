@@ -23,6 +23,7 @@ namespace Tutorial
         private static VertexArrayObject<float, uint> VaoCube;
         private static Shader LightingShader;
         private static Shader LampShader;
+        private static Vector3 LampPosition = new Vector3(1.2f, 1.0f, 2.0f);
 
         private static Camera Camera;
 
@@ -31,48 +32,48 @@ namespace Tutorial
 
         private static readonly float[] Vertices =
         {
-            //X    Y      Z
-            -0.5f, -0.5f, -0.5f,
-             0.5f, -0.5f, -0.5f,
-             0.5f,  0.5f, -0.5f,
-             0.5f,  0.5f, -0.5f,
-            -0.5f,  0.5f, -0.5f,
-            -0.5f, -0.5f, -0.5f,
+            //X    Y      Z       Normals
+            -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+             0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+             0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+             0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+            -0.5f,  0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f,  0.0f, -1.0f,
 
-            -0.5f, -0.5f,  0.5f,
-             0.5f, -0.5f,  0.5f,
-             0.5f,  0.5f,  0.5f,
-             0.5f,  0.5f,  0.5f,
-            -0.5f,  0.5f,  0.5f,
-            -0.5f, -0.5f,  0.5f,
+            -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+             0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+             0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+             0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+            -0.5f,  0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
+            -0.5f, -0.5f,  0.5f,  0.0f,  0.0f,  1.0f,
 
-            -0.5f,  0.5f,  0.5f,
-            -0.5f,  0.5f, -0.5f,
-            -0.5f, -0.5f, -0.5f,
-            -0.5f, -0.5f, -0.5f,
-            -0.5f, -0.5f,  0.5f,
-            -0.5f,  0.5f,  0.5f,
+            -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
+            -0.5f,  0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
+            -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
+            -0.5f, -0.5f, -0.5f, -1.0f,  0.0f,  0.0f,
+            -0.5f, -0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
+            -0.5f,  0.5f,  0.5f, -1.0f,  0.0f,  0.0f,
 
-             0.5f,  0.5f,  0.5f,
-             0.5f,  0.5f, -0.5f,
-             0.5f, -0.5f, -0.5f,
-             0.5f, -0.5f, -0.5f,
-             0.5f, -0.5f,  0.5f,
-             0.5f,  0.5f,  0.5f,
+             0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
+             0.5f,  0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
+             0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
+             0.5f, -0.5f, -0.5f,  1.0f,  0.0f,  0.0f,
+             0.5f, -0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
+             0.5f,  0.5f,  0.5f,  1.0f,  0.0f,  0.0f,
 
-            -0.5f, -0.5f, -0.5f,
-             0.5f, -0.5f, -0.5f,
-             0.5f, -0.5f,  0.5f,
-             0.5f, -0.5f,  0.5f,
-            -0.5f, -0.5f,  0.5f,
-            -0.5f, -0.5f, -0.5f,
+            -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
+             0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
+             0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
+             0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
+            -0.5f, -0.5f,  0.5f,  0.0f, -1.0f,  0.0f,
+            -0.5f, -0.5f, -0.5f,  0.0f, -1.0f,  0.0f,
 
-            -0.5f,  0.5f, -0.5f,
-             0.5f,  0.5f, -0.5f,
-             0.5f,  0.5f,  0.5f,
-             0.5f,  0.5f,  0.5f,
-            -0.5f,  0.5f,  0.5f,
-            -0.5f,  0.5f, -0.5f
+            -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
+             0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f,
+             0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+             0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+            -0.5f,  0.5f,  0.5f,  0.0f,  1.0f,  0.0f,
+            -0.5f,  0.5f, -0.5f,  0.0f,  1.0f,  0.0f
         };
 
         private static readonly uint[] Indices =
@@ -116,7 +117,8 @@ namespace Tutorial
             Vbo = new BufferObject<float>(Gl, Vertices, BufferTargetARB.ArrayBuffer);
             VaoCube = new VertexArrayObject<float, uint>(Gl, Vbo, Ebo);
 
-            VaoCube.VertexAttributePointer(0, 3, VertexAttribPointerType.Float, 3, 0);
+            VaoCube.VertexAttributePointer(0, 3, VertexAttribPointerType.Float, 6, 0);
+            VaoCube.VertexAttributePointer(1, 3, VertexAttribPointerType.Float, 6, 3);
 
             //The lighting shader will give our main cube its colour multiplied by the lights intensity
             LightingShader = new Shader(Gl, "shader.vert", "lighting.frag");
@@ -167,6 +169,7 @@ namespace Tutorial
             LightingShader.SetUniform("uProjection", Camera.GetProjectionMatrix());
             LightingShader.SetUniform("objectColor", new Vector3(1.0f, 0.5f, 0.31f));
             LightingShader.SetUniform("lightColor", Vector3.One);
+            LightingShader.SetUniform("lightPos", LampPosition);
 
             //We're drawing with just vertices and no indicies, and it takes 36 verticies to have a six-sided textured cube
             Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
@@ -176,7 +179,7 @@ namespace Tutorial
             //The Lamp cube is going to be a scaled down version of the normal cubes verticies moved to a different screen location
             var lampMatrix = Matrix4x4.Identity;
             lampMatrix *= Matrix4x4.CreateScale(0.2f);
-            lampMatrix *= Matrix4x4.CreateTranslation(new Vector3(1.2f, 1.0f, 2.0f));
+            lampMatrix *= Matrix4x4.CreateTranslation(LampPosition);
 
             LampShader.SetUniform("uModel", lampMatrix);
             LampShader.SetUniform("uView", Camera.GetViewMatrix());
