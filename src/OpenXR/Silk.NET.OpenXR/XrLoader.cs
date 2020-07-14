@@ -68,7 +68,7 @@ namespace Silk.NET.OpenXR
             {
                 OpenXR.GetInstanceProcAddr
                     (OpenXR.CurrentInstance.Value, symbolName, ref Unsafe.As<IntPtr, FuncPtr>(ref sym));
-                if (sym != IntPtr.Zero)
+                if (sym != default)
                 {
                     return sym;
                 }
