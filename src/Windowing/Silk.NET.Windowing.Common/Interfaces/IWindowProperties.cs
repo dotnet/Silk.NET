@@ -38,11 +38,6 @@ namespace Silk.NET.Windowing.Common
         new Size Size { get; set; }
 
         /// <summary>
-        /// Elapsed time in seconds since the value was set. Starts at 0 when the Window is initialized.
-        /// </summary>
-        double Time { get; set; }
-
-        /// <summary>
         /// The window title.
         /// </summary>
         string Title { get; set; }

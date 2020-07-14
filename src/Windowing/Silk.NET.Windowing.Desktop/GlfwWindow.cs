@@ -55,6 +55,8 @@ namespace Silk.NET.Windowing.Desktop
         // The stopwatches. Used to calculate delta.
         private Stopwatch _renderStopwatch;
         private Stopwatch _updateStopwatch;
+        // The stopwatch used to determine how long the window has been alive
+        private Stopwatch _lifetimeStopwatch;
 
         // Invoke method variables
         private ConcurrentQueue<Invocation> _pendingInvocations;
@@ -225,17 +227,7 @@ namespace Silk.NET.Windowing.Desktop
             }
         }
 
-        public double Time
-        {
-            get
-            {
-                return _glfw.GetTime();
-            }
-            set
-            {
-                _glfw.SetTime(value);
-            }
-        }
+        public double Time => _lifetimeStopwatch.Elapsed.TotalSeconds;
 
         /// <inheritdoc />
         public double FramesPerSecond
@@ -605,8 +597,10 @@ namespace Silk.NET.Windowing.Desktop
             // Run OnLoad.
             Load?.Invoke();
 
+            _lifetimeStopwatch = new Stopwatch();
             _renderStopwatch = new Stopwatch();
             _updateStopwatch = new Stopwatch();
+            _lifetimeStopwatch.Start();
             _renderStopwatch.Start();
             _updateStopwatch.Start();
             Glfw.ThrowExceptions();
@@ -669,6 +663,8 @@ namespace Silk.NET.Windowing.Desktop
         {
             _updateTimeDeficit = 0;
             _renderTimeDeficit = 0;
+
+            _lifetimeStopwatch.Restart();
 
             _updateStopwatch.Stop();
             _renderStopwatch.Stop();

@@ -83,7 +83,6 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 true,
                 windowCI.Position,
                 windowCI.Size,
-                0,
                 -1,
                 -1,
                 new GraphicsAPI

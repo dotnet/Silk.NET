@@ -23,7 +23,6 @@ namespace Silk.NET.Windowing.Common
             UseSingleThreadedWindow = opts.UseSingleThreadedWindow;
             Position = new Point(50, 50);
             Size = new Size(1280, 720);
-            Time = 0;
             FramesPerSecond = opts.FramesPerSecond;
             UpdatesPerSecond = opts.UpdatesPerSecond;
             API = opts.API;
@@ -64,9 +63,6 @@ namespace Silk.NET.Windowing.Common
         public Size Size { get; set; }
 
         /// <inheritdoc />
-        public double Time { get; set; }
-
-        /// <inheritdoc />
         public double FramesPerSecond { get; set; }
 
         /// <inheritdoc />
@@ -102,7 +98,6 @@ namespace Silk.NET.Windowing.Common
             bool useSingleThreadedWindow,
             Point position,
             Size size,
-            double time,
             double framesPerSecond,
             double updatesPerSecond,
             GraphicsAPI api,
@@ -122,7 +117,6 @@ namespace Silk.NET.Windowing.Common
             UseSingleThreadedWindow = useSingleThreadedWindow;
             Position = position;
             Size = size;
-            Time = time;
             FramesPerSecond = framesPerSecond;
             UpdatesPerSecond = updatesPerSecond;
             API = api;
@@ -144,7 +138,7 @@ namespace Silk.NET.Windowing.Common
         public static WindowOptions Default { get; } = new WindowOptions
         (
             true, true, new Point(50, 50),
-            new Size(1280, 720), 0, 0.0, 0.0, GraphicsAPI.Default,
+            new Size(1280, 720), 0.0, 0.0, GraphicsAPI.Default,
             Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window", WindowState.Normal,
             WindowBorder.Resizable, VSyncMode.On, 5,
             true, VideoMode.Default
@@ -156,7 +150,7 @@ namespace Silk.NET.Windowing.Common
         public static WindowOptions DefaultVulkan { get; } = new WindowOptions
         (
             true, true, new Point(50, 50),
-            new Size(1280, 720), 0, 0.0, 0.0, GraphicsAPI.DefaultVulkan,
+            new Size(1280, 720), 0.0, 0.0, GraphicsAPI.DefaultVulkan,
             Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window", WindowState.Normal,
             WindowBorder.Resizable, VSyncMode.Off,
             5, false, VideoMode.Default
