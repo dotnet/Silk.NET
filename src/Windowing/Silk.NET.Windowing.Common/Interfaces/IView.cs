@@ -1,5 +1,5 @@
 // This file is part of Silk.NET.
-// 
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -18,7 +18,7 @@ namespace Silk.NET.Windowing.Common
         /// A handle to the underlying window.
         /// </summary>
         IntPtr Handle { get; }
-        
+
         /// <summary>
         /// Determines whether the context is current on this thread.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Silk.NET.Windowing.Common
             "https://github.com/Ultz/Silk.NET/blob/v1.2.0/documentation/deprecation-notices/VulkanViews.md"
         )]
         bool IsCurrentContext { get; }
-        
+
         /// <summary>
         /// Determines whether Vulkan functions are supported on this window.
         /// </summary>
@@ -38,7 +38,7 @@ namespace Silk.NET.Windowing.Common
             "https://github.com/Ultz/Silk.NET/blob/v1.2.0/documentation/deprecation-notices/VulkanViews.md"
         )]
         bool IsVulkanSupported { get; }
-        
+
         /// <summary>
         /// Determines whether the underlying platform has requested the window to close.
         /// </summary>
@@ -50,6 +50,11 @@ namespace Silk.NET.Windowing.Common
         /// visual fidelity to increase framerates on lower-end machines.
         /// </summary>
         bool IsRunningSlowly { get; }
+
+        /// <summary>
+        /// Elapsed time in seconds since the View was initialized.
+        /// </summary>
+        double Time { get; }
 
         /// <summary>
         /// Raised when the window is resized.

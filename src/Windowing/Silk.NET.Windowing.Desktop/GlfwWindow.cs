@@ -1,5 +1,5 @@
 // This file is part of Silk.NET.
-// 
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
@@ -55,6 +55,8 @@ namespace Silk.NET.Windowing.Desktop
         // The stopwatches. Used to calculate delta.
         private Stopwatch _renderStopwatch;
         private Stopwatch _updateStopwatch;
+        // The stopwatch used to determine how long the window has been alive
+        private Stopwatch _lifetimeStopwatch;
 
         // Invoke method variables
         private ConcurrentQueue<Invocation> _pendingInvocations;
@@ -224,6 +226,8 @@ namespace Silk.NET.Windowing.Desktop
                 _size = value;
             }
         }
+
+        public double Time => _lifetimeStopwatch.Elapsed.TotalSeconds;
 
         /// <inheritdoc />
         public double FramesPerSecond
@@ -593,8 +597,10 @@ namespace Silk.NET.Windowing.Desktop
             // Run OnLoad.
             Load?.Invoke();
 
+            _lifetimeStopwatch = new Stopwatch();
             _renderStopwatch = new Stopwatch();
             _updateStopwatch = new Stopwatch();
+            _lifetimeStopwatch.Start();
             _renderStopwatch.Start();
             _updateStopwatch.Start();
             Glfw.ThrowExceptions();
@@ -658,6 +664,7 @@ namespace Silk.NET.Windowing.Desktop
             _updateTimeDeficit = 0;
             _renderTimeDeficit = 0;
 
+            _lifetimeStopwatch.Stop();
             _updateStopwatch.Stop();
             _renderStopwatch.Stop();
 
@@ -677,7 +684,7 @@ namespace Silk.NET.Windowing.Desktop
             _windowPtr = (WindowHandle*) 0;
         }
 
-        // Disable parameter because 
+        // Disable parameter because
         // ReSharper disable once UnusedParameter.Local
         private void Dispose(bool disposing)
         {

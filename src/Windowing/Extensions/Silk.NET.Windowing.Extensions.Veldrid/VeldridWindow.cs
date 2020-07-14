@@ -1,4 +1,4 @@
-﻿// This file is no-longer Ultz Confidential Information and is now deemed "Public Knowledge" as defined in section 1(j)
+// This file is no-longer Ultz Confidential Information and is now deemed "Public Knowledge" as defined in section 1(j)
 // of the Ultz Non-Disclosure Agreement (OmegaNDA) as of 01/05/2020.
 //
 // Signed-off by Dylan Perks, Chief Executive.
@@ -22,12 +22,12 @@ using XWindow = Vulkan.Xlib.Window;
 namespace Silk.NET.Windowing.Extensions.Veldrid
 {
     /// <summary>
-    /// Contains classes for creating 
+    /// Contains classes for creating
     /// </summary>
     public static class VeldridWindow
     {
         // TODO view support
-        
+
         [DllImport("user32.dll", EntryPoint = "GetWindowLong")]
         static extern IntPtr GetWindowLongPtr(IntPtr hWnd, int nIndex = -6);
 
@@ -248,7 +248,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                     // do nothing
                 }
             }
-            
+
             throw new PlatformNotSupportedException();
         }
 
@@ -293,10 +293,10 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                     // do nothing
                 }
             }
-            
+
             throw new PlatformNotSupportedException();
         }
-        
+
         public static unsafe GraphicsDevice CreateVulkanGraphicsDevice(GraphicsDeviceOptions options, IView window)
             => CreateVulkanGraphicsDevice(options, window, false);
         public static unsafe GraphicsDevice CreateVulkanGraphicsDevice(
