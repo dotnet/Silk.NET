@@ -301,6 +301,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 3.1 - Ambient Ligh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 3.2 - Diffuse Lighting", "examples\CSharp\Tutorial 3.2 - Diffuse Lighting\Tutorial 3.2 - Diffuse Lighting.csproj", "{D6CF7DDC-D36A-47B6-9C42-422DC3AA6B90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 3.3 - Specular Lighting", "examples\CSharp\Tutorial 3.3 - Specular Lighting\Tutorial 3.3 - Specular Lighting.csproj", "{97C5570D-8342-4F62-9175-70C291D93431}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1874,6 +1876,18 @@ Global
 		{D6CF7DDC-D36A-47B6-9C42-422DC3AA6B90}.Release|x64.Build.0 = Release|Any CPU
 		{D6CF7DDC-D36A-47B6-9C42-422DC3AA6B90}.Release|x86.ActiveCfg = Release|Any CPU
 		{D6CF7DDC-D36A-47B6-9C42-422DC3AA6B90}.Release|x86.Build.0 = Release|Any CPU
+		{97C5570D-8342-4F62-9175-70C291D93431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97C5570D-8342-4F62-9175-70C291D93431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97C5570D-8342-4F62-9175-70C291D93431}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{97C5570D-8342-4F62-9175-70C291D93431}.Debug|x64.Build.0 = Debug|Any CPU
+		{97C5570D-8342-4F62-9175-70C291D93431}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{97C5570D-8342-4F62-9175-70C291D93431}.Debug|x86.Build.0 = Debug|Any CPU
+		{97C5570D-8342-4F62-9175-70C291D93431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97C5570D-8342-4F62-9175-70C291D93431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97C5570D-8342-4F62-9175-70C291D93431}.Release|x64.ActiveCfg = Release|Any CPU
+		{97C5570D-8342-4F62-9175-70C291D93431}.Release|x64.Build.0 = Release|Any CPU
+		{97C5570D-8342-4F62-9175-70C291D93431}.Release|x86.ActiveCfg = Release|Any CPU
+		{97C5570D-8342-4F62-9175-70C291D93431}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
@@ -2014,6 +2028,7 @@ Global
 		{4FBE561E-7FF9-4D69-91D5-945DE9A20291} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
 		{0451BC01-130B-4C35-9F23-87A3AFDFED2E} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
 		{D6CF7DDC-D36A-47B6-9C42-422DC3AA6B90} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
+		{97C5570D-8342-4F62-9175-70C291D93431} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
 	EndGlobalSection
 	EndGlobalSection
 EndGlobal
