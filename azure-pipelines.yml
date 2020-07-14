@@ -14,7 +14,7 @@ jobs:
 
   variables:
     buildConfiguration: 'Release'
-    dotnetCoreVersion: '3.1.100'
+    dotnetCoreVersion: '3.1.302'
 
   steps:
   - task: UseDotNet@2
