@@ -26,7 +26,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public abstract void BindProgramPipeline([Flow(FlowDirection.In)] uint pipeline);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramvEXT")]
-        public abstract unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** strings);
+        public abstract unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** strings);
 
         [NativeApi(EntryPoint = "glDeleteProgramPipelinesEXT")]
         public abstract unsafe void DeleteProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* pipelines);
@@ -47,10 +47,10 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public abstract void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetProgramPipelineInfoLogEXT")]
-        public abstract unsafe void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* infoLog);
+        public abstract unsafe void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* infoLog);
 
         [NativeApi(EntryPoint = "glGetProgramPipelineInfoLogEXT")]
-        public abstract void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> infoLog);
+        public abstract void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> infoLog);
 
         [NativeApi(EntryPoint = "glIsProgramPipelineEXT")]
         public abstract bool IsProgramPipeline([Flow(FlowDirection.In)] uint pipeline);
@@ -227,7 +227,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public abstract void ValidateProgramPipeline([Flow(FlowDirection.In)] uint pipeline);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramvEXT")]
-        public abstract unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** strings);
+        public abstract unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** strings);
 
         [NativeApi(EntryPoint = "glGetProgramPipelineivEXT")]
         public abstract unsafe void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] PipelineParameterName pname, [Flow(FlowDirection.Out)] int* @params);
@@ -247,7 +247,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] stringsSa)
         {
             // StringArrayOverloader
-            var strings = (char**) SilkMarshal.MarshalStringArrayToPtr(stringsSa);
+            var strings = (byte**) SilkMarshal.MarshalStringArrayToPtr(stringsSa);
             var ret = CreateShaderProgram(type, count, strings);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
             return ret;
@@ -271,7 +271,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         public unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] stringsSa)
         {
             // StringArrayOverloader
-            var strings = (char**) SilkMarshal.MarshalStringArrayToPtr(stringsSa);
+            var strings = (byte**) SilkMarshal.MarshalStringArrayToPtr(stringsSa);
             var ret = CreateShaderProgram(type, count, strings);
             SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
             return ret;

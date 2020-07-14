@@ -23,10 +23,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public abstract void ActiveProgram([Flow(FlowDirection.In)] uint program);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramEXT")]
-        public abstract unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] char* @string);
+        public abstract unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] byte* @string);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramEXT")]
-        public abstract uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] Span<char> @string);
+        public abstract uint CreateShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] Span<byte> @string);
 
         [NativeApi(EntryPoint = "glUseShaderProgramEXT")]
         public abstract void UseShaderProgram([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint program);

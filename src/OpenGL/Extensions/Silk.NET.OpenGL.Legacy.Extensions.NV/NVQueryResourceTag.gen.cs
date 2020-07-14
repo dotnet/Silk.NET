@@ -32,10 +32,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public abstract void GenQueryResourceTag([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<int> tagIds);
 
         [NativeApi(EntryPoint = "glQueryResourceTagNV")]
-        public abstract unsafe void QueryResourceTag([Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] char* tagString);
+        public abstract unsafe void QueryResourceTag([Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] byte* tagString);
 
         [NativeApi(EntryPoint = "glQueryResourceTagNV")]
-        public abstract void QueryResourceTag([Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] Span<char> tagString);
+        public abstract void QueryResourceTag([Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] Span<byte> tagString);
 
         [NativeApi(EntryPoint = "glQueryResourceTagNV")]
         public abstract void QueryResourceTag([Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] string tagString);
