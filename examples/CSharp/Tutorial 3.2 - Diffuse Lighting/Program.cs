@@ -135,22 +135,22 @@ namespace Tutorial
 
             if (primaryKeyboard.IsKeyPressed(Key.W))
             {
-                //Move forwards
+                //Move forwards by adding a movement amount in the Cameras Front direction
                 Camera.Position += moveSpeed * Camera.Front;
             }
             if (primaryKeyboard.IsKeyPressed(Key.S))
             {
-                //Move backwards
+                //Move backwards by subtracting a movement amount in the Cameras Front direction
                 Camera.Position -= moveSpeed * Camera.Front;
             }
             if (primaryKeyboard.IsKeyPressed(Key.A))
             {
-                //Move left
+                //Move left by subtracting movement from the 'Right' direction (calculated by 'crossing' the front and up directions)
                 Camera.Position -= Vector3.Normalize(Vector3.Cross(Camera.Front, Camera.Up)) * moveSpeed;
             }
             if (primaryKeyboard.IsKeyPressed(Key.D))
             {
-                //Move right
+                //Move right by adding movement in the 'Right' direction (calculated by 'crossing' the front and up directions)
                 Camera.Position += Vector3.Normalize(Vector3.Cross(Camera.Front, Camera.Up)) * moveSpeed;
             }
         }
@@ -161,9 +161,20 @@ namespace Tutorial
             Gl.Clear((uint)(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));
 
             VaoCube.Bind();
+
+            //Draw the coral coloured cube that we want to be affected by the light
+            RenderLitCube();
+
+            //Draw the 'Lamp' cube that represents where the source of the light will come from
+            RenderLampCube();
+        }
+
+        private static unsafe void RenderLitCube()
+        {
+            //Use the 'lighting shader' that is capable of modifying the cubes colours based on ambient lighting and diffuse lighting
             LightingShader.Use();
 
-            //Slightly rotate the cube to give it an angled face to look at
+            //Set up the uniforms needed for the lighting shaders to be able to draw and light the coral cube
             LightingShader.SetUniform("uModel", Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(25f)));
             LightingShader.SetUniform("uView", Camera.GetViewMatrix());
             LightingShader.SetUniform("uProjection", Camera.GetProjectionMatrix());
@@ -173,7 +184,11 @@ namespace Tutorial
 
             //We're drawing with just vertices and no indicies, and it takes 36 verticies to have a six-sided textured cube
             Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
+        }
 
+        private static unsafe void RenderLampCube()
+        {
+            //Use the 'main' shader that does not do any lighting calculations to just draw the cube to screen in the requested colours.
             LampShader.Use();
 
             //The Lamp cube is going to be a scaled down version of the normal cubes verticies moved to a different screen location
@@ -181,6 +196,7 @@ namespace Tutorial
             lampMatrix *= Matrix4x4.CreateScale(0.2f);
             lampMatrix *= Matrix4x4.CreateTranslation(LampPosition);
 
+            //Setup the uniforms needed to draw the Lamp in the correct place on screen
             LampShader.SetUniform("uModel", lampMatrix);
             LampShader.SetUniform("uView", Camera.GetViewMatrix());
             LampShader.SetUniform("uProjection", Camera.GetProjectionMatrix());
