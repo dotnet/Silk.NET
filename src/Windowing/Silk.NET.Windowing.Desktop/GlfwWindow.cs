@@ -664,8 +664,7 @@ namespace Silk.NET.Windowing.Desktop
             _updateTimeDeficit = 0;
             _renderTimeDeficit = 0;
 
-            _lifetimeStopwatch.Restart();
-
+            _lifetimeStopwatch.Stop();
             _updateStopwatch.Stop();
             _renderStopwatch.Stop();
 
