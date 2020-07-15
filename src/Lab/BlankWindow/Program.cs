@@ -1,18 +1,16 @@
-﻿// This file is part of Silk.NET.
-// 
+// This file is part of Silk.NET.
+//
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System;
-using System.Diagnostics;
-using System.Drawing;
-using System.Threading;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
 using Silk.NET.Windowing.Common.Structs;
-using SixLabors.ImageSharp;
-using SixLabors.ImageSharp.Advanced;
 using SixLabors.ImageSharp.PixelFormats;
+using System;
+using System.Drawing;
+using System.Threading;
+using Image = SixLabors.ImageSharp.Image;
 
 namespace BlankWindow
 {
@@ -67,7 +65,7 @@ namespace BlankWindow
 
         public static void Resize(Size size)
         {
-            Console.WriteLine(size); 
+            Console.WriteLine(size);
             //_rsz = true;
         }
 
@@ -82,7 +80,7 @@ namespace BlankWindow
             using var image = Image.Load<Rgba32>("favicon.png");
             Span<byte> span;
             byte[] arr;
-            var ogspan = image.GetPixelSpan();
+            var ogspan = image.GetPixelRowSpan(0);
             fixed (Rgba32* pixels = ogspan)
             {
                 span = new Span<byte>(pixels, ogspan.Length * 4);
