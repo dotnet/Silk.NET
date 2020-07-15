@@ -13,11 +13,11 @@ open Silk.NET.Maths
 let config = { FsCheckConfig.defaultConfig with startSize = 50 }
 
 let inline box2Tests<'T
-    when 'T : struct
-    and 'T : (new : unit -> 'T)
-    and 'T :> ValueType
-    and 'T :> IFormattable
-    and 'T : comparison> =
+    when ^T : struct
+    and ^T : (new : unit -> ^T)
+    and ^T :> ValueType
+    and ^T :> IFormattable
+    and ^T : comparison> =        
     testList (sprintf "Box2<%s> Tests" typedefof<'T>.Name) [
         testPropertyWithConfig config "constructor sets Min to min" <|
             fun (minX:^T, minY:^T, maxX:^T, maxY:^T) ->
@@ -27,6 +27,7 @@ let inline box2Tests<'T
                     let max = Vector2(maxX, maxY)
                     let box = Box2(min, max)
                     box.Min = min))
+                
         testPropertyWithConfig config "constructor sets Max to max" <|
             fun (minX:^T, minY:^T, maxX:^T, maxY:^T) ->
                 ((minX < maxX && minY < maxY)
@@ -35,6 +36,7 @@ let inline box2Tests<'T
                     let max = Vector2(maxX, maxY)
                     let box = Box2(min, max)
                     box.Max = max))
+                
         testPropertyWithConfig config "constructor throws on invalid size" <|
             fun (minX:^T, minY:^T, maxX:^T, maxY:^T) ->
                 ((minX > maxX || minY > maxY)
@@ -42,6 +44,25 @@ let inline box2Tests<'T
                     let min = Vector2(minX, minY)
                     let max = Vector2(maxX, maxY)
                     Expect.throwsT<ArgumentOutOfRangeException> <| (fun () -> Box2(min, max) |> ignore) <| "Box2(big, small) throws"))
+                
+        testPropertyWithConfig config "size returns size" <|
+            fun (minX:^T, minY:^T, maxX:^T, maxY:^T) ->
+                ((minX < maxX && minY < maxY)
+                 ==> lazy (
+                    let min = Vector2(minX, minY)
+                    let max = Vector2(maxX, maxY)
+                    let box = Box2(min, max)
+                    box.Size = max - min))
+                
+                
+        testPropertyWithConfig config "half size returns half the size" <|
+            fun (minX:^T, minY:^T, maxX:^T, maxY:^T) ->
+                 ((minX < maxX && minY < maxY)
+                 ==> lazy (
+                    let min = Vector2(minX, minY)
+                    let max = Vector2(maxX, maxY)
+                    let box = Box2(min, max)
+                    box.HalfSize = (box.Size / Vector2(Scalar<'T>.Two))))
     ]
     
     
@@ -59,7 +80,7 @@ let uint16Box2Tests = box2Tests<uint16>
 
 [<Tests>]
 let int16Box2Tests = box2Tests<int16>
-
+ 
 [<Tests>]
 let uint32Box2Tests = box2Tests<uint32>
 
