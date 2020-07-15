@@ -8,23 +8,28 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PerformanceConfigurationINTEL
+    [NativeName("Name", "VkPerformanceConfigurationINTEL")]
+    public unsafe partial struct PerformanceConfigurationINTEL
     {
         public PerformanceConfigurationINTEL
         (
             ulong handle = default
         )
         {
-           Handle = handle;
+            Handle = handle;
         }
 
 
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "")]
+        [NativeName("Name", "")]
         public ulong Handle;
     }
 }

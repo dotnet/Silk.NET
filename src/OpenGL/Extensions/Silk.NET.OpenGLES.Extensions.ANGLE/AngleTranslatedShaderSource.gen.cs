@@ -20,10 +20,10 @@ namespace Silk.NET.OpenGLES.Extensions.ANGLE
     {
         public const string ExtensionName = "ANGLE_translated_shader_source";
         [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
-        public abstract unsafe void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] char* source);
+        public abstract unsafe void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] byte* source);
 
         [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
-        public abstract void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] Span<char> source);
+        public abstract void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] Span<byte> source);
 
         [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
         public abstract unsafe void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] string source);

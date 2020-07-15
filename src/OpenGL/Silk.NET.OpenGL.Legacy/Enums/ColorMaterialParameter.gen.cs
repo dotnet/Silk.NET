@@ -5,17 +5,24 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy
 {
+    [NativeName("Name", "ColorMaterialParameter")]
     public enum ColorMaterialParameter
     {
+        [NativeName("Name", "GL_AMBIENT")]
         Ambient = 0x1200,
+        [NativeName("Name", "GL_DIFFUSE")]
         Diffuse = 0x1201,
+        [NativeName("Name", "GL_SPECULAR")]
         Specular = 0x1202,
+        [NativeName("Name", "GL_EMISSION")]
         Emission = 0x1600,
+        [NativeName("Name", "GL_AMBIENT_AND_DIFFUSE")]
         AmbientAndDiffuse = 0x1602,
     }
 }

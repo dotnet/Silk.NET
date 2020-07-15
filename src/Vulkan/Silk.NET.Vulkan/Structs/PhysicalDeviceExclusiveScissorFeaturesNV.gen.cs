@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceExclusiveScissorFeaturesNV
+    [NativeName("Name", "VkPhysicalDeviceExclusiveScissorFeaturesNV")]
+    public unsafe partial struct PhysicalDeviceExclusiveScissorFeaturesNV
     {
         public PhysicalDeviceExclusiveScissorFeaturesNV
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.Vulkan
             Bool32 exclusiveScissor = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ExclusiveScissor = exclusiveScissor;
+            SType = sType;
+            PNext = pNext;
+            ExclusiveScissor = exclusiveScissor;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "exclusiveScissor")]
         public Bool32 ExclusiveScissor;
     }
 }

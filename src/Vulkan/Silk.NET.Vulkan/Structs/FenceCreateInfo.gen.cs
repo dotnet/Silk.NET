@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct FenceCreateInfo
+    [NativeName("Name", "VkFenceCreateInfo")]
+    public unsafe partial struct FenceCreateInfo
     {
         public FenceCreateInfo
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.Vulkan
             FenceCreateFlags flags = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkFenceCreateFlags")]
+        [NativeName("Type.Name", "VkFenceCreateFlags")]
+        [NativeName("Name", "flags")]
         public FenceCreateFlags Flags;
     }
 }

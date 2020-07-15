@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DeviceGroupDeviceCreateInfo
+    [NativeName("Name", "VkDeviceGroupDeviceCreateInfo")]
+    public unsafe partial struct DeviceGroupDeviceCreateInfo
     {
         public DeviceGroupDeviceCreateInfo
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.Vulkan
             PhysicalDevice* pPhysicalDevices = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PhysicalDeviceCount = physicalDeviceCount;
-           PPhysicalDevices = pPhysicalDevices;
+            SType = sType;
+            PNext = pNext;
+            PhysicalDeviceCount = physicalDeviceCount;
+            PPhysicalDevices = pPhysicalDevices;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "physicalDeviceCount")]
         public uint PhysicalDeviceCount;
 /// <summary></summary>
+        [NativeName("Type", "VkPhysicalDevice*")]
+        [NativeName("Type.Name", "VkPhysicalDevice")]
+        [NativeName("Name", "pPhysicalDevices")]
         public PhysicalDevice* PPhysicalDevices;
     }
 }

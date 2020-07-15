@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceDescriptorIndexingFeatures
+    [NativeName("Name", "VkPhysicalDeviceDescriptorIndexingFeatures")]
+    public unsafe partial struct PhysicalDeviceDescriptorIndexingFeatures
     {
         public PhysicalDeviceDescriptorIndexingFeatures
         (
@@ -42,73 +44,139 @@ namespace Silk.NET.Vulkan
             Bool32 runtimeDescriptorArray = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ShaderInputAttachmentArrayDynamicIndexing = shaderInputAttachmentArrayDynamicIndexing;
-           ShaderUniformTexelBufferArrayDynamicIndexing = shaderUniformTexelBufferArrayDynamicIndexing;
-           ShaderStorageTexelBufferArrayDynamicIndexing = shaderStorageTexelBufferArrayDynamicIndexing;
-           ShaderUniformBufferArrayNonUniformIndexing = shaderUniformBufferArrayNonUniformIndexing;
-           ShaderSampledImageArrayNonUniformIndexing = shaderSampledImageArrayNonUniformIndexing;
-           ShaderStorageBufferArrayNonUniformIndexing = shaderStorageBufferArrayNonUniformIndexing;
-           ShaderStorageImageArrayNonUniformIndexing = shaderStorageImageArrayNonUniformIndexing;
-           ShaderInputAttachmentArrayNonUniformIndexing = shaderInputAttachmentArrayNonUniformIndexing;
-           ShaderUniformTexelBufferArrayNonUniformIndexing = shaderUniformTexelBufferArrayNonUniformIndexing;
-           ShaderStorageTexelBufferArrayNonUniformIndexing = shaderStorageTexelBufferArrayNonUniformIndexing;
-           DescriptorBindingUniformBufferUpdateAfterBind = descriptorBindingUniformBufferUpdateAfterBind;
-           DescriptorBindingSampledImageUpdateAfterBind = descriptorBindingSampledImageUpdateAfterBind;
-           DescriptorBindingStorageImageUpdateAfterBind = descriptorBindingStorageImageUpdateAfterBind;
-           DescriptorBindingStorageBufferUpdateAfterBind = descriptorBindingStorageBufferUpdateAfterBind;
-           DescriptorBindingUniformTexelBufferUpdateAfterBind = descriptorBindingUniformTexelBufferUpdateAfterBind;
-           DescriptorBindingStorageTexelBufferUpdateAfterBind = descriptorBindingStorageTexelBufferUpdateAfterBind;
-           DescriptorBindingUpdateUnusedWhilePending = descriptorBindingUpdateUnusedWhilePending;
-           DescriptorBindingPartiallyBound = descriptorBindingPartiallyBound;
-           DescriptorBindingVariableDescriptorCount = descriptorBindingVariableDescriptorCount;
-           RuntimeDescriptorArray = runtimeDescriptorArray;
+            SType = sType;
+            PNext = pNext;
+            ShaderInputAttachmentArrayDynamicIndexing = shaderInputAttachmentArrayDynamicIndexing;
+            ShaderUniformTexelBufferArrayDynamicIndexing = shaderUniformTexelBufferArrayDynamicIndexing;
+            ShaderStorageTexelBufferArrayDynamicIndexing = shaderStorageTexelBufferArrayDynamicIndexing;
+            ShaderUniformBufferArrayNonUniformIndexing = shaderUniformBufferArrayNonUniformIndexing;
+            ShaderSampledImageArrayNonUniformIndexing = shaderSampledImageArrayNonUniformIndexing;
+            ShaderStorageBufferArrayNonUniformIndexing = shaderStorageBufferArrayNonUniformIndexing;
+            ShaderStorageImageArrayNonUniformIndexing = shaderStorageImageArrayNonUniformIndexing;
+            ShaderInputAttachmentArrayNonUniformIndexing = shaderInputAttachmentArrayNonUniformIndexing;
+            ShaderUniformTexelBufferArrayNonUniformIndexing = shaderUniformTexelBufferArrayNonUniformIndexing;
+            ShaderStorageTexelBufferArrayNonUniformIndexing = shaderStorageTexelBufferArrayNonUniformIndexing;
+            DescriptorBindingUniformBufferUpdateAfterBind = descriptorBindingUniformBufferUpdateAfterBind;
+            DescriptorBindingSampledImageUpdateAfterBind = descriptorBindingSampledImageUpdateAfterBind;
+            DescriptorBindingStorageImageUpdateAfterBind = descriptorBindingStorageImageUpdateAfterBind;
+            DescriptorBindingStorageBufferUpdateAfterBind = descriptorBindingStorageBufferUpdateAfterBind;
+            DescriptorBindingUniformTexelBufferUpdateAfterBind = descriptorBindingUniformTexelBufferUpdateAfterBind;
+            DescriptorBindingStorageTexelBufferUpdateAfterBind = descriptorBindingStorageTexelBufferUpdateAfterBind;
+            DescriptorBindingUpdateUnusedWhilePending = descriptorBindingUpdateUnusedWhilePending;
+            DescriptorBindingPartiallyBound = descriptorBindingPartiallyBound;
+            DescriptorBindingVariableDescriptorCount = descriptorBindingVariableDescriptorCount;
+            RuntimeDescriptorArray = runtimeDescriptorArray;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderInputAttachmentArrayDynamicIndexing")]
         public Bool32 ShaderInputAttachmentArrayDynamicIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderUniformTexelBufferArrayDynamicIndexing")]
         public Bool32 ShaderUniformTexelBufferArrayDynamicIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderStorageTexelBufferArrayDynamicIndexing")]
         public Bool32 ShaderStorageTexelBufferArrayDynamicIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderUniformBufferArrayNonUniformIndexing")]
         public Bool32 ShaderUniformBufferArrayNonUniformIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderSampledImageArrayNonUniformIndexing")]
         public Bool32 ShaderSampledImageArrayNonUniformIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderStorageBufferArrayNonUniformIndexing")]
         public Bool32 ShaderStorageBufferArrayNonUniformIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderStorageImageArrayNonUniformIndexing")]
         public Bool32 ShaderStorageImageArrayNonUniformIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderInputAttachmentArrayNonUniformIndexing")]
         public Bool32 ShaderInputAttachmentArrayNonUniformIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderUniformTexelBufferArrayNonUniformIndexing")]
         public Bool32 ShaderUniformTexelBufferArrayNonUniformIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderStorageTexelBufferArrayNonUniformIndexing")]
         public Bool32 ShaderStorageTexelBufferArrayNonUniformIndexing;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingUniformBufferUpdateAfterBind")]
         public Bool32 DescriptorBindingUniformBufferUpdateAfterBind;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingSampledImageUpdateAfterBind")]
         public Bool32 DescriptorBindingSampledImageUpdateAfterBind;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingStorageImageUpdateAfterBind")]
         public Bool32 DescriptorBindingStorageImageUpdateAfterBind;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingStorageBufferUpdateAfterBind")]
         public Bool32 DescriptorBindingStorageBufferUpdateAfterBind;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingUniformTexelBufferUpdateAfterBind")]
         public Bool32 DescriptorBindingUniformTexelBufferUpdateAfterBind;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingStorageTexelBufferUpdateAfterBind")]
         public Bool32 DescriptorBindingStorageTexelBufferUpdateAfterBind;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingUpdateUnusedWhilePending")]
         public Bool32 DescriptorBindingUpdateUnusedWhilePending;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingPartiallyBound")]
         public Bool32 DescriptorBindingPartiallyBound;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "descriptorBindingVariableDescriptorCount")]
         public Bool32 DescriptorBindingVariableDescriptorCount;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "runtimeDescriptorArray")]
         public Bool32 RuntimeDescriptorArray;
     }
 }

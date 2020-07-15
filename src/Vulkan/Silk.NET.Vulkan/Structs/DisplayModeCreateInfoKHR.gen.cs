@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DisplayModeCreateInfoKHR
+    [NativeName("Name", "VkDisplayModeCreateInfoKHR")]
+    public unsafe partial struct DisplayModeCreateInfoKHR
     {
         public DisplayModeCreateInfoKHR
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.Vulkan
             DisplayModeParametersKHR parameters = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Parameters = parameters;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Parameters = parameters;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkDisplayModeCreateFlagsKHR")]
+        [NativeName("Type.Name", "VkDisplayModeCreateFlagsKHR")]
+        [NativeName("Name", "flags")]
         public uint Flags;
 /// <summary></summary>
+        [NativeName("Type", "VkDisplayModeParametersKHR")]
+        [NativeName("Type.Name", "VkDisplayModeParametersKHR")]
+        [NativeName("Name", "parameters")]
         public DisplayModeParametersKHR Parameters;
     }
 }

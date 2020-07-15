@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct VertexInputBindingDivisorDescriptionEXT
+    [NativeName("Name", "VkVertexInputBindingDivisorDescriptionEXT")]
+    public unsafe partial struct VertexInputBindingDivisorDescriptionEXT
     {
         public VertexInputBindingDivisorDescriptionEXT
         (
@@ -22,13 +24,19 @@ namespace Silk.NET.Vulkan
             uint divisor = default
         )
         {
-           Binding = binding;
-           Divisor = divisor;
+            Binding = binding;
+            Divisor = divisor;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "binding")]
         public uint Binding;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "divisor")]
         public uint Divisor;
     }
 }

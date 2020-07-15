@@ -6,6 +6,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Loader;
 using Ultz.SuperInvoke;
 
@@ -15,33 +16,89 @@ namespace Silk.NET.Vulkan
 {
     public abstract unsafe partial class Vk : NativeAPI
     {
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_ATTACHMENT_UNUSED")]
         public const uint AttachmentUnused = (~0U);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_FALSE")]
         public const uint False = 0;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_LOD_CLAMP_NONE")]
         public const float LodClampNone = 1000.0f;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_LUID_SIZE")]
         public const uint LuidSize = 8;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_LUID_SIZE_KHR")]
         public const uint LuidSizeKhr = 8;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_DESCRIPTION_SIZE")]
         public const uint MaxDescriptionSize = 256;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_DEVICE_GROUP_SIZE")]
         public const uint MaxDeviceGroupSize = 32;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_DEVICE_GROUP_SIZE_KHR")]
         public const uint MaxDeviceGroupSizeKhr = 32;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_DRIVER_INFO_SIZE")]
         public const uint MaxDriverInfoSize = 256;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_DRIVER_INFO_SIZE_KHR")]
         public const uint MaxDriverInfoSizeKhr = 256;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_DRIVER_NAME_SIZE")]
         public const uint MaxDriverNameSize = 256;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_DRIVER_NAME_SIZE_KHR")]
         public const uint MaxDriverNameSizeKhr = 256;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_EXTENSION_NAME_SIZE")]
         public const uint MaxExtensionNameSize = 256;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_MEMORY_HEAPS")]
         public const uint MaxMemoryHeaps = 16;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_MEMORY_TYPES")]
         public const uint MaxMemoryTypes = 32;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_PHYSICAL_DEVICE_NAME_SIZE")]
         public const uint MaxPhysicalDeviceNameSize = 256;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_QUEUE_FAMILY_EXTERNAL")]
         public const uint QueueFamilyExternal = (~0U-1);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_QUEUE_FAMILY_EXTERNAL_KHR")]
         public const uint QueueFamilyExternalKhr = (~0U-1);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_QUEUE_FAMILY_FOREIGN_EXT")]
         public const uint QueueFamilyForeignExt = (~0U-2);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_QUEUE_FAMILY_IGNORED")]
         public const uint QueueFamilyIgnored = (~0U);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_REMAINING_ARRAY_LAYERS")]
         public const uint RemainingArrayLayers = (~0U);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_REMAINING_MIP_LEVELS")]
         public const uint RemainingMipLevels = (~0U);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_SHADER_UNUSED_KHR")]
         public const uint ShaderUnusedKhr = (~0U);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_SHADER_UNUSED_NV")]
         public const uint ShaderUnusedNV = (~0U);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_SUBPASS_EXTERNAL")]
         public const uint SubpassExternal = (~0U);
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_TRUE")]
         public const uint True = 1;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_UUID_SIZE")]
         public const uint UuidSize = 16;
+        [NativeName("Type", "")]
+        [NativeName("Name", "VK_WHOLE_SIZE")]
         public const ulong WholeSize = (~0ul);
 
         /// <summary>To be added.</summary>

@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PipelineViewportSwizzleStateCreateInfoNV
+    [NativeName("Name", "VkPipelineViewportSwizzleStateCreateInfoNV")]
+    public unsafe partial struct PipelineViewportSwizzleStateCreateInfoNV
     {
         public PipelineViewportSwizzleStateCreateInfoNV
         (
@@ -25,22 +27,37 @@ namespace Silk.NET.Vulkan
             ViewportSwizzleNV* pViewportSwizzles = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           ViewportCount = viewportCount;
-           PViewportSwizzles = pViewportSwizzles;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            ViewportCount = viewportCount;
+            PViewportSwizzles = pViewportSwizzles;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkPipelineViewportSwizzleStateCreateFlagsNV")]
+        [NativeName("Type.Name", "VkPipelineViewportSwizzleStateCreateFlagsNV")]
+        [NativeName("Name", "flags")]
         public uint Flags;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "viewportCount")]
         public uint ViewportCount;
 /// <summary></summary>
+        [NativeName("Type", "VkViewportSwizzleNV*")]
+        [NativeName("Type.Name", "VkViewportSwizzleNV")]
+        [NativeName("Name", "pViewportSwizzles")]
         public ViewportSwizzleNV* PViewportSwizzles;
     }
 }

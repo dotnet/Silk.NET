@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct WaylandSurfaceCreateInfoKHR
+    [NativeName("Name", "VkWaylandSurfaceCreateInfoKHR")]
+    public unsafe partial struct WaylandSurfaceCreateInfoKHR
     {
         public WaylandSurfaceCreateInfoKHR
         (
@@ -25,22 +27,37 @@ namespace Silk.NET.Vulkan
             IntPtr* surface = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Display = display;
-           Surface = surface;
+            SType = sType;
+            PNext = pNext;
+            Flags = flags;
+            Display = display;
+            Surface = surface;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkWaylandSurfaceCreateFlagsKHR")]
+        [NativeName("Type.Name", "VkWaylandSurfaceCreateFlagsKHR")]
+        [NativeName("Name", "flags")]
         public uint Flags;
 /// <summary></summary>
+        [NativeName("Type", "wl_display*")]
+        [NativeName("Type.Name", "wl_display")]
+        [NativeName("Name", "display")]
         public IntPtr* Display;
 /// <summary></summary>
+        [NativeName("Type", "wl_surface*")]
+        [NativeName("Type.Name", "wl_surface")]
+        [NativeName("Name", "surface")]
         public IntPtr* Surface;
     }
 }

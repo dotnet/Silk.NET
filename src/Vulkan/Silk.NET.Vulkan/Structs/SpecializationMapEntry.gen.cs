@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct SpecializationMapEntry
+    [NativeName("Name", "VkSpecializationMapEntry")]
+    public unsafe partial struct SpecializationMapEntry
     {
         public SpecializationMapEntry
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.Vulkan
             UIntPtr size = default
         )
         {
-           ConstantID = constantID;
-           Offset = offset;
-           Size = size;
+            ConstantID = constantID;
+            Offset = offset;
+            Size = size;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "constantID")]
         public uint ConstantID;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "offset")]
         public uint Offset;
 /// <summary></summary>
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "size")]
         public UIntPtr Size;
     }
 }

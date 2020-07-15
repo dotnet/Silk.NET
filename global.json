@@ -1,0 +1,6 @@
+{
+  "sdk": {
+    "version": "5.0.100-preview.6.20318.15",
+    "rollForward": "latestPatch"
+  }
+}

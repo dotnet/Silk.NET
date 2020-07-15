@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceImageFormatInfo2
+    [NativeName("Name", "VkPhysicalDeviceImageFormatInfo2")]
+    public unsafe partial struct PhysicalDeviceImageFormatInfo2
     {
         public PhysicalDeviceImageFormatInfo2
         (
@@ -27,28 +29,49 @@ namespace Silk.NET.Vulkan
             ImageCreateFlags flags = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Format = format;
-           Type = type;
-           Tiling = tiling;
-           Usage = usage;
-           Flags = flags;
+            SType = sType;
+            PNext = pNext;
+            Format = format;
+            Type = type;
+            Tiling = tiling;
+            Usage = usage;
+            Flags = flags;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkFormat")]
+        [NativeName("Type.Name", "VkFormat")]
+        [NativeName("Name", "format")]
         public Format Format;
 /// <summary></summary>
+        [NativeName("Type", "VkImageType")]
+        [NativeName("Type.Name", "VkImageType")]
+        [NativeName("Name", "type")]
         public ImageType Type;
 /// <summary></summary>
+        [NativeName("Type", "VkImageTiling")]
+        [NativeName("Type.Name", "VkImageTiling")]
+        [NativeName("Name", "tiling")]
         public ImageTiling Tiling;
 /// <summary></summary>
+        [NativeName("Type", "VkImageUsageFlags")]
+        [NativeName("Type.Name", "VkImageUsageFlags")]
+        [NativeName("Name", "usage")]
         public ImageUsageFlags Usage;
 /// <summary></summary>
+        [NativeName("Type", "VkImageCreateFlags")]
+        [NativeName("Type.Name", "VkImageCreateFlags")]
+        [NativeName("Name", "flags")]
         public ImageCreateFlags Flags;
     }
 }

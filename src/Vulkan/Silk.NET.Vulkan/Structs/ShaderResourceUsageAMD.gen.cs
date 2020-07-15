@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ShaderResourceUsageAMD
+    [NativeName("Name", "VkShaderResourceUsageAMD")]
+    public unsafe partial struct ShaderResourceUsageAMD
     {
         public ShaderResourceUsageAMD
         (
@@ -25,22 +27,37 @@ namespace Silk.NET.Vulkan
             UIntPtr scratchMemUsageInBytes = default
         )
         {
-           NumUsedVgprs = numUsedVgprs;
-           NumUsedSgprs = numUsedSgprs;
-           LdsSizePerLocalWorkGroup = ldsSizePerLocalWorkGroup;
-           LdsUsageSizeInBytes = ldsUsageSizeInBytes;
-           ScratchMemUsageInBytes = scratchMemUsageInBytes;
+            NumUsedVgprs = numUsedVgprs;
+            NumUsedSgprs = numUsedSgprs;
+            LdsSizePerLocalWorkGroup = ldsSizePerLocalWorkGroup;
+            LdsUsageSizeInBytes = ldsUsageSizeInBytes;
+            ScratchMemUsageInBytes = scratchMemUsageInBytes;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "numUsedVgprs")]
         public uint NumUsedVgprs;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "numUsedSgprs")]
         public uint NumUsedSgprs;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "ldsSizePerLocalWorkGroup")]
         public uint LdsSizePerLocalWorkGroup;
 /// <summary></summary>
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "ldsUsageSizeInBytes")]
         public UIntPtr LdsUsageSizeInBytes;
 /// <summary></summary>
+        [NativeName("Type", "size_t")]
+        [NativeName("Type.Name", "size_t")]
+        [NativeName("Name", "scratchMemUsageInBytes")]
         public UIntPtr ScratchMemUsageInBytes;
     }
 }

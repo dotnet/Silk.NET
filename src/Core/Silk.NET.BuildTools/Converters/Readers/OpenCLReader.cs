@@ -194,7 +194,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 NativeName = x.Name,
                                 NativeType = x.Type.ToString(),
                                 Type = ConvertType(x.Type)
-                            }
+                            }.WithFixedFieldFixup09072020()
                         )
                         .ToList(),
                         Name = Naming.TranslateLite(TrimName(s.Name, task), prefix),
@@ -1034,7 +1034,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var needsCasting = value > int.MaxValue || value < 0;
             if (needsCasting)
             {
-                Debug.WriteLine($"Warning: casting overflowing enum value {token} from 64-bit to 32-bit.");
+                Console.WriteLine($"Warning: casting overflowing enum value {token} from 64-bit to 32-bit.");
                 valueString = $"unchecked((int){valueString})";
             }
 

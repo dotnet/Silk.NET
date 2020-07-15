@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenCL
 {
-    public unsafe struct Dx9SurfaceInfoKhr
+    [NativeName("Name", "cl_dx9_surface_info_khr")]
+    public unsafe partial struct Dx9SurfaceInfoKhr
     {
         public Dx9SurfaceInfoKhr
         (
@@ -22,13 +24,19 @@ namespace Silk.NET.OpenCL
             IntPtr sharedHandle = default
         )
         {
-           Resource = resource;
-           SharedHandle = sharedHandle;
+            Resource = resource;
+            SharedHandle = sharedHandle;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "IDirect3DSurface9*")]
+        [NativeName("Type.Name", "IDirect3DSurface9")]
+        [NativeName("Name", "resource")]
         public IntPtr Resource;
 /// <summary></summary>
+        [NativeName("Type", "HANDLE")]
+        [NativeName("Type.Name", "HANDLE")]
+        [NativeName("Name", "shared_handle")]
         public IntPtr SharedHandle;
     }
 }

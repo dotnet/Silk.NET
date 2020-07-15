@@ -5,13 +5,16 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES
 {
+    [NativeName("Name", "TextureStorageMaskAMD")]
     public enum TextureStorageMaskAMD
     {
+        [NativeName("Name", "GL_TEXTURE_STORAGE_SPARSE_BIT_AMD")]
         TextureStorageSparseBitAmd = 0x1,
     }
 }

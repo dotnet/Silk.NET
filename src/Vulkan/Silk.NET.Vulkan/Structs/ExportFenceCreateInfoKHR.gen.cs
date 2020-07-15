@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ExportFenceCreateInfoKHR
+    [NativeName("Name", "VkExportFenceCreateInfoKHR")]
+    public unsafe partial struct ExportFenceCreateInfoKHR
     {
         public ExportFenceCreateInfoKHR
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.Vulkan
             ExternalFenceHandleTypeFlags handleTypes = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           HandleTypes = handleTypes;
+            SType = sType;
+            PNext = pNext;
+            HandleTypes = handleTypes;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkExternalFenceHandleTypeFlags")]
+        [NativeName("Type.Name", "VkExternalFenceHandleTypeFlags")]
+        [NativeName("Name", "handleTypes")]
         public ExternalFenceHandleTypeFlags HandleTypes;
     }
 }

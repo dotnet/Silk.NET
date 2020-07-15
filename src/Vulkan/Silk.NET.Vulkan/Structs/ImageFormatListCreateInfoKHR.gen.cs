@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ImageFormatListCreateInfoKHR
+    [NativeName("Name", "VkImageFormatListCreateInfoKHR")]
+    public unsafe partial struct ImageFormatListCreateInfoKHR
     {
         public ImageFormatListCreateInfoKHR
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.Vulkan
             Format* pViewFormats = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ViewFormatCount = viewFormatCount;
-           PViewFormats = pViewFormats;
+            SType = sType;
+            PNext = pNext;
+            ViewFormatCount = viewFormatCount;
+            PViewFormats = pViewFormats;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "viewFormatCount")]
         public uint ViewFormatCount;
 /// <summary></summary>
+        [NativeName("Type", "VkFormat*")]
+        [NativeName("Type.Name", "VkFormat")]
+        [NativeName("Name", "pViewFormats")]
         public Format* PViewFormats;
     }
 }

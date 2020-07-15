@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ExportMemoryWin32HandleInfoNV
+    [NativeName("Name", "VkExportMemoryWin32HandleInfoNV")]
+    public unsafe partial struct ExportMemoryWin32HandleInfoNV
     {
         public ExportMemoryWin32HandleInfoNV
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.Vulkan
             int dwAccess = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           PAttributes = pAttributes;
-           DwAccess = dwAccess;
+            SType = sType;
+            PNext = pNext;
+            PAttributes = pAttributes;
+            DwAccess = dwAccess;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "SECURITY_ATTRIBUTES*")]
+        [NativeName("Type.Name", "SECURITY_ATTRIBUTES")]
+        [NativeName("Name", "pAttributes")]
         public IntPtr* PAttributes;
 /// <summary></summary>
+        [NativeName("Type", "DWORD")]
+        [NativeName("Type.Name", "DWORD")]
+        [NativeName("Name", "dwAccess")]
         public int DwAccess;
     }
 }

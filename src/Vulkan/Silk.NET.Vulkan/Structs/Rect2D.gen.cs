@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct Rect2D
+    [NativeName("Name", "VkRect2D")]
+    public unsafe partial struct Rect2D
     {
         public Rect2D
         (
@@ -22,13 +24,19 @@ namespace Silk.NET.Vulkan
             Extent2D extent = default
         )
         {
-           Offset = offset;
-           Extent = extent;
+            Offset = offset;
+            Extent = extent;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkOffset2D")]
+        [NativeName("Type.Name", "VkOffset2D")]
+        [NativeName("Name", "offset")]
         public Offset2D Offset;
 /// <summary></summary>
+        [NativeName("Type", "VkExtent2D")]
+        [NativeName("Type.Name", "VkExtent2D")]
+        [NativeName("Name", "extent")]
         public Extent2D Extent;
     }
 }

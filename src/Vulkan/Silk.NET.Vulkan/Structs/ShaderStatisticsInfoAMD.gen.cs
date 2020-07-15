@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ShaderStatisticsInfoAMD
+    [NativeName("Name", "VkShaderStatisticsInfoAMD")]
+    public unsafe partial struct ShaderStatisticsInfoAMD
     {
         public ShaderStatisticsInfoAMD
         (
@@ -26,27 +28,48 @@ namespace Silk.NET.Vulkan
             uint numAvailableSgprs = default
         )
         {
-           ShaderStageMask = shaderStageMask;
-           ResourceUsage = resourceUsage;
-           NumPhysicalVgprs = numPhysicalVgprs;
-           NumPhysicalSgprs = numPhysicalSgprs;
-           NumAvailableVgprs = numAvailableVgprs;
-           NumAvailableSgprs = numAvailableSgprs;
+            ShaderStageMask = shaderStageMask;
+            ResourceUsage = resourceUsage;
+            NumPhysicalVgprs = numPhysicalVgprs;
+            NumPhysicalSgprs = numPhysicalSgprs;
+            NumAvailableVgprs = numAvailableVgprs;
+            NumAvailableSgprs = numAvailableSgprs;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkShaderStageFlags")]
+        [NativeName("Type.Name", "VkShaderStageFlags")]
+        [NativeName("Name", "shaderStageMask")]
         public ShaderStageFlags ShaderStageMask;
 /// <summary></summary>
+        [NativeName("Type", "VkShaderResourceUsageAMD")]
+        [NativeName("Type.Name", "VkShaderResourceUsageAMD")]
+        [NativeName("Name", "resourceUsage")]
         public ShaderResourceUsageAMD ResourceUsage;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "numPhysicalVgprs")]
         public uint NumPhysicalVgprs;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "numPhysicalSgprs")]
         public uint NumPhysicalSgprs;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "numAvailableVgprs")]
         public uint NumAvailableVgprs;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "numAvailableSgprs")]
         public uint NumAvailableSgprs;
         /// <summary></summary>
-       public fixed uint ComputeWorkGroupSize[3];
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "computeWorkGroupSize")]
+        public fixed uint ComputeWorkGroupSize[3];
     }
 }

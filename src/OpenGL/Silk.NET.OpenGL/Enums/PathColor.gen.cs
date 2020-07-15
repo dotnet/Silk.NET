@@ -5,14 +5,18 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL
 {
+    [NativeName("Name", "PathColor")]
     public enum PathColor
     {
+        [NativeName("Name", "GL_PRIMARY_COLOR_NV")]
         PrimaryColorNV = 0x852C,
+        [NativeName("Name", "GL_SECONDARY_COLOR_NV")]
         SecondaryColorNV = 0x852D,
     }
 }
