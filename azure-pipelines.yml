@@ -30,7 +30,7 @@ jobs:
     condition: succeededOrFailed()
     displayName: 'Publish Maths Tests'
     inputs:
-      testRunner: Nunit3
+      testRunner: NUnit
       testResultsFiles: 'TestResults.xml'
       
   
