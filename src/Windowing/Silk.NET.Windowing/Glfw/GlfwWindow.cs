@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -54,6 +55,8 @@ namespace Silk.NET.Windowing.Glfw
         // The stopwatches. Used to calculate delta.
         private Stopwatch _renderStopwatch;
         private Stopwatch _updateStopwatch;
+        // The stopwatch used to determine how long the window has been alive
+        private Stopwatch _lifetimeStopwatch;
 
         // Invoke method variables
         private ConcurrentQueue<Invocation> _pendingInvocations;
@@ -223,6 +226,8 @@ namespace Silk.NET.Windowing.Glfw
                 _size = value;
             }
         }
+
+        public double Time => _lifetimeStopwatch.Elapsed.TotalSeconds;
 
         /// <inheritdoc />
         public double FramesPerSecond
@@ -592,8 +597,10 @@ namespace Silk.NET.Windowing.Glfw
             // Run OnLoad.
             Load?.Invoke();
 
+            _lifetimeStopwatch = new Stopwatch();
             _renderStopwatch = new Stopwatch();
             _updateStopwatch = new Stopwatch();
+            _lifetimeStopwatch.Start();
             _renderStopwatch.Start();
             _updateStopwatch.Start();
             GLFW.Glfw.ThrowExceptions();
@@ -654,6 +661,10 @@ namespace Silk.NET.Windowing.Glfw
         /// <inheritdoc />
         public unsafe void Reset()
         {
+            _updateTimeDeficit = 0;
+            _renderTimeDeficit = 0;
+
+            _lifetimeStopwatch.Stop();
             _updateStopwatch.Stop();
             _renderStopwatch.Stop();
 
@@ -673,7 +684,7 @@ namespace Silk.NET.Windowing.Glfw
             _windowPtr = (WindowHandle*) 0;
         }
 
-        // Disable parameter because 
+        // Disable parameter because
         // ReSharper disable once UnusedParameter.Local
         private void Dispose(bool disposing)
         {
@@ -796,6 +807,8 @@ namespace Silk.NET.Windowing.Glfw
         /// <inheritdoc />
         public event Action<double> Render;
 
+        private double _updateTimeDeficit = 0;
+
         /// <summary>
         /// Run an OnUpdate event.
         /// </summary>
@@ -807,7 +820,7 @@ namespace Silk.NET.Windowing.Glfw
                 && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive))
             {
                 // Calculate the amount of remaining time till next update.
-                var remainingTime = _updatePeriod - _updateStopwatch.Elapsed.TotalSeconds;
+                var remainingTime = _updatePeriod - _updateStopwatch.Elapsed.TotalSeconds - _updateTimeDeficit;
 
                 // If the result is negative, and no call was within period that means the frame is running slowly.
                 if (remainingTime < 0.0)
@@ -829,6 +842,9 @@ namespace Silk.NET.Windowing.Glfw
             // Calculate delta and run frame.
             var delta = _updateStopwatch.Elapsed.TotalSeconds;
 
+            // Calculate how much the delta differs from the desired updatePeriod.
+            _updateTimeDeficit += delta - _updatePeriod;
+
             // Reset
             _updateStopwatch.Restart();
             _updatedWithinPeriod = false;
@@ -842,6 +858,7 @@ namespace Silk.NET.Windowing.Glfw
         }
 
         private int? _lastVs;
+        private double _renderTimeDeficit = 0;
 
         /// <summary>
         /// Run an OnRender event.
@@ -853,7 +870,7 @@ namespace Silk.NET.Windowing.Glfw
                 && (VSync == VSyncMode.Off || VSync == VSyncMode.Adaptive))
             {
                 // Calculate the amount of remaining time till next rendering..
-                var remainingTime = _renderPeriod - _renderStopwatch.Elapsed.TotalSeconds;
+                var remainingTime = _renderPeriod - _renderStopwatch.Elapsed.TotalSeconds - _renderTimeDeficit;
 
                 // If no update frame rate is given we have to check for slow running here.
                 if (UpdatesPerSecond < double.Epsilon)
@@ -879,6 +896,8 @@ namespace Silk.NET.Windowing.Glfw
             }
 
             var delta = _renderStopwatch.Elapsed.TotalSeconds;
+
+            _renderTimeDeficit += delta - _renderPeriod;
 
             //Reset
             _renderStopwatch.Restart();

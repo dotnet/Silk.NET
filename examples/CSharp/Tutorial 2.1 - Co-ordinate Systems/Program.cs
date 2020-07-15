@@ -30,9 +30,6 @@ namespace Tutorial
         private static Vector3 CameraRight = Vector3.Normalize(Vector3.Cross(Vector3.UnitY, CameraDirection));
         private static Vector3 CameraUp = Vector3.Cross(CameraDirection, CameraRight);
 
-        //Track when the window started so we can use the time elapsed to rotate the cube
-        private static DateTime StartTime;
-
         private static readonly float[] Vertices =
         {
             //X    Y      Z     U   V
@@ -101,7 +98,6 @@ namespace Tutorial
 
         private static void OnLoad()
         {
-            StartTime = DateTime.UtcNow;
             IInputContext input = window.CreateInput();
             for (int i = 0; i < input.Keyboards.Count; i++)
             {
@@ -133,7 +129,7 @@ namespace Tutorial
             Shader.SetUniform("uTexture0", 0);
 
             //Use elapsed time to convert to radians to allow our cube to rotate over time
-            var difference = (DateTime.UtcNow - StartTime).TotalMilliseconds / 10;
+            var difference = window.Time * 100;
 
             var model = Matrix4x4.CreateRotationY((float)DegreesToRadians(difference)) * Matrix4x4.CreateRotationX((float)DegreesToRadians(difference));
             var view = Matrix4x4.CreateLookAt(CameraPosition, CameraTarget, CameraUp);
