@@ -22,13 +22,18 @@ jobs:
     inputs:
       includePreviewVersions: true
       version: $(dotnetCoreVersion)
-  - script: dotnet test --configuration $(buildConfiguration) --logger trx
-    displayName: 'Build/Test'
+      
+# Silk.NET.Maths Tests
+  - script: dotnet run --project ./src/Maths/Silk.NET.Maths.Tests/Silk.NET.Maths.Tests.fsproj --configuration Release -- --nunit-summary TestResults.xml
+    displayName: 'Build Maths Tests'
   - task: PublishTestResults@2
     condition: succeededOrFailed()
+    displayName: 'Publish Maths Tests'
     inputs:
-      testRunner: VSTest
-      testResultsFiles: '**/*.trx'
+      testRunner: Nunit3
+      testResultsFiles: 'TestResults.xml'
+      
+  
   - script: dotnet pack --configuration $(buildConfiguration) --version-suffix build$(Build.BuildId)
     displayName: 'Build/Pack'
   - publish: build/output_packages
