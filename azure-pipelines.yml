@@ -22,7 +22,11 @@ jobs:
     inputs:
       includePreviewVersions: true
       version: $(dotnetCoreVersion)
-  - script: dotnet pack --configuration $(buildConfiguration) --version-suffix build$(Build.BuildId)
+  - script: dotnet restore
+    displayName: 'Restore'
+  - script: dotnet test --configuration $(buildConfiguration) --no-restore
+    displayName: 'Build/Test'
+  - script: dotnet pack --configuration $(buildConfiguration) --version-suffix build$(Build.BuildId) --no-restore
     displayName: 'Build/Pack'
   - publish: build/output_packages
     artifact: NuGet Packages
