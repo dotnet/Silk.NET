@@ -22,11 +22,14 @@ jobs:
     inputs:
       includePreviewVersions: true
       version: $(dotnetCoreVersion)
-  - script: dotnet restore
-    displayName: 'Restore'
-  - script: dotnet test --configuration $(buildConfiguration) --no-restore
+  - script: dotnet test --configuration $(buildConfiguration) --logger trx
     displayName: 'Build/Test'
-  - script: dotnet pack --configuration $(buildConfiguration) --version-suffix build$(Build.BuildId) --no-restore
+  - task: PublishTestResults@2
+    condition: succeededOrFailed()
+    inputs:
+      testRunner: VSTest
+      testResultsFiles: '**/*.trx'
+  - script: dotnet pack --configuration $(buildConfiguration) --version-suffix build$(Build.BuildId)
     displayName: 'Build/Pack'
   - publish: build/output_packages
     artifact: NuGet Packages

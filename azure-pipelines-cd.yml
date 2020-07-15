@@ -25,9 +25,9 @@ jobs:
       includePreviewVersions: true
   - script: dotnet restore
     displayName: 'Restore'
-  - script: dotnet test --configuration $(buildConfiguration) --no-restore
+  - script: dotnet test --configuration $(buildConfiguration)
     displayName: 'Build/Test'
-  - script: dotnet pack --configuration $(buildConfiguration) --no-restore
+  - script: dotnet pack --configuration $(buildConfiguration)
     displayName: 'Build/Pack'
   - script: dotnet nuget push **/Silk.NET.*.nupkg -s https://api.nuget.org/v3/index.json -k $(NUGET_API_KEY) -n true --skip-duplicate true
     displayName: 'Push to NuGet'
