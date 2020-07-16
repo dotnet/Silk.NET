@@ -33,7 +33,7 @@ namespace Tutorial
         public void ModifyDirection(float xOffset, float yOffset)
         {
             Yaw += xOffset;
-            Pitch += yOffset;
+            Pitch -= yOffset;
 
             //We don't want to be able to look behind us by going over our head or under our feet so make sure it stays within these bounds
             Pitch = Math.Clamp(Pitch, -89f, 89f);

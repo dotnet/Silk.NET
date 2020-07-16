@@ -112,6 +112,7 @@ namespace Tutorial
             }
             for (int i = 0; i < input.Mice.Count; i++)
             {
+                input.Mice[i].Cursor.CursorMode = CursorMode.Raw;
                 input.Mice[i].MouseMove += OnMouseMove;
                 input.Mice[i].Scroll += OnMouseWheel;
             }
@@ -212,7 +213,7 @@ namespace Tutorial
 
         private static unsafe void OnMouseMove(IMouse mouse, PointF position)
         {
-            var lookSensitivity = 0.02f;
+            var lookSensitivity = 0.1f;
             if (LastMousePosition == default) { LastMousePosition = position; }
             else
             {
