@@ -45,5 +45,12 @@ namespace Silk.NET.Windowing.Common
         /// </summary>
         /// <returns>The main monitor.</returns>
         IMonitor GetMainMonitor();
+
+        /// <summary>
+        /// Gets a value indicating whether the given configuration structure is supported on this platform.
+        /// </summary>
+        /// <typeparam name="T">The configuration structure to check.</typeparam>
+        /// <returns>Whether this config is supported.</returns>
+        bool IsExtensionSupported<T>() where T : struct;
     }
 }

@@ -462,6 +462,36 @@ namespace Silk.NET.Windowing.Glfw
             }
         }
 
+        public bool IsExtensionConfigPresent<T>() where T : struct
+        {
+            // make sure when implementing a new extension, you implement this properly, like so:
+            // if (typeof(T) == typeof(MyExtensionConfig))
+            // {
+            //     return true;
+            // }
+            return false;
+        }
+
+        public ref T GetExtensionConfig<T>() where T : struct
+        {
+            if (!IsExtensionConfigPresent<T>())
+            {
+                throw new InvalidOperationException("This extension isn't present on this window.");
+            }
+            
+            // make sure when implementing a new extension, you implement this properly, like so:
+            // if (typeof(T) == typeof(MyExtensionConfig))
+            // {
+            //     return ref _myExtensionConfig;
+            // }
+
+            throw new Exception
+            (
+                "Someone forgot to implement this extension but didn't want to " +
+                "use NotImplementedException because our IDEs shout at us."
+            );
+        }
+
         /// <inheritdoc />
         public unsafe void MakeCurrent()
         {
