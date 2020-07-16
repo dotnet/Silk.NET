@@ -166,19 +166,5 @@ namespace Silk.NET.Windowing.Common
         /// To make all contexts non-current, use <see cref="IWindowPlatform.ClearCurrent"/>.
         /// </summary>
         void ClearContext();
-
-        /// <summary>
-        /// Returns a value indicating whether the given extension config has been applied to this window.
-        /// </summary>
-        /// <typeparam name="T">The extension config.</typeparam>
-        /// <returns>True if the config has been applied, false otherwise.</returns>
-        bool IsExtensionConfigPresent<T>() where T : struct;
-
-        /// <summary>
-        /// If present, returns the reference to the extension config applied to this view.
-        /// </summary>
-        /// <typeparam name="T">The extension config to use.</typeparam>
-        /// <returns>A reference to the extension config.</returns>
-        ref T GetExtensionConfig<T>() where T : struct;
     }
 }

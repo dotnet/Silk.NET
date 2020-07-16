@@ -59,13 +59,5 @@ namespace Silk.NET.Windowing.Glfw
 
         /// <inheritdoc />
         public unsafe IMonitor GetMainMonitor() => new GlfwMonitor(GlfwProvider.GLFW.Value.GetPrimaryMonitor(), 0);
-
-        public bool IsExtensionSupported<T>() where T : struct
-        {
-            // TODO introduce an extension for allowing manual specification of window hints
-            // TODO introduce an extension to wrap an existing GLFW window handle.
-            // TODO when exposed in GLFW, introduce an extension to allow wrapping existing native window handles
-            return false;
-        }
     }
 }
