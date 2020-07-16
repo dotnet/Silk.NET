@@ -28,7 +28,7 @@ namespace Tutorial
         //Setup the cameras location, directions, and movement speed
         private static Vector3 CameraPosition = new Vector3(0.0f, 0.0f, 3.0f);
         private static Vector3 CameraFront = new Vector3(0.0f, 0.0f, -1.0f);
-        private static Vector3 CameraUp = new Vector3(0.0f, 1.0f, 0.0f);
+        private static Vector3 CameraUp = Vector3.UnitY;
         private static Vector3 CameraDirection = Vector3.Zero;
         private static float CameraYaw = -90f;
         private static float CameraPitch = 0f;
@@ -36,9 +36,6 @@ namespace Tutorial
 
         //Used to track change in mouse movement to allow for moving of the Camera
         private static PointF LastMousePosition;
-
-        //Track when the window started so we can use the time elapsed to rotate the cube
-        private static DateTime StartTime;
 
         private static readonly float[] Vertices =
         {
@@ -109,7 +106,6 @@ namespace Tutorial
 
         private static void OnLoad()
         {
-            StartTime = DateTime.UtcNow;
             IInputContext input = window.CreateInput();
             primaryKeyboard = input.Keyboards.FirstOrDefault();
             if (primaryKeyboard != null)
@@ -174,7 +170,7 @@ namespace Tutorial
             Shader.SetUniform("uTexture0", 0);
 
             //Use elapsed time to convert to radians to allow our cube to rotate over time
-            var difference = (DateTime.UtcNow - StartTime).TotalMilliseconds / 10;
+            var difference = (float)(window.Time * 100);
 
             var model = Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(difference)) * Matrix4x4.CreateRotationX(MathHelper.DegreesToRadians(difference));
             var view = Matrix4x4.CreateLookAt(CameraPosition, CameraPosition + CameraFront, CameraUp);
