@@ -28,7 +28,7 @@ namespace Tutorial
         //Setup the cameras location, directions, and movement speed
         private static Vector3 CameraPosition = new Vector3(0.0f, 0.0f, 3.0f);
         private static Vector3 CameraFront = new Vector3(0.0f, 0.0f, -1.0f);
-        private static Vector3 CameraUp = new Vector3(0.0f, 1.0f, 3.0f);
+        private static Vector3 CameraUp = Vector3.UnitY;
         private static Vector3 CameraDirection = Vector3.Zero;
         private static float CameraYaw = -90f;
         private static float CameraPitch = 0f;
@@ -36,9 +36,6 @@ namespace Tutorial
 
         //Used to track change in mouse movement to allow for moving of the Camera
         private static PointF LastMousePosition;
-
-        //Track when the window started so we can use the time elapsed to rotate the cube
-        private static DateTime StartTime;
 
         private static readonly float[] Vertices =
         {
@@ -109,7 +106,6 @@ namespace Tutorial
 
         private static void OnLoad()
         {
-            StartTime = DateTime.UtcNow;
             IInputContext input = window.CreateInput();
             primaryKeyboard = input.Keyboards.FirstOrDefault();
             if (primaryKeyboard != null)
@@ -118,6 +114,7 @@ namespace Tutorial
             }
             for (int i = 0; i < input.Mice.Count; i++)
             {
+                input.Mice[i].Cursor.CursorMode = CursorMode.Raw;
                 input.Mice[i].MouseMove += OnMouseMove;
                 input.Mice[i].Scroll += OnMouseWheel;
             }
@@ -173,11 +170,11 @@ namespace Tutorial
             Shader.SetUniform("uTexture0", 0);
 
             //Use elapsed time to convert to radians to allow our cube to rotate over time
-            var difference = (DateTime.UtcNow - StartTime).TotalMilliseconds / 10;
+            var difference = (float)(window.Time * 100);
 
-            var model = Matrix4x4.CreateRotationY((float)DegreesToRadians(difference)) * Matrix4x4.CreateRotationX((float)DegreesToRadians(difference));
+            var model = Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(difference)) * Matrix4x4.CreateRotationX(MathHelper.DegreesToRadians(difference));
             var view = Matrix4x4.CreateLookAt(CameraPosition, CameraPosition + CameraFront, CameraUp);
-            var projection = Matrix4x4.CreatePerspectiveFieldOfView((float)DegreesToRadians(CameraZoom), Width / Height, 0.1f, 100.0f);
+            var projection = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(CameraZoom), Width / Height, 0.1f, 100.0f);
 
             Shader.SetUniform("uModel", model);
             Shader.SetUniform("uView", view);
@@ -189,7 +186,7 @@ namespace Tutorial
 
         private static unsafe void OnMouseMove(IMouse mouse, PointF position)
         {
-            var lookSensitivity = 0.02f;
+            var lookSensitivity = 0.1f;
             if (LastMousePosition == default) { LastMousePosition = position; }
             else
             {
@@ -198,15 +195,14 @@ namespace Tutorial
                 LastMousePosition = position;
 
                 CameraYaw += xOffset;
-                CameraPitch += yOffset;
+                CameraPitch -= yOffset;
 
                 //We don't want to be able to look behind us by going over our head or under our feet so make sure it stays within these bounds
-                if (CameraPitch > 89.0f) { CameraPitch = 89.0f; }
-                if (CameraPitch < -89.0f) { CameraPitch = -89.0f; }
+                CameraPitch = Math.Clamp(CameraPitch, -89.0f, 89.0f);
 
-                CameraDirection.X = MathF.Cos((float)DegreesToRadians(CameraYaw)) * MathF.Cos((float)DegreesToRadians(CameraPitch));
-                CameraDirection.Y = MathF.Sin((float)DegreesToRadians(CameraPitch));
-                CameraDirection.Z = MathF.Sin((float)DegreesToRadians(CameraYaw)) * MathF.Cos((float)DegreesToRadians(CameraPitch));
+                CameraDirection.X = MathF.Cos(MathHelper.DegreesToRadians(CameraYaw)) * MathF.Cos(MathHelper.DegreesToRadians(CameraPitch));
+                CameraDirection.Y = MathF.Sin(MathHelper.DegreesToRadians(CameraPitch));
+                CameraDirection.Z = MathF.Sin(MathHelper.DegreesToRadians(CameraYaw)) * MathF.Cos(MathHelper.DegreesToRadians(CameraPitch));
                 CameraFront = Vector3.Normalize(CameraDirection);
             }
         }
@@ -232,11 +228,6 @@ namespace Tutorial
             {
                 window.Close();
             }
-        }
-
-        private static double DegreesToRadians(double degrees)
-        {
-            return (Math.PI / 180f) * degrees;
         }
     }
 }
