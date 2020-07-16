@@ -599,6 +599,7 @@ namespace Silk.NET.Windowing.Glfw
             _lifetimeStopwatch = new Stopwatch();
             _renderStopwatch = new Stopwatch();
             _updateStopwatch = new Stopwatch();
+            _lifetimeStopwatch.Start();
             _renderStopwatch.Start();
             _updateStopwatch.Start();
             GLFW.Glfw.ThrowExceptions();
