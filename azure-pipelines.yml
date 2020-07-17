@@ -24,7 +24,7 @@ jobs:
       version: $(dotnetCoreVersion)
       
 # Silk.NET.Maths Tests
-  - script: dotnet run --project ./src/Maths/Silk.NET.Maths.Tests/Silk.NET.Maths.Tests.fsproj --configuration Release -- --nunit-summary TestResults.xml
+  - script: dotnet test ./src/Maths/Silk.NET.Maths.Tests/Silk.NET.Maths.Tests.fsproj --configuration Release /p:AltCover=true /p:AltCoverCobertura="cobertura.xml" -- --nunit-summary TestResults.xml
     displayName: 'Build Maths Tests'
   - task: PublishTestResults@2
     condition: succeededOrFailed()
@@ -32,7 +32,10 @@ jobs:
     inputs:
       testRunner: NUnit
       testResultsFiles: 'TestResults.xml'
-      
+  - task: PublishCodeCoverageResults@1
+    inputs:
+      codeCoverageTool: 'cobertura'
+      summaryFileLocation: ./src/Maths/Silk.NET.Maths.Tests/cobertura.xml
   
   - script: dotnet pack --configuration $(buildConfiguration) --version-suffix build$(Build.BuildId)
     displayName: 'Build/Pack'
