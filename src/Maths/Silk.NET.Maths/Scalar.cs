@@ -223,6 +223,29 @@ namespace Silk.NET.Maths
             Debug.Fail("Unreachable Code");
             return default;
         }
+        
+#if !NETSTANDARD2_0
+        public static bool IsNormal<T>(T value) where T : unmanaged, IFormattable
+        {
+            ThrowForUnsupportedBaseType<T>();
+            if (typeof(T) == typeof(Half))
+            {
+                return Half.IsNormal((Half) (object) value);
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return Single.IsNormal((Single) (object) value);
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return Double.IsNormal((Double) (object) value);
+            }
+            
+            return true;
+        }
+#endif
 
         public static T Pi<T>() where T : unmanaged, IFormattable
         {
