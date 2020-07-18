@@ -35,7 +35,7 @@ namespace Triangle
             var opts = ViewOptions.Default;
             opts.FramesPerSecond = 90;
             opts.UpdatesPerSecond = 90;
-            opts.VSync = VSyncMode.Off;
+            opts.VSync = false;
             _window = Window.GetView(opts);
 #else
             var opts = WindowOptions.Default;
@@ -80,7 +80,7 @@ namespace Triangle
         {
             if (_window is IWindow w)
             {
-                w.Title = "FPS " + Math.Ceiling(1d / obj);
+                w.Title = "UPS " + Math.Ceiling(1d / obj);
             }
         }
 

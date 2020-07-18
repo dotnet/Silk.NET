@@ -76,7 +76,7 @@ namespace VulkanTriangle
         {
             var opts = WindowOptions.DefaultVulkan;
             _window = Window.Create(opts) as IVulkanWindow;
-            if (_window is null || !_window.IsVulkanSupported)
+            if (_window?.VkSurface is null)
             {
                 throw new NotSupportedException("Windowing platform doesn't support Vulkan.");
             }

@@ -81,7 +81,6 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             var opts = new WindowOptions
             (
                 windowCI.IsVisible,
-                true,
                 windowCI.Position,
                 windowCI.Size,
                 -1,
@@ -96,8 +95,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 windowCI.Title,
                 WindowState.Normal,
                 WindowBorder.Resizable,
-                deviceOptions.SyncToVerticalBlank ? VSyncMode.On : VSyncMode.Off,
-                5,
+                deviceOptions.SyncToVerticalBlank,
                 false,
                 VideoMode.Default,
                 null

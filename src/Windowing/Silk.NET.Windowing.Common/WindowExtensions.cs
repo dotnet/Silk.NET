@@ -58,6 +58,10 @@ namespace Silk.NET.Windowing.Common
             view.Reset();
         }
 
+        public static void SwapBuffers(this IView view) => view.GLContext?.SwapBuffers();
+        public static void MakeCurrent(this IView view) => view.GLContext?.MakeCurrent();
+        public static void ClearContext(this IView view) => view.GLContext?.Clear();
+
         /// <summary>
         /// Sets the window icon to default on the given window.
         /// </summary>

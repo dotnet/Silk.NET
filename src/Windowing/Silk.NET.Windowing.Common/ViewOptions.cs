@@ -14,8 +14,6 @@ namespace Silk.NET.Windowing.Common
     public struct ViewOptions : IViewProperties
     {
         /// <inheritdoc />
-        public bool UseSingleThreadedWindow { get; set; }
-        /// <inheritdoc />
         public bool ShouldSwapAutomatically { get; set; }
         /// <inheritdoc />
         public bool IsEventDriven { get; set; }
@@ -28,10 +26,10 @@ namespace Silk.NET.Windowing.Common
         public double UpdatesPerSecond { get; set; }
         /// <inheritdoc />
         public GraphicsAPI API { get; set; }
+
         /// <inheritdoc />
-        public VSyncMode VSync { get; set; }
-        /// <inheritdoc />
-        public int RunningSlowTolerance { get; set; }
+        public bool VSync { get; set; }
+
         /// <inheritdoc />
         public VideoMode VideoMode { get; set; }
         /// <inheritdoc />
@@ -42,28 +40,40 @@ namespace Silk.NET.Windowing.Common
         /// </summary>
         public ViewOptions
         (
-            bool useSingleThreadedWindow,
             double framesPerSecond,
             double updatesPerSecond,
             GraphicsAPI api,
-            VSyncMode vSync,
-            int isRunningSlowlyThreshold,
+            bool isVSync,
             bool shouldSwapAutomatically,
             VideoMode videoMode,
             int? preferredDepthBufferBits = null,
             bool isEventDriven = false
         )
         {
-            UseSingleThreadedWindow = useSingleThreadedWindow;
             FramesPerSecond = framesPerSecond;
             UpdatesPerSecond = updatesPerSecond;
             API = api;
-            VSync = vSync;
-            RunningSlowTolerance = isRunningSlowlyThreshold;
             ShouldSwapAutomatically = shouldSwapAutomatically;
             VideoMode = videoMode;
             PreferredDepthBufferBits = preferredDepthBufferBits;
             IsEventDriven = isEventDriven;
+            VSync = isVSync;
+        }
+
+        /// <summary>
+        /// Creates a ViewOptions struct from the given WindowOptions.
+        /// </summary>
+        /// <param name="opts">The window options to trim down.</param>
+        public ViewOptions(WindowOptions opts)
+        {
+            FramesPerSecond = opts.FramesPerSecond;
+            UpdatesPerSecond = opts.UpdatesPerSecond;
+            API = opts.API;
+            VideoMode = opts.VideoMode;
+            PreferredDepthBufferBits = opts.PreferredDepthBufferBits;
+            ShouldSwapAutomatically = opts.ShouldSwapAutomatically;
+            IsEventDriven = opts.IsEventDriven;
+            VSync = opts.VSync;
         }
 
         /// <summary>
@@ -71,7 +81,7 @@ namespace Silk.NET.Windowing.Common
         /// </summary>
         public static ViewOptions Default { get; } = new ViewOptions
         (
-            true, 0.0, 0.0, GraphicsAPI.Default, VSyncMode.On, 5, true, VideoMode.Default
+            0.0, 0.0, GraphicsAPI.Default, true, true, VideoMode.Default
         );
 
         /// <summary>
@@ -79,7 +89,7 @@ namespace Silk.NET.Windowing.Common
         /// </summary>
         public static ViewOptions DefaultVulkan { get; } = new ViewOptions
         (
-            true, 0.0, 0.0, GraphicsAPI.DefaultVulkan, VSyncMode.On, 5, true, VideoMode.Default
+            0.0, 0.0, GraphicsAPI.DefaultVulkan, false, false, VideoMode.Default
         );
     }
 }
