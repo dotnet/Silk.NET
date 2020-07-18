@@ -14,28 +14,34 @@ namespace Silk.NET.Windowing
         /// Gets all monitors present on this window platform.
         /// </summary>
         /// <returns>All monitors present on this window platform</returns>
-        public static IEnumerable<IMonitor> GetMonitors()
+        public static IEnumerable<IMonitor> GetMonitors(IView? view)
         {
-            if (Window.Platform is null)
+            foreach (var platform in Window.Platforms)
             {
-                Window.Init();
+                if (view is null ? platform.IsApplicable : platform.IsSourceOfView(view))
+                {
+                    return platform.GetMonitors();
+                }
             }
 
-            return Window.Platform.GetMonitors();
+            throw Window.NoPlatformException;
         }
 
         /// <summary>
         /// Gets the main monitor.
         /// </summary>
         /// <returns>The main monitor.</returns>
-        public static IMonitor GetMainMonitor()
+        public static IMonitor GetMainMonitor(IView view)
         {
-            if (Window.Platform is null)
+            foreach (var platform in Window.Platforms)
             {
-                Window.Init();
+                if (view is null ? platform.IsApplicable : platform.IsSourceOfView(view))
+                {
+                    return platform.GetMainMonitor();
+                }
             }
 
-            return Window.Platform.GetMainMonitor();
+            throw Window.NoPlatformException;
         }
     }
 }

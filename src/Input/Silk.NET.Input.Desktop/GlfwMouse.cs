@@ -8,21 +8,19 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
 using MouseButton = Silk.NET.Input.Common.MouseButton;
 
-namespace Silk.NET.Input.Desktop
+namespace Silk.NET.Input.GlfwBackend
 {
-    internal class GlfwMouse : IMouse, IGlfwDevice, IGlfwSubscriber, IDisposable
+    internal class GlfwMouse : IMouse, IGlfwSubscriber, IDisposable
     {
         private static readonly MouseButton[] Buttons = ((MouseButton[]) Enum.GetValues(typeof(MouseButton)))
             .Where(x => x != (MouseButton) (-1))
             .ToArray();
 
         private unsafe WindowHandle* _handle;
-        private readonly unsafe ScrollWheel* _scrollWheel;
         private GlfwCallbacks.ScrollCallback _scroll;
         private GlfwCallbacks.CursorPosCallback _cursorPos;
         private GlfwCallbacks.MouseButtonCallback _mouseButton;
@@ -34,8 +32,7 @@ namespace Silk.NET.Input.Desktop
 
         public unsafe GlfwMouse()
         {
-            _scrollWheel = (ScrollWheel*) Marshal.AllocHGlobal(sizeof(ScrollWheel));
-            ScrollWheels = new GlfwReadOnlyList<ScrollWheel>(_scrollWheel, 1);
+            ScrollWheels = new ScrollWheel[1];
         }
         public string Name { get; } = "Silk.NET Mouse (via GLFW)";
         public int Index { get; } = 0;
@@ -87,12 +84,12 @@ namespace Silk.NET.Input.Desktop
             events.Scroll += _scroll = (_, x, y) =>
             {
                 var val = new ScrollWheel((float) x, (float) y);
-                if (_scrollWheel[0].X != val.X || _scrollWheel[0].Y != val.Y)
+                if (ScrollWheels[0].X != val.X || ScrollWheels[0].Y != val.Y)
                 {
                     _scrollModified = true;
                 }
 
-                _scrollWheel[0] = val;
+                ((ScrollWheel[])ScrollWheels)[0] = val;
                 Scroll?.Invoke(this, val);
             };
             events.CursorPos += _cursorPos = (_, x, y) => MouseMove?.Invoke(this, new PointF((float) x, (float) y));
@@ -191,7 +188,7 @@ namespace Silk.NET.Input.Desktop
         {
             if (!_scrollModified)
             {
-                _scrollWheel[0] = default;
+                ((ScrollWheel[])ScrollWheels)[0] = default;
             }
 
             _scrollModified = false;

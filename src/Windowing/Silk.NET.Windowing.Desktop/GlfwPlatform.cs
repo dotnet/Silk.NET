@@ -7,15 +7,18 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
+using Silk.NET.Windowing.Common.Internals;
+using Silk.NET.Windowing.Desktop;
 
 [assembly: InternalsVisibleTo("Silk.NET.Input.Desktop")]
+[assembly: WindowPlatform(typeof(GlfwPlatform))]
 
 namespace Silk.NET.Windowing.Desktop
 {
     /// <summary>
     /// A GLFW-based backend.
     /// </summary>
-    public class GlfwPlatform : IWindowPlatform
+    internal class GlfwPlatform : IWindowPlatform
     {
         private GlfwPlatform()
         {
@@ -59,5 +62,7 @@ namespace Silk.NET.Windowing.Desktop
 
         /// <inheritdoc />
         public unsafe IMonitor GetMainMonitor() => new GlfwMonitor(GlfwProvider.GLFW.Value.GetPrimaryMonitor(), 0);
+
+        public bool IsSourceOfView(IView view) => view is GlfwWindow;
     }
 }

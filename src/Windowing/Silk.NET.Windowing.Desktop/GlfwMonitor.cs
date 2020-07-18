@@ -8,6 +8,7 @@ using System.Drawing;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
 using VideoMode = Silk.NET.Windowing.Common.VideoMode;
+using NativeMonitor = Silk.NET.GLFW.Monitor;
 
 namespace Silk.NET.Windowing.Desktop
 {
@@ -15,9 +16,9 @@ namespace Silk.NET.Windowing.Desktop
     {
         private float _gamma = 1.0f;
         
-        public Monitor* Handle { get; }
+        public NativeMonitor* Handle { get; }
 
-        public GlfwMonitor(Monitor* monitor, int index)
+        public GlfwMonitor(NativeMonitor* monitor, int index)
         {
             Handle = monitor;
             Index = index;

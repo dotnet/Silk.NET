@@ -16,7 +16,6 @@ namespace InputTest
         private static void Main()
         {
             var opts = WindowOptions.Default;
-            opts.UseSingleThreadedWindow = false;
             opts.FramesPerSecond = 60;
             opts.UpdatesPerSecond = 60;
             var window = Window.Create(opts);

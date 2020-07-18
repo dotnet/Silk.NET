@@ -9,9 +9,9 @@ using System.Linq;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
 
-namespace Silk.NET.Input.Desktop
+namespace Silk.NET.Input.GlfwBackend
 {
-    internal class GlfwKeyboard : IKeyboard, IGlfwDevice, IGlfwSubscriber
+    internal class GlfwKeyboard : IKeyboard, IGlfwSubscriber
     {
         private static readonly Key[] Keys = ((Keys[]) Enum.GetValues(typeof(Keys))).Select(ConvertKey).ToArray();
         private unsafe WindowHandle* _handle;

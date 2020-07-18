@@ -7,6 +7,7 @@ using System;
 using System.Linq;
 using Silk.NET.Input.Common;
 using Silk.NET.Input.Desktop;
+using Silk.NET.Windowing;
 using Silk.NET.Windowing.Common;
 
 namespace Silk.NET.Input

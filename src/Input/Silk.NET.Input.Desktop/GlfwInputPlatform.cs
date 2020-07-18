@@ -8,12 +8,12 @@ using System.Collections.Generic;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
 using Silk.NET.Windowing.Common;
-using Silk.NET.Windowing.Desktop;
+using Silk.NET.Windowing.GlfwBackend;
 
-namespace Silk.NET.Input.Desktop
+namespace Silk.NET.Input.GlfwBackend
 {
     /// <inheritdoc />
-    public class GlfwInputPlatform : IInputPlatform
+    internal class GlfwInputPlatform : IInputPlatform
     {
         private GlfwInputPlatform(){}
         private static Dictionary<IntPtr, GlfwEvents> _subs = new Dictionary<IntPtr, GlfwEvents>();
@@ -21,7 +21,7 @@ namespace Silk.NET.Input.Desktop
         public bool IsApplicable(IView window) => window is GlfwWindow;
 
         /// <inheritdoc />
-        public IInputContext CreateInput(IView window) => new GlfwInputContext(window as GlfwWindow);
+        public IInputContext CreateInput(IView window) => new GlfwInputContext(window);
         /// <summary>
         /// Gets the cached instance of the GLFW input platform.
         /// </summary>

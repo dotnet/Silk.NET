@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
+using NativeMonitor = Silk.NET.GLFW.Monitor;
 
 namespace Silk.NET.Windowing.Desktop
 {
@@ -22,11 +23,11 @@ namespace Silk.NET.Windowing.Desktop
 
         private unsafe struct Enumerator : IEnumerator<IMonitor>
         {
-            private readonly Monitor** _monitors;
+            private readonly NativeMonitor** _monitors;
             private readonly int _count;
             private int _index;
 
-            public Enumerator(Monitor** monitors, int count)
+            public Enumerator(NativeMonitor** monitors, int count)
             {
                 _monitors = monitors;
                 _count = count;

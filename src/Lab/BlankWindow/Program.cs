@@ -22,7 +22,6 @@ namespace BlankWindow
         {
             var options = WindowOptions.Default;
 
-            options.UseSingleThreadedWindow = true;
             //options.ShouldSwapAutomatically = false;
 
             options.UpdatesPerSecond = 60.0;

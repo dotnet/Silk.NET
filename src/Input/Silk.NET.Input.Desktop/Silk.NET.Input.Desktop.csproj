@@ -2,11 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <IncludeBuildOutput>false</IncludeBuildOutput> <!-- Metapackage -->
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>8.0</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Silk.NET.Input\Silk.NET.Input.csproj" />
+      <ProjectReference Include="..\..\Windowing\Silk.NET.GLFW\Silk.NET.GLFW.csproj" />
+      <ProjectReference Include="..\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
     </ItemGroup>
 
     <Import Project="..\..\..\build\props\common.props" />

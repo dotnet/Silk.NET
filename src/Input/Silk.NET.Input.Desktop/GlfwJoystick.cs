@@ -5,28 +5,21 @@
 
 using System;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
 
-namespace Silk.NET.Input.Desktop
+namespace Silk.NET.Input.GlfwBackend
 {
-    internal class GlfwJoystick : IJoystick, IGlfwDevice, IDisposable
+    internal class GlfwJoystick : IJoystick, IDisposable
     {
-        private unsafe Axis* _axes;
-        private unsafe Button* _buttons;
-        private unsafe Hat* _hats;
         private bool _connected;
 
         public unsafe GlfwJoystick(int i)
         {
             Index = i;
-            _axes = (Axis*) Marshal.AllocHGlobal(0);
-            _buttons = (Button*) Marshal.AllocHGlobal(0);
-            _hats = (Hat*) Marshal.AllocHGlobal(0);
-            Axes = new GlfwReadOnlyList<Axis>(_axes, 0);
-            Buttons = new GlfwReadOnlyList<Button>(_buttons, 0);
-            Hats = new GlfwReadOnlyList<Hat>(_hats, 0);
+            Axes = new Axis[0];
+            Buttons = new Button[0];
+            Hats = new Hat[0];
 
             _connected = IsConnected;
         }
@@ -65,17 +58,17 @@ namespace Silk.NET.Input.Desktop
 
             for (var i = 0; i < btnCount; i++)
             {
-                _buttons[i] = new Button(ButtonName.Unknown, i, btn[i] == (int) InputAction.Press);
+                ((Button[])Buttons)[i] = new Button(ButtonName.Unknown, i, btn[i] == (int) InputAction.Press);
             }
 
             for (var i = 0; i < axisCount; i++)
             {
-                _axes[i] = new Axis(i, axes[i]);
+                ((Axis[])Axes)[i] = new Axis(i, axes[i]);
             }
 
             for (var i = 0; i < hatCount; i++)
             {
-                _hats[i] = new Hat
+                ((Hat[])Hats)[i] = new Hat
                 (
                     i, hats[i] switch
                     {
@@ -106,8 +99,9 @@ namespace Silk.NET.Input.Desktop
                 return;
             }
 
-            _axes = (Axis*) Marshal.ReAllocHGlobal((IntPtr) _axes, (IntPtr) count);
-            Axes = new GlfwReadOnlyList<Axis>(_axes, count);
+            var axes = (Axis[])Axes;
+            Array.Resize(ref axes, count);
+            Axes = axes;
         }
 
         public unsafe void EnsureButtonSize(int count)
@@ -117,8 +111,9 @@ namespace Silk.NET.Input.Desktop
                 return;
             }
 
-            _buttons = (Button*) Marshal.ReAllocHGlobal((IntPtr) _buttons, (IntPtr) count);
-            Buttons = new GlfwReadOnlyList<Button>(_buttons, count);
+            var buttons = (Button[]) Buttons;
+            Array.Resize(ref buttons, count);
+            Buttons = buttons;
         }
 
         public unsafe void EnsureHatSize(int count)
@@ -128,15 +123,13 @@ namespace Silk.NET.Input.Desktop
                 return;
             }
 
-            _hats = (Hat*) Marshal.ReAllocHGlobal((IntPtr) _hats, (IntPtr) count);
-            Hats = new GlfwReadOnlyList<Hat>(_hats, count);
+            var hats = (Hat[]) Hats;
+            Array.Resize(ref hats, count);
+            Hats = hats;
         }
 
-        public unsafe void Dispose()
+        public void Dispose()
         {
-            Marshal.FreeHGlobal((IntPtr) _axes);
-            Marshal.FreeHGlobal((IntPtr) _buttons);
-            Marshal.FreeHGlobal((IntPtr) _hats);
         }
 
         public Action<IInputDevice, bool> OnConnectionChanged { get; set; }
