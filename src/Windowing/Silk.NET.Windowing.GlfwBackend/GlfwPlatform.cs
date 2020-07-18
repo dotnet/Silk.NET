@@ -10,7 +10,7 @@ using Silk.NET.Windowing.Common;
 
 [assembly: InternalsVisibleTo("Silk.NET.Input.Desktop")]
 
-namespace Silk.NET.Windowing.Glfw
+namespace Silk.NET.Windowing.GlfwBackend
 {
     /// <summary>
     /// A GLFW-based backend.

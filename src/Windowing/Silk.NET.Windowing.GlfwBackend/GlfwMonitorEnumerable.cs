@@ -9,7 +9,7 @@ using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
 using MonitorHandle = Silk.NET.GLFW.Monitor;
 
-namespace Silk.NET.Windowing.Glfw
+namespace Silk.NET.Windowing.GlfwBackend
 {
     internal class GlfwMonitorEnumerable : IEnumerable<IMonitor>
     {

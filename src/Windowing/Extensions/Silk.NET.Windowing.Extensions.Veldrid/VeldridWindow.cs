@@ -10,8 +10,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
-using Silk.NET.Windowing.Desktop;
-using Silk.NET.Windowing.Glfw;
 using Ultz.SuperInvoke.Loader;
 using Veldrid;
 using Veldrid.OpenGL;
@@ -173,7 +171,8 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
 
         private static unsafe SwapchainSource GetSwapchainSource(IView view)
         {
-            if (view.GetType().FullName == "Silk.NET.Windowing.Desktop.GlfwWindow")
+            if (view.GetType().FullName == "Silk.NET.Windowing.Desktop.GlfwWindow" ||
+                view.GetType().FullName == Window.GlfwBackendType)
             {
                 var handle = (WindowHandle*) view.Handle;
                 var glfw = GlfwProvider.GLFW.Value;

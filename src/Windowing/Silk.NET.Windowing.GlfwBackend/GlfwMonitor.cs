@@ -10,7 +10,7 @@ using Silk.NET.Windowing.Common;
 using VideoMode = Silk.NET.Windowing.Common.VideoMode;
 using MonitorHandle = Silk.NET.GLFW.Monitor;
 
-namespace Silk.NET.Windowing.Glfw
+namespace Silk.NET.Windowing.GlfwBackend
 {
     internal unsafe class GlfwMonitor : IMonitor
     {

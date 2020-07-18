@@ -13,7 +13,7 @@ using Silk.NET.Windowing.Common.Structs;
 using Silk.NET.Windowing.Internals;
 using VideoMode = Silk.NET.Windowing.Common.VideoMode;
 
-namespace Silk.NET.Windowing.Glfw
+namespace Silk.NET.Windowing.GlfwBackend
 {
     internal unsafe class GlfwWindow : BaseWindow, IGLContext, IVkSurface
     {
