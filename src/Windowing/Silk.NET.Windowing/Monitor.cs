@@ -5,13 +5,9 @@
 
 using System.Collections.Generic;
 using Silk.NET.Windowing.Common;
-using static Silk.NET.Windowing.Window;
 
 namespace Silk.NET.Windowing
 {
-    /// <summary>
-    /// Contains methods for accessing monitors.
-    /// </summary>
     public static class Monitor
     {
         /// <summary>
@@ -19,13 +15,27 @@ namespace Silk.NET.Windowing
         /// </summary>
         /// <returns>All monitors present on this window platform</returns>
         public static IEnumerable<IMonitor> GetMonitors()
-            => Platform?.GetMonitors() ?? FirstPartyPlatform?.GetMonitors() ?? throw NoPlatformException;
+        {
+            if (Window.Platform is null)
+            {
+                Window.Init();
+            }
+
+            return Window.Platform.GetMonitors();
+        }
 
         /// <summary>
         /// Gets the main monitor.
         /// </summary>
         /// <returns>The main monitor.</returns>
         public static IMonitor GetMainMonitor()
-            => Platform?.GetMainMonitor() ?? FirstPartyPlatform?.GetMainMonitor() ?? throw NoPlatformException;
+        {
+            if (Window.Platform is null)
+            {
+                Window.Init();
+            }
+
+            return Window.Platform.GetMainMonitor();
+        }
     }
 }

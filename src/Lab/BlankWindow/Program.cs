@@ -22,11 +22,11 @@ namespace BlankWindow
         {
             var options = WindowOptions.Default;
 
+            options.UseSingleThreadedWindow = true;
             //options.ShouldSwapAutomatically = false;
 
             options.UpdatesPerSecond = 60.0;
             options.FramesPerSecond = 60.0;
-            options.VSync = false;
             // options.VSync = VSyncMode.On;
 
             // options.WindowState = WindowState.Fullscreen;
