@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>8</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Silk.NET.Input\Silk.NET.Input.csproj" />
+      <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing.GlfwBackend\Silk.NET.Windowing.GlfwBackend.csproj" />
+    </ItemGroup>
+
+</Project>

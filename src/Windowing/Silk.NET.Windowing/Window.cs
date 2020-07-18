@@ -119,5 +119,10 @@ namespace Silk.NET.Windowing
                 throw NoPlatformException;
             }
         }
+
+        internal static bool IsUsingGlfw(IView view)
+            => !(FirstPartyPlatform is SdlPlatform) &&
+               !(FirstPartyPlatform is null) &&
+               FirstPartyPlatform.IsSourceOfView(view);
     }
 }

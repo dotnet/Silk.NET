@@ -36,5 +36,10 @@ namespace Silk.NET.Windowing.Sdl
         {
             throw new System.NotImplementedException();
         }
+
+        public bool IsSourceOfView(IView view)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

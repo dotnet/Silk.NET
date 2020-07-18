@@ -59,5 +59,7 @@ namespace Silk.NET.Windowing.GlfwBackend
 
         /// <inheritdoc />
         public unsafe IMonitor GetMainMonitor() => new GlfwMonitor(GlfwProvider.GLFW.Value.GetPrimaryMonitor(), 0);
+
+        public bool IsSourceOfView(IView view) => view is GlfwWindow;
     }
 }

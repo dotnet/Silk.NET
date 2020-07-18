@@ -7,3 +7,4 @@ using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Silk.NET.Windowing.GlfwBackend")]
 [assembly: InternalsVisibleTo("Silk.NET.Windowing.Extensions.Veldrid")]
+[assembly: InternalsVisibleTo("Silk.NET.Input")]
