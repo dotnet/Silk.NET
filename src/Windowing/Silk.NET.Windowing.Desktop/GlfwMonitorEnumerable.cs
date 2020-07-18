@@ -7,9 +7,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Common;
-using MonitorHandle = Silk.NET.GLFW.Monitor;
 
-namespace Silk.NET.Windowing.Glfw
+namespace Silk.NET.Windowing.Desktop
 {
     internal class GlfwMonitorEnumerable : IEnumerable<IMonitor>
     {
@@ -23,11 +22,11 @@ namespace Silk.NET.Windowing.Glfw
 
         private unsafe struct Enumerator : IEnumerator<IMonitor>
         {
-            private readonly MonitorHandle** _monitors;
+            private readonly Monitor** _monitors;
             private readonly int _count;
             private int _index;
 
-            public Enumerator(MonitorHandle** monitors, int count)
+            public Enumerator(Monitor** monitors, int count)
             {
                 _monitors = monitors;
                 _count = count;

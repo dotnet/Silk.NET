@@ -8,7 +8,7 @@ using System.IO;
 using System.Reflection;
 using Silk.NET.Core.Loader;
 using Silk.NET.Windowing.Common;
-using Silk.NET.Windowing.Glfw;
+using Silk.NET.Windowing.Desktop;
 using GlfwLoader = Silk.NET.GLFW.GlfwLoader;
 
 namespace Silk.NET.Windowing
