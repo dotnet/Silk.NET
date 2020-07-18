@@ -55,6 +55,7 @@ namespace Silk.NET.Windowing.Desktop
         // The stopwatches. Used to calculate delta.
         private Stopwatch _renderStopwatch;
         private Stopwatch _updateStopwatch;
+        private Stopwatch _lifetimeStopwatch;
 
         // Invoke method variables
         private ConcurrentQueue<Invocation> _pendingInvocations;
@@ -126,6 +127,8 @@ namespace Silk.NET.Windowing.Desktop
 
         /// <inheritdoc />
         public bool IsRunningSlowly => _isRunningSlowlyTries > RunningSlowTolerance;
+
+        public double Time => _lifetimeStopwatch.Elapsed.TotalSeconds;
 
         /// <inheritdoc />
         public bool IsVisible
@@ -595,8 +598,10 @@ namespace Silk.NET.Windowing.Desktop
 
             _renderStopwatch = new Stopwatch();
             _updateStopwatch = new Stopwatch();
+            _lifetimeStopwatch = new Stopwatch();
             _renderStopwatch.Start();
             _updateStopwatch.Start();
+            _lifetimeStopwatch.Start();
             Glfw.ThrowExceptions();
         }
 
@@ -657,6 +662,7 @@ namespace Silk.NET.Windowing.Desktop
         {
             _updateStopwatch.Stop();
             _renderStopwatch.Stop();
+            _lifetimeStopwatch.Stop();
 
             try
             {
