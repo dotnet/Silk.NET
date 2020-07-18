@@ -6,7 +6,7 @@
 using System;
 using Silk.NET.GLFW;
 
-namespace Silk.NET.Input.Glfw
+namespace Silk.NET.Input.Desktop
 {
     internal class GlfwEvents : IDisposable
     {

@@ -127,9 +127,5 @@ namespace Silk.NET.Windowing
             
             Platform.ClearContexts();
         }
-
-        public static bool IsUsingGlfw(IView view) => view is GlfwWindow;
-        // TODO allow passing in a GLFW WindowHandle*
-        // TODO allow passing in a SDL window handle
     }
 }

@@ -5,12 +5,11 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using Silk.NET.Input.Common;
 
 namespace Silk.NET.Input.Desktop
 {
     internal struct IsConnectedEnumerator<T> : IEnumerator<T>
-        where T:IInputDevice
+        where T:IGlfwDevice
     {
         private ReadOnlyListEnumerator<T> _base;
 

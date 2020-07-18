@@ -8,11 +8,10 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Silk.NET.GLFW;
 using Silk.NET.Input.Common;
-using Silk.NET.Input.Desktop;
 
-namespace Silk.NET.Input.Glfw
+namespace Silk.NET.Input.Desktop
 {
-    internal unsafe class GlfwGamepad : IGamepad, IDisposable
+    internal unsafe class GlfwGamepad : IGamepad, IGlfwDevice, IDisposable
     {
         private const int GamepadButtonCount = 15;
         private const int GamepadThumbstickCount = 2;
@@ -31,9 +30,9 @@ namespace Silk.NET.Input.Glfw
             _buttons = (Button*) Marshal.AllocHGlobal(GamepadButtonCount * sizeof(Button));
             _thumbsticks = (Thumbstick*) Marshal.AllocHGlobal(GamepadThumbstickCount * sizeof(Thumbstick));
             _triggers = (Trigger*) Marshal.AllocHGlobal(GamepadTriggerCount * sizeof(Trigger));
-            Buttons = new PtrReadOnlyList<Button>(_buttons, GamepadButtonCount);
-            Thumbsticks = new PtrReadOnlyList<Thumbstick>(_thumbsticks, GamepadThumbstickCount);
-            Triggers = new PtrReadOnlyList<Trigger>(_triggers, GamepadTriggerCount);
+            Buttons = new GlfwReadOnlyList<Button>(_buttons, GamepadButtonCount);
+            Thumbsticks = new GlfwReadOnlyList<Thumbstick>(_thumbsticks, GamepadThumbstickCount);
+            Triggers = new GlfwReadOnlyList<Trigger>(_triggers, GamepadTriggerCount);
 
             _connected = hasState;
             
