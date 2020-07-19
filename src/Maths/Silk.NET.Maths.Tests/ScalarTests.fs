@@ -108,6 +108,27 @@ let inline scalarTests<'T
                 let four = num<'T> 4
                 Expect.equal actual four "8 / 2 = 4"
         ]
+        
+        testList "Constants" [
+            testCase "One is one" <|
+                fun () ->
+                    Expect.equal (Scalar.One<'T>()) (LanguagePrimitives.GenericOne) "One is one"
+            testCase "Two is two" <|
+                fun () ->
+                    Expect.equal (Scalar.Two<'T>()) (num<'T> 2) "Two is two" 
+        ]
+        
+        testList "Exceptions" [
+            testCase "Vector too small throws NotSupportedException" <|
+                fun () ->
+                    Expect.throwsT<NotSupportedException> (fun () -> Scalar.ThrowVectorTTooSmall()) "Vector too small throws NotSupportedException"
+            testCase "ThrowIndexOutOfRange throws IndexOutOfRangeException" <|
+                fun () ->
+                    Expect.throwsT<IndexOutOfRangeException> (fun () -> Scalar.ThrowIndexOutOfRange()) "ThrowIndexOutOfRange throws IndexOutOfRange"
+            testCase "ThrowNotSupportedByUnderlying throws ExceptionNotSupported" <|
+                fun () ->
+                    Expect.throwsT<NotSupportedException> (fun () -> Scalar.ThrowNotSupportedByUnderlying()) "ThrowNotSupportedByUnderlying throws ExceptionNotSupported"
+        ]
     ]
     
 [<Tests>]
