@@ -35,6 +35,12 @@ namespace Silk.NET.GLFW
         }
 
         /// <summary>
+        /// Overrides <see cref="GlfwProvider"/>'s default logic in which it initializes GLFW when used. This is
+        /// useful if you're using GLFW manually in conjunction with a windowing platform built atop Silk.NET.GLFW.
+        /// </summary>
+        public static void SuppressInit() => GlfwProvider.GLFW = new Lazy<Glfw>(GetApi);
+
+        /// <summary>
         /// Gets the default callback which gets called when a GLFW-Error occurs.
         /// </summary>
         /// <seealso cref="SetErrorCallback" />
