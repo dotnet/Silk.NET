@@ -4,12 +4,11 @@
 // of the MIT license. See the LICENSE file for details.
 
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Common;
-using Silk.NET.Windowing.Common.Structs;
 using SixLabors.ImageSharp.PixelFormats;
 using System;
 using System.Drawing;
 using System.Threading;
+using Silk.NET.Windowing.Structs;
 using Image = SixLabors.ImageSharp.Image;
 
 namespace BlankWindow

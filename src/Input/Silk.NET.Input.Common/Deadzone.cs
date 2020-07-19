@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// The deadzone to use for a joystick/gamepad's sticks.

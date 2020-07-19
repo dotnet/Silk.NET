@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// Represents the position of a joystick <see cref="Hat"/>

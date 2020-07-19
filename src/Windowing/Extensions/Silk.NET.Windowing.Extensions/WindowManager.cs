@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Silk.NET.Windowing.Common;
 
 namespace Silk.NET.Windowing.Extensions
 {

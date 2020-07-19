@@ -6,8 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using Silk.NET.Windowing.Common;
-using Silk.NET.Windowing.Common.Internals;
+using Silk.NET.Windowing.Internals;
 
 namespace Silk.NET.Windowing
 {
@@ -20,8 +19,15 @@ namespace Silk.NET.Windowing
         internal static Exception NoPlatformException => new Exception
         (
             "Couldn't find a suitable window platform. " +
-            "https://docs.ultz.co.uk/silk.net/windowing/troubleshooting.html"
+            "https://docs.ultz.co.uk/Silk.NET/windowing/troubleshooting.html"
         );
+
+        static Window()
+        {
+            // Try add the first-party backends
+            TryAdd("Silk.NET.Windowing.Glfw");
+            TryAdd("Silk.NET.Windowing.Allegro");
+        }
 
         /// <summary>
         /// Gets the first platform registered that is applicable and isn't view-only.
@@ -67,6 +73,11 @@ namespace Silk.NET.Windowing
         /// <returns>A Silk.NET window using the current platform.</returns>
         public static IWindow Create(WindowOptions options)
         {
+            if (Platforms.Count == 0)
+            {
+                throw NoPlatformException;
+            }
+            
             if (IsViewOnly)
             {
                 throw new NotSupportedException
@@ -138,7 +149,13 @@ namespace Silk.NET.Windowing
         /// Adds this window platform to the platform list. Shouldn't be used unless writing your own windowing backend.
         /// </summary>
         /// <param name="platform">The platform to add.</param>
-        public static void Add(IWindowPlatform platform) => ((List<IWindowPlatform>) Platforms).Add(platform);
+        public static void Add(IWindowPlatform platform)
+        {
+            if (!((List<IWindowPlatform>)Platforms).Contains(platform))
+            {
+                ((List<IWindowPlatform>) Platforms).Add(platform);
+            }
+        }
 
         /// <summary>
         /// Removes this window platform from the platform list. Shouldn't be used unless writing your own windowing backend.
@@ -168,7 +185,7 @@ namespace Silk.NET.Windowing
                     return false;
                 }
                 
-                Add((IWindowPlatform) Activator.CreateInstance(attr.Type));
+                Add((IWindowPlatform) Activator.CreateInstance(attr.Type, true));
                 return true;
             }
             catch

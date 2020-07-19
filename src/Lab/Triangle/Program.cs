@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 using SampleBase;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Common;
 
 namespace Triangle
 {

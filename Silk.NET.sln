@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.GLFW", "src\Window
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Core", "src\Core\Silk.NET.Core\Silk.NET.Core.csproj", "{136C6154-D300-4B82-80D3-17B637841A2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing.Desktop", "src\Windowing\Silk.NET.Windowing.Desktop\Silk.NET.Windowing.Desktop.csproj", "{0A18FCAE-572E-47FF-B8E3-C97ED15132FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing.Glfw", "src\Windowing\Silk.NET.Windowing.Glfw\Silk.NET.Windowing.Glfw.csproj", "{0A18FCAE-572E-47FF-B8E3-C97ED15132FA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankWindow", "src\Lab\BlankWindow\BlankWindow.csproj", "{E8C4587E-9424-438B-AEAF-A09E0234865A}"
 EndProject
@@ -166,7 +166,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{0651C5EF-5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangle", "src\Lab\Triangle\Triangle.csproj", "{3478F392-7055-4ECC-B388-7F115AA7EA5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Input.Desktop", "src\Input\Silk.NET.Input.Desktop\Silk.NET.Input.Desktop.csproj", "{3908DEF6-7403-49F5-B8EC-5B3B12C325D4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Input.Glfw", "src\Input\Silk.NET.Input.Glfw\Silk.NET.Input.Glfw.csproj", "{3908DEF6-7403-49F5-B8EC-5B3B12C325D4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Input", "src\Input\Silk.NET.Input\Silk.NET.Input.csproj", "{020A8E88-B607-4281-BA0D-5ED03484A201}"
 EndProject
@@ -291,6 +291,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 3.3 - Specular Lighting", "examples\CSharp\Tutorial 3.3 - Specular Lighting\Tutorial 3.3 - Specular Lighting.csproj", "{97C5570D-8342-4F62-9175-70C291D93431}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tutorial 3.4 - Materials", "examples\CSharp\Tutorial 3.4 - Materials\Tutorial 3.4 - Materials.csproj", "{5C119A02-AD0F-4222-9379-DB2DBAC59868}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing", "src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj", "{00D8F04F-2063-4F4E-B793-0F9DCF2BCFA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1781,6 +1783,18 @@ Global
 		{5C119A02-AD0F-4222-9379-DB2DBAC59868}.Release|x64.Build.0 = Release|Any CPU
 		{5C119A02-AD0F-4222-9379-DB2DBAC59868}.Release|x86.ActiveCfg = Release|Any CPU
 		{5C119A02-AD0F-4222-9379-DB2DBAC59868}.Release|x86.Build.0 = Release|Any CPU
+		{00D8F04F-2063-4F4E-B793-0F9DCF2BCFA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D8F04F-2063-4F4E-B793-0F9DCF2BCFA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D8F04F-2063-4F4E-B793-0F9DCF2BCFA9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{00D8F04F-2063-4F4E-B793-0F9DCF2BCFA9}.Debug|x64.Build.0 = Debug|Any CPU
+		{00D8F04F-2063-4F4E-B793-0F9DCF2BCFA9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{00D8F04F-2063-4F4E-B793-0F9DCF2BCFA9}.Debug|x86.Build.0 = Debug|Any CPU
+		{00D8F04F-2063-4F4E-B793-0F9DCF2BCFA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D8F04F-2063-4F4E-B793-0F9DCF2BCFA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D8F04F-2063-4F4E-B793-0F9DCF2BCFA9}.Release|x64.ActiveCfg = Release|Any CPU
+		{00D8F04F-2063-4F4E-B793-0F9DCF2BCFA9}.Release|x64.Build.0 = Release|Any CPU
+		{00D8F04F-2063-4F4E-B793-0F9DCF2BCFA9}.Release|x86.ActiveCfg = Release|Any CPU
+		{00D8F04F-2063-4F4E-B793-0F9DCF2BCFA9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
@@ -1913,6 +1927,7 @@ Global
 		{D6CF7DDC-D36A-47B6-9C42-422DC3AA6B90} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
 		{97C5570D-8342-4F62-9175-70C291D93431} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
 		{5C119A02-AD0F-4222-9379-DB2DBAC59868} = {E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}
+		{00D8F04F-2063-4F4E-B793-0F9DCF2BCFA9} = {23324041-2076-477C-A4BF-B385B8066C6C}
 	EndGlobalSection
 	EndGlobalSection
 EndGlobal

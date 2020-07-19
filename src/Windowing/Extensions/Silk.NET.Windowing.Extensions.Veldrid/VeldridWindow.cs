@@ -9,13 +9,12 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.GLFW;
-using Silk.NET.Windowing.Common;
 using Ultz.SuperInvoke.Loader;
 using Veldrid;
 using Veldrid.OpenGL;
 using Veldrid.Vk;
 using Vulkan.Xlib;
-using VideoMode = Silk.NET.Windowing.Common.VideoMode;
+using VideoMode = Silk.NET.Windowing.VideoMode;
 using XWindow = Vulkan.Xlib.Window;
 
 namespace Silk.NET.Windowing.Extensions.Veldrid

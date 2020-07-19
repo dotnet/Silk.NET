@@ -14,7 +14,6 @@ using Silk.NET.Vulkan;
 using Silk.NET.Vulkan.Extensions.EXT;
 using Silk.NET.Vulkan.Extensions.KHR;
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Common;
 using Image = Silk.NET.Vulkan.Image;
 
 namespace VulkanTriangle

@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>8.0</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing.Glfw\Silk.NET.Windowing.Glfw.csproj" />
+      <ProjectReference Include="..\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj" />
+    </ItemGroup>
+
+    <Import Project="..\..\..\build\props\common.props" />
+
+</Project>
