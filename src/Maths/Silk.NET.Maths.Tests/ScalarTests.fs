@@ -129,6 +129,16 @@ let inline scalarTests<'T
                 fun () ->
                     Expect.throwsT<NotSupportedException> (fun () -> Scalar.ThrowNotSupportedByUnderlying()) "ThrowNotSupportedByUnderlying throws ExceptionNotSupported"
         ]
+        
+        testList "Sqrt" [
+            testCase "Sqrt(9) = 3" <|
+                fun () ->
+                    Expect.equal (Scalar.SquareRoot(num<'T> 9)) (num<'T> 3) "Sqrt(9) = 3"
+            testProperty "Sqrt(x) < x where x > 1" <|
+                fun (x:^T) ->
+                    ((Scalar.IsNormal x) && (x > Scalar.One<'T>()))
+                    ==> (Scalar.SquareRoot(x) < x)
+        ]
     ]
     
 [<Tests>]
