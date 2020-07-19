@@ -40,6 +40,10 @@ jobs:
     inputs:
       codeCoverageTool: 'cobertura'
       summaryFileLocation: ./src/Maths/Silk.NET.Maths.Tests/cobertura.xml
+  - script: |
+    bash <(curl -s https://codecov.io/bash)
+  displayName: 'Upload to codecov.io'
+  condition: succeededOrFailed()
   
   - script: dotnet pack --configuration $(buildConfiguration) --version-suffix build$(Build.BuildId)
     displayName: 'Build/Pack'
