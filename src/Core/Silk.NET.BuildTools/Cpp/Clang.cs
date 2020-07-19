@@ -211,7 +211,7 @@ namespace Silk.NET.BuildTools.Cpp
                 }
             }
 
-            string GetAnonymousName(Cursor cursor, string kind)
+            string GetAnonymousName(CXCursor cursor, string kind)
             {
                 cursor.Location.GetFileLocation(out var file, out var line, out var column, out _);
                 var fileName = Path.GetFileNameWithoutExtension(file.Name.ToString());
@@ -279,8 +279,8 @@ namespace Silk.NET.BuildTools.Cpp
                     var asize = arrayType.Handle.ArraySize;
                     if (asize != -1)
                     {
-                        count = new Count
-                            ((int) (asize * (currentCount?.IsStatic ?? false ? currentCount.StaticCount : 1)));
+                        Console.WriteLine("Warning/TODO: Multidimensional fixed buffers may have patchy support");
+                        count = new Count((int) (asize * (currentCount?.IsStatic ?? false ? currentCount?.StaticCount : 1)));
                     }
                     else
                     {
@@ -395,7 +395,16 @@ namespace Silk.NET.BuildTools.Cpp
                 }
                 else if (type is ElaboratedType elaboratedType)
                 {
-                    ret = new Type {Name = elaboratedType.NamedType.AsString};
+                    ret = new Type
+                    {
+                        Name = elaboratedType.NamedType.Handle.Declaration.IsAnonymous
+                            ? GetAnonymousName
+                            (
+                                elaboratedType.NamedType.Handle.Declaration,
+                                elaboratedType.NamedType.Kind == CXTypeKind.CXType_Enum ? "Enum" : "Struct"
+                            )
+                            : elaboratedType.NamedType.AsString
+                    };
                 }
                 else if (type is FunctionType functionType)
                 {
@@ -439,7 +448,7 @@ namespace Silk.NET.BuildTools.Cpp
                 {
                     if (tagType.Decl.Handle.IsAnonymous)
                     {
-                        ret = new Type {Name = GetAnonymousName(tagType.Decl, tagType.KindSpelling)};
+                        ret = new Type {Name = GetAnonymousName(tagType.Decl.Handle, tagType.KindSpelling)};
                     }
                     else if (tagType.Handle.IsConstQualified)
                     {
@@ -537,7 +546,25 @@ namespace Silk.NET.BuildTools.Cpp
                     case CX_DeclKind.CX_DeclKind_Enum:
                     {
                         var enumDecl = (EnumDecl) decl;
-                        var existing = enums.FirstOrDefault(x => x.NativeName == enumDecl.Name);
+                        var enumName = enumDecl.Name;
+                        if (string.IsNullOrWhiteSpace(enumName))
+                        {
+                            enumName = GetAnonymousName(enumDecl.Handle, "Enum");
+                            constants.AddRange
+                            (
+                                enumDecl.Enumerators.Select
+                                (
+                                    x => new Constant
+                                    {
+                                        Name = Naming.Translate(Naming.TrimName(x.Name, task), task.FunctionPrefix),
+                                        NativeName = x.Name, Type = GetType(enumDecl.IntegerType, out var count, out var success),
+                                        Value = CheckToken("0x" + x.InitVal.ToString("X"))
+                                    }
+                                )
+                            );
+                        }
+                        
+                        var existing = enums.FirstOrDefault(x => x.NativeName == enumName);
                         if (!(existing is null) && existing.ClangMetadata?[0] != enumDecl.Location.ToString())
                         {
                             Console.WriteLine("Warning: Existing enum with same native name.");
@@ -547,20 +574,20 @@ namespace Silk.NET.BuildTools.Cpp
                             break;
                         }
 
-                        if (task.ExcludedNativeNames?.Contains(enumDecl.Name) ?? false)
+                        if (task.ExcludedNativeNames?.Contains(enumName) ?? false)
                         {
                             break;
                         }
 
                         string name = null;
-                        task.RenamedNativeNames.TryGetValue(enumDecl.Name, out name);
+                        task.RenamedNativeNames.TryGetValue(enumName, out name);
                         enums.Add
                         (
                             new Enum
                             {
-                                Name = name ?? Naming.TranslateLite
-                                    (Naming.TrimName(enumDecl.Name, task), task.FunctionPrefix),
-                                NativeName = enumDecl.Name,
+                                Name = name ?? Naming.TranslateDiet
+                                    (Naming.TrimName(enumName, task), task.FunctionPrefix),
+                                NativeName = enumName,
                                 ClangMetadata = new[] {enumDecl.Location.ToString()},
                                 Tokens = enumDecl.Enumerators.Where
                                         (x => !(task.ExcludedNativeNames?.Contains(x.Name) ?? false))
@@ -584,7 +611,13 @@ namespace Silk.NET.BuildTools.Cpp
                     case CX_DeclKind.CX_DeclKind_CXXRecord:
                     {
                         var recordDecl = (CXXRecordDecl) decl;
-                        var existing = structs.FirstOrDefault(x => x.NativeName == recordDecl.Name);
+                        var structName = recordDecl.Name;
+                        if (string.IsNullOrWhiteSpace(structName))
+                        {
+                            structName = GetAnonymousName(recordDecl.Handle, "Struct");
+                        }
+
+                        var existing = structs.FirstOrDefault(x => x.NativeName == structName);
                         if (!(existing is null) && existing.ClangMetadata?[0] != recordDecl.Location.ToString())
                         {
                             Console.WriteLine("Warning: Existing struct with same native name.");
@@ -602,27 +635,27 @@ namespace Silk.NET.BuildTools.Cpp
                             }
                         }
 
-                        if (task.ExcludedNativeNames?.Contains(recordDecl.Name) ?? false)
+                        if (task.ExcludedNativeNames?.Contains(structName) ?? false)
                         {
                             break;
                         }
 
                         string name = null;
-                        task.RenamedNativeNames.TryGetValue(recordDecl.Name, out name);
+                        task.RenamedNativeNames.TryGetValue(structName, out name);
 
                         structs.Add
                         (
                             new Struct
                             {
-                                Name = name ?? Naming.TranslateLite
-                                    (Naming.TrimName(recordDecl.Name, task), task.FunctionPrefix),
-                                NativeName = recordDecl.Name,
+                                Name = name ?? Naming.TranslateDiet
+                                    (Naming.TrimName(structName, task), task.FunctionPrefix),
+                                NativeName = structName,
                                 ClangMetadata = new[] {recordDecl.Location.ToString()},
                                 Fields = recordDecl.Fields.Select
                                     (
                                         x => new Field
                                         {
-                                            Name = Naming.TranslateLite
+                                            Name = Naming.TranslateDiet
                                                 (Naming.TrimName(x.Name, task), task.FunctionPrefix),
                                             NativeName = x.Name,
                                             Type = GetType(x.Type, out var count, out _),
@@ -711,7 +744,7 @@ namespace Silk.NET.BuildTools.Cpp
                         (
                             new Function
                             {
-                                Name = name ?? Naming.TranslateLite
+                                Name = name ?? Naming.TranslateDiet
                                     (Naming.TrimName(functionDecl.Name, task), task.FunctionPrefix),
                                 NativeName = functionDecl.Name,
                                 Convention = GetCallingConvention

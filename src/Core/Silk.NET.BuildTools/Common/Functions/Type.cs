@@ -48,7 +48,7 @@ namespace Silk.NET.BuildTools.Common.Functions
             {
                 if (value < 0)
                 {
-                    Debug.WriteLine($"Negative indirection levels assigned at:\n{Environment.StackTrace}");
+                    Console.WriteLine($"Negative indirection levels assigned at:\n{Environment.StackTrace}");
                 }
 
                 _indirectionLevels = value;

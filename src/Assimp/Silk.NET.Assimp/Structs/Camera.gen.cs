@@ -24,7 +24,7 @@ namespace Silk.NET.Assimp
             System.Numerics.Vector3 mPosition = default,
             System.Numerics.Vector3 mUp = default,
             System.Numerics.Vector3 mLookAt = default,
-            float mHorizontalFOV = default,
+            float mHorizontalFov = default,
             float mClipPlaneNear = default,
             float mClipPlaneFar = default,
             float mAspect = default
@@ -34,7 +34,7 @@ namespace Silk.NET.Assimp
             MPosition = mPosition;
             MUp = mUp;
             MLookAt = mLookAt;
-            MHorizontalFOV = mHorizontalFOV;
+            MHorizontalFov = mHorizontalFov;
             MClipPlaneNear = mClipPlaneNear;
             MClipPlaneFar = mClipPlaneFar;
             MAspect = mAspect;
@@ -64,7 +64,7 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "mHorizontalFOV")]
-        public float MHorizontalFOV;
+        public float MHorizontalFov;
 
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]

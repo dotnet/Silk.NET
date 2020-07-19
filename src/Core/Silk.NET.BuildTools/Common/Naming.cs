@@ -120,6 +120,45 @@ namespace Silk.NET.BuildTools.Common
         }
 
         /// <summary>
+        /// Translates an identifier name into a C#-style PascalCase name.
+        /// Removes Khronos-specific translation, but isn't quite as stripped back as <see cref="TranslateLite"/>
+        /// <seealso cref="TranslateLite"/>
+        /// <seealso cref="Translate"/>
+        /// </summary>
+        /// <param name="name">The name to translate.</param>
+        /// <param name="prefix">The name prefix.</param>
+        /// <returns>The translated name.</returns>
+        [NotNull]
+        public static string TranslateDiet([NotNull] string name, string prefix)
+        {
+            var builder = new StringBuilder(name);
+
+            // ReSharper thinks the calls to Cast<Match> are redundant, but removing them changes the type of match,
+            // and I don't know enough about LINQ to know how to fix it.
+            // ReSharper disable RedundantEnumerableCastCall
+            foreach (var match in LongAcronymsRegex.Matches(builder.ToString()).Cast<Match>())
+            {
+                builder.Remove(match.Index, match.Length);
+                builder.Insert(match.Index, match.Value.Transform(To.LowerCase, To.TitleCase));
+            }
+            
+            foreach (var match in ShortNonAcronymsRegex.Matches(builder.ToString()).Cast<Match>())
+            {
+                builder.Remove(match.Index, match.Length);
+                builder.Insert(match.Index, match.Value.Transform(To.LowerCase, To.TitleCase));
+            }
+            // ReSharper restore RedundantEnumerableCastCall
+
+            if (char.IsDigit(builder[0]))
+            {
+                builder.Insert(0, "C");
+            }
+
+            var newName = builder.ToString().Pascalize();
+            return newName.CheckMemberName(prefix).GetAlphanumericOnly();
+        }
+
+        /// <summary>
         /// Translates an identifier name into a C#-style PascalCase name. Omits the use of LINQ from <see cref="Translate"/>.
         /// <seealso cref="Translate"/>
         /// </summary>

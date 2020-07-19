@@ -178,7 +178,7 @@
             "typeMaps": [
                 {
                     "ID3D11Buffer*": "IntPtr",
-                    "ID3D11Texture2D*":  "IntPtr",
+                    "ID3D11Texture2D*": "IntPtr",
                     "ID3D11Texture3D*": "IntPtr",
                     "ID3D11Device*": "IntPtr",
                     "ID3D12Device*": "IntPtr",
@@ -511,7 +511,7 @@
                     "PFN_xrDebugUtilsMessengerCallbackEXT": "FuncPtr",
                     "PFNEGLGETPROCADDRESSPROC": "FuncPtr",
                     "ID3D11Buffer*": "IntPtr",
-                    "ID3D11Texture2D*":  "IntPtr",
+                    "ID3D11Texture2D*": "IntPtr",
                     "ID3D11Texture3D*": "IntPtr",
                     "ID3D11Device*": "IntPtr",
                     "ID3D12Device*": "IntPtr",
@@ -522,6 +522,117 @@
                     "EGLContext": "IntPtr",
                     "GLXFBConfig": "IntPtr",
                     "VkFormat": "uint"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "Allegro",
+            "sources": [
+                "src/Windowing/Include/allegro5/allegro.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "allegro5",
+            "controlDescriptors": [
+                "convert-windows-only"
+            ],
+            "converter": {},
+            "prefix": "al_",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.26.28801/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/include",
+                    "-Isrc/Windowing/Include"
+                ],
+                "traverse": [
+                    "src/Windowing/Include/allegro5/base.h",
+                    "src/Windowing/Include/allegro5/altime.h",
+                    "src/Windowing/Include/allegro5/bitmap.h",
+                    "src/Windowing/Include/allegro5/bitmap_io.h",
+                    "src/Windowing/Include/allegro5/bitmap_draw.h",
+                    "src/Windowing/Include/allegro5/bitmap_lock.h",
+                    "src/Windowing/Include/allegro5/blender.h",
+                    "src/Windowing/Include/allegro5/clipboard.h",
+                    "src/Windowing/Include/allegro5/color.h",
+                    "src/Windowing/Include/allegro5/config.h",
+                    "src/Windowing/Include/allegro5/cpu.h",
+                    "src/Windowing/Include/allegro5/debug.h",
+                    "src/Windowing/Include/allegro5/display.h",
+                    "src/Windowing/Include/allegro5/error.h",
+                    "src/Windowing/Include/allegro5/events.h",
+                    "src/Windowing/Include/allegro5/file.h",
+                    "src/Windowing/Include/allegro5/fullscreen_mode.h",
+                    "src/Windowing/Include/allegro5/haptic.h",
+                    "src/Windowing/Include/allegro5/joystick.h",
+                    "src/Windowing/Include/allegro5/keyboard.h",
+                    "src/Windowing/Include/allegro5/memory.h",
+                    "src/Windowing/Include/allegro5/monitor.h",
+                    "src/Windowing/Include/allegro5/mouse.h",
+                    "src/Windowing/Include/allegro5/mouse_cursor.h",
+                    "src/Windowing/Include/allegro5/path.h",
+                    "src/Windowing/Include/allegro5/system.h",
+                    "src/Windowing/Include/allegro5/timer.h",
+                    "src/Windowing/Include/allegro5/tls.h",
+                    "src/Windowing/Include/allegro5/touch_input.h",
+                    "src/Windowing/Include/allegro5/utf8.h"
+                ],
+                "classes": {
+                    "allegro.h": "[Core]Allegro"
+                }
+            },
+            "exclude": [
+            ],
+            "rename": {
+                "__AnonymousEnum_bitmap_draw_L12_C1": "AllegroFlipAxis",
+                "__AnonymousEnum_bitmap_L18_C1": "AllegroBitmapFlags",
+                "__AnonymousEnum_bitmap_io_L14_C1": "AllegroBitmapIOFlags",
+                "__AnonymousEnum_bitmap_lock_L14_C1": "AllegroBitmapLockFlags",
+                "__AnonymousEnum_display_L13_C1": "AllegroDisplayFlags",
+                "__AnonymousEnum_display_L100_C1": "AllegroPrimMaxUserAttr",
+                "__AnonymousEnum_display_L75_C1": "AllegroImportance",
+                "__AnonymousEnum_events_L15_C1": "AllegroEventKind",
+                "__AnonymousEnum_monitor_L21_C1": "AllegroDefaultDisplayAdapter",
+                "__AnonymousEnum_system_L39_C1": "AllegroSystemPath",
+                "__AnonymousStruct_joystick_L45_C4": "AllegroJoystick",
+                "_al_tagbstring": "AllegroString"
+            },
+            "bakery": {
+                "profileNames": [
+                    "allegro"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Windowing",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Allegro",
+            "extensionsNamespace": "Silk.NET.Allegro.Extensions",
+            "legacyNameContainer": {
+                "Linux": "liballegro.so.5.2",
+                "Windows": "allegro-5.2.dll",
+                "MacOS": "liballegro.5.2.dylib",
+                "Android": "libassimp.so.5",
+                "IOS": "__Internal",
+                "ClassName": "AllegroLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"

@@ -35,7 +35,7 @@ namespace Silk.NET.Assimp
             uint mNumAnimMeshes = default,
             AnimMesh** mAnimMeshes = default,
             uint mMethod = default,
-            AABB mAABB = default
+            Aabb mAabb = default
         )
         {
             MPrimitiveTypes = mPrimitiveTypes;
@@ -69,7 +69,7 @@ namespace Silk.NET.Assimp
             MNumAnimMeshes = mNumAnimMeshes;
             MAnimMeshes = mAnimMeshes;
             MMethod = mMethod;
-            MAABB = mAABB;
+            MAabb = mAabb;
         }
 
 
@@ -190,7 +190,7 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "unsigned int [8]")]
         [NativeName("Type.Name", "unsigned int [8]")]
         [NativeName("Name", "mNumUVComponents")]
-        public fixed uint MNumUVComponents[8];
+        public fixed uint MNumUvcomponents[8];
 
         [NativeName("Type", "aiFace *")]
         [NativeName("Type.Name", "aiFace *")]
@@ -235,6 +235,6 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "aiAABB")]
         [NativeName("Type.Name", "aiAABB")]
         [NativeName("Name", "mAABB")]
-        public AABB MAABB;
+        public Aabb MAabb;
     }
 }

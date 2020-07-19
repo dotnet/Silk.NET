@@ -371,11 +371,11 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public abstract unsafe Return GetMaterialUVTransform(Material* pMat, byte* pKey, uint type, uint index, UVTransform* pOut);
+        public abstract unsafe Return GetMaterialUvtransform(Material* pMat, byte* pKey, uint type, uint index, Uvtransform* pOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public abstract Return GetMaterialUVTransform(Span<Material> pMat, Span<byte> pKey, uint type, uint index, Span<UVTransform> pOut);
+        public abstract Return GetMaterialUvtransform(Span<Material> pMat, Span<byte> pKey, uint type, uint index, Span<Uvtransform> pOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialString")]
@@ -563,11 +563,11 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public abstract unsafe Return GetMaterialUVTransform(Material* pMat, string pKey, uint type, uint index, UVTransform* pOut);
+        public abstract unsafe Return GetMaterialUvtransform(Material* pMat, string pKey, uint type, uint index, Uvtransform* pOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public abstract Return GetMaterialUVTransform(Span<Material> pMat, string pKey, uint type, uint index, Span<UVTransform> pOut);
+        public abstract Return GetMaterialUvtransform(Span<Material> pMat, string pKey, uint type, uint index, Span<Uvtransform> pOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialString")]

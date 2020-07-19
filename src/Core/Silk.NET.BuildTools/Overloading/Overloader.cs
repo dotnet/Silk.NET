@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -164,7 +165,7 @@ namespace Silk.NET.BuildTools.Overloading
                 }
             }
 
-            Debug.WriteLine($"Removed {removed} duplicate overloads.");
+            Console.WriteLine($"Removed {removed} duplicate overloads.");
 
             return ret;
         }

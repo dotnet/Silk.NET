@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using MoreLinq.Extensions;
@@ -55,6 +56,7 @@ namespace Silk.NET.BuildTools.Baking
             profile.Projects["Core"].Enums.AddRange(coreEnums);
             profile.Projects["Core"].Structs.AddRange(coreStructs);
             profile.Projects = profile.Projects.Concat(extProjects).ToDictionary();
+            ParameterNameCheck(profile);
 
             Console.WriteLine("Profile Bakery: Stirring them until they form a nice paste...");
             MergeAll(profile); // note: the key of the Interfaces dictionary is changed here, so don't rely on it herein
@@ -65,6 +67,31 @@ namespace Silk.NET.BuildTools.Baking
             TypeMapper.MapEnums(profile); // we need to map the enums to make sure they are correct for their extension.
             Console.WriteLine($"Created profile \"{name}\".");
             return profile;
+        }
+
+        [SuppressMessage("ReSharper", "ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator")]
+        private static void ParameterNameCheck(Profile profile)
+        {
+            foreach (var kvp in profile.Projects)
+            {
+                foreach (var @class in kvp.Value.Classes)
+                {
+                    foreach (var nativeApi in @class.NativeApis)
+                    {
+                        foreach (var function in nativeApi.Value.Functions)
+                        {
+                            for (var i = 0; i < function.Parameters.Count; i++)
+                            {
+                                var param = function.Parameters[i];
+                                if (string.IsNullOrWhiteSpace(param.Name))
+                                {
+                                    param.Name = $"arg{i}";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private static void Vary(Profile profile)
@@ -204,6 +231,9 @@ namespace Silk.NET.BuildTools.Baking
                         @interface.Value.Functions = functions;
                     }
 
+                    @class.Constants = @class.Constants.RemoveDuplicates((left, right) => left.Name == right.Name)
+                        .ToList();
+
                     foreach (var @enum in project.Value.Enums)
                     {
                         var tokens = new List<Token>();
@@ -214,10 +244,10 @@ namespace Silk.NET.BuildTools.Baking
                             {
                                 if (existingToken.Value != token.Value)
                                 {
-                                    Debug.WriteLine("Warning: Two tokens with the same name but different values.");
-                                    Debug.WriteLine($"    {existingToken.Name} = {existingToken.Value}");
-                                    Debug.WriteLine($"    {token.Name} = {token.Value}");
-                                    Debug.WriteLine($"{existingToken.Value} will be used.");
+                                    Console.WriteLine("Warning: Two tokens with the same name but different values.");
+                                    Console.WriteLine($"    {existingToken.Name} = {existingToken.Value}");
+                                    Console.WriteLine($"    {token.Name} = {token.Value}");
+                                    Console.WriteLine($"{existingToken.Value} will be used.");
                                 }
 
                                 continue;

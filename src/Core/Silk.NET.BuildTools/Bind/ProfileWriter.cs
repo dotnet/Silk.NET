@@ -148,7 +148,7 @@ namespace Silk.NET.BuildTools.Bind
                 {
                     if (!(field.Count is null))
                     {
-                        if (!Field.FixedCapableTypes.Contains(field.Type.Name))
+                        if (!Field.FixedCapableTypes.Contains(field.Type.Name) || field.Type.IndirectionLevels > 1)
                         {
                             var count = field.Count.IsConstant
                                 ? int.Parse
@@ -185,7 +185,7 @@ namespace Silk.NET.BuildTools.Bind
             {
                 if (!(structField.Count is null))
                 {
-                    if (!Field.FixedCapableTypes.Contains(structField.Type.Name))
+                    if (!Field.FixedCapableTypes.Contains(structField.Type.Name) || structField.Type.IndirectionLevels > 1)
                     {
                         var count = structField.Count.IsConstant
                             ? int.Parse
@@ -281,6 +281,11 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="file">The file to write the class to.</param>
         public static void WriteNameContainer(this Project project, Profile profile, string file, BindTask task)
         {
+            if (File.Exists(file))
+            {
+                return;
+            }
+            
             using var sw = new StreamWriter(file);
             
             sw.WriteLine(task.LicenseText());
@@ -455,14 +460,14 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine("        {");
                         sw.WriteLine
                         (
-                            $"             return LibraryLoader<{@class.ClassName}>.Load(new {task.NameContainer.ClassName}());"
+                            $"             return LibraryActivator.CreateInstance<{@class.ClassName}>(new {task.NameContainer.ClassName}().GetLibraryName());"
                         );
                         sw.WriteLine("        }");
                         sw.WriteLine();
                         sw.WriteLine("        public bool TryGetExtension<T>(out T ext)");
                         sw.WriteLine($"            where T:NativeExtension<{@class.ClassName}>");
                         sw.WriteLine("        {");
-                        sw.WriteLine($"             ext = LibraryLoader<{@class.ClassName}>.Load<T>(this);");
+                        sw.WriteLine($"             ext = LibraryActivator.CreateInstance<T>(Library);");
                         sw.WriteLine("             return ext != null;");
                         sw.WriteLine("        }");
                         sw.WriteLine();

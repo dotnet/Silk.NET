@@ -13,7 +13,7 @@ namespace Silk.NET.BuildTools.Common.Functions
     /// <summary>
     /// Represents a parameter of a C# function.
     /// </summary>
-    public class Parameter : IEquatable<Parameter>
+    public class Parameter
     {
         /// <summary>
         /// Gets or sets the name of the parameter.
@@ -46,52 +46,5 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         [JsonIgnore]
         public Function Origin { get; set; }
-
-        /// <inheritdoc />
-        public bool Equals(Parameter other)
-        {
-            if (ReferenceEquals(null, other))
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-
-            return Type.Eq(other.Type);
-        }
-
-        /// <inheritdoc />
-        public override bool Equals(object obj)
-        {
-            if (ReferenceEquals(null, obj))
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, obj))
-            {
-                return true;
-            }
-
-            return obj is Parameter parameter && Equals(parameter);
-        }
-
-        /// <inheritdoc />
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                // ReSharper disable NonReadonlyMemberInGetHashCode
-                var hashCode = (Name != null ? Name.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (Type != null ? Type.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (Count != null ? Count.GetHashCode() : 0);
-                hashCode = (hashCode * 397) ^ (int) Flow;
-                // ReSharper restore NonReadonlyMemberInGetHashCode
-                return hashCode;
-            }
-        }
     }
 }

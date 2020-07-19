@@ -16,9 +16,9 @@ using Ultz.SuperInvoke;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiUVTransform")]
-    public unsafe partial struct UVTransform
+    public unsafe partial struct Uvtransform
     {
-        public UVTransform
+        public Uvtransform
         (
             System.Numerics.Vector2 mTranslation = default,
             System.Numerics.Vector2 mScaling = default,

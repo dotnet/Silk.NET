@@ -737,7 +737,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var proto = e.Value;
             var name = e.Element("name");
             if (name == null) {
-                Debug.WriteLine($"Warning: Parameter name is null. Element: {e}.");
+                Console.WriteLine($"Warning: Parameter name is null. Element: {e}.");
             }
 
             var ret = name is null
@@ -785,9 +785,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 string randomName = null;
                 if (parameter.Element("name") is null)
                 {
-                    Debug.WriteLine($"Warning: Parameter name is null. Element: {parameter}.");
+                    Console.WriteLine($"Warning: Parameter name is null. Element: {parameter}.");
                     randomName = "unnamedParameter" + _unnamedParameters++;
-                    Debug.WriteLine($"Giving it name {randomName}");
+                    Console.WriteLine($"Giving it name {randomName}");
                 }
 
                 var paramName = new XAttribute("name", (parameter.Element("name")?.Value ?? randomName)
