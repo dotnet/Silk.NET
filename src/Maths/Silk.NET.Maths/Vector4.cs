@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -17,7 +17,9 @@ using static Silk.NET.Maths.Scalar;
 namespace Silk.NET.Maths
 {
     [Serializable]
-    public readonly partial struct Vector4<T> : IEquatable<Vector4<T>>, IFormattable where T : unmanaged, IFormattable
+    [Generator.GenerateMethodAliases]
+    public readonly partial struct Vector4<T>
+        where T : unmanaged, IFormattable
     {
         public static Vector4<T> UnitX => new Vector4<T>(Scalar<T>.One, default, default, default);
         public static Vector4<T> UnitY => new Vector4<T>(default, Scalar<T>.One, default, default);
@@ -29,45 +31,28 @@ namespace Silk.NET.Maths
         public static Vector4<T> NegativeInfinity => new Vector4<T>(Scalar<T>.NegativeInfinity);
         public static unsafe int SizeInBytes => sizeof(Vector4<T>);
 
-        public readonly T X;
-        public readonly T Y;
-        public readonly T Z;
-        public readonly T W;
-
-        public Vector4(T value) : this(value, value, value, value)
-        {
-        }
-
-        public Vector4(T x, T y, T z, T w)
-        {
-            X = x;
-            Y = y;
-            Z = z;
-            W = w;
-        }
-
-        public Vector4(Vector2<T> xyzw) : this(xyzw, xyzw)
-        {
-        }
-
-
-        public Vector4(Vector2<T> xy, Vector2<T> zw) : this(xy.X, xy.Y, zw.X, zw.Y)
-        {
-        }
-
-        public Vector4(Vector3<T> xyz, T w = default) : this(xyz.X, xyz.Y, xyz.Z, w)
-        {
-        }
-
-        public Vector4(Vector4<T> xyzw) => this = xyzw;
+        public T X { get; }
+        public T Y { get; }
+        public T Z { get; }
+        public T W { get; }
 
         public Vector4<T> WithX(T x) => new Vector4<T>(x, Y, Z, W);
-
         public Vector4<T> WithY(T y) => new Vector4<T>(X, y, Z, W);
-
         public Vector4<T> WithZ(T z) => new Vector4<T>(X, Y, z, W);
+        public Vector4<T> WithW(T w) => new Vector4<T>(X, Y, Z, w);
 
-        public Vector4<T> WithW(T w) => new Vector4<T>(X, Y, Y, w);
+        public Vector4(T value) : this(value, value, value, value) { }
+
+        public Vector4(T x, T y, T z, T w) => (X, Y, Z, W) = (x, y, z, w);
+
+        public Vector4(Vector2<T> xyzw) : this(xyzw, xyzw) { }
+
+
+        public Vector4(Vector2<T> xy, Vector2<T> zw) : this(xy.X, xy.Y, zw.X, zw.Y) { }
+
+        public Vector4(Vector3<T> xyz, T w) : this(xyz.X, xyz.Y, xyz.Z, w) { }
+
+        public Vector4(Vector4<T> xyzw) => this = xyzw;
 
         public T this[int index]
         {
@@ -98,118 +83,68 @@ namespace Silk.NET.Maths
             }
         }
 
-        public T Length => SquareRoot(LengthSquared);
+        public static T GetLength(Vector4<T> vec) => SquareRoot(GetLengthSquared(vec));
 
-        public T LengthSquared => Dot(this, this);
+        public static T GetLengthSquared(Vector4<T> vec) => Dot(vec, vec);
 
-        public Vector4<T> Normalized() => Normalize(this);
+        public static Vector4<T> Add(Vector4<T> a, Vector4<T> b)
+            => new Vector4<T>(Scalar.Add(a.X, b.X), Scalar.Add(a.Y, b.Y), Scalar.Add(a.Z, b.Z), Scalar.Add(a.W, b.W));
 
-        public static Vector4<T> Add(Vector4<T> a, Vector4<T> b) =>
-            new Vector4<T>
+        public static Vector4<T> Subtract(Vector4<T> a, Vector4<T> b)
+            => new Vector4<T>
             (
-                Scalar.Add(a.X, b.X),
-                Scalar.Add(a.Y, b.Y),
-                Scalar.Add(a.Z, b.Z),
-                Scalar.Add(a.W, b.W)
-            );
-
-        public static void Add(ref Vector4<T> a, ref Vector4<T> b, out Vector4<T> result) => result = Add(a, b);
-
-        public static Vector4<T> Subtract(Vector4<T> a, Vector4<T> b) =>
-            new Vector4<T>
-            (
-                Scalar.Subtract(a.X, b.X),
-                Scalar.Subtract(a.Y, b.Y),
-                Scalar.Subtract(a.Z, b.Z),
+                Scalar.Subtract(a.X, b.X), Scalar.Subtract(a.Y, b.Y), Scalar.Subtract(a.Z, b.Z),
                 Scalar.Subtract(a.W, b.W)
             );
 
-        public static void Subtract
-            (ref Vector4<T> a, ref Vector4<T> b, out Vector4<T> result) => result = Subtract(a, b);
 
-        public static Vector4<T> Multiply(Vector4<T> vector, T scale) =>
-            new Vector4<T>
+        public static Vector4<T> Multiply(Vector4<T> vector, T scale)
+            => new Vector4<T>
             (
-                Scalar.Multiply(vector.X, scale),
-                Scalar.Multiply(vector.Y, scale),
-                Scalar.Multiply(vector.Z, scale),
+                Scalar.Multiply(vector.X, scale), Scalar.Multiply(vector.Y, scale), Scalar.Multiply(vector.Z, scale),
                 Scalar.Multiply(vector.W, scale)
             );
 
-        public static void Multiply
-            (ref Vector4<T> vector, T scale, out Vector4<T> result) => result = Multiply(vector, scale);
 
-        public static Vector4<T> Multiply(Vector4<T> vector, Vector4<T> scale) =>
-            new Vector4<T>
+        public static Vector4<T> Multiply(Vector4<T> vector, Vector4<T> scale)
+            => new Vector4<T>
             (
-                Scalar.Multiply(vector.X, scale.X),
-                Scalar.Multiply(vector.Y, scale.Y),
-                Scalar.Multiply(vector.Z, scale.Z),
-                Scalar.Multiply(vector.W, scale.W)
+                Scalar.Multiply(vector.X, scale.X), Scalar.Multiply(vector.Y, scale.Y),
+                Scalar.Multiply(vector.Z, scale.Z), Scalar.Multiply(vector.W, scale.W)
             );
 
-        public static void Multiply
-            (ref Vector4<T> vector, ref Vector4<T> scale, out Vector4<T> result) => result = Multiply(vector, scale);
 
-        public static Vector4<T> Divide(Vector4<T> vector, T scale) =>
-            new Vector4<T>
+        public static Vector4<T> Divide(Vector4<T> vector, T scale)
+            => new Vector4<T>
             (
-                Scalar.Divide(vector.X, scale),
-                Scalar.Divide(vector.Y, scale),
-                Scalar.Divide(vector.Z, scale),
+                Scalar.Divide(vector.X, scale), Scalar.Divide(vector.Y, scale), Scalar.Divide(vector.Z, scale),
                 Scalar.Divide(vector.W, scale)
             );
 
-        public static void Divide
-            (ref Vector4<T> vector, T scale, out Vector4<T> result) => result = Divide(vector, scale);
 
-        public static Vector4<T> Divide(Vector4<T> vector, Vector4<T> scale) =>
-            new Vector4<T>
+        public static Vector4<T> Divide(Vector4<T> vector, Vector4<T> scale)
+            => new Vector4<T>
             (
-                Scalar.Divide(vector.X, scale.X),
-                Scalar.Divide(vector.Y, scale.Y),
-                Scalar.Divide(vector.Z, scale.Z),
+                Scalar.Divide(vector.X, scale.X), Scalar.Divide(vector.Y, scale.Y), Scalar.Divide(vector.Z, scale.Z),
                 Scalar.Divide(vector.W, scale.W)
             );
 
-        public static void Divide
-            (ref Vector4<T> vector, ref Vector4<T> scale, out Vector4<T> result) => result = Divide(vector, scale);
 
-        public static Vector4<T> Divide(T value, Vector4<T> scale) =>
-            new Vector4<T>
+        public static Vector4<T> Divide(T value, Vector4<T> scale)
+            => new Vector4<T>
             (
-                Scalar.Divide(value, scale.X),
-                Scalar.Divide(value, scale.Y),
-                Scalar.Divide(value, scale.Z),
+                Scalar.Divide(value, scale.X), Scalar.Divide(value, scale.Y), Scalar.Divide(value, scale.Z),
                 Scalar.Divide(value, scale.W)
             );
 
-        public static void Divide
-            (T value, ref Vector4<T> scale, out Vector4<T> result) => result = Divide(value, scale);
 
-        public static Vector4<T> ComponentMin(Vector4<T> a, Vector4<T> b) =>
-            new Vector4<T>
-            (
-                Min(a.X, b.X),
-                Min(a.Y, b.Y),
-                Min(a.Z, b.Z),
-                Min(a.W, b.W)
-            );
+        public static Vector4<T> ComponentMin(Vector4<T> a, Vector4<T> b)
+            => new Vector4<T>(Min(a.X, b.X), Min(a.Y, b.Y), Min(a.Z, b.Z), Min(a.W, b.W));
 
-        public static void ComponentMin
-            (ref Vector4<T> a, ref Vector4<T> b, out Vector4<T> result) => result = ComponentMin(a, b);
 
-        public static Vector4<T> ComponentMax(Vector4<T> a, Vector4<T> b) =>
-            new Vector4<T>
-            (
-                Max(a.X, b.X),
-                Max(a.Y, b.Y),
-                Max(a.Z, b.Z),
-                Max(a.W, b.W)
-            );
+        public static Vector4<T> ComponentMax(Vector4<T> a, Vector4<T> b)
+            => new Vector4<T>(Max(a.X, b.X), Max(a.Y, b.Y), Max(a.Z, b.Z), Max(a.W, b.W));
 
-        public static void ComponentMax
-            (ref Vector4<T> a, ref Vector4<T> b, out Vector4<T> result) => result = ComponentMax(a, b);
 
         public static Vector4<T> MagnitudeMin(Vector4<T> left, Vector4<T> right)
         {
@@ -221,8 +156,6 @@ namespace Silk.NET.Maths
             return left;
         }
 
-        public static void MagnitudeMin
-            (ref Vector4<T> left, ref Vector4<T> right, out Vector4<T> result) => result = MagnitudeMin(left, right);
 
         public static Vector4<T> MagnitudeMax(Vector4<T> left, Vector4<T> right)
         {
@@ -234,30 +167,17 @@ namespace Silk.NET.Maths
             return right;
         }
 
-        public static void MagnitudeMax
-            (ref Vector4<T> left, ref Vector4<T> right, out Vector4<T> result) => result = MagnitudeMax(left, right);
 
-        public static Vector4<T> Clamp(Vector4<T> vec, Vector4<T> min, Vector4<T> max) =>
-            new Vector4<T>
+        public static Vector4<T> Clamp(Vector4<T> vec, Vector4<T> min, Vector4<T> max)
+            => new Vector4<T>
             (
-                Scalar.Clamp(vec.X, min.X, max.X),
-                Scalar.Clamp(vec.Y, min.Y, max.Y),
-                Scalar.Clamp(vec.Z, min.Z, max.Z),
+                Scalar.Clamp(vec.X, min.X, max.X), Scalar.Clamp(vec.Y, min.Y, max.Y), Scalar.Clamp(vec.Z, min.Z, max.Z),
                 Scalar.Clamp(vec.W, min.W, max.W)
             );
 
-        public static void Clamp
-        (
-            ref Vector4<T> vec,
-            ref Vector4<T> min,
-            ref Vector4<T> max,
-            out Vector4<T> result
-        ) =>
-            result = Clamp(vec, min, max);
 
-        public static Vector4<T> Normalize(Vector4<T> vec) => vec / vec.Length;
+        public static Vector4<T> GetNormalized(Vector4<T> vec) => vec / vec.Length;
 
-        public static void Normalize(ref Vector4<T> vec, out Vector4<T> result) => result = Normalize(vec);
 
         public static T Dot(Vector4<T> left, Vector4<T> right)
         {
@@ -265,32 +185,18 @@ namespace Silk.NET.Maths
             return Scalar.Add(Scalar.Add(mul.X, mul.Y), Scalar.Add(mul.Z, mul.W));
         }
 
-        public static void Dot(ref Vector4<T> left, ref Vector4<T> right, out T result) => result = Dot(left, right);
 
-        public static Vector4<T> Lerp
-            (Vector4<T> a, Vector4<T> b, T blend) => a * Scalar.Subtract(Scalar<T>.One, blend) + b * blend;
+        public static Vector4<T> Lerp(Vector4<T> a, Vector4<T> b, T blend)
+            => a * Scalar.Subtract(Scalar<T>.One, blend) + b * blend;
 
-        public static void Lerp
-            (ref Vector4<T> a, ref Vector4<T> b, T blend, out Vector4<T> result) => result = Lerp(a, b, blend);
 
-        public static Vector4<T> BaryCentric(Vector4<T> a, Vector4<T> b, Vector4<T> c, T u, T v) =>
-            a * Scalar.Subtract(Scalar<T>.One, u) * Scalar.Subtract(Scalar<T>.One, v)
-            + b * u * Scalar.Subtract(Scalar<T>.One, v)
-            + c * Scalar.Subtract(Scalar<T>.One, u) * v;
+        public static Vector4<T> BaryCentric(Vector4<T> a, Vector4<T> b, Vector4<T> c, T u, T v)
+            => a * Scalar.Subtract(Scalar<T>.One, u) * Scalar.Subtract(Scalar<T>.One, v) +
+               b * u * Scalar.Subtract(Scalar<T>.One, v) + c * Scalar.Subtract(Scalar<T>.One, u) * v;
 
-        public static void BaryCentric
-        (
-            ref Vector4<T> a,
-            ref Vector4<T> b,
-            ref Vector4<T> c,
-            T u,
-            T v,
-            out Vector4<T> result
-        ) =>
-            result = BaryCentric(a, b, c, u, v);
 
-        public static Vector4<T> Transform(Vector4<T> vec, Matrix4X4<T> mat) =>
-            new Vector4<T>
+        public static Vector4<T> Transform(Vector4<T> vec, Matrix4x4<T> mat)
+            => new Vector4<T>
             (
                 Scalar.Add
                 (
@@ -314,8 +220,6 @@ namespace Silk.NET.Maths
                 )
             );
 
-        public static void Transform
-            (ref Vector4<T> vec, ref Matrix4X4<T> mat, out Vector4<T> result) => result = Transform(vec, mat);
 
         public static Vector4<T> Transform(Vector4<T> vec, Quaternion<T> quat)
         {
@@ -342,8 +246,7 @@ namespace Silk.NET.Maths
                     Scalar.Multiply(vec.X, Scalar.Subtract(Scalar<T>.One, Scalar.Subtract(yy2, zz2))),
                     Scalar.Add
                     (
-                        Scalar.Multiply(vec.Y, Scalar.Subtract(xy2, wz2)),
-                        Scalar.Multiply(vec.Z, Scalar.Add(xz2, wy2))
+                        Scalar.Multiply(vec.Y, Scalar.Subtract(xy2, wz2)), Scalar.Multiply(vec.Z, Scalar.Add(xz2, wy2))
                     )
                 ),
                 Scalar.Add
@@ -363,56 +266,28 @@ namespace Silk.NET.Maths
                         Scalar.Multiply(vec.Y, Scalar.Add(yz2, wx2)),
                         Scalar.Multiply(vec.Z, Scalar.Subtract(Scalar<T>.One, Scalar.Subtract(xx2, yy2)))
                     )
-                ),
-                vec.W
+                ), vec.W
             );
         }
 
-        public static void Transform
-            (ref Vector4<T> vec, ref Quaternion<T> quat, out Vector4<T> result) => result = Transform(vec, quat);
 
-        public static Vector4<T> Negate(Vector4<T> vec) =>
-            new Vector4<T>
-                (Scalar.Negate(vec.X), Scalar.Negate(vec.Y), Scalar.Negate(vec.Z), Scalar.Negate(vec.W));
+        public static Vector4<T> GetNegated(Vector4<T> vec)
+            => new Vector4<T>(Negate(vec.X), Negate(vec.Y), Negate(vec.Z), Negate(vec.W));
 
-        public static void Negate(ref Vector4<T> vec, out Vector4<T> result) => result = Negate(vec);
 
-        public static Vector4<T> Cos(Vector4<T> vector) => new Vector4<T>
-            (Scalar.Cos(vector.X), Scalar.Cos(vector.Y), Scalar.Cos(vector.Z), Scalar.Cos(vector.W));
+        public static Vector4<T> Cos(Vector4<T> vector)
+            => new Vector4<T>(Scalar.Cos(vector.X), Scalar.Cos(vector.Y), Scalar.Cos(vector.Z), Scalar.Cos(vector.W));
 
-        public static Vector4<T> Sin(Vector4<T> vector) => new Vector4<T>
-            (Scalar.Sin(vector.X), Scalar.Sin(vector.Y), Scalar.Sin(vector.Z), Scalar.Sin(vector.W));
 
-        public static Vector4<T> operator +(Vector4<T> left, Vector4<T> right) => Add(left, right);
-
-        public static Vector4<T> operator -(Vector4<T> left, Vector4<T> right) => Subtract(left, right);
-
-        public static Vector4<T> operator -(Vector4<T> vec) => Negate(vec);
-
-        public static Vector4<T> operator *(Vector4<T> vec, T scale) => Multiply(vec, scale);
-
-        public static Vector4<T> operator *(T scale, Vector4<T> vec) => Multiply(vec, scale);
-
-        public static Vector4<T> operator *(Vector4<T> vec, Vector4<T> scale) => Multiply(vec, scale);
-
-        public static Vector4<T> operator *(Vector4<T> vec, Matrix4X4<T> mat) => Transform(vec, mat);
-
-        public static Vector4<T> operator *(Matrix4X4<T> mat, Vector4<T> vec) => Transform(vec, mat);
-
-        public static Vector4<T> operator *(Vector4<T> vec, Quaternion<T> quat) => Transform(vec, quat);
-
-        public static Vector4<T> operator *(Quaternion<T> quat, Vector4<T> vec) => Transform(vec, quat);
-
-        public static Vector4<T> operator /(Vector4<T> vec, T scale) => Divide(vec, scale);
-
-        public static Vector4<T> operator /(T value, Vector4<T> scale) => Divide(value, scale);
+        public static Vector4<T> Sin(Vector4<T> vector)
+            => new Vector4<T>(Scalar.Sin(vector.X), Scalar.Sin(vector.Y), Scalar.Sin(vector.Z), Scalar.Sin(vector.W));
 
         public static bool operator ==(Vector4<T> left, Vector4<T> right) => left.Equals(right);
 
         public static bool operator !=(Vector4<T> left, Vector4<T> right) => !(left == right);
 
-        public static implicit operator Vector4<T>
-            ((T X, T Y, T Z, T W) values) => new Vector4<T>(values.X, values.Y, values.Z, values.W);
+        public static implicit operator Vector4<T>((T X, T Y, T Z, T W) values)
+            => new Vector4<T>(values.X, values.Y, values.Z, values.W);
 
         public override string ToString() => ToString("G");
 
@@ -423,16 +298,16 @@ namespace Silk.NET.Maths
             var sb = new StringBuilder();
             var separator = NumberFormatInfo.GetInstance(formatProvider).NumberGroupSeparator;
             sb.Append('<');
-            sb.Append(((IFormattable) X).ToString(format, formatProvider));
+            sb.Append(X.ToString(format, formatProvider));
             sb.Append(separator);
             sb.Append(' ');
-            sb.Append(((IFormattable) Y).ToString(format, formatProvider));
+            sb.Append(Y.ToString(format, formatProvider));
             sb.Append(separator);
             sb.Append(' ');
-            sb.Append(((IFormattable) Z).ToString(format, formatProvider));
+            sb.Append(Z.ToString(format, formatProvider));
             sb.Append(separator);
             sb.Append(' ');
-            sb.Append(((IFormattable) W).ToString(format, formatProvider));
+            sb.Append(W.ToString(format, formatProvider));
             sb.Append('>');
             return sb.ToString();
         }
@@ -441,11 +316,8 @@ namespace Silk.NET.Maths
 
         public override bool Equals(object? obj) => obj is Vector4<T> vec && Equals(vec);
 
-        public bool Equals(Vector4<T> other) =>
-            Equal(X, other.X)
-            && Equal(Y, other.Y)
-            && Equal(Z, other.Z)
-            && Equal(W, other.W);
+        public bool Equals(Vector4<T> other)
+            => Equal(X, other.X) && Equal(Y, other.Y) && Equal(Z, other.Z) && Equal(W, other.W);
 
         public void Deconstruct(out T x, out T y, out T z, out T w)
         {
@@ -454,6 +326,7 @@ namespace Silk.NET.Maths
             z = Z;
             w = W;
         }
+
 #if INTRINSICS
         public Vector64<T> AsVector64()
         {
@@ -481,9 +354,7 @@ namespace Silk.NET.Maths
                     ((short) (object) X, (short) (object) Y, (short) (object) Z, (short) (object) W);
             }
 
-            if (typeof(T) == typeof(uint) ||
-                typeof(T) == typeof(int) ||
-                typeof(T) == typeof(Half) ||
+            if (typeof(T) == typeof(uint) || typeof(T) == typeof(int) || typeof(T) == typeof(Half) ||
                 typeof(T) == typeof(float))
             {
                 ThrowNotSupportedByUnderlying<T>();
@@ -638,6 +509,7 @@ namespace Silk.NET.Maths
 #endif
 
 #if BTEC_INTRINSICS
+        // @formatter:off
         public unsafe Vector<T> AsVector()
         {
             if (Vector<T>.Count >= 4)
@@ -650,6 +522,7 @@ namespace Silk.NET.Maths
             ThrowVectorTTooSmall();
             return default; // not reached
         }
+        // @formatter:on
 #endif
     }
 }

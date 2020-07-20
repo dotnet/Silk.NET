@@ -2,14 +2,6 @@
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
-//
-// This file was sourced from the CoreFX Lab (https://github.com/dotnet/corefxlab).
-// Below are the copyright headers associated with System.Numerics.Experimental, as well as the file itself ;)
-// File may have changed from the original.
-//
-// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-// See the LICENSE file in the project root for more information.
 
 using System;
 using System.Diagnostics;
@@ -17,7 +9,6 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// ReSharper disable once CheckNamespace
 namespace Silk.NET.Maths
 {
     // ===================================================================================================
@@ -101,13 +92,12 @@ namespace Silk.NET.Maths
 
         private Half(ushort value) => m_value = value;
 
-        private Half
-            (bool sign, ushort exp, ushort sig) =>
-            m_value = (ushort) (((sign ? 1 : 0) << SignShift) + (exp << ExponentShift) + sig);
+        private Half(bool sign, ushort exp, ushort sig)
+            => m_value = (ushort)(((sign ? 1 : 0) << SignShift) + (exp << ExponentShift) + sig);
 
-        private sbyte Exponent => (sbyte) ((m_value & ExponentMask) >> ExponentShift);
+        private sbyte Exponent => (sbyte)((m_value & ExponentMask) >> ExponentShift);
 
-        private ushort Significand => (ushort) ((m_value & SignificandMask) >> SignificandShift);
+        private ushort Significand => (ushort)((m_value & SignificandMask) >> SignificandShift);
 
         public static bool operator <(Half left, Half right)
         {
@@ -127,7 +117,7 @@ namespace Silk.NET.Maths
                 return leftIsNegative && !AreZero(left, right);
             }
 
-            return (short) left.m_value < (short) right.m_value;
+            return (short)left.m_value < (short)right.m_value;
         }
 
         public static bool operator >(Half left, Half right) => right < left;
@@ -150,7 +140,7 @@ namespace Silk.NET.Maths
                 return leftIsNegative || AreZero(left, right);
             }
 
-            return (short) left.m_value <= (short) right.m_value;
+            return (short)left.m_value <= (short)right.m_value;
         }
 
         public static bool operator >=(Half left, Half right) => right <= left;
@@ -183,7 +173,7 @@ namespace Silk.NET.Maths
 
         /// <summary>Determines whether the specified value is negative.</summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IsNegative(Half value) => (short) value.m_value < 0;
+        public static bool IsNegative(Half value) => (short)value.m_value < 0;
 
         /// <summary>Determines whether the specified value is negative infinity.</summary>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -225,34 +215,34 @@ namespace Silk.NET.Maths
         }
 
         public static Half Parse
-            (ReadOnlySpan<char> s, NumberStyles style = DefaultParseStyle, IFormatProvider? formatProvider = null) =>
-            throw new NotImplementedException();
+            (ReadOnlySpan<char> s, NumberStyles style = DefaultParseStyle, IFormatProvider? formatProvider = null)
+            => throw new NotImplementedException();
 
         public static bool TryParse(string s, out Half result) => TryParse(s, DefaultParseStyle, null, out result);
 
-        public static bool TryParse(ReadOnlySpan<char> s, out Half result) => TryParse
-            (s, DefaultParseStyle, null, out result);
+        public static bool TryParse(ReadOnlySpan<char> s, out Half result)
+            => TryParse(s, DefaultParseStyle, null, out result);
+
+        public static bool TryParse(string s, NumberStyles style, IFormatProvider? formatProvider, out Half result)
+            => TryParse(s.AsSpan(), style, formatProvider, out result);
 
         public static bool TryParse
-            (string s, NumberStyles style, IFormatProvider? formatProvider, out Half result) => TryParse
-            (s.AsSpan(), style, formatProvider, out result);
-
-        public static bool TryParse
-            (ReadOnlySpan<char> s, NumberStyles style, IFormatProvider? formatProvider, out Half result) =>
-            throw new NotImplementedException();
+            (ReadOnlySpan<char> s, NumberStyles style, IFormatProvider? formatProvider, out Half result)
+            => throw new NotImplementedException();
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static bool AreZero(Half left, Half right) =>
-            // IEEE defines that positive and negative zero are equal, this gives us a quick equality check
-            // for two values by or'ing the private bits together and stripping the sign. They are both zero,
-            // and therefore equivalent, if the resulting value is still zero.
-            (ushort) ((left.m_value | right.m_value) & ~SignMask) == 0;
+        private static bool AreZero(Half left, Half right)
+            =>
+                // IEEE defines that positive and negative zero are equal, this gives us a quick equality check
+                // for two values by or'ing the private bits together and stripping the sign. They are both zero,
+                // and therefore equivalent, if the resulting value is still zero.
+                (ushort)((left.m_value | right.m_value) & ~SignMask) == 0;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static bool IsNaNOrZero(Half value) => ((value.m_value - 1) & ~SignMask) >= PositiveInfinityBits;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static ushort StripSign(Half value) => (ushort) (value.m_value & ~SignMask);
+        private static ushort StripSign(Half value) => (ushort)(value.m_value & ~SignMask);
 
         public int CompareTo(object? obj)
         {
@@ -261,17 +251,17 @@ namespace Silk.NET.Maths
                 return obj is null ? 1 : throw new ArgumentException("The given argument is not a half.", nameof(obj));
             }
 
-            return CompareTo((Half) obj);
+            return CompareTo((Half)obj);
         }
 
         public int CompareTo(Half other)
         {
-            if ((short) m_value < (short) other.m_value)
+            if ((short)m_value < (short)other.m_value)
             {
                 return -1;
             }
 
-            if ((short) m_value > (short) other.m_value)
+            if ((short)m_value > (short)other.m_value)
             {
                 return 1;
             }
@@ -290,7 +280,7 @@ namespace Silk.NET.Maths
             return 1;
         }
 
-        public override bool Equals(object? obj) => obj is Half && Equals((Half) obj);
+        public override bool Equals(object? obj) => obj is Half && Equals((Half)obj);
 
         public bool Equals(Half other) => this == other || IsNaN(this) && IsNaN(other);
 
@@ -314,24 +304,17 @@ namespace Silk.NET.Maths
         // throw new NotImplementedException();
         // TODO: Implement this
         public bool TryFormat
-        (
-            Span<char> destination,
-            out int charsWritten,
-            ReadOnlySpan<char> format,
-            IFormatProvider? formatProvider
-        ) =>
-            throw new NotImplementedException();
+            (Span<char> destination, out int charsWritten, ReadOnlySpan<char> format, IFormatProvider? formatProvider)
+            => throw new NotImplementedException();
 
         // -----------------------Start of to-half conversions-------------------------
 
         public static implicit operator Half(int value)
         {
             var sign = value < 0;
-            Half
-                h = (uint) (sign
-                    ? -value
-                    : value); // Math.Abs but doesn't throw exception, because we cast it to uint anyway
-            return sign ? new Half((ushort) (h.m_value | SignMask)) : h;
+            Half h = (uint)(sign ? -value : value);
+            // Math.Abs but doesn't throw exception, because we cast it to uint anyway
+            return sign ? new Half((ushort)(h.m_value | SignMask)) : h;
         }
 
         [CLSCompliant(false)]
@@ -341,23 +324,21 @@ namespace Silk.NET.Maths
             if (shiftDist >= 0)
             {
                 return value != 0
-                    ? new Half(false, (ushort) (0x18 - shiftDist), (ushort) (value << shiftDist))
+                    ? new Half(false, (ushort)(0x18 - shiftDist), (ushort)(value << shiftDist))
                     : default;
             }
 
             shiftDist += 4;
             var sig = shiftDist < 0 ? Helpers.ShiftRightJam(value, -shiftDist) : value << shiftDist;
-            return new Half(RoundPackToHalf(false, (short) (0x1C - shiftDist), (ushort) sig));
+            return new Half(RoundPackToHalf(false, (short)(0x1C - shiftDist), (ushort)sig));
         }
 
         public static implicit operator Half(long value)
         {
             var sign = value < 0;
-            Half
-                h = (ulong) (sign
-                    ? -value
-                    : value); // Math.Abs but doesn't throw exception, because we cast it to ulong anyway
-            return sign ? new Half((ushort) (h.m_value | SignMask)) : h;
+            Half h = (ulong)(sign ? -value : value);
+            // Math.Abs but doesn't throw exception, because we cast it to ulong anyway
+            return sign ? new Half((ushort)(h.m_value | SignMask)) : h;
         }
 
         [CLSCompliant(false)]
@@ -368,25 +349,24 @@ namespace Silk.NET.Maths
             if (shiftDist >= 0)
             {
                 return value != 0
-                    ? new Half(false, (ushort) (0x18 - shiftDist), (ushort) (value << shiftDist))
+                    ? new Half(false, (ushort)(0x18 - shiftDist), (ushort)(value << shiftDist))
                     : default;
             }
 
             shiftDist += 4;
-            var sig =
-                (ushort) (shiftDist < 0 ? Helpers.ShiftRightJam(value, -shiftDist) : value << shiftDist);
-            return new Half(RoundPackToHalf(false, (short) (0x1C - shiftDist), sig));
+            var sig = (ushort)(shiftDist < 0 ? Helpers.ShiftRightJam(value, -shiftDist) : value << shiftDist);
+            return new Half(RoundPackToHalf(false, (short)(0x1C - shiftDist), sig));
         }
 
-        public static implicit operator Half(short value) => (int) value;
+        public static implicit operator Half(short value) => (int)value;
 
         [CLSCompliant(false)]
-        public static implicit operator Half(ushort value) => (uint) value;
+        public static implicit operator Half(ushort value) => (uint)value;
 
-        public static implicit operator Half(byte value) => (uint) value;
+        public static implicit operator Half(byte value) => (uint)value;
 
         [CLSCompliant(false)]
-        public static implicit operator Half(sbyte value) => (int) value;
+        public static implicit operator Half(sbyte value) => (int)value;
 
         public static explicit operator Half(float value)
         {
@@ -394,15 +374,14 @@ namespace Silk.NET.Maths
 
             var floatInt = Helpers.ToUInt32(value);
             var sign = (floatInt & Helpers.SingleSignMask) >> Helpers.SingleSignShift != 0;
-            var exp = (int) (floatInt & Helpers.SingleExponentMask) >> Helpers.SingleExponentShift;
+            var exp = (int)(floatInt & Helpers.SingleExponentMask) >> Helpers.SingleExponentShift;
             var sig = floatInt & Helpers.SingleSignificandMask;
 
             if (exp == singleMaxExponent)
             {
                 if (sig != 0) // NaN
                 {
-                    return Helpers.CreateHalfNaN
-                        (sign, (ulong) sig << 41); // Shift the significand bits to the left end
+                    return Helpers.CreateHalfNaN(sign, (ulong)sig << 41); // Shift the significand bits to the left end
                 }
 
                 return sign ? NegativeInfinity : PositiveInfinity;
@@ -410,12 +389,12 @@ namespace Silk.NET.Maths
 
             var sigHalf = (sig >> 9) | ((sig & 0x1FFU) != 0 ? 1U : 0U); // RightShiftJam
 
-            if ((exp | (int) sigHalf) == 0)
+            if ((exp | (int)sigHalf) == 0)
             {
                 return new Half(sign, 0, 0);
             }
 
-            return new Half(RoundPackToHalf(sign, (short) (exp - 0x71), (ushort) (sigHalf | 0x4000)));
+            return new Half(RoundPackToHalf(sign, (short)(exp - 0x71), (ushort)(sigHalf | 0x4000)));
         }
 
         public static explicit operator Half(double value)
@@ -424,7 +403,7 @@ namespace Silk.NET.Maths
 
             var doubleInt = Helpers.ToUInt64(value);
             var sign = (doubleInt & Helpers.DoubleSignMask) >> Helpers.DoubleSignShift != 0;
-            var exp = (int) ((doubleInt & Helpers.DoubleExponentMask) >> Helpers.DoubleExponentShift);
+            var exp = (int)((doubleInt & Helpers.DoubleExponentMask) >> Helpers.DoubleExponentShift);
             var sig = doubleInt & Helpers.DoubleSignificandMask;
 
             if (exp == doubleMaxExponent)
@@ -437,13 +416,13 @@ namespace Silk.NET.Maths
                 return sign ? NegativeInfinity : PositiveInfinity;
             }
 
-            var sigHalf = (uint) Helpers.ShiftRightJam(sig, 38);
-            if ((exp | (int) sigHalf) == 0)
+            var sigHalf = (uint)Helpers.ShiftRightJam(sig, 38);
+            if ((exp | (int)sigHalf) == 0)
             {
                 return new Half(sign, 0, 0);
             }
 
-            return new Half(RoundPackToHalf(sign, (short) (exp - 0x3F1), (ushort) (sigHalf | 0x4000)));
+            return new Half(RoundPackToHalf(sign, (short)(exp - 0x3F1), (ushort)(sigHalf | 0x4000)));
         }
 
         // -----------------------Start of from-half conversions-------------------------
@@ -465,7 +444,7 @@ namespace Silk.NET.Maths
                 return IllegalValueToInt32;
             }
 
-            var alignedSig = (int) (sig | 0x0400) << shiftDist;
+            var alignedSig = (int)(sig | 0x0400) << shiftDist;
             alignedSig >>= 10;
             return sign ? -alignedSig : alignedSig;
         }
@@ -490,7 +469,7 @@ namespace Silk.NET.Maths
 
             var alignedSig = (sig | 0x0400) << shiftDist;
             alignedSig >>= 10;
-            return (uint) (sign ? -(int) alignedSig : (int) alignedSig);
+            return (uint)(sign ? -(int)alignedSig : (int)alignedSig);
         }
 
         public static explicit operator long(Half value)
@@ -510,7 +489,7 @@ namespace Silk.NET.Maths
                 return IllegalValueToInt64;
             }
 
-            var alignedSig = (int) (sig | 0x0400) << shiftDist;
+            var alignedSig = (int)(sig | 0x0400) << shiftDist;
             alignedSig >>= 10;
             return sign ? -alignedSig : alignedSig;
         }
@@ -535,18 +514,18 @@ namespace Silk.NET.Maths
 
             var alignedSig = (sig | 0x0400) << shiftDist;
             alignedSig >>= 10;
-            return (ulong) (sign ? -alignedSig : alignedSig);
+            return (ulong)(sign ? -alignedSig : alignedSig);
         }
 
-        public static explicit operator short(Half value) => (short) (int) value;
+        public static explicit operator short(Half value) => (short)(int)value;
 
         [CLSCompliant(false)]
-        public static explicit operator ushort(Half value) => (ushort) (short) (int) value;
+        public static explicit operator ushort(Half value) => (ushort)(short)(int)value;
 
-        public static explicit operator byte(Half value) => (byte) (sbyte) (int) value;
+        public static explicit operator byte(Half value) => (byte)(sbyte)(int)value;
 
         [CLSCompliant(false)]
-        public static explicit operator sbyte(Half value) => (sbyte) (int) value;
+        public static explicit operator sbyte(Half value) => (sbyte)(int)value;
 
         public static implicit operator float(Half value)
         {
@@ -558,7 +537,7 @@ namespace Silk.NET.Maths
             {
                 if (sig != 0)
                 {
-                    return Helpers.CreateSingleNaN(sign, (ulong) sig << 54);
+                    return Helpers.CreateSingleNaN(sign, (ulong)sig << 54);
                 }
 
                 return sign ? float.NegativeInfinity : float.PositiveInfinity;
@@ -568,15 +547,14 @@ namespace Silk.NET.Maths
             {
                 if (sig == 0)
                 {
-                    return Helpers.CreateSingle
-                        (sign ? Helpers.SingleSignMask : 0); // Positive / Negative zero
+                    return Helpers.CreateSingle(sign ? Helpers.SingleSignMask : 0); // Positive / Negative zero
                 }
 
                 (exp, sig) = NormSubnormalF16Sig(sig);
                 exp -= 1;
             }
 
-            return Helpers.CreateSingle(sign, (byte) (exp + 0x70), sig << 13);
+            return Helpers.CreateSingle(sign, (byte)(exp + 0x70), sig << 13);
         }
 
         public static implicit operator double(Half value)
@@ -589,7 +567,7 @@ namespace Silk.NET.Maths
             {
                 if (sig != 0)
                 {
-                    return Helpers.CreateDoubleNaN(sign, (ulong) sig << 54);
+                    return Helpers.CreateDoubleNaN(sign, (ulong)sig << 54);
                 }
 
                 return sign ? double.NegativeInfinity : double.PositiveInfinity;
@@ -599,20 +577,19 @@ namespace Silk.NET.Maths
             {
                 if (sig == 0)
                 {
-                    return Helpers.CreateDouble
-                        (sign ? Helpers.DoubleSignMask : 0); // Positive / Negative zero
+                    return Helpers.CreateDouble(sign ? Helpers.DoubleSignMask : 0); // Positive / Negative zero
                 }
 
                 (exp, sig) = NormSubnormalF16Sig(sig);
                 exp -= 1;
             }
 
-            return Helpers.CreateDouble(sign, (ushort) (exp + 0x3F0), (ulong) sig << 42);
+            return Helpers.CreateDouble(sign, (ushort)(exp + 0x3F0), (ulong)sig << 42);
         }
 
         // IEEE 754 specifies NaNs to be propagated
-        public static Half operator -
-            (Half value) => IsNaN(value) ? value : new Half((ushort) (value.m_value ^ SignMask));
+        public static Half operator -(Half value)
+            => IsNaN(value) ? value : new Half((ushort)(value.m_value ^ SignMask));
 
         public static Half operator +(Half value) => value;
 
@@ -621,11 +598,11 @@ namespace Silk.NET.Maths
             const int roundIncrement = 0x8; // Depends on rounding mode but it's always towards closest / ties to even
             var roundBits = sig & 0xF;
 
-            if ((uint) exp >= 0x1D)
+            if ((uint)exp >= 0x1D)
             {
                 if (exp < 0)
                 {
-                    sig = (ushort) Helpers.ShiftRightJam(sig, -exp);
+                    sig = (ushort)Helpers.ShiftRightJam(sig, -exp);
                     exp = 0;
                 }
                 else if (exp > 0x1D || sig + roundIncrement >= 0x8000) // Overflow
@@ -634,15 +611,15 @@ namespace Silk.NET.Maths
                 }
             }
 
-            sig = (ushort) ((sig + roundIncrement) >> 4);
-            sig &= (ushort) ~(((roundBits ^ 8) != 0 ? 0 : 1) & 1);
+            sig = (ushort)((sig + roundIncrement) >> 4);
+            sig &= (ushort)~(((roundBits ^ 8) != 0 ? 0 : 1) & 1);
 
             if (sig == 0)
             {
                 exp = 0;
             }
 
-            return new Half(sign, (ushort) exp, sig).m_value;
+            return new Half(sign, (ushort)exp, sig).m_value;
         }
 
         private static (int Exp, uint Sig) NormSubnormalF16Sig(uint sig)
@@ -674,41 +651,40 @@ namespace Silk.NET.Maths
             public const ushort HalfSignificandMask = 0x03FF;
             public const int HalfSignificandShift = 0;
 
-            private static ReadOnlySpan<byte> Log2DeBruijn => new byte[32]
-            {
-                00, 09, 01, 10, 13, 21, 02, 29,
-                11, 14, 16, 18, 22, 25, 03, 30,
-                08, 12, 20, 28, 15, 17, 24, 07,
-                19, 27, 23, 06, 26, 05, 04, 31
-            };
+            private static ReadOnlySpan<byte> Log2DeBruijn
+                => new byte[32]
+                {
+                    00, 09, 01, 10, 13, 21, 02, 29, 11, 14, 16, 18, 22, 25, 03, 30, 08, 12, 20, 28, 15, 17, 24, 07, 19,
+                    27, 23, 06, 26, 05, 04, 31
+                };
 
-            public static double CreateDouble(ulong value) => BitConverter.Int64BitsToDouble((long) value);
+            public static double CreateDouble(ulong value) => BitConverter.Int64BitsToDouble((long)value);
 
-            public static float CreateSingle(uint value) => Int32BitsToSingle((int) value);
+            public static float CreateSingle(uint value) => Int32BitsToSingle((int)value);
 
-            public static unsafe Half CreateHalf(ushort value) => *(Half*) &value;
+            public static unsafe Half CreateHalf(ushort value) => *(Half*)&value;
 
-            public static Half CreateHalf(bool sign, ushort exp, ushort sig) =>
-                CreateHalf
-                    ((ushort) (((sign ? 1U : 0U) << HalfSignShift) | ((uint) exp << SingleExponentShift) | sig));
+            public static Half CreateHalf(bool sign, ushort exp, ushort sig)
+                => CreateHalf
+                    ((ushort)(((sign ? 1U : 0U) << HalfSignShift) | ((uint)exp << SingleExponentShift) | sig));
 
-            public static float CreateSingle(bool sign, byte exp, uint sig) =>
-                Int32BitsToSingle
-                    ((int) (((sign ? 1U : 0U) << SingleSignShift) | ((uint) exp << SingleExponentShift) | sig));
+            public static float CreateSingle(bool sign, byte exp, uint sig)
+                => Int32BitsToSingle
+                    ((int)(((sign ? 1U : 0U) << SingleSignShift) | ((uint)exp << SingleExponentShift) | sig));
 
-            public static double CreateDouble(bool sign, ushort exp, ulong sig) =>
-                BitConverter.Int64BitsToDouble
-                    ((long) (((sign ? 1UL : 0UL) << DoubleSignShift) | ((ulong) exp << DoubleExponentShift) | sig));
+            public static double CreateDouble(bool sign, ushort exp, ulong sig)
+                => BitConverter.Int64BitsToDouble
+                    ((long)(((sign ? 1UL : 0UL) << DoubleSignShift) | ((ulong)exp << DoubleExponentShift) | sig));
 
-            public static unsafe ushort ToUInt16(Half value) => *(ushort*) &value;
+            public static unsafe ushort ToUInt16(Half value) => *(ushort*)&value;
 
-            public static uint ToUInt32(float value) => (uint) SingleToInt32Bits(value);
+            public static uint ToUInt32(float value) => (uint)SingleToInt32Bits(value);
 
-            public static ulong ToUInt64(double value) => (ulong) BitConverter.DoubleToInt64Bits(value);
+            public static ulong ToUInt64(double value) => (ulong)BitConverter.DoubleToInt64Bits(value);
 
-            public static unsafe float Int32BitsToSingle(int value) => *(float*) &value;
+            public static unsafe float Int32BitsToSingle(int value) => *(float*)&value;
 
-            public static unsafe int SingleToInt32Bits(float value) => *(int*) &value;
+            public static unsafe int SingleToInt32Bits(float value) => *(int*)&value;
 
             // Significand bits should be shifted towards to the left end before calling these methods
             // Creates Quiet NaN if significand == 0
@@ -717,9 +693,9 @@ namespace Silk.NET.Maths
                 const uint NaNBits = HalfExponentMask | 0x200; // Most significant significand bit
 
                 var signInt = (sign ? 1U : 0U) << HalfSignShift;
-                var sigInt = (uint) (significand >> 54);
+                var sigInt = (uint)(significand >> 54);
 
-                return CreateHalf((ushort) (signInt | NaNBits | sigInt));
+                return CreateHalf((ushort)(signInt | NaNBits | sigInt));
             }
 
             public static float CreateSingleNaN(bool sign, ulong significand)
@@ -727,7 +703,7 @@ namespace Silk.NET.Maths
                 const uint NaNBits = SingleExponentMask | 0x400000; // Most significant significand bit
 
                 var signInt = (sign ? 1U : 0U) << SingleSignShift;
-                var sigInt = (uint) (significand >> 41);
+                var sigInt = (uint)(significand >> 41);
 
                 return CreateSingle(signInt | NaNBits | sigInt);
             }
@@ -748,12 +724,11 @@ namespace Silk.NET.Maths
             // If any bits are lost by shifting, "jam" them into the LSB.
             // if dist > bit count, Will be 1 or 0 depending on i
             // (unlike bitwise operators that masks the lower 5 bits)
-            public static uint ShiftRightJam
-                (uint i, int dist) => dist < 31 ? (i >> dist) | (i << (-dist & 31) != 0 ? 1U : 0U) : i != 0 ? 1U : 0U;
+            public static uint ShiftRightJam(uint i, int dist)
+                => dist < 31 ? (i >> dist) | (i << (-dist & 31) != 0 ? 1U : 0U) : i != 0 ? 1U : 0U;
 
-            public static ulong ShiftRightJam
-                (ulong l, int dist) =>
-                dist < 63 ? (l >> dist) | (l << (-dist & 63) != 0 ? 1UL : 0UL) : l != 0 ? 1UL : 0UL;
+            public static ulong ShiftRightJam(ulong l, int dist)
+                => dist < 63 ? (l >> dist) | (l << (-dist & 63) != 0 ? 1UL : 0UL) : l != 0 ? 1UL : 0UL;
 
             /// <summary>
             /// Count the number of leading zero bits in a mask.
@@ -780,11 +755,11 @@ namespace Silk.NET.Maths
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             public static int LeadingZeroCount(ulong value)
             {
-                var hi = (uint) (value >> 32);
+                var hi = (uint)(value >> 32);
 
                 if (hi == 0)
                 {
-                    return 32 + LeadingZeroCount((uint) value);
+                    return 32 + LeadingZeroCount((uint)value);
                 }
 
                 return LeadingZeroCount(hi);
@@ -814,7 +789,7 @@ namespace Silk.NET.Maths
                     // Using deBruijn sequence, k=2, n=5 (2^5=32) : 0b_0000_0111_1100_0100_1010_1100_1101_1101u
                     ref MemoryMarshal.GetReference(Log2DeBruijn),
                     // uint|long -> IntPtr cast on 32-bit platforms does expensive overflow checks not needed here
-                    (IntPtr) (int) ((value * 0x07C4ACDDu) >> 27)
+                    (IntPtr)(int)((value * 0x07C4ACDDu) >> 27)
                 );
             }
         }
