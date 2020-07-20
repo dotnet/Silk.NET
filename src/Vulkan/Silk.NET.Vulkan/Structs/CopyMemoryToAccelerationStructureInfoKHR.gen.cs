@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct CopyMemoryToAccelerationStructureInfoKHR
+    [NativeName("Name", "VkCopyMemoryToAccelerationStructureInfoKHR")]
+    public unsafe partial struct CopyMemoryToAccelerationStructureInfoKHR
     {
         public CopyMemoryToAccelerationStructureInfoKHR
         (
@@ -25,22 +27,37 @@ namespace Silk.NET.Vulkan
             CopyAccelerationStructureModeKHR mode = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Src = src;
-           Dst = dst;
-           Mode = mode;
+            SType = sType;
+            PNext = pNext;
+            Src = src;
+            Dst = dst;
+            Mode = mode;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkDeviceOrHostAddressConstKHR")]
+        [NativeName("Type.Name", "VkDeviceOrHostAddressConstKHR")]
+        [NativeName("Name", "src")]
         public DeviceOrHostAddressConstKHR Src;
 /// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureKHR")]
+        [NativeName("Type.Name", "VkAccelerationStructureKHR")]
+        [NativeName("Name", "dst")]
         public AccelerationStructureKHR Dst;
 /// <summary></summary>
+        [NativeName("Type", "VkCopyAccelerationStructureModeKHR")]
+        [NativeName("Type.Name", "VkCopyAccelerationStructureModeKHR")]
+        [NativeName("Name", "mode")]
         public CopyAccelerationStructureModeKHR Mode;
     }
 }

@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct IndirectCommandsStreamNV
+    [NativeName("Name", "VkIndirectCommandsStreamNV")]
+    public unsafe partial struct IndirectCommandsStreamNV
     {
         public IndirectCommandsStreamNV
         (
@@ -22,13 +24,19 @@ namespace Silk.NET.Vulkan
             ulong offset = default
         )
         {
-           Buffer = buffer;
-           Offset = offset;
+            Buffer = buffer;
+            Offset = offset;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkBuffer")]
+        [NativeName("Type.Name", "VkBuffer")]
+        [NativeName("Name", "buffer")]
         public Buffer Buffer;
 /// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "offset")]
         public ulong Offset;
     }
 }

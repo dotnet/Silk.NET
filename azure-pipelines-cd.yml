@@ -15,7 +15,7 @@ jobs:
 
   variables:
     buildConfiguration: 'Release'
-    dotnetCoreVersion: '5.0.100-preview.5.20279.10'
+    dotnetCoreVersion: '5.0.100-preview.6.20318.15'
 
   steps:
   - task: UseDotNet@2

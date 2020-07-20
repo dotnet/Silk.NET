@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct AccelerationStructureVersionKHR
+    [NativeName("Name", "VkAccelerationStructureVersionKHR")]
+    public unsafe partial struct AccelerationStructureVersionKHR
     {
         public AccelerationStructureVersionKHR
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.Vulkan
             byte* versionData = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           VersionData = versionData;
+            SType = sType;
+            PNext = pNext;
+            VersionData = versionData;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "uint8_t*")]
+        [NativeName("Type.Name", "uint8_t")]
+        [NativeName("Name", "versionData")]
         public byte* VersionData;
     }
 }

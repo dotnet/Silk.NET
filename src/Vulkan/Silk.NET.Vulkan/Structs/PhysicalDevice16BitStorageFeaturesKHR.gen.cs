@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDevice16BitStorageFeaturesKHR
+    [NativeName("Name", "VkPhysicalDevice16BitStorageFeaturesKHR")]
+    public unsafe partial struct PhysicalDevice16BitStorageFeaturesKHR
     {
         public PhysicalDevice16BitStorageFeaturesKHR
         (
@@ -26,25 +28,43 @@ namespace Silk.NET.Vulkan
             Bool32 storageInputOutput16 = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           StorageBuffer16BitAccess = storageBuffer16BitAccess;
-           UniformAndStorageBuffer16BitAccess = uniformAndStorageBuffer16BitAccess;
-           StoragePushConstant16 = storagePushConstant16;
-           StorageInputOutput16 = storageInputOutput16;
+            SType = sType;
+            PNext = pNext;
+            StorageBuffer16BitAccess = storageBuffer16BitAccess;
+            UniformAndStorageBuffer16BitAccess = uniformAndStorageBuffer16BitAccess;
+            StoragePushConstant16 = storagePushConstant16;
+            StorageInputOutput16 = storageInputOutput16;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "storageBuffer16BitAccess")]
         public Bool32 StorageBuffer16BitAccess;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "uniformAndStorageBuffer16BitAccess")]
         public Bool32 UniformAndStorageBuffer16BitAccess;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "storagePushConstant16")]
         public Bool32 StoragePushConstant16;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "storageInputOutput16")]
         public Bool32 StorageInputOutput16;
     }
 }

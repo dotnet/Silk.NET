@@ -5,14 +5,18 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkSamplerYcbcrRange")]
     public enum SamplerYcbcrRange
     {
+        [NativeName("Name", "VK_SAMPLER_YCBCR_RANGE_ITU_FULL")]
         ItuFull = 0,
+        [NativeName("Name", "VK_SAMPLER_YCBCR_RANGE_ITU_NARROW")]
         ItuNarrow = 1,
     }
 }

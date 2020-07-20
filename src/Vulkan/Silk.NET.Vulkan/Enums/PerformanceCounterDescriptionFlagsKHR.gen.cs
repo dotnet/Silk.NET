@@ -5,15 +5,19 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
     [Flags()]
+    [NativeName("Name", "VkPerformanceCounterDescriptionFlagsKHR")]
     public enum PerformanceCounterDescriptionFlagsKHR
     {
+        [NativeName("Name", "VK_PERFORMANCE_COUNTER_DESCRIPTION_PERFORMANCE_IMPACTING_KHR")]
         PerformanceCounterDescriptionPerformanceImpactingKhr = 1,
+        [NativeName("Name", "VK_PERFORMANCE_COUNTER_DESCRIPTION_CONCURRENTLY_IMPACTED_KHR")]
         PerformanceCounterDescriptionConcurrentlyImpactedKhr = 2,
     }
 }

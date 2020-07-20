@@ -61,6 +61,13 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 }
             }
 
+            if (int.TryParse(elementCountSymbolic, out var intVal))
+            {
+                elementCountSymbolic = null;
+                elementCount = intVal;
+                foundConstantElementCount = true;
+            }
+
             if (foundConstantElementCount && typeName.Contains($"[{elementCount}]"))
             {
                 typeName = typeName.Replace($"[{elementCount}]", string.Empty);

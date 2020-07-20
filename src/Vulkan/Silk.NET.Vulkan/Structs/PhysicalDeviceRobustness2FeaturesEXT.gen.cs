@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceRobustness2FeaturesEXT
+    [NativeName("Name", "VkPhysicalDeviceRobustness2FeaturesEXT")]
+    public unsafe partial struct PhysicalDeviceRobustness2FeaturesEXT
     {
         public PhysicalDeviceRobustness2FeaturesEXT
         (
@@ -25,22 +27,37 @@ namespace Silk.NET.Vulkan
             Bool32 nullDescriptor = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           RobustBufferAccess2 = robustBufferAccess2;
-           RobustImageAccess2 = robustImageAccess2;
-           NullDescriptor = nullDescriptor;
+            SType = sType;
+            PNext = pNext;
+            RobustBufferAccess2 = robustBufferAccess2;
+            RobustImageAccess2 = robustImageAccess2;
+            NullDescriptor = nullDescriptor;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "robustBufferAccess2")]
         public Bool32 RobustBufferAccess2;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "robustImageAccess2")]
         public Bool32 RobustImageAccess2;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "nullDescriptor")]
         public Bool32 NullDescriptor;
     }
 }

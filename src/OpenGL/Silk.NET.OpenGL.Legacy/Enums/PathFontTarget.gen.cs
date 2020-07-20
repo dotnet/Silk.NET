@@ -5,15 +5,20 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy
 {
+    [NativeName("Name", "PathFontTarget")]
     public enum PathFontTarget
     {
+        [NativeName("Name", "GL_STANDARD_FONT_NAME_NV")]
         StandardFontNameNV = 0x9072,
+        [NativeName("Name", "GL_SYSTEM_FONT_NAME_NV")]
         SystemFontNameNV = 0x9073,
+        [NativeName("Name", "GL_FILE_NAME_NV")]
         FileNameNV = 0x9074,
     }
 }

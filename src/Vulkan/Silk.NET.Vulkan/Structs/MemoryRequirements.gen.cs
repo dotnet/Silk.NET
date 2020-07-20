@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct MemoryRequirements
+    [NativeName("Name", "VkMemoryRequirements")]
+    public unsafe partial struct MemoryRequirements
     {
         public MemoryRequirements
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.Vulkan
             uint memoryTypeBits = default
         )
         {
-           Size = size;
-           Alignment = alignment;
-           MemoryTypeBits = memoryTypeBits;
+            Size = size;
+            Alignment = alignment;
+            MemoryTypeBits = memoryTypeBits;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "size")]
         public ulong Size;
 /// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "alignment")]
         public ulong Alignment;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "memoryTypeBits")]
         public uint MemoryTypeBits;
     }
 }

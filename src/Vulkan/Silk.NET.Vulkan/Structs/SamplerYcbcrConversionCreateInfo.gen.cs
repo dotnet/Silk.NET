@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct SamplerYcbcrConversionCreateInfo
+    [NativeName("Name", "VkSamplerYcbcrConversionCreateInfo")]
+    public unsafe partial struct SamplerYcbcrConversionCreateInfo
     {
         public SamplerYcbcrConversionCreateInfo
         (
@@ -30,37 +32,67 @@ namespace Silk.NET.Vulkan
             Bool32 forceExplicitReconstruction = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Format = format;
-           YcbcrModel = ycbcrModel;
-           YcbcrRange = ycbcrRange;
-           Components = components;
-           XChromaOffset = xChromaOffset;
-           YChromaOffset = yChromaOffset;
-           ChromaFilter = chromaFilter;
-           ForceExplicitReconstruction = forceExplicitReconstruction;
+            SType = sType;
+            PNext = pNext;
+            Format = format;
+            YcbcrModel = ycbcrModel;
+            YcbcrRange = ycbcrRange;
+            Components = components;
+            XChromaOffset = xChromaOffset;
+            YChromaOffset = yChromaOffset;
+            ChromaFilter = chromaFilter;
+            ForceExplicitReconstruction = forceExplicitReconstruction;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkFormat")]
+        [NativeName("Type.Name", "VkFormat")]
+        [NativeName("Name", "format")]
         public Format Format;
 /// <summary></summary>
+        [NativeName("Type", "VkSamplerYcbcrModelConversion")]
+        [NativeName("Type.Name", "VkSamplerYcbcrModelConversion")]
+        [NativeName("Name", "ycbcrModel")]
         public SamplerYcbcrModelConversion YcbcrModel;
 /// <summary></summary>
+        [NativeName("Type", "VkSamplerYcbcrRange")]
+        [NativeName("Type.Name", "VkSamplerYcbcrRange")]
+        [NativeName("Name", "ycbcrRange")]
         public SamplerYcbcrRange YcbcrRange;
 /// <summary></summary>
+        [NativeName("Type", "VkComponentMapping")]
+        [NativeName("Type.Name", "VkComponentMapping")]
+        [NativeName("Name", "components")]
         public ComponentMapping Components;
 /// <summary></summary>
+        [NativeName("Type", "VkChromaLocation")]
+        [NativeName("Type.Name", "VkChromaLocation")]
+        [NativeName("Name", "xChromaOffset")]
         public ChromaLocation XChromaOffset;
 /// <summary></summary>
+        [NativeName("Type", "VkChromaLocation")]
+        [NativeName("Type.Name", "VkChromaLocation")]
+        [NativeName("Name", "yChromaOffset")]
         public ChromaLocation YChromaOffset;
 /// <summary></summary>
+        [NativeName("Type", "VkFilter")]
+        [NativeName("Type.Name", "VkFilter")]
+        [NativeName("Name", "chromaFilter")]
         public Filter ChromaFilter;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "forceExplicitReconstruction")]
         public Bool32 ForceExplicitReconstruction;
     }
 }

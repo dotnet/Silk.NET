@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PipelineViewportWScalingStateCreateInfoNV
+    [NativeName("Name", "VkPipelineViewportWScalingStateCreateInfoNV")]
+    public unsafe partial struct PipelineViewportWScalingStateCreateInfoNV
     {
         public PipelineViewportWScalingStateCreateInfoNV
         (
@@ -25,22 +27,37 @@ namespace Silk.NET.Vulkan
             ViewportWScalingNV* pViewportWScalings = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           ViewportWScalingEnable = viewportWScalingEnable;
-           ViewportCount = viewportCount;
-           PViewportWScalings = pViewportWScalings;
+            SType = sType;
+            PNext = pNext;
+            ViewportWScalingEnable = viewportWScalingEnable;
+            ViewportCount = viewportCount;
+            PViewportWScalings = pViewportWScalings;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "viewportWScalingEnable")]
         public Bool32 ViewportWScalingEnable;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "viewportCount")]
         public uint ViewportCount;
 /// <summary></summary>
+        [NativeName("Type", "VkViewportWScalingNV*")]
+        [NativeName("Type.Name", "VkViewportWScalingNV")]
+        [NativeName("Name", "pViewportWScalings")]
         public ViewportWScalingNV* PViewportWScalings;
     }
 }

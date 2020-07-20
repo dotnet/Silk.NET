@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct MemoryRequirements2KHR
+    [NativeName("Name", "VkMemoryRequirements2KHR")]
+    public unsafe partial struct MemoryRequirements2KHR
     {
         public MemoryRequirements2KHR
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.Vulkan
             MemoryRequirements memoryRequirements = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           MemoryRequirements = memoryRequirements;
+            SType = sType;
+            PNext = pNext;
+            MemoryRequirements = memoryRequirements;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkMemoryRequirements")]
+        [NativeName("Type.Name", "VkMemoryRequirements")]
+        [NativeName("Name", "memoryRequirements")]
         public MemoryRequirements MemoryRequirements;
     }
 }

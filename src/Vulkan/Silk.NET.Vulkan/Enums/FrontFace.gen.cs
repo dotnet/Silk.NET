@@ -5,14 +5,18 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
+    [NativeName("Name", "VkFrontFace")]
     public enum FrontFace
     {
+        [NativeName("Name", "VK_FRONT_FACE_COUNTER_CLOCKWISE")]
         CounterClockwise = 0,
+        [NativeName("Name", "VK_FRONT_FACE_CLOCKWISE")]
         Clockwise = 1,
     }
 }

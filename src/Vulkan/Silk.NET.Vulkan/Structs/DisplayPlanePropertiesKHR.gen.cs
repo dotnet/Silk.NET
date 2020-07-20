@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DisplayPlanePropertiesKHR
+    [NativeName("Name", "VkDisplayPlanePropertiesKHR")]
+    public unsafe partial struct DisplayPlanePropertiesKHR
     {
         public DisplayPlanePropertiesKHR
         (
@@ -22,13 +24,19 @@ namespace Silk.NET.Vulkan
             uint currentStackIndex = default
         )
         {
-           CurrentDisplay = currentDisplay;
-           CurrentStackIndex = currentStackIndex;
+            CurrentDisplay = currentDisplay;
+            CurrentStackIndex = currentStackIndex;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkDisplayKHR")]
+        [NativeName("Type.Name", "VkDisplayKHR")]
+        [NativeName("Name", "currentDisplay")]
         public DisplayKHR CurrentDisplay;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "currentStackIndex")]
         public uint CurrentStackIndex;
     }
 }

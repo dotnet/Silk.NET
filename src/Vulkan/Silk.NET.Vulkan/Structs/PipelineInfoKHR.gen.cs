@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PipelineInfoKHR
+    [NativeName("Name", "VkPipelineInfoKHR")]
+    public unsafe partial struct PipelineInfoKHR
     {
         public PipelineInfoKHR
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.Vulkan
             Pipeline pipeline = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           Pipeline = pipeline;
+            SType = sType;
+            PNext = pNext;
+            Pipeline = pipeline;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkPipeline")]
+        [NativeName("Type.Name", "VkPipeline")]
+        [NativeName("Name", "pipeline")]
         public Pipeline Pipeline;
     }
 }

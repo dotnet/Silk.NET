@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ViewportSwizzleNV
+    [NativeName("Name", "VkViewportSwizzleNV")]
+    public unsafe partial struct ViewportSwizzleNV
     {
         public ViewportSwizzleNV
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.Vulkan
             ViewportCoordinateSwizzleNV w = default
         )
         {
-           X = x;
-           Y = y;
-           Z = z;
-           W = w;
+            X = x;
+            Y = y;
+            Z = z;
+            W = w;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Type.Name", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Name", "x")]
         public ViewportCoordinateSwizzleNV X;
 /// <summary></summary>
+        [NativeName("Type", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Type.Name", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Name", "y")]
         public ViewportCoordinateSwizzleNV Y;
 /// <summary></summary>
+        [NativeName("Type", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Type.Name", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Name", "z")]
         public ViewportCoordinateSwizzleNV Z;
 /// <summary></summary>
+        [NativeName("Type", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Type.Name", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Name", "w")]
         public ViewportCoordinateSwizzleNV W;
     }
 }

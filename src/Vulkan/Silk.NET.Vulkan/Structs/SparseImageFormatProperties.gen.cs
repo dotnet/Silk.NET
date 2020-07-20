@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct SparseImageFormatProperties
+    [NativeName("Name", "VkSparseImageFormatProperties")]
+    public unsafe partial struct SparseImageFormatProperties
     {
         public SparseImageFormatProperties
         (
@@ -23,16 +25,25 @@ namespace Silk.NET.Vulkan
             SparseImageFormatFlags flags = default
         )
         {
-           AspectMask = aspectMask;
-           ImageGranularity = imageGranularity;
-           Flags = flags;
+            AspectMask = aspectMask;
+            ImageGranularity = imageGranularity;
+            Flags = flags;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkImageAspectFlags")]
+        [NativeName("Type.Name", "VkImageAspectFlags")]
+        [NativeName("Name", "aspectMask")]
         public ImageAspectFlags AspectMask;
 /// <summary></summary>
+        [NativeName("Type", "VkExtent3D")]
+        [NativeName("Type.Name", "VkExtent3D")]
+        [NativeName("Name", "imageGranularity")]
         public Extent3D ImageGranularity;
 /// <summary></summary>
+        [NativeName("Type", "VkSparseImageFormatFlags")]
+        [NativeName("Type.Name", "VkSparseImageFormatFlags")]
+        [NativeName("Name", "flags")]
         public SparseImageFormatFlags Flags;
     }
 }
