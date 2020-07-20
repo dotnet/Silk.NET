@@ -20,7 +20,7 @@ let inline scalarTests<'T
     and ^T : (static member Zero : ^T)
     and ^T : (static member One : ^T)> =
     
-    testList (sprintf "Scalar<%s> Tests" typedefof<'T>.Name) [
+    testList (sprintf "Scalar<%s> integer Tests" typedefof<'T>.Name) [
         testList "Add" [
             testProperty "Commutative" <|
                 fun (a:^T, b:^T) ->
@@ -138,6 +138,15 @@ let inline scalarTests<'T
                 fun (x:^T) ->
                     ((Scalar.IsNormal x) && (x > Scalar.One<'T>()))
                     ==> (Scalar.SquareRoot(x) < x)
+        ]
+        
+        testList "Helper verification" [
+            testProperty "One" <|
+                fun () ->
+                    Scalar.One<'T>() = Scalar<'T>.One
+            testProperty "Two" <|
+                fun () ->
+                    Scalar.Two<'T>() = Scalar<'T>.Two
         ]
     ]
     
