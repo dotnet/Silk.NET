@@ -249,7 +249,7 @@ namespace Silk.NET.Maths
 
         public static T Pi<T>() where T : unmanaged, IFormattable
         {
-            ThrowForIntegerBaseType<T>();
+            ThrowForNonFloatingPointType<T>();
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)Math.PI;
@@ -272,7 +272,7 @@ namespace Silk.NET.Maths
 
         public static T Tau<T>() where T : unmanaged, IFormattable
         {
-            ThrowForIntegerBaseType<T>();
+            ThrowForNonFloatingPointType<T>();
 
             if (typeof(T) == typeof(Half))
             {
@@ -295,7 +295,7 @@ namespace Silk.NET.Maths
 
         public static T PositiveInfinity<T>() where T : unmanaged, IFormattable
         {
-            ThrowForIntegerBaseType<T>();
+            ThrowForNonFloatingPointType<T>();
 
             if (typeof(T) == typeof(Half))
             {
@@ -319,7 +319,7 @@ namespace Silk.NET.Maths
 
         public static T NegativeInfinity<T>() where T : unmanaged, IFormattable
         {
-            ThrowForIntegerBaseType<T>();
+            ThrowForNonFloatingPointType<T>();
 
             if (typeof(T) == typeof(Half))
             {
@@ -425,7 +425,7 @@ namespace Silk.NET.Maths
         }
 
         [M(MethodImplOptions)]
-        internal static void ThrowForIntegerBaseType<T>() where T : unmanaged, IFormattable
+        internal static void ThrowForNonFloatingPointType<T>() where T : unmanaged, IFormattable
         {
             if (typeof(T) != typeof(Half) && typeof(T) != typeof(float) && typeof(T) != typeof(double))
             {
@@ -1400,7 +1400,7 @@ namespace Silk.NET.Maths
         [M(MethodImplOptions)]
         public static T Acos<T>(T value) where T : unmanaged, IFormattable
         {
-            ThrowForIntegerBaseType<T>();
+            ThrowForNonFloatingPointType<T>();
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)MathF.Acos((Half)(object)value);
@@ -1479,7 +1479,7 @@ namespace Silk.NET.Maths
         [M(MethodImplOptions)]
         public static T Sin<T>(T value) where T : unmanaged, IFormattable
         {
-            ThrowForIntegerBaseType<T>();
+            ThrowForNonFloatingPointType<T>();
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)MathF.Sin((Half)(object)value);
@@ -1503,7 +1503,7 @@ namespace Silk.NET.Maths
         [M(MethodImplOptions)]
         public static T Sinh<T>(T value) where T : unmanaged, IFormattable
         {
-            ThrowForIntegerBaseType<T>();
+            ThrowForNonFloatingPointType<T>();
 
             if (typeof(T) == typeof(Half))
             {
@@ -1528,7 +1528,7 @@ namespace Silk.NET.Maths
         [M(MethodImplOptions)]
         public static T Asin<T>(T value) where T : unmanaged, IFormattable
         {
-            ThrowForIntegerBaseType<T>();
+            ThrowForNonFloatingPointType<T>();
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)MathF.Asin((Half)(object)value);
@@ -1553,7 +1553,7 @@ namespace Silk.NET.Maths
         [M(MethodImplOptions)]
         public static T Atan<T>(T value) where T : unmanaged, IFormattable
         {
-            ThrowForIntegerBaseType<T>();
+            ThrowForNonFloatingPointType<T>();
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)MathF.Atan((Half)(object)value);
@@ -1577,7 +1577,7 @@ namespace Silk.NET.Maths
         [M(MethodImplOptions)]
         public static T Atan2<T>(T left, T right) where T : unmanaged, IFormattable
         {
-            ThrowForIntegerBaseType<T>();
+            ThrowForNonFloatingPointType<T>();
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)Math.Atan2((Half)(object)left, (Half)(object)right);
@@ -1601,7 +1601,7 @@ namespace Silk.NET.Maths
         [M(MethodImplOptions)]
         public static T Cos<T>(T value) where T : unmanaged, IFormattable
         {
-            ThrowForIntegerBaseType<T>();
+            ThrowForNonFloatingPointType<T>();
 
             if (typeof(T) == typeof(Half))
             {
@@ -1627,7 +1627,7 @@ namespace Silk.NET.Maths
         [M(MethodImplOptions)]
         public static T Cosh<T>(T value) where T : unmanaged, IFormattable
         {
-            ThrowForIntegerBaseType<T>();
+            ThrowForNonFloatingPointType<T>();
 
             if (typeof(T) == typeof(Half))
             {

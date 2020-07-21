@@ -31,7 +31,7 @@ let t = testList "Scalar UInt16 Tests" [
     testList "Throw Helpers" [
         testCase "ThrowInvalidType" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> (Scalar.ThrowInvalidType())) "ThrowInvalidType throws NotSupportedException"
         testCase "ThrowForUnsupportedBaseType" <| fun () -> Scalar.ThrowForUnsupportedBaseType<uint16>()
-        testCase "ThrowForIntegerBaseType" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> Scalar.ThrowForIntegerBaseType<uint16>()) "ThrowForIntegerBaseType<uint16> throws NotSupportedException"
+        testCase "ThrowForNonFloatingPointType" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> Scalar.ThrowForNonFloatingPointType<uint16>()) "ThrowForNonFloatingPointType<uint16> throws NotSupportedException"
         testCase "ThrowNotSupportedByUnderlying" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> Scalar.ThrowNotSupportedByUnderlying<uint16>()) "ThrowNotSupportedByUnderlying throws NotSupportedException"
         testCase "ThrowIndexOutOfRange" <| fun () -> Expect.throwsT<IndexOutOfRangeException> (fun () -> Scalar.ThrowIndexOutOfRange()) "ThrowIndexOutOfRange throws IndexOutOfRangeException"
         testCase "ThrowVectorTTooSmall" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> Scalar.ThrowVectorTTooSmall()) "ThrowVectorTTooSmall throws NotSupportedException"

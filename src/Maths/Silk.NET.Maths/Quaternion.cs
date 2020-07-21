@@ -23,7 +23,7 @@ namespace Silk.NET.Maths
 
         public Quaternion(Vector4<T> xyzw)
         {
-            ThrowForIntegerBaseType<T>();
+            ThrowForNonFloatingPointType<T>();
             Xyzw = xyzw;
         }
 
