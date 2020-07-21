@@ -12,6 +12,7 @@ let t = testList "Scalar Int64 Tests" [
         testCase "Two" <| fun () -> Expect.equal Scalar<int64>.Two 2L "Scalar<int64>.Two = 2"
         testCase "Pi" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> Scalar<int64>.Pi |> ignore) "Scalar<int64>.Pi throws"
         testCase "Tau" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> Scalar<int64>.Tau |> ignore) "Scalar<int64>.Tau throws"
+        testCase "HalfPi" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> Scalar<int64>.HalfPi |> ignore) "Scalar<int64>.HalfPi throws"
         testCase "PositiveInfinity" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> Scalar<int64>.PositiveInfinity |> ignore) "Scalar<int64>.PositiveInfinity throws"
         testCase "NegativeInfinity" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> Scalar<int64>.NegativeInfinity |> ignore) "Scalar<int64>.NegativeInfinity throws"
     ]

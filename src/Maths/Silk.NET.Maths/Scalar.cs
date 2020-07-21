@@ -45,6 +45,12 @@ namespace Silk.NET.Maths
             [M(MethodImplOptions.AggressiveInlining)]
             get => Scalar.Tau<T>();
         }
+        
+        public static T HalfPi
+        {
+            [M(MethodImplOptions.AggressiveInlining)]
+            get => Scalar.HalfPi<T>();
+        }
 
         public static T PositiveInfinity
         {
@@ -65,6 +71,7 @@ namespace Silk.NET.Maths
             System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining | (MethodImplOptions)512;
 
         private const double HALF_PI = Math.PI / 2;
+        private const double TAU = Math.PI * 2;
         /* Note: The following patterns are used throughout the code here and are described here
         *
         * PATTERN:
@@ -271,6 +278,29 @@ namespace Silk.NET.Maths
         }
 
         public static T Tau<T>() where T : unmanaged, IFormattable
+        {
+            ThrowForNonFloatingPointType<T>();
+
+            if (typeof(T) == typeof(Half))
+            {
+                return (T)(object)(Half)TAU;
+            }
+
+            if (typeof(T) == typeof(float))
+            {
+                return (T)(object)(float)TAU;
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return (T)(object)TAU;
+            }
+
+            Debug.Fail("Unreachable Code");
+            return default;
+        }
+        
+        public static T HalfPi<T>() where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
 
@@ -1580,12 +1610,12 @@ namespace Silk.NET.Maths
             ThrowForNonFloatingPointType<T>();
             if (typeof(T) == typeof(Half))
             {
-                return (T)(object)Math.Atan2((Half)(object)left, (Half)(object)right);
+                return (T)(object)MathF.Atan2((Half)(object)left, (Half)(object)right);
             }
 
             if (typeof(T) == typeof(float))
             {
-                return (T)(object)Math.Atan2((float)(object)left, (float)(object)right);
+                return (T)(object)MathF.Atan2((float)(object)left, (float)(object)right);
             }
 
             if (typeof(T) == typeof(double))

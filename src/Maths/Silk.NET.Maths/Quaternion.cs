@@ -156,13 +156,13 @@ namespace Silk.NET.Maths
             if (Larger(singularityTest, Scalar.Multiply(As<T>(singularityThreshold), unit)))
             {
                 x = default;
-                y = Tau<T>();
+                y = HalfPi<T>();
                 z = Scalar.Multiply(Two<T>(), Atan2(q.X, q.W));
             }
             else if (Smaller(singularityTest, Scalar.Multiply(Negate(As<T>(singularityThreshold)), unit)))
             {
                 x = default;
-                y = Negate(Tau<T>());
+                y = Negate(HalfPi<T>());
                 z = Negate(Scalar.Multiply(Two<T>(), Atan2(q.X, q.W)));
             }
             else
