@@ -1424,9 +1424,9 @@ namespace Silk.NET.Maths
         public static T Abs<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
-            if (typeof(T) == typeof(byte))
+            if (typeof(T) == typeof(byte) || typeof(T) == typeof(ulong) || typeof(T) == typeof(ushort) || typeof(T) == typeof(uint))
             {
-                return (T)(object)(byte)MathF.Abs((byte)(object)value);
+                return value;
             }
 
             if (typeof(T) == typeof(sbyte))
@@ -1434,19 +1434,9 @@ namespace Silk.NET.Maths
                 return (T)(object)(sbyte)MathF.Abs((sbyte)(object)value);
             }
 
-            if (typeof(T) == typeof(ushort))
-            {
-                return (T)(object)(ushort)MathF.Abs((ushort)(object)value);
-            }
-
             if (typeof(T) == typeof(short))
             {
                 return (T)(object)(short)MathF.Abs((short)(object)value);
-            }
-
-            if (typeof(T) == typeof(uint))
-            {
-                return (T)(object)(uint)MathF.Abs((uint)(object)value);
             }
 
             if (typeof(T) == typeof(int))
@@ -1460,11 +1450,6 @@ namespace Silk.NET.Maths
         [M(MethodImplOptions)]
         private static T _Abs2<T>(T value) where T : unmanaged, IFormattable
         {
-            if (typeof(T) == typeof(ulong))
-            {
-                ThrowNotSupportedByUnderlying<T>();
-            }
-
             if (typeof(T) == typeof(long))
             {
                 return (T)(object)Math.Abs((long)(object)value);
@@ -1610,29 +1595,6 @@ namespace Silk.NET.Maths
 
             Debug.Fail("Unreachable Code");
             return default;
-        }
-
-        [M(MethodImplOptions)]
-        private static T Floor<T>(T value) where T : unmanaged, IFormattable
-        {
-            ThrowForUnsupportedBaseType<T>();
-
-            if (typeof(T) == typeof(Half))
-            {
-                return (T)(object)(Half)(short)(Half)(object)value;
-            }
-
-            if (typeof(T) == typeof(float))
-            {
-                return (T)(object)(float)(int)(float)(object)value;
-            }
-
-            if (typeof(T) == typeof(double))
-            {
-                return (T)(object)(double)(long)(double)(object)value;
-            }
-
-            return value;
         }
 
 
