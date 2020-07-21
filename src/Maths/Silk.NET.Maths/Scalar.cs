@@ -143,10 +143,12 @@ namespace Silk.NET.Maths
                 return (T)(object)(long)1;
             }
 
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)1;
             }
+#endif
 
             if (typeof(T) == typeof(float))
             {
@@ -211,10 +213,12 @@ namespace Silk.NET.Maths
                 return (T)(object)(long)2;
             }
 
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)2;
             }
+#endif
 
             if (typeof(T) == typeof(float))
             {
@@ -235,10 +239,12 @@ namespace Silk.NET.Maths
         public static bool IsNormal<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return Half.IsNormal((Half) (object) value);
             }
+#endif
 
             if (typeof(T) == typeof(float))
             {
@@ -257,10 +263,12 @@ namespace Silk.NET.Maths
         public static T Pi<T>() where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)Math.PI;
             }
+#endif
 
             if (typeof(T) == typeof(float))
             {
@@ -281,10 +289,12 @@ namespace Silk.NET.Maths
         {
             ThrowForNonFloatingPointType<T>();
 
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)TAU;
             }
+#endif
 
             if (typeof(T) == typeof(float))
             {
@@ -304,10 +314,12 @@ namespace Silk.NET.Maths
         {
             ThrowForNonFloatingPointType<T>();
 
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)HALF_PI;
             }
+#endif
 
             if (typeof(T) == typeof(float))
             {
@@ -327,10 +339,12 @@ namespace Silk.NET.Maths
         {
             ThrowForNonFloatingPointType<T>();
 
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)Half.PositiveInfinity;
             }
+#endif
 
             if (typeof(T) == typeof(float))
             {
@@ -351,11 +365,12 @@ namespace Silk.NET.Maths
         {
             ThrowForNonFloatingPointType<T>();
 
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)Half.NegativeInfinity;
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)float.NegativeInfinity;
@@ -419,10 +434,12 @@ namespace Silk.NET.Maths
                 return (T)(object)(long)value;
             }
 
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)value;
             }
+#endif
 
             if (typeof(T) == typeof(float))
             {
@@ -457,7 +474,11 @@ namespace Silk.NET.Maths
         [M(MethodImplOptions)]
         internal static void ThrowForNonFloatingPointType<T>() where T : unmanaged, IFormattable
         {
-            if (typeof(T) != typeof(Half) && typeof(T) != typeof(float) && typeof(T) != typeof(double))
+            if (
+#if HALF
+                typeof(T) != typeof(Half) &&
+#endif                
+                typeof(T) != typeof(float) && typeof(T) != typeof(double))
             {
                 ThrowInvalidType();
             }
@@ -528,12 +549,12 @@ namespace Silk.NET.Maths
             {
                 return (T)(object)(long)Math.Sqrt((long)(object)value);
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)MathF.Sqrt((Half)(object)value);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)MathF.Sqrt((float)(object)value);
@@ -598,12 +619,12 @@ namespace Silk.NET.Maths
             {
                 return (T)(object)((long)(object)left + (long)(object)right);
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)((Half)(object)left + (Half)(object)right);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)((float)(object)left + (float)(object)right);
@@ -667,12 +688,12 @@ namespace Silk.NET.Maths
             {
                 return (T)(object)((long)(object)left % (long)(object)right);
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)((Half)(object)left % (Half)(object)right);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)((float)(object)left % (float)(object)right);
@@ -736,12 +757,12 @@ namespace Silk.NET.Maths
             {
                 return (T)(object)((long)(object)left - (long)(object)right);
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)((Half)(object)left - (Half)(object)right);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)((float)(object)left - (float)(object)right);
@@ -805,12 +826,12 @@ namespace Silk.NET.Maths
             {
                 return (T)(object)((long)(object)left * (long)(object)right);
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)((Half)(object)left * (Half)(object)right);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)((float)(object)left * (float)(object)right);
@@ -874,12 +895,12 @@ namespace Silk.NET.Maths
             {
                 return (T)(object)((long)(object)left / (long)(object)right);
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)((Half)(object)left / (Half)(object)right);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)((float)(object)left / (float)(object)right);
@@ -943,12 +964,12 @@ namespace Silk.NET.Maths
             {
                 return (T)(object)Math.Min((long)(object)left, (long)(object)right);
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)Math.Min((Half)(object)left, (Half)(object)right);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)Math.Min((float)(object)left, (float)(object)right);
@@ -1012,12 +1033,12 @@ namespace Silk.NET.Maths
             {
                 return (T)(object)Math.Max((long)(object)left, (long)(object)right);
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)Math.Max((Half)(object)left, (Half)(object)right);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)Math.Max((float)(object)left, (float)(object)right);
@@ -1081,12 +1102,12 @@ namespace Silk.NET.Maths
             {
                 return (long)(object)left > (long)(object)right;
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (Half)(object)left > (Half)(object)right;
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (float)(object)left > (float)(object)right;
@@ -1151,12 +1172,12 @@ namespace Silk.NET.Maths
             {
                 return (long)(object)left < (long)(object)right;
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (Half)(object)left < (Half)(object)right;
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (float)(object)left < (float)(object)right;
@@ -1221,12 +1242,12 @@ namespace Silk.NET.Maths
             {
                 return (long)(object)left >= (long)(object)right;
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (Half)(object)left >= (Half)(object)right;
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (float)(object)left >= (float)(object)right;
@@ -1291,12 +1312,12 @@ namespace Silk.NET.Maths
             {
                 return (long)(object)left <= (long)(object)right;
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (Half)(object)left <= (Half)(object)right;
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (float)(object)left <= (float)(object)right;
@@ -1337,12 +1358,12 @@ namespace Silk.NET.Maths
             {
                 return (T)(object)-(long)(object)value;
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)-(Half)(object)value;
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)-(float)(object)value;
@@ -1406,12 +1427,12 @@ namespace Silk.NET.Maths
             {
                 return (long)(object)left == (long)(object)right;
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (Half)(object)left == (Half)(object)right;
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (float)(object)left == (float)(object)right;
@@ -1431,11 +1452,12 @@ namespace Silk.NET.Maths
         public static T Acos<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)MathF.Acos((Half)(object)value);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)MathF.Acos((float)(object)value);
@@ -1484,12 +1506,12 @@ namespace Silk.NET.Maths
             {
                 return (T)(object)Math.Abs((long)(object)value);
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)MathF.Abs((Half)(object)value);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)MathF.Abs((float)(object)value);
@@ -1510,11 +1532,12 @@ namespace Silk.NET.Maths
         public static T Sin<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)MathF.Sin((Half)(object)value);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)MathF.Sin((float)(object)value);
@@ -1534,12 +1557,12 @@ namespace Silk.NET.Maths
         public static T Sinh<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)MathF.Sinh((Half)(object)value);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)MathF.Sinh((float)(object)value);
@@ -1559,11 +1582,12 @@ namespace Silk.NET.Maths
         public static T Asin<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)MathF.Asin((Half)(object)value);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)MathF.Asin((float)(object)value);
@@ -1584,11 +1608,12 @@ namespace Silk.NET.Maths
         public static T Atan<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)MathF.Atan((Half)(object)value);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)MathF.Atan((float)(object)value);
@@ -1608,11 +1633,12 @@ namespace Silk.NET.Maths
         public static T Atan2<T>(T left, T right) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)MathF.Atan2((Half)(object)left, (Half)(object)right);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)MathF.Atan2((float)(object)left, (float)(object)right);
@@ -1633,11 +1659,12 @@ namespace Silk.NET.Maths
         {
             ThrowForNonFloatingPointType<T>();
 
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)MathF.Cos((Half)(object)value);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)MathF.Cos((float)(object)value);
@@ -1658,12 +1685,12 @@ namespace Silk.NET.Maths
         public static T Cosh<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 return (T)(object)(Half)MathF.Cosh((Half)(object)value);
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (T)(object)MathF.Cosh((float)(object)value);
