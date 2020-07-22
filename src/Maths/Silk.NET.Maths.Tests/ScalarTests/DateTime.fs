@@ -113,4 +113,7 @@ let t = testList "Scalar DateTime Tests" [
 
     testProperty "Cosh" <|
         fun (a:DateTime) -> Expect.throwsT<NotSupportedException> (fun () -> Scalar.Cosh(a) |> ignore) "Cannot find Cosh of DateTime"
+        
+    testProperty "IsNormal" <|
+        fun (a:DateTime) -> Expect.throwsT<NotSupportedException> (fun () -> Scalar.IsNormal(a) |> ignore) "DateTime cannot be Normal"
 ]

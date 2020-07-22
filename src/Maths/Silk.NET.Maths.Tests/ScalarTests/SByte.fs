@@ -120,4 +120,6 @@ let t = testList "Scalar SByte Tests" [
 
     testProperty "Cosh" <|
         fun (a:sbyte) -> Expect.throwsT<NotSupportedException> (fun () -> Scalar.Cosh(a) |> ignore) "Cannot find Cosh of SByte"
+        
+    testProperty "IsNormal" <| fun (a:sbyte) -> Expect.equal (Scalar.IsNormal<sbyte>(a)) true
 ]

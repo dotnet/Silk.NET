@@ -113,4 +113,6 @@ let t = testList "Scalar Double Tests" [
         
     testProperty "Atan2 matches underlying" <|
         fun (a:double, b:double) -> Double.Equals(Scalar.Atan2(a, b), Math.Atan2(a, b))
+        
+    testProperty "IsNormal" <| fun (a:Double) -> Expect.equal (Scalar.IsNormal<Double>(a)) (Double.IsNormal a)
 ]

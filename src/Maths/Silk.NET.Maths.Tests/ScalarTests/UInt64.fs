@@ -120,4 +120,6 @@ let t = testList "Scalar UInt64 Tests" [
 
     testProperty "Cosh" <|
         fun (a:uint64) -> Expect.throwsT<NotSupportedException> (fun () -> Scalar.Cosh(a) |> ignore) "Cannot find Cosh of UInt64"
+        
+    testProperty "IsNormal" <| fun (a:uint64) -> Expect.equal (Scalar.IsNormal<uint64>(a)) true
 ]

@@ -119,4 +119,6 @@ let t = ptestList "Scalar Half Tests" [
         
     testPropertyWithConfig config "Atan2 matches underlying" <|
         fun (a:Half, b:Half) -> Half.Equals(Scalar.Atan2(a, b), MathF.Atan2(float32 a, float32 b))
+        
+    testProperty "IsNormal" <| fun (a:Half) -> Expect.equal (Scalar.IsNormal<Half>(a)) (Half.IsNormal a)
 ]

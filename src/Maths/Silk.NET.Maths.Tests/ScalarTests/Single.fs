@@ -113,4 +113,6 @@ let t = testList "Scalar Single Tests" [
         
     testProperty "Atan2 matches underlying" <|
         fun (a:float32, b:float32) -> Single.Equals(Scalar.Atan2(a, b), MathF.Atan2(a, b))
+        
+    testProperty "IsNormal" <| fun (a:Single) -> Expect.equal (Scalar.IsNormal<Single>(a)) (Single.IsNormal a)
 ]

@@ -120,4 +120,6 @@ let t = testList "Scalar Int16 Tests" [
 
     testProperty "Cosh" <|
         fun (a:int16) -> Expect.throwsT<NotSupportedException> (fun () -> Scalar.Cosh(a) |> ignore) "Cannot find Cosh of Int16"
+        
+    testProperty "IsNormal" <| fun (a:int16) -> Expect.equal (Scalar.IsNormal<int16>(a)) true
 ]
