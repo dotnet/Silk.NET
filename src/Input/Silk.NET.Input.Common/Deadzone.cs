@@ -10,7 +10,7 @@ namespace Silk.NET.Input
     /// <summary>
     /// The deadzone to use for a joystick/gamepad's sticks.
     /// </summary>
-    public struct Deadzone
+    public readonly struct Deadzone
     {
         /// <summary>
         /// The size of the deadzone to use.
