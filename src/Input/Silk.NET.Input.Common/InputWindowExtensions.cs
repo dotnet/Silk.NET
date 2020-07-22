@@ -24,7 +24,7 @@ namespace Silk.NET.Input
         static InputWindowExtensions()
         {
             TryAdd("Silk.NET.Input.Glfw");
-            TryAdd("Silk.NET.Input.Allegro");
+            TryAdd("Silk.NET.Input.Glvf");
         }
 
         /// <summary>
