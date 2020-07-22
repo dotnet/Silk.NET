@@ -1,4 +1,4 @@
-module Silk.NET.Maths.Tests.DateTimeScalarTests
+module Silk.NET.Maths.Tests.ScalarTests.DateTime
 
 open System
 open Expecto

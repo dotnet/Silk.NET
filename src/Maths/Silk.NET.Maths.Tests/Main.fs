@@ -9,7 +9,6 @@ open Logary
 open Logary.Configuration
 open Logary.Adapters.Facade
 open Logary.Targets
-open Silk.NET.Maths.Tests
 
 [<EntryPoint>]
 let main argv =

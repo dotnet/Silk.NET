@@ -8,18 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="ByteScalarTests.fs" />
-    <Compile Include="SByteScalarTests.fs" />
-    <Compile Include="UInt16ScalarTests.fs" />
-    <Compile Include="Int16ScalarTests.fs" />
-    <Compile Include="UInt32ScalarTests.fs" />
-    <Compile Include="Int32ScalarTests.fs" />
-    <Compile Include="UInt64ScalarTests.fs" />
-    <Compile Include="Int64ScalarTests.fs" />
-    <Compile Include="HalfScalarTests.fs" />
-    <Compile Include="FloatScalarTests.fs" />
-    <Compile Include="DoubleScalarTests.fs" />
-    <Compile Include="DateTimeScalarTests.fs" />
+  <Compile Include="ScalarTests\Byte.fs" />
+  <Compile Include="ScalarTests\SByte.fs" />
+  <Compile Include="ScalarTests\UInt16.fs" />
+  <Compile Include="ScalarTests\Int16.fs" />
+  <Compile Include="ScalarTests\UInt32.fs" />
+  <Compile Include="ScalarTests\Int32.fs" />
+  <Compile Include="ScalarTests\UInt64.fs" />
+  <Compile Include="ScalarTests\Int64.fs" />
+  <Compile Include="ScalarTests\Half.fs" />
+  <Compile Include="ScalarTests\Single.fs" />
+  <Compile Include="ScalarTests\Double.fs" />
+  <Compile Include="ScalarTests\DateTime.fs" />
     <Compile Include="Main.fs" />
   </ItemGroup>
 

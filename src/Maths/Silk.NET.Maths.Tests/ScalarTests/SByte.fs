@@ -1,4 +1,4 @@
-module Silk.NET.Maths.Tests.SByteScalarTests
+module Silk.NET.Maths.Tests.ScalarTests.SByte
 
 open System
 open Expecto

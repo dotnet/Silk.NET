@@ -1,4 +1,4 @@
-module Silk.NET.Maths.Tests.DoubleScalarTests
+module Silk.NET.Maths.Tests.ScalarTests.Double
 
 open System
 open Expecto
