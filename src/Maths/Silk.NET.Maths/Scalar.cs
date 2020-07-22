@@ -552,7 +552,7 @@ namespace Silk.NET.Maths
 #if HALF
             if (typeof(T) == typeof(Half))
             {
-                return (T)(object)(Half)MathF.Sqrt((Half)(object)value);
+                return (T)(object)(Half)MathF.Sqrt((float)(Half)(object)value);
             }
 #endif
             if (typeof(T) == typeof(float))

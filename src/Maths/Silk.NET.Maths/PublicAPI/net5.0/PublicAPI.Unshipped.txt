@@ -51,12 +51,6 @@ Silk.NET.Maths.Box3<T>.Size.get -> Silk.NET.Maths.Vector3<T>
 Silk.NET.Maths.Box3<T>.ToString(string? format) -> string!
 Silk.NET.Maths.Box3<T>.ToString(string? format, System.IFormatProvider? formatProvider) -> string!
 Silk.NET.Maths.Box3<T>.Translate(Silk.NET.Maths.Vector3<T> distance) -> Silk.NET.Maths.Box3<T>
-Silk.NET.Maths.Half
-Silk.NET.Maths.Half.CompareTo(Silk.NET.Maths.Half other) -> int
-Silk.NET.Maths.Half.CompareTo(object? obj) -> int
-Silk.NET.Maths.Half.Equals(Silk.NET.Maths.Half other) -> bool
-Silk.NET.Maths.Half.ToString(string? format = null, System.IFormatProvider? formatProvider = null) -> string!
-Silk.NET.Maths.Half.TryFormat(System.Span<char> destination, out int charsWritten, System.ReadOnlySpan<char> format, System.IFormatProvider? formatProvider) -> bool
 Silk.NET.Maths.Matrix2x2<T>
 Silk.NET.Maths.Matrix2x2<T>.Column0.get -> Silk.NET.Maths.Vector2<T>
 Silk.NET.Maths.Matrix2x2<T>.Column1.get -> Silk.NET.Maths.Vector2<T>
@@ -752,9 +746,6 @@ override Silk.NET.Maths.Box2<T>.ToString() -> string!
 override Silk.NET.Maths.Box3<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Box3<T>.GetHashCode() -> int
 override Silk.NET.Maths.Box3<T>.ToString() -> string!
-override Silk.NET.Maths.Half.Equals(object? obj) -> bool
-override Silk.NET.Maths.Half.GetHashCode() -> int
-override Silk.NET.Maths.Half.ToString() -> string!
 override Silk.NET.Maths.Matrix2x2<T>.Equals(object? obj) -> bool
 override Silk.NET.Maths.Matrix2x2<T>.GetHashCode() -> int
 override Silk.NET.Maths.Matrix2x2<T>.ToString() -> string!
@@ -798,48 +789,6 @@ static Silk.NET.Maths.Box2<T>.operator !=(Silk.NET.Maths.Box2<T> left, Silk.NET.
 static Silk.NET.Maths.Box2<T>.operator ==(Silk.NET.Maths.Box2<T> left, Silk.NET.Maths.Box2<T> right) -> bool
 static Silk.NET.Maths.Box3<T>.operator !=(Silk.NET.Maths.Box3<T> left, Silk.NET.Maths.Box3<T> right) -> bool
 static Silk.NET.Maths.Box3<T>.operator ==(Silk.NET.Maths.Box3<T> left, Silk.NET.Maths.Box3<T> right) -> bool
-static Silk.NET.Maths.Half.IsFinite(Silk.NET.Maths.Half value) -> bool
-static Silk.NET.Maths.Half.IsInfinity(Silk.NET.Maths.Half value) -> bool
-static Silk.NET.Maths.Half.IsNaN(Silk.NET.Maths.Half value) -> bool
-static Silk.NET.Maths.Half.IsNegative(Silk.NET.Maths.Half value) -> bool
-static Silk.NET.Maths.Half.IsNegativeInfinity(Silk.NET.Maths.Half value) -> bool
-static Silk.NET.Maths.Half.IsNormal(Silk.NET.Maths.Half value) -> bool
-static Silk.NET.Maths.Half.IsPositiveInfinity(Silk.NET.Maths.Half value) -> bool
-static Silk.NET.Maths.Half.IsSubnormal(Silk.NET.Maths.Half value) -> bool
-static Silk.NET.Maths.Half.Parse(System.ReadOnlySpan<char> s, System.Globalization.NumberStyles style = System.Globalization.NumberStyles.AllowThousands | System.Globalization.NumberStyles.Float, System.IFormatProvider? formatProvider = null) -> Silk.NET.Maths.Half
-static Silk.NET.Maths.Half.Parse(string! s, System.Globalization.NumberStyles style = System.Globalization.NumberStyles.AllowThousands | System.Globalization.NumberStyles.Float, System.IFormatProvider? formatProvider = null) -> Silk.NET.Maths.Half
-static Silk.NET.Maths.Half.TryParse(System.ReadOnlySpan<char> s, System.Globalization.NumberStyles style, System.IFormatProvider? formatProvider, out Silk.NET.Maths.Half result) -> bool
-static Silk.NET.Maths.Half.TryParse(System.ReadOnlySpan<char> s, out Silk.NET.Maths.Half result) -> bool
-static Silk.NET.Maths.Half.TryParse(string! s, System.Globalization.NumberStyles style, System.IFormatProvider? formatProvider, out Silk.NET.Maths.Half result) -> bool
-static Silk.NET.Maths.Half.TryParse(string! s, out Silk.NET.Maths.Half result) -> bool
-static Silk.NET.Maths.Half.explicit operator Silk.NET.Maths.Half(double value) -> Silk.NET.Maths.Half
-static Silk.NET.Maths.Half.explicit operator Silk.NET.Maths.Half(float value) -> Silk.NET.Maths.Half
-static Silk.NET.Maths.Half.explicit operator byte(Silk.NET.Maths.Half value) -> byte
-static Silk.NET.Maths.Half.explicit operator int(Silk.NET.Maths.Half value) -> int
-static Silk.NET.Maths.Half.explicit operator long(Silk.NET.Maths.Half value) -> long
-static Silk.NET.Maths.Half.explicit operator sbyte(Silk.NET.Maths.Half value) -> sbyte
-static Silk.NET.Maths.Half.explicit operator short(Silk.NET.Maths.Half value) -> short
-static Silk.NET.Maths.Half.explicit operator uint(Silk.NET.Maths.Half value) -> uint
-static Silk.NET.Maths.Half.explicit operator ulong(Silk.NET.Maths.Half value) -> ulong
-static Silk.NET.Maths.Half.explicit operator ushort(Silk.NET.Maths.Half value) -> ushort
-static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(byte value) -> Silk.NET.Maths.Half
-static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(int value) -> Silk.NET.Maths.Half
-static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(long value) -> Silk.NET.Maths.Half
-static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(sbyte value) -> Silk.NET.Maths.Half
-static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(short value) -> Silk.NET.Maths.Half
-static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(uint value) -> Silk.NET.Maths.Half
-static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(ulong value) -> Silk.NET.Maths.Half
-static Silk.NET.Maths.Half.implicit operator Silk.NET.Maths.Half(ushort value) -> Silk.NET.Maths.Half
-static Silk.NET.Maths.Half.implicit operator double(Silk.NET.Maths.Half value) -> double
-static Silk.NET.Maths.Half.implicit operator float(Silk.NET.Maths.Half value) -> float
-static Silk.NET.Maths.Half.operator !=(Silk.NET.Maths.Half left, Silk.NET.Maths.Half right) -> bool
-static Silk.NET.Maths.Half.operator +(Silk.NET.Maths.Half value) -> Silk.NET.Maths.Half
-static Silk.NET.Maths.Half.operator -(Silk.NET.Maths.Half value) -> Silk.NET.Maths.Half
-static Silk.NET.Maths.Half.operator <(Silk.NET.Maths.Half left, Silk.NET.Maths.Half right) -> bool
-static Silk.NET.Maths.Half.operator <=(Silk.NET.Maths.Half left, Silk.NET.Maths.Half right) -> bool
-static Silk.NET.Maths.Half.operator ==(Silk.NET.Maths.Half left, Silk.NET.Maths.Half right) -> bool
-static Silk.NET.Maths.Half.operator >(Silk.NET.Maths.Half left, Silk.NET.Maths.Half right) -> bool
-static Silk.NET.Maths.Half.operator >=(Silk.NET.Maths.Half left, Silk.NET.Maths.Half right) -> bool
 static Silk.NET.Maths.Matrix2x2<T>.Add(Silk.NET.Maths.Matrix2x2<T> left, Silk.NET.Maths.Matrix2x2<T> right) -> Silk.NET.Maths.Matrix2x2<T>
 static Silk.NET.Maths.Matrix2x2<T>.Add(ref Silk.NET.Maths.Matrix2x2<T> left, ref Silk.NET.Maths.Matrix2x2<T> right, out Silk.NET.Maths.Matrix2x2<T> result) -> void
 static Silk.NET.Maths.Matrix2x2<T>.CreateRotation(T angle) -> Silk.NET.Maths.Matrix2x2<T>
@@ -1443,9 +1392,3 @@ static Silk.NET.Maths.Vector4<T>.operator /(Silk.NET.Maths.Vector4<T> vector, Si
 static Silk.NET.Maths.Vector4<T>.operator /(Silk.NET.Maths.Vector4<T> vector, T scale) -> Silk.NET.Maths.Vector4<T>
 static Silk.NET.Maths.Vector4<T>.operator /(T value, Silk.NET.Maths.Vector4<T> scale) -> Silk.NET.Maths.Vector4<T>
 static Silk.NET.Maths.Vector4<T>.operator ==(Silk.NET.Maths.Vector4<T> left, Silk.NET.Maths.Vector4<T> right) -> bool
-static readonly Silk.NET.Maths.Half.Epsilon -> Silk.NET.Maths.Half
-static readonly Silk.NET.Maths.Half.MaxValue -> Silk.NET.Maths.Half
-static readonly Silk.NET.Maths.Half.MinValue -> Silk.NET.Maths.Half
-static readonly Silk.NET.Maths.Half.NaN -> Silk.NET.Maths.Half
-static readonly Silk.NET.Maths.Half.NegativeInfinity -> Silk.NET.Maths.Half
-static readonly Silk.NET.Maths.Half.PositiveInfinity -> Silk.NET.Maths.Half

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.0;net5.0</TargetFrameworks>
-        <DefineConstants Condition="'$(TargetFramework)' == 'net5.0'">
+        <DefineConstants Condition="'$(TargetFramework)' == 'net6.0'">
             HALF;$(DefineConstants)
         </DefineConstants>
         <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.0' Or '$(TargetFramework)' == 'net5.0'">
