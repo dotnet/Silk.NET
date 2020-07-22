@@ -16,7 +16,7 @@ namespace Silk.NET.Windowing
     public static class Window
     {
         public static IReadOnlyList<IWindowPlatform> Platforms { get; } = new List<IWindowPlatform>();
-        internal static Exception NoPlatformException => new Exception
+        internal static Exception NoPlatformException => new PlatformNotSupportedException
         (
             "Couldn't find a suitable window platform. " +
             "https://docs.ultz.co.uk/Silk.NET/windowing/troubleshooting.html"
