@@ -6,8 +6,6 @@
 using System;
 using System.Drawing;
 
-// No immediate urgency to document these as they're not intended for public consumption.
-#pragma warning disable 1591
 
 namespace Silk.NET.Windowing.Internals
 {
