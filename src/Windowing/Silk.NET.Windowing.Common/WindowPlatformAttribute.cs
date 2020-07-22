@@ -6,7 +6,7 @@
 using System;
 using System.ComponentModel;
 
-namespace Silk.NET.Windowing.Internals
+namespace Silk.NET.Windowing
 {
     /// <summary>
     /// An assembly attribute which points the registrar to a type that implements <see cref="IWindowPlatform"/>

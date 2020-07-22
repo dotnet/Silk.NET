@@ -6,7 +6,6 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using Silk.NET.Input.Internals;
 using Silk.NET.Windowing;
 
 namespace Silk.NET.Input
