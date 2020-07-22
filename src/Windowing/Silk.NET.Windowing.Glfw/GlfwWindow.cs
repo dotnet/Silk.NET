@@ -297,7 +297,7 @@ namespace Silk.NET.Windowing.Glfw
 
                 if (value is null)
                 {
-                    throw new ArgumentNullException();
+                    throw new ArgumentNullException(nameof(value));
                 }
 
                 if (WindowState == WindowState.Fullscreen)
