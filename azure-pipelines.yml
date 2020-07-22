@@ -60,10 +60,6 @@ stages:
   jobs:
   - job: Build
   
-    dependsOn:
-    - Test
-    - Coverage
-  
     pool:
       vmImage: 'ubuntu-latest'
   
