@@ -2,8 +2,6 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <!-- seeing as the APIs in this project are the only APIs the user should be using,
-             it no longer makes sense to put everything in the Common namespace -->
         <RootNamespace>Silk.NET.Input</RootNamespace>
     </PropertyGroup>
 
