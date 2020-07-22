@@ -19,6 +19,7 @@
     <Compile Include="HalfScalarTests.fs" />
     <Compile Include="FloatScalarTests.fs" />
     <Compile Include="DoubleScalarTests.fs" />
+    <Compile Include="DateTimeScalarTests.fs" />
     <Compile Include="Main.fs" />
   </ItemGroup>
 
