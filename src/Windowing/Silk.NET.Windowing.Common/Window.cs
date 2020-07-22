@@ -26,7 +26,7 @@ namespace Silk.NET.Windowing
         {
             // Try add the first-party backends
             TryAdd("Silk.NET.Windowing.Glfw");
-            TryAdd("Silk.NET.Windowing.Allegro");
+            TryAdd("Silk.NET.Windowing.Glvf");
         }
 
         /// <summary>

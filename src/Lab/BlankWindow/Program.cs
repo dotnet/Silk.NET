@@ -8,7 +8,6 @@ using SixLabors.ImageSharp.PixelFormats;
 using System;
 using System.Drawing;
 using System.Threading;
-using Silk.NET.Windowing.Structs;
 using Image = SixLabors.ImageSharp.Image;
 
 namespace BlankWindow

@@ -4,7 +4,6 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using Silk.NET.Windowing.Structs;
 
 namespace Silk.NET.Windowing
 {

@@ -9,8 +9,6 @@ using System.Runtime.InteropServices;
 using Silk.NET.Core.Contexts;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Internals;
-using Silk.NET.Windowing.Structs;
-using VideoMode = Silk.NET.Windowing.VideoMode;
 
 namespace Silk.NET.Windowing.Glfw
 {

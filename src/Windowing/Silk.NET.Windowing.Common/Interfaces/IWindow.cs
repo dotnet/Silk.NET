@@ -5,7 +5,6 @@
 
 using System;
 using System.Drawing;
-using Silk.NET.Windowing.Structs;
 
 namespace Silk.NET.Windowing
 {
