@@ -57,6 +57,7 @@ stages:
 
 - stage: Build/Pack
   dependsOn: Testing
+  jobs:
   - job: Build
   
     dependsOn:
