@@ -51,10 +51,16 @@ namespace Silk.NET.Windowing.Glfw
 
         protected override void CoreReset()
         {
+            if (_glfwWindow == null)
+            {
+                return;
+            }
+            
             try
             {
                 _glfw.DestroyWindow(_glfwWindow);
                 GLFW.Glfw.ThrowExceptions();
+                _glfwWindow = null;
             }
             catch (GlfwException)
             {
