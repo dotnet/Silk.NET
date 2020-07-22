@@ -8,7 +8,7 @@ namespace Silk.NET.Input
     /// <summary>
     /// Represents an axis on a joystick.
     /// </summary>
-    public struct Axis
+    public readonly struct Axis
     {
         /// <summary>
         /// The index of this axis, used to determine which axis it is.
