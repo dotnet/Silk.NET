@@ -11,8 +11,6 @@ using System.Drawing;
 using System.Threading;
 using Silk.NET.Core.Contexts;
 
-// No immediate urgency to document these as they're not intended for public consumption.
-#pragma warning disable 1591
 
 namespace Silk.NET.Windowing.Internals
 {
