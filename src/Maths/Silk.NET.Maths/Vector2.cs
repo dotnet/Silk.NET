@@ -289,12 +289,12 @@ namespace Silk.NET.Maths
             {
                 return (Vector64<T>) (object) Vector64.Create((int) (object) X, (int) (object) Y);
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 ThrowNotSupportedByUnderlying<T>();
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (Vector64<T>) (object) Vector64.Create((float) (object) X, (float) (object) Y);
@@ -349,12 +349,12 @@ namespace Silk.NET.Maths
             {
                 return (Vector128<T>) (object) Vector128.Create((long) (object) X, (long) (object) Y);
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 ThrowNotSupportedByUnderlying<T>();
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (Vector128<T>) (object) Vector128.Create((float) (object) X, (float) (object) Y, 0, 0);
@@ -420,12 +420,12 @@ namespace Silk.NET.Maths
             {
                 return (Vector256<T>) (object) Vector256.Create((long) (object) X, (long) (object) Y, 0, 0);
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 ThrowNotSupportedByUnderlying<T>();
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (Vector256<T>) (object) Vector256.Create

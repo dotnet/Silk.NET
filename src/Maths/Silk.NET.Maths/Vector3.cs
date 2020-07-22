@@ -348,7 +348,10 @@ namespace Silk.NET.Maths
                     ((short) (object) X, (short) (object) Y, (short) (object) Z, 0);
             }
 
-            if (typeof(T) == typeof(uint) || typeof(T) == typeof(int) || typeof(T) == typeof(Half) ||
+            if (typeof(T) == typeof(uint) || typeof(T) == typeof(int) || 
+#if HALF
+                typeof(T) == typeof(Half) ||
+#endif
                 typeof(T) == typeof(float))
             {
                 ThrowNotSupportedByUnderlying<T>();
@@ -396,7 +399,10 @@ namespace Silk.NET.Maths
                     ((int) (object) X, (int) (object) Y, (int) (object) Z, 0);
             }
 
-            if (typeof(T) == typeof(ulong) || typeof(T) == typeof(long) || typeof(T) == typeof(Half) ||
+            if (typeof(T) == typeof(ulong) || typeof(T) == typeof(long) ||
+#if HALF
+                typeof(T) == typeof(Half) ||
+#endif
                 typeof(T) == typeof(double))
             {
                 ThrowNotSupportedByUnderlying<T>();
@@ -469,12 +475,12 @@ namespace Silk.NET.Maths
                 return (Vector256<T>) (object) Vector256.Create
                     ((long) (object) X, (long) (object) Y, (long) (object) Z, 0);
             }
-
+#if HALF
             if (typeof(T) == typeof(Half))
             {
                 ThrowNotSupportedByUnderlying<T>();
             }
-
+#endif
             if (typeof(T) == typeof(float))
             {
                 return (Vector256<T>) (object) Vector256.Create
