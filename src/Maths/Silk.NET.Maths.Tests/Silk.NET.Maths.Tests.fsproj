@@ -17,6 +17,7 @@
     <Compile Include="UInt64ScalarTests.fs" />
     <Compile Include="Int64ScalarTests.fs" />
     <Compile Include="FloatScalarTests.fs" />
+    <Compile Include="DoubleScalarTests.fs" />
     <Compile Include="Main.fs" />
   </ItemGroup>
 
