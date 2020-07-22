@@ -36,8 +36,8 @@ let t = testList "Scalar Half Tests" [
         testCase "NegativeInfinity" <| fun () -> Expect.equal (Scalar.NegativeInfinity<Half>()) Half.NegativeInfinity "Scalar.NegativeInfinity<Half>() = Half.NegativeInfinity"
     ]
     
-    ptestPropertyWithConfig config "As" <|
-        fun (a:float32) -> Half.Equals(Scalar.As<Half>(a), Half.op_Explicit a)
+    // ptestPropertyWithConfig config "As" <|
+    //    fun (a:float32) -> Half.Equals(Scalar.As<Half>(a), Half.op_Explicit a)
     
     testList "Throw Helpers" [
         testCase "ThrowInvalidType" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> (Scalar.ThrowInvalidType())) "ThrowInvalidType throws NotSupportedException"
@@ -48,7 +48,7 @@ let t = testList "Scalar Half Tests" [
         testCase "ThrowVectorTTooSmall" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> Scalar.ThrowVectorTTooSmall()) "ThrowVectorTTooSmall throws NotSupportedException"
     ]
     
-    ptestPropertyWithConfig config "SquareRoot<Half> matches underlying" <|
+    (*ptestPropertyWithConfig config "SquareRoot<Half> matches underlying" <|
         fun (a:Half) -> Half.Equals(Scalar.SquareRoot<Half>(a), a |> float32 |> MathF.Sqrt |> Half.op_Explicit)
         
     ptestPropertyWithConfig config "Add<Half> matches underlying" <|
@@ -118,7 +118,7 @@ let t = testList "Scalar Half Tests" [
         fun (a:Half) -> Half.Equals((Scalar.Cosh a), (MathF.Cosh (float32 a)))
         
     ptestPropertyWithConfig config "Atan2 matches underlying" <|
-        fun (a:Half, b:Half) -> Half.Equals(Scalar.Atan2(a, b), MathF.Atan2(float32 a, float32 b))
+        fun (a:Half, b:Half) -> Half.Equals(Scalar.Atan2(a, b), MathF.Atan2(float32 a, float32 b))*)
         
     testPropertyWithConfig config "IsNormal" <| fun (a:Half) -> Expect.equal (Scalar.IsNormal<Half>(a)) (Half.IsNormal a)
 ]
