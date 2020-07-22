@@ -127,11 +127,11 @@ namespace Tutorial
             Shader.SetUniform("uTexture0", 0);
 
             //Use elapsed time to convert to radians to allow our cube to rotate over time
-            var difference = window.Time * 100;
+            var difference = (float)(window.Time * 100);
 
-            var model = Matrix4x4.CreateRotationY((float)DegreesToRadians(difference)) * Matrix4x4.CreateRotationX((float)DegreesToRadians(difference));
+            var model = Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(difference)) * Matrix4x4.CreateRotationX(MathHelper.DegreesToRadians(difference));
             var view = Matrix4x4.CreateLookAt(CameraPosition, CameraTarget, CameraUp);
-            var projection = Matrix4x4.CreatePerspectiveFieldOfView((float)DegreesToRadians(45.0f), Width / Height, 0.1f, 100.0f);
+            var projection = Matrix4x4.CreatePerspectiveFieldOfView(MathHelper.DegreesToRadians(45.0f), Width / Height, 0.1f, 100.0f);
 
             Shader.SetUniform("uModel", model);
             Shader.SetUniform("uView", view);
@@ -156,11 +156,6 @@ namespace Tutorial
             {
                 window.Close();
             }
-        }
-
-        private static double DegreesToRadians(double degrees)
-        {
-            return (Math.PI / 180f) * degrees;
         }
     }
 }
