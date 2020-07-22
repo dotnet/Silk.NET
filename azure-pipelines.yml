@@ -55,7 +55,7 @@ stages:
       displayName: 'Upload to codecov.io'
       condition: succeededOrFailed()
 
-- stage: Build and Pack
+- stage: Build_and_Pack
   dependsOn: Testing
   jobs:
   - job: Build
