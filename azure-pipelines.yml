@@ -22,6 +22,7 @@ stages:
       displayName: 'Install .NET 5.0'
       inputs:
         includePreviewVersions: true
+        version: $(dotnetCoreVersion)
     - script: dotnet run --project ./src/Maths/Silk.NET.Maths.Tests/Silk.NET.Maths.Tests.fsproj --configuration Release -- --nunit-summary TestResults.xml
       displayName: 'Run Tests and Export NUnit'
     - task: PublishTestResults@2
@@ -43,6 +44,7 @@ stages:
       displayName: 'Install .NET 5.0'
       inputs:
         includePreviewVersions: true
+        version: $(dotnetCoreVersion)
     - script: dotnet test ./src/Maths/Silk.NET.Maths.Tests/Silk.NET.Maths.Tests.fsproj --configuration Release /p:AltCover=true /p:AltCoverCobertura="cobertura.xml" -- --nunit-summary TestResults.xml
       displayName: 'Collect Coverage'
       condition: succeededOrFailed()
