@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// An interface representing a keyboard.

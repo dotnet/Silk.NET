@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Silk.NET.Windowing.Common
+namespace Silk.NET.Windowing
 {
     /// <summary>
     /// A Vulkan window.

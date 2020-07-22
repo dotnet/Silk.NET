@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// A thumbstick on an <see cref="IGamepad"/>

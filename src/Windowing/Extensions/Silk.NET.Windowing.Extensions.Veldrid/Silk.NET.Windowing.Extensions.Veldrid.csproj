@@ -10,7 +10,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+      <ProjectReference Include="..\..\Silk.NET.GLFW\Silk.NET.GLFW.csproj" />
+      <ProjectReference Include="..\..\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
     </ItemGroup>
 
     <Import Project="..\..\..\..\build\props\common.props" />

@@ -6,7 +6,7 @@
 using System;
 using Silk.NET.GLFW;
 
-namespace Silk.NET.Windowing.Common
+namespace Silk.NET.Windowing
 {
     /// <summary>
     /// An interface representing a Vulkan window

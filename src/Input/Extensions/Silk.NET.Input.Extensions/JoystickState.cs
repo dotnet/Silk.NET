@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using Silk.NET.Input.Common;
 
 namespace Silk.NET.Input.Extensions
 {

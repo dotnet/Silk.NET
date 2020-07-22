@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 using SampleBase;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Common;
 
 namespace Triangle
 {
@@ -35,7 +34,7 @@ namespace Triangle
             var opts = ViewOptions.Default;
             opts.FramesPerSecond = 90;
             opts.UpdatesPerSecond = 90;
-            opts.VSync = VSyncMode.Off;
+            opts.VSync = false;
             _window = Window.GetView(opts);
 #else
             var opts = WindowOptions.Default;

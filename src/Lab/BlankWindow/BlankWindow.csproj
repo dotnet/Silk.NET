@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="SixLabors.ImageSharp" Version="1.0.0-rc0003" />
     </ItemGroup>
 
@@ -18,6 +14,10 @@
       <None Update="favicon.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
     </ItemGroup>
 
     <Import Project="..\..\..\build\props\common.props" />

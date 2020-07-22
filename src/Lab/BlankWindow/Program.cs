@@ -4,8 +4,6 @@
 // of the MIT license. See the LICENSE file for details.
 
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Common;
-using Silk.NET.Windowing.Common.Structs;
 using SixLabors.ImageSharp.PixelFormats;
 using System;
 using System.Drawing;
@@ -22,7 +20,6 @@ namespace BlankWindow
         {
             var options = WindowOptions.Default;
 
-            options.UseSingleThreadedWindow = true;
             //options.ShouldSwapAutomatically = false;
 
             options.UpdatesPerSecond = 60.0;

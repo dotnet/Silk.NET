@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// An interface representing a mouse.

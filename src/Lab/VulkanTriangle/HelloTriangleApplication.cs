@@ -14,7 +14,6 @@ using Silk.NET.Vulkan;
 using Silk.NET.Vulkan.Extensions.EXT;
 using Silk.NET.Vulkan.Extensions.KHR;
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Common;
 using Image = Silk.NET.Vulkan.Image;
 
 namespace VulkanTriangle
@@ -32,7 +31,7 @@ namespace VulkanTriangle
             Cleanup();
         }
 
-        private IVulkanWindow _window;
+        private IWindow _window;
 
         private Instance _instance;
         private DebugUtilsMessengerEXT _debugMessenger;
@@ -76,7 +75,7 @@ namespace VulkanTriangle
         {
             var opts = WindowOptions.DefaultVulkan;
             _window = Window.Create(opts) as IVulkanWindow;
-            if (_window is null || !_window.IsVulkanSupported)
+            if (_window?.VkSurface is null)
             {
                 throw new NotSupportedException("Windowing platform doesn't support Vulkan.");
             }
@@ -234,7 +233,7 @@ namespace VulkanTriangle
                 PApplicationInfo = &appInfo
             };
 
-            var extensions = (byte**) _window.GetRequiredExtensions(out var extCount);
+            var extensions = (byte**) _window.VkSurface!.GetRequiredExtensions(out var extCount);
             var newExtensions = stackalloc byte*[(int)(extCount + _instanceExtensions.Length)];
             for (var i = 0; i < extCount; i++)
             {
@@ -330,7 +329,7 @@ namespace VulkanTriangle
 
         private unsafe void CreateSurface()
         {
-            _surface = _window.CreateSurface<AllocationCallbacks>(_instance.ToHandle(), null).ToSurface();
+            _surface = _window.VkSurface!.Create<AllocationCallbacks>(_instance.ToHandle(), null).ToSurface();
         }
 
         private unsafe void PickPhysicalDevice()

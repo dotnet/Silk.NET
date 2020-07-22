@@ -4,10 +4,8 @@ using System.Drawing;
 using System.Linq;
 using Silk.NET.GLFW;
 using Silk.NET.Input;
-using Silk.NET.Input.Common;
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Common;
-using MouseButton = Silk.NET.Input.Common.MouseButton;
+using MouseButton = Silk.NET.Input.MouseButton;
 
 namespace InputTest
 {
@@ -16,7 +14,6 @@ namespace InputTest
         private static void Main()
         {
             var opts = WindowOptions.Default;
-            opts.UseSingleThreadedWindow = false;
             opts.FramesPerSecond = 60;
             opts.UpdatesPerSecond = 60;
             var window = Window.Create(opts);

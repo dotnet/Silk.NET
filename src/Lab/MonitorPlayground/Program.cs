@@ -2,9 +2,7 @@
 using System.Drawing;
 using System.Linq;
 using Silk.NET.Input;
-using Silk.NET.Input.Common;
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Common;
 
 namespace MonitorPlayground
 {
@@ -41,13 +39,13 @@ namespace MonitorPlayground
             //window.Run();
             var opts = WindowOptions.Default;
             //opts.WindowState = WindowState.Fullscreen;
-            var window = Monitor.GetMainMonitor().CreateWindow(opts);
+            var window = Monitor.GetMainMonitor(null).CreateWindow(opts);
             IInputContext input = null;
             var currentMonitor = 0;
             window.Load += () =>
             {
                 input = window.CreateInput();
-                foreach (var monitor in Monitor.GetMonitors())
+                foreach (var monitor in Monitor.GetMonitors(null))
                 {
                     Console.WriteLine(monitor.Index + " " + monitor.Bounds);
                 }
@@ -59,11 +57,11 @@ namespace MonitorPlayground
                 {
                     try
                     {
-                        window.Monitor = Monitor.GetMonitors().ElementAt(currentMonitor++);
+                        window.Monitor = Monitor.GetMonitors(window).ElementAt(currentMonitor++);
                     }
                     catch (ArgumentOutOfRangeException)
                     {
-                        window.Monitor = Monitor.GetMonitors().ElementAt(currentMonitor = 0);
+                        window.Monitor = Monitor.GetMonitors(window).ElementAt(currentMonitor = 0);
                     }
                 }
 

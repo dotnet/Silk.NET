@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// Represents a joystick device with a set amount of axes, buttons, and hats.
