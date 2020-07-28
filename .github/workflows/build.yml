@@ -20,9 +20,9 @@ jobs:
     - name: Setup NuGet
       uses: nuget/setup-nuget@v1
       with:
-        nuget-api-key: ${{ secrets.AZDO_ARTIFACTS_TOKEN }}
-        nuget-api-key-source: https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json
         nuget-version: '5.x'
+    - name: Setup Feed
+      run: nuget sources add -Name Experimental -Source https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json -username ${{ secrets.AZDO_ARTIFACTS_USERNAME }} -password ${{ secrets.AZDO_ARTIFACTS_TOKEN }}
     - name: Push Experimental Packages
       if: ${{ github.repository == 'Ultz/Silk.NET' }}
-      run: nuget push "build/output_packages/*.nupkg" -Source "https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json" -ApiKey ${{ secrets.AZDO_ARTIFACTS_TOKEN }}
+      run: nuget push "build/output_packages/*.nupkg" -Source Experimental -ApiKey ${{ secrets.AZDO_ARTIFACTS_TOKEN }}
