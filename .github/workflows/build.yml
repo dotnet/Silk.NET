@@ -25,4 +25,4 @@ jobs:
         nuget-version: '5.x'
     - name: Push Experimental Packages
       if: ${{ github.repository == 'Ultz/Silk.NET' }}
-      run: nuget push build/output_packages/*.nupkg
+      run: nuget push "build\output_packages\*.nupkg"
