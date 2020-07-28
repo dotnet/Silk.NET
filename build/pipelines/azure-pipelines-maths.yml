@@ -1,19 +1,63 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+name: 'CI-$(Build.BuildId)'
 
 trigger:
-- master
+  branches:
+    include:
+    - '*'
+  paths:
+    include:
+    - '/src/Maths'
 
-pool:
-  vmImage: 'ubuntu-latest'
+pr:
+- '*'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+stages:
+- stage: Testing
+  jobs:
+  - job: Test
+    pool:
+      vmImage: 'ubuntu-latest'
+  
+    variables:
+      buildConfiguration: 'Release'
+      dotnetCoreVersion: '5.0.100-preview.7.20366.6'
+  
+    steps:
+    - task: UseDotNet@2
+      displayName: 'Install .NET 5.0'
+      inputs:
+        includePreviewVersions: true
+        version: $(dotnetCoreVersion)
+    - script: dotnet run --project ./src/Maths/Silk.NET.Maths.Tests/Silk.NET.Maths.Tests.fsproj --configuration Release -- --nunit-summary TestResults.xml
+      displayName: 'Run Tests and Export NUnit'
+    - task: PublishTestResults@2
+      condition: succeededOrFailed()
+      displayName: 'Publish Maths Tests'
+      inputs:
+        testRunner: NUnit
+        testResultsFiles: 'TestResults.xml'
+  - job: Coverage
+    pool:
+      vmImage: 'ubuntu-latest'
+  
+    variables:
+      buildConfiguration: 'Release'
+      dotnetCoreVersion: '5.0.100-preview.7.20366.6'
+  
+    steps:
+    - task: UseDotNet@2
+      displayName: 'Install .NET 5.0'
+      inputs:
+        includePreviewVersions: true
+        version: $(dotnetCoreVersion)
+    - script: dotnet test ./src/Maths/Silk.NET.Maths.Tests/Silk.NET.Maths.Tests.fsproj --configuration Release /p:AltCover=true /p:AltCoverCobertura="cobertura.xml" -- --nunit-summary TestResults.xml
+      displayName: 'Collect Coverage'
+      condition: succeededOrFailed()
+    - task: PublishCodeCoverageResults@1
+      condition: succeededOrFailed()
+      inputs:
+        codeCoverageTool: 'cobertura'
+        summaryFileLocation: ./src/Maths/Silk.NET.Maths.Tests/cobertura.xml
+    - script: bash <(curl -s https://codecov.io/bash)
+      displayName: 'Upload to codecov.io'
+      condition: succeededOrFailed()
