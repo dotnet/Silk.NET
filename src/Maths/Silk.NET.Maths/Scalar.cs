@@ -65,7 +65,7 @@ namespace Silk.NET.Maths
         }
     }
 
-    internal static class Scalar
+    internal static partial class Scalar
     {
         private const MethodImplOptions MethodImplOptions =
             System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining | (MethodImplOptions)512;
@@ -1530,11 +1530,28 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        // note that when `Cos` gets a better implementation, Sin should just become `Cos(Subtract(Tau, value));`
         [M(MethodImplOptions)]
         public static T Sin<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
+            
+#if !NETSTANDARD2_0
+#if HALF
+            if (typeof(T) == typeof(Half))
+            {
+                return (T)(object)(Half)Sin_Ported((float)(Half)(object)value);
+            }
+#endif
+            if (typeof(T) == typeof(float))
+            {
+                return (T)(object)Sin_Ported((float)(object)value);
+            }
+
+            if (typeof(T) == typeof(double))
+            {
+                return (T)(object)Math.Sin((double)(object)value);
+            }
+#else
 #if HALF
             if (typeof(T) == typeof(Half))
             {
@@ -1550,7 +1567,7 @@ namespace Silk.NET.Maths
             {
                 return (T)(object)Math.Sin((double)(object)value);
             }
-
+#endif
 
             Debug.Fail("Unreachable Code");
             return default;
@@ -1662,6 +1679,7 @@ namespace Silk.NET.Maths
         {
             ThrowForNonFloatingPointType<T>();
 
+            // return Sin(Add(HalfPi<T>(), value)); isn't quite as accurate
 #if HALF
             if (typeof(T) == typeof(Half))
             {
