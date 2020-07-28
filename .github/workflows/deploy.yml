@@ -29,6 +29,6 @@ jobs:
       with:
         nuget-version: '5.x'
     - name: Setup Feed
-      run: nuget sources add -Name GitHub -Source https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json -username UltzLtd -password ${{ secrets.ULTZLTD_TOKEN }}
+      run: nuget sources add -Name GitHub -Source https://nuget.pkg.github.com/Ultz/index.json -username UltzLtd -password ${{ secrets.ULTZLTD_TOKEN }}
     - name: Push to GitHub Packages
       run: nuget push "build/output_packages/*.nupkg" -Source GitHub -ApiKey ${{ secrets.ULTZLTD_TOKEN }}
