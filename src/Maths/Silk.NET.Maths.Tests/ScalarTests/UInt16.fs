@@ -27,7 +27,7 @@ let t = testList "Scalar UInt16 Tests" [
     ]
     
     testProperty "As" <|
-        fun (a:float32) -> Scalar.As<uint16>(a) = uint16 a
+        fun (a:float) -> Scalar.As<uint16>(a) = uint16 a
     
     testList "Throw Helpers" [
         testCase "ThrowInvalidType" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> (Scalar.ThrowInvalidType())) "ThrowInvalidType throws NotSupportedException"

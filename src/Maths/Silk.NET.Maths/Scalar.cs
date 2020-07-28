@@ -386,7 +386,7 @@ namespace Silk.NET.Maths
             return default; // can't be reached
         }
 
-        public static T As<T>(float value) where T : unmanaged, IFormattable
+        public static T As<T>(double value) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
             if (typeof(T) == typeof(byte))
@@ -422,7 +422,7 @@ namespace Silk.NET.Maths
             return _As2<T>(value);
         }
 
-        private static T _As2<T>(float value) where T : unmanaged, IFormattable
+        private static T _As2<T>(double value) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
             {
@@ -443,7 +443,7 @@ namespace Silk.NET.Maths
 
             if (typeof(T) == typeof(float))
             {
-                return (T)(object)value;
+                return (T)(object)(float)value;
             }
 
             if (typeof(T) == typeof(double))
@@ -1695,7 +1695,6 @@ namespace Silk.NET.Maths
             {
                 return (T)(object)Math.Cos((double)(object)value);
             }
-
 
             Debug.Fail("Unreachable Code");
             return default;

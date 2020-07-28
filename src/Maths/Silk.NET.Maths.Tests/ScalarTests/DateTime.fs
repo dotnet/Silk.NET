@@ -26,7 +26,7 @@ let t = testList "Scalar DateTime Tests" [
         testCase "NegativeInfinity" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> (Scalar.NegativeInfinity<DateTime>()) |> ignore) "Scalar.NegativeInfinity<DateTime>() throws"
     ]
     
-    testProperty "As" <| fun (a:float32) -> Expect.throwsT<NotSupportedException> (fun () -> (Scalar.As<DateTime>(a)) |> ignore) "Scalar.As<DateTime>() throws"
+    testProperty "As" <| fun (a:float) -> Expect.throwsT<NotSupportedException> (fun () -> (Scalar.As<DateTime>(a)) |> ignore) "Scalar.As<DateTime>() throws"
     
     testList "Throw Helpers" [
         testCase "ThrowInvalidType" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> (Scalar.ThrowInvalidType())) "ThrowInvalidType throws NotSupportedException"

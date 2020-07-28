@@ -37,7 +37,7 @@ let t = testList "Scalar Half Tests" [
     ]
     
     // ptestPropertyWithConfig config "As" <|
-    //    fun (a:float32) -> Half.Equals(Scalar.As<Half>(a), Half.op_Explicit a)
+    //    fun (a:float) -> Half.Equals(Scalar.As<Half>(a), Half.op_Explicit a)
     
     testList "Throw Helpers" [
         testCase "ThrowInvalidType" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> (Scalar.ThrowInvalidType())) "ThrowInvalidType throws NotSupportedException"

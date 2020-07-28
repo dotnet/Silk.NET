@@ -31,7 +31,7 @@ let t = testList "Scalar Double Tests" [
     ]
     
     testProperty "As" <|
-        fun (a:float32) -> Double.Equals(Scalar.As<Double>(a), double a)
+        fun (a:float) -> Double.Equals(Scalar.As<Double>(a), double a)
     
     testList "Throw Helpers" [
         testCase "ThrowInvalidType" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> (Scalar.ThrowInvalidType())) "ThrowInvalidType throws NotSupportedException"

@@ -27,7 +27,7 @@ let t = testList "Scalar Byte Tests" [
     ]
     
     testProperty "As" <|
-        fun (a:float32) -> Scalar.As<byte>(a) = byte a
+        fun (a:float) -> Scalar.As<byte>(a) = byte a
     
     testList "Throw Helpers" [
         testCase "ThrowInvalidType" <| fun () -> Expect.throwsT<NotSupportedException> (fun () -> (Scalar.ThrowInvalidType())) "ThrowInvalidType throws NotSupportedException"
