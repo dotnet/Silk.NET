@@ -6,6 +6,7 @@ trigger:
 pr:
 - '*'
 
+stages:
 - stage: Build_and_Pack
   jobs:
   - job: Build
