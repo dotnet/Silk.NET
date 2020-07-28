@@ -21,6 +21,17 @@ namespace Silk.NET.Maths
         {
             (Min, Max) = (min, max);
             
+#if !NETSTANDARD2_0
+            if (!IsNormal(min.X))
+                ThrowArgumentOutOfRangeException("min.X", "All values have to be normal");
+            if (!IsNormal(min.Y))
+                ThrowArgumentOutOfRangeException("min.Y", "All values have to be normal");
+            if (!IsNormal(max.X))
+                ThrowArgumentOutOfRangeException("max.X", "All values have to be normal");
+            if (!IsNormal(max.Y))
+                ThrowArgumentOutOfRangeException("max.Y", "All values have to be normal");
+#endif
+            
             if (Smaller(Max.X, Min.X) || Smaller(Max.Y, Min.Y))
             {
                 ThrowArgumentOutOfRangeException(nameof(Max), "Max has to be larger then Min");
@@ -39,7 +50,7 @@ namespace Silk.NET.Maths
 
         public Vector2<T> Size => Max - Min;
 
-        public readonly Vector2<T> HalfSize => Size / Scalar<T>.Two;
+        public Vector2<T> HalfSize => Size / Scalar<T>.Two;
 
         public Vector2<T> Center => Min + HalfSize;
 

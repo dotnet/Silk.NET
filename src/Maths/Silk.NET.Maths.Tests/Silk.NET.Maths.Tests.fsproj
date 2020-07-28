@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Generators.fs" />
     <Compile Include="ScalarTests\Byte.fs" />
     <Compile Include="ScalarTests\SByte.fs" />
     <Compile Include="ScalarTests\UInt16.fs" />
@@ -20,6 +21,7 @@
     <Compile Include="ScalarTests\Single.fs" />
     <Compile Include="ScalarTests\Double.fs" />
     <Compile Include="ScalarTests\DateTime.fs" />
+    <Compile Include="Box2Tests.fs" />
     <Compile Include="Main.fs" />
   </ItemGroup>
 
