@@ -17,5 +17,12 @@ jobs:
       run: dotnet pack --configuration Release --version-suffix build$GITHUB_RUN_NUMBER.0
     - name: Test
       run: dotnet test --no-restore --verbosity normal
-    - name: NuGet Push
-      run: dotnet nuget push build/output_packages/Silk.NET.*.nupkg -k ${{ secrets.AZDO_ARTIFACTS_TOKEN }} -s https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json
+    - name: Setup NuGet
+      uses: nuget/setup-nuget@v1
+      with:
+        nuget-api-key: ${{ secrets.AZDO_ARTIFACTS_TOKEN }}
+        nuget-api-key-source: https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json
+        nuget-version: '5.x'
+    - name: Push Experimental Packages
+      if: ${{ github.repository == 'Ultz/Silk.NET' }}
+      run: nuget push build/output_packages/Silk.NET.*.nupkg
