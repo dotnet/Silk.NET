@@ -11,12 +11,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.302
-    - name: Install dependencies
-      run: dotnet restore
-    - name: Pack
-      run: dotnet pack --configuration Release --version-suffix build$GITHUB_RUN_NUMBER.0
     - name: Test
       run: dotnet test --no-restore --verbosity normal
+    - name: Pack
+      run: dotnet pack --configuration Release --version-suffix build$GITHUB_RUN_NUMBER.0
     - name: Setup NuGet
       uses: nuget/setup-nuget@v1
       with:
