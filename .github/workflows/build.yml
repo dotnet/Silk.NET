@@ -25,4 +25,4 @@ jobs:
         nuget-version: '5.x'
     - name: Push Experimental Packages
       if: ${{ github.repository == 'Ultz/Silk.NET' }}
-      run: nuget push "build\output_packages\*.nupkg" -Source "https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json" -ApiKey ${{ secrets.AZDO_ARTIFACTS_TOKEN }}
+      run: nuget push "build/output_packages/*.nupkg" -Source "https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json" -ApiKey ${{ secrets.AZDO_ARTIFACTS_TOKEN }}
