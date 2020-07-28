@@ -2,7 +2,9 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>8.0</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <RootNamespace>Silk.NET.Windowing</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

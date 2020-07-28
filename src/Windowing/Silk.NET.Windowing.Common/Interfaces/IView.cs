@@ -7,7 +7,7 @@ using System;
 using System.Drawing;
 using Silk.NET.Core.Contexts;
 
-namespace Silk.NET.Windowing.Common
+namespace Silk.NET.Windowing
 {
     /// <summary>
     /// Represents a window view.
@@ -20,36 +20,9 @@ namespace Silk.NET.Windowing.Common
         IntPtr Handle { get; }
 
         /// <summary>
-        /// Determines whether the context is current on this thread.
-        /// </summary>
-        [Obsolete
-        (
-            "IsCurrentContext will be removed in 2.0. Use GLContext.IsCurrent instead. " +
-            "https://github.com/Ultz/Silk.NET/blob/v1.2.0/documentation/deprecation-notices/VulkanViews.md"
-        )]
-        bool IsCurrentContext { get; }
-
-        /// <summary>
-        /// Determines whether Vulkan functions are supported on this window.
-        /// </summary>
-        [Obsolete
-        (
-            "IsVulkanSupported will be removed in 2.0. Check whether VkSurface is null instead. " +
-            "https://github.com/Ultz/Silk.NET/blob/v1.2.0/documentation/deprecation-notices/VulkanViews.md"
-        )]
-        bool IsVulkanSupported { get; }
-
-        /// <summary>
         /// Determines whether the underlying platform has requested the window to close.
         /// </summary>
         bool IsClosing { get; }
-
-        /// <summary>
-        /// If true, the window has failed to reach the target framerate for multiple consecutive frames, as defined
-        /// in <see cref="IViewProperties.RunningSlowTolerance"/>. You can use this to do things such as lowering
-        /// visual fidelity to increase framerates on lower-end machines.
-        /// </summary>
-        bool IsRunningSlowly { get; }
 
         /// <summary>
         /// Elapsed time in seconds since the View was initialized.
@@ -118,16 +91,6 @@ namespace Silk.NET.Windowing.Common
         void Reset();
 
         /// <summary>
-        /// Swaps the front and back buffers.
-        /// </summary>
-        void SwapBuffers();
-
-        /// <summary>
-        /// Makes the OpenGL context current on the current thread.
-        /// </summary>
-        void MakeCurrent();
-
-        /// <summary>
         /// Close this window.
         /// </summary>
         void Close();
@@ -147,24 +110,11 @@ namespace Silk.NET.Windowing.Common
         Point PointToScreen(Point point);
 
         /// <summary>
-        /// Invokes this delegate on the window's main thread.
-        /// </summary>
-        /// <param name="d">The delegate to run.</param>
-        /// <returns>An object returned from the delegate.</returns>
-        object Invoke(Delegate d);
-
-        /// <summary>
         /// Invokes this delegate on the window's main thread, with the provided arguments.
         /// </summary>
         /// <param name="d">The delegate to run.</param>
         /// <param name="args">The delegate's arguments.</param>
         /// <returns>An object returned from the delegate.</returns>
         object Invoke(Delegate d, params object[] args);
-
-        /// <summary>
-        /// If this window's context is current on this thread, it is cleared from the thread (i.e. made non-current).
-        /// To make all contexts non-current, use <see cref="IWindowPlatform.ClearCurrent"/>.
-        /// </summary>
-        void ClearContext();
     }
 }

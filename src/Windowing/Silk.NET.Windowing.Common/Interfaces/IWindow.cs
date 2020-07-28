@@ -5,9 +5,8 @@
 
 using System;
 using System.Drawing;
-using Silk.NET.Windowing.Common.Structs;
 
-namespace Silk.NET.Windowing.Common
+namespace Silk.NET.Windowing
 {
     /// <summary>
     /// An interface representing a window.

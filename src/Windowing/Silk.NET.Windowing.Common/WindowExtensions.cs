@@ -4,9 +4,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using Silk.NET.Windowing.Common.Structs;
 
-namespace Silk.NET.Windowing.Common
+namespace Silk.NET.Windowing
 {
     /// <summary>
     /// Extensions for IWindow
@@ -57,6 +56,10 @@ namespace Silk.NET.Windowing.Common
             view.DoEvents();
             view.Reset();
         }
+
+        public static void SwapBuffers(this IView view) => view.GLContext?.SwapBuffers();
+        public static void MakeCurrent(this IView view) => view.GLContext?.MakeCurrent();
+        public static void ClearContext(this IView view) => view.GLContext?.Clear();
 
         /// <summary>
         /// Sets the window icon to default on the given window.

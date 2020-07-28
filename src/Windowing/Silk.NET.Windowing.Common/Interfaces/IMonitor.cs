@@ -6,7 +6,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace Silk.NET.Windowing.Common
+namespace Silk.NET.Windowing
 {
     /// <summary>
     /// An interface representing a monitor.

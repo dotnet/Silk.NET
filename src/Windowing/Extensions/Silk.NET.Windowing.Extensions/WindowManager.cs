@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Silk.NET.Windowing.Common;
 
 namespace Silk.NET.Windowing.Extensions
 {
@@ -27,7 +26,7 @@ namespace Silk.NET.Windowing.Extensions
         /// Gets the window with a context current on this thread.
         /// </summary>
         /// <returns>The window with a context current on this thread.</returns>
-        public IWindow GetCurrent() => Windows.FirstOrDefault(x => x.IsCurrentContext);
+        public IWindow GetCurrent() => Windows.FirstOrDefault(x => x.GLContext?.IsCurrent ?? false);
 
         /// <summary>
         /// Adds a window to this manager.
@@ -54,7 +53,7 @@ namespace Silk.NET.Windowing.Extensions
         /// fetched using the <see cref="SilkManager"/>.
         /// </param>
         public void CreateWindow(WindowOptions opts, IWindowHost host = null)
-            => AddWindow((host ?? Window.Platform).CreateWindow(opts));
+            => AddWindow((host ?? Window.GetWindowPlatform(false))!.CreateWindow(opts));
 
         /// <summary>
         /// Executes a render loop encompassing all windows within this manager.

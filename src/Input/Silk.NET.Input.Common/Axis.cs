@@ -3,12 +3,12 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// Represents an axis on a joystick.
     /// </summary>
-    public struct Axis
+    public readonly struct Axis
     {
         /// <summary>
         /// The index of this axis, used to determine which axis it is.

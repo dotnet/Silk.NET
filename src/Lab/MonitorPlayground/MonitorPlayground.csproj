@@ -7,7 +7,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
-      <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+      <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
     </ItemGroup>
 
 </Project>

@@ -5,7 +5,7 @@
 
 using System.Collections.Generic;
 
-namespace Silk.NET.Windowing.Common
+namespace Silk.NET.Windowing
 {
     /// <summary>
     /// An interface that provides windowing for its respective native backend.
@@ -45,5 +45,12 @@ namespace Silk.NET.Windowing.Common
         /// </summary>
         /// <returns>The main monitor.</returns>
         IMonitor GetMainMonitor();
+
+        /// <summary>
+        /// Gets whether the given view is sourced from this platform.
+        /// </summary>
+        /// <param name="view">The view to check.</param>
+        /// <returns>Whether the view is sourced from this platform.</returns>
+        bool IsSourceOfView(IView view);
     }
 }

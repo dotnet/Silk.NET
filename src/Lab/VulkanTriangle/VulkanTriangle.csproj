@@ -11,7 +11,6 @@
       <ProjectReference Include="..\..\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.KHR\Silk.NET.Vulkan.Extensions.KHR.csproj" />
       <ProjectReference Include="..\..\Vulkan\Silk.NET.Vulkan\Silk.NET.Vulkan.csproj" />
       <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
-      <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
     </ItemGroup>
 
     <ItemGroup>

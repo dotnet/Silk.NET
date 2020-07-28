@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// Represents a gamepad/controller with a set amount of thumbsticks, buttons, and triggers.

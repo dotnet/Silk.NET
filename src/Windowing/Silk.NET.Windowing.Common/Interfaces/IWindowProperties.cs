@@ -5,7 +5,7 @@
 
 using System.Drawing;
 
-namespace Silk.NET.Windowing.Common
+namespace Silk.NET.Windowing
 {
     /// <summary>
     /// Contains all window properties.
