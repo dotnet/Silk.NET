@@ -17,10 +17,11 @@ env:
 jobs:
   check-comment:
     outputs:
-      triggered: ${{ steps.check.outputs.triggered }}
+      triggered: ${{ steps.check.outputs.triggered || github.event_name == 'push' }}
     runs-on: ubuntu-latest
     steps:
       - uses: khan/pull-request-comment-trigger@master
+        if: github.event_name != 'push'
         id: check
         with:
           trigger: '@jit-asm'
