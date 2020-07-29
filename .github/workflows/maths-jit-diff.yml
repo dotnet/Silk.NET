@@ -56,12 +56,12 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ./artifacts/
-          key: windows-${{ matrix.arch }}-clr-cache-v5.0.100-preview.7.20364.11
+          key: windows-${{ matrix.arch }}-clr-cache-v5.0.0-preview.7.20364.11 
       - uses: actions/checkout@v2
         if: steps.cache.outputs.cache-hit != 'true'
         with:
           repository: dotnet/runtime
-          ref: v5.0.100-preview.7.20364.11
+          ref: v5.0.0-preview.7.20364.11 
       - name: Build CLR
         if: steps.cache.outputs.cache-hit != 'true'
         run: ./build.cmd -subset clr -configuration checked -arch ${{ matrix.arch }}
@@ -109,3 +109,4 @@ jobs:
           message: 'Update Windows ${{ matrix.arch }} JIT ASM'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: git push
