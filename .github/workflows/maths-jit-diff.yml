@@ -11,6 +11,8 @@ env:
 
 jobs:
   check-comment:
+    outputs:
+      triggered: ${{ steps.check.outputs.triggered }}
     runs-on: ubuntu-latest
     steps:
       - uses: khan/pull-request-comment-trigger@master
