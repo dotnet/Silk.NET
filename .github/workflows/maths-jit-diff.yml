@@ -11,7 +11,7 @@ env:
 
 jobs:
   check-comment:
-    runs-on: linux-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: khan/pull-request-comment-trigger@master
         id: check
