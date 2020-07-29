@@ -32,9 +32,9 @@ jobs:
       - name: Build Project
         run: dotnet build ./src/Maths/JITTest/JITTest.csproj -f net5.0 -c Release -o ./sample/
       - uses: actions/upload-artifact@v2
-          with:
-            name: sample
-            path: sample/
+        with:
+          name: sample
+          path: sample/
             
   windows-setup-clr:
     strategy:
@@ -55,9 +55,9 @@ jobs:
       - name: Build Test
         run: ./src/coreclr/build-test.cmd ${{ matrix.arch }} checked
       - uses: actions/upload-artifact@v2
-          with:
-            name: windows-${{ matrix.arch }}-clr
-            path: artifacts/
+        with:
+          name: windows-${{ matrix.arch }}-clr
+          path: artifacts/
   windows-diff:
     strategy:
       matrix:
