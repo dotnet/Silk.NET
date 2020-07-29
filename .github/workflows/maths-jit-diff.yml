@@ -110,7 +110,7 @@ jobs:
         run: ./artifacts/tests/coreclr/Windows_NT.${{ matrix.arch }}.Checked/Tests/Core_Root/CoreRun.exe ./sample/JITTest.dll > ./windows-jit-asm-${{ matrix.arch }}
         env:
           COMPlus_TieredCompilation: 0
-          COMPlus_JitDisasm: 'Silk.NET.Maths.Scalar::*'
+          COMPlus_JitDisasm: '*'
           COMPlus_JitDiffableDasm: 1
       - name: Upload JIT Diff
         uses: EndBug/add-and-commit@v4 # You can change this to use a specific version
