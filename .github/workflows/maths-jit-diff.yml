@@ -23,11 +23,10 @@ jobs:
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
   build-sample-project:
-    runs-on: linux-latest
+    runs-on: ubuntu-latest
     
     needs: check-comment
     if: needs.check-comment.outputs.triggered == 'true'
-    
     steps:
       - uses: actions/checkout@v2
       - name: Setup .NET Core
@@ -52,14 +51,25 @@ jobs:
     if: needs.check-comment.outputs.triggered == 'true'
     
     steps:
+      - name: Cache Artifacts
+        id: cache
+        uses: actions/cache@v2
+        with:
+          path: ./artifacts/
+          key: windows-${{ matrix.arch }}-clr-cache-v5.0.100-preview.7.20364.11
       - uses: actions/checkout@v2
+        if: steps.cache.outputs.cache-hit != 'true'
         with:
           repository: dotnet/runtime
+          ref: v5.0.100-preview.7.20364.11
       - name: Build CLR
+        if: steps.cache.outputs.cache-hit != 'true'
         run: ./build.cmd -subset clr -configuration checked -arch ${{ matrix.arch }}
       - name: Build Libs
+        if: steps.cache.outputs.cache-hit != 'true'
         run: ./build.cmd -subset libs -configuration release -runtimeConfiguration checked -arch ${{ matrix.arch }}
       - name: Build Test
+        if: steps.cache.outputs.cache-hit != 'true'
         run: ./src/coreclr/build-test.cmd ${{ matrix.arch }} checked
       - uses: actions/upload-artifact@v2
         with:
