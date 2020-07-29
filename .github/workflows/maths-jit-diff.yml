@@ -61,7 +61,7 @@ jobs:
         id: cache
         uses: actions/cache@v2
         with:
-          path: ./artifacts.zip
+          path: artifacts/
           key: windows-${{ matrix.arch }}-clr-cache-${{ env.DOTNET_TAG }} 
       - uses: actions/checkout@v2
         if: steps.cache.outputs.cache-hit != 'true'
