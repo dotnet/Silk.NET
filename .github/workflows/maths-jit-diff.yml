@@ -77,10 +77,16 @@ jobs:
       - name: Build Test
         if: steps.cache.outputs.cache-hit != 'true'
         run: ./src/coreclr/build-test.cmd ${{ matrix.arch }} checked
+      - uses: papeloto/action-zip@v1
+        name: Zip checked CLR
+        with:
+          files: artifacts/
+          dest: artifacts.zip
       - uses: actions/upload-artifact@v2
+        name: Upload checked CLR
         with:
           name: windows-${{ matrix.arch }}-clr
-          path: artifacts/
+          path: artifacts.zip
   windows-diff:
     strategy:
       matrix:
@@ -95,7 +101,12 @@ jobs:
         name: Download checked CLR
         with:
           name: windows-${{ matrix.arch }}-clr
-          path: artifacts/
+          path: artifacts.zip
+      - name: Extract checked CLR
+        uses: DuckSoft/extract-7z-action@v1.0
+        with:
+          pathSource: artifacts.zip
+          pathTarget: artifacts/
       - uses: actions/download-artifact@v2
         name: Download Sample
         with:
