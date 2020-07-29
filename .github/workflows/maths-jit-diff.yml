@@ -5,6 +5,9 @@ on:
     types: [opened]
   issue_comment:
     types: [created]
+  push:
+    paths:
+      - '.github/workflows/maths-jit-diff.yml'
 
 env:
   DOTNET_NOLOGO: 1
