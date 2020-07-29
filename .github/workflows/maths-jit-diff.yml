@@ -61,7 +61,7 @@ jobs:
         id: cache
         uses: actions/cache@v2
         with:
-          path: ./artifacts/
+          path: ./artifacts.zip
           key: windows-${{ matrix.arch }}-clr-cache-${{ env.DOTNET_TAG }} 
       - uses: actions/checkout@v2
         if: steps.cache.outputs.cache-hit != 'true'
@@ -79,6 +79,7 @@ jobs:
         run: ./src/coreclr/build-test.cmd ${{ matrix.arch }} checked
       - uses: papeloto/action-zip@v1
         name: Zip checked CLR
+        if: steps.cache.outputs.cache-hit != 'true'
         with:
           files: artifacts/
           dest: artifacts.zip
