@@ -1,0 +1,94 @@
+name: JIT Disassembly
+
+on:
+  pull_request:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
+env:
+  DOTNET_NOLOGO: 1
+
+jobs:
+  check-comment:
+    runs-on: linux-latest
+    steps:
+      - uses: khan/pull-request-comment-trigger@master
+        id: check
+        with:
+          trigger: '@jit-asm'
+          reaction: rocket
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+  build-sample-project:
+    runs-on: linux-latest
+    needs: check-comment
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with: 
+          dotnet-version: 5.0.100-preview.7.20366.6
+      - name: Build Project
+        run: dotnet build ./src/Maths/JITTest/JITTest.csproj -f net5.0 -c Release -o ./sample/
+      - uses: actions/upload-artifact@v2
+          with:
+            name: sample
+            path: sample/
+            
+  windows-setup-clr:
+    strategy:
+      matrix:
+        arch: [x64, x86]
+
+    runs-on: windows-latest
+  
+    needs: check-comment
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: dotnet/runtime
+      - name: Build CLR
+        run: ./build.cmd -subset clr -configuration checked -arch ${{ matrix.arch }}
+      - name: Build Libs
+        run: ./build.cmd -subset libs -configuration release -runtimeConfiguration checked -arch ${{ matrix.arch }}
+      - name: Build Test
+        run: ./src/coreclr/build-test.cmd ${{ matrix.arch }} checked
+      - uses: actions/upload-artifact@v2
+          with:
+            name: windows-${{ matrix.arch }}-clr
+            path: artifacts/
+  windows-diff:
+    strategy:
+      matrix:
+        arch: [x64, x86]
+
+    runs-on: windows-latest
+  
+    needs: [windows-setup-clr, build-sample-project]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
+        name: Download checked CLR
+        with:
+          name: windows-${{ matrix.arch }}-clr
+          path: artifacts/
+      - uses: actions/download-artifact@v2
+        name: Download Sample
+        with:
+          name: sample
+          path: sample/
+      - name: Generate JIT Diff
+        run: ./artifacts/tests/coreclr/Windows_NT.${{ matrix.arch }}.Checked/Tests/Core_Root/CoreRun.exe ./sample/JITTest.dll > ./windows-jit-asm-${{ matrix.arch }}
+        env:
+          COMPlus_TieredCompilation: 0
+          COMPlus_JitDisasm: '*'
+      - name: Upload JIT Diff
+        uses: EndBug/add-and-commit@v4 # You can change this to use a specific version
+        with:
+          add: './windows-jit-asm-${{ matrix.arch }}'
+          author_name: JIT CI
+          author_email: contact@kaij.tech
+          message: 'Update Windows ${{ matrix.arch }} JIT ASM'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

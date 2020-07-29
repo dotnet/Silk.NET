@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths.Generator", 
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Silk.NET.Maths.Tests", "Silk.NET.Maths.Tests\Silk.NET.Maths.Tests.fsproj", "{C3215652-5D03-4982-BF23-61CD8B00340B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JITTest", "JITTest\JITTest.csproj", "{F4C8B2A0-4888-4884-923B-E8629FBCCC7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{C3215652-5D03-4982-BF23-61CD8B00340B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3215652-5D03-4982-BF23-61CD8B00340B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3215652-5D03-4982-BF23-61CD8B00340B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4C8B2A0-4888-4884-923B-E8629FBCCC7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4C8B2A0-4888-4884-923B-E8629FBCCC7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4C8B2A0-4888-4884-923B-E8629FBCCC7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4C8B2A0-4888-4884-923B-E8629FBCCC7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
