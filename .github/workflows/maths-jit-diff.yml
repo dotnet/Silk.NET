@@ -11,6 +11,8 @@ on:
 
 env:
   DOTNET_NOLOGO: 1
+  DOTNET_TAG: v5.0.0-preview.7.20364.11
+  DOTNET_VERSION: 5.0.100-preview.7.20366.6
 
 jobs:
   check-comment:
@@ -35,7 +37,7 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v1
         with: 
-          dotnet-version: 5.0.100-preview.7.20366.6
+          dotnet-version: ${{ env.DOTNET_VERSION }}
       - name: Build Project
         run: dotnet build ./src/Maths/JITTest/JITTest.csproj -f net5.0 -c Release -o ./sample/
       - uses: actions/upload-artifact@v2
@@ -59,12 +61,12 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ./artifacts/
-          key: windows-${{ matrix.arch }}-clr-cache-v5.0.0-preview.7.20364.11 
+          key: windows-${{ matrix.arch }}-clr-cache-${{ env.DOTNET_TAG }} 
       - uses: actions/checkout@v2
         if: steps.cache.outputs.cache-hit != 'true'
         with:
           repository: dotnet/runtime
-          ref: v5.0.0-preview.7.20364.11 
+          ref: ${{ env.DOTNET_TAG }} 
       - name: Build CLR
         if: steps.cache.outputs.cache-hit != 'true'
         run: ./build.cmd -subset clr -configuration checked -arch ${{ matrix.arch }}
