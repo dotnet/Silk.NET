@@ -33,6 +33,7 @@
     <PackageReference Include="Expecto.Hopac" Version="9.0.2" />
     <PackageReference Include="Expecto.VisualStudio.TestAdapter" Version="10.0.2" />
     <PackageReference Include="FsCheck" Version="2.14.3" />
+    <PackageReference Include="GitHubActionsTestLogger" Version="1.1.0" />
     <PackageReference Include="Logary.Adapters.Facade" Version="5.0.1" />
     <PackageReference Include="YoloDev.Expecto.TestSdk" Version="0.*" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
