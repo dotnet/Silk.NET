@@ -22,7 +22,10 @@ jobs:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
   build-sample-project:
     runs-on: linux-latest
+    
     needs: check-comment
+    if: needs.check-comment.outputs.triggered == 'true'
+    
     steps:
       - uses: actions/checkout@v2
       - name: Setup .NET Core
@@ -40,10 +43,12 @@ jobs:
     strategy:
       matrix:
         arch: [x64, x86]
-
+        
     runs-on: windows-latest
-  
+    
     needs: check-comment
+    if: needs.check-comment.outputs.triggered == 'true'
+    
     steps:
       - uses: actions/checkout@v2
         with:
