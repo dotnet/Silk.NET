@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
   <metadata minClientVersion="2.12">
     <id>Ultz.Native.Assimp</id>
-    <version>5.0.1</version>
+    <version>5.0.1.1</version>
     <authors>Ultz</authors>
     <owners>Ultz</owners>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
