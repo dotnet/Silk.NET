@@ -77,13 +77,11 @@ jobs:
       - name: Build Test
         if: steps.cache.outputs.cache-hit != 'true'
         run: ./src/coreclr/build-test.cmd ${{ matrix.arch }} checked
-      - name: Zip checked CLR
-        run: tar.exe -a -c -f artifacts.zip artifacts
       - uses: actions/upload-artifact@v2
         name: Upload checked CLR
         with:
           name: windows-${{ matrix.arch }}-clr
-          path: artifacts.zip
+          path: artifacts/
   windows-diff:
     strategy:
       matrix:
@@ -98,9 +96,7 @@ jobs:
         name: Download checked CLR
         with:
           name: windows-${{ matrix.arch }}-clr
-          path: artifacts.zip
-      - name: Extract checked CLR
-        run: tar.exe -x -f artifacts.zip
+          path: artifacts/
       - uses: actions/download-artifact@v2
         name: Download Sample
         with:
