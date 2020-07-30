@@ -53,7 +53,7 @@ jobs:
         
     runs-on: windows-latest
     
-    needs: check-comment
+    needs: [check-comment, build-sample-project]
     if: needs.check-comment.outputs.triggered == 'true'
     
     steps:
@@ -77,26 +77,6 @@ jobs:
       - name: Build Test
         if: steps.cache.outputs.cache-hit != 'true'
         run: ./src/coreclr/build-test.cmd ${{ matrix.arch }} checked
-      - uses: actions/upload-artifact@v2
-        name: Upload checked CLR
-        with:
-          name: windows-${{ matrix.arch }}-clr
-          path: artifacts/
-  windows-diff:
-    strategy:
-      matrix:
-        arch: [x64, x86]
-
-    runs-on: windows-latest
-  
-    needs: [windows-setup-clr, build-sample-project]
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
-        name: Download checked CLR
-        with:
-          name: windows-${{ matrix.arch }}-clr
-          path: artifacts/
       - uses: actions/download-artifact@v2
         name: Download Sample
         with:
