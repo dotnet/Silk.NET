@@ -8,7 +8,7 @@ on:
   push:
     paths:
       - '.github/workflows/maths-jit-diff.yml'
-      - 'src/Maths/JITTest/**/*'
+      - 'src/Maths/JITTest/**'
 
 env:
   DOTNET_NOLOGO: 1
