@@ -83,19 +83,27 @@ jobs:
         with:
           name: sample
           path: sample/
+      - uses: actions/checkout@v2
+        with:
+          path: 'r'
       - name: Generate JIT Diff
-        run: ./artifacts/tests/coreclr/Windows_NT.${{ matrix.arch }}.Checked/Tests/Core_Root/CoreRun.exe ./sample/JITTest.dll > ./windows-jit-asm-${{ matrix.arch }}
+        run: ./artifacts/tests/coreclr/Windows_NT.${{ matrix.arch }}.Checked/Tests/Core_Root/CoreRun.exe ./sample/JITTest.dll > ./r/windows-jit-asm-${{ matrix.arch }}
         env:
           COMPlus_TieredCompilation: 0
           COMPlus_JitDisasm: '*'
           COMPlus_JitDiffableDasm: 1
       - name: Upload JIT Diff
-        uses: EndBug/add-and-commit@v4 # You can change this to use a specific version
+        uses: EndBug/add-and-commit@v4
         with:
+          cwd: './r'
           add: './windows-jit-asm-${{ matrix.arch }}'
           author_name: JIT CI
           author_email: contact@kaij.tech
           message: 'Update Windows ${{ matrix.arch }} JIT ASM'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - run: git push
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        working-directory: './r'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
