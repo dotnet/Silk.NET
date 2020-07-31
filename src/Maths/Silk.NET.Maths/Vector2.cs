@@ -9,6 +9,7 @@ using System.Runtime.Intrinsics;
 using System;
 using System.Globalization;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Text;
 using static Silk.NET.Maths.Scalar;
 
