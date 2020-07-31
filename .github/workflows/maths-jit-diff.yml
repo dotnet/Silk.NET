@@ -97,7 +97,7 @@ jobs:
         uses: EndBug/add-and-commit@v4
         with:
           cwd: './r'
-          add: './r/build/maths/windows-jit-asm-${{ matrix.arch }}'
+          add: './build/maths/windows-jit-asm-${{ matrix.arch }}'
           author_name: JIT CI
           author_email: 31213871+UltzLtd@users.noreply.github.com
           message: 'Update Windows ${{ matrix.arch }} JIT ASM'
