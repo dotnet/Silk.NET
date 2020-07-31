@@ -14,12 +14,12 @@ Silk.NET works on any .NET Standard 2.0 compliant platform. This includes Xamari
 # The team
 We currently have the following maintainers:
 - [Dylan P.](https://github.com/Perksey) from [Ultz](https://github.com/Ultz)
-- [Vivian J.](https://github.com/devvoid) from the open-source community
 - [Kai J.](https://github.com/HurricanKai) from the open-source community
 
 As well as some helpers from the community:
-- [Maximiliano L.](https://github.com/maxilevi) - developer of [Project Hedra](https://projecthedra.com/) using Silk.NET
-- [Aaron P.](https://github.com/AzyIsCool) - director at [Ultz](https://github.com/Ultz)
+- [Vivian J.](https://github.com/devvoid) - a community member who basically wrote half the library.
+- [Maximiliano L.](https://github.com/maxilevi) - developer of [Project Hedra](https://projecthedra.com/) using Silk.NET.
+- [Aaron P.](https://github.com/AzyIsCool) - director at [Ultz](https://github.com/Ultz).
 - [Frederik A.](https://github.com/frederikja163) - imparting knowledge on those using Silk.NET.
 - [Robert S.](https://github.com/Pyrdacor) - developer of [freeserf.net](https://github.com/Pyrdacor/freeserf.net) and lead developer of [Silk UI](https://github.com/Ultz/SilkUI)
 
