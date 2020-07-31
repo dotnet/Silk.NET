@@ -90,7 +90,7 @@ jobs:
         run: ./artifacts/tests/coreclr/Windows_NT.${{ matrix.arch }}.Checked/Tests/Core_Root/CoreRun.exe ./sample/JITTest.dll > ./r/build/maths/windows-jit-asm-${{ matrix.arch }}
         env:
           COMPlus_TieredCompilation: 0
-          COMPlus_JitDisasm: 'JITTest.*::*'
+          COMPlus_JitDisasm: 'Silk.NET.Maths.Scalar::*'
           COMPlus_JitDiffableDasm: 1
        
       - name: Upload JIT Diff
