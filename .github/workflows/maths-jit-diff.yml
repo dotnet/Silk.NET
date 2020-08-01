@@ -9,6 +9,7 @@ on:
     paths:
       - '.github/workflows/maths-jit-diff.yml'
       - 'src/Maths/JITTest/**'
+      - 'src/Maths/Silk.NET.Maths/Scalar*.cs'
 
 env:
   DOTNET_NOLOGO: 1
