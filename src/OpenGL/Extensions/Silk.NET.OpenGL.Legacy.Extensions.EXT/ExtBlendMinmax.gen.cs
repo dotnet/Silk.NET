@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_blend_minmax")]
-    public abstract unsafe partial class ExtBlendMinmax : NativeExtension<GL>
+    public unsafe partial class ExtBlendMinmax : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_blend_minmax";
         [NativeApi(EntryPoint = "glBlendEquationEXT")]
-        public abstract void BlendEquation([Flow(FlowDirection.In)] EXT mode);
+        public partial void BlendEquation([Flow(FlowDirection.In)] EXT mode);
 
         [NativeApi(EntryPoint = "glBlendEquationEXT")]
-        public abstract void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode);
+        public partial void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode);
 
         public ExtBlendMinmax(INativeContext ctx)
             : base(ctx)

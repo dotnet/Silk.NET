@@ -16,24 +16,24 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenXR.Extensions.KHR
 {
     [Extension("XR_KHR_convert_timespec_time")]
-    public abstract unsafe partial class KhrConvertTimespecTime : NativeExtension<XR>
+    public unsafe partial class KhrConvertTimespecTime : NativeExtension<XR>
     {
         public const string ExtensionName = "XR_KHR_convert_timespec_time";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrConvertTimespecTimeToTimeKHR")]
-        public abstract unsafe Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ValueTuple<IntPtr,IntPtr>* timespecTime, [Count(Count = 0)] long* time);
+        public partial unsafe Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ValueTuple<IntPtr,IntPtr>* timespecTime, [Count(Count = 0)] long* time);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrConvertTimespecTimeToTimeKHR")]
-        public abstract Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref ValueTuple<IntPtr,IntPtr> timespecTime, [Count(Count = 0)] ref long time);
+        public partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref ValueTuple<IntPtr,IntPtr> timespecTime, [Count(Count = 0)] ref long time);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrConvertTimeToTimespecTimeKHR")]
-        public abstract unsafe Result ConvertTimeToTimespecTime([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] ValueTuple<IntPtr,IntPtr>* timespecTime);
+        public partial unsafe Result ConvertTimeToTimespecTime([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] ValueTuple<IntPtr,IntPtr>* timespecTime);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrConvertTimeToTimespecTimeKHR")]
-        public abstract Result ConvertTimeToTimespecTime([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] ref ValueTuple<IntPtr,IntPtr> timespecTime);
+        public partial Result ConvertTimeToTimespecTime([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] ref ValueTuple<IntPtr,IntPtr> timespecTime);
 
         public KhrConvertTimespecTime(INativeContext ctx)
             : base(ctx)

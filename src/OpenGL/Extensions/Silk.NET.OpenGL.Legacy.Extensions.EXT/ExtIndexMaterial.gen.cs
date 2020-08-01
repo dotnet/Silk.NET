@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_index_material")]
-    public abstract unsafe partial class ExtIndexMaterial : NativeExtension<GL>
+    public unsafe partial class ExtIndexMaterial : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_index_material";
         [NativeApi(EntryPoint = "glIndexMaterialEXT")]
-        public abstract void IndexMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] EXT mode);
+        public partial void IndexMaterial([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] EXT mode);
 
         [NativeApi(EntryPoint = "glIndexMaterialEXT")]
-        public abstract void IndexMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] IndexMaterialParameterEXT mode);
+        public partial void IndexMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] IndexMaterialParameterEXT mode);
 
         public ExtIndexMaterial(INativeContext ctx)
             : base(ctx)

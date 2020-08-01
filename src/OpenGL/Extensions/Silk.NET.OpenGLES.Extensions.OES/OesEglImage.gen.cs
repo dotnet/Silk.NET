@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [Extension("OES_EGL_image")]
-    public abstract unsafe partial class OesEglImage : NativeExtension<GL>
+    public unsafe partial class OesEglImage : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_EGL_image";
         [NativeApi(EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
-        public abstract void EglimageTargetRenderbufferStorage([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image);
+        public partial void EglimageTargetRenderbufferStorage([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image);
 
         [NativeApi(EntryPoint = "glEGLImageTargetTexture2DOES")]
-        public abstract void EglimageTargetTexture2D([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image);
+        public partial void EglimageTargetTexture2D([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image);
 
         public unsafe void EglimageTargetRenderbufferStorage([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] int image)
         {

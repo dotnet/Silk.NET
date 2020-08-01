@@ -16,20 +16,20 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_shader_pixel_local_storage2")]
-    public abstract unsafe partial class ExtShaderPixelLocalStorage2 : NativeExtension<GL>
+    public unsafe partial class ExtShaderPixelLocalStorage2 : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_shader_pixel_local_storage2";
         [NativeApi(EntryPoint = "glClearPixelLocalStorageuiEXT")]
-        public abstract unsafe void ClearPixelLocalStorage([Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* values);
+        public partial unsafe void ClearPixelLocalStorage([Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* values);
 
         [NativeApi(EntryPoint = "glClearPixelLocalStorageuiEXT")]
-        public abstract void ClearPixelLocalStorage([Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> values);
+        public partial void ClearPixelLocalStorage([Flow(FlowDirection.In)] uint offset, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> values);
 
         [NativeApi(EntryPoint = "glFramebufferPixelLocalStorageSizeEXT")]
-        public abstract void FramebufferPixelLocalStorageSize([Flow(FlowDirection.In)] uint target, [Flow(FlowDirection.In)] uint size);
+        public partial void FramebufferPixelLocalStorageSize([Flow(FlowDirection.In)] uint target, [Flow(FlowDirection.In)] uint size);
 
         [NativeApi(EntryPoint = "glGetFramebufferPixelLocalStorageSizeEXT")]
-        public abstract uint GetFramebufferPixelLocalStorageSize([Flow(FlowDirection.In)] uint target);
+        public partial uint GetFramebufferPixelLocalStorageSize([Flow(FlowDirection.In)] uint target);
 
         public ExtShaderPixelLocalStorage2(INativeContext ctx)
             : base(ctx)

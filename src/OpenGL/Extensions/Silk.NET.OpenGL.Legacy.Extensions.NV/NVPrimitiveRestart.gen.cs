@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_primitive_restart")]
-    public abstract unsafe partial class NVPrimitiveRestart : NativeExtension<GL>
+    public unsafe partial class NVPrimitiveRestart : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_primitive_restart";
         [NativeApi(EntryPoint = "glPrimitiveRestartNV")]
-        public abstract void PrimitiveRestart();
+        public partial void PrimitiveRestart();
 
         [NativeApi(EntryPoint = "glPrimitiveRestartIndexNV")]
-        public abstract void PrimitiveRestartIndex([Flow(FlowDirection.In)] uint index);
+        public partial void PrimitiveRestartIndex([Flow(FlowDirection.In)] uint index);
 
         public NVPrimitiveRestart(INativeContext ctx)
             : base(ctx)

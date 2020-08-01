@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_clip_control")]
-    public abstract unsafe partial class ExtClipControl : NativeExtension<GL>
+    public unsafe partial class ExtClipControl : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_clip_control";
         [NativeApi(EntryPoint = "glClipControlEXT")]
-        public abstract void ClipControl([Flow(FlowDirection.In)] EXT origin, [Flow(FlowDirection.In)] EXT depth);
+        public partial void ClipControl([Flow(FlowDirection.In)] EXT origin, [Flow(FlowDirection.In)] EXT depth);
 
         public ExtClipControl(INativeContext ctx)
             : base(ctx)

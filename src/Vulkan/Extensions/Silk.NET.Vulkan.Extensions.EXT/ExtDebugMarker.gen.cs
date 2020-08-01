@@ -16,44 +16,44 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.EXT
 {
     [Extension("VK_EXT_debug_marker")]
-    public abstract unsafe partial class ExtDebugMarker : NativeExtension<Vk>
+    public unsafe partial class ExtDebugMarker : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_debug_marker";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdDebugMarkerBeginEXT")]
-        public abstract unsafe void CmdDebugMarkerBegin([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerMarkerInfoEXT* pMarkerInfo);
+        public partial unsafe void CmdDebugMarkerBegin([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerMarkerInfoEXT* pMarkerInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdDebugMarkerBeginEXT")]
-        public abstract void CmdDebugMarkerBegin([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugMarkerMarkerInfoEXT pMarkerInfo);
+        public partial void CmdDebugMarkerBegin([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugMarkerMarkerInfoEXT pMarkerInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdDebugMarkerEndEXT")]
-        public abstract void CmdDebugMarkerEnd([Count(Count = 0)] CommandBuffer commandBuffer);
+        public partial void CmdDebugMarkerEnd([Count(Count = 0)] CommandBuffer commandBuffer);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdDebugMarkerInsertEXT")]
-        public abstract unsafe void CmdDebugMarkerInsert([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerMarkerInfoEXT* pMarkerInfo);
+        public partial unsafe void CmdDebugMarkerInsert([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerMarkerInfoEXT* pMarkerInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdDebugMarkerInsertEXT")]
-        public abstract void CmdDebugMarkerInsert([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugMarkerMarkerInfoEXT pMarkerInfo);
+        public partial void CmdDebugMarkerInsert([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugMarkerMarkerInfoEXT pMarkerInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDebugMarkerSetObjectNameEXT")]
-        public abstract unsafe Result DebugMarkerSetObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerObjectNameInfoEXT* pNameInfo);
+        public partial unsafe Result DebugMarkerSetObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerObjectNameInfoEXT* pNameInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDebugMarkerSetObjectNameEXT")]
-        public abstract Result DebugMarkerSetObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugMarkerObjectNameInfoEXT pNameInfo);
+        public partial Result DebugMarkerSetObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugMarkerObjectNameInfoEXT pNameInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDebugMarkerSetObjectTagEXT")]
-        public abstract unsafe Result DebugMarkerSetObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerObjectTagInfoEXT* pTagInfo);
+        public partial unsafe Result DebugMarkerSetObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerObjectTagInfoEXT* pTagInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDebugMarkerSetObjectTagEXT")]
-        public abstract Result DebugMarkerSetObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugMarkerObjectTagInfoEXT pTagInfo);
+        public partial Result DebugMarkerSetObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DebugMarkerObjectTagInfoEXT pTagInfo);
 
         public ExtDebugMarker(INativeContext ctx)
             : base(ctx)

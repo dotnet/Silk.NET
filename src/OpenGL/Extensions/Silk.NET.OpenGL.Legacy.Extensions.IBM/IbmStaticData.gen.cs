@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
 {
     [Extension("IBM_static_data")]
-    public abstract unsafe partial class IbmStaticData : NativeExtension<GL>
+    public unsafe partial class IbmStaticData : NativeExtension<GL>
     {
         public const string ExtensionName = "IBM_static_data";
         [NativeApi(EntryPoint = "glFlushStaticDataIBM")]
-        public abstract void FlushStaticData([Flow(FlowDirection.In)] IBM target);
+        public partial void FlushStaticData([Flow(FlowDirection.In)] IBM target);
 
         public IbmStaticData(INativeContext ctx)
             : base(ctx)

@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_blend_equation_advanced")]
-    public abstract unsafe partial class NVBlendEquationAdvanced : NativeExtension<GL>
+    public unsafe partial class NVBlendEquationAdvanced : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_blend_equation_advanced";
         [NativeApi(EntryPoint = "glBlendBarrierNV")]
-        public abstract void BlendBarrier();
+        public partial void BlendBarrier();
 
         [NativeApi(EntryPoint = "glBlendParameteriNV")]
-        public abstract void BlendParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int value);
+        public partial void BlendParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int value);
 
         public NVBlendEquationAdvanced(INativeContext ctx)
             : base(ctx)

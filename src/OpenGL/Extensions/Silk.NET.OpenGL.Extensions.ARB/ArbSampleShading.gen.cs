@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_sample_shading")]
-    public abstract unsafe partial class ArbSampleShading : NativeExtension<GL>
+    public unsafe partial class ArbSampleShading : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_sample_shading";
         [NativeApi(EntryPoint = "glMinSampleShadingARB")]
-        public abstract void MinSampleShading([Flow(FlowDirection.In)] float value);
+        public partial void MinSampleShading([Flow(FlowDirection.In)] float value);
 
         public ArbSampleShading(INativeContext ctx)
             : base(ctx)

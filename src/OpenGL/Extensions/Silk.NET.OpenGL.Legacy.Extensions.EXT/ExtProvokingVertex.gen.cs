@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_provoking_vertex")]
-    public abstract unsafe partial class ExtProvokingVertex : NativeExtension<GL>
+    public unsafe partial class ExtProvokingVertex : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_provoking_vertex";
         [NativeApi(EntryPoint = "glProvokingVertexEXT")]
-        public abstract void ProvokingVertex([Flow(FlowDirection.In)] EXT mode);
+        public partial void ProvokingVertex([Flow(FlowDirection.In)] EXT mode);
 
         [NativeApi(EntryPoint = "glProvokingVertexEXT")]
-        public abstract void ProvokingVertex([Flow(FlowDirection.In)] VertexProvokingMode mode);
+        public partial void ProvokingVertex([Flow(FlowDirection.In)] VertexProvokingMode mode);
 
         public ExtProvokingVertex(INativeContext ctx)
             : base(ctx)

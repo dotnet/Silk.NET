@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [Extension("OES_texture_view")]
-    public abstract unsafe partial class OesTextureView : NativeExtension<GL>
+    public unsafe partial class OesTextureView : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_texture_view";
         [NativeApi(EntryPoint = "glTextureViewOES")]
-        public abstract void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
+        public partial void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] OES internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
 
         [NativeApi(EntryPoint = "glTextureViewOES")]
-        public abstract void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
+        public partial void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
 
         public OesTextureView(INativeContext ctx)
             : base(ctx)

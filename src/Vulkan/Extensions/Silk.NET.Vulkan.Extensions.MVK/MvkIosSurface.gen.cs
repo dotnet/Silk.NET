@@ -16,16 +16,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.MVK
 {
     [Extension("VK_MVK_ios_surface")]
-    public abstract unsafe partial class MvkIosSurface : NativeExtension<Vk>
+    public unsafe partial class MvkIosSurface : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_MVK_ios_surface";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK")]
-        public abstract unsafe Result CreateIossurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] IOSSurfaceCreateInfoMVK* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+        public partial unsafe Result CreateIossurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] IOSSurfaceCreateInfoMVK* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateIOSSurfaceMVK")]
-        public abstract Result CreateIossurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref IOSSurfaceCreateInfoMVK pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
+        public partial Result CreateIossurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref IOSSurfaceCreateInfoMVK pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         public MvkIosSurface(INativeContext ctx)
             : base(ctx)

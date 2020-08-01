@@ -16,16 +16,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.KHR
 {
     [Extension("VK_KHR_maintenance3")]
-    public abstract unsafe partial class KhrMaintenance3 : NativeExtension<Vk>
+    public unsafe partial class KhrMaintenance3 : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_KHR_maintenance3";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupportKHR")]
-        public abstract unsafe void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport);
+        public partial unsafe void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupportKHR")]
-        public abstract void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorSetLayoutSupport pSupport);
+        public partial void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorSetLayoutSupport pSupport);
 
         public KhrMaintenance3(INativeContext ctx)
             : base(ctx)

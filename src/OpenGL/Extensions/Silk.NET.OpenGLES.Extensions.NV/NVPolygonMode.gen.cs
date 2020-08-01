@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_polygon_mode")]
-    public abstract unsafe partial class NVPolygonMode : NativeExtension<GL>
+    public unsafe partial class NVPolygonMode : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_polygon_mode";
         [NativeApi(EntryPoint = "glPolygonModeNV")]
-        public abstract void PolygonMode([Flow(FlowDirection.In)] NV face, [Flow(FlowDirection.In)] NV mode);
+        public partial void PolygonMode([Flow(FlowDirection.In)] NV face, [Flow(FlowDirection.In)] NV mode);
 
         [NativeApi(EntryPoint = "glPolygonModeNV")]
-        public abstract void PolygonMode([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] PolygonMode mode);
+        public partial void PolygonMode([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] PolygonMode mode);
 
         public NVPolygonMode(INativeContext ctx)
             : base(ctx)

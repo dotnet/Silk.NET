@@ -16,17 +16,17 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_bindable_uniform")]
-    public abstract unsafe partial class ExtBindableUniform : NativeExtension<GL>
+    public unsafe partial class ExtBindableUniform : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_bindable_uniform";
         [NativeApi(EntryPoint = "glGetUniformBufferSizeEXT")]
-        public abstract int GetUniformBufferSize([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
+        public partial int GetUniformBufferSize([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
 
         [NativeApi(EntryPoint = "glGetUniformOffsetEXT")]
-        public abstract IntPtr GetUniformOffset([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
+        public partial IntPtr GetUniformOffset([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
 
         [NativeApi(EntryPoint = "glUniformBufferEXT")]
-        public abstract void UniformBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint buffer);
+        public partial void UniformBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint buffer);
 
         public ExtBindableUniform(INativeContext ctx)
             : base(ctx)

@@ -16,26 +16,26 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_tessellation_shader")]
-    public abstract unsafe partial class ArbTessellationShader : NativeExtension<GL>
+    public unsafe partial class ArbTessellationShader : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_tessellation_shader";
         [NativeApi(EntryPoint = "glPatchParameteri")]
-        public abstract void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] int value);
+        public partial void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] int value);
 
         [NativeApi(EntryPoint = "glPatchParameterfv")]
-        public abstract unsafe void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
+        public partial unsafe void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
 
         [NativeApi(EntryPoint = "glPatchParameterfv")]
-        public abstract void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float values);
+        public partial void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float values);
 
         [NativeApi(EntryPoint = "glPatchParameteri")]
-        public abstract void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value);
+        public partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value);
 
         [NativeApi(EntryPoint = "glPatchParameterfv")]
-        public abstract unsafe void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
+        public partial unsafe void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
 
         [NativeApi(EntryPoint = "glPatchParameterfv")]
-        public abstract void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float values);
+        public partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float values);
 
         public ArbTessellationShader(INativeContext ctx)
             : base(ctx)

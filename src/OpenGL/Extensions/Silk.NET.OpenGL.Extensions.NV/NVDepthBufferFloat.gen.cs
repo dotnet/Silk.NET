@@ -16,17 +16,17 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Extensions.NV
 {
     [Extension("NV_depth_buffer_float")]
-    public abstract unsafe partial class NVDepthBufferFloat : NativeExtension<GL>
+    public unsafe partial class NVDepthBufferFloat : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_depth_buffer_float";
         [NativeApi(EntryPoint = "glClearDepthdNV")]
-        public abstract void ClearDepth([Flow(FlowDirection.In)] double depth);
+        public partial void ClearDepth([Flow(FlowDirection.In)] double depth);
 
         [NativeApi(EntryPoint = "glDepthBoundsdNV")]
-        public abstract void DepthBounds([Flow(FlowDirection.In)] double zmin, [Flow(FlowDirection.In)] double zmax);
+        public partial void DepthBounds([Flow(FlowDirection.In)] double zmin, [Flow(FlowDirection.In)] double zmax);
 
         [NativeApi(EntryPoint = "glDepthRangedNV")]
-        public abstract void DepthRange([Flow(FlowDirection.In)] double zNear, [Flow(FlowDirection.In)] double zFar);
+        public partial void DepthRange([Flow(FlowDirection.In)] double zNear, [Flow(FlowDirection.In)] double zFar);
 
         public NVDepthBufferFloat(INativeContext ctx)
             : base(ctx)

@@ -16,16 +16,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenXR.Extensions.KHR
 {
     [Extension("XR_KHR_opengl_enable")]
-    public abstract unsafe partial class KhrOpenglEnable : NativeExtension<XR>
+    public unsafe partial class KhrOpenglEnable : NativeExtension<XR>
     {
         public const string ExtensionName = "XR_KHR_opengl_enable";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetOpenGLGraphicsRequirementsKHR")]
-        public abstract unsafe Result GetOpenGlgraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsOpenGLKHR* graphicsRequirements);
+        public partial unsafe Result GetOpenGlgraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsOpenGLKHR* graphicsRequirements);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetOpenGLGraphicsRequirementsKHR")]
-        public abstract Result GetOpenGlgraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref GraphicsRequirementsOpenGLKHR graphicsRequirements);
+        public partial Result GetOpenGlgraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref GraphicsRequirementsOpenGLKHR graphicsRequirements);
 
         public KhrOpenglEnable(INativeContext ctx)
             : base(ctx)

@@ -16,16 +16,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.EXT
 {
     [Extension("VK_EXT_hdr_metadata")]
-    public abstract unsafe partial class ExtHdrMetadata : NativeExtension<Vk>
+    public unsafe partial class ExtHdrMetadata : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_hdr_metadata";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkSetHdrMetadataEXT")]
-        public abstract unsafe void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] SwapchainKHR* pSwapchains, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] HdrMetadataEXT* pMetadata);
+        public partial unsafe void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] SwapchainKHR* pSwapchains, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] HdrMetadataEXT* pMetadata);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkSetHdrMetadataEXT")]
-        public abstract void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] ref SwapchainKHR pSwapchains, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] ref HdrMetadataEXT pMetadata);
+        public partial void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] ref SwapchainKHR pSwapchains, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] ref HdrMetadataEXT pMetadata);
 
         public ExtHdrMetadata(INativeContext ctx)
             : base(ctx)

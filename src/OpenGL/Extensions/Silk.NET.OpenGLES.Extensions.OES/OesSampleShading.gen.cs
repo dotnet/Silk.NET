@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [Extension("OES_sample_shading")]
-    public abstract unsafe partial class OesSampleShading : NativeExtension<GL>
+    public unsafe partial class OesSampleShading : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_sample_shading";
         [NativeApi(EntryPoint = "glMinSampleShadingOES")]
-        public abstract void MinSampleShading([Flow(FlowDirection.In)] float value);
+        public partial void MinSampleShading([Flow(FlowDirection.In)] float value);
 
         public OesSampleShading(INativeContext ctx)
             : base(ctx)

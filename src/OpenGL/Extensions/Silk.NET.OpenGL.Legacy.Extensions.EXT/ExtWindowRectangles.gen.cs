@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_window_rectangles")]
-    public abstract unsafe partial class ExtWindowRectangles : NativeExtension<GL>
+    public unsafe partial class ExtWindowRectangles : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_window_rectangles";
         [NativeApi(EntryPoint = "glWindowRectanglesEXT")]
-        public abstract unsafe void WindowRectangles([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* box);
+        public partial unsafe void WindowRectangles([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* box);
 
         [NativeApi(EntryPoint = "glWindowRectanglesEXT")]
-        public abstract void WindowRectangles([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref int box);
+        public partial void WindowRectangles([Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref int box);
 
         public ExtWindowRectangles(INativeContext ctx)
             : base(ctx)

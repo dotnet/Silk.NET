@@ -16,32 +16,32 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_instruments")]
-    public abstract unsafe partial class SgixInstruments : NativeExtension<GL>
+    public unsafe partial class SgixInstruments : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_instruments";
         [NativeApi(EntryPoint = "glGetInstrumentsSGIX")]
-        public abstract int GetInstruments();
+        public partial int GetInstruments();
 
         [NativeApi(EntryPoint = "glInstrumentsBufferSGIX")]
-        public abstract unsafe void InstrumentsBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] int* buffer);
+        public partial unsafe void InstrumentsBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] int* buffer);
 
         [NativeApi(EntryPoint = "glInstrumentsBufferSGIX")]
-        public abstract void InstrumentsBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<int> buffer);
+        public partial void InstrumentsBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<int> buffer);
 
         [NativeApi(EntryPoint = "glPollInstrumentsSGIX")]
-        public abstract unsafe int PollInstruments([Count(Count = 1), Flow(FlowDirection.Out)] int* marker_p);
+        public partial unsafe int PollInstruments([Count(Count = 1), Flow(FlowDirection.Out)] int* marker_p);
 
         [NativeApi(EntryPoint = "glPollInstrumentsSGIX")]
-        public abstract int PollInstruments([Count(Count = 1), Flow(FlowDirection.Out)] out int marker_p);
+        public partial int PollInstruments([Count(Count = 1), Flow(FlowDirection.Out)] out int marker_p);
 
         [NativeApi(EntryPoint = "glReadInstrumentsSGIX")]
-        public abstract void ReadInstruments([Flow(FlowDirection.In)] int marker);
+        public partial void ReadInstruments([Flow(FlowDirection.In)] int marker);
 
         [NativeApi(EntryPoint = "glStartInstrumentsSGIX")]
-        public abstract void StartInstruments();
+        public partial void StartInstruments();
 
         [NativeApi(EntryPoint = "glStopInstrumentsSGIX")]
-        public abstract void StopInstruments([Flow(FlowDirection.In)] int marker);
+        public partial void StopInstruments([Flow(FlowDirection.In)] int marker);
 
         public SgixInstruments(INativeContext ctx)
             : base(ctx)

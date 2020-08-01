@@ -16,29 +16,29 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_vertex_weighting")]
-    public abstract unsafe partial class ExtVertexWeighting : NativeExtension<GL>
+    public unsafe partial class ExtVertexWeighting : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_vertex_weighting";
         [NativeApi(EntryPoint = "glVertexWeightfEXT")]
-        public abstract void VertexWeight([Flow(FlowDirection.In)] float weight);
+        public partial void VertexWeight([Flow(FlowDirection.In)] float weight);
 
         [NativeApi(EntryPoint = "glVertexWeightfvEXT")]
-        public abstract unsafe void VertexWeight([Count(Count = 1), Flow(FlowDirection.In)] float* weight);
+        public partial unsafe void VertexWeight([Count(Count = 1), Flow(FlowDirection.In)] float* weight);
 
         [NativeApi(EntryPoint = "glVertexWeightfvEXT")]
-        public abstract void VertexWeight([Count(Count = 1), Flow(FlowDirection.In)] ref float weight);
+        public partial void VertexWeight([Count(Count = 1), Flow(FlowDirection.In)] ref float weight);
 
         [NativeApi(EntryPoint = "glVertexWeightPointerEXT")]
-        public abstract unsafe void VertexWeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public partial unsafe void VertexWeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexWeightPointerEXT")]
-        public abstract void VertexWeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        public partial void VertexWeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glVertexWeightPointerEXT")]
-        public abstract unsafe void VertexWeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexWeightPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public partial unsafe void VertexWeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexWeightPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexWeightPointerEXT")]
-        public abstract void VertexWeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexWeightPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        public partial void VertexWeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexWeightPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
         public ExtVertexWeighting(INativeContext ctx)
             : base(ctx)

@@ -345,7 +345,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine($"namespace {task.Namespace}{project.Namespace}");
                     sw.WriteLine("{");
                     sw.WriteLine
-                        ($"    public abstract unsafe partial class {@class.ClassName} : NativeAPI");
+                        ($"    public unsafe partial class {@class.ClassName} : NativeAPI");
                     sw.WriteLine("    {");
                     foreach (var constant in @class.Constants)
                     {
@@ -380,7 +380,7 @@ namespace Silk.NET.BuildTools.Bind
                         using (var sr = new StringReader(function.ToString()))
                         {
                             string line;
-                            var flPrefix = "public abstract ";
+                            var flPrefix = "public partial ";
                             while ((line = sr.ReadLine()) != null)
                             {
                                 sw.WriteLine($"        {flPrefix}{line}");
@@ -508,7 +508,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine($"    [Extension(\"{key}\")]");
                         sw.WriteLine
                         (
-                            $"    public abstract unsafe partial class {name} : NativeExtension<{@class.ClassName}>"
+                            $"    public unsafe partial class {name} : NativeExtension<{@class.ClassName}>"
                         );
                         sw.WriteLine("    {");
                         sw.WriteLine($"        public const string ExtensionName = \"{key}\";");
@@ -532,7 +532,7 @@ namespace Silk.NET.BuildTools.Bind
                             using (var sr = new StringReader(function.ToString()))
                             {
                                 string line;
-                                var flPrefix = "public abstract ";
+                                var flPrefix = "public partial ";
                                 while ((line = sr.ReadLine()) != null)
                                 {
                                     sw.WriteLine($"        {flPrefix}{line}");

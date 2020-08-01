@@ -14,7 +14,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// </summary>
     [Extension("AL_EXT_vorbis")]
     [NativeApi(Prefix = "al")]
-    public abstract class VorbisFormat : FormatExtensionBase<VorbisBufferFormat>
+    public partial class VorbisFormat : FormatExtensionBase<VorbisBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
         protected VorbisFormat(INativeContext ctx)

@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [Extension("KHR_terminate_context")]
-    public abstract unsafe partial class KhrTerminateContext : NativeExtension<CL>
+    public unsafe partial class KhrTerminateContext : NativeExtension<CL>
     {
         public const string ExtensionName = "KHR_terminate_context";
         [NativeApi(EntryPoint = "clTerminateContextKHR")]
-        public abstract int TerminateContext([Flow(FlowDirection.In)] IntPtr context);
+        public partial int TerminateContext([Flow(FlowDirection.In)] IntPtr context);
 
         public unsafe int TerminateContext([Flow(FlowDirection.In)] int context)
         {

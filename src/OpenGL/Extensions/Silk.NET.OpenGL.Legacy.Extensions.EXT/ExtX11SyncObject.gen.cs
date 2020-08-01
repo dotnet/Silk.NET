@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_x11_sync_object")]
-    public abstract unsafe partial class ExtX11SyncObject : NativeExtension<GL>
+    public unsafe partial class ExtX11SyncObject : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_x11_sync_object";
         [NativeApi(EntryPoint = "glImportSyncEXT")]
-        public abstract IntPtr ImportSync([Flow(FlowDirection.In)] EXT external_sync_type, [Flow(FlowDirection.In)] IntPtr external_sync, [Flow(FlowDirection.In)] uint flags);
+        public partial IntPtr ImportSync([Flow(FlowDirection.In)] EXT external_sync_type, [Flow(FlowDirection.In)] IntPtr external_sync, [Flow(FlowDirection.In)] uint flags);
 
         public unsafe IntPtr ImportSync([Flow(FlowDirection.In)] EXT external_sync_type, [Flow(FlowDirection.In)] int external_sync, [Flow(FlowDirection.In)] uint flags)
         {

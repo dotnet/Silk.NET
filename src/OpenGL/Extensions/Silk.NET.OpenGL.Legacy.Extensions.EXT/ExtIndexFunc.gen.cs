@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_index_func")]
-    public abstract unsafe partial class ExtIndexFunc : NativeExtension<GL>
+    public unsafe partial class ExtIndexFunc : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_index_func";
         [NativeApi(EntryPoint = "glIndexFuncEXT")]
-        public abstract void IndexFunc([Flow(FlowDirection.In)] EXT func, [Flow(FlowDirection.In)] float @ref);
+        public partial void IndexFunc([Flow(FlowDirection.In)] EXT func, [Flow(FlowDirection.In)] float @ref);
 
         [NativeApi(EntryPoint = "glIndexFuncEXT")]
-        public abstract void IndexFunc([Flow(FlowDirection.In)] IndexFunctionEXT func, [Flow(FlowDirection.In)] float @ref);
+        public partial void IndexFunc([Flow(FlowDirection.In)] IndexFunctionEXT func, [Flow(FlowDirection.In)] float @ref);
 
         public ExtIndexFunc(INativeContext ctx)
             : base(ctx)

@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.NVX
 {
     [Extension("NVX_conditional_render")]
-    public abstract unsafe partial class NvxConditionalRender : NativeExtension<GL>
+    public unsafe partial class NvxConditionalRender : NativeExtension<GL>
     {
         public const string ExtensionName = "NVX_conditional_render";
         [NativeApi(EntryPoint = "glBeginConditionalRenderNVX")]
-        public abstract void BeginConditionalRender([Flow(FlowDirection.In)] uint id);
+        public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id);
 
         [NativeApi(EntryPoint = "glEndConditionalRenderNVX")]
-        public abstract void EndConditionalRender();
+        public partial void EndConditionalRender();
 
         public NvxConditionalRender(INativeContext ctx)
             : base(ctx)

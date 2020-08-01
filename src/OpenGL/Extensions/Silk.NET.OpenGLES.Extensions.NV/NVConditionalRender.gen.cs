@@ -16,17 +16,17 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_conditional_render")]
-    public abstract unsafe partial class NVConditionalRender : NativeExtension<GL>
+    public unsafe partial class NVConditionalRender : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_conditional_render";
         [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
-        public abstract void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV mode);
+        public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV mode);
 
         [NativeApi(EntryPoint = "glEndConditionalRenderNV")]
-        public abstract void EndConditionalRender();
+        public partial void EndConditionalRender();
 
         [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
-        public abstract void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ConditionalRenderMode mode);
+        public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ConditionalRenderMode mode);
 
         public NVConditionalRender(INativeContext ctx)
             : base(ctx)

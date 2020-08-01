@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_texture_buffer_object")]
-    public abstract unsafe partial class ExtTextureBufferObject : NativeExtension<GL>
+    public unsafe partial class ExtTextureBufferObject : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_texture_buffer_object";
         [NativeApi(EntryPoint = "glTexBufferEXT")]
-        public abstract void TexBuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint buffer);
+        public partial void TexBuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint buffer);
 
         [NativeApi(EntryPoint = "glTexBufferEXT")]
-        public abstract void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
+        public partial void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
 
         public ExtTextureBufferObject(INativeContext ctx)
             : base(ctx)

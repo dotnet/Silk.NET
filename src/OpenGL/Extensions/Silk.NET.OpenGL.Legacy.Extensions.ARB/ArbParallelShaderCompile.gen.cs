@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_parallel_shader_compile")]
-    public abstract unsafe partial class ArbParallelShaderCompile : NativeExtension<GL>
+    public unsafe partial class ArbParallelShaderCompile : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_parallel_shader_compile";
         [NativeApi(EntryPoint = "glMaxShaderCompilerThreadsARB")]
-        public abstract void MaxShaderCompilerThreads([Flow(FlowDirection.In)] uint count);
+        public partial void MaxShaderCompilerThreads([Flow(FlowDirection.In)] uint count);
 
         public ArbParallelShaderCompile(INativeContext ctx)
             : base(ctx)

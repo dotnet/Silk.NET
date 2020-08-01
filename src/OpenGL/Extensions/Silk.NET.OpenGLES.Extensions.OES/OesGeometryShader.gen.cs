@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [Extension("OES_geometry_shader")]
-    public abstract unsafe partial class OesGeometryShader : NativeExtension<GL>
+    public unsafe partial class OesGeometryShader : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_geometry_shader";
         [NativeApi(EntryPoint = "glFramebufferTextureOES")]
-        public abstract void FramebufferTexture([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
+        public partial void FramebufferTexture([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] OES attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
         [NativeApi(EntryPoint = "glFramebufferTextureOES")]
-        public abstract void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
+        public partial void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
         public OesGeometryShader(INativeContext ctx)
             : base(ctx)

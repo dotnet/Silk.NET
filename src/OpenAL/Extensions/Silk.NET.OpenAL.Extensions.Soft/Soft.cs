@@ -13,7 +13,7 @@ namespace Silk.NET.OpenAL.Extensions.Soft
     /// Exposes the public API of functions added by OpenAL Soft.
     /// </summary>
     [NativeApi(Prefix = "al")]
-    public abstract class Soft : NativeExtension<AL>
+    public partial class Soft : NativeExtension<AL>
     {
         /// <inheritdoc cref="ExtensionBase" />
         protected Soft(INativeContext ctx)
@@ -22,18 +22,18 @@ namespace Silk.NET.OpenAL.Extensions.Soft
         }
 
         /// <inheritdoc />
-        public abstract bool GetBoolean(SoftStateBoolean param);
+        public partial bool GetBoolean(SoftStateBoolean param);
 
         /// <inheritdoc />
-        public abstract double GetDouble(SoftStateDouble param);
+        public partial double GetDouble(SoftStateDouble param);
 
         /// <inheritdoc />
-        public abstract float GetFloat(SoftStateFloat param);
+        public partial float GetFloat(SoftStateFloat param);
 
         /// <inheritdoc />
-        public abstract int GetInteger(SoftStateInteger param);
+        public partial int GetInteger(SoftStateInteger param);
 
         /// <inheritdoc />
-        public abstract IntPtr GetPointer(StatePointer param);
+        public partial IntPtr GetPointer(StatePointer param);
     }
 }

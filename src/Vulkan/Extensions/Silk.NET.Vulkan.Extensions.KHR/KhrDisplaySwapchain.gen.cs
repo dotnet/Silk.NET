@@ -16,16 +16,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.KHR
 {
     [Extension("VK_KHR_display_swapchain")]
-    public abstract unsafe partial class KhrDisplaySwapchain : NativeExtension<Vk>
+    public unsafe partial class KhrDisplaySwapchain : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_KHR_display_swapchain";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateSharedSwapchainsKHR")]
-        public abstract unsafe Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains);
+        public partial unsafe Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateSharedSwapchainsKHR")]
-        public abstract Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] ref SwapchainCreateInfoKHR pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Computed = "swapchainCount"), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchains);
+        public partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] ref SwapchainCreateInfoKHR pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Computed = "swapchainCount"), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchains);
 
         public KhrDisplaySwapchain(INativeContext ctx)
             : base(ctx)

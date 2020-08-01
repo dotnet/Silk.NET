@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_fragment_coverage_to_color")]
-    public abstract unsafe partial class NVFragmentCoverageToColor : NativeExtension<GL>
+    public unsafe partial class NVFragmentCoverageToColor : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_fragment_coverage_to_color";
         [NativeApi(EntryPoint = "glFragmentCoverageColorNV")]
-        public abstract void FragmentCoverageColor([Flow(FlowDirection.In)] uint color);
+        public partial void FragmentCoverageColor([Flow(FlowDirection.In)] uint color);
 
         public NVFragmentCoverageToColor(INativeContext ctx)
             : base(ctx)

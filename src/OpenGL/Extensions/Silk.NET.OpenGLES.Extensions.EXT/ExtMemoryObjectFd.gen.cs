@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_memory_object_fd")]
-    public abstract unsafe partial class ExtMemoryObjectFd : NativeExtension<GL>
+    public unsafe partial class ExtMemoryObjectFd : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_memory_object_fd";
         [NativeApi(EntryPoint = "glImportMemoryFdEXT")]
-        public abstract void ImportMemoryF([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.In)] int fd);
+        public partial void ImportMemoryF([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] EXT handleType, [Flow(FlowDirection.In)] int fd);
 
         [NativeApi(EntryPoint = "glImportMemoryFdEXT")]
-        public abstract void ImportMemoryF([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] int fd);
+        public partial void ImportMemoryF([Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong size, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] int fd);
 
         public ExtMemoryObjectFd(INativeContext ctx)
             : base(ctx)

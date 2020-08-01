@@ -16,12 +16,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.EXT
 {
     [Extension("VK_EXT_direct_mode_display")]
-    public abstract unsafe partial class ExtDirectModeDisplay : NativeExtension<Vk>
+    public unsafe partial class ExtDirectModeDisplay : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_direct_mode_display";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkReleaseDisplayEXT")]
-        public abstract Result ReleaseDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display);
+        public partial Result ReleaseDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display);
 
         public ExtDirectModeDisplay(INativeContext ctx)
             : base(ctx)

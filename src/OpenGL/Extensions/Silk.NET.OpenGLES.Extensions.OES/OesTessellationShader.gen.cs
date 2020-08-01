@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [Extension("OES_tessellation_shader")]
-    public abstract unsafe partial class OesTessellationShader : NativeExtension<GL>
+    public unsafe partial class OesTessellationShader : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_tessellation_shader";
         [NativeApi(EntryPoint = "glPatchParameteriOES")]
-        public abstract void PatchParameter([Flow(FlowDirection.In)] OES pname, [Flow(FlowDirection.In)] int value);
+        public partial void PatchParameter([Flow(FlowDirection.In)] OES pname, [Flow(FlowDirection.In)] int value);
 
         [NativeApi(EntryPoint = "glPatchParameteriOES")]
-        public abstract void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value);
+        public partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value);
 
         public OesTessellationShader(INativeContext ctx)
             : base(ctx)

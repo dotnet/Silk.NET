@@ -16,20 +16,20 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
     [Extension("SGIS_fog_function")]
-    public abstract unsafe partial class SgisFogFunction : NativeExtension<GL>
+    public unsafe partial class SgisFogFunction : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIS_fog_function";
         [NativeApi(EntryPoint = "glFogFuncSGIS")]
-        public abstract unsafe void FogFunc([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
+        public partial unsafe void FogFunc([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
 
         [NativeApi(EntryPoint = "glFogFuncSGIS")]
-        public abstract void FogFunc([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> points);
+        public partial void FogFunc([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> points);
 
         [NativeApi(EntryPoint = "glGetFogFuncSGIS")]
-        public abstract unsafe void GetFogFunc([Count(Count = 0), Flow(FlowDirection.Out)] float* points);
+        public partial unsafe void GetFogFunc([Count(Count = 0), Flow(FlowDirection.Out)] float* points);
 
         [NativeApi(EntryPoint = "glGetFogFuncSGIS")]
-        public abstract void GetFogFunc([Count(Count = 0), Flow(FlowDirection.Out)] out float points);
+        public partial void GetFogFunc([Count(Count = 0), Flow(FlowDirection.Out)] out float points);
 
         public unsafe float GetFogFunc()
         {

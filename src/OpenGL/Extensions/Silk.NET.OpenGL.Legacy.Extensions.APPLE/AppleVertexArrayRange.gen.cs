@@ -16,26 +16,26 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
     [Extension("APPLE_vertex_array_range")]
-    public abstract unsafe partial class AppleVertexArrayRange : NativeExtension<GL>
+    public unsafe partial class AppleVertexArrayRange : NativeExtension<GL>
     {
         public const string ExtensionName = "APPLE_vertex_array_range";
         [NativeApi(EntryPoint = "glFlushVertexArrayRangeAPPLE")]
-        public abstract unsafe void FlushVertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] void* pointer);
+        public partial unsafe void FlushVertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] void* pointer);
 
         [NativeApi(EntryPoint = "glFlushVertexArrayRangeAPPLE")]
-        public abstract void FlushVertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged;
+        public partial void FlushVertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glVertexArrayParameteriAPPLE")]
-        public abstract void VertexArrayParameter([Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] int param);
+        public partial void VertexArrayParameter([Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glVertexArrayRangeAPPLE")]
-        public abstract unsafe void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] void* pointer);
+        public partial unsafe void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexArrayRangeAPPLE")]
-        public abstract void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged;
+        public partial void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glVertexArrayParameteriAPPLE")]
-        public abstract void VertexArrayParameter([Flow(FlowDirection.In)] VertexArrayPNameAPPLE pname, [Flow(FlowDirection.In)] int param);
+        public partial void VertexArrayParameter([Flow(FlowDirection.In)] VertexArrayPNameAPPLE pname, [Flow(FlowDirection.In)] int param);
 
         public AppleVertexArrayRange(INativeContext ctx)
             : base(ctx)

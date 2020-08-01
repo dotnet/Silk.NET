@@ -12,7 +12,7 @@ namespace Silk.NET.OpenAL.Extensions.Soft
     /// Exposes the public API of the OpenAL Soft Deferred Updates extension.
     /// </summary>
     [NativeApi(Prefix = "al")]
-    public abstract class DeferredUpdates : NativeExtension<AL>
+    public partial class DeferredUpdates : NativeExtension<AL>
     {
         /// <inheritdoc cref="ExtensionBase" />
         protected DeferredUpdates(INativeContext ctx)
@@ -21,12 +21,12 @@ namespace Silk.NET.OpenAL.Extensions.Soft
         }
 
         /// <inheritdoc />
-        public abstract bool GetBoolean(DeferredStateBoolean param);
+        public partial bool GetBoolean(DeferredStateBoolean param);
 
         /// <inheritdoc />
-        public abstract void DeferUpdates();
+        public partial void DeferUpdates();
 
         /// <inheritdoc />
-        public abstract void ProcessUpdates();
+        public partial void ProcessUpdates();
     }
 }

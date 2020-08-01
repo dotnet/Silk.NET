@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_framezoom")]
-    public abstract unsafe partial class SgixFramezoom : NativeExtension<GL>
+    public unsafe partial class SgixFramezoom : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_framezoom";
         [NativeApi(EntryPoint = "glFrameZoomSGIX")]
-        public abstract void FrameZoom([Flow(FlowDirection.In)] int factor);
+        public partial void FrameZoom([Flow(FlowDirection.In)] int factor);
 
         public SgixFramezoom(INativeContext ctx)
             : base(ctx)

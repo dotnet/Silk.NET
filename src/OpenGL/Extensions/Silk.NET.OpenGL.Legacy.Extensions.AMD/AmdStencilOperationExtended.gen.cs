@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
 {
     [Extension("AMD_stencil_operation_extended")]
-    public abstract unsafe partial class AmdStencilOperationExtended : NativeExtension<GL>
+    public unsafe partial class AmdStencilOperationExtended : NativeExtension<GL>
     {
         public const string ExtensionName = "AMD_stencil_operation_extended";
         [NativeApi(EntryPoint = "glStencilOpValueAMD")]
-        public abstract void StencilOpValue([Flow(FlowDirection.In)] AMD face, [Flow(FlowDirection.In)] uint value);
+        public partial void StencilOpValue([Flow(FlowDirection.In)] AMD face, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glStencilOpValueAMD")]
-        public abstract void StencilOpValue([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] uint value);
+        public partial void StencilOpValue([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] uint value);
 
         public AmdStencilOperationExtended(INativeContext ctx)
             : base(ctx)

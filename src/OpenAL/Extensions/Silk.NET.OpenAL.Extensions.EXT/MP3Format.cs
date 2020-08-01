@@ -14,7 +14,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// </summary>
     [Extension("AL_EXT_MP3")]
     [NativeApi(Prefix = "al")]
-    public abstract class MP3Format : FormatExtensionBase<MP3BufferFormat>
+    public partial class MP3Format : FormatExtensionBase<MP3BufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
         protected MP3Format(INativeContext ctx)

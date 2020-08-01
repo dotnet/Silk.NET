@@ -16,12 +16,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.AMD
 {
     [Extension("VK_AMD_display_native_hdr")]
-    public abstract unsafe partial class AmdDisplayNativeHdr : NativeExtension<Vk>
+    public unsafe partial class AmdDisplayNativeHdr : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_AMD_display_native_hdr";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkSetLocalDimmingAMD")]
-        public abstract void SetLocalDimming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapChain, [Count(Count = 0)] Bool32 localDimmingEnable);
+        public partial void SetLocalDimming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapChain, [Count(Count = 0)] Bool32 localDimmingEnable);
 
         public AmdDisplayNativeHdr(INativeContext ctx)
             : base(ctx)

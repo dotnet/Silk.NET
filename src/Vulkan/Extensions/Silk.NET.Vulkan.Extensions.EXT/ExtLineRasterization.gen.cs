@@ -16,12 +16,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.EXT
 {
     [Extension("VK_EXT_line_rasterization")]
-    public abstract unsafe partial class ExtLineRasterization : NativeExtension<Vk>
+    public unsafe partial class ExtLineRasterization : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_line_rasterization";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetLineStippleEXT")]
-        public abstract void CmdSetLineStipple([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint lineStippleFactor, [Count(Count = 0)] ushort lineStipplePattern);
+        public partial void CmdSetLineStipple([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint lineStippleFactor, [Count(Count = 0)] ushort lineStipplePattern);
 
         public ExtLineRasterization(INativeContext ctx)
             : base(ctx)

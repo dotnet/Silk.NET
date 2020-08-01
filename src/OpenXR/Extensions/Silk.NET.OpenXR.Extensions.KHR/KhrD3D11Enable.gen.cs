@@ -16,16 +16,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenXR.Extensions.KHR
 {
     [Extension("XR_KHR_D3D11_enable")]
-    public abstract unsafe partial class KhrD3D11Enable : NativeExtension<XR>
+    public unsafe partial class KhrD3D11Enable : NativeExtension<XR>
     {
         public const string ExtensionName = "XR_KHR_D3D11_enable";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetD3D11GraphicsRequirementsKHR")]
-        public abstract unsafe Result GetD3D11GraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsD3D11KHR* graphicsRequirements);
+        public partial unsafe Result GetD3D11GraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsD3D11KHR* graphicsRequirements);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetD3D11GraphicsRequirementsKHR")]
-        public abstract Result GetD3D11GraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref GraphicsRequirementsD3D11KHR graphicsRequirements);
+        public partial Result GetD3D11GraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref GraphicsRequirementsD3D11KHR graphicsRequirements);
 
         public KhrD3D11Enable(INativeContext ctx)
             : base(ctx)

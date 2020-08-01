@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_ES3_1_compatibility")]
-    public abstract unsafe partial class ArbES31Compatibility : NativeExtension<GL>
+    public unsafe partial class ArbES31Compatibility : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_ES3_1_compatibility";
         [NativeApi(EntryPoint = "glMemoryBarrierByRegion")]
-        public abstract void MemoryBarrierByRegion([Flow(FlowDirection.In)] uint barriers);
+        public partial void MemoryBarrierByRegion([Flow(FlowDirection.In)] uint barriers);
 
         public ArbES31Compatibility(INativeContext ctx)
             : base(ctx)

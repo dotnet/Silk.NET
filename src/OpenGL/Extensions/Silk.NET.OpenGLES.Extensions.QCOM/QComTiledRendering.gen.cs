@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
     [Extension("QCOM_tiled_rendering")]
-    public abstract unsafe partial class QComTiledRendering : NativeExtension<GL>
+    public unsafe partial class QComTiledRendering : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_tiled_rendering";
         [NativeApi(EntryPoint = "glEndTilingQCOM")]
-        public abstract void EndTiling([Flow(FlowDirection.In)] uint preserveMask);
+        public partial void EndTiling([Flow(FlowDirection.In)] uint preserveMask);
 
         [NativeApi(EntryPoint = "glStartTilingQCOM")]
-        public abstract void StartTiling([Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint preserveMask);
+        public partial void StartTiling([Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint preserveMask);
 
         public QComTiledRendering(INativeContext ctx)
             : base(ctx)

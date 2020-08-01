@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [Extension("KHR_create_command_queue")]
-    public abstract unsafe partial class KhrCreateCommandQueue : NativeExtension<CL>
+    public unsafe partial class KhrCreateCommandQueue : NativeExtension<CL>
     {
         public const string ExtensionName = "KHR_create_command_queue";
         [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
-        public abstract unsafe IntPtr CreateCommandQueueWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] KHR* properties, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public partial unsafe IntPtr CreateCommandQueueWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] KHR* properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateCommandQueueWithPropertiesKHR")]
-        public abstract IntPtr CreateCommandQueueWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] Span<KHR> properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
+        public partial IntPtr CreateCommandQueueWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] Span<KHR> properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         public unsafe IntPtr CreateCommandQueueWithProperties([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] int device, [Flow(FlowDirection.In)] KHR* properties, [Flow(FlowDirection.Out)] int* errcode_ret)
         {

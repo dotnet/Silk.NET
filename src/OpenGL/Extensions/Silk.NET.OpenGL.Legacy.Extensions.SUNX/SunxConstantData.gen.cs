@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.SUNX
 {
     [Extension("SUNX_constant_data")]
-    public abstract unsafe partial class SunxConstantData : NativeExtension<GL>
+    public unsafe partial class SunxConstantData : NativeExtension<GL>
     {
         public const string ExtensionName = "SUNX_constant_data";
         [NativeApi(EntryPoint = "glFinishTextureSUNX")]
-        public abstract void FinishTexture();
+        public partial void FinishTexture();
 
         public SunxConstantData(INativeContext ctx)
             : base(ctx)

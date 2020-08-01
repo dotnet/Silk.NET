@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_pixel_texture")]
-    public abstract unsafe partial class SgixPixelTexture : NativeExtension<GL>
+    public unsafe partial class SgixPixelTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_pixel_texture";
         [NativeApi(EntryPoint = "glPixelTexGenSGIX")]
-        public abstract void PixelTexGen([Flow(FlowDirection.In)] SGIX mode);
+        public partial void PixelTexGen([Flow(FlowDirection.In)] SGIX mode);
 
         [NativeApi(EntryPoint = "glPixelTexGenSGIX")]
-        public abstract void PixelTexGen([Flow(FlowDirection.In)] PixelTexGenModeSGIX mode);
+        public partial void PixelTexGen([Flow(FlowDirection.In)] PixelTexGenModeSGIX mode);
 
         public SgixPixelTexture(INativeContext ctx)
             : base(ctx)

@@ -16,20 +16,20 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_transform_feedback_instanced")]
-    public abstract unsafe partial class ArbTransformFeedbackInstanced : NativeExtension<GL>
+    public unsafe partial class ArbTransformFeedbackInstanced : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_transform_feedback_instanced";
         [NativeApi(EntryPoint = "glDrawTransformFeedbackInstanced")]
-        public abstract void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
+        public partial void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
 
         [NativeApi(EntryPoint = "glDrawTransformFeedbackStreamInstanced")]
-        public abstract void DrawTransformFeedbackStreamInstanced([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] uint instancecount);
+        public partial void DrawTransformFeedbackStreamInstanced([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] uint instancecount);
 
         [NativeApi(EntryPoint = "glDrawTransformFeedbackInstanced")]
-        public abstract void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
+        public partial void DrawTransformFeedbackInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint instancecount);
 
         [NativeApi(EntryPoint = "glDrawTransformFeedbackStreamInstanced")]
-        public abstract void DrawTransformFeedbackStreamInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] uint instancecount);
+        public partial void DrawTransformFeedbackStreamInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] uint instancecount);
 
         public ArbTransformFeedbackInstanced(INativeContext ctx)
             : base(ctx)

@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_stencil_two_side")]
-    public abstract unsafe partial class ExtStencilTwoSide : NativeExtension<GL>
+    public unsafe partial class ExtStencilTwoSide : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_stencil_two_side";
         [NativeApi(EntryPoint = "glActiveStencilFaceEXT")]
-        public abstract void ActiveStencilFace([Flow(FlowDirection.In)] EXT face);
+        public partial void ActiveStencilFace([Flow(FlowDirection.In)] EXT face);
 
         [NativeApi(EntryPoint = "glActiveStencilFaceEXT")]
-        public abstract void ActiveStencilFace([Flow(FlowDirection.In)] StencilFaceDirection face);
+        public partial void ActiveStencilFace([Flow(FlowDirection.In)] StencilFaceDirection face);
 
         public ExtStencilTwoSide(INativeContext ctx)
             : base(ctx)

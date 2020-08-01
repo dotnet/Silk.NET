@@ -16,17 +16,17 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
     [Extension("SGIS_multisample")]
-    public abstract unsafe partial class SgisMultisample : NativeExtension<GL>
+    public unsafe partial class SgisMultisample : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIS_multisample";
         [NativeApi(EntryPoint = "glSampleMaskSGIS")]
-        public abstract void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
+        public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
 
         [NativeApi(EntryPoint = "glSamplePatternSGIS")]
-        public abstract void SamplePattern([Flow(FlowDirection.In)] SGIS pattern);
+        public partial void SamplePattern([Flow(FlowDirection.In)] SGIS pattern);
 
         [NativeApi(EntryPoint = "glSamplePatternSGIS")]
-        public abstract void SamplePattern([Flow(FlowDirection.In)] SamplePatternSGIS pattern);
+        public partial void SamplePattern([Flow(FlowDirection.In)] SamplePatternSGIS pattern);
 
         public SgisMultisample(INativeContext ctx)
             : base(ctx)

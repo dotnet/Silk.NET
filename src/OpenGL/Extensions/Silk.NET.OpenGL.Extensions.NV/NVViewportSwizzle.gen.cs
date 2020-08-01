@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Extensions.NV
 {
     [Extension("NV_viewport_swizzle")]
-    public abstract unsafe partial class NVViewportSwizzle : NativeExtension<GL>
+    public unsafe partial class NVViewportSwizzle : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_viewport_swizzle";
         [NativeApi(EntryPoint = "glViewportSwizzleNV")]
-        public abstract void ViewportSwizzle([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV swizzlex, [Flow(FlowDirection.In)] NV swizzley, [Flow(FlowDirection.In)] NV swizzlez, [Flow(FlowDirection.In)] NV swizzlew);
+        public partial void ViewportSwizzle([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] NV swizzlex, [Flow(FlowDirection.In)] NV swizzley, [Flow(FlowDirection.In)] NV swizzlez, [Flow(FlowDirection.In)] NV swizzlew);
 
         public NVViewportSwizzle(INativeContext ctx)
             : base(ctx)

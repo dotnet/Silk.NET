@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
     [Extension("QCOM_texture_foveated")]
-    public abstract unsafe partial class QComTextureFoveated : NativeExtension<GL>
+    public unsafe partial class QComTextureFoveated : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_texture_foveated";
         [NativeApi(EntryPoint = "glTextureFoveationParametersQCOM")]
-        public abstract void TextureFoveationParameters([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint layer, [Flow(FlowDirection.In)] uint focalPoint, [Flow(FlowDirection.In)] float focalX, [Flow(FlowDirection.In)] float focalY, [Flow(FlowDirection.In)] float gainX, [Flow(FlowDirection.In)] float gainY, [Flow(FlowDirection.In)] float foveaArea);
+        public partial void TextureFoveationParameters([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint layer, [Flow(FlowDirection.In)] uint focalPoint, [Flow(FlowDirection.In)] float focalX, [Flow(FlowDirection.In)] float focalY, [Flow(FlowDirection.In)] float gainX, [Flow(FlowDirection.In)] float gainY, [Flow(FlowDirection.In)] float foveaArea);
 
         public QComTextureFoveated(INativeContext ctx)
             : base(ctx)

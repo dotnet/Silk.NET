@@ -17,7 +17,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// </summary>
     [Extension("ALC_ENUMERATE_ALL_EXT")]
     [NativeApi(Prefix = "alc")]
-    public abstract class EnumerateAll : ContextExtensionBase
+    public partial class EnumerateAll : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
         protected EnumerateAll(INativeContext ctx)
@@ -26,10 +26,10 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         }
 
         /// <inheritdoc />
-        public abstract unsafe string GetString(Device* device, GetEnumerateAllContextString param);
+        public partial unsafe string GetString(Device* device, GetEnumerateAllContextString param);
 
         /// <inheritdoc />
-        public abstract unsafe char* GetStringList(Device* device, GetEnumerateAllContextStringList param);
+        public partial unsafe char* GetStringList(Device* device, GetEnumerateAllContextStringList param);
 
         /// <inheritdoc cref="GetStringList(Device*, GetEnumerateAllContextStringList)" />
         public IEnumerable<string> GetStringList(GetEnumerateAllContextStringList param)

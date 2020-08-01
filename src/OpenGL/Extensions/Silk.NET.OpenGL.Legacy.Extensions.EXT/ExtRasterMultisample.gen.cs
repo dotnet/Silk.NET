@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_raster_multisample")]
-    public abstract unsafe partial class ExtRasterMultisample : NativeExtension<GL>
+    public unsafe partial class ExtRasterMultisample : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_raster_multisample";
         [NativeApi(EntryPoint = "glRasterSamplesEXT")]
-        public abstract void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations);
+        public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         public ExtRasterMultisample(INativeContext ctx)
             : base(ctx)

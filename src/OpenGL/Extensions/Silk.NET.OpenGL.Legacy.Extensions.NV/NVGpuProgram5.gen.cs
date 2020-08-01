@@ -16,20 +16,20 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_gpu_program5")]
-    public abstract unsafe partial class NVGpuProgram5 : NativeExtension<GL>
+    public unsafe partial class NVGpuProgram5 : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_gpu_program5";
         [NativeApi(EntryPoint = "glGetProgramSubroutineParameteruivNV")]
-        public abstract unsafe void GetProgramSubroutineParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] uint* param);
+        public partial unsafe void GetProgramSubroutineParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] uint* param);
 
         [NativeApi(EntryPoint = "glGetProgramSubroutineParameteruivNV")]
-        public abstract void GetProgramSubroutineParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out uint param);
+        public partial void GetProgramSubroutineParameter([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out uint param);
 
         [NativeApi(EntryPoint = "glProgramSubroutineParametersuivNV")]
-        public abstract unsafe void ProgramSubroutineParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* @params);
+        public partial unsafe void ProgramSubroutineParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* @params);
 
         [NativeApi(EntryPoint = "glProgramSubroutineParametersuivNV")]
-        public abstract void ProgramSubroutineParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> @params);
+        public partial void ProgramSubroutineParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> @params);
 
         public NVGpuProgram5(INativeContext ctx)
             : base(ctx)

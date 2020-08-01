@@ -14,7 +14,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// </summary>
     [Extension("AL_EXT_MULAW")]
     [NativeApi(Prefix = "al")]
-    public abstract class MULAWFormat : FormatExtensionBase<MULAWBufferFormat>
+    public partial class MULAWFormat : FormatExtensionBase<MULAWBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
         protected MULAWFormat(INativeContext ctx)

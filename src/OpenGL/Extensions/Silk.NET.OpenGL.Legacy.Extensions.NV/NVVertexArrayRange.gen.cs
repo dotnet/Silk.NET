@@ -16,17 +16,17 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_vertex_array_range")]
-    public abstract unsafe partial class NVVertexArrayRange : NativeExtension<GL>
+    public unsafe partial class NVVertexArrayRange : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_vertex_array_range";
         [NativeApi(EntryPoint = "glFlushVertexArrayRangeNV")]
-        public abstract void FlushVertexArrayRange();
+        public partial void FlushVertexArrayRange();
 
         [NativeApi(EntryPoint = "glVertexArrayRangeNV")]
-        public abstract unsafe void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] void* pointer);
+        public partial unsafe void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexArrayRangeNV")]
-        public abstract void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        public partial void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
         public NVVertexArrayRange(INativeContext ctx)
             : base(ctx)

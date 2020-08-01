@@ -16,16 +16,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.EXT
 {
     [Extension("VK_EXT_image_drm_format_modifier")]
-    public abstract unsafe partial class ExtImageDrmFormatModifier : NativeExtension<Vk>
+    public unsafe partial class ExtImageDrmFormatModifier : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_image_drm_format_modifier";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageDrmFormatModifierPropertiesEXT")]
-        public abstract unsafe Result GetImageDrmFormatModifierProperties([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.Out)] ImageDrmFormatModifierPropertiesEXT* pProperties);
+        public partial unsafe Result GetImageDrmFormatModifierProperties([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.Out)] ImageDrmFormatModifierPropertiesEXT* pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageDrmFormatModifierPropertiesEXT")]
-        public abstract Result GetImageDrmFormatModifierProperties([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageDrmFormatModifierPropertiesEXT pProperties);
+        public partial Result GetImageDrmFormatModifierProperties([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageDrmFormatModifierPropertiesEXT pProperties);
 
         public ExtImageDrmFormatModifier(INativeContext ctx)
             : base(ctx)

@@ -16,20 +16,20 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.EXT
 {
     [Extension("VK_EXT_directfb_surface")]
-    public abstract unsafe partial class ExtDirectfbSurface : NativeExtension<Vk>
+    public unsafe partial class ExtDirectfbSurface : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_directfb_surface";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateDirectFBSurfaceEXT")]
-        public abstract unsafe Result CreateDirectFbsurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DirectFBSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+        public partial unsafe Result CreateDirectFbsurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DirectFBSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateDirectFBSurfaceEXT")]
-        public abstract Result CreateDirectFbsurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref DirectFBSurfaceCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
+        public partial Result CreateDirectFbsurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref DirectFBSurfaceCreateInfoEXT pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDirectFBPresentationSupportEXT")]
-        public abstract Bool32 GetPhysicalDeviceDirectFbpresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(FlowDirection.Out)] IntPtr dfb);
+        public partial Bool32 GetPhysicalDeviceDirectFbpresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(FlowDirection.Out)] IntPtr dfb);
 
         /// <summary>To be added.</summary>
         public unsafe Bool32 GetPhysicalDeviceDirectFbpresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(FlowDirection.Out)] int dfb)

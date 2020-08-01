@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
 {
     [Extension("ATI_map_object_buffer")]
-    public abstract unsafe partial class AtiMapObjectBuffer : NativeExtension<GL>
+    public unsafe partial class AtiMapObjectBuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "ATI_map_object_buffer";
         [NativeApi(EntryPoint = "glMapObjectBufferATI")]
-        public abstract unsafe void* MapObjectBuffer([Flow(FlowDirection.In)] uint buffer);
+        public partial unsafe void* MapObjectBuffer([Flow(FlowDirection.In)] uint buffer);
 
         [NativeApi(EntryPoint = "glUnmapObjectBufferATI")]
-        public abstract void UnmapObjectBuffer([Flow(FlowDirection.In)] uint buffer);
+        public partial void UnmapObjectBuffer([Flow(FlowDirection.In)] uint buffer);
 
         public AtiMapObjectBuffer(INativeContext ctx)
             : base(ctx)

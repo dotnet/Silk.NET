@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_tag_sample_buffer")]
-    public abstract unsafe partial class SgixTagSampleBuffer : NativeExtension<GL>
+    public unsafe partial class SgixTagSampleBuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_tag_sample_buffer";
         [NativeApi(EntryPoint = "glTagSampleBufferSGIX")]
-        public abstract void TagSampleBuffer();
+        public partial void TagSampleBuffer();
 
         public SgixTagSampleBuffer(INativeContext ctx)
             : base(ctx)

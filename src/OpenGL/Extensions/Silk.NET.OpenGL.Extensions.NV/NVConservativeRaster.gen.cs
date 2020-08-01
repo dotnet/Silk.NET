@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Extensions.NV
 {
     [Extension("NV_conservative_raster")]
-    public abstract unsafe partial class NVConservativeRaster : NativeExtension<GL>
+    public unsafe partial class NVConservativeRaster : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_conservative_raster";
         [NativeApi(EntryPoint = "glSubpixelPrecisionBiasNV")]
-        public abstract void SubpixelPrecisionBias([Flow(FlowDirection.In)] uint xbits, [Flow(FlowDirection.In)] uint ybits);
+        public partial void SubpixelPrecisionBias([Flow(FlowDirection.In)] uint xbits, [Flow(FlowDirection.In)] uint ybits);
 
         public NVConservativeRaster(INativeContext ctx)
             : base(ctx)

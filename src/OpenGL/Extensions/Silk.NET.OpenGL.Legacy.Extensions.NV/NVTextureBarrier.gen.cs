@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_texture_barrier")]
-    public abstract unsafe partial class NVTextureBarrier : NativeExtension<GL>
+    public unsafe partial class NVTextureBarrier : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_texture_barrier";
         [NativeApi(EntryPoint = "glTextureBarrierNV")]
-        public abstract void TextureBarrier();
+        public partial void TextureBarrier();
 
         public NVTextureBarrier(INativeContext ctx)
             : base(ctx)

@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.INTEL
 {
     [Extension("INTEL_framebuffer_CMAA")]
-    public abstract unsafe partial class IntelFramebufferCmaa : NativeExtension<GL>
+    public unsafe partial class IntelFramebufferCmaa : NativeExtension<GL>
     {
         public const string ExtensionName = "INTEL_framebuffer_CMAA";
         [NativeApi(EntryPoint = "glApplyFramebufferAttachmentCMAAINTEL")]
-        public abstract void ApplyFramebufferAttachmentCmaa();
+        public partial void ApplyFramebufferAttachmentCmaa();
 
         public IntelFramebufferCmaa(INativeContext ctx)
             : base(ctx)

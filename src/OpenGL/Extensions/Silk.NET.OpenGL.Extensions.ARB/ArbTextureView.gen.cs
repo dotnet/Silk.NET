@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_texture_view")]
-    public abstract unsafe partial class ArbTextureView : NativeExtension<GL>
+    public unsafe partial class ArbTextureView : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_texture_view";
         [NativeApi(EntryPoint = "glTextureView")]
-        public abstract void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
+        public partial void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
 
         [NativeApi(EntryPoint = "glTextureView")]
-        public abstract void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
+        public partial void TextureView([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint origtexture, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint minlevel, [Flow(FlowDirection.In)] uint numlevels, [Flow(FlowDirection.In)] uint minlayer, [Flow(FlowDirection.In)] uint numlayers);
 
         public ArbTextureView(INativeContext ctx)
             : base(ctx)

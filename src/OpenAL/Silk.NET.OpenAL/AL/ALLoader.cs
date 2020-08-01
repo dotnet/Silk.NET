@@ -12,12 +12,12 @@ namespace Silk.NET.OpenAL
 {
     public class ALLoader : LibraryLoader
     {
-        private abstract class InternalAL : NativeApiContainer
+        private partial class InternalAL : NativeApiContainer
         {
             [NativeApi(EntryPoint = "alcGetProcAddress")]
-            public abstract unsafe IntPtr GetProcAddress(Device* device, string proc);
+            public partial unsafe IntPtr GetProcAddress(Device* device, string proc);
             [NativeApi(EntryPoint = "alGetProcAddress")]
-            public abstract IntPtr GetProcAddress(string proc);
+            public partial IntPtr GetProcAddress(string proc);
 
             public InternalAL(INativeContext ctx) : base(ctx)
             {

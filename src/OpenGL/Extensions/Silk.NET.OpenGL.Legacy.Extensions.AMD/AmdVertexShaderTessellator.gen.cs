@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
 {
     [Extension("AMD_vertex_shader_tessellator")]
-    public abstract unsafe partial class AmdVertexShaderTessellator : NativeExtension<GL>
+    public unsafe partial class AmdVertexShaderTessellator : NativeExtension<GL>
     {
         public const string ExtensionName = "AMD_vertex_shader_tessellator";
         [NativeApi(EntryPoint = "glTessellationFactorAMD")]
-        public abstract void TessellationFactor([Flow(FlowDirection.In)] float factor);
+        public partial void TessellationFactor([Flow(FlowDirection.In)] float factor);
 
         [NativeApi(EntryPoint = "glTessellationModeAMD")]
-        public abstract void TessellationMode([Flow(FlowDirection.In)] AMD mode);
+        public partial void TessellationMode([Flow(FlowDirection.In)] AMD mode);
 
         public AmdVertexShaderTessellator(INativeContext ctx)
             : base(ctx)

@@ -16,16 +16,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.NV
 {
     [Extension("VK_NV_clip_space_w_scaling")]
-    public abstract unsafe partial class NVClipSpaceWScaling : NativeExtension<Vk>
+    public unsafe partial class NVClipSpaceWScaling : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_NV_clip_space_w_scaling";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewportWScalingNV")]
-        public abstract unsafe void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] ViewportWScalingNV* pViewportWScalings);
+        public partial unsafe void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] ViewportWScalingNV* pViewportWScalings);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewportWScalingNV")]
-        public abstract void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] ref ViewportWScalingNV pViewportWScalings);
+        public partial void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] ref ViewportWScalingNV pViewportWScalings);
 
         public NVClipSpaceWScaling(INativeContext ctx)
             : base(ctx)

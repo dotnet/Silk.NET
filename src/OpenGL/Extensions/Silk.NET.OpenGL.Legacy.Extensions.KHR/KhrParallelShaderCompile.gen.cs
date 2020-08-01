@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
 {
     [Extension("KHR_parallel_shader_compile")]
-    public abstract unsafe partial class KhrParallelShaderCompile : NativeExtension<GL>
+    public unsafe partial class KhrParallelShaderCompile : NativeExtension<GL>
     {
         public const string ExtensionName = "KHR_parallel_shader_compile";
         [NativeApi(EntryPoint = "glMaxShaderCompilerThreadsKHR")]
-        public abstract void MaxShaderCompilerThreads([Flow(FlowDirection.In)] uint count);
+        public partial void MaxShaderCompilerThreads([Flow(FlowDirection.In)] uint count);
 
         public KhrParallelShaderCompile(INativeContext ctx)
             : base(ctx)

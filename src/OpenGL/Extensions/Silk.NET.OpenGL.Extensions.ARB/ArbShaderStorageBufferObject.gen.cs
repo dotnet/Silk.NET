@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_shader_storage_buffer_object")]
-    public abstract unsafe partial class ArbShaderStorageBufferObject : NativeExtension<GL>
+    public unsafe partial class ArbShaderStorageBufferObject : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_shader_storage_buffer_object";
         [NativeApi(EntryPoint = "glShaderStorageBlockBinding")]
-        public abstract void ShaderStorageBlockBinding([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint storageBlockIndex, [Flow(FlowDirection.In)] uint storageBlockBinding);
+        public partial void ShaderStorageBlockBinding([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint storageBlockIndex, [Flow(FlowDirection.In)] uint storageBlockBinding);
 
         public ArbShaderStorageBufferObject(INativeContext ctx)
             : base(ctx)

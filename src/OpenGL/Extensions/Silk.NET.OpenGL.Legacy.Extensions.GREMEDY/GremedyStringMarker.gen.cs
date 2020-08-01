@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
 {
     [Extension("GREMEDY_string_marker")]
-    public abstract unsafe partial class GremedyStringMarker : NativeExtension<GL>
+    public unsafe partial class GremedyStringMarker : NativeExtension<GL>
     {
         public const string ExtensionName = "GREMEDY_string_marker";
         [NativeApi(EntryPoint = "glStringMarkerGREMEDY")]
-        public abstract unsafe void StringMarker([Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] void* @string);
+        public partial unsafe void StringMarker([Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] void* @string);
 
         [NativeApi(EntryPoint = "glStringMarkerGREMEDY")]
-        public abstract void StringMarker<T0>([Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] Span<T0> @string) where T0 : unmanaged;
+        public partial void StringMarker<T0>([Flow(FlowDirection.In)] uint len, [Count(Parameter = "len"), Flow(FlowDirection.In)] Span<T0> @string) where T0 : unmanaged;
 
         public GremedyStringMarker(INativeContext ctx)
             : base(ctx)

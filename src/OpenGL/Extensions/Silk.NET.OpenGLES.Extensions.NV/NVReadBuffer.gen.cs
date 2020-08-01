@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.NV
 {
     [Extension("NV_read_buffer")]
-    public abstract unsafe partial class NVReadBuffer : NativeExtension<GL>
+    public unsafe partial class NVReadBuffer : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_read_buffer";
         [NativeApi(EntryPoint = "glReadBufferNV")]
-        public abstract void ReadBuffer([Flow(FlowDirection.In)] NV mode);
+        public partial void ReadBuffer([Flow(FlowDirection.In)] NV mode);
 
         public NVReadBuffer(INativeContext ctx)
             : base(ctx)

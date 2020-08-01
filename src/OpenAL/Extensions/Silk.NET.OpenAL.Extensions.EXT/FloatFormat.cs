@@ -14,7 +14,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// </summary>
     [Extension("AL_EXT_float")]
     [NativeApi(Prefix = "al")]
-    public abstract class FloatFormat : FormatExtensionBase<FloatBufferFormat>
+    public partial class FloatFormat : FormatExtensionBase<FloatBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
         protected FloatFormat(INativeContext ctx)

@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_draw_texture")]
-    public abstract unsafe partial class NVDrawTexture : NativeExtension<GL>
+    public unsafe partial class NVDrawTexture : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_draw_texture";
         [NativeApi(EntryPoint = "glDrawTextureNV")]
-        public abstract void DrawTexture([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] float x0, [Flow(FlowDirection.In)] float y0, [Flow(FlowDirection.In)] float x1, [Flow(FlowDirection.In)] float y1, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float s0, [Flow(FlowDirection.In)] float t0, [Flow(FlowDirection.In)] float s1, [Flow(FlowDirection.In)] float t1);
+        public partial void DrawTexture([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] float x0, [Flow(FlowDirection.In)] float y0, [Flow(FlowDirection.In)] float x1, [Flow(FlowDirection.In)] float y1, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float s0, [Flow(FlowDirection.In)] float t0, [Flow(FlowDirection.In)] float s1, [Flow(FlowDirection.In)] float t1);
 
         public NVDrawTexture(INativeContext ctx)
             : base(ctx)

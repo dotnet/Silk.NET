@@ -16,26 +16,26 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Extensions.NV
 {
     [Extension("NV_framebuffer_mixed_samples")]
-    public abstract unsafe partial class NVFramebufferMixedSamples : NativeExtension<GL>
+    public unsafe partial class NVFramebufferMixedSamples : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_framebuffer_mixed_samples";
         [NativeApi(EntryPoint = "glCoverageModulationNV")]
-        public abstract void CoverageModulation([Flow(FlowDirection.In)] NV components);
+        public partial void CoverageModulation([Flow(FlowDirection.In)] NV components);
 
         [NativeApi(EntryPoint = "glCoverageModulationTableNV")]
-        public abstract unsafe void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* v);
+        public partial unsafe void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glCoverageModulationTableNV")]
-        public abstract void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> v);
+        public partial void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> v);
 
         [NativeApi(EntryPoint = "glGetCoverageModulationTableNV")]
-        public abstract unsafe void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* v);
+        public partial unsafe void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* v);
 
         [NativeApi(EntryPoint = "glGetCoverageModulationTableNV")]
-        public abstract void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<float> v);
+        public partial void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<float> v);
 
         [NativeApi(EntryPoint = "glRasterSamplesEXT")]
-        public abstract void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations);
+        public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         public unsafe float GetCoverageModulationTable()
         {

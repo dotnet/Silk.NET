@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_texture_barrier")]
-    public abstract unsafe partial class ArbTextureBarrier : NativeExtension<GL>
+    public unsafe partial class ArbTextureBarrier : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_texture_barrier";
         [NativeApi(EntryPoint = "glTextureBarrier")]
-        public abstract void TextureBarrier();
+        public partial void TextureBarrier();
 
         public ArbTextureBarrier(INativeContext ctx)
             : base(ctx)

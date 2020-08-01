@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [Extension("NV_clip_space_w_scaling")]
-    public abstract unsafe partial class NVClipSpaceWScaling : NativeExtension<GL>
+    public unsafe partial class NVClipSpaceWScaling : NativeExtension<GL>
     {
         public const string ExtensionName = "NV_clip_space_w_scaling";
         [NativeApi(EntryPoint = "glViewportPositionWScaleNV")]
-        public abstract void ViewportPositionWScale([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float xcoeff, [Flow(FlowDirection.In)] float ycoeff);
+        public partial void ViewportPositionWScale([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float xcoeff, [Flow(FlowDirection.In)] float ycoeff);
 
         public NVClipSpaceWScaling(INativeContext ctx)
             : base(ctx)

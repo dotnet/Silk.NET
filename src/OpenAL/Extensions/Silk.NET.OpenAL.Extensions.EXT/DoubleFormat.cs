@@ -14,7 +14,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// </summary>
     [Extension("AL_EXT_double")]
     [NativeApi(Prefix = "al")]
-    public abstract class DoubleFormat : FormatExtensionBase<DoubleBufferFormat>
+    public partial class DoubleFormat : FormatExtensionBase<DoubleBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
         protected DoubleFormat(INativeContext ctx)

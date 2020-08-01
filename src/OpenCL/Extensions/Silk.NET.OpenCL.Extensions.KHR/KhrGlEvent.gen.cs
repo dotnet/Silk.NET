@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [Extension("KHR_gl_event")]
-    public abstract unsafe partial class KhrGlEvent : NativeExtension<CL>
+    public unsafe partial class KhrGlEvent : NativeExtension<CL>
     {
         public const string ExtensionName = "KHR_gl_event";
         [NativeApi(EntryPoint = "clCreateEventFromGLsyncKHR")]
-        public abstract unsafe IntPtr CreateEventFromGLsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public partial unsafe IntPtr CreateEventFromGLsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateEventFromGLsyncKHR")]
-        public abstract IntPtr CreateEventFromGLsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
+        public partial IntPtr CreateEventFromGLsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         public unsafe IntPtr CreateEventFromGLsync([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] int sync, [Flow(FlowDirection.Out)] int* errcode_ret)
         {

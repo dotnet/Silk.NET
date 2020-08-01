@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_clip_control")]
-    public abstract unsafe partial class ArbClipControl : NativeExtension<GL>
+    public unsafe partial class ArbClipControl : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_clip_control";
         [NativeApi(EntryPoint = "glClipControl")]
-        public abstract void ClipControl([Flow(FlowDirection.In)] ARB origin, [Flow(FlowDirection.In)] ARB depth);
+        public partial void ClipControl([Flow(FlowDirection.In)] ARB origin, [Flow(FlowDirection.In)] ARB depth);
 
         [NativeApi(EntryPoint = "glClipControl")]
-        public abstract void ClipControl([Flow(FlowDirection.In)] ClipControlOrigin origin, [Flow(FlowDirection.In)] ClipControlDepth depth);
+        public partial void ClipControl([Flow(FlowDirection.In)] ClipControlOrigin origin, [Flow(FlowDirection.In)] ClipControlDepth depth);
 
         public ArbClipControl(INativeContext ctx)
             : base(ctx)

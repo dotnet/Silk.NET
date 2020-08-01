@@ -16,26 +16,26 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_vertex_array_object")]
-    public abstract unsafe partial class ArbVertexArrayObject : NativeExtension<GL>
+    public unsafe partial class ArbVertexArrayObject : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_vertex_array_object";
         [NativeApi(EntryPoint = "glBindVertexArray")]
-        public abstract void BindVertexArray([Flow(FlowDirection.In)] uint array);
+        public partial void BindVertexArray([Flow(FlowDirection.In)] uint array);
 
         [NativeApi(EntryPoint = "glDeleteVertexArrays")]
-        public abstract unsafe void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* arrays);
+        public partial unsafe void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* arrays);
 
         [NativeApi(EntryPoint = "glDeleteVertexArrays")]
-        public abstract void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> arrays);
+        public partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> arrays);
 
         [NativeApi(EntryPoint = "glGenVertexArrays")]
-        public abstract unsafe void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays);
+        public partial unsafe void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays);
 
         [NativeApi(EntryPoint = "glGenVertexArrays")]
-        public abstract void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays);
+        public partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays);
 
         [NativeApi(EntryPoint = "glIsVertexArray")]
-        public abstract bool IsVertexArray([Flow(FlowDirection.In)] uint array);
+        public partial bool IsVertexArray([Flow(FlowDirection.In)] uint array);
 
         public unsafe void DeleteVertexArray([Count(Parameter = "n"), Flow(FlowDirection.In)] uint arrays)
         {

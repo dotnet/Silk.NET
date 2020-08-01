@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_texture_buffer_object")]
-    public abstract unsafe partial class ArbTextureBufferObject : NativeExtension<GL>
+    public unsafe partial class ArbTextureBufferObject : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_texture_buffer_object";
         [NativeApi(EntryPoint = "glTexBufferARB")]
-        public abstract void TexBuffer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint buffer);
+        public partial void TexBuffer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] uint buffer);
 
         [NativeApi(EntryPoint = "glTexBufferARB")]
-        public abstract void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
+        public partial void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
 
         public ArbTextureBufferObject(INativeContext ctx)
             : base(ctx)

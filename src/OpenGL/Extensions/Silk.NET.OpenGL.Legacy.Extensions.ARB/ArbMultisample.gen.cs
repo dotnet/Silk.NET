@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_multisample")]
-    public abstract unsafe partial class ArbMultisample : NativeExtension<GL>
+    public unsafe partial class ArbMultisample : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_multisample";
         [NativeApi(EntryPoint = "glSampleCoverageARB")]
-        public abstract void SampleCoverage([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
+        public partial void SampleCoverage([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
 
         public ArbMultisample(INativeContext ctx)
             : base(ctx)

@@ -18,7 +18,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// </summary>
     [Extension("ALC_ENUMERATION_EXT")]
     [NativeApi(Prefix = "alc")]
-    public abstract class CaptureEnumerationEnumeration : ContextExtensionBase
+    public partial class CaptureEnumerationEnumeration : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
         protected CaptureEnumerationEnumeration(INativeContext ctx)
@@ -27,10 +27,10 @@ namespace Silk.NET.OpenAL.Extensions.EXT
         }
 
         /// <inheritdoc />
-        public abstract unsafe string GetString(Device* device, GetCaptureEnumerationContextString param);
+        public partial unsafe string GetString(Device* device, GetCaptureEnumerationContextString param);
 
         /// <inheritdoc />
-        public abstract unsafe char* GetStringList(Device* device, GetCaptureContextStringList param);
+        public partial unsafe char* GetStringList(Device* device, GetCaptureContextStringList param);
 
         /// <inheritdoc cref="GetStringList(Silk.NET.OpenAL.Device*,GetCaptureContextStringList)" />
         public IEnumerable<string> GetStringList(GetCaptureContextStringList param)

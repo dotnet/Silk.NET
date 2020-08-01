@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [Extension("SGIX_flush_raster")]
-    public abstract unsafe partial class SgixFlushRaster : NativeExtension<GL>
+    public unsafe partial class SgixFlushRaster : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIX_flush_raster";
         [NativeApi(EntryPoint = "glFlushRasterSGIX")]
-        public abstract void FlushRaster();
+        public partial void FlushRaster();
 
         public SgixFlushRaster(INativeContext ctx)
             : base(ctx)

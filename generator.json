@@ -486,7 +486,7 @@
                     "VkInstance": "Silk.NET.Core.Native.VkHandle",
                     "VkPhysicalDevice": "Silk.NET.Core.Native.VkHandle",
                     "VkImage": "ulong",
-                    "VkDevice": "Silk.NET.GLFW.VkHandle",
+                    "VkDevice": "Silk.NET.Core.Native.VkHandle",
                     "PFN_xrVoidFunction": "FuncPtr",
                     "PFN_xrDebugUtilsMessengerCallbackEXT": "FuncPtr",
                     "PFNEGLGETPROCADDRESSPROC": "FuncPtr",

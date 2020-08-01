@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
     [Extension("QCOM_shading_rate")]
-    public abstract unsafe partial class QComShadingRate : NativeExtension<GL>
+    public unsafe partial class QComShadingRate : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_shading_rate";
         [NativeApi(EntryPoint = "glShadingRateQCOM")]
-        public abstract void ShadingRate([Flow(FlowDirection.In)] QCOM rate);
+        public partial void ShadingRate([Flow(FlowDirection.In)] QCOM rate);
 
         [NativeApi(EntryPoint = "glShadingRateQCOM")]
-        public abstract void ShadingRate([Flow(FlowDirection.In)] ShadingRateQCOM rate);
+        public partial void ShadingRate([Flow(FlowDirection.In)] ShadingRateQCOM rate);
 
         public QComShadingRate(INativeContext ctx)
             : base(ctx)

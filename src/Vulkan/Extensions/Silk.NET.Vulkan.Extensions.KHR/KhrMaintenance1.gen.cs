@@ -16,12 +16,12 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.KHR
 {
     [Extension("VK_KHR_maintenance1")]
-    public abstract unsafe partial class KhrMaintenance1 : NativeExtension<Vk>
+    public unsafe partial class KhrMaintenance1 : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_KHR_maintenance1";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkTrimCommandPoolKHR")]
-        public abstract void TrimCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint flags);
+        public partial void TrimCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint flags);
 
         public KhrMaintenance1(INativeContext ctx)
             : base(ctx)

@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_texture_perturb_normal")]
-    public abstract unsafe partial class ExtTexturePerturbNormal : NativeExtension<GL>
+    public unsafe partial class ExtTexturePerturbNormal : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_texture_perturb_normal";
         [NativeApi(EntryPoint = "glTextureNormalEXT")]
-        public abstract void TextureNormal([Flow(FlowDirection.In)] EXT mode);
+        public partial void TextureNormal([Flow(FlowDirection.In)] EXT mode);
 
         [NativeApi(EntryPoint = "glTextureNormalEXT")]
-        public abstract void TextureNormal([Flow(FlowDirection.In)] TextureNormalModeEXT mode);
+        public partial void TextureNormal([Flow(FlowDirection.In)] TextureNormalModeEXT mode);
 
         public ExtTexturePerturbNormal(INativeContext ctx)
             : base(ctx)

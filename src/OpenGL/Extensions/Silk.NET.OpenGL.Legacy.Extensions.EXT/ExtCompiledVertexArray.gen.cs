@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_compiled_vertex_array")]
-    public abstract unsafe partial class ExtCompiledVertexArray : NativeExtension<GL>
+    public unsafe partial class ExtCompiledVertexArray : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_compiled_vertex_array";
         [NativeApi(EntryPoint = "glLockArraysEXT")]
-        public abstract void LockArrays([Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
+        public partial void LockArrays([Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "glUnlockArraysEXT")]
-        public abstract void UnlockArrays();
+        public partial void UnlockArrays();
 
         public ExtCompiledVertexArray(INativeContext ctx)
             : base(ctx)

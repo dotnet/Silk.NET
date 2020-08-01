@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenCL.Extensions.QCOM
 {
     [Extension("QCOM_ext_host_ptr")]
-    public abstract unsafe partial class QComExtHostPtr : NativeExtension<CL>
+    public unsafe partial class QComExtHostPtr : NativeExtension<CL>
     {
         public const string ExtensionName = "QCOM_ext_host_ptr";
         [NativeApi(EntryPoint = "clGetDeviceImageInfoQCOM")]
-        public abstract unsafe int GetDeviceImageInfo([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] UIntPtr image_width, [Flow(FlowDirection.In)] UIntPtr image_height, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public partial unsafe int GetDeviceImageInfo([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] UIntPtr image_width, [Flow(FlowDirection.In)] UIntPtr image_height, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetDeviceImageInfoQCOM")]
-        public abstract int GetDeviceImageInfo<T0>([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] UIntPtr image_width, [Flow(FlowDirection.In)] UIntPtr image_height, [Flow(FlowDirection.In)] Span<uint> image_format, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
+        public partial int GetDeviceImageInfo<T0>([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] UIntPtr image_width, [Flow(FlowDirection.In)] UIntPtr image_height, [Flow(FlowDirection.In)] Span<uint> image_format, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         public unsafe int GetDeviceImageInfo([Flow(FlowDirection.In)] int device, [Flow(FlowDirection.In)] uint image_width, [Flow(FlowDirection.In)] uint image_height, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] uint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret)
         {

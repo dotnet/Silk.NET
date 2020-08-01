@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
 {
     [Extension("GREMEDY_frame_terminator")]
-    public abstract unsafe partial class GremedyFrameTerminator : NativeExtension<GL>
+    public unsafe partial class GremedyFrameTerminator : NativeExtension<GL>
     {
         public const string ExtensionName = "GREMEDY_frame_terminator";
         [NativeApi(EntryPoint = "glFrameTerminatorGREMEDY")]
-        public abstract void FrameTerminator();
+        public partial void FrameTerminator();
 
         public GremedyFrameTerminator(INativeContext ctx)
             : base(ctx)

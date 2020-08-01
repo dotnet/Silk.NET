@@ -16,26 +16,26 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_multiview_draw_buffers")]
-    public abstract unsafe partial class ExtMultiviewDrawBuffers : NativeExtension<GL>
+    public unsafe partial class ExtMultiviewDrawBuffers : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_multiview_draw_buffers";
         [NativeApi(EntryPoint = "glDrawBuffersIndexedEXT")]
-        public abstract unsafe void DrawBuffersIndexed([Flow(FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(FlowDirection.In)] EXT* location, [Count(Parameter = "n"), Flow(FlowDirection.In)] int* indices);
+        public partial unsafe void DrawBuffersIndexed([Flow(FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(FlowDirection.In)] EXT* location, [Count(Parameter = "n"), Flow(FlowDirection.In)] int* indices);
 
         [NativeApi(EntryPoint = "glDrawBuffersIndexedEXT")]
-        public abstract void DrawBuffersIndexed([Flow(FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<EXT> location, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<int> indices);
+        public partial void DrawBuffersIndexed([Flow(FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<EXT> location, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<int> indices);
 
         [NativeApi(EntryPoint = "glGetIntegeri_vEXT")]
-        public abstract unsafe void GetInteger([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] int* data);
+        public partial unsafe void GetInteger([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] int* data);
 
         [NativeApi(EntryPoint = "glGetIntegeri_vEXT")]
-        public abstract void GetInteger([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] Span<int> data);
+        public partial void GetInteger([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] Span<int> data);
 
         [NativeApi(EntryPoint = "glReadBufferIndexedEXT")]
-        public abstract void ReadBufferIndexed([Flow(FlowDirection.In)] EXT src, [Flow(FlowDirection.In)] int index);
+        public partial void ReadBufferIndexed([Flow(FlowDirection.In)] EXT src, [Flow(FlowDirection.In)] int index);
 
         [NativeApi(EntryPoint = "glReadBufferIndexedEXT")]
-        public abstract void ReadBufferIndexed([Flow(FlowDirection.In)] ReadBufferMode src, [Flow(FlowDirection.In)] int index);
+        public partial void ReadBufferIndexed([Flow(FlowDirection.In)] ReadBufferMode src, [Flow(FlowDirection.In)] int index);
 
         public ExtMultiviewDrawBuffers(INativeContext ctx)
             : base(ctx)

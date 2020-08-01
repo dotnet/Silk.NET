@@ -16,7 +16,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// </summary>
     [Extension("ALC_EXT_CAPTURE")]
     [NativeApi(Prefix = "alc")]
-    public abstract class Capture : ContextExtensionBase
+    public partial class Capture : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
         protected Capture(INativeContext ctx)
@@ -25,29 +25,29 @@ namespace Silk.NET.OpenAL.Extensions.EXT
         }
 
         /// <inheritdoc />
-        public abstract unsafe Device* CaptureOpenDevice(string deviceName, uint frequency, BufferFormat format,
+        public partial unsafe Device* CaptureOpenDevice(string deviceName, uint frequency, BufferFormat format,
             int size);
 
         /// <inheritdoc />
-        public abstract unsafe bool CaptureCloseDevice(Device* device);
+        public partial unsafe bool CaptureCloseDevice(Device* device);
 
         /// <inheritdoc />
-        public abstract unsafe void CaptureStart(Device* device);
+        public partial unsafe void CaptureStart(Device* device);
 
         /// <inheritdoc />
-        public abstract unsafe void CaptureStop(Device* device);
+        public partial unsafe void CaptureStop(Device* device);
 
         /// <inheritdoc />
-        public abstract unsafe void CaptureSamples(Device* device, void* buffer, int sampleCount);
+        public partial unsafe void CaptureSamples(Device* device, void* buffer, int sampleCount);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public abstract unsafe void GetContextProperty(Device* device, GetCaptureContextInteger param, int count,
+        public partial unsafe void GetContextProperty(Device* device, GetCaptureContextInteger param, int count,
             void* data);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public abstract unsafe void GetContextProperty(Device* device, GetCaptureContextInteger param, int count,
+        public partial unsafe void GetContextProperty(Device* device, GetCaptureContextInteger param, int count,
             int* data);
 
         /// <inheritdoc cref="CaptureOpenDevice" />

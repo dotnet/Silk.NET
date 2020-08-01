@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
 {
     [Extension("AMD_sample_positions")]
-    public abstract unsafe partial class AmdSamplePositions : NativeExtension<GL>
+    public unsafe partial class AmdSamplePositions : NativeExtension<GL>
     {
         public const string ExtensionName = "AMD_sample_positions";
         [NativeApi(EntryPoint = "glSetMultisamplefvAMD")]
-        public abstract unsafe void SetMultisample([Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] float* val);
+        public partial unsafe void SetMultisample([Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] float* val);
 
         [NativeApi(EntryPoint = "glSetMultisamplefvAMD")]
-        public abstract void SetMultisample([Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> val);
+        public partial void SetMultisample([Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> val);
 
         public AmdSamplePositions(INativeContext ctx)
             : base(ctx)

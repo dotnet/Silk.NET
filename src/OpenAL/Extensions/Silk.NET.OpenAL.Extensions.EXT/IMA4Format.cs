@@ -15,7 +15,7 @@ namespace Silk.NET.OpenAL.Native.Extensions.EXT
     /// </summary>
     [Extension("AL_EXT_IMA4")]
     [NativeApi(Prefix = "al")]
-    public abstract class IMA4Format : FormatExtensionBase<IMA4BufferFormat>
+    public partial class IMA4Format : FormatExtensionBase<IMA4BufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
         protected IMA4Format(INativeContext ctx)

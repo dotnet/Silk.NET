@@ -16,29 +16,29 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [Extension("EXT_debug_marker")]
-    public abstract unsafe partial class ExtDebugMarker : NativeExtension<GL>
+    public unsafe partial class ExtDebugMarker : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_debug_marker";
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT")]
-        public abstract unsafe void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* marker);
+        public partial unsafe void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* marker);
 
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT")]
-        public abstract void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<byte> marker);
+        public partial void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<byte> marker);
 
         [NativeApi(EntryPoint = "glPopGroupMarkerEXT")]
-        public abstract void PopGroupMarker();
+        public partial void PopGroupMarker();
 
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT")]
-        public abstract unsafe void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* marker);
+        public partial unsafe void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* marker);
 
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT")]
-        public abstract void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<byte> marker);
+        public partial void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<byte> marker);
 
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT")]
-        public abstract void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string marker);
+        public partial void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string marker);
 
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT")]
-        public abstract void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string marker);
+        public partial void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string marker);
 
         public ExtDebugMarker(INativeContext ctx)
             : base(ctx)

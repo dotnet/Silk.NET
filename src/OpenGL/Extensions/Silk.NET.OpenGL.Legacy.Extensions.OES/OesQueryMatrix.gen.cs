@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.OES
 {
     [Extension("OES_query_matrix")]
-    public abstract unsafe partial class OesQueryMatrix : NativeExtension<GL>
+    public unsafe partial class OesQueryMatrix : NativeExtension<GL>
     {
         public const string ExtensionName = "OES_query_matrix";
         [NativeApi(EntryPoint = "glQueryMatrixxOES")]
-        public abstract unsafe uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] int* mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] int* exponent);
+        public partial unsafe uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] int* mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] int* exponent);
 
         [NativeApi(EntryPoint = "glQueryMatrixxOES")]
-        public abstract uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] Span<int> mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] Span<int> exponent);
+        public partial uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] Span<int> mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] Span<int> exponent);
 
         public OesQueryMatrix(INativeContext ctx)
             : base(ctx)

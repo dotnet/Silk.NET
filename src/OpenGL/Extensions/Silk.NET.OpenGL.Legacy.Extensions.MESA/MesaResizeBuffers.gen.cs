@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
 {
     [Extension("MESA_resize_buffers")]
-    public abstract unsafe partial class MesaResizeBuffers : NativeExtension<GL>
+    public unsafe partial class MesaResizeBuffers : NativeExtension<GL>
     {
         public const string ExtensionName = "MESA_resize_buffers";
         [NativeApi(EntryPoint = "glResizeBuffersMESA")]
-        public abstract void ResizeBuffers();
+        public partial void ResizeBuffers();
 
         public MesaResizeBuffers(INativeContext ctx)
             : base(ctx)

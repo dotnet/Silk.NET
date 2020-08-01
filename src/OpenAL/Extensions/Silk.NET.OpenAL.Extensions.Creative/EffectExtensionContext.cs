@@ -15,7 +15,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// </summary>
     [Extension("AL_EXT_EFX")]
     [NativeApi(Prefix = "alc")]
-    public abstract class EffectExtensionContext : NativeExtension<AL>
+    public partial class EffectExtensionContext : NativeExtension<AL>
     {
         /// <inheritdoc cref="ExtensionBase" />
         protected EffectExtensionContext(INativeContext ctx)
@@ -25,11 +25,11 @@ namespace Silk.NET.OpenAL.Extensions.Creative
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public abstract unsafe void GetContextProperty(IntPtr device, EFXContextInteger param, int size, int* data);
+        public partial unsafe void GetContextProperty(IntPtr device, EFXContextInteger param, int size, int* data);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public abstract unsafe void GetContextProperty(Device* device, EFXContextInteger param, int size, int* data);
+        public partial unsafe void GetContextProperty(Device* device, EFXContextInteger param, int size, int* data);
 
         /// <summary>
         /// Gets the major version of the Effect Extension.

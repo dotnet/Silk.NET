@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_stencil_clear_tag")]
-    public abstract unsafe partial class ExtStencilClearTag : NativeExtension<GL>
+    public unsafe partial class ExtStencilClearTag : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_stencil_clear_tag";
         [NativeApi(EntryPoint = "glStencilClearTagEXT")]
-        public abstract void StencilClearTag([Flow(FlowDirection.In)] uint stencilTagBits, [Flow(FlowDirection.In)] uint stencilClearTag);
+        public partial void StencilClearTag([Flow(FlowDirection.In)] uint stencilTagBits, [Flow(FlowDirection.In)] uint stencilClearTag);
 
         public ExtStencilClearTag(INativeContext ctx)
             : base(ctx)

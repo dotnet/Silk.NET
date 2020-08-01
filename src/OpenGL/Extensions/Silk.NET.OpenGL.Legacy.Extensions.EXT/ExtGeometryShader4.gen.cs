@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_geometry_shader4")]
-    public abstract unsafe partial class ExtGeometryShader4 : NativeExtension<GL>
+    public unsafe partial class ExtGeometryShader4 : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_geometry_shader4";
         [NativeApi(EntryPoint = "glProgramParameteriEXT")]
-        public abstract void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int value);
+        public partial void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int value);
 
         [NativeApi(EntryPoint = "glProgramParameteriEXT")]
-        public abstract void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramParameterPName pname, [Flow(FlowDirection.In)] int value);
+        public partial void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramParameterPName pname, [Flow(FlowDirection.In)] int value);
 
         public ExtGeometryShader4(INativeContext ctx)
             : base(ctx)

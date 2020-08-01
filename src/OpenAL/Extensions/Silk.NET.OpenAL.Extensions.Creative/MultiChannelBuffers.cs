@@ -14,7 +14,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     /// </summary>
     [Extension("AL_EXT_EFX")]
     [NativeApi(Prefix = "al")]
-    public abstract class MultiChannelBuffers : FormatExtensionBase<MultiChannelBufferFormat>
+    public partial class MultiChannelBuffers : FormatExtensionBase<MultiChannelBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
         protected MultiChannelBuffers(INativeContext ctx)

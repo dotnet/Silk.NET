@@ -16,14 +16,14 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.PGI
 {
     [Extension("PGI_misc_hints")]
-    public abstract unsafe partial class PgiMiscHints : NativeExtension<GL>
+    public unsafe partial class PgiMiscHints : NativeExtension<GL>
     {
         public const string ExtensionName = "PGI_misc_hints";
         [NativeApi(EntryPoint = "glHintPGI")]
-        public abstract void Hint([Flow(FlowDirection.In)] PGI target, [Flow(FlowDirection.In)] int mode);
+        public partial void Hint([Flow(FlowDirection.In)] PGI target, [Flow(FlowDirection.In)] int mode);
 
         [NativeApi(EntryPoint = "glHintPGI")]
-        public abstract void Hint([Flow(FlowDirection.In)] HintTargetPGI target, [Flow(FlowDirection.In)] int mode);
+        public partial void Hint([Flow(FlowDirection.In)] HintTargetPGI target, [Flow(FlowDirection.In)] int mode);
 
         public PgiMiscHints(INativeContext ctx)
             : base(ctx)

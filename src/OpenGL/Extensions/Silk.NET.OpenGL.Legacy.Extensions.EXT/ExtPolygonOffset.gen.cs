@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_polygon_offset")]
-    public abstract unsafe partial class ExtPolygonOffset : NativeExtension<GL>
+    public unsafe partial class ExtPolygonOffset : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_polygon_offset";
         [NativeApi(EntryPoint = "glPolygonOffsetEXT")]
-        public abstract void PolygonOffset([Flow(FlowDirection.In)] float factor, [Flow(FlowDirection.In)] float bias);
+        public partial void PolygonOffset([Flow(FlowDirection.In)] float factor, [Flow(FlowDirection.In)] float bias);
 
         public ExtPolygonOffset(INativeContext ctx)
             : base(ctx)

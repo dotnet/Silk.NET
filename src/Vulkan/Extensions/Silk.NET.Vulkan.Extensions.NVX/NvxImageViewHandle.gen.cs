@@ -16,24 +16,24 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.NVX
 {
     [Extension("VK_NVX_image_view_handle")]
-    public abstract unsafe partial class NvxImageViewHandle : NativeExtension<Vk>
+    public unsafe partial class NvxImageViewHandle : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_NVX_image_view_handle";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageViewAddressNVX")]
-        public abstract unsafe Result GetImageViewAddress([Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(FlowDirection.Out)] ImageViewAddressPropertiesNVX* pProperties);
+        public partial unsafe Result GetImageViewAddress([Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(FlowDirection.Out)] ImageViewAddressPropertiesNVX* pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageViewAddressNVX")]
-        public abstract Result GetImageViewAddress([Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageViewAddressPropertiesNVX pProperties);
+        public partial Result GetImageViewAddress([Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageViewAddressPropertiesNVX pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageViewHandleNVX")]
-        public abstract unsafe uint GetImageViewHandle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageViewHandleInfoNVX* pInfo);
+        public partial unsafe uint GetImageViewHandle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageViewHandleInfoNVX* pInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageViewHandleNVX")]
-        public abstract uint GetImageViewHandle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref ImageViewHandleInfoNVX pInfo);
+        public partial uint GetImageViewHandle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref ImageViewHandleInfoNVX pInfo);
 
         public NvxImageViewHandle(INativeContext ctx)
             : base(ctx)

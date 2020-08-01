@@ -16,20 +16,20 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.KHR
 {
     [Extension("VK_KHR_win32_surface")]
-    public abstract unsafe partial class KhrWin32Surface : NativeExtension<Vk>
+    public unsafe partial class KhrWin32Surface : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_KHR_win32_surface";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateWin32SurfaceKHR")]
-        public abstract unsafe Result CreateWin32Surface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] Win32SurfaceCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+        public partial unsafe Result CreateWin32Surface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] Win32SurfaceCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateWin32SurfaceKHR")]
-        public abstract Result CreateWin32Surface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref Win32SurfaceCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
+        public partial Result CreateWin32Surface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref Win32SurfaceCreateInfoKHR pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR")]
-        public abstract Bool32 GetPhysicalDeviceWin32PresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex);
+        public partial Bool32 GetPhysicalDeviceWin32PresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex);
 
         public KhrWin32Surface(INativeContext ctx)
             : base(ctx)

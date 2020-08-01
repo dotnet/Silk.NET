@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
 {
     [Extension("KHR_blend_equation_advanced")]
-    public abstract unsafe partial class KhrBlendEquationAdvanced : NativeExtension<GL>
+    public unsafe partial class KhrBlendEquationAdvanced : NativeExtension<GL>
     {
         public const string ExtensionName = "KHR_blend_equation_advanced";
         [NativeApi(EntryPoint = "glBlendBarrierKHR")]
-        public abstract void BlendBarrier();
+        public partial void BlendBarrier();
 
         public KhrBlendEquationAdvanced(INativeContext ctx)
             : base(ctx)

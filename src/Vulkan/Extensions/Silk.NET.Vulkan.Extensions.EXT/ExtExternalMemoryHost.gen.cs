@@ -16,16 +16,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.EXT
 {
     [Extension("VK_EXT_external_memory_host")]
-    public abstract unsafe partial class ExtExternalMemoryHost : NativeExtension<Vk>
+    public unsafe partial class ExtExternalMemoryHost : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_external_memory_host";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryHostPointerPropertiesEXT")]
-        public abstract unsafe Result GetMemoryHostPointerProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] void* pHostPointer, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties);
+        public partial unsafe Result GetMemoryHostPointerProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] void* pHostPointer, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryHostPointerPropertiesEXT")]
-        public abstract Result GetMemoryHostPointerProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] ref T0 pHostPointer, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryHostPointerPropertiesEXT pMemoryHostPointerProperties) where T0 : unmanaged;
+        public partial Result GetMemoryHostPointerProperties<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] ref T0 pHostPointer, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryHostPointerPropertiesEXT pMemoryHostPointerProperties) where T0 : unmanaged;
 
         public ExtExternalMemoryHost(INativeContext ctx)
             : base(ctx)

@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
     [Extension("SGIS_texture_color_mask")]
-    public abstract unsafe partial class SgisTextureColorMask : NativeExtension<GL>
+    public unsafe partial class SgisTextureColorMask : NativeExtension<GL>
     {
         public const string ExtensionName = "SGIS_texture_color_mask";
         [NativeApi(EntryPoint = "glTextureColorMaskSGIS")]
-        public abstract void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
+        public partial void TextureColorMask([Flow(FlowDirection.In)] bool red, [Flow(FlowDirection.In)] bool green, [Flow(FlowDirection.In)] bool blue, [Flow(FlowDirection.In)] bool alpha);
 
         public SgisTextureColorMask(INativeContext ctx)
             : base(ctx)

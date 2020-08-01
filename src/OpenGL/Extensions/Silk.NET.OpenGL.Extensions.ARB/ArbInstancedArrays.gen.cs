@@ -16,11 +16,11 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_instanced_arrays")]
-    public abstract unsafe partial class ArbInstancedArrays : NativeExtension<GL>
+    public unsafe partial class ArbInstancedArrays : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_instanced_arrays";
         [NativeApi(EntryPoint = "glVertexAttribDivisorARB")]
-        public abstract void VertexAttribDivisor([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint divisor);
+        public partial void VertexAttribDivisor([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint divisor);
 
         public ArbInstancedArrays(INativeContext ctx)
             : base(ctx)

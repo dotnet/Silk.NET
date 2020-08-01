@@ -16,16 +16,16 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Vulkan.Extensions.KHR
 {
     [Extension("VK_KHR_device_group_creation")]
-    public abstract unsafe partial class KhrDeviceGroupCreation : NativeExtension<Vk>
+    public unsafe partial class KhrDeviceGroupCreation : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_KHR_device_group_creation";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroupsKHR")]
-        public abstract unsafe Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* pPhysicalDeviceGroupCount, [Count(Computed = "pPhysicalDeviceGroupCount")] PhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties);
+        public partial unsafe Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* pPhysicalDeviceGroupCount, [Count(Computed = "pPhysicalDeviceGroupCount")] PhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroupsKHR")]
-        public abstract Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] ref uint pPhysicalDeviceGroupCount, [Count(Computed = "pPhysicalDeviceGroupCount")] ref PhysicalDeviceGroupProperties pPhysicalDeviceGroupProperties);
+        public partial Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] ref uint pPhysicalDeviceGroupCount, [Count(Computed = "pPhysicalDeviceGroupCount")] ref PhysicalDeviceGroupProperties pPhysicalDeviceGroupProperties);
 
         public KhrDeviceGroupCreation(INativeContext ctx)
             : base(ctx)
