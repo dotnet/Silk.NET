@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -121,8 +121,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glMapParameterfvNV")]
         public abstract void MapParameter([Flow(FlowDirection.In)] EvalTargetNV target, [Flow(FlowDirection.In)] MapParameterNV pname, [Count(Computed = "target, pname"), Flow(FlowDirection.In)] ref float @params);
 
-        public NVEvaluators(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVEvaluators(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

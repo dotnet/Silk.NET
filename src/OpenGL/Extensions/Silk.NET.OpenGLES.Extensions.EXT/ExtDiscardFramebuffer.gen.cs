@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -31,8 +31,8 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glDiscardFramebufferEXT")]
         public abstract void DiscardFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] Span<InvalidateFramebufferAttachment> attachments);
 
-        public ExtDiscardFramebuffer(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtDiscardFramebuffer(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

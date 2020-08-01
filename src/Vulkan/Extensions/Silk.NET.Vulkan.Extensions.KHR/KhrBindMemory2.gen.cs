@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -35,8 +35,8 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         [NativeApi(EntryPoint = "vkBindImageMemory2KHR")]
         public abstract Result BindImageMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] ref BindImageMemoryInfo pBindInfos);
 
-        public KhrBindMemory2(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrBindMemory2(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

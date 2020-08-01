@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -23,8 +23,8 @@ namespace Silk.NET.Vulkan.Extensions.AMD
         [NativeApi(EntryPoint = "vkCmdWriteBufferMarkerAMD")]
         public abstract void CmdWriteBufferMarker([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags pipelineStage, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] uint marker);
 
-        public AmdBufferMarker(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AmdBufferMarker(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

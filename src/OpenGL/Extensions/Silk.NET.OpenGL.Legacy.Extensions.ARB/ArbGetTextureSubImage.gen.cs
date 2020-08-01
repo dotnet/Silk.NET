@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -37,8 +37,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glGetTextureSubImage")]
         public abstract void GetTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged;
 
-        public ArbGetTextureSubImage(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbGetTextureSubImage(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

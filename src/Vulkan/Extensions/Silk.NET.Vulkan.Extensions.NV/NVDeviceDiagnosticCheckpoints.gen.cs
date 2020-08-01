@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -35,8 +35,8 @@ namespace Silk.NET.Vulkan.Extensions.NV
         [NativeApi(EntryPoint = "vkGetQueueCheckpointDataNV")]
         public abstract void GetQueueCheckpointData([Count(Count = 0)] Queue queue, [Count(Count = 0)] ref uint pCheckpointDataCount, [Count(Computed = "pCheckpointDataCount"), Flow(FlowDirection.Out)] out CheckpointDataNV pCheckpointData);
 
-        public NVDeviceDiagnosticCheckpoints(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVDeviceDiagnosticCheckpoints(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

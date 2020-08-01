@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -22,8 +22,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glDispatchComputeGroupSizeARB")]
         public abstract void DispatchComputeGroupSize([Flow(FlowDirection.In)] uint num_groups_x, [Flow(FlowDirection.In)] uint num_groups_y, [Flow(FlowDirection.In)] uint num_groups_z, [Flow(FlowDirection.In)] uint group_size_x, [Flow(FlowDirection.In)] uint group_size_y, [Flow(FlowDirection.In)] uint group_size_z);
 
-        public ArbComputeVariableGroupSize(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbComputeVariableGroupSize(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

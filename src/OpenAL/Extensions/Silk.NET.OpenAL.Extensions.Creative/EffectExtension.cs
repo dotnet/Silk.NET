@@ -6,7 +6,7 @@
 using System.Numerics;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
 
 namespace Silk.NET.OpenAL.Extensions.Creative
@@ -19,8 +19,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     public abstract class EffectExtension : NativeExtension<AL>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected EffectExtension(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected EffectExtension(INativeContext ctx)
+            : base(ctx)
         {
         }
 

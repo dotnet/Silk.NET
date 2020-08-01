@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -47,8 +47,8 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         [NativeApi(EntryPoint = "vkGetDeferredOperationResultKHR")]
         public abstract Result GetDeferredOperationResult([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR operation);
 
-        public KhrDeferredHostOperations(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrDeferredHostOperations(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

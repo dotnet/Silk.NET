@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenXR;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -27,8 +27,8 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
         public abstract Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ref SwapchainCreateInfo info, [Count(Count = 0)] ref Swapchain swapchain, [Count(Count = 0)] ref IntPtr surface);
 
-        public KhrAndroidSurfaceSwapchain(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrAndroidSurfaceSwapchain(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

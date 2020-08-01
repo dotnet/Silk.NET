@@ -4,8 +4,9 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
+using Silk.NET.Core.Native;
 
 namespace Silk.NET.OpenAL
 {
@@ -18,13 +19,14 @@ namespace Silk.NET.OpenAL
             [NativeApi(EntryPoint = "alGetProcAddress")]
             public abstract IntPtr GetProcAddress(string proc);
 
-            public InternalAL(ref NativeApiContext ctx) : base(ref ctx)
+            public InternalAL(INativeContext ctx) : base(ctx)
             {
             }
         }
 
-        private static InternalAL _al = LibraryActivator.CreateInstance<InternalAL>
+        private static InternalAL _al = (InternalAL)Activator.CreateInstance
         (
+            typeof(InternalAL),
             new OpenALLibraryNameContainer().GetLibraryName()
         );
 

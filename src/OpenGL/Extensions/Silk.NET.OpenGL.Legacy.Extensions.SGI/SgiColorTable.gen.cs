@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -97,8 +97,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
         [NativeApi(EntryPoint = "glGetColorTableParameterivSGI")]
         public abstract void GetColorTableParameter([Flow(FlowDirection.In)] ColorTableTargetSGI target, [Flow(FlowDirection.In)] GetColorTableParameterPNameSGI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        public SgiColorTable(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgiColorTable(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

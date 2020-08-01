@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -52,8 +52,8 @@ namespace Silk.NET.OpenGL.Extensions.NV
         [NativeApi(EntryPoint = "glShadingRateSampleOrderCustomNV")]
         public abstract void ShadingRateSampleOrderCustom([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(FlowDirection.In)] ref int locations);
 
-        public NVShadingRateImage(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVShadingRateImage(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

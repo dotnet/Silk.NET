@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -51,8 +51,8 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkMergeValidationCachesEXT")]
         public abstract Result MergeValidationCaches([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Computed = "srcCacheCount"), Flow(FlowDirection.In)] ref ValidationCacheEXT pSrcCaches);
 
-        public ExtValidationCache(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtValidationCache(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

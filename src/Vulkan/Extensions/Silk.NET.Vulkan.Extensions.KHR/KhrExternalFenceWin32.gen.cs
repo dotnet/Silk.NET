@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -35,8 +35,8 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         [NativeApi(EntryPoint = "vkImportFenceWin32HandleKHR")]
         public abstract Result ImportFenceWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref ImportFenceWin32HandleInfoKHR pImportFenceWin32HandleInfo);
 
-        public KhrExternalFenceWin32(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrExternalFenceWin32(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

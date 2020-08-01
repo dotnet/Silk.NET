@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
@@ -284,11 +284,17 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clCreateImageWithProperties")]
         public abstract IntPtr CreateImageWithProperties<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] Span<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] Span<uint> image_format, [Flow(FlowDirection.In)] Span<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
-        [NativeApi(EntryPoint = "clSetProgramReleaseCallback")]
-        public abstract unsafe int SetProgramReleaseCallback([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        [NativeApi(EntryPoint = "clSetContextDestructorCallback")]
+        public abstract unsafe int SetContextDestructorCallback([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+
+        [NativeApi(EntryPoint = "clSetContextDestructorCallback")]
+        public abstract int SetContextDestructorCallback<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSetProgramReleaseCallback")]
-        public abstract int SetProgramReleaseCallback<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
+        public abstract unsafe int SetProgramReleaseCallback([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+
+        [NativeApi(EntryPoint = "clSetProgramReleaseCallback")]
+        public abstract int SetProgramReleaseCallback<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSetProgramSpecializationConstant")]
         public abstract unsafe int SetProgramSpecializationConstant([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint spec_id, [Flow(FlowDirection.In)] UIntPtr spec_size, [Flow(FlowDirection.In)] void* spec_value);
@@ -354,10 +360,10 @@ namespace Silk.NET.OpenCL
         public abstract IntPtr CreateSamplerWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] Span<CLEnum> sampler_properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         [NativeApi(EntryPoint = "clEnqueueSVMFree")]
-        public abstract unsafe int EnqueueSvmfree([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] void* svm_pointers, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public abstract unsafe int EnqueueSvmfree([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] void* svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueSVMFree")]
-        public abstract int EnqueueSvmfree<T0, T1>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] Span<T0> svm_pointers, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] Span<T1> user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged where T1 : unmanaged;
+        public abstract int EnqueueSvmfree<T0, T1>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] Span<T0> svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] Span<T1> user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueSVMMap")]
         public abstract unsafe int EnqueueSvmmap([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] void* svm_ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
@@ -411,10 +417,10 @@ namespace Silk.NET.OpenCL
         public abstract void Svmfree<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.Out)] Span<T0> svm_pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public abstract unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public abstract unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public abstract unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
+        public abstract unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateImage")]
         public abstract unsafe IntPtr CreateImage([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
@@ -477,10 +483,10 @@ namespace Silk.NET.OpenCL
         public abstract int GetKernelArgInfo<T0>([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public abstract unsafe IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public abstract unsafe IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public abstract IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] Span<IntPtr> input_programs, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
+        public abstract IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] Span<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clReleaseDevice")]
         public abstract int ReleaseDevice([Flow(FlowDirection.In)] IntPtr device);
@@ -492,10 +498,10 @@ namespace Silk.NET.OpenCL
         public abstract int UnloadPlatformCompiler([Flow(FlowDirection.In)] IntPtr platform);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public abstract unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public abstract unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public abstract unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
+        public abstract unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels")]
         public abstract unsafe IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret);
@@ -507,10 +513,10 @@ namespace Silk.NET.OpenCL
         public abstract unsafe void* GetExtensionFunctionAddressForPlatform([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] string func_name);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public abstract unsafe IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public abstract unsafe IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public abstract IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] Span<IntPtr> input_programs, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
+        public abstract IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] Span<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateSubBuffer")]
         public abstract unsafe IntPtr CreateSubBuffer([Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint buffer_create_type, [Flow(FlowDirection.In)] void* buffer_create_info, [Flow(FlowDirection.Out)] int* errcode_ret);
@@ -543,25 +549,25 @@ namespace Silk.NET.OpenCL
         public abstract int EnqueueWriteBufferRect<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] Span<UIntPtr> buffer_offset, [Flow(FlowDirection.In)] Span<UIntPtr> host_offset, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.In)] UIntPtr buffer_row_pitch, [Flow(FlowDirection.In)] UIntPtr buffer_slice_pitch, [Flow(FlowDirection.In)] UIntPtr host_row_pitch, [Flow(FlowDirection.In)] UIntPtr host_slice_pitch, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSetEventCallback")]
-        public abstract unsafe int SetEventCallback([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] int command_exec_callback_type, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public abstract unsafe int SetEventCallback([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] int command_exec_callback_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clSetEventCallback")]
-        public abstract int SetEventCallback<T0>([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] int command_exec_callback_type, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
+        public abstract int SetEventCallback<T0>([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] int command_exec_callback_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSetMemObjectDestructorCallback")]
-        public abstract unsafe int SetMemObjectDestructorCallback([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public abstract unsafe int SetMemObjectDestructorCallback([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clSetMemObjectDestructorCallback")]
-        public abstract int SetMemObjectDestructorCallback<T0>([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
+        public abstract int SetMemObjectDestructorCallback<T0>([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSetUserEventStatus")]
         public abstract int SetUserEventStatus([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] int execution_status);
 
         [NativeApi(EntryPoint = "clBuildProgram")]
-        public abstract unsafe int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public abstract unsafe int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clBuildProgram")]
-        public abstract int BuildProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
+        public abstract int BuildProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateBuffer")]
         public abstract unsafe IntPtr CreateBuffer([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
@@ -576,16 +582,16 @@ namespace Silk.NET.OpenCL
         public abstract IntPtr CreateCommandQueue([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] CLEnum properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateContext")]
-        public abstract unsafe IntPtr CreateContext([Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* devices, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public abstract unsafe IntPtr CreateContext([Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* devices, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateContext")]
-        public abstract IntPtr CreateContext<T0>([Flow(FlowDirection.In)] Span<IntPtr> properties, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> devices, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
+        public abstract IntPtr CreateContext<T0>([Flow(FlowDirection.In)] Span<IntPtr> properties, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> devices, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateContextFromType")]
-        public abstract unsafe IntPtr CreateContextFromType([Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.In)] CLEnum device_type, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public abstract unsafe IntPtr CreateContextFromType([Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.In)] CLEnum device_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateContextFromType")]
-        public abstract IntPtr CreateContextFromType<T0>([Flow(FlowDirection.In)] Span<IntPtr> properties, [Flow(FlowDirection.In)] CLEnum device_type, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
+        public abstract IntPtr CreateContextFromType<T0>([Flow(FlowDirection.In)] Span<IntPtr> properties, [Flow(FlowDirection.In)] CLEnum device_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateImage2D")]
         public abstract unsafe IntPtr CreateImage2D([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] UIntPtr image_width, [Flow(FlowDirection.In)] UIntPtr image_height, [Flow(FlowDirection.In)] UIntPtr image_row_pitch, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
@@ -903,10 +909,10 @@ namespace Silk.NET.OpenCL
         public abstract int WaitForEvents([Flow(FlowDirection.In)] uint num_events, [Flow(FlowDirection.In)] Span<IntPtr> event_list);
 
         [NativeApi(EntryPoint = "clBuildProgram")]
-        public abstract unsafe int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public abstract unsafe int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clBuildProgram")]
-        public abstract int BuildProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
+        public abstract int BuildProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateKernel")]
         public abstract unsafe IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] string kernel_name, [Flow(FlowDirection.Out)] int* errcode_ret);
@@ -941,13 +947,25 @@ namespace Silk.NET.OpenCL
             return CreateImageWithProperties(new IntPtr(context), properties, flags, image_format, image_desc, host_ptr, errcode_ret);
         }
 
-        public unsafe int SetProgramReleaseCallback([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int SetContextDestructorCallback([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        {
+            // IntPtrOverloader
+            return SetContextDestructorCallback(new IntPtr(context), pfn_notify, user_data);
+        }
+
+        public unsafe int SetContextDestructorCallback<T0>([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        {
+            // IntPtrOverloader
+            return SetContextDestructorCallback(new IntPtr(context), pfn_notify, user_data);
+        }
+
+        public unsafe int SetProgramReleaseCallback([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // IntPtrOverloader
             return SetProgramReleaseCallback(new IntPtr(program), pfn_notify, user_data);
         }
 
-        public unsafe int SetProgramReleaseCallback<T0>([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public unsafe int SetProgramReleaseCallback<T0>([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // IntPtrOverloader
             return SetProgramReleaseCallback(new IntPtr(program), pfn_notify, user_data);
@@ -1067,13 +1085,13 @@ namespace Silk.NET.OpenCL
             return CreateSamplerWithProperties(new IntPtr(context), sampler_properties, errcode_ret);
         }
 
-        public unsafe int EnqueueSvmfree([Flow(FlowDirection.In)] int command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] void* svm_pointers, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event)
+        public unsafe int EnqueueSvmfree([Flow(FlowDirection.In)] int command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] void* svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event)
         {
             // IntPtrOverloader
             return EnqueueSvmfree(new IntPtr(command_queue), num_svm_pointers, svm_pointers, pfn_free_func, user_data, num_events_in_wait_list, event_wait_list, @event);
         }
 
-        public unsafe int EnqueueSvmfree<T0, T1>([Flow(FlowDirection.In)] int command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] Span<T0> svm_pointers, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] Span<T1> user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged where T1 : unmanaged
+        public unsafe int EnqueueSvmfree<T0, T1>([Flow(FlowDirection.In)] int command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] Span<T0> svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] Span<T1> user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged where T1 : unmanaged
         {
             // IntPtrOverloader
             return EnqueueSvmfree(new IntPtr(command_queue), num_svm_pointers, svm_pointers, pfn_free_func, user_data, num_events_in_wait_list, event_wait_list, @event);
@@ -1181,13 +1199,13 @@ namespace Silk.NET.OpenCL
             Svmfree(new IntPtr(context), svm_pointer);
         }
 
-        public unsafe int CompileProgram([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int CompileProgram([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // IntPtrOverloader
             return CompileProgram(new IntPtr(program), num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
         }
 
-        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
             var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
@@ -1196,13 +1214,13 @@ namespace Silk.NET.OpenCL
             return ret;
         }
 
-        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // IntPtrOverloader
             return CompileProgram(new IntPtr(program), num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
         }
 
-        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
             var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
@@ -1331,13 +1349,13 @@ namespace Silk.NET.OpenCL
             return GetKernelArgInfo(new IntPtr(kernel), arg_index, param_name, new UIntPtr(param_value_size), param_value, param_value_size_ret);
         }
 
-        public unsafe IntPtr LinkProgram([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public unsafe IntPtr LinkProgram([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // IntPtrOverloader
             return LinkProgram(new IntPtr(context), num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, user_data, errcode_ret);
         }
 
-        public unsafe IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] Span<IntPtr> input_programs, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        public unsafe IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] Span<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // IntPtrOverloader
             return LinkProgram(new IntPtr(context), num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, user_data, errcode_ret);
@@ -1361,13 +1379,13 @@ namespace Silk.NET.OpenCL
             return UnloadPlatformCompiler(new IntPtr(platform));
         }
 
-        public unsafe int CompileProgram([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int CompileProgram([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // IntPtrOverloader
             return CompileProgram(new IntPtr(program), num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
         }
 
-        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // StringArrayOverloader
             var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
@@ -1376,13 +1394,13 @@ namespace Silk.NET.OpenCL
             return ret;
         }
 
-        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // IntPtrOverloader
             return CompileProgram(new IntPtr(program), num_devices, device_list, options, num_input_headers, input_headers, header_include_names, pfn_notify, user_data);
         }
 
-        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] string[] header_include_namesSa, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // StringArrayOverloader
             var header_include_names = (char**) SilkMarshal.MarshalStringArrayToPtr(header_include_namesSa);
@@ -1409,13 +1427,13 @@ namespace Silk.NET.OpenCL
             return GetExtensionFunctionAddressForPlatform(new IntPtr(platform), func_name);
         }
 
-        public unsafe IntPtr LinkProgram([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
+        public unsafe IntPtr LinkProgram([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret)
         {
             // IntPtrOverloader
             return LinkProgram(new IntPtr(context), num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, user_data, errcode_ret);
         }
 
-        public unsafe IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] Span<IntPtr> input_programs, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
+        public unsafe IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] Span<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged
         {
             // IntPtrOverloader
             return LinkProgram(new IntPtr(context), num_devices, device_list, options, num_input_programs, input_programs, pfn_notify, user_data, errcode_ret);
@@ -1481,25 +1499,25 @@ namespace Silk.NET.OpenCL
             return EnqueueWriteBufferRect(new IntPtr(command_queue), new IntPtr(buffer), blocking_write, buffer_offset, host_offset, region, new UIntPtr(buffer_row_pitch), new UIntPtr(buffer_slice_pitch), new UIntPtr(host_row_pitch), new UIntPtr(host_slice_pitch), ptr, num_events_in_wait_list, event_wait_list, @event);
         }
 
-        public unsafe int SetEventCallback([Flow(FlowDirection.In)] int @event, [Flow(FlowDirection.In)] int command_exec_callback_type, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int SetEventCallback([Flow(FlowDirection.In)] int @event, [Flow(FlowDirection.In)] int command_exec_callback_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // IntPtrOverloader
             return SetEventCallback(new IntPtr(@event), command_exec_callback_type, pfn_notify, user_data);
         }
 
-        public unsafe int SetEventCallback<T0>([Flow(FlowDirection.In)] int @event, [Flow(FlowDirection.In)] int command_exec_callback_type, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public unsafe int SetEventCallback<T0>([Flow(FlowDirection.In)] int @event, [Flow(FlowDirection.In)] int command_exec_callback_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // IntPtrOverloader
             return SetEventCallback(new IntPtr(@event), command_exec_callback_type, pfn_notify, user_data);
         }
 
-        public unsafe int SetMemObjectDestructorCallback([Flow(FlowDirection.In)] int memobj, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int SetMemObjectDestructorCallback([Flow(FlowDirection.In)] int memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // IntPtrOverloader
             return SetMemObjectDestructorCallback(new IntPtr(memobj), pfn_notify, user_data);
         }
 
-        public unsafe int SetMemObjectDestructorCallback<T0>([Flow(FlowDirection.In)] int memobj, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public unsafe int SetMemObjectDestructorCallback<T0>([Flow(FlowDirection.In)] int memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // IntPtrOverloader
             return SetMemObjectDestructorCallback(new IntPtr(memobj), pfn_notify, user_data);
@@ -1511,13 +1529,13 @@ namespace Silk.NET.OpenCL
             return SetUserEventStatus(new IntPtr(@event), execution_status);
         }
 
-        public unsafe int BuildProgram([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int BuildProgram([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // IntPtrOverloader
             return BuildProgram(new IntPtr(program), num_devices, device_list, options, pfn_notify, user_data);
         }
 
-        public unsafe int BuildProgram<T0>([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public unsafe int BuildProgram<T0>([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // IntPtrOverloader
             return BuildProgram(new IntPtr(program), num_devices, device_list, options, pfn_notify, user_data);
@@ -2153,13 +2171,13 @@ namespace Silk.NET.OpenCL
             return SetKernelArg(new IntPtr(kernel), arg_index, new UIntPtr(arg_size), arg_value);
         }
 
-        public unsafe int BuildProgram([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int BuildProgram([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // IntPtrOverloader
             return BuildProgram(new IntPtr(program), num_devices, device_list, options, pfn_notify, user_data);
         }
 
-        public unsafe int BuildProgram<T0>([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public unsafe int BuildProgram<T0>([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // IntPtrOverloader
             return BuildProgram(new IntPtr(program), num_devices, device_list, options, pfn_notify, user_data);
@@ -2177,11 +2195,9 @@ namespace Silk.NET.OpenCL
             return CreateKernel(new IntPtr(program), kernel_name, errcode_ret);
         }
 
-        private SearchPathContainer _searchPaths;
-        public override SearchPathContainer SearchPaths => _searchPaths ??= new OpenCLLibraryNameContainer();
 
-        public CL(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public CL(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

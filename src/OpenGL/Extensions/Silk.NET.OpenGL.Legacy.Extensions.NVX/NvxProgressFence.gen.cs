@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -40,8 +40,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NVX
         [NativeApi(EntryPoint = "glWaitSemaphoreui64NVX")]
         public abstract void WaitSemaphore([Flow(FlowDirection.In)] uint waitGpu, [Flow(FlowDirection.In)] uint fenceObjectCount, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] Span<uint> semaphoreArray, [Count(Parameter = "fenceObjectCount"), Flow(FlowDirection.In)] Span<ulong> fenceValueArray);
 
-        public NvxProgressFence(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NvxProgressFence(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

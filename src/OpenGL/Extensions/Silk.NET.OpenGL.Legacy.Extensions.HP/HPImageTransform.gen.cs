@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -79,8 +79,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.HP
         [NativeApi(EntryPoint = "glImageTransformParameterfvHP")]
         public abstract void ImageTransformParameter([Flow(FlowDirection.In)] ImageTransformTargetHP target, [Flow(FlowDirection.In)] ImageTransformPNameHP pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
 
-        public HPImageTransform(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public HPImageTransform(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

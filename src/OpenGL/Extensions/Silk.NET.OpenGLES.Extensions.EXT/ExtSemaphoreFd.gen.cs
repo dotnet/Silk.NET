@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -25,8 +25,8 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glImportSemaphoreFdEXT")]
         public abstract void ImportSemaphoreF([Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] ExternalHandleType handleType, [Flow(FlowDirection.In)] int fd);
 
-        public ExtSemaphoreFd(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtSemaphoreFd(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

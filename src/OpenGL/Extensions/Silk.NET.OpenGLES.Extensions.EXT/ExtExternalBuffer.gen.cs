@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -37,8 +37,8 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             NamedBufferStorageExternal(buffer, new IntPtr(offset), new UIntPtr(size), new IntPtr(clientBuffer), flags);
         }
 
-        public ExtExternalBuffer(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtExternalBuffer(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -79,8 +79,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         [NativeApi(EntryPoint = "glListParameterivSGIX")]
         public abstract void ListParameter([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] ListParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
 
-        public SgixListPriority(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgixListPriority(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -22,8 +22,8 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glMaxShaderCompilerThreadsARB")]
         public abstract void MaxShaderCompilerThreads([Flow(FlowDirection.In)] uint count);
 
-        public ArbParallelShaderCompile(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbParallelShaderCompile(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

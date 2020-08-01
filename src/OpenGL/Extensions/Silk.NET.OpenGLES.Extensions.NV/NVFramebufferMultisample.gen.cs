@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -25,8 +25,8 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleNV")]
         public abstract void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
-        public NVFramebufferMultisample(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVFramebufferMultisample(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -47,8 +47,8 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkSetPrivateDataEXT")]
         public abstract Result SetPrivateData([Count(Count = 0)] Device device, [Count(Count = 0)] ObjectType objectType, [Count(Count = 0)] ulong objectHandle, [Count(Count = 0)] PrivateDataSlotEXT privateDataSlot, [Count(Count = 0)] ulong data);
 
-        public ExtPrivateData(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtPrivateData(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

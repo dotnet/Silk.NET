@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenXR;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -27,8 +27,8 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         [NativeApi(EntryPoint = "xrGetOpenGLESGraphicsRequirementsKHR")]
         public abstract Result GetOpenGlesgraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref GraphicsRequirementsOpenGLESKHR graphicsRequirements);
 
-        public KhrOpenglEsEnable(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrOpenglEsEnable(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -25,8 +25,8 @@ namespace Silk.NET.OpenGL.Extensions.NV
         [NativeApi(EntryPoint = "glBlendParameteriNV")]
         public abstract void BlendParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int value);
 
-        public NVBlendEquationAdvanced(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVBlendEquationAdvanced(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

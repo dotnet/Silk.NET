@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -415,8 +415,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         [NativeApi(EntryPoint = "glVertexStream4dvATI")]
         public abstract void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> coords);
 
-        public AtiVertexStreams(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AtiVertexStreams(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

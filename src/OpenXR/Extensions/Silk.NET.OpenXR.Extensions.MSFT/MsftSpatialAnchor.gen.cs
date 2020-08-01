@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenXR;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -39,8 +39,8 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         [NativeApi(EntryPoint = "xrDestroySpatialAnchorMSFT")]
         public abstract Result DestroySpatialAnchorMsft([Count(Count = 0)] SpatialAnchorMSFT anchor);
 
-        public MsftSpatialAnchor(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public MsftSpatialAnchor(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -34,8 +34,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         [NativeApi(EntryPoint = "glIsNameAMD")]
         public abstract bool IsName([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint name);
 
-        public AmdNameGenDelete(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AmdNameGenDelete(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

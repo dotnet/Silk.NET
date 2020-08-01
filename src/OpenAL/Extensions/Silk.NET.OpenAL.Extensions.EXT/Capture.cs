@@ -5,7 +5,8 @@
 
 using System;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
 using Silk.NET.OpenAL.Attributes;
 
 namespace Silk.NET.OpenAL.Extensions.EXT
@@ -18,8 +19,8 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     public abstract class Capture : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected Capture(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected Capture(INativeContext ctx)
+            : base(ctx)
         {
         }
 

@@ -4,7 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.OpenAL.Extensions;
@@ -18,12 +18,12 @@ namespace Silk.NET.OpenAL
     public abstract class ALContext : NativeAPI
     {
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected ALContext(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected ALContext(INativeContext ctx)
+            : base(ctx)
         {
         }
 
-        public override SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
+        public SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
 
         public abstract override bool IsExtensionPresent(string name);
 
@@ -85,8 +85,7 @@ namespace Silk.NET.OpenAL
         public static ALContext GetApi()
         {
             var loader = new ALLoader();
-            var ret = LibraryActivator.CreateInstance<ALContext>
-                (new OpenALLibraryNameContainer().GetLibraryName(), loader);
+            var ret = new ALContext(new DefaultNativeContext(new OpenALLibraryNameContainer().GetLibraryName(), loader));
             loader.Alc = ret;
             return ret;
         }

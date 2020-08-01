@@ -78,6 +78,8 @@ namespace Silk.NET.OpenGL.Legacy
         ColorAttachment30 = 0x8CFE,
         [NativeName("Name", "GL_COLOR_ATTACHMENT31")]
         ColorAttachment31 = 0x8CFF,
+        [NativeName("Name", "GL_DEPTH_ATTACHMENT")]
+        DepthAttachment = 0x8D00,
         [NativeName("Name", "GL_STENCIL_ATTACHMENT")]
         StencilAttachment = 0x8D20,
     }

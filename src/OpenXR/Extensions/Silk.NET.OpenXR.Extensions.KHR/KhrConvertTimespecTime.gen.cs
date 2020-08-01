@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenXR;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -35,8 +35,8 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         [NativeApi(EntryPoint = "xrConvertTimeToTimespecTimeKHR")]
         public abstract Result ConvertTimeToTimespecTime([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] ref ValueTuple<IntPtr,IntPtr> timespecTime);
 
-        public KhrConvertTimespecTime(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrConvertTimespecTime(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

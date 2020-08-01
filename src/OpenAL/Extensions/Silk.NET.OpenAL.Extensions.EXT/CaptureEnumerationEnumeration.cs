@@ -7,7 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
 using Silk.NET.OpenAL.Extensions.EXT.Enumeration;
 
 namespace Silk.NET.OpenAL.Extensions.EXT
@@ -20,8 +21,8 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     public abstract class CaptureEnumerationEnumeration : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected CaptureEnumerationEnumeration(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected CaptureEnumerationEnumeration(INativeContext ctx)
+            : base(ctx)
         {
         }
 

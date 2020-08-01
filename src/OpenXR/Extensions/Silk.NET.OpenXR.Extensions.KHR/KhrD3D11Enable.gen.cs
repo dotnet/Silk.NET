@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenXR;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -27,8 +27,8 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         [NativeApi(EntryPoint = "xrGetD3D11GraphicsRequirementsKHR")]
         public abstract Result GetD3D11GraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref GraphicsRequirementsD3D11KHR graphicsRequirements);
 
-        public KhrD3D11Enable(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrD3D11Enable(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

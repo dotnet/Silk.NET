@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -55,8 +55,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         [NativeApi(EntryPoint = "glGetFramebufferParameterfvAMD")]
         public abstract void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Flow(FlowDirection.In)] uint numsamples, [Flow(FlowDirection.In)] uint pixelindex, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.Out)] Span<float> values);
 
-        public AmdFramebufferSamplePositions(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AmdFramebufferSamplePositions(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

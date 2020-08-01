@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -31,8 +31,8 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceWin32PresentationSupportKHR")]
         public abstract Bool32 GetPhysicalDeviceWin32PresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex);
 
-        public KhrWin32Surface(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrWin32Surface(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -25,8 +25,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         [NativeApi(EntryPoint = "glDrawMeshArraysSUN")]
         public abstract void DrawMeshArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint width);
 
-        public SunMeshArray(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SunMeshArray(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

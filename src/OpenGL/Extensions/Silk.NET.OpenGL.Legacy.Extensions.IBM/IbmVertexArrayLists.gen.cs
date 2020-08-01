@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -109,8 +109,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
         [NativeApi(EntryPoint = "glVertexPointerListIBM")]
         public abstract unsafe void VertexPointerList<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] int stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0* pointer, [Flow(FlowDirection.In)] int ptrstride) where T0 : unmanaged;
 
-        public IbmVertexArrayLists(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public IbmVertexArrayLists(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

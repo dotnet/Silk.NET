@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -31,8 +31,8 @@ namespace Silk.NET.OpenGLES.Extensions.ANGLE
         [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
         public abstract void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] string source);
 
-        public AngleTranslatedShaderSource(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AngleTranslatedShaderSource(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

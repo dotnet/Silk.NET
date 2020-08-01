@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -91,8 +91,8 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         [NativeApi(EntryPoint = "vkQueuePresentKHR")]
         public abstract Result QueuePresent([Count(Count = 0)] Queue queue, [Count(Count = 0), Flow(FlowDirection.In)] ref PresentInfoKHR pPresentInfo);
 
-        public KhrSwapchain(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrSwapchain(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

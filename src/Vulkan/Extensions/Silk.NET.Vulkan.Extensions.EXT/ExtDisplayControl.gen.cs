@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -51,8 +51,8 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkRegisterDisplayEventEXT")]
         public abstract Result RegisterDisplayEvent([Count(Count = 0)] Device device, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0), Flow(FlowDirection.In)] ref DisplayEventInfoEXT pDisplayEventInfo, [Count(Count = 0), Flow(FlowDirection.In)] ref AllocationCallbacks pAllocator, [Count(Count = 0)] ref Fence pFence);
 
-        public ExtDisplayControl(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtDisplayControl(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

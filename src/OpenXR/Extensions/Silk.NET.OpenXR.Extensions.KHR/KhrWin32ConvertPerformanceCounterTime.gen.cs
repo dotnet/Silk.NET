@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenXR;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -35,8 +35,8 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         [NativeApi(EntryPoint = "xrConvertWin32PerformanceCounterToTimeKHR")]
         public abstract Result ConvertWin32PerformanceCounterToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ref long performanceCounter, [Count(Count = 0)] ref long time);
 
-        public KhrWin32ConvertPerformanceCounterTime(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrWin32ConvertPerformanceCounterTime(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 
@@ -28,8 +28,8 @@ namespace Silk.NET.GLFW
         private static readonly List<Exception> _exceptions = new List<Exception>();
 
         /// <inheritdoc />
-        protected Glfw(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected Glfw(INativeContext ctx)
+            : base(ctx)
         {
         }
 
@@ -3914,7 +3914,7 @@ namespace Silk.NET.GLFW
         /// <returns>The instance.</returns>
         public static Glfw GetApi()
         {
-            return LibraryActivator.CreateInstance<Glfw>(new GlfwLibraryNameContainer().GetLibraryName());
+            return new Glfw(new DefaultNativeContext(new GlfwLibraryNameContainer().GetLibraryName()));
         }
 
         /// <inheritdoc />

@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -169,8 +169,8 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glUniform4ui64vNV")]
         public abstract void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<ulong> value);
 
-        public NVGpuShader5(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVGpuShader5(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

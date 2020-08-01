@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -223,8 +223,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         [NativeApi(EntryPoint = "glTexCoord2fColor4ubVertex3fvSUN")]
         public abstract void TexCoord2fColor4ubVertex3([Count(Count = 2), Flow(FlowDirection.In)] Span<float> tc, [Flow(FlowDirection.In)] string c, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
 
-        public SunVertex(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SunVertex(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

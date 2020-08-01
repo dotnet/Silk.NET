@@ -33,24 +33,25 @@ namespace Silk.NET.BuildTools.Overloading
 
                 if (variant.Type.IsOut)
                 {
-                    variant.Attributes.Add
-                    (
-                        new Attribute
-                        {
-                            Name = "Ultz.SuperInvoke.InteropServices.CountAttribute",
-                            Arguments = new List<string>
-                            {
-                                parameter.Count.IsStatic
-                                    ? "Ultz.SuperInvoke.InteropServices.CountType.Constant"
-                                    : "Ultz.SuperInvoke.InteropServices.CountType.ParameterReference",
-                                (parameter.Count.IsStatic
-                                    ? parameter.Count.StaticCount
-                                    : parameter.Origin.Parameters.FindIndex
-                                          (x => x.Name == parameter.Count.ValueReference) -
-                                      parameter.Origin.Parameters.IndexOf(parameter)).ToString()
-                            }
-                        }
-                    );
+                    // TODO re-enable out strings.
+                    //variant.Attributes.Add
+                    //(
+                    //    new Attribute
+                    //    {
+                    //        Name = "Ultz.SuperInvoke.InteropServices.CountAttribute",
+                    //        Arguments = new List<string>
+                    //        {
+                    //            parameter.Count.IsStatic
+                    //                ? "Ultz.SuperInvoke.InteropServices.CountType.Constant"
+                    //                : "Ultz.SuperInvoke.InteropServices.CountType.ParameterReference",
+                    //            (parameter.Count.IsStatic
+                    //                ? parameter.Count.StaticCount
+                    //                : parameter.Origin.Parameters.FindIndex
+                    //                      (x => x.Name == parameter.Count.ValueReference) -
+                    //                  parameter.Origin.Parameters.IndexOf(parameter)).ToString()
+                    //        }
+                    //    }
+                    //);
                 }
 
                 return true;

@@ -4,7 +4,6 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Reflection;
 
 namespace Silk.NET.Core.Attributes
 {

@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenXR;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -27,8 +27,8 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         [NativeApi(EntryPoint = "xrCreateSpatialGraphNodeSpaceMSFT")]
         public abstract Result CreateSpatialGraphNodeSpaceMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ref SpatialGraphNodeSpaceCreateInfoMSFT createInfo, [Count(Count = 0)] ref Space space);
 
-        public MsftSpatialGraphBridge(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public MsftSpatialGraphBridge(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

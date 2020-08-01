@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenXR;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -27,8 +27,8 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         [NativeApi(EntryPoint = "xrGetVisibilityMaskKHR")]
         public abstract Result GetVisibilityMask([Count(Count = 0)] Session session, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint viewIndex, [Count(Count = 0)] VisibilityMaskTypeKHR visibilityMaskType, [Count(Count = 0)] ref VisibilityMaskKHR visibilityMask);
 
-        public KhrVisibilityMask(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrVisibilityMask(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

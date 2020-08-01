@@ -6,8 +6,9 @@
 using System;
 using System.Numerics;
 using System.Runtime.InteropServices;
+using Microsoft.Extensions.DependencyModel;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 
@@ -20,8 +21,8 @@ namespace Silk.NET.OpenAL
     public abstract class AL : NativeAPI
     {
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected AL(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected AL(INativeContext ctx)
+            : base(ctx)
         {
         }
 
@@ -29,7 +30,7 @@ namespace Silk.NET.OpenAL
         public abstract override bool IsExtensionPresent(string name);
 
         /// <inheritdoc />
-        public override SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
+        public SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
 
         /// <inheritdoc />
         public abstract IntPtr GetProcAddress(string name);
@@ -340,8 +341,8 @@ namespace Silk.NET.OpenAL
         /// <returns>The instance.</returns>
         public static AL GetApi()
         {
-            return LibraryActivator.CreateInstance<AL>
-                (new OpenALLibraryNameContainer().GetLibraryName(), new ALLoader());
+            return new AL(new DefaultNativeContext
+                (new OpenALLibraryNameContainer().GetLibraryName(), new ALLoader()));
         }
 
         /// <summary>
@@ -353,7 +354,7 @@ namespace Silk.NET.OpenAL
             where TExtension : NativeExtension<AL>
         {
             return IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(TExtension)).Name)
-                ? LibraryActivator.CreateInstance<TExtension>(Library)
+                ? (TExtension)Activator.CreateInstance(typeof(TExtension), Context)
                 : null;
         }
 

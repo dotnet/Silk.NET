@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -43,8 +43,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         [NativeApi(EntryPoint = "glStopInstrumentsSGIX")]
         public abstract void StopInstruments([Flow(FlowDirection.In)] int marker);
 
-        public SgixInstruments(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgixInstruments(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -31,8 +31,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         [NativeApi(EntryPoint = "glTextureStorageSparseAMD")]
         public abstract void TextureStorageSparse([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] AMD target, [Flow(FlowDirection.In)] InternalFormat internalFormat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint layers, [Flow(FlowDirection.In)] uint flags);
 
-        public AmdSparseTexture(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AmdSparseTexture(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

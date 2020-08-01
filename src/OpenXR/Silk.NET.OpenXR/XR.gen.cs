@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
@@ -511,11 +511,9 @@ namespace Silk.NET.OpenXR
         [NativeApi(EntryPoint = "xrStringToPath")]
         public abstract Result StringToPath([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string pathString, [Count(Count = 0)] ref ulong path);
 
-        private SearchPathContainer _searchPaths;
-        public override SearchPathContainer SearchPaths => _searchPaths ??= new OpenXRLibraryNameContainer();
 
-        public XR(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public XR(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

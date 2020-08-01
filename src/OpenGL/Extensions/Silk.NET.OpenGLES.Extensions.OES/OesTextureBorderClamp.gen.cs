@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -115,8 +115,8 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         [NativeApi(EntryPoint = "glTexParameterIuivOES")]
         public abstract void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint @params);
 
-        public OesTextureBorderClamp(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public OesTextureBorderClamp(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

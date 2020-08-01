@@ -7,7 +7,8 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
 
 namespace Silk.NET.OpenAL.Extensions.Creative
 {
@@ -19,8 +20,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     public abstract class EnumerateAll : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected EnumerateAll(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected EnumerateAll(INativeContext ctx)
+            : base(ctx)
         {
         }
 

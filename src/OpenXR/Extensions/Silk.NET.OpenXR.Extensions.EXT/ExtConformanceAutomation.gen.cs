@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenXR;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -39,8 +39,8 @@ namespace Silk.NET.OpenXR.Extensions.EXT
         [NativeApi(EntryPoint = "xrSetInputDeviceStateVector2fEXT")]
         public abstract Result SetInputDeviceStateVector2([Count(Count = 0)] Session session, [Count(Count = 0)] ulong topLevelPath, [Count(Count = 0)] ulong inputSourcePath, [Count(Count = 0)] Vector2f state);
 
-        public ExtConformanceAutomation(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtConformanceAutomation(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

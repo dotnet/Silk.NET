@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -25,8 +25,8 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         [NativeApi(EntryPoint = "glTexEstimateMotionRegionsQCOM")]
         public abstract void TexEstimateMotionRegion([Flow(FlowDirection.In)] uint @ref, [Flow(FlowDirection.In)] uint target, [Flow(FlowDirection.In)] uint output, [Flow(FlowDirection.In)] uint mask);
 
-        public QComMotionEstimation(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public QComMotionEstimation(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

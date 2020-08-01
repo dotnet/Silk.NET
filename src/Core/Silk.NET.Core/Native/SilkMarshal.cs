@@ -19,34 +19,49 @@ namespace Silk.NET.Core.Native
         /// </summary>
         /// <param name="str">The input string.</param>
         /// <returns>A pointer to a native ANSI string.</returns>
-        public static IntPtr MarshalStringToPtr(string str) => Marshal.StringToHGlobalAnsi(str);
+        public static IntPtr MarshalStringToPtr(string str)
+        {
+            return Marshal.StringToHGlobalAnsi(str);
+        }
 
         /// <summary>
         /// Converts an ANSI string pointer to a C# string.
         /// </summary>
         /// <param name="str">A pointer to the ANSI string to convert.</param>
         /// <returns>A C# string.</returns>
-        public static string MarshalPtrToString(IntPtr str) => Marshal.PtrToStringAnsi(str);
+        public static string MarshalPtrToString(IntPtr str)
+        {
+            return Marshal.PtrToStringAnsi(str);
+        }
 
         /// <summary>
         /// Free a string pointer.
         /// </summary>
         /// <param name="ptr">The pointer to free.</param>
-        public static void FreeStringPtr(IntPtr ptr) => Marshal.FreeHGlobal(ptr);
+        public static void FreeStringPtr(IntPtr ptr)
+        {
+            Marshal.FreeHGlobal(ptr);
+        }
 
         /// <summary>
         /// Allocate a new string pointer.
         /// </summary>
         /// <param name="length">The length of the string pointer, in bytes.</param>
         /// <returns>A pointer to the created string.</returns>
-        public static IntPtr NewStringPtr(int length) => Marshal.AllocHGlobal(length);
+        public static IntPtr NewStringPtr(int length)
+        {
+            return Marshal.AllocHGlobal(length);
+        }
 
         /// <summary>
         /// Allocate a new string pointer.
         /// </summary>
         /// <param name="length">The length of the string pointer, in bytes.</param>
         /// <returns>A pointer to the created string.</returns>
-        public static IntPtr NewStringPtr(uint length) => Marshal.AllocHGlobal((int) length);
+        public static IntPtr NewStringPtr(uint length)
+        {
+            return Marshal.AllocHGlobal((int) length);
+        }
 
         /// <summary>
         /// Convert an array of strings into a pointer.
@@ -86,6 +101,7 @@ namespace Silk.NET.Core.Native
                     throw;
                 }
             }
+
             return ptr;
         }
 
@@ -127,6 +143,7 @@ namespace Silk.NET.Core.Native
             {
                 Marshal.FreeHGlobal(Marshal.ReadIntPtr(ptr, i * IntPtr.Size));
             }
+
             Marshal.FreeHGlobal(ptr);
         }
     }

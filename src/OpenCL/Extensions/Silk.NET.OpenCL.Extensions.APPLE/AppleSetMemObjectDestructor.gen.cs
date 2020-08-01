@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenCL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -20,25 +20,25 @@ namespace Silk.NET.OpenCL.Extensions.APPLE
     {
         public const string ExtensionName = "APPLE_SetMemObjectDestructor";
         [NativeApi(EntryPoint = "clSetMemObjectDestructorAPPLE")]
-        public abstract unsafe int SetMemObjectDestructor([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public abstract unsafe int SetMemObjectDestructor([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clSetMemObjectDestructorAPPLE")]
-        public abstract int SetMemObjectDestructor<T0>([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
+        public abstract int SetMemObjectDestructor<T0>([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
-        public unsafe int SetMemObjectDestructor([Flow(FlowDirection.In)] int memobj, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        public unsafe int SetMemObjectDestructor([Flow(FlowDirection.In)] int memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
         {
             // IntPtrOverloader
             return SetMemObjectDestructor(new IntPtr(memobj), pfn_notify, user_data);
         }
 
-        public unsafe int SetMemObjectDestructor<T0>([Flow(FlowDirection.In)] int memobj, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        public unsafe int SetMemObjectDestructor<T0>([Flow(FlowDirection.In)] int memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
         {
             // IntPtrOverloader
             return SetMemObjectDestructor(new IntPtr(memobj), pfn_notify, user_data);
         }
 
-        public AppleSetMemObjectDestructor(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AppleSetMemObjectDestructor(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

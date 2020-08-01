@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
@@ -1441,11 +1441,9 @@ namespace Silk.NET.Vulkan
             return GetQueryPoolResults(device, queryPool, firstQuery, queryCount, new UIntPtr(dataSize), ref pData, stride, flags);
         }
 
-        private SearchPathContainer _searchPaths;
-        public override SearchPathContainer SearchPaths => _searchPaths ??= new VulkanLibraryNameContainer();
 
-        public Vk(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public Vk(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

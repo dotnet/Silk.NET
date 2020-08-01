@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -67,8 +67,8 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             ClearBufferSubData(target, internalformat, new IntPtr(offset), new UIntPtr(size), format, type, ref data);
         }
 
-        public ArbClearBufferObject(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbClearBufferObject(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

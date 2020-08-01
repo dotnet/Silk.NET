@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -127,8 +127,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         [NativeApi(EntryPoint = "glWindowPos4svMESA")]
         public abstract void WindowPos4([Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
 
-        public MesaWindowPos(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public MesaWindowPos(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

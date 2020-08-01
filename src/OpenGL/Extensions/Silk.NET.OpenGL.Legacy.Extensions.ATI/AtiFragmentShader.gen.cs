@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -88,8 +88,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         [NativeApi(EntryPoint = "glSampleMapATI")]
         public abstract void SampleMap([Flow(FlowDirection.In)] uint dst, [Flow(FlowDirection.In)] uint interp, [Flow(FlowDirection.In)] SwizzleOpATI swizzle);
 
-        public AtiFragmentShader(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AtiFragmentShader(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

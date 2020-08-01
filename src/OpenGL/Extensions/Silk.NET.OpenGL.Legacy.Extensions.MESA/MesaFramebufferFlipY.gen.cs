@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -37,8 +37,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
         [NativeApi(EntryPoint = "glGetFramebufferParameterivMESA")]
         public abstract void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        public MesaFramebufferFlipY(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public MesaFramebufferFlipY(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

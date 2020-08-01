@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -43,8 +43,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
         public abstract void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> weights);
 
-        public SgisTextureFilter4(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public SgisTextureFilter4(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

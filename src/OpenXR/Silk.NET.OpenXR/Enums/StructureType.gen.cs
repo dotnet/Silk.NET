@@ -228,5 +228,9 @@ namespace Silk.NET.OpenXR
         TypeSecondaryViewConfigurationSwapchainCreateInfoMsft = 1000053005,
         [NativeName("Name", "XR_TYPE_VIEW_CONFIGURATION_VIEW_FOV_EPIC")]
         TypeViewConfigurationViewFovEpic = 1000059000,
+        [NativeName("Name", "XR_TYPE_HOLOGRAPHIC_WINDOW_ATTACHMENT_MSFT")]
+        TypeHolographicWindowAttachmentMsft = 1000063000,
+        [NativeName("Name", "XR_TYPE_INTERACTION_PROFILE_ANALOG_THRESHOLD_VALVE")]
+        TypeInteractionProfileAnalogThresholdValve = 1000079000,
     }
 }

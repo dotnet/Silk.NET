@@ -8,7 +8,7 @@ using System.Buffers;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
 
 // ReSharper disable VirtualMemberCallInConstructor
@@ -29,8 +29,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         private readonly int _ramSize;
 
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected XRam(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected XRam(INativeContext ctx)
+            : base(ctx)
         {
             _bufferStorageModeAutomatic = GetEnumValue("AL_STORAGE_AUTOMATIC");
             _bufferStorageModeHardware = GetEnumValue("AL_STORAGE_HARDWARE");

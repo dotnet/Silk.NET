@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -23,8 +23,8 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkReleaseDisplayEXT")]
         public abstract Result ReleaseDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display);
 
-        public ExtDirectModeDisplay(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtDirectModeDisplay(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

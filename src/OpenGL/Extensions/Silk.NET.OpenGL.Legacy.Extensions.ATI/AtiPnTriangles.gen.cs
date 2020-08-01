@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -31,8 +31,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         [NativeApi(EntryPoint = "glPNTrianglesfATI")]
         public abstract void Pntriangles([Flow(FlowDirection.In)] PNTrianglesPNameATI pname, [Flow(FlowDirection.In)] float param);
 
-        public AtiPnTriangles(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AtiPnTriangles(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

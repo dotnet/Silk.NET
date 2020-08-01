@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -31,8 +31,8 @@ namespace Silk.NET.OpenGLES.Extensions.OES
         [NativeApi(EntryPoint = "glProgramBinaryOES")]
         public abstract void ProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] OES binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> binary, [Flow(FlowDirection.In)] int length) where T0 : unmanaged;
 
-        public OesGetProgramBinary(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public OesGetProgramBinary(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

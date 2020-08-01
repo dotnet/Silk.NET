@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenCL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -25,8 +25,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         [NativeApi(EntryPoint = "clIcdGetPlatformIDsKHR")]
         public abstract int IcdGetPlatformIDs([Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<IntPtr> platforms, [Flow(FlowDirection.Out)] Span<uint> num_platforms);
 
-        public KhrIcd(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrIcd(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

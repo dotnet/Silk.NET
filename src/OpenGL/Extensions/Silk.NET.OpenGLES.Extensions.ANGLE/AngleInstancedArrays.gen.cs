@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -40,8 +40,8 @@ namespace Silk.NET.OpenGLES.Extensions.ANGLE
         [NativeApi(EntryPoint = "glDrawElementsInstancedANGLE")]
         public abstract void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] PrimitiveType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged;
 
-        public AngleInstancedArrays(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AngleInstancedArrays(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

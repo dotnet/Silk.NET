@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenXR;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -39,8 +39,8 @@ namespace Silk.NET.OpenXR.Extensions.EXT
         [NativeApi(EntryPoint = "xrLocateHandJointsEXT")]
         public abstract Result LocateHandJoints([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] ref HandJointsLocateInfoEXT locateInfo, [Count(Count = 0)] ref HandJointLocationsEXT locations);
 
-        public ExtHandTracking(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtHandTracking(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

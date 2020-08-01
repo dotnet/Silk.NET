@@ -4,7 +4,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
 
 namespace Silk.NET.OpenAL.Extensions.Creative
 {
@@ -16,8 +17,8 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     public abstract class MultiChannelBuffers : FormatExtensionBase<MultiChannelBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected MultiChannelBuffers(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected MultiChannelBuffers(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

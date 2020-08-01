@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -31,8 +31,8 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkCmdEndConditionalRenderingEXT")]
         public abstract void CmdEndConditionalRendering([Count(Count = 0)] CommandBuffer commandBuffer);
 
-        public ExtConditionalRendering(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtConditionalRendering(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

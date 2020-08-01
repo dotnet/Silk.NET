@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenCL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -217,8 +217,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
             return SharedMemAlloc(new IntPtr(context), new IntPtr(device), properties, new UIntPtr(size), alignment, errcode_ret);
         }
 
-        public IntelUnifiedSharedMemory(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public IntelUnifiedSharedMemory(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

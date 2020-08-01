@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -31,8 +31,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.INTEL
         [NativeApi(EntryPoint = "glUnmapTexture2DINTEL")]
         public abstract void UnmapTexture2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
-        public IntelMapTexture(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public IntelMapTexture(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

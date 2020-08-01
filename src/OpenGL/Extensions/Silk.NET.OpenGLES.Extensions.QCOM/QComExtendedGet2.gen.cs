@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -46,8 +46,8 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
         public abstract void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.Out)] string source, [Flow(FlowDirection.Out)] Span<int> length);
 
-        public QComExtendedGet2(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public QComExtendedGet2(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

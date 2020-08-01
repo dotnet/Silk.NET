@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -55,8 +55,8 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkCmdEndTransformFeedbackEXT")]
         public abstract void CmdEndTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] ref Buffer pCounterBuffers, [Count(Computed = "counterBufferCount"), Flow(FlowDirection.In)] ref ulong pCounterBufferOffsets);
 
-        public ExtTransformFeedback(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtTransformFeedback(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

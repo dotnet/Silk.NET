@@ -9,6 +9,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -21,13 +23,13 @@ namespace Silk.NET.OpenXR
         (
             StructureType type = StructureType.TypeViewConfigurationViewFovEpic,
             void* next = default,
-            Fovf recommendedMutableFov = default,
+            Fovf recommendedFov = default,
             Fovf maxMutableFov = default
         )
         {
             Type = type;
             Next = next;
-            RecommendedMutableFov = recommendedMutableFov;
+            RecommendedFov = recommendedFov;
             MaxMutableFov = maxMutableFov;
         }
 
@@ -44,8 +46,8 @@ namespace Silk.NET.OpenXR
 /// <summary></summary>
         [NativeName("Type", "XrFovf")]
         [NativeName("Type.Name", "XrFovf")]
-        [NativeName("Name", "recommendedMutableFov")]
-        public Fovf RecommendedMutableFov;
+        [NativeName("Name", "recommendedFov")]
+        public Fovf RecommendedFov;
 /// <summary></summary>
         [NativeName("Type", "XrFovf")]
         [NativeName("Type.Name", "XrFovf")]

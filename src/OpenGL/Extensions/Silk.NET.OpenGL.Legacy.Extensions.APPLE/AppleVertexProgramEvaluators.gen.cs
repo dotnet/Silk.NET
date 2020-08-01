@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -52,8 +52,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         [NativeApi(EntryPoint = "glMapVertexAttrib2fAPPLE")]
         public abstract void MapVertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "size, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] ref float points);
 
-        public AppleVertexProgramEvaluators(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AppleVertexProgramEvaluators(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenCL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -127,8 +127,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
             return GetDeviceIDsFromD3D10(new IntPtr(platform), d3d_device_source, d3d_object, d3d_device_set, num_entries, devices, num_devices);
         }
 
-        public KhrD3d10Sharing(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrD3d10Sharing(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

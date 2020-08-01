@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -25,8 +25,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         [NativeApi(EntryPoint = "glQueryMatrixxOES")]
         public abstract uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] Span<int> mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] Span<int> exponent);
 
-        public OesQueryMatrix(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public OesQueryMatrix(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -49,8 +49,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI")]
         public abstract void VertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
 
-        public AtiVertexAttribArrayObject(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public AtiVertexAttribArrayObject(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

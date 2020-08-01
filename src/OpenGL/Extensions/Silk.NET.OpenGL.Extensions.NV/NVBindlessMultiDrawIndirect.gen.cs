@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -43,8 +43,8 @@ namespace Silk.NET.OpenGL.Extensions.NV
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectBindlessNV")]
         public abstract void MultiDrawElementsIndirectBindles<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] Span<T0> indirect, [Flow(FlowDirection.In)] uint drawCount, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] int vertexBufferCount) where T0 : unmanaged;
 
-        public NVBindlessMultiDrawIndirect(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVBindlessMultiDrawIndirect(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

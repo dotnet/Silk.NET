@@ -9,12 +9,10 @@ using Silk.NET.Core.Loader;
 namespace Silk.NET.Core.Contexts
 {
     /// <summary>
-    /// A native context that uses an <see cref="UnmanagedLibrary"/> for native library/function loading.
+    /// A native context that uses an <see cref="UnmanagedLibrary" /> for native library/function loading.
     /// </summary>
     public class DefaultNativeContext : INativeContext
     {
-        public UnmanagedLibrary Library { get; }
-
         /// <summary>
         /// Creates a new native context for the given underlying library.
         /// </summary>
@@ -83,8 +81,13 @@ namespace Silk.NET.Core.Contexts
         {
         }
 
+        public UnmanagedLibrary Library { get; }
+
         /// <inheritdoc />
-        public IntPtr GetProcAddress(string proc) => Library.LoadFunction(proc);
+        public IntPtr GetProcAddress(string proc)
+        {
+            return Library.LoadFunction(proc);
+        }
 
         /// <inheritdoc />
         public void Dispose()

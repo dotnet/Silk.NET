@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenCL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -55,8 +55,8 @@ namespace Silk.NET.OpenCL.Extensions.IMG
             return EnqueueReleaseGrallocObjects(new IntPtr(command_queue), num_objects, mem_objects, num_events_in_wait_list, event_wait_list, @event);
         }
 
-        public ImgUseGrallocPtr(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ImgUseGrallocPtr(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

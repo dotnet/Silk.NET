@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -22,8 +22,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
         [NativeApi(EntryPoint = "glFrameTerminatorGREMEDY")]
         public abstract void FrameTerminator();
 
-        public GremedyFrameTerminator(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public GremedyFrameTerminator(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

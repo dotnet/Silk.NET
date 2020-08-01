@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -25,8 +25,8 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glDrawBuffersNV")]
         public abstract void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<NV> bufs);
 
-        public NVDrawBuffers(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public NVDrawBuffers(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

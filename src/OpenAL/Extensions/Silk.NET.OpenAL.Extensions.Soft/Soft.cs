@@ -4,7 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
 
 namespace Silk.NET.OpenAL.Extensions.Soft
@@ -16,8 +16,8 @@ namespace Silk.NET.OpenAL.Extensions.Soft
     public abstract class Soft : NativeExtension<AL>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected Soft(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected Soft(INativeContext ctx)
+            : base(ctx)
         {
         }
 

@@ -1,4 +1,5 @@
 using System;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 
@@ -10,7 +11,7 @@ namespace Silk.NET.Assimp
     {
         public static Assimp GetApi()
         {
-             return LibraryActivator.CreateInstance<Assimp>(new AssimpLibraryNameContainer().GetLibraryName());
+             return new Assimp(new DefaultNativeContext(new AssimpLibraryNameContainer().GetLibraryName()));
         }
 
         public override bool IsExtensionPresent(string extension) => IsExtensionSupported(extension) == 1;

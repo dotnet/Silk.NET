@@ -4,7 +4,6 @@
 // of the MIT license. See the LICENSE file for details.
 
 using Silk.NET.Core.Contexts;
-using Silk.NET.Core.InteropServices;
 
 namespace Silk.NET.Core.Native
 {

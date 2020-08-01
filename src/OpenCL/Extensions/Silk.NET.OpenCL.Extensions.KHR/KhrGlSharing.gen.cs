@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenCL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -199,8 +199,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
             return GetGltextureInfo(new IntPtr(memobj), param_name, new UIntPtr(param_value_size), param_value, param_value_size_ret);
         }
 
-        public KhrGlSharing(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public KhrGlSharing(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

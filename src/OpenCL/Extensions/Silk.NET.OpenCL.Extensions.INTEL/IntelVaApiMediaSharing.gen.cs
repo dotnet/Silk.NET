@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenCL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -91,8 +91,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
             return GetDeviceIDsFromVAApimediaAdapter(new IntPtr(platform), media_adapter_type, media_adapter, media_adapter_set, num_entries, devices, num_devices);
         }
 
-        public IntelVaApiMediaSharing(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public IntelVaApiMediaSharing(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

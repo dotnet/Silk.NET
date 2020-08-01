@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -55,8 +55,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         [NativeApi(EntryPoint = "glGetClipPlanefOES")]
         public abstract void GetClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> equation);
 
-        public OesSinglePrecision(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public OesSinglePrecision(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

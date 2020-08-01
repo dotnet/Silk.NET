@@ -6,10 +6,10 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.OpenCL;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
@@ -91,8 +91,8 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
             return GetDeviceIDsFromDX9(new IntPtr(platform), dx9_device_source, dx9_object, dx9_device_set, num_entries, devices, num_devices);
         }
 
-        public IntelDx9MediaSharing(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public IntelDx9MediaSharing(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

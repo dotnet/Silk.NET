@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using Silk.NET.Core.InteropServices;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
 
 namespace Silk.NET.OpenAL.Extensions.Soft
@@ -15,8 +15,8 @@ namespace Silk.NET.OpenAL.Extensions.Soft
     public abstract class DeferredUpdates : NativeExtension<AL>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected DeferredUpdates(ref NativeApiContext ctx)
-            : base(ref ctx)
+        protected DeferredUpdates(INativeContext ctx)
+            : base(ctx)
         {
         }
 
