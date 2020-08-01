@@ -17521,7 +17521,7 @@ G_M19657_IG13:
 						;; bbWeight=0.50 PerfScore 2.00
 G_M19657_IG14:
        lea      rdx, [rsp+28H]
-       call     Silk.NET.Maths.Scalar:<Sin_Ported>g__ReduceForLargeInput|78_2(double,byref):double
+       call     Silk.NET.Maths.Scalar:<Sin_Ported>g__ReduceForLargeInput|79_2(double,byref):double
        test     byte  ptr [rsp+28H], 1
        jne      SHORT G_M19657_IG15
        vmulsd   xmm1, xmm0, xmm0

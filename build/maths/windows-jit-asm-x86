@@ -13958,7 +13958,7 @@ G_M19657_IG14:
        sub      esp, 8
        vmovsd   qword ptr [esp], xmm0
        lea      ecx, [ebp-0CH]
-       call     Silk.NET.Maths.Scalar:<Sin_Ported>g__ReduceForLargeInput|78_2(double,byref):double
+       call     Silk.NET.Maths.Scalar:<Sin_Ported>g__ReduceForLargeInput|79_2(double,byref):double
        fstp     qword ptr [ebp-28H]
        vmovsd   xmm0, qword ptr [ebp-28H]
        test     byte  ptr [ebp-0CH], 1
