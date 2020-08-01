@@ -903,7 +903,7 @@ G_M62066_IG166:
 ;* V00 arg0         [V00    ] (  0,  0   )   ubyte  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -912,14 +912,10 @@ G_M39210_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M39210_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M39210_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=72e766d5) for method JITTest.ScalarByte:Atan(ubyte):ubyte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=72e766d5) for method JITTest.ScalarByte:Atan(ubyte):ubyte
 ; ============================================================
 
 ; Assembly listing for method Silk.NET.Maths.Scalar:ThrowInvalidType()
@@ -968,7 +964,7 @@ G_M50239_IG02:
 ;* V01 arg1         [V01    ] (  0,  0   )   ubyte  ->  zero-ref   
 ;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V03 tmp1         [V03    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
-;* V04 tmp2         [V04,T00] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V04 tmp2         [V04    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -977,14 +973,10 @@ G_M50795_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M50795_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M50795_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=8f3d3994) for method JITTest.ScalarByte:Atan2(ubyte,ubyte):ubyte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=8f3d3994) for method JITTest.ScalarByte:Atan2(ubyte,ubyte):ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarByte:Cos(ubyte):ubyte
@@ -997,7 +989,7 @@ G_M50795_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )   ubyte  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -1006,14 +998,10 @@ G_M26959_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M26959_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M26959_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=805296b0) for method JITTest.ScalarByte:Cos(ubyte):ubyte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=805296b0) for method JITTest.ScalarByte:Cos(ubyte):ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarByte:Cosh(ubyte):ubyte
@@ -1026,7 +1014,7 @@ G_M26959_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )   ubyte  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -1035,14 +1023,10 @@ G_M28871_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M28871_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M28871_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=06b78f38) for method JITTest.ScalarByte:Cosh(ubyte):ubyte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=06b78f38) for method JITTest.ScalarByte:Cosh(ubyte):ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarByte:One():ubyte
@@ -1127,7 +1111,7 @@ G_M32392_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -1136,14 +1120,10 @@ G_M31926_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M31926_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M31926_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=192e8349) for method JITTest.ScalarByte:Pi():ubyte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=192e8349) for method JITTest.ScalarByte:Pi():ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarByte:Tau():ubyte
@@ -1155,7 +1135,7 @@ G_M31926_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -1164,14 +1144,10 @@ G_M37999_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M37999_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M37999_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=d0a66b90) for method JITTest.ScalarByte:Tau():ubyte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=d0a66b90) for method JITTest.ScalarByte:Tau():ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarByte:HalfPi():ubyte
@@ -1183,7 +1159,7 @@ G_M37999_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -1192,14 +1168,10 @@ G_M16981_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M16981_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M16981_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=4febbdaa) for method JITTest.ScalarByte:HalfPi():ubyte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=4febbdaa) for method JITTest.ScalarByte:HalfPi():ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarByte:PositiveInfinity():ubyte
@@ -1211,7 +1183,7 @@ G_M16981_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -1220,14 +1192,10 @@ G_M59590_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M59590_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M59590_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=855f1739) for method JITTest.ScalarByte:PositiveInfinity():ubyte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=855f1739) for method JITTest.ScalarByte:PositiveInfinity():ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarByte:NegativeInfinity():ubyte
@@ -1239,7 +1207,7 @@ G_M59590_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -1248,14 +1216,10 @@ G_M21390_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M21390_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M21390_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=e8ffac71) for method JITTest.ScalarByte:NegativeInfinity():ubyte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=e8ffac71) for method JITTest.ScalarByte:NegativeInfinity():ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarByte:As(double):ubyte
@@ -1797,7 +1761,7 @@ G_M26380_IG03:
 ; Final local variable assignments
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )   ubyte  ->  zero-ref   
-;* V01 loc0         [V01,T00] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op
+;* V01 loc0         [V01    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op
 ;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;
 ; Lcl frame size = 40
@@ -1807,14 +1771,10 @@ G_M58726_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M58726_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M58726_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=530f1a99) for method Silk.NET.Maths.Scalar:Negate(ubyte):ubyte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=530f1a99) for method Silk.NET.Maths.Scalar:Negate(ubyte):ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarByte:Equal(ubyte,ubyte):bool
@@ -1857,7 +1817,7 @@ G_M44190_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )   ubyte  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -1866,14 +1826,10 @@ G_M30510_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M30510_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M30510_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=bd7488d1) for method JITTest.ScalarByte:Acos(ubyte):ubyte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=bd7488d1) for method JITTest.ScalarByte:Acos(ubyte):ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarByte:Abs(ubyte):ubyte
@@ -1911,7 +1867,7 @@ G_M15744_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )   ubyte  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -1920,14 +1876,10 @@ G_M28516_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M28516_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M28516_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=695e909b) for method JITTest.ScalarByte:Sin(ubyte):ubyte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=695e909b) for method JITTest.ScalarByte:Sin(ubyte):ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarByte:Sinh(ubyte):ubyte
@@ -1940,7 +1892,7 @@ G_M28516_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )   ubyte  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -1949,14 +1901,10 @@ G_M28492_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M28492_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M28492_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=9d7a90b3) for method JITTest.ScalarByte:Sinh(ubyte):ubyte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=9d7a90b3) for method JITTest.ScalarByte:Sinh(ubyte):ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarByte:Asin(ubyte):ubyte
@@ -1969,7 +1917,7 @@ G_M28492_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )   ubyte  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )   ubyte  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )   ubyte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -1978,14 +1926,10 @@ G_M10245_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M10245_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M10245_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=cc8fd7fa) for method JITTest.ScalarByte:Asin(ubyte):ubyte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=cc8fd7fa) for method JITTest.ScalarByte:Asin(ubyte):ubyte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:EntryPoint()
@@ -2856,7 +2800,7 @@ G_M53313_IG166:
 ;* V00 arg0         [V00    ] (  0,  0   )    byte  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -2865,14 +2809,10 @@ G_M52345_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M52345_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M52345_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=097d3386) for method JITTest.ScalarSByte:Atan(byte):byte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=097d3386) for method JITTest.ScalarSByte:Atan(byte):byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:Atan2(byte,byte):byte
@@ -2886,7 +2826,7 @@ G_M52345_IG03:
 ;* V01 arg1         [V01    ] (  0,  0   )    byte  ->  zero-ref   
 ;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V03 tmp1         [V03    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
-;* V04 tmp2         [V04,T00] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V04 tmp2         [V04    ] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -2895,14 +2835,10 @@ G_M24045_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M24045_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M24045_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=d1d8a212) for method JITTest.ScalarSByte:Atan2(byte,byte):byte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=d1d8a212) for method JITTest.ScalarSByte:Atan2(byte,byte):byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:Cos(byte):byte
@@ -2915,7 +2851,7 @@ G_M24045_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )    byte  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -2924,14 +2860,10 @@ G_M63484_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M63484_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M63484_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=976a0803) for method JITTest.ScalarSByte:Cos(byte):byte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=976a0803) for method JITTest.ScalarSByte:Cos(byte):byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:Cosh(byte):byte
@@ -2944,7 +2876,7 @@ G_M63484_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )    byte  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -2953,14 +2885,10 @@ G_M6740_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M6740_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M6740_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=ff1ce5ab) for method JITTest.ScalarSByte:Cosh(byte):byte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=ff1ce5ab) for method JITTest.ScalarSByte:Cosh(byte):byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:One():byte
@@ -3045,7 +2973,7 @@ G_M35534_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -3054,14 +2982,10 @@ G_M41872_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M41872_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M41872_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=95095c6f) for method JITTest.ScalarSByte:Pi():byte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=95095c6f) for method JITTest.ScalarSByte:Pi():byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:Tau():byte
@@ -3073,7 +2997,7 @@ G_M41872_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -3082,14 +3006,10 @@ G_M23113_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M23113_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M23113_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=b93aa5b6) for method JITTest.ScalarSByte:Tau():byte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=b93aa5b6) for method JITTest.ScalarSByte:Tau():byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:HalfPi():byte
@@ -3101,7 +3021,7 @@ G_M23113_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -3110,14 +3030,10 @@ G_M23955_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M23955_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M23955_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=d101a26c) for method JITTest.ScalarSByte:HalfPi():byte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=d101a26c) for method JITTest.ScalarSByte:HalfPi():byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:PositiveInfinity():byte
@@ -3129,7 +3045,7 @@ G_M23955_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -3138,14 +3054,10 @@ G_M21088_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M21088_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M21088_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=7d12ad9f) for method JITTest.ScalarSByte:PositiveInfinity():byte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=7d12ad9f) for method JITTest.ScalarSByte:PositiveInfinity():byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:NegativeInfinity():byte
@@ -3157,7 +3069,7 @@ G_M21088_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -3166,14 +3078,10 @@ G_M11304_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M11304_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M11304_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=5484d3d7) for method JITTest.ScalarSByte:NegativeInfinity():byte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=5484d3d7) for method JITTest.ScalarSByte:NegativeInfinity():byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:As(double):byte
@@ -3774,7 +3682,7 @@ G_M8141_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )    byte  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -3783,14 +3691,10 @@ G_M8061_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M8061_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M8061_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=ac6ce082) for method JITTest.ScalarSByte:Acos(byte):byte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=ac6ce082) for method JITTest.ScalarSByte:Acos(byte):byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:Abs(byte):byte
@@ -3838,7 +3742,7 @@ RWD00  dd	7FFFFFFFh
 ;* V00 arg0         [V00    ] (  0,  0   )    byte  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -3847,14 +3751,10 @@ G_M10583_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M10583_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M10583_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=174bd6a8) for method JITTest.ScalarSByte:Sin(byte):byte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=174bd6a8) for method JITTest.ScalarSByte:Sin(byte):byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:Sinh(byte):byte
@@ -3867,7 +3767,7 @@ G_M10583_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )    byte  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -3876,14 +3776,10 @@ G_M7647_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M7647_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M7647_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=a85fe220) for method JITTest.ScalarSByte:Sinh(byte):byte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=a85fe220) for method JITTest.ScalarSByte:Sinh(byte):byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarSByte:Asin(byte):byte
@@ -3896,7 +3792,7 @@ G_M7647_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )    byte  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )    byte  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )    byte  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -3905,14 +3801,10 @@ G_M42774_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M42774_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M42774_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=2d1e58e9) for method JITTest.ScalarSByte:Asin(byte):byte
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=2d1e58e9) for method JITTest.ScalarSByte:Asin(byte):byte
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:EntryPoint()
@@ -4783,7 +4675,7 @@ G_M26591_IG166:
 ;* V00 arg0         [V00    ] (  0,  0   )  ushort  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -4792,14 +4684,10 @@ G_M30887_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M30887_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M30887_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=d7d58758) for method JITTest.ScalarUShort:Atan(ushort):ushort
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=d7d58758) for method JITTest.ScalarUShort:Atan(ushort):ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:Atan2(ushort,ushort):ushort
@@ -4813,7 +4701,7 @@ G_M30887_IG03:
 ;* V01 arg1         [V01    ] (  0,  0   )  ushort  ->  zero-ref   
 ;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V03 tmp1         [V03    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
-;* V04 tmp2         [V04,T00] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V04 tmp2         [V04    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -4822,14 +4710,10 @@ G_M37886_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M37886_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M37886_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=5c7c6c01) for method JITTest.ScalarUShort:Atan2(ushort,ushort):ushort
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=5c7c6c01) for method JITTest.ScalarUShort:Atan2(ushort,ushort):ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:Cos(ushort):ushort
@@ -4842,7 +4726,7 @@ G_M37886_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )  ushort  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -4851,14 +4735,10 @@ G_M11874_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M11874_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M11874_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=b794d19d) for method JITTest.ScalarUShort:Cos(ushort):ushort
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=b794d19d) for method JITTest.ScalarUShort:Cos(ushort):ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:Cosh(ushort):ushort
@@ -4871,7 +4751,7 @@ G_M11874_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )  ushort  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -4880,14 +4760,10 @@ G_M59018_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M59018_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M59018_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=3f331975) for method JITTest.ScalarUShort:Cosh(ushort):ushort
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=3f331975) for method JITTest.ScalarUShort:Cosh(ushort):ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:One():ushort
@@ -4972,7 +4848,7 @@ G_M41021_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -4981,14 +4857,10 @@ G_M41763_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M41763_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M41763_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=00025cdc) for method JITTest.ScalarUShort:Pi():ushort
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=00025cdc) for method JITTest.ScalarUShort:Pi():ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:Tau():ushort
@@ -5000,7 +4872,7 @@ G_M41763_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -5009,14 +4881,10 @@ G_M18810_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M18810_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M18810_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=9a9eb685) for method JITTest.ScalarUShort:Tau():ushort
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=9a9eb685) for method JITTest.ScalarUShort:Tau():ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:HalfPi():ushort
@@ -5028,7 +4896,7 @@ G_M18810_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -5037,14 +4905,10 @@ G_M63456_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M63456_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M63456_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=bc23081f) for method JITTest.ScalarUShort:HalfPi():ushort
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=bc23081f) for method JITTest.ScalarUShort:HalfPi():ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:PositiveInfinity():ushort
@@ -5056,7 +4920,7 @@ G_M63456_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -5065,14 +4929,10 @@ G_M43795_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M43795_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M43795_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=509054ec) for method JITTest.ScalarUShort:PositiveInfinity():ushort
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=509054ec) for method JITTest.ScalarUShort:PositiveInfinity():ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:NegativeInfinity():ushort
@@ -5084,7 +4944,7 @@ G_M43795_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -5093,14 +4953,10 @@ G_M44891_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M44891_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M44891_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=59af50a4) for method JITTest.ScalarUShort:NegativeInfinity():ushort
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=59af50a4) for method JITTest.ScalarUShort:NegativeInfinity():ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:As(double):ushort
@@ -5642,7 +5498,7 @@ G_M52289_IG03:
 ; Final local variable assignments
 ;
 ;* V00 arg0         [V00    ] (  0,  0   )  ushort  ->  zero-ref   
-;* V01 loc0         [V01,T00] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op
+;* V01 loc0         [V01    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op
 ;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;
 ; Lcl frame size = 40
@@ -5652,14 +5508,10 @@ G_M11110_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M11110_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M11110_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=ec21d499) for method Silk.NET.Maths.Scalar:Negate(ushort):ushort
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=ec21d499) for method Silk.NET.Maths.Scalar:Negate(ushort):ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:Equal(ushort,ushort):bool
@@ -5702,7 +5554,7 @@ G_M3123_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )  ushort  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -5711,14 +5563,10 @@ G_M547_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M547_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M547_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=85d4fddc) for method JITTest.ScalarUShort:Acos(ushort):ushort
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=85d4fddc) for method JITTest.ScalarUShort:Acos(ushort):ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:Abs(ushort):ushort
@@ -5756,7 +5604,7 @@ G_M4781_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )  ushort  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -5765,14 +5613,10 @@ G_M31945_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M31945_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M31945_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=f3a08336) for method JITTest.ScalarUShort:Sin(ushort):ushort
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=f3a08336) for method JITTest.ScalarUShort:Sin(ushort):ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:Sinh(ushort):ushort
@@ -5785,7 +5629,7 @@ G_M31945_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )  ushort  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -5794,14 +5638,10 @@ G_M64513_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M64513_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M64513_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=b04203fe) for method JITTest.ScalarUShort:Sinh(ushort):ushort
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=b04203fe) for method JITTest.ScalarUShort:Sinh(ushort):ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUShort:Asin(ushort):ushort
@@ -5814,7 +5654,7 @@ G_M64513_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )  ushort  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )  ushort  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )  ushort  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -5823,14 +5663,10 @@ G_M42952_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M42952_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M42952_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=ef5e5837) for method JITTest.ScalarUShort:Asin(ushort):ushort
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=ef5e5837) for method JITTest.ScalarUShort:Asin(ushort):ushort
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:EntryPoint()
@@ -6701,7 +6537,7 @@ G_M5194_IG166:
 ;* V00 arg0         [V00    ] (  0,  0   )   short  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -6710,14 +6546,10 @@ G_M22898_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M22898_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M22898_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=c340a68d) for method JITTest.ScalarShort:Atan(short):short
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=c340a68d) for method JITTest.ScalarShort:Atan(short):short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:Atan2(short,short):short
@@ -6731,7 +6563,7 @@ G_M22898_IG03:
 ;* V01 arg1         [V01    ] (  0,  0   )   short  ->  zero-ref   
 ;  V02 OutArgs      [V02    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V03 tmp1         [V03    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;* V04 tmp2         [V04,T00] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V04 tmp2         [V04    ] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -6740,14 +6572,10 @@ G_M20254_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M20254_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M20254_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=c76db0e1) for method JITTest.ScalarShort:Atan2(short,short):short
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=c76db0e1) for method JITTest.ScalarShort:Atan2(short,short):short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:Cos(short):short
@@ -6760,7 +6588,7 @@ G_M20254_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )   short  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -6769,14 +6597,10 @@ G_M43159_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M43159_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M43159_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=ab4e5768) for method JITTest.ScalarShort:Cos(short):short
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=ab4e5768) for method JITTest.ScalarShort:Cos(short):short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:Cosh(short):short
@@ -6789,7 +6613,7 @@ G_M43159_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )   short  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -6798,14 +6622,10 @@ G_M63071_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M63071_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M63071_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=419d09a0) for method JITTest.ScalarShort:Cosh(short):short
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=419d09a0) for method JITTest.ScalarShort:Cosh(short):short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:One():short
@@ -6890,7 +6710,7 @@ G_M47613_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -6899,14 +6719,10 @@ G_M51139_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M51139_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M51139_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=4f35383c) for method JITTest.ScalarShort:Pi():short
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=4f35383c) for method JITTest.ScalarShort:Pi():short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:Tau():short
@@ -6918,7 +6734,7 @@ G_M51139_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -6927,14 +6743,10 @@ G_M9178_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M9178_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M9178_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=cc88dc25) for method JITTest.ScalarShort:Tau():short
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=cc88dc25) for method JITTest.ScalarShort:Tau():short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:HalfPi():short
@@ -6946,7 +6758,7 @@ G_M9178_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -6955,14 +6767,10 @@ G_M16416_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M16416_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M16416_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=0ad8bfdf) for method JITTest.ScalarShort:HalfPi():short
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=0ad8bfdf) for method JITTest.ScalarShort:HalfPi():short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:PositiveInfinity():short
@@ -6974,7 +6782,7 @@ G_M16416_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -6983,14 +6791,10 @@ G_M3891_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M3891_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M3891_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=2d5ff0cc) for method JITTest.ScalarShort:PositiveInfinity():short
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=2d5ff0cc) for method JITTest.ScalarShort:PositiveInfinity():short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:NegativeInfinity():short
@@ -7002,7 +6806,7 @@ G_M3891_IG03:
 ;
 ;  V00 OutArgs      [V00    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V01 tmp1         [V01    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;* V02 tmp2         [V02,T00] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V02 tmp2         [V02    ] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -7011,14 +6815,10 @@ G_M17659_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M17659_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M17659_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=1cd7bb04) for method JITTest.ScalarShort:NegativeInfinity():short
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=1cd7bb04) for method JITTest.ScalarShort:NegativeInfinity():short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:As(double):short
@@ -7619,7 +7419,7 @@ G_M18150_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )   short  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -7628,14 +7428,10 @@ G_M33654_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M33654_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M33654_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=2f3b7c89) for method JITTest.ScalarShort:Acos(short):short
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=2f3b7c89) for method JITTest.ScalarShort:Acos(short):short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:Abs(short):short
@@ -7683,7 +7479,7 @@ RWD00  dd	7FFFFFFFh
 ;* V00 arg0         [V00    ] (  0,  0   )   short  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -7692,14 +7488,10 @@ G_M53628_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M53628_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M53628_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=84a92e83) for method JITTest.ScalarShort:Sin(short):short
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=84a92e83) for method JITTest.ScalarShort:Sin(short):short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:Sinh(short):short
@@ -7712,7 +7504,7 @@ G_M53628_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )   short  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -7721,14 +7513,10 @@ G_M57748_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M57748_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M57748_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=1bbc1e6b) for method JITTest.ScalarShort:Sinh(short):short
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=1bbc1e6b) for method JITTest.ScalarShort:Sinh(short):short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarShort:Asin(short):short
@@ -7741,7 +7529,7 @@ G_M57748_IG03:
 ;* V00 arg0         [V00    ] (  0,  0   )   short  ->  zero-ref   
 ;  V01 OutArgs      [V01    ] (  1,  1   )  lclBlk (32) [rsp+0x00]   "OutgoingArgSpace"
 ;* V02 tmp1         [V02    ] (  0,  0   )   short  ->  zero-ref    "Inline return value spill temp"
-;* V03 tmp2         [V03,T00] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
+;* V03 tmp2         [V03    ] (  0,  0   )   short  ->  zero-ref    ld-addr-op "Inline ldloca(s) first use temp"
 ;
 ; Lcl frame size = 40
 
@@ -7750,14 +7538,10 @@ G_M10397_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M10397_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M10397_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=246bd762) for method JITTest.ScalarShort:Asin(short):short
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=246bd762) for method JITTest.ScalarShort:Asin(short):short
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:EntryPoint()
@@ -8637,14 +8421,10 @@ G_M54983_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M54983_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M54983_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=e48a2938) for method JITTest.ScalarUInt32:Atan(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=e48a2938) for method JITTest.ScalarUInt32:Atan(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:Atan2(int,int):int
@@ -8667,14 +8447,10 @@ G_M49066_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M49066_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M49066_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=bf4f4055) for method JITTest.ScalarUInt32:Atan2(int,int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=bf4f4055) for method JITTest.ScalarUInt32:Atan2(int,int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:Cos(int):int
@@ -8696,14 +8472,10 @@ G_M4290_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M4290_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M4290_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=7cccef3d) for method JITTest.ScalarUInt32:Cos(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=7cccef3d) for method JITTest.ScalarUInt32:Cos(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:Cosh(int):int
@@ -8725,14 +8497,10 @@ G_M49706_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M49706_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M49706_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=25933dd5) for method JITTest.ScalarUInt32:Cosh(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=25933dd5) for method JITTest.ScalarUInt32:Cosh(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:One():int
@@ -8826,14 +8594,10 @@ G_M47479_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M47479_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M47479_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=1d3c4688) for method JITTest.ScalarUInt32:Pi():int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=1d3c4688) for method JITTest.ScalarUInt32:Pi():int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:Tau():int
@@ -8854,14 +8618,10 @@ G_M29326_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M29326_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M29326_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=d1108d71) for method JITTest.ScalarUInt32:Tau():int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=d1108d71) for method JITTest.ScalarUInt32:Tau():int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:HalfPi():int
@@ -8882,14 +8642,10 @@ G_M15444_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M15444_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M15444_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=9b5ec3ab) for method JITTest.ScalarUInt32:HalfPi():int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=9b5ec3ab) for method JITTest.ScalarUInt32:HalfPi():int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:PositiveInfinity():int
@@ -8910,14 +8666,10 @@ G_M12999_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M12999_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M12999_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=2f85cd38) for method JITTest.ScalarUInt32:PositiveInfinity():int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=2f85cd38) for method JITTest.ScalarUInt32:PositiveInfinity():int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:NegativeInfinity():int
@@ -8938,14 +8690,10 @@ G_M57999_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M57999_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M57999_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=e6801d70) for method JITTest.ScalarUInt32:NegativeInfinity():int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=e6801d70) for method JITTest.ScalarUInt32:NegativeInfinity():int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:As(double):int
@@ -9465,14 +9213,10 @@ G_M7398_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M7398_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M7398_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=4620e319) for method Silk.NET.Maths.Scalar:Negate(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=4620e319) for method Silk.NET.Maths.Scalar:Negate(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:Equal(int,int):bool
@@ -9522,14 +9266,10 @@ G_M3395_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M3395_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M3395_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=8dcbf2bc) for method JITTest.ScalarUInt32:Acos(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=8dcbf2bc) for method JITTest.ScalarUInt32:Acos(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:Abs(int):int
@@ -9576,14 +9316,10 @@ G_M52649_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M52649_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M52649_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=394d3256) for method JITTest.ScalarUInt32:Sin(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=394d3256) for method JITTest.ScalarUInt32:Sin(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:Sinh(int):int
@@ -9605,14 +9341,10 @@ G_M61089_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M61089_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M61089_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=a66a115e) for method JITTest.ScalarUInt32:Sinh(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=a66a115e) for method JITTest.ScalarUInt32:Sinh(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt32:Asin(int):int
@@ -9634,14 +9366,10 @@ G_M11368_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M11368_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M11368_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=57f4d397) for method JITTest.ScalarUInt32:Asin(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=57f4d397) for method JITTest.ScalarUInt32:Asin(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:EntryPoint()
@@ -10521,14 +10249,10 @@ G_M40306_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M40306_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M40306_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=abbe628d) for method JITTest.ScalarInt32:Atan(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=abbe628d) for method JITTest.ScalarInt32:Atan(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:Atan2(int,int):int
@@ -10551,14 +10275,10 @@ G_M22719_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M22719_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M22719_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=0454a740) for method JITTest.ScalarInt32:Atan2(int,int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=0454a740) for method JITTest.ScalarInt32:Atan2(int,int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:Cos(int):int
@@ -10580,14 +10300,10 @@ G_M6423_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M6423_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M6423_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=2a24e6e8) for method JITTest.ScalarInt32:Cos(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=2a24e6e8) for method JITTest.ScalarInt32:Cos(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:Cosh(int):int
@@ -10609,14 +10325,10 @@ G_M47135_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M47135_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M47135_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=93b347e0) for method JITTest.ScalarInt32:Cosh(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=93b347e0) for method JITTest.ScalarInt32:Cosh(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:One():int
@@ -10710,14 +10422,10 @@ G_M26850_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M26850_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M26850_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=b5e0971d) for method JITTest.ScalarInt32:Pi():int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=b5e0971d) for method JITTest.ScalarInt32:Pi():int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:Tau():int
@@ -10738,14 +10446,10 @@ G_M64315_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M64315_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M64315_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=070704c4) for method JITTest.ScalarInt32:Tau():int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=070704c4) for method JITTest.ScalarInt32:Tau():int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:HalfPi():int
@@ -10766,14 +10470,10 @@ G_M52097_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M52097_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M52097_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=4551347e) for method JITTest.ScalarInt32:HalfPi():int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=4551347e) for method JITTest.ScalarInt32:HalfPi():int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:PositiveInfinity():int
@@ -10794,14 +10494,10 @@ G_M52242_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M52242_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M52242_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=65a533ed) for method JITTest.ScalarInt32:PositiveInfinity():int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=65a533ed) for method JITTest.ScalarInt32:PositiveInfinity():int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:NegativeInfinity():int
@@ -10822,14 +10518,10 @@ G_M24794_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M24794_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M24794_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=4c109f25) for method JITTest.ScalarInt32:NegativeInfinity():int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=4c109f25) for method JITTest.ScalarInt32:NegativeInfinity():int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:As(double):int
@@ -11402,14 +11094,10 @@ G_M2166_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M2166_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M2166_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=9bb4f789) for method JITTest.ScalarInt32:Acos(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=9bb4f789) for method JITTest.ScalarInt32:Acos(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:Abs(int):int
@@ -11464,14 +11152,10 @@ G_M36156_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M36156_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M36156_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=b9dd72c3) for method JITTest.ScalarInt32:Sin(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=b9dd72c3) for method JITTest.ScalarInt32:Sin(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:Sinh(int):int
@@ -11493,14 +11177,10 @@ G_M1172_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M1172_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M1172_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=489cfb6b) for method JITTest.ScalarInt32:Sinh(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=489cfb6b) for method JITTest.ScalarInt32:Sinh(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt32:Asin(int):int
@@ -11522,14 +11202,10 @@ G_M7517_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M7517_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      eax, eax
-						;; bbWeight=1    PerfScore 1.25
-G_M7517_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=acd2e2a2) for method JITTest.ScalarInt32:Asin(int):int
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=acd2e2a2) for method JITTest.ScalarInt32:Asin(int):int
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:EntryPoint()
@@ -12409,14 +12085,10 @@ G_M292_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M292_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M292_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=8c3ffedb) for method JITTest.ScalarUInt64:Atan(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=8c3ffedb) for method JITTest.ScalarUInt64:Atan(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:Atan2(long,long):long
@@ -12439,14 +12111,10 @@ G_M48176_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M48176_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M48176_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=62d043cf) for method JITTest.ScalarUInt64:Atan2(long,long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=62d043cf) for method JITTest.ScalarUInt64:Atan2(long,long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:Cos(long):long
@@ -12468,14 +12136,10 @@ G_M26497_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M26497_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M26497_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=5799987e) for method JITTest.ScalarUInt64:Cos(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=5799987e) for method JITTest.ScalarUInt64:Cos(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:Cosh(long):long
@@ -12497,14 +12161,10 @@ G_M5961_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M5961_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M5961_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=f4cae8b6) for method JITTest.ScalarUInt64:Cosh(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=f4cae8b6) for method JITTest.ScalarUInt64:Cosh(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:One():long
@@ -12600,14 +12260,10 @@ G_M2317_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M2317_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M2317_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=c830f6f2) for method JITTest.ScalarUInt64:Pi():long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=c830f6f2) for method JITTest.ScalarUInt64:Pi():long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:Tau():long
@@ -12628,14 +12284,10 @@ G_M11444_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M11444_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M11444_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=2992d34b) for method JITTest.ScalarUInt64:Tau():long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=2992d34b) for method JITTest.ScalarUInt64:Tau():long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:HalfPi():long
@@ -12656,14 +12308,10 @@ G_M43726_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M43726_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M43726_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=5ebc5531) for method JITTest.ScalarUInt64:HalfPi():long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=5ebc5531) for method JITTest.ScalarUInt64:HalfPi():long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:PositiveInfinity():long
@@ -12684,14 +12332,10 @@ G_M65533_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M65533_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M65533_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=4b810002) for method JITTest.ScalarUInt64:PositiveInfinity():long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=4b810002) for method JITTest.ScalarUInt64:PositiveInfinity():long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:NegativeInfinity():long
@@ -12712,14 +12356,10 @@ G_M4789_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M4789_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M4789_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=7166ed4a) for method JITTest.ScalarUInt64:NegativeInfinity():long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=7166ed4a) for method JITTest.ScalarUInt64:NegativeInfinity():long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:As(double):long
@@ -13264,14 +12904,10 @@ G_M39782_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M39782_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M39782_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=f3226499) for method Silk.NET.Maths.Scalar:Negate(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=f3226499) for method Silk.NET.Maths.Scalar:Negate(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:Equal(long,long):bool
@@ -13322,14 +12958,10 @@ G_M12704_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M12704_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M12704_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=5e4cce5f) for method JITTest.ScalarUInt64:Acos(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=5e4cce5f) for method JITTest.ScalarUInt64:Acos(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:Abs(long):long
@@ -13376,14 +13008,10 @@ G_M38698_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M38698_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M38698_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=329768d5) for method JITTest.ScalarUInt64:Sin(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=329768d5) for method JITTest.ScalarUInt64:Sin(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:Sinh(long):long
@@ -13405,14 +13033,10 @@ G_M54082_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M54082_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M54082_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=7c512cbd) for method JITTest.ScalarUInt64:Sinh(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=7c512cbd) for method JITTest.ScalarUInt64:Sinh(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarUInt64:Asin(long):long
@@ -13434,14 +13058,10 @@ G_M10507_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M10507_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M10507_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=9330d6f4) for method JITTest.ScalarUInt64:Asin(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=9330d6f4) for method JITTest.ScalarUInt64:Asin(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:EntryPoint()
@@ -14321,14 +13941,10 @@ G_M46737_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M46737_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M46737_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=61db496e) for method JITTest.ScalarInt64:Atan(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=61db496e) for method JITTest.ScalarInt64:Atan(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:Atan2(long,long):long
@@ -14351,14 +13967,10 @@ G_M55941_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M55941_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M55941_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=ce8c257a) for method JITTest.ScalarInt64:Atan2(long,long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=ce8c257a) for method JITTest.ScalarInt64:Atan2(long,long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:Cos(long):long
@@ -14380,14 +13992,10 @@ G_M9940_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M9940_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M9940_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=6fc3d92b) for method JITTest.ScalarInt64:Cos(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=6fc3d92b) for method JITTest.ScalarInt64:Cos(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:Cosh(long):long
@@ -14409,14 +14017,10 @@ G_M50300_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M50300_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M50300_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=64593b83) for method JITTest.ScalarInt64:Cosh(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=64593b83) for method JITTest.ScalarInt64:Cosh(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:One():long
@@ -14512,14 +14116,10 @@ G_M29624_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M29624_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M29624_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=f5458c47) for method JITTest.ScalarInt64:Pi():long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=f5458c47) for method JITTest.ScalarInt64:Pi():long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:Tau():long
@@ -14540,14 +14140,10 @@ G_M25889_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M25889_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M25889_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=64ec9ade) for method JITTest.ScalarInt64:Tau():long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=64ec9ade) for method JITTest.ScalarInt64:Tau():long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:HalfPi():long
@@ -14568,14 +14164,10 @@ G_M35579_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M35579_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M35579_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=04607504) for method JITTest.ScalarInt64:HalfPi():long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=04607504) for method JITTest.ScalarInt64:HalfPi():long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:PositiveInfinity():long
@@ -14596,14 +14188,10 @@ G_M31304_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M31304_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M31304_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=8d5a85b7) for method JITTest.ScalarInt64:PositiveInfinity():long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=8d5a85b7) for method JITTest.ScalarInt64:PositiveInfinity():long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:NegativeInfinity():long
@@ -14624,14 +14212,10 @@ G_M30976_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M30976_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M30976_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=8ce286ff) for method JITTest.ScalarInt64:NegativeInfinity():long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=8ce286ff) for method JITTest.ScalarInt64:NegativeInfinity():long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:As(double):long
@@ -15218,14 +14802,10 @@ G_M2197_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M2197_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M2197_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=f98ef76a) for method JITTest.ScalarInt64:Acos(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=f98ef76a) for method JITTest.ScalarInt64:Acos(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:Abs(long):long
@@ -15289,14 +14869,10 @@ G_M21823_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M21823_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M21823_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=8127aac0) for method JITTest.ScalarInt64:Sin(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=8127aac0) for method JITTest.ScalarInt64:Sin(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:Sinh(long):long
@@ -15318,14 +14894,10 @@ G_M63351_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M63351_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M63351_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=13180888) for method JITTest.ScalarInt64:Sinh(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=13180888) for method JITTest.ScalarInt64:Sinh(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarInt64:Asin(long):long
@@ -15347,14 +14919,10 @@ G_M20286_IG01:
 						;; bbWeight=1    PerfScore 0.25
 G_M20286_IG02:
        call     Silk.NET.Maths.Scalar:ThrowInvalidType()
-       xor      rax, rax
-						;; bbWeight=1    PerfScore 1.25
-G_M20286_IG03:
-       add      rsp, 40
-       ret      
-						;; bbWeight=1    PerfScore 1.25
+       int3     
+						;; bbWeight=0    PerfScore 0.00
 
-; Total bytes of code 16, prolog size 4, PerfScore 4.35, (MethodHash=1185b0c1) for method JITTest.ScalarInt64:Asin(long):long
+; Total bytes of code 10, prolog size 4, PerfScore 1.25, (MethodHash=1185b0c1) for method JITTest.ScalarInt64:Asin(long):long
 ; ============================================================
 
 ; Assembly listing for method JITTest.ScalarHalf:EntryPoint()
