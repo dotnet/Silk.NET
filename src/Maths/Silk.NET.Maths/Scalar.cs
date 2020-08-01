@@ -16,6 +16,8 @@ namespace Silk.NET.Maths
 {
     internal static class Scalar<T> where T : unmanaged, IFormattable
     {
+        private const MethodImplOptions MIP = MethodImplOptions.AggressiveInlining | (MethodImplOptions) 0x0200;
+        
         /*
          * PLEASE DO ONLY MODIFY IF ADDING A PROPERTY
          * DO NOT EVER ADD METHODS / NON-FORWARD POPERTIES TO THIS TYPE
@@ -24,51 +26,50 @@ namespace Silk.NET.Maths
 
         public static T One
         {
-            [M(MethodImplOptions.AggressiveInlining)]
+            [M(MIP)]
             get => Scalar.One<T>();
         }
 
         public static T Two
         {
-            [M(MethodImplOptions.AggressiveInlining)]
+            [M(MIP)]
             get => Scalar.Two<T>();
         }
 
         public static T Pi
         {
-            [M(MethodImplOptions.AggressiveInlining)]
+            [M(MIP)]
             get => Scalar.Pi<T>();
         }
 
         public static T Tau
         {
-            [M(MethodImplOptions.AggressiveInlining)]
+            [M(MIP)]
             get => Scalar.Tau<T>();
         }
         
         public static T HalfPi
         {
-            [M(MethodImplOptions.AggressiveInlining)]
+            [M(MIP)]
             get => Scalar.HalfPi<T>();
         }
 
         public static T PositiveInfinity
         {
-            [M(MethodImplOptions.AggressiveInlining)]
+            [M(MIP)]
             get => Scalar.PositiveInfinity<T>();
         }
 
         public static T NegativeInfinity
         {
-            [M(MethodImplOptions.AggressiveInlining)]
+            [M(MIP)]
             get => Scalar.NegativeInfinity<T>();
         }
     }
 
     internal static partial class Scalar
     {
-        private const MethodImplOptions MethodImplOptions =
-            System.Runtime.CompilerServices.MethodImplOptions.AggressiveInlining | (MethodImplOptions)512;
+        private const MethodImplOptions MIP = MethodImplOptions.AggressiveInlining | (MethodImplOptions) 0x0200;
 
         private const double HALF_PI = Math.PI / 2;
         private const double TAU = Math.PI * 2;
@@ -79,8 +80,8 @@ namespace Silk.NET.Maths
         *    else if (typeof(T) == typeof(float)) { ... }
         *    ...
         * EXPLANATION:
-        *    At runtime, each instantiation of Scalar<T> will be type-specific, and each of these typeof blocks will be eliminated,
-        *    as typeof(T) is a (JIT) compile-time constant for each instantiation. This design was chosen to eliminate any overhead from
+        *    At runtime, each instantiation of Scalar.Method<T> will be type-specific, and each of these typeof blocks will be eliminated,
+        *    as typeof(T) is a JIT constant for each instantiation. This design was chosen to eliminate any overhead from
         *    delegates and other patterns.
         * 
         * PATTERN:
@@ -92,8 +93,10 @@ namespace Silk.NET.Maths
         *    See https://github.com/dotnet/runtime/issues/38106
         *
         * !!MAKE SURE TO CHECK JIT ASM WHEN MODIFYING THIS FILE!!
+        * JIT ASM CAN ALSO BE CHECKED FROM PR BY TRIGGERING A PIPELINE WITH A COMMENT "@jit-asm"
         */
 
+        [M(MIP)]
         public static T One<T>() where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -130,7 +133,7 @@ namespace Silk.NET.Maths
             return _One2<T>();
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         private static T _One2<T>() where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -165,6 +168,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
+        [M(MIP)]
         public static T Two<T>() where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -201,6 +205,7 @@ namespace Silk.NET.Maths
             return _Two2<T>();
         }
 
+        [M(MIP)]
         private static T _Two2<T>() where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -236,6 +241,7 @@ namespace Silk.NET.Maths
         }
         
 #if !NETSTANDARD2_0
+        [M(MIP)]
         public static bool IsNormal<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -260,6 +266,7 @@ namespace Silk.NET.Maths
         }
 #endif
 
+        [M(MIP)]
         public static T Pi<T>() where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
@@ -285,6 +292,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
+        [M(MIP)]
         public static T Tau<T>() where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
@@ -310,6 +318,7 @@ namespace Silk.NET.Maths
             return default;
         }
         
+        [M(MIP)]
         public static T HalfPi<T>() where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
@@ -334,7 +343,8 @@ namespace Silk.NET.Maths
             Debug.Fail("Unreachable Code");
             return default;
         }
-
+        
+        [M(MIP)]
         public static T PositiveInfinity<T>() where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
@@ -361,6 +371,7 @@ namespace Silk.NET.Maths
             return default; // can't be reached
         }
 
+        [M(MIP)]
         public static T NegativeInfinity<T>() where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
@@ -386,6 +397,7 @@ namespace Silk.NET.Maths
             return default; // can't be reached
         }
 
+        [M(MIP)]
         public static T As<T>(double value) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -422,6 +434,7 @@ namespace Silk.NET.Maths
             return _As2<T>(value);
         }
 
+        [M(MIP)]
         private static T _As2<T>(double value) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -456,10 +469,11 @@ namespace Silk.NET.Maths
             return default;
         }
 
+        [M(MethodImplOptions.NoInlining)] // this is actually implicit because of the exception
         internal static void ThrowInvalidType()
             => throw new NotSupportedException("This operation isn't supported for the current type.");
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         internal static void ThrowForUnsupportedBaseType<T>() where T : unmanaged, IFormattable
         {
             if (typeof(T) != typeof(byte) && typeof(T) != typeof(sbyte) && typeof(T) != typeof(ushort) &&
@@ -474,7 +488,7 @@ namespace Silk.NET.Maths
             }
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         internal static void ThrowForNonFloatingPointType<T>() where T : unmanaged, IFormattable
         {
             if (
@@ -490,20 +504,23 @@ namespace Silk.NET.Maths
 #if !NETSTANDARD2_0
         [DoesNotReturn]
 #endif
+        [M(MethodImplOptions.NoInlining)] // this is actually implicit because of the exception
         internal static void ThrowNotSupportedByUnderlying<T>() where T : unmanaged, IFormattable
             => throw new NotSupportedException($"{typeof(T).FullName} not supported by the underlying type");
 
 #if !NETSTANDARD2_0
         [DoesNotReturn]
 #endif
+        [M(MethodImplOptions.NoInlining)] // this is actually implicit because of the exception
         internal static void ThrowIndexOutOfRange() => throw new IndexOutOfRangeException();
 
 #if !NETSTANDARD2_0
         [DoesNotReturn]
 #endif
+        [M(MethodImplOptions.NoInlining)] // this is actually implicit because of the exception
         internal static void ThrowVectorTTooSmall() => throw new NotSupportedException("Vector<T> too small to fit");
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T SquareRoot<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -540,7 +557,7 @@ namespace Silk.NET.Maths
             return _SquareRoot2(value);
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         private static T _SquareRoot2<T>(T value) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -573,7 +590,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Add<T>(T left, T right) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -610,7 +627,7 @@ namespace Silk.NET.Maths
             return _Add2(left, right);
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         private static T _Add2<T>(T left, T right) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -642,7 +659,7 @@ namespace Silk.NET.Maths
             return default;
         }
         
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Mod<T>(T left, T right) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -679,7 +696,7 @@ namespace Silk.NET.Maths
             return _Mod2(left, right);
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         private static T _Mod2<T>(T left, T right) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -711,7 +728,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Subtract<T>(T left, T right) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -748,7 +765,7 @@ namespace Silk.NET.Maths
             return _Subtract2(left, right);
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         private static T _Subtract2<T>(T left, T right) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -780,7 +797,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Multiply<T>(T left, T right) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -817,7 +834,7 @@ namespace Silk.NET.Maths
             return _Multiply2(left, right);
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         private static T _Multiply2<T>(T left, T right) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -849,7 +866,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Divide<T>(T left, T right) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -886,7 +903,7 @@ namespace Silk.NET.Maths
             return _Divide2(left, right);
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         private static T _Divide2<T>(T left, T right) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -918,7 +935,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Min<T>(T left, T right) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -955,7 +972,7 @@ namespace Silk.NET.Maths
             return _Min2(left, right);
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         private static T _Min2<T>(T left, T right) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -987,7 +1004,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Max<T>(T left, T right) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -1024,7 +1041,7 @@ namespace Silk.NET.Maths
             return _Max2(left, right);
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         private static T _Max2<T>(T left, T right) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -1056,7 +1073,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static bool Larger<T>(T left, T right) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -1093,7 +1110,7 @@ namespace Silk.NET.Maths
             return _Larger2(left, right);
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         private static bool _Larger2<T>(T left, T right) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -1126,7 +1143,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static bool Smaller<T>(T left, T right) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -1163,7 +1180,7 @@ namespace Silk.NET.Maths
             return _Smaller2(left, right);
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         private static bool _Smaller2<T>(T left, T right) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -1196,7 +1213,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static bool LargerEquals<T>(T left, T right) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -1233,7 +1250,7 @@ namespace Silk.NET.Maths
             return _LargerEquals2(left, right);
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         private static bool _LargerEquals2<T>(T left, T right) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -1266,7 +1283,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static bool SmallerEquals<T>(T left, T right) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -1303,7 +1320,7 @@ namespace Silk.NET.Maths
             return _SmallerEquals2(left, right);
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         private static bool _SmallerEquals2<T>(T left, T right) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -1336,10 +1353,10 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Clamp<T>(T value, T min, T max) where T : unmanaged, IFormattable => Min(Max(value, min), max);
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Negate<T>(T value) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(sbyte))
@@ -1382,7 +1399,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static bool Equal<T>(T left, T right) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -1419,6 +1436,7 @@ namespace Silk.NET.Maths
             return _Equal2(left, right);
         }
 
+        [M(MIP)]
         private static bool _Equal2<T>(T left, T right) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(ulong))
@@ -1451,7 +1469,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Acos<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
@@ -1475,7 +1493,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Abs<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForUnsupportedBaseType<T>();
@@ -1502,7 +1520,7 @@ namespace Silk.NET.Maths
             return _Abs2(value);
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         private static T _Abs2<T>(T value) where T : unmanaged, IFormattable
         {
             if (typeof(T) == typeof(long))
@@ -1530,7 +1548,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Sin<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
@@ -1573,7 +1591,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Sinh<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
@@ -1598,7 +1616,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Asin<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
@@ -1624,7 +1642,7 @@ namespace Silk.NET.Maths
         }
 
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Atan<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
@@ -1649,7 +1667,7 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Atan2<T>(T left, T right) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
@@ -1674,7 +1692,7 @@ namespace Silk.NET.Maths
         }
 
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Cos<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
@@ -1701,7 +1719,7 @@ namespace Silk.NET.Maths
         }
 
 
-        [M(MethodImplOptions)]
+        [M(MIP)]
         public static T Cosh<T>(T value) where T : unmanaged, IFormattable
         {
             ThrowForNonFloatingPointType<T>();
