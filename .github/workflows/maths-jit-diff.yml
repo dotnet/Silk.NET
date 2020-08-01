@@ -103,12 +103,12 @@ jobs:
         name: Download windows-jit-asm-x64
         with:
           name: windows-jit-asm-x64
-          path: ./windows-jit-asm-x64
+          path: '.'
       - uses: actions/download-artifact@v2
         name: Download windows-jit-asm-x86
         with:
           name: windows-jit-asm-x86
-          path: ./windows-jit-asm-x86
+          path: '.'
       - name: Move files
         run: |
           mv ./windows-jit-asm-x86 ./build/maths/windows-jit-asm-x86
