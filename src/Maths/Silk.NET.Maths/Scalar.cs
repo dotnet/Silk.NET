@@ -469,7 +469,6 @@ namespace Silk.NET.Maths
             return default;
         }
 
-        [M(MethodImplOptions.NoInlining)] // this is actually implicit because of the exception
         internal static void ThrowInvalidType()
             => throw new NotSupportedException("This operation isn't supported for the current type.");
 
@@ -504,20 +503,17 @@ namespace Silk.NET.Maths
 #if !NETSTANDARD2_0
         [DoesNotReturn]
 #endif
-        [M(MethodImplOptions.NoInlining)] // this is actually implicit because of the exception
         internal static void ThrowNotSupportedByUnderlying<T>() where T : unmanaged, IFormattable
             => throw new NotSupportedException($"{typeof(T).FullName} not supported by the underlying type");
 
 #if !NETSTANDARD2_0
         [DoesNotReturn]
 #endif
-        [M(MethodImplOptions.NoInlining)] // this is actually implicit because of the exception
         internal static void ThrowIndexOutOfRange() => throw new IndexOutOfRangeException();
 
 #if !NETSTANDARD2_0
         [DoesNotReturn]
 #endif
-        [M(MethodImplOptions.NoInlining)] // this is actually implicit because of the exception
         internal static void ThrowVectorTTooSmall() => throw new NotSupportedException("Vector<T> too small to fit");
 
         [M(MIP)]
