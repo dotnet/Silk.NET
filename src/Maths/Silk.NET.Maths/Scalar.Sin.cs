@@ -69,7 +69,7 @@ namespace Silk.NET.Maths
             18152700886
         };
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]
         private static long GetPiBits(int index)
         {
             switch (index)
@@ -106,7 +106,7 @@ namespace Silk.NET.Maths
             }
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+        [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]
         public static float Sin_Ported(float x)
         {
             double result = x;
@@ -250,7 +250,7 @@ namespace Silk.NET.Maths
             // modified to raise NaN on infinite 
             return float.NaN;
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]
             static double CosTaylorSeriesOneIteration(double x1)
             {
                 // 1 - (x^2 / 2!)
@@ -258,7 +258,7 @@ namespace Silk.NET.Maths
                 return 1.0 + (x2 * C1);
             }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]
             static double CosTaylorSeriesFourIterations(double x1)
             {
                 // 1 - (x^2 / 2!) + (x^4 / 4!) - (x^6 / 6!) + (x^8 / 8!) - (x^10 / 10!)
@@ -269,7 +269,7 @@ namespace Silk.NET.Maths
                 return 1.0 + (x2 * C0) + (x4 * ((C1 + (x2 * C2)) + (x4 * (C3 + (x2 * C4)))));
             }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]
             static unsafe double ReduceForLargeInput(double x, out int region)
             {
                 Debug.Assert(!double.IsNegative(x));
@@ -404,7 +404,7 @@ namespace Silk.NET.Maths
                 return x * PiOverTwo;
             }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]
             static double SinTaylorSeriesOneIteration(double x1)
             {
                 // x - (x^3 / 3!)
@@ -415,7 +415,7 @@ namespace Silk.NET.Maths
                 return x1 + (x3 * S1);
             }
 
-            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+            [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]
             static double SinTaylorSeriesFourIterations(double x1)
             {
                 // x - (x^3 / 3!) + (x^5 / 5!) - (x^7 / 7!) + (x^9 / 9!)

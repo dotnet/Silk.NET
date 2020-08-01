@@ -103,12 +103,16 @@ jobs:
         name: Download windows-jit-asm-x64
         with:
           name: windows-jit-asm-x64
-          path: ./build/maths/windows-jit-asm-x64
+          path: ./windows-jit-asm-x64
       - uses: actions/download-artifact@v2
         name: Download windows-jit-asm-x86
         with:
           name: windows-jit-asm-x86
-          path: ./build/maths/windows-jit-asm-x86
+          path: ./windows-jit-asm-x86
+      - name: Move files
+        run: |
+          mv ./windows-jit-asm-x86 ./build/maths/windows-jit-asm-x86
+          mv ./windows-jit-asm-x64 ./build/maths/windows-jit-asm-x64
       - name: Create Commit
         uses: EndBug/add-and-commit@v4
         with:
