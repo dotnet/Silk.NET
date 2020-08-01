@@ -9,7 +9,7 @@ using Silk.NET.OpenXR;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.InteropServices;
 
 #pragma warning disable 1591
 
@@ -29,11 +29,11 @@ namespace Silk.NET.OpenXR.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanGraphicsDeviceKHR")]
-        public abstract unsafe Result GetVulkanGraphicsDevice([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] Silk.NET.GLFW.VkHandle vkInstance, [Count(Count = 0)] Silk.NET.GLFW.VkHandle* vkPhysicalDevice);
+        public abstract unsafe Result GetVulkanGraphicsDevice([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] VkHandle vkInstance, [Count(Count = 0)] VkHandle* vkPhysicalDevice);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanGraphicsDeviceKHR")]
-        public abstract Result GetVulkanGraphicsDevice([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] Silk.NET.GLFW.VkHandle vkInstance, [Count(Count = 0)] ref Silk.NET.GLFW.VkHandle vkPhysicalDevice);
+        public abstract Result GetVulkanGraphicsDevice([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] VkHandle vkInstance, [Count(Count = 0)] ref VkHandle vkPhysicalDevice);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanGraphicsRequirementsKHR")]

@@ -8,7 +8,6 @@ using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
 
 namespace Silk.NET.OpenGL
 {

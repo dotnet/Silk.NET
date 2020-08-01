@@ -8,8 +8,8 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
+using Silk.NET.Core.Loader;
 using Silk.NET.GLFW;
-using Ultz.SuperInvoke.Loader;
 using Veldrid;
 using Veldrid.OpenGL;
 using Veldrid.Vk;

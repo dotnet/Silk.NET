@@ -1,7 +1,6 @@
 using System;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 

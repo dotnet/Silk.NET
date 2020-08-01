@@ -5,7 +5,7 @@
 
 using System;
 
-namespace Silk.NET.Core.Native
+namespace Silk.NET.Core.Attributes
 {
     /// <summary>
     /// Represents the count of a parameter.

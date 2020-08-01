@@ -6,7 +6,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace Silk.NET.GLFW
+namespace Silk.NET.Core.Native
 {
     /// <summary>
     ///     A handle to a Vulkan object.

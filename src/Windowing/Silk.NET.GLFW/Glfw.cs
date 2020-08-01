@@ -6,10 +6,9 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Silk.NET.Core.InteropServices;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
-using Ultz.SuperInvoke.InteropServices;
 
 namespace Silk.NET.GLFW
 {

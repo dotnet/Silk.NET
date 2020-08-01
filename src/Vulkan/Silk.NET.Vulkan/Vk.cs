@@ -5,8 +5,7 @@ using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
-using LibraryLoader = Ultz.SuperInvoke.Loader.LibraryLoader;
+using LibraryLoader = Silk.NET.Core.Loader.LibraryLoader;
 
 namespace Silk.NET.Vulkan
 {

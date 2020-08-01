@@ -5,7 +5,6 @@
 
 using System;
 using Silk.NET.Core.Loader;
-using Ultz.SuperInvoke.Loader;
 
 namespace Silk.NET.GLFW
 {

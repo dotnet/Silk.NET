@@ -9,7 +9,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
@@ -22,9 +21,9 @@ namespace Silk.NET.OpenXR
         (
             StructureType type = StructureType.TypeGraphicsBindingVulkanKhr,
             void* next = default,
-            Silk.NET.GLFW.VkHandle instance = default,
-            Silk.NET.GLFW.VkHandle physicalDevice = default,
-            Silk.NET.GLFW.VkHandle device = default,
+            VkHandle instance = default,
+            VkHandle physicalDevice = default,
+            VkHandle device = default,
             uint queueFamilyIndex = default,
             uint queueIndex = default
         )
@@ -52,17 +51,17 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "VkInstance")]
         [NativeName("Type.Name", "VkInstance")]
         [NativeName("Name", "instance")]
-        public Silk.NET.GLFW.VkHandle Instance;
+        public VkHandle Instance;
 /// <summary></summary>
         [NativeName("Type", "VkPhysicalDevice")]
         [NativeName("Type.Name", "VkPhysicalDevice")]
         [NativeName("Name", "physicalDevice")]
-        public Silk.NET.GLFW.VkHandle PhysicalDevice;
+        public VkHandle PhysicalDevice;
 /// <summary></summary>
         [NativeName("Type", "VkDevice")]
         [NativeName("Type.Name", "VkDevice")]
         [NativeName("Name", "device")]
-        public Silk.NET.GLFW.VkHandle Device;
+        public VkHandle Device;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

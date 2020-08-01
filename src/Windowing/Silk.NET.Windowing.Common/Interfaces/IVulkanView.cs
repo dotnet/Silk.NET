@@ -4,7 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using Silk.NET.GLFW;
+using Silk.NET.Core.Native;
 
 namespace Silk.NET.Windowing
 {

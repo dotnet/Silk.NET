@@ -7,6 +7,7 @@ using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Native;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Internals;
 

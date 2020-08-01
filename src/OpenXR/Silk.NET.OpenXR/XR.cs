@@ -4,7 +4,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
 using ExtensionAttribute = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591

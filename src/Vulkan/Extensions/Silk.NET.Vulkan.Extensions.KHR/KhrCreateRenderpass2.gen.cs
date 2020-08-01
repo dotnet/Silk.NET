@@ -9,7 +9,7 @@ using Silk.NET.Vulkan;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.InteropServices;
 
 #pragma warning disable 1591
 

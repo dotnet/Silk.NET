@@ -4,10 +4,11 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using Silk.NET.Core.InteropServices;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.OpenAL.Extensions;
-using Ultz.SuperInvoke;
+
 namespace Silk.NET.OpenAL
 {
     /// <summary>

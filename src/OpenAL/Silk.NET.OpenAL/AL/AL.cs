@@ -7,9 +7,10 @@ using System;
 using System.Numerics;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
+using Silk.NET.Core.InteropServices;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+
 namespace Silk.NET.OpenAL
 {
     /// <summary>

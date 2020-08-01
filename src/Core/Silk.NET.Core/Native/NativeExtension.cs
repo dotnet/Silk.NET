@@ -3,7 +3,9 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.InteropServices;
+
 namespace Silk.NET.Core.Native
 {
     public abstract class NativeExtension<T> : NativeApiContainer where T : NativeAPI
@@ -11,9 +13,9 @@ namespace Silk.NET.Core.Native
         /// <inheritdoc />
         protected NativeExtension
         (
-            ref NativeApiContext ctx
+            INativeContext ctx
         )
-            : base(ref ctx)
+            : base(ctx)
         {
         }
     }

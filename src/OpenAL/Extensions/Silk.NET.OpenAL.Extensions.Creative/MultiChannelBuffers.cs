@@ -4,7 +4,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.InteropServices;
+
 namespace Silk.NET.OpenAL.Extensions.Creative
 {
     /// <summary>

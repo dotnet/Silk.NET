@@ -6,7 +6,6 @@
 using Microsoft.Extensions.DependencyModel;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
 
 namespace Silk.NET.OpenAL.Extensions
 {

@@ -5,8 +5,9 @@
 
 using System;
 using Silk.NET.Core.Attributes;
+using Silk.NET.Core.InteropServices;
 using Silk.NET.OpenAL.Attributes;
-using Ultz.SuperInvoke;
+
 namespace Silk.NET.OpenAL.Extensions.EXT
 {
     /// <summary>

@@ -7,8 +7,9 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
+using Silk.NET.Core.InteropServices;
 using Silk.NET.OpenAL.Extensions.EXT.Enumeration;
-using Ultz.SuperInvoke;
+
 namespace Silk.NET.OpenAL.Extensions.EXT
 {
     /// <summary>

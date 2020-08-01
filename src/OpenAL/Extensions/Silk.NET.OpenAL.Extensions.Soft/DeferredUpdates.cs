@@ -3,8 +3,9 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using Silk.NET.Core.InteropServices;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+
 namespace Silk.NET.OpenAL.Extensions.Soft
 {
     /// <summary>
