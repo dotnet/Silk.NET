@@ -28,11 +28,21 @@ namespace Silk.NET.Windowing
         /// Elapsed time in seconds since the View was initialized.
         /// </summary>
         double Time { get; }
+        
+        /// <summary>
+        /// The size of the framebuffer. May differ from the window size.
+        /// </summary>
+        Size FramebufferSize { get; }
 
         /// <summary>
         /// Raised when the window is resized.
         /// </summary>
         event Action<Size> Resize;
+
+        /// <summary>
+        /// Raised when the window's framebuffer is resized.
+        /// </summary>
+        event Action<Size> FramebufferResize;
 
         /// <summary>
         /// Raised when the window is about to close.
@@ -99,15 +109,25 @@ namespace Silk.NET.Windowing
         /// Converts this point to client coordinates.
         /// </summary>
         /// <param name="point">The point to transform.</param>
-        /// <returns></returns>
+        /// <returns>The transformed point.</returns>
+        /// <remarks>Expects screen coordinates as input.</remarks>
         Point PointToClient(Point point);
 
         /// <summary>
         /// Converts this point to screen coordinates.
         /// </summary>
         /// <param name="point">The point to transform.</param>
-        /// <returns></returns>
+        /// <returns>The transformed point.</returns>
+        /// <remarks>Expects client coordinates as input.</remarks>
         Point PointToScreen(Point point);
+
+        /// <summary>
+        /// Converts this point to framebuffer coordinates.
+        /// </summary>
+        /// <param name="point">The point to transform.</param>
+        /// <returns>The transformed point.</returns>
+        /// <remarks>Expects client coordinates as input.</remarks>
+        Point PointToFramebuffer(Point point);
 
         /// <summary>
         /// Invokes this delegate on the window's main thread, with the provided arguments.
