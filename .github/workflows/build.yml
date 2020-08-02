@@ -20,7 +20,7 @@ jobs:
     - name: Test
       run: dotnet test --verbosity normal
     - name: Pack
-      run: dotnet pack --configuration Release --version-suffix build$GITHUB_RUN_NUMBER.0
+      run: dotnet pack --configuration Release --version-suffix build$GITHUB_RUN_NUMBER.0 -p:ContinuousIntegrationBuild=true
     - name: Setup NuGet
       uses: nuget/setup-nuget@v1
       with:

@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: dotnet restore
     - name: Pack
-      run: dotnet pack --configuration Release
+      run: dotnet pack --configuration Release -p:ContinuousIntegrationBuild=true
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Push to NuGet
