@@ -17,13 +17,13 @@ namespace Silk.NET.Input.Glfw
         {
             _list = list;
             _i = 0;
-            Current = default;
+            Current = default!;
         }
         public bool MoveNext()
         {
             if (_i >= _list.Count)
             {
-                Current = default;
+                Current = default!;
                 return false;
             }
 
@@ -35,12 +35,12 @@ namespace Silk.NET.Input.Glfw
         public void Reset()
         {
             _i = 0;
-            Current = default;
+            Current = default!;
         }
 
         public T Current { get; private set; }
 
-        object IEnumerator.Current => Current;
+        object? IEnumerator.Current => Current;
 
         public void Dispose()
         {

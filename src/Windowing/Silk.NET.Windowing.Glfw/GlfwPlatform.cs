@@ -8,7 +8,6 @@ using System.Runtime.CompilerServices;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Glfw;
-using Silk.NET.Windowing.Internals;
 
 [assembly: InternalsVisibleTo("Silk.NET.Input.Glfw")]
 [assembly: WindowPlatform(typeof(GlfwPlatform))]
@@ -20,8 +19,6 @@ namespace Silk.NET.Windowing.Glfw
     /// </summary>
     internal class GlfwPlatform : IWindowPlatform
     {
-        public GlfwPlatform(){ }
-        
         /// <inheritdoc />
         public bool IsViewOnly { get; } = false;
 

@@ -44,7 +44,7 @@ namespace Silk.NET.Input
         /// <remarks>
         /// This event is only called when the button is first pressed, and not every frame where the button is still pressed.
         /// </remarks>
-        event Action<IGamepad, Button> ButtonDown;
+        event Action<IGamepad, Button>? ButtonDown;
         
         /// <summary>
         /// Called when a button is released.
@@ -52,16 +52,16 @@ namespace Silk.NET.Input
         /// <remarks>
         /// This event is only called when the button is first released, and not every frame where the button is still released.
         /// </remarks>
-        event Action<IGamepad, Button> ButtonUp;
+        event Action<IGamepad, Button>? ButtonUp;
         
         /// <summary>
         /// Called when a thumbstick is moved.
         /// </summary>
-        event Action<IGamepad, Thumbstick> ThumbstickMoved;
+        event Action<IGamepad, Thumbstick>? ThumbstickMoved;
         
         /// <summary>
         /// Called when a trigger is moved.
         /// </summary>
-        event Action<IGamepad, Trigger> TriggerMoved;
+        event Action<IGamepad, Trigger>? TriggerMoved;
     }
 }

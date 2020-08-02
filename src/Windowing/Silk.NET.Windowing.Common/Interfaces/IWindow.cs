@@ -21,12 +21,12 @@ namespace Silk.NET.Windowing
         /// <remarks>
         /// This may be a <see cref="IWindow"/> or a <see cref="IMonitor"/>.
         /// </remarks>
-        IWindowHost Parent { get; }
+        IWindowHost? Parent { get; }
 
         /// <summary>
         /// Gets the monitor on which this window is active.
         /// </summary>
-        IMonitor Monitor { get; set; }
+        IMonitor? Monitor { get; set; }
         
         /// <summary>
         /// Gets or sets whether the window has been requested to close.
@@ -36,17 +36,17 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Raised when the window is moved.
         /// </summary>
-        event Action<Point> Move;
+        event Action<Point>? Move;
 
         /// <summary>
         /// Raised when the window state is changed.
         /// </summary>
-        event Action<WindowState> StateChanged;
+        event Action<WindowState>? StateChanged;
 
         /// <summary>
         /// Raised when the user drops files onto the window.
         /// </summary>
-        event Action<string[]> FileDrop;
+        event Action<string[]>? FileDrop;
 
         /// <summary>
         /// Sets the window icons.

@@ -15,14 +15,14 @@ namespace Silk.NET.Input.Glfw
 {
     internal class GlfwMouse : IMouse, IGlfwSubscriber, IDisposable
     {
-        private static readonly MouseButton[] Buttons = ((MouseButton[]) Enum.GetValues(typeof(MouseButton)))
+        private static readonly MouseButton[] _buttons = ((MouseButton[]) Enum.GetValues(typeof(MouseButton)))
             .Where(x => x != (MouseButton) (-1))
             .ToArray();
 
         private unsafe WindowHandle* _handle;
-        private GlfwCallbacks.ScrollCallback _scroll;
-        private GlfwCallbacks.CursorPosCallback _cursorPos;
-        private GlfwCallbacks.MouseButtonCallback _mouseButton;
+        private GlfwCallbacks.ScrollCallback? _scroll;
+        private GlfwCallbacks.CursorPosCallback? _cursorPos;
+        private GlfwCallbacks.MouseButtonCallback? _mouseButton;
         private bool _firstClick = true;
         private bool _scrollModified = false;
         private MouseButton? _firstClickButton = null;
@@ -36,7 +36,7 @@ namespace Silk.NET.Input.Glfw
         public string Name { get; } = "Silk.NET Mouse (via GLFW)";
         public int Index { get; } = 0;
         public bool IsConnected { get; } = true;
-        public IReadOnlyList<MouseButton> SupportedButtons { get; } = Buttons;
+        public IReadOnlyList<MouseButton> SupportedButtons { get; } = _buttons;
         public IReadOnlyList<ScrollWheel> ScrollWheels { get; }
 
         public unsafe PointF Position
@@ -119,7 +119,7 @@ namespace Silk.NET.Input.Glfw
                 // This is the first click with the given mouse button.
                 _firstClickTime = null;
 
-                if (!_firstClick)
+                if (!_firstClick && !(_firstClickButton is null))
                 {
                     // Only the mouse buttons differ so treat last click as a single click.
                     Click?.Invoke(mouse, _firstClickButton.Value);
@@ -180,10 +180,13 @@ namespace Silk.NET.Input.Glfw
         {
             _firstClickTime = null;
             _firstClick = true;
-            Click?.Invoke(this, _firstClickButton.Value);
+            if (!(_firstClickButton is null))
+            {
+                Click?.Invoke(this, _firstClickButton.Value);
+            }
         }
 
-        public unsafe void Update()
+        public void Update()
         {
             if (!_scrollModified)
             {

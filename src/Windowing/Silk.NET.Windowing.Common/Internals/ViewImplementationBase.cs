@@ -36,7 +36,7 @@ namespace Silk.NET.Windowing.Internals
 
         // Invocations
         private readonly ArrayPool<object> _returnArrayPool = ArrayPool<object>.Create();
-        private PendingInvocation[] _pendingInvocations;
+        private PendingInvocation[]? _pendingInvocations;
         private int _rented;
 
         // Ensure we keep SwapInterval up-to-date
@@ -78,13 +78,13 @@ namespace Silk.NET.Windowing.Internals
         protected abstract void UnregisterCallbacks();
         
         // Events
-        public abstract event Action<Size> Resize;
-        public abstract event Action<Size> FramebufferResize;
-        public abstract event Action Closing;
-        public abstract event Action<bool> FocusChanged;
-        public event Action Load;
-        public event Action<double> Update;
-        public event Action<double> Render;
+        public abstract event Action<Size>? Resize;
+        public abstract event Action<Size>? FramebufferResize;
+        public abstract event Action? Closing;
+        public abstract event Action<bool>? FocusChanged;
+        public event Action? Load;
+        public event Action<double>? Update;
+        public event Action<double>? Render;
         
         // Lifetime controls
         public void Initialize()
@@ -228,7 +228,7 @@ namespace Silk.NET.Windowing.Internals
         {
             var rentalIndex = Interlocked.Increment(ref _rented) - 1;
             EnsureArrayIsReady(rentalIndex);
-            ref var x = ref _pendingInvocations[rentalIndex];
+            ref var x = ref _pendingInvocations![rentalIndex];
             x.Delegate = d;
             x.Data = args;
             x.ResetEvent.Reset();
@@ -243,11 +243,16 @@ namespace Silk.NET.Windowing.Internals
 
         public void DoInvokes()
         {
+            if (_pendingInvocations is null)
+            {
+                return;
+            }
+            
             var completed = 0;
             for (var i = 0; i < _rented + completed && i < _pendingInvocations.Length; i++)
             {
                 ref var invocation = ref _pendingInvocations[i];
-                if (invocation.IsComplete)
+                if (invocation.IsComplete || invocation.Delegate is null)
                 {
                     completed++;
                 }
@@ -285,7 +290,7 @@ namespace Silk.NET.Windowing.Internals
 
             var na = new PendingInvocation[finalSize];
             var og = Interlocked.Exchange(ref _pendingInvocations, na);
-            og.CopyTo(na, 0);
+            og?.CopyTo(na, 0);
             for (var i = 0; i < na.Length; i++)
             {
                 na[i].ResetEvent ??= new ManualResetEventSlim();
@@ -295,8 +300,8 @@ namespace Silk.NET.Windowing.Internals
         private struct PendingInvocation
         {
             public bool IsComplete { get; set; }
-            public Delegate Delegate { get; set; }
-            public object[] Data { get; set; }
+            public Delegate? Delegate { get; set; }
+            public object[]? Data { get; set; }
             public ManualResetEventSlim ResetEvent { get; set; }
         }
     }

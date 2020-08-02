@@ -35,6 +35,7 @@ namespace Silk.NET.Input
         /// </summary>
         ICursor Cursor { get; }
         
+        /// <summary>
         /// The maximum time in milliseconds between two
         /// consecutive clicks to count as a double click.
         /// </summary>

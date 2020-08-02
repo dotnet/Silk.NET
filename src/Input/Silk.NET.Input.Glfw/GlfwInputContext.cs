@@ -98,6 +98,6 @@ namespace Silk.NET.Input.Glfw
         public IReadOnlyList<IKeyboard> Keyboards { get; }
         public IReadOnlyList<IMouse> Mice { get; }
         public IReadOnlyList<IInputDevice> OtherDevices { get; } = new IInputDevice[0];
-        public event Action<IInputDevice, bool> ConnectionChanged;
+        public event Action<IInputDevice, bool>? ConnectionChanged;
     }
 }

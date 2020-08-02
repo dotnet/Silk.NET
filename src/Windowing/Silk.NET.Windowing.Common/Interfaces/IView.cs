@@ -37,37 +37,37 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Raised when the window is resized.
         /// </summary>
-        event Action<Size> Resize;
+        event Action<Size>? Resize;
 
         /// <summary>
         /// Raised when the window's framebuffer is resized.
         /// </summary>
-        event Action<Size> FramebufferResize;
+        event Action<Size>? FramebufferResize;
 
         /// <summary>
         /// Raised when the window is about to close.
         /// </summary>
-        event Action Closing;
+        event Action? Closing;
 
         /// <summary>
         /// Raised when the window focus changes.
         /// </summary>
-        event Action<bool> FocusChanged;
+        event Action<bool>? FocusChanged;
 
         /// <summary>
         /// Raised when the window first begins to run.
         /// </summary>
-        event Action Load;
+        event Action? Load;
 
         /// <summary>
         /// Raised when an update should be run.
         /// </summary>
-        event Action<double> Update;
+        event Action<double>? Update;
 
         /// <summary>
         /// Raised when a frame should be rendered.
         /// </summary>
-        event Action<double> Render;
+        event Action<double>? Render;
 
         /// <summary>
         /// Creates the window on the underlying platform.
