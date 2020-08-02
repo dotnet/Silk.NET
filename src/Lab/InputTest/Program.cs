@@ -222,12 +222,12 @@ namespace InputTest
             Console.WriteLine($"M{arg1.Index}> {arg2} up.");
         }
 
-        private static void MouseOnClick(IMouse arg1, MouseButton arg2)
+        private static void MouseOnClick(IMouse arg1, MouseButton arg2, PointF pos)
         {
             Console.WriteLine($"M{arg1.Index}> {arg2} single click.");
         }
 
-        private static void MouseOnDoubleClick(IMouse arg1, MouseButton arg2)
+        private static void MouseOnDoubleClick(IMouse arg1, MouseButton arg2, PointF pos)
         {
             Console.WriteLine($"M{arg1.Index}> {arg2} double click.");
         }

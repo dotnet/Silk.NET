@@ -67,8 +67,8 @@ namespace Silk.NET.Input.Glfw
 
         public event Action<IMouse, MouseButton> MouseDown;
         public event Action<IMouse, MouseButton> MouseUp;
-        public event Action<IMouse, MouseButton> Click;
-        public event Action<IMouse, MouseButton> DoubleClick;
+        public event Action<IMouse, MouseButton, PointF> Click;
+        public event Action<IMouse, MouseButton, PointF> DoubleClick;
         public event Action<IMouse, PointF> MouseMove;
         public event Action<IMouse, ScrollWheel> Scroll;
 
@@ -122,7 +122,7 @@ namespace Silk.NET.Input.Glfw
                 if (!_firstClick && !(_firstClickButton is null))
                 {
                     // Only the mouse buttons differ so treat last click as a single click.
-                    Click?.Invoke(mouse, _firstClickButton.Value);
+                    Click?.Invoke(mouse, _firstClickButton.Value, Position);
                 }
 
                 ProcessFirstClick(button);
@@ -142,13 +142,13 @@ namespace Silk.NET.Input.Glfw
                     {
                         // Second click was in time and in range -> double click.
                         _firstClick = true;
-                        DoubleClick?.Invoke(mouse, button);
+                        DoubleClick?.Invoke(mouse, button, position);
                     }
                     else
                     {
                         // Second click was in time but outside range -> single click.
                         // The second click is another "first click".
-                        Click?.Invoke(mouse, button);
+                        Click?.Invoke(mouse, button, position);
                         ProcessFirstClick(button);
                     }
                 }
@@ -182,7 +182,7 @@ namespace Silk.NET.Input.Glfw
             _firstClick = true;
             if (!(_firstClickButton is null))
             {
-                Click?.Invoke(this, _firstClickButton.Value);
+                Click?.Invoke(this, _firstClickButton.Value, Position);
             }
         }
 
