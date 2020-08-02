@@ -200,6 +200,15 @@ namespace Silk.NET.Windowing.Glfw
                 !(_initialMonitor is null) ? _initialMonitor.Handle : null,
                 null
             );
+            
+            if (opts.IsVisible)
+            {
+                _glfw.ShowWindow(_glfwWindow);
+            }
+            else
+            {
+                _glfw.HideWindow(_glfwWindow);
+            }
 
             if (opts.API.API == ContextAPI.OpenGL || opts.API.API == ContextAPI.OpenGLES)
             {
