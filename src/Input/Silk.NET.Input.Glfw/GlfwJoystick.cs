@@ -13,7 +13,7 @@ namespace Silk.NET.Input.Glfw
     {
         private bool _connected;
 
-        public unsafe GlfwJoystick(int i)
+        public GlfwJoystick(int i)
         {
             Index = i;
             Axes = new Axis[0];
@@ -32,10 +32,10 @@ namespace Silk.NET.Input.Glfw
         public IReadOnlyList<Button> Buttons { get; private set; }
         public IReadOnlyList<Hat> Hats { get; private set; }
         public Deadzone Deadzone { get; set; }
-        public event Action<IJoystick, Button> ButtonDown;
-        public event Action<IJoystick, Button> ButtonUp;
-        public event Action<IJoystick, Axis> AxisMoved;
-        public event Action<IJoystick, Hat> HatMoved;
+        public event Action<IJoystick, Button>? ButtonDown;
+        public event Action<IJoystick, Button>? ButtonUp;
+        public event Action<IJoystick, Axis>? AxisMoved;
+        public event Action<IJoystick, Hat>? HatMoved;
         public unsafe void Update()
         {
             if (!IsConnected)
@@ -91,7 +91,7 @@ namespace Silk.NET.Input.Glfw
             }
         }
 
-        public unsafe void EnsureAxesSize(int count)
+        public void EnsureAxesSize(int count)
         {
             if (Axes.Count == count)
             {
@@ -103,7 +103,7 @@ namespace Silk.NET.Input.Glfw
             Axes = axes;
         }
 
-        public unsafe void EnsureButtonSize(int count)
+        public void EnsureButtonSize(int count)
         {
             if (Buttons.Count == count)
             {
@@ -115,7 +115,7 @@ namespace Silk.NET.Input.Glfw
             Buttons = buttons;
         }
 
-        public unsafe void EnsureHatSize(int count)
+        public void EnsureHatSize(int count)
         {
             if (Hats.Count == count)
             {
@@ -131,6 +131,6 @@ namespace Silk.NET.Input.Glfw
         {
         }
 
-        public Action<IInputDevice, bool> OnConnectionChanged { get; set; }
+        public Action<IInputDevice, bool>? OnConnectionChanged { get; set; }
     }
 }

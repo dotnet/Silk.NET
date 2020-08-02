@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using Silk.NET.Core;
 using Silk.NET.GLFW;
 
 namespace Silk.NET.Input.Glfw
@@ -14,7 +15,7 @@ namespace Silk.NET.Input.Glfw
     /// </summary>
     internal class GlfwCursor : ICursor, IDisposable
     {
-        private static readonly Dictionary<StandardCursor, CursorShape> CursorShapes = new Dictionary<StandardCursor, CursorShape>
+        private static readonly Dictionary<StandardCursor, CursorShape> _cursorShapes = new Dictionary<StandardCursor, CursorShape>
         {
             { StandardCursor.Arrow, CursorShape.Arrow },
             { StandardCursor.IBeam, CursorShape.IBeam },
@@ -31,9 +32,7 @@ namespace Silk.NET.Input.Glfw
         private StandardCursor _standardCursor = StandardCursor.Default;
         private int _hotspotX = 0;
         private int _hotspotY = 0;
-        private int _width = 0;
-        private int _height = 0;
-        private byte[] _pixels = null;
+        private RawImage _image;
 
         internal unsafe GlfwCursor(WindowHandle* handle)
         {
@@ -126,42 +125,14 @@ namespace Silk.NET.Input.Glfw
         }
         
         /// <inheritdoc />
-        public int Width
+        public RawImage Image
         {
-            get => _width;
+            get => _image;
             set
             {
-                if (_width != value)
+                if (_image != value)
                 {
-                    _width = value;
-                    UpdateCustomCursor();
-                }
-            }
-        }
-        
-        /// <inheritdoc />
-        public int Height
-        {
-            get => _height;
-            set
-            {
-                if (_height != value)
-                {
-                    _height = value;
-                    UpdateCustomCursor();
-                }
-            }
-        }
-        
-        /// <inheritdoc />
-        public byte[] Pixels
-        {
-            get => _pixels;
-            set
-            {
-                if (_pixels != value)
-                {
-                    _pixels = value;
+                    _image = value;
                     UpdateCustomCursor();
                 }
             }
@@ -231,32 +202,32 @@ namespace Silk.NET.Input.Glfw
                 return null;
             else
             {
-                if (!CursorShapes.ContainsKey(_standardCursor))
+                if (!_cursorShapes.ContainsKey(_standardCursor))
                     throw new InvalidOperationException("Glfw does not support the given standard cursor.");
 
-                return GlfwProvider.GLFW.Value.CreateStandardCursor(CursorShapes[_standardCursor]);
+                return GlfwProvider.GLFW.Value.CreateStandardCursor(_cursorShapes[_standardCursor]);
             }
         }
 
         private unsafe Cursor* CreateCustomCursor()
         {
-            if (Pixels == null || Pixels.Length == 0 || Width <= 0 || Height <= 0)
+            if (_image.Pixels.IsEmpty || _image.Width <= 0 || _image.Height <= 0)
                 return null;
 
-            if (Pixels.Length % BytesPerCursorPixel != 0)
+            if (_image.Pixels.Length % BytesPerCursorPixel != 0)
                 throw new ArgumentOutOfRangeException($"Pixel data must provide a multiple of {BytesPerCursorPixel} bytes.");
 
             // the user might setup the values step-by-step, so use the
             // default cursor as long as the custom cursor state is not valid
-            if (Width * Height * BytesPerCursorPixel != Pixels.Length)
+            if (_image.Width * _image.Height * BytesPerCursorPixel != _image.Pixels.Length)
                 return null;
 
-            fixed (byte* ptr = Pixels)
+            fixed (byte* ptr = _image.Pixels.Span)
             {
                 var image = new Image
                 {
-                    Width = Width,
-                    Height = Height,
+                    Width = _image.Width,
+                    Height = _image.Height,
                     Pixels = ptr
                 };
 

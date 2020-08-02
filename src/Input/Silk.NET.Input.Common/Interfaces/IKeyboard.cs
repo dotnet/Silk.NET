@@ -28,16 +28,16 @@ namespace Silk.NET.Input
         /// <summary>
         /// Called when a key is pressed.
         /// </summary>
-        event Action<IKeyboard, Key, int> KeyDown;
+        event Action<IKeyboard, Key, int>? KeyDown;
         
         /// <summary>
         /// Called when a key is released.
         /// </summary>
-        event Action<IKeyboard, Key, int> KeyUp;
+        event Action<IKeyboard, Key, int>? KeyUp;
         
         /// <summary>
         /// Called when a character is received.
         /// </summary>
-        event Action<IKeyboard, char> KeyChar;
+        event Action<IKeyboard, char>? KeyChar;
     }
 }

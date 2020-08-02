@@ -5,7 +5,9 @@
 
 using System;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Internals;
@@ -17,23 +19,25 @@ namespace Silk.NET.Windowing.Glfw
         private readonly GLFW.Glfw _glfw;
         private WindowHandle* _glfwWindow;
         private string _localTitleCache; // glfw doesn't let us get the window title.
-        private readonly GlfwWindow _parent;
-        private readonly GlfwMonitor _initialMonitor;
+        private readonly GlfwWindow? _parent;
+        private readonly GlfwMonitor? _initialMonitor;
         
         // Callbacks
-        private GlfwCallbacks.WindowPosCallback _onMove;
-        private GlfwCallbacks.WindowSizeCallback _onResize;
-        private GlfwCallbacks.DropCallback _onFileDrop;
-        private GlfwCallbacks.WindowCloseCallback _onClosing;
-        private GlfwCallbacks.WindowFocusCallback _onFocusChanged;
-        private GlfwCallbacks.WindowIconifyCallback _onMinimized;
-        private GlfwCallbacks.WindowMaximizeCallback _onMaximized;
+        private GlfwCallbacks.WindowPosCallback? _onMove;
+        private GlfwCallbacks.WindowSizeCallback? _onResize;
+        private GlfwCallbacks.FramebufferSizeCallback? _onFramebufferResize;
+        private GlfwCallbacks.DropCallback? _onFileDrop;
+        private GlfwCallbacks.WindowCloseCallback? _onClosing;
+        private GlfwCallbacks.WindowFocusCallback? _onFocusChanged;
+        private GlfwCallbacks.WindowIconifyCallback? _onMinimized;
+        private GlfwCallbacks.WindowMaximizeCallback? _onMaximized;
 
-        public GlfwWindow(WindowOptions optionsCache, GlfwWindow parent, GlfwMonitor monitor) : base(optionsCache)
+        public GlfwWindow(WindowOptions optionsCache, GlfwWindow? parent, GlfwMonitor? monitor) : base(optionsCache)
         {
             _glfw = GlfwProvider.GLFW.Value;
             _parent = parent;
             _initialMonitor = monitor;
+            _localTitleCache = optionsCache.Title;
         }
 
         protected override Size CoreSize
@@ -197,6 +201,15 @@ namespace Silk.NET.Windowing.Glfw
                 !(_initialMonitor is null) ? _initialMonitor.Handle : null,
                 null
             );
+            
+            if (opts.IsVisible)
+            {
+                _glfw.ShowWindow(_glfwWindow);
+            }
+            else
+            {
+                _glfw.HideWindow(_glfwWindow);
+            }
 
             if (opts.API.API == ContextAPI.OpenGL || opts.API.API == ContextAPI.OpenGLES)
             {
@@ -206,10 +219,10 @@ namespace Silk.NET.Windowing.Glfw
             GLFW.Glfw.ThrowExceptions();
         }
 
-        public override event Action<Point> Move;
-        public override event Action<WindowState> StateChanged;
-        public override event Action<string[]> FileDrop;
-        public override void SetWindowIcon(Span<WindowIcon> icons)
+        public override event Action<Point>? Move;
+        public override event Action<WindowState>? StateChanged;
+        public override event Action<string[]>? FileDrop;
+        public override void SetWindowIcon(ReadOnlySpan<RawImage> icons)
         {
             if (!IsInitialized)
             {
@@ -227,17 +240,14 @@ namespace Silk.NET.Windowing.Glfw
                 {
                     var icon = icons[i];
                     // ReSharper disable once StackAllocInsideLoop
-                    var iconMemory = stackalloc byte[icon.Pixels.Length];
+                    Span<byte> iconMemory = stackalloc byte[icon.Pixels.Length];
                     images[i] = new Image
                     {
                         Width = icon.Width, Height = icon.Height,
-                        Pixels = iconMemory
+                        Pixels = (byte*)Unsafe.AsPointer(ref iconMemory[0])
                     };
-
-                    for (var j = 0; j < icon.Pixels.Length; j++)
-                    {
-                        iconMemory[j] = icon.Pixels[j];
-                    }
+                    
+                    icon.Pixels.Span.CopyTo(iconMemory);
                 }
 
                 _glfw.SetWindowIcon(_glfwWindow, icons.Length, images);
@@ -247,8 +257,8 @@ namespace Silk.NET.Windowing.Glfw
 
         public override IWindow CreateWindow(WindowOptions opts) => new GlfwWindow(opts, this, null);
 
-        public override IWindowHost Parent => (IWindowHost)_parent ?? Monitor;
-        public override IMonitor Monitor
+        public override IWindowHost? Parent => (IWindowHost?)_parent ?? Monitor;
+        public override IMonitor? Monitor
         {
             get
             {
@@ -345,6 +355,15 @@ namespace Silk.NET.Windowing.Glfw
             => IsInitialized ? CachedVideoMode = Monitor?.VideoMode ?? CachedVideoMode : CachedVideoMode;
         public override bool IsEventDriven { get; set; }
 
+        public override Size FramebufferSize
+        {
+            get
+            {
+                _glfw.GetFramebufferSize(_glfwWindow, out var width, out var height);
+                return new Size(width, height);
+            }
+        }
+
         public override void DoEvents()
         {
             if (IsEventDriven)
@@ -386,6 +405,11 @@ namespace Silk.NET.Windowing.Glfw
                 var size = new Size(width, height);
                 UpdateSize(size);
                 Resize?.Invoke(size);
+            };
+
+            _onFramebufferResize = (window, width, height) =>
+            {
+                FramebufferResize?.Invoke(new Size(width, height));
             };
 
             _onClosing = window => Closing?.Invoke();
@@ -473,6 +497,7 @@ namespace Silk.NET.Windowing.Glfw
             _glfw.SetWindowFocusCallback(_glfwWindow, _onFocusChanged);
             _glfw.SetWindowIconifyCallback(_glfwWindow, _onMinimized);
             _glfw.SetWindowMaximizeCallback(_glfwWindow, _onMaximized);
+            _glfw.SetFramebufferSizeCallback(_glfwWindow, _onFramebufferResize);
             _glfw.SetDropCallback(_glfwWindow, _onFileDrop);
             GLFW.Glfw.ThrowExceptions();
         }
@@ -489,14 +514,16 @@ namespace Silk.NET.Windowing.Glfw
                 _glfw.GcUtility.Unpin(_onMinimized);
                 _glfw.GcUtility.Unpin(_onMove);
                 _glfw.GcUtility.Unpin(_onResize);
+                _glfw.GcUtility.Unpin(_onFramebufferResize);
                 _glfw.GcUtility.Unpin(_onFileDrop);
                 _glfw.GcUtility.Unpin(_onFocusChanged);
             }
         }
 
-        public override event Action<Size> Resize;
-        public override event Action Closing;
-        public override event Action<bool> FocusChanged;
+        public override event Action<Size>? Resize;
+        public override event Action<Size>? FramebufferResize;
+        public override event Action? Closing;
+        public override event Action<bool>? FocusChanged;
 
         ~GlfwWindow()
         {

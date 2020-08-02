@@ -8,6 +8,8 @@ using System.Buffers;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Threading;
 using Silk.NET.Core.Contexts;
 
@@ -34,7 +36,7 @@ namespace Silk.NET.Windowing.Internals
 
         // Invocations
         private readonly ArrayPool<object> _returnArrayPool = ArrayPool<object>.Create();
-        private PendingInvocation[] _pendingInvocations;
+        private PendingInvocation[]? _pendingInvocations;
         private int _rented;
 
         // Ensure we keep SwapInterval up-to-date
@@ -65,6 +67,7 @@ namespace Silk.NET.Windowing.Internals
         public abstract bool IsClosing { get; }
         public abstract VideoMode VideoMode { get; }
         public abstract bool IsEventDriven { get; set; }
+        public abstract Size FramebufferSize { get; }
         public abstract void DoEvents();
         public abstract void ContinueEvents();
         public abstract void Dispose();
@@ -75,12 +78,13 @@ namespace Silk.NET.Windowing.Internals
         protected abstract void UnregisterCallbacks();
         
         // Events
-        public abstract event Action<Size> Resize;
-        public abstract event Action Closing;
-        public abstract event Action<bool> FocusChanged;
-        public event Action Load;
-        public event Action<double> Update;
-        public event Action<double> Render;
+        public abstract event Action<Size>? Resize;
+        public abstract event Action<Size>? FramebufferResize;
+        public abstract event Action? Closing;
+        public abstract event Action<bool>? FocusChanged;
+        public event Action? Load;
+        public event Action<double>? Update;
+        public event Action<double>? Render;
         
         // Lifetime controls
         public void Initialize()
@@ -176,13 +180,55 @@ namespace Silk.NET.Windowing.Internals
                 _optionsCache.VSync = value;
             }
         }
+        
+        // Misc implementations
+        [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions)512)]
+        public Point PointToFramebuffer(Point point)
+        {
+            // TODO this monstrosity will be gone once Silk.NET.Maths is in
+            if (Vector.IsHardwareAccelerated && Vector<int>.Count >= 2)
+            {
+#if NETSTANDARD2_1
+                // ReSharper disable SuggestVarOrType_Elsewhere
+                Span<int> framebufferSizeElements = stackalloc int[Vector<int>.Count];
+                Unsafe.As<int, Size>(ref framebufferSizeElements[0]) = FramebufferSize;
+                var framebufferSize = new Vector<int>(framebufferSizeElements);
+                Span<int> sizeElements = stackalloc int[Vector<int>.Count];
+                Unsafe.As<int, Size>(ref sizeElements[0]) = Size;
+                var size = new Vector<int>(sizeElements);
+                Span<int> pointElements = stackalloc int[Vector<int>.Count];
+                Unsafe.As<int, Point>(ref pointElements[0]) = point;
+                var thePoint = new Vector<int>(pointElements);
+                // ReSharper restore SuggestVarOrType_Elsewhere
+#else
+                var c = Vector<int>.Count;
+                var a = new int[c * 3];
+                Unsafe.As<int, Size>(ref a[0]) = FramebufferSize;
+                Unsafe.As<int, Size>(ref a[c]) = Size;
+                Unsafe.As<int, Point>(ref a[c * 2]) = point;
+                var framebufferSize = new Vector<int>(a, 0);
+                var size = new Vector<int>(a, c);
+                var thePoint = new Vector<int>(a, c * 2);
+#endif
+                thePoint = Vector.Multiply(thePoint, Vector.Divide(framebufferSize, size));
+                return new Point(thePoint[0], thePoint[1]);
+            }
+
+            var fSize = FramebufferSize;
+            var aSize = Size;
+            return new Point
+            {
+                X = point.X * (fSize.Width / aSize.Width),
+                Y = point.Y * (fSize.Height / aSize.Height)
+            };
+        }
 
         // Invoke system
         public object Invoke(Delegate d, params object[] args)
         {
             var rentalIndex = Interlocked.Increment(ref _rented) - 1;
             EnsureArrayIsReady(rentalIndex);
-            ref var x = ref _pendingInvocations[rentalIndex];
+            ref var x = ref _pendingInvocations![rentalIndex];
             x.Delegate = d;
             x.Data = args;
             x.ResetEvent.Reset();
@@ -197,11 +243,16 @@ namespace Silk.NET.Windowing.Internals
 
         public void DoInvokes()
         {
+            if (_pendingInvocations is null)
+            {
+                return;
+            }
+            
             var completed = 0;
             for (var i = 0; i < _rented + completed && i < _pendingInvocations.Length; i++)
             {
                 ref var invocation = ref _pendingInvocations[i];
-                if (invocation.IsComplete)
+                if (invocation.IsComplete || invocation.Delegate is null)
                 {
                     completed++;
                 }
@@ -239,7 +290,7 @@ namespace Silk.NET.Windowing.Internals
 
             var na = new PendingInvocation[finalSize];
             var og = Interlocked.Exchange(ref _pendingInvocations, na);
-            og.CopyTo(na, 0);
+            og?.CopyTo(na, 0);
             for (var i = 0; i < na.Length; i++)
             {
                 na[i].ResetEvent ??= new ManualResetEventSlim();
@@ -249,8 +300,8 @@ namespace Silk.NET.Windowing.Internals
         private struct PendingInvocation
         {
             public bool IsComplete { get; set; }
-            public Delegate Delegate { get; set; }
-            public object[] Data { get; set; }
+            public Delegate? Delegate { get; set; }
+            public object[]? Data { get; set; }
             public ManualResetEventSlim ResetEvent { get; set; }
         }
     }

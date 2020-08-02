@@ -35,6 +35,7 @@ namespace Silk.NET.Input
         /// </summary>
         ICursor Cursor { get; }
         
+        /// <summary>
         /// The maximum time in milliseconds between two
         /// consecutive clicks to count as a double click.
         /// </summary>
@@ -66,12 +67,12 @@ namespace Silk.NET.Input
         /// <summary>
         /// Called when a single click is performed.
         /// </summary>
-        event Action<IMouse, MouseButton> Click;
+        event Action<IMouse, MouseButton, PointF> Click;
 
         /// <summary>
         /// Called when a double click is performed.
         /// </summary>
-        event Action<IMouse, MouseButton> DoubleClick;
+        event Action<IMouse, MouseButton, PointF> DoubleClick;
         
         /// <summary>
         /// Called when the mouse is moved.
