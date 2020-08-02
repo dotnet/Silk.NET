@@ -18,8 +18,7 @@ namespace Silk.NET.Input.Glfw
     /// <inheritdoc />
     internal class GlfwInputPlatform : IInputPlatform
     {
-        public GlfwInputPlatform(){}
-        private static Dictionary<IntPtr, GlfwEvents> _subs = new Dictionary<IntPtr, GlfwEvents>();
+        private static readonly Dictionary<IntPtr, GlfwEvents> _subs = new Dictionary<IntPtr, GlfwEvents>();
         /// <inheritdoc />
         public bool IsApplicable(IView window) => window is GlfwWindow;
 

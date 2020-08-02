@@ -58,6 +58,6 @@ namespace Silk.NET.Input
         /// <summary>
         /// Called when the connection status of a device changes.
         /// </summary>
-        event Action<IInputDevice, bool> ConnectionChanged;
+        event Action<IInputDevice, bool>? ConnectionChanged;
     }
 }

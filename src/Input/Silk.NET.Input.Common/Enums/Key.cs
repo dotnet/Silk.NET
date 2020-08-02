@@ -618,11 +618,6 @@ namespace Silk.NET.Input
         /// <summary>
         /// The menu key.
         /// </summary>
-        Menu = 348,
-
-        /// <summary>
-        /// The last valid key in this enum.
-        /// </summary>
-        LastKey = Menu
+        Menu = 348
     }
 }

@@ -3,6 +3,8 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using Silk.NET.Core;
+
 namespace Silk.NET.Input
 {
     /// <summary>
@@ -48,29 +50,13 @@ namespace Silk.NET.Input
         int HotspotY { get; set; }
 
         /// <summary>
-        /// Width of the cursor in pixels.
-        /// </summary>
-        /// <remarks>
-        /// Is only used if <see cref="Type"/> is <see cref="CursorType.Custom"/>.
-        /// </remarks>
-        int Width { get; set; }
-
-        /// <summary>
-        /// Height of the cursor in pixels.
-        /// </summary>
-        /// <remarks>
-        /// Is only used if <see cref="Type"/> is <see cref="CursorType.Custom"/>.
-        /// </remarks>
-        int Height { get; set; }
-
-        /// <summary>
         /// Image data for the cursor.
         /// </summary>
         /// <remarks>
         /// The image MUST be in 32-bit RGBA, non-premultiplied, and in little-endian format.
         /// Is only used if <see cref="Type"/> is <see cref="CursorType.Custom"/>.
         /// </remarks>
-        byte[] Pixels { get; set; }
+        RawImage Image { get; set; }
 
         /// <summary>
         /// Checks whether or not a specific <see cref="CursorMode"/> is supported.
