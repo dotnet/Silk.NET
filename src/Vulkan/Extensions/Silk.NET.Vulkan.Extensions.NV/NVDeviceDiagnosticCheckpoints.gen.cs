@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
         public const string ExtensionName = "VK_NV_device_diagnostic_checkpoints";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetCheckpointNV")]
-        public partial unsafe void CmdSetCheckpoint([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] void* pCheckpointMarker);
+        public unsafe partial void CmdSetCheckpoint([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] void* pCheckpointMarker);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetCheckpointNV")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetQueueCheckpointDataNV")]
-        public partial unsafe void GetQueueCheckpointData([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Computed = "pCheckpointDataCount"), Flow(FlowDirection.Out)] CheckpointDataNV* pCheckpointData);
+        public unsafe partial void GetQueueCheckpointData([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Computed = "pCheckpointDataCount"), Flow(FlowDirection.Out)] CheckpointDataNV* pCheckpointData);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetQueueCheckpointDataNV")]

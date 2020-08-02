@@ -20,7 +20,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     {
         public const string ExtensionName = "KHR_subgroups";
         [NativeApi(EntryPoint = "clGetKernelSubGroupInfoKHR")]
-        public partial unsafe int GetKernelSubGroupInfo([Flow(FlowDirection.In)] IntPtr in_kernel, [Flow(FlowDirection.In)] IntPtr in_device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr input_value_size, [Flow(FlowDirection.In)] void* input_value, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetKernelSubGroupInfo([Flow(FlowDirection.In)] IntPtr in_kernel, [Flow(FlowDirection.In)] IntPtr in_device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr input_value_size, [Flow(FlowDirection.In)] void* input_value, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetKernelSubGroupInfoKHR")]
         public partial int GetKernelSubGroupInfo<T0, T1>([Flow(FlowDirection.In)] IntPtr in_kernel, [Flow(FlowDirection.In)] IntPtr in_device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr input_value_size, [Flow(FlowDirection.In)] Span<T0> input_value, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T1> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged where T1 : unmanaged;

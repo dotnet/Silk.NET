@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_headless_surface";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateHeadlessSurfaceEXT")]
-        public partial unsafe Result CreateHeadlessSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] HeadlessSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+        public unsafe partial Result CreateHeadlessSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] HeadlessSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateHeadlessSurfaceEXT")]

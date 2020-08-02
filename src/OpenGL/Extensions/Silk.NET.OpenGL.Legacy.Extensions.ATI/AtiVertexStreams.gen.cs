@@ -26,7 +26,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] sbyte nx, [Flow(FlowDirection.In)] sbyte ny, [Flow(FlowDirection.In)] sbyte nz);
 
         [NativeApi(EntryPoint = "glNormalStream3bvATI")]
-        public partial unsafe void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] sbyte* coords);
+        public unsafe partial void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] sbyte* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3bvATI")]
         public partial void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<sbyte> coords);
@@ -35,7 +35,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] short nx, [Flow(FlowDirection.In)] short ny, [Flow(FlowDirection.In)] short nz);
 
         [NativeApi(EntryPoint = "glNormalStream3svATI")]
-        public partial unsafe void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] short* coords);
+        public unsafe partial void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3svATI")]
         public partial void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<short> coords);
@@ -44,7 +44,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] int nx, [Flow(FlowDirection.In)] int ny, [Flow(FlowDirection.In)] int nz);
 
         [NativeApi(EntryPoint = "glNormalStream3ivATI")]
-        public partial unsafe void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] int* coords);
+        public unsafe partial void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3ivATI")]
         public partial void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<int> coords);
@@ -53,7 +53,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] float nx, [Flow(FlowDirection.In)] float ny, [Flow(FlowDirection.In)] float nz);
 
         [NativeApi(EntryPoint = "glNormalStream3fvATI")]
-        public partial unsafe void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] float* coords);
+        public unsafe partial void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3fvATI")]
         public partial void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> coords);
@@ -62,7 +62,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] double nx, [Flow(FlowDirection.In)] double ny, [Flow(FlowDirection.In)] double nz);
 
         [NativeApi(EntryPoint = "glNormalStream3dvATI")]
-        public partial unsafe void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] double* coords);
+        public unsafe partial void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3dvATI")]
         public partial void NormalStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> coords);
@@ -77,7 +77,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] short x);
 
         [NativeApi(EntryPoint = "glVertexStream1svATI")]
-        public partial unsafe void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(FlowDirection.In)] short* coords);
+        public unsafe partial void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1svATI")]
         public partial void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(FlowDirection.In)] ref short coords);
@@ -86,7 +86,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] int x);
 
         [NativeApi(EntryPoint = "glVertexStream1ivATI")]
-        public partial unsafe void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(FlowDirection.In)] int* coords);
+        public unsafe partial void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1ivATI")]
         public partial void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(FlowDirection.In)] ref int coords);
@@ -95,7 +95,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] float x);
 
         [NativeApi(EntryPoint = "glVertexStream1fvATI")]
-        public partial unsafe void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(FlowDirection.In)] float* coords);
+        public unsafe partial void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1fvATI")]
         public partial void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(FlowDirection.In)] ref float coords);
@@ -104,7 +104,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] double x);
 
         [NativeApi(EntryPoint = "glVertexStream1dvATI")]
-        public partial unsafe void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(FlowDirection.In)] double* coords);
+        public unsafe partial void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1dvATI")]
         public partial void VertexStream1([Flow(FlowDirection.In)] ATI stream, [Count(Count = 1), Flow(FlowDirection.In)] ref double coords);
@@ -113,7 +113,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y);
 
         [NativeApi(EntryPoint = "glVertexStream2svATI")]
-        public partial unsafe void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(FlowDirection.In)] short* coords);
+        public unsafe partial void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2svATI")]
         public partial void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(FlowDirection.In)] Span<short> coords);
@@ -122,7 +122,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y);
 
         [NativeApi(EntryPoint = "glVertexStream2ivATI")]
-        public partial unsafe void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(FlowDirection.In)] int* coords);
+        public unsafe partial void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2ivATI")]
         public partial void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(FlowDirection.In)] Span<int> coords);
@@ -131,7 +131,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y);
 
         [NativeApi(EntryPoint = "glVertexStream2fvATI")]
-        public partial unsafe void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(FlowDirection.In)] float* coords);
+        public unsafe partial void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2fvATI")]
         public partial void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> coords);
@@ -140,7 +140,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y);
 
         [NativeApi(EntryPoint = "glVertexStream2dvATI")]
-        public partial unsafe void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(FlowDirection.In)] double* coords);
+        public unsafe partial void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2dvATI")]
         public partial void VertexStream2([Flow(FlowDirection.In)] ATI stream, [Count(Count = 2), Flow(FlowDirection.In)] Span<double> coords);
@@ -149,7 +149,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z);
 
         [NativeApi(EntryPoint = "glVertexStream3svATI")]
-        public partial unsafe void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] short* coords);
+        public unsafe partial void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3svATI")]
         public partial void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<short> coords);
@@ -158,7 +158,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z);
 
         [NativeApi(EntryPoint = "glVertexStream3ivATI")]
-        public partial unsafe void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] int* coords);
+        public unsafe partial void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3ivATI")]
         public partial void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<int> coords);
@@ -167,7 +167,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z);
 
         [NativeApi(EntryPoint = "glVertexStream3fvATI")]
-        public partial unsafe void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] float* coords);
+        public unsafe partial void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3fvATI")]
         public partial void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> coords);
@@ -176,7 +176,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
 
         [NativeApi(EntryPoint = "glVertexStream3dvATI")]
-        public partial unsafe void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] double* coords);
+        public unsafe partial void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3dvATI")]
         public partial void VertexStream3([Flow(FlowDirection.In)] ATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> coords);
@@ -185,7 +185,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z, [Flow(FlowDirection.In)] short w);
 
         [NativeApi(EntryPoint = "glVertexStream4svATI")]
-        public partial unsafe void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(FlowDirection.In)] short* coords);
+        public unsafe partial void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4svATI")]
         public partial void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> coords);
@@ -194,7 +194,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z, [Flow(FlowDirection.In)] int w);
 
         [NativeApi(EntryPoint = "glVertexStream4ivATI")]
-        public partial unsafe void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(FlowDirection.In)] int* coords);
+        public unsafe partial void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4ivATI")]
         public partial void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> coords);
@@ -203,7 +203,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
 
         [NativeApi(EntryPoint = "glVertexStream4fvATI")]
-        public partial unsafe void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(FlowDirection.In)] float* coords);
+        public unsafe partial void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4fvATI")]
         public partial void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> coords);
@@ -212,7 +212,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
 
         [NativeApi(EntryPoint = "glVertexStream4dvATI")]
-        public partial unsafe void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(FlowDirection.In)] double* coords);
+        public unsafe partial void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4dvATI")]
         public partial void VertexStream4([Flow(FlowDirection.In)] ATI stream, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> coords);
@@ -224,7 +224,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] sbyte nx, [Flow(FlowDirection.In)] sbyte ny, [Flow(FlowDirection.In)] sbyte nz);
 
         [NativeApi(EntryPoint = "glNormalStream3bvATI")]
-        public partial unsafe void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] sbyte* coords);
+        public unsafe partial void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] sbyte* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3bvATI")]
         public partial void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<sbyte> coords);
@@ -233,7 +233,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] short nx, [Flow(FlowDirection.In)] short ny, [Flow(FlowDirection.In)] short nz);
 
         [NativeApi(EntryPoint = "glNormalStream3svATI")]
-        public partial unsafe void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] short* coords);
+        public unsafe partial void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3svATI")]
         public partial void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<short> coords);
@@ -242,7 +242,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] int nx, [Flow(FlowDirection.In)] int ny, [Flow(FlowDirection.In)] int nz);
 
         [NativeApi(EntryPoint = "glNormalStream3ivATI")]
-        public partial unsafe void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] int* coords);
+        public unsafe partial void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3ivATI")]
         public partial void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<int> coords);
@@ -251,7 +251,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] float nx, [Flow(FlowDirection.In)] float ny, [Flow(FlowDirection.In)] float nz);
 
         [NativeApi(EntryPoint = "glNormalStream3fvATI")]
-        public partial unsafe void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] float* coords);
+        public unsafe partial void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3fvATI")]
         public partial void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> coords);
@@ -260,7 +260,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] double nx, [Flow(FlowDirection.In)] double ny, [Flow(FlowDirection.In)] double nz);
 
         [NativeApi(EntryPoint = "glNormalStream3dvATI")]
-        public partial unsafe void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] double* coords);
+        public unsafe partial void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glNormalStream3dvATI")]
         public partial void NormalStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> coords);
@@ -275,7 +275,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] short x);
 
         [NativeApi(EntryPoint = "glVertexStream1svATI")]
-        public partial unsafe void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(FlowDirection.In)] short* coords);
+        public unsafe partial void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1svATI")]
         public partial void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(FlowDirection.In)] ref short coords);
@@ -284,7 +284,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] int x);
 
         [NativeApi(EntryPoint = "glVertexStream1ivATI")]
-        public partial unsafe void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(FlowDirection.In)] int* coords);
+        public unsafe partial void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1ivATI")]
         public partial void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(FlowDirection.In)] ref int coords);
@@ -293,7 +293,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] float x);
 
         [NativeApi(EntryPoint = "glVertexStream1fvATI")]
-        public partial unsafe void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(FlowDirection.In)] float* coords);
+        public unsafe partial void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1fvATI")]
         public partial void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(FlowDirection.In)] ref float coords);
@@ -302,7 +302,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] double x);
 
         [NativeApi(EntryPoint = "glVertexStream1dvATI")]
-        public partial unsafe void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(FlowDirection.In)] double* coords);
+        public unsafe partial void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream1dvATI")]
         public partial void VertexStream1([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 1), Flow(FlowDirection.In)] ref double coords);
@@ -311,7 +311,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y);
 
         [NativeApi(EntryPoint = "glVertexStream2svATI")]
-        public partial unsafe void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(FlowDirection.In)] short* coords);
+        public unsafe partial void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2svATI")]
         public partial void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(FlowDirection.In)] Span<short> coords);
@@ -320,7 +320,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y);
 
         [NativeApi(EntryPoint = "glVertexStream2ivATI")]
-        public partial unsafe void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(FlowDirection.In)] int* coords);
+        public unsafe partial void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2ivATI")]
         public partial void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(FlowDirection.In)] Span<int> coords);
@@ -329,7 +329,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y);
 
         [NativeApi(EntryPoint = "glVertexStream2fvATI")]
-        public partial unsafe void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(FlowDirection.In)] float* coords);
+        public unsafe partial void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2fvATI")]
         public partial void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> coords);
@@ -338,7 +338,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y);
 
         [NativeApi(EntryPoint = "glVertexStream2dvATI")]
-        public partial unsafe void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(FlowDirection.In)] double* coords);
+        public unsafe partial void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream2dvATI")]
         public partial void VertexStream2([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 2), Flow(FlowDirection.In)] Span<double> coords);
@@ -347,7 +347,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z);
 
         [NativeApi(EntryPoint = "glVertexStream3svATI")]
-        public partial unsafe void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] short* coords);
+        public unsafe partial void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3svATI")]
         public partial void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<short> coords);
@@ -356,7 +356,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z);
 
         [NativeApi(EntryPoint = "glVertexStream3ivATI")]
-        public partial unsafe void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] int* coords);
+        public unsafe partial void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3ivATI")]
         public partial void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<int> coords);
@@ -365,7 +365,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z);
 
         [NativeApi(EntryPoint = "glVertexStream3fvATI")]
-        public partial unsafe void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] float* coords);
+        public unsafe partial void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3fvATI")]
         public partial void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> coords);
@@ -374,7 +374,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
 
         [NativeApi(EntryPoint = "glVertexStream3dvATI")]
-        public partial unsafe void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] double* coords);
+        public unsafe partial void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream3dvATI")]
         public partial void VertexStream3([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> coords);
@@ -383,7 +383,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z, [Flow(FlowDirection.In)] short w);
 
         [NativeApi(EntryPoint = "glVertexStream4svATI")]
-        public partial unsafe void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(FlowDirection.In)] short* coords);
+        public unsafe partial void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(FlowDirection.In)] short* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4svATI")]
         public partial void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> coords);
@@ -392,7 +392,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int z, [Flow(FlowDirection.In)] int w);
 
         [NativeApi(EntryPoint = "glVertexStream4ivATI")]
-        public partial unsafe void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(FlowDirection.In)] int* coords);
+        public unsafe partial void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(FlowDirection.In)] int* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4ivATI")]
         public partial void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> coords);
@@ -401,7 +401,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
 
         [NativeApi(EntryPoint = "glVertexStream4fvATI")]
-        public partial unsafe void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(FlowDirection.In)] float* coords);
+        public unsafe partial void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(FlowDirection.In)] float* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4fvATI")]
         public partial void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> coords);
@@ -410,7 +410,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
 
         [NativeApi(EntryPoint = "glVertexStream4dvATI")]
-        public partial unsafe void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(FlowDirection.In)] double* coords);
+        public unsafe partial void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(FlowDirection.In)] double* coords);
 
         [NativeApi(EntryPoint = "glVertexStream4dvATI")]
         public partial void VertexStream4([Flow(FlowDirection.In)] VertexStreamATI stream, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> coords);

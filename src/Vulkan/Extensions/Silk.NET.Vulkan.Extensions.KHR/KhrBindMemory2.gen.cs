@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_bind_memory2";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkBindBufferMemory2KHR")]
-        public partial unsafe Result BindBufferMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindBufferMemoryInfo* pBindInfos);
+        public unsafe partial Result BindBufferMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindBufferMemoryInfo* pBindInfos);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkBindBufferMemory2KHR")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkBindImageMemory2KHR")]
-        public partial unsafe Result BindImageMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindImageMemoryInfo* pBindInfos);
+        public unsafe partial Result BindImageMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindImageMemoryInfo* pBindInfos);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkBindImageMemory2KHR")]

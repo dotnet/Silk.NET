@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
     {
         public const string ExtensionName = "APPLE_object_purgeable";
         [NativeApi(EntryPoint = "glGetObjectParameterivAPPLE")]
-        public partial unsafe void GetObjectParameter([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetObjectParameter([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetObjectParameterivAPPLE")]
         public partial void GetObjectParameter([Flow(FlowDirection.In)] APPLE objectType, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] APPLE pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);

@@ -20,7 +20,7 @@ namespace Silk.NET.OpenCL.Extensions.APPLE
     {
         public const string ExtensionName = "APPLE_SetMemObjectDestructor";
         [NativeApi(EntryPoint = "clSetMemObjectDestructorAPPLE")]
-        public partial unsafe int SetMemObjectDestructor([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int SetMemObjectDestructor([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clSetMemObjectDestructorAPPLE")]
         public partial int SetMemObjectDestructor<T0>([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;

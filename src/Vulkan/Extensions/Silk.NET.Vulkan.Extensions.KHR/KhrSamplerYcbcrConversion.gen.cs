@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_sampler_ycbcr_conversion";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR")]
-        public partial unsafe Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
+        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversionKHR")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversionKHR")]
-        public partial unsafe void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversionKHR")]

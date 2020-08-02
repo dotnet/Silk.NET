@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void ColorP3([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint color);
 
         [NativeApi(EntryPoint = "glColorP3uiv")]
-        public partial unsafe void ColorP3([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
+        public unsafe partial void ColorP3([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
 
         [NativeApi(EntryPoint = "glColorP3uiv")]
         public partial void ColorP3([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint color);
@@ -32,7 +32,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void ColorP4([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint color);
 
         [NativeApi(EntryPoint = "glColorP4uiv")]
-        public partial unsafe void ColorP4([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
+        public unsafe partial void ColorP4([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
 
         [NativeApi(EntryPoint = "glColorP4uiv")]
         public partial void ColorP4([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint color);
@@ -41,7 +41,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoordP1([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP1uiv")]
-        public partial unsafe void MultiTexCoordP1([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP1([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP1uiv")]
         public partial void MultiTexCoordP1([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -50,7 +50,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoordP2([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP2uiv")]
-        public partial unsafe void MultiTexCoordP2([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP2([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP2uiv")]
         public partial void MultiTexCoordP2([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -59,7 +59,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoordP3([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP3uiv")]
-        public partial unsafe void MultiTexCoordP3([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP3([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP3uiv")]
         public partial void MultiTexCoordP3([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -68,7 +68,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoordP4([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP4uiv")]
-        public partial unsafe void MultiTexCoordP4([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP4([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP4uiv")]
         public partial void MultiTexCoordP4([Flow(FlowDirection.In)] ARB texture, [Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -77,7 +77,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void NormalP3([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glNormalP3uiv")]
-        public partial unsafe void NormalP3([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void NormalP3([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glNormalP3uiv")]
         public partial void NormalP3([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -86,7 +86,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void SecondaryColorP3([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint color);
 
         [NativeApi(EntryPoint = "glSecondaryColorP3uiv")]
-        public partial unsafe void SecondaryColorP3([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
+        public unsafe partial void SecondaryColorP3([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
 
         [NativeApi(EntryPoint = "glSecondaryColorP3uiv")]
         public partial void SecondaryColorP3([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint color);
@@ -95,7 +95,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void TexCoordP1([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP1uiv")]
-        public partial unsafe void TexCoordP1([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP1([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP1uiv")]
         public partial void TexCoordP1([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -104,7 +104,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void TexCoordP2([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP2uiv")]
-        public partial unsafe void TexCoordP2([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP2([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP2uiv")]
         public partial void TexCoordP2([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -113,7 +113,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void TexCoordP3([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP3uiv")]
-        public partial unsafe void TexCoordP3([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP3([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP3uiv")]
         public partial void TexCoordP3([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -122,7 +122,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void TexCoordP4([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP4uiv")]
-        public partial unsafe void TexCoordP4([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP4([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP4uiv")]
         public partial void TexCoordP4([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -131,7 +131,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP1uiv")]
-        public partial unsafe void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP1uiv")]
         public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -140,7 +140,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP2uiv")]
-        public partial unsafe void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP2uiv")]
         public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -149,7 +149,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP3uiv")]
-        public partial unsafe void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP3uiv")]
         public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -158,7 +158,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP4uiv")]
-        public partial unsafe void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP4uiv")]
         public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -167,7 +167,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void VertexP2([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexP2uiv")]
-        public partial unsafe void VertexP2([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexP2([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexP2uiv")]
         public partial void VertexP2([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -176,7 +176,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void VertexP3([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexP3uiv")]
-        public partial unsafe void VertexP3([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexP3([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexP3uiv")]
         public partial void VertexP3([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -185,7 +185,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void VertexP4([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexP4uiv")]
-        public partial unsafe void VertexP4([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexP4([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexP4uiv")]
         public partial void VertexP4([Flow(FlowDirection.In)] ARB type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -194,7 +194,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void ColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint color);
 
         [NativeApi(EntryPoint = "glColorP3uiv")]
-        public partial unsafe void ColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
+        public unsafe partial void ColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
 
         [NativeApi(EntryPoint = "glColorP3uiv")]
         public partial void ColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint color);
@@ -203,7 +203,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void ColorP4([Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint color);
 
         [NativeApi(EntryPoint = "glColorP4uiv")]
-        public partial unsafe void ColorP4([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
+        public unsafe partial void ColorP4([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
 
         [NativeApi(EntryPoint = "glColorP4uiv")]
         public partial void ColorP4([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint color);
@@ -212,7 +212,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoordP1([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP1uiv")]
-        public partial unsafe void MultiTexCoordP1([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP1([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP1uiv")]
         public partial void MultiTexCoordP1([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -221,7 +221,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoordP2([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP2uiv")]
-        public partial unsafe void MultiTexCoordP2([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP2([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP2uiv")]
         public partial void MultiTexCoordP2([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -230,7 +230,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoordP3([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP3uiv")]
-        public partial unsafe void MultiTexCoordP3([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP3([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP3uiv")]
         public partial void MultiTexCoordP3([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -239,7 +239,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoordP4([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP4uiv")]
-        public partial unsafe void MultiTexCoordP4([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP4([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP4uiv")]
         public partial void MultiTexCoordP4([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -248,7 +248,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void NormalP3([Flow(FlowDirection.In)] NormalPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glNormalP3uiv")]
-        public partial unsafe void NormalP3([Flow(FlowDirection.In)] NormalPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void NormalP3([Flow(FlowDirection.In)] NormalPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glNormalP3uiv")]
         public partial void NormalP3([Flow(FlowDirection.In)] NormalPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -257,7 +257,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void SecondaryColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint color);
 
         [NativeApi(EntryPoint = "glSecondaryColorP3uiv")]
-        public partial unsafe void SecondaryColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
+        public unsafe partial void SecondaryColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
 
         [NativeApi(EntryPoint = "glSecondaryColorP3uiv")]
         public partial void SecondaryColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint color);
@@ -266,7 +266,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void TexCoordP1([Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP1uiv")]
-        public partial unsafe void TexCoordP1([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP1([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP1uiv")]
         public partial void TexCoordP1([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -275,7 +275,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void TexCoordP2([Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP2uiv")]
-        public partial unsafe void TexCoordP2([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP2([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP2uiv")]
         public partial void TexCoordP2([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -284,7 +284,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void TexCoordP3([Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP3uiv")]
-        public partial unsafe void TexCoordP3([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP3([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP3uiv")]
         public partial void TexCoordP3([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -293,7 +293,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void TexCoordP4([Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP4uiv")]
-        public partial unsafe void TexCoordP4([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP4([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP4uiv")]
         public partial void TexCoordP4([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -302,7 +302,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP1uiv")]
-        public partial unsafe void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP1uiv")]
         public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -311,7 +311,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP2uiv")]
-        public partial unsafe void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP2uiv")]
         public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -320,7 +320,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP3uiv")]
-        public partial unsafe void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP3uiv")]
         public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -329,7 +329,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP4uiv")]
-        public partial unsafe void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP4uiv")]
         public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -338,7 +338,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void VertexP2([Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexP2uiv")]
-        public partial unsafe void VertexP2([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexP2([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexP2uiv")]
         public partial void VertexP2([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -347,7 +347,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void VertexP3([Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexP3uiv")]
-        public partial unsafe void VertexP3([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexP3([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexP3uiv")]
         public partial void VertexP3([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -356,7 +356,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void VertexP4([Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexP4uiv")]
-        public partial unsafe void VertexP4([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexP4([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexP4uiv")]
         public partial void VertexP4([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);

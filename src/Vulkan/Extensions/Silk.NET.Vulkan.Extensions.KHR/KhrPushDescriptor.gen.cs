@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_push_descriptor";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdPushDescriptorSetKHR")]
-        public partial unsafe void CmdPushDescriptorSet([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] uint descriptorWriteCount, [Count(Computed = "descriptorWriteCount"), Flow(FlowDirection.In)] WriteDescriptorSet* pDescriptorWrites);
+        public unsafe partial void CmdPushDescriptorSet([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] uint descriptorWriteCount, [Count(Computed = "descriptorWriteCount"), Flow(FlowDirection.In)] WriteDescriptorSet* pDescriptorWrites);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdPushDescriptorSetKHR")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplateKHR")]
-        public partial unsafe void CmdPushDescriptorSetWithTemplate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] void* pData);
+        public unsafe partial void CmdPushDescriptorSetWithTemplate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] void* pData);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdPushDescriptorSetWithTemplateKHR")]

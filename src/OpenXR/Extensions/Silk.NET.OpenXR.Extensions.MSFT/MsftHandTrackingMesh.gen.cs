@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         public const string ExtensionName = "XR_MSFT_hand_tracking_mesh";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateHandMeshSpaceMSFT")]
-        public partial unsafe Result CreateHandMeshSpaceMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] HandMeshSpaceCreateInfoMSFT* createInfo, [Count(Count = 0)] Space* space);
+        public unsafe partial Result CreateHandMeshSpaceMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] HandMeshSpaceCreateInfoMSFT* createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateHandMeshSpaceMSFT")]
@@ -29,7 +29,7 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrUpdateHandMeshMSFT")]
-        public partial unsafe Result UpdateHandMeshMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] HandMeshUpdateInfoMSFT* updateInfo, [Count(Count = 0)] HandMeshMSFT* handMesh);
+        public unsafe partial Result UpdateHandMeshMsft([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] HandMeshUpdateInfoMSFT* updateInfo, [Count(Count = 0)] HandMeshMSFT* handMesh);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrUpdateHandMeshMSFT")]

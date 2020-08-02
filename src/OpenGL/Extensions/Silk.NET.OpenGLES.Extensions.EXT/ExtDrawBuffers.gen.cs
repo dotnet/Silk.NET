@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     {
         public const string ExtensionName = "EXT_draw_buffers";
         [NativeApi(EntryPoint = "glDrawBuffersEXT")]
-        public partial unsafe void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] EXT* bufs);
+        public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] EXT* bufs);
 
         [NativeApi(EntryPoint = "glDrawBuffersEXT")]
         public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<EXT> bufs);

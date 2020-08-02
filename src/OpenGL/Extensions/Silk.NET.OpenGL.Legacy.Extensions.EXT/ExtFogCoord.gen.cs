@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void FogCoord([Flow(FlowDirection.In)] float coord);
 
         [NativeApi(EntryPoint = "glFogCoordfvEXT")]
-        public partial unsafe void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] float* coord);
+        public unsafe partial void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] float* coord);
 
         [NativeApi(EntryPoint = "glFogCoordfvEXT")]
         public partial void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] ref float coord);
@@ -32,19 +32,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void FogCoord([Flow(FlowDirection.In)] double coord);
 
         [NativeApi(EntryPoint = "glFogCoorddvEXT")]
-        public partial unsafe void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] double* coord);
+        public unsafe partial void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] double* coord);
 
         [NativeApi(EntryPoint = "glFogCoorddvEXT")]
         public partial void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] ref double coord);
 
         [NativeApi(EntryPoint = "glFogCoordPointerEXT")]
-        public partial unsafe void FogCoordPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void FogCoordPointer([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glFogCoordPointerEXT")]
         public partial void FogCoordPointer<T0>([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glFogCoordPointerEXT")]
-        public partial unsafe void FogCoordPointer([Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void FogCoordPointer([Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glFogCoordPointerEXT")]
         public partial void FogCoordPointer<T0>([Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;

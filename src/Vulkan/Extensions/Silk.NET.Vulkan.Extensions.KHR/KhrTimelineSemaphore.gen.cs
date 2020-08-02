@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_timeline_semaphore";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetSemaphoreCounterValueKHR")]
-        public partial unsafe Result GetSemaphoreCounterValue([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pValue);
+        public unsafe partial Result GetSemaphoreCounterValue([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pValue);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetSemaphoreCounterValueKHR")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkSignalSemaphoreKHR")]
-        public partial unsafe Result SignalSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreSignalInfo* pSignalInfo);
+        public unsafe partial Result SignalSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreSignalInfo* pSignalInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkSignalSemaphoreKHR")]
@@ -37,7 +37,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkWaitSemaphoresKHR")]
-        public partial unsafe Result WaitSemaphores([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreWaitInfo* pWaitInfo, [Count(Count = 0)] ulong timeout);
+        public unsafe partial Result WaitSemaphores([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreWaitInfo* pWaitInfo, [Count(Count = 0)] ulong timeout);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkWaitSemaphoresKHR")]

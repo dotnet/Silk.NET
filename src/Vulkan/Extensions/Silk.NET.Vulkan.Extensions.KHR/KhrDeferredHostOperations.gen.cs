@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_deferred_host_operations";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateDeferredOperationKHR")]
-        public partial unsafe Result CreateDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DeferredOperationKHR* pDeferredOperation);
+        public unsafe partial Result CreateDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DeferredOperationKHR* pDeferredOperation);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateDeferredOperationKHR")]
@@ -33,7 +33,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyDeferredOperationKHR")]
-        public partial unsafe void DestroyDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR operation, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyDeferredOperation([Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR operation, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyDeferredOperationKHR")]

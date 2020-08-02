@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_image_drm_format_modifier";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageDrmFormatModifierPropertiesEXT")]
-        public partial unsafe Result GetImageDrmFormatModifierProperties([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.Out)] ImageDrmFormatModifierPropertiesEXT* pProperties);
+        public unsafe partial Result GetImageDrmFormatModifierProperties([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.Out)] ImageDrmFormatModifierPropertiesEXT* pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageDrmFormatModifierPropertiesEXT")]

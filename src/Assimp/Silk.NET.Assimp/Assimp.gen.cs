@@ -23,11 +23,11 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetExportFormatDescription")]
-        public partial unsafe ExportFormatDesc* GetExportFormatDescription(uint pIndex);
+        public unsafe partial ExportFormatDesc* GetExportFormatDescription(uint pIndex);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiReleaseExportFormatDescription")]
-        public partial unsafe void ReleaseExportFormatDescription(ExportFormatDesc* desc);
+        public unsafe partial void ReleaseExportFormatDescription(ExportFormatDesc* desc);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiReleaseExportFormatDescription")]
@@ -35,15 +35,15 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiCopyScene")]
-        public partial unsafe void CopyScene(Scene* pIn, Scene** pOut);
+        public unsafe partial void CopyScene(Scene* pIn, Scene** pOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiCopyScene")]
-        public partial unsafe void CopyScene(Span<Scene> pIn, Scene** pOut);
+        public unsafe partial void CopyScene(Span<Scene> pIn, Scene** pOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiFreeScene")]
-        public partial unsafe void FreeScene(Scene* pIn);
+        public unsafe partial void FreeScene(Scene* pIn);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiFreeScene")]
@@ -51,7 +51,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiExportScene")]
-        public partial unsafe Return ExportScene(Scene* pScene, byte* pFormatId, byte* pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene(Scene* pScene, byte* pFormatId, byte* pFileName, uint pPreprocessing);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiExportScene")]
@@ -59,7 +59,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public partial unsafe Return ExportSceneEx(Scene* pScene, byte* pFormatId, byte* pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx(Scene* pScene, byte* pFormatId, byte* pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiExportSceneEx")]
@@ -67,15 +67,15 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public partial unsafe ExportDataBlob* ExportSceneToBlob(Scene* pScene, byte* pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob(Scene* pScene, byte* pFormatId, uint pPreprocessing);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public partial unsafe ExportDataBlob* ExportSceneToBlob(Span<Scene> pScene, Span<byte> pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob(Span<Scene> pScene, Span<byte> pFormatId, uint pPreprocessing);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiReleaseExportBlob")]
-        public partial unsafe void ReleaseExportBlob(ExportDataBlob* pData);
+        public unsafe partial void ReleaseExportBlob(ExportDataBlob* pData);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiReleaseExportBlob")]
@@ -83,63 +83,63 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetImporterDesc")]
-        public partial unsafe ImporterDesc* GetImporterDesc(byte* extension);
+        public unsafe partial ImporterDesc* GetImporterDesc(byte* extension);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetImporterDesc")]
-        public partial unsafe ImporterDesc* GetImporterDesc(Span<byte> extension);
+        public unsafe partial ImporterDesc* GetImporterDesc(Span<byte> extension);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFile")]
-        public partial unsafe Scene* ImportFile(byte* pFile, uint pFlags);
+        public unsafe partial Scene* ImportFile(byte* pFile, uint pFlags);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFile")]
-        public partial unsafe Scene* ImportFile(Span<byte> pFile, uint pFlags);
+        public unsafe partial Scene* ImportFile(Span<byte> pFile, uint pFlags);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFileEx")]
-        public partial unsafe Scene* ImportFileEx(byte* pFile, uint pFlags, FileIO* pFS);
+        public unsafe partial Scene* ImportFileEx(byte* pFile, uint pFlags, FileIO* pFS);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFileEx")]
-        public partial unsafe Scene* ImportFileEx(Span<byte> pFile, uint pFlags, Span<FileIO> pFS);
+        public unsafe partial Scene* ImportFileEx(Span<byte> pFile, uint pFlags, Span<FileIO> pFS);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public partial unsafe Scene* ImportFileExWithProperties(byte* pFile, uint pFlags, FileIO* pFS, PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileExWithProperties(byte* pFile, uint pFlags, FileIO* pFS, PropertyStore* pProps);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public partial unsafe Scene* ImportFileExWithProperties(Span<byte> pFile, uint pFlags, Span<FileIO> pFS, Span<PropertyStore> pProps);
+        public unsafe partial Scene* ImportFileExWithProperties(Span<byte> pFile, uint pFlags, Span<FileIO> pFS, Span<PropertyStore> pProps);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public partial unsafe Scene* ImportFileFromMemory(byte* pBuffer, uint pLength, uint pFlags, byte* pHint);
+        public unsafe partial Scene* ImportFileFromMemory(byte* pBuffer, uint pLength, uint pFlags, byte* pHint);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public partial unsafe Scene* ImportFileFromMemory(Span<byte> pBuffer, uint pLength, uint pFlags, Span<byte> pHint);
+        public unsafe partial Scene* ImportFileFromMemory(Span<byte> pBuffer, uint pLength, uint pFlags, Span<byte> pHint);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public partial unsafe Scene* ImportFileFromMemoryWithProperties(byte* pBuffer, uint pLength, uint pFlags, byte* pHint, PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties(byte* pBuffer, uint pLength, uint pFlags, byte* pHint, PropertyStore* pProps);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public partial unsafe Scene* ImportFileFromMemoryWithProperties(Span<byte> pBuffer, uint pLength, uint pFlags, Span<byte> pHint, Span<PropertyStore> pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties(Span<byte> pBuffer, uint pLength, uint pFlags, Span<byte> pHint, Span<PropertyStore> pProps);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiApplyPostProcessing")]
-        public partial unsafe Scene* ApplyPostProcessing(Scene* pScene, uint pFlags);
+        public unsafe partial Scene* ApplyPostProcessing(Scene* pScene, uint pFlags);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiApplyPostProcessing")]
-        public partial unsafe Scene* ApplyPostProcessing(Span<Scene> pScene, uint pFlags);
+        public unsafe partial Scene* ApplyPostProcessing(Span<Scene> pScene, uint pFlags);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetPredefinedLogStream")]
-        public partial unsafe LogStream GetPredefinedLogStream(DefaultLogStream pStreams, byte* file);
+        public unsafe partial LogStream GetPredefinedLogStream(DefaultLogStream pStreams, byte* file);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetPredefinedLogStream")]
@@ -147,7 +147,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiAttachLogStream")]
-        public partial unsafe void AttachLogStream(LogStream* stream);
+        public unsafe partial void AttachLogStream(LogStream* stream);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiAttachLogStream")]
@@ -159,7 +159,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiDetachLogStream")]
-        public partial unsafe Return DetachLogStream(LogStream* stream);
+        public unsafe partial Return DetachLogStream(LogStream* stream);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiDetachLogStream")]
@@ -171,7 +171,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiReleaseImport")]
-        public partial unsafe void ReleaseImport(Scene* pScene);
+        public unsafe partial void ReleaseImport(Scene* pScene);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiReleaseImport")]
@@ -179,11 +179,11 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetErrorString")]
-        public partial unsafe byte* GetErrorString();
+        public unsafe partial byte* GetErrorString();
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiIsExtensionSupported")]
-        public partial unsafe int IsExtensionSupported(byte* szExtension);
+        public unsafe partial int IsExtensionSupported(byte* szExtension);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiIsExtensionSupported")]
@@ -191,7 +191,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetExtensionList")]
-        public partial unsafe void GetExtensionList(AssimpString* szOut);
+        public unsafe partial void GetExtensionList(AssimpString* szOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetExtensionList")]
@@ -199,7 +199,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMemoryRequirements")]
-        public partial unsafe void GetMemoryRequirements(Scene* pIn, MemoryInfo* @in);
+        public unsafe partial void GetMemoryRequirements(Scene* pIn, MemoryInfo* @in);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMemoryRequirements")]
@@ -207,11 +207,11 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiCreatePropertyStore")]
-        public partial unsafe PropertyStore* CreatePropertyStore();
+        public unsafe partial PropertyStore* CreatePropertyStore();
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiReleasePropertyStore")]
-        public partial unsafe void ReleasePropertyStore(PropertyStore* p);
+        public unsafe partial void ReleasePropertyStore(PropertyStore* p);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiReleasePropertyStore")]
@@ -219,7 +219,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyInteger")]
-        public partial unsafe void SetImportPropertyInteger(PropertyStore* store, byte* szName, int value);
+        public unsafe partial void SetImportPropertyInteger(PropertyStore* store, byte* szName, int value);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyInteger")]
@@ -227,7 +227,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public partial unsafe void SetImportPropertyFloat(PropertyStore* store, byte* szName, float value);
+        public unsafe partial void SetImportPropertyFloat(PropertyStore* store, byte* szName, float value);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
@@ -235,7 +235,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public partial unsafe void SetImportPropertyString(PropertyStore* store, byte* szName, AssimpString* st);
+        public unsafe partial void SetImportPropertyString(PropertyStore* store, byte* szName, AssimpString* st);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
@@ -243,7 +243,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public partial unsafe void SetImportPropertyMatrix(PropertyStore* store, byte* szName, System.Numerics.Matrix4x4* mat);
+        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, byte* szName, System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
@@ -251,7 +251,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiCreateQuaternionFromMatrix")]
-        public partial unsafe void CreateQuaternionFromMatrix(System.Numerics.Quaternion* quat, AssimpMatrix3x3* mat);
+        public unsafe partial void CreateQuaternionFromMatrix(System.Numerics.Quaternion* quat, AssimpMatrix3x3* mat);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiCreateQuaternionFromMatrix")]
@@ -259,7 +259,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
-        public partial unsafe void DecomposeMatrix(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Quaternion* rotation, System.Numerics.Vector3* position);
+        public unsafe partial void DecomposeMatrix(System.Numerics.Matrix4x4* mat, System.Numerics.Vector3* scaling, System.Numerics.Quaternion* rotation, System.Numerics.Vector3* position);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiDecomposeMatrix")]
@@ -267,7 +267,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiTransposeMatrix4")]
-        public partial unsafe void TransposeMatrix4(System.Numerics.Matrix4x4* mat);
+        public unsafe partial void TransposeMatrix4(System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiTransposeMatrix4")]
@@ -275,7 +275,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiTransposeMatrix3")]
-        public partial unsafe void TransposeMatrix3(AssimpMatrix3x3* mat);
+        public unsafe partial void TransposeMatrix3(AssimpMatrix3x3* mat);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiTransposeMatrix3")]
@@ -283,7 +283,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiTransformVecByMatrix3")]
-        public partial unsafe void TransformVecByMatrix3(System.Numerics.Vector3* vec, AssimpMatrix3x3* mat);
+        public unsafe partial void TransformVecByMatrix3(System.Numerics.Vector3* vec, AssimpMatrix3x3* mat);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiTransformVecByMatrix3")]
@@ -291,7 +291,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiTransformVecByMatrix4")]
-        public partial unsafe void TransformVecByMatrix4(System.Numerics.Vector3* vec, System.Numerics.Matrix4x4* mat);
+        public unsafe partial void TransformVecByMatrix4(System.Numerics.Vector3* vec, System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiTransformVecByMatrix4")]
@@ -299,7 +299,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiMultiplyMatrix4")]
-        public partial unsafe void MultiplyMatrix4(System.Numerics.Matrix4x4* dst, System.Numerics.Matrix4x4* src);
+        public unsafe partial void MultiplyMatrix4(System.Numerics.Matrix4x4* dst, System.Numerics.Matrix4x4* src);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiMultiplyMatrix4")]
@@ -307,7 +307,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiMultiplyMatrix3")]
-        public partial unsafe void MultiplyMatrix3(AssimpMatrix3x3* dst, AssimpMatrix3x3* src);
+        public unsafe partial void MultiplyMatrix3(AssimpMatrix3x3* dst, AssimpMatrix3x3* src);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiMultiplyMatrix3")]
@@ -315,7 +315,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiIdentityMatrix3")]
-        public partial unsafe void IdentityMatrix3(AssimpMatrix3x3* mat);
+        public unsafe partial void IdentityMatrix3(AssimpMatrix3x3* mat);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiIdentityMatrix3")]
@@ -323,7 +323,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiIdentityMatrix4")]
-        public partial unsafe void IdentityMatrix4(System.Numerics.Matrix4x4* mat);
+        public unsafe partial void IdentityMatrix4(System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiIdentityMatrix4")]
@@ -335,19 +335,19 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetImportFormatDescription")]
-        public partial unsafe ImporterDesc* GetImportFormatDescription(uint pIndex);
+        public unsafe partial ImporterDesc* GetImportFormatDescription(uint pIndex);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public partial unsafe Return GetMaterialProperty(Material* pMat, byte* pKey, uint type, uint index, MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty(Material* pMat, byte* pKey, uint type, uint index, MaterialProperty** pPropOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public partial unsafe Return GetMaterialProperty(Span<Material> pMat, Span<byte> pKey, uint type, uint index, MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty(Span<Material> pMat, Span<byte> pKey, uint type, uint index, MaterialProperty** pPropOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public partial unsafe Return GetMaterialFloatArray(Material* pMat, byte* pKey, uint type, uint index, float* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray(Material* pMat, byte* pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
@@ -355,7 +355,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public partial unsafe Return GetMaterialIntegerArray(Material* pMat, byte* pKey, uint type, uint index, int* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray(Material* pMat, byte* pKey, uint type, uint index, int* pOut, uint* pMax);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
@@ -363,7 +363,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public partial unsafe Return GetMaterialColor(Material* pMat, byte* pKey, uint type, uint index, System.Numerics.Vector4* pOut);
+        public unsafe partial Return GetMaterialColor(Material* pMat, byte* pKey, uint type, uint index, System.Numerics.Vector4* pOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
@@ -371,7 +371,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public partial unsafe Return GetMaterialUVTransform(Material* pMat, byte* pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform(Material* pMat, byte* pKey, uint type, uint index, UVTransform* pOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
@@ -379,7 +379,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public partial unsafe Return GetMaterialString(Material* pMat, byte* pKey, uint type, uint index, AssimpString* pOut);
+        public unsafe partial Return GetMaterialString(Material* pMat, byte* pKey, uint type, uint index, AssimpString* pOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialString")]
@@ -387,7 +387,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialTextureCount")]
-        public partial unsafe uint GetMaterialTextureCount(Material* pMat, TextureType type);
+        public unsafe partial uint GetMaterialTextureCount(Material* pMat, TextureType type);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialTextureCount")]
@@ -395,7 +395,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
-        public partial unsafe Return GetMaterialTexture(Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
+        public unsafe partial Return GetMaterialTexture(Material* mat, TextureType type, uint index, AssimpString* path, TextureMapping* mapping, uint* uvindex, float* blend, TextureOp* op, TextureMapMode* mapmode, uint* flags);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialTexture")]
@@ -403,7 +403,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetLegalString")]
-        public partial unsafe byte* GetLegalString();
+        public unsafe partial byte* GetLegalString();
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetVersionMinor")]
@@ -419,7 +419,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetBranchName")]
-        public partial unsafe byte* GetBranchName();
+        public unsafe partial byte* GetBranchName();
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetCompileFlags")]
@@ -427,7 +427,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiExportScene")]
-        public partial unsafe Return ExportScene(Scene* pScene, string pFormatId, string pFileName, uint pPreprocessing);
+        public unsafe partial Return ExportScene(Scene* pScene, string pFormatId, string pFileName, uint pPreprocessing);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiExportScene")]
@@ -435,7 +435,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiExportSceneEx")]
-        public partial unsafe Return ExportSceneEx(Scene* pScene, string pFormatId, string pFileName, FileIO* pIO, uint pPreprocessing);
+        public unsafe partial Return ExportSceneEx(Scene* pScene, string pFormatId, string pFileName, FileIO* pIO, uint pPreprocessing);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiExportSceneEx")]
@@ -443,47 +443,47 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public partial unsafe ExportDataBlob* ExportSceneToBlob(Scene* pScene, string pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob(Scene* pScene, string pFormatId, uint pPreprocessing);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiExportSceneToBlob")]
-        public partial unsafe ExportDataBlob* ExportSceneToBlob(Span<Scene> pScene, string pFormatId, uint pPreprocessing);
+        public unsafe partial ExportDataBlob* ExportSceneToBlob(Span<Scene> pScene, string pFormatId, uint pPreprocessing);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetImporterDesc")]
-        public partial unsafe ImporterDesc* GetImporterDesc(string extension);
+        public unsafe partial ImporterDesc* GetImporterDesc(string extension);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFile")]
-        public partial unsafe Scene* ImportFile(string pFile, uint pFlags);
+        public unsafe partial Scene* ImportFile(string pFile, uint pFlags);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFileEx")]
-        public partial unsafe Scene* ImportFileEx(string pFile, uint pFlags, FileIO* pFS);
+        public unsafe partial Scene* ImportFileEx(string pFile, uint pFlags, FileIO* pFS);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFileEx")]
-        public partial unsafe Scene* ImportFileEx(string pFile, uint pFlags, Span<FileIO> pFS);
+        public unsafe partial Scene* ImportFileEx(string pFile, uint pFlags, Span<FileIO> pFS);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public partial unsafe Scene* ImportFileExWithProperties(string pFile, uint pFlags, FileIO* pFS, PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileExWithProperties(string pFile, uint pFlags, FileIO* pFS, PropertyStore* pProps);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFileExWithProperties")]
-        public partial unsafe Scene* ImportFileExWithProperties(string pFile, uint pFlags, Span<FileIO> pFS, Span<PropertyStore> pProps);
+        public unsafe partial Scene* ImportFileExWithProperties(string pFile, uint pFlags, Span<FileIO> pFS, Span<PropertyStore> pProps);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFileFromMemory")]
-        public partial unsafe Scene* ImportFileFromMemory(string pBuffer, uint pLength, uint pFlags, string pHint);
+        public unsafe partial Scene* ImportFileFromMemory(string pBuffer, uint pLength, uint pFlags, string pHint);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public partial unsafe Scene* ImportFileFromMemoryWithProperties(string pBuffer, uint pLength, uint pFlags, string pHint, PropertyStore* pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties(string pBuffer, uint pLength, uint pFlags, string pHint, PropertyStore* pProps);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiImportFileFromMemoryWithProperties")]
-        public partial unsafe Scene* ImportFileFromMemoryWithProperties(string pBuffer, uint pLength, uint pFlags, string pHint, Span<PropertyStore> pProps);
+        public unsafe partial Scene* ImportFileFromMemoryWithProperties(string pBuffer, uint pLength, uint pFlags, string pHint, Span<PropertyStore> pProps);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetPredefinedLogStream")]
@@ -499,7 +499,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyInteger")]
-        public partial unsafe void SetImportPropertyInteger(PropertyStore* store, string szName, int value);
+        public unsafe partial void SetImportPropertyInteger(PropertyStore* store, string szName, int value);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyInteger")]
@@ -507,7 +507,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
-        public partial unsafe void SetImportPropertyFloat(PropertyStore* store, string szName, float value);
+        public unsafe partial void SetImportPropertyFloat(PropertyStore* store, string szName, float value);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyFloat")]
@@ -515,7 +515,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
-        public partial unsafe void SetImportPropertyString(PropertyStore* store, string szName, AssimpString* st);
+        public unsafe partial void SetImportPropertyString(PropertyStore* store, string szName, AssimpString* st);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyString")]
@@ -523,7 +523,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
-        public partial unsafe void SetImportPropertyMatrix(PropertyStore* store, string szName, System.Numerics.Matrix4x4* mat);
+        public unsafe partial void SetImportPropertyMatrix(PropertyStore* store, string szName, System.Numerics.Matrix4x4* mat);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiSetImportPropertyMatrix")]
@@ -531,15 +531,15 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public partial unsafe Return GetMaterialProperty(Material* pMat, string pKey, uint type, uint index, MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty(Material* pMat, string pKey, uint type, uint index, MaterialProperty** pPropOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialProperty")]
-        public partial unsafe Return GetMaterialProperty(Span<Material> pMat, string pKey, uint type, uint index, MaterialProperty** pPropOut);
+        public unsafe partial Return GetMaterialProperty(Span<Material> pMat, string pKey, uint type, uint index, MaterialProperty** pPropOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
-        public partial unsafe Return GetMaterialFloatArray(Material* pMat, string pKey, uint type, uint index, float* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialFloatArray(Material* pMat, string pKey, uint type, uint index, float* pOut, uint* pMax);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialFloatArray")]
@@ -547,7 +547,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
-        public partial unsafe Return GetMaterialIntegerArray(Material* pMat, string pKey, uint type, uint index, int* pOut, uint* pMax);
+        public unsafe partial Return GetMaterialIntegerArray(Material* pMat, string pKey, uint type, uint index, int* pOut, uint* pMax);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialIntegerArray")]
@@ -555,7 +555,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
-        public partial unsafe Return GetMaterialColor(Material* pMat, string pKey, uint type, uint index, System.Numerics.Vector4* pOut);
+        public unsafe partial Return GetMaterialColor(Material* pMat, string pKey, uint type, uint index, System.Numerics.Vector4* pOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialColor")]
@@ -563,7 +563,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
-        public partial unsafe Return GetMaterialUVTransform(Material* pMat, string pKey, uint type, uint index, UVTransform* pOut);
+        public unsafe partial Return GetMaterialUVTransform(Material* pMat, string pKey, uint type, uint index, UVTransform* pOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialUVTransform")]
@@ -571,7 +571,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialString")]
-        public partial unsafe Return GetMaterialString(Material* pMat, string pKey, uint type, uint index, AssimpString* pOut);
+        public unsafe partial Return GetMaterialString(Material* pMat, string pKey, uint type, uint index, AssimpString* pOut);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "aiGetMaterialString")]

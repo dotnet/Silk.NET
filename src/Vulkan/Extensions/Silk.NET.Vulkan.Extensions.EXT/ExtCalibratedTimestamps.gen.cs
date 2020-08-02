@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_calibrated_timestamps";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT")]
-        public partial unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Computed = "timestampCount"), Flow(FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Computed = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pMaxDeviation);
+        public unsafe partial Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Count = 0)] uint timestampCount, [Count(Computed = "timestampCount"), Flow(FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Computed = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pMaxDeviation);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetCalibratedTimestampsEXT")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
-        public partial unsafe Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pTimeDomainCount, [Count(Computed = "pTimeDomainCount"), Flow(FlowDirection.Out)] TimeDomainEXT* pTimeDomains);
+        public unsafe partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pTimeDomainCount, [Count(Computed = "pTimeDomainCount"), Flow(FlowDirection.Out)] TimeDomainEXT* pTimeDomains);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]

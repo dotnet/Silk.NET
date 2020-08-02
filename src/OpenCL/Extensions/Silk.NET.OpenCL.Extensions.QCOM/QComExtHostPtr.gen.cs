@@ -20,7 +20,7 @@ namespace Silk.NET.OpenCL.Extensions.QCOM
     {
         public const string ExtensionName = "QCOM_ext_host_ptr";
         [NativeApi(EntryPoint = "clGetDeviceImageInfoQCOM")]
-        public partial unsafe int GetDeviceImageInfo([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] UIntPtr image_width, [Flow(FlowDirection.In)] UIntPtr image_height, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetDeviceImageInfo([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] UIntPtr image_width, [Flow(FlowDirection.In)] UIntPtr image_height, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetDeviceImageInfoQCOM")]
         public partial int GetDeviceImageInfo<T0>([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] UIntPtr image_width, [Flow(FlowDirection.In)] UIntPtr image_height, [Flow(FlowDirection.In)] Span<uint> image_format, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;

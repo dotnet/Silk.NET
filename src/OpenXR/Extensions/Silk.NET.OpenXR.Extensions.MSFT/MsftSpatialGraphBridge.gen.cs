@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         public const string ExtensionName = "XR_MSFT_spatial_graph_bridge";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialGraphNodeSpaceMSFT")]
-        public partial unsafe Result CreateSpatialGraphNodeSpaceMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpatialGraphNodeSpaceCreateInfoMSFT* createInfo, [Count(Count = 0)] Space* space);
+        public unsafe partial Result CreateSpatialGraphNodeSpaceMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpatialGraphNodeSpaceCreateInfoMSFT* createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialGraphNodeSpaceMSFT")]

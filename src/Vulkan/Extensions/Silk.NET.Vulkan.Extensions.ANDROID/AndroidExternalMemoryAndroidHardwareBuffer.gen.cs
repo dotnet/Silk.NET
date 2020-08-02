@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.ANDROID
         public const string ExtensionName = "VK_ANDROID_external_memory_android_hardware_buffer";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetAndroidHardwareBufferPropertiesANDROID")]
-        public partial unsafe Result GetAndroidHardwareBufferProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] IntPtr* buffer, [Count(Count = 0), Flow(FlowDirection.Out)] AndroidHardwareBufferPropertiesANDROID* pProperties);
+        public unsafe partial Result GetAndroidHardwareBufferProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] IntPtr* buffer, [Count(Count = 0), Flow(FlowDirection.Out)] AndroidHardwareBufferPropertiesANDROID* pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetAndroidHardwareBufferPropertiesANDROID")]
@@ -29,11 +29,11 @@ namespace Silk.NET.Vulkan.Extensions.ANDROID
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryAndroidHardwareBufferANDROID")]
-        public partial unsafe Result GetMemoryAndroidHardwareBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetAndroidHardwareBufferInfoANDROID* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] IntPtr** pBuffer);
+        public unsafe partial Result GetMemoryAndroidHardwareBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetAndroidHardwareBufferInfoANDROID* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] IntPtr** pBuffer);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryAndroidHardwareBufferANDROID")]
-        public partial unsafe Result GetMemoryAndroidHardwareBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref MemoryGetAndroidHardwareBufferInfoANDROID pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out IntPtr* pBuffer);
+        public unsafe partial Result GetMemoryAndroidHardwareBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ref MemoryGetAndroidHardwareBufferInfoANDROID pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out IntPtr* pBuffer);
 
         public AndroidExternalMemoryAndroidHardwareBuffer(INativeContext ctx)
             : base(ctx)

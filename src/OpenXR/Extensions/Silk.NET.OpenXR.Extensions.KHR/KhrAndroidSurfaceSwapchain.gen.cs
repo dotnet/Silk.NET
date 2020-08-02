@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         public const string ExtensionName = "XR_KHR_android_surface_swapchain";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]
-        public partial unsafe Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfo* info, [Count(Count = 0)] Swapchain* swapchain, [Count(Count = 0)] IntPtr* surface);
+        public unsafe partial Result CreateSwapchainAndroidSurface([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainCreateInfo* info, [Count(Count = 0)] Swapchain* swapchain, [Count(Count = 0)] IntPtr* surface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateSwapchainAndroidSurfaceKHR")]

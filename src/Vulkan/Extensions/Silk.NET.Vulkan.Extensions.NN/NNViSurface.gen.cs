@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.NN
         public const string ExtensionName = "VK_NN_vi_surface";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateViSurfaceNN")]
-        public partial unsafe Result CreateViSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ViSurfaceCreateInfoNN* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+        public unsafe partial Result CreateViSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ViSurfaceCreateInfoNN* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateViSurfaceNN")]

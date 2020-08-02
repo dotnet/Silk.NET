@@ -26,7 +26,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         public partial void DeleteAsyncMarkers([Flow(FlowDirection.In)] uint marker, [Flow(FlowDirection.In)] uint range);
 
         [NativeApi(EntryPoint = "glFinishAsyncSGIX")]
-        public partial unsafe int FinishAsync([Count(Count = 1), Flow(FlowDirection.Out)] uint* markerp);
+        public unsafe partial int FinishAsync([Count(Count = 1), Flow(FlowDirection.Out)] uint* markerp);
 
         [NativeApi(EntryPoint = "glFinishAsyncSGIX")]
         public partial int FinishAsync([Count(Count = 1), Flow(FlowDirection.Out)] out uint markerp);
@@ -38,7 +38,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         public partial bool IsAsyncMarker([Flow(FlowDirection.In)] uint marker);
 
         [NativeApi(EntryPoint = "glPollAsyncSGIX")]
-        public partial unsafe int PollAsync([Count(Count = 1), Flow(FlowDirection.Out)] uint* markerp);
+        public unsafe partial int PollAsync([Count(Count = 1), Flow(FlowDirection.Out)] uint* markerp);
 
         [NativeApi(EntryPoint = "glPollAsyncSGIX")]
         public partial int PollAsync([Count(Count = 1), Flow(FlowDirection.Out)] out uint markerp);

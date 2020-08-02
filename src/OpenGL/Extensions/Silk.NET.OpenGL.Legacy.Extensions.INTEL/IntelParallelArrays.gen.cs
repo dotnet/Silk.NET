@@ -20,28 +20,28 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.INTEL
     {
         public const string ExtensionName = "INTEL_parallel_arrays";
         [NativeApi(EntryPoint = "glColorPointervINTEL")]
-        public partial unsafe void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] INTEL type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
+        public unsafe partial void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] INTEL type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
 
         [NativeApi(EntryPoint = "glNormalPointervINTEL")]
-        public partial unsafe void NormalPointer([Flow(FlowDirection.In)] INTEL type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
+        public unsafe partial void NormalPointer([Flow(FlowDirection.In)] INTEL type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
 
         [NativeApi(EntryPoint = "glTexCoordPointervINTEL")]
-        public partial unsafe void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] INTEL type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
+        public unsafe partial void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] INTEL type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
 
         [NativeApi(EntryPoint = "glVertexPointervINTEL")]
-        public partial unsafe void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] INTEL type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
+        public unsafe partial void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] INTEL type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
 
         [NativeApi(EntryPoint = "glColorPointervINTEL")]
-        public partial unsafe void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
+        public unsafe partial void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
 
         [NativeApi(EntryPoint = "glNormalPointervINTEL")]
-        public partial unsafe void NormalPointer([Flow(FlowDirection.In)] NormalPointerType type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
+        public unsafe partial void NormalPointer([Flow(FlowDirection.In)] NormalPointerType type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
 
         [NativeApi(EntryPoint = "glTexCoordPointervINTEL")]
-        public partial unsafe void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
+        public unsafe partial void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
 
         [NativeApi(EntryPoint = "glVertexPointervINTEL")]
-        public partial unsafe void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
+        public unsafe partial void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 4), Flow(FlowDirection.In)] void** pointer);
 
         public IntelParallelArrays(INativeContext ctx)
             : base(ctx)

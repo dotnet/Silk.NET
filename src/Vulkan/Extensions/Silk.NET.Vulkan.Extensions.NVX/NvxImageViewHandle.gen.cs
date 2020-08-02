@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.NVX
         public const string ExtensionName = "VK_NVX_image_view_handle";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageViewAddressNVX")]
-        public partial unsafe Result GetImageViewAddress([Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(FlowDirection.Out)] ImageViewAddressPropertiesNVX* pProperties);
+        public unsafe partial Result GetImageViewAddress([Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(FlowDirection.Out)] ImageViewAddressPropertiesNVX* pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageViewAddressNVX")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.NVX
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageViewHandleNVX")]
-        public partial unsafe uint GetImageViewHandle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageViewHandleInfoNVX* pInfo);
+        public unsafe partial uint GetImageViewHandle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageViewHandleInfoNVX* pInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageViewHandleNVX")]

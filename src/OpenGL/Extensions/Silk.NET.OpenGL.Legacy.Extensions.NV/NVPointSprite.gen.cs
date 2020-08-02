@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial void PointParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPointParameterivNV")]
-        public partial unsafe void PointParameter([Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void PointParameter([Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glPointParameterivNV")]
         public partial void PointParameter([Flow(FlowDirection.In)] NV pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
@@ -32,7 +32,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPointParameterivNV")]
-        public partial unsafe void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glPointParameterivNV")]
         public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);

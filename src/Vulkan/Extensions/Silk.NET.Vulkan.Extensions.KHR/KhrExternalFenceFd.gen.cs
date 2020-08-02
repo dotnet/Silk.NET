@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_external_fence_fd";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetFenceFdKHR")]
-        public partial unsafe Result GetFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FenceGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd);
+        public unsafe partial Result GetFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FenceGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetFenceFdKHR")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkImportFenceFdKHR")]
-        public partial unsafe Result ImportFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImportFenceFdInfoKHR* pImportFenceFdInfo);
+        public unsafe partial Result ImportFenceF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImportFenceFdInfoKHR* pImportFenceFdInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkImportFenceFdKHR")]

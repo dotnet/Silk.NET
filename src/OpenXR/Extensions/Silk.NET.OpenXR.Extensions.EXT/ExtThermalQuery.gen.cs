@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
         public const string ExtensionName = "XR_EXT_thermal_query";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
-        public partial unsafe Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] PerfSettingsNotificationLevelEXT* notificationLevel, [Count(Count = 0)] float* tempHeadroom, [Count(Count = 0)] float* tempSlope);
+        public unsafe partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] PerfSettingsNotificationLevelEXT* notificationLevel, [Count(Count = 0)] float* tempHeadroom, [Count(Count = 0)] float* tempSlope);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]

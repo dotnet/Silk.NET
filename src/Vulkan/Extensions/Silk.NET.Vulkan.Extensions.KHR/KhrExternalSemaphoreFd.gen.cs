@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_external_semaphore_fd";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetSemaphoreFdKHR")]
-        public partial unsafe Result GetSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd);
+        public unsafe partial Result GetSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetSemaphoreFdKHR")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkImportSemaphoreFdKHR")]
-        public partial unsafe Result ImportSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImportSemaphoreFdInfoKHR* pImportSemaphoreFdInfo);
+        public unsafe partial Result ImportSemaphoreF([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImportSemaphoreFdInfoKHR* pImportSemaphoreFdInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkImportSemaphoreFdKHR")]

@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.MVK
         public const string ExtensionName = "VK_MVK_macos_surface";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK")]
-        public partial unsafe Result CreateMacOssurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MacOSSurfaceCreateInfoMVK* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+        public unsafe partial Result CreateMacOssurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MacOSSurfaceCreateInfoMVK* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateMacOSSurfaceMVK")]

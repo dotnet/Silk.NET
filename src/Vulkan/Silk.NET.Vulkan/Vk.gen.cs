@@ -103,7 +103,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBeginRenderPass2")]
-        public partial unsafe void CmdBeginRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassBeginInfo* pRenderPassBegin, [Count(Count = 0), Flow(FlowDirection.In)] SubpassBeginInfo* pSubpassBeginInfo);
+        public unsafe partial void CmdBeginRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassBeginInfo* pRenderPassBegin, [Count(Count = 0), Flow(FlowDirection.In)] SubpassBeginInfo* pSubpassBeginInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBeginRenderPass2")]
@@ -119,7 +119,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdEndRenderPass2")]
-        public partial unsafe void CmdEndRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] SubpassEndInfo* pSubpassEndInfo);
+        public unsafe partial void CmdEndRenderPass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] SubpassEndInfo* pSubpassEndInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdEndRenderPass2")]
@@ -127,7 +127,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdNextSubpass2")]
-        public partial unsafe void CmdNextSubpass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] SubpassBeginInfo* pSubpassBeginInfo, [Count(Count = 0), Flow(FlowDirection.In)] SubpassEndInfo* pSubpassEndInfo);
+        public unsafe partial void CmdNextSubpass2([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] SubpassBeginInfo* pSubpassBeginInfo, [Count(Count = 0), Flow(FlowDirection.In)] SubpassEndInfo* pSubpassEndInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdNextSubpass2")]
@@ -135,7 +135,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateRenderPass2")]
-        public partial unsafe Result CreateRenderPass2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassCreateInfo2* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] RenderPass* pRenderPass);
+        public unsafe partial Result CreateRenderPass2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassCreateInfo2* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] RenderPass* pRenderPass);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateRenderPass2")]
@@ -143,7 +143,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetBufferDeviceAddress")]
-        public partial unsafe ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
+        public unsafe partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetBufferDeviceAddress")]
@@ -151,7 +151,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
-        public partial unsafe ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
+        public unsafe partial ulong GetBufferOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetBufferOpaqueCaptureAddress")]
@@ -159,7 +159,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
-        public partial unsafe ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceMemoryOpaqueCaptureAddressInfo* pInfo);
+        public unsafe partial ulong GetDeviceMemoryOpaqueCaptureAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceMemoryOpaqueCaptureAddressInfo* pInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceMemoryOpaqueCaptureAddress")]
@@ -167,7 +167,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetSemaphoreCounterValue")]
-        public partial unsafe Result GetSemaphoreCounterValue([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pValue);
+        public unsafe partial Result GetSemaphoreCounterValue([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pValue);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetSemaphoreCounterValue")]
@@ -179,7 +179,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkSignalSemaphore")]
-        public partial unsafe Result SignalSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreSignalInfo* pSignalInfo);
+        public unsafe partial Result SignalSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreSignalInfo* pSignalInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkSignalSemaphore")]
@@ -187,7 +187,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkWaitSemaphores")]
-        public partial unsafe Result WaitSemaphores([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreWaitInfo* pWaitInfo, [Count(Count = 0)] ulong timeout);
+        public unsafe partial Result WaitSemaphores([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreWaitInfo* pWaitInfo, [Count(Count = 0)] ulong timeout);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkWaitSemaphores")]
@@ -195,7 +195,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkBindBufferMemory2")]
-        public partial unsafe Result BindBufferMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindBufferMemoryInfo* pBindInfos);
+        public unsafe partial Result BindBufferMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindBufferMemoryInfo* pBindInfos);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkBindBufferMemory2")]
@@ -203,7 +203,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkBindImageMemory2")]
-        public partial unsafe Result BindImageMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindImageMemoryInfo* pBindInfos);
+        public unsafe partial Result BindImageMemory2([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindImageMemoryInfo* pBindInfos);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkBindImageMemory2")]
@@ -219,7 +219,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate")]
-        public partial unsafe Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
+        public unsafe partial Result CreateDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorUpdateTemplateCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorUpdateTemplate* pDescriptorUpdateTemplate);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateDescriptorUpdateTemplate")]
@@ -227,7 +227,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion")]
-        public partial unsafe Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
+        public unsafe partial Result CreateSamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerYcbcrConversionCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SamplerYcbcrConversion* pYcbcrConversion);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateSamplerYcbcrConversion")]
@@ -235,7 +235,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyDescriptorUpdateTemplate")]
-        public partial unsafe void DestroyDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyDescriptorUpdateTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyDescriptorUpdateTemplate")]
@@ -243,7 +243,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversion")]
-        public partial unsafe void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroySamplerYcbcrConversion([Count(Count = 0)] Device device, [Count(Count = 0)] SamplerYcbcrConversion ycbcrConversion, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroySamplerYcbcrConversion")]
@@ -251,7 +251,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumerateInstanceVersion")]
-        public partial unsafe Result EnumerateInstanceVersion([Count(Count = 0)] uint* pApiVersion);
+        public unsafe partial Result EnumerateInstanceVersion([Count(Count = 0)] uint* pApiVersion);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumerateInstanceVersion")]
@@ -259,7 +259,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroups")]
-        public partial unsafe Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* pPhysicalDeviceGroupCount, [Count(Computed = "pPhysicalDeviceGroupCount")] PhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties);
+        public unsafe partial Result EnumeratePhysicalDeviceGroups([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* pPhysicalDeviceGroupCount, [Count(Computed = "pPhysicalDeviceGroupCount")] PhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumeratePhysicalDeviceGroups")]
@@ -267,7 +267,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements2")]
-        public partial unsafe void GetBufferMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
+        public unsafe partial void GetBufferMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements2")]
@@ -275,7 +275,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport")]
-        public partial unsafe void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport);
+        public unsafe partial void GetDescriptorSetLayoutSupport([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayoutSupport* pSupport);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDescriptorSetLayoutSupport")]
@@ -283,7 +283,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceGroupPeerMemoryFeatures")]
-        public partial unsafe void GetDeviceGroupPeerMemoryFeatures([Count(Count = 0)] Device device, [Count(Count = 0)] uint heapIndex, [Count(Count = 0)] uint localDeviceIndex, [Count(Count = 0)] uint remoteDeviceIndex, [Count(Count = 0), Flow(FlowDirection.Out)] PeerMemoryFeatureFlags* pPeerMemoryFeatures);
+        public unsafe partial void GetDeviceGroupPeerMemoryFeatures([Count(Count = 0)] Device device, [Count(Count = 0)] uint heapIndex, [Count(Count = 0)] uint localDeviceIndex, [Count(Count = 0)] uint remoteDeviceIndex, [Count(Count = 0), Flow(FlowDirection.Out)] PeerMemoryFeatureFlags* pPeerMemoryFeatures);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceGroupPeerMemoryFeatures")]
@@ -291,7 +291,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceQueue2")]
-        public partial unsafe void GetDeviceQueue2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceQueueInfo2* pQueueInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Queue* pQueue);
+        public unsafe partial void GetDeviceQueue2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceQueueInfo2* pQueueInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Queue* pQueue);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceQueue2")]
@@ -299,7 +299,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageMemoryRequirements2")]
-        public partial unsafe void GetImageMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
+        public unsafe partial void GetImageMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageMemoryRequirementsInfo2* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageMemoryRequirements2")]
@@ -307,7 +307,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2")]
-        public partial unsafe void GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Computed = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements);
+        public unsafe partial void GetImageSparseMemoryRequirements2([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageSparseMemoryRequirementsInfo2* pInfo, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Computed = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements2* pSparseMemoryRequirements);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements2")]
@@ -315,7 +315,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties")]
-        public partial unsafe void GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalBufferInfo* pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalBufferProperties* pExternalBufferProperties);
+        public unsafe partial void GetPhysicalDeviceExternalBufferProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalBufferInfo* pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalBufferProperties* pExternalBufferProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalBufferProperties")]
@@ -323,7 +323,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties")]
-        public partial unsafe void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalFenceProperties* pExternalFenceProperties);
+        public unsafe partial void GetPhysicalDeviceExternalFenceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalFenceProperties* pExternalFenceProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalFenceProperties")]
@@ -331,7 +331,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties")]
-        public partial unsafe void GetPhysicalDeviceExternalSemaphoreProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalSemaphoreInfo* pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalSemaphoreProperties* pExternalSemaphoreProperties);
+        public unsafe partial void GetPhysicalDeviceExternalSemaphoreProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalSemaphoreInfo* pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalSemaphoreProperties* pExternalSemaphoreProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalSemaphoreProperties")]
@@ -339,7 +339,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures2")]
-        public partial unsafe void GetPhysicalDeviceFeatures2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceFeatures2* pFeatures);
+        public unsafe partial void GetPhysicalDeviceFeatures2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceFeatures2* pFeatures);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures2")]
@@ -347,7 +347,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties2")]
-        public partial unsafe void GetPhysicalDeviceFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0), Flow(FlowDirection.Out)] FormatProperties2* pFormatProperties);
+        public unsafe partial void GetPhysicalDeviceFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0), Flow(FlowDirection.Out)] FormatProperties2* pFormatProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties2")]
@@ -355,7 +355,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2")]
-        public partial unsafe Result GetPhysicalDeviceImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceImageFormatInfo2* pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ImageFormatProperties2* pImageFormatProperties);
+        public unsafe partial Result GetPhysicalDeviceImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceImageFormatInfo2* pImageFormatInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ImageFormatProperties2* pImageFormatProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties2")]
@@ -363,7 +363,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties2")]
-        public partial unsafe void GetPhysicalDeviceMemoryProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceMemoryProperties2* pMemoryProperties);
+        public unsafe partial void GetPhysicalDeviceMemoryProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceMemoryProperties2* pMemoryProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties2")]
@@ -371,7 +371,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties2")]
-        public partial unsafe void GetPhysicalDeviceProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceProperties2* pProperties);
+        public unsafe partial void GetPhysicalDeviceProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceProperties2* pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties2")]
@@ -379,7 +379,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2")]
-        public partial unsafe void GetPhysicalDeviceQueueFamilyProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount, [Count(Computed = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] QueueFamilyProperties2* pQueueFamilyProperties);
+        public unsafe partial void GetPhysicalDeviceQueueFamilyProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount, [Count(Computed = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] QueueFamilyProperties2* pQueueFamilyProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties2")]
@@ -387,7 +387,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
-        public partial unsafe void GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties2* pProperties);
+        public unsafe partial void GetPhysicalDeviceSparseImageFormatProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties2* pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties2")]
@@ -399,7 +399,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkUpdateDescriptorSetWithTemplate")]
-        public partial unsafe void UpdateDescriptorSetWithTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSet descriptorSet, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] void* pData);
+        public unsafe partial void UpdateDescriptorSetWithTemplate([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSet descriptorSet, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] void* pData);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkUpdateDescriptorSetWithTemplate")]
@@ -407,7 +407,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkAllocateCommandBuffers")]
-        public partial unsafe Result AllocateCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CommandBufferAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->commandBufferCount"), Flow(FlowDirection.Out)] CommandBuffer* pCommandBuffers);
+        public unsafe partial Result AllocateCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CommandBufferAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->commandBufferCount"), Flow(FlowDirection.Out)] CommandBuffer* pCommandBuffers);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkAllocateCommandBuffers")]
@@ -415,7 +415,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkAllocateDescriptorSets")]
-        public partial unsafe Result AllocateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(FlowDirection.Out)] DescriptorSet* pDescriptorSets);
+        public unsafe partial Result AllocateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetAllocateInfo* pAllocateInfo, [Count(Computed = "pAllocateInfo->descriptorSetCount"), Flow(FlowDirection.Out)] DescriptorSet* pDescriptorSets);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkAllocateDescriptorSets")]
@@ -423,7 +423,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkAllocateMemory")]
-        public partial unsafe Result AllocateMemory([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryAllocateInfo* pAllocateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DeviceMemory* pMemory);
+        public unsafe partial Result AllocateMemory([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryAllocateInfo* pAllocateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DeviceMemory* pMemory);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkAllocateMemory")]
@@ -431,7 +431,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkBeginCommandBuffer")]
-        public partial unsafe Result BeginCommandBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CommandBufferBeginInfo* pBeginInfo);
+        public unsafe partial Result BeginCommandBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] CommandBufferBeginInfo* pBeginInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkBeginCommandBuffer")]
@@ -451,7 +451,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBeginRenderPass")]
-        public partial unsafe void CmdBeginRenderPass([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassBeginInfo* pRenderPassBegin, [Count(Count = 0)] SubpassContents contents);
+        public unsafe partial void CmdBeginRenderPass([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassBeginInfo* pRenderPassBegin, [Count(Count = 0)] SubpassContents contents);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBeginRenderPass")]
@@ -459,7 +459,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBindDescriptorSets")]
-        public partial unsafe void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Computed = "descriptorSetCount"), Flow(FlowDirection.In)] DescriptorSet* pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Computed = "dynamicOffsetCount"), Flow(FlowDirection.In)] uint* pDynamicOffsets);
+        public unsafe partial void CmdBindDescriptorSets([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint firstSet, [Count(Count = 0)] uint descriptorSetCount, [Count(Computed = "descriptorSetCount"), Flow(FlowDirection.In)] DescriptorSet* pDescriptorSets, [Count(Count = 0)] uint dynamicOffsetCount, [Count(Computed = "dynamicOffsetCount"), Flow(FlowDirection.In)] uint* pDynamicOffsets);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBindDescriptorSets")]
@@ -475,7 +475,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBindVertexBuffers")]
-        public partial unsafe void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets);
+        public unsafe partial void CmdBindVertexBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Count = 0)] uint bindingCount, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Computed = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBindVertexBuffers")]
@@ -483,7 +483,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBlitImage")]
-        public partial unsafe void CmdBlitImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Computed = "regionCount"), Flow(FlowDirection.In)] ImageBlit* pRegions, [Count(Count = 0)] Filter filter);
+        public unsafe partial void CmdBlitImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Computed = "regionCount"), Flow(FlowDirection.In)] ImageBlit* pRegions, [Count(Count = 0)] Filter filter);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBlitImage")]
@@ -491,7 +491,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdClearAttachments")]
-        public partial unsafe void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Computed = "attachmentCount"), Flow(FlowDirection.In)] ClearAttachment* pAttachments, [Count(Count = 0)] uint rectCount, [Count(Computed = "rectCount"), Flow(FlowDirection.In)] ClearRect* pRects);
+        public unsafe partial void CmdClearAttachments([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint attachmentCount, [Count(Computed = "attachmentCount"), Flow(FlowDirection.In)] ClearAttachment* pAttachments, [Count(Count = 0)] uint rectCount, [Count(Computed = "rectCount"), Flow(FlowDirection.In)] ClearRect* pRects);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdClearAttachments")]
@@ -499,7 +499,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdClearColorImage")]
-        public partial unsafe void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(FlowDirection.In)] ClearColorValue* pColor, [Count(Count = 0)] uint rangeCount, [Count(Computed = "rangeCount"), Flow(FlowDirection.In)] ImageSubresourceRange* pRanges);
+        public unsafe partial void CmdClearColorImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(FlowDirection.In)] ClearColorValue* pColor, [Count(Count = 0)] uint rangeCount, [Count(Computed = "rangeCount"), Flow(FlowDirection.In)] ImageSubresourceRange* pRanges);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdClearColorImage")]
@@ -507,7 +507,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage")]
-        public partial unsafe void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(FlowDirection.In)] ClearDepthStencilValue* pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Computed = "rangeCount"), Flow(FlowDirection.In)] ImageSubresourceRange* pRanges);
+        public unsafe partial void CmdClearDepthStencilImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image image, [Count(Count = 0)] ImageLayout imageLayout, [Count(Count = 0), Flow(FlowDirection.In)] ClearDepthStencilValue* pDepthStencil, [Count(Count = 0)] uint rangeCount, [Count(Computed = "rangeCount"), Flow(FlowDirection.In)] ImageSubresourceRange* pRanges);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdClearDepthStencilImage")]
@@ -515,7 +515,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyBuffer")]
-        public partial unsafe void CmdCopyBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer srcBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] uint regionCount, [Count(Computed = "regionCount"), Flow(FlowDirection.In)] BufferCopy* pRegions);
+        public unsafe partial void CmdCopyBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer srcBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] uint regionCount, [Count(Computed = "regionCount"), Flow(FlowDirection.In)] BufferCopy* pRegions);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyBuffer")]
@@ -523,7 +523,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyBufferToImage")]
-        public partial unsafe void CmdCopyBufferToImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer srcBuffer, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Computed = "regionCount"), Flow(FlowDirection.In)] BufferImageCopy* pRegions);
+        public unsafe partial void CmdCopyBufferToImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer srcBuffer, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Computed = "regionCount"), Flow(FlowDirection.In)] BufferImageCopy* pRegions);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyBufferToImage")]
@@ -531,7 +531,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyImage")]
-        public partial unsafe void CmdCopyImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Computed = "regionCount"), Flow(FlowDirection.In)] ImageCopy* pRegions);
+        public unsafe partial void CmdCopyImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Computed = "regionCount"), Flow(FlowDirection.In)] ImageCopy* pRegions);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyImage")]
@@ -539,7 +539,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer")]
-        public partial unsafe void CmdCopyImageToBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] uint regionCount, [Count(Computed = "regionCount"), Flow(FlowDirection.In)] BufferImageCopy* pRegions);
+        public unsafe partial void CmdCopyImageToBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] uint regionCount, [Count(Computed = "regionCount"), Flow(FlowDirection.In)] BufferImageCopy* pRegions);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdCopyImageToBuffer")]
@@ -583,7 +583,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdExecuteCommands")]
-        public partial unsafe void CmdExecuteCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint commandBufferCount, [Count(Computed = "commandBufferCount"), Flow(FlowDirection.In)] CommandBuffer* pCommandBuffers);
+        public unsafe partial void CmdExecuteCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint commandBufferCount, [Count(Computed = "commandBufferCount"), Flow(FlowDirection.In)] CommandBuffer* pCommandBuffers);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdExecuteCommands")]
@@ -599,7 +599,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdPipelineBarrier")]
-        public partial unsafe void CmdPipelineBarrier([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] DependencyFlags dependencyFlags, [Count(Count = 0)] uint memoryBarrierCount, [Count(Computed = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Computed = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Computed = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
+        public unsafe partial void CmdPipelineBarrier([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] DependencyFlags dependencyFlags, [Count(Count = 0)] uint memoryBarrierCount, [Count(Computed = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Computed = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Computed = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdPipelineBarrier")]
@@ -607,7 +607,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdPushConstants")]
-        public partial unsafe void CmdPushConstants([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Count = 0)] uint size, [Count(Computed = "size")] void* pValues);
+        public unsafe partial void CmdPushConstants([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] ShaderStageFlags stageFlags, [Count(Count = 0)] uint offset, [Count(Count = 0)] uint size, [Count(Computed = "size")] void* pValues);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdPushConstants")]
@@ -623,7 +623,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdResolveImage")]
-        public partial unsafe void CmdResolveImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Computed = "regionCount"), Flow(FlowDirection.In)] ImageResolve* pRegions);
+        public unsafe partial void CmdResolveImage([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Image srcImage, [Count(Count = 0)] ImageLayout srcImageLayout, [Count(Count = 0)] Image dstImage, [Count(Count = 0)] ImageLayout dstImageLayout, [Count(Count = 0)] uint regionCount, [Count(Computed = "regionCount"), Flow(FlowDirection.In)] ImageResolve* pRegions);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdResolveImage")]
@@ -651,7 +651,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetScissor")]
-        public partial unsafe void CmdSetScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstScissor, [Count(Count = 0)] uint scissorCount, [Count(Computed = "scissorCount"), Flow(FlowDirection.In)] Rect2D* pScissors);
+        public unsafe partial void CmdSetScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstScissor, [Count(Count = 0)] uint scissorCount, [Count(Computed = "scissorCount"), Flow(FlowDirection.In)] Rect2D* pScissors);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetScissor")]
@@ -671,7 +671,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewport")]
-        public partial unsafe void CmdSetViewport([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] Viewport* pViewports);
+        public unsafe partial void CmdSetViewport([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] Viewport* pViewports);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewport")]
@@ -679,7 +679,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdUpdateBuffer")]
-        public partial unsafe void CmdUpdateBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] ulong dataSize, [Count(Computed = "dataSize")] void* pData);
+        public unsafe partial void CmdUpdateBuffer([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer dstBuffer, [Count(Count = 0)] ulong dstOffset, [Count(Count = 0)] ulong dataSize, [Count(Computed = "dataSize")] void* pData);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdUpdateBuffer")]
@@ -687,7 +687,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdWaitEvents")]
-        public partial unsafe void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Computed = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Computed = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Computed = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Computed = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
+        public unsafe partial void CmdWaitEvents([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Computed = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Count = 0)] PipelineStageFlags srcStageMask, [Count(Count = 0)] PipelineStageFlags dstStageMask, [Count(Count = 0)] uint memoryBarrierCount, [Count(Computed = "memoryBarrierCount"), Flow(FlowDirection.In)] MemoryBarrier* pMemoryBarriers, [Count(Count = 0)] uint bufferMemoryBarrierCount, [Count(Computed = "bufferMemoryBarrierCount"), Flow(FlowDirection.In)] BufferMemoryBarrier* pBufferMemoryBarriers, [Count(Count = 0)] uint imageMemoryBarrierCount, [Count(Computed = "imageMemoryBarrierCount"), Flow(FlowDirection.In)] ImageMemoryBarrier* pImageMemoryBarriers);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdWaitEvents")]
@@ -699,7 +699,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateBuffer")]
-        public partial unsafe Result CreateBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Buffer* pBuffer);
+        public unsafe partial Result CreateBuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Buffer* pBuffer);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateBuffer")]
@@ -707,7 +707,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateBufferView")]
-        public partial unsafe Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] BufferView* pView);
+        public unsafe partial Result CreateBufferView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] BufferView* pView);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateBufferView")]
@@ -715,7 +715,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateCommandPool")]
-        public partial unsafe Result CreateCommandPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CommandPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] CommandPool* pCommandPool);
+        public unsafe partial Result CreateCommandPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] CommandPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] CommandPool* pCommandPool);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateCommandPool")]
@@ -723,7 +723,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateComputePipelines")]
-        public partial unsafe Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Computed = "createInfoCount"), Flow(FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
+        public unsafe partial Result CreateComputePipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Computed = "createInfoCount"), Flow(FlowDirection.In)] ComputePipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateComputePipelines")]
@@ -731,7 +731,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateDescriptorPool")]
-        public partial unsafe Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorPool* pDescriptorPool);
+        public unsafe partial Result CreateDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorPool* pDescriptorPool);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateDescriptorPool")]
@@ -739,7 +739,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout")]
-        public partial unsafe Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayout* pSetLayout);
+        public unsafe partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DescriptorSetLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] DescriptorSetLayout* pSetLayout);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateDescriptorSetLayout")]
@@ -747,7 +747,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateDevice")]
-        public partial unsafe Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Device* pDevice);
+        public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Device* pDevice);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateDevice")]
@@ -755,7 +755,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateEvent")]
-        public partial unsafe Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Event* pEvent);
+        public unsafe partial Result CreateEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] EventCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Event* pEvent);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateEvent")]
@@ -763,7 +763,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateFence")]
-        public partial unsafe Result CreateFence([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FenceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Fence* pFence);
+        public unsafe partial Result CreateFence([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FenceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Fence* pFence);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateFence")]
@@ -771,7 +771,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateFramebuffer")]
-        public partial unsafe Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Framebuffer* pFramebuffer);
+        public unsafe partial Result CreateFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FramebufferCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Framebuffer* pFramebuffer);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateFramebuffer")]
@@ -779,7 +779,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateGraphicsPipelines")]
-        public partial unsafe Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Computed = "createInfoCount"), Flow(FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
+        public unsafe partial Result CreateGraphicsPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Computed = "createInfoCount"), Flow(FlowDirection.In)] GraphicsPipelineCreateInfo* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateGraphicsPipelines")]
@@ -787,7 +787,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateImage")]
-        public partial unsafe Result CreateImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Image* pImage);
+        public unsafe partial Result CreateImage([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Image* pImage);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateImage")]
@@ -795,7 +795,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateImageView")]
-        public partial unsafe Result CreateImageView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ImageView* pView);
+        public unsafe partial Result CreateImageView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ImageViewCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ImageView* pView);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateImageView")]
@@ -803,7 +803,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateInstance")]
-        public partial unsafe Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Instance* pInstance);
+        public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Instance* pInstance);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateInstance")]
@@ -811,7 +811,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreatePipelineCache")]
-        public partial unsafe Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PipelineCache* pPipelineCache);
+        public unsafe partial Result CreatePipelineCache([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineCacheCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PipelineCache* pPipelineCache);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreatePipelineCache")]
@@ -819,7 +819,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreatePipelineLayout")]
-        public partial unsafe Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PipelineLayout* pPipelineLayout);
+        public unsafe partial Result CreatePipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineLayoutCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PipelineLayout* pPipelineLayout);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreatePipelineLayout")]
@@ -827,7 +827,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateQueryPool")]
-        public partial unsafe Result CreateQueryPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] QueryPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] QueryPool* pQueryPool);
+        public unsafe partial Result CreateQueryPool([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] QueryPoolCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] QueryPool* pQueryPool);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateQueryPool")]
@@ -835,7 +835,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateRenderPass")]
-        public partial unsafe Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] RenderPass* pRenderPass);
+        public unsafe partial Result CreateRenderPass([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] RenderPassCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] RenderPass* pRenderPass);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateRenderPass")]
@@ -843,7 +843,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateSampler")]
-        public partial unsafe Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Sampler* pSampler);
+        public unsafe partial Result CreateSampler([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SamplerCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Sampler* pSampler);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateSampler")]
@@ -851,7 +851,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateSemaphore")]
-        public partial unsafe Result CreateSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Semaphore* pSemaphore);
+        public unsafe partial Result CreateSemaphore([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] SemaphoreCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Semaphore* pSemaphore);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateSemaphore")]
@@ -859,7 +859,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateShaderModule")]
-        public partial unsafe Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ShaderModule* pShaderModule);
+        public unsafe partial Result CreateShaderModule([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ShaderModuleCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] ShaderModule* pShaderModule);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateShaderModule")]
@@ -867,7 +867,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyBuffer")]
-        public partial unsafe void DestroyBuffer([Count(Count = 0)] Device device, [Count(Count = 0)] Buffer buffer, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyBuffer([Count(Count = 0)] Device device, [Count(Count = 0)] Buffer buffer, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyBuffer")]
@@ -875,7 +875,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyBufferView")]
-        public partial unsafe void DestroyBufferView([Count(Count = 0)] Device device, [Count(Count = 0)] BufferView bufferView, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyBufferView([Count(Count = 0)] Device device, [Count(Count = 0)] BufferView bufferView, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyBufferView")]
@@ -883,7 +883,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyCommandPool")]
-        public partial unsafe void DestroyCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyCommandPool")]
@@ -891,7 +891,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyDescriptorPool")]
-        public partial unsafe void DestroyDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyDescriptorPool([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyDescriptorPool")]
@@ -899,7 +899,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyDescriptorSetLayout")]
-        public partial unsafe void DestroyDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSetLayout descriptorSetLayout, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorSetLayout descriptorSetLayout, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyDescriptorSetLayout")]
@@ -907,7 +907,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyDevice")]
-        public partial unsafe void DestroyDevice([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyDevice([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyDevice")]
@@ -915,7 +915,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyEvent")]
-        public partial unsafe void DestroyEvent([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyEvent([Count(Count = 0)] Device device, [Count(Count = 0)] Event @event, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyEvent")]
@@ -923,7 +923,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyFence")]
-        public partial unsafe void DestroyFence([Count(Count = 0)] Device device, [Count(Count = 0)] Fence fence, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyFence([Count(Count = 0)] Device device, [Count(Count = 0)] Fence fence, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyFence")]
@@ -931,7 +931,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyFramebuffer")]
-        public partial unsafe void DestroyFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0)] Framebuffer framebuffer, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyFramebuffer([Count(Count = 0)] Device device, [Count(Count = 0)] Framebuffer framebuffer, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyFramebuffer")]
@@ -939,7 +939,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyImage")]
-        public partial unsafe void DestroyImage([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyImage([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyImage")]
@@ -947,7 +947,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyImageView")]
-        public partial unsafe void DestroyImageView([Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyImageView([Count(Count = 0)] Device device, [Count(Count = 0)] ImageView imageView, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyImageView")]
@@ -955,7 +955,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyInstance")]
-        public partial unsafe void DestroyInstance([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyInstance([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyInstance")]
@@ -963,7 +963,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyPipeline")]
-        public partial unsafe void DestroyPipeline([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyPipeline([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyPipeline")]
@@ -971,7 +971,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyPipelineCache")]
-        public partial unsafe void DestroyPipelineCache([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyPipelineCache([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyPipelineCache")]
@@ -979,7 +979,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyPipelineLayout")]
-        public partial unsafe void DestroyPipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineLayout pipelineLayout, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyPipelineLayout([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineLayout pipelineLayout, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyPipelineLayout")]
@@ -987,7 +987,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyQueryPool")]
-        public partial unsafe void DestroyQueryPool([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyQueryPool([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyQueryPool")]
@@ -995,7 +995,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyRenderPass")]
-        public partial unsafe void DestroyRenderPass([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyRenderPass([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyRenderPass")]
@@ -1003,7 +1003,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroySampler")]
-        public partial unsafe void DestroySampler([Count(Count = 0)] Device device, [Count(Count = 0)] Sampler sampler, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroySampler([Count(Count = 0)] Device device, [Count(Count = 0)] Sampler sampler, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroySampler")]
@@ -1011,7 +1011,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroySemaphore")]
-        public partial unsafe void DestroySemaphore([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroySemaphore([Count(Count = 0)] Device device, [Count(Count = 0)] Semaphore semaphore, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroySemaphore")]
@@ -1019,7 +1019,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyShaderModule")]
-        public partial unsafe void DestroyShaderModule([Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyShaderModule([Count(Count = 0)] Device device, [Count(Count = 0)] ShaderModule shaderModule, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyShaderModule")]
@@ -1035,7 +1035,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
-        public partial unsafe Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] byte* pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount")] ExtensionProperties* pProperties);
+        public unsafe partial Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] byte* pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
@@ -1043,7 +1043,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumerateDeviceLayerProperties")]
-        public partial unsafe Result EnumerateDeviceLayerProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount")] LayerProperties* pProperties);
+        public unsafe partial Result EnumerateDeviceLayerProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount")] LayerProperties* pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumerateDeviceLayerProperties")]
@@ -1051,7 +1051,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]
-        public partial unsafe Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] byte* pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount")] ExtensionProperties* pProperties);
+        public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] byte* pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]
@@ -1059,7 +1059,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumerateInstanceLayerProperties")]
-        public partial unsafe Result EnumerateInstanceLayerProperties([Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount")] LayerProperties* pProperties);
+        public unsafe partial Result EnumerateInstanceLayerProperties([Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount")] LayerProperties* pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumerateInstanceLayerProperties")]
@@ -1067,7 +1067,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumeratePhysicalDevices")]
-        public partial unsafe Result EnumeratePhysicalDevices([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* pPhysicalDeviceCount, [Count(Computed = "pPhysicalDeviceCount")] PhysicalDevice* pPhysicalDevices);
+        public unsafe partial Result EnumeratePhysicalDevices([Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* pPhysicalDeviceCount, [Count(Computed = "pPhysicalDeviceCount")] PhysicalDevice* pPhysicalDevices);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumeratePhysicalDevices")]
@@ -1075,7 +1075,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkFlushMappedMemoryRanges")]
-        public partial unsafe Result FlushMappedMemoryRanges([Count(Count = 0)] Device device, [Count(Count = 0)] uint memoryRangeCount, [Count(Computed = "memoryRangeCount"), Flow(FlowDirection.In)] MappedMemoryRange* pMemoryRanges);
+        public unsafe partial Result FlushMappedMemoryRanges([Count(Count = 0)] Device device, [Count(Count = 0)] uint memoryRangeCount, [Count(Computed = "memoryRangeCount"), Flow(FlowDirection.In)] MappedMemoryRange* pMemoryRanges);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkFlushMappedMemoryRanges")]
@@ -1083,7 +1083,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkFreeCommandBuffers")]
-        public partial unsafe void FreeCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint commandBufferCount, [Count(Computed = "commandBufferCount"), Flow(FlowDirection.In)] CommandBuffer* pCommandBuffers);
+        public unsafe partial void FreeCommandBuffers([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint commandBufferCount, [Count(Computed = "commandBufferCount"), Flow(FlowDirection.In)] CommandBuffer* pCommandBuffers);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkFreeCommandBuffers")]
@@ -1091,7 +1091,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkFreeDescriptorSets")]
-        public partial unsafe Result FreeDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0)] uint descriptorSetCount, [Count(Computed = "descriptorSetCount"), Flow(FlowDirection.In)] DescriptorSet* pDescriptorSets);
+        public unsafe partial Result FreeDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] DescriptorPool descriptorPool, [Count(Count = 0)] uint descriptorSetCount, [Count(Computed = "descriptorSetCount"), Flow(FlowDirection.In)] DescriptorSet* pDescriptorSets);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkFreeDescriptorSets")]
@@ -1099,7 +1099,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkFreeMemory")]
-        public partial unsafe void FreeMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void FreeMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkFreeMemory")]
@@ -1107,7 +1107,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements")]
-        public partial unsafe void GetBufferMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Buffer buffer, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements* pMemoryRequirements);
+        public unsafe partial void GetBufferMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Buffer buffer, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements* pMemoryRequirements);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetBufferMemoryRequirements")]
@@ -1115,7 +1115,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceMemoryCommitment")]
-        public partial unsafe void GetDeviceMemoryCommitment([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pCommittedMemoryInBytes);
+        public unsafe partial void GetDeviceMemoryCommitment([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pCommittedMemoryInBytes);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceMemoryCommitment")]
@@ -1123,7 +1123,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceProcAddr")]
-        public partial unsafe FuncPtr GetDeviceProcAddr([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] byte* pName);
+        public unsafe partial FuncPtr GetDeviceProcAddr([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] byte* pName);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceProcAddr")]
@@ -1131,7 +1131,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceQueue")]
-        public partial unsafe void GetDeviceQueue([Count(Count = 0)] Device device, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] uint queueIndex, [Count(Count = 0), Flow(FlowDirection.Out)] Queue* pQueue);
+        public unsafe partial void GetDeviceQueue([Count(Count = 0)] Device device, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] uint queueIndex, [Count(Count = 0), Flow(FlowDirection.Out)] Queue* pQueue);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetDeviceQueue")]
@@ -1147,7 +1147,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageMemoryRequirements")]
-        public partial unsafe void GetImageMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements* pMemoryRequirements);
+        public unsafe partial void GetImageMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements* pMemoryRequirements);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageMemoryRequirements")]
@@ -1155,7 +1155,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements")]
-        public partial unsafe void GetImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Computed = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements* pSparseMemoryRequirements);
+        public unsafe partial void GetImageSparseMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0)] uint* pSparseMemoryRequirementCount, [Count(Computed = "pSparseMemoryRequirementCount"), Flow(FlowDirection.Out)] SparseImageMemoryRequirements* pSparseMemoryRequirements);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageSparseMemoryRequirements")]
@@ -1163,7 +1163,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageSubresourceLayout")]
-        public partial unsafe void GetImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.In)] ImageSubresource* pSubresource, [Count(Count = 0), Flow(FlowDirection.Out)] SubresourceLayout* pLayout);
+        public unsafe partial void GetImageSubresourceLayout([Count(Count = 0)] Device device, [Count(Count = 0)] Image image, [Count(Count = 0), Flow(FlowDirection.In)] ImageSubresource* pSubresource, [Count(Count = 0), Flow(FlowDirection.Out)] SubresourceLayout* pLayout);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetImageSubresourceLayout")]
@@ -1171,7 +1171,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetInstanceProcAddr")]
-        public partial unsafe FuncPtr GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* pName);
+        public unsafe partial FuncPtr GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] byte* pName);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetInstanceProcAddr")]
@@ -1179,7 +1179,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures")]
-        public partial unsafe void GetPhysicalDeviceFeatures([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceFeatures* pFeatures);
+        public unsafe partial void GetPhysicalDeviceFeatures([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceFeatures* pFeatures);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFeatures")]
@@ -1187,7 +1187,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties")]
-        public partial unsafe void GetPhysicalDeviceFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0), Flow(FlowDirection.Out)] FormatProperties* pFormatProperties);
+        public unsafe partial void GetPhysicalDeviceFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0), Flow(FlowDirection.Out)] FormatProperties* pFormatProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFormatProperties")]
@@ -1195,7 +1195,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties")]
-        public partial unsafe Result GetPhysicalDeviceImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageCreateFlags flags, [Count(Count = 0), Flow(FlowDirection.Out)] ImageFormatProperties* pImageFormatProperties);
+        public unsafe partial Result GetPhysicalDeviceImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageCreateFlags flags, [Count(Count = 0), Flow(FlowDirection.Out)] ImageFormatProperties* pImageFormatProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceImageFormatProperties")]
@@ -1203,7 +1203,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties")]
-        public partial unsafe void GetPhysicalDeviceMemoryProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceMemoryProperties* pMemoryProperties);
+        public unsafe partial void GetPhysicalDeviceMemoryProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceMemoryProperties* pMemoryProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceMemoryProperties")]
@@ -1211,7 +1211,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties")]
-        public partial unsafe void GetPhysicalDeviceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceProperties* pProperties);
+        public unsafe partial void GetPhysicalDeviceProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.Out)] PhysicalDeviceProperties* pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceProperties")]
@@ -1219,7 +1219,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties")]
-        public partial unsafe void GetPhysicalDeviceQueueFamilyProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount, [Count(Computed = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] QueueFamilyProperties* pQueueFamilyProperties);
+        public unsafe partial void GetPhysicalDeviceQueueFamilyProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount, [Count(Computed = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] QueueFamilyProperties* pQueueFamilyProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceQueueFamilyProperties")]
@@ -1227,7 +1227,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties")]
-        public partial unsafe void GetPhysicalDeviceSparseImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] SampleCountFlags samples, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties* pProperties);
+        public unsafe partial void GetPhysicalDeviceSparseImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] SampleCountFlags samples, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties* pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSparseImageFormatProperties")]
@@ -1235,7 +1235,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineCacheData")]
-        public partial unsafe Result GetPipelineCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] UIntPtr* pDataSize, [Count(Computed = "pDataSize")] void* pData);
+        public unsafe partial Result GetPipelineCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] UIntPtr* pDataSize, [Count(Computed = "pDataSize")] void* pData);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineCacheData")]
@@ -1243,7 +1243,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetQueryPoolResults")]
-        public partial unsafe Result GetQueryPoolResults([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] void* pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags);
+        public unsafe partial Result GetQueryPoolResults([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] void* pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetQueryPoolResults")]
@@ -1251,7 +1251,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetRenderAreaGranularity")]
-        public partial unsafe void GetRenderAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(FlowDirection.Out)] Extent2D* pGranularity);
+        public unsafe partial void GetRenderAreaGranularity([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderPass, [Count(Count = 0), Flow(FlowDirection.Out)] Extent2D* pGranularity);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetRenderAreaGranularity")]
@@ -1259,7 +1259,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkInvalidateMappedMemoryRanges")]
-        public partial unsafe Result InvalidateMappedMemoryRanges([Count(Count = 0)] Device device, [Count(Count = 0)] uint memoryRangeCount, [Count(Computed = "memoryRangeCount"), Flow(FlowDirection.In)] MappedMemoryRange* pMemoryRanges);
+        public unsafe partial Result InvalidateMappedMemoryRanges([Count(Count = 0)] Device device, [Count(Count = 0)] uint memoryRangeCount, [Count(Computed = "memoryRangeCount"), Flow(FlowDirection.In)] MappedMemoryRange* pMemoryRanges);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkInvalidateMappedMemoryRanges")]
@@ -1267,15 +1267,15 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkMapMemory")]
-        public partial unsafe Result MapMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ulong offset, [Count(Count = 0)] ulong size, [Count(Count = 0)] uint flags, [Count(Count = 0)] void** ppData);
+        public unsafe partial Result MapMemory([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ulong offset, [Count(Count = 0)] ulong size, [Count(Count = 0)] uint flags, [Count(Count = 0)] void** ppData);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkMapMemory")]
-        public partial unsafe Result MapMemory<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ulong offset, [Count(Count = 0)] ulong size, [Count(Count = 0)] uint flags, [Count(Count = 0)] ref T0* ppData) where T0 : unmanaged;
+        public unsafe partial Result MapMemory<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ulong offset, [Count(Count = 0)] ulong size, [Count(Count = 0)] uint flags, [Count(Count = 0)] ref T0* ppData) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkMergePipelineCaches")]
-        public partial unsafe Result MergePipelineCaches([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Computed = "srcCacheCount"), Flow(FlowDirection.In)] PipelineCache* pSrcCaches);
+        public unsafe partial Result MergePipelineCaches([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Computed = "srcCacheCount"), Flow(FlowDirection.In)] PipelineCache* pSrcCaches);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkMergePipelineCaches")]
@@ -1283,7 +1283,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkQueueBindSparse")]
-        public partial unsafe Result QueueBindSparse([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindSparseInfo* pBindInfo, [Count(Count = 0)] Fence fence);
+        public unsafe partial Result QueueBindSparse([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindSparseInfo* pBindInfo, [Count(Count = 0)] Fence fence);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkQueueBindSparse")]
@@ -1291,7 +1291,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkQueueSubmit")]
-        public partial unsafe Result QueueSubmit([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint submitCount, [Count(Computed = "submitCount"), Flow(FlowDirection.In)] SubmitInfo* pSubmits, [Count(Count = 0)] Fence fence);
+        public unsafe partial Result QueueSubmit([Count(Count = 0)] Queue queue, [Count(Count = 0)] uint submitCount, [Count(Computed = "submitCount"), Flow(FlowDirection.In)] SubmitInfo* pSubmits, [Count(Count = 0)] Fence fence);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkQueueSubmit")]
@@ -1319,7 +1319,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkResetFences")]
-        public partial unsafe Result ResetFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Computed = "fenceCount"), Flow(FlowDirection.In)] Fence* pFences);
+        public unsafe partial Result ResetFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Computed = "fenceCount"), Flow(FlowDirection.In)] Fence* pFences);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkResetFences")]
@@ -1335,7 +1335,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkUpdateDescriptorSets")]
-        public partial unsafe void UpdateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] uint descriptorWriteCount, [Count(Computed = "descriptorWriteCount"), Flow(FlowDirection.In)] WriteDescriptorSet* pDescriptorWrites, [Count(Count = 0)] uint descriptorCopyCount, [Count(Computed = "descriptorCopyCount"), Flow(FlowDirection.In)] CopyDescriptorSet* pDescriptorCopies);
+        public unsafe partial void UpdateDescriptorSets([Count(Count = 0)] Device device, [Count(Count = 0)] uint descriptorWriteCount, [Count(Computed = "descriptorWriteCount"), Flow(FlowDirection.In)] WriteDescriptorSet* pDescriptorWrites, [Count(Count = 0)] uint descriptorCopyCount, [Count(Computed = "descriptorCopyCount"), Flow(FlowDirection.In)] CopyDescriptorSet* pDescriptorCopies);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkUpdateDescriptorSets")]
@@ -1343,7 +1343,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkWaitForFences")]
-        public partial unsafe Result WaitForFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Computed = "fenceCount"), Flow(FlowDirection.In)] Fence* pFences, [Count(Count = 0)] Bool32 waitAll, [Count(Count = 0)] ulong timeout);
+        public unsafe partial Result WaitForFences([Count(Count = 0)] Device device, [Count(Count = 0)] uint fenceCount, [Count(Computed = "fenceCount"), Flow(FlowDirection.In)] Fence* pFences, [Count(Count = 0)] Bool32 waitAll, [Count(Count = 0)] ulong timeout);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkWaitForFences")]
@@ -1351,7 +1351,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
-        public partial unsafe Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount")] ExtensionProperties* pProperties);
+        public unsafe partial Result EnumerateDeviceExtensionProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumerateDeviceExtensionProperties")]
@@ -1359,7 +1359,7 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]
-        public partial unsafe Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount")] ExtensionProperties* pProperties);
+        public unsafe partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In)] string pLayerName, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount")] ExtensionProperties* pProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkEnumerateInstanceExtensionProperties")]

@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         public const string ExtensionName = "XR_KHR_win32_convert_performance_counter_time";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrConvertTimeToWin32PerformanceCounterKHR")]
-        public partial unsafe Result ConvertTimeToWin32PerformanceCounter([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] long* performanceCounter);
+        public unsafe partial Result ConvertTimeToWin32PerformanceCounter([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] long* performanceCounter);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrConvertTimeToWin32PerformanceCounterKHR")]
@@ -29,7 +29,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrConvertWin32PerformanceCounterToTimeKHR")]
-        public partial unsafe Result ConvertWin32PerformanceCounterToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] long* performanceCounter, [Count(Count = 0)] long* time);
+        public unsafe partial Result ConvertWin32PerformanceCounterToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] long* performanceCounter, [Count(Count = 0)] long* time);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrConvertWin32PerformanceCounterToTimeKHR")]

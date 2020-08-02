@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_debug_marker";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdDebugMarkerBeginEXT")]
-        public partial unsafe void CmdDebugMarkerBegin([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerMarkerInfoEXT* pMarkerInfo);
+        public unsafe partial void CmdDebugMarkerBegin([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerMarkerInfoEXT* pMarkerInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdDebugMarkerBeginEXT")]
@@ -33,7 +33,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdDebugMarkerInsertEXT")]
-        public partial unsafe void CmdDebugMarkerInsert([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerMarkerInfoEXT* pMarkerInfo);
+        public unsafe partial void CmdDebugMarkerInsert([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerMarkerInfoEXT* pMarkerInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdDebugMarkerInsertEXT")]
@@ -41,7 +41,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDebugMarkerSetObjectNameEXT")]
-        public partial unsafe Result DebugMarkerSetObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerObjectNameInfoEXT* pNameInfo);
+        public unsafe partial Result DebugMarkerSetObjectName([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerObjectNameInfoEXT* pNameInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDebugMarkerSetObjectNameEXT")]
@@ -49,7 +49,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDebugMarkerSetObjectTagEXT")]
-        public partial unsafe Result DebugMarkerSetObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerObjectTagInfoEXT* pTagInfo);
+        public unsafe partial Result DebugMarkerSetObjectTag([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DebugMarkerObjectTagInfoEXT* pTagInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDebugMarkerSetObjectTagEXT")]

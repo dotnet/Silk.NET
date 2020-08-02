@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
     {
         public const string ExtensionName = "OES_query_matrix";
         [NativeApi(EntryPoint = "glQueryMatrixxOES")]
-        public partial unsafe uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] int* mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] int* exponent);
+        public unsafe partial uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] int* mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] int* exponent);
 
         [NativeApi(EntryPoint = "glQueryMatrixxOES")]
         public partial uint QueryMatrixx([Count(Count = 16), Flow(FlowDirection.Out)] Span<int> mantissa, [Count(Count = 16), Flow(FlowDirection.Out)] Span<int> exponent);

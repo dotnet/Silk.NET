@@ -20,7 +20,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     {
         public const string ExtensionName = "KHR_egl_event";
         [NativeApi(EntryPoint = "clCreateEventFromEGLSyncKHR")]
-        public partial unsafe IntPtr CreateEventFromEglsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] IntPtr display, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateEventFromEglsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] IntPtr display, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateEventFromEGLSyncKHR")]
         public partial IntPtr CreateEventFromEglsync([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] IntPtr display, [Flow(FlowDirection.Out)] Span<int> errcode_ret);

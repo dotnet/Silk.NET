@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_win32_surface";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateWin32SurfaceKHR")]
-        public partial unsafe Result CreateWin32Surface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] Win32SurfaceCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+        public unsafe partial Result CreateWin32Surface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] Win32SurfaceCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateWin32SurfaceKHR")]

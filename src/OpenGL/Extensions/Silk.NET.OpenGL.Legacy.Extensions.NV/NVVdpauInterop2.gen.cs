@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
     {
         public const string ExtensionName = "NV_vdpau_interop2";
         [NativeApi(EntryPoint = "glVDPAURegisterVideoSurfaceWithPictureStructureNV")]
-        public partial unsafe IntPtr VdpauregisterVideoSurfaceWithPictureStructure([Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] uint* textureNames, [Flow(FlowDirection.In)] bool isFrameStructure);
+        public unsafe partial IntPtr VdpauregisterVideoSurfaceWithPictureStructure([Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] uint* textureNames, [Flow(FlowDirection.In)] bool isFrameStructure);
 
         [NativeApi(EntryPoint = "glVDPAURegisterVideoSurfaceWithPictureStructureNV")]
         public partial IntPtr VdpauregisterVideoSurfaceWithPictureStructure<T0>([Flow(FlowDirection.In)] Span<T0> vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] Span<uint> textureNames, [Flow(FlowDirection.In)] bool isFrameStructure) where T0 : unmanaged;

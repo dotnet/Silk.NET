@@ -23,13 +23,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial void CoverageModulation([Flow(FlowDirection.In)] NV components);
 
         [NativeApi(EntryPoint = "glCoverageModulationTableNV")]
-        public partial unsafe void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glCoverageModulationTableNV")]
         public partial void CoverageModulationTable([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> v);
 
         [NativeApi(EntryPoint = "glGetCoverageModulationTableNV")]
-        public partial unsafe void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* v);
+        public unsafe partial void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* v);
 
         [NativeApi(EntryPoint = "glGetCoverageModulationTableNV")]
         public partial void GetCoverageModulationTable([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<float> v);

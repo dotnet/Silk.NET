@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
     {
         public const string ExtensionName = "APPLE_vertex_array_range";
         [NativeApi(EntryPoint = "glFlushVertexArrayRangeAPPLE")]
-        public partial unsafe void FlushVertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] void* pointer);
+        public unsafe partial void FlushVertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] void* pointer);
 
         [NativeApi(EntryPoint = "glFlushVertexArrayRangeAPPLE")]
         public partial void FlushVertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged;
@@ -29,7 +29,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         public partial void VertexArrayParameter([Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glVertexArrayRangeAPPLE")]
-        public partial unsafe void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] void* pointer);
+        public unsafe partial void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexArrayRangeAPPLE")]
         public partial void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged;

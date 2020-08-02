@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
         public const string ExtensionName = "XR_EXT_debug_utils";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT")]
-        public partial unsafe Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* createInfo, [Count(Count = 0)] DebugUtilsMessengerEXT* messenger);
+        public unsafe partial Result CreateDebugUtilsMessenger([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCreateInfoEXT* createInfo, [Count(Count = 0)] DebugUtilsMessengerEXT* messenger);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateDebugUtilsMessengerEXT")]
@@ -33,7 +33,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrSessionBeginDebugUtilsLabelRegionEXT")]
-        public partial unsafe Result SessionBeginDebugUtilsLabelRegion([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsLabelEXT* labelInfo);
+        public unsafe partial Result SessionBeginDebugUtilsLabelRegion([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsLabelEXT* labelInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrSessionBeginDebugUtilsLabelRegionEXT")]
@@ -45,7 +45,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrSessionInsertDebugUtilsLabelEXT")]
-        public partial unsafe Result SessionInsertDebugUtilsLabel([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsLabelEXT* labelInfo);
+        public unsafe partial Result SessionInsertDebugUtilsLabel([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsLabelEXT* labelInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrSessionInsertDebugUtilsLabelEXT")]
@@ -53,7 +53,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrSetDebugUtilsObjectNameEXT")]
-        public partial unsafe Result SetDebugUtilsObjectName([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsObjectNameInfoEXT* nameInfo);
+        public unsafe partial Result SetDebugUtilsObjectName([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsObjectNameInfoEXT* nameInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrSetDebugUtilsObjectNameEXT")]
@@ -61,7 +61,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrSubmitDebugUtilsMessageEXT")]
-        public partial unsafe Result SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCallbackDataEXT* callbackData);
+        public unsafe partial Result SubmitDebugUtilsMessage([Count(Count = 0)] Instance instance, [Count(Count = 0)] DebugUtilsMessageSeverityFlagsEXT messageSeverity, [Count(Count = 0)] DebugUtilsMessageTypeFlagsEXT messageTypes, [Count(Count = 0), Flow(FlowDirection.In)] DebugUtilsMessengerCallbackDataEXT* callbackData);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrSubmitDebugUtilsMessageEXT")]

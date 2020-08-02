@@ -20,13 +20,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
     {
         public const string ExtensionName = "SGIS_fog_function";
         [NativeApi(EntryPoint = "glFogFuncSGIS")]
-        public partial unsafe void FogFunc([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
+        public unsafe partial void FogFunc([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
 
         [NativeApi(EntryPoint = "glFogFuncSGIS")]
         public partial void FogFunc([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> points);
 
         [NativeApi(EntryPoint = "glGetFogFuncSGIS")]
-        public partial unsafe void GetFogFunc([Count(Count = 0), Flow(FlowDirection.Out)] float* points);
+        public unsafe partial void GetFogFunc([Count(Count = 0), Flow(FlowDirection.Out)] float* points);
 
         [NativeApi(EntryPoint = "glGetFogFuncSGIS")]
         public partial void GetFogFunc([Count(Count = 0), Flow(FlowDirection.Out)] out float points);

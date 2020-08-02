@@ -20,13 +20,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_EGL_image_storage";
         [NativeApi(EntryPoint = "glEGLImageTargetTexStorageEXT")]
-        public partial unsafe void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] int* attrib_list);
+        public unsafe partial void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] int* attrib_list);
 
         [NativeApi(EntryPoint = "glEGLImageTargetTexStorageEXT")]
         public partial void EglimageTargetTexStorage([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] Span<int> attrib_list);
 
         [NativeApi(EntryPoint = "glEGLImageTargetTextureStorageEXT")]
-        public partial unsafe void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] int* attrib_list);
+        public unsafe partial void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] int* attrib_list);
 
         [NativeApi(EntryPoint = "glEGLImageTargetTextureStorageEXT")]
         public partial void EglimageTargetTextureStorage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] Span<int> attrib_list);

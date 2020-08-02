@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
     {
         public const string ExtensionName = "NV_draw_buffers";
         [NativeApi(EntryPoint = "glDrawBuffersNV")]
-        public partial unsafe void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] NV* bufs);
+        public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] NV* bufs);
 
         [NativeApi(EntryPoint = "glDrawBuffersNV")]
         public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<NV> bufs);

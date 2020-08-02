@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
         public const string ExtensionName = "XR_EXT_hand_tracking";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateHandTrackerEXT")]
-        public partial unsafe Result CreateHandTracker([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] HandTrackerCreateInfoEXT* createInfo, [Count(Count = 0)] HandTrackerEXT* handTracker);
+        public unsafe partial Result CreateHandTracker([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] HandTrackerCreateInfoEXT* createInfo, [Count(Count = 0)] HandTrackerEXT* handTracker);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateHandTrackerEXT")]
@@ -33,7 +33,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrLocateHandJointsEXT")]
-        public partial unsafe Result LocateHandJoints([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] HandJointsLocateInfoEXT* locateInfo, [Count(Count = 0)] HandJointLocationsEXT* locations);
+        public unsafe partial Result LocateHandJoints([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] HandJointsLocateInfoEXT* locateInfo, [Count(Count = 0)] HandJointLocationsEXT* locations);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrLocateHandJointsEXT")]

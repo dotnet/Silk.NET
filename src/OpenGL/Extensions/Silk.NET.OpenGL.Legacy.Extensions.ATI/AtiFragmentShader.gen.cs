@@ -59,7 +59,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         public partial void SampleMap([Flow(FlowDirection.In)] uint dst, [Flow(FlowDirection.In)] uint interp, [Flow(FlowDirection.In)] ATI swizzle);
 
         [NativeApi(EntryPoint = "glSetFragmentShaderConstantATI")]
-        public partial unsafe void SetFragmentShaderConstant([Flow(FlowDirection.In)] uint dst, [Count(Count = 4), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void SetFragmentShaderConstant([Flow(FlowDirection.In)] uint dst, [Count(Count = 4), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glSetFragmentShaderConstantATI")]
         public partial void SetFragmentShaderConstant([Flow(FlowDirection.In)] uint dst, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> value);

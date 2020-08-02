@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Flow(FlowDirection.In)] int value);
 
         [NativeApi(EntryPoint = "glPatchParameterfv")]
-        public partial unsafe void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
+        public unsafe partial void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
 
         [NativeApi(EntryPoint = "glPatchParameterfv")]
         public partial void PatchParameter([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float values);
@@ -32,7 +32,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value);
 
         [NativeApi(EntryPoint = "glPatchParameterfv")]
-        public partial unsafe void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
+        public unsafe partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
 
         [NativeApi(EntryPoint = "glPatchParameterfv")]
         public partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float values);

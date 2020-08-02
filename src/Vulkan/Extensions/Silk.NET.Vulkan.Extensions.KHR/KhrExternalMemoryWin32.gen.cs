@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_external_memory_win32";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandleKHR")]
-        public partial unsafe Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetWin32HandleInfoKHR* pGetWin32HandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] IntPtr* pHandle);
+        public unsafe partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetWin32HandleInfoKHR* pGetWin32HandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] IntPtr* pHandle);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandleKHR")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
-        public partial unsafe Result GetMemoryWin32HandleProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] IntPtr handle, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryWin32HandlePropertiesKHR* pMemoryWin32HandleProperties);
+        public unsafe partial Result GetMemoryWin32HandleProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] IntPtr handle, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryWin32HandlePropertiesKHR* pMemoryWin32HandleProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]

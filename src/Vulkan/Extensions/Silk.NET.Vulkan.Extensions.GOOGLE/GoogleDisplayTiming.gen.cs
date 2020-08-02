@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.GOOGLE
         public const string ExtensionName = "VK_GOOGLE_display_timing";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPastPresentationTimingGOOGLE")]
-        public partial unsafe Result GetPastPresentationTiming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pPresentationTimingCount, [Count(Computed = "pPresentationTimingCount"), Flow(FlowDirection.Out)] PastPresentationTimingGOOGLE* pPresentationTimings);
+        public unsafe partial Result GetPastPresentationTiming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pPresentationTimingCount, [Count(Computed = "pPresentationTimingCount"), Flow(FlowDirection.Out)] PastPresentationTimingGOOGLE* pPresentationTimings);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPastPresentationTimingGOOGLE")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.GOOGLE
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetRefreshCycleDurationGOOGLE")]
-        public partial unsafe Result GetRefreshCycleDuration([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0), Flow(FlowDirection.Out)] RefreshCycleDurationGOOGLE* pDisplayTimingProperties);
+        public unsafe partial Result GetRefreshCycleDuration([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0), Flow(FlowDirection.Out)] RefreshCycleDurationGOOGLE* pDisplayTimingProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetRefreshCycleDurationGOOGLE")]

@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_metal_surface";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT")]
-        public partial unsafe Result CreateMetalSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MetalSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+        public unsafe partial Result CreateMetalSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MetalSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateMetalSurfaceEXT")]

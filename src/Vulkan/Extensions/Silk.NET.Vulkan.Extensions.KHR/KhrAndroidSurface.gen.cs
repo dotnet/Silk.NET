@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_android_surface";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateAndroidSurfaceKHR")]
-        public partial unsafe Result CreateAndroidSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] AndroidSurfaceCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+        public unsafe partial Result CreateAndroidSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] AndroidSurfaceCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateAndroidSurfaceKHR")]

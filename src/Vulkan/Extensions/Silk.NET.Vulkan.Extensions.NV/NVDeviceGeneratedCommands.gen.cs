@@ -25,7 +25,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdExecuteGeneratedCommandsNV")]
-        public partial unsafe void CmdExecuteGeneratedCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 isPreprocessed, [Count(Count = 0), Flow(FlowDirection.In)] GeneratedCommandsInfoNV* pGeneratedCommandsInfo);
+        public unsafe partial void CmdExecuteGeneratedCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Bool32 isPreprocessed, [Count(Count = 0), Flow(FlowDirection.In)] GeneratedCommandsInfoNV* pGeneratedCommandsInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdExecuteGeneratedCommandsNV")]
@@ -33,7 +33,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdPreprocessGeneratedCommandsNV")]
-        public partial unsafe void CmdPreprocessGeneratedCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] GeneratedCommandsInfoNV* pGeneratedCommandsInfo);
+        public unsafe partial void CmdPreprocessGeneratedCommands([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] GeneratedCommandsInfoNV* pGeneratedCommandsInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdPreprocessGeneratedCommandsNV")]
@@ -41,7 +41,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV")]
-        public partial unsafe Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] IndirectCommandsLayoutCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] IndirectCommandsLayoutNV* pIndirectCommandsLayout);
+        public unsafe partial Result CreateIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] IndirectCommandsLayoutCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] IndirectCommandsLayoutNV* pIndirectCommandsLayout);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateIndirectCommandsLayoutNV")]
@@ -49,7 +49,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyIndirectCommandsLayoutNV")]
-        public partial unsafe void DestroyIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0)] IndirectCommandsLayoutNV indirectCommandsLayout, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyIndirectCommandsLayout([Count(Count = 0)] Device device, [Count(Count = 0)] IndirectCommandsLayoutNV indirectCommandsLayout, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyIndirectCommandsLayoutNV")]
@@ -57,7 +57,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsNV")]
-        public partial unsafe void GetGeneratedCommandsMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] GeneratedCommandsMemoryRequirementsInfoNV* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
+        public unsafe partial void GetGeneratedCommandsMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] GeneratedCommandsMemoryRequirementsInfoNV* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2* pMemoryRequirements);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetGeneratedCommandsMemoryRequirementsNV")]

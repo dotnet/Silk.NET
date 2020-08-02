@@ -23,55 +23,55 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void VertexBlend([Flow(FlowDirection.In)] int count);
 
         [NativeApi(EntryPoint = "glWeightbvARB")]
-        public partial unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] sbyte* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] sbyte* weights);
 
         [NativeApi(EntryPoint = "glWeightbvARB")]
         public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<sbyte> weights);
 
         [NativeApi(EntryPoint = "glWeightsvARB")]
-        public partial unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] short* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] short* weights);
 
         [NativeApi(EntryPoint = "glWeightsvARB")]
         public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<short> weights);
 
         [NativeApi(EntryPoint = "glWeightivARB")]
-        public partial unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] int* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] int* weights);
 
         [NativeApi(EntryPoint = "glWeightivARB")]
         public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<int> weights);
 
         [NativeApi(EntryPoint = "glWeightfvARB")]
-        public partial unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] float* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] float* weights);
 
         [NativeApi(EntryPoint = "glWeightfvARB")]
         public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<float> weights);
 
         [NativeApi(EntryPoint = "glWeightdvARB")]
-        public partial unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] double* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] double* weights);
 
         [NativeApi(EntryPoint = "glWeightdvARB")]
         public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<double> weights);
 
         [NativeApi(EntryPoint = "glWeightubvARB")]
-        public partial unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] byte* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] byte* weights);
 
         [NativeApi(EntryPoint = "glWeightubvARB")]
         public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<byte> weights);
 
         [NativeApi(EntryPoint = "glWeightusvARB")]
-        public partial unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ushort* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ushort* weights);
 
         [NativeApi(EntryPoint = "glWeightusvARB")]
         public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<ushort> weights);
 
         [NativeApi(EntryPoint = "glWeightuivARB")]
-        public partial unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] uint* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] uint* weights);
 
         [NativeApi(EntryPoint = "glWeightuivARB")]
         public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<uint> weights);
 
         [NativeApi(EntryPoint = "glWeightPointerARB")]
-        public partial unsafe void WeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void WeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glWeightPointerARB")]
         public partial void WeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -80,7 +80,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void Weight([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] string weights);
 
         [NativeApi(EntryPoint = "glWeightPointerARB")]
-        public partial unsafe void WeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] WeightPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void WeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] WeightPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glWeightPointerARB")]
         public partial void WeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] WeightPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;

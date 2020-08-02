@@ -20,25 +20,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
     {
         public const string ExtensionName = "SGIS_sharpen_texture";
         [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
-        public partial unsafe void GetSharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
+        public unsafe partial void GetSharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
 
         [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
         public partial void GetSharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
 
         [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
-        public partial unsafe void SharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
+        public unsafe partial void SharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
 
         [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
         public partial void SharpenTexFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> points);
 
         [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
-        public partial unsafe void GetSharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
+        public unsafe partial void GetSharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* points);
 
         [NativeApi(EntryPoint = "glGetSharpenTexFuncSGIS")]
         public partial void GetSharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
 
         [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
-        public partial unsafe void SharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
+        public unsafe partial void SharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* points);
 
         [NativeApi(EntryPoint = "glSharpenTexFuncSGIS")]
         public partial void SharpenTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<float> points);

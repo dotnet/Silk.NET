@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.GGP
         public const string ExtensionName = "VK_GGP_stream_descriptor_surface";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateStreamDescriptorSurfaceGGP")]
-        public partial unsafe Result CreateStreamDescriptorSurfaceGgp([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] StreamDescriptorSurfaceCreateInfoGGP* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+        public unsafe partial Result CreateStreamDescriptorSurfaceGgp([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] StreamDescriptorSurfaceCreateInfoGGP* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateStreamDescriptorSurfaceGGP")]

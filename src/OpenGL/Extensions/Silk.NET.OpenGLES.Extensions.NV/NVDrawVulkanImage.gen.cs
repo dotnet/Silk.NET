@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         public partial void DrawVkImage([Flow(FlowDirection.In)] ulong vkImage, [Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] float x0, [Flow(FlowDirection.In)] float y0, [Flow(FlowDirection.In)] float x1, [Flow(FlowDirection.In)] float y1, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float s0, [Flow(FlowDirection.In)] float t0, [Flow(FlowDirection.In)] float s1, [Flow(FlowDirection.In)] float t1);
 
         [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
-        public partial unsafe IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
+        public unsafe partial IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
         public partial IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] ref byte name);

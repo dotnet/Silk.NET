@@ -20,13 +20,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
     {
         public const string ExtensionName = "APPLE_texture_range";
         [NativeApi(EntryPoint = "glGetTexParameterPointervAPPLE")]
-        public partial unsafe void GetTexParameterPointer([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] APPLE pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+        public unsafe partial void GetTexParameterPointer([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] APPLE pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
         [NativeApi(EntryPoint = "glGetTexParameterPointervAPPLE")]
-        public partial unsafe void GetTexParameterPointer<T0>([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] APPLE pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
+        public unsafe partial void GetTexParameterPointer<T0>([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] APPLE pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTextureRangeAPPLE")]
-        public partial unsafe void TextureRange([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void TextureRange([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glTextureRangeAPPLE")]
         public partial void TextureRange<T0>([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : unmanaged;

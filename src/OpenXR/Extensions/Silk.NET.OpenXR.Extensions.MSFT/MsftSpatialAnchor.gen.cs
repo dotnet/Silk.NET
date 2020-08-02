@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         public const string ExtensionName = "XR_MSFT_spatial_anchor";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorMSFT")]
-        public partial unsafe Result CreateSpatialAnchorMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpatialAnchorCreateInfoMSFT* createInfo, [Count(Count = 0)] SpatialAnchorMSFT* anchor);
+        public unsafe partial Result CreateSpatialAnchorMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpatialAnchorCreateInfoMSFT* createInfo, [Count(Count = 0)] SpatialAnchorMSFT* anchor);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorMSFT")]
@@ -29,7 +29,7 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorSpaceMSFT")]
-        public partial unsafe Result CreateSpatialAnchorSpaceMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpatialAnchorSpaceCreateInfoMSFT* createInfo, [Count(Count = 0)] Space* space);
+        public unsafe partial Result CreateSpatialAnchorSpaceMsft([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] SpatialAnchorSpaceCreateInfoMSFT* createInfo, [Count(Count = 0)] Space* space);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorSpaceMSFT")]

@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
         public const string ExtensionName = "VK_NV_clip_space_w_scaling";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewportWScalingNV")]
-        public partial unsafe void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] ViewportWScalingNV* pViewportWScalings);
+        public unsafe partial void CmdSetViewportWScaling([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] ViewportWScalingNV* pViewportWScalings);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewportWScalingNV")]

@@ -23,13 +23,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         public partial int GetInstruments();
 
         [NativeApi(EntryPoint = "glInstrumentsBufferSGIX")]
-        public partial unsafe void InstrumentsBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] int* buffer);
+        public unsafe partial void InstrumentsBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] int* buffer);
 
         [NativeApi(EntryPoint = "glInstrumentsBufferSGIX")]
         public partial void InstrumentsBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<int> buffer);
 
         [NativeApi(EntryPoint = "glPollInstrumentsSGIX")]
-        public partial unsafe int PollInstruments([Count(Count = 1), Flow(FlowDirection.Out)] int* marker_p);
+        public unsafe partial int PollInstruments([Count(Count = 1), Flow(FlowDirection.Out)] int* marker_p);
 
         [NativeApi(EntryPoint = "glPollInstrumentsSGIX")]
         public partial int PollInstruments([Count(Count = 1), Flow(FlowDirection.Out)] out int marker_p);

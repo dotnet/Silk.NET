@@ -29,7 +29,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] double s);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1dvARB")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1dvARB")]
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] ref double v);
@@ -38,7 +38,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] float s);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1fvARB")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1fvARB")]
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] ref float v);
@@ -47,7 +47,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int s);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1ivARB")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1ivARB")]
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] ref int v);
@@ -56,7 +56,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] short s);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1svARB")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1svARB")]
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] ARB target, [Count(Count = 1), Flow(FlowDirection.In)] ref short v);
@@ -65,7 +65,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2dvARB")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2dvARB")]
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] Span<double> v);
@@ -74,7 +74,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2fvARB")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2fvARB")]
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
@@ -83,7 +83,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2ivARB")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2ivARB")]
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] Span<int> v);
@@ -92,7 +92,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2svARB")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2svARB")]
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] ARB target, [Count(Count = 2), Flow(FlowDirection.In)] Span<short> v);
@@ -101,7 +101,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3dvARB")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3dvARB")]
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
@@ -110,7 +110,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3fvARB")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3fvARB")]
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
@@ -119,7 +119,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3ivARB")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3ivARB")]
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
@@ -128,7 +128,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3svARB")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3svARB")]
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] ARB target, [Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
@@ -137,7 +137,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r, [Flow(FlowDirection.In)] double q);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4dvARB")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4dvARB")]
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
@@ -146,7 +146,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float q);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4fvARB")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4fvARB")]
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
@@ -155,7 +155,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r, [Flow(FlowDirection.In)] int q);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4ivARB")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4ivARB")]
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
@@ -164,7 +164,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r, [Flow(FlowDirection.In)] short q);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4svARB")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4svARB")]
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] ARB target, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
@@ -179,7 +179,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1dvARB")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1dvARB")]
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref double v);
@@ -188,7 +188,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1fvARB")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1fvARB")]
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref float v);
@@ -197,7 +197,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1ivARB")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1ivARB")]
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref int v);
@@ -206,7 +206,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1svARB")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord1svARB")]
         public partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] ref short v);
@@ -215,7 +215,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2dvARB")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2dvARB")]
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<double> v);
@@ -224,7 +224,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2fvARB")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2fvARB")]
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
@@ -233,7 +233,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2ivARB")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2ivARB")]
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<int> v);
@@ -242,7 +242,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2svARB")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord2svARB")]
         public partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] Span<short> v);
@@ -251,7 +251,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3dvARB")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3dvARB")]
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
@@ -260,7 +260,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3fvARB")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3fvARB")]
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
@@ -269,7 +269,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3ivARB")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3ivARB")]
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
@@ -278,7 +278,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3svARB")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord3svARB")]
         public partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
@@ -287,7 +287,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] double s, [Flow(FlowDirection.In)] double t, [Flow(FlowDirection.In)] double r, [Flow(FlowDirection.In)] double q);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4dvARB")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4dvARB")]
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
@@ -296,7 +296,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] float s, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float q);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4fvARB")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4fvARB")]
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
@@ -305,7 +305,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] int s, [Flow(FlowDirection.In)] int t, [Flow(FlowDirection.In)] int r, [Flow(FlowDirection.In)] int q);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4ivARB")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4ivARB")]
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
@@ -314,7 +314,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Flow(FlowDirection.In)] short s, [Flow(FlowDirection.In)] short t, [Flow(FlowDirection.In)] short r, [Flow(FlowDirection.In)] short q);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4svARB")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glMultiTexCoord4svARB")]
         public partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);

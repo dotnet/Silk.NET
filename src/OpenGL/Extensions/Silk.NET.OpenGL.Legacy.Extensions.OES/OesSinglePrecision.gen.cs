@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         public partial void ClearDepth([Flow(FlowDirection.In)] float depth);
 
         [NativeApi(EntryPoint = "glClipPlanefOES")]
-        public partial unsafe void ClipPlane([Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.In)] float* equation);
+        public unsafe partial void ClipPlane([Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.In)] float* equation);
 
         [NativeApi(EntryPoint = "glClipPlanefOES")]
         public partial void ClipPlane([Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> equation);
@@ -35,7 +35,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         public partial void Frustum([Flow(FlowDirection.In)] float l, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float b, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f);
 
         [NativeApi(EntryPoint = "glGetClipPlanefOES")]
-        public partial unsafe void GetClipPlane([Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.Out)] float* equation);
+        public unsafe partial void GetClipPlane([Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.Out)] float* equation);
 
         [NativeApi(EntryPoint = "glGetClipPlanefOES")]
         public partial void GetClipPlane([Flow(FlowDirection.In)] OES plane, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> equation);
@@ -44,13 +44,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         public partial void Ortho([Flow(FlowDirection.In)] float l, [Flow(FlowDirection.In)] float r, [Flow(FlowDirection.In)] float b, [Flow(FlowDirection.In)] float t, [Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f);
 
         [NativeApi(EntryPoint = "glClipPlanefOES")]
-        public partial unsafe void ClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.In)] float* equation);
+        public unsafe partial void ClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.In)] float* equation);
 
         [NativeApi(EntryPoint = "glClipPlanefOES")]
         public partial void ClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> equation);
 
         [NativeApi(EntryPoint = "glGetClipPlanefOES")]
-        public partial unsafe void GetClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.Out)] float* equation);
+        public unsafe partial void GetClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.Out)] float* equation);
 
         [NativeApi(EntryPoint = "glGetClipPlanefOES")]
         public partial void GetClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> equation);

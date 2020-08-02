@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public partial void BindTransformFeedback([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint id);
 
         [NativeApi(EntryPoint = "glDeleteTransformFeedbacks")]
-        public partial unsafe void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids);
+        public unsafe partial void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids);
 
         [NativeApi(EntryPoint = "glDeleteTransformFeedbacks")]
         public partial void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> ids);
@@ -32,7 +32,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public partial void DrawTransformFeedback([Flow(FlowDirection.In)] ARB mode, [Flow(FlowDirection.In)] uint id);
 
         [NativeApi(EntryPoint = "glGenTransformFeedbacks")]
-        public partial unsafe void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
+        public unsafe partial void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
 
         [NativeApi(EntryPoint = "glGenTransformFeedbacks")]
         public partial void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids);

@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial void FlushVertexArrayRange();
 
         [NativeApi(EntryPoint = "glVertexArrayRangeNV")]
-        public partial unsafe void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexArrayRangeNV")]
         public partial void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;

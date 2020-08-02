@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
     {
         public const string ExtensionName = "SGIX_reference_plane";
         [NativeApi(EntryPoint = "glReferencePlaneSGIX")]
-        public partial unsafe void ReferencePlane([Count(Count = 4), Flow(FlowDirection.In)] double* equation);
+        public unsafe partial void ReferencePlane([Count(Count = 4), Flow(FlowDirection.In)] double* equation);
 
         [NativeApi(EntryPoint = "glReferencePlaneSGIX")]
         public partial void ReferencePlane([Count(Count = 4), Flow(FlowDirection.In)] Span<double> equation);

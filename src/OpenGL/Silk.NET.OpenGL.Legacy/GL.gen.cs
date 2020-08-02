@@ -18,13 +18,13 @@ namespace Silk.NET.OpenGL.Legacy
     {
 
         [NativeApi(EntryPoint = "glMultiDrawArraysIndirectCount")]
-        public partial unsafe void MultiDrawArraysIndirectCount([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
+        public unsafe partial void MultiDrawArraysIndirectCount([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysIndirectCount")]
         public partial void MultiDrawArraysIndirectCount<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] Span<T0> indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectCount")]
-        public partial unsafe void MultiDrawElementsIndirectCount([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
+        public unsafe partial void MultiDrawElementsIndirectCount([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectCount")]
         public partial void MultiDrawElementsIndirectCount<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Span<T0> indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
@@ -33,25 +33,25 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void PolygonOffsetClamp([Flow(FlowDirection.In)] float factor, [Flow(FlowDirection.In)] float units, [Flow(FlowDirection.In)] float clamp);
 
         [NativeApi(EntryPoint = "glSpecializeShader")]
-        public partial unsafe void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] byte* pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] uint* pConstantIndex, [Flow(FlowDirection.In)] uint* pConstantValue);
+        public unsafe partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] byte* pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] uint* pConstantIndex, [Flow(FlowDirection.In)] uint* pConstantValue);
 
         [NativeApi(EntryPoint = "glSpecializeShader")]
         public partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] Span<byte> pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] Span<uint> pConstantIndex, [Flow(FlowDirection.In)] Span<uint> pConstantValue);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysIndirectCount")]
-        public partial unsafe void MultiDrawArraysIndirectCount([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
+        public unsafe partial void MultiDrawArraysIndirectCount([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysIndirectCount")]
         public partial void MultiDrawArraysIndirectCount<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] Span<T0> indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectCount")]
-        public partial unsafe void MultiDrawElementsIndirectCount([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
+        public unsafe partial void MultiDrawElementsIndirectCount([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirectCount")]
         public partial void MultiDrawElementsIndirectCount<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] Span<T0> indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glSpecializeShader")]
-        public partial unsafe void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] uint* pConstantIndex, [Flow(FlowDirection.In)] uint* pConstantValue);
+        public unsafe partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] uint* pConstantIndex, [Flow(FlowDirection.In)] uint* pConstantValue);
 
         [NativeApi(EntryPoint = "glSpecializeShader")]
         public partial void SpecializeShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] string pEntryPoint, [Flow(FlowDirection.In)] uint numSpecializationConstants, [Flow(FlowDirection.In)] Span<uint> pConstantIndex, [Flow(FlowDirection.In)] Span<uint> pConstantValue);
@@ -66,31 +66,31 @@ namespace Silk.NET.OpenGL.Legacy
         public partial GLEnum CheckNamedFramebufferStatus([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum target);
 
         [NativeApi(EntryPoint = "glClearNamedBufferData")]
-        public partial unsafe void ClearNamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* data);
+        public unsafe partial void ClearNamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearNamedBufferData")]
         public partial void ClearNamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearNamedBufferSubData")]
-        public partial unsafe void ClearNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* data);
+        public unsafe partial void ClearNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearNamedBufferSubData")]
         public partial void ClearNamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearNamedFramebufferiv")]
-        public partial unsafe void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] int* value);
+        public unsafe partial void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glClearNamedFramebufferiv")]
         public partial void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] Span<int> value);
 
         [NativeApi(EntryPoint = "glClearNamedFramebufferuiv")]
-        public partial unsafe void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glClearNamedFramebufferuiv")]
         public partial void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] Span<uint> value);
 
         [NativeApi(EntryPoint = "glClearNamedFramebufferfv")]
-        public partial unsafe void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glClearNamedFramebufferfv")]
         public partial void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] Span<float> value);
@@ -102,19 +102,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ClipControl([Flow(FlowDirection.In)] GLEnum origin, [Flow(FlowDirection.In)] GLEnum depth);
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage1D")]
-        public partial unsafe void CompressedTextureSubImage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTextureSubImage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage1D")]
         public partial void CompressedTextureSubImage1D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage2D")]
-        public partial unsafe void CompressedTextureSubImage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTextureSubImage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage2D")]
         public partial void CompressedTextureSubImage2D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage3D")]
-        public partial unsafe void CompressedTextureSubImage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTextureSubImage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage3D")]
         public partial void CompressedTextureSubImage3D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
@@ -132,55 +132,55 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void CopyTextureSubImage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glCreateBuffers")]
-        public partial unsafe void CreateBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* buffers);
+        public unsafe partial void CreateBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* buffers);
 
         [NativeApi(EntryPoint = "glCreateBuffers")]
         public partial void CreateBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> buffers);
 
         [NativeApi(EntryPoint = "glCreateFramebuffers")]
-        public partial unsafe void CreateFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* framebuffers);
+        public unsafe partial void CreateFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* framebuffers);
 
         [NativeApi(EntryPoint = "glCreateFramebuffers")]
         public partial void CreateFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> framebuffers);
 
         [NativeApi(EntryPoint = "glCreateProgramPipelines")]
-        public partial unsafe void CreateProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* pipelines);
+        public unsafe partial void CreateProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* pipelines);
 
         [NativeApi(EntryPoint = "glCreateProgramPipelines")]
         public partial void CreateProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> pipelines);
 
         [NativeApi(EntryPoint = "glCreateQueries")]
-        public partial unsafe void CreateQueries([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
+        public unsafe partial void CreateQueries([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
 
         [NativeApi(EntryPoint = "glCreateQueries")]
         public partial void CreateQueries([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids);
 
         [NativeApi(EntryPoint = "glCreateRenderbuffers")]
-        public partial unsafe void CreateRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* renderbuffers);
+        public unsafe partial void CreateRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* renderbuffers);
 
         [NativeApi(EntryPoint = "glCreateRenderbuffers")]
         public partial void CreateRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> renderbuffers);
 
         [NativeApi(EntryPoint = "glCreateSamplers")]
-        public partial unsafe void CreateSamplers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* samplers);
+        public unsafe partial void CreateSamplers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* samplers);
 
         [NativeApi(EntryPoint = "glCreateSamplers")]
         public partial void CreateSamplers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> samplers);
 
         [NativeApi(EntryPoint = "glCreateTextures")]
-        public partial unsafe void CreateTextures([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* textures);
+        public unsafe partial void CreateTextures([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* textures);
 
         [NativeApi(EntryPoint = "glCreateTextures")]
         public partial void CreateTextures([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures);
 
         [NativeApi(EntryPoint = "glCreateTransformFeedbacks")]
-        public partial unsafe void CreateTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
+        public unsafe partial void CreateTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
 
         [NativeApi(EntryPoint = "glCreateTransformFeedbacks")]
         public partial void CreateTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids);
 
         [NativeApi(EntryPoint = "glCreateVertexArrays")]
-        public partial unsafe void CreateVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays);
+        public unsafe partial void CreateVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays);
 
         [NativeApi(EntryPoint = "glCreateVertexArrays")]
         public partial void CreateVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays);
@@ -198,13 +198,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void GenerateTextureMipmap([Flow(FlowDirection.In)] uint texture);
 
         [NativeApi(EntryPoint = "glGetCompressedTextureImage")]
-        public partial unsafe void GetCompressedTextureImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
+        public unsafe partial void GetCompressedTextureImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetCompressedTextureImage")]
         public partial void GetCompressedTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetCompressedTextureSubImage")]
-        public partial unsafe void GetCompressedTextureSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
+        public unsafe partial void GetCompressedTextureSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetCompressedTextureSubImage")]
         public partial void GetCompressedTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged;
@@ -213,148 +213,148 @@ namespace Silk.NET.OpenGL.Legacy
         public partial GLEnum GetGraphicsResetStatus();
 
         [NativeApi(EntryPoint = "glGetNamedBufferParameteriv")]
-        public partial unsafe void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetNamedBufferParameteriv")]
         public partial void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetNamedBufferParameteri64v")]
-        public partial unsafe void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] long* @params);
+        public unsafe partial void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] long* @params);
 
         [NativeApi(EntryPoint = "glGetNamedBufferParameteri64v")]
         public partial void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] Span<long> @params);
 
         [NativeApi(EntryPoint = "glGetNamedBufferPointerv")]
-        public partial unsafe void GetNamedBufferPointer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] void** @params);
+        public unsafe partial void GetNamedBufferPointer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] void** @params);
 
         [NativeApi(EntryPoint = "glGetNamedBufferSubData")]
-        public partial unsafe void GetNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] void* data);
+        public unsafe partial void GetNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] void* data);
 
         [NativeApi(EntryPoint = "glGetNamedBufferSubData")]
         public partial void GetNamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetNamedFramebufferAttachmentParameteriv")]
-        public partial unsafe void GetNamedFramebufferAttachmentParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetNamedFramebufferAttachmentParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetNamedFramebufferAttachmentParameteriv")]
         public partial void GetNamedFramebufferAttachmentParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetNamedFramebufferParameteriv")]
-        public partial unsafe void GetNamedFramebufferParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* param);
+        public unsafe partial void GetNamedFramebufferParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* param);
 
         [NativeApi(EntryPoint = "glGetNamedFramebufferParameteriv")]
         public partial void GetNamedFramebufferParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] Span<int> param);
 
         [NativeApi(EntryPoint = "glGetNamedRenderbufferParameteriv")]
-        public partial unsafe void GetNamedRenderbufferParameter([Flow(FlowDirection.In)] uint renderbuffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetNamedRenderbufferParameter([Flow(FlowDirection.In)] uint renderbuffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetNamedRenderbufferParameteriv")]
         public partial void GetNamedRenderbufferParameter([Flow(FlowDirection.In)] uint renderbuffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetnColorTable")]
-        public partial unsafe void GetnColorTable([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* table);
+        public unsafe partial void GetnColorTable([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* table);
 
         [NativeApi(EntryPoint = "glGetnColorTable")]
         public partial void GetnColorTable<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnCompressedTexImage")]
-        public partial unsafe void GetnCompressedTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int lod, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
+        public unsafe partial void GetnCompressedTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int lod, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetnCompressedTexImage")]
         public partial void GetnCompressedTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int lod, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnConvolutionFilter")]
-        public partial unsafe void GetnConvolutionFilter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* image);
+        public unsafe partial void GetnConvolutionFilter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* image);
 
         [NativeApi(EntryPoint = "glGetnConvolutionFilter")]
         public partial void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnHistogram")]
-        public partial unsafe void GetnHistogram([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
+        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnHistogram")]
         public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMapdv")]
-        public partial unsafe void GetnMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] double* v);
+        public unsafe partial void GetnMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] double* v);
 
         [NativeApi(EntryPoint = "glGetnMapdv")]
         public partial void GetnMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<double> v);
 
         [NativeApi(EntryPoint = "glGetnMapfv")]
-        public partial unsafe void GetnMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* v);
+        public unsafe partial void GetnMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* v);
 
         [NativeApi(EntryPoint = "glGetnMapfv")]
         public partial void GetnMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<float> v);
 
         [NativeApi(EntryPoint = "glGetnMapiv")]
-        public partial unsafe void GetnMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] int* v);
+        public unsafe partial void GetnMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] int* v);
 
         [NativeApi(EntryPoint = "glGetnMapiv")]
         public partial void GetnMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<int> v);
 
         [NativeApi(EntryPoint = "glGetnMinmax")]
-        public partial unsafe void GetnMinmax([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
+        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnMinmax")]
         public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnPixelMapfv")]
-        public partial unsafe void GetnPixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* values);
+        public unsafe partial void GetnPixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* values);
 
         [NativeApi(EntryPoint = "glGetnPixelMapfv")]
         public partial void GetnPixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<float> values);
 
         [NativeApi(EntryPoint = "glGetnPixelMapuiv")]
-        public partial unsafe void GetnPixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* values);
+        public unsafe partial void GetnPixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* values);
 
         [NativeApi(EntryPoint = "glGetnPixelMapuiv")]
         public partial void GetnPixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<uint> values);
 
         [NativeApi(EntryPoint = "glGetnPixelMapusv")]
-        public partial unsafe void GetnPixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] ushort* values);
+        public unsafe partial void GetnPixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] ushort* values);
 
         [NativeApi(EntryPoint = "glGetnPixelMapusv")]
         public partial void GetnPixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<ushort> values);
 
         [NativeApi(EntryPoint = "glGetnPolygonStipple")]
-        public partial unsafe void GetnPolygonStipple([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] byte* pattern);
+        public unsafe partial void GetnPolygonStipple([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] byte* pattern);
 
         [NativeApi(EntryPoint = "glGetnPolygonStipple")]
         public partial void GetnPolygonStipple([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<byte> pattern);
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public partial unsafe void GetnSeparableFilter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span);
+        public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span);
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
         public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] Span<T2> span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnTexImage")]
-        public partial unsafe void GetnTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
+        public unsafe partial void GetnTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetnTexImage")]
         public partial void GetnTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnUniformdv")]
-        public partial unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] double* @params);
+        public unsafe partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] double* @params);
 
         [NativeApi(EntryPoint = "glGetnUniformdv")]
         public partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> @params);
 
         [NativeApi(EntryPoint = "glGetnUniformfv")]
-        public partial unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetnUniformfv")]
         public partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> @params);
 
         [NativeApi(EntryPoint = "glGetnUniformiv")]
-        public partial unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetnUniformiv")]
         public partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetnUniformuiv")]
-        public partial unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetnUniformuiv")]
         public partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<uint> @params);
@@ -363,124 +363,124 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void GetQueryBufferObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] IntPtr offset);
 
         [NativeApi(EntryPoint = "glGetTextureImage")]
-        public partial unsafe void GetTextureImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
+        public unsafe partial void GetTextureImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetTextureImage")]
         public partial void GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetTextureLevelParameterfv")]
-        public partial unsafe void GetTextureLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetTextureLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetTextureLevelParameterfv")]
         public partial void GetTextureLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] Span<float> @params);
 
         [NativeApi(EntryPoint = "glGetTextureLevelParameteriv")]
-        public partial unsafe void GetTextureLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTextureLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetTextureLevelParameteriv")]
         public partial void GetTextureLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameterfv")]
-        public partial unsafe void GetTextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetTextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameterfv")]
         public partial void GetTextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] Span<float> @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameteriv")]
-        public partial unsafe void GetTextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameteriv")]
         public partial void GetTextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameterIiv")]
-        public partial unsafe void GetTextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameterIiv")]
         public partial void GetTextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameterIuiv")]
-        public partial unsafe void GetTextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetTextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameterIuiv")]
         public partial void GetTextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] Span<uint> @params);
 
         [NativeApi(EntryPoint = "glGetTextureSubImage")]
-        public partial unsafe void GetTextureSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
+        public unsafe partial void GetTextureSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetTextureSubImage")]
         public partial void GetTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetTransformFeedbackiv")]
-        public partial unsafe void GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* param);
+        public unsafe partial void GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* param);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbackiv")]
         public partial void GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] Span<int> param);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbacki_v")]
-        public partial unsafe void GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] int* param);
+        public unsafe partial void GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] int* param);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbacki_v")]
         public partial void GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] Span<int> param);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbacki64_v")]
-        public partial unsafe void GetTransformFeedbacki64([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] long* param);
+        public unsafe partial void GetTransformFeedbacki64([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] long* param);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbacki64_v")]
         public partial void GetTransformFeedbacki64([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] Span<long> param);
 
         [NativeApi(EntryPoint = "glGetVertexArrayiv")]
-        public partial unsafe void GetVertexArray([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* param);
+        public unsafe partial void GetVertexArray([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* param);
 
         [NativeApi(EntryPoint = "glGetVertexArrayiv")]
         public partial void GetVertexArray([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] Span<int> param);
 
         [NativeApi(EntryPoint = "glGetVertexArrayIndexediv")]
-        public partial unsafe void GetVertexArrayIndexed([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* param);
+        public unsafe partial void GetVertexArrayIndexed([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] int* param);
 
         [NativeApi(EntryPoint = "glGetVertexArrayIndexediv")]
         public partial void GetVertexArrayIndexed([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] Span<int> param);
 
         [NativeApi(EntryPoint = "glGetVertexArrayIndexed64iv")]
-        public partial unsafe void GetVertexArrayIndexed64([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] long* param);
+        public unsafe partial void GetVertexArrayIndexed64([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] long* param);
 
         [NativeApi(EntryPoint = "glGetVertexArrayIndexed64iv")]
         public partial void GetVertexArrayIndexed64([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.Out)] Span<long> param);
 
         [NativeApi(EntryPoint = "glInvalidateNamedFramebufferData")]
-        public partial unsafe void InvalidateNamedFramebufferData([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numAttachments, [Flow(FlowDirection.In)] GLEnum* attachments);
+        public unsafe partial void InvalidateNamedFramebufferData([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numAttachments, [Flow(FlowDirection.In)] GLEnum* attachments);
 
         [NativeApi(EntryPoint = "glInvalidateNamedFramebufferData")]
         public partial void InvalidateNamedFramebufferData([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numAttachments, [Flow(FlowDirection.In)] Span<GLEnum> attachments);
 
         [NativeApi(EntryPoint = "glInvalidateNamedFramebufferSubData")]
-        public partial unsafe void InvalidateNamedFramebufferSubData([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numAttachments, [Flow(FlowDirection.In)] GLEnum* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        public unsafe partial void InvalidateNamedFramebufferSubData([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numAttachments, [Flow(FlowDirection.In)] GLEnum* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glInvalidateNamedFramebufferSubData")]
         public partial void InvalidateNamedFramebufferSubData([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numAttachments, [Flow(FlowDirection.In)] Span<GLEnum> attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glMapNamedBuffer")]
-        public partial unsafe void* MapNamedBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum access);
+        public unsafe partial void* MapNamedBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum access);
 
         [NativeApi(EntryPoint = "glMapNamedBufferRange")]
-        public partial unsafe void* MapNamedBufferRange([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
+        public unsafe partial void* MapNamedBufferRange([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
 
         [NativeApi(EntryPoint = "glMemoryBarrierByRegion")]
         public partial void MemoryBarrierByRegion([Flow(FlowDirection.In)] uint barriers);
 
         [NativeApi(EntryPoint = "glNamedBufferData")]
-        public partial unsafe void NamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] GLEnum usage);
+        public unsafe partial void NamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] GLEnum usage);
 
         [NativeApi(EntryPoint = "glNamedBufferData")]
         public partial void NamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glNamedBufferStorage")]
-        public partial unsafe void NamedBufferStorage([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags);
+        public unsafe partial void NamedBufferStorage([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glNamedBufferStorage")]
         public partial void NamedBufferStorage<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glNamedBufferSubData")]
-        public partial unsafe void NamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Computed = "size"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void NamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Computed = "size"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glNamedBufferSubData")]
         public partial void NamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Computed = "size"), Flow(FlowDirection.In)] ref T0 data) where T0 : unmanaged;
@@ -489,7 +489,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void NamedFramebufferDrawBuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GLEnum buf);
 
         [NativeApi(EntryPoint = "glNamedFramebufferDrawBuffers")]
-        public partial unsafe void NamedFramebufferDrawBuffers([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.In)] GLEnum* bufs);
+        public unsafe partial void NamedFramebufferDrawBuffers([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.In)] GLEnum* bufs);
 
         [NativeApi(EntryPoint = "glNamedFramebufferDrawBuffers")]
         public partial void NamedFramebufferDrawBuffers([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.In)] Span<GLEnum> bufs);
@@ -516,7 +516,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void NamedRenderbufferStorageMultisample([Flow(FlowDirection.In)] uint renderbuffer, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glReadnPixels")]
-        public partial unsafe void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
+        public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
 
         [NativeApi(EntryPoint = "glReadnPixels")]
         public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged;
@@ -534,7 +534,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glTextureParameterfv")]
-        public partial unsafe void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float* param);
+        public unsafe partial void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float* param);
 
         [NativeApi(EntryPoint = "glTextureParameterfv")]
         public partial void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] Span<float> param);
@@ -543,19 +543,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glTextureParameteriv")]
-        public partial unsafe void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int* param);
+        public unsafe partial void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int* param);
 
         [NativeApi(EntryPoint = "glTextureParameteriv")]
         public partial void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] Span<int> param);
 
         [NativeApi(EntryPoint = "glTextureParameterIiv")]
-        public partial unsafe void TextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void TextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glTextureParameterIiv")]
         public partial void TextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glTextureParameterIuiv")]
-        public partial unsafe void TextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint* @params);
+        public unsafe partial void TextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint* @params);
 
         [NativeApi(EntryPoint = "glTextureParameterIuiv")]
         public partial void TextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] Span<uint> @params);
@@ -576,19 +576,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TextureStorage3DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTextureSubImage1D")]
-        public partial unsafe void TextureSubImage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TextureSubImage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTextureSubImage1D")]
         public partial void TextureSubImage1D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Span<T0> pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTextureSubImage2D")]
-        public partial unsafe void TextureSubImage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TextureSubImage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTextureSubImage2D")]
         public partial void TextureSubImage2D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Span<T0> pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTextureSubImage3D")]
-        public partial unsafe void TextureSubImage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TextureSubImage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTextureSubImage3D")]
         public partial void TextureSubImage3D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Span<T0> pixels) where T0 : unmanaged;
@@ -624,7 +624,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexArrayVertexBuffer([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glVertexArrayVertexBuffers")]
-        public partial unsafe void VertexArrayVertexBuffers([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] IntPtr* offsets, [Flow(FlowDirection.In)] uint* strides);
+        public unsafe partial void VertexArrayVertexBuffers([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] IntPtr* offsets, [Flow(FlowDirection.In)] uint* strides);
 
         [NativeApi(EntryPoint = "glVertexArrayVertexBuffers")]
         public partial void VertexArrayVertexBuffers([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<uint> buffers, [Flow(FlowDirection.In)] Span<IntPtr> offsets, [Flow(FlowDirection.In)] Span<uint> strides);
@@ -636,31 +636,31 @@ namespace Silk.NET.OpenGL.Legacy
         public partial GLEnum CheckNamedFramebufferStatus([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] FramebufferTarget target);
 
         [NativeApi(EntryPoint = "glClearNamedBufferData")]
-        public partial unsafe void ClearNamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* data);
+        public unsafe partial void ClearNamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearNamedBufferData")]
         public partial void ClearNamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearNamedBufferSubData")]
-        public partial unsafe void ClearNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* data);
+        public unsafe partial void ClearNamedBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearNamedBufferSubData")]
         public partial void ClearNamedBufferSubData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearNamedFramebufferiv")]
-        public partial unsafe void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] int* value);
+        public unsafe partial void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glClearNamedFramebufferiv")]
         public partial void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] Span<int> value);
 
         [NativeApi(EntryPoint = "glClearNamedFramebufferuiv")]
-        public partial unsafe void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glClearNamedFramebufferuiv")]
         public partial void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] Span<uint> value);
 
         [NativeApi(EntryPoint = "glClearNamedFramebufferfv")]
-        public partial unsafe void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glClearNamedFramebufferfv")]
         public partial void ClearNamedFramebuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] Span<float> value);
@@ -672,130 +672,130 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ClipControl([Flow(FlowDirection.In)] ClipControlOrigin origin, [Flow(FlowDirection.In)] ClipControlDepth depth);
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage1D")]
-        public partial unsafe void CompressedTextureSubImage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTextureSubImage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage1D")]
         public partial void CompressedTextureSubImage1D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage2D")]
-        public partial unsafe void CompressedTextureSubImage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTextureSubImage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage2D")]
         public partial void CompressedTextureSubImage2D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage3D")]
-        public partial unsafe void CompressedTextureSubImage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTextureSubImage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTextureSubImage3D")]
         public partial void CompressedTextureSubImage3D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCreateQueries")]
-        public partial unsafe void CreateQueries([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
+        public unsafe partial void CreateQueries([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
 
         [NativeApi(EntryPoint = "glCreateQueries")]
         public partial void CreateQueries([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids);
 
         [NativeApi(EntryPoint = "glCreateTextures")]
-        public partial unsafe void CreateTextures([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* textures);
+        public unsafe partial void CreateTextures([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* textures);
 
         [NativeApi(EntryPoint = "glCreateTextures")]
         public partial void CreateTextures([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures);
 
         [NativeApi(EntryPoint = "glGetNamedBufferParameteriv")]
-        public partial unsafe void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPNameARB pname, [Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPNameARB pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetNamedBufferParameteriv")]
         public partial void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPNameARB pname, [Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetNamedBufferParameteri64v")]
-        public partial unsafe void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPNameARB pname, [Flow(FlowDirection.Out)] long* @params);
+        public unsafe partial void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPNameARB pname, [Flow(FlowDirection.Out)] long* @params);
 
         [NativeApi(EntryPoint = "glGetNamedBufferParameteri64v")]
         public partial void GetNamedBufferParameter([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPNameARB pname, [Flow(FlowDirection.Out)] Span<long> @params);
 
         [NativeApi(EntryPoint = "glGetNamedBufferPointerv")]
-        public partial unsafe void GetNamedBufferPointer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Flow(FlowDirection.Out)] void** @params);
+        public unsafe partial void GetNamedBufferPointer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Flow(FlowDirection.Out)] void** @params);
 
         [NativeApi(EntryPoint = "glGetNamedFramebufferAttachmentParameteriv")]
-        public partial unsafe void GetNamedFramebufferAttachmentParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetNamedFramebufferAttachmentParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetNamedFramebufferAttachmentParameteriv")]
         public partial void GetNamedFramebufferAttachmentParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetNamedFramebufferParameteriv")]
-        public partial unsafe void GetNamedFramebufferParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GetFramebufferParameter pname, [Flow(FlowDirection.Out)] int* param);
+        public unsafe partial void GetNamedFramebufferParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GetFramebufferParameter pname, [Flow(FlowDirection.Out)] int* param);
 
         [NativeApi(EntryPoint = "glGetNamedFramebufferParameteriv")]
         public partial void GetNamedFramebufferParameter([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] GetFramebufferParameter pname, [Flow(FlowDirection.Out)] Span<int> param);
 
         [NativeApi(EntryPoint = "glGetNamedRenderbufferParameteriv")]
-        public partial unsafe void GetNamedRenderbufferParameter([Flow(FlowDirection.In)] uint renderbuffer, [Flow(FlowDirection.In)] RenderbufferParameterName pname, [Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetNamedRenderbufferParameter([Flow(FlowDirection.In)] uint renderbuffer, [Flow(FlowDirection.In)] RenderbufferParameterName pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetNamedRenderbufferParameteriv")]
         public partial void GetNamedRenderbufferParameter([Flow(FlowDirection.In)] uint renderbuffer, [Flow(FlowDirection.In)] RenderbufferParameterName pname, [Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetnColorTable")]
-        public partial unsafe void GetnColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* table);
+        public unsafe partial void GetnColorTable([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* table);
 
         [NativeApi(EntryPoint = "glGetnColorTable")]
         public partial void GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnCompressedTexImage")]
-        public partial unsafe void GetnCompressedTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int lod, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
+        public unsafe partial void GetnCompressedTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int lod, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetnCompressedTexImage")]
         public partial void GetnCompressedTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int lod, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnConvolutionFilter")]
-        public partial unsafe void GetnConvolutionFilter([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* image);
+        public unsafe partial void GetnConvolutionFilter([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* image);
 
         [NativeApi(EntryPoint = "glGetnConvolutionFilter")]
         public partial void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnHistogram")]
-        public partial unsafe void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
+        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnHistogram")]
         public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMapdv")]
-        public partial unsafe void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] double* v);
+        public unsafe partial void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] double* v);
 
         [NativeApi(EntryPoint = "glGetnMapdv")]
         public partial void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<double> v);
 
         [NativeApi(EntryPoint = "glGetnMapfv")]
-        public partial unsafe void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* v);
+        public unsafe partial void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* v);
 
         [NativeApi(EntryPoint = "glGetnMapfv")]
         public partial void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<float> v);
 
         [NativeApi(EntryPoint = "glGetnMapiv")]
-        public partial unsafe void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] int* v);
+        public unsafe partial void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] int* v);
 
         [NativeApi(EntryPoint = "glGetnMapiv")]
         public partial void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<int> v);
 
         [NativeApi(EntryPoint = "glGetnMinmax")]
-        public partial unsafe void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
+        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnMinmax")]
         public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnPixelMapfv")]
-        public partial unsafe void GetnPixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* values);
+        public unsafe partial void GetnPixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] float* values);
 
         [NativeApi(EntryPoint = "glGetnPixelMapfv")]
         public partial void GetnPixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<float> values);
 
         [NativeApi(EntryPoint = "glGetnPixelMapuiv")]
-        public partial unsafe void GetnPixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* values);
+        public unsafe partial void GetnPixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* values);
 
         [NativeApi(EntryPoint = "glGetnPixelMapuiv")]
         public partial void GetnPixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<uint> values);
 
         [NativeApi(EntryPoint = "glGetnPixelMapusv")]
-        public partial unsafe void GetnPixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] ushort* values);
+        public unsafe partial void GetnPixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] ushort* values);
 
         [NativeApi(EntryPoint = "glGetnPixelMapusv")]
         public partial void GetnPixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<ushort> values);
@@ -804,13 +804,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void GetnPolygonStipple([Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] string pattern);
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
-        public partial unsafe void GetnSeparableFilter([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span);
+        public unsafe partial void GetnSeparableFilter([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] void* row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] void* column, [Flow(FlowDirection.Out)] void* span);
 
         [NativeApi(EntryPoint = "glGetnSeparableFilter")]
         public partial void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Flow(FlowDirection.Out)] Span<T1> column, [Flow(FlowDirection.Out)] Span<T2> span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnTexImage")]
-        public partial unsafe void GetnTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
+        public unsafe partial void GetnTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetnTexImage")]
         public partial void GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged;
@@ -819,106 +819,106 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void GetQueryBufferObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Flow(FlowDirection.In)] IntPtr offset);
 
         [NativeApi(EntryPoint = "glGetTextureImage")]
-        public partial unsafe void GetTextureImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
+        public unsafe partial void GetTextureImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetTextureImage")]
         public partial void GetTextureImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetTextureLevelParameterfv")]
-        public partial unsafe void GetTextureLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetTextureLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetTextureLevelParameterfv")]
         public partial void GetTextureLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] Span<float> @params);
 
         [NativeApi(EntryPoint = "glGetTextureLevelParameteriv")]
-        public partial unsafe void GetTextureLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTextureLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetTextureLevelParameteriv")]
         public partial void GetTextureLevelParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameterfv")]
-        public partial unsafe void GetTextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetTextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameterfv")]
         public partial void GetTextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] Span<float> @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameteriv")]
-        public partial unsafe void GetTextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameteriv")]
         public partial void GetTextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameterIiv")]
-        public partial unsafe void GetTextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameterIiv")]
         public partial void GetTextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameterIuiv")]
-        public partial unsafe void GetTextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetTextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetTextureParameterIuiv")]
         public partial void GetTextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] GetTextureParameter pname, [Flow(FlowDirection.Out)] Span<uint> @params);
 
         [NativeApi(EntryPoint = "glGetTextureSubImage")]
-        public partial unsafe void GetTextureSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
+        public unsafe partial void GetTextureSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetTextureSubImage")]
         public partial void GetTextureSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<T0> pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetTransformFeedbackiv")]
-        public partial unsafe void GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] TransformFeedbackPName pname, [Flow(FlowDirection.Out)] int* param);
+        public unsafe partial void GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] TransformFeedbackPName pname, [Flow(FlowDirection.Out)] int* param);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbackiv")]
         public partial void GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] TransformFeedbackPName pname, [Flow(FlowDirection.Out)] Span<int> param);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbacki_v")]
-        public partial unsafe void GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] TransformFeedbackPName pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] int* param);
+        public unsafe partial void GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] TransformFeedbackPName pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] int* param);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbacki_v")]
         public partial void GetTransformFeedback([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] TransformFeedbackPName pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] Span<int> param);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbacki64_v")]
-        public partial unsafe void GetTransformFeedbacki64([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] TransformFeedbackPName pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] long* param);
+        public unsafe partial void GetTransformFeedbacki64([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] TransformFeedbackPName pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] long* param);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbacki64_v")]
         public partial void GetTransformFeedbacki64([Flow(FlowDirection.In)] uint xfb, [Flow(FlowDirection.In)] TransformFeedbackPName pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] Span<long> param);
 
         [NativeApi(EntryPoint = "glGetVertexArrayiv")]
-        public partial unsafe void GetVertexArray([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] VertexArrayPName pname, [Flow(FlowDirection.Out)] int* param);
+        public unsafe partial void GetVertexArray([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] VertexArrayPName pname, [Flow(FlowDirection.Out)] int* param);
 
         [NativeApi(EntryPoint = "glGetVertexArrayiv")]
         public partial void GetVertexArray([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] VertexArrayPName pname, [Flow(FlowDirection.Out)] Span<int> param);
 
         [NativeApi(EntryPoint = "glGetVertexArrayIndexediv")]
-        public partial unsafe void GetVertexArrayIndexed([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexArrayPName pname, [Flow(FlowDirection.Out)] int* param);
+        public unsafe partial void GetVertexArrayIndexed([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexArrayPName pname, [Flow(FlowDirection.Out)] int* param);
 
         [NativeApi(EntryPoint = "glGetVertexArrayIndexediv")]
         public partial void GetVertexArrayIndexed([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexArrayPName pname, [Flow(FlowDirection.Out)] Span<int> param);
 
         [NativeApi(EntryPoint = "glGetVertexArrayIndexed64iv")]
-        public partial unsafe void GetVertexArrayIndexed64([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexArrayPName pname, [Flow(FlowDirection.Out)] long* param);
+        public unsafe partial void GetVertexArrayIndexed64([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexArrayPName pname, [Flow(FlowDirection.Out)] long* param);
 
         [NativeApi(EntryPoint = "glGetVertexArrayIndexed64iv")]
         public partial void GetVertexArrayIndexed64([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexArrayPName pname, [Flow(FlowDirection.Out)] Span<long> param);
 
         [NativeApi(EntryPoint = "glInvalidateNamedFramebufferData")]
-        public partial unsafe void InvalidateNamedFramebufferData([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numAttachments, [Flow(FlowDirection.In)] FramebufferAttachment* attachments);
+        public unsafe partial void InvalidateNamedFramebufferData([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numAttachments, [Flow(FlowDirection.In)] FramebufferAttachment* attachments);
 
         [NativeApi(EntryPoint = "glInvalidateNamedFramebufferData")]
         public partial void InvalidateNamedFramebufferData([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numAttachments, [Flow(FlowDirection.In)] Span<FramebufferAttachment> attachments);
 
         [NativeApi(EntryPoint = "glInvalidateNamedFramebufferSubData")]
-        public partial unsafe void InvalidateNamedFramebufferSubData([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numAttachments, [Flow(FlowDirection.In)] FramebufferAttachment* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        public unsafe partial void InvalidateNamedFramebufferSubData([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numAttachments, [Flow(FlowDirection.In)] FramebufferAttachment* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glInvalidateNamedFramebufferSubData")]
         public partial void InvalidateNamedFramebufferSubData([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint numAttachments, [Flow(FlowDirection.In)] Span<FramebufferAttachment> attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glMapNamedBuffer")]
-        public partial unsafe void* MapNamedBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferAccessARB access);
+        public unsafe partial void* MapNamedBuffer([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] BufferAccessARB access);
 
         [NativeApi(EntryPoint = "glNamedBufferData")]
-        public partial unsafe void NamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] VertexBufferObjectUsage usage);
+        public unsafe partial void NamedBufferData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] VertexBufferObjectUsage usage);
 
         [NativeApi(EntryPoint = "glNamedBufferData")]
         public partial void NamedBufferData<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] VertexBufferObjectUsage usage) where T0 : unmanaged;
@@ -927,7 +927,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void NamedFramebufferDrawBuffer([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] ColorBuffer buf);
 
         [NativeApi(EntryPoint = "glNamedFramebufferDrawBuffers")]
-        public partial unsafe void NamedFramebufferDrawBuffers([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.In)] ColorBuffer* bufs);
+        public unsafe partial void NamedFramebufferDrawBuffers([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.In)] ColorBuffer* bufs);
 
         [NativeApi(EntryPoint = "glNamedFramebufferDrawBuffers")]
         public partial void NamedFramebufferDrawBuffers([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.In)] Span<ColorBuffer> bufs);
@@ -954,7 +954,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void NamedRenderbufferStorageMultisample([Flow(FlowDirection.In)] uint renderbuffer, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glReadnPixels")]
-        public partial unsafe void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
+        public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
 
         [NativeApi(EntryPoint = "glReadnPixels")]
         public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged;
@@ -969,7 +969,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glTextureParameterfv")]
-        public partial unsafe void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] float* param);
+        public unsafe partial void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] float* param);
 
         [NativeApi(EntryPoint = "glTextureParameterfv")]
         public partial void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] Span<float> param);
@@ -978,19 +978,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glTextureParameteriv")]
-        public partial unsafe void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] int* param);
+        public unsafe partial void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] int* param);
 
         [NativeApi(EntryPoint = "glTextureParameteriv")]
         public partial void TextureParameter([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] Span<int> param);
 
         [NativeApi(EntryPoint = "glTextureParameterIiv")]
-        public partial unsafe void TextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void TextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glTextureParameterIiv")]
         public partial void TextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glTextureParameterIuiv")]
-        public partial unsafe void TextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] uint* @params);
+        public unsafe partial void TextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] uint* @params);
 
         [NativeApi(EntryPoint = "glTextureParameterIuiv")]
         public partial void TextureParameterI([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] Span<uint> @params);
@@ -1011,19 +1011,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TextureStorage3DMultisample([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
         [NativeApi(EntryPoint = "glTextureSubImage1D")]
-        public partial unsafe void TextureSubImage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TextureSubImage1D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTextureSubImage1D")]
         public partial void TextureSubImage1D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] Span<T0> pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTextureSubImage2D")]
-        public partial unsafe void TextureSubImage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TextureSubImage2D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTextureSubImage2D")]
         public partial void TextureSubImage2D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] Span<T0> pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTextureSubImage3D")]
-        public partial unsafe void TextureSubImage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TextureSubImage3D([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTextureSubImage3D")]
         public partial void TextureSubImage3D<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] Span<T0> pixels) where T0 : unmanaged;
@@ -1038,85 +1038,85 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexArrayAttribLFormat([Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint attribindex, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribLType type, [Flow(FlowDirection.In)] uint relativeoffset);
 
         [NativeApi(EntryPoint = "glBindBuffersBase")]
-        public partial unsafe void BindBuffersBase([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers);
+        public unsafe partial void BindBuffersBase([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers);
 
         [NativeApi(EntryPoint = "glBindBuffersBase")]
         public partial void BindBuffersBase([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> buffers);
 
         [NativeApi(EntryPoint = "glBindBuffersRange")]
-        public partial unsafe void BindBuffersRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes);
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes);
 
         [NativeApi(EntryPoint = "glBindBuffersRange")]
         public partial void BindBuffersRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<UIntPtr> sizes);
 
         [NativeApi(EntryPoint = "glBindImageTextures")]
-        public partial unsafe void BindImageTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* textures);
+        public unsafe partial void BindImageTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* textures);
 
         [NativeApi(EntryPoint = "glBindImageTextures")]
         public partial void BindImageTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> textures);
 
         [NativeApi(EntryPoint = "glBindSamplers")]
-        public partial unsafe void BindSamplers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* samplers);
+        public unsafe partial void BindSamplers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* samplers);
 
         [NativeApi(EntryPoint = "glBindSamplers")]
         public partial void BindSamplers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> samplers);
 
         [NativeApi(EntryPoint = "glBindTextures")]
-        public partial unsafe void BindTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* textures);
+        public unsafe partial void BindTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* textures);
 
         [NativeApi(EntryPoint = "glBindTextures")]
         public partial void BindTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> textures);
 
         [NativeApi(EntryPoint = "glBindVertexBuffers")]
-        public partial unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides);
+        public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides);
 
         [NativeApi(EntryPoint = "glBindVertexBuffers")]
         public partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> strides);
 
         [NativeApi(EntryPoint = "glBufferStorage")]
-        public partial unsafe void BufferStorage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags);
+        public unsafe partial void BufferStorage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glBufferStorage")]
         public partial void BufferStorage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearTexImage")]
-        public partial unsafe void ClearTexImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void ClearTexImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearTexImage")]
         public partial void ClearTexImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ref T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearTexSubImage")]
-        public partial unsafe void ClearTexSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void ClearTexSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearTexSubImage")]
         public partial void ClearTexSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ref T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBindBuffersBase")]
-        public partial unsafe void BindBuffersBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers);
+        public unsafe partial void BindBuffersBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers);
 
         [NativeApi(EntryPoint = "glBindBuffersBase")]
         public partial void BindBuffersBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> buffers);
 
         [NativeApi(EntryPoint = "glBindBuffersRange")]
-        public partial unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes);
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes);
 
         [NativeApi(EntryPoint = "glBindBuffersRange")]
         public partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<UIntPtr> sizes);
 
         [NativeApi(EntryPoint = "glBufferStorage")]
-        public partial unsafe void BufferStorage([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags);
+        public unsafe partial void BufferStorage([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glBufferStorage")]
         public partial void BufferStorage<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearTexImage")]
-        public partial unsafe void ClearTexImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void ClearTexImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearTexImage")]
         public partial void ClearTexImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ref T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearTexSubImage")]
-        public partial unsafe void ClearTexSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void ClearTexSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearTexSubImage")]
         public partial void ClearTexSubImage<T0>([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ref T0 data) where T0 : unmanaged;
@@ -1125,13 +1125,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void BindVertexBuffer([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glClearBufferData")]
-        public partial unsafe void ClearBufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferData")]
         public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ref T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferSubData")]
-        public partial unsafe void ClearBufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferSubData")]
         public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ref T0 data) where T0 : unmanaged;
@@ -1140,19 +1140,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void CopyImageSubData([Flow(FlowDirection.In)] uint srcName, [Flow(FlowDirection.In)] GLEnum srcTarget, [Flow(FlowDirection.In)] int srcLevel, [Flow(FlowDirection.In)] int srcX, [Flow(FlowDirection.In)] int srcY, [Flow(FlowDirection.In)] int srcZ, [Flow(FlowDirection.In)] uint dstName, [Flow(FlowDirection.In)] GLEnum dstTarget, [Flow(FlowDirection.In)] int dstLevel, [Flow(FlowDirection.In)] int dstX, [Flow(FlowDirection.In)] int dstY, [Flow(FlowDirection.In)] int dstZ, [Flow(FlowDirection.In)] uint srcWidth, [Flow(FlowDirection.In)] uint srcHeight, [Flow(FlowDirection.In)] uint srcDepth);
 
         [NativeApi(EntryPoint = "glDebugMessageCallback")]
-        public partial unsafe void DebugMessageCallback([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProc callback, [Flow(FlowDirection.In)] void* userParam);
+        public unsafe partial void DebugMessageCallback([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProc callback, [Flow(FlowDirection.In)] void* userParam);
 
         [NativeApi(EntryPoint = "glDebugMessageCallback")]
         public partial void DebugMessageCallback<T0>([Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] DebugProc callback, [Flow(FlowDirection.In)] Span<T0> userParam) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDebugMessageControl")]
-        public partial unsafe void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
+        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl")]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert")]
-        public partial unsafe void DebugMessageInsert([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(FlowDirection.In)] byte* buf);
+        public unsafe partial void DebugMessageInsert([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(FlowDirection.In)] byte* buf);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert")]
         public partial void DebugMessageInsert([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(FlowDirection.In)] ref byte buf);
@@ -1167,75 +1167,75 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void FramebufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glGetDebugMessageLog")]
-        public partial unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] GLEnum* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] GLEnum* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] GLEnum* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog);
+        public unsafe partial uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] GLEnum* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] GLEnum* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] GLEnum* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog);
 
         [NativeApi(EntryPoint = "glGetDebugMessageLog")]
         public partial uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<GLEnum> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<GLEnum> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<GLEnum> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog);
 
         [NativeApi(EntryPoint = "glGetFramebufferParameteriv")]
-        public partial unsafe void GetFramebufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFramebufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetFramebufferParameteriv")]
         public partial void GetFramebufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetInternalformati64v")]
-        public partial unsafe void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] long* @params);
+        public unsafe partial void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] long* @params);
 
         [NativeApi(EntryPoint = "glGetInternalformati64v")]
         public partial void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params);
 
         [NativeApi(EntryPoint = "glGetObjectLabel")]
-        public partial unsafe void GetObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label);
+        public unsafe partial void GetObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label);
 
         [NativeApi(EntryPoint = "glGetObjectLabel")]
         public partial void GetObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label);
 
         [NativeApi(EntryPoint = "glGetObjectPtrLabel")]
-        public partial unsafe void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label);
+        public unsafe partial void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label);
 
         [NativeApi(EntryPoint = "glGetObjectPtrLabel")]
         public partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label) where T0 : unmanaged;
 
         [System.Obsolete("Deprecated in version 4.3")]
         [NativeApi(EntryPoint = "glGetPointerv")]
-        public partial unsafe void GetPointer([Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+        public unsafe partial void GetPointer([Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
         [System.Obsolete("Deprecated in version 4.3")]
         [NativeApi(EntryPoint = "glGetPointerv")]
-        public partial unsafe void GetPointer<T0>([Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
+        public unsafe partial void GetPointer<T0>([Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
-        public partial unsafe void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
         public partial void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetProgramResourceiv")]
-        public partial unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] GLEnum* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] GLEnum* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetProgramResourceiv")]
         public partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] Span<GLEnum> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetProgramResourceIndex")]
-        public partial unsafe uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
+        public unsafe partial uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetProgramResourceIndex")]
         public partial uint GetProgramResourceIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] ref byte name);
 
         [NativeApi(EntryPoint = "glGetProgramResourceLocation")]
-        public partial unsafe int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
+        public unsafe partial int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetProgramResourceLocation")]
         public partial int GetProgramResourceLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] ref byte name);
 
         [NativeApi(EntryPoint = "glGetProgramResourceLocationIndex")]
-        public partial unsafe int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
+        public unsafe partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetProgramResourceLocationIndex")]
         public partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Count(Computed = "name"), Flow(FlowDirection.In)] ref byte name);
 
         [NativeApi(EntryPoint = "glGetProgramResourceName")]
-        public partial unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
+        public unsafe partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
         [NativeApi(EntryPoint = "glGetProgramResourceName")]
         public partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name);
@@ -1247,13 +1247,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void InvalidateBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length);
 
         [NativeApi(EntryPoint = "glInvalidateFramebuffer")]
-        public partial unsafe void InvalidateFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] GLEnum* attachments);
+        public unsafe partial void InvalidateFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] GLEnum* attachments);
 
         [NativeApi(EntryPoint = "glInvalidateFramebuffer")]
         public partial void InvalidateFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] Span<GLEnum> attachments);
 
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer")]
-        public partial unsafe void InvalidateSubFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] GLEnum* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        public unsafe partial void InvalidateSubFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] GLEnum* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer")]
         public partial void InvalidateSubFramebuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] Span<GLEnum> attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
@@ -1265,25 +1265,25 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void InvalidateTexSubImage([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysIndirect")]
-        public partial unsafe void MultiDrawArraysIndirect([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
+        public unsafe partial void MultiDrawArraysIndirect([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysIndirect")]
         public partial void MultiDrawArraysIndirect<T0>([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] ref T0 indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirect")]
-        public partial unsafe void MultiDrawElementsIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
+        public unsafe partial void MultiDrawElementsIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirect")]
         public partial void MultiDrawElementsIndirect<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] ref T0 indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glObjectLabel")]
-        public partial unsafe void ObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] byte* label);
+        public unsafe partial void ObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] byte* label);
 
         [NativeApi(EntryPoint = "glObjectLabel")]
         public partial void ObjectLabel([Flow(FlowDirection.In)] GLEnum identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] ref byte label);
 
         [NativeApi(EntryPoint = "glObjectPtrLabel")]
-        public partial unsafe void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] byte* label);
+        public unsafe partial void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] byte* label);
 
         [NativeApi(EntryPoint = "glObjectPtrLabel")]
         public partial void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint length, [Count(Computed = "label, length"), Flow(FlowDirection.In)] ref byte label) where T0 : unmanaged;
@@ -1292,7 +1292,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void PopDebugGroup();
 
         [NativeApi(EntryPoint = "glPushDebugGroup")]
-        public partial unsafe void PushDebugGroup([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(FlowDirection.In)] byte* message);
+        public unsafe partial void PushDebugGroup([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(FlowDirection.In)] byte* message);
 
         [NativeApi(EntryPoint = "glPushDebugGroup")]
         public partial void PushDebugGroup([Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Count(Computed = "message, length"), Flow(FlowDirection.In)] ref byte message);
@@ -1328,13 +1328,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexBindingDivisor([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint divisor);
 
         [NativeApi(EntryPoint = "glClearBufferData")]
-        public partial unsafe void ClearBufferData([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void ClearBufferData([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferData")]
         public partial void ClearBufferData<T0>([Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ref T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glClearBufferSubData")]
-        public partial unsafe void ClearBufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void ClearBufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glClearBufferSubData")]
         public partial void ClearBufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ref T0 data) where T0 : unmanaged;
@@ -1343,7 +1343,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void CopyImageSubData([Flow(FlowDirection.In)] uint srcName, [Flow(FlowDirection.In)] CopyImageSubDataTarget srcTarget, [Flow(FlowDirection.In)] int srcLevel, [Flow(FlowDirection.In)] int srcX, [Flow(FlowDirection.In)] int srcY, [Flow(FlowDirection.In)] int srcZ, [Flow(FlowDirection.In)] uint dstName, [Flow(FlowDirection.In)] CopyImageSubDataTarget dstTarget, [Flow(FlowDirection.In)] int dstLevel, [Flow(FlowDirection.In)] int dstX, [Flow(FlowDirection.In)] int dstY, [Flow(FlowDirection.In)] int dstZ, [Flow(FlowDirection.In)] uint srcWidth, [Flow(FlowDirection.In)] uint srcHeight, [Flow(FlowDirection.In)] uint srcDepth);
 
         [NativeApi(EntryPoint = "glDebugMessageControl")]
-        public partial unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
+        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl")]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> ids, [Flow(FlowDirection.In)] bool enabled);
@@ -1355,51 +1355,51 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void FramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferParameterName pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glGetDebugMessageLog")]
-        public partial unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Flow(FlowDirection.Out)] out string messageLog);
+        public unsafe partial uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Flow(FlowDirection.Out)] out string messageLog);
 
         [NativeApi(EntryPoint = "glGetDebugMessageLog")]
         public partial uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Flow(FlowDirection.Out)] out string messageLog);
 
         [NativeApi(EntryPoint = "glGetFramebufferParameteriv")]
-        public partial unsafe void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetFramebufferParameteriv")]
         public partial void GetFramebufferParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetInternalformati64v")]
-        public partial unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] long* @params);
+        public unsafe partial void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] long* @params);
 
         [NativeApi(EntryPoint = "glGetInternalformati64v")]
         public partial void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<long> @params);
 
         [NativeApi(EntryPoint = "glGetObjectLabel")]
-        public partial unsafe void GetObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string label);
+        public unsafe partial void GetObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string label);
 
         [NativeApi(EntryPoint = "glGetObjectLabel")]
         public partial void GetObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] out string label);
 
         [NativeApi(EntryPoint = "glGetObjectPtrLabel")]
-        public partial unsafe void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string label);
+        public unsafe partial void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string label);
 
         [NativeApi(EntryPoint = "glGetObjectPtrLabel")]
         public partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] out string label) where T0 : unmanaged;
 
         [System.Obsolete("Deprecated in version 4.3")]
         [NativeApi(EntryPoint = "glGetPointerv")]
-        public partial unsafe void GetPointer([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+        public unsafe partial void GetPointer([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
         [System.Obsolete("Deprecated in version 4.3")]
         [NativeApi(EntryPoint = "glGetPointerv")]
-        public partial unsafe void GetPointer<T0>([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
+        public unsafe partial void GetPointer<T0>([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
-        public partial unsafe void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] ProgramInterfacePName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] ProgramInterfacePName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
         public partial void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] ProgramInterfacePName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetProgramResourceiv")]
-        public partial unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetProgramResourceiv")]
         public partial void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] Span<ProgramResourceProperty> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params);
@@ -1414,31 +1414,31 @@ namespace Silk.NET.OpenGL.Legacy
         public partial int GetProgramResourceLocationIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] string name);
 
         [NativeApi(EntryPoint = "glGetProgramResourceName")]
-        public partial unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string name);
+        public unsafe partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string name);
 
         [NativeApi(EntryPoint = "glGetProgramResourceName")]
         public partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] out string name);
 
         [NativeApi(EntryPoint = "glInvalidateFramebuffer")]
-        public partial unsafe void InvalidateFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] InvalidateFramebufferAttachment* attachments);
+        public unsafe partial void InvalidateFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] InvalidateFramebufferAttachment* attachments);
 
         [NativeApi(EntryPoint = "glInvalidateFramebuffer")]
         public partial void InvalidateFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] Span<InvalidateFramebufferAttachment> attachments);
 
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer")]
-        public partial unsafe void InvalidateSubFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] InvalidateFramebufferAttachment* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+        public unsafe partial void InvalidateSubFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] InvalidateFramebufferAttachment* attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glInvalidateSubFramebuffer")]
         public partial void InvalidateSubFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] Span<InvalidateFramebufferAttachment> attachments, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysIndirect")]
-        public partial unsafe void MultiDrawArraysIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
+        public unsafe partial void MultiDrawArraysIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawArraysIndirect")]
         public partial void MultiDrawArraysIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] ref T0 indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirect")]
-        public partial unsafe void MultiDrawElementsIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
+        public unsafe partial void MultiDrawElementsIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] void* indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsIndirect")]
         public partial void MultiDrawElementsIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount, stride"), Flow(FlowDirection.In)] ref T0 indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged;
@@ -1447,7 +1447,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label);
 
         [NativeApi(EntryPoint = "glObjectPtrLabel")]
-        public partial unsafe void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label);
+        public unsafe partial void ObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label);
 
         [NativeApi(EntryPoint = "glObjectPtrLabel")]
         public partial void ObjectPtrLabel<T0>([Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label) where T0 : unmanaged;
@@ -1483,13 +1483,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void DrawArraysInstancedBaseInstance([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstance")]
-        public partial unsafe void DrawElementsInstancedBaseInstance([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
+        public unsafe partial void DrawElementsInstancedBaseInstance([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstance")]
         public partial void DrawElementsInstancedBaseInstance<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<T0> indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstance")]
-        public partial unsafe void DrawElementsInstancedBaseVertexBaseInstance([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance);
+        public unsafe partial void DrawElementsInstancedBaseVertexBaseInstance([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance);
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstance")]
         public partial void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<T0> indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
@@ -1501,13 +1501,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void DrawTransformFeedbackStreamInstanced([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] uint instancecount);
 
         [NativeApi(EntryPoint = "glGetActiveAtomicCounterBufferiv")]
-        public partial unsafe void GetActiveAtomicCounterBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufferIndex, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetActiveAtomicCounterBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufferIndex, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetActiveAtomicCounterBufferiv")]
         public partial void GetActiveAtomicCounterBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufferIndex, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetInternalformativ")]
-        public partial unsafe void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetInternalformativ")]
         public partial void GetInternalformat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params);
@@ -1531,13 +1531,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void DrawArraysInstancedBaseInstance([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstance")]
-        public partial unsafe void DrawElementsInstancedBaseInstance([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] PrimitiveType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
+        public unsafe partial void DrawElementsInstancedBaseInstance([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] PrimitiveType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance);
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseInstance")]
         public partial void DrawElementsInstancedBaseInstance<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] PrimitiveType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<T0> indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstance")]
-        public partial unsafe void DrawElementsInstancedBaseVertexBaseInstance([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance);
+        public unsafe partial void DrawElementsInstancedBaseVertexBaseInstance([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance);
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertexBaseInstance")]
         public partial void DrawElementsInstancedBaseVertexBaseInstance<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<T0> indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex, [Flow(FlowDirection.In)] uint baseinstance) where T0 : unmanaged;
@@ -1549,13 +1549,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void DrawTransformFeedbackStreamInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] uint instancecount);
 
         [NativeApi(EntryPoint = "glGetActiveAtomicCounterBufferiv")]
-        public partial unsafe void GetActiveAtomicCounterBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufferIndex, [Flow(FlowDirection.In)] AtomicCounterBufferPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetActiveAtomicCounterBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufferIndex, [Flow(FlowDirection.In)] AtomicCounterBufferPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetActiveAtomicCounterBufferiv")]
         public partial void GetActiveAtomicCounterBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufferIndex, [Flow(FlowDirection.In)] AtomicCounterBufferPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetInternalformativ")]
-        public partial unsafe void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetInternalformativ")]
         public partial void GetInternalformat([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] InternalFormatPName pname, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params);
@@ -1579,10 +1579,10 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ClearDepth([Flow(FlowDirection.In)] float d);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramv")]
-        public partial unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** strings);
+        public unsafe partial uint CreateShaderProgram([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** strings);
 
         [NativeApi(EntryPoint = "glDeleteProgramPipelines")]
-        public partial unsafe void DeleteProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* pipelines);
+        public unsafe partial void DeleteProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* pipelines);
 
         [NativeApi(EntryPoint = "glDeleteProgramPipelines")]
         public partial void DeleteProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> pipelines);
@@ -1591,7 +1591,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void DepthRange([Flow(FlowDirection.In)] float n, [Flow(FlowDirection.In)] float f);
 
         [NativeApi(EntryPoint = "glDepthRangeArrayv")]
-        public partial unsafe void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glDepthRangeArrayv")]
         public partial void DepthRangeArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref double v);
@@ -1600,49 +1600,49 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void DepthRangeIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double n, [Flow(FlowDirection.In)] double f);
 
         [NativeApi(EntryPoint = "glGenProgramPipelines")]
-        public partial unsafe void GenProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* pipelines);
+        public unsafe partial void GenProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* pipelines);
 
         [NativeApi(EntryPoint = "glGenProgramPipelines")]
         public partial void GenProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> pipelines);
 
         [NativeApi(EntryPoint = "glGetDoublei_v")]
-        public partial unsafe void GetDouble([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] double* data);
+        public unsafe partial void GetDouble([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] double* data);
 
         [NativeApi(EntryPoint = "glGetDoublei_v")]
         public partial void GetDouble([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out double data);
 
         [NativeApi(EntryPoint = "glGetFloati_v")]
-        public partial unsafe void GetFloat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data);
+        public unsafe partial void GetFloat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] float* data);
 
         [NativeApi(EntryPoint = "glGetFloati_v")]
         public partial void GetFloat([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float data);
 
         [NativeApi(EntryPoint = "glGetProgramBinary")]
-        public partial unsafe void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
+        public unsafe partial void GetProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* binary);
 
         [NativeApi(EntryPoint = "glGetProgramBinary")]
         public partial void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetProgramPipelineiv")]
-        public partial unsafe void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetProgramPipelineiv")]
         public partial void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetProgramPipelineInfoLog")]
-        public partial unsafe void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* infoLog);
+        public unsafe partial void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* infoLog);
 
         [NativeApi(EntryPoint = "glGetProgramPipelineInfoLog")]
         public partial void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> infoLog);
 
         [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
-        public partial unsafe void GetShaderPrecisionFormat([Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] GLEnum precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
+        public unsafe partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] GLEnum precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
 
         [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
         public partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] GLEnum precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision);
 
         [NativeApi(EntryPoint = "glGetVertexAttribLdv")]
-        public partial unsafe void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* @params);
+        public unsafe partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribLdv")]
         public partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out double @params);
@@ -1651,7 +1651,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial bool IsProgramPipeline([Flow(FlowDirection.In)] uint pipeline);
 
         [NativeApi(EntryPoint = "glProgramBinary")]
-        public partial unsafe void ProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+        public unsafe partial void ProgramBinary([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
         [NativeApi(EntryPoint = "glProgramBinary")]
         public partial void ProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
@@ -1663,7 +1663,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0);
 
         [NativeApi(EntryPoint = "glProgramUniform1iv")]
-        public partial unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        public unsafe partial void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glProgramUniform1iv")]
         public partial void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
@@ -1672,7 +1672,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0);
 
         [NativeApi(EntryPoint = "glProgramUniform1fv")]
-        public partial unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glProgramUniform1fv")]
         public partial void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
@@ -1681,7 +1681,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double v0);
 
         [NativeApi(EntryPoint = "glProgramUniform1dv")]
-        public partial unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniform1dv")]
         public partial void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
@@ -1690,7 +1690,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0);
 
         [NativeApi(EntryPoint = "glProgramUniform1uiv")]
-        public partial unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glProgramUniform1uiv")]
         public partial void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
@@ -1699,7 +1699,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1);
 
         [NativeApi(EntryPoint = "glProgramUniform2iv")]
-        public partial unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        public unsafe partial void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glProgramUniform2iv")]
         public partial void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
@@ -1708,7 +1708,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1);
 
         [NativeApi(EntryPoint = "glProgramUniform2fv")]
-        public partial unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glProgramUniform2fv")]
         public partial void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
@@ -1717,7 +1717,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double v0, [Flow(FlowDirection.In)] double v1);
 
         [NativeApi(EntryPoint = "glProgramUniform2dv")]
-        public partial unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniform2dv")]
         public partial void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
@@ -1726,7 +1726,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1);
 
         [NativeApi(EntryPoint = "glProgramUniform2uiv")]
-        public partial unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glProgramUniform2uiv")]
         public partial void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
@@ -1735,7 +1735,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2);
 
         [NativeApi(EntryPoint = "glProgramUniform3iv")]
-        public partial unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        public unsafe partial void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glProgramUniform3iv")]
         public partial void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
@@ -1744,7 +1744,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2);
 
         [NativeApi(EntryPoint = "glProgramUniform3fv")]
-        public partial unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glProgramUniform3fv")]
         public partial void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
@@ -1753,7 +1753,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double v0, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2);
 
         [NativeApi(EntryPoint = "glProgramUniform3dv")]
-        public partial unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniform3dv")]
         public partial void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
@@ -1762,7 +1762,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2);
 
         [NativeApi(EntryPoint = "glProgramUniform3uiv")]
-        public partial unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glProgramUniform3uiv")]
         public partial void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
@@ -1771,7 +1771,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2, [Flow(FlowDirection.In)] int v3);
 
         [NativeApi(EntryPoint = "glProgramUniform4iv")]
-        public partial unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        public unsafe partial void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glProgramUniform4iv")]
         public partial void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
@@ -1780,7 +1780,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] float v0, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] float v3);
 
         [NativeApi(EntryPoint = "glProgramUniform4fv")]
-        public partial unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glProgramUniform4fv")]
         public partial void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
@@ -1789,7 +1789,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double v0, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] double v3);
 
         [NativeApi(EntryPoint = "glProgramUniform4dv")]
-        public partial unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniform4dv")]
         public partial void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
@@ -1798,115 +1798,115 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2, [Flow(FlowDirection.In)] uint v3);
 
         [NativeApi(EntryPoint = "glProgramUniform4uiv")]
-        public partial unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glProgramUniform4uiv")]
         public partial void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2fv")]
-        public partial unsafe void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2fv")]
         public partial void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2dv")]
-        public partial unsafe void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2dv")]
         public partial void ProgramUniformMatrix2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x3fv")]
-        public partial unsafe void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x3fv")]
         public partial void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x3dv")]
-        public partial unsafe void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x3dv")]
         public partial void ProgramUniformMatrix2x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x4fv")]
-        public partial unsafe void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x4fv")]
         public partial void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x4dv")]
-        public partial unsafe void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix2x4dv")]
         public partial void ProgramUniformMatrix2x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3fv")]
-        public partial unsafe void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3fv")]
         public partial void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3dv")]
-        public partial unsafe void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3dv")]
         public partial void ProgramUniformMatrix3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x2fv")]
-        public partial unsafe void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x2fv")]
         public partial void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x2dv")]
-        public partial unsafe void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x2dv")]
         public partial void ProgramUniformMatrix3x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x4fv")]
-        public partial unsafe void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x4fv")]
         public partial void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x4dv")]
-        public partial unsafe void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix3x4dv")]
         public partial void ProgramUniformMatrix3x4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4fv")]
-        public partial unsafe void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4fv")]
         public partial void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4dv")]
-        public partial unsafe void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4dv")]
         public partial void ProgramUniformMatrix4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x2fv")]
-        public partial unsafe void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x2fv")]
         public partial void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x2dv")]
-        public partial unsafe void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x2dv")]
         public partial void ProgramUniformMatrix4x2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x3fv")]
-        public partial unsafe void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x3fv")]
         public partial void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x3dv")]
-        public partial unsafe void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glProgramUniformMatrix4x3dv")]
         public partial void ProgramUniformMatrix4x3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
@@ -1915,7 +1915,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ReleaseShaderCompiler();
 
         [NativeApi(EntryPoint = "glScissorArrayv")]
-        public partial unsafe void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glScissorArrayv")]
         public partial void ScissorArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref int v);
@@ -1924,13 +1924,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int left, [Flow(FlowDirection.In)] int bottom, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glScissorIndexedv")]
-        public partial unsafe void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glScissorIndexedv")]
         public partial void ScissorIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
 
         [NativeApi(EntryPoint = "glShaderBinary")]
-        public partial unsafe void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] GLEnum binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
+        public unsafe partial void ShaderBinary([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* shaders, [Flow(FlowDirection.In)] GLEnum binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length);
 
         [NativeApi(EntryPoint = "glShaderBinary")]
         public partial void ShaderBinary<T0>([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> shaders, [Flow(FlowDirection.In)] GLEnum binaryformat, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged;
@@ -1945,7 +1945,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribL1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x);
 
         [NativeApi(EntryPoint = "glVertexAttribL1dv")]
-        public partial unsafe void VertexAttribL1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void VertexAttribL1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glVertexAttribL1dv")]
         public partial void VertexAttribL1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ref double v);
@@ -1954,7 +1954,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribL2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y);
 
         [NativeApi(EntryPoint = "glVertexAttribL2dv")]
-        public partial unsafe void VertexAttribL2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void VertexAttribL2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glVertexAttribL2dv")]
         public partial void VertexAttribL2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<double> v);
@@ -1963,7 +1963,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribL3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
 
         [NativeApi(EntryPoint = "glVertexAttribL3dv")]
-        public partial unsafe void VertexAttribL3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void VertexAttribL3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glVertexAttribL3dv")]
         public partial void VertexAttribL3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
@@ -1972,19 +1972,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribL4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
 
         [NativeApi(EntryPoint = "glVertexAttribL4dv")]
-        public partial unsafe void VertexAttribL4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void VertexAttribL4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glVertexAttribL4dv")]
         public partial void VertexAttribL4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
 
         [NativeApi(EntryPoint = "glVertexAttribLPointer")]
-        public partial unsafe void VertexAttribLPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void VertexAttribLPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexAttribLPointer")]
         public partial void VertexAttribLPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glViewportArrayv")]
-        public partial unsafe void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glViewportArrayv")]
         public partial void ViewportArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ref float v);
@@ -1993,34 +1993,34 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float w, [Flow(FlowDirection.In)] float h);
 
         [NativeApi(EntryPoint = "glViewportIndexedfv")]
-        public partial unsafe void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glViewportIndexedfv")]
         public partial void ViewportIndexed([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramv")]
-        public partial unsafe uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** strings);
+        public unsafe partial uint CreateShaderProgram([Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** strings);
 
         [NativeApi(EntryPoint = "glGetProgramPipelineiv")]
-        public partial unsafe void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] PipelineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] PipelineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetProgramPipelineiv")]
         public partial void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] PipelineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetProgramPipelineInfoLog")]
-        public partial unsafe void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string infoLog);
+        public unsafe partial void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string infoLog);
 
         [NativeApi(EntryPoint = "glGetProgramPipelineInfoLog")]
         public partial void GetProgramPipelineInfoLog([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] out string infoLog);
 
         [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
-        public partial unsafe void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
+        public unsafe partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] int* range, [Count(Count = 1), Flow(FlowDirection.Out)] int* precision);
 
         [NativeApi(EntryPoint = "glGetShaderPrecisionFormat")]
         public partial void GetShaderPrecisionFormat([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] PrecisionType precisiontype, [Count(Count = 2), Flow(FlowDirection.Out)] Span<int> range, [Count(Count = 1), Flow(FlowDirection.Out)] out int precision);
 
         [NativeApi(EntryPoint = "glGetVertexAttribLdv")]
-        public partial unsafe void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* @params);
+        public unsafe partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribLdv")]
         public partial void GetVertexAttribL([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out double @params);
@@ -2029,7 +2029,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramParameterPName pname, [Flow(FlowDirection.In)] int value);
 
         [NativeApi(EntryPoint = "glVertexAttribLPointer")]
-        public partial unsafe void VertexAttribLPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribLType type, [Flow(FlowDirection.In)] uint stride, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void VertexAttribLPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribLType type, [Flow(FlowDirection.In)] uint stride, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexAttribLPointer")]
         public partial void VertexAttribLPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribLType type, [Flow(FlowDirection.In)] uint stride, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : unmanaged;
@@ -2053,19 +2053,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] GLEnum srcRGB, [Flow(FlowDirection.In)] GLEnum dstRGB, [Flow(FlowDirection.In)] GLEnum srcAlpha, [Flow(FlowDirection.In)] GLEnum dstAlpha);
 
         [NativeApi(EntryPoint = "glDeleteTransformFeedbacks")]
-        public partial unsafe void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids);
+        public unsafe partial void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids);
 
         [NativeApi(EntryPoint = "glDeleteTransformFeedbacks")]
         public partial void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> ids);
 
         [NativeApi(EntryPoint = "glDrawArraysIndirect")]
-        public partial unsafe void DrawArraysIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] void* indirect);
+        public unsafe partial void DrawArraysIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] void* indirect);
 
         [NativeApi(EntryPoint = "glDrawArraysIndirect")]
         public partial void DrawArraysIndirect<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElementsIndirect")]
-        public partial unsafe void DrawElementsIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* indirect);
+        public unsafe partial void DrawElementsIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] void* indirect);
 
         [NativeApi(EntryPoint = "glDrawElementsIndirect")]
         public partial void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged;
@@ -2080,61 +2080,61 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void EndQueryIndexed([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index);
 
         [NativeApi(EntryPoint = "glGenTransformFeedbacks")]
-        public partial unsafe void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
+        public unsafe partial void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
 
         [NativeApi(EntryPoint = "glGenTransformFeedbacks")]
         public partial void GenTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids);
 
         [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
-        public partial unsafe void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
+        public unsafe partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
         [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
         public partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name);
 
         [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv")]
-        public partial unsafe void GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* values);
+        public unsafe partial void GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* values);
 
         [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv")]
         public partial void GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int values);
 
         [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
-        public partial unsafe void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
+        public unsafe partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
         [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
         public partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name);
 
         [NativeApi(EntryPoint = "glGetProgramStageiv")]
-        public partial unsafe void GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* values);
+        public unsafe partial void GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* values);
 
         [NativeApi(EntryPoint = "glGetProgramStageiv")]
         public partial void GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int values);
 
         [NativeApi(EntryPoint = "glGetQueryIndexediv")]
-        public partial unsafe void GetQueryIndexed([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetQueryIndexed([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetQueryIndexediv")]
         public partial void GetQueryIndexed([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetSubroutineIndex")]
-        public partial unsafe uint GetSubroutineIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] byte* name);
+        public unsafe partial uint GetSubroutineIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetSubroutineIndex")]
         public partial uint GetSubroutineIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] Span<byte> name);
 
         [NativeApi(EntryPoint = "glGetSubroutineUniformLocation")]
-        public partial unsafe int GetSubroutineUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] byte* name);
+        public unsafe partial int GetSubroutineUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetSubroutineUniformLocation")]
         public partial int GetSubroutineUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] Span<byte> name);
 
         [NativeApi(EntryPoint = "glGetUniformdv")]
-        public partial unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] double* @params);
+        public unsafe partial void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] double* @params);
 
         [NativeApi(EntryPoint = "glGetUniformdv")]
         public partial void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out double @params);
 
         [NativeApi(EntryPoint = "glGetUniformSubroutineuiv")]
-        public partial unsafe void GetUniformSubroutine([Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] int location, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetUniformSubroutine([Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] int location, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetUniformSubroutineuiv")]
         public partial void GetUniformSubroutine([Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] int location, [Count(Count = 1), Flow(FlowDirection.Out)] out uint @params);
@@ -2149,7 +2149,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void PatchParameter([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int value);
 
         [NativeApi(EntryPoint = "glPatchParameterfv")]
-        public partial unsafe void PatchParameter([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
+        public unsafe partial void PatchParameter([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
 
         [NativeApi(EntryPoint = "glPatchParameterfv")]
         public partial void PatchParameter([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float values);
@@ -2164,7 +2164,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double x);
 
         [NativeApi(EntryPoint = "glUniform1dv")]
-        public partial unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniform1dv")]
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
@@ -2173,7 +2173,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y);
 
         [NativeApi(EntryPoint = "glUniform2dv")]
-        public partial unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniform2dv")]
         public partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
@@ -2182,7 +2182,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
 
         [NativeApi(EntryPoint = "glUniform3dv")]
-        public partial unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniform3dv")]
         public partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
@@ -2191,67 +2191,67 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
 
         [NativeApi(EntryPoint = "glUniform4dv")]
-        public partial unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniform4dv")]
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2dv")]
-        public partial unsafe void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2dv")]
         public partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2x3dv")]
-        public partial unsafe void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2x3dv")]
         public partial void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2x4dv")]
-        public partial unsafe void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2x4dv")]
         public partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3dv")]
-        public partial unsafe void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3dv")]
         public partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3x2dv")]
-        public partial unsafe void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3x2dv")]
         public partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3x4dv")]
-        public partial unsafe void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3x4dv")]
         public partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4dv")]
-        public partial unsafe void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4dv")]
         public partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4x2dv")]
-        public partial unsafe void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4x2dv")]
         public partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4x3dv")]
-        public partial unsafe void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
+        public unsafe partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] double* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4x3dv")]
         public partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<double> value);
 
         [NativeApi(EntryPoint = "glUniformSubroutinesuiv")]
-        public partial unsafe void UniformSubroutines([Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* indices);
+        public unsafe partial void UniformSubroutines([Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* indices);
 
         [NativeApi(EntryPoint = "glUniformSubroutinesuiv")]
         public partial void UniformSubroutines([Flow(FlowDirection.In)] GLEnum shadertype, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> indices);
@@ -2275,13 +2275,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] uint buf, [Flow(FlowDirection.In)] BlendingFactor srcRGB, [Flow(FlowDirection.In)] BlendingFactor dstRGB, [Flow(FlowDirection.In)] BlendingFactor srcAlpha, [Flow(FlowDirection.In)] BlendingFactor dstAlpha);
 
         [NativeApi(EntryPoint = "glDrawArraysIndirect")]
-        public partial unsafe void DrawArraysIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] void* indirect);
+        public unsafe partial void DrawArraysIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] void* indirect);
 
         [NativeApi(EntryPoint = "glDrawArraysIndirect")]
         public partial void DrawArraysIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElementsIndirect")]
-        public partial unsafe void DrawElementsIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] void* indirect);
+        public unsafe partial void DrawElementsIndirect([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] void* indirect);
 
         [NativeApi(EntryPoint = "glDrawElementsIndirect")]
         public partial void DrawElementsIndirect<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] Span<T0> indirect) where T0 : unmanaged;
@@ -2296,31 +2296,31 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void EndQueryIndexed([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index);
 
         [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
-        public partial unsafe void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string name);
+        public unsafe partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string name);
 
         [NativeApi(EntryPoint = "glGetActiveSubroutineName")]
         public partial void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] out string name);
 
         [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv")]
-        public partial unsafe void GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] SubroutineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* values);
+        public unsafe partial void GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] SubroutineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* values);
 
         [NativeApi(EntryPoint = "glGetActiveSubroutineUniformiv")]
         public partial void GetActiveSubroutineUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] SubroutineParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int values);
 
         [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
-        public partial unsafe void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string name);
+        public unsafe partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string name);
 
         [NativeApi(EntryPoint = "glGetActiveSubroutineUniformName")]
         public partial void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] out string name);
 
         [NativeApi(EntryPoint = "glGetProgramStageiv")]
-        public partial unsafe void GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ProgramStagePName pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* values);
+        public unsafe partial void GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ProgramStagePName pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* values);
 
         [NativeApi(EntryPoint = "glGetProgramStageiv")]
         public partial void GetProgramStage([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] ProgramStagePName pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int values);
 
         [NativeApi(EntryPoint = "glGetQueryIndexediv")]
-        public partial unsafe void GetQueryIndexed([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetQueryIndexed([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetQueryIndexediv")]
         public partial void GetQueryIndexed([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
@@ -2332,7 +2332,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial int GetSubroutineUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] string name);
 
         [NativeApi(EntryPoint = "glGetUniformSubroutineuiv")]
-        public partial unsafe void GetUniformSubroutine([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] int location, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetUniformSubroutine([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] int location, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetUniformSubroutineuiv")]
         public partial void GetUniformSubroutine([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] int location, [Count(Count = 1), Flow(FlowDirection.Out)] out uint @params);
@@ -2341,19 +2341,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Flow(FlowDirection.In)] int value);
 
         [NativeApi(EntryPoint = "glPatchParameterfv")]
-        public partial unsafe void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
+        public unsafe partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* values);
 
         [NativeApi(EntryPoint = "glPatchParameterfv")]
         public partial void PatchParameter([Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float values);
 
         [NativeApi(EntryPoint = "glUniformSubroutinesuiv")]
-        public partial unsafe void UniformSubroutines([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* indices);
+        public unsafe partial void UniformSubroutines([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* indices);
 
         [NativeApi(EntryPoint = "glUniformSubroutinesuiv")]
         public partial void UniformSubroutines([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> indices);
 
         [NativeApi(EntryPoint = "glBindFragDataLocationIndexed")]
-        public partial unsafe void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] byte* name);
+        public unsafe partial void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glBindFragDataLocationIndexed")]
         public partial void BindFragDataLocationIndexed([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Span<byte> name);
@@ -2365,7 +2365,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ColorP3([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint color);
 
         [NativeApi(EntryPoint = "glColorP3uiv")]
-        public partial unsafe void ColorP3([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
+        public unsafe partial void ColorP3([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
 
         [NativeApi(EntryPoint = "glColorP3uiv")]
         public partial void ColorP3([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint color);
@@ -2374,61 +2374,61 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ColorP4([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint color);
 
         [NativeApi(EntryPoint = "glColorP4uiv")]
-        public partial unsafe void ColorP4([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
+        public unsafe partial void ColorP4([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
 
         [NativeApi(EntryPoint = "glColorP4uiv")]
         public partial void ColorP4([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint color);
 
         [NativeApi(EntryPoint = "glDeleteSamplers")]
-        public partial unsafe void DeleteSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* samplers);
+        public unsafe partial void DeleteSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* samplers);
 
         [NativeApi(EntryPoint = "glDeleteSamplers")]
         public partial void DeleteSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> samplers);
 
         [NativeApi(EntryPoint = "glGenSamplers")]
-        public partial unsafe void GenSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* samplers);
+        public unsafe partial void GenSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* samplers);
 
         [NativeApi(EntryPoint = "glGenSamplers")]
         public partial void GenSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> samplers);
 
         [NativeApi(EntryPoint = "glGetFragDataIndex")]
-        public partial unsafe int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] byte* name);
+        public unsafe partial int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetFragDataIndex")]
         public partial int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] Span<byte> name);
 
         [NativeApi(EntryPoint = "glGetQueryObjecti64v")]
-        public partial unsafe void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* @params);
+        public unsafe partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* @params);
 
         [NativeApi(EntryPoint = "glGetQueryObjecti64v")]
         public partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long @params);
 
         [NativeApi(EntryPoint = "glGetQueryObjectui64v")]
-        public partial unsafe void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] ulong* @params);
+        public unsafe partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] ulong* @params);
 
         [NativeApi(EntryPoint = "glGetQueryObjectui64v")]
         public partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out ulong @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameteriv")]
-        public partial unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameteriv")]
         public partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameterfv")]
-        public partial unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameterfv")]
         public partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameterIiv")]
-        public partial unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameterIiv")]
         public partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameterIuiv")]
-        public partial unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameterIuiv")]
         public partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
@@ -2440,7 +2440,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void MultiTexCoordP1([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP1uiv")]
-        public partial unsafe void MultiTexCoordP1([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP1([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP1uiv")]
         public partial void MultiTexCoordP1([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2449,7 +2449,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void MultiTexCoordP2([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP2uiv")]
-        public partial unsafe void MultiTexCoordP2([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP2([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP2uiv")]
         public partial void MultiTexCoordP2([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2458,7 +2458,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void MultiTexCoordP3([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP3uiv")]
-        public partial unsafe void MultiTexCoordP3([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP3([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP3uiv")]
         public partial void MultiTexCoordP3([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2467,7 +2467,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void MultiTexCoordP4([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP4uiv")]
-        public partial unsafe void MultiTexCoordP4([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP4([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP4uiv")]
         public partial void MultiTexCoordP4([Flow(FlowDirection.In)] GLEnum texture, [Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2476,7 +2476,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void NormalP3([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glNormalP3uiv")]
-        public partial unsafe void NormalP3([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void NormalP3([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glNormalP3uiv")]
         public partial void NormalP3([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2488,7 +2488,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glSamplerParameteriv")]
-        public partial unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        public unsafe partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
 
         [NativeApi(EntryPoint = "glSamplerParameteriv")]
         public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param);
@@ -2497,19 +2497,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glSamplerParameterfv")]
-        public partial unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
+        public unsafe partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
 
         [NativeApi(EntryPoint = "glSamplerParameterfv")]
         public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float param);
 
         [NativeApi(EntryPoint = "glSamplerParameterIiv")]
-        public partial unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        public unsafe partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
 
         [NativeApi(EntryPoint = "glSamplerParameterIiv")]
         public partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param);
 
         [NativeApi(EntryPoint = "glSamplerParameterIuiv")]
-        public partial unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param);
+        public unsafe partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param);
 
         [NativeApi(EntryPoint = "glSamplerParameterIuiv")]
         public partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint param);
@@ -2518,7 +2518,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void SecondaryColorP3([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint color);
 
         [NativeApi(EntryPoint = "glSecondaryColorP3uiv")]
-        public partial unsafe void SecondaryColorP3([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
+        public unsafe partial void SecondaryColorP3([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
 
         [NativeApi(EntryPoint = "glSecondaryColorP3uiv")]
         public partial void SecondaryColorP3([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint color);
@@ -2527,7 +2527,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TexCoordP1([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP1uiv")]
-        public partial unsafe void TexCoordP1([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP1([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP1uiv")]
         public partial void TexCoordP1([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2536,7 +2536,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TexCoordP2([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP2uiv")]
-        public partial unsafe void TexCoordP2([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP2([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP2uiv")]
         public partial void TexCoordP2([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2545,7 +2545,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TexCoordP3([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP3uiv")]
-        public partial unsafe void TexCoordP3([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP3([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP3uiv")]
         public partial void TexCoordP3([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2554,7 +2554,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TexCoordP4([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP4uiv")]
-        public partial unsafe void TexCoordP4([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP4([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP4uiv")]
         public partial void TexCoordP4([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2566,7 +2566,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP1uiv")]
-        public partial unsafe void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP1uiv")]
         public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -2575,7 +2575,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP2uiv")]
-        public partial unsafe void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP2uiv")]
         public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -2584,7 +2584,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP3uiv")]
-        public partial unsafe void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP3uiv")]
         public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -2593,7 +2593,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP4uiv")]
-        public partial unsafe void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP4uiv")]
         public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -2602,7 +2602,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexP2([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexP2uiv")]
-        public partial unsafe void VertexP2([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexP2([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexP2uiv")]
         public partial void VertexP2([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -2611,7 +2611,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexP3([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexP3uiv")]
-        public partial unsafe void VertexP3([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexP3([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexP3uiv")]
         public partial void VertexP3([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -2620,7 +2620,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexP4([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexP4uiv")]
-        public partial unsafe void VertexP4([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexP4([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexP4uiv")]
         public partial void VertexP4([Flow(FlowDirection.In)] GLEnum type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -2632,7 +2632,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint color);
 
         [NativeApi(EntryPoint = "glColorP3uiv")]
-        public partial unsafe void ColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
+        public unsafe partial void ColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
 
         [NativeApi(EntryPoint = "glColorP3uiv")]
         public partial void ColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint color);
@@ -2641,7 +2641,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ColorP4([Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint color);
 
         [NativeApi(EntryPoint = "glColorP4uiv")]
-        public partial unsafe void ColorP4([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
+        public unsafe partial void ColorP4([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
 
         [NativeApi(EntryPoint = "glColorP4uiv")]
         public partial void ColorP4([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint color);
@@ -2650,37 +2650,37 @@ namespace Silk.NET.OpenGL.Legacy
         public partial int GetFragDataIndex([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string name);
 
         [NativeApi(EntryPoint = "glGetQueryObjecti64v")]
-        public partial unsafe void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* @params);
+        public unsafe partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* @params);
 
         [NativeApi(EntryPoint = "glGetQueryObjecti64v")]
         public partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long @params);
 
         [NativeApi(EntryPoint = "glGetQueryObjectui64v")]
-        public partial unsafe void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] ulong* @params);
+        public unsafe partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] ulong* @params);
 
         [NativeApi(EntryPoint = "glGetQueryObjectui64v")]
         public partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out ulong @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameteriv")]
-        public partial unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameteriv")]
         public partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameterfv")]
-        public partial unsafe void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameterfv")]
         public partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameterIiv")]
-        public partial unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameterIiv")]
         public partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameterIuiv")]
-        public partial unsafe void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetSamplerParameterIuiv")]
         public partial void GetSamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
@@ -2689,7 +2689,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void MultiTexCoordP1([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP1uiv")]
-        public partial unsafe void MultiTexCoordP1([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP1([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP1uiv")]
         public partial void MultiTexCoordP1([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2698,7 +2698,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void MultiTexCoordP2([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP2uiv")]
-        public partial unsafe void MultiTexCoordP2([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP2([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP2uiv")]
         public partial void MultiTexCoordP2([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2707,7 +2707,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void MultiTexCoordP3([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP3uiv")]
-        public partial unsafe void MultiTexCoordP3([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP3([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP3uiv")]
         public partial void MultiTexCoordP3([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2716,7 +2716,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void MultiTexCoordP4([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP4uiv")]
-        public partial unsafe void MultiTexCoordP4([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void MultiTexCoordP4([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glMultiTexCoordP4uiv")]
         public partial void MultiTexCoordP4([Flow(FlowDirection.In)] TextureUnit texture, [Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2725,7 +2725,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void NormalP3([Flow(FlowDirection.In)] NormalPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glNormalP3uiv")]
-        public partial unsafe void NormalP3([Flow(FlowDirection.In)] NormalPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void NormalP3([Flow(FlowDirection.In)] NormalPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glNormalP3uiv")]
         public partial void NormalP3([Flow(FlowDirection.In)] NormalPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2737,7 +2737,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glSamplerParameteriv")]
-        public partial unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        public unsafe partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
 
         [NativeApi(EntryPoint = "glSamplerParameteriv")]
         public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param);
@@ -2746,19 +2746,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Flow(FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glSamplerParameterfv")]
-        public partial unsafe void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
+        public unsafe partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* param);
 
         [NativeApi(EntryPoint = "glSamplerParameterfv")]
         public partial void SamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterF pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float param);
 
         [NativeApi(EntryPoint = "glSamplerParameterIiv")]
-        public partial unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
+        public unsafe partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* param);
 
         [NativeApi(EntryPoint = "glSamplerParameterIiv")]
         public partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int param);
 
         [NativeApi(EntryPoint = "glSamplerParameterIuiv")]
-        public partial unsafe void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param);
+        public unsafe partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* param);
 
         [NativeApi(EntryPoint = "glSamplerParameterIuiv")]
         public partial void SamplerParameterI([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] SamplerParameterI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint param);
@@ -2767,7 +2767,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void SecondaryColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint color);
 
         [NativeApi(EntryPoint = "glSecondaryColorP3uiv")]
-        public partial unsafe void SecondaryColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
+        public unsafe partial void SecondaryColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* color);
 
         [NativeApi(EntryPoint = "glSecondaryColorP3uiv")]
         public partial void SecondaryColorP3([Flow(FlowDirection.In)] ColorPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint color);
@@ -2776,7 +2776,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TexCoordP1([Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP1uiv")]
-        public partial unsafe void TexCoordP1([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP1([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP1uiv")]
         public partial void TexCoordP1([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2785,7 +2785,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TexCoordP2([Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP2uiv")]
-        public partial unsafe void TexCoordP2([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP2([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP2uiv")]
         public partial void TexCoordP2([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2794,7 +2794,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TexCoordP3([Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP3uiv")]
-        public partial unsafe void TexCoordP3([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP3([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP3uiv")]
         public partial void TexCoordP3([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2803,7 +2803,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TexCoordP4([Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint coords);
 
         [NativeApi(EntryPoint = "glTexCoordP4uiv")]
-        public partial unsafe void TexCoordP4([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
+        public unsafe partial void TexCoordP4([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* coords);
 
         [NativeApi(EntryPoint = "glTexCoordP4uiv")]
         public partial void TexCoordP4([Flow(FlowDirection.In)] TexCoordPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint coords);
@@ -2812,7 +2812,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP1uiv")]
-        public partial unsafe void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP1uiv")]
         public partial void VertexAttribP1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -2821,7 +2821,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP2uiv")]
-        public partial unsafe void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP2uiv")]
         public partial void VertexAttribP2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -2830,7 +2830,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP3uiv")]
-        public partial unsafe void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP3uiv")]
         public partial void VertexAttribP3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -2839,7 +2839,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexAttribP4uiv")]
-        public partial unsafe void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexAttribP4uiv")]
         public partial void VertexAttribP4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -2848,7 +2848,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexP2([Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexP2uiv")]
-        public partial unsafe void VertexP2([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexP2([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexP2uiv")]
         public partial void VertexP2([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -2857,7 +2857,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexP3([Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexP3uiv")]
-        public partial unsafe void VertexP3([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexP3([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexP3uiv")]
         public partial void VertexP3([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -2866,7 +2866,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexP4([Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint value);
 
         [NativeApi(EntryPoint = "glVertexP4uiv")]
-        public partial unsafe void VertexP4([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void VertexP4([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glVertexP4uiv")]
         public partial void VertexP4([Flow(FlowDirection.In)] VertexPointerType type, [Count(Count = 1), Flow(FlowDirection.In)] ref uint value);
@@ -2878,19 +2878,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void DeleteSync([Flow(FlowDirection.In)] IntPtr sync);
 
         [NativeApi(EntryPoint = "glDrawElementsBaseVertex")]
-        public partial unsafe void DrawElementsBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
+        public unsafe partial void DrawElementsBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
 
         [NativeApi(EntryPoint = "glDrawElementsBaseVertex")]
         public partial void DrawElementsBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex")]
-        public partial unsafe void DrawElementsInstancedBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex);
+        public unsafe partial void DrawElementsInstancedBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex);
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex")]
         public partial void DrawElementsInstancedBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex")]
-        public partial unsafe void DrawRangeElementsBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
+        public unsafe partial void DrawRangeElementsBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
 
         [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex")]
         public partial void DrawRangeElementsBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
@@ -2902,31 +2902,31 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void FramebufferTexture([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
         [NativeApi(EntryPoint = "glGetBufferParameteri64v")]
-        public partial unsafe void GetBufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* @params);
+        public unsafe partial void GetBufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* @params);
 
         [NativeApi(EntryPoint = "glGetBufferParameteri64v")]
         public partial void GetBufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long @params);
 
         [NativeApi(EntryPoint = "glGetInteger64v")]
-        public partial unsafe void GetInteger64([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* data);
+        public unsafe partial void GetInteger64([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* data);
 
         [NativeApi(EntryPoint = "glGetInteger64v")]
         public partial void GetInteger64([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long data);
 
         [NativeApi(EntryPoint = "glGetInteger64i_v")]
-        public partial unsafe void GetInteger64([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] long* data);
+        public unsafe partial void GetInteger64([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] long* data);
 
         [NativeApi(EntryPoint = "glGetInteger64i_v")]
         public partial void GetInteger64([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out long data);
 
         [NativeApi(EntryPoint = "glGetMultisamplefv")]
-        public partial unsafe void GetMultisample([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* val);
+        public unsafe partial void GetMultisample([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* val);
 
         [NativeApi(EntryPoint = "glGetMultisamplefv")]
         public partial void GetMultisample([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float val);
 
         [NativeApi(EntryPoint = "glGetSynciv")]
-        public partial unsafe void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
+        public unsafe partial void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
         [NativeApi(EntryPoint = "glGetSynciv")]
         public partial void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values);
@@ -2935,10 +2935,10 @@ namespace Silk.NET.OpenGL.Legacy
         public partial bool IsSync([Flow(FlowDirection.In)] IntPtr sync);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsBaseVertex")]
-        public partial unsafe void MultiDrawElementsBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex);
+        public unsafe partial void MultiDrawElementsBaseVertex([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsBaseVertex")]
-        public partial unsafe void MultiDrawElementsBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref T0* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref int basevertex) where T0 : unmanaged;
+        public unsafe partial void MultiDrawElementsBaseVertex<T0>([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref T0* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref int basevertex) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glProvokingVertex")]
         public partial void ProvokingVertex([Flow(FlowDirection.In)] GLEnum mode);
@@ -2956,19 +2956,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void WaitSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
 
         [NativeApi(EntryPoint = "glDrawElementsBaseVertex")]
-        public partial unsafe void DrawElementsBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
+        public unsafe partial void DrawElementsBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
 
         [NativeApi(EntryPoint = "glDrawElementsBaseVertex")]
         public partial void DrawElementsBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex")]
-        public partial unsafe void DrawElementsInstancedBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex);
+        public unsafe partial void DrawElementsInstancedBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex);
 
         [NativeApi(EntryPoint = "glDrawElementsInstancedBaseVertex")]
         public partial void DrawElementsInstancedBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] uint instancecount, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex")]
-        public partial unsafe void DrawRangeElementsBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
+        public unsafe partial void DrawRangeElementsBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] int basevertex);
 
         [NativeApi(EntryPoint = "glDrawRangeElementsBaseVertex")]
         public partial void DrawRangeElementsBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] int basevertex) where T0 : unmanaged;
@@ -2980,34 +2980,34 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void FramebufferTexture([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level);
 
         [NativeApi(EntryPoint = "glGetBufferParameteri64v")]
-        public partial unsafe void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* @params);
+        public unsafe partial void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* @params);
 
         [NativeApi(EntryPoint = "glGetBufferParameteri64v")]
         public partial void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long @params);
 
         [NativeApi(EntryPoint = "glGetInteger64v")]
-        public partial unsafe void GetInteger64([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* data);
+        public unsafe partial void GetInteger64([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* data);
 
         [NativeApi(EntryPoint = "glGetInteger64v")]
         public partial void GetInteger64([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out long data);
 
         [NativeApi(EntryPoint = "glGetMultisamplefv")]
-        public partial unsafe void GetMultisample([Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* val);
+        public unsafe partial void GetMultisample([Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* val);
 
         [NativeApi(EntryPoint = "glGetMultisamplefv")]
         public partial void GetMultisample([Flow(FlowDirection.In)] GetMultisamplePNameNV pname, [Flow(FlowDirection.In)] uint index, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float val);
 
         [NativeApi(EntryPoint = "glGetSynciv")]
-        public partial unsafe void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
+        public unsafe partial void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
         [NativeApi(EntryPoint = "glGetSynciv")]
         public partial void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsBaseVertex")]
-        public partial unsafe void MultiDrawElementsBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex);
+        public unsafe partial void MultiDrawElementsBaseVertex([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* basevertex);
 
         [NativeApi(EntryPoint = "glMultiDrawElementsBaseVertex")]
-        public partial unsafe void MultiDrawElementsBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref T0* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref int basevertex) where T0 : unmanaged;
+        public unsafe partial void MultiDrawElementsBaseVertex<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref T0* indices, [Flow(FlowDirection.In)] uint drawcount, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref int basevertex) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glProvokingVertex")]
         public partial void ProvokingVertex([Flow(FlowDirection.In)] VertexProvokingMode mode);
@@ -3031,52 +3031,52 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void DrawArraysInstanced([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint instancecount);
 
         [NativeApi(EntryPoint = "glDrawElementsInstanced")]
-        public partial unsafe void DrawElementsInstanced([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount);
+        public unsafe partial void DrawElementsInstanced([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount);
 
         [NativeApi(EntryPoint = "glDrawElementsInstanced")]
         public partial void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] uint instancecount) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
-        public partial unsafe void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
         public partial void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetActiveUniformBlockName")]
-        public partial unsafe void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* uniformBlockName);
+        public unsafe partial void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* uniformBlockName);
 
         [NativeApi(EntryPoint = "glGetActiveUniformBlockName")]
         public partial void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> uniformBlockName);
 
         [NativeApi(EntryPoint = "glGetActiveUniformName")]
-        public partial unsafe void GetActiveUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* uniformName);
+        public unsafe partial void GetActiveUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* uniformName);
 
         [NativeApi(EntryPoint = "glGetActiveUniformName")]
         public partial void GetActiveUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> uniformName);
 
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
-        public partial unsafe void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] uint* uniformIndices, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] uint* uniformIndices, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
         public partial void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] Span<uint> uniformIndices, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetIntegeri_v")]
-        public partial unsafe void GetInteger([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] int* data);
+        public unsafe partial void GetInteger([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] int* data);
 
         [NativeApi(EntryPoint = "glGetIntegeri_v")]
         public partial void GetInteger([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out int data);
 
         [NativeApi(EntryPoint = "glGetUniformBlockIndex")]
-        public partial unsafe uint GetUniformBlockIndex([Flow(FlowDirection.In)] uint program, [Count(Count = 0), Flow(FlowDirection.In)] byte* uniformBlockName);
+        public unsafe partial uint GetUniformBlockIndex([Flow(FlowDirection.In)] uint program, [Count(Count = 0), Flow(FlowDirection.In)] byte* uniformBlockName);
 
         [NativeApi(EntryPoint = "glGetUniformBlockIndex")]
         public partial uint GetUniformBlockIndex([Flow(FlowDirection.In)] uint program, [Count(Count = 0), Flow(FlowDirection.In)] ref byte uniformBlockName);
 
         [NativeApi(EntryPoint = "glGetUniformIndices")]
-        public partial unsafe void GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] byte** uniformNames, [Count(Computed = "uniformCount"), Flow(FlowDirection.Out)] uint* uniformIndices);
+        public unsafe partial void GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] byte** uniformNames, [Count(Computed = "uniformCount"), Flow(FlowDirection.Out)] uint* uniformIndices);
 
         [NativeApi(EntryPoint = "glGetUniformIndices")]
-        public partial unsafe void GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] ref byte* uniformNames, [Count(Computed = "uniformCount"), Flow(FlowDirection.Out)] out uint uniformIndices);
+        public unsafe partial void GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] ref byte* uniformNames, [Count(Computed = "uniformCount"), Flow(FlowDirection.Out)] out uint uniformIndices);
 
         [NativeApi(EntryPoint = "glPrimitiveRestartIndex")]
         public partial void PrimitiveRestartIndex([Flow(FlowDirection.In)] uint index);
@@ -3100,31 +3100,31 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void DrawArraysInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint instancecount);
 
         [NativeApi(EntryPoint = "glDrawElementsInstanced")]
-        public partial unsafe void DrawElementsInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount);
+        public unsafe partial void DrawElementsInstanced([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices, [Flow(FlowDirection.In)] uint instancecount);
 
         [NativeApi(EntryPoint = "glDrawElementsInstanced")]
         public partial void DrawElementsInstanced<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices, [Flow(FlowDirection.In)] uint instancecount) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
-        public partial unsafe void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] UniformBlockPName pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] UniformBlockPName pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
         public partial void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] UniformBlockPName pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetActiveUniformBlockName")]
-        public partial unsafe void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string uniformBlockName);
+        public unsafe partial void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string uniformBlockName);
 
         [NativeApi(EntryPoint = "glGetActiveUniformBlockName")]
         public partial void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] out string uniformBlockName);
 
         [NativeApi(EntryPoint = "glGetActiveUniformName")]
-        public partial unsafe void GetActiveUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string uniformName);
+        public unsafe partial void GetActiveUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string uniformName);
 
         [NativeApi(EntryPoint = "glGetActiveUniformName")]
         public partial void GetActiveUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformIndex, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] out string uniformName);
 
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
-        public partial unsafe void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] uint* uniformIndices, [Flow(FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] uint* uniformIndices, [Flow(FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetActiveUniformsiv")]
         public partial void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] Span<uint> uniformIndices, [Flow(FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] out int @params);
@@ -3142,7 +3142,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void BeginTransformFeedback([Flow(FlowDirection.In)] GLEnum primitiveMode);
 
         [NativeApi(EntryPoint = "glBindFragDataLocation")]
-        public partial unsafe void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
+        public unsafe partial void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glBindFragDataLocation")]
         public partial void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Count(Computed = "name"), Flow(FlowDirection.In)] ref byte name);
@@ -3166,19 +3166,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ClampColor([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum clamp);
 
         [NativeApi(EntryPoint = "glClearBufferiv")]
-        public partial unsafe void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] int* value);
+        public unsafe partial void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glClearBufferiv")]
         public partial void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref int value);
 
         [NativeApi(EntryPoint = "glClearBufferuiv")]
-        public partial unsafe void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glClearBufferuiv")]
         public partial void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref uint value);
 
         [NativeApi(EntryPoint = "glClearBufferfv")]
-        public partial unsafe void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glClearBufferfv")]
         public partial void ClearBuffer([Flow(FlowDirection.In)] GLEnum buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref float value);
@@ -3190,19 +3190,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ColorMask([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] bool r, [Flow(FlowDirection.In)] bool g, [Flow(FlowDirection.In)] bool b, [Flow(FlowDirection.In)] bool a);
 
         [NativeApi(EntryPoint = "glDeleteFramebuffers")]
-        public partial unsafe void DeleteFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* framebuffers);
+        public unsafe partial void DeleteFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* framebuffers);
 
         [NativeApi(EntryPoint = "glDeleteFramebuffers")]
         public partial void DeleteFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> framebuffers);
 
         [NativeApi(EntryPoint = "glDeleteRenderbuffers")]
-        public partial unsafe void DeleteRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* renderbuffers);
+        public unsafe partial void DeleteRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* renderbuffers);
 
         [NativeApi(EntryPoint = "glDeleteRenderbuffers")]
         public partial void DeleteRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> renderbuffers);
 
         [NativeApi(EntryPoint = "glDeleteVertexArrays")]
-        public partial unsafe void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* arrays);
+        public unsafe partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* arrays);
 
         [NativeApi(EntryPoint = "glDeleteVertexArrays")]
         public partial void DeleteVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> arrays);
@@ -3241,82 +3241,82 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void GenerateMipmap([Flow(FlowDirection.In)] GLEnum target);
 
         [NativeApi(EntryPoint = "glGenFramebuffers")]
-        public partial unsafe void GenFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* framebuffers);
+        public unsafe partial void GenFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* framebuffers);
 
         [NativeApi(EntryPoint = "glGenFramebuffers")]
         public partial void GenFramebuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> framebuffers);
 
         [NativeApi(EntryPoint = "glGenRenderbuffers")]
-        public partial unsafe void GenRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* renderbuffers);
+        public unsafe partial void GenRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* renderbuffers);
 
         [NativeApi(EntryPoint = "glGenRenderbuffers")]
         public partial void GenRenderbuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> renderbuffers);
 
         [NativeApi(EntryPoint = "glGenVertexArrays")]
-        public partial unsafe void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays);
+        public unsafe partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* arrays);
 
         [NativeApi(EntryPoint = "glGenVertexArrays")]
         public partial void GenVertexArrays([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays);
 
         [NativeApi(EntryPoint = "glGetBooleani_v")]
-        public partial unsafe void GetBoolean([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] bool* data);
+        public unsafe partial void GetBoolean([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetBooleani_v")]
         public partial void GetBoolean([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out bool data);
 
         [NativeApi(EntryPoint = "glGetFragDataLocation")]
-        public partial unsafe int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
+        public unsafe partial int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetFragDataLocation")]
         public partial int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] ref byte name);
 
         [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameteriv")]
-        public partial unsafe void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameteriv")]
         public partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetRenderbufferParameteriv")]
-        public partial unsafe void GetRenderbufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetRenderbufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetRenderbufferParameteriv")]
         public partial void GetRenderbufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetStringi")]
-        public partial unsafe byte* GetString([Flow(FlowDirection.In)] GLEnum name, [Flow(FlowDirection.In)] uint index);
+        public unsafe partial byte* GetString([Flow(FlowDirection.In)] GLEnum name, [Flow(FlowDirection.In)] uint index);
 
         [NativeApi(EntryPoint = "glGetTexParameterIiv")]
-        public partial unsafe void GetTexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetTexParameterIiv")]
         public partial void GetTexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetTexParameterIuiv")]
-        public partial unsafe void GetTexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetTexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetTexParameterIuiv")]
         public partial void GetTexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbackVarying")]
-        public partial unsafe void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
+        public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbackVarying")]
         public partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name);
 
         [NativeApi(EntryPoint = "glGetUniformuiv")]
-        public partial unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetUniformuiv")]
         public partial void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out uint @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribIiv")]
-        public partial unsafe void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribIiv")]
         public partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribIuiv")]
-        public partial unsafe void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribIuiv")]
         public partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out uint @params);
@@ -3334,7 +3334,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial bool IsVertexArray([Flow(FlowDirection.In)] uint array);
 
         [NativeApi(EntryPoint = "glMapBufferRange")]
-        public partial unsafe void* MapBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
+        public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
 
         [NativeApi(EntryPoint = "glRenderbufferStorage")]
         public partial void RenderbufferStorage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
@@ -3343,25 +3343,25 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glTexParameterIiv")]
-        public partial unsafe void TexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void TexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glTexParameterIiv")]
         public partial void TexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
 
         [NativeApi(EntryPoint = "glTexParameterIuiv")]
-        public partial unsafe void TexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params);
+        public unsafe partial void TexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params);
 
         [NativeApi(EntryPoint = "glTexParameterIuiv")]
         public partial void TexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint @params);
 
         [NativeApi(EntryPoint = "glTransformFeedbackVaryings")]
-        public partial unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** varyings, [Flow(FlowDirection.In)] GLEnum bufferMode);
+        public unsafe partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** varyings, [Flow(FlowDirection.In)] GLEnum bufferMode);
 
         [NativeApi(EntryPoint = "glUniform1ui")]
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0);
 
         [NativeApi(EntryPoint = "glUniform1uiv")]
-        public partial unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glUniform1uiv")]
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
@@ -3370,7 +3370,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1);
 
         [NativeApi(EntryPoint = "glUniform2uiv")]
-        public partial unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glUniform2uiv")]
         public partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
@@ -3379,7 +3379,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2);
 
         [NativeApi(EntryPoint = "glUniform3uiv")]
-        public partial unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glUniform3uiv")]
         public partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
@@ -3388,7 +3388,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint v0, [Flow(FlowDirection.In)] uint v1, [Flow(FlowDirection.In)] uint v2, [Flow(FlowDirection.In)] uint v3);
 
         [NativeApi(EntryPoint = "glUniform4uiv")]
-        public partial unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glUniform4uiv")]
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
@@ -3400,13 +3400,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribI1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint x);
 
         [NativeApi(EntryPoint = "glVertexAttribI1iv")]
-        public partial unsafe void VertexAttribI1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void VertexAttribI1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glVertexAttribI1iv")]
         public partial void VertexAttribI1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ref int v);
 
         [NativeApi(EntryPoint = "glVertexAttribI1uiv")]
-        public partial unsafe void VertexAttribI1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] uint* v);
+        public unsafe partial void VertexAttribI1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] uint* v);
 
         [NativeApi(EntryPoint = "glVertexAttribI1uiv")]
         public partial void VertexAttribI1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ref uint v);
@@ -3418,13 +3418,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribI2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y);
 
         [NativeApi(EntryPoint = "glVertexAttribI2iv")]
-        public partial unsafe void VertexAttribI2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void VertexAttribI2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glVertexAttribI2iv")]
         public partial void VertexAttribI2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<int> v);
 
         [NativeApi(EntryPoint = "glVertexAttribI2uiv")]
-        public partial unsafe void VertexAttribI2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] uint* v);
+        public unsafe partial void VertexAttribI2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] uint* v);
 
         [NativeApi(EntryPoint = "glVertexAttribI2uiv")]
         public partial void VertexAttribI2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<uint> v);
@@ -3436,13 +3436,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribI3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint z);
 
         [NativeApi(EntryPoint = "glVertexAttribI3iv")]
-        public partial unsafe void VertexAttribI3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void VertexAttribI3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glVertexAttribI3iv")]
         public partial void VertexAttribI3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
 
         [NativeApi(EntryPoint = "glVertexAttribI3uiv")]
-        public partial unsafe void VertexAttribI3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] uint* v);
+        public unsafe partial void VertexAttribI3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] uint* v);
 
         [NativeApi(EntryPoint = "glVertexAttribI3uiv")]
         public partial void VertexAttribI3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] Span<uint> v);
@@ -3454,43 +3454,43 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint x, [Flow(FlowDirection.In)] uint y, [Flow(FlowDirection.In)] uint z, [Flow(FlowDirection.In)] uint w);
 
         [NativeApi(EntryPoint = "glVertexAttribI4iv")]
-        public partial unsafe void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glVertexAttribI4iv")]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
 
         [NativeApi(EntryPoint = "glVertexAttribI4uiv")]
-        public partial unsafe void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* v);
+        public unsafe partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* v);
 
         [NativeApi(EntryPoint = "glVertexAttribI4uiv")]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<uint> v);
 
         [NativeApi(EntryPoint = "glVertexAttribI4bv")]
-        public partial unsafe void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] sbyte* v);
+        public unsafe partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] sbyte* v);
 
         [NativeApi(EntryPoint = "glVertexAttribI4bv")]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<sbyte> v);
 
         [NativeApi(EntryPoint = "glVertexAttribI4sv")]
-        public partial unsafe void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glVertexAttribI4sv")]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
 
         [NativeApi(EntryPoint = "glVertexAttribI4ubv")]
-        public partial unsafe void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] byte* v);
+        public unsafe partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] byte* v);
 
         [NativeApi(EntryPoint = "glVertexAttribI4ubv")]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<byte> v);
 
         [NativeApi(EntryPoint = "glVertexAttribI4usv")]
-        public partial unsafe void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ushort* v);
+        public unsafe partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ushort* v);
 
         [NativeApi(EntryPoint = "glVertexAttribI4usv")]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<ushort> v);
 
         [NativeApi(EntryPoint = "glVertexAttribIPointer")]
-        public partial unsafe void VertexAttribIPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void VertexAttribIPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexAttribIPointer")]
         public partial void VertexAttribIPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -3520,19 +3520,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ClampColor([Flow(FlowDirection.In)] ClampColorTargetARB target, [Flow(FlowDirection.In)] ClampColorModeARB clamp);
 
         [NativeApi(EntryPoint = "glClearBufferiv")]
-        public partial unsafe void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] int* value);
+        public unsafe partial void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glClearBufferiv")]
         public partial void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref int value);
 
         [NativeApi(EntryPoint = "glClearBufferuiv")]
-        public partial unsafe void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] uint* value);
+        public unsafe partial void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] uint* value);
 
         [NativeApi(EntryPoint = "glClearBufferuiv")]
         public partial void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref uint value);
 
         [NativeApi(EntryPoint = "glClearBufferfv")]
-        public partial unsafe void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glClearBufferfv")]
         public partial void ClearBuffer([Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ref float value);
@@ -3568,7 +3568,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void GenerateMipmap([Flow(FlowDirection.In)] TextureTarget target);
 
         [NativeApi(EntryPoint = "glGetBooleani_v")]
-        public partial unsafe void GetBoolean([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] bool* data);
+        public unsafe partial void GetBoolean([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetBooleani_v")]
         public partial void GetBoolean([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out bool data);
@@ -3577,13 +3577,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string name);
 
         [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameteriv")]
-        public partial unsafe void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetFramebufferAttachmentParameteriv")]
         public partial void GetFramebufferAttachmentParameter([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachment attachment, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetRenderbufferParameteriv")]
-        public partial unsafe void GetRenderbufferParameter([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] RenderbufferParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetRenderbufferParameter([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] RenderbufferParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetRenderbufferParameteriv")]
         public partial void GetRenderbufferParameter([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] RenderbufferParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
@@ -3592,31 +3592,31 @@ namespace Silk.NET.OpenGL.Legacy
         public partial string GetString([Flow(FlowDirection.In)] StringName name, [Flow(FlowDirection.In)] uint index);
 
         [NativeApi(EntryPoint = "glGetTexParameterIiv")]
-        public partial unsafe void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetTexParameterIiv")]
         public partial void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetTexParameterIuiv")]
-        public partial unsafe void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetTexParameterIuiv")]
         public partial void GetTexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbackVarying")]
-        public partial unsafe void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Flow(FlowDirection.Out)] out string name);
+        public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Flow(FlowDirection.Out)] out string name);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbackVarying")]
         public partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out uint size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Flow(FlowDirection.Out)] out string name);
 
         [NativeApi(EntryPoint = "glGetVertexAttribIiv")]
-        public partial unsafe void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribIiv")]
         public partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribIuiv")]
-        public partial unsafe void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribIuiv")]
         public partial void GetVertexAttribI([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out uint @params);
@@ -3625,7 +3625,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial bool IsEnabled([Flow(FlowDirection.In)] EnableCap target, [Flow(FlowDirection.In)] uint index);
 
         [NativeApi(EntryPoint = "glMapBufferRange")]
-        public partial unsafe void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
+        public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
 
         [NativeApi(EntryPoint = "glRenderbufferStorage")]
         public partial void RenderbufferStorage([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
@@ -3634,61 +3634,61 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void RenderbufferStorageMultisample([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glTexParameterIiv")]
-        public partial unsafe void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glTexParameterIiv")]
         public partial void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
 
         [NativeApi(EntryPoint = "glTexParameterIuiv")]
-        public partial unsafe void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params);
+        public unsafe partial void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] uint* @params);
 
         [NativeApi(EntryPoint = "glTexParameterIuiv")]
         public partial void TexParameterI([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref uint @params);
 
         [NativeApi(EntryPoint = "glTransformFeedbackVaryings")]
-        public partial unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** varyings, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode);
+        public unsafe partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** varyings, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode);
 
         [NativeApi(EntryPoint = "glVertexAttribI4ubv")]
         public partial void VertexAttribI4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] string v);
 
         [NativeApi(EntryPoint = "glVertexAttribIPointer")]
-        public partial unsafe void VertexAttribIPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void VertexAttribIPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexAttribIPointer")]
         public partial void VertexAttribIPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glUniformMatrix2x3fv")]
-        public partial unsafe void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2x3fv")]
         public partial void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2x4fv")]
-        public partial unsafe void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2x4fv")]
         public partial void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3x2fv")]
-        public partial unsafe void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3x2fv")]
         public partial void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3x4fv")]
-        public partial unsafe void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3x4fv")]
         public partial void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4x2fv")]
-        public partial unsafe void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4x2fv")]
         public partial void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4x3fv")]
-        public partial unsafe void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4x3fv")]
         public partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
@@ -3697,7 +3697,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void AttachShader([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint shader);
 
         [NativeApi(EntryPoint = "glBindAttribLocation")]
-        public partial unsafe void BindAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] byte* name);
+        public unsafe partial void BindAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glBindAttribLocation")]
         public partial void BindAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] Span<byte> name);
@@ -3727,7 +3727,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void DisableVertexAttribArray([Flow(FlowDirection.In)] uint index);
 
         [NativeApi(EntryPoint = "glDrawBuffers")]
-        public partial unsafe void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] GLEnum* bufs);
+        public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] GLEnum* bufs);
 
         [NativeApi(EntryPoint = "glDrawBuffers")]
         public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<GLEnum> bufs);
@@ -3736,100 +3736,100 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void EnableVertexAttribArray([Flow(FlowDirection.In)] uint index);
 
         [NativeApi(EntryPoint = "glGetActiveAttrib")]
-        public partial unsafe void GetActiveAttrib([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
+        public unsafe partial void GetActiveAttrib([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
         [NativeApi(EntryPoint = "glGetActiveAttrib")]
         public partial void GetActiveAttrib([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name);
 
         [NativeApi(EntryPoint = "glGetActiveUniform")]
-        public partial unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
+        public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
 
         [NativeApi(EntryPoint = "glGetActiveUniform")]
         public partial void GetActiveUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out GLEnum type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name);
 
         [NativeApi(EntryPoint = "glGetAttachedShaders")]
-        public partial unsafe void GetAttachedShaders([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] uint* shaders);
+        public unsafe partial void GetAttachedShaders([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] uint* shaders);
 
         [NativeApi(EntryPoint = "glGetAttachedShaders")]
         public partial void GetAttachedShaders([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] Span<uint> shaders);
 
         [NativeApi(EntryPoint = "glGetAttribLocation")]
-        public partial unsafe int GetAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] byte* name);
+        public unsafe partial int GetAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetAttribLocation")]
         public partial int GetAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] Span<byte> name);
 
         [NativeApi(EntryPoint = "glGetProgramiv")]
-        public partial unsafe void GetProgram([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetProgram([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetProgramiv")]
         public partial void GetProgram([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetProgramInfoLog")]
-        public partial unsafe void GetProgramInfoLog([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* infoLog);
+        public unsafe partial void GetProgramInfoLog([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* infoLog);
 
         [NativeApi(EntryPoint = "glGetProgramInfoLog")]
         public partial void GetProgramInfoLog([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> infoLog);
 
         [NativeApi(EntryPoint = "glGetShaderiv")]
-        public partial unsafe void GetShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetShaderiv")]
         public partial void GetShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetShaderInfoLog")]
-        public partial unsafe void GetShaderInfoLog([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* infoLog);
+        public unsafe partial void GetShaderInfoLog([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* infoLog);
 
         [NativeApi(EntryPoint = "glGetShaderInfoLog")]
         public partial void GetShaderInfoLog([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> infoLog);
 
         [NativeApi(EntryPoint = "glGetShaderSource")]
-        public partial unsafe void GetShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* source);
+        public unsafe partial void GetShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* source);
 
         [NativeApi(EntryPoint = "glGetShaderSource")]
         public partial void GetShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> source);
 
         [NativeApi(EntryPoint = "glGetUniformfv")]
-        public partial unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetUniformfv")]
         public partial void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetUniformiv")]
-        public partial unsafe void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetUniformiv")]
         public partial void GetUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Computed = "program, location"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetUniformLocation")]
-        public partial unsafe int GetUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] byte* name);
+        public unsafe partial int GetUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetUniformLocation")]
         public partial int GetUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] Span<byte> name);
 
         [NativeApi(EntryPoint = "glGetVertexAttribdv")]
-        public partial unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
+        public unsafe partial void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribdv")]
         public partial void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribfv")]
-        public partial unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribfv")]
         public partial void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribiv")]
-        public partial unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribiv")]
         public partial void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribPointerv")]
-        public partial unsafe void GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** pointer);
+        public unsafe partial void GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** pointer);
 
         [NativeApi(EntryPoint = "glGetVertexAttribPointerv")]
-        public partial unsafe void GetVertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* pointer) where T0 : unmanaged;
+        public unsafe partial void GetVertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glIsProgram")]
         public partial bool IsProgram([Flow(FlowDirection.In)] uint program);
@@ -3841,10 +3841,10 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void LinkProgram([Flow(FlowDirection.In)] uint program);
 
         [NativeApi(EntryPoint = "glShaderSource")]
-        public partial unsafe void ShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length);
+        public unsafe partial void ShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length);
 
         [NativeApi(EntryPoint = "glShaderSource")]
-        public partial unsafe void ShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> length);
+        public unsafe partial void ShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> length);
 
         [NativeApi(EntryPoint = "glStencilFuncSeparate")]
         public partial void StencilFuncSeparate([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
@@ -3862,13 +3862,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0);
 
         [NativeApi(EntryPoint = "glUniform1fv")]
-        public partial unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniform1fv")]
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glUniform1iv")]
-        public partial unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        public unsafe partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glUniform1iv")]
         public partial void Uniform1([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
@@ -3880,13 +3880,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1);
 
         [NativeApi(EntryPoint = "glUniform2fv")]
-        public partial unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniform2fv")]
         public partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glUniform2iv")]
-        public partial unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        public unsafe partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glUniform2iv")]
         public partial void Uniform2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
@@ -3898,13 +3898,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2);
 
         [NativeApi(EntryPoint = "glUniform3fv")]
-        public partial unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniform3fv")]
         public partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glUniform3iv")]
-        public partial unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        public unsafe partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glUniform3iv")]
         public partial void Uniform3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
@@ -3916,31 +3916,31 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] int v0, [Flow(FlowDirection.In)] int v1, [Flow(FlowDirection.In)] int v2, [Flow(FlowDirection.In)] int v3);
 
         [NativeApi(EntryPoint = "glUniform4fv")]
-        public partial unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniform4fv")]
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glUniform4iv")]
-        public partial unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
+        public unsafe partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* value);
 
         [NativeApi(EntryPoint = "glUniform4iv")]
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2fv")]
-        public partial unsafe void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix2fv")]
         public partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3fv")]
-        public partial unsafe void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3fv")]
         public partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4fv")]
-        public partial unsafe void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+        public unsafe partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4fv")]
         public partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<float> value);
@@ -3955,7 +3955,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x);
 
         [NativeApi(EntryPoint = "glVertexAttrib1dv")]
-        public partial unsafe void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib1dv")]
         public partial void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ref double v);
@@ -3964,7 +3964,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x);
 
         [NativeApi(EntryPoint = "glVertexAttrib1fv")]
-        public partial unsafe void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib1fv")]
         public partial void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ref float v);
@@ -3973,7 +3973,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] short x);
 
         [NativeApi(EntryPoint = "glVertexAttrib1sv")]
-        public partial unsafe void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib1sv")]
         public partial void VertexAttrib1([Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ref short v);
@@ -3982,7 +3982,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y);
 
         [NativeApi(EntryPoint = "glVertexAttrib2dv")]
-        public partial unsafe void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib2dv")]
         public partial void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<double> v);
@@ -3991,7 +3991,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y);
 
         [NativeApi(EntryPoint = "glVertexAttrib2fv")]
-        public partial unsafe void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib2fv")]
         public partial void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<float> v);
@@ -4000,7 +4000,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y);
 
         [NativeApi(EntryPoint = "glVertexAttrib2sv")]
-        public partial unsafe void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib2sv")]
         public partial void VertexAttrib2([Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] Span<short> v);
@@ -4009,7 +4009,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z);
 
         [NativeApi(EntryPoint = "glVertexAttrib3dv")]
-        public partial unsafe void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib3dv")]
         public partial void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
@@ -4018,7 +4018,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z);
 
         [NativeApi(EntryPoint = "glVertexAttrib3fv")]
-        public partial unsafe void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib3fv")]
         public partial void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
@@ -4027,13 +4027,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z);
 
         [NativeApi(EntryPoint = "glVertexAttrib3sv")]
-        public partial unsafe void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib3sv")]
         public partial void VertexAttrib3([Flow(FlowDirection.In)] uint index, [Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4bv")]
-        public partial unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] sbyte* v);
+        public unsafe partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] sbyte* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4bv")]
         public partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<sbyte> v);
@@ -4042,7 +4042,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] double x, [Flow(FlowDirection.In)] double y, [Flow(FlowDirection.In)] double z, [Flow(FlowDirection.In)] double w);
 
         [NativeApi(EntryPoint = "glVertexAttrib4dv")]
-        public partial unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4dv")]
         public partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<double> v);
@@ -4051,13 +4051,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float x, [Flow(FlowDirection.In)] float y, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float w);
 
         [NativeApi(EntryPoint = "glVertexAttrib4fv")]
-        public partial unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4fv")]
         public partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<float> v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4iv")]
-        public partial unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4iv")]
         public partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
@@ -4066,43 +4066,43 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] short x, [Flow(FlowDirection.In)] short y, [Flow(FlowDirection.In)] short z, [Flow(FlowDirection.In)] short w);
 
         [NativeApi(EntryPoint = "glVertexAttrib4sv")]
-        public partial unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4sv")]
         public partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4ubv")]
-        public partial unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] byte* v);
+        public unsafe partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] byte* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4ubv")]
         public partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<byte> v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4uiv")]
-        public partial unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* v);
+        public unsafe partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4uiv")]
         public partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<uint> v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4usv")]
-        public partial unsafe void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ushort* v);
+        public unsafe partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ushort* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4usv")]
         public partial void VertexAttrib4([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<ushort> v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4Nbv")]
-        public partial unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] sbyte* v);
+        public unsafe partial void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] sbyte* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4Nbv")]
         public partial void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<sbyte> v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4Niv")]
-        public partial unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4Niv")]
         public partial void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<int> v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4Nsv")]
-        public partial unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4Nsv")]
         public partial void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<short> v);
@@ -4111,25 +4111,25 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] byte x, [Flow(FlowDirection.In)] byte y, [Flow(FlowDirection.In)] byte z, [Flow(FlowDirection.In)] byte w);
 
         [NativeApi(EntryPoint = "glVertexAttrib4Nubv")]
-        public partial unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] byte* v);
+        public unsafe partial void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] byte* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4Nubv")]
         public partial void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<byte> v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4Nuiv")]
-        public partial unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* v);
+        public unsafe partial void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] uint* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4Nuiv")]
         public partial void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<uint> v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4Nusv")]
-        public partial unsafe void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ushort* v);
+        public unsafe partial void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] ushort* v);
 
         [NativeApi(EntryPoint = "glVertexAttrib4Nusv")]
         public partial void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Count(Count = 4), Flow(FlowDirection.In)] Span<ushort> v);
 
         [NativeApi(EntryPoint = "glVertexAttribPointer")]
-        public partial unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexAttribPointer")]
         public partial void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -4144,19 +4144,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial uint CreateShader([Flow(FlowDirection.In)] ShaderType type);
 
         [NativeApi(EntryPoint = "glDrawBuffers")]
-        public partial unsafe void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] DrawBufferMode* bufs);
+        public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] DrawBufferMode* bufs);
 
         [NativeApi(EntryPoint = "glDrawBuffers")]
         public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<DrawBufferMode> bufs);
 
         [NativeApi(EntryPoint = "glGetActiveAttrib")]
-        public partial unsafe void GetActiveAttrib([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Flow(FlowDirection.Out)] out string name);
+        public unsafe partial void GetActiveAttrib([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] AttributeType* type, [Flow(FlowDirection.Out)] out string name);
 
         [NativeApi(EntryPoint = "glGetActiveAttrib")]
         public partial void GetActiveAttrib([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out AttributeType type, [Flow(FlowDirection.Out)] out string name);
 
         [NativeApi(EntryPoint = "glGetActiveUniform")]
-        public partial unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Flow(FlowDirection.Out)] out string name);
+        public unsafe partial void GetActiveUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Flow(FlowDirection.Out)] out string name);
 
         [NativeApi(EntryPoint = "glGetActiveUniform")]
         public partial void GetActiveUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Flow(FlowDirection.Out)] out string name);
@@ -4165,31 +4165,31 @@ namespace Silk.NET.OpenGL.Legacy
         public partial int GetAttribLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string name);
 
         [NativeApi(EntryPoint = "glGetProgramiv")]
-        public partial unsafe void GetProgram([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramPropertyARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetProgram([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramPropertyARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetProgramiv")]
         public partial void GetProgram([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramPropertyARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetProgramInfoLog")]
-        public partial unsafe void GetProgramInfoLog([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string infoLog);
+        public unsafe partial void GetProgramInfoLog([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string infoLog);
 
         [NativeApi(EntryPoint = "glGetProgramInfoLog")]
         public partial void GetProgramInfoLog([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] out string infoLog);
 
         [NativeApi(EntryPoint = "glGetShaderiv")]
-        public partial unsafe void GetShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] ShaderParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] ShaderParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetShaderiv")]
         public partial void GetShader([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] ShaderParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetShaderInfoLog")]
-        public partial unsafe void GetShaderInfoLog([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string infoLog);
+        public unsafe partial void GetShaderInfoLog([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string infoLog);
 
         [NativeApi(EntryPoint = "glGetShaderInfoLog")]
         public partial void GetShaderInfoLog([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] out string infoLog);
 
         [NativeApi(EntryPoint = "glGetShaderSource")]
-        public partial unsafe void GetShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string source);
+        public unsafe partial void GetShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out)] out string source);
 
         [NativeApi(EntryPoint = "glGetShaderSource")]
         public partial void GetShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Flow(FlowDirection.Out)] out string source);
@@ -4198,28 +4198,28 @@ namespace Silk.NET.OpenGL.Legacy
         public partial int GetUniformLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string name);
 
         [NativeApi(EntryPoint = "glGetVertexAttribdv")]
-        public partial unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
+        public unsafe partial void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] double* @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribdv")]
         public partial void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribfv")]
-        public partial unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribfv")]
         public partial void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<float> @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribiv")]
-        public partial unsafe void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribiv")]
         public partial void GetVertexAttrib([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPropertyARB pname, [Count(Count = 4), Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetVertexAttribPointerv")]
-        public partial unsafe void GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerPropertyARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** pointer);
+        public unsafe partial void GetVertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerPropertyARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** pointer);
 
         [NativeApi(EntryPoint = "glGetVertexAttribPointerv")]
-        public partial unsafe void GetVertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerPropertyARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* pointer) where T0 : unmanaged;
+        public unsafe partial void GetVertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerPropertyARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glStencilFuncSeparate")]
         public partial void StencilFuncSeparate([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] StencilFunction func, [Flow(FlowDirection.In)] int @ref, [Flow(FlowDirection.In)] uint mask);
@@ -4237,7 +4237,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void VertexAttrib4N([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] string v);
 
         [NativeApi(EntryPoint = "glVertexAttribPointer")]
-        public partial unsafe void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void VertexAttribPointer([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glVertexAttribPointer")]
         public partial void VertexAttribPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -4249,25 +4249,25 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void BindBuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint buffer);
 
         [NativeApi(EntryPoint = "glBufferData")]
-        public partial unsafe void BufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] GLEnum usage);
+        public unsafe partial void BufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] GLEnum usage);
 
         [NativeApi(EntryPoint = "glBufferData")]
         public partial void BufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBufferSubData")]
-        public partial unsafe void BufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void BufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glBufferSubData")]
         public partial void BufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glDeleteBuffers")]
-        public partial unsafe void DeleteBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* buffers);
+        public unsafe partial void DeleteBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* buffers);
 
         [NativeApi(EntryPoint = "glDeleteBuffers")]
         public partial void DeleteBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> buffers);
 
         [NativeApi(EntryPoint = "glDeleteQueries")]
-        public partial unsafe void DeleteQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids);
+        public unsafe partial void DeleteQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids);
 
         [NativeApi(EntryPoint = "glDeleteQueries")]
         public partial void DeleteQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> ids);
@@ -4276,49 +4276,49 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void EndQuery([Flow(FlowDirection.In)] GLEnum target);
 
         [NativeApi(EntryPoint = "glGenBuffers")]
-        public partial unsafe void GenBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* buffers);
+        public unsafe partial void GenBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* buffers);
 
         [NativeApi(EntryPoint = "glGenBuffers")]
         public partial void GenBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> buffers);
 
         [NativeApi(EntryPoint = "glGenQueries")]
-        public partial unsafe void GenQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
+        public unsafe partial void GenQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* ids);
 
         [NativeApi(EntryPoint = "glGenQueries")]
         public partial void GenQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids);
 
         [NativeApi(EntryPoint = "glGetBufferParameteriv")]
-        public partial unsafe void GetBufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetBufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetBufferParameteriv")]
         public partial void GetBufferParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetBufferPointerv")]
-        public partial unsafe void GetBufferPointer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
         [NativeApi(EntryPoint = "glGetBufferPointerv")]
-        public partial unsafe void GetBufferPointer<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
+        public unsafe partial void GetBufferPointer<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetBufferSubData")]
-        public partial unsafe void GetBufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] void* data);
+        public unsafe partial void GetBufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] void* data);
 
         [NativeApi(EntryPoint = "glGetBufferSubData")]
         public partial void GetBufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetQueryiv")]
-        public partial unsafe void GetQuery([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetQuery([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetQueryiv")]
         public partial void GetQuery([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetQueryObjectiv")]
-        public partial unsafe void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetQueryObjectiv")]
         public partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetQueryObjectuiv")]
-        public partial unsafe void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetQueryObjectuiv")]
         public partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
@@ -4330,7 +4330,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial bool IsQuery([Flow(FlowDirection.In)] uint id);
 
         [NativeApi(EntryPoint = "glMapBuffer")]
-        public partial unsafe void* MapBuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum access);
+        public unsafe partial void* MapBuffer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum access);
 
         [NativeApi(EntryPoint = "glUnmapBuffer")]
         public partial bool UnmapBuffer([Flow(FlowDirection.In)] GLEnum target);
@@ -4342,13 +4342,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void BindBuffer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint buffer);
 
         [NativeApi(EntryPoint = "glBufferData")]
-        public partial unsafe void BufferData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] BufferUsageARB usage);
+        public unsafe partial void BufferData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] BufferUsageARB usage);
 
         [NativeApi(EntryPoint = "glBufferData")]
         public partial void BufferData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBufferSubData")]
-        public partial unsafe void BufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void BufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glBufferSubData")]
         public partial void BufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
@@ -4357,43 +4357,43 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void EndQuery([Flow(FlowDirection.In)] QueryTarget target);
 
         [NativeApi(EntryPoint = "glGetBufferParameteriv")]
-        public partial unsafe void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetBufferParameteriv")]
         public partial void GetBufferParameter([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetBufferPointerv")]
-        public partial unsafe void GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+        public unsafe partial void GetBufferPointer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
 
         [NativeApi(EntryPoint = "glGetBufferPointerv")]
-        public partial unsafe void GetBufferPointer<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
+        public unsafe partial void GetBufferPointer<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferPointerNameARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] out T0* @params) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetBufferSubData")]
-        public partial unsafe void GetBufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] void* data);
+        public unsafe partial void GetBufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] void* data);
 
         [NativeApi(EntryPoint = "glGetBufferSubData")]
         public partial void GetBufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetQueryiv")]
-        public partial unsafe void GetQuery([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetQuery([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetQueryiv")]
         public partial void GetQuery([Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetQueryObjectiv")]
-        public partial unsafe void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetQueryObjectiv")]
         public partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetQueryObjectuiv")]
-        public partial unsafe void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] uint* @params);
 
         [NativeApi(EntryPoint = "glGetQueryObjectuiv")]
         public partial void GetQueryObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out uint @params);
 
         [NativeApi(EntryPoint = "glMapBuffer")]
-        public partial unsafe void* MapBuffer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferAccessARB access);
+        public unsafe partial void* MapBuffer([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] BufferAccessARB access);
 
         [NativeApi(EntryPoint = "glUnmapBuffer")]
         public partial bool UnmapBuffer([Flow(FlowDirection.In)] BufferTargetARB target);
@@ -4413,7 +4413,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoordfv")]
-        public partial unsafe void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] float* coord);
+        public unsafe partial void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] float* coord);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoordfv")]
@@ -4425,7 +4425,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoorddv")]
-        public partial unsafe void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] double* coord);
+        public unsafe partial void FogCoord([Count(Count = 1), Flow(FlowDirection.In)] double* coord);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoorddv")]
@@ -4433,29 +4433,29 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoordPointer")]
-        public partial unsafe void FogCoordPointer([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void FogCoordPointer([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoordPointer")]
         public partial void FogCoordPointer<T0>([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawArrays")]
-        public partial unsafe void MultiDrawArrays([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* first, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint drawcount);
+        public unsafe partial void MultiDrawArrays([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* first, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint drawcount);
 
         [NativeApi(EntryPoint = "glMultiDrawArrays")]
         public partial void MultiDrawArrays([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref int first, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] uint drawcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElements")]
-        public partial unsafe void MultiDrawElements([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount);
+        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElements")]
-        public partial unsafe void MultiDrawElements<T0>([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref T0* indices, [Flow(FlowDirection.In)] uint drawcount) where T0 : unmanaged;
+        public unsafe partial void MultiDrawElements<T0>([Flow(FlowDirection.In)] GLEnum mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref T0* indices, [Flow(FlowDirection.In)] uint drawcount) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glPointParameterf")]
         public partial void PointParameter([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glPointParameterfv")]
-        public partial unsafe void PointParameter([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void PointParameter([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glPointParameterfv")]
         public partial void PointParameter([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
@@ -4464,7 +4464,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void PointParameter([Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPointParameteriv")]
-        public partial unsafe void PointParameter([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void PointParameter([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glPointParameteriv")]
         public partial void PointParameter([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
@@ -4475,7 +4475,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3bv")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] sbyte* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] sbyte* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3bv")]
@@ -4487,7 +4487,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3dv")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3dv")]
@@ -4499,7 +4499,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3fv")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3fv")]
@@ -4511,7 +4511,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3iv")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3iv")]
@@ -4523,7 +4523,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3sv")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3sv")]
@@ -4535,7 +4535,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3ubv")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] byte* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] byte* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3ubv")]
@@ -4547,7 +4547,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3uiv")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] uint* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] uint* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3uiv")]
@@ -4559,7 +4559,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3usv")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] ushort* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] ushort* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColor3usv")]
@@ -4567,7 +4567,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColorPointer")]
-        public partial unsafe void SecondaryColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void SecondaryColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColorPointer")]
@@ -4579,7 +4579,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2dv")]
-        public partial unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2dv")]
@@ -4591,7 +4591,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2fv")]
-        public partial unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2fv")]
@@ -4603,7 +4603,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2iv")]
-        public partial unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2iv")]
@@ -4615,7 +4615,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2sv")]
-        public partial unsafe void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void WindowPos2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos2sv")]
@@ -4627,7 +4627,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3dv")]
-        public partial unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3dv")]
@@ -4639,7 +4639,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3fv")]
-        public partial unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3fv")]
@@ -4651,7 +4651,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3iv")]
-        public partial unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3iv")]
@@ -4663,7 +4663,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3sv")]
-        public partial unsafe void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void WindowPos3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glWindowPos3sv")]
@@ -4677,29 +4677,29 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoordPointer")]
-        public partial unsafe void FogCoordPointer([Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void FogCoordPointer([Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glFogCoordPointer")]
         public partial void FogCoordPointer<T0>([Flow(FlowDirection.In)] FogPointerTypeEXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glMultiDrawArrays")]
-        public partial unsafe void MultiDrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* first, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint drawcount);
+        public unsafe partial void MultiDrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] int* first, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint drawcount);
 
         [NativeApi(EntryPoint = "glMultiDrawArrays")]
         public partial void MultiDrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref int first, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] uint drawcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElements")]
-        public partial unsafe void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount);
+        public unsafe partial void MultiDrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint drawcount);
 
         [NativeApi(EntryPoint = "glMultiDrawElements")]
-        public partial unsafe void MultiDrawElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref T0* indices, [Flow(FlowDirection.In)] uint drawcount) where T0 : unmanaged;
+        public unsafe partial void MultiDrawElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "drawcount"), Flow(FlowDirection.In)] ref T0* indices, [Flow(FlowDirection.In)] uint drawcount) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glPointParameterf")]
         public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Flow(FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glPointParameterfv")]
-        public partial unsafe void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glPointParameterfv")]
         public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
@@ -4708,7 +4708,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glPointParameteriv")]
-        public partial unsafe void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glPointParameteriv")]
         public partial void PointParameter([Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
@@ -4719,7 +4719,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColorPointer")]
-        public partial unsafe void SecondaryColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void SecondaryColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.4")]
         [NativeApi(EntryPoint = "glSecondaryColorPointer")]
@@ -4733,50 +4733,50 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ClientActiveTexture([Flow(FlowDirection.In)] GLEnum texture);
 
         [NativeApi(EntryPoint = "glCompressedTexImage1D")]
-        public partial unsafe void CompressedTexImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTexImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexImage1D")]
         public partial void CompressedTexImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexImage2D")]
-        public partial unsafe void CompressedTexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexImage2D")]
         public partial void CompressedTexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexImage3D")]
-        public partial unsafe void CompressedTexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexImage3D")]
         public partial void CompressedTexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage1D")]
-        public partial unsafe void CompressedTexSubImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTexSubImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage1D")]
         public partial void CompressedTexSubImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage2D")]
-        public partial unsafe void CompressedTexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage2D")]
         public partial void CompressedTexSubImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage3D")]
-        public partial unsafe void CompressedTexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage3D")]
         public partial void CompressedTexSubImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetCompressedTexImage")]
-        public partial unsafe void GetCompressedTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Count(Computed = "target, level"), Flow(FlowDirection.Out)] void* img);
+        public unsafe partial void GetCompressedTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Count(Computed = "target, level"), Flow(FlowDirection.Out)] void* img);
 
         [NativeApi(EntryPoint = "glGetCompressedTexImage")]
         public partial void GetCompressedTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Count(Computed = "target, level"), Flow(FlowDirection.Out)] out T0 img) where T0 : unmanaged;
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glLoadTransposeMatrixf")]
-        public partial unsafe void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
+        public unsafe partial void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glLoadTransposeMatrixf")]
@@ -4784,7 +4784,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glLoadTransposeMatrixd")]
-        public partial unsafe void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
+        public unsafe partial void LoadTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glLoadTransposeMatrixd")]
@@ -4796,7 +4796,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1dv")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1dv")]
@@ -4808,7 +4808,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1fv")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1fv")]
@@ -4820,7 +4820,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1iv")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1iv")]
@@ -4832,7 +4832,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1sv")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 1), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1sv")]
@@ -4844,7 +4844,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2dv")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2dv")]
@@ -4856,7 +4856,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2fv")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2fv")]
@@ -4868,7 +4868,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2iv")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2iv")]
@@ -4880,7 +4880,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2sv")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2sv")]
@@ -4892,7 +4892,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3dv")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3dv")]
@@ -4904,7 +4904,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3fv")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3fv")]
@@ -4916,7 +4916,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3iv")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3iv")]
@@ -4928,7 +4928,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3sv")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3sv")]
@@ -4940,7 +4940,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4dv")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4dv")]
@@ -4952,7 +4952,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4fv")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4fv")]
@@ -4964,7 +4964,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4iv")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4iv")]
@@ -4976,7 +4976,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4sv")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] GLEnum target, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4sv")]
@@ -4984,7 +4984,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultTransposeMatrixf")]
-        public partial unsafe void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
+        public unsafe partial void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultTransposeMatrixf")]
@@ -4992,7 +4992,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultTransposeMatrixd")]
-        public partial unsafe void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
+        public unsafe partial void MultTransposeMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultTransposeMatrixd")]
@@ -5009,43 +5009,43 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ClientActiveTexture([Flow(FlowDirection.In)] TextureUnit texture);
 
         [NativeApi(EntryPoint = "glCompressedTexImage1D")]
-        public partial unsafe void CompressedTexImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTexImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexImage1D")]
         public partial void CompressedTexImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexImage2D")]
-        public partial unsafe void CompressedTexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexImage2D")]
         public partial void CompressedTexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexImage3D")]
-        public partial unsafe void CompressedTexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexImage3D")]
         public partial void CompressedTexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage1D")]
-        public partial unsafe void CompressedTexSubImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTexSubImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage1D")]
         public partial void CompressedTexSubImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage2D")]
-        public partial unsafe void CompressedTexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage2D")]
         public partial void CompressedTexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage3D")]
-        public partial unsafe void CompressedTexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void CompressedTexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glCompressedTexSubImage3D")]
         public partial void CompressedTexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] Span<T0> data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetCompressedTexImage")]
-        public partial unsafe void GetCompressedTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Count(Computed = "target, level"), Flow(FlowDirection.Out)] void* img);
+        public unsafe partial void GetCompressedTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Count(Computed = "target, level"), Flow(FlowDirection.Out)] void* img);
 
         [NativeApi(EntryPoint = "glGetCompressedTexImage")]
         public partial void GetCompressedTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Count(Computed = "target, level"), Flow(FlowDirection.Out)] out T0 img) where T0 : unmanaged;
@@ -5056,7 +5056,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1dv")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1dv")]
@@ -5068,7 +5068,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1fv")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1fv")]
@@ -5080,7 +5080,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1iv")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1iv")]
@@ -5092,7 +5092,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1sv")]
-        public partial unsafe void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord1([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 1), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord1sv")]
@@ -5104,7 +5104,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2dv")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2dv")]
@@ -5116,7 +5116,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2fv")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2fv")]
@@ -5128,7 +5128,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2iv")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2iv")]
@@ -5140,7 +5140,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2sv")]
-        public partial unsafe void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord2([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord2sv")]
@@ -5152,7 +5152,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3dv")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3dv")]
@@ -5164,7 +5164,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3fv")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3fv")]
@@ -5176,7 +5176,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3iv")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3iv")]
@@ -5188,7 +5188,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3sv")]
-        public partial unsafe void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord3([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord3sv")]
@@ -5200,7 +5200,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4dv")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4dv")]
@@ -5212,7 +5212,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4fv")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4fv")]
@@ -5224,7 +5224,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4iv")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4iv")]
@@ -5236,7 +5236,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4sv")]
-        public partial unsafe void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void MultiTexCoord4([Flow(FlowDirection.In)] TextureUnit target, [Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.3")]
         [NativeApi(EntryPoint = "glMultiTexCoord4sv")]
@@ -5246,19 +5246,19 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void CopyTexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glDrawRangeElements")]
-        public partial unsafe void DrawRangeElements([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
+        public unsafe partial void DrawRangeElements([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
 
         [NativeApi(EntryPoint = "glDrawRangeElements")]
         public partial void DrawRangeElements<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage3D")]
-        public partial unsafe void TexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage3D")]
         public partial void TexImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage3D")]
-        public partial unsafe void TexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage3D")]
         public partial void TexSubImage3D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -5267,26 +5267,26 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void CopyTexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glDrawRangeElements")]
-        public partial unsafe void DrawRangeElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
+        public unsafe partial void DrawRangeElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
 
         [NativeApi(EntryPoint = "glDrawRangeElements")]
         public partial void DrawRangeElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage3D")]
-        public partial unsafe void TexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TexImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage3D")]
         public partial void TexImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage3D")]
-        public partial unsafe void TexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TexSubImage3D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage3D")]
         public partial void TexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glAreTexturesResident")]
-        public partial unsafe bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glAreTexturesResident")]
@@ -5301,7 +5301,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glColorPointer")]
-        public partial unsafe void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glColorPointer")]
@@ -5320,7 +5320,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void CopyTexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
 
         [NativeApi(EntryPoint = "glDeleteTextures")]
-        public partial unsafe void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures);
+        public unsafe partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures);
 
         [NativeApi(EntryPoint = "glDeleteTextures")]
         public partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> textures);
@@ -5333,14 +5333,14 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void DrawArrays([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "glDrawElements")]
-        public partial unsafe void DrawElements([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
+        public unsafe partial void DrawElements([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
 
         [NativeApi(EntryPoint = "glDrawElements")]
         public partial void DrawElements<T0>([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glEdgeFlagPointer")]
-        public partial unsafe void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Count(Computed = "stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void EdgeFlagPointer([Flow(FlowDirection.In)] uint stride, [Count(Computed = "stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glEdgeFlagPointer")]
@@ -5351,7 +5351,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void EnableClientState([Flow(FlowDirection.In)] GLEnum array);
 
         [NativeApi(EntryPoint = "glGenTextures")]
-        public partial unsafe void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* textures);
+        public unsafe partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* textures);
 
         [NativeApi(EntryPoint = "glGenTextures")]
         public partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures);
@@ -5362,7 +5362,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glIndexubv")]
-        public partial unsafe void Index([Count(Count = 1), Flow(FlowDirection.In)] byte* c);
+        public unsafe partial void Index([Count(Count = 1), Flow(FlowDirection.In)] byte* c);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glIndexubv")]
@@ -5370,7 +5370,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glIndexPointer")]
-        public partial unsafe void IndexPointer([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void IndexPointer([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glIndexPointer")]
@@ -5378,7 +5378,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glInterleavedArrays")]
-        public partial unsafe void InterleavedArrays([Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "format, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void InterleavedArrays([Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "format, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glInterleavedArrays")]
@@ -5389,7 +5389,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glNormalPointer")]
-        public partial unsafe void NormalPointer([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void NormalPointer([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glNormalPointer")]
@@ -5404,7 +5404,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glPrioritizeTextures")]
-        public partial unsafe void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
+        public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glPrioritizeTextures")]
@@ -5416,27 +5416,27 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glTexCoordPointer")]
-        public partial unsafe void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glTexCoordPointer")]
         public partial void TexCoordPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage1D")]
-        public partial unsafe void TexSubImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TexSubImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage1D")]
         public partial void TexSubImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage2D")]
-        public partial unsafe void TexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TexSubImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage2D")]
         public partial void TexSubImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glVertexPointer")]
-        public partial unsafe void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glVertexPointer")]
@@ -5447,7 +5447,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glColorPointer")]
-        public partial unsafe void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void ColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glColorPointer")]
@@ -5473,7 +5473,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void DrawArrays([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count);
 
         [NativeApi(EntryPoint = "glDrawElements")]
-        public partial unsafe void DrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
+        public unsafe partial void DrawElements([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] void* indices);
 
         [NativeApi(EntryPoint = "glDrawElements")]
         public partial void DrawElements<T0>([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ref T0 indices) where T0 : unmanaged;
@@ -5488,7 +5488,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glIndexPointer")]
-        public partial unsafe void IndexPointer([Flow(FlowDirection.In)] IndexPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void IndexPointer([Flow(FlowDirection.In)] IndexPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glIndexPointer")]
@@ -5496,7 +5496,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glInterleavedArrays")]
-        public partial unsafe void InterleavedArrays([Flow(FlowDirection.In)] InterleavedArrayFormat format, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "format, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void InterleavedArrays([Flow(FlowDirection.In)] InterleavedArrayFormat format, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "format, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glInterleavedArrays")]
@@ -5504,7 +5504,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glNormalPointer")]
-        public partial unsafe void NormalPointer([Flow(FlowDirection.In)] NormalPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void NormalPointer([Flow(FlowDirection.In)] NormalPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glNormalPointer")]
@@ -5512,27 +5512,27 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glTexCoordPointer")]
-        public partial unsafe void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void TexCoordPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glTexCoordPointer")]
         public partial void TexCoordPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] TexCoordPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage1D")]
-        public partial unsafe void TexSubImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TexSubImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage1D")]
         public partial void TexSubImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexSubImage2D")]
-        public partial unsafe void TexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TexSubImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexSubImage2D")]
         public partial void TexSubImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glVertexPointer")]
-        public partial unsafe void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void VertexPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [System.Obsolete("Deprecated in version 1.1")]
         [NativeApi(EntryPoint = "glVertexPointer")]
@@ -5552,7 +5552,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glBitmap")]
-        public partial unsafe void Bitmap([Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] float xorig, [Flow(FlowDirection.In)] float yorig, [Flow(FlowDirection.In)] float xmove, [Flow(FlowDirection.In)] float ymove, [Count(Computed = "width, height"), Flow(FlowDirection.In)] byte* bitmap);
+        public unsafe partial void Bitmap([Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] float xorig, [Flow(FlowDirection.In)] float yorig, [Flow(FlowDirection.In)] float xmove, [Flow(FlowDirection.In)] float ymove, [Count(Computed = "width, height"), Flow(FlowDirection.In)] byte* bitmap);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glBitmap")]
@@ -5567,7 +5567,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glCallLists")]
-        public partial unsafe void CallLists([Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "n, type"), Flow(FlowDirection.In)] void* lists);
+        public unsafe partial void CallLists([Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "n, type"), Flow(FlowDirection.In)] void* lists);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glCallLists")]
@@ -5595,7 +5595,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glClipPlane")]
-        public partial unsafe void ClipPlane([Flow(FlowDirection.In)] GLEnum plane, [Count(Count = 4), Flow(FlowDirection.In)] double* equation);
+        public unsafe partial void ClipPlane([Flow(FlowDirection.In)] GLEnum plane, [Count(Count = 4), Flow(FlowDirection.In)] double* equation);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glClipPlane")]
@@ -5607,7 +5607,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3bv")]
-        public partial unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] sbyte* v);
+        public unsafe partial void Color3([Count(Count = 3), Flow(FlowDirection.In)] sbyte* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3bv")]
@@ -5619,7 +5619,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3dv")]
-        public partial unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void Color3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3dv")]
@@ -5631,7 +5631,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3fv")]
-        public partial unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void Color3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3fv")]
@@ -5643,7 +5643,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3iv")]
-        public partial unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void Color3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3iv")]
@@ -5655,7 +5655,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3sv")]
-        public partial unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void Color3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3sv")]
@@ -5667,7 +5667,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3ubv")]
-        public partial unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] byte* v);
+        public unsafe partial void Color3([Count(Count = 3), Flow(FlowDirection.In)] byte* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3ubv")]
@@ -5679,7 +5679,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3uiv")]
-        public partial unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] uint* v);
+        public unsafe partial void Color3([Count(Count = 3), Flow(FlowDirection.In)] uint* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3uiv")]
@@ -5691,7 +5691,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3usv")]
-        public partial unsafe void Color3([Count(Count = 3), Flow(FlowDirection.In)] ushort* v);
+        public unsafe partial void Color3([Count(Count = 3), Flow(FlowDirection.In)] ushort* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor3usv")]
@@ -5703,7 +5703,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4bv")]
-        public partial unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] sbyte* v);
+        public unsafe partial void Color4([Count(Count = 4), Flow(FlowDirection.In)] sbyte* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4bv")]
@@ -5715,7 +5715,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4dv")]
-        public partial unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void Color4([Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4dv")]
@@ -5727,7 +5727,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4fv")]
-        public partial unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void Color4([Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4fv")]
@@ -5739,7 +5739,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4iv")]
-        public partial unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void Color4([Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4iv")]
@@ -5751,7 +5751,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4sv")]
-        public partial unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void Color4([Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4sv")]
@@ -5763,7 +5763,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4ubv")]
-        public partial unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] byte* v);
+        public unsafe partial void Color4([Count(Count = 4), Flow(FlowDirection.In)] byte* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4ubv")]
@@ -5775,7 +5775,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4uiv")]
-        public partial unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] uint* v);
+        public unsafe partial void Color4([Count(Count = 4), Flow(FlowDirection.In)] uint* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4uiv")]
@@ -5787,7 +5787,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4usv")]
-        public partial unsafe void Color4([Count(Count = 4), Flow(FlowDirection.In)] ushort* v);
+        public unsafe partial void Color4([Count(Count = 4), Flow(FlowDirection.In)] ushort* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glColor4usv")]
@@ -5828,7 +5828,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glDrawPixels")]
-        public partial unsafe void DrawPixels([Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void DrawPixels([Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glDrawPixels")]
@@ -5840,7 +5840,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEdgeFlagv")]
-        public partial unsafe void EdgeFlag([Count(Count = 1), Flow(FlowDirection.In)] bool* flag);
+        public unsafe partial void EdgeFlag([Count(Count = 1), Flow(FlowDirection.In)] bool* flag);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEdgeFlagv")]
@@ -5863,7 +5863,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord1dv")]
-        public partial unsafe void EvalCoord1([Count(Count = 1), Flow(FlowDirection.In)] double* u);
+        public unsafe partial void EvalCoord1([Count(Count = 1), Flow(FlowDirection.In)] double* u);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord1dv")]
@@ -5875,7 +5875,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord1fv")]
-        public partial unsafe void EvalCoord1([Count(Count = 1), Flow(FlowDirection.In)] float* u);
+        public unsafe partial void EvalCoord1([Count(Count = 1), Flow(FlowDirection.In)] float* u);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord1fv")]
@@ -5887,7 +5887,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord2dv")]
-        public partial unsafe void EvalCoord2([Count(Count = 2), Flow(FlowDirection.In)] double* u);
+        public unsafe partial void EvalCoord2([Count(Count = 2), Flow(FlowDirection.In)] double* u);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord2dv")]
@@ -5899,7 +5899,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord2fv")]
-        public partial unsafe void EvalCoord2([Count(Count = 2), Flow(FlowDirection.In)] float* u);
+        public unsafe partial void EvalCoord2([Count(Count = 2), Flow(FlowDirection.In)] float* u);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glEvalCoord2fv")]
@@ -5923,7 +5923,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFeedbackBuffer")]
-        public partial unsafe void FeedbackBuffer([Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "size"), Flow(FlowDirection.Out)] float* buffer);
+        public unsafe partial void FeedbackBuffer([Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] GLEnum type, [Count(Parameter = "size"), Flow(FlowDirection.Out)] float* buffer);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFeedbackBuffer")]
@@ -5941,7 +5941,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogfv")]
-        public partial unsafe void Fog([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void Fog([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogfv")]
@@ -5953,7 +5953,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogiv")]
-        public partial unsafe void Fog([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void Fog([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogiv")]
@@ -5971,21 +5971,21 @@ namespace Silk.NET.OpenGL.Legacy
         public partial uint GenLists([Flow(FlowDirection.In)] uint range);
 
         [NativeApi(EntryPoint = "glGetBooleanv")]
-        public partial unsafe void GetBoolean([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] bool* data);
+        public unsafe partial void GetBoolean([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetBooleanv")]
         public partial void GetBoolean([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out bool data);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetClipPlane")]
-        public partial unsafe void GetClipPlane([Flow(FlowDirection.In)] GLEnum plane, [Count(Count = 4), Flow(FlowDirection.Out)] double* equation);
+        public unsafe partial void GetClipPlane([Flow(FlowDirection.In)] GLEnum plane, [Count(Count = 4), Flow(FlowDirection.Out)] double* equation);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetClipPlane")]
         public partial void GetClipPlane([Flow(FlowDirection.In)] GLEnum plane, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> equation);
 
         [NativeApi(EntryPoint = "glGetDoublev")]
-        public partial unsafe void GetDouble([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* data);
+        public unsafe partial void GetDouble([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* data);
 
         [NativeApi(EntryPoint = "glGetDoublev")]
         public partial void GetDouble([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out double data);
@@ -5994,20 +5994,20 @@ namespace Silk.NET.OpenGL.Legacy
         public partial GLEnum GetError();
 
         [NativeApi(EntryPoint = "glGetFloatv")]
-        public partial unsafe void GetFloat([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* data);
+        public unsafe partial void GetFloat([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* data);
 
         [NativeApi(EntryPoint = "glGetFloatv")]
         public partial void GetFloat([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float data);
 
         [NativeApi(EntryPoint = "glGetIntegerv")]
-        public partial unsafe void GetInteger([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* data);
+        public unsafe partial void GetInteger([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* data);
 
         [NativeApi(EntryPoint = "glGetIntegerv")]
         public partial void GetInteger([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int data);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightfv")]
-        public partial unsafe void GetLight([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetLight([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightfv")]
@@ -6015,7 +6015,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightiv")]
-        public partial unsafe void GetLight([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetLight([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightiv")]
@@ -6023,7 +6023,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapdv")]
-        public partial unsafe void GetMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] double* v);
+        public unsafe partial void GetMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] double* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapdv")]
@@ -6031,7 +6031,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapfv")]
-        public partial unsafe void GetMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] float* v);
+        public unsafe partial void GetMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] float* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapfv")]
@@ -6039,7 +6039,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapiv")]
-        public partial unsafe void GetMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] int* v);
+        public unsafe partial void GetMap([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] int* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapiv")]
@@ -6047,7 +6047,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialfv")]
-        public partial unsafe void GetMaterial([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetMaterial([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialfv")]
@@ -6055,7 +6055,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialiv")]
-        public partial unsafe void GetMaterial([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetMaterial([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialiv")]
@@ -6063,7 +6063,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapfv")]
-        public partial unsafe void GetPixelMap([Flow(FlowDirection.In)] GLEnum map, [Count(Computed = "map"), Flow(FlowDirection.Out)] float* values);
+        public unsafe partial void GetPixelMap([Flow(FlowDirection.In)] GLEnum map, [Count(Computed = "map"), Flow(FlowDirection.Out)] float* values);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapfv")]
@@ -6071,7 +6071,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapuiv")]
-        public partial unsafe void GetPixelMap([Flow(FlowDirection.In)] GLEnum map, [Count(Computed = "map"), Flow(FlowDirection.Out)] uint* values);
+        public unsafe partial void GetPixelMap([Flow(FlowDirection.In)] GLEnum map, [Count(Computed = "map"), Flow(FlowDirection.Out)] uint* values);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapuiv")]
@@ -6079,7 +6079,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapusv")]
-        public partial unsafe void GetPixelMap([Flow(FlowDirection.In)] GLEnum map, [Count(Computed = "map"), Flow(FlowDirection.Out)] ushort* values);
+        public unsafe partial void GetPixelMap([Flow(FlowDirection.In)] GLEnum map, [Count(Computed = "map"), Flow(FlowDirection.Out)] ushort* values);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapusv")]
@@ -6087,18 +6087,18 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPolygonStipple")]
-        public partial unsafe void GetPolygonStipple([Count(Count = 0), Flow(FlowDirection.Out)] byte* mask);
+        public unsafe partial void GetPolygonStipple([Count(Count = 0), Flow(FlowDirection.Out)] byte* mask);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPolygonStipple")]
         public partial void GetPolygonStipple([Count(Count = 0), Flow(FlowDirection.Out)] out byte mask);
 
         [NativeApi(EntryPoint = "glGetString")]
-        public partial unsafe byte* GetString([Flow(FlowDirection.In)] GLEnum name);
+        public unsafe partial byte* GetString([Flow(FlowDirection.In)] GLEnum name);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnvfv")]
-        public partial unsafe void GetTexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetTexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnvfv")]
@@ -6106,7 +6106,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnviv")]
-        public partial unsafe void GetTexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnviv")]
@@ -6114,7 +6114,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGendv")]
-        public partial unsafe void GetTexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* @params);
+        public unsafe partial void GetTexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGendv")]
@@ -6122,7 +6122,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGenfv")]
-        public partial unsafe void GetTexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetTexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGenfv")]
@@ -6130,38 +6130,38 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGeniv")]
-        public partial unsafe void GetTexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGeniv")]
         public partial void GetTexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetTexImage")]
-        public partial unsafe void GetTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] void* pixels);
+        public unsafe partial void GetTexImage([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetTexImage")]
         public partial void GetTexImage<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetTexLevelParameterfv")]
-        public partial unsafe void GetTexLevelParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetTexLevelParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetTexLevelParameterfv")]
         public partial void GetTexLevelParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetTexLevelParameteriv")]
-        public partial unsafe void GetTexLevelParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTexLevelParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetTexLevelParameteriv")]
         public partial void GetTexLevelParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetTexParameterfv")]
-        public partial unsafe void GetTexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetTexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetTexParameterfv")]
         public partial void GetTexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetTexParameteriv")]
-        public partial unsafe void GetTexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetTexParameteriv")]
         public partial void GetTexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
@@ -6175,7 +6175,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexdv")]
-        public partial unsafe void Index([Count(Count = 1), Flow(FlowDirection.In)] double* c);
+        public unsafe partial void Index([Count(Count = 1), Flow(FlowDirection.In)] double* c);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexdv")]
@@ -6187,7 +6187,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexfv")]
-        public partial unsafe void Index([Count(Count = 1), Flow(FlowDirection.In)] float* c);
+        public unsafe partial void Index([Count(Count = 1), Flow(FlowDirection.In)] float* c);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexfv")]
@@ -6199,7 +6199,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexiv")]
-        public partial unsafe void Index([Count(Count = 1), Flow(FlowDirection.In)] int* c);
+        public unsafe partial void Index([Count(Count = 1), Flow(FlowDirection.In)] int* c);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexiv")]
@@ -6211,7 +6211,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexsv")]
-        public partial unsafe void Index([Count(Count = 1), Flow(FlowDirection.In)] short* c);
+        public unsafe partial void Index([Count(Count = 1), Flow(FlowDirection.In)] short* c);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glIndexsv")]
@@ -6238,7 +6238,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightfv")]
-        public partial unsafe void Light([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void Light([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightfv")]
@@ -6250,7 +6250,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightiv")]
-        public partial unsafe void Light([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void Light([Flow(FlowDirection.In)] GLEnum light, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightiv")]
@@ -6262,7 +6262,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModelfv")]
-        public partial unsafe void LightModel([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void LightModel([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModelfv")]
@@ -6274,7 +6274,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModeliv")]
-        public partial unsafe void LightModel([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void LightModel([Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModeliv")]
@@ -6297,7 +6297,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLoadMatrixf")]
-        public partial unsafe void LoadMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
+        public unsafe partial void LoadMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLoadMatrixf")]
@@ -6305,7 +6305,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLoadMatrixd")]
-        public partial unsafe void LoadMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
+        public unsafe partial void LoadMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLoadMatrixd")]
@@ -6320,7 +6320,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1d")]
-        public partial unsafe void Map1([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] double* points);
+        public unsafe partial void Map1([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] double* points);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1d")]
@@ -6328,7 +6328,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1f")]
-        public partial unsafe void Map1([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] float* points);
+        public unsafe partial void Map1([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] float* points);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1f")]
@@ -6336,7 +6336,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2d")]
-        public partial unsafe void Map2([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] double* points);
+        public unsafe partial void Map2([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] double* points);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2d")]
@@ -6344,7 +6344,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2f")]
-        public partial unsafe void Map2([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] float* points);
+        public unsafe partial void Map2([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] float* points);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2f")]
@@ -6372,7 +6372,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialfv")]
-        public partial unsafe void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialfv")]
@@ -6384,7 +6384,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialiv")]
-        public partial unsafe void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void Material([Flow(FlowDirection.In)] GLEnum face, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialiv")]
@@ -6396,7 +6396,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMultMatrixf")]
-        public partial unsafe void MultMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
+        public unsafe partial void MultMatrix([Count(Count = 16), Flow(FlowDirection.In)] float* m);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMultMatrixf")]
@@ -6404,7 +6404,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMultMatrixd")]
-        public partial unsafe void MultMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
+        public unsafe partial void MultMatrix([Count(Count = 16), Flow(FlowDirection.In)] double* m);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMultMatrixd")]
@@ -6420,7 +6420,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3bv")]
-        public partial unsafe void Normal3([Count(Count = 3), Flow(FlowDirection.In)] sbyte* v);
+        public unsafe partial void Normal3([Count(Count = 3), Flow(FlowDirection.In)] sbyte* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3bv")]
@@ -6432,7 +6432,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3dv")]
-        public partial unsafe void Normal3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void Normal3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3dv")]
@@ -6444,7 +6444,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3fv")]
-        public partial unsafe void Normal3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void Normal3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3fv")]
@@ -6456,7 +6456,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3iv")]
-        public partial unsafe void Normal3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void Normal3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3iv")]
@@ -6468,7 +6468,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3sv")]
-        public partial unsafe void Normal3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void Normal3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glNormal3sv")]
@@ -6484,7 +6484,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapfv")]
-        public partial unsafe void PixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] float* values);
+        public unsafe partial void PixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] float* values);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapfv")]
@@ -6492,7 +6492,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapuiv")]
-        public partial unsafe void PixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] uint* values);
+        public unsafe partial void PixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] uint* values);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapuiv")]
@@ -6500,7 +6500,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapusv")]
-        public partial unsafe void PixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] ushort* values);
+        public unsafe partial void PixelMap([Flow(FlowDirection.In)] GLEnum map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] ushort* values);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapusv")]
@@ -6532,7 +6532,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPolygonStipple")]
-        public partial unsafe void PolygonStipple([Count(Count = 0), Flow(FlowDirection.In)] byte* mask);
+        public unsafe partial void PolygonStipple([Count(Count = 0), Flow(FlowDirection.In)] byte* mask);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPolygonStipple")]
@@ -6568,7 +6568,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2dv")]
-        public partial unsafe void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2dv")]
@@ -6580,7 +6580,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2fv")]
-        public partial unsafe void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2fv")]
@@ -6592,7 +6592,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2iv")]
-        public partial unsafe void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2iv")]
@@ -6604,7 +6604,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2sv")]
-        public partial unsafe void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void RasterPos2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos2sv")]
@@ -6616,7 +6616,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3dv")]
-        public partial unsafe void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3dv")]
@@ -6628,7 +6628,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3fv")]
-        public partial unsafe void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3fv")]
@@ -6640,7 +6640,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3iv")]
-        public partial unsafe void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3iv")]
@@ -6652,7 +6652,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3sv")]
-        public partial unsafe void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void RasterPos3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos3sv")]
@@ -6664,7 +6664,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4dv")]
-        public partial unsafe void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4dv")]
@@ -6676,7 +6676,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4fv")]
-        public partial unsafe void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4fv")]
@@ -6688,7 +6688,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4iv")]
-        public partial unsafe void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4iv")]
@@ -6700,7 +6700,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4sv")]
-        public partial unsafe void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void RasterPos4([Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRasterPos4sv")]
@@ -6710,7 +6710,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ReadBuffer([Flow(FlowDirection.In)] GLEnum src);
 
         [NativeApi(EntryPoint = "glReadPixels")]
-        public partial unsafe void ReadPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] void* pixels);
+        public unsafe partial void ReadPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glReadPixels")]
         public partial void ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
@@ -6721,7 +6721,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectdv")]
-        public partial unsafe void Rect([Count(Count = 2), Flow(FlowDirection.In)] double* v1, [Count(Count = 2), Flow(FlowDirection.In)] double* v2);
+        public unsafe partial void Rect([Count(Count = 2), Flow(FlowDirection.In)] double* v1, [Count(Count = 2), Flow(FlowDirection.In)] double* v2);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectdv")]
@@ -6733,7 +6733,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectfv")]
-        public partial unsafe void Rect([Count(Count = 2), Flow(FlowDirection.In)] float* v1, [Count(Count = 2), Flow(FlowDirection.In)] float* v2);
+        public unsafe partial void Rect([Count(Count = 2), Flow(FlowDirection.In)] float* v1, [Count(Count = 2), Flow(FlowDirection.In)] float* v2);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectfv")]
@@ -6745,7 +6745,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectiv")]
-        public partial unsafe void Rect([Count(Count = 2), Flow(FlowDirection.In)] int* v1, [Count(Count = 2), Flow(FlowDirection.In)] int* v2);
+        public unsafe partial void Rect([Count(Count = 2), Flow(FlowDirection.In)] int* v1, [Count(Count = 2), Flow(FlowDirection.In)] int* v2);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectiv")]
@@ -6753,7 +6753,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectsv")]
-        public partial unsafe void Rect([Count(Count = 2), Flow(FlowDirection.In)] short* v1, [Count(Count = 2), Flow(FlowDirection.In)] short* v2);
+        public unsafe partial void Rect([Count(Count = 2), Flow(FlowDirection.In)] short* v1, [Count(Count = 2), Flow(FlowDirection.In)] short* v2);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glRectsv")]
@@ -6788,7 +6788,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glSelectBuffer")]
-        public partial unsafe void SelectBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] uint* buffer);
+        public unsafe partial void SelectBuffer([Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] uint* buffer);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glSelectBuffer")]
@@ -6813,7 +6813,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1dv")]
-        public partial unsafe void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1dv")]
@@ -6825,7 +6825,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1fv")]
-        public partial unsafe void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1fv")]
@@ -6837,7 +6837,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1iv")]
-        public partial unsafe void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1iv")]
@@ -6849,7 +6849,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1sv")]
-        public partial unsafe void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void TexCoord1([Count(Count = 1), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord1sv")]
@@ -6861,7 +6861,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2dv")]
-        public partial unsafe void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2dv")]
@@ -6873,7 +6873,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2fv")]
-        public partial unsafe void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2fv")]
@@ -6885,7 +6885,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2iv")]
-        public partial unsafe void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2iv")]
@@ -6897,7 +6897,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2sv")]
-        public partial unsafe void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void TexCoord2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord2sv")]
@@ -6909,7 +6909,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3dv")]
-        public partial unsafe void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3dv")]
@@ -6921,7 +6921,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3fv")]
-        public partial unsafe void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3fv")]
@@ -6933,7 +6933,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3iv")]
-        public partial unsafe void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3iv")]
@@ -6945,7 +6945,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3sv")]
-        public partial unsafe void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void TexCoord3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord3sv")]
@@ -6957,7 +6957,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4dv")]
-        public partial unsafe void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4dv")]
@@ -6969,7 +6969,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4fv")]
-        public partial unsafe void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4fv")]
@@ -6981,7 +6981,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4iv")]
-        public partial unsafe void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4iv")]
@@ -6993,7 +6993,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4sv")]
-        public partial unsafe void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void TexCoord4([Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexCoord4sv")]
@@ -7005,7 +7005,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnvfv")]
-        public partial unsafe void TexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void TexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnvfv")]
@@ -7017,7 +7017,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnviv")]
-        public partial unsafe void TexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void TexEnv([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnviv")]
@@ -7025,7 +7025,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGendv")]
-        public partial unsafe void TexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] double* @params);
+        public unsafe partial void TexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] double* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGendv")]
@@ -7037,7 +7037,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGenfv")]
-        public partial unsafe void TexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void TexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGenfv")]
@@ -7049,7 +7049,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGeniv")]
-        public partial unsafe void TexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void TexGen([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGeniv")]
@@ -7060,13 +7060,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TexGend([Flow(FlowDirection.In)] GLEnum coord, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] double param);
 
         [NativeApi(EntryPoint = "glTexImage1D")]
-        public partial unsafe void TexImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TexImage1D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage1D")]
         public partial void TexImage1D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage2D")]
-        public partial unsafe void TexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TexImage2D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage2D")]
         public partial void TexImage2D<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -7075,7 +7075,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glTexParameterfv")]
-        public partial unsafe void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glTexParameterfv")]
         public partial void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
@@ -7084,7 +7084,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glTexParameteriv")]
-        public partial unsafe void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glTexParameteriv")]
         public partial void TexParameter([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);
@@ -7103,7 +7103,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2dv")]
-        public partial unsafe void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2dv")]
@@ -7115,7 +7115,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2fv")]
-        public partial unsafe void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2fv")]
@@ -7127,7 +7127,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2iv")]
-        public partial unsafe void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2iv")]
@@ -7139,7 +7139,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2sv")]
-        public partial unsafe void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void Vertex2([Count(Count = 2), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex2sv")]
@@ -7151,7 +7151,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3dv")]
-        public partial unsafe void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3dv")]
@@ -7163,7 +7163,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3fv")]
-        public partial unsafe void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3fv")]
@@ -7175,7 +7175,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3iv")]
-        public partial unsafe void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3iv")]
@@ -7187,7 +7187,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3sv")]
-        public partial unsafe void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void Vertex3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex3sv")]
@@ -7199,7 +7199,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4dv")]
-        public partial unsafe void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] double* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4dv")]
@@ -7211,7 +7211,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4fv")]
-        public partial unsafe void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] float* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4fv")]
@@ -7223,7 +7223,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4iv")]
-        public partial unsafe void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] int* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4iv")]
@@ -7235,7 +7235,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4sv")]
-        public partial unsafe void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void Vertex4([Count(Count = 4), Flow(FlowDirection.In)] short* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glVertex4sv")]
@@ -7265,7 +7265,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glCallLists")]
-        public partial unsafe void CallLists([Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.In)] ListNameType type, [Count(Computed = "n, type"), Flow(FlowDirection.In)] void* lists);
+        public unsafe partial void CallLists([Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.In)] ListNameType type, [Count(Computed = "n, type"), Flow(FlowDirection.In)] void* lists);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glCallLists")]
@@ -7273,7 +7273,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glClipPlane")]
-        public partial unsafe void ClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.In)] double* equation);
+        public unsafe partial void ClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.In)] double* equation);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glClipPlane")]
@@ -7309,7 +7309,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glDrawPixels")]
-        public partial unsafe void DrawPixels([Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void DrawPixels([Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glDrawPixels")]
@@ -7328,7 +7328,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFeedbackBuffer")]
-        public partial unsafe void FeedbackBuffer([Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] FeedbackType type, [Count(Parameter = "size"), Flow(FlowDirection.Out)] float* buffer);
+        public unsafe partial void FeedbackBuffer([Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.In)] FeedbackType type, [Count(Parameter = "size"), Flow(FlowDirection.Out)] float* buffer);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFeedbackBuffer")]
@@ -7340,7 +7340,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogfv")]
-        public partial unsafe void Fog([Flow(FlowDirection.In)] FogParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void Fog([Flow(FlowDirection.In)] FogParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogfv")]
@@ -7352,7 +7352,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogiv")]
-        public partial unsafe void Fog([Flow(FlowDirection.In)] FogParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void Fog([Flow(FlowDirection.In)] FogParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glFogiv")]
@@ -7362,40 +7362,40 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void FrontFace([Flow(FlowDirection.In)] FrontFaceDirection mode);
 
         [NativeApi(EntryPoint = "glGetBooleanv")]
-        public partial unsafe void GetBoolean([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] bool* data);
+        public unsafe partial void GetBoolean([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetBooleanv")]
         public partial void GetBoolean([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out bool data);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetClipPlane")]
-        public partial unsafe void GetClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.Out)] double* equation);
+        public unsafe partial void GetClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.Out)] double* equation);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetClipPlane")]
         public partial void GetClipPlane([Flow(FlowDirection.In)] ClipPlaneName plane, [Count(Count = 4), Flow(FlowDirection.Out)] Span<double> equation);
 
         [NativeApi(EntryPoint = "glGetDoublev")]
-        public partial unsafe void GetDouble([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* data);
+        public unsafe partial void GetDouble([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* data);
 
         [NativeApi(EntryPoint = "glGetDoublev")]
         public partial void GetDouble([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out double data);
 
         [NativeApi(EntryPoint = "glGetFloatv")]
-        public partial unsafe void GetFloat([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* data);
+        public unsafe partial void GetFloat([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* data);
 
         [NativeApi(EntryPoint = "glGetFloatv")]
         public partial void GetFloat([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float data);
 
         [NativeApi(EntryPoint = "glGetIntegerv")]
-        public partial unsafe void GetInteger([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* data);
+        public unsafe partial void GetInteger([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* data);
 
         [NativeApi(EntryPoint = "glGetIntegerv")]
         public partial void GetInteger([Flow(FlowDirection.In)] GetPName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int data);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightfv")]
-        public partial unsafe void GetLight([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetLight([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightfv")]
@@ -7403,7 +7403,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightiv")]
-        public partial unsafe void GetLight([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetLight([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetLightiv")]
@@ -7411,7 +7411,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapdv")]
-        public partial unsafe void GetMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] GetMapQuery query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] double* v);
+        public unsafe partial void GetMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] GetMapQuery query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] double* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapdv")]
@@ -7419,7 +7419,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapfv")]
-        public partial unsafe void GetMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] GetMapQuery query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] float* v);
+        public unsafe partial void GetMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] GetMapQuery query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] float* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapfv")]
@@ -7427,7 +7427,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapiv")]
-        public partial unsafe void GetMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] GetMapQuery query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] int* v);
+        public unsafe partial void GetMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] GetMapQuery query, [Count(Computed = "target, query"), Flow(FlowDirection.Out)] int* v);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMapiv")]
@@ -7435,7 +7435,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialfv")]
-        public partial unsafe void GetMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialfv")]
@@ -7443,7 +7443,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialiv")]
-        public partial unsafe void GetMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetMaterial([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetMaterialiv")]
@@ -7451,7 +7451,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapfv")]
-        public partial unsafe void GetPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Computed = "map"), Flow(FlowDirection.Out)] float* values);
+        public unsafe partial void GetPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Computed = "map"), Flow(FlowDirection.Out)] float* values);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapfv")]
@@ -7459,7 +7459,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapuiv")]
-        public partial unsafe void GetPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Computed = "map"), Flow(FlowDirection.Out)] uint* values);
+        public unsafe partial void GetPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Computed = "map"), Flow(FlowDirection.Out)] uint* values);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapuiv")]
@@ -7467,7 +7467,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapusv")]
-        public partial unsafe void GetPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Computed = "map"), Flow(FlowDirection.Out)] ushort* values);
+        public unsafe partial void GetPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Computed = "map"), Flow(FlowDirection.Out)] ushort* values);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetPixelMapusv")]
@@ -7482,7 +7482,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnvfv")]
-        public partial unsafe void GetTexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetTexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnvfv")]
@@ -7490,7 +7490,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnviv")]
-        public partial unsafe void GetTexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexEnviv")]
@@ -7498,7 +7498,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGendv")]
-        public partial unsafe void GetTexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* @params);
+        public unsafe partial void GetTexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] double* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGendv")]
@@ -7506,7 +7506,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGenfv")]
-        public partial unsafe void GetTexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetTexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGenfv")]
@@ -7514,38 +7514,38 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGeniv")]
-        public partial unsafe void GetTexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glGetTexGeniv")]
         public partial void GetTexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetTexImage")]
-        public partial unsafe void GetTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] void* pixels);
+        public unsafe partial void GetTexImage([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glGetTexImage")]
         public partial void GetTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "target, level, format, type"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetTexLevelParameterfv")]
-        public partial unsafe void GetTexLevelParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetTexLevelParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetTexLevelParameterfv")]
         public partial void GetTexLevelParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetTexLevelParameteriv")]
-        public partial unsafe void GetTexLevelParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTexLevelParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetTexLevelParameteriv")]
         public partial void GetTexLevelParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
         [NativeApi(EntryPoint = "glGetTexParameterfv")]
-        public partial unsafe void GetTexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetTexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
 
         [NativeApi(EntryPoint = "glGetTexParameterfv")]
         public partial void GetTexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
 
         [NativeApi(EntryPoint = "glGetTexParameteriv")]
-        public partial unsafe void GetTexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetTexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetTexParameteriv")]
         public partial void GetTexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GetTextureParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
@@ -7562,7 +7562,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightfv")]
-        public partial unsafe void Light([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void Light([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightfv")]
@@ -7574,7 +7574,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightiv")]
-        public partial unsafe void Light([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void Light([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightiv")]
@@ -7586,7 +7586,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModelfv")]
-        public partial unsafe void LightModel([Flow(FlowDirection.In)] LightModelParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void LightModel([Flow(FlowDirection.In)] LightModelParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModelfv")]
@@ -7598,7 +7598,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModeliv")]
-        public partial unsafe void LightModel([Flow(FlowDirection.In)] LightModelParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void LightModel([Flow(FlowDirection.In)] LightModelParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glLightModeliv")]
@@ -7609,7 +7609,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1d")]
-        public partial unsafe void Map1([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] double* points);
+        public unsafe partial void Map1([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] double* points);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1d")]
@@ -7617,7 +7617,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1f")]
-        public partial unsafe void Map1([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] float* points);
+        public unsafe partial void Map1([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int stride, [Flow(FlowDirection.In)] int order, [Count(Computed = "target, stride, order"), Flow(FlowDirection.In)] float* points);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap1f")]
@@ -7625,7 +7625,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2d")]
-        public partial unsafe void Map2([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] double* points);
+        public unsafe partial void Map2([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] double u1, [Flow(FlowDirection.In)] double u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] double v1, [Flow(FlowDirection.In)] double v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] double* points);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2d")]
@@ -7633,7 +7633,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2f")]
-        public partial unsafe void Map2([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] float* points);
+        public unsafe partial void Map2([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] float u1, [Flow(FlowDirection.In)] float u2, [Flow(FlowDirection.In)] int ustride, [Flow(FlowDirection.In)] int uorder, [Flow(FlowDirection.In)] float v1, [Flow(FlowDirection.In)] float v2, [Flow(FlowDirection.In)] int vstride, [Flow(FlowDirection.In)] int vorder, [Count(Computed = "target, ustride, uorder, vstride, vorder"), Flow(FlowDirection.In)] float* points);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMap2f")]
@@ -7645,7 +7645,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialfv")]
-        public partial unsafe void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialfv")]
@@ -7657,7 +7657,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialiv")]
-        public partial unsafe void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void Material([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glMaterialiv")]
@@ -7673,7 +7673,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapfv")]
-        public partial unsafe void PixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] float* values);
+        public unsafe partial void PixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] float* values);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapfv")]
@@ -7681,7 +7681,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapuiv")]
-        public partial unsafe void PixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] uint* values);
+        public unsafe partial void PixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] uint* values);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapuiv")]
@@ -7689,7 +7689,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapusv")]
-        public partial unsafe void PixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] ushort* values);
+        public unsafe partial void PixelMap([Flow(FlowDirection.In)] PixelMap map, [Flow(FlowDirection.In)] uint mapsize, [Count(Parameter = "mapsize"), Flow(FlowDirection.In)] ushort* values);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glPixelMapusv")]
@@ -7720,7 +7720,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void ReadBuffer([Flow(FlowDirection.In)] ReadBufferMode src);
 
         [NativeApi(EntryPoint = "glReadPixels")]
-        public partial unsafe void ReadPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] void* pixels);
+        public unsafe partial void ReadPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] void* pixels);
 
         [NativeApi(EntryPoint = "glReadPixels")]
         public partial void ReadPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.Out)] out T0 pixels) where T0 : unmanaged;
@@ -7745,7 +7745,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnvfv")]
-        public partial unsafe void TexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void TexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnvfv")]
@@ -7757,7 +7757,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnviv")]
-        public partial unsafe void TexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void TexEnv([Flow(FlowDirection.In)] TextureEnvTarget target, [Flow(FlowDirection.In)] TextureEnvParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexEnviv")]
@@ -7765,7 +7765,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGendv")]
-        public partial unsafe void TexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] double* @params);
+        public unsafe partial void TexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] double* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGendv")]
@@ -7777,7 +7777,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGenfv")]
-        public partial unsafe void TexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void TexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGenfv")]
@@ -7789,7 +7789,7 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGeniv")]
-        public partial unsafe void TexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void TexGen([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [System.Obsolete("Deprecated in version 1.0")]
         [NativeApi(EntryPoint = "glTexGeniv")]
@@ -7800,13 +7800,13 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TexGend([Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter pname, [Flow(FlowDirection.In)] double param);
 
         [NativeApi(EntryPoint = "glTexImage1D")]
-        public partial unsafe void TexImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TexImage1D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage1D")]
         public partial void TexImage1D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glTexImage2D")]
-        public partial unsafe void TexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
+        public unsafe partial void TexImage2D([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] void* pixels);
 
         [NativeApi(EntryPoint = "glTexImage2D")]
         public partial void TexImage2D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ref T0 pixels) where T0 : unmanaged;
@@ -7815,7 +7815,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] float param);
 
         [NativeApi(EntryPoint = "glTexParameterfv")]
-        public partial unsafe void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
+        public unsafe partial void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] float* @params);
 
         [NativeApi(EntryPoint = "glTexParameterfv")]
         public partial void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref float @params);
@@ -7824,7 +7824,7 @@ namespace Silk.NET.OpenGL.Legacy
         public partial void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Flow(FlowDirection.In)] int param);
 
         [NativeApi(EntryPoint = "glTexParameteriv")]
-        public partial unsafe void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glTexParameteriv")]
         public partial void TexParameter([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ref int @params);

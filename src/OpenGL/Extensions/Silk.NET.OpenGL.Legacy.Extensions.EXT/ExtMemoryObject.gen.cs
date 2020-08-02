@@ -23,31 +23,31 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void BufferStorageMem([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
         [NativeApi(EntryPoint = "glCreateMemoryObjectsEXT")]
-        public partial unsafe void CreateMemoryObjects([Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.Out)] uint* memoryObjects);
+        public unsafe partial void CreateMemoryObjects([Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.Out)] uint* memoryObjects);
 
         [NativeApi(EntryPoint = "glCreateMemoryObjectsEXT")]
         public partial void CreateMemoryObjects([Flow(FlowDirection.In)] uint n, [Flow(FlowDirection.Out)] Span<uint> memoryObjects);
 
         [NativeApi(EntryPoint = "glDeleteMemoryObjectsEXT")]
-        public partial unsafe void DeleteMemoryObjects([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* memoryObjects);
+        public unsafe partial void DeleteMemoryObjects([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* memoryObjects);
 
         [NativeApi(EntryPoint = "glDeleteMemoryObjectsEXT")]
         public partial void DeleteMemoryObjects([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> memoryObjects);
 
         [NativeApi(EntryPoint = "glGetMemoryObjectParameterivEXT")]
-        public partial unsafe void GetMemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetMemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetMemoryObjectParameterivEXT")]
         public partial void GetMemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.Out)] Span<int> @params);
 
         [NativeApi(EntryPoint = "glGetUnsignedBytevEXT")]
-        public partial unsafe void GetUnsignedByte([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] byte* data);
+        public unsafe partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] byte* data);
 
         [NativeApi(EntryPoint = "glGetUnsignedBytevEXT")]
         public partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out byte data);
 
         [NativeApi(EntryPoint = "glGetUnsignedBytei_vEXT")]
-        public partial unsafe void GetUnsignedByte([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] byte* data);
+        public unsafe partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] byte* data);
 
         [NativeApi(EntryPoint = "glGetUnsignedBytei_vEXT")]
         public partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Computed = "target"), Flow(FlowDirection.Out)] out byte data);
@@ -56,7 +56,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial bool IsMemoryObject([Flow(FlowDirection.In)] uint memoryObject);
 
         [NativeApi(EntryPoint = "glMemoryObjectParameterivEXT")]
-        public partial unsafe void MemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void MemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glMemoryObjectParameterivEXT")]
         public partial void MemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.In)] Span<int> @params);
@@ -98,7 +98,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void BufferStorageMem([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] ulong offset);
 
         [NativeApi(EntryPoint = "glGetMemoryObjectParameterivEXT")]
-        public partial unsafe void GetMemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] MemoryObjectParameterName pname, [Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetMemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] MemoryObjectParameterName pname, [Flow(FlowDirection.Out)] int* @params);
 
         [NativeApi(EntryPoint = "glGetMemoryObjectParameterivEXT")]
         public partial void GetMemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] MemoryObjectParameterName pname, [Flow(FlowDirection.Out)] Span<int> @params);
@@ -110,7 +110,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void GetUnsignedByte([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] string data);
 
         [NativeApi(EntryPoint = "glMemoryObjectParameterivEXT")]
-        public partial unsafe void MemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] MemoryObjectParameterName pname, [Flow(FlowDirection.In)] int* @params);
+        public unsafe partial void MemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] MemoryObjectParameterName pname, [Flow(FlowDirection.In)] int* @params);
 
         [NativeApi(EntryPoint = "glMemoryObjectParameterivEXT")]
         public partial void MemoryObjectParameter([Flow(FlowDirection.In)] uint memoryObject, [Flow(FlowDirection.In)] MemoryObjectParameterName pname, [Flow(FlowDirection.In)] Span<int> @params);

@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_display_control";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDisplayPowerControlEXT")]
-        public partial unsafe Result DisplayPowerControl([Count(Count = 0)] Device device, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0), Flow(FlowDirection.In)] DisplayPowerInfoEXT* pDisplayPowerInfo);
+        public unsafe partial Result DisplayPowerControl([Count(Count = 0)] Device device, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0), Flow(FlowDirection.In)] DisplayPowerInfoEXT* pDisplayPowerInfo);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDisplayPowerControlEXT")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetSwapchainCounterEXT")]
-        public partial unsafe Result GetSwapchainCounter([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] SurfaceCounterFlagsEXT counter, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pCounterValue);
+        public unsafe partial Result GetSwapchainCounter([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] SurfaceCounterFlagsEXT counter, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pCounterValue);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetSwapchainCounterEXT")]
@@ -37,7 +37,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkRegisterDeviceEventEXT")]
-        public partial unsafe Result RegisterDeviceEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceEventInfoEXT* pDeviceEventInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0)] Fence* pFence);
+        public unsafe partial Result RegisterDeviceEvent([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] DeviceEventInfoEXT* pDeviceEventInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0)] Fence* pFence);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkRegisterDeviceEventEXT")]
@@ -45,7 +45,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkRegisterDisplayEventEXT")]
-        public partial unsafe Result RegisterDisplayEvent([Count(Count = 0)] Device device, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0), Flow(FlowDirection.In)] DisplayEventInfoEXT* pDisplayEventInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0)] Fence* pFence);
+        public unsafe partial Result RegisterDisplayEvent([Count(Count = 0)] Device device, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0), Flow(FlowDirection.In)] DisplayEventInfoEXT* pDisplayEventInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0)] Fence* pFence);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkRegisterDisplayEventEXT")]

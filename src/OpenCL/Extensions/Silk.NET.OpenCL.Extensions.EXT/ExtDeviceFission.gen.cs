@@ -20,7 +20,7 @@ namespace Silk.NET.OpenCL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_device_fission";
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT")]
-        public partial unsafe int CreateSubDevices([Flow(FlowDirection.In)] IntPtr in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] IntPtr* out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] IntPtr in_device, [Flow(FlowDirection.In)] ulong* properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] IntPtr* out_devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
         [NativeApi(EntryPoint = "clCreateSubDevicesEXT")]
         public partial int CreateSubDevices([Flow(FlowDirection.In)] IntPtr in_device, [Flow(FlowDirection.In)] Span<ulong> properties, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<IntPtr> out_devices, [Flow(FlowDirection.Out)] Span<uint> num_devices);

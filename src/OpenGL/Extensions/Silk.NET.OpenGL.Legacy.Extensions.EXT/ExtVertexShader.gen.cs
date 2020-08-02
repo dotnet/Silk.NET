@@ -62,64 +62,64 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial uint GenVertexShaders([Flow(FlowDirection.In)] uint range);
 
         [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT")]
-        public partial unsafe void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
+        public unsafe partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT")]
         public partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
 
         [NativeApi(EntryPoint = "glGetInvariantFloatvEXT")]
-        public partial unsafe void GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
+        public unsafe partial void GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
 
         [NativeApi(EntryPoint = "glGetInvariantFloatvEXT")]
         public partial void GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
 
         [NativeApi(EntryPoint = "glGetInvariantIntegervEXT")]
-        public partial unsafe void GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
+        public unsafe partial void GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
 
         [NativeApi(EntryPoint = "glGetInvariantIntegervEXT")]
         public partial void GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
 
         [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT")]
-        public partial unsafe void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
+        public unsafe partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT")]
         public partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
 
         [NativeApi(EntryPoint = "glGetLocalConstantFloatvEXT")]
-        public partial unsafe void GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
+        public unsafe partial void GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
 
         [NativeApi(EntryPoint = "glGetLocalConstantFloatvEXT")]
         public partial void GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
 
         [NativeApi(EntryPoint = "glGetLocalConstantIntegervEXT")]
-        public partial unsafe void GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
+        public unsafe partial void GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
 
         [NativeApi(EntryPoint = "glGetLocalConstantIntegervEXT")]
         public partial void GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
 
         [NativeApi(EntryPoint = "glGetVariantBooleanvEXT")]
-        public partial unsafe void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
+        public unsafe partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetVariantBooleanvEXT")]
         public partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
 
         [NativeApi(EntryPoint = "glGetVariantFloatvEXT")]
-        public partial unsafe void GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
+        public unsafe partial void GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
 
         [NativeApi(EntryPoint = "glGetVariantFloatvEXT")]
         public partial void GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
 
         [NativeApi(EntryPoint = "glGetVariantIntegervEXT")]
-        public partial unsafe void GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
+        public unsafe partial void GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
 
         [NativeApi(EntryPoint = "glGetVariantIntegervEXT")]
         public partial void GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
 
         [NativeApi(EntryPoint = "glGetVariantPointervEXT")]
-        public partial unsafe void GetVariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] void** data);
+        public unsafe partial void GetVariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] void** data);
 
         [NativeApi(EntryPoint = "glGetVariantPointervEXT")]
-        public partial unsafe void GetVariantPointer<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out T0* data) where T0 : unmanaged;
+        public unsafe partial void GetVariantPointer<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out T0* data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glInsertComponentEXT")]
         public partial void InsertComponent([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint src, [Flow(FlowDirection.In)] uint num);
@@ -128,13 +128,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial bool IsVariantEnabled([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT cap);
 
         [NativeApi(EntryPoint = "glSetInvariantEXT")]
-        public partial unsafe void SetInvariant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
+        public unsafe partial void SetInvariant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
 
         [NativeApi(EntryPoint = "glSetInvariantEXT")]
         public partial void SetInvariant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glSetLocalConstantEXT")]
-        public partial unsafe void SetLocalConstant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
+        public unsafe partial void SetLocalConstant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
 
         [NativeApi(EntryPoint = "glSetLocalConstantEXT")]
         public partial void SetLocalConstant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
@@ -152,55 +152,55 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] EXT outW);
 
         [NativeApi(EntryPoint = "glVariantbvEXT")]
-        public partial unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] sbyte* addr);
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] sbyte* addr);
 
         [NativeApi(EntryPoint = "glVariantbvEXT")]
         public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref sbyte addr);
 
         [NativeApi(EntryPoint = "glVariantsvEXT")]
-        public partial unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] short* addr);
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] short* addr);
 
         [NativeApi(EntryPoint = "glVariantsvEXT")]
         public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref short addr);
 
         [NativeApi(EntryPoint = "glVariantivEXT")]
-        public partial unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] int* addr);
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] int* addr);
 
         [NativeApi(EntryPoint = "glVariantivEXT")]
         public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref int addr);
 
         [NativeApi(EntryPoint = "glVariantfvEXT")]
-        public partial unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] float* addr);
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] float* addr);
 
         [NativeApi(EntryPoint = "glVariantfvEXT")]
         public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref float addr);
 
         [NativeApi(EntryPoint = "glVariantdvEXT")]
-        public partial unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] double* addr);
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] double* addr);
 
         [NativeApi(EntryPoint = "glVariantdvEXT")]
         public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref double addr);
 
         [NativeApi(EntryPoint = "glVariantubvEXT")]
-        public partial unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] byte* addr);
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] byte* addr);
 
         [NativeApi(EntryPoint = "glVariantubvEXT")]
         public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref byte addr);
 
         [NativeApi(EntryPoint = "glVariantusvEXT")]
-        public partial unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ushort* addr);
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ushort* addr);
 
         [NativeApi(EntryPoint = "glVariantusvEXT")]
         public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref ushort addr);
 
         [NativeApi(EntryPoint = "glVariantuivEXT")]
-        public partial unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] uint* addr);
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] uint* addr);
 
         [NativeApi(EntryPoint = "glVariantuivEXT")]
         public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref uint addr);
 
         [NativeApi(EntryPoint = "glVariantPointerEXT")]
-        public partial unsafe void VariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] void* addr);
+        public unsafe partial void VariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] void* addr);
 
         [NativeApi(EntryPoint = "glVariantPointerEXT")]
         public partial void VariantPointer<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
@@ -227,76 +227,76 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial uint GenSymbol([Flow(FlowDirection.In)] DataTypeEXT datatype, [Flow(FlowDirection.In)] VertexShaderStorageTypeEXT storagetype, [Flow(FlowDirection.In)] ParameterRangeEXT range, [Flow(FlowDirection.In)] uint components);
 
         [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT")]
-        public partial unsafe void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
+        public unsafe partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT")]
         public partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
 
         [NativeApi(EntryPoint = "glGetInvariantFloatvEXT")]
-        public partial unsafe void GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
+        public unsafe partial void GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
 
         [NativeApi(EntryPoint = "glGetInvariantFloatvEXT")]
         public partial void GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
 
         [NativeApi(EntryPoint = "glGetInvariantIntegervEXT")]
-        public partial unsafe void GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
+        public unsafe partial void GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
 
         [NativeApi(EntryPoint = "glGetInvariantIntegervEXT")]
         public partial void GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
 
         [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT")]
-        public partial unsafe void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
+        public unsafe partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT")]
         public partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
 
         [NativeApi(EntryPoint = "glGetLocalConstantFloatvEXT")]
-        public partial unsafe void GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
+        public unsafe partial void GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
 
         [NativeApi(EntryPoint = "glGetLocalConstantFloatvEXT")]
         public partial void GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
 
         [NativeApi(EntryPoint = "glGetLocalConstantIntegervEXT")]
-        public partial unsafe void GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
+        public unsafe partial void GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
 
         [NativeApi(EntryPoint = "glGetLocalConstantIntegervEXT")]
         public partial void GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
 
         [NativeApi(EntryPoint = "glGetVariantBooleanvEXT")]
-        public partial unsafe void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
+        public unsafe partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
 
         [NativeApi(EntryPoint = "glGetVariantBooleanvEXT")]
         public partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
 
         [NativeApi(EntryPoint = "glGetVariantFloatvEXT")]
-        public partial unsafe void GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
+        public unsafe partial void GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
 
         [NativeApi(EntryPoint = "glGetVariantFloatvEXT")]
         public partial void GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
 
         [NativeApi(EntryPoint = "glGetVariantIntegervEXT")]
-        public partial unsafe void GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
+        public unsafe partial void GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
 
         [NativeApi(EntryPoint = "glGetVariantIntegervEXT")]
         public partial void GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
 
         [NativeApi(EntryPoint = "glGetVariantPointervEXT")]
-        public partial unsafe void GetVariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] void** data);
+        public unsafe partial void GetVariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] void** data);
 
         [NativeApi(EntryPoint = "glGetVariantPointervEXT")]
-        public partial unsafe void GetVariantPointer<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out T0* data) where T0 : unmanaged;
+        public unsafe partial void GetVariantPointer<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out T0* data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glIsVariantEnabledEXT")]
         public partial bool IsVariantEnabled([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] VariantCapEXT cap);
 
         [NativeApi(EntryPoint = "glSetInvariantEXT")]
-        public partial unsafe void SetInvariant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
+        public unsafe partial void SetInvariant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
 
         [NativeApi(EntryPoint = "glSetInvariantEXT")]
         public partial void SetInvariant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glSetLocalConstantEXT")]
-        public partial unsafe void SetLocalConstant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
+        public unsafe partial void SetLocalConstant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
 
         [NativeApi(EntryPoint = "glSetLocalConstantEXT")]
         public partial void SetLocalConstant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
@@ -317,7 +317,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void Variant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] string addr);
 
         [NativeApi(EntryPoint = "glVariantPointerEXT")]
-        public partial unsafe void VariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] void* addr);
+        public unsafe partial void VariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] void* addr);
 
         [NativeApi(EntryPoint = "glVariantPointerEXT")]
         public partial void VariantPointer<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;

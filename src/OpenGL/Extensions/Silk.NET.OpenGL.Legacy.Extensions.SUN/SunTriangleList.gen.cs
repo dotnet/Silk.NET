@@ -29,37 +29,37 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
         public partial void ReplacementCode([Flow(FlowDirection.In)] byte code);
 
         [NativeApi(EntryPoint = "glReplacementCodeuivSUN")]
-        public partial unsafe void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] uint* code);
+        public unsafe partial void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] uint* code);
 
         [NativeApi(EntryPoint = "glReplacementCodeuivSUN")]
         public partial void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] ref uint code);
 
         [NativeApi(EntryPoint = "glReplacementCodeusvSUN")]
-        public partial unsafe void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] ushort* code);
+        public unsafe partial void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] ushort* code);
 
         [NativeApi(EntryPoint = "glReplacementCodeusvSUN")]
         public partial void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] ref ushort code);
 
         [NativeApi(EntryPoint = "glReplacementCodeubvSUN")]
-        public partial unsafe void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] byte* code);
+        public unsafe partial void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] byte* code);
 
         [NativeApi(EntryPoint = "glReplacementCodeubvSUN")]
         public partial void ReplacementCode([Count(Count = 0), Flow(FlowDirection.In)] ref byte code);
 
         [NativeApi(EntryPoint = "glReplacementCodePointerSUN")]
-        public partial unsafe void ReplacementCodePointer([Flow(FlowDirection.In)] SUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void** pointer);
+        public unsafe partial void ReplacementCodePointer([Flow(FlowDirection.In)] SUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void** pointer);
 
         [NativeApi(EntryPoint = "glReplacementCodePointerSUN")]
-        public partial unsafe void ReplacementCodePointer<T0>([Flow(FlowDirection.In)] SUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0* pointer) where T0 : unmanaged;
+        public unsafe partial void ReplacementCodePointer<T0>([Flow(FlowDirection.In)] SUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0* pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glReplacementCodeubvSUN")]
         public partial void ReplacementCode([Flow(FlowDirection.In)] string code);
 
         [NativeApi(EntryPoint = "glReplacementCodePointerSUN")]
-        public partial unsafe void ReplacementCodePointer([Flow(FlowDirection.In)] ReplacementCodeTypeSUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void** pointer);
+        public unsafe partial void ReplacementCodePointer([Flow(FlowDirection.In)] ReplacementCodeTypeSUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void** pointer);
 
         [NativeApi(EntryPoint = "glReplacementCodePointerSUN")]
-        public partial unsafe void ReplacementCodePointer<T0>([Flow(FlowDirection.In)] ReplacementCodeTypeSUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0* pointer) where T0 : unmanaged;
+        public unsafe partial void ReplacementCodePointer<T0>([Flow(FlowDirection.In)] ReplacementCodeTypeSUN type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0* pointer) where T0 : unmanaged;
 
         public SunTriangleList(INativeContext ctx)
             : base(ctx)

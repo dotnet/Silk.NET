@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         public const string ExtensionName = "XR_KHR_vulkan_enable";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR")]
-        public partial unsafe Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, byte* buffer);
+        public unsafe partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, byte* buffer);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR")]
@@ -29,7 +29,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanGraphicsDeviceKHR")]
-        public partial unsafe Result GetVulkanGraphicsDevice([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle vkInstance, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle* vkPhysicalDevice);
+        public unsafe partial Result GetVulkanGraphicsDevice([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle vkInstance, [Count(Count = 0)] Silk.NET.Core.Native.VkHandle* vkPhysicalDevice);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanGraphicsDeviceKHR")]
@@ -37,7 +37,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanGraphicsRequirementsKHR")]
-        public partial unsafe Result GetVulkanGraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsVulkanKHR* graphicsRequirements);
+        public unsafe partial Result GetVulkanGraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsVulkanKHR* graphicsRequirements);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanGraphicsRequirementsKHR")]
@@ -45,7 +45,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanInstanceExtensionsKHR")]
-        public partial unsafe Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, byte* buffer);
+        public unsafe partial Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, byte* buffer);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanInstanceExtensionsKHR")]
@@ -53,7 +53,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR")]
-        public partial unsafe Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, string buffer);
+        public unsafe partial Result GetVulkanDeviceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, string buffer);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanDeviceExtensionsKHR")]
@@ -61,7 +61,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanInstanceExtensionsKHR")]
-        public partial unsafe Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, string buffer);
+        public unsafe partial Result GetVulkanInstanceExtension([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, string buffer);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetVulkanInstanceExtensionsKHR")]

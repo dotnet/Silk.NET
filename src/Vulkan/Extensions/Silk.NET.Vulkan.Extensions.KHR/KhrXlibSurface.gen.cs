@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_xlib_surface";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateXlibSurfaceKHR")]
-        public partial unsafe Result CreateXlibSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] XlibSurfaceCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+        public unsafe partial Result CreateXlibSurface([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] XlibSurfaceCreateInfoKHR* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateXlibSurfaceKHR")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]
-        public partial unsafe Bool32 GetPhysicalDeviceXlibPresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] IntPtr visualID);
+        public unsafe partial Bool32 GetPhysicalDeviceXlibPresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] IntPtr visualID);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceXlibPresentationSupportKHR")]

@@ -273,67 +273,67 @@ namespace Silk.NET.OpenCL
         public const int VersionPatchBits = 12;
 
         [NativeApi(EntryPoint = "clCreateBufferWithProperties")]
-        public partial unsafe IntPtr CreateBufferWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateBufferWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateBufferWithProperties")]
         public partial IntPtr CreateBufferWithProperties<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] Span<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateImageWithProperties")]
-        public partial unsafe IntPtr CreateImageWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateImageWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateImageWithProperties")]
         public partial IntPtr CreateImageWithProperties<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] Span<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] Span<uint> image_format, [Flow(FlowDirection.In)] Span<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSetContextDestructorCallback")]
-        public partial unsafe int SetContextDestructorCallback([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int SetContextDestructorCallback([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clSetContextDestructorCallback")]
         public partial int SetContextDestructorCallback<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSetProgramReleaseCallback")]
-        public partial unsafe int SetProgramReleaseCallback([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int SetProgramReleaseCallback([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clSetProgramReleaseCallback")]
         public partial int SetProgramReleaseCallback<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSetProgramSpecializationConstant")]
-        public partial unsafe int SetProgramSpecializationConstant([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint spec_id, [Flow(FlowDirection.In)] UIntPtr spec_size, [Flow(FlowDirection.In)] void* spec_value);
+        public unsafe partial int SetProgramSpecializationConstant([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint spec_id, [Flow(FlowDirection.In)] UIntPtr spec_size, [Flow(FlowDirection.In)] void* spec_value);
 
         [NativeApi(EntryPoint = "clSetProgramSpecializationConstant")]
         public partial int SetProgramSpecializationConstant<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint spec_id, [Flow(FlowDirection.In)] UIntPtr spec_size, [Flow(FlowDirection.In)] Span<T0> spec_value) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateProgramWithIL")]
-        public partial unsafe IntPtr CreateProgramWithIL([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] void* il, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithIL([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] void* il, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithIL")]
         public partial IntPtr CreateProgramWithIL<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] Span<T0> il, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueSVMMigrateMem")]
-        public partial unsafe int EnqueueSvmmigrateMem([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.In)] void** svm_pointers, [Flow(FlowDirection.In)] UIntPtr* sizes, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueSvmmigrateMem([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.In)] void** svm_pointers, [Flow(FlowDirection.In)] UIntPtr* sizes, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueSVMMigrateMem")]
-        public partial unsafe int EnqueueSvmmigrateMem<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.In)] void** svm_pointers, [Flow(FlowDirection.In)] Span<UIntPtr> sizes, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
+        public unsafe partial int EnqueueSvmmigrateMem<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.In)] void** svm_pointers, [Flow(FlowDirection.In)] Span<UIntPtr> sizes, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetDeviceAndHostTimer")]
-        public partial unsafe int GetDeviceAndHostTimer([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.Out)] ulong* device_timestamp, [Flow(FlowDirection.Out)] ulong* host_timestamp);
+        public unsafe partial int GetDeviceAndHostTimer([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.Out)] ulong* device_timestamp, [Flow(FlowDirection.Out)] ulong* host_timestamp);
 
         [NativeApi(EntryPoint = "clGetDeviceAndHostTimer")]
         public partial int GetDeviceAndHostTimer([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.Out)] Span<ulong> device_timestamp, [Flow(FlowDirection.Out)] Span<ulong> host_timestamp);
 
         [NativeApi(EntryPoint = "clGetHostTimer")]
-        public partial unsafe int GetHostTimer([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.Out)] ulong* host_timestamp);
+        public unsafe partial int GetHostTimer([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.Out)] ulong* host_timestamp);
 
         [NativeApi(EntryPoint = "clGetHostTimer")]
         public partial int GetHostTimer([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.Out)] Span<ulong> host_timestamp);
 
         [NativeApi(EntryPoint = "clGetKernelSubGroupInfo")]
-        public partial unsafe int GetKernelSubGroupInfo([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr input_value_size, [Flow(FlowDirection.In)] void* input_value, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetKernelSubGroupInfo([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr input_value_size, [Flow(FlowDirection.In)] void* input_value, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetKernelSubGroupInfo")]
         public partial int GetKernelSubGroupInfo<T0, T1>([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr input_value_size, [Flow(FlowDirection.In)] Span<T0> input_value, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T1> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "clCloneKernel")]
-        public partial unsafe IntPtr OneKernel([Flow(FlowDirection.In)] IntPtr source_kernel, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr OneKernel([Flow(FlowDirection.In)] IntPtr source_kernel, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCloneKernel")]
         public partial IntPtr OneKernel([Flow(FlowDirection.In)] IntPtr source_kernel, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
@@ -342,148 +342,148 @@ namespace Silk.NET.OpenCL
         public partial int SetDefaultDeviceCommandQueue([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] IntPtr command_queue);
 
         [NativeApi(EntryPoint = "clCreateCommandQueueWithProperties")]
-        public partial unsafe IntPtr CreateCommandQueueWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateCommandQueueWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateCommandQueueWithProperties")]
         public partial IntPtr CreateCommandQueueWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] Span<CLEnum> properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         [NativeApi(EntryPoint = "clCreatePipe")]
-        public partial unsafe IntPtr CreatePipe([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint pipe_packet_size, [Flow(FlowDirection.In)] uint pipe_max_packets, [Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreatePipe([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint pipe_packet_size, [Flow(FlowDirection.In)] uint pipe_max_packets, [Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreatePipe")]
         public partial IntPtr CreatePipe([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint pipe_packet_size, [Flow(FlowDirection.In)] uint pipe_max_packets, [Flow(FlowDirection.In)] Span<IntPtr> properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateSamplerWithProperties")]
-        public partial unsafe IntPtr CreateSamplerWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum* sampler_properties, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateSamplerWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum* sampler_properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateSamplerWithProperties")]
         public partial IntPtr CreateSamplerWithProperties([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] Span<CLEnum> sampler_properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         [NativeApi(EntryPoint = "clEnqueueSVMFree")]
-        public partial unsafe int EnqueueSvmfree([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] void* svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueSvmfree([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] void* svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueSVMFree")]
         public partial int EnqueueSvmfree<T0, T1>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_svm_pointers, [Flow(FlowDirection.Out)] Span<T0> svm_pointers, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] FreeCallback pfn_free_func, [Flow(FlowDirection.Out)] Span<T1> user_data, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueSVMMap")]
-        public partial unsafe int EnqueueSvmmap([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] void* svm_ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueSvmmap([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] void* svm_ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueSVMMap")]
         public partial int EnqueueSvmmap<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.Out)] Span<T0> svm_ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueSVMMemcpy")]
-        public partial unsafe int EnqueueSvmmemcpy([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] void* dst_ptr, [Flow(FlowDirection.In)] void* src_ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueSvmmemcpy([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] void* dst_ptr, [Flow(FlowDirection.In)] void* src_ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueSVMMemcpy")]
         public partial int EnqueueSvmmemcpy<T0, T1>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] bool blocking_copy, [Flow(FlowDirection.Out)] Span<T0> dst_ptr, [Flow(FlowDirection.In)] Span<T1> src_ptr, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueSVMMemFill")]
-        public partial unsafe int EnqueueSvmmemFill([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.Out)] void* svm_ptr, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] UIntPtr pattern_size, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueSvmmemFill([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.Out)] void* svm_ptr, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] UIntPtr pattern_size, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueSVMMemFill")]
         public partial int EnqueueSvmmemFill<T0, T1>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.Out)] Span<T0> svm_ptr, [Flow(FlowDirection.In)] Span<T1> pattern, [Flow(FlowDirection.In)] UIntPtr pattern_size, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueSVMUnmap")]
-        public partial unsafe int EnqueueSvmunmap([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.Out)] void* svm_ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueSvmunmap([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.Out)] void* svm_ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueSVMUnmap")]
         public partial int EnqueueSvmunmap<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.Out)] Span<T0> svm_ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetPipeInfo")]
-        public partial unsafe int GetPipeInfo([Flow(FlowDirection.In)] IntPtr pipe, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetPipeInfo([Flow(FlowDirection.In)] IntPtr pipe, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetPipeInfo")]
         public partial int GetPipeInfo<T0>([Flow(FlowDirection.In)] IntPtr pipe, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSetKernelArgSVMPointer")]
-        public partial unsafe int SetKernelArgSvmpointer([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] void* arg_value);
+        public unsafe partial int SetKernelArgSvmpointer([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] void* arg_value);
 
         [NativeApi(EntryPoint = "clSetKernelArgSVMPointer")]
         public partial int SetKernelArgSvmpointer<T0>([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] Span<T0> arg_value) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSetKernelExecInfo")]
-        public partial unsafe int SetKernelExecInfo([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.In)] void* param_value);
+        public unsafe partial int SetKernelExecInfo([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.In)] void* param_value);
 
         [NativeApi(EntryPoint = "clSetKernelExecInfo")]
         public partial int SetKernelExecInfo<T0>([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.In)] Span<T0> param_value) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSVMAlloc")]
-        public partial unsafe void* Svmalloc([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint alignment);
+        public unsafe partial void* Svmalloc([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint alignment);
 
         [NativeApi(EntryPoint = "clSVMFree")]
-        public partial unsafe void Svmfree([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.Out)] void* svm_pointer);
+        public unsafe partial void Svmfree([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.Out)] void* svm_pointer);
 
         [NativeApi(EntryPoint = "clSVMFree")]
         public partial void Svmfree<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.Out)] Span<T0> svm_pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public partial unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public partial unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateImage")]
-        public partial unsafe IntPtr CreateImage([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateImage([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] ImageDesc* image_desc, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateImage")]
         public partial IntPtr CreateImage<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] Span<uint> image_format, [Flow(FlowDirection.In)] Span<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels")]
-        public partial unsafe IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels")]
         public partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> kernel_names, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateSubDevices")]
-        public partial unsafe int CreateSubDevices([Flow(FlowDirection.In)] IntPtr in_device, [Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.Out)] IntPtr* out_devices, [Flow(FlowDirection.Out)] uint* num_devices_ret);
+        public unsafe partial int CreateSubDevices([Flow(FlowDirection.In)] IntPtr in_device, [Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.Out)] IntPtr* out_devices, [Flow(FlowDirection.Out)] uint* num_devices_ret);
 
         [NativeApi(EntryPoint = "clCreateSubDevices")]
         public partial int CreateSubDevices([Flow(FlowDirection.In)] IntPtr in_device, [Flow(FlowDirection.In)] Span<IntPtr> properties, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.Out)] Span<IntPtr> out_devices, [Flow(FlowDirection.Out)] Span<uint> num_devices_ret);
 
         [NativeApi(EntryPoint = "clEnqueueBarrierWithWaitList")]
-        public partial unsafe int EnqueueBarrierWithWaitList([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueBarrierWithWaitList([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueBarrierWithWaitList")]
         public partial int EnqueueBarrierWithWaitList([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event);
 
         [NativeApi(EntryPoint = "clEnqueueFillBuffer")]
-        public partial unsafe int EnqueueFillBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] UIntPtr pattern_size, [Flow(FlowDirection.In)] UIntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueFillBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] void* pattern, [Flow(FlowDirection.In)] UIntPtr pattern_size, [Flow(FlowDirection.In)] UIntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueFillBuffer")]
         public partial int EnqueueFillBuffer<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] Span<T0> pattern, [Flow(FlowDirection.In)] UIntPtr pattern_size, [Flow(FlowDirection.In)] UIntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueFillImage")]
-        public partial unsafe int EnqueueFillImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] UIntPtr* origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueFillImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] void* fill_color, [Flow(FlowDirection.In)] UIntPtr* origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueFillImage")]
         public partial int EnqueueFillImage<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] Span<T0> fill_color, [Flow(FlowDirection.In)] Span<UIntPtr> origin, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueMarkerWithWaitList")]
-        public partial unsafe int EnqueueMarkerWithWaitList([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueMarkerWithWaitList([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueMarkerWithWaitList")]
         public partial int EnqueueMarkerWithWaitList([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event);
 
         [NativeApi(EntryPoint = "clEnqueueMigrateMemObjects")]
-        public partial unsafe int EnqueueMigrateMemObjects([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] IntPtr* mem_objects, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueMigrateMemObjects([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] IntPtr* mem_objects, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueMigrateMemObjects")]
         public partial int EnqueueMigrateMemObjects([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] Span<IntPtr> mem_objects, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event);
 
         [NativeApi(EntryPoint = "clGetExtensionFunctionAddressForPlatform")]
-        public partial unsafe void* GetExtensionFunctionAddressForPlatform([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] char* func_name);
+        public unsafe partial void* GetExtensionFunctionAddressForPlatform([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] char* func_name);
 
         [NativeApi(EntryPoint = "clGetExtensionFunctionAddressForPlatform")]
-        public partial unsafe void* GetExtensionFunctionAddressForPlatform([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] Span<char> func_name);
+        public unsafe partial void* GetExtensionFunctionAddressForPlatform([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] Span<char> func_name);
 
         [NativeApi(EntryPoint = "clGetKernelArgInfo")]
-        public partial unsafe int GetKernelArgInfo([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetKernelArgInfo([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetKernelArgInfo")]
         public partial int GetKernelArgInfo<T0>([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public partial unsafe IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
         public partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] Span<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
@@ -498,64 +498,64 @@ namespace Silk.NET.OpenCL
         public partial int UnloadPlatformCompiler([Flow(FlowDirection.In)] IntPtr platform);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public partial unsafe int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int CompileProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] IntPtr* input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clCompileProgram")]
-        public partial unsafe int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
+        public unsafe partial int CompileProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_headers, [Flow(FlowDirection.In)] Span<IntPtr> input_headers, [Flow(FlowDirection.In)] char** header_include_names, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels")]
-        public partial unsafe IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string kernel_names, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithBuiltInKernels")]
         public partial IntPtr CreateProgramWithBuiltInKernel([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string kernel_names, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         [NativeApi(EntryPoint = "clGetExtensionFunctionAddressForPlatform")]
-        public partial unsafe void* GetExtensionFunctionAddressForPlatform([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] string func_name);
+        public unsafe partial void* GetExtensionFunctionAddressForPlatform([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] string func_name);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
-        public partial unsafe IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr LinkProgram([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] IntPtr* input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clLinkProgram")]
         public partial IntPtr LinkProgram<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In)] uint num_input_programs, [Flow(FlowDirection.In)] Span<IntPtr> input_programs, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateSubBuffer")]
-        public partial unsafe IntPtr CreateSubBuffer([Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint buffer_create_type, [Flow(FlowDirection.In)] void* buffer_create_info, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateSubBuffer([Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint buffer_create_type, [Flow(FlowDirection.In)] void* buffer_create_info, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateSubBuffer")]
         public partial IntPtr CreateSubBuffer<T0>([Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint buffer_create_type, [Flow(FlowDirection.In)] Span<T0> buffer_create_info, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateUserEvent")]
-        public partial unsafe IntPtr CreateUserEvent([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateUserEvent([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateUserEvent")]
         public partial IntPtr CreateUserEvent([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         [NativeApi(EntryPoint = "clEnqueueCopyBufferRect")]
-        public partial unsafe int EnqueueCopyBufferRect([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr src_buffer, [Flow(FlowDirection.In)] IntPtr dst_buffer, [Flow(FlowDirection.In)] UIntPtr* src_origin, [Flow(FlowDirection.In)] UIntPtr* dst_origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] UIntPtr src_row_pitch, [Flow(FlowDirection.In)] UIntPtr src_slice_pitch, [Flow(FlowDirection.In)] UIntPtr dst_row_pitch, [Flow(FlowDirection.In)] UIntPtr dst_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueCopyBufferRect([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr src_buffer, [Flow(FlowDirection.In)] IntPtr dst_buffer, [Flow(FlowDirection.In)] UIntPtr* src_origin, [Flow(FlowDirection.In)] UIntPtr* dst_origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] UIntPtr src_row_pitch, [Flow(FlowDirection.In)] UIntPtr src_slice_pitch, [Flow(FlowDirection.In)] UIntPtr dst_row_pitch, [Flow(FlowDirection.In)] UIntPtr dst_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueCopyBufferRect")]
         public partial int EnqueueCopyBufferRect([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr src_buffer, [Flow(FlowDirection.In)] IntPtr dst_buffer, [Flow(FlowDirection.In)] Span<UIntPtr> src_origin, [Flow(FlowDirection.In)] Span<UIntPtr> dst_origin, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.In)] UIntPtr src_row_pitch, [Flow(FlowDirection.In)] UIntPtr src_slice_pitch, [Flow(FlowDirection.In)] UIntPtr dst_row_pitch, [Flow(FlowDirection.In)] UIntPtr dst_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event);
 
         [NativeApi(EntryPoint = "clEnqueueReadBufferRect")]
-        public partial unsafe int EnqueueReadBufferRect([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] UIntPtr* buffer_offset, [Flow(FlowDirection.In)] UIntPtr* host_offset, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] UIntPtr buffer_row_pitch, [Flow(FlowDirection.In)] UIntPtr buffer_slice_pitch, [Flow(FlowDirection.In)] UIntPtr host_row_pitch, [Flow(FlowDirection.In)] UIntPtr host_slice_pitch, [Flow(FlowDirection.Out)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueReadBufferRect([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] UIntPtr* buffer_offset, [Flow(FlowDirection.In)] UIntPtr* host_offset, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] UIntPtr buffer_row_pitch, [Flow(FlowDirection.In)] UIntPtr buffer_slice_pitch, [Flow(FlowDirection.In)] UIntPtr host_row_pitch, [Flow(FlowDirection.In)] UIntPtr host_slice_pitch, [Flow(FlowDirection.Out)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueReadBufferRect")]
         public partial int EnqueueReadBufferRect<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] Span<UIntPtr> buffer_offset, [Flow(FlowDirection.In)] Span<UIntPtr> host_offset, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.In)] UIntPtr buffer_row_pitch, [Flow(FlowDirection.In)] UIntPtr buffer_slice_pitch, [Flow(FlowDirection.In)] UIntPtr host_row_pitch, [Flow(FlowDirection.In)] UIntPtr host_slice_pitch, [Flow(FlowDirection.Out)] Span<T0> ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueWriteBufferRect")]
-        public partial unsafe int EnqueueWriteBufferRect([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] UIntPtr* buffer_offset, [Flow(FlowDirection.In)] UIntPtr* host_offset, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] UIntPtr buffer_row_pitch, [Flow(FlowDirection.In)] UIntPtr buffer_slice_pitch, [Flow(FlowDirection.In)] UIntPtr host_row_pitch, [Flow(FlowDirection.In)] UIntPtr host_slice_pitch, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueWriteBufferRect([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] UIntPtr* buffer_offset, [Flow(FlowDirection.In)] UIntPtr* host_offset, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] UIntPtr buffer_row_pitch, [Flow(FlowDirection.In)] UIntPtr buffer_slice_pitch, [Flow(FlowDirection.In)] UIntPtr host_row_pitch, [Flow(FlowDirection.In)] UIntPtr host_slice_pitch, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueWriteBufferRect")]
         public partial int EnqueueWriteBufferRect<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] Span<UIntPtr> buffer_offset, [Flow(FlowDirection.In)] Span<UIntPtr> host_offset, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.In)] UIntPtr buffer_row_pitch, [Flow(FlowDirection.In)] UIntPtr buffer_slice_pitch, [Flow(FlowDirection.In)] UIntPtr host_row_pitch, [Flow(FlowDirection.In)] UIntPtr host_slice_pitch, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSetEventCallback")]
-        public partial unsafe int SetEventCallback([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] int command_exec_callback_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int SetEventCallback([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] int command_exec_callback_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clSetEventCallback")]
         public partial int SetEventCallback<T0>([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] int command_exec_callback_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clSetMemObjectDestructorCallback")]
-        public partial unsafe int SetMemObjectDestructorCallback([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int SetMemObjectDestructorCallback([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clSetMemObjectDestructorCallback")]
         public partial int SetMemObjectDestructorCallback<T0>([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
@@ -564,73 +564,73 @@ namespace Silk.NET.OpenCL
         public partial int SetUserEventStatus([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] int execution_status);
 
         [NativeApi(EntryPoint = "clBuildProgram")]
-        public partial unsafe int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] char* options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clBuildProgram")]
         public partial int BuildProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<char> options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateBuffer")]
-        public partial unsafe IntPtr CreateBuffer([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateBuffer([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateBuffer")]
         public partial IntPtr CreateBuffer<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateCommandQueue")]
-        public partial unsafe IntPtr CreateCommandQueue([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] CLEnum properties, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateCommandQueue([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] CLEnum properties, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateCommandQueue")]
         public partial IntPtr CreateCommandQueue([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] CLEnum properties, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateContext")]
-        public partial unsafe IntPtr CreateContext([Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* devices, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateContext([Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* devices, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateContext")]
         public partial IntPtr CreateContext<T0>([Flow(FlowDirection.In)] Span<IntPtr> properties, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> devices, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateContextFromType")]
-        public partial unsafe IntPtr CreateContextFromType([Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.In)] CLEnum device_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateContextFromType([Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.In)] CLEnum device_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateContextFromType")]
         public partial IntPtr CreateContextFromType<T0>([Flow(FlowDirection.In)] Span<IntPtr> properties, [Flow(FlowDirection.In)] CLEnum device_type, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateImage2D")]
-        public partial unsafe IntPtr CreateImage2D([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] UIntPtr image_width, [Flow(FlowDirection.In)] UIntPtr image_height, [Flow(FlowDirection.In)] UIntPtr image_row_pitch, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateImage2D([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] UIntPtr image_width, [Flow(FlowDirection.In)] UIntPtr image_height, [Flow(FlowDirection.In)] UIntPtr image_row_pitch, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateImage2D")]
         public partial IntPtr CreateImage2D<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] Span<uint> image_format, [Flow(FlowDirection.In)] UIntPtr image_width, [Flow(FlowDirection.In)] UIntPtr image_height, [Flow(FlowDirection.In)] UIntPtr image_row_pitch, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateImage3D")]
-        public partial unsafe IntPtr CreateImage3D([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] UIntPtr image_width, [Flow(FlowDirection.In)] UIntPtr image_height, [Flow(FlowDirection.In)] UIntPtr image_depth, [Flow(FlowDirection.In)] UIntPtr image_row_pitch, [Flow(FlowDirection.In)] UIntPtr image_slice_pitch, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateImage3D([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint* image_format, [Flow(FlowDirection.In)] UIntPtr image_width, [Flow(FlowDirection.In)] UIntPtr image_height, [Flow(FlowDirection.In)] UIntPtr image_depth, [Flow(FlowDirection.In)] UIntPtr image_row_pitch, [Flow(FlowDirection.In)] UIntPtr image_slice_pitch, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateImage3D")]
         public partial IntPtr CreateImage3D<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] Span<uint> image_format, [Flow(FlowDirection.In)] UIntPtr image_width, [Flow(FlowDirection.In)] UIntPtr image_height, [Flow(FlowDirection.In)] UIntPtr image_depth, [Flow(FlowDirection.In)] UIntPtr image_row_pitch, [Flow(FlowDirection.In)] UIntPtr image_slice_pitch, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateKernel")]
-        public partial unsafe IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] char* kernel_name, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] char* kernel_name, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateKernel")]
         public partial IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] Span<char> kernel_name, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateKernelsInProgram")]
-        public partial unsafe int CreateKernelsInProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_kernels, [Flow(FlowDirection.Out)] IntPtr* kernels, [Flow(FlowDirection.Out)] uint* num_kernels_ret);
+        public unsafe partial int CreateKernelsInProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_kernels, [Flow(FlowDirection.Out)] IntPtr* kernels, [Flow(FlowDirection.Out)] uint* num_kernels_ret);
 
         [NativeApi(EntryPoint = "clCreateKernelsInProgram")]
         public partial int CreateKernelsInProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_kernels, [Flow(FlowDirection.Out)] Span<IntPtr> kernels, [Flow(FlowDirection.Out)] Span<uint> num_kernels_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithBinary")]
-        public partial unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.In)] byte** binaries, [Flow(FlowDirection.Out)] int* binary_status, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.In)] byte** binaries, [Flow(FlowDirection.Out)] int* binary_status, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithBinary")]
-        public partial unsafe IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<UIntPtr> lengths, [Flow(FlowDirection.In)] byte** binaries, [Flow(FlowDirection.Out)] Span<int> binary_status, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithBinary([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] Span<UIntPtr> lengths, [Flow(FlowDirection.In)] byte** binaries, [Flow(FlowDirection.Out)] Span<int> binary_status, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithSource")]
-        public partial unsafe IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] char** strings, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] char** strings, [Flow(FlowDirection.In)] UIntPtr* lengths, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateProgramWithSource")]
-        public partial unsafe IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] char** strings, [Flow(FlowDirection.In)] Span<UIntPtr> lengths, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
+        public unsafe partial IntPtr CreateProgramWithSource([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] char** strings, [Flow(FlowDirection.In)] Span<UIntPtr> lengths, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateSampler")]
-        public partial unsafe IntPtr CreateSampler([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] bool normalized_coords, [Flow(FlowDirection.In)] uint addressing_mode, [Flow(FlowDirection.In)] uint filter_mode, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateSampler([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] bool normalized_coords, [Flow(FlowDirection.In)] uint addressing_mode, [Flow(FlowDirection.In)] uint filter_mode, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateSampler")]
         public partial IntPtr CreateSampler([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] bool normalized_coords, [Flow(FlowDirection.In)] uint addressing_mode, [Flow(FlowDirection.In)] uint filter_mode, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
@@ -639,97 +639,97 @@ namespace Silk.NET.OpenCL
         public partial int EnqueueBarrier([Flow(FlowDirection.In)] IntPtr command_queue);
 
         [NativeApi(EntryPoint = "clEnqueueCopyBuffer")]
-        public partial unsafe int EnqueueCopyBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr src_buffer, [Flow(FlowDirection.In)] IntPtr dst_buffer, [Flow(FlowDirection.In)] UIntPtr src_offset, [Flow(FlowDirection.In)] UIntPtr dst_offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueCopyBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr src_buffer, [Flow(FlowDirection.In)] IntPtr dst_buffer, [Flow(FlowDirection.In)] UIntPtr src_offset, [Flow(FlowDirection.In)] UIntPtr dst_offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueCopyBuffer")]
         public partial int EnqueueCopyBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr src_buffer, [Flow(FlowDirection.In)] IntPtr dst_buffer, [Flow(FlowDirection.In)] UIntPtr src_offset, [Flow(FlowDirection.In)] UIntPtr dst_offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event);
 
         [NativeApi(EntryPoint = "clEnqueueCopyBufferToImage")]
-        public partial unsafe int EnqueueCopyBufferToImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr src_buffer, [Flow(FlowDirection.In)] IntPtr dst_image, [Flow(FlowDirection.In)] UIntPtr src_offset, [Flow(FlowDirection.In)] UIntPtr* dst_origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueCopyBufferToImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr src_buffer, [Flow(FlowDirection.In)] IntPtr dst_image, [Flow(FlowDirection.In)] UIntPtr src_offset, [Flow(FlowDirection.In)] UIntPtr* dst_origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueCopyBufferToImage")]
         public partial int EnqueueCopyBufferToImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr src_buffer, [Flow(FlowDirection.In)] IntPtr dst_image, [Flow(FlowDirection.In)] UIntPtr src_offset, [Flow(FlowDirection.In)] Span<UIntPtr> dst_origin, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event);
 
         [NativeApi(EntryPoint = "clEnqueueCopyImage")]
-        public partial unsafe int EnqueueCopyImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr src_image, [Flow(FlowDirection.In)] IntPtr dst_image, [Flow(FlowDirection.In)] UIntPtr* src_origin, [Flow(FlowDirection.In)] UIntPtr* dst_origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueCopyImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr src_image, [Flow(FlowDirection.In)] IntPtr dst_image, [Flow(FlowDirection.In)] UIntPtr* src_origin, [Flow(FlowDirection.In)] UIntPtr* dst_origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueCopyImage")]
         public partial int EnqueueCopyImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr src_image, [Flow(FlowDirection.In)] IntPtr dst_image, [Flow(FlowDirection.In)] Span<UIntPtr> src_origin, [Flow(FlowDirection.In)] Span<UIntPtr> dst_origin, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event);
 
         [NativeApi(EntryPoint = "clEnqueueCopyImageToBuffer")]
-        public partial unsafe int EnqueueCopyImageToBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr src_image, [Flow(FlowDirection.In)] IntPtr dst_buffer, [Flow(FlowDirection.In)] UIntPtr* src_origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] UIntPtr dst_offset, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueCopyImageToBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr src_image, [Flow(FlowDirection.In)] IntPtr dst_buffer, [Flow(FlowDirection.In)] UIntPtr* src_origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] UIntPtr dst_offset, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueCopyImageToBuffer")]
         public partial int EnqueueCopyImageToBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr src_image, [Flow(FlowDirection.In)] IntPtr dst_buffer, [Flow(FlowDirection.In)] Span<UIntPtr> src_origin, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.In)] UIntPtr dst_offset, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event);
 
         [NativeApi(EntryPoint = "clEnqueueMapBuffer")]
-        public partial unsafe void* EnqueueMapBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] UIntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial void* EnqueueMapBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] UIntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clEnqueueMapBuffer")]
-        public partial unsafe void* EnqueueMapBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] UIntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
+        public unsafe partial void* EnqueueMapBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] UIntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         [NativeApi(EntryPoint = "clEnqueueMapImage")]
-        public partial unsafe void* EnqueueMapImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] UIntPtr* origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.Out)] UIntPtr* image_row_pitch, [Flow(FlowDirection.Out)] UIntPtr* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial void* EnqueueMapImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] UIntPtr* origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.Out)] UIntPtr* image_row_pitch, [Flow(FlowDirection.Out)] UIntPtr* image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clEnqueueMapImage")]
-        public partial unsafe void* EnqueueMapImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] Span<UIntPtr> origin, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.Out)] Span<UIntPtr> image_row_pitch, [Flow(FlowDirection.Out)] Span<UIntPtr> image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
+        public unsafe partial void* EnqueueMapImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] bool blocking_map, [Flow(FlowDirection.In)] CLEnum map_flags, [Flow(FlowDirection.In)] Span<UIntPtr> origin, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.Out)] Span<UIntPtr> image_row_pitch, [Flow(FlowDirection.Out)] Span<UIntPtr> image_slice_pitch, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         [NativeApi(EntryPoint = "clEnqueueMarker")]
-        public partial unsafe int EnqueueMarker([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueMarker([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueMarker")]
         public partial int EnqueueMarker([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.Out)] Span<IntPtr> @event);
 
         [NativeApi(EntryPoint = "clEnqueueNativeKernel")]
-        public partial unsafe int EnqueueNativeKernel([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] FuncPtr user_func, [Flow(FlowDirection.Out)] void* args, [Flow(FlowDirection.In)] UIntPtr cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] IntPtr* mem_list, [Flow(FlowDirection.In)] void** args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueNativeKernel([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] FuncPtr user_func, [Flow(FlowDirection.Out)] void* args, [Flow(FlowDirection.In)] UIntPtr cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] IntPtr* mem_list, [Flow(FlowDirection.In)] void** args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueNativeKernel")]
-        public partial unsafe int EnqueueNativeKernel<T0, T1>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] FuncPtr user_func, [Flow(FlowDirection.Out)] Span<T0> args, [Flow(FlowDirection.In)] UIntPtr cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] Span<IntPtr> mem_list, [Flow(FlowDirection.In)] void** args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial int EnqueueNativeKernel<T0, T1>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] FuncPtr user_func, [Flow(FlowDirection.Out)] Span<T0> args, [Flow(FlowDirection.In)] UIntPtr cb_args, [Flow(FlowDirection.In)] uint num_mem_objects, [Flow(FlowDirection.In)] Span<IntPtr> mem_list, [Flow(FlowDirection.In)] void** args_mem_loc, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueNDRangeKernel")]
-        public partial unsafe int EnqueueNdrangeKernel([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] UIntPtr* global_work_offset, [Flow(FlowDirection.In)] UIntPtr* global_work_size, [Flow(FlowDirection.In)] UIntPtr* local_work_size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueNdrangeKernel([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] UIntPtr* global_work_offset, [Flow(FlowDirection.In)] UIntPtr* global_work_size, [Flow(FlowDirection.In)] UIntPtr* local_work_size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueNDRangeKernel")]
         public partial int EnqueueNdrangeKernel([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint work_dim, [Flow(FlowDirection.In)] Span<UIntPtr> global_work_offset, [Flow(FlowDirection.In)] Span<UIntPtr> global_work_size, [Flow(FlowDirection.In)] Span<UIntPtr> local_work_size, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event);
 
         [NativeApi(EntryPoint = "clEnqueueReadBuffer")]
-        public partial unsafe int EnqueueReadBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] UIntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueReadBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] UIntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueReadBuffer")]
         public partial int EnqueueReadBuffer<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] UIntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] Span<T0> ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueReadImage")]
-        public partial unsafe int EnqueueReadImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] UIntPtr* origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] UIntPtr row_pitch, [Flow(FlowDirection.In)] UIntPtr slice_pitch, [Flow(FlowDirection.Out)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueReadImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] UIntPtr* origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] UIntPtr row_pitch, [Flow(FlowDirection.In)] UIntPtr slice_pitch, [Flow(FlowDirection.Out)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueReadImage")]
         public partial int EnqueueReadImage<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] bool blocking_read, [Flow(FlowDirection.In)] Span<UIntPtr> origin, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.In)] UIntPtr row_pitch, [Flow(FlowDirection.In)] UIntPtr slice_pitch, [Flow(FlowDirection.Out)] Span<T0> ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueTask")]
-        public partial unsafe int EnqueueTask([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueTask([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueTask")]
         public partial int EnqueueTask([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event);
 
         [NativeApi(EntryPoint = "clEnqueueUnmapMemObject")]
-        public partial unsafe int EnqueueUnmapMemObject([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.Out)] void* mapped_ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueUnmapMemObject([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.Out)] void* mapped_ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueUnmapMemObject")]
         public partial int EnqueueUnmapMemObject<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.Out)] Span<T0> mapped_ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueWaitForEvents")]
-        public partial unsafe int EnqueueWaitForEvents([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_events, [Flow(FlowDirection.In)] IntPtr* event_list);
+        public unsafe partial int EnqueueWaitForEvents([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_events, [Flow(FlowDirection.In)] IntPtr* event_list);
 
         [NativeApi(EntryPoint = "clEnqueueWaitForEvents")]
         public partial int EnqueueWaitForEvents([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint num_events, [Flow(FlowDirection.In)] Span<IntPtr> event_list);
 
         [NativeApi(EntryPoint = "clEnqueueWriteBuffer")]
-        public partial unsafe int EnqueueWriteBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] UIntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueWriteBuffer([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] UIntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueWriteBuffer")]
         public partial int EnqueueWriteBuffer<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr buffer, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] UIntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clEnqueueWriteImage")]
-        public partial unsafe int EnqueueWriteImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] UIntPtr* origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] UIntPtr input_row_pitch, [Flow(FlowDirection.In)] UIntPtr input_slice_pitch, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
+        public unsafe partial int EnqueueWriteImage([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] UIntPtr* origin, [Flow(FlowDirection.In)] UIntPtr* region, [Flow(FlowDirection.In)] UIntPtr input_row_pitch, [Flow(FlowDirection.In)] UIntPtr input_slice_pitch, [Flow(FlowDirection.In)] void* ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] IntPtr* event_wait_list, [Flow(FlowDirection.Out)] IntPtr* @event);
 
         [NativeApi(EntryPoint = "clEnqueueWriteImage")]
         public partial int EnqueueWriteImage<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] bool blocking_write, [Flow(FlowDirection.In)] Span<UIntPtr> origin, [Flow(FlowDirection.In)] Span<UIntPtr> region, [Flow(FlowDirection.In)] UIntPtr input_row_pitch, [Flow(FlowDirection.In)] UIntPtr input_slice_pitch, [Flow(FlowDirection.In)] Span<T0> ptr, [Flow(FlowDirection.In)] uint num_events_in_wait_list, [Flow(FlowDirection.In)] Span<IntPtr> event_wait_list, [Flow(FlowDirection.Out)] Span<IntPtr> @event) where T0 : unmanaged;
@@ -741,103 +741,103 @@ namespace Silk.NET.OpenCL
         public partial int Flush([Flow(FlowDirection.In)] IntPtr command_queue);
 
         [NativeApi(EntryPoint = "clGetCommandQueueInfo")]
-        public partial unsafe int GetCommandQueueInfo([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetCommandQueueInfo([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetCommandQueueInfo")]
         public partial int GetCommandQueueInfo<T0>([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetContextInfo")]
-        public partial unsafe int GetContextInfo([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetContextInfo([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetContextInfo")]
         public partial int GetContextInfo<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetDeviceIDs")]
-        public partial unsafe int GetDeviceIDs([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] CLEnum device_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] IntPtr* devices, [Flow(FlowDirection.Out)] uint* num_devices);
+        public unsafe partial int GetDeviceIDs([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] CLEnum device_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] IntPtr* devices, [Flow(FlowDirection.Out)] uint* num_devices);
 
         [NativeApi(EntryPoint = "clGetDeviceIDs")]
         public partial int GetDeviceIDs([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] CLEnum device_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<IntPtr> devices, [Flow(FlowDirection.Out)] Span<uint> num_devices);
 
         [NativeApi(EntryPoint = "clGetDeviceInfo")]
-        public partial unsafe int GetDeviceInfo([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetDeviceInfo([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetDeviceInfo")]
         public partial int GetDeviceInfo<T0>([Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetEventInfo")]
-        public partial unsafe int GetEventInfo([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetEventInfo([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetEventInfo")]
         public partial int GetEventInfo<T0>([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetEventProfilingInfo")]
-        public partial unsafe int GetEventProfilingInfo([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetEventProfilingInfo([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetEventProfilingInfo")]
         public partial int GetEventProfilingInfo<T0>([Flow(FlowDirection.In)] IntPtr @event, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetExtensionFunctionAddress")]
-        public partial unsafe void* GetExtensionFunctionAddress([Flow(FlowDirection.In)] char* func_name);
+        public unsafe partial void* GetExtensionFunctionAddress([Flow(FlowDirection.In)] char* func_name);
 
         [NativeApi(EntryPoint = "clGetExtensionFunctionAddress")]
-        public partial unsafe void* GetExtensionFunctionAddress([Flow(FlowDirection.In)] Span<char> func_name);
+        public unsafe partial void* GetExtensionFunctionAddress([Flow(FlowDirection.In)] Span<char> func_name);
 
         [NativeApi(EntryPoint = "clGetImageInfo")]
-        public partial unsafe int GetImageInfo([Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetImageInfo([Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetImageInfo")]
         public partial int GetImageInfo<T0>([Flow(FlowDirection.In)] IntPtr image, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetKernelInfo")]
-        public partial unsafe int GetKernelInfo([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetKernelInfo([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetKernelInfo")]
         public partial int GetKernelInfo<T0>([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetKernelWorkGroupInfo")]
-        public partial unsafe int GetKernelWorkGroupInfo([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetKernelWorkGroupInfo([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetKernelWorkGroupInfo")]
         public partial int GetKernelWorkGroupInfo<T0>([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetMemObjectInfo")]
-        public partial unsafe int GetMemObjectInfo([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetMemObjectInfo([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetMemObjectInfo")]
         public partial int GetMemObjectInfo<T0>([Flow(FlowDirection.In)] IntPtr memobj, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetPlatformIDs")]
-        public partial unsafe int GetPlatformIDs([Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] IntPtr* platforms, [Flow(FlowDirection.Out)] uint* num_platforms);
+        public unsafe partial int GetPlatformIDs([Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] IntPtr* platforms, [Flow(FlowDirection.Out)] uint* num_platforms);
 
         [NativeApi(EntryPoint = "clGetPlatformIDs")]
         public partial int GetPlatformIDs([Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<IntPtr> platforms, [Flow(FlowDirection.Out)] Span<uint> num_platforms);
 
         [NativeApi(EntryPoint = "clGetPlatformInfo")]
-        public partial unsafe int GetPlatformInfo([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetPlatformInfo([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetPlatformInfo")]
         public partial int GetPlatformInfo<T0>([Flow(FlowDirection.In)] IntPtr platform, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetProgramBuildInfo")]
-        public partial unsafe int GetProgramBuildInfo([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetProgramBuildInfo([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetProgramBuildInfo")]
         public partial int GetProgramBuildInfo<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] IntPtr device, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetProgramInfo")]
-        public partial unsafe int GetProgramInfo([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetProgramInfo([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetProgramInfo")]
         public partial int GetProgramInfo<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetSamplerInfo")]
-        public partial unsafe int GetSamplerInfo([Flow(FlowDirection.In)] IntPtr sampler, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetSamplerInfo([Flow(FlowDirection.In)] IntPtr sampler, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetSamplerInfo")]
         public partial int GetSamplerInfo<T0>([Flow(FlowDirection.In)] IntPtr sampler, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] Span<T0> param_value, [Flow(FlowDirection.Out)] Span<UIntPtr> param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetSupportedImageFormats")]
-        public partial unsafe int GetSupportedImageFormats([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] uint* image_formats, [Flow(FlowDirection.Out)] uint* num_image_formats);
+        public unsafe partial int GetSupportedImageFormats([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] uint* image_formats, [Flow(FlowDirection.Out)] uint* num_image_formats);
 
         [NativeApi(EntryPoint = "clGetSupportedImageFormats")]
         public partial int GetSupportedImageFormats([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] Span<uint> image_formats, [Flow(FlowDirection.Out)] Span<uint> num_image_formats);
@@ -885,43 +885,43 @@ namespace Silk.NET.OpenCL
         public partial int RetainSampler([Flow(FlowDirection.In)] IntPtr sampler);
 
         [NativeApi(EntryPoint = "clSetCommandQueueProperty")]
-        public partial unsafe int SetCommandQueueProperty([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] CLEnum properties, [Flow(FlowDirection.In)] bool enable, [Flow(FlowDirection.Out)] CLEnum* old_properties);
+        public unsafe partial int SetCommandQueueProperty([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] CLEnum properties, [Flow(FlowDirection.In)] bool enable, [Flow(FlowDirection.Out)] CLEnum* old_properties);
 
         [NativeApi(EntryPoint = "clSetCommandQueueProperty")]
         public partial int SetCommandQueueProperty([Flow(FlowDirection.In)] IntPtr command_queue, [Flow(FlowDirection.In)] CLEnum properties, [Flow(FlowDirection.In)] bool enable, [Flow(FlowDirection.Out)] Span<CLEnum> old_properties);
 
         [NativeApi(EntryPoint = "clSetKernelArg")]
-        public partial unsafe int SetKernelArg([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] UIntPtr arg_size, [Flow(FlowDirection.In)] void* arg_value);
+        public unsafe partial int SetKernelArg([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] UIntPtr arg_size, [Flow(FlowDirection.In)] void* arg_value);
 
         [NativeApi(EntryPoint = "clSetKernelArg")]
         public partial int SetKernelArg<T0>([Flow(FlowDirection.In)] IntPtr kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] UIntPtr arg_size, [Flow(FlowDirection.In)] Span<T0> arg_value) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clUnloadCompiler")]
-        public partial unsafe int UnloadCompiler([Flow(FlowDirection.In)] void* unnamedParameter0);
+        public unsafe partial int UnloadCompiler([Flow(FlowDirection.In)] void* unnamedParameter0);
 
         [NativeApi(EntryPoint = "clUnloadCompiler")]
         public partial int UnloadCompiler<T0>([Flow(FlowDirection.In)] Span<T0> unnamedParameter0) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clWaitForEvents")]
-        public partial unsafe int WaitForEvents([Flow(FlowDirection.In)] uint num_events, [Flow(FlowDirection.In)] IntPtr* event_list);
+        public unsafe partial int WaitForEvents([Flow(FlowDirection.In)] uint num_events, [Flow(FlowDirection.In)] IntPtr* event_list);
 
         [NativeApi(EntryPoint = "clWaitForEvents")]
         public partial int WaitForEvents([Flow(FlowDirection.In)] uint num_events, [Flow(FlowDirection.In)] Span<IntPtr> event_list);
 
         [NativeApi(EntryPoint = "clBuildProgram")]
-        public partial unsafe int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+        public unsafe partial int BuildProgram([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] IntPtr* device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
         [NativeApi(EntryPoint = "clBuildProgram")]
         public partial int BuildProgram<T0>([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] uint num_devices, [Flow(FlowDirection.In)] Span<IntPtr> device_list, [Flow(FlowDirection.In)] string options, [Flow(FlowDirection.In), PinObjectAttribute(PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateKernel")]
-        public partial unsafe IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] string kernel_name, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] string kernel_name, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateKernel")]
         public partial IntPtr CreateKernel([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In)] string kernel_name, [Flow(FlowDirection.Out)] Span<int> errcode_ret);
 
         [NativeApi(EntryPoint = "clGetExtensionFunctionAddress")]
-        public partial unsafe void* GetExtensionFunctionAddress([Flow(FlowDirection.In)] string func_name);
+        public unsafe partial void* GetExtensionFunctionAddress([Flow(FlowDirection.In)] string func_name);
 
         public unsafe IntPtr CreateBufferWithProperties([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In)] CLEnum* properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] uint size, [Flow(FlowDirection.Out)] void* host_ptr, [Flow(FlowDirection.Out)] int* errcode_ret)
         {

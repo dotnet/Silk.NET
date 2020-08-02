@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         public const string ExtensionName = "XR_KHR_convert_timespec_time";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrConvertTimespecTimeToTimeKHR")]
-        public partial unsafe Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ValueTuple<IntPtr,IntPtr>* timespecTime, [Count(Count = 0)] long* time);
+        public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ValueTuple<IntPtr,IntPtr>* timespecTime, [Count(Count = 0)] long* time);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrConvertTimespecTimeToTimeKHR")]
@@ -29,7 +29,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrConvertTimeToTimespecTimeKHR")]
-        public partial unsafe Result ConvertTimeToTimespecTime([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] ValueTuple<IntPtr,IntPtr>* timespecTime);
+        public unsafe partial Result ConvertTimeToTimespecTime([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] ValueTuple<IntPtr,IntPtr>* timespecTime);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrConvertTimeToTimespecTimeKHR")]

@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_private_data";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreatePrivateDataSlotEXT")]
-        public partial unsafe Result CreatePrivateDataSlot([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PrivateDataSlotCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PrivateDataSlotEXT* pPrivateDataSlot);
+        public unsafe partial Result CreatePrivateDataSlot([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PrivateDataSlotCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] PrivateDataSlotEXT* pPrivateDataSlot);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreatePrivateDataSlotEXT")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyPrivateDataSlotEXT")]
-        public partial unsafe void DestroyPrivateDataSlot([Count(Count = 0)] Device device, [Count(Count = 0)] PrivateDataSlotEXT privateDataSlot, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyPrivateDataSlot([Count(Count = 0)] Device device, [Count(Count = 0)] PrivateDataSlotEXT privateDataSlot, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyPrivateDataSlotEXT")]
@@ -37,7 +37,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPrivateDataEXT")]
-        public partial unsafe void GetPrivateData([Count(Count = 0)] Device device, [Count(Count = 0)] ObjectType objectType, [Count(Count = 0)] ulong objectHandle, [Count(Count = 0)] PrivateDataSlotEXT privateDataSlot, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pData);
+        public unsafe partial void GetPrivateData([Count(Count = 0)] Device device, [Count(Count = 0)] ObjectType objectType, [Count(Count = 0)] ulong objectHandle, [Count(Count = 0)] PrivateDataSlotEXT privateDataSlot, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pData);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetPrivateDataEXT")]

@@ -32,7 +32,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public partial void FogCoordFormat([Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glGetIntegerui64i_vNV")]
-        public partial unsafe void GetIntegerui64([Flow(FlowDirection.In)] NV value, [Flow(FlowDirection.In)] uint index, [Count(Computed = "value"), Flow(FlowDirection.Out)] ulong* result);
+        public unsafe partial void GetIntegerui64([Flow(FlowDirection.In)] NV value, [Flow(FlowDirection.In)] uint index, [Count(Computed = "value"), Flow(FlowDirection.Out)] ulong* result);
 
         [NativeApi(EntryPoint = "glGetIntegerui64i_vNV")]
         public partial void GetIntegerui64([Flow(FlowDirection.In)] NV value, [Flow(FlowDirection.In)] uint index, [Count(Computed = "value"), Flow(FlowDirection.Out)] out ulong result);

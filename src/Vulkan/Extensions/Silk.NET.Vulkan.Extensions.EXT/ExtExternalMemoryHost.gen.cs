@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_external_memory_host";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryHostPointerPropertiesEXT")]
-        public partial unsafe Result GetMemoryHostPointerProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] void* pHostPointer, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties);
+        public unsafe partial Result GetMemoryHostPointerProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] void* pHostPointer, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryHostPointerPropertiesEXT")]

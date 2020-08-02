@@ -25,7 +25,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetCoarseSampleOrderNV")]
-        public partial unsafe void CmdSetCoarseSampleOrder([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Count = 0)] uint customSampleOrderCount, [Count(Computed = "customSampleOrderCount"), Flow(FlowDirection.In)] CoarseSampleOrderCustomNV* pCustomSampleOrders);
+        public unsafe partial void CmdSetCoarseSampleOrder([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Count = 0)] uint customSampleOrderCount, [Count(Computed = "customSampleOrderCount"), Flow(FlowDirection.In)] CoarseSampleOrderCustomNV* pCustomSampleOrders);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetCoarseSampleOrderNV")]
@@ -33,7 +33,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewportShadingRatePaletteNV")]
-        public partial unsafe void CmdSetViewportShadingRatePalette([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] ShadingRatePaletteNV* pShadingRatePalettes);
+        public unsafe partial void CmdSetViewportShadingRatePalette([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] ShadingRatePaletteNV* pShadingRatePalettes);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetViewportShadingRatePaletteNV")]

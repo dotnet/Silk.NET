@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.FUCHSIA
         public const string ExtensionName = "VK_FUCHSIA_imagepipe_surface";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateImagePipeSurfaceFUCHSIA")]
-        public partial unsafe Result CreateImagePipeSurfaceFuchsia([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ImagePipeSurfaceCreateInfoFUCHSIA* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
+        public unsafe partial Result CreateImagePipeSurfaceFuchsia([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ImagePipeSurfaceCreateInfoFUCHSIA* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateImagePipeSurfaceFUCHSIA")]

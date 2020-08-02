@@ -20,13 +20,13 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
     {
         public const string ExtensionName = "EXT_multiview_draw_buffers";
         [NativeApi(EntryPoint = "glDrawBuffersIndexedEXT")]
-        public partial unsafe void DrawBuffersIndexed([Flow(FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(FlowDirection.In)] EXT* location, [Count(Parameter = "n"), Flow(FlowDirection.In)] int* indices);
+        public unsafe partial void DrawBuffersIndexed([Flow(FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(FlowDirection.In)] EXT* location, [Count(Parameter = "n"), Flow(FlowDirection.In)] int* indices);
 
         [NativeApi(EntryPoint = "glDrawBuffersIndexedEXT")]
         public partial void DrawBuffersIndexed([Flow(FlowDirection.In)] int n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<EXT> location, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<int> indices);
 
         [NativeApi(EntryPoint = "glGetIntegeri_vEXT")]
-        public partial unsafe void GetInteger([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] int* data);
+        public unsafe partial void GetInteger([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] int* data);
 
         [NativeApi(EntryPoint = "glGetIntegeri_vEXT")]
         public partial void GetInteger([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.Out)] Span<int> data);

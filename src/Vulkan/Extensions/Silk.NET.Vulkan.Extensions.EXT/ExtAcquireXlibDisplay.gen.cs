@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         public const string ExtensionName = "VK_EXT_acquire_xlib_display";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkAcquireXlibDisplayEXT")]
-        public partial unsafe Result AcquireXlibDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] DisplayKHR display);
+        public unsafe partial Result AcquireXlibDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] DisplayKHR display);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkAcquireXlibDisplayEXT")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetRandROutputDisplayEXT")]
-        public partial unsafe Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] IntPtr rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay);
+        public unsafe partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] IntPtr rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetRandROutputDisplayEXT")]

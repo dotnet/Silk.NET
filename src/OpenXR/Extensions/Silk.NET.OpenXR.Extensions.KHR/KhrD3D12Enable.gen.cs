@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         public const string ExtensionName = "XR_KHR_D3D12_enable";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetD3D12GraphicsRequirementsKHR")]
-        public partial unsafe Result GetD3D12GraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsD3D12KHR* graphicsRequirements);
+        public unsafe partial Result GetD3D12GraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsD3D12KHR* graphicsRequirements);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetD3D12GraphicsRequirementsKHR")]

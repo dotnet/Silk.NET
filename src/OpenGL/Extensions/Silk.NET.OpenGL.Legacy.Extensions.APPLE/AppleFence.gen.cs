@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
     {
         public const string ExtensionName = "APPLE_fence";
         [NativeApi(EntryPoint = "glDeleteFencesAPPLE")]
-        public partial unsafe void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* fences);
+        public unsafe partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* fences);
 
         [NativeApi(EntryPoint = "glDeleteFencesAPPLE")]
         public partial void DeleteFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Span<uint> fences);
@@ -32,7 +32,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         public partial void FinishObject([Flow(FlowDirection.In)] APPLE @object, [Flow(FlowDirection.In)] int name);
 
         [NativeApi(EntryPoint = "glGenFencesAPPLE")]
-        public partial unsafe void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* fences);
+        public unsafe partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* fences);
 
         [NativeApi(EntryPoint = "glGenFencesAPPLE")]
         public partial void GenFences([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> fences);

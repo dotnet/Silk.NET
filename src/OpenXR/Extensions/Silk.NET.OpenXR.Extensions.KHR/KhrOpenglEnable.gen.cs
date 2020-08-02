@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         public const string ExtensionName = "XR_KHR_opengl_enable";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetOpenGLGraphicsRequirementsKHR")]
-        public partial unsafe Result GetOpenGlgraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsOpenGLKHR* graphicsRequirements);
+        public unsafe partial Result GetOpenGlgraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsOpenGLKHR* graphicsRequirements);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetOpenGLGraphicsRequirementsKHR")]

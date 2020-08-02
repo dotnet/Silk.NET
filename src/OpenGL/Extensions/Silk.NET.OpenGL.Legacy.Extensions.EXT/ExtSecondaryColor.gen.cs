@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void SecondaryColor3([Flow(FlowDirection.In)] sbyte red, [Flow(FlowDirection.In)] sbyte green, [Flow(FlowDirection.In)] sbyte blue);
 
         [NativeApi(EntryPoint = "glSecondaryColor3bvEXT")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] sbyte* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] sbyte* v);
 
         [NativeApi(EntryPoint = "glSecondaryColor3bvEXT")]
         public partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<sbyte> v);
@@ -32,7 +32,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void SecondaryColor3([Flow(FlowDirection.In)] double red, [Flow(FlowDirection.In)] double green, [Flow(FlowDirection.In)] double blue);
 
         [NativeApi(EntryPoint = "glSecondaryColor3dvEXT")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] double* v);
 
         [NativeApi(EntryPoint = "glSecondaryColor3dvEXT")]
         public partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<double> v);
@@ -41,7 +41,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void SecondaryColor3([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue);
 
         [NativeApi(EntryPoint = "glSecondaryColor3fvEXT")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glSecondaryColor3fvEXT")]
         public partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<float> v);
@@ -50,7 +50,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void SecondaryColor3([Flow(FlowDirection.In)] int red, [Flow(FlowDirection.In)] int green, [Flow(FlowDirection.In)] int blue);
 
         [NativeApi(EntryPoint = "glSecondaryColor3ivEXT")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] int* v);
 
         [NativeApi(EntryPoint = "glSecondaryColor3ivEXT")]
         public partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<int> v);
@@ -59,7 +59,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void SecondaryColor3([Flow(FlowDirection.In)] short red, [Flow(FlowDirection.In)] short green, [Flow(FlowDirection.In)] short blue);
 
         [NativeApi(EntryPoint = "glSecondaryColor3svEXT")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] short* v);
 
         [NativeApi(EntryPoint = "glSecondaryColor3svEXT")]
         public partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<short> v);
@@ -68,7 +68,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void SecondaryColor3([Flow(FlowDirection.In)] byte red, [Flow(FlowDirection.In)] byte green, [Flow(FlowDirection.In)] byte blue);
 
         [NativeApi(EntryPoint = "glSecondaryColor3ubvEXT")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] byte* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] byte* v);
 
         [NativeApi(EntryPoint = "glSecondaryColor3ubvEXT")]
         public partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<byte> v);
@@ -77,7 +77,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void SecondaryColor3([Flow(FlowDirection.In)] uint red, [Flow(FlowDirection.In)] uint green, [Flow(FlowDirection.In)] uint blue);
 
         [NativeApi(EntryPoint = "glSecondaryColor3uivEXT")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] uint* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] uint* v);
 
         [NativeApi(EntryPoint = "glSecondaryColor3uivEXT")]
         public partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<uint> v);
@@ -86,13 +86,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void SecondaryColor3([Flow(FlowDirection.In)] ushort red, [Flow(FlowDirection.In)] ushort green, [Flow(FlowDirection.In)] ushort blue);
 
         [NativeApi(EntryPoint = "glSecondaryColor3usvEXT")]
-        public partial unsafe void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] ushort* v);
+        public unsafe partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] ushort* v);
 
         [NativeApi(EntryPoint = "glSecondaryColor3usvEXT")]
         public partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] Span<ushort> v);
 
         [NativeApi(EntryPoint = "glSecondaryColorPointerEXT")]
-        public partial unsafe void SecondaryColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void SecondaryColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glSecondaryColorPointerEXT")]
         public partial void SecondaryColorPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
@@ -101,7 +101,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void SecondaryColor3([Flow(FlowDirection.In)] string v);
 
         [NativeApi(EntryPoint = "glSecondaryColorPointerEXT")]
-        public partial unsafe void SecondaryColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void SecondaryColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glSecondaryColorPointerEXT")]
         public partial void SecondaryColorPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;

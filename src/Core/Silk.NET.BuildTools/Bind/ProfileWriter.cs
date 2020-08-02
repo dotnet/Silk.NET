@@ -377,10 +377,10 @@ namespace Silk.NET.BuildTools.Bind
                         }
 
                         sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
-                        using (var sr = new StringReader(function.ToString()))
+                        using (var sr = new StringReader(function.ToString(null, true)))
                         {
                             string line;
-                            var flPrefix = "public partial ";
+                            var flPrefix = "public ";
                             while ((line = sr.ReadLine()) != null)
                             {
                                 sw.WriteLine($"        {flPrefix}{line}");
@@ -529,10 +529,10 @@ namespace Silk.NET.BuildTools.Bind
                             }
 
                             sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
-                            using (var sr = new StringReader(function.ToString()))
+                            using (var sr = new StringReader(function.ToString(null, true)))
                             {
                                 string line;
-                                var flPrefix = "public partial ";
+                                var flPrefix = "public ";
                                 while ((line = sr.ReadLine()) != null)
                                 {
                                     sw.WriteLine($"        {flPrefix}{line}");

@@ -20,7 +20,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_debug_marker";
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT")]
-        public partial unsafe void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* marker);
+        public unsafe partial void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* marker);
 
         [NativeApi(EntryPoint = "glInsertEventMarkerEXT")]
         public partial void InsertEventMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<byte> marker);
@@ -29,7 +29,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void PopGroupMarker();
 
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT")]
-        public partial unsafe void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* marker);
+        public unsafe partial void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* marker);
 
         [NativeApi(EntryPoint = "glPushGroupMarkerEXT")]
         public partial void PushGroupMarker([Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] Span<byte> marker);

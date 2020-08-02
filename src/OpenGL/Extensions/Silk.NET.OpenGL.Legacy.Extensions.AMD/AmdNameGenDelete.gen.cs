@@ -20,13 +20,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
     {
         public const string ExtensionName = "AMD_name_gen_delete";
         [NativeApi(EntryPoint = "glDeleteNamesAMD")]
-        public partial unsafe void DeleteNames([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.In)] uint* names);
+        public unsafe partial void DeleteNames([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.In)] uint* names);
 
         [NativeApi(EntryPoint = "glDeleteNamesAMD")]
         public partial void DeleteNames([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.In)] Span<uint> names);
 
         [NativeApi(EntryPoint = "glGenNamesAMD")]
-        public partial unsafe void GenNames([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.Out)] uint* names);
+        public unsafe partial void GenNames([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.Out)] uint* names);
 
         [NativeApi(EntryPoint = "glGenNamesAMD")]
         public partial void GenNames([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.Out)] Span<uint> names);

@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial void FlushPixelDataRange([Flow(FlowDirection.In)] NV target);
 
         [NativeApi(EntryPoint = "glPixelDataRangeNV")]
-        public partial unsafe void PixelDataRange([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void PixelDataRange([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glPixelDataRangeNV")]
         public partial void PixelDataRange<T0>([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : unmanaged;
@@ -32,7 +32,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial void FlushPixelDataRange([Flow(FlowDirection.In)] PixelDataRangeTargetNV target);
 
         [NativeApi(EntryPoint = "glPixelDataRangeNV")]
-        public partial unsafe void PixelDataRange([Flow(FlowDirection.In)] PixelDataRangeTargetNV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void PixelDataRange([Flow(FlowDirection.In)] PixelDataRangeTargetNV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* pointer);
 
         [NativeApi(EntryPoint = "glPixelDataRangeNV")]
         public partial void PixelDataRange<T0>([Flow(FlowDirection.In)] PixelDataRangeTargetNV target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] Span<T0> pointer) where T0 : unmanaged;

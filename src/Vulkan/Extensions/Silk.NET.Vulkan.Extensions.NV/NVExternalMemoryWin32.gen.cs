@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
         public const string ExtensionName = "VK_NV_external_memory_win32";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandleNV")]
-        public partial unsafe Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV handleType, [Count(Count = 0), Flow(FlowDirection.Out)] IntPtr* pHandle);
+        public unsafe partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV handleType, [Count(Count = 0), Flow(FlowDirection.Out)] IntPtr* pHandle);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandleNV")]

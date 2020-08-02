@@ -21,7 +21,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
         public const string ExtensionName = "VK_NV_ray_tracing";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkBindAccelerationStructureMemoryNV")]
-        public partial unsafe Result BindAccelerationStructureMemory([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindAccelerationStructureMemoryInfoKHR* pBindInfos);
+        public unsafe partial Result BindAccelerationStructureMemory([Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] BindAccelerationStructureMemoryInfoKHR* pBindInfos);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkBindAccelerationStructureMemoryNV")]
@@ -29,7 +29,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructureNV")]
-        public partial unsafe void CmdBuildAccelerationStructure([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureInfoNV* pInfo, [Count(Count = 0)] Buffer instanceData, [Count(Count = 0)] ulong instanceOffset, [Count(Count = 0)] Bool32 update, [Count(Count = 0)] AccelerationStructureKHR dst, [Count(Count = 0)] AccelerationStructureKHR src, [Count(Count = 0)] Buffer scratch, [Count(Count = 0)] ulong scratchOffset);
+        public unsafe partial void CmdBuildAccelerationStructure([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureInfoNV* pInfo, [Count(Count = 0)] Buffer instanceData, [Count(Count = 0)] ulong instanceOffset, [Count(Count = 0)] Bool32 update, [Count(Count = 0)] AccelerationStructureKHR dst, [Count(Count = 0)] AccelerationStructureKHR src, [Count(Count = 0)] Buffer scratch, [Count(Count = 0)] ulong scratchOffset);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdBuildAccelerationStructureNV")]
@@ -45,7 +45,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdWriteAccelerationStructuresPropertiesNV")]
-        public partial unsafe void CmdWriteAccelerationStructuresProperties([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint accelerationStructureCount, [Count(Computed = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery);
+        public unsafe partial void CmdWriteAccelerationStructuresProperties([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint accelerationStructureCount, [Count(Computed = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdWriteAccelerationStructuresPropertiesNV")]
@@ -57,7 +57,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateAccelerationStructureNV")]
-        public partial unsafe Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureNV* pAccelerationStructure);
+        public unsafe partial Result CreateAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureCreateInfoNV* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] AccelerationStructureNV* pAccelerationStructure);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateAccelerationStructureNV")]
@@ -65,7 +65,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesNV")]
-        public partial unsafe Result CreateRayTracingPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Computed = "createInfoCount"), Flow(FlowDirection.In)] RayTracingPipelineCreateInfoNV* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
+        public unsafe partial Result CreateRayTracingPipelines([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Computed = "createInfoCount"), Flow(FlowDirection.In)] RayTracingPipelineCreateInfoNV* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCreateRayTracingPipelinesNV")]
@@ -73,7 +73,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyAccelerationStructureNV")]
-        public partial unsafe void DestroyAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
+        public unsafe partial void DestroyAccelerationStructure([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkDestroyAccelerationStructureNV")]
@@ -81,7 +81,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetAccelerationStructureHandleNV")]
-        public partial unsafe Result GetAccelerationStructureHandle([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] void* pData);
+        public unsafe partial Result GetAccelerationStructureHandle([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] void* pData);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetAccelerationStructureHandleNV")]
@@ -89,7 +89,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetAccelerationStructureMemoryRequirementsNV")]
-        public partial unsafe void GetAccelerationStructureMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureMemoryRequirementsInfoNV* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2KHR* pMemoryRequirements);
+        public unsafe partial void GetAccelerationStructureMemoryRequirements([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] AccelerationStructureMemoryRequirementsInfoNV* pInfo, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryRequirements2KHR* pMemoryRequirements);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetAccelerationStructureMemoryRequirementsNV")]
@@ -97,7 +97,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetRayTracingShaderGroupHandlesNV")]
-        public partial unsafe Result GetRayTracingShaderGroupHandles([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] void* pData);
+        public unsafe partial Result GetRayTracingShaderGroupHandles([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] void* pData);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkGetRayTracingShaderGroupHandlesNV")]

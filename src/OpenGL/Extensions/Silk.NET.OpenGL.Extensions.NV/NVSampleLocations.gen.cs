@@ -20,13 +20,13 @@ namespace Silk.NET.OpenGL.Extensions.NV
     {
         public const string ExtensionName = "NV_sample_locations";
         [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvNV")]
-        public partial unsafe void FramebufferSampleLocations([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
+        public unsafe partial void FramebufferSampleLocations([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvNV")]
         public partial void FramebufferSampleLocations([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<float> v);
 
         [NativeApi(EntryPoint = "glNamedFramebufferSampleLocationsfvNV")]
-        public partial unsafe void NamedFramebufferSampleLocations([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
+        public unsafe partial void NamedFramebufferSampleLocations([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glNamedFramebufferSampleLocationsfvNV")]
         public partial void NamedFramebufferSampleLocations([Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<float> v);
@@ -35,7 +35,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public partial void ResolveDepthValues();
 
         [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvNV")]
-        public partial unsafe void FramebufferSampleLocations([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
+        public unsafe partial void FramebufferSampleLocations([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] float* v);
 
         [NativeApi(EntryPoint = "glFramebufferSampleLocationsfvNV")]
         public partial void FramebufferSampleLocations([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Span<float> v);
