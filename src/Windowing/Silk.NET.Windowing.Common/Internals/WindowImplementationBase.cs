@@ -5,6 +5,7 @@
 
 using System;
 using System.Drawing;
+using Silk.NET.Core;
 
 
 namespace Silk.NET.Windowing.Internals
@@ -46,7 +47,7 @@ namespace Silk.NET.Windowing.Internals
         public abstract IWindow CreateWindow(WindowOptions opts);
         public abstract IWindowHost Parent { get; }
         public abstract IMonitor Monitor { get; set; }
-        public abstract void SetWindowIcon(Span<WindowIcon> icons);
+        public abstract void SetWindowIcon(ReadOnlySpan<RawImage> icons);
         
         // Cache updates for dervied classes
         protected void UpdatePosition(Point point) => _optionsCache.Position = point;

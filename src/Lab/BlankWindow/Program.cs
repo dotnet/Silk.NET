@@ -8,6 +8,7 @@ using SixLabors.ImageSharp.PixelFormats;
 using System;
 using System.Drawing;
 using System.Threading;
+using Silk.NET.Core;
 using Image = SixLabors.ImageSharp.Image;
 
 namespace BlankWindow
@@ -84,7 +85,7 @@ namespace BlankWindow
                 arr = span.ToArray();
             }
 
-            var icon = new WindowIcon(image.Width, image.Height, arr);
+            var icon = new RawImage(image.Width, image.Height, arr);
             window.SetWindowIcon(ref icon);
             Console.WriteLine("Finished loading");
         }

@@ -6,6 +6,7 @@
 using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
+using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
 using Silk.NET.GLFW;
 using Silk.NET.Windowing.Internals;
@@ -209,7 +210,7 @@ namespace Silk.NET.Windowing.Glfw
         public override event Action<Point> Move;
         public override event Action<WindowState> StateChanged;
         public override event Action<string[]> FileDrop;
-        public override void SetWindowIcon(Span<WindowIcon> icons)
+        public override void SetWindowIcon(ReadOnlySpan<RawImage> icons)
         {
             if (!IsInitialized)
             {

@@ -5,6 +5,7 @@
 
 using System;
 using System.Drawing;
+using Silk.NET.Core;
 
 namespace Silk.NET.Windowing
 {
@@ -51,6 +52,6 @@ namespace Silk.NET.Windowing
         /// Sets the window icons.
         /// </summary>
         /// <param name="icons">Either a collection of window icons, or null to set to the default icon.</param>
-        void SetWindowIcon(Span<WindowIcon> icons);
+        void SetWindowIcon(ReadOnlySpan<RawImage> icons);
     }
 }
