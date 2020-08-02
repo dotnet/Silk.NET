@@ -34,7 +34,7 @@ namespace Silk.NET.Input.Glfw
             _i = 0;
         }
 
-        public T Current => _i >= _list.Count || _i < 0 ? default! : _list[_i];
+        public T Current => _list[_i];
 
         object? IEnumerator.Current => Current;
 
