@@ -19,7 +19,7 @@ namespace Silk.NET.Core
         /// <param name="width">The width of the image.</param>
         /// <param name="height">The height of the image.</param>
         /// <param name="rgbaPixels">The image daqta.</param>
-        public RawImage(int width, int height, byte[] rgbaPixels)
+        public RawImage(int width, int height, Memory<byte> rgbaPixels)
         {
             Pixels = rgbaPixels;
             Width = width;
