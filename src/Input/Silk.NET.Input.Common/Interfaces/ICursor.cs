@@ -53,6 +53,7 @@ namespace Silk.NET.Input
         /// Image data for the cursor.
         /// </summary>
         /// <remarks>
+        /// The image MUST be in 32-bit RGBA, non-premultiplied, and in little-endian format.
         /// Is only used if <see cref="Type"/> is <see cref="CursorType.Custom"/>.
         /// </remarks>
         RawImage Image { get; set; }

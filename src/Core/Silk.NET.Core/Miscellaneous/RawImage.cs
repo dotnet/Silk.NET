@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -34,10 +34,11 @@ namespace Silk.NET.Core
         /// The height of the image in pixels.
         /// </summary>
         public int Height { get; }
+
         /// <summary>
         /// The image data.
         /// </summary>
-        public byte[] Pixels { get; }
+        public Memory<byte> Pixels { get; }
 
         /// <summary>
         /// Checks whether the two given <see cref="RawImage"/>s are equal.
@@ -46,7 +47,7 @@ namespace Silk.NET.Core
         /// <param name="right">The second raw image to compare the first against.</param>
         /// <returns>True if they are equal, false otherwise.</returns>
         /// <remarks>
-        /// This does not check whether the byte arrays have equal, only whether their references are the same.
+        /// This does not check whether the byte arrays are equal, only whether their references are the same.
         /// </remarks>  
         public static bool operator ==(RawImage left, RawImage right) => left.Equals(right);
 
@@ -57,7 +58,7 @@ namespace Silk.NET.Core
         /// <param name="right">The second raw image to compare the first against.</param>
         /// <returns>True if they are not equal, false otherwise.</returns>
         /// <remarks>
-        /// This does not check whether the byte arrays have equal, only whether their references are the same.
+        /// This does not check whether the byte arrays are equal, only whether their references are the same.
         /// </remarks>
         public static bool operator !=(RawImage left, RawImage right) => !(left == right);
 
@@ -68,26 +69,10 @@ namespace Silk.NET.Core
         /// <returns>True if they are equal, false otherwise.</returns>
         /// <remarks>
         /// This does not check whether the byte arrays have equal, only whether their references are the same.
-        /// For a complete comparison, use <see cref="ImageEquals"/>
         /// </remarks>  
         public bool Equals(RawImage other)
         {
             return Width == other.Width && Height == other.Height && Equals(Pixels, other.Pixels);
-        }
-
-        /// <summary>
-        /// Checks whether the given <see cref="RawImage"/> is equal to this one.
-        /// </summary>
-        /// <param name="other">The raw image to compare this raw image against.</param>
-        /// <returns>True if they are equal, false otherwise.</returns>
-        /// <remarks>
-        /// This performs a value comparison over the pixel array, comparing whether the whole image is equal. However,
-        /// this results in the comparison being a lot slower. For just a reference comparison of the pixels array, use
-        /// <see cref="Equals(RawImage)"/>
-        /// </remarks>
-        public bool ImageEquals(RawImage other)
-        {
-            return Width == other.Width && Height == other.Height && Pixels.SequenceEqual(other.Pixels);
         }
 
         /// <inheritdoc />
@@ -97,15 +82,6 @@ namespace Silk.NET.Core
         }
 
         /// <inheritdoc />
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                var hashCode = Width;
-                hashCode = (hashCode * 397) ^ Height;
-                hashCode = (hashCode * 397) ^ (Pixels != null ? Pixels.GetHashCode() : 0);
-                return hashCode;
-            }
-        }
+        public override int GetHashCode() => HashCode.Combine(Width, Height, Pixels);
     }
 }

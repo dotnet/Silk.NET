@@ -211,7 +211,7 @@ namespace Silk.NET.Input.Glfw
 
         private unsafe Cursor* CreateCustomCursor()
         {
-            if (_image.Pixels == null || _image.Pixels.Length == 0 || _image.Width <= 0 || _image.Height <= 0)
+            if (_image.Pixels.IsEmpty || _image.Width <= 0 || _image.Height <= 0)
                 return null;
 
             if (_image.Pixels.Length % BytesPerCursorPixel != 0)
@@ -222,7 +222,7 @@ namespace Silk.NET.Input.Glfw
             if (_image.Width * _image.Height * BytesPerCursorPixel != _image.Pixels.Length)
                 return null;
 
-            fixed (byte* ptr = _image.Pixels)
+            fixed (byte* ptr = _image.Pixels.Span)
             {
                 var image = new Image
                 {

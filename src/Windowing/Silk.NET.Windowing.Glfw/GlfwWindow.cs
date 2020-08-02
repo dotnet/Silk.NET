@@ -5,6 +5,7 @@
 
 using System;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
@@ -239,17 +240,14 @@ namespace Silk.NET.Windowing.Glfw
                 {
                     var icon = icons[i];
                     // ReSharper disable once StackAllocInsideLoop
-                    var iconMemory = stackalloc byte[icon.Pixels.Length];
+                    Span<byte> iconMemory = stackalloc byte[icon.Pixels.Length];
                     images[i] = new Image
                     {
                         Width = icon.Width, Height = icon.Height,
-                        Pixels = iconMemory
+                        Pixels = (byte*)Unsafe.AsPointer(ref iconMemory[0])
                     };
-
-                    for (var j = 0; j < icon.Pixels.Length; j++)
-                    {
-                        iconMemory[j] = icon.Pixels[j];
-                    }
+                    
+                    icon.Pixels.Span.CopyTo(iconMemory);
                 }
 
                 _glfw.SetWindowIcon(_glfwWindow, icons.Length, images);
