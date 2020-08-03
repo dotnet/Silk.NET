@@ -49,7 +49,7 @@ namespace Silk.NET.SilkTouch
 
                 var name = $"{receiverClassDeclaration.Identifier.Text}.gen.cs.gen";
                 context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-                File.WriteAllText(name, s);
+                File.WriteAllText(@"C:\SILK.NET\src\OpenGL\Silk.NET.OpenGL\" + name, s);
             }
         }
 
@@ -62,6 +62,10 @@ namespace Silk.NET.SilkTouch
             if (!classDeclaration.Parent.IsKind(SyntaxKind.NamespaceDeclaration))
                 return null;
             var namespaceDeclaration = (NamespaceDeclarationSyntax)classDeclaration.Parent;
+
+            if (!namespaceDeclaration.Parent.IsKind(SyntaxKind.CompilationUnit))
+                return null;
+            var compilationUnit = (CompilationUnitSyntax) namespaceDeclaration.Parent;
             
             var classSymbol = ModelExtensions.GetDeclaredSymbol(compilation.GetSemanticModel(classDeclaration.SyntaxTree), classDeclaration);
             
@@ -102,9 +106,9 @@ namespace Silk.NET.SilkTouch
                 var functionPointerTypeParams = new List<ParameterSyntax>();
 
                 // in
-                if (symbol.Parameters.Length > 0)
-                    continue;
-                // ...
+                var parameters = symbol.Parameters.Select(x => (Symbol: x, Marshaller: MarshallParameterType(x))).ToArray();
+                functionPointerTypeParams.AddRange(parameters.Select(x => x.Marshaller?.TypeParameter ?? Parameter(Identifier(x.Symbol.Type.Name))));
+
                 // out
                 var returnMarshaller = MarshalReturnType(symbol.ReturnType);
 
@@ -163,11 +167,7 @@ namespace Silk.NET.SilkTouch
                                         ArgumentList
                                         (
                                             SeparatedList
-                                            (
-                                                symbol.Parameters.Select
-                                                        (x => x.Name)
-                                                    .Select(x => Argument(IdentifierName(x)))
-                                            )
+                                                (parameters.Select(x => Argument(x.Marshaller?.Expression(x.Symbol) ?? IdentifierName(x.Symbol.Name))))
                                         )
                                     )
                                 )
@@ -175,13 +175,28 @@ namespace Silk.NET.SilkTouch
                         )
                         .WithAttributeLists(default)
                         .WithSemicolonToken(default)
+                        .WithParameterList(ParameterList(SeparatedList(declaration.ParameterList.Parameters.Select(x => x.WithAttributeLists(default)))))
                 );
             }
 
             if (newMembers.Count == 0)
                 return null;
 
-            return namespaceDeclaration.WithMembers(List(new MemberDeclarationSyntax[] {classDeclaration.WithMembers(List(newMembers))})).NormalizeWhitespace().ToFullString();
+            var newNamespace = namespaceDeclaration.WithMembers
+                (List(new MemberDeclarationSyntax[] {classDeclaration.WithMembers(List(newMembers))})).WithUsings(compilationUnit.Usings);
+
+            return newNamespace.NormalizeWhitespace().ToFullString();
+        }
+
+        private static IParameterMarshaller MarshallParameterType(IParameterSymbol symbol)
+        {
+            return null;
+        }
+
+        private interface IParameterMarshaller
+        {
+            public ParameterSyntax TypeParameter { get; }
+            ExpressionSyntax Expression(IParameterSymbol symbol);
         }
         
         private static IReturnMarshaller MarshalReturnType(ITypeSymbol symbol)
