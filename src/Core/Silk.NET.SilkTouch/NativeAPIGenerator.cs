@@ -107,71 +107,79 @@ namespace Silk.NET.SilkTouch
 
                 // in
                 var parameters = symbol.Parameters.Select(x => (Symbol: x, Marshaller: MarshallParameterType(x))).ToArray();
-                functionPointerTypeParams.AddRange(parameters.Select(x => x.Marshaller?.TypeParameter ?? Parameter(Identifier(x.Symbol.Type.Name))));
+                functionPointerTypeParams.AddRange(parameters.Select(x => x.Marshaller?.TypeParameter ?? Parameter(Identifier(x.Symbol.Type.ToDisplayString()))));
 
                 // out
                 var returnMarshaller = MarshalReturnType(symbol.ReturnType);
 
-                if (returnMarshaller is null)
-                    continue;
+                functionPointerTypeParams.Add
+                (
+                    symbol.ReturnsVoid
+                        ? Parameter(Identifier("void"))
+                        : Parameter(returnMarshaller?.ResultType ?? Identifier(symbol.ReturnType.Name))
+                );
+                
+                var invocationExpressionSyntax = InvocationExpression
+                (
+                    ParenthesizedExpression
+                    (
+                        CastExpression
+                        (
+                            FunctionPointerType
+                            (
+                                Identifier(GetCallingConvention(callingConvention)),
+                                SeparatedList(functionPointerTypeParams)
+                            ), InvocationExpression
+                            (
+                                IdentifierName("Load"), ArgumentList
+                                (
+                                    SeparatedList<ArgumentSyntax>
+                                    (
+                                        new[]
+                                        {
+                                            Argument
+                                            (
+                                                LiteralExpression
+                                                (
+                                                    SyntaxKind.NumericLiteralExpression,
+                                                    Literal(slot)
+                                                )
+                                            ),
+                                            Argument
+                                            (
+                                                LiteralExpression
+                                                (
+                                                    SyntaxKind.StringLiteralExpression,
+                                                    Literal(entryPoint)
+                                                )
+                                            )
+                                        }
+                                    )
+                                )
+                            )
+                        )
+                    ),
+                    ArgumentList
+                    (
+                        SeparatedList
+                            (parameters.Select(x => Argument(x.Marshaller?.Expression(x.Symbol) ?? IdentifierName(x.Symbol.Name))))
+                    )
+                );
+                var blockSyntax = symbol.ReturnsVoid 
+                    ? Block(ExpressionStatement(invocationExpressionSyntax))
+                    : Block
+                    (
+                        returnMarshaller?.Statement
+                        (
+                            invocationExpressionSyntax
+                        ) ?? ReturnStatement(invocationExpressionSyntax)
+                    );
 
-                functionPointerTypeParams.Add(Parameter(returnMarshaller.ResultType));
                 newMembers.Add
                 (
                     declaration.WithBody
                         (
-                            Block
-                            (
-                                returnMarshaller.Statement
-                                (
-                                    InvocationExpression
-                                    (
-                                        ParenthesizedExpression
-                                        (
-                                            CastExpression
-                                            (
-                                                FunctionPointerType
-                                                (
-                                                    Identifier(GetCallingConvention(callingConvention)),
-                                                    SeparatedList(functionPointerTypeParams)
-                                                ), InvocationExpression
-                                                (
-                                                    IdentifierName("Load"), ArgumentList
-                                                    (
-                                                        SeparatedList<ArgumentSyntax>
-                                                        (
-                                                            new[]
-                                                            {
-                                                                Argument
-                                                                (
-                                                                    LiteralExpression
-                                                                    (
-                                                                        SyntaxKind.StringLiteralExpression,
-                                                                        Literal(entryPoint)
-                                                                    )
-                                                                ),
-                                                                Argument
-                                                                (
-                                                                    LiteralExpression
-                                                                    (
-                                                                        SyntaxKind.NumericLiteralExpression,
-                                                                        Literal(slot)
-                                                                    )
-                                                                )
-                                                            }
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        ),
-                                        ArgumentList
-                                        (
-                                            SeparatedList
-                                                (parameters.Select(x => Argument(x.Marshaller?.Expression(x.Symbol) ?? IdentifierName(x.Symbol.Name))))
-                                        )
-                                    )
-                                )
-                            )
+                            blockSyntax
                         )
                         .WithAttributeLists(default)
                         .WithSemicolonToken(default)
@@ -204,9 +212,6 @@ namespace Silk.NET.SilkTouch
             if (symbol.SpecialType == SpecialType.System_Boolean)
                 return new BoolReturnMarshaller();
 
-            if (symbol.SpecialType == SpecialType.System_Void)
-                return new VoidReturnMarshaller();
-
             return null;
         }
         
@@ -214,12 +219,6 @@ namespace Silk.NET.SilkTouch
         {
             public SyntaxToken ResultType { get; }
             public StatementSyntax Statement(ExpressionSyntax argument);
-        }
-        
-        private class VoidReturnMarshaller : IReturnMarshaller
-        {
-            public SyntaxToken ResultType => Identifier("void");
-            public StatementSyntax Statement(ExpressionSyntax argument) => ExpressionStatement(argument);
         }
         
         private class BoolReturnMarshaller : IReturnMarshaller
