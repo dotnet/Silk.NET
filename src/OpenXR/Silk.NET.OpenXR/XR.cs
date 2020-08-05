@@ -59,14 +59,7 @@ namespace Silk.NET.OpenXR
             var l = new List<string>();
             if (string.IsNullOrWhiteSpace(layer))
             {
-                var layerCount = 0u;
-                EnumerateApiLayerProperties(0, ref layerCount, ref Unsafe.AsRef<ApiLayerProperties>(null));
-                var layers = stackalloc ApiLayerProperties[(int)layerCount];
-                EnumerateApiLayerProperties(0, ref layerCount, ref layers[0]);
-                for (var i = 0; i < layerCount; i++)
-                {
-                    Add(l, layers[i].LayerName);
-                }
+                Add(l, null);
             }
             else
             {
