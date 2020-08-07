@@ -281,6 +281,11 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="file">The file to write the class to.</param>
         public static void WriteNameContainer(this Project project, Profile profile, string file, BindTask task)
         {
+            if (File.Exists(file))
+            {
+                return;
+            }
+            
             using var sw = new StreamWriter(file);
             
             sw.WriteLine(task.LicenseText());

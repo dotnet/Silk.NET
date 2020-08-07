@@ -284,6 +284,12 @@ namespace Silk.NET.OpenCL
         [NativeApi(EntryPoint = "clCreateImageWithProperties")]
         public abstract IntPtr CreateImageWithProperties<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] Span<CLEnum> properties, [Flow(FlowDirection.In)] CLEnum flags, [Flow(FlowDirection.In)] Span<uint> image_format, [Flow(FlowDirection.In)] Span<ImageDesc> image_desc, [Flow(FlowDirection.Out)] Span<T0> host_ptr, [Flow(FlowDirection.Out)] Span<int> errcode_ret) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "clSetContextDestructorCallback")]
+        public abstract unsafe int SetContextDestructorCallback([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
+
+        [NativeApi(EntryPoint = "clSetContextDestructorCallback")]
+        public abstract int SetContextDestructorCallback<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clSetProgramReleaseCallback")]
         public abstract unsafe int SetProgramReleaseCallback([Flow(FlowDirection.In)] IntPtr program, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data);
 
@@ -939,6 +945,18 @@ namespace Silk.NET.OpenCL
         {
             // IntPtrOverloader
             return CreateImageWithProperties(new IntPtr(context), properties, flags, image_format, image_desc, host_ptr, errcode_ret);
+        }
+
+        public unsafe int SetContextDestructorCallback([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)
+        {
+            // IntPtrOverloader
+            return SetContextDestructorCallback(new IntPtr(context), pfn_notify, user_data);
+        }
+
+        public unsafe int SetContextDestructorCallback<T0>([Flow(FlowDirection.In)] int context, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] Span<T0> user_data) where T0 : unmanaged
+        {
+            // IntPtrOverloader
+            return SetContextDestructorCallback(new IntPtr(context), pfn_notify, user_data);
         }
 
         public unsafe int SetProgramReleaseCallback([Flow(FlowDirection.In)] int program, [Flow(FlowDirection.In), Ultz.SuperInvoke.InteropServices.PinObjectAttribute(Ultz.SuperInvoke.InteropServices.PinMode.UntilNextCall)] NotifyCallback pfn_notify, [Flow(FlowDirection.Out)] void* user_data)

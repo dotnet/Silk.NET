@@ -9,7 +9,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using MoreLinq.Extensions;
-using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
