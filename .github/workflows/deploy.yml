@@ -27,7 +27,7 @@ jobs:
       with:
         nuget-version: '5.x'
     - name: Push to NuGet
-      run: nuget push "build/output_packages/Silk.NET.*.nupkg" -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_TOKEN }}
+      run: nuget push "build/output_packages/Silk.NET.*.nupkg" -SkipDuplicate -Source https://api.nuget.org/v3/index.json -ApiKey ${{ secrets.NUGET_TOKEN }}
     - name: Setup Feed
       run: nuget sources add -Name GitHub -Source https://nuget.pkg.github.com/Ultz/index.json -username UltzLtd -password ${{ secrets.ULTZLTD_TOKEN }}
     - name: Push to GitHub Packages
