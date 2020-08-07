@@ -32,8 +32,6 @@ namespace Silk.NET.BuildTools.Cpp
                 Name = Path.GetFileNameWithoutExtension(fileName)
             };
 
-            //var traversals = task.ClangOpts.Traverse.Select(x => Path.GetFullPath(x).ToLower().Replace('\\', '/'))
-            //    .ToArray();
             var matcher = new Matcher();
             matcher.AddIncludePatterns
                 (task.ClangOpts.Traverse.Select(x => x.ToLower().Replace('\\', '/')));
@@ -233,17 +231,6 @@ namespace Silk.NET.BuildTools.Cpp
             {
                 bool isPlain = false;
                 VisitTypedefDeclUnderlyingType(tdDecl.UnderlyingType, ref isPlain, out var anonName, out var decl);
-                //Debug.WriteLine("!!! " + isPlain + " " + decl?.Handle.IsAnonymous + " " + ((decl as TagDecl)?.Name is null));
-                //if (!isPlain)
-                //{
-                //    return;
-                //}
-
-                //if (!decl.Handle.IsAnonymous)
-                //{
-                //    return;
-                //}
-
                 if (decl is null || !string.IsNullOrWhiteSpace(((TagDecl)decl).Name))
                 {
                     return;

@@ -46,39 +46,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// </summary>
         [JsonIgnore]
         public Function Origin { get; set; }
-
-        // /// <inheritdoc />
-        // public bool Equals(Parameter other)
-        // {
-        //     if (ReferenceEquals(null, other))
-        //     {
-        //         return false;
-        //     }
-// 
-        //     if (ReferenceEquals(this, other))
-        //     {
-        //         return true;
-        //     }
-// 
-        //     return Type.Eq(other.Type);
-        // }
-// 
-        // /// <inheritdoc />
-        // public override bool Equals(object obj)
-        // {
-        //     if (ReferenceEquals(null, obj))
-        //     {
-        //         return false;
-        //     }
-// 
-        //     if (ReferenceEquals(this, obj))
-        //     {
-        //         return true;
-        //     }
-// 
-        //     return obj is Parameter parameter && Equals(parameter);
-        // }
-
+        
         /// <inheritdoc />
         public override int GetHashCode()
         {
