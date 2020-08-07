@@ -1808,13 +1808,6 @@
               "Attributes": []
             },
             {
-              "Name": "DeviceOpenclCVersion",
-              "NativeName": "CL_DEVICE_OPENCL_C_VERSION",
-              "Value": "0x103D",
-              "Doc": "",
-              "Attributes": []
-            },
-            {
               "Name": "FPSoftFloat",
               "NativeName": "CL_FP_SOFT_FLOAT",
               "Value": "0x64",
@@ -1916,6 +1909,13 @@
               "Name": "DeviceHostUnifiedMemory",
               "NativeName": "CL_DEVICE_HOST_UNIFIED_MEMORY",
               "Value": "0x1035",
+              "Doc": "",
+              "Attributes": []
+            },
+            {
+              "Name": "DeviceOpenclCVersion",
+              "NativeName": "CL_DEVICE_OPENCL_C_VERSION",
+              "Value": "0x103D",
               "Doc": "",
               "Attributes": []
             },

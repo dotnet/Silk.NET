@@ -283,6 +283,8 @@ namespace Silk.NET.Vulkan
         Astc6x6x6UnormBlockExt = 1000288027,
         Astc6x6x6SrgbBlockExt = 1000288028,
         Astc6x6x6SfloatBlockExt = 1000288029,
+        A4R4G4B4UnormPack16Ext = 1000340000,
+        A4B4G4R4UnormPack16Ext = 1000340001,
         G8B8G8R8422Unorm = 1000156000,
         B8G8R8G8422Unorm = 1000156001,
         G8B8R83Plane420Unorm = 1000156002,

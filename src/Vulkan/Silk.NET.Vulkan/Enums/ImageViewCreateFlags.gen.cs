@@ -14,6 +14,6 @@ namespace Silk.NET.Vulkan
     public enum ImageViewCreateFlags
     {
         ImageViewCreateFragmentDensityMapDynamicBitExt = 1,
-        ImageViewCreateReserved1BitExt = 2,
+        ImageViewCreateFragmentDensityMapDeferredBitExt = 2,
     }
 }

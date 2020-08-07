@@ -31,6 +31,8 @@ namespace Silk.NET.Vulkan
         BufferUsageConditionalRenderingBitExt = 512,
         BufferUsageRayTracingBitKhr = 1024,
         BufferUsageRayTracingBitNV = 1024,
+        BufferUsageReserved19BitKhr = 524288,
+        BufferUsageReserved20BitKhr = 1048576,
         BufferUsageReserved18BitQCom = 262144,
         BufferUsageShaderDeviceAddressBitExt = 131072,
         BufferUsageShaderDeviceAddressBitKhr = 131072,

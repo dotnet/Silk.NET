@@ -17,6 +17,7 @@ namespace Silk.NET.Vulkan
         ExternalSemaphoreHandleTypeOpaqueWin32Bit = 2,
         ExternalSemaphoreHandleTypeOpaqueWin32KmtBit = 4,
         ExternalSemaphoreHandleTypeD3D12FenceBit = 8,
+        ExternalSemaphoreHandleTypeD3D11FenceBit = 8,
         ExternalSemaphoreHandleTypeSyncFDBit = 16,
     }
 }

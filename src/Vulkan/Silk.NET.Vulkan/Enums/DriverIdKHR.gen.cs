@@ -25,5 +25,6 @@ namespace Silk.NET.Vulkan
         DriverIDGgpProprietary = 11,
         DriverIDBroadcomProprietary = 12,
         DriverIDMesaLlvmpipe = 13,
+        DriverIDMoltenvk = 14,
     }
 }
