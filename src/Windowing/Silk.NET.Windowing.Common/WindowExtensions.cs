@@ -44,15 +44,18 @@ namespace Silk.NET.Windowing.Common
         public static void Run(this IView view)
         {
             view.Initialize();
-            while (!view.IsClosing)
-            {
-                view.DoEvents();
-                if (!view.IsClosing)
+            view.Run
+            (
+                () =>
                 {
-                    view.DoUpdate();
-                    view.DoRender();
+                    view.DoEvents();
+                    if (!view.IsClosing)
+                    {
+                        view.DoUpdate();
+                        view.DoRender();
+                    }
                 }
-            }
+            );
 
             view.DoEvents();
             view.Reset();

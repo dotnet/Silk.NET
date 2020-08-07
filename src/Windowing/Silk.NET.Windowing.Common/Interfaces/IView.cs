@@ -166,5 +166,11 @@ namespace Silk.NET.Windowing.Common
         /// To make all contexts non-current, use <see cref="IWindowPlatform.ClearCurrent"/>.
         /// </summary>
         void ClearContext();
+
+        /// <summary>
+        /// Initiates a render loop in which the given callback is called as fast as the underlying platform can manage.
+        /// </summary>
+        /// <param name="onFrame">The callback to run each frame.</param>
+        void Run(Action onFrame);
     }
 }

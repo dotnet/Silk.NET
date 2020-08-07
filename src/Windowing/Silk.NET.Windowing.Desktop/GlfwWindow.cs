@@ -464,6 +464,15 @@ namespace Silk.NET.Windowing.Desktop
         }
 
         /// <inheritdoc />
+        public void Run(Action onFrame)
+        {
+            while (!IsClosing)
+            {
+                onFrame();
+            }
+        }
+
+        /// <inheritdoc />
         public unsafe void MakeCurrent()
         {
             _glfw.MakeContextCurrent(_windowPtr);
