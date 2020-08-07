@@ -136,5 +136,11 @@ namespace Silk.NET.Windowing
         /// <param name="args">The delegate's arguments.</param>
         /// <returns>An object returned from the delegate.</returns>
         object Invoke(Delegate d, params object[] args);
+
+        /// <summary>
+        /// Initiates a render loop in which the given callback is called as fast as the underlying platform can manage.
+        /// </summary>
+        /// <param name="onFrame">The callback to run each frame.</param>
+        void Run(Action onFrame);
     }
 }
