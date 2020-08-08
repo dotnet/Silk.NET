@@ -574,18 +574,18 @@
                 }
             },
             "exclude": [
-                "_SDL_AudioStream",
-                "_SDL_GameController",
-                "_SDL_Haptic",
-                "_SDL_iconv_t",
-                "_SDL_Joystick",
-                "_SDL_Sensor"
             ],
             "rename": {
                 "__AnonymousEnum_SDL_shape_L80_C9": "WindowShapeModeVal",
                 "__AnonymousEnum_SDL_stdinc_L161_C9": "SdlBool",
                 "__AnonymousRecord_SDL_gamecontroller_L84_C5": "GameControllerBindValue",
-                "__AnonymousRecord_SDL_gamecontroller_L88_C9": "GameControllerHatValue"
+                "__AnonymousRecord_SDL_gamecontroller_L88_C9": "GameControllerHatValue",
+                "_SDL_Haptic": "Haptic",
+                "_SDL_GameController": "GameController",
+                "_SDL_Joystick": "Joystick",
+                "_SDL_AudioStream": "AudioStream",
+                "_SDL_iconv_t": "Icon",
+                "_SDL_Sensor": "Sensor"
             },
             "bakery": {
                 "profileNames": [
