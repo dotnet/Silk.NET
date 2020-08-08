@@ -41,8 +41,8 @@ namespace Silk.NET.SDL
         [NativeName("Name", "h")]
         public void* H;
 
-        [NativeName("Type", "struct (anonymous struct at src/Windowing/Include\\SDL_rwops.h:114:13)")]
-        [NativeName("Type.Name", "struct (anonymous struct at src/Windowing/Include\\SDL_rwops.h:114:13)")]
+        [NativeName("Type", "struct (anonymous struct at build/submodules/SDL-mirror/include\\SDL_rwops.h:114:13)")]
+        [NativeName("Type.Name", "struct (anonymous struct at build/submodules/SDL-mirror/include\\SDL_rwops.h:114:13)")]
         [NativeName("Name", "buffer")]
         public AnonymousRecordSDLRwopsL114C13 Buffer;
     }

@@ -533,7 +533,7 @@
         {
             "profileName": "SDL",
             "sources": [
-                "src/Windowing/Include/SDL.h"
+                "build/submodules/SDL-mirror/include/SDL.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -558,10 +558,10 @@
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
                     "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.26.28801/include",
                     "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/include",
-                    "-Isrc/Windowing/Include"
+                    "-Ibuild/submodules/SDL-mirror/include"
                 ],
                 "traverse": [
-                    "src/Windowing/Include/*.h"
+                    "build/submodules/SDL-mirror/include/*.h"
                 ],
                 "classes": {
                     "SDL.h": "[Core]SDL"

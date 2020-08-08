@@ -33,20 +33,20 @@ namespace Silk.NET.SDL
 
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (anonymous struct at src/Windowing/Include\\SDL_rwops.h:110:9)")]
-        [NativeName("Type.Name", "struct (anonymous struct at src/Windowing/Include\\SDL_rwops.h:110:9)")]
+        [NativeName("Type", "struct (anonymous struct at build/submodules/SDL-mirror/include\\SDL_rwops.h:110:9)")]
+        [NativeName("Type.Name", "struct (anonymous struct at build/submodules/SDL-mirror/include\\SDL_rwops.h:110:9)")]
         [NativeName("Name", "windowsio")]
         public AnonymousRecordSDLRwopsL110C9 Windowsio;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (anonymous struct at src/Windowing/Include\\SDL_rwops.h:130:9)")]
-        [NativeName("Type.Name", "struct (anonymous struct at src/Windowing/Include\\SDL_rwops.h:130:9)")]
+        [NativeName("Type", "struct (anonymous struct at build/submodules/SDL-mirror/include\\SDL_rwops.h:130:9)")]
+        [NativeName("Type.Name", "struct (anonymous struct at build/submodules/SDL-mirror/include\\SDL_rwops.h:130:9)")]
         [NativeName("Name", "mem")]
         public AnonymousRecordSDLRwopsL130C9 Mem;
 
         [FieldOffset(0)]
-        [NativeName("Type", "struct (anonymous struct at src/Windowing/Include\\SDL_rwops.h:136:9)")]
-        [NativeName("Type.Name", "struct (anonymous struct at src/Windowing/Include\\SDL_rwops.h:136:9)")]
+        [NativeName("Type", "struct (anonymous struct at build/submodules/SDL-mirror/include\\SDL_rwops.h:136:9)")]
+        [NativeName("Type.Name", "struct (anonymous struct at build/submodules/SDL-mirror/include\\SDL_rwops.h:136:9)")]
         [NativeName("Name", "unknown")]
         public AnonymousRecordSDLRwopsL136C9 Unknown;
     }

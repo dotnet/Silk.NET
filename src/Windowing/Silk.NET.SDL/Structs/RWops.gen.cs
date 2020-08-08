@@ -69,8 +69,8 @@ namespace Silk.NET.SDL
         [NativeName("Name", "type")]
         public uint Type;
 
-        [NativeName("Type", "union (anonymous union at src/Windowing/Include\\SDL_rwops.h:94:5)")]
-        [NativeName("Type.Name", "union (anonymous union at src/Windowing/Include\\SDL_rwops.h:94:5)")]
+        [NativeName("Type", "union (anonymous union at build/submodules/SDL-mirror/include\\SDL_rwops.h:94:5)")]
+        [NativeName("Type.Name", "union (anonymous union at build/submodules/SDL-mirror/include\\SDL_rwops.h:94:5)")]
         [NativeName("Name", "hidden")]
         public AnonymousRecordSDLRwopsL94C5 Hidden;
     }
