@@ -8,13 +8,15 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using Silk.NET.Core.Native;
+using Silk.NET.Core.Attributes;
 using Ultz.SuperInvoke;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDevice4444FormatsFeaturesEXT
+    [NativeName("Name", "VkPhysicalDevice4444FormatsFeaturesEXT")]
+    public unsafe partial struct PhysicalDevice4444FormatsFeaturesEXT
     {
         public PhysicalDevice4444FormatsFeaturesEXT
         (
@@ -24,19 +26,31 @@ namespace Silk.NET.Vulkan
             Bool32 formatA4B4G4R4 = default
         )
         {
-           SType = sType;
-           PNext = pNext;
-           FormatA4R4G4B4 = formatA4R4G4B4;
-           FormatA4B4G4R4 = formatA4B4G4R4;
+            SType = sType;
+            PNext = pNext;
+            FormatA4R4G4B4 = formatA4R4G4B4;
+            FormatA4B4G4R4 = formatA4B4G4R4;
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "formatA4R4G4B4")]
         public Bool32 FormatA4R4G4B4;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "formatA4B4G4R4")]
         public Bool32 FormatA4B4G4R4;
     }
 }

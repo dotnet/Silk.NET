@@ -342,7 +342,8 @@
                     "PFN_vkVoidFunction": "FuncPtr",
                     "PFN_vkDebugReportCallbackEXT": "FuncPtr",
                     "PFN_vkDebugUtilsMessengerCallbackEXT": "FuncPtr",
-                    "char": "byte"
+                    "char": "byte",
+                    "Window": "IntPtr"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -517,11 +518,102 @@
                     "ID3D12Device*": "IntPtr",
                     "ID3D12Resource*": "IntPtr",
                     "ID3D12CommandQueue*": "IntPtr",
+                    "IUnknown*": "IntPtr",
                     "EGLDisplay": "IntPtr",
                     "EGLConfig": "IntPtr",
                     "EGLContext": "IntPtr",
                     "GLXFBConfig": "IntPtr",
                     "VkFormat": "uint"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "SDL",
+            "sources": [
+                "build/submodules/SDL-mirror/include/SDL.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "sdl",
+            "controlDescriptors": [
+                "convert-windows-only"
+            ],
+            "converter": {},
+            "prefix": "sdl",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.26.28801/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/include",
+                    "-Ibuild/submodules/SDL-mirror/include",
+                    "-D__IPHONEOS__",
+                    "-D__ANDROID__",
+                    "-D__WIN32__",
+                    "-D__WINRT__",
+                    "-D__LINUX__"
+                ],
+                "traverse": [
+                    "!build/submodules/SDL-mirror/include/SDL_rwops.h",
+                    "build/submodules/SDL-mirror/include/*.h"
+                ],
+                "classes": {
+                    "SDL.h": "[Core]SDL"
+                }
+            },
+            "exclude": [
+            ],
+            "rename": {
+                "__AnonymousEnum_SDL_shape_L80_C9": "WindowShapeModeVal",
+                "__AnonymousEnum_SDL_stdinc_L161_C9": "SdlBool",
+                "__AnonymousRecord_SDL_gamecontroller_L84_C5": "GameControllerBindValue",
+                "__AnonymousRecord_SDL_gamecontroller_L88_C9": "GameControllerHatValue",
+                "_SDL_Haptic": "Haptic",
+                "_SDL_GameController": "GameController",
+                "_SDL_Joystick": "Joystick",
+                "_SDL_AudioStream": "AudioStream",
+                "_SDL_iconv_t": "Icon",
+                "_SDL_Sensor": "Sensor"
+            },
+            "bakery": {
+                "profileNames": [
+                    "SDL"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Windowing",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.SDL",
+            "extensionsNamespace": "Silk.NET.SDL.Extensions",
+            "legacyNameContainer": {
+                "Linux": "libSDL2-2.0.so.0",
+                "Windows": "SDL2.dll",
+                "MacOS": "libSDL2-2.0.0.dylib",
+                "Android": "libSDL2-2.0.so.0",
+                "IOS": "__Internal",
+                "ClassName": "SDLLibraryNameContainer"
+            },
+            "typeMaps": [
+                {
+                    "$typemapPrecedesInjections": "true",
+                    "WindowShapeMode": "WindowShapeModeVal",
+                    "SDL_bool": "SdlBool",
+                    "SDL_RWops": "RWops"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"

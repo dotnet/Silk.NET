@@ -62,7 +62,6 @@
     "int64_t": "long",
     "int32_t": "int",
     "Display": "IntPtr",
-    "Window": "IntPtr",
     "Pixmap": "IntPtr",
     "Colormap": "IntPtr",
     "GLXWindow": "IntPtr",

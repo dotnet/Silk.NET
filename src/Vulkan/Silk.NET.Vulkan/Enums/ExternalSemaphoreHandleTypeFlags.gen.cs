@@ -23,6 +23,8 @@ namespace Silk.NET.Vulkan
         ExternalSemaphoreHandleTypeOpaqueWin32KmtBit = 4,
         [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_D3D12_FENCE_BIT")]
         ExternalSemaphoreHandleTypeD3D12FenceBit = 8,
+        [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_D3D11_FENCE_BIT")]
+        ExternalSemaphoreHandleTypeD3D11FenceBit = 8,
         [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_SYNC_FD_BIT")]
         ExternalSemaphoreHandleTypeSyncFDBit = 16,
     }

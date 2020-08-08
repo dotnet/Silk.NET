@@ -126,6 +126,14 @@ namespace Silk.NET.Windowing.Internals
         }
 
         // Game loop implementation
+        public virtual void Run(Action onFrame)
+        {
+            while (!IsClosing)
+            {
+                onFrame();
+            }
+        }
+
         public void DoRender()
         {
             DoInvokes();

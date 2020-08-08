@@ -528,8 +528,6 @@ namespace Silk.NET.OpenCL
         DeviceNativeVectorWidthDouble = 0x103B,
         [NativeName("Name", "CL_DEVICE_NATIVE_VECTOR_WIDTH_HALF")]
         DeviceNativeVectorWidthHalf = 0x103C,
-        [NativeName("Name", "CL_DEVICE_OPENCL_C_VERSION")]
-        DeviceOpenclCVersion = 0x103D,
         [NativeName("Name", "CL_FP_SOFT_FLOAT")]
         FPSoftFloat = 0x64,
         [NativeName("Name", "CL_CONTEXT_NUM_DEVICES")]
@@ -560,6 +558,8 @@ namespace Silk.NET.OpenCL
         BufferCreateTypeRegion = 0x1220,
         [NativeName("Name", "CL_DEVICE_HOST_UNIFIED_MEMORY")]
         DeviceHostUnifiedMemory = 0x1035,
+        [NativeName("Name", "CL_DEVICE_OPENCL_C_VERSION")]
+        DeviceOpenclCVersion = 0x103D,
         [NativeName("Name", "CL_COMPILE_PROGRAM_FAILURE")]
         CompileProgramFailure = unchecked((int)0xFFFFFFFFFFFFFFF1),
         [NativeName("Name", "CL_LINKER_NOT_AVAILABLE")]
@@ -876,6 +876,10 @@ namespace Silk.NET.OpenCL
         DeviceAtomicScopeDevice = 0x32,
         [NativeName("Name", "CL_DEVICE_ATOMIC_SCOPE_ALL_DEVICES")]
         DeviceAtomicScopeAllDevices = 0x64,
+        [NativeName("Name", "CL_DEVICE_QUEUE_SUPPORTED")]
+        DeviceQueueSupported = 0x1,
+        [NativeName("Name", "CL_DEVICE_QUEUE_REPLACEABLE_DEFAULT")]
+        DeviceQueueReplaceableDefault = 0x2,
         [NativeName("Name", "CL_PLATFORM_NUMERIC_VERSION")]
         PlatformNumericVersion = 0x906,
         [NativeName("Name", "CL_PLATFORM_EXTENSIONS_WITH_VERSION")]
@@ -908,6 +912,8 @@ namespace Silk.NET.OpenCL
         DeviceBuiltInKernelsWithVersion = 0x1062,
         [NativeName("Name", "CL_DEVICE_PREFERRED_WORK_GROUP_SIZE_MULTIPLE")]
         DevicePreferredWorkGroupSizeMultiple = 0x1067,
+        [NativeName("Name", "CL_DEVICE_LATEST_CONFORMANCE_VERSION_PASSED")]
+        DeviceLatestConformanceVersionPassed = 0x1072,
         [NativeName("Name", "CL_PIPE_PROPERTIES")]
         PipeProperties = 0x1122,
         [NativeName("Name", "CL_SAMPLER_PROPERTIES")]
@@ -926,9 +932,5 @@ namespace Silk.NET.OpenCL
         VersionPatchBits = 0x12,
         [NativeName("Name", "CL_NAME_VERSION_MAX_NAME_SIZE")]
         NameVersionMaxNameSize = 0x64,
-        [NativeName("Name", "CL_DEVICE_QUEUE_SUPPORTED")]
-        DeviceQueueSupported = 0x1,
-        [NativeName("Name", "CL_DEVICE_QUEUE_REPLACEABLE_DEFAULT")]
-        DeviceQueueReplaceableDefault = 0x2,
     }
 }

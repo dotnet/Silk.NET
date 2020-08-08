@@ -14,7 +14,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using Silk.NET.BuildTools.Baking;
 using Silk.NET.BuildTools.Bind;
 using Silk.NET.BuildTools.Common;

@@ -820,6 +820,8 @@ namespace Silk.NET.Vulkan
         PipelineRasterizationLineStateCreateInfoExt = 1000259001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_LINE_RASTERIZATION_PROPERTIES_EXT")]
         PhysicalDeviceLineRasterizationPropertiesExt = 1000259002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_FLOAT_FEATURES_EXT")]
+        PhysicalDeviceShaderAtomicFloatFeaturesExt = 1000260000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_HOST_QUERY_RESET_FEATURES_EXT")]
         PhysicalDeviceHostQueryResetFeaturesExt = 1000261000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INDEX_TYPE_UINT8_FEATURES_EXT")]
@@ -896,6 +898,10 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceFragmentDensityMap2FeaturesExt = 1000332000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_2_PROPERTIES_EXT")]
         PhysicalDeviceFragmentDensityMap2PropertiesExt = 1000332001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_ROBUSTNESS_FEATURES_EXT")]
+        PhysicalDeviceImageRobustnessFeaturesExt = 1000335000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_4444_FORMATS_FEATURES_EXT")]
+        PhysicalDevice4444FormatsFeaturesExt = 1000340000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DIRECTFB_SURFACE_CREATE_INFO_EXT")]
         DirectfbSurfaceCreateInfoExt = 1000346000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]
