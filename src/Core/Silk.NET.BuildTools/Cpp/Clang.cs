@@ -33,13 +33,16 @@ namespace Silk.NET.BuildTools.Cpp
             };
 
             var matcher = new Matcher();
-            matcher.AddIncludePatterns
-                (task.ClangOpts.Traverse.Select(x => x.ToLower().Replace('\\', '/')));
+            matcher.AddIncludePatterns(task.ClangOpts.Traverse.Select(x => x.ToLower().Replace('\\', '/'))
+                .Where(x => !x.StartsWith("!")));
+            matcher.AddExcludePatterns(task.ClangOpts.Traverse.Select(x => x.ToLower().Replace('\\', '/'))
+                .Where(x => x.StartsWith("!"))
+                .Select(x => x.Substring(1)));
+            
             var traversals = matcher.GetResultsInFullPath(Environment.CurrentDirectory)
                 .Select(x => Path.GetFullPath(x).ToLower().Replace('\\', '/'))
                 .ToArray();
 
-            var untraversedFiles = new List<string>();
             Console.WriteLine("Loading input header...");
             using var ms = new MemoryStream();
             input.CopyTo(ms);
@@ -167,7 +170,6 @@ namespace Silk.NET.BuildTools.Cpp
                             if (!traversals.Contains
                                 (Path.GetFullPath(file.Name.ToString()).ToLower().Replace('\\', '/')))
                             {
-                                untraversedFiles.Add(file.Name.ToString());
                                 continue;
                             }
                         }

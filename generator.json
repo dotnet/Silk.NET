@@ -558,9 +558,15 @@
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
                     "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.26.28801/include",
                     "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.26.28801/include",
-                    "-Ibuild/submodules/SDL-mirror/include"
+                    "-Ibuild/submodules/SDL-mirror/include",
+                    "-D__IPHONEOS__",
+                    "-D__ANDROID__",
+                    "-D__WIN32__",
+                    "-D__WINRT__",
+                    "-D__LINUX__"
                 ],
                 "traverse": [
+                    "!build/submodules/SDL-mirror/include/SDL_rwops.h",
                     "build/submodules/SDL-mirror/include/*.h"
                 ],
                 "classes": {
@@ -568,6 +574,12 @@
                 }
             },
             "exclude": [
+                "_SDL_AudioStream",
+                "_SDL_GameController",
+                "_SDL_Haptic",
+                "_SDL_iconv_t",
+                "_SDL_Joystick",
+                "_SDL_Sensor"
             ],
             "rename": {
                 "__AnonymousEnum_SDL_shape_L80_C9": "WindowShapeModeVal",
@@ -600,7 +612,8 @@
                 {
                     "$typemapPrecedesInjections": "true",
                     "WindowShapeMode": "WindowShapeModeVal",
-                    "SDL_bool": "SdlBool"
+                    "SDL_bool": "SdlBool",
+                    "SDL_RWops": "RWops"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"

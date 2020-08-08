@@ -770,32 +770,32 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 557, Column 37 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_open")]
-        public abstract unsafe SDLIconvT* IconvOpen(byte* tocode, byte* fromcode);
+        public abstract unsafe _SDL_iconv_t* IconvOpen(byte* tocode, byte* fromcode);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 557, Column 37 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_open")]
-        public abstract unsafe SDLIconvT* IconvOpen(Span<byte> tocode, Span<byte> fromcode);
+        public abstract unsafe _SDL_iconv_t* IconvOpen(Span<byte> tocode, Span<byte> fromcode);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 559, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_close")]
-        public abstract unsafe int IconvClose(SDLIconvT* cd);
+        public abstract unsafe int IconvClose(_SDL_iconv_t* cd);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 559, Column 29 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_close")]
-        public abstract int IconvClose(Span<SDLIconvT> cd);
+        public abstract int IconvClose(Span<_SDL_iconv_t> cd);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 560, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv")]
-        public abstract unsafe uint Iconv(SDLIconvT* cd, byte** inbuf, uint* inbytesleft, byte** outbuf, uint* outbytesleft);
+        public abstract unsafe uint Iconv(_SDL_iconv_t* cd, byte** inbuf, uint* inbytesleft, byte** outbuf, uint* outbytesleft);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 560, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv")]
-        public abstract unsafe uint Iconv(Span<SDLIconvT> cd, byte** inbuf, Span<uint> inbytesleft, byte** outbuf, Span<uint> outbytesleft);
+        public abstract unsafe uint Iconv(Span<_SDL_iconv_t> cd, byte** inbuf, Span<uint> inbytesleft, byte** outbuf, Span<uint> outbytesleft);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 567, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
@@ -831,6 +831,26 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 139, Column 30 in build/submodules/SDL-mirror/include\\SDL_main.h")]
         [NativeApi(EntryPoint = "SDL_UnregisterApp")]
         public abstract void UnregisterApp();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
+        public abstract unsafe int WinRTRunApp(void* mainFunction, void* reserved);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
+        public abstract int WinRTRunApp<T0, T1>(Span<T0> mainFunction, Span<T1> reserved) where T0 : unmanaged where T1 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [NativeApi(EntryPoint = "SDL_UIKitRunApp")]
+        public abstract unsafe int UIKitRunApp(int argc, byte** argv, void* mainFunction);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        [NativeApi(EntryPoint = "SDL_UIKitRunApp")]
+        public abstract unsafe int UIKitRunApp<T0>(int argc, byte** argv, Span<T0> mainFunction) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 52, Column 25 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
@@ -1263,281 +1283,6 @@ namespace Silk.NET.SDL
         public abstract int TLSSet<T0, T1>(uint id, Span<T0> value, Span<T1> destructor) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 153, Column 36 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWFromFile")]
-        public abstract unsafe RWops* RWFromFile(byte* file, byte* mode);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 153, Column 36 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWFromFile")]
-        public abstract unsafe RWops* RWFromFile(Span<byte> file, Span<byte> mode);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 160, Column 36 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWFromFP")]
-        public abstract unsafe RWops* RWFromFP(void* fp, SdlBool autoclose);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 160, Column 36 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWFromFP")]
-        public abstract unsafe RWops* RWFromFP<T0>(Span<T0> fp, SdlBool autoclose) where T0 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 164, Column 36 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWFromMem")]
-        public abstract unsafe RWops* RWFromMem(void* mem, int size);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 164, Column 36 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWFromMem")]
-        public abstract unsafe RWops* RWFromMem<T0>(Span<T0> mem, int size) where T0 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 165, Column 36 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWFromConstMem")]
-        public abstract unsafe RWops* RWFromConstMem(void* mem, int size);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 165, Column 36 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWFromConstMem")]
-        public abstract unsafe RWops* RWFromConstMem<T0>(Span<T0> mem, int size) where T0 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 171, Column 36 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_AllocRW")]
-        public abstract unsafe RWops* AllocRW();
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 172, Column 30 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_FreeRW")]
-        public abstract unsafe void FreeRW(RWops* area);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 172, Column 30 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_FreeRW")]
-        public abstract void FreeRW(Span<RWops> area);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 181, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWsize")]
-        public abstract unsafe long RWsize(RWops* context);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 181, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWsize")]
-        public abstract long RWsize(Span<RWops> context);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 189, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWseek")]
-        public abstract unsafe long RWseek(RWops* context, long offset, int whence);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 189, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWseek")]
-        public abstract long RWseek(Span<RWops> context, long offset, int whence);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 195, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWtell")]
-        public abstract unsafe long RWtell(RWops* context);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 195, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWtell")]
-        public abstract long RWtell(Span<RWops> context);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 203, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWread")]
-        public abstract unsafe uint RWread(RWops* context, void* ptr, uint size, uint maxnum);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 203, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWread")]
-        public abstract uint RWread<T0>(Span<RWops> context, Span<T0> ptr, uint size, uint maxnum) where T0 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 212, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWwrite")]
-        public abstract unsafe uint RWwrite(RWops* context, void* ptr, uint size, uint num);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 212, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWwrite")]
-        public abstract uint RWwrite<T0>(Span<RWops> context, Span<T0> ptr, uint size, uint num) where T0 : unmanaged;
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 220, Column 29 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWclose")]
-        public abstract unsafe int RWclose(RWops* context);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 220, Column 29 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWclose")]
-        public abstract int RWclose(Span<RWops> context);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 235, Column 31 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_LoadFile_RW")]
-        public abstract unsafe void* LoadFileRW(RWops* src, uint* datasize, int freesrc);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 235, Column 31 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_LoadFile_RW")]
-        public abstract unsafe void* LoadFileRW(Span<RWops> src, Span<uint> datasize, int freesrc);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 251, Column 31 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_LoadFile")]
-        public abstract unsafe void* LoadFile(byte* file, uint* datasize);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 251, Column 31 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_LoadFile")]
-        public abstract unsafe void* LoadFile(Span<byte> file, Span<uint> datasize);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 259, Column 31 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_ReadU8")]
-        public abstract unsafe byte ReadU8(RWops* src);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 259, Column 31 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_ReadU8")]
-        public abstract byte ReadU8(Span<RWops> src);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 260, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_ReadLE16")]
-        public abstract unsafe ushort ReadLE16(RWops* src);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 260, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_ReadLE16")]
-        public abstract ushort ReadLE16(Span<RWops> src);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 261, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_ReadBE16")]
-        public abstract unsafe ushort ReadBE16(RWops* src);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 261, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_ReadBE16")]
-        public abstract ushort ReadBE16(Span<RWops> src);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 262, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_ReadLE32")]
-        public abstract unsafe uint ReadLE32(RWops* src);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 262, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_ReadLE32")]
-        public abstract uint ReadLE32(Span<RWops> src);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 263, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_ReadBE32")]
-        public abstract unsafe uint ReadBE32(RWops* src);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 263, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_ReadBE32")]
-        public abstract uint ReadBE32(Span<RWops> src);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 264, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_ReadLE64")]
-        public abstract unsafe ulong ReadLE64(RWops* src);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 264, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_ReadLE64")]
-        public abstract ulong ReadLE64(Span<RWops> src);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 265, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_ReadBE64")]
-        public abstract unsafe ulong ReadBE64(RWops* src);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 265, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_ReadBE64")]
-        public abstract ulong ReadBE64(Span<RWops> src);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 274, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_WriteU8")]
-        public abstract unsafe uint WriteU8(RWops* dst, byte value);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 274, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_WriteU8")]
-        public abstract uint WriteU8(Span<RWops> dst, byte value);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 275, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_WriteLE16")]
-        public abstract unsafe uint WriteLE16(RWops* dst, ushort value);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 275, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_WriteLE16")]
-        public abstract uint WriteLE16(Span<RWops> dst, ushort value);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 276, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_WriteBE16")]
-        public abstract unsafe uint WriteBE16(RWops* dst, ushort value);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 276, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_WriteBE16")]
-        public abstract uint WriteBE16(Span<RWops> dst, ushort value);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 277, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_WriteLE32")]
-        public abstract unsafe uint WriteLE32(RWops* dst, uint value);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 277, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_WriteLE32")]
-        public abstract uint WriteLE32(Span<RWops> dst, uint value);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 278, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_WriteBE32")]
-        public abstract unsafe uint WriteBE32(RWops* dst, uint value);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 278, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_WriteBE32")]
-        public abstract uint WriteBE32(Span<RWops> dst, uint value);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 279, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_WriteLE64")]
-        public abstract unsafe uint WriteLE64(RWops* dst, ulong value);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 279, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_WriteLE64")]
-        public abstract uint WriteLE64(Span<RWops> dst, ulong value);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 280, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_WriteBE64")]
-        public abstract unsafe uint WriteBE64(RWops* dst, ulong value);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 280, Column 32 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_WriteBE64")]
-        public abstract uint WriteBE64(Span<RWops> dst, ulong value);
-
-        /// <summary>To be added.</summary>
         [NativeName("Src", "Line 251, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_GetNumAudioDrivers")]
         public abstract int GetNumAudioDrivers();
@@ -1660,67 +1405,67 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 552, Column 43 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_NewAudioStream")]
-        public abstract unsafe SDLAudioStream* NewAudioStream(ushort src_format, byte src_channels, int src_rate, ushort dst_format, byte dst_channels, int dst_rate);
+        public abstract unsafe _SDL_AudioStream* NewAudioStream(ushort src_format, byte src_channels, int src_rate, ushort dst_format, byte dst_channels, int dst_rate);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 574, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioStreamPut")]
-        public abstract unsafe int AudioStreamPut(SDLAudioStream* stream, void* buf, int len);
+        public abstract unsafe int AudioStreamPut(_SDL_AudioStream* stream, void* buf, int len);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 574, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioStreamPut")]
-        public abstract int AudioStreamPut<T0>(Span<SDLAudioStream> stream, Span<T0> buf, int len) where T0 : unmanaged;
+        public abstract int AudioStreamPut<T0>(Span<_SDL_AudioStream> stream, Span<T0> buf, int len) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 591, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioStreamGet")]
-        public abstract unsafe int AudioStreamGet(SDLAudioStream* stream, void* buf, int len);
+        public abstract unsafe int AudioStreamGet(_SDL_AudioStream* stream, void* buf, int len);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 591, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioStreamGet")]
-        public abstract int AudioStreamGet<T0>(Span<SDLAudioStream> stream, Span<T0> buf, int len) where T0 : unmanaged;
+        public abstract int AudioStreamGet<T0>(Span<_SDL_AudioStream> stream, Span<T0> buf, int len) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 606, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioStreamAvailable")]
-        public abstract unsafe int AudioStreamAvailable(SDLAudioStream* stream);
+        public abstract unsafe int AudioStreamAvailable(_SDL_AudioStream* stream);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 606, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioStreamAvailable")]
-        public abstract int AudioStreamAvailable(Span<SDLAudioStream> stream);
+        public abstract int AudioStreamAvailable(Span<_SDL_AudioStream> stream);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 623, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioStreamFlush")]
-        public abstract unsafe int AudioStreamFlush(SDLAudioStream* stream);
+        public abstract unsafe int AudioStreamFlush(_SDL_AudioStream* stream);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 623, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioStreamFlush")]
-        public abstract int AudioStreamFlush(Span<SDLAudioStream> stream);
+        public abstract int AudioStreamFlush(Span<_SDL_AudioStream> stream);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 635, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioStreamClear")]
-        public abstract unsafe void AudioStreamClear(SDLAudioStream* stream);
+        public abstract unsafe void AudioStreamClear(_SDL_AudioStream* stream);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 635, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_AudioStreamClear")]
-        public abstract void AudioStreamClear(Span<SDLAudioStream> stream);
+        public abstract void AudioStreamClear(Span<_SDL_AudioStream> stream);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 647, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_FreeAudioStream")]
-        public abstract unsafe void FreeAudioStream(SDLAudioStream* stream);
+        public abstract unsafe void FreeAudioStream(_SDL_AudioStream* stream);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 647, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
         [NativeApi(EntryPoint = "SDL_FreeAudioStream")]
-        public abstract void FreeAudioStream(Span<SDLAudioStream> stream);
+        public abstract void FreeAudioStream(Span<_SDL_AudioStream> stream);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 657, Column 30 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
@@ -3455,97 +3200,97 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 190, Column 39 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickOpen")]
-        public abstract unsafe SDLJoystick* JoystickOpen(int device_index);
+        public abstract unsafe _SDL_Joystick* JoystickOpen(int device_index);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 195, Column 39 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickFromInstanceID")]
-        public abstract unsafe SDLJoystick* JoystickFromInstanceID(int instance_id);
+        public abstract unsafe _SDL_Joystick* JoystickFromInstanceID(int instance_id);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 200, Column 39 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickFromPlayerIndex")]
-        public abstract unsafe SDLJoystick* JoystickFromPlayerIndex(int player_index);
+        public abstract unsafe _SDL_Joystick* JoystickFromPlayerIndex(int player_index);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 206, Column 37 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickName")]
-        public abstract unsafe byte* JoystickName(SDLJoystick* joystick);
+        public abstract unsafe byte* JoystickName(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 206, Column 37 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickName")]
-        public abstract unsafe byte* JoystickName(Span<SDLJoystick> joystick);
+        public abstract unsafe byte* JoystickName(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 213, Column 29 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetPlayerIndex")]
-        public abstract unsafe int JoystickGetPlayerIndex(SDLJoystick* joystick);
+        public abstract unsafe int JoystickGetPlayerIndex(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 213, Column 29 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetPlayerIndex")]
-        public abstract int JoystickGetPlayerIndex(Span<SDLJoystick> joystick);
+        public abstract int JoystickGetPlayerIndex(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 218, Column 30 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickSetPlayerIndex")]
-        public abstract unsafe void JoystickSetPlayerIndex(SDLJoystick* joystick, int player_index);
+        public abstract unsafe void JoystickSetPlayerIndex(_SDL_Joystick* joystick, int player_index);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 218, Column 30 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickSetPlayerIndex")]
-        public abstract void JoystickSetPlayerIndex(Span<SDLJoystick> joystick, int player_index);
+        public abstract void JoystickSetPlayerIndex(Span<_SDL_Joystick> joystick, int player_index);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 223, Column 42 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetGUID")]
-        public abstract unsafe JoystickGUID JoystickGetGUID(SDLJoystick* joystick);
+        public abstract unsafe JoystickGUID JoystickGetGUID(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 223, Column 42 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetGUID")]
-        public abstract JoystickGUID JoystickGetGUID(Span<SDLJoystick> joystick);
+        public abstract JoystickGUID JoystickGetGUID(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 229, Column 32 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetVendor")]
-        public abstract unsafe ushort JoystickGetVendor(SDLJoystick* joystick);
+        public abstract unsafe ushort JoystickGetVendor(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 229, Column 32 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetVendor")]
-        public abstract ushort JoystickGetVendor(Span<SDLJoystick> joystick);
+        public abstract ushort JoystickGetVendor(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 235, Column 32 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetProduct")]
-        public abstract unsafe ushort JoystickGetProduct(SDLJoystick* joystick);
+        public abstract unsafe ushort JoystickGetProduct(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 235, Column 32 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetProduct")]
-        public abstract ushort JoystickGetProduct(Span<SDLJoystick> joystick);
+        public abstract ushort JoystickGetProduct(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 241, Column 32 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetProductVersion")]
-        public abstract unsafe ushort JoystickGetProductVersion(SDLJoystick* joystick);
+        public abstract unsafe ushort JoystickGetProductVersion(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 241, Column 32 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetProductVersion")]
-        public abstract ushort JoystickGetProductVersion(Span<SDLJoystick> joystick);
+        public abstract ushort JoystickGetProductVersion(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 246, Column 42 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetType")]
-        public abstract unsafe JoystickType JoystickGetType(SDLJoystick* joystick);
+        public abstract unsafe JoystickType JoystickGetType(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 246, Column 42 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetType")]
-        public abstract JoystickType JoystickGetType(Span<SDLJoystick> joystick);
+        public abstract JoystickType JoystickGetType(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 252, Column 30 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
@@ -3570,62 +3315,62 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 262, Column 34 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetAttached")]
-        public abstract unsafe SdlBool JoystickGetAttached(SDLJoystick* joystick);
+        public abstract unsafe SdlBool JoystickGetAttached(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 262, Column 34 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetAttached")]
-        public abstract SdlBool JoystickGetAttached(Span<SDLJoystick> joystick);
+        public abstract SdlBool JoystickGetAttached(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 267, Column 40 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickInstanceID")]
-        public abstract unsafe int JoystickInstanceID(SDLJoystick* joystick);
+        public abstract unsafe int JoystickInstanceID(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 267, Column 40 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickInstanceID")]
-        public abstract int JoystickInstanceID(Span<SDLJoystick> joystick);
+        public abstract int JoystickInstanceID(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 272, Column 29 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickNumAxes")]
-        public abstract unsafe int JoystickNumAxes(SDLJoystick* joystick);
+        public abstract unsafe int JoystickNumAxes(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 272, Column 29 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickNumAxes")]
-        public abstract int JoystickNumAxes(Span<SDLJoystick> joystick);
+        public abstract int JoystickNumAxes(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 280, Column 29 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickNumBalls")]
-        public abstract unsafe int JoystickNumBalls(SDLJoystick* joystick);
+        public abstract unsafe int JoystickNumBalls(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 280, Column 29 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickNumBalls")]
-        public abstract int JoystickNumBalls(Span<SDLJoystick> joystick);
+        public abstract int JoystickNumBalls(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 285, Column 29 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickNumHats")]
-        public abstract unsafe int JoystickNumHats(SDLJoystick* joystick);
+        public abstract unsafe int JoystickNumHats(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 285, Column 29 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickNumHats")]
-        public abstract int JoystickNumHats(Span<SDLJoystick> joystick);
+        public abstract int JoystickNumHats(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 290, Column 29 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickNumButtons")]
-        public abstract unsafe int JoystickNumButtons(SDLJoystick* joystick);
+        public abstract unsafe int JoystickNumButtons(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 290, Column 29 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickNumButtons")]
-        public abstract int JoystickNumButtons(Span<SDLJoystick> joystick);
+        public abstract int JoystickNumButtons(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 298, Column 30 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
@@ -3640,82 +3385,82 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 320, Column 32 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetAxis")]
-        public abstract unsafe short JoystickGetAxis(SDLJoystick* joystick, int axis);
+        public abstract unsafe short JoystickGetAxis(_SDL_Joystick* joystick, int axis);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 320, Column 32 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetAxis")]
-        public abstract short JoystickGetAxis(Span<SDLJoystick> joystick, int axis);
+        public abstract short JoystickGetAxis(Span<_SDL_Joystick> joystick, int axis);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 332, Column 34 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetAxisInitialState")]
-        public abstract unsafe SdlBool JoystickGetAxisInitialState(SDLJoystick* joystick, int axis, short* state);
+        public abstract unsafe SdlBool JoystickGetAxisInitialState(_SDL_Joystick* joystick, int axis, short* state);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 332, Column 34 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetAxisInitialState")]
-        public abstract SdlBool JoystickGetAxisInitialState(Span<SDLJoystick> joystick, int axis, Span<short> state);
+        public abstract SdlBool JoystickGetAxisInitialState(Span<_SDL_Joystick> joystick, int axis, Span<short> state);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 366, Column 31 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetHat")]
-        public abstract unsafe byte JoystickGetHat(SDLJoystick* joystick, int hat);
+        public abstract unsafe byte JoystickGetHat(_SDL_Joystick* joystick, int hat);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 366, Column 31 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetHat")]
-        public abstract byte JoystickGetHat(Span<SDLJoystick> joystick, int hat);
+        public abstract byte JoystickGetHat(Span<_SDL_Joystick> joystick, int hat);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 376, Column 29 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetBall")]
-        public abstract unsafe int JoystickGetBall(SDLJoystick* joystick, int ball, int* dx, int* dy);
+        public abstract unsafe int JoystickGetBall(_SDL_Joystick* joystick, int ball, int* dx, int* dy);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 376, Column 29 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetBall")]
-        public abstract int JoystickGetBall(Span<SDLJoystick> joystick, int ball, Span<int> dx, Span<int> dy);
+        public abstract int JoystickGetBall(Span<_SDL_Joystick> joystick, int ball, Span<int> dx, Span<int> dy);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 384, Column 31 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetButton")]
-        public abstract unsafe byte JoystickGetButton(SDLJoystick* joystick, int button);
+        public abstract unsafe byte JoystickGetButton(_SDL_Joystick* joystick, int button);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 384, Column 31 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetButton")]
-        public abstract byte JoystickGetButton(Span<SDLJoystick> joystick, int button);
+        public abstract byte JoystickGetButton(Span<_SDL_Joystick> joystick, int button);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 398, Column 29 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickRumble")]
-        public abstract unsafe int JoystickRumble(SDLJoystick* joystick, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
+        public abstract unsafe int JoystickRumble(_SDL_Joystick* joystick, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 398, Column 29 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickRumble")]
-        public abstract int JoystickRumble(Span<SDLJoystick> joystick, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
+        public abstract int JoystickRumble(Span<_SDL_Joystick> joystick, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 403, Column 30 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickClose")]
-        public abstract unsafe void JoystickClose(SDLJoystick* joystick);
+        public abstract unsafe void JoystickClose(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 403, Column 30 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickClose")]
-        public abstract void JoystickClose(Span<SDLJoystick> joystick);
+        public abstract void JoystickClose(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 408, Column 48 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickCurrentPowerLevel")]
-        public abstract unsafe JoystickPowerLevel JoystickCurrentPowerLevel(SDLJoystick* joystick);
+        public abstract unsafe JoystickPowerLevel JoystickCurrentPowerLevel(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 408, Column 48 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickCurrentPowerLevel")]
-        public abstract JoystickPowerLevel JoystickCurrentPowerLevel(Span<SDLJoystick> joystick);
+        public abstract JoystickPowerLevel JoystickCurrentPowerLevel(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 131, Column 29 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
@@ -3755,12 +3500,12 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 173, Column 32 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerMapping")]
-        public abstract unsafe byte* GameControllerMapping(SDLGameController* gamecontroller);
+        public abstract unsafe byte* GameControllerMapping(_SDL_GameController* gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 173, Column 32 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerMapping")]
-        public abstract unsafe byte* GameControllerMapping(Span<SDLGameController> gamecontroller);
+        public abstract unsafe byte* GameControllerMapping(Span<_SDL_GameController> gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 178, Column 34 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
@@ -3785,107 +3530,107 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 210, Column 45 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerOpen")]
-        public abstract unsafe SDLGameController* GameControllerOpen(int joystick_index);
+        public abstract unsafe _SDL_GameController* GameControllerOpen(int joystick_index);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 215, Column 45 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerFromInstanceID")]
-        public abstract unsafe SDLGameController* GameControllerFromInstanceID(int joyid);
+        public abstract unsafe _SDL_GameController* GameControllerFromInstanceID(int joyid);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 220, Column 45 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerFromPlayerIndex")]
-        public abstract unsafe SDLGameController* GameControllerFromPlayerIndex(int player_index);
+        public abstract unsafe _SDL_GameController* GameControllerFromPlayerIndex(int player_index);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 225, Column 37 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerName")]
-        public abstract unsafe byte* GameControllerName(SDLGameController* gamecontroller);
+        public abstract unsafe byte* GameControllerName(_SDL_GameController* gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 225, Column 37 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerName")]
-        public abstract unsafe byte* GameControllerName(Span<SDLGameController> gamecontroller);
+        public abstract unsafe byte* GameControllerName(Span<_SDL_GameController> gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 230, Column 48 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetType")]
-        public abstract unsafe GameControllerType GameControllerGetType(SDLGameController* gamecontroller);
+        public abstract unsafe GameControllerType GameControllerGetType(_SDL_GameController* gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 230, Column 48 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetType")]
-        public abstract GameControllerType GameControllerGetType(Span<SDLGameController> gamecontroller);
+        public abstract GameControllerType GameControllerGetType(Span<_SDL_GameController> gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 237, Column 29 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetPlayerIndex")]
-        public abstract unsafe int GameControllerGetPlayerIndex(SDLGameController* gamecontroller);
+        public abstract unsafe int GameControllerGetPlayerIndex(_SDL_GameController* gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 237, Column 29 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetPlayerIndex")]
-        public abstract int GameControllerGetPlayerIndex(Span<SDLGameController> gamecontroller);
+        public abstract int GameControllerGetPlayerIndex(Span<_SDL_GameController> gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 242, Column 30 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerSetPlayerIndex")]
-        public abstract unsafe void GameControllerSetPlayerIndex(SDLGameController* gamecontroller, int player_index);
+        public abstract unsafe void GameControllerSetPlayerIndex(_SDL_GameController* gamecontroller, int player_index);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 242, Column 30 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerSetPlayerIndex")]
-        public abstract void GameControllerSetPlayerIndex(Span<SDLGameController> gamecontroller, int player_index);
+        public abstract void GameControllerSetPlayerIndex(Span<_SDL_GameController> gamecontroller, int player_index);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 248, Column 32 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetVendor")]
-        public abstract unsafe ushort GameControllerGetVendor(SDLGameController* gamecontroller);
+        public abstract unsafe ushort GameControllerGetVendor(_SDL_GameController* gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 248, Column 32 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetVendor")]
-        public abstract ushort GameControllerGetVendor(Span<SDLGameController> gamecontroller);
+        public abstract ushort GameControllerGetVendor(Span<_SDL_GameController> gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 254, Column 32 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetProduct")]
-        public abstract unsafe ushort GameControllerGetProduct(SDLGameController* gamecontroller);
+        public abstract unsafe ushort GameControllerGetProduct(_SDL_GameController* gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 254, Column 32 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetProduct")]
-        public abstract ushort GameControllerGetProduct(Span<SDLGameController> gamecontroller);
+        public abstract ushort GameControllerGetProduct(Span<_SDL_GameController> gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 260, Column 32 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetProductVersion")]
-        public abstract unsafe ushort GameControllerGetProductVersion(SDLGameController* gamecontroller);
+        public abstract unsafe ushort GameControllerGetProductVersion(_SDL_GameController* gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 260, Column 32 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetProductVersion")]
-        public abstract ushort GameControllerGetProductVersion(Span<SDLGameController> gamecontroller);
+        public abstract ushort GameControllerGetProductVersion(Span<_SDL_GameController> gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 266, Column 34 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAttached")]
-        public abstract unsafe SdlBool GameControllerGetAttached(SDLGameController* gamecontroller);
+        public abstract unsafe SdlBool GameControllerGetAttached(_SDL_GameController* gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 266, Column 34 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAttached")]
-        public abstract SdlBool GameControllerGetAttached(Span<SDLGameController> gamecontroller);
+        public abstract SdlBool GameControllerGetAttached(Span<_SDL_GameController> gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 271, Column 39 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetJoystick")]
-        public abstract unsafe SDLJoystick* GameControllerGetJoystick(SDLGameController* gamecontroller);
+        public abstract unsafe _SDL_Joystick* GameControllerGetJoystick(_SDL_GameController* gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 271, Column 39 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetJoystick")]
-        public abstract unsafe SDLJoystick* GameControllerGetJoystick(Span<SDLGameController> gamecontroller);
+        public abstract unsafe _SDL_Joystick* GameControllerGetJoystick(Span<_SDL_GameController> gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 282, Column 29 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
@@ -3915,22 +3660,22 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 328, Column 1 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetBindForAxis")]
-        public abstract unsafe GameControllerButtonBind GameControllerGetBindForAxis(SDLGameController* gamecontroller, GameControllerAxis axis);
+        public abstract unsafe GameControllerButtonBind GameControllerGetBindForAxis(_SDL_GameController* gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 328, Column 1 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetBindForAxis")]
-        public abstract GameControllerButtonBind GameControllerGetBindForAxis(Span<SDLGameController> gamecontroller, GameControllerAxis axis);
+        public abstract GameControllerButtonBind GameControllerGetBindForAxis(Span<_SDL_GameController> gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 340, Column 1 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAxis")]
-        public abstract unsafe short GameControllerGetAxis(SDLGameController* gamecontroller, GameControllerAxis axis);
+        public abstract unsafe short GameControllerGetAxis(_SDL_GameController* gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 340, Column 1 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAxis")]
-        public abstract short GameControllerGetAxis(Span<SDLGameController> gamecontroller, GameControllerAxis axis);
+        public abstract short GameControllerGetAxis(Span<_SDL_GameController> gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 370, Column 50 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
@@ -3950,42 +3695,42 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 381, Column 1 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetBindForButton")]
-        public abstract unsafe GameControllerButtonBind GameControllerGetBindForButton(SDLGameController* gamecontroller, GameControllerButton button);
+        public abstract unsafe GameControllerButtonBind GameControllerGetBindForButton(_SDL_GameController* gamecontroller, GameControllerButton button);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 381, Column 1 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetBindForButton")]
-        public abstract GameControllerButtonBind GameControllerGetBindForButton(Span<SDLGameController> gamecontroller, GameControllerButton button);
+        public abstract GameControllerButtonBind GameControllerGetBindForButton(Span<_SDL_GameController> gamecontroller, GameControllerButton button);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 390, Column 31 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetButton")]
-        public abstract unsafe byte GameControllerGetButton(SDLGameController* gamecontroller, GameControllerButton button);
+        public abstract unsafe byte GameControllerGetButton(_SDL_GameController* gamecontroller, GameControllerButton button);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 390, Column 31 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetButton")]
-        public abstract byte GameControllerGetButton(Span<SDLGameController> gamecontroller, GameControllerButton button);
+        public abstract byte GameControllerGetButton(Span<_SDL_GameController> gamecontroller, GameControllerButton button);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 404, Column 29 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerRumble")]
-        public abstract unsafe int GameControllerRumble(SDLGameController* gamecontroller, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
+        public abstract unsafe int GameControllerRumble(_SDL_GameController* gamecontroller, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 404, Column 29 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerRumble")]
-        public abstract int GameControllerRumble(Span<SDLGameController> gamecontroller, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
+        public abstract int GameControllerRumble(Span<_SDL_GameController> gamecontroller, ushort low_frequency_rumble, ushort high_frequency_rumble, uint duration_ms);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 409, Column 30 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerClose")]
-        public abstract unsafe void GameControllerClose(SDLGameController* gamecontroller);
+        public abstract unsafe void GameControllerClose(_SDL_GameController* gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 409, Column 30 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerClose")]
-        public abstract void GameControllerClose(Span<SDLGameController> gamecontroller);
+        public abstract void GameControllerClose(Span<_SDL_GameController> gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 72, Column 29 in build/submodules/SDL-mirror/include/SDL_touch.h")]
@@ -4205,7 +3950,7 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 856, Column 37 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticOpen")]
-        public abstract unsafe SDLHaptic* HapticOpen(int device_index);
+        public abstract unsafe _SDL_Haptic* HapticOpen(int device_index);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 867, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
@@ -4215,12 +3960,12 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 878, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticIndex")]
-        public abstract unsafe int HapticIndex(SDLHaptic* haptic);
+        public abstract unsafe int HapticIndex(_SDL_Haptic* haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 878, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticIndex")]
-        public abstract int HapticIndex(Span<SDLHaptic> haptic);
+        public abstract int HapticIndex(Span<_SDL_Haptic> haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 887, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
@@ -4230,237 +3975,237 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 897, Column 37 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticOpenFromMouse")]
-        public abstract unsafe SDLHaptic* HapticOpenFromMouse();
+        public abstract unsafe _SDL_Haptic* HapticOpenFromMouse();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_JoystickIsHaptic")]
-        public abstract unsafe int JoystickIsHaptic(SDLJoystick* joystick);
+        public abstract unsafe int JoystickIsHaptic(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_JoystickIsHaptic")]
-        public abstract int JoystickIsHaptic(Span<SDLJoystick> joystick);
+        public abstract int JoystickIsHaptic(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 927, Column 37 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticOpenFromJoystick")]
-        public abstract unsafe SDLHaptic* HapticOpenFromJoystick(SDLJoystick* joystick);
+        public abstract unsafe _SDL_Haptic* HapticOpenFromJoystick(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 927, Column 37 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticOpenFromJoystick")]
-        public abstract unsafe SDLHaptic* HapticOpenFromJoystick(Span<SDLJoystick> joystick);
+        public abstract unsafe _SDL_Haptic* HapticOpenFromJoystick(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 935, Column 30 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticClose")]
-        public abstract unsafe void HapticClose(SDLHaptic* haptic);
+        public abstract unsafe void HapticClose(_SDL_Haptic* haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 935, Column 30 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticClose")]
-        public abstract void HapticClose(Span<SDLHaptic> haptic);
+        public abstract void HapticClose(Span<_SDL_Haptic> haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 951, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticNumEffects")]
-        public abstract unsafe int HapticNumEffects(SDLHaptic* haptic);
+        public abstract unsafe int HapticNumEffects(_SDL_Haptic* haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 951, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticNumEffects")]
-        public abstract int HapticNumEffects(Span<SDLHaptic> haptic);
+        public abstract int HapticNumEffects(Span<_SDL_Haptic> haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 967, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticNumEffectsPlaying")]
-        public abstract unsafe int HapticNumEffectsPlaying(SDLHaptic* haptic);
+        public abstract unsafe int HapticNumEffectsPlaying(_SDL_Haptic* haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 967, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticNumEffectsPlaying")]
-        public abstract int HapticNumEffectsPlaying(Span<SDLHaptic> haptic);
+        public abstract int HapticNumEffectsPlaying(Span<_SDL_Haptic> haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 985, Column 38 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticQuery")]
-        public abstract unsafe uint HapticQuery(SDLHaptic* haptic);
+        public abstract unsafe uint HapticQuery(_SDL_Haptic* haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 985, Column 38 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticQuery")]
-        public abstract uint HapticQuery(Span<SDLHaptic> haptic);
+        public abstract uint HapticQuery(Span<_SDL_Haptic> haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 993, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticNumAxes")]
-        public abstract unsafe int HapticNumAxes(SDLHaptic* haptic);
+        public abstract unsafe int HapticNumAxes(_SDL_Haptic* haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 993, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticNumAxes")]
-        public abstract int HapticNumAxes(Span<SDLHaptic> haptic);
+        public abstract int HapticNumAxes(Span<_SDL_Haptic> haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1005, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticEffectSupported")]
-        public abstract unsafe int HapticEffectSupported(SDLHaptic* haptic, HapticEffect* effect);
+        public abstract unsafe int HapticEffectSupported(_SDL_Haptic* haptic, HapticEffect* effect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1005, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticEffectSupported")]
-        public abstract int HapticEffectSupported(Span<SDLHaptic> haptic, Span<HapticEffect> effect);
+        public abstract int HapticEffectSupported(Span<_SDL_Haptic> haptic, Span<HapticEffect> effect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1020, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticNewEffect")]
-        public abstract unsafe int HapticNewEffect(SDLHaptic* haptic, HapticEffect* effect);
+        public abstract unsafe int HapticNewEffect(_SDL_Haptic* haptic, HapticEffect* effect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1020, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticNewEffect")]
-        public abstract int HapticNewEffect(Span<SDLHaptic> haptic, Span<HapticEffect> effect);
+        public abstract int HapticNewEffect(Span<_SDL_Haptic> haptic, Span<HapticEffect> effect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1040, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticUpdateEffect")]
-        public abstract unsafe int HapticUpdateEffect(SDLHaptic* haptic, int effect, HapticEffect* data);
+        public abstract unsafe int HapticUpdateEffect(_SDL_Haptic* haptic, int effect, HapticEffect* data);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1040, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticUpdateEffect")]
-        public abstract int HapticUpdateEffect(Span<SDLHaptic> haptic, int effect, Span<HapticEffect> data);
+        public abstract int HapticUpdateEffect(Span<_SDL_Haptic> haptic, int effect, Span<HapticEffect> data);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1062, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticRunEffect")]
-        public abstract unsafe int HapticRunEffect(SDLHaptic* haptic, int effect, uint iterations);
+        public abstract unsafe int HapticRunEffect(_SDL_Haptic* haptic, int effect, uint iterations);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1062, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticRunEffect")]
-        public abstract int HapticRunEffect(Span<SDLHaptic> haptic, int effect, uint iterations);
+        public abstract int HapticRunEffect(Span<_SDL_Haptic> haptic, int effect, uint iterations);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1076, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticStopEffect")]
-        public abstract unsafe int HapticStopEffect(SDLHaptic* haptic, int effect);
+        public abstract unsafe int HapticStopEffect(_SDL_Haptic* haptic, int effect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1076, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticStopEffect")]
-        public abstract int HapticStopEffect(Span<SDLHaptic> haptic, int effect);
+        public abstract int HapticStopEffect(Span<_SDL_Haptic> haptic, int effect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1090, Column 30 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticDestroyEffect")]
-        public abstract unsafe void HapticDestroyEffect(SDLHaptic* haptic, int effect);
+        public abstract unsafe void HapticDestroyEffect(_SDL_Haptic* haptic, int effect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1090, Column 30 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticDestroyEffect")]
-        public abstract void HapticDestroyEffect(Span<SDLHaptic> haptic, int effect);
+        public abstract void HapticDestroyEffect(Span<_SDL_Haptic> haptic, int effect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1105, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticGetEffectStatus")]
-        public abstract unsafe int HapticGetEffectStatus(SDLHaptic* haptic, int effect);
+        public abstract unsafe int HapticGetEffectStatus(_SDL_Haptic* haptic, int effect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1105, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticGetEffectStatus")]
-        public abstract int HapticGetEffectStatus(Span<SDLHaptic> haptic, int effect);
+        public abstract int HapticGetEffectStatus(Span<_SDL_Haptic> haptic, int effect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1124, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticSetGain")]
-        public abstract unsafe int HapticSetGain(SDLHaptic* haptic, int gain);
+        public abstract unsafe int HapticSetGain(_SDL_Haptic* haptic, int gain);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1124, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticSetGain")]
-        public abstract int HapticSetGain(Span<SDLHaptic> haptic, int gain);
+        public abstract int HapticSetGain(Span<_SDL_Haptic> haptic, int gain);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1140, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticSetAutocenter")]
-        public abstract unsafe int HapticSetAutocenter(SDLHaptic* haptic, int autocenter);
+        public abstract unsafe int HapticSetAutocenter(_SDL_Haptic* haptic, int autocenter);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1140, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticSetAutocenter")]
-        public abstract int HapticSetAutocenter(Span<SDLHaptic> haptic, int autocenter);
+        public abstract int HapticSetAutocenter(Span<_SDL_Haptic> haptic, int autocenter);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1157, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticPause")]
-        public abstract unsafe int HapticPause(SDLHaptic* haptic);
+        public abstract unsafe int HapticPause(_SDL_Haptic* haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1157, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticPause")]
-        public abstract int HapticPause(Span<SDLHaptic> haptic);
+        public abstract int HapticPause(Span<_SDL_Haptic> haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1169, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticUnpause")]
-        public abstract unsafe int HapticUnpause(SDLHaptic* haptic);
+        public abstract unsafe int HapticUnpause(_SDL_Haptic* haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1169, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticUnpause")]
-        public abstract int HapticUnpause(Span<SDLHaptic> haptic);
+        public abstract int HapticUnpause(Span<_SDL_Haptic> haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1177, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticStopAll")]
-        public abstract unsafe int HapticStopAll(SDLHaptic* haptic);
+        public abstract unsafe int HapticStopAll(_SDL_Haptic* haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1177, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticStopAll")]
-        public abstract int HapticStopAll(Span<SDLHaptic> haptic);
+        public abstract int HapticStopAll(Span<_SDL_Haptic> haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1189, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticRumbleSupported")]
-        public abstract unsafe int HapticRumbleSupported(SDLHaptic* haptic);
+        public abstract unsafe int HapticRumbleSupported(_SDL_Haptic* haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1189, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticRumbleSupported")]
-        public abstract int HapticRumbleSupported(Span<SDLHaptic> haptic);
+        public abstract int HapticRumbleSupported(Span<_SDL_Haptic> haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1202, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticRumbleInit")]
-        public abstract unsafe int HapticRumbleInit(SDLHaptic* haptic);
+        public abstract unsafe int HapticRumbleInit(_SDL_Haptic* haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1202, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticRumbleInit")]
-        public abstract int HapticRumbleInit(Span<SDLHaptic> haptic);
+        public abstract int HapticRumbleInit(Span<_SDL_Haptic> haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1216, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticRumblePlay")]
-        public abstract unsafe int HapticRumblePlay(SDLHaptic* haptic, float strength, uint length);
+        public abstract unsafe int HapticRumblePlay(_SDL_Haptic* haptic, float strength, uint length);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1216, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticRumblePlay")]
-        public abstract int HapticRumblePlay(Span<SDLHaptic> haptic, float strength, uint length);
+        public abstract int HapticRumblePlay(Span<_SDL_Haptic> haptic, float strength, uint length);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1228, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticRumbleStop")]
-        public abstract unsafe int HapticRumbleStop(SDLHaptic* haptic);
+        public abstract unsafe int HapticRumbleStop(_SDL_Haptic* haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1228, Column 29 in build/submodules/SDL-mirror/include\\SDL_haptic.h")]
         [NativeApi(EntryPoint = "SDL_HapticRumbleStop")]
-        public abstract int HapticRumbleStop(Span<SDLHaptic> haptic);
+        public abstract int HapticRumbleStop(Span<_SDL_Haptic> haptic);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1295, Column 34 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
@@ -5470,72 +5215,72 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 172, Column 37 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorOpen")]
-        public abstract unsafe SDLSensor* SensorOpen(int device_index);
+        public abstract unsafe _SDL_Sensor* SensorOpen(int device_index);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 177, Column 37 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorFromInstanceID")]
-        public abstract unsafe SDLSensor* SensorFromInstanceID(int instance_id);
+        public abstract unsafe _SDL_Sensor* SensorFromInstanceID(int instance_id);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 184, Column 37 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorGetName")]
-        public abstract unsafe byte* SensorGetName(SDLSensor* sensor);
+        public abstract unsafe byte* SensorGetName(_SDL_Sensor* sensor);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 184, Column 37 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorGetName")]
-        public abstract unsafe byte* SensorGetName(Span<SDLSensor> sensor);
+        public abstract unsafe byte* SensorGetName(Span<_SDL_Sensor> sensor);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 193, Column 40 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorGetType")]
-        public abstract unsafe SensorType SensorGetType(SDLSensor* sensor);
+        public abstract unsafe SensorType SensorGetType(_SDL_Sensor* sensor);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 193, Column 40 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorGetType")]
-        public abstract SensorType SensorGetType(Span<SDLSensor> sensor);
+        public abstract SensorType SensorGetType(Span<_SDL_Sensor> sensor);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 202, Column 29 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorGetNonPortableType")]
-        public abstract unsafe int SensorGetNonPortableType(SDLSensor* sensor);
+        public abstract unsafe int SensorGetNonPortableType(_SDL_Sensor* sensor);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 202, Column 29 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorGetNonPortableType")]
-        public abstract int SensorGetNonPortableType(Span<SDLSensor> sensor);
+        public abstract int SensorGetNonPortableType(Span<_SDL_Sensor> sensor);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 211, Column 38 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorGetInstanceID")]
-        public abstract unsafe int SensorGetInstanceID(SDLSensor* sensor);
+        public abstract unsafe int SensorGetInstanceID(_SDL_Sensor* sensor);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 211, Column 38 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorGetInstanceID")]
-        public abstract int SensorGetInstanceID(Span<SDLSensor> sensor);
+        public abstract int SensorGetInstanceID(Span<_SDL_Sensor> sensor);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 224, Column 29 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorGetData")]
-        public abstract unsafe int SensorGetData(SDLSensor* sensor, float* data, int num_values);
+        public abstract unsafe int SensorGetData(_SDL_Sensor* sensor, float* data, int num_values);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 224, Column 29 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorGetData")]
-        public abstract int SensorGetData(Span<SDLSensor> sensor, Span<float> data, int num_values);
+        public abstract int SensorGetData(Span<_SDL_Sensor> sensor, Span<float> data, int num_values);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 229, Column 30 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorClose")]
-        public abstract unsafe void SensorClose(SDLSensor* sensor);
+        public abstract unsafe void SensorClose(_SDL_Sensor* sensor);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 229, Column 30 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorClose")]
-        public abstract void SensorClose(Span<SDLSensor> sensor);
+        public abstract void SensorClose(Span<_SDL_Sensor> sensor);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 238, Column 30 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
@@ -5618,6 +5363,86 @@ namespace Silk.NET.SDL
         public abstract SdlBool DXGIGetOutputInfo(int displayIndex, Span<int> adapterIndex, Span<int> outputIndex);
 
         /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
+        public abstract unsafe int IPhoneSetAnimationCallback(Window* window, int interval, void* callback, void* callbackParam);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
+        public abstract int IPhoneSetAnimationCallback<T0, T1>(Span<Window> window, int interval, Span<T0> callback, Span<T1> callbackParam) where T0 : unmanaged where T1 : unmanaged;
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 98, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_iPhoneSetEventPump")]
+        public abstract void IPhoneSetEventPump(SdlBool enabled);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 111, Column 32 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_AndroidGetJNIEnv")]
+        public abstract unsafe void* AndroidGetJNIEnv();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 121, Column 32 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_AndroidGetActivity")]
+        public abstract unsafe void* AndroidGetActivity();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 147, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_GetAndroidSDKVersion")]
+        public abstract int GetAndroidSDKVersion();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 152, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_IsAndroidTV")]
+        public abstract SdlBool IsAndroidTV();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 157, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_IsChromebook")]
+        public abstract SdlBool IsChromebook();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 162, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_IsDeXMode")]
+        public abstract SdlBool IsDeXMode();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 167, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_AndroidBackButton")]
+        public abstract void AndroidBackButton();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 182, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_AndroidGetInternalStoragePath")]
+        public abstract unsafe byte* AndroidGetInternalStoragePath();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 191, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_AndroidGetExternalStorageState")]
+        public abstract int AndroidGetExternalStorageState();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 199, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_AndroidGetExternalStoragePath")]
+        public abstract unsafe byte* AndroidGetExternalStoragePath();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 264, Column 41 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_WinRTGetFSPathUNICODE")]
+        public abstract unsafe char* WinRTGetFSPathUNICODE(WinRTPath pathType);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 281, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_WinRTGetFSPathUTF8")]
+        public abstract unsafe byte* WinRTGetFSPathUTF8(WinRTPath pathType);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 288, Column 48 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_WinRTGetDeviceFamily")]
+        public abstract WinRTDeviceFamily WinRTGetDeviceFamily();
+
+        /// <summary>To be added.</summary>
         [NativeName("Src", "Line 295, Column 34 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         [NativeApi(EntryPoint = "SDL_IsTablet")]
         public abstract SdlBool IsTablet();
@@ -5651,6 +5476,11 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 303, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         [NativeApi(EntryPoint = "SDL_OnApplicationDidBecomeActive")]
         public abstract void OnApplicationDidBecomeActive();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 305, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_OnApplicationDidChangeStatusBarOrientation")]
+        public abstract void OnApplicationDidChangeStatusBarOrientation();
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 45, Column 32 in build/submodules/SDL-mirror/include\\SDL_timer.h")]
@@ -5930,7 +5760,7 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 557, Column 37 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_iconv_open")]
-        public abstract unsafe SDLIconvT* IconvOpen(string tocode, string fromcode);
+        public abstract unsafe _SDL_iconv_t* IconvOpen(string tocode, string fromcode);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 567, Column 31 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
@@ -5996,21 +5826,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 227, Column 37 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_GetThreadName")]
         public abstract string GetThreadNameS(Span<Thread> thread);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 153, Column 36 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_RWFromFile")]
-        public abstract unsafe RWops* RWFromFile(string file, string mode);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 251, Column 31 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_LoadFile")]
-        public abstract unsafe void* LoadFile(string file, uint* datasize);
-
-        /// <summary>To be added.</summary>
-        [NativeName("Src", "Line 251, Column 31 in build/submodules/SDL-mirror/include\\SDL_rwops.h")]
-        [NativeApi(EntryPoint = "SDL_LoadFile")]
-        public abstract unsafe void* LoadFile(string file, Span<uint> datasize);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 252, Column 37 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
@@ -6235,12 +6050,12 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 206, Column 37 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickName")]
-        public abstract unsafe string JoystickNameS(SDLJoystick* joystick);
+        public abstract unsafe string JoystickNameS(_SDL_Joystick* joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 206, Column 37 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickName")]
-        public abstract string JoystickNameS(Span<SDLJoystick> joystick);
+        public abstract string JoystickNameS(Span<_SDL_Joystick> joystick);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 252, Column 30 in build/submodules/SDL-mirror/include\\SDL_joystick.h")]
@@ -6270,12 +6085,12 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 173, Column 32 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerMapping")]
-        public abstract unsafe string GameControllerMappingS(SDLGameController* gamecontroller);
+        public abstract unsafe string GameControllerMappingS(_SDL_GameController* gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 173, Column 32 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerMapping")]
-        public abstract string GameControllerMappingS(Span<SDLGameController> gamecontroller);
+        public abstract string GameControllerMappingS(Span<_SDL_GameController> gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 185, Column 37 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
@@ -6290,12 +6105,12 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 225, Column 37 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerName")]
-        public abstract unsafe string GameControllerNameS(SDLGameController* gamecontroller);
+        public abstract unsafe string GameControllerNameS(_SDL_GameController* gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 225, Column 37 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerName")]
-        public abstract string GameControllerNameS(Span<SDLGameController> gamecontroller);
+        public abstract string GameControllerNameS(Span<_SDL_GameController> gamecontroller);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 317, Column 48 in build/submodules/SDL-mirror/include\\SDL_gamecontroller.h")]
@@ -6490,17 +6305,37 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 184, Column 37 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorGetName")]
-        public abstract unsafe string SensorGetNameS(SDLSensor* sensor);
+        public abstract unsafe string SensorGetNameS(_SDL_Sensor* sensor);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 184, Column 37 in build/submodules/SDL-mirror/include\\SDL_sensor.h")]
         [NativeApi(EntryPoint = "SDL_SensorGetName")]
-        public abstract string SensorGetNameS(Span<SDLSensor> sensor);
+        public abstract string SensorGetNameS(Span<_SDL_Sensor> sensor);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 66, Column 38 in build/submodules/SDL-mirror/include\\SDL_shape.h")]
         [NativeApi(EntryPoint = "SDL_CreateShapedWindow")]
         public abstract unsafe Window* CreateShapedWindow(string title, uint x, uint y, uint w, uint h, uint flags);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 182, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_AndroidGetInternalStoragePath")]
+        public abstract string AndroidGetInternalStoragePathS();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 199, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_AndroidGetExternalStoragePath")]
+        public abstract string AndroidGetExternalStoragePathS();
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 264, Column 41 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_WinRTGetFSPathUNICODE")]
+        public abstract string WinRTGetFSPathUNICODES(WinRTPath pathType);
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 281, Column 38 in build/submodules/SDL-mirror/include\\SDL_system.h")]
+        [NativeApi(EntryPoint = "SDL_WinRTGetFSPathUTF8")]
+        public abstract string WinRTGetFSPathUTF8S(WinRTPath pathType);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 37 in build/submodules/SDL-mirror/include\\SDL_version.h")]
@@ -6641,7 +6476,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 560, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        public unsafe uint Iconv(SDLIconvT* cd, string[] inbufSa, uint* inbytesleft, string[] outbufSa, uint* outbytesleft)
+        public unsafe uint Iconv(_SDL_iconv_t* cd, string[] inbufSa, uint* inbytesleft, string[] outbufSa, uint* outbytesleft)
         {
             // StringArrayOverloader
             var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
@@ -6654,7 +6489,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 560, Column 32 in build/submodules/SDL-mirror/include\\SDL_stdinc.h")]
-        public unsafe uint Iconv(Span<SDLIconvT> cd, string[] inbufSa, Span<uint> inbytesleft, string[] outbufSa, Span<uint> outbytesleft)
+        public unsafe uint Iconv(Span<_SDL_iconv_t> cd, string[] inbufSa, Span<uint> inbytesleft, string[] outbufSa, Span<uint> outbytesleft)
         {
             // StringArrayOverloader
             var inbuf = (byte**) SilkMarshal.MarshalStringArrayToPtr(inbufSa);
@@ -6672,6 +6507,28 @@ namespace Silk.NET.SDL
             // StringArrayOverloader
             var argv = (byte**) SilkMarshal.MarshalStringArrayToPtr(argvSa);
             var ret = Main(argc, argv);
+            SilkMarshal.CopyPtrToStringArray((IntPtr) argv, argvSa);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        public unsafe int UIKitRunApp(int argc, string[] argvSa, void* mainFunction)
+        {
+            // StringArrayOverloader
+            var argv = (byte**) SilkMarshal.MarshalStringArrayToPtr(argvSa);
+            var ret = UIKitRunApp(argc, argv, mainFunction);
+            SilkMarshal.CopyPtrToStringArray((IntPtr) argv, argvSa);
+            return ret;
+        }
+
+        /// <summary>To be added.</summary>
+        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
+        public unsafe int UIKitRunApp<T0>(int argc, string[] argvSa, Span<T0> mainFunction) where T0 : unmanaged
+        {
+            // StringArrayOverloader
+            var argv = (byte**) SilkMarshal.MarshalStringArrayToPtr(argvSa);
+            var ret = UIKitRunApp(argc, argv, mainFunction);
             SilkMarshal.CopyPtrToStringArray((IntPtr) argv, argvSa);
             return ret;
         }
