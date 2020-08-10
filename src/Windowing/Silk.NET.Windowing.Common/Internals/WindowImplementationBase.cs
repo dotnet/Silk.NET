@@ -15,7 +15,7 @@ namespace Silk.NET.Windowing.Internals
     /// </summary>
     internal abstract class WindowImplementationBase : ViewImplementationBase, IWindow
     {
-        private WindowOptions _optionsCache;
+        protected WindowOptions ExtendedOptionsCache;
 
         /// <summary>
         /// Creates a base window with the given options.
@@ -23,7 +23,7 @@ namespace Silk.NET.Windowing.Internals
         /// <param name="optionsCache">The options, used to configure the view.</param>
         protected WindowImplementationBase(WindowOptions optionsCache) : base(new ViewOptions(optionsCache))
         {
-            _optionsCache = optionsCache;
+            ExtendedOptionsCache = optionsCache;
         }
         
         // Property bases - these have extra functionality baked into their getters and setters
@@ -50,22 +50,22 @@ namespace Silk.NET.Windowing.Internals
         public abstract void SetWindowIcon(ReadOnlySpan<RawImage> icons);
         
         // Cache updates for dervied classes
-        protected void UpdatePosition(Point point) => _optionsCache.Position = point;
-        protected void UpdateSize(Size size) => _optionsCache.Size = size;
-        protected void UpdateState(WindowState state) => _optionsCache.WindowState = state;
+        protected void UpdatePosition(Point point) => ExtendedOptionsCache.Position = point;
+        protected void UpdateSize(Size size) => ExtendedOptionsCache.Size = size;
+        protected void UpdateState(WindowState state) => ExtendedOptionsCache.WindowState = state;
         
         // Lifetime controls
         protected override void CoreInitialize(ViewOptions opts)
         {
-            _optionsCache.ShouldSwapAutomatically = opts.ShouldSwapAutomatically;
-            _optionsCache.IsEventDriven = opts.IsEventDriven;
-            _optionsCache.FramesPerSecond = opts.FramesPerSecond;
-            _optionsCache.UpdatesPerSecond = opts.UpdatesPerSecond;
-            _optionsCache.VSync = opts.VSync;
-            _optionsCache.API = opts.API;
-            _optionsCache.VideoMode = opts.VideoMode;
-            _optionsCache.PreferredDepthBufferBits = opts.PreferredDepthBufferBits;
-            CoreInitialize(_optionsCache);
+            ExtendedOptionsCache.ShouldSwapAutomatically = opts.ShouldSwapAutomatically;
+            ExtendedOptionsCache.IsEventDriven = opts.IsEventDriven;
+            ExtendedOptionsCache.FramesPerSecond = opts.FramesPerSecond;
+            ExtendedOptionsCache.UpdatesPerSecond = opts.UpdatesPerSecond;
+            ExtendedOptionsCache.VSync = opts.VSync;
+            ExtendedOptionsCache.API = opts.API;
+            ExtendedOptionsCache.VideoMode = opts.VideoMode;
+            ExtendedOptionsCache.PreferredDepthBufferBits = opts.PreferredDepthBufferBits;
+            CoreInitialize(ExtendedOptionsCache);
         }
         
         // Point transformations
@@ -82,7 +82,7 @@ namespace Silk.NET.Windowing.Internals
         // Properties with different accessors on IWindow than on IView
         Size IWindowProperties.Size
         {
-            get => IsInitialized ? _optionsCache.Size = CoreSize : _optionsCache.Size;
+            get => IsInitialized ? ExtendedOptionsCache.Size = CoreSize : ExtendedOptionsCache.Size;
             set
             {
                 if (IsInitialized)
@@ -90,7 +90,7 @@ namespace Silk.NET.Windowing.Internals
                     SizeSettable = value;
                 }
 
-                _optionsCache.Size = value;
+                ExtendedOptionsCache.Size = value;
             }
         }
         bool IWindow.IsClosing
@@ -101,7 +101,7 @@ namespace Silk.NET.Windowing.Internals
         
         public bool IsVisible
         {
-            get => IsInitialized ? _optionsCache.IsVisible = CoreIsVisible : _optionsCache.IsVisible;
+            get => IsInitialized ? ExtendedOptionsCache.IsVisible = CoreIsVisible : ExtendedOptionsCache.IsVisible;
             set
             {
                 if (IsInitialized)
@@ -109,13 +109,13 @@ namespace Silk.NET.Windowing.Internals
                     CoreIsVisible = value;
                 }
 
-                _optionsCache.IsVisible = value;
+                ExtendedOptionsCache.IsVisible = value;
             }
         }
 
         public Point Position
         {
-            get => IsInitialized ? _optionsCache.Position = CorePosition : _optionsCache.Position;
+            get => IsInitialized ? ExtendedOptionsCache.Position = CorePosition : ExtendedOptionsCache.Position;
             set
             {
                 if (IsInitialized)
@@ -123,13 +123,13 @@ namespace Silk.NET.Windowing.Internals
                     CorePosition = value;
                 }
 
-                _optionsCache.Position = value;
+                ExtendedOptionsCache.Position = value;
             }
         }
 
         public string Title
         {
-            get => IsInitialized ? _optionsCache.Title = CoreTitle : _optionsCache.Title;
+            get => IsInitialized ? ExtendedOptionsCache.Title = CoreTitle : ExtendedOptionsCache.Title;
             set
             {
                 if (IsInitialized)
@@ -137,13 +137,13 @@ namespace Silk.NET.Windowing.Internals
                     CoreTitle = value;
                 }
 
-                _optionsCache.Title = value;
+                ExtendedOptionsCache.Title = value;
             }
         }
 
         public WindowState WindowState
         {
-            get => IsInitialized ? _optionsCache.WindowState = CoreWindowState : _optionsCache.WindowState;
+            get => IsInitialized ? ExtendedOptionsCache.WindowState = CoreWindowState : ExtendedOptionsCache.WindowState;
             set
             {
                 if (IsInitialized)
@@ -151,13 +151,13 @@ namespace Silk.NET.Windowing.Internals
                     CoreWindowState = value;
                 }
 
-                _optionsCache.WindowState = value;
+                ExtendedOptionsCache.WindowState = value;
             }
         }
 
         public WindowBorder WindowBorder
         {
-            get => IsInitialized ? _optionsCache.WindowBorder = CoreWindowBorder : _optionsCache.WindowBorder;
+            get => IsInitialized ? ExtendedOptionsCache.WindowBorder = CoreWindowBorder : ExtendedOptionsCache.WindowBorder;
             set
             {
                 if (IsInitialized)
@@ -165,10 +165,10 @@ namespace Silk.NET.Windowing.Internals
                     CoreWindowBorder = value;
                 }
 
-                _optionsCache.WindowBorder = value;
+                ExtendedOptionsCache.WindowBorder = value;
             }
         }
 
-        public bool TransparentFramebuffer => _optionsCache.TransparentFramebuffer;
+        public bool TransparentFramebuffer => ExtendedOptionsCache.TransparentFramebuffer;
     }
 }

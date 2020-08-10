@@ -533,7 +533,8 @@
         {
             "profileName": "SDL",
             "sources": [
-                "build/submodules/SDL-mirror/include/SDL.h"
+                "build/submodules/SDL-mirror/include/SDL.h",
+                "build/submodules/SDL-mirror/include/SDL_vulkan.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -570,10 +571,13 @@
                     "build/submodules/SDL-mirror/include/*.h"
                 ],
                 "classes": {
-                    "SDL.h": "[Core]SDL"
+                    "SDL.h": "[Core]Sdl",
+                    "SDL_vulkan.h": "[Core]Sdl"
                 }
             },
             "exclude": [
+                "VkSurfaceKHR",
+                "VkInstance"
             ],
             "rename": {
                 "__AnonymousEnum_SDL_shape_L80_C9": "WindowShapeModeVal",
@@ -589,7 +593,8 @@
             },
             "bakery": {
                 "profileNames": [
-                    "SDL"
+                    "SDL",
+                    "SDL_vulkan"
                 ]
             },
             "output": {
@@ -613,7 +618,9 @@
                     "$typemapPrecedesInjections": "true",
                     "WindowShapeMode": "WindowShapeModeVal",
                     "SDL_bool": "SdlBool",
-                    "SDL_RWops": "RWops"
+                    "SDL_RWops": "RWops",
+                    "VkInstance": "Silk.NET.GLFW.VkHandle",
+                    "VkSurfaceKHR": "Silk.NET.Core.VkNonDispatchableHandle"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"

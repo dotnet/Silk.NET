@@ -6,4 +6,4 @@
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Silk.NET.Windowing.Glfw")]
-[assembly: InternalsVisibleTo("Silk.NET.Windowing.Glvf")]
+[assembly: InternalsVisibleTo("Silk.NET.Windowing.Sdl")]

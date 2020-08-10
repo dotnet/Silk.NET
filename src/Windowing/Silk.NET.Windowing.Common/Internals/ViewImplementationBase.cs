@@ -25,7 +25,7 @@ namespace Silk.NET.Windowing.Internals
         private const int InitialInvocationRental = 2;
         
         // Cache the options for when the window is closed
-        private ViewOptions _optionsCache;
+        protected ViewOptions _optionsCache;
         
         // Game loop fields
         private readonly Stopwatch _renderStopwatch = new Stopwatch();
@@ -101,6 +101,9 @@ namespace Silk.NET.Windowing.Internals
             _updateStopwatch.Start();
             _lifetimeStopwatch.Start();
             IsInitialized = true;
+            IsEventDriven = _optionsCache.IsEventDriven;
+            GLContext?.MakeCurrent();
+            GLContext?.SwapInterval(_optionsCache.VSync ? 1 : 0);
             Load?.Invoke();
         }
         public void Reset()

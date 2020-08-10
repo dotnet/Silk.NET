@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Silk.NET.Core;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Ultz.SuperInvoke;
@@ -3845,7 +3846,7 @@ namespace Silk.NET.GLFW
             VkHandle instance,
             WindowHandle* window,
             void* allocator,
-            VkHandle* surface
+            VkNonDispatchableHandle* surface
         );
 
         /// <summary>

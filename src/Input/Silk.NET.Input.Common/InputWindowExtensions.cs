@@ -23,7 +23,7 @@ namespace Silk.NET.Input
         static InputWindowExtensions()
         {
             TryAdd("Silk.NET.Input.Glfw");
-            TryAdd("Silk.NET.Input.Glvf");
+            TryAdd("Silk.NET.Input.Sdl");
         }
 
         /// <summary>
