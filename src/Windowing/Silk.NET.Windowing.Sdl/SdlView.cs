@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
 using System.Reflection;
 using System.Threading;
@@ -155,6 +156,7 @@ namespace Silk.NET.Windowing.Sdl
 
         public override void DoEvents()
         {
+            ClearEvents();
             Event @event = default;
             if (IsEventDriven)
             {
@@ -174,6 +176,23 @@ namespace Silk.NET.Windowing.Sdl
             while (Sdl.PollEvent(&@event) == 1)
             {
                 Events.Add(@event);
+            }
+            
+            ProcessEvents();
+        }
+
+        private void ClearEvents()
+        {
+            var c = Events.Count;
+            for (var i = 0; i < c; i++)
+            {
+                var @event = Events[0];
+                if (@event.Type == (uint) EventType.Dropfile)
+                {
+                    Sdl.Free(@event.Drop.File);
+                }
+                
+                Events.RemoveAt(0);
             }
         }
 
@@ -225,7 +244,8 @@ namespace Silk.NET.Windowing.Sdl
             return new Point(point.X + x, point.Y + y);
         }
 
-        public void ProcessEvents()
+        [SuppressMessage("ReSharper", "SwitchStatementHandlesSomeKnownEnumValuesWithDefault")]
+        public virtual void ProcessEvents()
         {
             var count = Events.Count;
             var i = 0;
@@ -235,113 +255,54 @@ namespace Silk.NET.Windowing.Sdl
                 var skipped = false;
                 switch ((EventType) @event.Type)
                 {
-                    //case EventType.Firstevent:
-                    //    break;
                     case EventType.AppTerminating:
                     case EventType.Quit:
                     {
-                        IsClosingVal = true;
-                        Closing?.Invoke();
+                        Close();
                         break;
                     }
                     //case EventType.AppTerminating:
                     //    break;
                     //case EventType.AppLowmemory:
                     //    break;
-                    //case EventType.AppWillenterbackground:
+                    //case EventType.AppWillenterbackground: TODO Pausing event
                     //    break;
                     //case EventType.AppDidenterbackground:
                     //    break;
-                    //case EventType.AppWillenterforeground:
+                    //case EventType.AppWillenterforeground: TODO Resuming event
                     //    break;
                     //case EventType.AppDidenterforeground:
                     //    break;
-                    //case EventType.Displayevent:
-                    //    break;
-                    //case EventType.Windowevent:
-                    //    break;
-                    //case EventType.Syswmevent:
-                    //    break;
-                    //case EventType.Keydown:
-                    //    break;
-                    //case EventType.Keyup:
-                    //    break;
-                    //case EventType.Textediting:
-                    //    break;
-                    //case EventType.Textinput:
-                    //    break;
-                    //case EventType.Keymapchanged:
-                    //    break;
-                    //case EventType.Mousemotion:
-                    //    break;
-                    //case EventType.Mousebuttondown:
-                    //    break;
-                    //case EventType.Mousebuttonup:
-                    //    break;
-                    //case EventType.Mousewheel:
-                    //    break;
-                    //case EventType.Joyaxismotion:
-                    //    break;
-                    //case EventType.Joyballmotion:
-                    //    break;
-                    //case EventType.Joyhatmotion:
-                    //    break;
-                    //case EventType.Joybuttondown:
-                    //    break;
-                    //case EventType.Joybuttonup:
-                    //    break;
-                    //case EventType.Joydeviceadded:
-                    //    break;
-                    //case EventType.Joydeviceremoved:
-                    //    break;
-                    //case EventType.Controlleraxismotion:
-                    //    break;
-                    //case EventType.Controllerbuttondown:
-                    //    break;
-                    //case EventType.Controllerbuttonup:
-                    //    break;
-                    //case EventType.Controllerdeviceadded:
-                    //    break;
-                    //case EventType.Controllerdeviceremoved:
-                    //    break;
-                    //case EventType.Controllerdeviceremapped:
-                    //    break;
-                    //case EventType.Fingerdown:
-                    //    break;
-                    //case EventType.Fingerup:
-                    //    break;
-                    //case EventType.Fingermotion:
-                    //    break;
-                    //case EventType.Dollargesture:
-                    //    break;
-                    //case EventType.Dollarrecord:
-                    //    break;
-                    //case EventType.Multigesture:
-                    //    break;
-                    //case EventType.Clipboardupdate:
-                    //    break;
-                    //case EventType.Dropfile:
-                    //    break;
-                    //case EventType.Droptext:
-                    //    break;
-                    //case EventType.Dropbegin:
-                    //    break;
-                    //case EventType.Dropcomplete:
-                    //    break;
-                    //case EventType.Audiodeviceadded:
-                    //    break;
-                    //case EventType.Audiodeviceremoved:
-                    //    break;
-                    //case EventType.Sensorupdate:
-                    //    break;
-                    //case EventType.RenderTargetsReset:
-                    //    break;
-                    //case EventType.RenderDeviceReset:
-                    //    break;
-                    //case EventType.Userevent:
-                    //    break;
-                    //case EventType.Lastevent:
-                    //    break;
+                    case EventType.Windowevent:
+                    {
+                        switch ((WindowEventID)@event.Window.Type)
+                        {
+                            case WindowEventID.WindoweventResized:
+                            {
+                                Resize?.Invoke(new Size(@event.Window.Data1, @event.Window.Data2));
+                                FramebufferResize?.Invoke(FramebufferSize);
+                                break;
+                            }
+                            case WindowEventID.WindoweventFocusGained:
+                            {
+                                FocusChanged?.Invoke(true);
+                                break;
+                            }
+                            case WindowEventID.WindoweventFocusLost:
+                            {
+                                FocusChanged?.Invoke(false);
+                                break;
+                            }
+                            default:
+                            {
+                                i++;
+                                skipped = true;
+                                break;
+                            }
+                        }
+
+                        break;
+                    }
                     default:
                     {
                         i++;
@@ -355,13 +316,6 @@ namespace Silk.NET.Windowing.Sdl
                     Events.RemoveAt(i);
                 }
             }
-            
-            ProcessEvents2();
-        }
-
-        protected virtual void ProcessEvents2()
-        {
-            
         }
     }
 }

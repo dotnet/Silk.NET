@@ -4,7 +4,10 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
+using System.Text;
 using Silk.NET.Core;
 using Silk.NET.SDL;
 using Point = System.Drawing.Point;
@@ -16,6 +19,7 @@ namespace Silk.NET.Windowing.Sdl
     internal unsafe class SdlWindow : SdlView, IWindow
     {
         private WindowOptions _extendedOptionsCache;
+        private List<string> _droppedFiles = new List<string>();
 
         public SdlWindow(WindowOptions opts, SdlView? parent, SdlMonitor? monitor)
             : base(new ViewOptions(opts), parent, monitor)
@@ -301,6 +305,103 @@ namespace Silk.NET.Windowing.Sdl
             return (flags & WindowFlags.WindowBorderless) != 0
                 ? WindowBorder.Hidden
                 : WindowBorder.Fixed;
+        }
+
+        [SuppressMessage("ReSharper", "SwitchStatementHandlesSomeKnownEnumValuesWithDefault")]
+        public override void ProcessEvents()
+        {
+            base.ProcessEvents();
+            var i = 0;
+            var c = Events.Count;
+            for (var j = 0; j < c; j++)
+            {
+                var @event = Events[i];
+                var skipped = false;
+                switch ((EventType) @event.Type)
+                {
+                    case EventType.Windowevent:
+                    {
+                        switch ((WindowEventID) @event.Window.Type)
+                        {
+                            //case WindowEventID.WindoweventNone:
+                            //    break;
+                            //case WindowEventID.WindoweventShown:
+                            //    break;
+                            //case WindowEventID.WindoweventHidden:
+                            //    break;
+                            //case WindowEventID.WindoweventExposed:
+                            //    break;
+                            case WindowEventID.WindoweventMoved:
+                            {
+                                Move?.Invoke(new Point(@event.Window.Data1, @event.Window.Data2));
+                                break;
+                            }
+                            case WindowEventID.WindoweventResized:
+                                break;
+                            case WindowEventID.WindoweventSizeChanged:
+                                break;
+                            case WindowEventID.WindoweventMinimized:
+                            {
+                                StateChanged?.Invoke(WindowState.Minimized);
+                                break;
+                            }
+                            case WindowEventID.WindoweventMaximized:
+                            {
+                                StateChanged?.Invoke(WindowState.Maximized);
+                                break;
+                            }
+                            case WindowEventID.WindoweventRestored:
+                            {
+                                StateChanged?.Invoke(WindowState.Normal);
+                                break;
+                            }
+                            //case WindowEventID.WindoweventEnter:
+                            //    break;
+                            //case WindowEventID.WindoweventLeave:
+                            //    break;
+                            //case WindowEventID.WindoweventFocusGained:
+                            //    break;
+                            //case WindowEventID.WindoweventFocusLost:
+                            //    break;
+                            //case WindowEventID.WindoweventClose:
+                            //    break;
+                            //case WindowEventID.WindoweventTakeFocus:
+                            //    break;
+                            //case WindowEventID.WindoweventHitTest:
+                            //    break;
+                            default:
+                            {
+                                i++;
+                                skipped = true;
+                                break;
+                            }
+                        }
+                        break;
+                    }
+                    case EventType.Dropfile:
+                    {
+                        _droppedFiles.Add(new string((sbyte*) @event.Drop.File));
+                        break;
+                    }
+                    default:
+                    {
+                        i++;
+                        skipped = true;
+                        break;
+                    }
+                }
+                
+                if (!skipped)
+                {
+                    Events.RemoveAt(i);
+                }
+            }
+
+            if (_droppedFiles.Count > 0)
+            {
+                FileDrop?.Invoke(_droppedFiles.ToArray());
+                _droppedFiles.Clear();
+            }
         }
     }
 }
