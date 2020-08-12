@@ -243,6 +243,9 @@ namespace Silk.NET.SilkTouch
         
         private static IReturnMarshaller GetReturnMarshaller(ITypeSymbol typeSymbol)
         {
+            if (typeSymbol.SpecialType == SpecialType.System_Boolean)
+                return new BoolReturnMarshaller();
+            
             return new BaseReturnMarshaller();
         }
 
@@ -264,6 +267,26 @@ namespace Silk.NET.SilkTouch
             }
         }
         
+        private class BoolReturnMarshaller : IReturnMarshaller
+        {
+            public Func<InvocationExpressionSyntax, BlockSyntax> Marshal(ITypeSymbol parameter, out ParameterSyntax loadType)
+            {
+                loadType = Parameter(Identifier("byte"));
+
+                return load => Block
+                (
+                    ReturnStatement
+                    (
+                        BinaryExpression
+                        (
+                            SyntaxKind.EqualsExpression, load,
+                            LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(1))
+                        )
+                    )
+                );
+            }
+        }
+
         private interface IParameterMarshaller
         {
             Func<BlockSyntax, BlockSyntax> Marshal(IParameterSymbol parameter, int id, out ParameterSyntax loadType, out ExpressionSyntax invokeParameter);
