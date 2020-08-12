@@ -25,7 +25,7 @@ namespace Silk.NET.Windowing.Sdl
         internal SDL.Sdl Sdl { get; private set; }
         internal SDL.Window* SdlWindow { get; private set; }
         protected SdlView? ParentView { get; }
-        protected SdlMonitor? InitialMonitor { get; }
+        protected SdlMonitor? InitialMonitor { get; set; }
         private SdlGLContext? _ctx;
         private SdlVkSurface? _vk;
         internal bool IsClosingVal { get; set; }
@@ -50,11 +50,20 @@ namespace Silk.NET.Windowing.Sdl
 
         protected override IntPtr CoreHandle => (IntPtr) SdlWindow;
 
-        protected override void CoreInitialize(ViewOptions opts)
+        protected override void CoreInitialize(ViewOptions opts) => CoreInitialize(opts, null, null, null, null, null, null);
+        protected void CoreInitialize(ViewOptions opts, WindowFlags? additionalFlags, int? x, int? y, int? w, int? h, string? title)
         {
-            var flags = WindowFlags.WindowResizable |
-                        WindowFlags.WindowAllowHighdpi |
+            var flags = WindowFlags.WindowAllowHighdpi |
                         WindowFlags.WindowShown;
+
+            if (additionalFlags is null)
+            {
+                flags |= WindowFlags.WindowResizable;
+            }
+            else
+            {
+                flags |= additionalFlags.Value;
+            }
 
             // Set window API.
             switch (opts.API.API)
@@ -78,11 +87,11 @@ namespace Silk.NET.Windowing.Sdl
             // Create window
             SdlWindow = Sdl.CreateWindow
             (
-                Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window",
-                50,
-                50,
-                1280,
-                720,
+                title ?? Assembly.GetEntryAssembly()?.GetName().Name ?? "Silk.NET Window",
+                x ?? 50,
+                y ?? 50,
+                w ?? 1280,
+                h ?? 720,
                 (uint) flags
             );
             Sdl.ThrowError();

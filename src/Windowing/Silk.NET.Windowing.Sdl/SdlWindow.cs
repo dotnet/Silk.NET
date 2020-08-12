@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
-using System.Text;
+using System.Runtime.CompilerServices;
 using Silk.NET.Core;
 using Silk.NET.SDL;
 using Point = System.Drawing.Point;
@@ -31,7 +31,8 @@ namespace Silk.NET.Windowing.Sdl
         {
             get => !IsInitialized
                 ? _extendedOptionsCache.IsVisible
-                : ((WindowFlags) Sdl.GetWindowFlags(SdlWindow) & WindowFlags.WindowShown) != 0;
+                : _extendedOptionsCache.IsVisible =
+                    ((WindowFlags) Sdl.GetWindowFlags(SdlWindow) & WindowFlags.WindowShown) != 0;
             set
             {
                 _extendedOptionsCache.IsVisible = value;
@@ -59,12 +60,10 @@ namespace Silk.NET.Windowing.Sdl
                 {
                     var ret = stackalloc int[2];
                     Sdl.GetWindowPosition(SdlWindow, ret, &ret[1]);
-                    return *(Point*) ret;
+                    return _extendedOptionsCache.Position = *(Point*) ret;
                 }
-                else
-                {
-                    return _extendedOptionsCache.Position;
-                }
+
+                return _extendedOptionsCache.Position;
             }
             set
             {
@@ -80,7 +79,7 @@ namespace Silk.NET.Windowing.Sdl
 
         public new Size Size
         {
-            get => _extendedOptionsCache.Size = base.Size;
+            get => IsInitialized ? _extendedOptionsCache.Size = base.Size : _extendedOptionsCache.Size;
             set
             {
                 _extendedOptionsCache.Size = value;
@@ -117,38 +116,40 @@ namespace Silk.NET.Windowing.Sdl
                 : _extendedOptionsCache.WindowState;
             set
             {
-                if (IsInitialized)
-                {
-                    switch (value)
-                    {
-                        case WindowState.Normal:
-                        {
-                            Sdl.RestoreWindow(SdlWindow);
-                            break;
-                        }
-                        case WindowState.Minimized:
-                        {
-                            Sdl.MinimizeWindow(SdlWindow);
-                            break;
-                        }
-                        case WindowState.Maximized:
-                        {
-                            Sdl.MaximizeWindow(SdlWindow);
-                            break;
-                        }
-                        case WindowState.Fullscreen:
-                        {
-                            Sdl.SetWindowFullscreen(SdlWindow, (uint) WindowFlags.WindowFullscreen);
-                            break;
-                        }
-                        default:
-                        {
-                            throw new ArgumentOutOfRangeException(nameof(value), value, null);
-                        }
-                    }
-                }
 
                 _extendedOptionsCache.WindowState = value;
+                if (!IsInitialized)
+                {
+                    return;
+                }
+
+                switch (value)
+                {
+                    case WindowState.Normal:
+                    {
+                        Sdl.RestoreWindow(SdlWindow);
+                        break;
+                    }
+                    case WindowState.Minimized:
+                    {
+                        Sdl.MinimizeWindow(SdlWindow);
+                        break;
+                    }
+                    case WindowState.Maximized:
+                    {
+                        Sdl.MaximizeWindow(SdlWindow);
+                        break;
+                    }
+                    case WindowState.Fullscreen:
+                    {
+                        Sdl.SetWindowFullscreen(SdlWindow, (uint) WindowFlags.WindowFullscreen);
+                        break;
+                    }
+                    default:
+                    {
+                        throw new ArgumentOutOfRangeException(nameof(value), value, null);
+                    }
+                }
             }
         }
 
@@ -359,14 +360,6 @@ namespace Silk.NET.Windowing.Sdl
                             //    break;
                             //case WindowEventID.WindoweventLeave:
                             //    break;
-                            //case WindowEventID.WindoweventFocusGained:
-                            //    break;
-                            //case WindowEventID.WindoweventFocusLost:
-                            //    break;
-                            //case WindowEventID.WindoweventClose:
-                            //    break;
-                            //case WindowEventID.WindoweventTakeFocus:
-                            //    break;
                             //case WindowEventID.WindoweventHitTest:
                             //    break;
                             default:
@@ -403,6 +396,32 @@ namespace Silk.NET.Windowing.Sdl
                 FileDrop?.Invoke(_droppedFiles.ToArray());
                 _droppedFiles.Clear();
             }
+        }
+
+        protected override void CoreInitialize(ViewOptions opts)
+        {
+            WindowFlags flags = 0;
+            flags |= IsVisible ? WindowFlags.WindowShown : WindowFlags.WindowHidden;
+            flags |= WindowBorder switch
+            {
+                WindowBorder.Resizable => WindowFlags.WindowResizable,
+                WindowBorder.Fixed => 0,
+                WindowBorder.Hidden => WindowFlags.WindowBorderless,
+                _ => 0
+            };
+            flags |= WindowState switch
+            {
+                WindowState.Normal => 0,
+                WindowState.Minimized => WindowFlags.WindowMinimized,
+                WindowState.Maximized => WindowFlags.WindowMaximized,
+                WindowState.Fullscreen => WindowFlags.WindowFullscreen,
+                _ => 0
+            };
+            CoreInitialize
+            (
+                opts, flags, InitialMonitor?.Bounds.Location.X + Position.X,
+                InitialMonitor?.Bounds.Location.Y + Position.Y, Size.Width, Size.Height, Title
+            );
         }
     }
 }

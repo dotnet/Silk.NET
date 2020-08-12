@@ -606,10 +606,10 @@
             "namespace": "Silk.NET.SDL",
             "extensionsNamespace": "Silk.NET.SDL.Extensions",
             "legacyNameContainer": {
-                "Linux": "libSDL2-2.0.so.0",
+                "Linux": "libSDL2-2.0.so",
                 "Windows": "SDL2.dll",
-                "MacOS": "libSDL2-2.0.0.dylib",
-                "Android": "libSDL2-2.0.so.0",
+                "MacOS": "libSDL2-2.0.dylib",
+                "Android": "libSDL2-2.0.so",
                 "IOS": "__Internal",
                 "ClassName": "SDLLibraryNameContainer"
             },
