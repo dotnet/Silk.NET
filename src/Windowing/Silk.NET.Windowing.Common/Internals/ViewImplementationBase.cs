@@ -103,7 +103,7 @@ namespace Silk.NET.Windowing.Internals
             IsInitialized = true;
             IsEventDriven = _optionsCache.IsEventDriven;
             GLContext?.MakeCurrent();
-            GLContext?.SwapInterval(_optionsCache.VSync ? 1 : 0);
+            _swapIntervalChanged = true;
             Load?.Invoke();
         }
         public void Reset()

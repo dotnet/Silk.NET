@@ -3,31 +3,59 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Collections.Generic;
 using System.Drawing;
+using Silk.NET.SDL;
 
 namespace Silk.NET.Windowing.Sdl
 {
-    public class SdlMonitor : IMonitor
+    public struct SdlMonitor : IMonitor
     {
-        public SdlMonitor(int i)
-        {
-            throw new System.NotImplementedException();
-        }
+        public SdlMonitor(int i) => Index = i;
+        public IWindow CreateWindow(WindowOptions opts) => new SdlWindow(opts, null, this);
 
-        public IWindow CreateWindow(WindowOptions opts)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public string Name { get; }
+        public string Name => SdlProvider.SDL.Value.GetDisplayNameS(Index);
         public int Index { get; }
-        public Rectangle Bounds { get; }
-        public VideoMode VideoMode { get; }
-        public float Gamma { get; set; }
-        public IEnumerable<VideoMode> GetAllVideoModes()
+
+        public unsafe Rectangle Bounds
         {
-            throw new System.NotImplementedException();
+            get
+            {
+                Rectangle ret;
+                SdlProvider.SDL.Value.GetDisplayUsableBounds(Index, (Rect*) &ret);
+                return ret;
+            }
+        }
+
+        public unsafe VideoMode VideoMode
+        {
+            get
+            {
+                DisplayMode mode;
+                SdlProvider.SDL.Value.GetCurrentDisplayMode(Index, &mode);
+                return new VideoMode(new Size(mode.W, mode.H), mode.RefreshRate);
+            }
+        }
+
+        public float Gamma
+        {
+            get => throw new PlatformNotSupportedException("Gamma ramps are not implemented on the SDL backend.");
+            set => throw new PlatformNotSupportedException("Gamma ramps are not implemented on the SDL backend.");
+        }
+
+        public unsafe IEnumerable<VideoMode> GetAllVideoModes()
+        {
+            var sdl = SdlProvider.SDL.Value;
+            var ret = new VideoMode[sdl.GetNumDisplayModes(Index)];
+            for (var i = 0; i < ret.Length; i++)
+            {
+                DisplayMode mode;
+                sdl.GetDisplayMode(Index, i, &mode);
+                ret[i] = new VideoMode(new Size(mode.W, mode.H), mode.RefreshRate);
+            }
+
+            return ret;
         }
     }
 }

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
+using System.Linq;
 using System.Reflection;
 using System.Threading;
 using Silk.NET.Core;
@@ -62,32 +63,12 @@ namespace Silk.NET.Windowing.Sdl
                 case ContextAPI.Vulkan:
                 {
                     flags |= WindowFlags.WindowVulkan;
-                    _vk = new SdlVkSurface(this);
                     break;
                 }
                 case ContextAPI.OpenGLES:
                 case ContextAPI.OpenGL:
                 {
                     flags |= WindowFlags.WindowOpengl;
-                    _ctx = new SdlGLContext
-                    (
-                        this,
-                        (GLattr.GLContextMajorVersion, opts.API.Version.MajorVersion),
-                        (GLattr.GLContextMinorVersion, opts.API.Version.MinorVersion),
-                        (
-                            GLattr.GLContextProfileMask,
-                            (int) (opts.API.API == ContextAPI.OpenGLES
-                                ? GLprofile.GLContextProfileES
-                                : opts.API.Profile switch
-                                {
-                                    ContextProfile.Core => GLprofile.GLContextProfileCore,
-                                    ContextProfile.Compatability => GLprofile.GLContextProfileCompatibility,
-                                    _ => throw new ArgumentOutOfRangeException(nameof(opts), "Bad ContextProfile")
-                                })
-                        ),
-                        (GLattr.GLContextFlags, (int) opts.API.Flags),
-                        (GLattr.GLDepthSize, opts.PreferredDepthBufferBits ?? 16)
-                    );
                     break;
                 }
             }
@@ -104,7 +85,25 @@ namespace Silk.NET.Windowing.Sdl
                 720,
                 (uint) flags
             );
-
+            Sdl.ThrowError();
+            (GLContext as SdlGLContext)?.Create
+            (
+                (GLattr.GLContextMajorVersion, opts.API.Version.MajorVersion),
+                (GLattr.GLContextMinorVersion, opts.API.Version.MinorVersion),
+                (
+                    GLattr.GLContextProfileMask,
+                    (int) (opts.API.API == ContextAPI.OpenGLES
+                        ? GLprofile.GLContextProfileES
+                        : opts.API.Profile switch
+                        {
+                            ContextProfile.Core => GLprofile.GLContextProfileCore,
+                            ContextProfile.Compatability => GLprofile.GLContextProfileCompatibility,
+                            _ => throw new ArgumentOutOfRangeException(nameof(opts), "Bad ContextProfile")
+                        })
+                ),
+                (GLattr.GLContextFlags, (int) opts.API.Flags),
+                (GLattr.GLDepthSize, opts.PreferredDepthBufferBits ?? 16)
+            );
             if (SdlWindow == null)
             {
                 throw new PlatformException(Sdl.GetErrorAsException());
@@ -133,11 +132,14 @@ namespace Silk.NET.Windowing.Sdl
                 return;
             }
             
+            GLContext?.Dispose();
             Sdl.DestroyWindow(SdlWindow);
         }
 
-        public override IGLContext? GLContext => _ctx;
-        public override IVkSurface? VkSurface => _vk;
+        public override IGLContext? GLContext => _ctx ??= API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES
+            ? new SdlGLContext(this)
+            : null;
+        public override IVkSurface? VkSurface => _vk ??= API.API == ContextAPI.Vulkan ? new SdlVkSurface(this) : null;
         public override bool IsClosing => IsClosingVal;
 
         public override VideoMode VideoMode
@@ -275,7 +277,7 @@ namespace Silk.NET.Windowing.Sdl
                     //    break;
                     case EventType.Windowevent:
                     {
-                        switch ((WindowEventID)@event.Window.Type)
+                        switch ((WindowEventID)@event.Window.Event)
                         {
                             case WindowEventID.WindoweventResized:
                             {

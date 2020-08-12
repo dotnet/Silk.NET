@@ -234,7 +234,7 @@ namespace Silk.NET.Windowing.Sdl
                 }
 
                 return monitor < 0
-                    ? null
+                    ? (IMonitor?) null
                     : new SdlMonitor(monitor);
             }
             set
@@ -321,7 +321,7 @@ namespace Silk.NET.Windowing.Sdl
                 {
                     case EventType.Windowevent:
                     {
-                        switch ((WindowEventID) @event.Window.Type)
+                        switch ((WindowEventID) @event.Window.Event)
                         {
                             //case WindowEventID.WindoweventNone:
                             //    break;
@@ -376,6 +376,7 @@ namespace Silk.NET.Windowing.Sdl
                                 break;
                             }
                         }
+
                         break;
                     }
                     case EventType.Dropfile:
@@ -390,7 +391,7 @@ namespace Silk.NET.Windowing.Sdl
                         break;
                     }
                 }
-                
+
                 if (!skipped)
                 {
                     Events.RemoveAt(i);
