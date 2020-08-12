@@ -238,6 +238,9 @@ namespace Silk.NET.SilkTouch
         
         private static IParameterMarshaller GetParameterMarshaller(IParameterSymbol parameterSymbol)
         {
+            if (parameterSymbol.Type.SpecialType == SpecialType.System_Boolean)
+                return new BoolParameterMarshaller();
+            
             return new BaseParameterMarshaller();
         }
         
@@ -417,6 +420,18 @@ namespace Silk.NET.SilkTouch
                 invokeParameter = IdentifierName(name);
                 
                 return func;
+            }
+        }
+        
+        private class BoolParameterMarshaller : IParameterMarshaller
+        {
+            public Func<BlockSyntax, BlockSyntax> Marshal(IParameterSymbol parameter, int id, out ParameterSyntax loadType, out ExpressionSyntax invokeParameter)
+            {
+                loadType = Parameter(Identifier("byte"));
+                invokeParameter = CastExpression
+                    (PredefinedType(Token(SyntaxKind.ByteKeyword)), IdentifierName(FormatName(parameter.Name)));
+                
+                return x => x;
             }
         }
 
