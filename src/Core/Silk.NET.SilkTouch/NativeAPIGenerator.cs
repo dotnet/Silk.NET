@@ -241,6 +241,9 @@ namespace Silk.NET.SilkTouch
             if (parameterSymbol.Type.SpecialType == SpecialType.System_Boolean)
                 return new BoolParameterMarshaller();
             
+            if (parameterSymbol.Type.TypeKind == TypeKind.Delegate)
+                return new DelegateParameterMarshaller();
+
             return new BaseParameterMarshaller();
         }
         
@@ -431,6 +434,46 @@ namespace Silk.NET.SilkTouch
                 invokeParameter = CastExpression
                     (PredefinedType(Token(SyntaxKind.ByteKeyword)), IdentifierName(FormatName(parameter.Name)));
                 
+                return x => x;
+            }
+        }
+        
+        private class DelegateParameterMarshaller : IParameterMarshaller
+        {
+            public Func<BlockSyntax, BlockSyntax> Marshal(IParameterSymbol parameter, int id, out ParameterSyntax loadType, out ExpressionSyntax invokeParameter)
+            {
+                loadType = Parameter(Identifier("IntPtr"));
+                invokeParameter = ConditionalExpression
+                (
+                    BinaryExpression
+                    (
+                        SyntaxKind.EqualsExpression, IdentifierName(FormatName(parameter.Name)),
+                        LiteralExpression(SyntaxKind.NullLiteralExpression)
+                    ),
+                    MemberAccessExpression
+                        (SyntaxKind.SimpleMemberAccessExpression, IdentifierName("IntPtr"), IdentifierName("Zero")),
+                    InvocationExpression
+                    ( // System.Runtime.InteropServices.Marshal.GetDelegateForFunctionPointer<T>(ResultName)
+                        MemberAccessExpression
+                        (
+                            SyntaxKind.SimpleMemberAccessExpression,
+                            MemberAccessExpression
+                            (
+                                SyntaxKind.SimpleMemberAccessExpression,
+                                MemberAccessExpression
+                                (
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    MemberAccessExpression
+                                    (
+                                        SyntaxKind.SimpleMemberAccessExpression, IdentifierName("System"),
+                                        IdentifierName("Runtime")
+                                    ), IdentifierName("InteropServices")
+                                ), IdentifierName("Marshal")
+                            ), IdentifierName("GetFunctionPointerForDelegate")
+                        ), ArgumentList(SingletonSeparatedList(Argument(IdentifierName(FormatName(parameter.Name)))))
+                    )
+                );
+
                 return x => x;
             }
         }
