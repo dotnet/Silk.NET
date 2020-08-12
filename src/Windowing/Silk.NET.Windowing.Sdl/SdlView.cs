@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing;
-using System.Linq;
 using System.Reflection;
 using System.Threading;
 using Silk.NET.Core;
@@ -22,22 +21,49 @@ namespace Silk.NET.Windowing.Sdl
     internal unsafe class SdlView : ViewImplementationBase
     {
         private const int WaitTimeout = 10;
-        internal SDL.Sdl Sdl { get; private set; }
-        internal SDL.Window* SdlWindow { get; private set; }
-        protected SdlView? ParentView { get; }
-        protected SdlMonitor? InitialMonitor { get; set; }
         private SdlGLContext? _ctx;
         private SdlVkSurface? _vk;
-        internal bool IsClosingVal { get; set; }
         private int _continue;
-        public List<Event> Events { get; } = new List<Event>();
         public SdlView(ViewOptions opts, SdlView? parent, SdlMonitor? monitor) : base(opts)
         {
             Sdl = SdlProvider.SDL.Value;
             ParentView = parent;
             InitialMonitor = monitor;
         }
+        
+        // Events
+        public override event Action<Size>? Resize;
+        public override event Action<Size>? FramebufferResize;
+        public override event Action? Closing;
+        public override event Action<bool>? FocusChanged;
+        
+        // Properties
+        public override IGLContext? GLContext => _ctx ??= API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES
+            ? new SdlGLContext(this)
+            : null;
+        public override IVkSurface? VkSurface => _vk ??= API.API == ContextAPI.Vulkan ? new SdlVkSurface(this) : null;
+        protected override IntPtr CoreHandle => (IntPtr) SdlWindow;
+        internal SDL.Sdl Sdl { get; }
+        internal SDL.Window* SdlWindow { get; private set; }
+        internal bool IsClosingVal { get; set; }
+        public override bool IsClosing => IsClosingVal;
+        public override bool IsEventDriven { get; set; }
+        public List<Event> Events { get; } = new List<Event>();
+        protected SdlView? ParentView { get; }
+        protected SdlMonitor? InitialMonitor { get; set; }
 
+        public override Size FramebufferSize => _ctx?.FramebufferSize ?? CoreSize;
+        public override VideoMode VideoMode
+        {
+            get
+            {
+                DisplayMode mode;
+                return Sdl.GetWindowDisplayMode(SdlWindow, &mode) == 1
+                    ? new VideoMode(new Size(mode.W, mode.H), mode.RefreshRate)
+                    : default;
+            }
+        }
+        
         protected override Size CoreSize
         {
             get
@@ -48,8 +74,9 @@ namespace Silk.NET.Windowing.Sdl
             }
         }
 
-        protected override IntPtr CoreHandle => (IntPtr) SdlWindow;
 
+        // Methods
+        public override void ContinueEvents() => Interlocked.Exchange(ref _continue, 1);
         protected override void CoreInitialize(ViewOptions opts) => CoreInitialize(opts, null, null, null, null, null, null);
         protected void CoreInitialize(ViewOptions opts, WindowFlags? additionalFlags, int? x, int? y, int? w, int? h, string? title)
         {
@@ -145,26 +172,6 @@ namespace Silk.NET.Windowing.Sdl
             Sdl.DestroyWindow(SdlWindow);
         }
 
-        public override IGLContext? GLContext => _ctx ??= API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES
-            ? new SdlGLContext(this)
-            : null;
-        public override IVkSurface? VkSurface => _vk ??= API.API == ContextAPI.Vulkan ? new SdlVkSurface(this) : null;
-        public override bool IsClosing => IsClosingVal;
-
-        public override VideoMode VideoMode
-        {
-            get
-            {
-                DisplayMode mode;
-                return Sdl.GetWindowDisplayMode(SdlWindow, &mode) == 1
-                    ? new VideoMode(new Size(mode.W, mode.H), mode.RefreshRate)
-                    : default;
-            }
-        }
-        public override bool IsEventDriven { get; set; }
-
-        public override Size FramebufferSize => _ctx?.FramebufferSize ?? CoreSize;
-
         public override void DoEvents()
         {
             ClearEvents();
@@ -207,8 +214,6 @@ namespace Silk.NET.Windowing.Sdl
             }
         }
 
-        public override void ContinueEvents() => Interlocked.Exchange(ref _continue, 1);
-
         public override void Dispose()
         {
             CoreReset();
@@ -236,10 +241,6 @@ namespace Silk.NET.Windowing.Sdl
             // do nothing, SDL uses event pumps like all windowing frameworks should do.
         }
 
-        public override event Action<Size>? Resize;
-        public override event Action<Size>? FramebufferResize;
-        public override event Action? Closing;
-        public override event Action<bool>? FocusChanged;
 
         public override Point PointToClient(Point point)
         {
