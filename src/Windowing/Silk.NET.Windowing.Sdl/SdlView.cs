@@ -159,6 +159,8 @@ namespace Silk.NET.Windowing.Sdl
             {
                 Sdl.ClearError();
             }
+            
+            Sdl.ThrowError();
         }
 
         protected override void CoreReset()

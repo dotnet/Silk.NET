@@ -5,11 +5,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Silk.NET.SDL;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Sdl;
 
 [assembly: WindowPlatform(typeof(SdlPlatform))]
+[assembly: InternalsVisibleTo("Silk.NET.Input.Sdl")]
 
 namespace Silk.NET.Windowing.Sdl
 {

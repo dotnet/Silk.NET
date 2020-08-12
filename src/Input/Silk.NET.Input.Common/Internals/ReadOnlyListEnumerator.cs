@@ -6,7 +6,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Silk.NET.Input.Glfw
+namespace Silk.NET.Input.Internals
 {
     internal struct ReadOnlyListEnumerator<T> : IEnumerator<T>
     {

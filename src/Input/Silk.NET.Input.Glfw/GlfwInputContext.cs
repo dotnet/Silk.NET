@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using Silk.NET.GLFW;
+using Silk.NET.Input.Internals;
 using Silk.NET.Windowing;
 using Silk.NET.Windowing.Glfw;
 
