@@ -246,6 +246,9 @@ namespace Silk.NET.SilkTouch
             if (typeSymbol.SpecialType == SpecialType.System_Boolean)
                 return new BoolReturnMarshaller();
             
+            if (typeSymbol.TypeKind == TypeKind.Delegate)
+                return new DelegateReturnMarshaller();
+            
             return new BaseReturnMarshaller();
         }
 
@@ -286,7 +289,70 @@ namespace Silk.NET.SilkTouch
                 );
             }
         }
+        
+        private class DelegateReturnMarshaller : IReturnMarshaller
+        {
+            public Func<InvocationExpressionSyntax, BlockSyntax> Marshal(ITypeSymbol parameter, out ParameterSyntax loadType)
+            {
+                loadType = Parameter(Identifier("IntPtr"));
 
+                return load => Block
+                (
+                    LocalDeclarationStatement
+                    (
+                        VariableDeclaration
+                        (
+                            IdentifierName("var"),
+                            SingletonSeparatedList
+                                (VariableDeclarator(Identifier(ResultName), null, EqualsValueClause(load)))
+                        )
+                    ), ExpressionStatement
+                    (
+                        ConditionalExpression
+                        (
+                            BinaryExpression
+                            (
+                                SyntaxKind.EqualsExpression, IdentifierName(ResultName),
+                                MemberAccessExpression
+                                (
+                                    SyntaxKind.SimpleMemberAccessExpression, IdentifierName("IntPtr"),
+                                    IdentifierName("Zero")
+                                )
+                            ), LiteralExpression(SyntaxKind.NullLiteralExpression), InvocationExpression
+                            ( // System.Runtime.InteropServices.Marshal.GetDelegateForFunctionPointer<T>(ResultName)
+                                MemberAccessExpression
+                                (
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    MemberAccessExpression
+                                    (
+                                        SyntaxKind.SimpleMemberAccessExpression,
+                                        MemberAccessExpression
+                                        (
+                                            SyntaxKind.SimpleMemberAccessExpression,
+                                            MemberAccessExpression
+                                            (
+                                                SyntaxKind.SimpleMemberAccessExpression, IdentifierName("System"),
+                                                IdentifierName("Runtime")
+                                            ), IdentifierName("InteropServices")
+                                        ), IdentifierName("Marshal")
+                                    ),
+                                    GenericName
+                                    (
+                                        Identifier("GetDelegateForFunctionPointer"),
+                                        TypeArgumentList
+                                        (
+                                            SingletonSeparatedList
+                                                ((TypeSyntax) IdentifierName(parameter.ToDisplayString()))
+                                        )
+                                    )
+                                ), ArgumentList(SingletonSeparatedList(Argument(IdentifierName(ResultName))))
+                            )
+                        )
+                    )
+                );
+            }
+        }
+        
         private interface IParameterMarshaller
         {
             Func<BlockSyntax, BlockSyntax> Marshal(IParameterSymbol parameter, int id, out ParameterSyntax loadType, out ExpressionSyntax invokeParameter);
