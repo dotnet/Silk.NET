@@ -54,31 +54,38 @@ namespace Silk.NET.SilkTouch
         }
 
         private string ProcessClassDeclaration
-            (ClassDeclarationSyntax classDeclaration, Compilation compilation, INamedTypeSymbol nativeApiAttributeSymbol)
+        (
+            ClassDeclarationSyntax classDeclaration,
+            Compilation compilation,
+            INamedTypeSymbol nativeApiAttributeSymbol
+        )
         {
             if (!classDeclaration.Modifiers.Any(x => x.IsKind(SyntaxKind.PartialKeyword)))
                 return null;
 
             if (!classDeclaration.Parent.IsKind(SyntaxKind.NamespaceDeclaration))
                 return null;
-            var namespaceDeclaration = (NamespaceDeclarationSyntax)classDeclaration.Parent;
+            var namespaceDeclaration = (NamespaceDeclarationSyntax) classDeclaration.Parent;
 
             if (!namespaceDeclaration.Parent.IsKind(SyntaxKind.CompilationUnit))
                 return null;
             var compilationUnit = (CompilationUnitSyntax) namespaceDeclaration.Parent;
-            
-            var classSymbol = ModelExtensions.GetDeclaredSymbol(compilation.GetSemanticModel(classDeclaration.SyntaxTree), classDeclaration);
-            
+
+            var classSymbol = ModelExtensions.GetDeclaredSymbol
+                (compilation.GetSemanticModel(classDeclaration.SyntaxTree), classDeclaration);
+
             var classAttribute = classSymbol.GetAttributes()
                 .FirstOrDefault(x => SymbolEqualityComparer.Default.Equals(x.AttributeClass, nativeApiAttributeSymbol));
 
-            var classNativeApiAttribute = classAttribute == default ? new NativeApiAttribute() : ToNativeApiAttribute(classAttribute);
+            var classNativeApiAttribute = classAttribute == default
+                ? new NativeApiAttribute()
+                : ToNativeApiAttribute(classAttribute);
 
             var newMembers = new List<MemberDeclarationSyntax>();
-            
-            var methods = classDeclaration.Members
-                .Where(x => x.IsKind(SyntaxKind.MethodDeclaration))
-                .Select(x => (MethodDeclarationSyntax)x)
+
+            var methods = classDeclaration.Members.Where
+                    (x => x.IsKind(SyntaxKind.MethodDeclaration))
+                .Select(x => (MethodDeclarationSyntax) x)
                 .Select
                 (
                     declaration => (declaration,
@@ -89,37 +96,61 @@ namespace Silk.NET.SilkTouch
                     x => (x.declaration, x.symbol,
                         attribute: x.symbol.GetAttributes()
                             .FirstOrDefault
-                                (x2 => SymbolEqualityComparer.Default.Equals(x2.AttributeClass, nativeApiAttributeSymbol)))
+                            (
+                                x2 => SymbolEqualityComparer.Default.Equals(x2.AttributeClass, nativeApiAttributeSymbol)
+                            ))
                 )
                 .Where(x => x.attribute != default)
-                .Select(x => (x.declaration, x.symbol, ToNativeApiAttribute(x.attribute))).ToArray();
-            foreach (var (declaration, symbol, attribute) in methods)
+                .Select(x => (x.declaration, x.symbol, ToNativeApiAttribute(x.attribute)))
+                .Where(x => x.declaration.Modifiers.Any(x => x.IsKind(SyntaxKind.PartialKeyword)))
+                .Select
+                (
+                    x => (declaration: x.declaration, symbol: x.symbol,
+                        entryPoint: NativeApiAttribute.GetEntryPoint(x.Item3, classNativeApiAttribute, x.symbol.Name),
+                        callingConvention: NativeApiAttribute.GetCallingConvention(x.Item3, classNativeApiAttribute))
+                )
+                .ToArray();
+            foreach (var (declaration, symbol, entryPoint, callingConvention) in methods)
             {
-                if (!declaration.Modifiers.Any(x => x.IsKind(SyntaxKind.PartialKeyword)))
-                    continue; // TODO: Diagnostic
-
-                var entryPoint = NativeApiAttribute.GetEntryPoint(attribute, classNativeApiAttribute, symbol.Name);
-                var callingConvention = NativeApiAttribute.GetCallingConvention(attribute, classNativeApiAttribute);
+                // NOTE: This function is sort of backwards, because we first generate the Load + call and then wrap it in blocks generated from parameters
 
                 var slot = Interlocked.Increment(ref _slot);
 
-                var functionPointerTypeParams = new List<ParameterSyntax>();
+                var marshalled =
 
-                // in
-                var parameters = symbol.Parameters.Select(x => (Symbol: x, Marshaller: MarshallParameterType(x))).ToArray();
-                functionPointerTypeParams.AddRange(parameters.Select(x => x.Marshaller?.TypeParameter ?? Parameter(Identifier(x.Symbol.Type.ToDisplayString()))));
+                // build parameter-marshaller pairs
+                symbol.Parameters.Select(x => (parameter: x, marshaller: GetParameterMarshaller(x)))
 
-                // out
-                var returnMarshaller = MarshalReturnType(symbol.ReturnType);
-
-                functionPointerTypeParams.Add
+                // marshal parameters
+                .Select
                 (
-                    symbol.ReturnsVoid
-                        ? Parameter(Identifier("void"))
-                        : Parameter(returnMarshaller?.ResultType ?? Identifier(symbol.ReturnType.Name))
-                );
+                    (x, i) =>
+                    {
+                        var applyStatements = x.marshaller.Marshal
+                            (x.parameter, i, out var loadType, out var invokeParameter);
+
+                        return (applyStatements, loadType, invokeParameter);
+                    }
+                ).ToArray();
+
+
+                ParameterSyntax returnLoadType;
+                Func<InvocationExpressionSyntax, BlockSyntax> buildBlock;
                 
-                var invocationExpressionSyntax = InvocationExpression
+                // marshal return
+                if (!symbol.ReturnsVoid)
+                {
+                    var marshaller = GetReturnMarshaller(symbol.ReturnType);
+                    buildBlock = marshaller.Marshal(symbol.ReturnType, out returnLoadType);
+                }
+                else
+                {
+                    returnLoadType = Parameter(Identifier("void"));
+                    buildBlock = load => Block(ExpressionStatement(load));
+                }
+
+                // build load + invocation
+                var loadExpression = InvocationExpression
                 (
                     ParenthesizedExpression
                     (
@@ -128,30 +159,21 @@ namespace Silk.NET.SilkTouch
                             FunctionPointerType
                             (
                                 Identifier(GetCallingConvention(callingConvention)),
-                                SeparatedList(functionPointerTypeParams)
+                                SeparatedList(marshalled.Select(x => x.loadType).Append(returnLoadType))
                             ), InvocationExpression
                             (
                                 IdentifierName("Load"), ArgumentList
                                 (
-                                    SeparatedList<ArgumentSyntax>
+                                    SeparatedList
                                     (
                                         new[]
                                         {
                                             Argument
-                                            (
-                                                LiteralExpression
-                                                (
-                                                    SyntaxKind.NumericLiteralExpression,
-                                                    Literal(slot)
-                                                )
-                                            ),
+                                                (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(slot))),
                                             Argument
                                             (
                                                 LiteralExpression
-                                                (
-                                                    SyntaxKind.StringLiteralExpression,
-                                                    Literal(entryPoint)
-                                                )
+                                                    (SyntaxKind.StringLiteralExpression, Literal(entryPoint))
                                             )
                                         }
                                     )
@@ -162,31 +184,47 @@ namespace Silk.NET.SilkTouch
                     ArgumentList
                     (
                         SeparatedList
-                            (parameters.Select(x => Argument(x.Marshaller?.Expression(x.Symbol) ?? IdentifierName(x.Symbol.Name))))
+                        (
+                            marshalled.Select
+                                (x => Argument(x.invokeParameter))
+                        )
                     )
                 );
-                var blockSyntax = symbol.ReturnsVoid 
-                    ? Block(ExpressionStatement(invocationExpressionSyntax))
-                    : Block
-                    (
-                        returnMarshaller?.Statement
-                        (
-                            invocationExpressionSyntax
-                        ) ?? ReturnStatement(invocationExpressionSyntax)
-                    );
+                
+                BlockSyntax block;
 
+                if (symbol.ReturnsVoid)
+                    // build loest block (LOADEXPR)
+                    block = Block(ExpressionStatement(loadExpression));
+                else
+                    // build lowest block
+                    block = buildBlock(loadExpression);
+
+                // apply parameter marshalling
+                block = marshalled.Aggregate(block, (current, parameter) => parameter.applyStatements(current));
+
+                block = Block(UnsafeStatement(Token(SyntaxKind.UnsafeKeyword), block));
+
+                var method = declaration.WithBody
+                        (block)
+                    .WithAttributeLists(default)
+                    .WithSemicolonToken(default)
+                    .WithParameterList
+                    (
+                        ParameterList
+                        (
+                            SeparatedList
+                                (declaration.ParameterList.Parameters.Select(x => x.WithAttributeLists(default)))
+                        )
+                    );    
+
+                // append to members
                 newMembers.Add
                 (
-                    declaration.WithBody
-                        (
-                            blockSyntax
-                        )
-                        .WithAttributeLists(default)
-                        .WithSemicolonToken(default)
-                        .WithParameterList(ParameterList(SeparatedList(declaration.ParameterList.Parameters.Select(x => x.WithAttributeLists(default)))))
+                    method
                 );
             }
-
+                           
             if (newMembers.Count == 0)
                 return null;
 
@@ -196,48 +234,114 @@ namespace Silk.NET.SilkTouch
             return newNamespace.NormalizeWhitespace().ToFullString();
         }
 
-        private static IParameterMarshaller MarshallParameterType(IParameterSymbol symbol)
+        private const string ResultName = "res";
+        
+        private static IParameterMarshaller GetParameterMarshaller(IParameterSymbol parameterSymbol)
         {
-            return null;
-        }
-
-        private interface IParameterMarshaller
-        {
-            public ParameterSyntax TypeParameter { get; }
-            ExpressionSyntax Expression(IParameterSymbol symbol);
+            return new BaseParameterMarshaller();
         }
         
-        private static IReturnMarshaller MarshalReturnType(ITypeSymbol symbol)
+        private static IReturnMarshaller GetReturnMarshaller(ITypeSymbol typeSymbol)
         {
-            if (symbol.SpecialType == SpecialType.System_Boolean)
-                return new BoolReturnMarshaller();
-
-            return null;
+            return new BaseReturnMarshaller();
         }
-        
+
         private interface IReturnMarshaller
         {
-            public SyntaxToken ResultType { get; }
-            public StatementSyntax Statement(ExpressionSyntax argument);
+            Func<InvocationExpressionSyntax, BlockSyntax> Marshal(ITypeSymbol parameter, out ParameterSyntax loadType);
         }
         
-        private class BoolReturnMarshaller : IReturnMarshaller
+        private class BaseReturnMarshaller : IReturnMarshaller
         {
-            public SyntaxToken ResultType => Identifier("byte");
+            public virtual Func<InvocationExpressionSyntax, BlockSyntax> Marshal(ITypeSymbol parameter, out ParameterSyntax loadType)
+            {
+                loadType = Parameter(Identifier(parameter.ToDisplayString()));
 
-            public StatementSyntax Statement
-                (ExpressionSyntax argument)
-                => ReturnStatement(BinaryExpression
+                return load => Block
                 (
-                    SyntaxKind.EqualsExpression, argument,
-                    LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(1))
-                ));
+                    ReturnStatement(load)
+                );
+            }
+        }
+        
+        private interface IParameterMarshaller
+        {
+            Func<BlockSyntax, BlockSyntax> Marshal(IParameterSymbol parameter, int id, out ParameterSyntax loadType, out ExpressionSyntax invokeParameter);
+        }
+        
+        private class BaseParameterMarshaller : IParameterMarshaller
+        {
+            public virtual Func<BlockSyntax, BlockSyntax> Marshal(IParameterSymbol parameter, int id, out ParameterSyntax loadType, out ExpressionSyntax invokeParameter)
+            {
+                Func<BlockSyntax, BlockSyntax> func;
+                var name = $"p{id}";
+                switch (parameter.RefKind)
+                {
+                    case RefKind.None:
+                        func = child => Block
+                        (
+                            LocalDeclarationStatement
+                            (
+                                VariableDeclaration
+                                (
+                                    IdentifierName("var"), SeparatedList
+                                    (
+                                        new[]
+                                        {
+                                            VariableDeclarator
+                                            (
+                                                Identifier(name), null,
+                                                EqualsValueClause(IdentifierName(FormatName(parameter.Name)))
+                                            )
+                                        }
+                                    )
+                                )
+                            ), child
+                        );
+                        loadType = Parameter(Identifier(parameter.Type.ToDisplayString()));
+                        break;
+                    case RefKind.In:
+                    case RefKind.Out:
+                    case RefKind.Ref:
+                        func = child => Block
+                        (
+                            FixedStatement
+                            (
+                                VariableDeclaration
+                                (
+                                    IdentifierName(parameter.Type.ToDisplayString() + "*"), SeparatedList
+                                    (
+                                        new[]
+                                        {
+                                            VariableDeclarator(Identifier(name), default, EqualsValueClause(PrefixUnaryExpression(SyntaxKind.AddressOfExpression, IdentifierName(FormatName(parameter.Name)))))
+                                        }
+                                    )
+                                ), child
+                            )
+                        );
+                        loadType = Parameter(Identifier(parameter.Type.ToDisplayString() + "*"));
+                        break;
+                    default:
+                        throw new Exception();
+                }
+
+                invokeParameter = IdentifierName(name);
+                
+                return func;
+            }
+        }
+
+        private static string FormatName(string name)
+        {
+            if (CSharpKeywords.Contains(name))
+                return "@" + name;
+            return name;
         }
         
         private static string GetCallingConvention(CallingConvention convention) =>
             convention switch
             {
-                // CallingConvention.Winapi => "", netstandard2.0 doesn't allow this :(
+                // CallingConvention.Winapi => "", netstandard2.0 doesn't allow this
                 CallingConvention.Cdecl => "cdecl",
                 CallingConvention.ThisCall => "thiscall",
                 CallingConvention.StdCall => "stdcall",
@@ -270,5 +374,86 @@ namespace Silk.NET.SilkTouch
                 if (syntaxNode is ClassDeclarationSyntax cds) ClassDeclarations.Add(cds);
             }
         }
+        
+        public static List<string> CSharpKeywords => new List<string>
+        {
+            "abstract",
+            "event",
+            "new",
+            "struct",
+            "as",
+            "explicit",
+            "null",
+            "switch",
+            "base",
+            "extern",
+            "object",
+            "this",
+            "bool",
+            "false",
+            "operator",
+            "throw",
+            "break",
+            "finally",
+            "out",
+            "true",
+            "byte",
+            "fixed",
+            "override",
+            "try",
+            "case",
+            "float",
+            "params",
+            "typeof",
+            "catch",
+            "for",
+            "private",
+            "uint",
+            "char",
+            "foreach",
+            "protected",
+            "ulong",
+            "checked",
+            "goto",
+            "public",
+            "unchecked",
+            "class",
+            "if",
+            "readonly",
+            "unsafe",
+            "const",
+            "implicit",
+            "ref",
+            "ushort",
+            "continue",
+            "in",
+            "return",
+            "using",
+            "decimal",
+            "int",
+            "sbyte",
+            "virtual",
+            "default",
+            "interface",
+            "sealed",
+            "volatile",
+            "delegate",
+            "internal",
+            "short",
+            "void",
+            "do",
+            "is",
+            "sizeof",
+            "while",
+            "double",
+            "lock",
+            "stackalloc",
+            "else",
+            "long",
+            "static",
+            "enum",
+            "namespace",
+            "string"
+        };
     }
 }
