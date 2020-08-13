@@ -13,6 +13,7 @@ namespace Silk.NET.Input.Sdl
         private readonly SdlInputContext _ctx;
         private readonly List<MouseButton> _downButtons = new List<MouseButton>();
         private bool _wheelChanged;
+
         public SdlMouse(SdlInputContext ctx)
         {
             _ctx = ctx;
@@ -25,16 +26,20 @@ namespace Silk.NET.Input.Sdl
 
         public override IReadOnlyList<MouseButton> SupportedButtons { get; } = new[]
             {MouseButton.Left, MouseButton.Middle, MouseButton.Right, MouseButton.Button4, MouseButton.Button5};
+
         public override IReadOnlyList<ScrollWheel> ScrollWheels { get; } = new ScrollWheel[1];
-        public override unsafe PointF Position {
+
+        public override unsafe PointF Position
+        {
             get
             {
                 int x, y;
-                _ctx.Sdl.GetMouseState(&x,&y);
+                _ctx.Sdl.GetMouseState(&x, &y);
                 return new PointF(x, y);
             }
-            set => _ctx.Sdl.WarpMouseInWindow((Window*) _ctx.Handle, (int)value.X, (int)value.Y);
+            set => _ctx.Sdl.WarpMouseInWindow((Window*) _ctx.Handle, (int) value.X, (int) value.Y);
         }
+
         public override ICursor Cursor { get; }
         public override bool IsButtonPressed(MouseButton btn) => _downButtons.Contains(btn);
         public override event Action<IMouse, PointF>? MouseMove;
@@ -42,11 +47,12 @@ namespace Silk.NET.Input.Sdl
 
         public void Update()
         {
-            if (!_wheelChanged && Unsafe.As<ScrollWheel, Vector2>(ref ((ScrollWheel[])ScrollWheels)[0]) != default)
+            if (!_wheelChanged && Unsafe.As<ScrollWheel, Vector2>(ref ((ScrollWheel[]) ScrollWheels)[0]) != default)
             {
                 ((ScrollWheel[]) ScrollWheels)[0] = default;
             }
         }
+
         public void DoEvent(Event @event)
         {
             switch ((EventType) @event.Type)

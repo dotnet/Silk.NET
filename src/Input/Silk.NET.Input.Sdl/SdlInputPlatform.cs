@@ -19,8 +19,11 @@ namespace Silk.NET.Input.Sdl
 
         public IInputContext CreateInput(IView view) => new SdlInputContext
         (
-            view as SdlView ?? throw new InvalidOperationException("Attempted to create SDL input context for a " +
-                                                                   "non-SDL view.")
+            view as SdlView ?? throw new InvalidOperationException
+            (
+                "Attempted to create SDL input context for a " +
+                "non-SDL view."
+            )
         );
     }
 }

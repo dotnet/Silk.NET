@@ -9,7 +9,7 @@ using System.Collections.Generic;
 namespace Silk.NET.Input.Internals
 {
     internal struct IsConnectedEnumerator<T> : IEnumerator<T>
-        where T:IInputDevice
+        where T : IInputDevice
     {
         private IEnumerator<T> _base;
 
@@ -18,7 +18,7 @@ namespace Silk.NET.Input.Internals
             _base = @base;
             Current = default!;
         }
-        
+
         public bool MoveNext()
         {
             while (_base.MoveNext())

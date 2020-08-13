@@ -25,7 +25,7 @@ namespace Silk.NET.Windowing.Internals
         {
             ExtendedOptionsCache = optionsCache;
         }
-        
+
         // Property bases - these have extra functionality baked into their getters and setters
         protected abstract bool CoreIsVisible { get; set; }
         protected abstract Point CorePosition { get; set; }
@@ -34,7 +34,7 @@ namespace Silk.NET.Windowing.Internals
         protected abstract WindowBorder CoreWindowBorder { get; set; }
         protected abstract bool IsClosingSettable { set; }
         protected abstract Size SizeSettable { set; }
-        
+
         // Function bases - again extra functionality on top
         protected abstract void CoreInitialize(WindowOptions opts);
 
@@ -42,18 +42,18 @@ namespace Silk.NET.Windowing.Internals
         public abstract event Action<Point>? Move;
         public abstract event Action<WindowState>? StateChanged;
         public abstract event Action<string[]>? FileDrop;
-        
+
         // Other APIs implemented abstractly
         public abstract IWindow CreateWindow(WindowOptions opts);
         public abstract IWindowHost? Parent { get; }
         public abstract IMonitor? Monitor { get; set; }
         public abstract void SetWindowIcon(ReadOnlySpan<RawImage> icons);
-        
+
         // Cache updates for dervied classes
         protected void UpdatePosition(Point point) => ExtendedOptionsCache.Position = point;
         protected void UpdateSize(Size size) => ExtendedOptionsCache.Size = size;
         protected void UpdateState(WindowState state) => ExtendedOptionsCache.WindowState = state;
-        
+
         // Lifetime controls
         protected override void CoreInitialize(ViewOptions opts)
         {
@@ -67,7 +67,7 @@ namespace Silk.NET.Windowing.Internals
             ExtendedOptionsCache.PreferredDepthBufferBits = opts.PreferredDepthBufferBits;
             CoreInitialize(ExtendedOptionsCache);
         }
-        
+
         // Point transformations
         public override Point PointToClient(Point point)
         {
@@ -78,7 +78,7 @@ namespace Silk.NET.Windowing.Internals
         {
             return new Point(point.X + Position.X, point.Y + Position.Y);
         }
-        
+
         // Properties with different accessors on IWindow than on IView
         Size IWindowProperties.Size
         {
@@ -93,12 +93,13 @@ namespace Silk.NET.Windowing.Internals
                 ExtendedOptionsCache.Size = value;
             }
         }
+
         bool IWindow.IsClosing
         {
             get => IsClosing;
             set => IsClosingSettable = value;
         }
-        
+
         public bool IsVisible
         {
             get => IsInitialized ? ExtendedOptionsCache.IsVisible = CoreIsVisible : ExtendedOptionsCache.IsVisible;
@@ -143,7 +144,9 @@ namespace Silk.NET.Windowing.Internals
 
         public WindowState WindowState
         {
-            get => IsInitialized ? ExtendedOptionsCache.WindowState = CoreWindowState : ExtendedOptionsCache.WindowState;
+            get => IsInitialized
+                ? ExtendedOptionsCache.WindowState = CoreWindowState
+                : ExtendedOptionsCache.WindowState;
             set
             {
                 if (IsInitialized)
@@ -157,7 +160,9 @@ namespace Silk.NET.Windowing.Internals
 
         public WindowBorder WindowBorder
         {
-            get => IsInitialized ? ExtendedOptionsCache.WindowBorder = CoreWindowBorder : ExtendedOptionsCache.WindowBorder;
+            get => IsInitialized
+                ? ExtendedOptionsCache.WindowBorder = CoreWindowBorder
+                : ExtendedOptionsCache.WindowBorder;
             set
             {
                 if (IsInitialized)

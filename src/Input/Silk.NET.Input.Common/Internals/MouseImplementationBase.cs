@@ -24,18 +24,19 @@ namespace Silk.NET.Input.Internals
         public abstract bool IsButtonPressed(MouseButton btn);
         public abstract event Action<IMouse, PointF>? MouseMove;
         public abstract event Action<IMouse, ScrollWheel>? Scroll;
-        
+
         // Fields
         private MouseButton? _firstClickButton;
         private PointF _firstClickPosition = PointF.Empty;
         private DateTime? _firstClickTime;
         private bool _firstClick = true;
-        
+
         // Events
         public event Action<IMouse, MouseButton>? MouseDown;
         public event Action<IMouse, MouseButton>? MouseUp;
         public event Action<IMouse, MouseButton, PointF>? Click;
         public event Action<IMouse, MouseButton, PointF>? DoubleClick;
+
         protected void HandleMouseDown(IMouse mouse, MouseButton button)
         {
             MouseDown?.Invoke(mouse, button);

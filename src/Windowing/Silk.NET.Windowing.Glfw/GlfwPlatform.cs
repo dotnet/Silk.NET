@@ -27,10 +27,12 @@ namespace Silk.NET.Windowing.Glfw
         {
             get
             {
-                try {
+                try
+                {
                     GLFW.Glfw.GetApi(); // activate the class so we can determine if we can activate the class
                 }
-                catch {
+                catch
+                {
                     return false;
                 }
 

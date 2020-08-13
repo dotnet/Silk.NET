@@ -40,7 +40,7 @@ namespace Silk.NET.Input.Glfw
 
             for (var i = 0; i < _joysticks.Length; i++)
             {
-                _joysticks[i] = new GlfwJoystick(i){OnConnectionChanged = OnConnectionChanged};
+                _joysticks[i] = new GlfwJoystick(i) {OnConnectionChanged = OnConnectionChanged};
             }
 
             _subscribers[0] = _keyboards[0] = new GlfwKeyboard();
@@ -63,7 +63,7 @@ namespace Silk.NET.Input.Glfw
                 {
                     updatable.Update();
                 }
-                
+
                 foreach (var updatable in _joysticks)
                 {
                     updatable.Update();

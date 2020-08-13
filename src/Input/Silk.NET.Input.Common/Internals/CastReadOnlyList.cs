@@ -37,7 +37,7 @@ namespace Silk.NET.Input.Internals
                     return default!;
                 }
 
-                return (TTo)ret;
+                return (TTo) ret;
             }
         }
     }

@@ -14,6 +14,7 @@ using Silk.NET.Core.Contexts;
 using Silk.NET.SDL;
 using Silk.NET.Windowing.Internals;
 using Point = System.Drawing.Point;
+
 // ReSharper disable BitwiseOperatorOnEnumWithoutFlags
 
 namespace Silk.NET.Windowing.Sdl
@@ -24,23 +25,25 @@ namespace Silk.NET.Windowing.Sdl
         private SdlGLContext? _ctx;
         private SdlVkSurface? _vk;
         private int _continue;
+
         public SdlView(ViewOptions opts, SdlView? parent, SdlMonitor? monitor) : base(opts)
         {
             Sdl = SdlProvider.SDL.Value;
             ParentView = parent;
             InitialMonitor = monitor;
         }
-        
+
         // Events
         public override event Action<Size>? Resize;
         public override event Action<Size>? FramebufferResize;
         public override event Action? Closing;
         public override event Action<bool>? FocusChanged;
-        
+
         // Properties
         public override IGLContext? GLContext => _ctx ??= API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES
             ? new SdlGLContext(this)
             : null;
+
         public override IVkSurface? VkSurface => _vk ??= API.API == ContextAPI.Vulkan ? new SdlVkSurface(this) : null;
         protected override IntPtr CoreHandle => (IntPtr) SdlWindow;
         internal SDL.Sdl Sdl { get; }
@@ -53,6 +56,7 @@ namespace Silk.NET.Windowing.Sdl
         protected SdlMonitor? InitialMonitor { get; set; }
 
         public override Size FramebufferSize => _ctx?.FramebufferSize ?? CoreSize;
+
         public override VideoMode VideoMode
         {
             get
@@ -63,7 +67,7 @@ namespace Silk.NET.Windowing.Sdl
                     : default;
             }
         }
-        
+
         protected override Size CoreSize
         {
             get
@@ -77,8 +81,12 @@ namespace Silk.NET.Windowing.Sdl
 
         // Methods
         public override void ContinueEvents() => Interlocked.Exchange(ref _continue, 1);
-        protected override void CoreInitialize(ViewOptions opts) => CoreInitialize(opts, null, null, null, null, null, null);
-        protected void CoreInitialize(ViewOptions opts, WindowFlags? additionalFlags, int? x, int? y, int? w, int? h, string? title)
+
+        protected override void CoreInitialize(ViewOptions opts) => CoreInitialize
+            (opts, null, null, null, null, null, null);
+
+        protected void CoreInitialize
+            (ViewOptions opts, WindowFlags? additionalFlags, int? x, int? y, int? w, int? h, string? title)
         {
             var flags = WindowFlags.WindowAllowHighdpi |
                         WindowFlags.WindowShown;
@@ -159,7 +167,7 @@ namespace Silk.NET.Windowing.Sdl
             {
                 Sdl.ClearError();
             }
-            
+
             Sdl.ThrowError();
         }
 
@@ -169,7 +177,7 @@ namespace Silk.NET.Windowing.Sdl
             {
                 return;
             }
-            
+
             GLContext?.Dispose();
             Sdl.DestroyWindow(SdlWindow);
         }
@@ -197,7 +205,7 @@ namespace Silk.NET.Windowing.Sdl
             {
                 Events.Add(@event);
             }
-            
+
             ProcessEvents();
         }
 
@@ -211,7 +219,7 @@ namespace Silk.NET.Windowing.Sdl
                 {
                     Sdl.Free(@event.Drop.File);
                 }
-                
+
                 Events.RemoveAt(0);
             }
         }
@@ -221,12 +229,12 @@ namespace Silk.NET.Windowing.Sdl
             CoreReset();
             GC.SuppressFinalize(this);
         }
-        
+
         ~SdlView()
         {
             CoreReset();
         }
-        
+
         public override void Close()
         {
             Closing?.Invoke();
@@ -289,7 +297,7 @@ namespace Silk.NET.Windowing.Sdl
                     //    break;
                     case EventType.Windowevent:
                     {
-                        switch ((WindowEventID)@event.Window.Event)
+                        switch ((WindowEventID) @event.Window.Event)
                         {
                             case WindowEventID.WindoweventResized:
                             {

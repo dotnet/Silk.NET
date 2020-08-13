@@ -9,7 +9,7 @@ using System.Collections.Generic;
 namespace Silk.NET.Input.Internals
 {
     internal struct IsConnectedWrapper<T> : IReadOnlyList<T>
-        where T:IInputDevice
+        where T : IInputDevice
     {
         private readonly IReadOnlyList<T> _list;
 

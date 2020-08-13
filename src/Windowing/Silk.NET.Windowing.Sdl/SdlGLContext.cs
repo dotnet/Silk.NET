@@ -38,6 +38,7 @@ namespace Silk.NET.Windowing.Sdl
                 _view.Sdl.GLSetAttribute(attribute, value);
                 _view.Sdl.ThrowError();
             }
+
             _ctx = _view.Sdl.GLCreateContext(_view.SdlWindow);
         }
 

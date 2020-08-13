@@ -23,6 +23,7 @@ namespace Silk.NET.Input.Sdl
         public event Action<IKeyboard, Key, int>? KeyDown;
         public event Action<IKeyboard, Key, int>? KeyUp;
         public event Action<IKeyboard, char>? KeyChar;
+
         public unsafe void DoEvent(Event @event)
         {
             switch ((EventType) @event.Type)
@@ -61,8 +62,9 @@ namespace Silk.NET.Input.Sdl
                             break;
                         }
 
-                        KeyChar?.Invoke(this, (char)@char);
+                        KeyChar?.Invoke(this, (char) @char);
                     }
+
                     break;
                 }
                 case EventType.Keymapchanged:

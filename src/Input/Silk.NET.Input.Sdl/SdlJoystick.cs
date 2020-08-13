@@ -38,6 +38,7 @@ namespace Silk.NET.Input.Sdl
         public event Action<IJoystick, Button>? ButtonUp;
         public event Action<IJoystick, Axis>? AxisMoved;
         public event Action<IJoystick, Hat>? HatMoved;
+
         public void DoEvent(Event @event)
         {
             switch ((EventType) @event.Type)
@@ -53,7 +54,7 @@ namespace Silk.NET.Input.Sdl
                     (
                         this,
                         _axes[@event.Jaxis.Axis] = new Axis
-                            (@event.Jaxis.Axis, (float)@event.Jaxis.Value/ short.MaxValue)
+                            (@event.Jaxis.Axis, (float) @event.Jaxis.Value / short.MaxValue)
                     );
                     break;
                 }

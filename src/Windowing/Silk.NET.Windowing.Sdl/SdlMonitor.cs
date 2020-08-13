@@ -41,7 +41,7 @@ namespace Silk.NET.Windowing.Sdl
         public float Gamma
         {
             get => 1;
-            set {}
+            set { }
         }
 
         public unsafe IEnumerable<VideoMode> GetAllVideoModes()

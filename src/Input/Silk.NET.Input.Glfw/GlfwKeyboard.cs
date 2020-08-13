@@ -300,6 +300,5 @@ namespace Silk.NET.Input.Glfw
             Key.Menu => Keys.Menu,
             _ => throw new ArgumentOutOfRangeException()
         };
-        
     }
 }

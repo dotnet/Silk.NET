@@ -24,12 +24,18 @@ namespace Silk.NET.Input.Sdl
             _view.Update += Update;
             SdlGamepads = new Dictionary<int, SdlGamepad>();
             SdlJoysticks = new Dictionary<int, SdlJoystick>();
-            Gamepads = new IsConnectedWrapper<IGamepad>(new CastReadOnlyList<SdlGamepad, IGamepad>
-                (new ReadOnlyCollectionListAdapter<SdlGamepad>(SdlGamepads.Values)));
-            Joysticks = new IsConnectedWrapper<IJoystick>(new CastReadOnlyList<SdlJoystick, IJoystick>
-                (new ReadOnlyCollectionListAdapter<SdlJoystick>(SdlJoysticks.Values)));
-            Keyboards = new IKeyboard[]{new SdlKeyboard(this)};
-            Mice = new IMouse[]{new SdlMouse(this)};
+            Gamepads = new IsConnectedWrapper<IGamepad>
+            (
+                new CastReadOnlyList<SdlGamepad, IGamepad>
+                    (new ReadOnlyCollectionListAdapter<SdlGamepad>(SdlGamepads.Values))
+            );
+            Joysticks = new IsConnectedWrapper<IJoystick>
+            (
+                new CastReadOnlyList<SdlJoystick, IJoystick>
+                    (new ReadOnlyCollectionListAdapter<SdlJoystick>(SdlJoysticks.Values))
+            );
+            Keyboards = new IKeyboard[] {new SdlKeyboard(this)};
+            Mice = new IMouse[] {new SdlMouse(this)};
         }
 
         // Public properties
@@ -53,13 +59,13 @@ namespace Silk.NET.Input.Sdl
             {
                 throw new InvalidOperationException("Input update event fired without an underlying window.");
             }
-            
+
             if (_lastHandle != _view.Handle)
             {
                 RefreshJoysticksAndGamepads();
                 _lastHandle = _view.Handle;
             }
-            
+
             var i = 0;
             var c = _sdlView.Events.Count;
             for (var j = 0; j < c; j++)
@@ -67,14 +73,14 @@ namespace Silk.NET.Input.Sdl
                 var @event = _sdlView.Events[i];
                 var skipped = false;
                 var r = 0;
-                switch ((EventType)@event.Type)
+                switch ((EventType) @event.Type)
                 {
                     case EventType.Keydown:
                     case EventType.Keyup:
                     case EventType.Textediting:
                     case EventType.Textinput:
                     {
-                        ((SdlKeyboard)Keyboards[0]).DoEvent(@event);
+                        ((SdlKeyboard) Keyboards[0]).DoEvent(@event);
                         break;
                     }
                     case EventType.Mousemotion:
@@ -82,7 +88,7 @@ namespace Silk.NET.Input.Sdl
                     case EventType.Mousebuttonup:
                     case EventType.Mousewheel:
                     {
-                        ((SdlMouse)Mice[0]).DoEvent(@event);
+                        ((SdlMouse) Mice[0]).DoEvent(@event);
                         break;
                     }
                     case EventType.Joyaxismotion:
@@ -99,7 +105,7 @@ namespace Silk.NET.Input.Sdl
                             skipped = true;
                             break;
                         }
-                        
+
                         RefreshJoysticksAndGamepads();
                         r++;
                         goto case EventType.Joyaxismotion;
@@ -118,7 +124,7 @@ namespace Silk.NET.Input.Sdl
                             skipped = true;
                             break;
                         }
-                        
+
                         RefreshJoysticksAndGamepads();
                         r++;
                         goto case EventType.Joyballmotion;
@@ -137,7 +143,7 @@ namespace Silk.NET.Input.Sdl
                             skipped = true;
                             break;
                         }
-                        
+
                         RefreshJoysticksAndGamepads();
                         r++;
                         goto case EventType.Joyhatmotion;
@@ -157,7 +163,7 @@ namespace Silk.NET.Input.Sdl
                             skipped = true;
                             break;
                         }
-                        
+
                         RefreshJoysticksAndGamepads();
                         r++;
                         goto case EventType.Joybuttonup;
@@ -187,7 +193,7 @@ namespace Silk.NET.Input.Sdl
                             skipped = true;
                             break;
                         }
-                        
+
                         RefreshJoysticksAndGamepads();
                         r++;
                         goto case EventType.Controlleraxismotion;
@@ -207,7 +213,7 @@ namespace Silk.NET.Input.Sdl
                             skipped = true;
                             break;
                         }
-                        
+
                         RefreshJoysticksAndGamepads();
                         r++;
                         goto case EventType.Controllerbuttonup;
@@ -228,7 +234,7 @@ namespace Silk.NET.Input.Sdl
                             skipped = true;
                             break;
                         }
-                        
+
                         RefreshJoysticksAndGamepads();
                         r++;
                         goto case EventType.Controllerdeviceremapped;
@@ -249,6 +255,7 @@ namespace Silk.NET.Input.Sdl
                         break;
                     }
                 }
+
                 if (!skipped)
                 {
                     _sdlView.Events.RemoveAt(i);
@@ -258,13 +265,13 @@ namespace Silk.NET.Input.Sdl
                     i++;
                 }
             }
-            
-            ((SdlMouse)Mice[0]).Update();
+
+            ((SdlMouse) Mice[0]).Update();
             foreach (var gp in SdlGamepads.Values)
             {
                 gp.Update();
             }
-            
+
             Sdl.ThrowError();
         }
 
@@ -304,7 +311,7 @@ namespace Silk.NET.Input.Sdl
             {
                 gp.Dispose();
             }
-            
+
             foreach (var joy in SdlJoysticks.Values)
             {
                 joy.Dispose();

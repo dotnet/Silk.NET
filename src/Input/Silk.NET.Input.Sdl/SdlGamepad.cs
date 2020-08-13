@@ -85,27 +85,27 @@ namespace Silk.NET.Input.Sdl
                         {
                             _thumbsticksChanged[0] = true;
                             _thumbsticks[0] = new Thumbstick
-                                (0, _thumbsticks[0].X, (float)@event.Caxis.Value / short.MaxValue);
+                                (0, _thumbsticks[0].X, (float) @event.Caxis.Value / short.MaxValue);
                             break;
                         }
                         case GameControllerAxis.ControllerAxisRightx:
                         {
                             _thumbsticksChanged[1] = true;
                             _thumbsticks[1] = new Thumbstick
-                                (1, (float)@event.Caxis.Value / short.MaxValue, _thumbsticks[1].Y);
+                                (1, (float) @event.Caxis.Value / short.MaxValue, _thumbsticks[1].Y);
                             break;
                         }
                         case GameControllerAxis.ControllerAxisRighty:
                         {
                             _thumbsticksChanged[1] = true;
                             _thumbsticks[1] = new Thumbstick
-                                (1, _thumbsticks[1].X, (float) @event.Caxis.Value / short.MaxValue );
+                                (1, _thumbsticks[1].X, (float) @event.Caxis.Value / short.MaxValue);
                             break;
                         }
                         case GameControllerAxis.ControllerAxisTriggerleft:
                         {
                             TriggerMoved?.Invoke
-                                (this, _triggers[0] = new Trigger(0, (float)  @event.Caxis.Value / short.MaxValue));
+                                (this, _triggers[0] = new Trigger(0, (float) @event.Caxis.Value / short.MaxValue));
                             break;
                         }
                         case GameControllerAxis.ControllerAxisTriggerright:

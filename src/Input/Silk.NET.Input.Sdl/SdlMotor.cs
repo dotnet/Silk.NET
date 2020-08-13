@@ -9,6 +9,7 @@
             _gp = gp;
             Index = i;
         }
+
         public int Index { get; }
 
         public float Speed

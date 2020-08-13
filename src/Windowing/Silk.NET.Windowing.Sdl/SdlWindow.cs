@@ -116,7 +116,6 @@ namespace Silk.NET.Windowing.Sdl
                 : _extendedOptionsCache.WindowState;
             set
             {
-
                 _extendedOptionsCache.WindowState = value;
                 if (!IsInitialized)
                 {

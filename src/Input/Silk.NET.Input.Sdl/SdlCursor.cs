@@ -257,7 +257,7 @@ namespace Silk.NET.Input.Sdl
                 0x0000ff00,
                 0x000000ff
             );
-            
+
             return _ctx.Sdl.CreateColorCursor(surface, 0, 0);
         }
 

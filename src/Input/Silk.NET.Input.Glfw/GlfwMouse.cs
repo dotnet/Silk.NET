@@ -30,6 +30,7 @@ namespace Silk.NET.Input.Glfw
         {
             ScrollWheels = new ScrollWheel[1];
         }
+
         public override string Name { get; } = "Silk.NET Mouse (via GLFW)";
         public override int Index { get; } = 0;
         public override bool IsConnected { get; } = true;
@@ -79,7 +80,7 @@ namespace Silk.NET.Input.Glfw
                     _scrollModified = true;
                 }
 
-                ((ScrollWheel[])ScrollWheels)[0] = val;
+                ((ScrollWheel[]) ScrollWheels)[0] = val;
                 Scroll?.Invoke(this, val);
             };
             events.CursorPos += _cursorPos = (_, x, y) => MouseMove?.Invoke(this, new PointF((float) x, (float) y));
@@ -113,7 +114,7 @@ namespace Silk.NET.Input.Glfw
         {
             if (!_scrollModified)
             {
-                ((ScrollWheel[])ScrollWheels)[0] = default;
+                ((ScrollWheel[]) ScrollWheels)[0] = default;
             }
 
             _scrollModified = false;

@@ -21,6 +21,7 @@ namespace Silk.NET.Windowing
         private const string GlfwBackendName = "GlfwPlatform";
         private const string SdlBackendName = "SdlPlatform";
         public static IReadOnlyList<IWindowPlatform> Platforms { get; } = new List<IWindowPlatform>();
+
         internal static Exception NoPlatformException => new PlatformNotSupportedException
         (
             "Couldn't find a suitable window platform. " +
@@ -70,7 +71,7 @@ namespace Silk.NET.Windowing
                 return true;
             }
         }
-        
+
         /// <summary>
         /// Create a window on the current platform.
         /// </summary>
@@ -82,7 +83,7 @@ namespace Silk.NET.Windowing
             {
                 throw NoPlatformException;
             }
-            
+
             if (IsViewOnly)
             {
                 throw new NotSupportedException
@@ -137,7 +138,7 @@ namespace Silk.NET.Windowing
                 }
             }
         }
-        
+
         // Registrar functions
 
         /// <summary>
@@ -162,7 +163,7 @@ namespace Silk.NET.Windowing
             {
                 return;
             }
-            
+
             Prioritize(platform);
         }
 
@@ -178,7 +179,7 @@ namespace Silk.NET.Windowing
             {
                 return;
             }
-            
+
             Prioritize(platform);
         }
 
@@ -188,7 +189,7 @@ namespace Silk.NET.Windowing
         /// <param name="platform">The platform to add.</param>
         public static void Add(IWindowPlatform platform)
         {
-            if (!((List<IWindowPlatform>)Platforms).Contains(platform))
+            if (!((List<IWindowPlatform>) Platforms).Contains(platform))
             {
                 ((List<IWindowPlatform>) Platforms).Add(platform);
             }
@@ -221,7 +222,7 @@ namespace Silk.NET.Windowing
                 {
                     return false;
                 }
-                
+
                 Add((IWindowPlatform) Activator.CreateInstance(attr.Type, true));
                 return true;
             }

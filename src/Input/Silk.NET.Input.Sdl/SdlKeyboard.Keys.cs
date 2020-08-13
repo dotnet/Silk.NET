@@ -10,12 +10,11 @@ namespace Silk.NET.Input.Sdl
 {
     partial class SdlKeyboard
     {
-        
         private static readonly Dictionary<KeyCode, Key> _keyMap = new Dictionary<KeyCode, Key>
         {
             // The key enum was designed for UK-style QWERTY keyboards, thus some enumerants are missing if they require
             // a modifier key (such as a shift) in order to access that key
-            
+
             {KeyCode.KUnknown, Key.Unknown},
             {KeyCode.KReturn, Key.Enter},
             {KeyCode.KEscape, Key.Escape},

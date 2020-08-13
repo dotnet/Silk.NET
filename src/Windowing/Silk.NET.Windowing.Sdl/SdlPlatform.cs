@@ -42,7 +42,7 @@ namespace Silk.NET.Windowing.Sdl
             {
                 throw new PlatformNotSupportedException("Platform is view-only.");
             }
-            
+
             return new SdlWindow(opts, null, null);
         }
 

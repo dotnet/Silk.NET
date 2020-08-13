@@ -33,15 +33,16 @@ namespace Silk.NET.Windowing.Sdl
         }
 
         private unsafe byte** _requiredExtensions;
+
         public unsafe char** GetRequiredExtensions(out uint count)
         {
             fixed (uint* countPtr = &count)
             {
-                if (_view.Sdl.VulkanGetInstanceExtensions(_view.SdlWindow, countPtr, (byte**)0) == SdlBool.True)
+                if (_view.Sdl.VulkanGetInstanceExtensions(_view.SdlWindow, countPtr, (byte**) 0) == SdlBool.True)
                 {
                     if (_requiredExtensions == null)
                     {
-                        _requiredExtensions = (byte**) Marshal.AllocHGlobal((IntPtr)(sizeof(byte*) * count));
+                        _requiredExtensions = (byte**) Marshal.AllocHGlobal((IntPtr) (sizeof(byte*) * count));
                     }
                     else
                     {
@@ -49,13 +50,14 @@ namespace Silk.NET.Windowing.Sdl
                             ((IntPtr) _requiredExtensions, (IntPtr) (sizeof(byte*) * count));
                     }
 
-                    if (_view.Sdl.VulkanGetInstanceExtensions(_view.SdlWindow, countPtr, _requiredExtensions) == SdlBool.True)
+                    if (_view.Sdl.VulkanGetInstanceExtensions
+                        (_view.SdlWindow, countPtr, _requiredExtensions) == SdlBool.True)
                     {
                         return (char**) _requiredExtensions;
                     }
                 }
             }
-            
+
             throw new PlatformException(_view.Sdl.GetErrorAsException());
         }
     }
