@@ -10,7 +10,7 @@ using Silk.NET.SDL;
 
 namespace Silk.NET.Windowing.Sdl
 {
-    public struct SdlMonitor : IMonitor
+    internal struct SdlMonitor : IMonitor
     {
         public SdlMonitor(int i) => Index = i;
         public IWindow CreateWindow(WindowOptions opts) => new SdlWindow(opts, null, this);
@@ -40,8 +40,8 @@ namespace Silk.NET.Windowing.Sdl
 
         public float Gamma
         {
-            get => throw new PlatformNotSupportedException("Gamma ramps are not implemented on the SDL backend.");
-            set => throw new PlatformNotSupportedException("Gamma ramps are not implemented on the SDL backend.");
+            get => 1;
+            set {}
         }
 
         public unsafe IEnumerable<VideoMode> GetAllVideoModes()

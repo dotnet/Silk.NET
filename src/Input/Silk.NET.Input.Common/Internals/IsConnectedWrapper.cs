@@ -14,7 +14,7 @@ namespace Silk.NET.Input.Internals
         private readonly IReadOnlyList<T> _list;
 
         public IsConnectedWrapper(IReadOnlyList<T> list) => _list = list;
-        public IEnumerator<T> GetEnumerator() => new IsConnectedEnumerator<T>(new ReadOnlyListEnumerator<T>(_list));
+        public IEnumerator<T> GetEnumerator() => new IsConnectedEnumerator<T>(_list.GetEnumerator());
 
         IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 

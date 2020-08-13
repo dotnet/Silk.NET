@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Silk.NET.Windowing.Internals;
 
@@ -15,6 +16,10 @@ namespace Silk.NET.Windowing
     /// </summary>
     public static class Window
     {
+        private const string GlfwBackendNamespace = "Silk.NET.Windowing.Glfw";
+        private const string SdlBackendNamespace = "Silk.NET.Windowing.Sdl";
+        private const string GlfwBackendName = "GlfwPlatform";
+        private const string SdlBackendName = "SdlPlatform";
         public static IReadOnlyList<IWindowPlatform> Platforms { get; } = new List<IWindowPlatform>();
         internal static Exception NoPlatformException => new PlatformNotSupportedException
         (
@@ -25,8 +30,8 @@ namespace Silk.NET.Windowing
         static Window()
         {
             // Try add the first-party backends
-            TryAdd("Silk.NET.Windowing.Glfw");
-            TryAdd("Silk.NET.Windowing.Sdl");
+            TryAdd(GlfwBackendNamespace);
+            TryAdd(SdlBackendNamespace);
         }
 
         /// <summary>
@@ -143,6 +148,38 @@ namespace Silk.NET.Windowing
         {
             ((List<IWindowPlatform>) Platforms).Remove(platform);
             ((List<IWindowPlatform>) Platforms).Insert(0, platform);
+        }
+
+        /// <summary>
+        /// If added, moves the GLFW platform to the top of the platform list, to ensure that <see cref="Window"/>
+        /// functions check/use the provided platform first.
+        /// </summary>
+        public static void PrioritizeGlfw()
+        {
+            var platform = Platforms.FirstOrDefault
+                (x => x.GetType().FullName == GlfwBackendNamespace + "." + GlfwBackendName);
+            if (platform is null)
+            {
+                return;
+            }
+            
+            Prioritize(platform);
+        }
+
+        /// <summary>
+        /// If added, moves the SDL platform to the top of the platform list, to ensure that <see cref="Window"/>
+        /// functions check/use the provided platform first.
+        /// </summary>
+        public static void PrioritizeSdl()
+        {
+            var platform = Platforms.FirstOrDefault
+                (x => x.GetType().FullName == SdlBackendNamespace + "." + SdlBackendName);
+            if (platform is null)
+            {
+                return;
+            }
+            
+            Prioritize(platform);
         }
 
         /// <summary>

@@ -51,10 +51,10 @@ namespace Silk.NET.Input.Glfw
         public IReadOnlyList<Trigger> Triggers { get; }
         public IReadOnlyList<IMotor> VibrationMotors { get; } = new IMotor[0];
         public Deadzone Deadzone { get; set; }
-        public event Action<IGamepad, Button> ButtonDown;
-        public event Action<IGamepad, Button> ButtonUp;
-        public event Action<IGamepad, Thumbstick> ThumbstickMoved;
-        public event Action<IGamepad, Trigger> TriggerMoved;
+        public event Action<IGamepad, Button>? ButtonDown;
+        public event Action<IGamepad, Button>? ButtonUp;
+        public event Action<IGamepad, Thumbstick>? ThumbstickMoved;
+        public event Action<IGamepad, Trigger>? TriggerMoved;
 
         public void Update()
         {

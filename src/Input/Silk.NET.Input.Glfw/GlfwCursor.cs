@@ -96,6 +96,12 @@ namespace Silk.NET.Input.Glfw
             }
         }
 
+        public bool IsConfined
+        {
+            get => false;
+            set { }
+        }
+
         /// <inheritdoc />
         public int HotspotX
         {
