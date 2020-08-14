@@ -15,7 +15,7 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// Creates a new instance of the GlfwProvider class.
         /// </summary>
-        static GlfwProvider()
+        unsafe static GlfwProvider()
         {
             GLFW = new Lazy<Glfw>
             (
