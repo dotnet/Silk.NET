@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
@@ -13,6 +13,17 @@ namespace Silk.NET.Input.Sdl
         private readonly SdlInputContext _ctx;
         private readonly List<MouseButton> _downButtons = new List<MouseButton>();
         private bool _wheelChanged;
+
+        /// <summary>
+        /// Used by SdlCursor.
+        /// </summary>
+        internal bool IsRaw { get; set; }
+
+        /// <summary>
+        /// The current raw mouse position. This is done because when SDL is in raw mouse mode, it doesn't allow
+        /// unlimited mouse movement like GLFW does so we have to simulate it.
+        /// </summary>
+        internal Vector2 AggregatePoint { get; set; }
 
         public SdlMouse(SdlInputContext ctx)
         {
@@ -59,7 +70,16 @@ namespace Silk.NET.Input.Sdl
             {
                 case EventType.Mousemotion:
                 {
-                    MouseMove?.Invoke(this, new PointF(@event.Motion.X, @event.Motion.Y));
+                    if (IsRaw)
+                    {
+                        var aggr = AggregatePoint += new Vector2(@event.Motion.Xrel, @event.Motion.Yrel);
+                        MouseMove?.Invoke(this, Unsafe.As<Vector2, PointF>(ref aggr));
+                    }
+                    else
+                    {
+                        MouseMove?.Invoke(this, new PointF(@event.Motion.X, @event.Motion.Y));
+                    }
+
                     break;
                 }
                 case EventType.Mousebuttondown:

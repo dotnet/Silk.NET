@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Net.Mime;
 using Silk.NET.Core;
 using Silk.NET.SDL;
 
@@ -101,12 +100,14 @@ namespace Silk.NET.Input.Sdl
                 {
                     case CursorMode.Normal:
                     {
+                        _mouse.IsRaw = false;
                         _ctx.Sdl.SetRelativeMouseMode(SdlBool.False);
                         _ctx.Sdl.ShowCursor(1);
                         break;
                     }
                     case CursorMode.Hidden:
                     {
+                        _mouse.IsRaw = false;
                         _ctx.Sdl.SetRelativeMouseMode(SdlBool.False);
                         _ctx.Sdl.ShowCursor(0);
                         break;
@@ -117,6 +118,8 @@ namespace Silk.NET.Input.Sdl
                     }
                     case CursorMode.Raw:
                     {
+                        _mouse.IsRaw = true;
+                        _mouse.AggregatePoint = default;
                         _ctx.Sdl.SetRelativeMouseMode(SdlBool.True);
                         break;
                     }
