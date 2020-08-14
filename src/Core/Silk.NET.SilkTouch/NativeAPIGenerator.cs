@@ -30,8 +30,6 @@ namespace Silk.NET.SilkTouch
             context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
         }
 
-        private delegate void Middleware(ref MarshalContext ctx, Action next);
-
         private static string MakePointer(string loadType)
         {
             return loadType + "*";
