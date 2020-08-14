@@ -201,8 +201,6 @@ namespace Silk.NET.SilkTouch
                 
                 marshalBuilder.Use(BuildLoadInvoke);
 
-                // NOTE: This function is sort of backwards, because we first generate the Load + call and then wrap it in blocks generated from parameters
-
                 var slot = Interlocked.Increment(ref _slot);
 
                var context = new MarshalContext(compilation, symbol, slot);
@@ -215,8 +213,10 @@ namespace Silk.NET.SilkTouch
                var block = Block(context.CurrentStatements);
                
                if (declaration.Modifiers.All(x => x.Text != "unsafe"))
+               {
                    // this is not done as a middleware to allow middlewares to prepend any variable declaration, even if it's unsafe
                    block = Block(UnsafeStatement(Token(SyntaxKind.UnsafeKeyword), block));
+               }
 
                var method = declaration.WithBody
                        (block)
@@ -247,13 +247,6 @@ namespace Silk.NET.SilkTouch
             return newNamespace.NormalizeWhitespace().ToFullString();
         }
 
-        private static string FormatName(string name)
-        {
-            if (CSharpKeywords.Contains(name))
-                return "@" + name;
-            return name;
-        }
-        
         private static string GetCallingConvention(CallingConvention convention) =>
             convention switch
             {
@@ -280,86 +273,5 @@ namespace Silk.NET.SilkTouch
 
             return v;
         }
-
-        public static List<string> CSharpKeywords => new List<string>
-        {
-            "abstract",
-            "event",
-            "new",
-            "struct",
-            "as",
-            "explicit",
-            "null",
-            "switch",
-            "base",
-            "extern",
-            "object",
-            "this",
-            "bool",
-            "false",
-            "operator",
-            "throw",
-            "break",
-            "finally",
-            "out",
-            "true",
-            "byte",
-            "fixed",
-            "override",
-            "try",
-            "case",
-            "float",
-            "params",
-            "typeof",
-            "catch",
-            "for",
-            "private",
-            "uint",
-            "char",
-            "foreach",
-            "protected",
-            "ulong",
-            "checked",
-            "goto",
-            "public",
-            "unchecked",
-            "class",
-            "if",
-            "readonly",
-            "unsafe",
-            "const",
-            "implicit",
-            "ref",
-            "ushort",
-            "continue",
-            "in",
-            "return",
-            "using",
-            "decimal",
-            "int",
-            "sbyte",
-            "virtual",
-            "default",
-            "interface",
-            "sealed",
-            "volatile",
-            "delegate",
-            "internal",
-            "short",
-            "void",
-            "do",
-            "is",
-            "sizeof",
-            "while",
-            "double",
-            "lock",
-            "stackalloc",
-            "else",
-            "long",
-            "static",
-            "enum",
-            "namespace",
-            "string"
-        };
     }
 }

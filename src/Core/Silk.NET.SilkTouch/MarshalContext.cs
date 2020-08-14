@@ -84,7 +84,7 @@ namespace Silk.NET.SilkTouch
                 _compilation = compilation;
                 MethodSymbol = methodSymbol;
                 Slot = slot;
-                ParameterExpressions = MethodSymbol.Parameters.Select(x => SyntaxFactory.IdentifierName(x.Name)).Cast<ExpressionSyntax>().ToArray();
+                ParameterExpressions = MethodSymbol.Parameters.Select(x => SyntaxFactory.IdentifierName(FormatName(x.Name))).Cast<ExpressionSyntax>().ToArray();
                 LoadTypes = MethodSymbol.Parameters.Select
                         (x => x.Type.ToDisplayString())
                     .Append(MethodSymbol.ReturnsVoid ? "void" : MethodSymbol.ReturnType.ToDisplayString())
@@ -109,5 +109,93 @@ namespace Silk.NET.SilkTouch
                 ReturnMarshalOptions =
                     v is null ? null : new MarshalOptions((UnmanagedType) v.ConstructorArguments[0].Value);
             }
+            
+            private static string FormatName(string name)
+            {
+                if (CSharpKeywords.Contains(name))
+                    return "@" + name;
+                return name;
+            }
+            
+            private static readonly string[] CSharpKeywords =
+            {
+                "abstract",
+                "event",
+                "new",
+                "struct",
+                "as",
+                "explicit",
+                "null",
+                "switch",
+                "base",
+                "extern",
+                "object",
+                "this",
+                "bool",
+                "false",
+                "operator",
+                "throw",
+                "break",
+                "finally",
+                "out",
+                "true",
+                "byte",
+                "fixed",
+                "override",
+                "try",
+                "case",
+                "float",
+                "params",
+                "typeof",
+                "catch",
+                "for",
+                "private",
+                "uint",
+                "char",
+                "foreach",
+                "protected",
+                "ulong",
+                "checked",
+                "goto",
+                "public",
+                "unchecked",
+                "class",
+                "if",
+                "readonly",
+                "unsafe",
+                "const",
+                "implicit",
+                "ref",
+                "ushort",
+                "continue",
+                "in",
+                "return",
+                "using",
+                "decimal",
+                "int",
+                "sbyte",
+                "virtual",
+                "default",
+                "interface",
+                "sealed",
+                "volatile",
+                "delegate",
+                "internal",
+                "short",
+                "void",
+                "do",
+                "is",
+                "sizeof",
+                "while",
+                "double",
+                "lock",
+                "stackalloc",
+                "else",
+                "long",
+                "static",
+                "enum",
+                "namespace",
+                "string"
+            };
         }
 }
