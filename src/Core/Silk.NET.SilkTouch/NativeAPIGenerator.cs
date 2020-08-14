@@ -31,54 +31,6 @@ namespace Silk.NET.SilkTouch
         }
 
         private delegate void Middleware(ref MarshalContext ctx, Action next);
-        
-        private static void PinMiddleware(ref MarshalContext ctx, Action next)
-        {
-            var statementsToHere = ctx.CurrentStatements.ToList();
-            ctx.CurrentStatements = Enumerable.Empty<StatementSyntax>();
-            var oldParameterExpressions = (ExpressionSyntax[])ctx.ParameterExpressions.Clone();
-
-            for (var index = 0; index < ctx.ParameterExpressions.Length; index++)
-            {
-                // in this loop, update all types & expressions
-                
-                var shouldPin = ctx.ShouldPinParameter[index];
-                if (!shouldPin) continue;
-                
-                var loadType = ctx.LoadTypes[index];
-                loadType = MakePointer(loadType);
-                ctx.LoadTypes[index] = loadType;
-                
-                var name = $"pp{ctx.Slot}{index}";
-                ctx.ParameterExpressions[index] = IdentifierName(name);
-            }
-
-            next();
-
-            for (var index = 0; index < ctx.ParameterExpressions.Length; index++)
-            {
-                // in this loop, actually emit the `fixed` statements, with the statements of `next()` as body
-                
-                var shouldPin = ctx.ShouldPinParameter[index];
-                if (!shouldPin) continue;
-
-                var name = $"pp{ctx.Slot}{index}";
-                var block = Block(ctx.CurrentStatements.ToArray());
-                ctx.CurrentStatements = Enumerable.Empty<StatementSyntax>();
-                ctx.CurrentStatements = ctx.CurrentStatements.Append(FixedStatement
-                (
-                    VariableDeclaration
-                    (
-                        IdentifierName(ctx.LoadTypes[index]),
-                        SingletonSeparatedList
-                            (VariableDeclarator(Identifier(name), null, EqualsValueClause(oldParameterExpressions[index])))
-                    ), block
-                ));
-            }
-
-            statementsToHere.AddRange(ctx.CurrentStatements);
-            ctx.CurrentStatements = statementsToHere;
-        }
 
         private static string MakePointer(string loadType)
         {
