@@ -15,7 +15,7 @@ namespace Silk.NET.GLFW
         /// <summary>
         /// Creates a new instance of the GlfwProvider class.
         /// </summary>
-        static GlfwProvider()
+        unsafe static GlfwProvider()
         {
             GLFW = new Lazy<Glfw>
             (
@@ -23,7 +23,14 @@ namespace Silk.NET.GLFW
                 {
 
                     var glfw = Glfw.GetApi();
-                    glfw.Init();
+
+                    if (!glfw.Init())
+                    {
+                        var code = (Silk.NET.GLFW.ErrorCode) glfw.GetError(out var pDesc);
+                        var desc = new string(pDesc);
+                        throw new GlfwException($"GLFW Init failed, {code}: {desc}");
+                    }
+
                     glfw.SetErrorCallback(Glfw.ErrorCallback);
 
                     return glfw;
