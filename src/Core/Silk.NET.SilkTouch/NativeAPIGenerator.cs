@@ -325,16 +325,6 @@ namespace Silk.NET.SilkTouch
             return v;
         }
 
-        public class SyntaxReceiver : ISyntaxReceiver
-        {
-            public List<ClassDeclarationSyntax> ClassDeclarations = new List<ClassDeclarationSyntax>();
-            
-            public void OnVisitSyntaxNode(SyntaxNode syntaxNode)
-            {
-                if (syntaxNode is ClassDeclarationSyntax cds) ClassDeclarations.Add(cds);
-            }
-        }
-        
         public static List<string> CSharpKeywords => new List<string>
         {
             "abstract",

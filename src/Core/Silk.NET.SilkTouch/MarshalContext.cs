@@ -7,12 +7,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Silk.NET.SilkTouch
 {
 
-        private class MarshalContext
+        public class MarshalContext
         {
             private readonly Compilation _compilation;
 
@@ -83,7 +84,7 @@ namespace Silk.NET.SilkTouch
                 _compilation = compilation;
                 MethodSymbol = methodSymbol;
                 Slot = slot;
-                ParameterExpressions = MethodSymbol.Parameters.Select(x => IdentifierName(x.Name)).Cast<ExpressionSyntax>().ToArray();
+                ParameterExpressions = MethodSymbol.Parameters.Select(x => SyntaxFactory.IdentifierName(x.Name)).Cast<ExpressionSyntax>().ToArray();
                 LoadTypes = MethodSymbol.Parameters.Select
                         (x => x.Type.ToDisplayString())
                     .Append(MethodSymbol.ReturnsVoid ? "void" : MethodSymbol.ReturnType.ToDisplayString())
