@@ -30,11 +30,6 @@ namespace Silk.NET.SilkTouch
             context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
         }
 
-        private static string MakePointer(string loadType)
-        {
-            return loadType + "*";
-        }
-
         public void Execute(SourceGeneratorContext context)
         {
             Debugger.Launch();
@@ -48,6 +43,7 @@ namespace Silk.NET.SilkTouch
             
             _marshalBuilder = new MarshalBuilder();
 
+            _marshalBuilder.Use(SpanMarshaller);
             _marshalBuilder.Use(PinObjectMarshaller);
             _marshalBuilder.Use(BoolMarshaller);
             _marshalBuilder.Use(DelegateMarshaller);
