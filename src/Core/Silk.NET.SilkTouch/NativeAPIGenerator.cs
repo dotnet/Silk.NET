@@ -43,13 +43,12 @@ namespace Silk.NET.SilkTouch
             
             _marshalBuilder = new MarshalBuilder();
 
+            _marshalBuilder.Use(ParameterInitMiddleware);
+            _marshalBuilder.Use(PinMiddleware);
             _marshalBuilder.Use(SpanMarshaller);
-            _marshalBuilder.Use(PinObjectMarshaller);
             _marshalBuilder.Use(BoolMarshaller);
             _marshalBuilder.Use(DelegateMarshaller);
-
-            // pinning should be the last step before the load invoke
-            _marshalBuilder.Use(PinMiddleware);
+            _marshalBuilder.Use(PinObjectMarshaller);
 
             foreach (var receiverClassDeclaration in receiver.ClassDeclarations)
             {

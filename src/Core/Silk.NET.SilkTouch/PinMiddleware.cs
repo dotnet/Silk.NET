@@ -6,6 +6,7 @@
 using System;
 using System.Linq;
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -52,7 +53,7 @@ namespace Silk.NET.SilkTouch
                     (
                         IdentifierName(ctx.LoadTypes[index].ToDisplayString()),
                         SingletonSeparatedList
-                            (VariableDeclarator(Identifier(name), null, EqualsValueClause(oldParameterExpressions[index])))
+                            (VariableDeclarator(Identifier(name), null, EqualsValueClause(PrefixUnaryExpression(SyntaxKind.AddressOfExpression, oldParameterExpressions[index]))))
                     ), block
                 ));
             }
