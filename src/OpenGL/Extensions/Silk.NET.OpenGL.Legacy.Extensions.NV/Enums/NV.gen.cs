@@ -1492,6 +1492,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         SignedHilo8NV = 0x885F,
         [NativeName("Name", "GL_FORCE_BLUE_TO_ONE_NV")]
         ForceBlueToOneNV = 0x8860,
+        [NativeName("Name", "GL_TIMELINE_SEMAPHORE_VALUE_NV")]
+        TimelineSemaphoreValueNV = 0x9595,
+        [NativeName("Name", "GL_SEMAPHORE_TYPE_NV")]
+        SemaphoreTypeNV = 0x95B3,
+        [NativeName("Name", "GL_SEMAPHORE_TYPE_BINARY_NV")]
+        SemaphoreTypeBinaryNV = 0x95B4,
+        [NativeName("Name", "GL_SEMAPHORE_TYPE_TIMELINE_NV")]
+        SemaphoreTypeTimelineNV = 0x95B5,
+        [NativeName("Name", "GL_MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_NV")]
+        MaxTimelineSemaphoreValueDifferenceNV = 0x95B6,
         [NativeName("Name", "GL_BACK_PRIMARY_COLOR_NV")]
         BackPrimaryColorNV = 0x8C77,
         [NativeName("Name", "GL_BACK_SECONDARY_COLOR_NV")]
