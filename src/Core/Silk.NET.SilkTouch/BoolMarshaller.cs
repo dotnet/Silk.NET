@@ -59,8 +59,8 @@ namespace Silk.NET.SilkTouch
                             break;
                     }
 
-                    LiteralExpressionSyntax @true;
-                    LiteralExpressionSyntax @false;
+                    ExpressionSyntax @true;
+                    ExpressionSyntax @false;
 
                     if (ctx.ParameterMarshalOptions[index]?.MarshalAs == UnmanagedType.VariantBool)
                     {
@@ -72,6 +72,9 @@ namespace Silk.NET.SilkTouch
                         @true = LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(1));
                         @false = LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(0));
                     }
+
+                    @true = CastExpression(IdentifierName(ctx.LoadTypes[index].ToDisplayString()), @true);
+                    @false = CastExpression(IdentifierName(ctx.LoadTypes[index].ToDisplayString()), @false);
 
                     var name = $"bmp{ctx.Slot}{index}";
                     ctx.DeclareVariable(ctx.LoadTypes[index], name);
@@ -86,7 +89,7 @@ namespace Silk.NET.SilkTouch
             {
                     ctx.ReturnLoadType = ctx.Compilation.GetSpecialType(SpecialType.System_Byte);
 
-                    ctx.DeclareVariable(ctx.ReturnLoadType, resultLocalName);
+                    ctx.DeclareVariable(ctx.Compilation.GetSpecialType(SpecialType.System_Boolean), resultLocalName);
             }
 
             next();
