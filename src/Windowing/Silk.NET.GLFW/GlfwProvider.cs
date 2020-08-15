@@ -27,7 +27,7 @@ namespace Silk.NET.GLFW
                     if (!glfw.Init())
                     {
                         var code = glfw.GetError(out byte* pDesc);
-                        var len = SpanHelpers.IndexOf(ref *pDesc, (byte)'\0', int.MaxValue);
+                        var len = new ReadOnlySpan<byte>(pDesc, int.MaxValue).IndexOf((byte)'\0');
                         var desc = len <= 0 ? "Unknown" : System.Text.Encoding.UTF8.GetString(pDesc, len);
                         throw new GlfwException($"GLFW Init failed, {code}: {desc}");
                     }
