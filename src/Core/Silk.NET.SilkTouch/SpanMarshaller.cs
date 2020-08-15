@@ -43,7 +43,7 @@ namespace Silk.NET.SilkTouch
                 if (!shouldPin) continue;
                 
                 var loadType = ctx.LoadTypes[index];
-                loadType = ctx.Compilation.CreatePointerTypeSymbol((loadType as INamedTypeSymbol)!.TypeParameters[0]);
+                loadType = ctx.Compilation.CreatePointerTypeSymbol((loadType as INamedTypeSymbol)!.TypeArguments[0]);
                 ctx.LoadTypes[index] = loadType;
                 
                 var name = $"sp{ctx.Slot}{index}";
