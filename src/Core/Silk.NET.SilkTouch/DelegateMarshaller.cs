@@ -25,20 +25,23 @@ namespace Silk.NET.SilkTouch
                     continue;
                 
                 ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_IntPtr);
-                ctx.ParameterExpressions[index] = ConditionalExpression
+                var name = $"dmp{ctx.Slot}{index}";
+                ctx.DeclareVariable(ctx.LoadTypes[index], name);
+                ctx.SetParameterToVariableAndAssign
                 (
-                    BinaryExpression
+                    index, name, ConditionalExpression
                     (
-                        SyntaxKind.EqualsExpression, ctx.ParameterExpressions[index],
-                        LiteralExpression(SyntaxKind.NullLiteralExpression)
-                    ),
-                    MemberAccessExpression
-                        (SyntaxKind.SimpleMemberAccessExpression, IdentifierName(nameof(IntPtr)), IdentifierName(nameof(IntPtr.Zero))),
-                    InvocationExpression
-                    ( // System.Runtime.InteropServices.Marshal.GetDelegateForFunctionPointer<T>(ResultName)
+                        BinaryExpression
+                        (
+                            SyntaxKind.EqualsExpression, ctx.ParameterExpressions[index],
+                            LiteralExpression(SyntaxKind.NullLiteralExpression)
+                        ),
                         MemberAccessExpression
                         (
-                            SyntaxKind.SimpleMemberAccessExpression,
+                            SyntaxKind.SimpleMemberAccessExpression, IdentifierName(nameof(IntPtr)),
+                            IdentifierName(nameof(IntPtr.Zero))
+                        ), InvocationExpression
+                        ( // System.Runtime.InteropServices.Marshal.GetDelegateForFunctionPointer<T>(ResultName)
                             MemberAccessExpression
                             (
                                 SyntaxKind.SimpleMemberAccessExpression,
@@ -47,12 +50,16 @@ namespace Silk.NET.SilkTouch
                                     SyntaxKind.SimpleMemberAccessExpression,
                                     MemberAccessExpression
                                     (
-                                        SyntaxKind.SimpleMemberAccessExpression, IdentifierName("System"),
-                                        IdentifierName("Runtime")
-                                    ), IdentifierName("InteropServices")
-                                ), IdentifierName("Marshal")
-                            ), IdentifierName("GetFunctionPointerForDelegate")
-                        ), ArgumentList(SingletonSeparatedList(Argument(ctx.ParameterExpressions[index])))
+                                        SyntaxKind.SimpleMemberAccessExpression,
+                                        MemberAccessExpression
+                                        (
+                                            SyntaxKind.SimpleMemberAccessExpression, IdentifierName("System"),
+                                            IdentifierName("Runtime")
+                                        ), IdentifierName("InteropServices")
+                                    ), IdentifierName("Marshal")
+                                ), IdentifierName("GetFunctionPointerForDelegate")
+                            ), ArgumentList(SingletonSeparatedList(Argument(ctx.ParameterExpressions[index])))
+                        )
                     )
                 );
             }
@@ -62,17 +69,7 @@ namespace Silk.NET.SilkTouch
             var oldReturnLoadType = ctx.ReturnLoadType;
             if (processReturn)
             {
-                ctx.CurrentStatements = ctx.CurrentStatements.Prepend
-                (
-                    LocalDeclarationStatement
-                    (
-                        VariableDeclaration
-                        (
-                            IdentifierName(ctx.ReturnLoadType.ToDisplayString()),
-                            SingletonSeparatedList(VariableDeclarator(Identifier(resultLocalName)))
-                        )
-                    )
-                );
+                ctx.DeclareVariable(ctx.ReturnLoadType, resultLocalName);
                 
                 ctx.ReturnLoadType = ctx.Compilation.GetSpecialType(SpecialType.System_IntPtr);
             }

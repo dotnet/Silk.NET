@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
 {
@@ -71,7 +72,14 @@ namespace Silk.NET.SilkTouch
             /// </summary>
             public ITypeSymbol? CurrentResultType { get; set; }
 
+            /// <summary>
+            /// Parameter Marshal pptions
+            /// </summary>
             public MarshalOptions?[] ParameterMarshalOptions { get; }
+            
+            /// <summary>
+            /// Return Marshal options
+            /// </summary>
             public MarshalOptions? ReturnMarshalOptions { get; }
 
             public class MarshalOptions
@@ -81,6 +89,25 @@ namespace Silk.NET.SilkTouch
                     MarshalAs = marshalAs;
                 }
                 public UnmanagedType MarshalAs { get; }
+            }
+
+            public void DeclareVariable(ITypeSymbol type, string name)
+            {
+                CurrentStatements = CurrentStatements.Prepend
+                (
+                    LocalDeclarationStatement
+                    (
+                        VariableDeclaration
+                            (IdentifierName(type.ToDisplayString()), SingletonSeparatedList(VariableDeclarator(name)))
+                    )
+                );
+            }
+
+            public void SetParameterToVariableAndAssign(int index, string variableName, ExpressionSyntax assign)
+            {
+                var identifer = IdentifierName(variableName);
+                CurrentStatements = CurrentStatements.Append(ExpressionStatement(AssignmentExpression(SyntaxKind.SimpleAssignmentExpression, identifer, assign)));
+                ParameterExpressions[index] = identifer;
             }
 
             public bool TryGetAttribute(int index, string typeFullName, out AttributeData? attributeData)
@@ -93,7 +120,7 @@ namespace Silk.NET.SilkTouch
                             (x.AttributeClass, Compilation.GetTypeByMetadataName(typeFullName))
                     );
 
-                return attributeData is null;
+                return !(attributeData is null);
             }
 
             public bool TryGetAttribute
@@ -109,7 +136,16 @@ namespace Silk.NET.SilkTouch
                 Compilation = compilation;
                 MethodSymbol = methodSymbol;
                 Slot = slot;
-                ParameterExpressions = MethodSymbol.Parameters.Select(x => SyntaxFactory.IdentifierName(FormatName(x.Name))).Cast<ExpressionSyntax>().ToArray();
+                CurrentStatements = Enumerable.Empty<StatementSyntax>();
+                ParameterExpressions = new ExpressionSyntax[MethodSymbol.Parameters.Length];
+                for (int index = 0; index < MethodSymbol.Parameters.Length; index++)
+                {
+                    var symbol = MethodSymbol.Parameters[index];
+                    var name = $"dp{Slot}{index}";
+                    DeclareVariable(symbol.Type, name);
+                    SetParameterToVariableAndAssign(index, name, IdentifierName(FormatName(symbol.Name)));
+                }
+
                 LoadTypes = MethodSymbol.Parameters.Select
                         (x => x.Type)
                     .Append
@@ -120,7 +156,6 @@ namespace Silk.NET.SilkTouch
                     )
                     .ToArray();
                 ShouldPinParameter = MethodSymbol.Parameters.Select(x => x.RefKind != RefKind.None).ToArray();
-                CurrentStatements = Enumerable.Empty<StatementSyntax>();
 
                 ParameterMarshalOptions = methodSymbol.Parameters.Select
                 (
