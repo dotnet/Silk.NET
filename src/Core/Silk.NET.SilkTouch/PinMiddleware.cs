@@ -5,6 +5,7 @@
 
 using System;
 using System.Linq;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -26,7 +27,7 @@ namespace Silk.NET.SilkTouch
                 if (!shouldPin) continue;
                 
                 var loadType = ctx.LoadTypes[index];
-                loadType = MakePointer(loadType);
+                loadType = ctx.Compilation.CreatePointerTypeSymbol(loadType);
                 ctx.LoadTypes[index] = loadType;
                 
                 var name = $"pp{ctx.Slot}{index}";
@@ -49,7 +50,7 @@ namespace Silk.NET.SilkTouch
                 (
                     VariableDeclaration
                     (
-                        IdentifierName(ctx.LoadTypes[index]),
+                        IdentifierName(ctx.LoadTypes[index].ToDisplayString()),
                         SingletonSeparatedList
                             (VariableDeclarator(Identifier(name), null, EqualsValueClause(oldParameterExpressions[index])))
                     ), block

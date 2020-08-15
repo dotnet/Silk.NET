@@ -6,6 +6,7 @@
 using System;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -18,43 +19,45 @@ namespace Silk.NET.SilkTouch
         {
             for (var index = 0; index < ctx.ParameterExpressions.Length; index++)
             {
-                if (ctx.LoadTypes[index] == "bool")
+                if (SymbolEqualityComparer.Default.Equals(ctx.LoadTypes[index], ctx.Compilation.GetSpecialType(SpecialType.System_Boolean)))
                 {
                     switch (ctx.ParameterMarshalOptions[index]?.MarshalAs)
                     {
                         case UnmanagedType.I1:
-                            ctx.LoadTypes[index] = "sbyte";
+                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_SByte);
                             break;
                         case UnmanagedType.I2:
-                            ctx.LoadTypes[index] = "short";
+                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_Int16);;
                             break;
                         case UnmanagedType.I4:
-                            ctx.LoadTypes[index] = "int";
+                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_Int32);;
                             break;
                         case UnmanagedType.I8:
-                            ctx.LoadTypes[index] = "long";
+                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_Int64);;
                             break;
                         case UnmanagedType.SysInt:
-                            ctx.LoadTypes[index] = "nint";
+                            // SpecialType.System_NativeInteger or similar isn't available yet
+                            throw new NotSupportedException();
                             break;
                         case UnmanagedType.SysUInt:
-                            ctx.LoadTypes[index] = "nuint";
+                            // SpecialType.System_UnsignedNativeInteger or similar isn't available yet
+                            throw new NotSupportedException();
                             break;
                         case UnmanagedType.U2:
-                            ctx.LoadTypes[index] = "short";
+                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_UInt16);
                             break;
                         case UnmanagedType.U4:
-                            ctx.LoadTypes[index] = "uint";
+                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_UInt32);
                             break;
                         case UnmanagedType.U8:
-                            ctx.LoadTypes[index] = "ulong";
+                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_UInt64);
                             break;
                         case UnmanagedType.VariantBool:
-                            ctx.LoadTypes[index] = "short";
+                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_Int16);
                             break;
                         case UnmanagedType.U1:
                         default:
-                            ctx.LoadTypes[index] = "byte";
+                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_Byte);;
                             break;
                     }
 
@@ -78,10 +81,10 @@ namespace Silk.NET.SilkTouch
 
 
             var resultLocalName = $"boolName{ctx.Slot}res";
-            var processReturnType = !ctx.ReturnsVoid && ctx.ReturnLoadType == "bool";
+            var processReturnType = !ctx.ReturnsVoid && SymbolEqualityComparer.Default.Equals(ctx.ReturnLoadType, ctx.Compilation.GetSpecialType(SpecialType.System_Boolean));
             if (processReturnType)
             {
-                    ctx.ReturnLoadType = "byte";
+                    ctx.ReturnLoadType = ctx.Compilation.GetSpecialType(SpecialType.System_Byte);
 
                     ctx.CurrentStatements = ctx.CurrentStatements.Prepend
                 (
@@ -89,7 +92,7 @@ namespace Silk.NET.SilkTouch
                     (
                         VariableDeclaration
                         (
-                            IdentifierName(ctx.ReturnLoadType),
+                            IdentifierName(ctx.ReturnLoadType.ToDisplayString()),
                             SingletonSeparatedList(VariableDeclarator(Identifier(resultLocalName)))
                         )
                     )

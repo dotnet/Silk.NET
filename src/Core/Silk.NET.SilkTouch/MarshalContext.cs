@@ -15,7 +15,10 @@ namespace Silk.NET.SilkTouch
 
         public class MarshalContext
         {
-            private readonly Compilation _compilation;
+            /// <summary>
+            /// The Compilation this method originated from
+            /// </summary>
+            public Compilation Compilation { get; }
 
             /// <summary>
             /// Indicates the method slot
@@ -25,12 +28,12 @@ namespace Silk.NET.SilkTouch
             /// <summary>
             /// All Load types in order, last is the return type
             /// </summary>
-            public string[] LoadTypes { get; }
+            public ITypeSymbol[] LoadTypes { get; }
             
             /// <summary>
             /// The type loaded as return type from native
             /// </summary>
-            public ref string ReturnLoadType => ref LoadTypes[LoadTypes.Length - 1];
+            public ref ITypeSymbol ReturnLoadType => ref LoadTypes[LoadTypes.Length - 1];
 
             /// <summary>
             /// Indicates whether the parameter at each index should be pinned before sent to native
@@ -65,7 +68,7 @@ namespace Silk.NET.SilkTouch
             /// <summary>
             /// The current type of the <see cref="ResultExpression"/>
             /// </summary>
-            public string? CurrentResultType { get; set; }
+            public ITypeSymbol? CurrentResultType { get; set; }
 
             public MarshalOptions?[] ParameterMarshalOptions { get; }
             public MarshalOptions? ReturnMarshalOptions { get; }
@@ -81,20 +84,25 @@ namespace Silk.NET.SilkTouch
 
             public MarshalContext(Compilation compilation, IMethodSymbol methodSymbol, int slot)
             {
-                _compilation = compilation;
+                Compilation = compilation;
                 MethodSymbol = methodSymbol;
                 Slot = slot;
                 ParameterExpressions = MethodSymbol.Parameters.Select(x => SyntaxFactory.IdentifierName(FormatName(x.Name))).Cast<ExpressionSyntax>().ToArray();
                 LoadTypes = MethodSymbol.Parameters.Select
-                        (x => x.Type.ToDisplayString())
-                    .Append(MethodSymbol.ReturnsVoid ? "void" : MethodSymbol.ReturnType.ToDisplayString())
+                        (x => x.Type)
+                    .Append
+                    (
+                        MethodSymbol.ReturnsVoid
+                            ? Compilation.GetSpecialType(SpecialType.System_Void)
+                            : MethodSymbol.ReturnType
+                    )
                     .ToArray();
                 ShouldPinParameter = MethodSymbol.Parameters.Select(x => x.RefKind != RefKind.None).ToArray();
                 CurrentStatements = Enumerable.Empty<StatementSyntax>();
 
                 ParameterMarshalOptions = methodSymbol.Parameters.Select
                 (
-                    x => x.GetAttributes().FirstOrDefault(x => SymbolEqualityComparer.Default.Equals(x.AttributeClass, _compilation.GetTypeByMetadataName("System.Runtime.InteropServices.MarshalAsAttribute")))
+                    x => x.GetAttributes().FirstOrDefault(x => SymbolEqualityComparer.Default.Equals(x.AttributeClass, Compilation.GetTypeByMetadataName("System.Runtime.InteropServices.MarshalAsAttribute")))
                 ).Select(x => x is null ? null : new MarshalOptions((UnmanagedType)x.ConstructorArguments[0].Value)).ToArray();
 
                 var v = methodSymbol.ReturnType.GetAttributes()
@@ -103,7 +111,7 @@ namespace Silk.NET.SilkTouch
                         x => SymbolEqualityComparer.Default.Equals
                         (
                             x.AttributeClass,
-                            _compilation.GetTypeByMetadataName("System.Runtime.InteropServices.MarshalAsAttribute")
+                            Compilation.GetTypeByMetadataName("System.Runtime.InteropServices.MarshalAsAttribute")
                         )
                     );
                 ReturnMarshalOptions =

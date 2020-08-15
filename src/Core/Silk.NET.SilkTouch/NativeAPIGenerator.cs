@@ -141,7 +141,7 @@ namespace Silk.NET.SilkTouch
                                 FunctionPointerType
                                 (
                                     Identifier(GetCallingConvention(callingConvention)),
-                                    SeparatedList(ctx.LoadTypes.Select(x => Parameter(Identifier(x))))
+                                    SeparatedList(ctx.LoadTypes.Select(x => Parameter(Identifier(x.ToDisplayString()))))
                                 ), InvocationExpression
                                 (
                                     IdentifierName("Load"), ArgumentList
@@ -183,7 +183,7 @@ namespace Silk.NET.SilkTouch
                     {
                         // declare variable in outer scope
                         var name = $"res{ctx.Slot}";
-                        var v = LocalDeclarationStatement(VariableDeclaration(IdentifierName(ctx.ReturnLoadType), SingletonSeparatedList(
+                        var v = LocalDeclarationStatement(VariableDeclaration(IdentifierName(ctx.ReturnLoadType.ToDisplayString()), SingletonSeparatedList(
                             VariableDeclarator(name))));
 
                         ctx.CurrentStatements = ctx.CurrentStatements.Prepend(v);
