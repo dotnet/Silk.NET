@@ -247,7 +247,7 @@ namespace Silk.NET.GLFW
         /// </para>
         /// </remarks>
         /// <seealso cref="SetErrorCallback" />
-        public abstract unsafe ErrorCode GetError(out char* description);
+        public abstract unsafe ErrorCode GetError(out byte* description);
 
         /// <summary>
         /// <para>
