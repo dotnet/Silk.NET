@@ -22,6 +22,7 @@ jobs:
     - name: Pack
       run: dotnet pack --configuration Release --version-suffix build$GITHUB_RUN_NUMBER.0
     - name: Setup NuGet
+      if: ${{ github.repository == 'Ultz/Silk.NET' && github.event_name != 'pull_request' }}
       uses: nuget/setup-nuget@v1
       with:
         nuget-version: '5.x'
