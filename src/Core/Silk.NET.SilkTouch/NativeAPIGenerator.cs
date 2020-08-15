@@ -47,7 +47,8 @@ namespace Silk.NET.SilkTouch
                 return;
             
             _marshalBuilder = new MarshalBuilder();
-            
+
+            _marshalBuilder.Use(PinObjectMarshaller);
             _marshalBuilder.Use(BoolMarshaller);
             _marshalBuilder.Use(DelegateMarshaller);
 
@@ -184,11 +185,8 @@ namespace Silk.NET.SilkTouch
                     {
                         // declare variable in outer scope
                         var name = $"res{ctx.Slot}";
-                        var v = LocalDeclarationStatement(VariableDeclaration(IdentifierName(ctx.ReturnLoadType.ToDisplayString()), SingletonSeparatedList(
-                            VariableDeclarator(name))));
-
-                        ctx.CurrentStatements = ctx.CurrentStatements.Prepend(v);
-
+                        
+                        ctx.DeclareVariable(ctx.ReturnLoadType, name);
 
                         ctx.ResultExpression = IdentifierName(name);
 
