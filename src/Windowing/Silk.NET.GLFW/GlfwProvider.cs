@@ -26,7 +26,7 @@ namespace Silk.NET.GLFW
 
                     if (!glfw.Init())
                     {
-                        var code = glfw.GetError(out var pDesc);
+                        var code = glfw.GetError(out byte* pDesc);
                         // len = strnlen(pDesc, 4096);
                         var len = new ReadOnlySpan<byte>(pDesc, 4096).IndexOf((byte)0);
                         var desc = len <= 0 ? "Unknown" : System.Text.Encoding.UTF8.GetString(pDesc, len);
