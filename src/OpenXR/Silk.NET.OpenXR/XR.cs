@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using System.Linq;
 using System.Runtime.InteropServices;
-using Silk.NET.Core.Contexts;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using ExtensionAttribute = Silk.NET.Core.Attributes.ExtensionAttribute;
 
@@ -68,14 +66,7 @@ namespace Silk.NET.OpenXR
             var l = new List<string>();
             if (string.IsNullOrWhiteSpace(layer))
             {
-                var layerCount = 0u;
-                EnumerateApiLayerProperties(0, ref layerCount, ref Unsafe.AsRef<ApiLayerProperties>(null));
-                var layers = stackalloc ApiLayerProperties[(int)layerCount];
-                EnumerateApiLayerProperties(0, ref layerCount, ref layers[0]);
-                for (var i = 0; i < layerCount; i++)
-                {
-                    Add(l, layers[i].LayerName);
-                }
+                Add(l, null);
             }
             else
             {
@@ -94,6 +85,12 @@ namespace Silk.NET.OpenXR
             var extensionCount = 0u;
             EnumerateInstanceExtensionProperties(layerName, extensionCount, &extensionCount, null);
             var exts = stackalloc ExtensionProperties[(int)extensionCount];
+
+            for (int i = 0; i < extensionCount; i++)
+            {
+                exts[i] = new ExtensionProperties(StructureType.TypeExtensionProperties);
+            }
+            
             EnumerateInstanceExtensionProperties(layerName, extensionCount, &extensionCount, exts);
             for (var i = 0; i < extensionCount; i++)
             {

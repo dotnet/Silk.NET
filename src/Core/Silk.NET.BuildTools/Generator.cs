@@ -14,7 +14,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 using Silk.NET.BuildTools.Baking;
 using Silk.NET.BuildTools.Bind;
 using Silk.NET.BuildTools.Common;
@@ -193,7 +192,7 @@ namespace Silk.NET.BuildTools
                     );
                 }
                 using var memoryStream = new MemoryStream();
-                using var fileStream = File.OpenWrite(file);
+                using var fileStream = File.OpenRead(file);
                 using var gzStream = new GZipStream(fileStream, CompressionMode.Decompress);
                 gzStream.CopyTo(memoryStream);
                 profile = JsonConvert.DeserializeObject<Profile>(Encoding.UTF8.GetString(memoryStream.ToArray()));

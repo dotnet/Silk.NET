@@ -924,6 +924,16 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         TextureBorderColorNV = 0x1004,
         [NativeName("Name", "GL_CLAMP_TO_BORDER_NV")]
         ClampToBorderNV = 0x812D,
+        [NativeName("Name", "GL_TIMELINE_SEMAPHORE_VALUE_NV")]
+        TimelineSemaphoreValueNV = 0x9595,
+        [NativeName("Name", "GL_SEMAPHORE_TYPE_NV")]
+        SemaphoreTypeNV = 0x95B3,
+        [NativeName("Name", "GL_SEMAPHORE_TYPE_BINARY_NV")]
+        SemaphoreTypeBinaryNV = 0x95B4,
+        [NativeName("Name", "GL_SEMAPHORE_TYPE_TIMELINE_NV")]
+        SemaphoreTypeTimelineNV = 0x95B5,
+        [NativeName("Name", "GL_MAX_TIMELINE_SEMAPHORE_VALUE_DIFFERENCE_NV")]
+        MaxTimelineSemaphoreValueDifferenceNV = 0x95B6,
         [NativeName("Name", "GL_MAX_VIEWPORTS_NV")]
         MaxViewportsNV = 0x825B,
         [NativeName("Name", "GL_VIEWPORT_SUBPIXEL_BITS_NV")]
