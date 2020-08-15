@@ -72,7 +72,17 @@ namespace Silk.NET.BuildTools.Overloading
             sb.AppendLine
             (
                 $"{function.Name}" +
-                $"({string.Join(", ", function.Parameters.Select(x => (x.Type.IsByRef ? "ref " : string.Empty) + x.Name))});"
+                "(" + string.Join
+                (
+                    ", ",
+                    function.Parameters.Select
+                    (
+                        x => (x.Type.IsByRef ? "ref " : string.Empty) + (Utilities.CSharpKeywords.Contains
+                            (x.Name)
+                            ? "@"
+                            : string.Empty) + x.Name
+                    )
+                ) + ");"
             );
 
             foreach (var epilogueLine in ep)

@@ -30,7 +30,7 @@ namespace Silk.NET.Windowing
         /// Gets the main monitor.
         /// </summary>
         /// <returns>The main monitor.</returns>
-        public static IMonitor GetMainMonitor(IView view)
+        public static IMonitor GetMainMonitor(IView? view)
         {
             foreach (var platform in Window.Platforms)
             {

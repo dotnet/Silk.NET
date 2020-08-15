@@ -900,6 +900,11 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceFragmentDensityMap2PropertiesExt = 1000332001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_ROBUSTNESS_FEATURES_EXT")]
         PhysicalDeviceImageRobustnessFeaturesExt = 1000335000,
+<<<<<<< HEAD
+=======
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_4444_FORMATS_FEATURES_EXT")]
+        PhysicalDevice4444FormatsFeaturesExt = 1000340000,
+>>>>>>> 2.0
         [NativeName("Name", "VK_STRUCTURE_TYPE_DIRECTFB_SURFACE_CREATE_INFO_EXT")]
         DirectfbSurfaceCreateInfoExt = 1000346000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]

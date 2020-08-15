@@ -5,17 +5,15 @@
 
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design.Serialization;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
 using ClangSharp;
 using ClangSharp.Interop;
+using Microsoft.Extensions.FileSystemGlobbing;
 using Silk.NET.BuildTools.Common;
-using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
@@ -34,10 +32,17 @@ namespace Silk.NET.BuildTools.Cpp
                 Name = Path.GetFileNameWithoutExtension(fileName)
             };
 
-            var traversals = task.ClangOpts.Traverse.Select
-                    (x => Path.GetFullPath(x).ToLower().Replace('\\', '/'))
+            var matcher = new Matcher();
+            matcher.AddIncludePatterns(task.ClangOpts.Traverse.Select(x => x.ToLower().Replace('\\', '/'))
+                .Where(x => !x.StartsWith("!")));
+            matcher.AddExcludePatterns(task.ClangOpts.Traverse.Select(x => x.ToLower().Replace('\\', '/'))
+                .Where(x => x.StartsWith("!"))
+                .Select(x => x.Substring(1)));
+            
+            var traversals = matcher.GetResultsInFullPath(Environment.CurrentDirectory)
+                .Select(x => Path.GetFullPath(x).ToLower().Replace('\\', '/'))
                 .ToArray();
-            var untraversedFiles = new List<string>();
+
             Console.WriteLine("Loading input header...");
             using var ms = new MemoryStream();
             input.CopyTo(ms);
@@ -165,7 +170,6 @@ namespace Silk.NET.BuildTools.Cpp
                             if (!traversals.Contains
                                 (Path.GetFullPath(file.Name.ToString()).ToLower().Replace('\\', '/')))
                             {
-                                untraversedFiles.Add(file.Name.ToString());
                                 continue;
                             }
                         }
@@ -216,6 +220,120 @@ namespace Silk.NET.BuildTools.Cpp
                 cursor.Location.GetFileLocation(out var file, out var line, out var column, out _);
                 var fileName = Path.GetFileNameWithoutExtension(file.Name.ToString());
                 return $"__Anonymous{kind}_{fileName}_L{line}_C{column}";
+            }
+
+            string GetAnonymousName2(CXCursor cursor, string kind)
+            {
+                cursor.Location.GetFileLocation(out var file, out var line, out var column, out _);
+                var fileName = Path.GetFileNameWithoutExtension(file.Name.ToString());
+                return $"__Anonymous{kind}_{fileName}_L{line}_C{column}";
+            }
+
+            void VisitTypedefDecl(TypedefDecl tdDecl)
+            {
+                bool isPlain = false;
+                VisitTypedefDeclUnderlyingType(tdDecl.UnderlyingType, ref isPlain, out var anonName, out var decl);
+                if (decl is null || !string.IsNullOrWhiteSpace(((TagDecl)decl).Name))
+                {
+                    return;
+                }
+
+                if (decl is EnumDecl)
+                {
+                    var enumSpec = enums.FirstOrDefault(x => x.NativeName == anonName);
+                    var name = Naming.TranslateLite(Naming.TrimName(tdDecl.Name, task), task.FunctionPrefix);
+                    if (task.RenamedNativeNames.TryAdd(anonName, name) && !(enumSpec is null))
+                    {
+                        enumSpec.Attributes.Add(new Attribute
+                        {
+                            Arguments = new List<string>{"\"AnonymousName\"", $"\"{anonName}\""},
+                            Name = "NativeName"
+                        });
+                        enumSpec.Name = name;
+                        enumSpec.NativeName = tdDecl.Name;
+                    }
+                }
+                else if (decl is RecordDecl)
+                {
+                    var structSpec = structs.FirstOrDefault(x => x.NativeName == anonName);
+                    var name = Naming.TranslateLite(Naming.TrimName(tdDecl.Name, task), task.FunctionPrefix);
+                    if (task.RenamedNativeNames.TryAdd(anonName, name) && !(structSpec is null))
+                    {
+                        structSpec.Name = name;
+                        structSpec.NativeName = tdDecl.Name;
+                    }
+                }
+            }
+
+            void VisitTypedefDeclUnderlyingType
+            (
+                ClangSharp.Type type,
+                ref bool isPlain,
+                out string anonymousName,
+                out Decl decl
+            )
+            {
+                decl = null;
+                anonymousName = null;
+                if (type is ArrayType arrayType)
+                {
+                    isPlain = false;
+                    VisitTypedefDeclUnderlyingType
+                        (arrayType.ElementType, ref isPlain, out anonymousName, out decl);
+                }
+                else if (type is AttributedType attributedType)
+                {
+                    isPlain = false;
+                    VisitTypedefDeclUnderlyingType
+                        (attributedType.ModifiedType, ref isPlain, out anonymousName, out decl);
+                }
+                else if (type is BuiltinType)
+                {
+                    decl = null;
+                }
+                else if (type is ElaboratedType elaboratedType)
+                {
+                    VisitTypedefDeclUnderlyingType
+                        (elaboratedType.NamedType, ref isPlain, out anonymousName, out decl);
+                }
+                else if (type is FunctionType functionType)
+                {
+                    // todo maybe?
+                }
+                else if (type is PointerType pointerType)
+                {
+                    isPlain = false;
+                    VisitTypedefDeclUnderlyingType
+                        (pointerType.PointeeType, ref isPlain, out anonymousName, out decl);
+                }
+                else if (type is ReferenceType referenceType)
+                {
+                    isPlain = false;
+                    VisitTypedefDeclUnderlyingType
+                        (referenceType.PointeeType, ref isPlain, out anonymousName, out decl);
+                }
+                else if (type is TagType tagType)
+                {
+                    if (tagType.Handle.IsConstQualified)
+                    {
+                        anonymousName = GetAnonymousName2
+                        (
+                            tagType.Decl.TypeForDecl.Handle.Declaration,
+                            tagType.Kind.ToString().Substring("CXType_".Length)
+                        );
+                    }
+                    else
+                    {
+                        anonymousName = GetAnonymousName
+                            (tagType.Decl, tagType.Kind.ToString().Substring("CXType_".Length));
+                    }
+
+                    decl = tagType.Decl;
+                }
+                else if (type is TypedefType typedefType)
+                {
+                    // return...
+                }
             }
 
             CallingConvention GetCallingConvention(CXCallingConv conv)
@@ -395,7 +513,21 @@ namespace Silk.NET.BuildTools.Cpp
                 }
                 else if (type is ElaboratedType elaboratedType)
                 {
-                    ret = new Type {Name = elaboratedType.NamedType.AsString};
+                    if (elaboratedType.NamedType.Handle.Declaration.IsAnonymous)
+                    {
+                        ret = new Type
+                        {
+                            Name = GetAnonymousName2
+                            (
+                                elaboratedType.NamedType.Handle.Declaration,
+                                elaboratedType.NamedType.Handle.kind.ToString().Substring("CXType_".Length)
+                            )
+                        };
+                    }
+                    else
+                    {
+                        ret = new Type {Name = elaboratedType.NamedType.AsString};
+                    }
                 }
                 else if (type is FunctionType functionType)
                 {
@@ -475,11 +607,11 @@ namespace Silk.NET.BuildTools.Cpp
                     Console.WriteLine("To yield a successful mapping despite this, use this type via a typedef.");
                 }
 
-                ret.OriginalName = type.AsString;
+                ret.OriginalName = type.AsString.Replace("\\", "\\\\");
                 return ret;
             }
 
-            void VisitDecl(Decl decl)
+            void VisitDecl(Decl decl, string typedef = null)
             {
                 switch (decl.Kind)
                 {
@@ -537,7 +669,13 @@ namespace Silk.NET.BuildTools.Cpp
                     case CX_DeclKind.CX_DeclKind_Enum:
                     {
                         var enumDecl = (EnumDecl) decl;
-                        var existing = enums.FirstOrDefault(x => x.NativeName == enumDecl.Name);
+                        var nativeName = enumDecl.Name;
+                        if (string.IsNullOrWhiteSpace(nativeName))
+                        {
+                            nativeName = typedef ?? GetAnonymousName(enumDecl, "Enum");
+                        }
+
+                        var existing = enums.FirstOrDefault(x => x.NativeName == nativeName);
                         if (!(existing is null) && existing.ClangMetadata?[0] != enumDecl.Location.ToString())
                         {
                             Console.WriteLine("Warning: Existing enum with same native name.");
@@ -547,20 +685,20 @@ namespace Silk.NET.BuildTools.Cpp
                             break;
                         }
 
-                        if (task.ExcludedNativeNames?.Contains(enumDecl.Name) ?? false)
+                        if (task.ExcludedNativeNames?.Contains(nativeName) ?? false)
                         {
                             break;
                         }
 
                         string name = null;
-                        task.RenamedNativeNames.TryGetValue(enumDecl.Name, out name);
+                        task.RenamedNativeNames.TryGetValue(nativeName, out name);
                         enums.Add
                         (
                             new Enum
                             {
                                 Name = name ?? Naming.TranslateLite
-                                    (Naming.TrimName(enumDecl.Name, task), task.FunctionPrefix),
-                                NativeName = enumDecl.Name,
+                                    (Naming.TrimName(nativeName, task), task.FunctionPrefix),
+                                NativeName = nativeName,
                                 ClangMetadata = new[] {enumDecl.Location.ToString()},
                                 Tokens = enumDecl.Enumerators.Where
                                         (x => !(task.ExcludedNativeNames?.Contains(x.Name) ?? false))
@@ -584,11 +722,17 @@ namespace Silk.NET.BuildTools.Cpp
                     case CX_DeclKind.CX_DeclKind_CXXRecord:
                     {
                         var recordDecl = (CXXRecordDecl) decl;
-                        var existing = structs.FirstOrDefault(x => x.NativeName == recordDecl.Name);
+                        var nativeName = recordDecl.Name;
+                        if (string.IsNullOrWhiteSpace(nativeName))
+                        {
+                            nativeName = typedef ?? GetAnonymousName(recordDecl, "Record");
+                        }
+                        
+                        var existing = structs.FirstOrDefault(x => x.NativeName == nativeName);
                         if (!(existing is null) && existing.ClangMetadata?[0] != recordDecl.Location.ToString())
                         {
                             Console.WriteLine("Warning: Existing struct with same native name.");
-                            Console.WriteLine($"    Existing: {existing.NativeName}, {existing.ClangMetadata}");
+                            Console.WriteLine($"    Existing: {existing.NativeName}, {existing.ClangMetadata[0]}");
                             Console.WriteLine($"    New: {existing.NativeName}, {recordDecl.Location}");
                             if (existing.Fields.Count == 0)
                             {
@@ -602,21 +746,21 @@ namespace Silk.NET.BuildTools.Cpp
                             }
                         }
 
-                        if (task.ExcludedNativeNames?.Contains(recordDecl.Name) ?? false)
+                        if (task.ExcludedNativeNames?.Contains(nativeName) ?? false)
                         {
                             break;
                         }
 
                         string name = null;
-                        task.RenamedNativeNames.TryGetValue(recordDecl.Name, out name);
+                        task.RenamedNativeNames.TryGetValue(nativeName, out name);
 
                         structs.Add
                         (
                             new Struct
                             {
                                 Name = name ?? Naming.TranslateLite
-                                    (Naming.TrimName(recordDecl.Name, task), task.FunctionPrefix),
-                                NativeName = recordDecl.Name,
+                                    (Naming.TrimName(nativeName, task), task.FunctionPrefix),
+                                NativeName = nativeName,
                                 ClangMetadata = new[] {recordDecl.Location.ToString()},
                                 Fields = recordDecl.Fields.Select
                                     (
@@ -626,7 +770,7 @@ namespace Silk.NET.BuildTools.Cpp
                                                 (Naming.TrimName(x.Name, task), task.FunctionPrefix),
                                             NativeName = x.Name,
                                             Type = GetType(x.Type, out var count, out _),
-                                            NativeType = x.Type.AsString, Count = count,
+                                            NativeType = x.Type.AsString.Replace("\\", "\\\\"), Count = count,
                                             Attributes = recordDecl.IsUnion
                                                 ? new List<Attribute>
                                                 {
@@ -660,11 +804,12 @@ namespace Silk.NET.BuildTools.Cpp
                     // case CX_DeclKind.CX_DeclKind_ObjCTypeParam:
                     // case CX_DeclKind.CX_DeclKind_TypeAlias:
 
-                    // TODO perhaps? case CX_DeclKind.CX_DeclKind_Typedef:
-                    // TODO perhaps? {
-                    // TODO perhaps?     VisitTypedefDecl();
-                    // TODO perhaps?     break;
-                    // TODO perhaps? }
+                    case CX_DeclKind.CX_DeclKind_Typedef:
+                    {
+                        var typedefDecl = (TypedefDecl) decl;
+                        VisitTypedefDecl(typedefDecl);
+                        break;
+                    }
 
                     // case CX_DeclKind.CX_DeclKind_UnresolvedUsingTypename:
 
@@ -722,11 +867,26 @@ namespace Silk.NET.BuildTools.Cpp
                                 ),
                                 Parameters = functionDecl.Parameters.Select
                                     (
-                                        x => new Parameter
-                                            {Name = x.Name, Type = GetType(x.Type, out var count, out _), Count = count}
+                                        (x, i) => new Parameter
+                                        {
+                                            Name = string.IsNullOrWhiteSpace(x.Name) ? $"arg{i}" : x.Name,
+                                            Type = GetType(x.Type, out var count, out _), Count = count
+                                        }
                                     )
                                     .ToList(),
-                                ReturnType = GetType(functionDecl.ReturnType, out _, out _)
+                                ReturnType = GetType(functionDecl.ReturnType, out _, out _),
+                                Attributes = new List<Attribute>
+                                {
+                                    new Attribute
+                                    {
+                                        Name = "NativeName",
+                                        Arguments = new List<string>
+                                        {
+                                            "\"Src\"",
+                                            $"\"{functionDecl.Location}\"".Replace("\\", "\\\\")
+                                        }
+                                    }
+                                }
                             }
                         );
                         break;
