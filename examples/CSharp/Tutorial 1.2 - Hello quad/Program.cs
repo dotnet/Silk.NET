@@ -137,7 +137,8 @@ namespace Tutorial
 
             //Checking the linking for errors.
             string shader = Gl.GetProgramInfoLog(Shader);
-            if (!string.IsNullOrWhiteSpace(shader))
+            Gl.GetProgram(Shader, GLEnum.LinkStatus, out var status);
+            if (status == 0)
             {
                 Console.WriteLine($"Error linking shader {infoLog}");
             }
