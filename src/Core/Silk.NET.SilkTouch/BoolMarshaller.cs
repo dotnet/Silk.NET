@@ -36,12 +36,10 @@ namespace Silk.NET.SilkTouch
                             ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_Int64);;
                             break;
                         case UnmanagedType.SysInt:
-                            // SpecialType.System_NativeInteger or similar isn't available yet
-                            throw new NotSupportedException();
+                            ctx.LoadTypes[index] = ctx.Compilation.CreateNativeIntegerTypeSymbol(true);
                             break;
                         case UnmanagedType.SysUInt:
-                            // SpecialType.System_UnsignedNativeInteger or similar isn't available yet
-                            throw new NotSupportedException();
+                            ctx.LoadTypes[index] = ctx.Compilation.CreateNativeIntegerTypeSymbol(false);
                             break;
                         case UnmanagedType.U2:
                             ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_UInt16);
@@ -75,7 +73,9 @@ namespace Silk.NET.SilkTouch
                         @false = LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(0));
                     }
 
-                    ctx.ParameterExpressions[index] = ConditionalExpression(ctx.ParameterExpressions[index], @true, @false);
+                    var name = $"bmp{ctx.Slot}{index}";
+                    ctx.DeclareVariable(ctx.LoadTypes[index], name);
+                    ctx.SetParameterToVariableAndAssign(index, name, ConditionalExpression(ctx.ParameterExpressions[index], @true, @false));
                 }
             }
 
@@ -86,17 +86,7 @@ namespace Silk.NET.SilkTouch
             {
                     ctx.ReturnLoadType = ctx.Compilation.GetSpecialType(SpecialType.System_Byte);
 
-                    ctx.CurrentStatements = ctx.CurrentStatements.Prepend
-                (
-                    LocalDeclarationStatement
-                    (
-                        VariableDeclaration
-                        (
-                            IdentifierName(ctx.ReturnLoadType.ToDisplayString()),
-                            SingletonSeparatedList(VariableDeclarator(Identifier(resultLocalName)))
-                        )
-                    )
-                );
+                    ctx.DeclareVariable(ctx.ReturnLoadType, resultLocalName);
             }
 
             next();
