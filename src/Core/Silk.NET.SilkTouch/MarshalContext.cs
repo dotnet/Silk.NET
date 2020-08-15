@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -81,6 +82,27 @@ namespace Silk.NET.SilkTouch
                 }
                 public UnmanagedType MarshalAs { get; }
             }
+
+            public bool TryGetAttribute(int index, string typeFullName, out AttributeData? attributeData)
+            {
+                attributeData = MethodSymbol.Parameters[index]
+                    .GetAttributes()
+                    .FirstOrDefault
+                    (
+                        x => SymbolEqualityComparer.Default.Equals
+                            (x.AttributeClass, Compilation.GetTypeByMetadataName(typeFullName))
+                    );
+
+                return attributeData is null;
+            }
+
+            public bool TryGetAttribute
+                (int index, Type type, out AttributeData? attributeData)
+                => TryGetAttribute(index, type.FullName, out attributeData);
+
+            public bool TryGetAttribute<T>
+                (int index, out AttributeData? attributeData) where T : Attribute
+                => TryGetAttribute(index, typeof(T), out attributeData);
 
             public MarshalContext(Compilation compilation, IMethodSymbol methodSymbol, int slot)
             {
