@@ -233,7 +233,7 @@ namespace Silk.NET.Input.Sdl
             else
             {
                 if (!_cursorShapes.ContainsKey(_standardCursor))
-                    throw new InvalidOperationException("Glfw does not support the given standard cursor.");
+                    throw new InvalidOperationException("Sdl does not support the given standard cursor.");
 
                 return _ctx.Sdl.CreateSystemCursor(_cursorShapes[_standardCursor]);
             }
