@@ -20,6 +20,14 @@ namespace Silk.NET.Core.Native
             // The only implementer of this function should be SilkTouch
             // ReSharper disable once VirtualMemberCallInConstructor
             _entryPoints = new IntPtr[CoreGetSlotCount()];
+            if (_entryPoints.Length == 0)
+            {
+                throw new InvalidOperationException
+                (
+                    "The derived class does not implement CoreGetSlotCount, or does not have any slots." +
+                    "This could be because of a SilkTouch bug, or because you're not using SilkTouch at all."
+                );
+            }
         }
 
         public GcUtility GcUtility { get; } = new GcUtility();
@@ -29,14 +37,7 @@ namespace Silk.NET.Core.Native
             _ctx.Dispose();
         }
 
-        protected virtual int CoreGetSlotCount()
-        {
-            throw new MissingMethodException
-            (
-                "The derived class does not implement CoreGetSlotCount. This could be because of a SilkTouch " +
-                "bug, or because you're not using SilkTouch at all."
-            );
-        }
+        protected virtual int CoreGetSlotCount() => 0;
 
         protected void Pin(object o, int slot = -1)
         {
