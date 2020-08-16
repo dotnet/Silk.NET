@@ -68,8 +68,13 @@ namespace Silk.NET.SilkTouch
                             SyntaxKind.SimpleMemberAccessExpression,
                             MemberAccessExpression
                             (
-                                SyntaxKind.SimpleMemberAccessExpression, IdentifierName("Silk"), IdentifierName("NET")
-                            ), IdentifierName("Core")
+                                SyntaxKind.SimpleMemberAccessExpression,
+                                MemberAccessExpression
+                                (
+                                    SyntaxKind.SimpleMemberAccessExpression, IdentifierName("Silk"),
+                                    IdentifierName("NET")
+                                ), IdentifierName("Core")
+                            ), IdentifierName("Native")
                         ), IdentifierName("AllocBStr")
                     ),
                 [UnmanagedType.LPWStr] = _allocHGlobal,

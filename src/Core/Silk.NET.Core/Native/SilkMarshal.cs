@@ -15,6 +15,13 @@ namespace Silk.NET.Core.Native
     public static class SilkMarshal
     {
         /// <summary>
+        /// Allocate a new BStr pointer.
+        /// </summary>
+        /// <param name="length">The length of the string pointer, in bytes.</param>
+        /// <returns>A pointer to the created string.</returns>
+        public static IntPtr AllocBStr(int length) => Marshal.StringToBSTR(new string('\0', length));
+        
+        /// <summary>
         /// Converts a C# string to an ANSI string pointer.
         /// </summary>
         /// <param name="str">The input string.</param>
