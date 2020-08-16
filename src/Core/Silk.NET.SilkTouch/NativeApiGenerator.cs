@@ -46,8 +46,8 @@ namespace Silk.NET.SilkTouch
             marshalBuilder.Use(PinMiddleware);
             marshalBuilder.Use(SpanMarshaller);
             marshalBuilder.Use(BoolMarshaller);
-            marshalBuilder.Use(DelegateMarshaller);
             marshalBuilder.Use(PinObjectMarshaller);
+            marshalBuilder.Use(DelegateMarshaller);
 
             List<ITypeSymbol> processedSymbols = new List<ITypeSymbol>();
 
@@ -59,7 +59,7 @@ namespace Silk.NET.SilkTouch
 
                 var name = $"{receiverClassDeclaration.Identifier.Text}.{receiverClassDeclaration.GetHashCode()}.gen";
                 context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-                // File.WriteAllText(name, s);
+                File.WriteAllText(name, s);
             }
         }
 
