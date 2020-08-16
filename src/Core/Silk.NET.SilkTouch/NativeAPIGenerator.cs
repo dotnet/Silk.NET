@@ -32,7 +32,6 @@ namespace Silk.NET.SilkTouch
 
         public void Execute(SourceGeneratorContext context)
         {
-            Debugger.Launch();
             if (!(context.SyntaxReceiver is SyntaxReceiver receiver))
                 return;
 
@@ -59,7 +58,7 @@ namespace Silk.NET.SilkTouch
 
                 var name = $"{receiverClassDeclaration.Identifier.Text}.gen.cs.gen";
                 context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-                File.WriteAllText(@"C:\SILK.NET\src\OpenGL\Silk.NET.OpenGL\" + name, s);
+                // File.WriteAllText(name, s);
             }
         }
 
