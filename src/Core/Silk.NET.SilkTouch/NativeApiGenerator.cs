@@ -87,7 +87,7 @@ namespace Silk.NET.SilkTouch
                 (compilation.GetSemanticModel(classDeclaration.SyntaxTree), classDeclaration) as ITypeSymbol;
 
             if (!compilation.HasImplicitConversion
-                (classSymbol, compilation.GetTypeByMetadataName("Silk.NET.Core.Native.NativeAPI")))
+                (classSymbol, compilation.GetTypeByMetadataName("Silk.NET.Core.Native.NativeApiContainer")))
                 return null;
 
             var classAttribute = classSymbol.GetAttributes()
