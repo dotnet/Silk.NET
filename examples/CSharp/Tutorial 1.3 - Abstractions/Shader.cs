@@ -25,10 +25,10 @@ namespace Tutorial
             _gl.AttachShader(_handle, fragment);
             _gl.LinkProgram(_handle);
             //Check for linking errors.
-            string infoLog = _gl.GetProgramInfoLog(_handle);
-            if (!string.IsNullOrWhiteSpace(infoLog))
+            _gl.GetProgram(_handle, GLEnum.LinkStatus, out var status);
+            if (status == 0)
             {
-                throw new Exception($"Program failed to link with error: {infoLog}");
+                throw new Exception($"Program failed to link with error: {_gl.GetProgramInfoLog(_handle)}");
             }
             //Detach and delete the shaders
             _gl.DetachShader(_handle, vertex);
