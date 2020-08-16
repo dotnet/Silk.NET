@@ -17,48 +17,53 @@ namespace Silk.NET.SilkTouch
     {
         private static void BoolMarshaller(ref MarshalContext ctx, Action next)
         {
+            static ITypeSymbol Type(Compilation compilation, UnmanagedType? type)
+            {
+                switch (type)
+                    {
+                        case UnmanagedType.I1:
+                            return compilation.GetSpecialType(SpecialType.System_SByte);
+                            
+                        case UnmanagedType.I2:
+                            return compilation.GetSpecialType(SpecialType.System_Int16);;
+                            
+                        case UnmanagedType.I4:
+                            return compilation.GetSpecialType(SpecialType.System_Int32);;
+                            
+                        case UnmanagedType.I8:
+                            return compilation.GetSpecialType(SpecialType.System_Int64);;
+                            
+                        case UnmanagedType.SysInt:
+                            return compilation.CreateNativeIntegerTypeSymbol(true);
+                            
+                        case UnmanagedType.SysUInt:
+                            return compilation.CreateNativeIntegerTypeSymbol(false);
+                            
+                        case UnmanagedType.U2:
+                            return compilation.GetSpecialType(SpecialType.System_UInt16);
+                            
+                        case UnmanagedType.U4:
+                            return compilation.GetSpecialType(SpecialType.System_UInt32);
+                            
+                        case UnmanagedType.U8:
+                            return compilation.GetSpecialType(SpecialType.System_UInt64);
+                            
+                        case UnmanagedType.VariantBool:
+                            return compilation.GetSpecialType(SpecialType.System_Int16);
+                            
+                        case UnmanagedType.U1:
+                        default:
+                            return compilation.GetSpecialType(SpecialType.System_Byte);;
+                            
+                    }
+            }
+            
             for (var index = 0; index < ctx.ParameterExpressions.Length; index++)
             {
                 if (SymbolEqualityComparer.Default.Equals(ctx.LoadTypes[index], ctx.Compilation.GetSpecialType(SpecialType.System_Boolean)))
                 {
-                    switch (ctx.ParameterMarshalOptions[index]?.MarshalAs)
-                    {
-                        case UnmanagedType.I1:
-                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_SByte);
-                            break;
-                        case UnmanagedType.I2:
-                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_Int16);;
-                            break;
-                        case UnmanagedType.I4:
-                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_Int32);;
-                            break;
-                        case UnmanagedType.I8:
-                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_Int64);;
-                            break;
-                        case UnmanagedType.SysInt:
-                            ctx.LoadTypes[index] = ctx.Compilation.CreateNativeIntegerTypeSymbol(true);
-                            break;
-                        case UnmanagedType.SysUInt:
-                            ctx.LoadTypes[index] = ctx.Compilation.CreateNativeIntegerTypeSymbol(false);
-                            break;
-                        case UnmanagedType.U2:
-                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_UInt16);
-                            break;
-                        case UnmanagedType.U4:
-                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_UInt32);
-                            break;
-                        case UnmanagedType.U8:
-                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_UInt64);
-                            break;
-                        case UnmanagedType.VariantBool:
-                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_Int16);
-                            break;
-                        case UnmanagedType.U1:
-                        default:
-                            ctx.LoadTypes[index] = ctx.Compilation.GetSpecialType(SpecialType.System_Byte);;
-                            break;
-                    }
-
+                    ctx.LoadTypes[index] = Type(ctx.Compilation, ctx.ParameterMarshalOptions[index]?.MarshalAs);
+                    
                     ExpressionSyntax @true;
                     ExpressionSyntax @false;
 
@@ -87,7 +92,7 @@ namespace Silk.NET.SilkTouch
             var processReturnType = !ctx.ReturnsVoid && SymbolEqualityComparer.Default.Equals(ctx.ReturnLoadType, ctx.Compilation.GetSpecialType(SpecialType.System_Boolean));
             if (processReturnType)
             {
-                    ctx.ReturnLoadType = ctx.Compilation.GetSpecialType(SpecialType.System_Byte);
+                    ctx.ReturnLoadType = Type(ctx.Compilation, ctx.ReturnMarshalOptions?.MarshalAs);
 
                     ctx.DeclareVariable(ctx.Compilation.GetSpecialType(SpecialType.System_Boolean), resultLocalName);
             }
@@ -95,7 +100,21 @@ namespace Silk.NET.SilkTouch
             next();
 
             if (processReturnType)
-            {
+            {                    
+                ExpressionSyntax @true;
+                ExpressionSyntax @false;
+                
+                if (ctx.ReturnMarshalOptions?.MarshalAs == UnmanagedType.VariantBool)
+                {
+                    @true = LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(-1)); 
+                    @false = LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(0));
+                }
+                else
+                {
+                    @true = LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(1));
+                    @false = LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(0));
+                }
+
                 ctx.CurrentStatements = ctx.CurrentStatements.Append
                 (
                     ExpressionStatement
@@ -103,11 +122,7 @@ namespace Silk.NET.SilkTouch
                         AssignmentExpression
                         (
                             SyntaxKind.SimpleAssignmentExpression, IdentifierName(resultLocalName),
-                            BinaryExpression
-                            (
-                                SyntaxKind.EqualsExpression, ctx.ResultExpression,
-                                LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(1))
-                            )
+                            BinaryExpression(SyntaxKind.EqualsExpression, ctx.ResultExpression, @true)
                         )
                     )
                 );
