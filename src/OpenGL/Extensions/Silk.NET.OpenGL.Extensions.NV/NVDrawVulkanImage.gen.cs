@@ -38,7 +38,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
         public partial void WaitVkSemaphore([Flow(FlowDirection.In)] ulong vkSemaphore);
 
         [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
-        public partial IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] string name);
+        public partial IntPtr GetVkProcAddr([Flow(FlowDirection.In)] string name);
 
         public NVDrawVulkanImage(INativeContext ctx)
             : base(ctx)

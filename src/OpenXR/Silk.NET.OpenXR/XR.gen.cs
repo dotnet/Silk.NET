@@ -473,43 +473,43 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
-        public unsafe partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Computed = "propertyCapacityInput")] ExtensionProperties* properties);
+        public unsafe partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Computed = "propertyCapacityInput")] ExtensionProperties* properties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrEnumerateInstanceExtensionProperties")]
-        public partial Result EnumerateInstanceExtensionProperties([Count(Count = 0), Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Computed = "propertyCapacityInput")] ref ExtensionProperties properties);
+        public partial Result EnumerateInstanceExtensionProperties([Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] ref uint propertyCountOutput, [Count(Computed = "propertyCapacityInput")] ref ExtensionProperties properties);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
-        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Computed = "bufferCapacityInput")] string buffer);
+        public unsafe partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, string buffer);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInputSourceLocalizedName")]
-        public partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ref InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Computed = "bufferCapacityInput")] string buffer);
+        public partial Result GetInputSourceLocalizedName([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ref InputSourceLocalizedNameGetInfo getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, string buffer);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
-        public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] string name, [Count(Count = 0)] FuncPtr* function);
+        public unsafe partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string name, [Count(Count = 0)] FuncPtr* function);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrGetInstanceProcAddr")]
-        public partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] string name, [Count(Count = 0)] ref FuncPtr function);
+        public partial Result GetInstanceProcAddr([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string name, [Count(Count = 0)] ref FuncPtr function);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrPathToString")]
-        public unsafe partial Result PathToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Computed = "bufferCapacityInput")] string buffer);
+        public unsafe partial Result PathToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, string buffer);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrPathToString")]
-        public partial Result PathToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Computed = "bufferCapacityInput")] string buffer);
+        public partial Result PathToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, string buffer);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrStringToPath")]
-        public unsafe partial Result StringToPath([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] string pathString, [Count(Count = 0)] ulong* path);
+        public unsafe partial Result StringToPath([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string pathString, [Count(Count = 0)] ulong* path);
 
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "xrStringToPath")]
-        public partial Result StringToPath([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] string pathString, [Count(Count = 0)] ref ulong path);
+        public partial Result StringToPath([Count(Count = 0)] Instance instance, [Flow(FlowDirection.In)] string pathString, [Count(Count = 0)] ref ulong path);
 
 
         public XR(INativeContext ctx)

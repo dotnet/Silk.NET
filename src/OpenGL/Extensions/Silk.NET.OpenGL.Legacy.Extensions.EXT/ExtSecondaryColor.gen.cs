@@ -98,7 +98,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void SecondaryColorPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glSecondaryColor3ubvEXT")]
-        public partial void SecondaryColor3([Count(Count = 3), Flow(FlowDirection.In)] string v);
+        public partial void SecondaryColor3([Flow(FlowDirection.In)] string v);
 
         [NativeApi(EntryPoint = "glSecondaryColorPointerEXT")]
         public unsafe partial void SecondaryColorPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ColorPointerType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] void* pointer);

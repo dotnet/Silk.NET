@@ -74,10 +74,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> value);
 
         [NativeApi(EntryPoint = "glBindFragDataLocationEXT")]
-        public partial void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Count(Computed = "name"), Flow(FlowDirection.In)] string name);
+        public partial void BindFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint color, [Flow(FlowDirection.In)] string name);
 
         [NativeApi(EntryPoint = "glGetFragDataLocationEXT")]
-        public partial int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Count(Computed = "name"), Flow(FlowDirection.In)] string name);
+        public partial int GetFragDataLocation([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] string name);
 
         public ExtGpuShader4(INativeContext ctx)
             : base(ctx)
