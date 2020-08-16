@@ -133,7 +133,7 @@ namespace Silk.NET.SilkTouch
                             InvocationExpression
                             (
                                 _allocString[marshalAs],
-                                ArgumentList(SingletonSeparatedList(Argument(count)))
+                                ArgumentList(SingletonSeparatedList(Argument(CastExpression(PredefinedType(Token(SyntaxKind.IntKeyword)), count))))
                             )
                         );
                         break;
