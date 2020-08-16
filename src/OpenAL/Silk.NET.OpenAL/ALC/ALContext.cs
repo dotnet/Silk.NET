@@ -82,11 +82,23 @@ namespace Silk.NET.OpenAL
         /// Gets an instance of the API.
         /// </summary>
         /// <returns>The instance.</returns>
-        public static ALContext GetApi()
+        public static unsafe ALContext GetApi()
         {
-            var loader = new ALLoader();
-            var ret = new ALContext(new DefaultNativeContext(new OpenALLibraryNameContainer().GetLibraryName(), loader));
-            loader.Alc = ret;
+            var ctx = new MultiNativeContext
+                (new DefaultNativeContext(new OpenALLibraryNameContainer().GetLibraryName()), null);
+            var ret = new ALContext(ctx);
+            ctx.Contexts[1] = new LamdaNativeContext(
+                x =>
+                {
+                    if (x.EndsWith("GetProcAddress") ||
+                        x.EndsWith("GetContextsDevice") ||
+                        x.EndsWith("GetCurrentContext"))
+                    {
+                        return default;
+                    }
+
+                    return (IntPtr) ret.GetProcAddress(ret.GetContextsDevice(ret.GetCurrentContext()), x);
+                });
             return ret;
         }
 

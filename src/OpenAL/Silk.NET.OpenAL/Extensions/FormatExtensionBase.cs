@@ -13,7 +13,8 @@ namespace Silk.NET.OpenAL.Extensions
     /// Base class for OpenAL extensions that add audio formats.
     /// </summary>
     /// <typeparam name="TExtendedBufferFormat">The extended buffer format enumeration.</typeparam>
-    public abstract class FormatExtensionBase<TExtendedBufferFormat> : NativeExtension<AL>
+    [NativeApi(Prefix = "al")]
+    public abstract partial class FormatExtensionBase<TExtendedBufferFormat> : NativeExtension<AL>
         where TExtendedBufferFormat : struct, Enum
     {
         /// <inheritdoc cref="ExtensionBase" />
