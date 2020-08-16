@@ -80,10 +80,15 @@ namespace Silk.NET.SilkTouch
 
             if (!namespaceDeclaration.Parent.IsKind(SyntaxKind.CompilationUnit))
                 return null;
+            
             var compilationUnit = (CompilationUnitSyntax) namespaceDeclaration.Parent;
 
             var classSymbol = ModelExtensions.GetDeclaredSymbol
-                (compilation.GetSemanticModel(classDeclaration.SyntaxTree), classDeclaration);
+                (compilation.GetSemanticModel(classDeclaration.SyntaxTree), classDeclaration) as ITypeSymbol;
+
+            if (!compilation.HasImplicitConversion
+                (classSymbol, compilation.GetTypeByMetadataName("Silk.NET.Core.Native.NativeAPI")))
+                return null;
 
             var classAttribute = classSymbol.GetAttributes()
                 .FirstOrDefault(x => SymbolEqualityComparer.Default.Equals(x.AttributeClass, nativeApiAttributeSymbol));
@@ -112,7 +117,6 @@ namespace Silk.NET.SilkTouch
                                 x2 => SymbolEqualityComparer.Default.Equals(x2.AttributeClass, nativeApiAttributeSymbol)
                             ))
                 )
-                .Where(x => x.attribute != default)
                 .Select(x => (x.declaration, x.symbol, ToNativeApiAttribute(x.attribute)))
                 .Where(x => x.declaration.Modifiers.Any(x2 => x2.IsKind(SyntaxKind.PartialKeyword)) && x.symbol.PartialImplementationPart is null)
                 .Select
@@ -255,8 +259,11 @@ namespace Silk.NET.SilkTouch
                 _ => throw new ArgumentException("convention is invalid", nameof(convention))
             };
 
-        private static NativeApiAttribute ToNativeApiAttribute(AttributeData attributeData)
+        private static NativeApiAttribute? ToNativeApiAttribute(AttributeData? attributeData)
         {
+            if (attributeData is null)
+                return null;
+            
             var v = new NativeApiAttribute();
             var dictionary = attributeData.NamedArguments.ToDictionary(x => x.Key, x => x.Value);
 
