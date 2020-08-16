@@ -241,7 +241,7 @@ namespace Silk.NET.Windowing.Sdl
             {
                 if (!IsInitialized)
                 {
-                    throw new InvalidOperationException("Window is not running.");
+                    throw new InvalidOperationException("Window is not initialized.");
                 }
 
                 if (value is null)
