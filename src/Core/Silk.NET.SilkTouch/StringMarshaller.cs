@@ -59,7 +59,7 @@ namespace Silk.NET.SilkTouch
             new Dictionary<UnmanagedType, ExpressionSyntax>
             {
                 [UnmanagedType.BStr] =
-                    // Silk.NET.Core.AllocBStr
+                    // Silk.NET.Core.Native.SilkMarshal.AllocBStr
                     MemberAccessExpression
                     (
                         SyntaxKind.SimpleMemberAccessExpression,
@@ -71,10 +71,14 @@ namespace Silk.NET.SilkTouch
                                 SyntaxKind.SimpleMemberAccessExpression,
                                 MemberAccessExpression
                                 (
-                                    SyntaxKind.SimpleMemberAccessExpression, IdentifierName("Silk"),
-                                    IdentifierName("NET")
-                                ), IdentifierName("Core")
-                            ), IdentifierName("Native")
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    MemberAccessExpression
+                                    (
+                                        SyntaxKind.SimpleMemberAccessExpression, IdentifierName("Silk"),
+                                        IdentifierName("NET")
+                                    ), IdentifierName("Core")
+                                ), IdentifierName("Native")
+                            ), IdentifierName("SilkMarshal")
                         ), IdentifierName("AllocBStr")
                     ),
                 [UnmanagedType.LPWStr] = _allocHGlobal,
