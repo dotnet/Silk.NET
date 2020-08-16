@@ -25,10 +25,10 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         }
 
         /// <inheritdoc />
-        public partial unsafe void GenAuxiliaryEffectSlots(int count, uint* slots);
+        public unsafe partial void GenAuxiliaryEffectSlots(int count, uint* slots);
 
         /// <inheritdoc />
-        public partial unsafe void DeleteAuxiliaryEffectSlots(int count, uint* slots);
+        public unsafe partial void DeleteAuxiliaryEffectSlots(int count, uint* slots);
 
         /// <inheritdoc />
         [return: MarshalAs(UnmanagedType.I4)]
@@ -51,10 +51,10 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public partial void GetAuxiliaryEffectSlotProperty(uint slot, EffectSlotFloat param, out float value);
 
         /// <inheritdoc />
-        public partial unsafe void GenEffects(int count, uint* effects);
+        public unsafe partial void GenEffects(int count, uint* effects);
 
         /// <inheritdoc />
-        public partial unsafe void DeleteEffects(int count, uint* effects);
+        public unsafe partial void DeleteEffects(int count, uint* effects);
 
         /// <inheritdoc />
         [return: MarshalAs(UnmanagedType.I4)]
@@ -85,10 +85,10 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public partial void GetEffectProperty(uint effect, EffectVector3 param, out Vector3 value);
 
         /// <inheritdoc />
-        public partial unsafe void GenFilters(int count, uint* filters);
+        public unsafe partial void GenFilters(int count, uint* filters);
 
         /// <inheritdoc />
-        public partial unsafe void DeleteFilters(int count, uint* filters);
+        public unsafe partial void DeleteFilters(int count, uint* filters);
 
         /// <inheritdoc />
         [return: MarshalAs(UnmanagedType.I4)]

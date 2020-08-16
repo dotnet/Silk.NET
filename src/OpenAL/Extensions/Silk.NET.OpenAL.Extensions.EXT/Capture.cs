@@ -25,29 +25,29 @@ namespace Silk.NET.OpenAL.Extensions.EXT
         }
 
         /// <inheritdoc />
-        public partial unsafe Device* CaptureOpenDevice(string deviceName, uint frequency, BufferFormat format,
+        public unsafe partial Device* CaptureOpenDevice(string deviceName, uint frequency, BufferFormat format,
             int size);
 
         /// <inheritdoc />
-        public partial unsafe bool CaptureCloseDevice(Device* device);
+        public unsafe partial bool CaptureCloseDevice(Device* device);
 
         /// <inheritdoc />
-        public partial unsafe void CaptureStart(Device* device);
+        public unsafe partial void CaptureStart(Device* device);
 
         /// <inheritdoc />
-        public partial unsafe void CaptureStop(Device* device);
+        public unsafe partial void CaptureStop(Device* device);
 
         /// <inheritdoc />
-        public partial unsafe void CaptureSamples(Device* device, void* buffer, int sampleCount);
+        public unsafe partial void CaptureSamples(Device* device, void* buffer, int sampleCount);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public partial unsafe void GetContextProperty(Device* device, GetCaptureContextInteger param, int count,
+        public unsafe partial void GetContextProperty(Device* device, GetCaptureContextInteger param, int count,
             void* data);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public partial unsafe void GetContextProperty(Device* device, GetCaptureContextInteger param, int count,
+        public unsafe partial void GetContextProperty(Device* device, GetCaptureContextInteger param, int count,
             int* data);
 
         /// <inheritdoc cref="CaptureOpenDevice" />

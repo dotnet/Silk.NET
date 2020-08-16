@@ -15,7 +15,7 @@ namespace Silk.NET.OpenAL
         private partial class InternalAL : NativeApiContainer
         {
             [NativeApi(EntryPoint = "alcGetProcAddress")]
-            public partial unsafe IntPtr GetProcAddress(Device* device, string proc);
+            public unsafe partial IntPtr GetProcAddress(Device* device, string proc);
             [NativeApi(EntryPoint = "alGetProcAddress")]
             public partial IntPtr GetProcAddress(string proc);
 

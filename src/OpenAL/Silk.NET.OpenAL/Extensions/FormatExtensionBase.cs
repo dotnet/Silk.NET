@@ -23,7 +23,7 @@ namespace Silk.NET.OpenAL.Extensions
         }
 
         /// <inheritdoc cref="BufferData" />
-        public partial unsafe void BufferData(uint buffer, TExtendedBufferFormat format, void* data, int size,
+        public unsafe partial void BufferData(uint buffer, TExtendedBufferFormat format, void* data, int size,
             int frequency);
 
         /// <summary>

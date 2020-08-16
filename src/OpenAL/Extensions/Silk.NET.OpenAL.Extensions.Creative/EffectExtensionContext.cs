@@ -25,11 +25,11 @@ namespace Silk.NET.OpenAL.Extensions.Creative
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public partial unsafe void GetContextProperty(IntPtr device, EFXContextInteger param, int size, int* data);
+        public unsafe partial void GetContextProperty(IntPtr device, EFXContextInteger param, int size, int* data);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public partial unsafe void GetContextProperty(Device* device, EFXContextInteger param, int size, int* data);
+        public unsafe partial void GetContextProperty(Device* device, EFXContextInteger param, int size, int* data);
 
         /// <summary>
         /// Gets the major version of the Effect Extension.

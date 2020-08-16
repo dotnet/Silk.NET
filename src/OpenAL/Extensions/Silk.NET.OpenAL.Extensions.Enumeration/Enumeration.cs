@@ -26,10 +26,10 @@ namespace Silk.NET.OpenAL.Extensions.Enumeration
         }
 
         /// <inheritdoc />
-        public partial unsafe string GetString(Device* device, GetEnumerationContextString param);
+        public unsafe partial string GetString(Device* device, GetEnumerationContextString param);
 
         /// <inheritdoc />
-        public partial unsafe char* GetStringList(Device* device, GetEnumerationContextStringList param);
+        public unsafe partial char* GetStringList(Device* device, GetEnumerationContextStringList param);
 
         /// <inheritdoc cref="GetString(Device*, GetEnumerationContextString)" />
         public IEnumerable<string> GetStringList(GetEnumerationContextStringList param)

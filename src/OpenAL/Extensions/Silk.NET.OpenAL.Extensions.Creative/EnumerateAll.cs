@@ -26,10 +26,10 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         }
 
         /// <inheritdoc />
-        public partial unsafe string GetString(Device* device, GetEnumerateAllContextString param);
+        public unsafe partial string GetString(Device* device, GetEnumerateAllContextString param);
 
         /// <inheritdoc />
-        public partial unsafe char* GetStringList(Device* device, GetEnumerateAllContextStringList param);
+        public unsafe partial char* GetStringList(Device* device, GetEnumerateAllContextStringList param);
 
         /// <inheritdoc cref="GetStringList(Device*, GetEnumerateAllContextStringList)" />
         public IEnumerable<string> GetStringList(GetEnumerateAllContextStringList param)

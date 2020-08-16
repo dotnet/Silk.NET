@@ -27,7 +27,7 @@ namespace Silk.NET.OpenAL
         }
 
         /// <inheritdoc />
-        public partial override bool IsExtensionPresent(string name);
+        public override partial bool IsExtensionPresent(string name);
 
         /// <inheritdoc />
         public SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
@@ -39,16 +39,16 @@ namespace Silk.NET.OpenAL
         public partial int GetEnumValue(string name);
 
         /// <inheritdoc />
-        public partial unsafe void GenBuffers(int count, uint* buffers);
+        public unsafe partial void GenBuffers(int count, uint* buffers);
 
         /// <inheritdoc />
-        public partial unsafe void DeleteBuffers(int count, uint* buffers);
+        public unsafe partial void DeleteBuffers(int count, uint* buffers);
 
         /// <inheritdoc />
         public partial bool IsBuffer(uint buffer);
 
         /// <inheritdoc />
-        public partial unsafe void BufferData(uint buffer, BufferFormat format, void* data, int size, int frequency);
+        public unsafe partial void BufferData(uint buffer, BufferFormat format, void* data, int size, int frequency);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Bufferf")]
@@ -65,7 +65,7 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Bufferfv")]
-        public partial unsafe void SetBufferProperty(uint buffer, BufferVector3 param, float* value);
+        public unsafe partial void SetBufferProperty(uint buffer, BufferVector3 param, float* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Bufferi")]
@@ -77,7 +77,7 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Bufferiv")]
-        public partial unsafe void SetBufferProperty(uint buffer, BufferInteger param, int* value);
+        public unsafe partial void SetBufferProperty(uint buffer, BufferInteger param, int* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetBufferf")]
@@ -94,7 +94,7 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetBufferfv")]
-        public partial unsafe void GetBufferProperty(uint buffer, BufferFloat param, float* value);
+        public unsafe partial void GetBufferProperty(uint buffer, BufferFloat param, float* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetBufferi")]
@@ -107,7 +107,7 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetBufferiv")]
-        public partial unsafe void GetBufferProperty(uint buffer, GetBufferInteger param, int* value);
+        public unsafe partial void GetBufferProperty(uint buffer, GetBufferInteger param, int* value);
 
         /// <inheritdoc />
         public partial AudioError GetError();
@@ -126,7 +126,7 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Listenerfv")]
-        public partial unsafe void SetListenerProperty(ListenerFloatArray param, float* value);
+        public unsafe partial void SetListenerProperty(ListenerFloatArray param, float* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Listeneri")]
@@ -138,7 +138,7 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Listeneriv")]
-        public partial unsafe void SetListenerProperty(ListenerInteger param, int* value);
+        public unsafe partial void SetListenerProperty(ListenerInteger param, int* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetListenerf")]
@@ -155,7 +155,7 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetListenerfv")]
-        public partial unsafe void GetListenerProperty(ListenerFloatArray param, float* value);
+        public unsafe partial void GetListenerProperty(ListenerFloatArray param, float* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetListeneri")]
@@ -167,13 +167,13 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetListeneriv")]
-        public partial unsafe void GetListenerProperty(ListenerInteger param, int* value);
+        public unsafe partial void GetListenerProperty(ListenerInteger param, int* value);
 
         /// <inheritdoc />
-        public partial unsafe void GenSources(int count, uint* sources);
+        public unsafe partial void GenSources(int count, uint* sources);
 
         /// <inheritdoc />
-        public partial unsafe void DeleteSources(int count, uint* sources);
+        public unsafe partial void DeleteSources(int count, uint* sources);
 
         /// <inheritdoc />
         public partial bool IsSource(uint source);
@@ -193,7 +193,7 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcefv")]
-        public partial unsafe void SetSourceProperty(uint source, SourceVector3 param, float* value);
+        public unsafe partial void SetSourceProperty(uint source, SourceVector3 param, float* value);
 
         /// <inheritdoc />
         [Obsolete("Kept in for backwards compatibility. Please use the signature that takes a bool instead of an int.")]
@@ -214,7 +214,7 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourceiv")]
-        public partial unsafe void SetSourceProperty(uint source, SourceInteger param, int* value);
+        public unsafe partial void SetSourceProperty(uint source, SourceInteger param, int* value);
         
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourcei")]
@@ -226,7 +226,7 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "Sourceiv")]
-        public partial unsafe void SetSourceProperty(uint source, SourceInteger param, uint* value);
+        public unsafe partial void SetSourceProperty(uint source, SourceInteger param, uint* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSourcef")]
@@ -248,7 +248,7 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSourcefv")]
-        public partial unsafe void GetSourceProperty(uint source, SourceFloat param, float* value);
+        public unsafe partial void GetSourceProperty(uint source, SourceFloat param, float* value);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSourcei")]
@@ -261,41 +261,41 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetSourceiv")]
-        public partial unsafe void GetSourceProperty(uint source, GetSourceInteger param, int* value);
+        public unsafe partial void GetSourceProperty(uint source, GetSourceInteger param, int* value);
 
         /// <inheritdoc />
         public partial void SourcePlay(uint source);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "SourcePlayv")]
-        public partial unsafe void SourcePlay(int count, uint* sources);
+        public unsafe partial void SourcePlay(int count, uint* sources);
 
         /// <inheritdoc />
         public partial void SourcePause(uint source);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "SourcePausev")]
-        public partial unsafe void SourcePause(int count, uint* sources);
+        public unsafe partial void SourcePause(int count, uint* sources);
 
         /// <inheritdoc />
         public partial void SourceStop(uint source);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "SourceStopv")]
-        public partial unsafe void SourceStop(int count, uint* sources);
+        public unsafe partial void SourceStop(int count, uint* sources);
 
         /// <inheritdoc />
         public partial void SourceRewind(uint source);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "SourceRewindv")]
-        public partial unsafe void SourceRewind(int count, uint* sources);
+        public unsafe partial void SourceRewind(int count, uint* sources);
 
         /// <inheritdoc />
-        public partial unsafe void SourceQueueBuffers(uint source, int count, uint* buffers);
+        public unsafe partial void SourceQueueBuffers(uint source, int count, uint* buffers);
 
         /// <inheritdoc />
-        public partial unsafe void SourceUnqueueBuffers(uint source, int count, uint* buffers);
+        public unsafe partial void SourceUnqueueBuffers(uint source, int count, uint* buffers);
 
         /// <inheritdoc />
         public partial void Enable(Capability capability);

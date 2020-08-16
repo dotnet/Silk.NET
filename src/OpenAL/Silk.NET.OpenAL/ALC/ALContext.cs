@@ -28,55 +28,55 @@ namespace Silk.NET.OpenAL
         public partial override bool IsExtensionPresent(string name);
 
         /// <inheritdoc />
-        public partial unsafe Context* CreateContext(Device* device, int* attributeList);
+        public unsafe partial Context* CreateContext(Device* device, int* attributeList);
 
         /// <inheritdoc />
-        public partial unsafe bool MakeContextCurrent(Context* context);
+        public unsafe partial bool MakeContextCurrent(Context* context);
 
         /// <inheritdoc />
-        public partial unsafe void ProcessContext(Context* context);
+        public unsafe partial void ProcessContext(Context* context);
 
         /// <inheritdoc />
-        public partial unsafe void SuspendContext(Context* context);
+        public unsafe partial void SuspendContext(Context* context);
 
         /// <inheritdoc />
-        public partial unsafe void DestroyContext(Context* context);
+        public unsafe partial void DestroyContext(Context* context);
 
         /// <inheritdoc />
-        public partial unsafe Context* GetCurrentContext();
+        public unsafe partial Context* GetCurrentContext();
 
         /// <inheritdoc />
-        public partial unsafe Device* GetContextsDevice(Context* context);
+        public unsafe partial Device* GetContextsDevice(Context* context);
 
         /// <inheritdoc />
-        public partial unsafe Device* OpenDevice(string deviceName);
+        public unsafe partial Device* OpenDevice(string deviceName);
 
         /// <inheritdoc />
-        public partial unsafe bool CloseDevice(Device* device);
+        public unsafe partial bool CloseDevice(Device* device);
 
         /// <inheritdoc />
-        public partial unsafe ContextError GetError(Device* device);
+        public unsafe partial ContextError GetError(Device* device);
 
         /// <inheritdoc />
-        public partial unsafe bool IsExtensionPresent(Device* device, string name);
+        public unsafe partial bool IsExtensionPresent(Device* device, string name);
 
         /// <inheritdoc />
-        public partial unsafe void* GetProcAddress(Device* device, string name);
+        public unsafe partial void* GetProcAddress(Device* device, string name);
 
         /// <inheritdoc />
-        public partial unsafe int GetEnumValue(Device* device, string name);
+        public unsafe partial int GetEnumValue(Device* device, string name);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetString")]
-        public partial unsafe string GetContextProperty(Device* device, GetContextString param);
+        public unsafe partial string GetContextProperty(Device* device, GetContextString param);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public partial unsafe void GetContextProperty(Device* device, GetContextInteger param, int count, IntPtr data);
+        public unsafe partial void GetContextProperty(Device* device, GetContextInteger param, int count, IntPtr data);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public partial unsafe void GetContextProperty(Device* device, GetContextInteger param, int count, int* data);
+        public unsafe partial void GetContextProperty(Device* device, GetContextInteger param, int count, int* data);
 
         /// <summary>
         /// Gets an instance of the API.
