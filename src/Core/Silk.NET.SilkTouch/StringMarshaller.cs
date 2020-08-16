@@ -93,7 +93,16 @@ namespace Silk.NET.SilkTouch
                 var marshalAs = ctx.ParameterMarshalOptions[index]?.MarshalAs ?? UnmanagedType.LPStr;
 
                 var name = $"smptr{ctx.Slot}{index}";
-                ctx.DeclareVariable(intptr, name);
+
+                var charType = ctx.Compilation.CreatePointerTypeSymbol(marshalAs switch
+                {
+                    UnmanagedType.BStr => ctx.Compilation.GetSpecialType(SpecialType.System_Char),
+                    UnmanagedType.LPWStr => ctx.Compilation.GetSpecialType(SpecialType.System_Char),
+                    UnmanagedType.LPStr => ctx.Compilation.GetSpecialType(SpecialType.System_Byte),
+                    UnmanagedType.LPTStr => ctx.Compilation.GetSpecialType(SpecialType.System_Byte),
+                });
+                
+                ctx.DeclareVariable(charType, name);
                 switch (ctx.MethodSymbol.Parameters[index].RefKind)
                 {
                     case RefKind.None:
@@ -102,12 +111,17 @@ namespace Silk.NET.SilkTouch
                         ctx.SetParameterToVariableAndAssign
                         (
                             index, name,
-                            InvocationExpression
+                            CastExpression
                             (
-                                _stringToPtr[marshalAs],
-                                ArgumentList(SingletonSeparatedList(Argument(ctx.ParameterExpressions[index])))
+                                IdentifierName(charType.ToDisplayString()),
+                                InvocationExpression
+                                (
+                                    _stringToPtr[marshalAs],
+                                    ArgumentList(SingletonSeparatedList(Argument(ctx.ParameterExpressions[index])))
+                                )
                             )
                         );
+                        ctx.LoadTypes[index] = charType;
                         break;
                     case RefKind.Out:
                         ExpressionSyntax count;
@@ -126,19 +140,37 @@ namespace Silk.NET.SilkTouch
                             "Computed" => throw new Exception(),
                             _ => throw new ArgumentOutOfRangeException(c.Key)
                         };
-                        
+
                         ctx.SetParameterToVariableAndAssign
                         (
                             index, name,
-                            InvocationExpression
+                            CastExpression
                             (
-                                _allocString[marshalAs],
-                                ArgumentList(SingletonSeparatedList(Argument(CastExpression(PredefinedType(Token(SyntaxKind.IntKeyword)), count))))
+                                IdentifierName(charType.ToDisplayString()),
+                                InvocationExpression
+                                (
+                                    _allocString[marshalAs],
+                                    ArgumentList
+                                    (
+                                        SingletonSeparatedList
+                                        (
+                                            Argument
+                                                (CastExpression(PredefinedType(Token(SyntaxKind.IntKeyword)), count))
+                                        )
+                                    )
+                                )
                             )
                         );
+                        
+                        // second address of
+                        var name2 = $"smo{ctx.Slot}{index}";
+                        var pp = ctx.Compilation.CreatePointerTypeSymbol(charType);
+                        ctx.DeclareVariable(pp, name2);
+                        ctx.SetParameterToVariableAndAssign(index, name2, PrefixUnaryExpression(SyntaxKind.AddressOfExpression, ctx.ParameterExpressions[index]));
+                        ctx.LoadTypes[index] = pp;
+                        ctx.ShouldPinParameter[index] = false;
                         break;
                 }
-                ctx.LoadTypes[index] = intptr;
             }
 
             next();
@@ -164,7 +196,17 @@ namespace Silk.NET.SilkTouch
                                 InvocationExpression
                                 (
                                     _stringFromPtr[marshalAs],
-                                    ArgumentList(SingletonSeparatedList(Argument(IdentifierName(name))))
+                                    ArgumentList
+                                    (
+                                        SingletonSeparatedList
+                                        (
+                                            Argument
+                                            (
+                                                CastExpression
+                                                    (IdentifierName(intptr.ToDisplayString()), IdentifierName(name))
+                                            )
+                                        )
+                                    )
                                 )
                             )
                         )
@@ -178,7 +220,14 @@ namespace Silk.NET.SilkTouch
                         InvocationExpression
                         (
                             _freeString[marshalAs],
-                            ArgumentList(SingletonSeparatedList(Argument(IdentifierName(name))))
+                            ArgumentList
+                            (
+                                SingletonSeparatedList
+                                (
+                                    Argument
+                                        (CastExpression(IdentifierName(intptr.ToDisplayString()), IdentifierName(name)))
+                                )
+                            )
                         )
                     )
                 );
