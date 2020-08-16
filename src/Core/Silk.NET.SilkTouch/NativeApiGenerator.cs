@@ -6,11 +6,9 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -23,7 +21,6 @@ namespace Silk.NET.SilkTouch
     [Generator]
     public partial class NativeApiGenerator : ISourceGenerator
     {
-        private static volatile int _slot = 0;
         public void Initialize(InitializationContext context)
         {
             context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
@@ -51,13 +48,15 @@ namespace Silk.NET.SilkTouch
             marshalBuilder.Use(DelegateMarshaller);
             marshalBuilder.Use(PinObjectMarshaller);
 
+            List<ITypeSymbol> processedSymbols = new List<ITypeSymbol>();
+
             foreach (var receiverClassDeclaration in receiver.ClassDeclarations)
             {
-                var s = ProcessClassDeclaration(receiverClassDeclaration, context.Compilation, nativeApiAttribute, marshalBuilder);
+                var s = ProcessClassDeclaration(receiverClassDeclaration, context.Compilation, nativeApiAttribute, marshalBuilder, ref processedSymbols);
                 
                 if (s is null) continue;
 
-                var name = $"{receiverClassDeclaration.Identifier.Text}.gen";
+                var name = $"{receiverClassDeclaration.Identifier.Text}.{receiverClassDeclaration.GetHashCode()}.gen";
                 context.AddSource(name, SourceText.From(s, Encoding.UTF8));
                 // File.WriteAllText(name, s);
             }
@@ -68,7 +67,8 @@ namespace Silk.NET.SilkTouch
             ClassDeclarationSyntax classDeclaration,
             Compilation compilation,
             INamedTypeSymbol nativeApiAttributeSymbol,
-            MarshalBuilder rootMarshalBuilder
+            MarshalBuilder rootMarshalBuilder,
+            ref List<ITypeSymbol> processedSymbols
         )
         {
             if (!classDeclaration.Modifiers.Any(x => x.IsKind(SyntaxKind.PartialKeyword)))
@@ -99,6 +99,7 @@ namespace Silk.NET.SilkTouch
 
             var newMembers = new List<MemberDeclarationSyntax>();
 
+            int slot = 0;
             var methods = classDeclaration.Members.Where
                     (x => x.IsKind(SyntaxKind.MethodDeclaration))
                 .Select(x => (MethodDeclarationSyntax) x)
@@ -201,7 +202,7 @@ namespace Silk.NET.SilkTouch
                 
                 marshalBuilder.Use(BuildLoadInvoke);
 
-                var slot = Interlocked.Increment(ref _slot);
+                slot++;
 
                var context = new MarshalContext(compilation, symbol, slot);
 
@@ -239,13 +240,29 @@ namespace Silk.NET.SilkTouch
                     method
                 );
             }
-                           
+
+            if (!classSymbol.GetMembers().Any(x => x.Kind == SymbolKind.Method && x.Name == "CoreGetSlotCount") && !processedSymbols.Contains(classSymbol))
+            {
+                newMembers.Add
+                (
+                    MethodDeclaration
+                    (
+                        List<AttributeListSyntax>(),
+                        TokenList(Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)),
+                        PredefinedType(Token(SyntaxKind.IntKeyword)), null, Identifier("CoreGetSlotCount"), null,
+                        ParameterList(), List<TypeParameterConstraintClauseSyntax>(), null,
+                        ArrowExpressionClause(LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(slot))),
+                        Token(SyntaxKind.SemicolonToken)
+                    )
+                );
+            }               
             if (newMembers.Count == 0)
                 return null;
 
             var newNamespace = namespaceDeclaration.WithMembers
                 (List(new MemberDeclarationSyntax[] {classDeclaration.WithMembers(List(newMembers)).WithAttributeLists(List<AttributeListSyntax>())})).WithUsings(compilationUnit.Usings);
 
+            processedSymbols.Add(classSymbol);
             return newNamespace.NormalizeWhitespace().ToFullString();
         }
 
