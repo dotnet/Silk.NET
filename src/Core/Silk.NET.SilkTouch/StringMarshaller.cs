@@ -14,7 +14,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
 {
-    public partial class NativeAPIGenerator
+    public partial class NativeApiGenerator
     {
         private static ExpressionSyntax _sysMarshal = // System.Runtime.InteropServices.Marshal
             MemberAccessExpression

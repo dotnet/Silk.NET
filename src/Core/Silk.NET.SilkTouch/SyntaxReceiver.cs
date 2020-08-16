@@ -9,7 +9,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Silk.NET.SilkTouch
 {
-    public partial class NativeAPIGenerator
+    public partial class NativeApiGenerator
     {
         public class SyntaxReceiver : ISyntaxReceiver
         {

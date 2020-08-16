@@ -13,7 +13,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
 {
-    public partial class NativeAPIGenerator
+    public partial class NativeApiGenerator
     {
         private void ParameterInitMiddleware(ref MarshalContext ctx, Action next)
         {

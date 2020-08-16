@@ -21,7 +21,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 namespace Silk.NET.SilkTouch
 {
     [Generator]
-    public partial class NativeAPIGenerator : ISourceGenerator
+    public partial class NativeApiGenerator : ISourceGenerator
     {
         private static volatile int _slot = 0;
         public void Initialize(InitializationContext context)
