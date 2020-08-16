@@ -26,6 +26,8 @@ namespace Silk.NET.Input.Sdl
 
         public unsafe string Name => _ctx.Sdl.JoystickNameS(_joystick);
         public int Index => ActualIndex;
+        public int ActualIndex { get; set; }
+        public int InstanceId { get; }
 
         public unsafe bool IsConnected => _ctx.Sdl.JoystickGetAttached(_joystick) == SdlBool.True &&
                                           _ctx.Sdl.IsGameController(ActualIndex) == SdlBool.False;
@@ -126,9 +128,6 @@ namespace Silk.NET.Input.Sdl
                 }
             }
         }
-
-        public int ActualIndex { get; set; }
-        public int InstanceId { get; }
 
         public unsafe void Dispose()
         {
